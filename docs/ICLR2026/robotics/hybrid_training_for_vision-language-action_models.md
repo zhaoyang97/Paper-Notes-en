@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Hybrid Training for Vision-Language-Action Models
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Vision-Language-Action] This paper proposes **Hybrid Training (HyT)**: an approach that enables VLAs to learn simultaneously from "Chain-of-Thought (CoT)" and "Action" data during training, while bypassing time-consuming thought generation during inference via a "modality variable." This achieves the performance gains of CoT while maintaining
+  [ICLR 2026][Robotics][Vision-Language-Action] This paper proposes **Hybrid Training (HyT)**: an approach that enables VLAs to learn simultaneously from "Chain-of-Thought (CoT)" and "Action" data during training, while bypassing time-consuming thought generation during inference via a "modality variable." This achieves the performance gains of CoT while maintaining the high control frequency of standard VLAs.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Vision-Language-Action
-  - Embodied Chain-of-Thought
-  - Inference Acceleration
+  - "ICLR 2026"
+  - "Robotics"
+  - "Vision-Language-Action"
+  - "Embodied Chain-of-Thought"
+  - "Hybrid Training"
+  - "Inference Acceleration"
+  - "Modality Variables"
 date: 2026-05-08
-content_hash: c6bbedc360010eb0
+content_hash: 1c7ea3abe7657e8d
 ---
+
 # Hybrid Training for Vision-Language-Action Models
 
 **Conference**: ICLR 2026  
@@ -115,10 +118,10 @@ The improvement in OOD scenarios is particularly notable (29→54); HyT reaches 
 ## Related Papers
 
 - [\[ICLR 2026\] VLM4VLA: Revisiting Vision-Language-Models in Vision-Language-Action Models](vlm4vla_revisiting_vision-language-models_in_vision-language-action_models.md)
-- [\[ICLR 2026\] villa-X: Enhancing Latent Action Modeling in Vision-Language-Action Models](villa-x_enhancing_latent_action_modeling_in_vision-language-action_models.md)
+- [\[ICLR 2026\] Spatially Guided Training for Vision-Language-Action Model](spatially_guided_training_for_vision-language-action_model.md)
 - [\[CVPR 2026\] QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models](../../CVPR2026/robotics/quantvla_scale-calibrated_post-training_quantization_for_vision-language-action_.md)
+- [\[ICLR 2026\] villa-X: Enhancing Latent Action Modeling in Vision-Language-Action Models](villa-x_enhancing_latent_action_modeling_in_vision-language-action_models.md)
 - [\[ICML 2026\] Test-Time Training for Visual Foresight Vision-Language-Action Models](../../ICML2026/robotics/test-time_training_for_visual_foresight_vision-language-action_models.md)
-- [\[ICLR 2026\] Action-aware Dynamic Pruning for Efficient Vision-Language-Action Manipulation](action-aware_dynamic_pruning_for_efficient_vision-language-action_manipulation.md)
 
 </div>
 

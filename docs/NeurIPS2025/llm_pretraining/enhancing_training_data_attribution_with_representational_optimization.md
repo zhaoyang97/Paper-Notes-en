@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Enhancing Training Data Attribution with Representational Optimization
 description: >-
-  [NeurIPS 2025][LLM Pretraining][training data attribution] This paper proposes AirRep (Attentive Influence Ranking Representation), a representation learning-based training data attribution method that employs a trainabl…
+  [NeurIPS 2025][LLM Pretraining][training data attribution] This paper proposes AirRep (Attentive Influence Ranking Representation), a representation learning-based training data attribution method that employs a trainable encoder and attention pooling mechanism. AirRep achieves attribution accuracy on par with or superior to state-of-the-art gradient-based methods while being approximately 80× faster at inference.
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "attention pooling"
   - "data selection"
 date: 2026-05-08
-content_hash: 9ab8afe9c01f6a76
+content_hash: d7d99b57c028cdd3
 ---
 
 # Enhancing Training Data Attribution with Representational Optimization
@@ -176,10 +176,10 @@ Starting from the base GTE (7.65), components are incrementally added:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Final-Model-Only Data Attribution with a Unifying View of Gradient-Based Methods](final-model-only_data_attribution_with_a_unifying_view_of_gradient-based_methods.md)
-- [\[NeurIPS 2025\] Conformal Risk Training: End-to-End Optimization of Conformal Risk Control](conformal_risk_training_end-to-end_optimization_of_conformal_risk_control.md)
 - [\[NeurIPS 2025\] Quantifying Task-Relevant Representational Similarity Using Decision Variable Correlation](quantifying_task-relevant_representational_similarity_using_decision_variable_co.md)
+- [\[NeurIPS 2025\] Conformal Risk Training: End-to-End Optimization of Conformal Risk Control](conformal_risk_training_end-to-end_optimization_of_conformal_risk_control.md)
+- [\[ICML 2025\] LLM Data Selection and Utilization via Dynamic Bi-level Optimization](../../ICML2025/llm_pretraining/llm_data_selection_and_utilization_via_dynamic_bi-level_optimization.md)
 - [\[NeurIPS 2025\] Predict Training Data Quality via Its Geometry in Metric Space](predict_training_data_quality_via_its_geometry_in_metric_space.md)
-- [\[NeurIPS 2025\] Language Model Behavioral Phases are Consistent Across Architecture, Training Data, and Scale](language_model_behavioral_phases_are_consistent_across_archi.md)
 
 </div>
 

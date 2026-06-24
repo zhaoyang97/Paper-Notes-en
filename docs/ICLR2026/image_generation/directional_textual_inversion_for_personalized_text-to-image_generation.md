@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Directional Textual Inversion for Personalized Text-to-Image Generation
 description: >-
-  [ICLR 2026][Image Generation][Textual Inversion] This paper discovers that token embeddings learned by Textual Inversion (TI) suffer from "norm inflation," leading to decreased text alignment in complex prompts. It proposes Directional Textual Inversion (DTI), which fixes the embedding norm to an in-distribution scale and optimizes only the direction on the unit hype
+  [ICLR 2026][Image Generation][Textual Inversion] This paper discovers that token embeddings learned by Textual Inversion (TI) suffer from "norm inflation," leading to decreased text alignment in complex prompts. It proposes Directional Textual Inversion (DTI), which fixes the embedding norm to an in-distribution scale and optimizes only the direction on the unit hypersphere using Riemannian SGD. Combined with a von Mises-Fisher prior, this method significantly improves prompt…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Textual Inversion
-  - von Mises-Fisher
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Textual Inversion"
+  - "Directional Optimization"
+  - "Hypersphere"
+  - "von Mises-Fisher"
+  - "Personalized Text-to-Image"
 date: 2026-05-08
-content_hash: c8cc84924bebcf17
+content_hash: 5564da9cbc3b7784
 ---
+
 # Directional Textual Inversion for Personalized Text-to-Image Generation
 
 **Conference**: ICLR 2026  
@@ -134,10 +138,10 @@ DTI significantly improves text alignment across all models (0.292 → 0.522 on 
 ## Related Papers
 
 - [\[ICLR 2026\] Preserve and Personalize: Personalized Text-to-Image Diffusion Models without Distributional Drift](preserve_and_personalize_personalized_text-to-image_diffusion_models_without_dis.md)
+- [\[CVPR 2026\] Premier: Personalized Preference Modulation with Learnable User Embedding in Text-to-Image Generation](../../CVPR2026/image_generation/premier_personalized_preference_modulation_with_learnable_user_embedding_in_text.md)
 - [\[AAAI 2026\] DOS: Directional Object Separation in Text Embeddings for Multi-Object Image Generation](../../AAAI2026/image_generation/dos_directional_object_separation_in_text_embeddings_for_mul.md)
 - [\[ICLR 2026\] MOSAIC: Multi-Subject Personalized Generation via Correspondence-Aware Alignment and Disentanglement](mosaic_multi-subject_personalized_generation_via_correspondence-aware_alignment_.md)
 - [\[ECCV 2024\] Textual-Visual Logic Challenge: Understanding and Reasoning in Text-to-Image Generation](../../ECCV2024/image_generation/textual-visual_logic_challenge_understanding_and_reasoning_in_text-to-image_gene.md)
-- [\[CVPR 2026\] Premier: Personalized Preference Modulation with Learnable User Embedding in Text-to-Image Generation](../../CVPR2026/image_generation/premier_personalized_preference_modulation_with_learnable_user_embedding_in_text.md)
 
 </div>
 

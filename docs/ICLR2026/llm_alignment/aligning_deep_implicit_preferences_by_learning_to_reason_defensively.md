@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Aligning Deep Implicit Preferences by Learning to Reason Defensively
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] Addressing the problem in LLM personalization where models "merely parrot explicit user preferences while failing to infer deep intentions or proactively avoid risks," this paper reformulates alignment from scalar reward matching into a structured reasoning process. It first constructs DeepPref, a reasoning chain datas
+  [ICLR2026][LLM Alignment][Personalized Alignment] Addressing the problem in LLM personalization where models "merely parrot explicit user preferences while failing to infer deep intentions or proactively avoid risks," this paper reformulates alignment from scalar reward matching into a structured reasoning process. It first constructs DeepPref, a reasoning chain dataset with step-by-step critique annotations using a "Multi-role Cognitive Committee." Then…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR2026"
+  - "LLM Alignment"
+  - "Personalized Alignment"
+  - "Implicit Preferences"
+  - "Process Reward Models"
+  - "Defensive Reasoning"
+  - "Online Reinforcement Learning"
 date: 2026-05-08
-content_hash: bbbedb2c3fea2e7b
+content_hash: b41e73ad5c1d788c
 ---
+
 # Aligning Deep Implicit Preferences by Learning to Reason Defensively
 
 **Conference**: ICLR2026  
@@ -151,6 +157,7 @@ Comparing different reward modeling paradigms on DeepPref (Pro. Sup. = Process S
 - Value: ⭐⭐⭐⭐ The "Critique PRM + token-level advantage" paradigm has high transfer value for reasoning-heavy alignment tasks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -158,8 +165,8 @@ Comparing different reward modeling paradigms on DeepPref (Pro. Sup. = Process S
 - [\[ICLR 2026\] COMAL: A Convergent Meta-Algorithm for Aligning LLMs with General Preferences](comal_a_convergent_meta-algorithm_for_aligning_llms_with_general_preferences.md)
 - [\[ICML 2026\] Implicit Safety Alignment from Crowd Preferences](../../ICML2026/llm_alignment/implicit_safety_alignment_from_crowd_preferences.md)
 - [\[ICLR 2026\] Learning Ordinal Probabilistic Reward from Preferences (OPRM)](learning_ordinal_probabilistic_reward_from_preferences.md)
+- [\[ICLR 2026\] Learning from Noisy Preferences: A Semi-Supervised Learning Approach to Direct Preference Optimization](learning_from_noisy_preferences_a_semi-supervised_learning_approach_to_direct_pr.md)
 - [\[ACL 2025\] Synergistic Weak-Strong Collaboration by Aligning Preferences](../../ACL2025/llm_alignment/synergistic_weak-strong_collaboration_by_aligning_preferences.md)
-- [\[ICLR 2026\] Data Selection for LLM Alignment Using Fine-Grained Preferences](data_selection_for_llm_alignment_using_fine-grained_preferences.md)
 
 </div>
 

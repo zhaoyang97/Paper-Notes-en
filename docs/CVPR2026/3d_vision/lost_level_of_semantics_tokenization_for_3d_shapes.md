@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LoST: Level of Semantics Tokenization for 3D Shapes
 description: >-
-  [CVPR 2026][3D Vision][3D Generation] This work proposes Level-of-Semantics Tokenization (LoST), which sorts 3D shape tokens by semantic significance. This allows short prefixes to decode into complete and semantically plausible shapes. Combined with the RIDA semantic alignment loss and GPT-style autoregressive generation, the method significantly outperfo
+  [CVPR 2026][3D Vision][3D Generation] This work proposes Level-of-Semantics Tokenization (LoST), which sorts 3D shape tokens by semantic significance. This allows short prefixes to decode into complete and semantically plausible shapes. Combined with the RIDA semantic alignment loss and GPT-style autoregressive generation, the method significantly outperforms existing 3D AR approaches using only 128 tokens compared to tens of thousands.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Generation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Generation"
+  - "Shape Tokenization"
+  - "Autoregressive Models"
+  - "Semantic Hierarchy"
+  - "Diffusion Decoding"
 date: 2026-05-08
-content_hash: 21b0d1667e54210b
+content_hash: a7abebc32980f643
 ---
+
 # LoST: Level of Semantics Tokenization for 3D Shapes
 
 **Conference**: CVPR 2026  
@@ -154,11 +159,11 @@ AR Generation:
 
 ## Related Papers
 
+- [\[CVPR 2026\] Residual Primitive Fitting of 3D Shapes with SuperFrusta](residual_primitive_fitting_of_3d_shapes_with_superfrusta.md)
+- [\[CVPR 2026\] UniTEX: Universal High Fidelity Generative Texturing for 3D Shapes](unitex_universal_high_fidelity_generative_texturing_for_3d_shapes.md)
 - [\[CVPR 2026\] Fusion of Depth and Semantics for Probabilistic Floorplan Localization](fusion_of_depth_and_semantics_for_probabilistic_floorplan_localization.md)
-- [\[CVPR 2026\] GeoCodeBench: Benchmarking PhD-Level Coding in 3D Geometric Computer Vision](benchmarking_phd-level_coding_in_3d_geometric_computer_vision.md)
-- [\[CVPR 2026\] 3D-IDE: 3D Implicit Depth Emergent](3d-ide_3d_implicit_depth_emergent.md)
-- [\[CVPR 2026\] ActionMesh: Animated 3D Mesh Generation with Temporal 3D Diffusion](actionmesh_animated_3d_mesh_generation_with_temporal_3d_diffusion.md)
-- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
+- [\[ICCV 2025\] Can3Tok: Canonical 3D Tokenization and Latent Modeling of Scene-Level 3D Gaussians](../../ICCV2025/3d_vision/can3tok_canonical_3d_tokenization_and_latent_modeling_of_scene-level_3d_gaussian.md)
+- [\[CVPR 2026\] ExtrinSplat: Decoupling Geometry and Semantics for Open-Vocabulary Understanding in 3D Gaussian Splatting](extrinsplat_decoupling_geometry_and_semantics_for_open-vocabulary_understanding_.md)
 
 </div>
 

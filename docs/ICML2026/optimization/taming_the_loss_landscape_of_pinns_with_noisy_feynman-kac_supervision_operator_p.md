@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Taming the Loss Landscape of PINNs with Noisy Feynman-Kac Supervision: Operator Preconditioning and Non-Asymptotic Error Bounds
 description: >-
-  [ICML 2026][Optimization & Theory][PINN] Incorporating a small number of interior point pseudo-labels, obtained via Monte Carlo simulation of the Feynman–Kac formula, into the PINN loss essentially acts as operator preconditioning for the PDE operator. This work provides an operator-level proof that the condition number remains bounded with respect to the num
+  [ICML 2026][Optimization][PINN] Incorporating a small number of interior point pseudo-labels, obtained via Monte Carlo simulation of the Feynman–Kac formula, into the PINN loss essentially acts as operator preconditioning for the PDE operator. This work provides an operator-level proof that the condition number remains bounded with respect to the number of collocation points $N$, along with a non-asymptotic $L^2$ error bound for $\tanh$ activations. This approach enables PINN…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - PINN
-  - Feynman-Kac
+  - "ICML 2026"
+  - "Optimization"
+  - "PINN"
+  - "Feynman-Kac"
+  - "Operator Preconditioning"
+  - "Condition Number"
+  - "Loss Landscape"
 date: 2026-05-08
-content_hash: 5936c184bb3f38e1
+content_hash: 3fb8d8587f65df4c
 ---
+
 # Taming the Loss Landscape of PINNs with Noisy Feynman-Kac Supervision: Operator Preconditioning and Non-Asymptotic Error Bounds
 
 **Conference**: ICML 2026  

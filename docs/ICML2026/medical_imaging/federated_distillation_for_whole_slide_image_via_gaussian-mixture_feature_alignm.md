@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Federated Distillation for Whole Slide Image via Gaussian-Mixture Feature Alignment and Curriculum Integration
 description: >-
-  [ICML 2026][Medical Imaging][WSI] This paper proposes FedHD: In heterogeneous federated pathology scenarios, it employs Gaussian-mixture feature alignment for "one-to-one" WSI feature-level distillation. It then progressively injects cross-institutional synthetic features into local training via curriculum learning. This allows institutions to collabor
+  [ICML 2026][Medical Imaging][WSI] This paper proposes FedHD: In heterogeneous federated pathology scenarios, it employs Gaussian-mixture feature alignment for "one-to-one" WSI feature-level distillation. It then progressively injects cross-institutional synthetic features into local training via curriculum learning. This allows institutions to collaborate without sharing raw data or exchanging model parameters. Compatible with heterogeneous MIL architectures and feature extra…
 tags:
-  - ICML 2026
-  - Medical Imaging
-  - WSI
-  - Gaussian Mixture
+  - "ICML 2026"
+  - "Medical Imaging"
+  - "WSI"
+  - "Multi-instance Learning"
+  - "Gaussian Mixture"
+  - "Federated Distillation"
+  - "Curriculum Learning"
 date: 2026-05-08
-content_hash: 1fe6a1d3e1a22773
+content_hash: 45e5ea2c757c6408
 ---
+
 # Federated Distillation for Whole Slide Image via Gaussian-Mixture Feature Alignment and Curriculum Integration
 
 **Conference**: ICML 2026  
@@ -143,10 +147,10 @@ Local distillation runs for 1000 iterations, local MIL training for 50 epochs, w
 ## Related Papers
 
 - [\[CVPR 2026\] Dual-Level Hypergraph Generation for Addressing Feature Scarcity in Whole-Slide Image Classification](../../CVPR2026/medical_imaging/dual-level_hypergraph_generation_for_addressing_feature_scarcity_in_whole-slide_.md)
-- [\[CVPR 2026\] MUSE: Harnessing Precise and Diverse Semantics for Few-Shot Whole Slide Image Classification](../../CVPR2026/medical_imaging/muse_harnessing_precise_and_diverse_semantics_for_few-shot_whole_slide_image_cla.md)
 - [\[CVPR 2026\] Act Like a Pathologist: Tissue-Aware Whole Slide Image Reasoning](../../CVPR2026/medical_imaging/act_like_a_pathologist_tissue-aware_whole_slide_image_reasoning.md)
 - [\[CVPR 2026\] TopoSlide: Topologically-Informed Histopathology Whole Slide Image Representation Learning](../../CVPR2026/medical_imaging/toposlide_topologically-informed_histopathology_whole_slide_image_representation.md)
 - [\[CVPR 2026\] MLLM-HWSI: A Multimodal Large Language Model for Hierarchical Whole Slide Image Understanding](../../CVPR2026/medical_imaging/mllm-hwsi_a_multimodal_large_language_model_for_hierarchical_whole_slide_image_u.md)
+- [\[CVPR 2026\] Contrastive Cross-Bag Augmentation for Multiple Instance Learning-based Whole Slide Image Classification](../../CVPR2026/medical_imaging/contrastive_cross-bag_augmentation_for_multiple_instance_learning-based_whole_sl.md)
 
 </div>
 

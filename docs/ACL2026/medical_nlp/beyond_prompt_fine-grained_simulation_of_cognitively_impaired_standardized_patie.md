@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Prompt: Fine-grained Simulation of Cognitively Impaired Standardized Patients via Stochastic Steering
 description: >-
-  [ACL 2026][Medical NLP][Paper Note] This paper proposes StsPatient, which simulates standardized patients across various cognitive impairment domains and severity levels by extracting domain-specific Steering Vectors from contrastive instruction/response pairs. Combined with a Stochastic Token Modulation (STM) mechanism to control injection probability,
+  [ACL 2026 Findings][Medical LLM][Standardized Patient Simulation] This paper proposes StsPatient, which simulates standardized patients across various cognitive impairment domains and severity levels by extracting domain-specific Steering Vectors from contrastive instruction/response pairs. Combined with a Stochastic Token Modulation (STM) mechanism to control injection probability, it achieves an average improvement of 11.23% in clinical authenticity compared to prompt engin…
 tags:
-  - ACL 2026
-  - Medical NLP
+  - "ACL 2026 Findings"
+  - "Medical LLM"
+  - "Standardized Patient Simulation"
+  - "Cognitive Impairment"
+  - "Steering Vector"
+  - "Stochastic Modulation"
+  - "Clinical Training"
 date: 2026-05-08
-content_hash: 2f564d0d54a71122
+content_hash: 5a7d5f1be64d57fc
 ---
+
 # Beyond Prompt: Fine-grained Simulation of Cognitively Impaired Standardized Patients via Stochastic Steering
 
 **Conference**: ACL 2026 Findings  
@@ -119,8 +125,6 @@ This gives the severity $s \in [0,1]$ a direct statistical meaning: a larger $s$
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-</div>
 
 ## Related Papers
 

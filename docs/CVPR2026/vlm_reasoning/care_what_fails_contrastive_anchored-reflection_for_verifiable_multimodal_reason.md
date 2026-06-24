@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CARE What Fails: Contrastive Anchored-REflection for Verifiable Multimodal Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][RLVR] CARE is a "failure-centric" RLVR post-training framework for multimodal reasoning. It uses the best rollout in a group as an anchor, selects a small set of "near-miss" hard negatives for z-score normalization within a subgroup (only suppressing negatives), and performs structured reflection resampling on representative
+  [CVPR 2026][VLM Reasoning][RLVR] CARE is a "failure-centric" RLVR post-training framework for multimodal reasoning. It uses the best rollout in a group as an anchor, selects a small set of "near-miss" hard negatives for z-score normalization within a subgroup (only suppressing negatives), and performs structured reflection resampling on representative failures. By transforming "near-miss errors" into supervision signals, it achieves a macro average score 4.62 points higher th…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - RLVR
-  - GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "RLVR"
+  - "GRPO"
+  - "Contrastive Advantage Normalization"
+  - "Hard Negatives"
+  - "Reflection Self-Correction"
 date: 2026-05-08
-content_hash: 91c721fdf68a2b2a
+content_hash: 97dd82902d2df896
 ---
+
 # CARE What Fails: Contrastive Anchored-REflection for Verifiable Multimodal Reasoning
 
 **Conference**: CVPR 2026  
@@ -147,10 +151,10 @@ Breakdown of major components (Avg. is the macro average across six benchmarks):
 ## Related Papers
 
 - [\[CVPR 2026\] Perceptual-Evidence Anchored Reinforced Learning for Multimodal Reasoning](perceptual-evidence_anchored_reinforced_learning_for_multimodal_reasoning.md)
+- [\[CVPR 2026\] DPAD: Discriminative Perception via Anchored Description for Reasoning Segmentation](discriminative_perception_via_anchored_description_for_reasoning_segmentation.md)
 - [\[CVPR 2026\] Beyond Multiple Choice: Verifiable OpenQA for Robust Vision-Language RFT](beyond_multiple_choice_verifiable_openqa_for_robust_vision-language_rft.md)
 - [\[CVPR 2026\] REVISOR: Beyond Textual Reflection, Towards Multimodal Introspective Reasoning in Long-Form Video Understanding](revisor_beyond_textual_reflection_towards_multimodal_introspective_reasoning_in_.md)
-- [\[CVPR 2026\] Stable and Efficient Single-Rollout RL for Multimodal Reasoning](stable_and_efficient_single-rollout_rl_for_multimodal_reasoning.md)
-- [\[CVPR 2026\] CogniVerse: Revolutionizing Multi-Modal Retrieval-Augmented Generation with Cognitive Reflection and Geometric Reasoning](cogniverse_revolutionizing_multi-modal_retrieval-augmented_generation_with_cogni.md)
+- [\[CVPR 2026\] Seeing What Matters: A Training-Free Self-Guided Framework for Multimodal Detail Perception and Reasoning](seeing_what_matters_a_training-free_self-guided_framework_for_multimodal_detail_.md)
 
 </div>
 

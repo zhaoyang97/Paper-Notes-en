@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Hierarchical Policy Optimization for Simultaneous Translation of Unbounded Speech
 description: >-
-  [ACL 2026][Multilingual & Translation][Reinforcement Learning] This paper proposes Hierarchical Policy Optimization (HPO), which post-trains LLM-based simultaneous speech translation models using a hierarchical reward design. By suppressing latency optimization when translation quality fails to meet a threshold, it achieves a +7 COMET translation quality improvement at a 1.5-secon
+  [ACL 2026 Oral][Multilingual & Machine Translation][Simultaneous Speech Translation] This paper proposes Hierarchical Policy Optimization (HPO), which post-trains LLM-based simultaneous speech translation models using a hierarchical reward design. By suppressing latency optimization when translation quality fails to meet a threshold, it achieves a +7 COMET translation quality improvement at a 1.5-second latency.
 tags:
-  - ACL 2026
-  - Multilingual & Translation
-  - Reinforcement Learning
-  - GRPO
+  - "ACL 2026 Oral"
+  - "Multilingual & Machine Translation"
+  - "Simultaneous Speech Translation"
+  - "Reinforcement Learning"
+  - "Hierarchical Reward"
+  - "LLM-based Speech Translation"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 13c3e9323d1cb95e
+content_hash: d8fd6c18c56cbe8b
 ---
+
 # Hierarchical Policy Optimization for Simultaneous Translation of Unbounded Speech
 
 **Conference**: ACL 2026 Oral  

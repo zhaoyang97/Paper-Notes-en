@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Pose Prior Learner: Unsupervised Categorical Prior Learning for Pose Estimation
 description: >-
-  [ICLR 2026][Human Understanding][Paper Note] This paper proposes the Pose Prior Learner (PPL), which utilizes a hierarchical memory module to learn explicit and visualizable pose priors (keypoint priors + connectivity priors) from scratch using purely self-supervised image reconstruction. These priors constrain and iteratively refine pose estimation for single im
+  [ICLR 2026][Human Understanding][Categorical Prior] This paper proposes the Pose Prior Learner (PPL), which utilizes a hierarchical memory module to learn explicit and visualizable pose priors (keypoint priors + connectivity priors) from scratch using purely self-supervised image reconstruction. These priors constrain and iteratively refine pose estimation for single images. PPL outperforms manual-prior and prior-free baselines on several human and animal datasets and can com…
 tags:
-  - ICLR 2026
-  - Human Understanding
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Categorical Prior"
+  - "Unsupervised Pose Estimation"
+  - "Hierarchical Memory"
+  - "Template Transformation"
+  - "Iterative Inference"
 date: 2026-05-08
-content_hash: 6ff591561b2a8a9f
+content_hash: a010b2b81aac7ed7
 ---
+
 # Pose Prior Learner: Unsupervised Categorical Prior Learning for Pose Estimation
 
 **Conference**: ICLR 2026  
@@ -140,16 +146,16 @@ Comparison of initialization (Predefined / Random / From Memory) and learnabilit
 - Value: ⭐⭐⭐⭐⭐ Proves priors can be learned self-supervised to surpass manual labels.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] MGDHand: Multi-Granularity Prior-to-Inertial Distillation Framework for Sequential 3D Hand Pose Estimation from Sparse IMUs](../../CVPR2026/human_understanding/mgdhand_multi-granularity_prior-to-inertial_distillation_framework_for_sequentia.md)
 - [\[CVPR 2026\] HamiPose: Hamiltonian Optimization for Unsupervised Domain Adaptive Pose Estimation](../../CVPR2026/human_understanding/hamipose_hamiltonian_optimization_for_unsupervised_domain_adaptive_pose_estimati.md)
 - [\[NeurIPS 2025\] PandaPose: 3D Human Pose Lifting from a Single Image via Propagating 2D Pose Prior to 3D Anchor Space](../../NeurIPS2025/human_understanding/pandapose_3d_human_pose_lifting_from_a_single_image_via_propagating_2d_pose_prio.md)
+- [\[ICLR 2026\] EdgeCAPE: Edge Weight Prediction for Category-Agnostic Pose Estimation](edgecape_edge_weight_prediction_for_category-agnostic_pose_estimation.md)
 - [\[ICLR 2026\] Zero-Shot Human Pose Estimation Using Diffusion-Based Inverse Solvers](zero-shot_human_pose_estimation_using_diffusion-based_inverse_solvers.md)
-- [\[CVPR 2026\] Occluded Human Body Capture with Frequency Domain Denoising Prior](../../CVPR2026/human_understanding/occluded_human_body_capture_with_frequency_domain_denoising_prior.md)
 
 </div>
 

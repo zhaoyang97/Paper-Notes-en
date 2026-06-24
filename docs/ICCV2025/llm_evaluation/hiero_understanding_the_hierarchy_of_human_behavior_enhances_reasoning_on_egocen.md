@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HiERO: Understanding the Hierarchy of Human Behavior Enhances Reasoning on Egocentric Videos
 description: >-
-  [ICCV 2025][LLM Evaluation][Egocentric video understanding] This paper proposes HiERO, a weakly supervised hierarchical graph architecture that learns the hierarchy of functional activity cues by aligning video segments…
+  [ICCV 2025][LLM Evaluation][Egocentric video understanding] This paper proposes HiERO, a weakly supervised hierarchical graph architecture that learns the hierarchy of functional activity cues by aligning video segments with narration text. The resulting segment features encode multi-scale behavioral dependencies. HiERO substantially outperforms fully supervised methods in zero-shot evaluation on procedure learning tasks (F1 +12.5% on EgoProceL) and achieves state-of-the-art…
 tags:
   - "ICCV 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "procedure learning"
   - "zero-shot reasoning"
 date: 2026-05-08
-content_hash: bc508a13d36bd2f4
+content_hash: 343ba412562bdff3
 ---
 
 # HiERO: Understanding the Hierarchy of Human Behavior Enhances Reasoning on Egocentric Videos
@@ -205,9 +205,9 @@ Total loss: $\mathcal{L} = \mathcal{L}_{vna} + \mathcal{L}_{ft}$
 
 - [\[NeurIPS 2025\] Bayesian Evaluation of Large Language Model Behavior](../../NeurIPS2025/llm_evaluation/bayesian_evaluation_of_large_language_model_behavior.md)
 - [\[NeurIPS 2025\] Ineq-Comp: Benchmarking Human-Intuitive Compositional Reasoning in Automated Theorem Proving on Inequalities](../../NeurIPS2025/llm_evaluation/ineq-comp_benchmarking_human-intuitive_compositional_reasoning_in_automated_theo.md)
-- [\[ACL 2026\] Idiom Understanding as a Tool to Measure the Dialect Gap](../../ACL2026/llm_evaluation/idiom_understanding_as_a_tool_to_measure_the_dialect_gap.md)
+- [\[ECCV 2024\] Sync from the Sea: Retrieving Alignable Videos from Large-Scale Datasets](../../ECCV2024/llm_evaluation/sync_from_the_sea_retrieving_alignable_videos_from_large-scale_datasets.md)
 - [\[ICCV 2025\] 3DSRBench: A Comprehensive 3D Spatial Reasoning Benchmark](3dsrbench_a_comprehensive_3d_spatial_reasoning_benchmark.md)
-- [\[ICML 2026\] From Human-Level AI Tales to AI Leveling Human Scales](../../ICML2026/llm_evaluation/from_human-level_ai_tales_to_ai_leveling_human_scales.md)
+- [\[ACL 2025\] How Far are LLMs from Being Our Digital Twins? A Benchmark for Persona-Based Behavior Chain Simulation](../../ACL2025/llm_evaluation/how_far_are_llms_from_being_our_digital_twins_a_benchmark_for_persona-based_beha.md)
 
 </div>
 

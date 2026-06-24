@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] Language in the Flow of Time: Time-Series-Paired Texts Weaved into a Unified Temporal Narrative
 description: >-
-  [ICLR 2026][Time Series][multimodal time series] This work discovers that text paired with time series exhibits a periodicity similar to the time series itself (Chronological Textual Resonance). It proposes the TaTS framework, which transforms textual representations into auxiliary variables to enhance the forecasting and imputation performance of any existing time s
+  [ICLR2026][Time Series][multimodal time series] This work discovers that text paired with time series exhibits a periodicity similar to the time series itself (Chronological Textual Resonance). It proposes the TaTS framework, which transforms textual representations into auxiliary variables to enhance the forecasting and imputation performance of any existing time series model in a plug-and-play manner.
 tags:
-  - ICLR 2026
-  - Time Series
-  - multimodal time series
-  - text-augmented forecasting
-  - Chronological Textual Resonance
-  - plug-and-play framework
+  - "ICLR2026"
+  - "Time Series"
+  - "multimodal time series"
+  - "text-augmented forecasting"
+  - "Chronological Textual Resonance"
+  - "plug-and-play framework"
 date: 2026-05-08
-content_hash: baaee8d0dfe0b278
+content_hash: 0e04de5770c7010b
 ---
+
 # Language in the Flow of Time: Time-Series-Paired Texts Weaved into a Unified Temporal Narrative
 
 **Conference**: ICLR2026  
@@ -142,10 +143,10 @@ With "frequency synchronization" established, the fusion can be extremely lightw
 ## Related Papers
 
 - [\[ICLR 2026\] SRT: Super-Resolution for Time Series via Disentangled Rectified Flow](srt_super-resolution_for_time_series_via_disentangled_rectified_flow.md)
+- [\[ICLR 2026\] UniCA: Unified Covariate Adaptation for Time Series Foundation Model](unica_unified_covariate_adaptation_for_time_series_foundation_model.md)
+- [\[ICLR 2026\] Flow-based Conformal Prediction for Multi-dimensional Time Series](flow-based_conformal_prediction_for_multi-dimensional_time_series.md)
 - [\[ICLR 2026\] Time-Gated Multi-Scale Flow Matching for Time-Series Imputation](time-gated_multi-scale_flow_matching_for_time-series_imputation.md)
 - [\[ICLR 2026\] pyrregular: A Unified Framework for Irregular Time Series, with Classification Benchmarks](pyrregular_a_unified_framework_for_irregular_time_series_with_classification_ben.md)
-- [\[ICLR 2026\] Understanding Transformers for Time Series: Rank Structure, Flow-of-ranks, and Compressibility](understanding_transformers_for_time_series_rank_structure_flow-of-ranks_and_comp.md)
-- [\[ICLR 2026\] Semantic-Enhanced Time-Series Forecasting via Large Language Models](semantic-enhanced_time-series_forecasting_via_large_language_models.md)
 
 </div>
 

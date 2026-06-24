@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Path of Least Resistance: Guiding LLM Reasoning Trajectories with Prefix Consensus
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] The authors propose PoLR (Path of Least Resistance), the first test-time method utilizing reasoning prefix consistency. By clustering short prefixes and expanding only the dominant cluster to replace standard Self-Consistency, it reduces token usage by 40%–60% and latency by up to 50% while maintaining or even improvin
+  [ICLR 2026][Reasoning][Self-consistency decoding] The authors propose PoLR (Path of Least Resistance), the first test-time method utilizing reasoning prefix consistency. By clustering short prefixes and expanding only the dominant cluster to replace standard Self-Consistency, it reduces token usage by 40%–60% and latency by up to 50% while maintaining or even improving accuracy across benchmarks such as GSM8K, Math500, AIME, and GPQA.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Self-consistency decoding"
+  - "prefix consensus"
+  - "reasoning efficiency"
+  - "clustering pruning"
+  - "test-time compute"
 date: 2026-05-08
-content_hash: 229f37244e7d3be4
+content_hash: 391d570895fd1c8c
 ---
+
 # The Path of Least Resistance: Guiding LLM Reasoning Trajectories with Prefix Consensus
 
 **Conference**: ICLR 2026  
@@ -129,15 +135,15 @@ PoLR acts as a complementary front-end filter for AC/ESC, further reducing paths
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] The Path of Least Resistance: Guiding LLM Reasoning Trajectories for Efficient Consistency](the_path_of_least_resistance_guiding_llm_reasoning_trajectories_for_efficient_co.md)
 - [\[ICLR 2026\] Rethinking LLM Reasoning: From Explicit Trajectories to Latent Representations](rethinking_llm_reasoning_from_explicit_trajectories_to_latent_representations.md)
+- [\[ICLR 2026\] Echoes as Anchors: Probabilistic Costs and Attention Refocusing in LLM Reasoning](echoes_as_anchors_probabilistic_costs_and_attention_refocusing_in_llm_reasoning.md)
 - [\[ICLR 2026\] Off-Trajectory Reasoning: Can LLMs Collaborate on Reasoning Trajectories?](off-trajectory_reasoning_can_llms_collaborate_on_reasoning_trajectories.md)
 - [\[ICLR 2026\] Plan and Budget: Effective and Efficient Test-Time Scaling on Reasoning LLMs](plan_and_budget_effective_and_efficient_test-time_scaling_on_reasoning_large_lan.md)
-- [\[ICLR 2026\] Predicting LLM Reasoning Performance with Small Proxy Model](predicting_llm_reasoning_performance_with_small_proxy_model.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Pixel2Phys: Distilling Governing Laws from Visual Dynamics
 description: >-
-  [CVPR 2026][Interpretability][AI for Science] Pixel2Phys is proposed as an MLLM-based multi-agent collaborative framework that automatically discovers interpretable physical governing equations from raw videos through an iterative hypothesis-verification-refinement loop involving four agents: Plan, Variable, Equation, and Experiment. It achieves a 45.35% improveme
+  [CVPR 2026][Interpretability][Physics law discovery] Pixel2Phys is proposed as an MLLM-based multi-agent collaborative framework that automatically discovers interpretable physical governing equations from raw videos through an iterative hypothesis-verification-refinement loop involving four agents: Plan, Variable, Equation, and Experiment. It achieves a 45.35% improvement in extrapolation accuracy compared to baselines.
 tags:
-  - CVPR 2026
-  - Interpretability
-  - AI for Science
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Physics law discovery"
+  - "multi-agent framework"
+  - "symbolic regression"
+  - "video understanding"
+  - "AI for Science"
 date: 2026-05-08
-content_hash: 0f1516ea6b8c3e77
+content_hash: edeb5011d6acf4bf
 ---
+
 # Pixel2Phys: Distilling Governing Laws from Visual Dynamics
 
 **Conference**: CVPR 2026  
@@ -155,11 +160,11 @@ Only the Representation-level tool in the Variable Agent requires training. The 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Draft and Refine with Visual Experts](draft_and_refine_with_visual_experts.md)
 - [\[NeurIPS 2025\] Towards Scaling Laws for Symbolic Regression](../../NeurIPS2025/interpretability/towards_scaling_laws_for_symbolic_regression.md)
 - [\[ICML 2026\] Learn from A Rationalist: Distilling Intermediate Interpretable Rationales](../../ICML2026/interpretability/learn_from_a_rationalist_distilling_intermediate_interpretable_rationales.md)
+- [\[CVPR 2026\] Draft and Refine with Visual Experts](draft_and_refine_with_visual_experts.md)
 - [\[CVPR 2026\] Language Models Can Explain Visual Features via Steering](language_models_can_explain_visual_features_via_steering.md)
-- [\[CVPR 2026\] Learning complete and explainable visual representations from itemized text supervision](learning_complete_and_explainable_visual_representations_from_itemized_text_supe.md)
+- [\[CVPR 2026\] Selection-as-Nonlinearity: Bridging Attention and Activation via a Joint Game-Decision Lens for Interpretable, Discriminative Visual Representations](selection-as-nonlinearity_bridging_attention_and_activation_via_a_joint_game-dec.md)
 
 </div>
 

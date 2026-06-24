@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Order within Chaos: Capturing Intrinsic Energy Anomalies for AI-Manipulated Image Forgery Localization
 description: >-
-  [ICML 2026][Image Generation][AI-IFL] Starting from the spectral bias of diffusion models, this paper theoretically proves that the local Gibbs energy of diffusion-generated regions is inevitably lower than that of real imaging regions. Accordingly, a LAD (Local Adjacency Discrepancy) energy map is constructed as an intrinsic forensic fingerprint. A lightw
+  [ICML 2026][Image Generation][AI-IFL] Starting from the spectral bias of diffusion models, this paper theoretically proves that the local Gibbs energy of diffusion-generated regions is inevitably lower than that of real imaging regions. Accordingly, a LAD (Local Adjacency Discrepancy) energy map is constructed as an intrinsic forensic fingerprint. A lightweight adapter then injects LAD cues into SAM to achieve pixel-level forgery localization. Coupled with the EditStream mult…
 tags:
-  - ICML 2026
-  - Image Generation
-  - AI-IFL
-  - Diffusion Model
+  - "ICML 2026"
+  - "Image Generation"
+  - "AI-IFL"
+  - "Diffusion Models"
+  - "Gibbs Energy"
+  - "SAM Adapter"
+  - "Self-evolving Data Synthesis"
 date: 2026-05-08
-content_hash: 3bc361fbfe4770af
+content_hash: 4dc8930f97792a8a
 ---
+
 # Order within Chaos: Capturing Intrinsic Energy Anomalies for AI-Manipulated Image Forgery Localization
 
 **Conference**: ICML 2026  
@@ -135,9 +139,9 @@ Regarding image-level discrimination: FLAME achieves an ACC of 0.901/0.916 on Ma
 
 - [\[ICML 2026\] The Latent Color Subspace: Emergent Order in High-Dimensional Chaos](the_latent_color_subspace_emergent_order_in_high-dimensional_chaos.md)
 - [\[AAAI 2026\] Creating Blank Canvas Against AI-Enabled Image Forgery](../../AAAI2026/image_generation/creating_blank_canvas_against_ai-enabled_image_forgery.md)
-- [\[ICML 2026\] Esoteric Language Models: A Family of Any-Order Diffusion LLMs](esoteric_language_models_a_family_of_any-order_diffusion_llms.md)
 - [\[ICML 2026\] Local Hessian Spectral Filtering for Robust Intrinsic Dimension Estimation](local_hessian_spectral_filtering_for_robust_intrinsic_dimension_estimation.md)
 - [\[ICML 2026\] The Coupling Within: Flow Matching via Distilled Normalizing Flows](the_coupling_within_flow_matching_via_distilled_normalizing_flows.md)
+- [\[ICML 2026\] Esoteric Language Models: A Family of Any-Order Diffusion LLMs](esoteric_language_models_a_family_of_any-order_diffusion_llms.md)
 
 </div>
 

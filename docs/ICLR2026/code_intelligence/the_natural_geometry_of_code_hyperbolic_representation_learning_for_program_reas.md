@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Natural Geometry of Code: Hyperbolic Representation Learning for Program Reasoning
 description: >-
-  [ICLR 2026][Code Intelligence][Paper Note] This paper argues that the "natural geometry" of code is hyperbolic space. It proposes HypeCodeNet, a graph neural network operating natively on the numerically stable Lorentz model. Using hyperbolic embedding layers, tangent-space message passing, and geodesic attention, it learns low-distortion hierarchical represent
+  [ICLR 2026][Code Intelligence][Hyperbolic Representation Learning] This paper argues that the "natural geometry" of code is hyperbolic space. It proposes HypeCodeNet, a graph neural network operating natively on the numerically stable Lorentz model. Using hyperbolic embedding layers, tangent-space message passing, and geodesic attention, it learns low-distortion hierarchical representations for ASTs. HypeCodeNet outperforms Euclidean models across clone detection…
 tags:
-  - ICLR 2026
-  - Code Intelligence
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Hyperbolic Representation Learning"
+  - "Lorentz Model"
+  - "Abstract Syntax Tree"
+  - "Graph Neural Network"
+  - "Program Reasoning"
 date: 2026-05-08
-content_hash: 2c9e1550254ca43a
+content_hash: eb38ab4919d4236c
 ---
+
 # The Natural Geometry of Code: Hyperbolic Representation Learning for Program Reasoning
 
 **Conference**: ICLR 2026  
@@ -139,16 +145,16 @@ Breakdown of performance on BigCloneBench (F1):
 - **Value**: ⭐⭐⭐⭐ Significant insights into low-dimensional efficiency and geometric inductive biases for hierarchical graph learning.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICML 2026\] UniRTL: Unified Code and Graph for Robust RTL Representation Learning](../../ICML2026/code_intelligence/unirtl_unifying_code_and_graph_for_robust_rtl_representation_learning.md)
 - [\[NeurIPS 2025\] CodeCrash: Exposing LLM Fragility to Misleading Natural Language in Code Reasoning](../../NeurIPS2025/code_intelligence/codecrash_exposing_llm_fragility_to_misleading_natural_language_in_code_reasonin.md)
-- [\[ICLR 2026\] Agnostics: Learning to Synthesize Code in Any Programming Language with a Universal Reinforcement Learning Environment](agnostics_learning_to_synthesize_code_in_any_programming_language_with_a_univers.md)
 - [\[ACL 2026\] The Path Not Taken: Duality in Reasoning about Program Execution](../../ACL2026/code_intelligence/the_path_not_taken_duality_in_reasoning_about_program_execution.md)
+- [\[ICLR 2026\] Agnostics: Learning to Synthesize Code in Any Programming Language with a Universal Reinforcement Learning Environment](agnostics_learning_to_synthesize_code_in_any_programming_language_with_a_univers.md)
 - [\[ICLR 2026\] RefineStat: Efficient Exploration for Probabilistic Program Synthesis](refinestat_efficient_exploration_for_probabilistic_program_synthesis.md)
-- [\[ICLR 2026\] Paper2Code: Automating Code Generation from Scientific Papers in Machine Learning](paper2code_automating_code_generation_from_scientific_papers_in_machine_learning.md)
 
 </div>
 

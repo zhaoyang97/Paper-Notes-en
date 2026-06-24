@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Outliers: A Study of Optimizers Under Quantization
 description: >-
-  [ICLR 2026][Model Compression][Quantization] The authors provide the first systematic study of the relationship between "optimizer selection" and "quantization robustness." Training 50M–1.5B LLMs with six different optimizers, they find that traditional outlier metrics (MMR, Kurtosis) fail to predict post-quantization accuracy. Instead, they propose an analytical
+  [ICLR2026][Model Compression][Quantization] The authors provide the first systematic study of the relationship between "optimizer selection" and "quantization robustness." Training 50M–1.5B LLMs with six different optimizers, they find that traditional outlier metrics (MMR, Kurtosis) fail to predict post-quantization accuracy. Instead, they propose an analytical ABC error propagation decomposition and a new metric $R_L$, revealing the counter-intuitive conclusion that Shampoo…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Quantization
+  - "ICLR2026"
+  - "Model Compression"
+  - "Quantization"
+  - "Optimizer"
+  - "Error Propagation"
+  - "Outliers"
+  - "Scaling Laws"
 date: 2026-05-08
-content_hash: c5bcc53225419474
+content_hash: 226c2a3daf5f6029
 ---
+
 # Beyond Outliers: A Study of Optimizers Under Quantization
 
 **Conference**: ICLR2026  
@@ -142,10 +147,10 @@ Scaling law parameter efficiency $\rho_{4bit}$: Shampoo is highest (0.879), foll
 ## Related Papers
 
 - [\[NeurIPS 2025\] A Granular Study of Safety Pretraining under Model Abliteration](../../NeurIPS2025/model_compression/a_granular_study_of_safety_pretraining_under_model_abliteration.md)
+- [\[ICLR 2026\] Beyond Uniformity: Sample and Frequency Meta Weighting for Post-Training Quantization of Diffusion Models](beyond_uniformity_sample_and_frequency_meta_weighting_for_post-training_quantiza.md)
 - [\[CVPR 2026\] TWEO: Transformers Without Extreme Outliers Enables FP8 Training And Quantization For Dummies](../../CVPR2026/model_compression/tweo_transformers_without_extreme_outliers_enables_fp8_training_and_quantization.md)
 - [\[ICLR 2026\] Study of Training Dynamics for Memory-Constrained Fine-Tuning (TraDy)](study_of_training_dynamics_for_memory-constrained_fine-tuning.md)
 - [\[ICLR 2026\] AgilePruner: An Empirical Study of Attention and Diversity for Adaptive Visual Token Pruning in LVLMs](agilepruner_an_empirical_study_of_attention_and_diversity_for_adaptive_visual_to.md)
-- [\[ICLR 2026\] Beyond Student: An Asymmetric Network for Neural Network Inheritance](beyond_student_an_asymmetric_network_for_neural_network_inheritance.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] ViewMask-1-to-3: Multi-View Consistent Image Generation via Multimodal Discrete Diffusion Models
 description: >-
-  [ICML 2026][Image Generation][Paper Note] By utilizing discrete diffusion models and visual tokenization, multi-view generation is reformulated as a discrete sequence prediction task. A simple random masking strategy combined with self-attention naturally achieves cross-view consistency, significantly outperforming continuous diffusion methods.
+  [ICML 2026][Image Generation][Discrete Diffusion] By utilizing discrete diffusion models and visual tokenization, multi-view generation is reformulated as a discrete sequence prediction task. A simple random masking strategy combined with self-attention naturally achieves cross-view consistency, significantly outperforming continuous diffusion methods.
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML 2026"
+  - "Image Generation"
+  - "Discrete Diffusion"
+  - "Multi-view Generation"
+  - "Visual Tokenization"
+  - "Mask Prediction"
 date: 2026-05-08
-content_hash: 14108958e6694d60
+content_hash: e1a67bf812750d77
 ---
+
 # ViewMask-1-to-3: Multi-View Consistent Image Generation via Multimodal Discrete Diffusion Models
 
 **Conference**: ICML 2026  
@@ -131,9 +136,9 @@ Directly learning multi-view consistency in one stage lacks foundational token u
 ## Related Papers
 
 - [\[CVPR 2026\] InstructMix2Mix: Consistent Sparse-View Editing Through Multi-View Model Personalization](../../CVPR2026/image_generation/instructmix2mix_consistent_sparse-view_editing_through_multi-view_model_personal.md)
+- [\[ICLR 2026\] Consolidating Reinforcement Learning for Multimodal Discrete Diffusion Models](../../ICLR2026/image_generation/consolidating_reinforcement_learning_for_multimodal_discrete_diffusion_models.md)
 - [\[ICML 2026\] Divide and Conquer: Reliable Multi-View Evidential Learning for Deepfake Detection](divide_and_conquer_reliable_multi-view_evidential_learning_for_deepfake_detectio.md)
 - [\[CVPR 2026\] Correspondence-Attention Alignment for Multi-View Diffusion Models](../../CVPR2026/image_generation/correspondence-attention_alignment_for_multi-view_diffusion_models.md)
-- [\[ECCV 2024\] M2D2M: Multi-Motion Generation from Text with Discrete Diffusion Models](../../ECCV2024/image_generation/m2d2m_multi-motion_generation_from_text_with_discrete_diffusion_models.md)
 - [\[ECCV 2024\] PanoFree: Tuning-Free Holistic Multi-view Image Generation with Cross-view Self-Guidance](../../ECCV2024/image_generation/panofree_tuning-free_holistic_multi-view_image_generation_with_cross-view_self-g.md)
 
 </div>

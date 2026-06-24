@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SpatialVID: A Large-Scale Video Dataset with Spatial Annotations
 description: >-
-  [CVPR 2026][3D Vision][World Models] SpatialVID distills 2.71 million dynamic segments (7,089 hours in total) from 21,000 hours of in-the-wild web videos using a three-stage "hierarchical filtering + geometric/semantic annotation + balanced sampling" pipeline. Each segment includes per-frame camera poses, depth, dynamic masks, structured captions, and ser
+  [CVPR 2026][3D Vision][Video Dataset] SpatialVID distills 2.71 million dynamic segments (7,089 hours in total) from 21,000 hours of in-the-wild web videos using a three-stage "hierarchical filtering + geometric/semantic annotation + balanced sampling" pipeline. Each segment includes per-frame camera poses, depth, dynamic masks, structured captions, and serialized motion instructions, representing the largest and most comprehensively annotated video dataset for "dynamic scenes…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - World Models
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Video Dataset"
+  - "Camera Pose"
+  - "Depth Annotation"
+  - "World Models"
+  - "Controllable Video Generation"
 date: 2026-05-08
-content_hash: a910468338030034
+content_hash: b7c3277aa2042408
 ---
+
 # SpatialVID: A Large-Scale Video Dataset with Spatial Annotations
 
 **Conference**: CVPR 2026  
@@ -130,6 +135,7 @@ After GS-LRM was trained on a SpatialVID subset (segment count aligned with Real
 - **Value**: ⭐⭐⭐⭐⭐ Directly addresses the scarcity of training data for spatial intelligence and world models.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,19 +2,21 @@
 title: >-
   [Paper Note] Are We Measuring Oversmoothing in Graph Neural Networks Correctly?
 description: >-
-  [ICLR 2026][Graph Learning][oversmoothing] This work points out that the widely used Dirichlet energy metric fails to correctly capture the oversmoothing phenomenon in practical GNN scenarios. It proposes using the numerical/effective rank (Erank) of feature representations as an alternative metric. Under the setting of independent training for each depth (from
+  [ICLR 2026][Graph Learning][oversmoothing] This work points out that the widely used Dirichlet energy metric fails to correctly capture the oversmoothing phenomenon in practical GNN scenarios. It proposes using the numerical/effective rank (Erank) of feature representations as an alternative metric. Under the setting of independent training for each depth (from 2 to 24), Erank achieves an average correlation of 0.91 with accuracy (consistent positive direction)…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - oversmoothing
-  - graph neural networks
-  - Dirichlet energy
-  - numerical rank
-  - effective rank
-  - rank collapse
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "oversmoothing"
+  - "graph neural networks"
+  - "Dirichlet energy"
+  - "numerical rank"
+  - "effective rank"
+  - "rank collapse"
+  - "GNN depth"
 date: 2026-05-08
-content_hash: 041b29b6cc5fe764
+content_hash: b95075d7177e5c89
 ---
+
 # Are We Measuring Oversmoothing in Graph Neural Networks Correctly?
 
 **Conference**: ICLR 2026  
@@ -141,9 +143,9 @@ Retention ratio = Accuracy at 24 layers / Accuracy at 2 layers. Lower values ind
 ## Related Papers
 
 - [\[ICML 2025\] On Measuring Long-Range Interactions in Graph Neural Networks](../../ICML2025/graph_learning/on_measuring_long-range_interactions_in_graph_neural_networks.md)
-- [\[ICLR 2026\] Learning from Historical Activations in Graph Neural Networks](learning_from_historical_activations_in_graph_neural_networks.md)
 - [\[ICLR 2026\] WATS: Wavelet-Aware Temperature Scaling for Reliable Graph Neural Networks](wats_wavelet-aware_temperature_scaling_for_reliable_graph_neural_networks.md)
 - [\[ICLR 2026\] Cooperative Sheaf Neural Networks](cooperative_sheaf_neural_networks.md)
+- [\[ICLR 2026\] Learning from Historical Activations in Graph Neural Networks](learning_from_historical_activations_in_graph_neural_networks.md)
 - [\[ICLR 2026\] LogicXGNN: Grounded Logical Rules for Explaining Graph Neural Networks](logicxgnn_grounded_logical_rules_for_explaining_graph_neural_networks.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CoDA: Agentic Systems for Collaborative Data Visualization
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] CoDA remodels "natural language to data visualization" as a multi-agent collaboration problem. It uses 8 specialized LLM agents to complete understanding, planning, generation, and self-reflection in stages. By "reading only metadata rather than raw data," it bypasses token limits, and through a "quality-driven reflect
+  [ICLR 2026][LLM Agent][Multi-agent systems] CoDA remodels "natural language to data visualization" as a multi-agent collaboration problem. It uses 8 specialized LLM agents to complete understanding, planning, generation, and self-reflection in stages. By "reading only metadata rather than raw data," it bypasses token limits, and through a "quality-driven reflection loop," it iteratively refines charts. It improves overall scores by up to 41.5% over strong baselines on Matplot…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Multi-agent systems"
+  - "NL2Vis"
+  - "Metadata preprocessing"
+  - "Self-reflection"
+  - "Code generation"
 date: 2026-05-08
-content_hash: 792014f298217539
+content_hash: a97db40d2fed4e49
 ---
+
 # CoDA: Agentic Systems for Collaborative Data Visualization
 
 **Conference**: ICLR 2026  

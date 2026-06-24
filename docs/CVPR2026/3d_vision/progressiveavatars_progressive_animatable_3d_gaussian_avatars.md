@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ProgressiveAvatars: Progressive Animatable 3D Gaussian Avatars
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Proposes ProgressiveAvatars, a progressive avatar representation based on adaptive implicit subdivision of template meshes to construct hierarchical 3DGS. It supports progressive transmission and rendering under varying bandwidth and computation constraints—obtaining a usable avatar with only 5% of the data (2.6MB), wi
+  [CVPR 2026][3D Vision][Progressive 3D representation] Proposes ProgressiveAvatars, a progressive avatar representation based on adaptive implicit subdivision of template meshes to construct hierarchical 3DGS. It supports progressive transmission and rendering under varying bandwidth and computation constraints—obtaining a usable avatar with only 5% of the data (2.6MB), with subsequent incremental loading smoothly improving quality to levels comparable with SOTA methods.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Progressive 3D representation"
+  - "animatable head avatars"
+  - "3D Gaussian Splatting"
+  - "streaming"
+  - "adaptive subdivision"
 date: 2026-05-08
-content_hash: 089929d7d372ef6e
+content_hash: 58c83f90668ff30b
 ---
+
 # ProgressiveAvatars: Progressive Animatable 3D Gaussian Avatars
 
 **Conference**: CVPR 2026  
@@ -150,11 +156,11 @@ While the hierarchy determines *where* details grow, streaming requires knowing 
 
 ## Related Papers
 
-- [\[CVPR 2026\] HyperGaussians: High-Dimensional Gaussian Splatting for High-Fidelity Animatable Face Avatars](hypergaussians_high-dimensional_gaussian_splatting_for_high-fidelity_animatable_.md)
-- [\[CVPR 2026\] PhysHead: Simulation-Ready Gaussian Head Avatars](physhead_simulation-ready_gaussian_head_avatars.md)
 - [\[CVPR 2026\] Motion-Aware Animatable Gaussian Avatars Deblurring](motion-aware_animatable_gaussian_avatars_deblurring.md)
-- [\[CVPR 2026\] Routing on Demand: DSNet for Efficient Progressive Point Cloud Denoising](routing_on_demand_dsnet_for_efficient_progressive_point_cloud_denoising.md)
-- [\[CVPR 2026\] MeshLAM: Feed-Forward One-Shot Animatable Textured Mesh Avatar Reconstruction](meshlam_feed-forward_one-shot_animatable_textured_mesh_avatar_reconstruction.md)
+- [\[CVPR 2026\] Tavatar: Topology-Aware Gaussian Attribute Derivation for Animatable Human Avatars](tavatar_topology-aware_gaussian_attribute_derivation_for_animatable_human_avatar.md)
+- [\[CVPR 2026\] HyperGaussians: High-Dimensional Gaussian Splatting for High-Fidelity Animatable Face Avatars](hypergaussians_high-dimensional_gaussian_splatting_for_high-fidelity_animatable_.md)
+- [\[CVPR 2026\] FlexAvatar: Flexible Large Reconstruction Model for Animatable Gaussian Head Avatars with Detailed Deformation](flexavatar_flexible_large_reconstruction_model_for_animatable_gaussian_head_avat.md)
+- [\[CVPR 2026\] Zero-Shot Reconstruction of Animatable 3D Avatars with Cloth Dynamics from a Single Image](zero-shot_reconstruction_of_animatable_3d_avatars_with_cloth_dynamics_from_a_sin.md)
 
 </div>
 

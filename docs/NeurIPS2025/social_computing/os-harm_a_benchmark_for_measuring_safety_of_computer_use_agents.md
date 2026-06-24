@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] OS-Harm: A Benchmark for Measuring Safety of Computer Use Agents
 description: >-
-  [NeurIPS 2025][Social Computing][Computer Use Agent] This paper presents OS-Harm, the first safety benchmark targeting general-purpose computer use agents (beyond browser-only settings)…
+  [NeurIPS 2025 Spotlight][Social Computing][Computer Use Agent] This paper presents OS-Harm, the first safety benchmark targeting general-purpose computer use agents (beyond browser-only settings), covering 150 tasks across three risk categories — deliberate user misuse, prompt injection attacks, and model misbehavior. Evaluations reveal that frontier models (o4-mini, Claude 3.7 Sonnet, Gemini 2.5 Pro, etc.) broadly comply with harmful instructions (up to 70% unsafe rate) and…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Social Computing"
   - "Computer Use Agent"
   - "Safety Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "Prompt Injection"
   - "Agent Safety"
 date: 2026-05-08
-content_hash: ac567a5a46aa6e05
+content_hash: 74dc7948b95b0e60
 ---
 
 # OS-Harm: A Benchmark for Measuring Safety of Computer Use Agents
@@ -123,9 +123,9 @@ OS-Harm is built on top of OSWorld, using Ubuntu virtual machines as isolated ex
 ## Related Papers
 
 - [\[NeurIPS 2025\] Policy-as-Prompt: Turning AI Governance Rules into Guardrails for AI Agents](policy-as-prompt_turning_ai_governance_rules_into_guardrails_for_ai_agents.md)
+- [\[ICML 2025\] OR-Bench: An Over-Refusal Benchmark for Large Language Models](../../ICML2025/social_computing/or-bench_an_over-refusal_benchmark_for_large_language_models.md)
+- [\[ACL 2025\] Measuring Social Biases in Masked Language Models by Proxy of Prediction Quality](../../ACL2025/social_computing/measuring_social_biases_in_masked_language_models_by_proxy_of_prediction_quality.md)
 - [\[ACL 2026\] GKnow: Measuring the Entanglement of Gender Bias and Factual Gender](../../ACL2026/social_computing/gknow_measuring_the_entanglement_of_gender_bias_and_factual_gender.md)
-- [\[ICLR 2026\] When Agents Persuade: Propaganda Generation and Mitigation in LLMs](../../ICLR2026/social_computing/when_agents_persuade_propaganda_generation_and_mitigation_in_llms.md)
-- [\[ICLR 2026\] BiasFreeBench: a Benchmark for Mitigating Bias in Large Language Model Responses](../../ICLR2026/social_computing/biasfreebench_a_benchmark_for_mitigating_bias_in_large_language_model_responses.md)
 - [\[ACL 2026\] Confident, Calibrated, or Complicit: Safety Alignment and Ideological Bias in LLM Hate Speech Detection](../../ACL2026/social_computing/confident_calibrated_or_complicit_safety_alignment_and_ideological_bias_in_llm_h.md)
 
 </div>

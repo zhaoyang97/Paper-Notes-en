@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] MoGA: Mixture-of-Groups Attention for End-to-End Long Video Generation
 description: >-
-  [ICLR 2026][Video Generation][Long Video Generation] MoGA employs a lightweight learnable token router to group tokens semantically and perform full attention within these groups. This eliminates the "coarse block score estimation" step found in block-sparse attention, enabling the end-to-end generation of minute-level, multi-shot, 480p/24fps long videos with a context l
+  [ICLR 2026][Video Generation][Long Video Generation] MoGA employs a lightweight learnable token router to group tokens semantically and perform full attention within these groups. This eliminates the "coarse block score estimation" step found in block-sparse attention, enabling the end-to-end generation of minute-level, multi-shot, 480p/24fps long videos with a context length of approximately 580,000 tokens.
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Long Video Generation
-  - Sparse Attention
-  - Diffusion Transformer
-  - Token Routing
-  - Multi-Shot
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Long Video Generation"
+  - "Sparse Attention"
+  - "Diffusion Transformer"
+  - "Token Routing"
+  - "Multi-Shot"
 date: 2026-05-08
-content_hash: 6bc53b3285bb2692
+content_hash: 5244e5162601c7c8
 ---
+
 # MoGA: Mixture-of-Groups Attention for End-to-End Long Video Generation
 
 **Conference**: ICLR 2026  
@@ -140,9 +141,9 @@ Long video generation previously converged into three paradigms: multi-stage (e.
 ## Related Papers
 
 - [\[ICLR 2026\] Mixture of Contexts for Long Video Generation](mixture_of_contexts_for_long_video_generation.md)
+- [\[ICLR 2026\] VMoBA: Mixture-of-Block Attention for Video Diffusion Models](vmoba_mixture-of-block_attention_for_video_diffusion_models.md)
 - [\[CVPR 2026\] STARFlow-V: End-to-End Video Generative Modeling with Autoregressive Normalizing Flows](../../CVPR2026/video_generation/starflow-v_end-to-end_video_generative_modeling_with_autoregressive_normalizing_.md)
 - [\[CVPR 2026\] MoCha: End-to-End Video Character Replacement without Structural Guidance](../../CVPR2026/video_generation/mocha_end-to-end_video_character_replacement_without_structural_guidance.md)
-- [\[ICLR 2026\] VMoBA: Mixture-of-Block Attention for Video Diffusion Models](vmoba_mixture-of-block_attention_for_video_diffusion_models.md)
 - [\[CVPR 2026\] EasyOmnimatte: Taming Pretrained Inpainting Diffusion Models for End-to-End Video Layered Decomposition](../../CVPR2026/video_generation/easyomnimatte_taming_pretrained_inpainting_diffusion_models_for_end-to-end_video.md)
 
 </div>

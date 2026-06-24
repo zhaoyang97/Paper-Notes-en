@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DICArt: Advancing Category-level Articulated Object Pose Estimation in Discrete State-Spaces
 description: >-
-  [CVPR 2026][3D Vision][Embodied AI] DICArt reformulates category-level 6D articulated object pose estimation as a **conditional discrete diffusion** process. Specifically, it discretizes rotation and translation into tokens, utilizes a "flow decider" for step-by-step denoising, and couples the estimation of each part according to the parent-child kinemat
+  [CVPR 2026][3D Vision][Articulated object pose estimation] DICArt reformulates category-level 6D articulated object pose estimation as a **conditional discrete diffusion** process. Specifically, it discretizes rotation and translation into tokens, utilizes a "flow decider" for step-by-step denoising, and couples the estimation of each part according to the parent-child kinematic hierarchy. It significantly outperforms existing methods on synthetic, semi-synthetic…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Embodied AI
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Articulated object pose estimation"
+  - "category-level 6D pose"
+  - "discrete diffusion"
+  - "kinematic constraints"
+  - "embodied AI"
 date: 2026-05-08
-content_hash: b17ced24774fa7d0
+content_hash: 51436db5fe7d724c
 ---
+
 # DICArt: Advancing Category-level Articulated Object Pose Estimation in Discrete State-Spaces
 
 **Conference**: CVPR 2026  
@@ -140,11 +145,11 @@ Conducted on the "Drawer" category:
 
 ## Related Papers
 
+- [\[CVPR 2026\] SCAPO: Self-Supervised Category-Level Articulated Pose Estimation from a Single 3D Observation](scapo_self-supervised_category-level_articulated_pose_estimation_from_a_single_3.md)
+- [\[CVPR 2026\] SE(3)-Equivariance with Geometric and Topological Guidance for Category-Level Object Pose Estimation](se3-equivariance_with_geometric_and_topological_guidance_for_category-level_obje.md)
 - [\[CVPR 2026\] ComPose: A Unified Completion-Pose Framework for Robust Category-Level Object Pose Estimation](compose_a_unified_completion-pose_framework_for_robust_category-level_object_pos.md)
-- [\[CVPR 2026\] EmbodMocap: In-the-Wild 4D Human-Scene Reconstruction for Embodied Agents](embodmocap_in-the-wild_4d_human-scene_reconstruction_for_embodied_agents.md)
-- [\[CVPR 2026\] Cov2Pose: Leveraging Spatial Covariance for Direct Manifold-aware 6-DoF Object Pose Estimation](cov2pose_leveraging_spatial_covariance_for_direct_manifold-aware_6-dof_object_po.md)
-- [\[CVPR 2026\] Breaking the 3D Dataset Bottleneck: Fast Scalable Generation of Aligned 3D Assets from Scratch for Category 6D Pose Estimation and Robotic Grasping](breaking_the_3d_dataset_bottleneck_fast_scalable_generation_of_aligned_3d_assets.md)
-- [\[CVPR 2026\] CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction](cari4d_category_agnostic_4d_reconstruction_of_human_object_interaction.md)
+- [\[CVPR 2026\] PoseGaussian: 6D Pose Estimation for Unseen Objects via Sparse-View Object-Level 3D Gaussian Splatting](posegaussian_6d_pose_estimation_for_unseen_objects_via_sparse-view_object-level_.md)
+- [\[CVPR 2026\] Exploring 6D Object Pose Estimation with Deformation](exploring_6d_object_pose_estimation_with_deformation.md)
 
 </div>
 

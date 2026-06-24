@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OrthAlign: Orthogonal Subspace Decomposition for Non-Interfering Multi-Objective Alignment
 description: >-
-  [ICLR 2026][Alignment & RLHF][SVD] Addressing the multi-objective alignment dilemma where "improving one preference harms another," OrthAlign constrains parameter updates of different preferences into mutually orthogonal subspaces. This ensures that optimization directions for each preference are mathematically non-interfering, achieving simultaneous al
+  [ICLR 2026][LLM Alignment][Multi-preference alignment] Addressing the multi-objective alignment dilemma where "improving one preference harms another," OrthAlign constrains parameter updates of different preferences into mutually orthogonal subspaces. This ensures that optimization directions for each preference are mathematically non-interfering, achieving simultaneous alignment of helpful/harmless/truthful without sacrificing individual performance. It achieves a maximum si…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - SVD
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Multi-preference alignment"
+  - "orthogonal subspace"
+  - "SVD"
+  - "spectral norm constraint"
+  - "parameter-level conflict"
 date: 2026-05-08
-content_hash: 841792717cdcc737
+content_hash: 24b273b97dfe16fb
 ---
+
 # OrthAlign: Orthogonal Subspace Decomposition for Non-Interfering Multi-Objective Alignment
 
 **Conference**: ICLR 2026  
@@ -158,9 +163,9 @@ Adaptive Rank Selection (RQ4): Harmlessness is highly sensitive to rank (droppin
 
 - [\[ICML 2026\] Simultaneous Multi-objective Alignment Across Verifiable and Non-verifiable Rewards](../../ICML2026/llm_alignment/simultaneous_multi-objective_alignment_across_verifiable_and_non-verifiable_rewa.md)
 - [\[ICLR 2026\] Multi-objective Large Language Model Alignment with Hierarchical Experts](multi-objective_large_language_model_alignment_with_hierarchical_experts.md)
+- [\[ICLR 2026\] Bradley–Terry and Multi-Objective Reward Modeling Are Complementary](bradley-terry_and_multi-objective_reward_modeling_are_complementary.md)
 - [\[ICLR 2026\] IDEAL: Data Equilibrium Adaptation for Multi-Capability Language Model Alignment](ideal_data_equilibrium_adaptation_for_multi-capability_language_model_alignment.md)
-- [\[ACL 2025\] LSSF: Safety Alignment via Low-Rank Safety Subspace Fusion](../../ACL2025/llm_alignment/lssf_safety_subspace.md)
-- [\[ICLR 2026\] SEMA: Simple yet Effective Learning for Multi-Turn Jailbreak Attacks](sema_simple_yet_effective_learning_for_multi-turn_jailbreak_attacks.md)
+- [\[ICML 2026\] GIST: Targeted Data Selection for Instruction Tuning with Gradient Subspace Projection](../../ICML2026/llm_alignment/gist_targeted_data_selection_for_instruction_tuning_via_coupled_optimization_geo.md)
 
 </div>
 

@@ -22,12 +22,12 @@ item_total: 2
 
 **🤖 AAAI2026** · **2** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (7)](../../CVPR2026/aigc_detection/index.md) · [🔬 ICLR2026 (30)](../../ICLR2026/aigc_detection/index.md) · [💬 ACL2026 (17)](../../ACL2026/aigc_detection/index.md) · [🧪 ICML2026 (11)](../../ICML2026/aigc_detection/index.md) · [🧠 NeurIPS2025 (9)](../../NeurIPS2025/aigc_detection/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (10)](../../CVPR2026/aigc_detection/index.md) · [🔬 ICLR2026 (30)](../../ICLR2026/aigc_detection/index.md) · [💬 ACL2026 (17)](../../ACL2026/aigc_detection/index.md) · [🧪 ICML2026 (11)](../../ICML2026/aigc_detection/index.md) · [🧠 NeurIPS2025 (9)](../../NeurIPS2025/aigc_detection/index.md) · [💬 ACL2025 (15)](../../ACL2025/aigc_detection/index.md)
 
 **[BAID: A Benchmark for Bias Assessment of AI Detectors](baid_a_benchmark_for_bias_assessment_of_ai_detectors.md)**
 
-:   This paper introduces the BAID benchmark (208K sample pairs covering 7 bias dimensions and 41 subgroups) to systematically evaluate the fairness of 4 open-source AI text detectors across demographic and linguistic subgroups, revealing significant recall disparities for dialect, informal English, and minority group texts.
+:   Proposes the BAID benchmark dataset (208k sample pairs covering 7 bias dimensions and 41 subgroups) to systematically evaluate the fairness performance of four open-source AI text detectors across various demographic and linguistic subgroups, revealing significant recall disparities of detectors on dialects, informal English, and minority texts.
 
 **[Optimized Algorithms for Text Clustering with LLM-Generated Constraints](optimized_algorithms_for_text_clustering_with_llm-generated_constraints.md)**
 
-:   This paper proposes the LSCK-HC framework, which leverages LLMs to generate set-form must-link/cannot-link constraints (as opposed to traditional pairwise constraints), coupled with a penalty-based local search clustering algorithm. The approach achieves clustering accuracy comparable to SOTA on five short-text datasets while reducing the number of LLM queries by more than 20×.
+:   Proposes the LSCK-HC framework, which utilizes LLMs to generate must-link/cannot-link constraints in set formats (rather than traditional pairwise constraints), and integrates with a penalized local search clustering algorithm. It achieves clustering accuracy comparable to SOTA on 5 short text datasets while reducing the number of LLM queries by over 20 times.

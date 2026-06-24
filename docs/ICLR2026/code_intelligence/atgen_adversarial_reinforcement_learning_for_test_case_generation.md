@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ATGen: Adversarial Reinforcement Learning for Test Case Generation
 description: >-
-  [ICLR 2026][Code Intelligence][GRPO] ATGen places a "test case generator" and an "adversarial code generator" into a competitive reinforcement learning loop. As the generator strengthens, the opponent is forced to produce more subtle bugs. This self-escalating dynamic curriculum breaks the "fixed-difficulty ceiling" of static datasets, doubling the attack
+  [ICLR2026][Code Intelligence][Test Case Generation] ATGen places a "test case generator" and an "adversarial code generator" into a competitive reinforcement learning loop. As the generator strengthens, the opponent is forced to produce more subtle bugs. This self-escalating dynamic curriculum breaks the "fixed-difficulty ceiling" of static datasets, doubling the attack success rate of a 7B model compared to the SFT-based UTGen (36.99% vs 16.24%).
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - GRPO
+  - "ICLR2026"
+  - "Code Intelligence"
+  - "Test Case Generation"
+  - "Adversarial Reinforcement Learning"
+  - "GRPO"
+  - "Dynamic Curriculum"
+  - "Code Reliability"
 date: 2026-05-08
-content_hash: a8487f128a0fd2e9
+content_hash: 8eac452388805266
 ---
+
 # ATGen: Adversarial Reinforcement Learning for Test Case Generation
 
 **Conference**: ICLR2026  
@@ -146,8 +151,8 @@ Table 3 compares adversarial vs. non-adversarial performance under different GRP
 - [\[ICLR 2026\] Critique-Coder: Enhancing Coder Models by Critique Reinforcement Learning](critique-coder_enhancing_coder_models_by_critique_reinforcement_learning.md)
 - [\[ICLR 2026\] Agnostics: Learning to Synthesize Code in Any Programming Language with a Universal Reinforcement Learning Environment](agnostics_learning_to_synthesize_code_in_any_programming_language_with_a_univers.md)
 - [\[ACL 2026\] MARS2: Scaling Multi-Agent Tree Search via Reinforcement Learning for Code Generation](../../ACL2026/code_intelligence/mars2_scaling_multi-agent_tree_search_via_reinforcement_learning_for_code_genera.md)
+- [\[ICLR 2026\] TikZilla: Scaling Text-to-TikZ with High-Quality Data and Reinforcement Learning](tikzilla_scaling_text-to-tikz_with_high-quality_data_and_reinforcement_learning.md)
 - [\[ACL 2026\] ChipSeek: Optimizing Verilog Generation via EDA-Integrated Reinforcement Learning](../../ACL2026/code_intelligence/chipseek_optimizing_verilog_generation_via_eda-integrated_reinforcement_learning.md)
-- [\[AAAI 2026\] ReCode: Updating Code API Knowledge with Reinforcement Learning](../../AAAI2026/code_intelligence/recode_updating_code_api_knowledge_with_reinforcement_learning.md)
 
 </div>
 

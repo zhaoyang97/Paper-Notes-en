@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] NEMO: Execution-Aware Optimization Modeling via Autonomous Coding Agents
 description: >-
-  [ICML 2026][Code Intelligence][Paper Note] NEMO treats Autonomous Coding Agents (ACA) as a "first-class abstraction" on par with LLM calls. It enables independently generated simulators and optimizers to cross-verify via execution results in a shared sandbox, combined with diverse memory retrieval and MBR/self-consistency decoding. It achieves SOTA on 8 out of
+  [ICML 2026][Code Intelligence][Automated Optimization Modeling] NEMO treats Autonomous Coding Agents (ACA) as a "first-class abstraction" on par with LLM calls. It enables independently generated simulators and optimizers to cross-verify via execution results in a shared sandbox, combined with diverse memory retrieval and MBR/self-consistency decoding. It achieves SOTA on 8 out of 9 optimization modeling benchmarks, leading by up to 28 percentage points.
 tags:
-  - ICML 2026
-  - Code Intelligence
+  - "ICML 2026"
+  - "Code Intelligence"
+  - "Automated Optimization Modeling"
+  - "Autonomous Coding Agents (ACA)"
+  - "Execution-Aware Verification"
+  - "Simulator-Optimizer Closed Loop"
+  - "MBR Decoding"
 date: 2026-05-08
-content_hash: 826c852cb2e15290
+content_hash: 1ebc855cf58f1db1
 ---
+
 # NEMO: Execution-Aware Optimization Modeling via Autonomous Coding Agents
 
 **Conference**: ICML 2026  
@@ -136,15 +142,16 @@ NEMO achieves SOTA on 8/9 benchmarks, with a notable +28 pp lead on IndustryOR o
 - Value: ⭐⭐⭐⭐ (Provides a robust template for NL-to-code agent systems).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] QiMeng-PRepair: Precise Code Repair via Edit-Aware Reward Optimization](../../ACL2026/code_intelligence/qimeng-prepair_precise_code_repair_via_edit-aware_reward_optimization.md)
 - [\[ICML 2026\] MatchFixAgent: Language-Agnostic Autonomous Repository-Level Code Translation Validation and Repair](matchfixagent_language-agnostic_autonomous_repository-level_code_translation_val.md)
-- [\[ACL 2026\] CodeDistiller: Automatically Generating Code Libraries for Scientific Coding Agents](../../ACL2026/code_intelligence/codedistiller_automatically_generating_code_libraries_for_scientific_coding_agen.md)
-- [\[ACL 2026\] RExBench: Can coding agents autonomously implement AI research extensions?](../../ACL2026/code_intelligence/rexbench_can_coding_agents_autonomously_implement_ai_research_extensions.md)
-- [\[ACL 2026\] SecureVibeBench: Evaluating Secure Coding Capabilities of Code Agents with Realistic Vulnerability Scenarios](../../ACL2026/code_intelligence/securevibebench_evaluating_secure_coding_capabilities_of_code_agents_with_realis.md)
+- [\[ICLR 2026\] VisCoder2: Building Multi-Language Visualization Coding Agents](../../ICLR2026/code_intelligence/viscoder2_building_multi-language_visualization_coding_agents.md)
+- [\[ICLR 2026\] BOAD: Discovering Hierarchical Software Engineering Agents via Bandit Optimization](../../ICLR2026/code_intelligence/boad_discovering_hierarchical_software_engineering_agents_via_bandit_optimizatio.md)
+- [\[ICLR 2026\] SWE-RM: Execution-Free Feedback for Software Engineering Agents](../../ICLR2026/code_intelligence/swe-rm_execution-free_feedback_for_software_engineering_agents.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PRISON: Unmasking the Criminal Potential of Large Language Models
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper proposes the PRISON evaluation framework, which places LLMs in real-world adapted criminal plots to play the role of a criminal. By utilizing three perspectives—"Criminal/Detective/God"—and five dimensions of criminal traits to quantify the model's "criminal potential," the study finds that mainstream LLMs s
+  [ICLR 2026][LLM Safety][Criminal Potential Evaluation] This paper proposes the PRISON evaluation framework, which places LLMs in real-world adapted criminal plots to play the role of a criminal. By utilizing three perspectives—"Criminal/Detective/God"—and five dimensions of criminal traits to quantify the model's "criminal potential," the study finds that mainstream LLMs spontaneously exhibit behaviors such as deception, manipulation, and framing even without explicit instruc…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Criminal Potential Evaluation"
+  - "Multi-agent Social Simulation"
+  - "Perspective Recognition"
+  - "Deception Detection"
+  - "Safety Alignment"
 date: 2026-05-08
-content_hash: 3d6c7e22e987c243
+content_hash: e7a217296ee7e569
 ---
+
 # PRISON: Unmasking the Criminal Potential of Large Language Models
 
 **Conference**: ICLR 2026  
@@ -130,8 +136,8 @@ This is a benchmark study; no training is involved. The evaluation protocol incl
 - Value: ⭐⭐⭐⭐⭐ Transforms abstract AI safety concerns into a reproducible benchmark with direct practical implications.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

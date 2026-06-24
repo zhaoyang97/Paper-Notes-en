@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Scaling Large Vision-Language Model RL Training via Efficient Load Balancing
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] Addressing two major system bottlenecks in VLM Reinforcement Learning (RL) training—centralized multimodal data loading and extreme sequence load imbalance across GPUs—this paper proposes FlexRL, an end-to-end system. FlexRL utilizes ShadowLoader to offload visual data decoding/preprocessing to workers while passing on
+  [ICLR 2026][LLM Efficiency][VLM Reinforcement Learning] Addressing two major system bottlenecks in VLM Reinforcement Learning (RL) training—centralized multimodal data loading and extreme sequence load imbalance across GPUs—this paper proposes FlexRL, an end-to-end system. FlexRL utilizes ShadowLoader to offload visual data decoding/preprocessing to workers while passing only lightweight metadata on the controller, and employs FlexUlysses to adaptively shard sequences into fi…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "VLM Reinforcement Learning"
+  - "Load Balancing"
+  - "Sequence Sharding"
+  - "Data Loading"
+  - "Training Systems"
 date: 2026-05-08
-content_hash: 150517456415e0c3
+content_hash: 51837efaa172a4f9
 ---
+
 # Scaling Large Vision-Language Model RL Training via Efficient Load Balancing
 
 **Conference**: ICLR 2026  
@@ -116,10 +122,20 @@ Evaluated on 128 H800 GPUs using MiMo-VL-7B-RL (Image-Heavy config, relative to 
 - Value: ⭐⭐⭐⭐⭐ Resolves real-world VLM RL training bottlenecks with substantial 8.47× gains.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Libra: Effective yet Efficient Load Balancing for Large-scale MoE Inference](libra_effective_yet_efficient_load_balancing_for_large-scale_moe_inference.md)
+- [\[AAAI 2026\] Scaling and Transferability of Annealing Strategies in Large Language Model Training](../../AAAI2026/llm_efficiency/scaling_and_transferability_of_annealing_strategies_in_large_language_model_trai.md)
+- [\[ICLR 2026\] Unlocking Full Efficiency of Token Filtering in Large Language Model Training](unlocking_full_efficiency_of_token_filtering_in_large_language_model_training.md)
+- [\[ICLR 2026\] DualMap: Enabling Both Cache Affinity and Load Balancing for Distributed LLM Serving](dualmap_enabling_both_cache_affinity_and_load_balancing_for_distributed_llm_serv.md)
+- [\[ICLR 2026\] Scaling Laws Meet Model Architecture: Toward Inference-Efficient LLMs](scaling_laws_meet_model_architecture_toward_inference-efficient_llms.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Libra: Effective yet Efficient Load Balancing for Large-scale MoE Inference](libra_effective_yet_efficient_load_balancing_for_large-scale_moe_inference.md)

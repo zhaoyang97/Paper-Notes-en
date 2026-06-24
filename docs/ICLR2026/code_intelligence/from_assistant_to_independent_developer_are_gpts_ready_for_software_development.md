@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Assistant to Independent Developer — Are GPTs Ready for Software Development?
 description: >-
-  [ICLR 2026][Code Intelligence][LLM Evaluation] This paper introduces APPFORGE, the first benchmark to evaluate the capability of LLMs to build complete Android applications end-to-end from scratch (101 real-world tasks, fully automated compilation/functional/stability evaluation). Findings show that even the strongest GPT-5 achieves only 18.8% success, revealing a
+  [ICLR 2026][Code Intelligence][Android App Development] This paper introduces APPFORGE, the first benchmark to evaluate the capability of LLMs to build complete Android applications end-to-end from scratch (101 real-world tasks, fully automated compilation/functional/stability evaluation). Findings show that even the strongest GPT-5 achieves only 18.8% success, revealing a significant gap between current models and "independent developers."
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Android App Development"
+  - "Code Generation Benchmark"
+  - "End-to-End Software Engineering"
+  - "LLM Evaluation"
+  - "Automated Testing"
 date: 2026-05-08
-content_hash: ffb19955eda784e5
+content_hash: c690005b6d87b234
 ---
+
 # From Assistant to Independent Developer — Are GPTs Ready for Software Development?
 
 **Conference**: ICLR 2026  
@@ -127,8 +132,8 @@ The strongest GPT-5-High achieves only an 18.81% overall success rate. Open-sour
 - [\[ACL 2026\] KoCo-Bench: Can Large Language Models Leverage Domain Knowledge in Software Development?](../../ACL2026/code_intelligence/koco-bench_can_large_language_models_leverage_domain_knowledge_in_software_devel.md)
 - [\[ICLR 2026\] RECODE-H: A Benchmark for Research Code Development with Interactive Human Feedback](recode-h_a_benchmark_for_research_code_development_with_interactive_human_feedba.md)
 - [\[ICML 2026\] Physics Is All You Need? A Case Study in Physicist-Supervised AI Development of Scientific Software](../../ICML2026/code_intelligence/physics_is_all_you_need_a_case_study_in_physicist-supervised_ai_development_of_s.md)
-- [\[ICLR 2026\] Ambig-SWE: Interactive Agents to Overcome Underspecificity in Software Engineering](ambig-swe_interactive_agents_to_overcome_underspecificity_in_software_engineerin.md)
-- [\[ICLR 2026\] SWE-RM: Execution-Free Feedback for Software Engineering Agents](swe-rm_execution-free_feedback_for_software_engineering_agents.md)
+- [\[ICLR 2026\] SweRank: Software Issue Localization via Code Ranking](swerank_software_issue_localization_with_code_ranking.md)
+- [\[ACL 2025\] SHARE: An SLM-based Hierarchical Action CorREction Assistant for Text-to-SQL](../../ACL2025/code_intelligence/share_text_to_sql_correction.md)
 
 </div>
 

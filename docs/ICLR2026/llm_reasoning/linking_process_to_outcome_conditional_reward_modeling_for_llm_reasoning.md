@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Linking Process to Outcome: Conditional Reward Modeling for LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Process Reward Model] CRM models multi-step reasoning as a sequential process of "gradually approaching the correct answer." By leveraging the conditional probability chain rule, it explicitly anchors the process reward of each step to the final outcome. This addresses the issues of missing step-wise dependencies and fuzzy credit assignment
+  [ICLR 2026][Reasoning][Process Reward Model] CRM models multi-step reasoning as a sequential process of "gradually approaching the correct answer." By leveraging the conditional probability chain rule, it explicitly anchors the process reward of each step to the final outcome. This addresses the issues of missing step-wise dependencies and fuzzy credit assignment, making it more stable and resistant to reward hacking across Best-of-N, beam search, and RL downstream tasks.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Process Reward Model
-  - Reward Hacking
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Process Reward Model"
+  - "Conditional Probability"
+  - "Credit Assignment"
+  - "Reward Hacking"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 401cfa34b04c6a81
+content_hash: ec6c166e9ada42b9
 ---
+
 # Linking Process to Outcome: Conditional Reward Modeling for LLM Reasoning
 
 **Conference**: ICLR 2026  
@@ -148,11 +151,11 @@ A significant jump occurs from 0% to 10%, with 50% being near-optimal, suggestin
 
 ## Related Papers
 
-- [\[ICLR 2026\] Smarter Not Harder: Generative Process Evaluation with Intrinsic-Signal Driving and Ability-Adaptive Reward Shaping](smarter_not_harder_generative_process_evaluation_with_intrinsic-signal_driving_a.md)
-- [\[ICLR 2026\] Fixing the Broken Compass: Diagnosing and Improving Inference-Time Reward Modeling](fixing_the_broken_compass_diagnosing_and_improving_inference-time_reward_modelin.md)
 - [\[ACL 2026\] Efficient Process Reward Modeling via Contrastive Mutual Information](../../ACL2026/llm_reasoning/efficient_process_reward_modeling_via_contrastive_mutual_information.md)
+- [\[NeurIPS 2025\] Stop Summation: Min-Form Credit Assignment Is All Process Reward Model Needs for Reasoning](../../NeurIPS2025/llm_reasoning/stop_summation_minform_credit_assignment_is_all_process_rewa.md)
 - [\[ICLR 2026\] OR-PRM: A Process Reward Model for Algorithmic Problem in Operations Research](or-prm_a_process_reward_model_for_algorithmic_problem_in_operations_research.md)
 - [\[ACL 2025\] Dynamic and Generalizable Process Reward Modeling (DG-PRM)](../../ACL2025/llm_reasoning/dgprm_dynamic_process_reward.md)
+- [\[ICLR 2026\] Smarter Not Harder: Generative Process Evaluation with Intrinsic-Signal Driving and Ability-Adaptive Reward Shaping](smarter_not_harder_generative_process_evaluation_with_intrinsic-signal_driving_a.md)
 
 </div>
 

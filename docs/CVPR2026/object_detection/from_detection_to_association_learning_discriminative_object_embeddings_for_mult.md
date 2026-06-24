@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Detection to Association: Learning Discriminative Object Embeddings for Multi-Object Tracking
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] FDTA identifies that "excessively high inter-class similarity" in object embeddings produced by DETR is the root cause of poor association accuracy in end-to-end MOT. Consequently, three lightweight adapters—Spatial (Depth), Temporal (Trajectory), and Identity (Contrastive Learning)—are attached to a shared DETR to exp
+  [CVPR 2026][Object Detection][End-to-End Multi-Object Tracking] FDTA identifies that "excessively high inter-class similarity" in object embeddings produced by DETR is the root cause of poor association accuracy in end-to-end MOT. Consequently, three lightweight adapters—Spatial (Depth), Temporal (Trajectory), and Identity (Contrastive Learning)—are attached to a shared DETR to explicitly refine embeddings from the perspectives of spatial continuity, temporal dependence…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "End-to-End Multi-Object Tracking"
+  - "DETR Object Embeddings"
+  - "Depth Distillation"
+  - "Temporal Trajectory Modeling"
+  - "Quality-Aware Contrastive Learning"
 date: 2026-05-08
-content_hash: 5c48dd7c62a7922d
+content_hash: a73937f387f27e57
 ---
+
 # From Detection to Association: Learning Discriminative Object Embeddings for Multi-Object Tracking
 
 **Conference**: CVPR 2026  
@@ -135,9 +141,9 @@ Gradual addition of the three adapters (DanceTrack test):
 
 - [\[CVPR 2026\] GMT: Effective Global Framework for Multi-Camera Multi-Target Tracking](gmt_effective_global_framework_for_multi-camera_multi-target_tracking.md)
 - [\[AAAI 2026\] AerialMind: Towards Referring Multi-Object Tracking in UAV Scenarios](../../AAAI2026/object_detection/aerialmind_towards_referring_multi-object_tracking_in_uav_sc.md)
-- [\[CVPR 2026\] Learning Multi-Modal Prototypes for Cross-Domain Few-Shot Object Detection](learning_multi-modal_prototypes_for_cross-domain_few-shot_object_detection.md)
-- [\[CVPR 2026\] Multi-view Crowd Tracking Transformer with View-Ground Interactions Under Large Real-World Scenes](multi-view_crowd_tracking_transformer_with_view-ground_interactions_under_large_.md)
 - [\[CVPR 2026\] Towards Persistence: Learning Topological Constraints for Event-based Small Object Detection](towards_persistence_learning_topological_constraints_for_event-based_small_objec.md)
+- [\[CVPR 2026\] InsCal: Calibrated Multi-Source Fully Test-Time Prompt Tuning for Object Detection](inscal_calibrated_multi-source_fully_test-time_prompt_tuning_for_object_detectio.md)
+- [\[CVPR 2026\] PaQ-DETR: Learning Pattern and Quality-Aware Dynamic Queries for Object Detection](paq-detr_learning_pattern_and_quality-aware_dynamic_queries_for_object_detection.md)
 
 </div>
 

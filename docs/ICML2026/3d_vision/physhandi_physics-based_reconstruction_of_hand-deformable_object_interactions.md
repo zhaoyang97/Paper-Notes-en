@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions
 description: >-
-  [ICML 2026][3D Vision][Spring-Mass] This paper proposes PhysHanDI, which couples the MANO hand model with a Spring-Mass soft body model. It uses dense hand meshes to drive the physical simulation of deformable objects and inversely utilizes object simulation to refine hand reconstruction, achieving SOTA dense 3D reconstruction for both hands and soft obj
+  [ICML 2026][3D Vision][Hand-Object Interaction] This paper proposes PhysHanDI, which couples the MANO hand model with a Spring-Mass soft body model. It uses dense hand meshes to drive the physical simulation of deformable objects and inversely utilizes object simulation to refine hand reconstruction, achieving SOTA dense 3D reconstruction for both hands and soft objects on sparse-view RGB-D videos.
 tags:
-  - ICML 2026
-  - 3D Vision
-  - Spring-Mass
-  - MANO
+  - "ICML 2026"
+  - "3D Vision"
+  - "Hand-Object Interaction"
+  - "Deformable Objects"
+  - "Spring-Mass"
+  - "MANO"
+  - "Inverse Physics"
 date: 2026-05-08
-content_hash: 11971618abfc2eed
+content_hash: c78265c368fb7aca
 ---
+
 # PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions
 
 **Conference**: ICML 2026  
@@ -145,7 +149,7 @@ The virtual spring $RRD$ decreased by 7×, indicating that dense hand control al
 - [\[CVPR 2026\] ForeHOI: Feed-forward 3D Object Reconstruction from Daily Hand-Object Interaction Videos](../../CVPR2026/3d_vision/forehoi_feed-forward_3d_object_reconstruction_from_daily_hand-object_interaction.md)
 - [\[CVPR 2026\] PAD-Hand: Physics-Aware Diffusion for Hand Motion Recovery](../../CVPR2026/3d_vision/pad-hand_physics-aware_diffusion_for_hand_motion_recovery.md)
 - [\[CVPR 2026\] Glove2Hand: Synthesizing Natural Hand-Object Interaction from Multi-Modal Sensing Gloves](../../CVPR2026/3d_vision/glove2hand_synthesizing_natural_hand-object_interaction_from_multi-modal_sensing.md)
-- [\[CVPR 2026\] PhysGaia: A Physics-Aware Benchmark with Multi-Body Interactions for Dynamic Novel View Synthesis](../../CVPR2026/3d_vision/physgaia_a_physics-aware_benchmark_with_multi-body_interactions_for_dynamic_nove.md)
+- [\[ECCV 2024\] D-SCo: Dual-Stream Conditional Diffusion for Monocular Hand-Held Object Reconstruction](../../ECCV2024/3d_vision/d-sco_dual-stream_conditional_diffusion_for_monocular_hand-held_object_reconstru.md)
 
 </div>
 

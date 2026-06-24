@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Graph-R1: Towards Agentic GraphRAG Framework via End-to-end Reinforcement Learning
 description: >-
-  [ICML 2026][Information Retrieval & RAG][GraphRAG] Graph-R1 reformulates GraphRAG as an end-to-end RL framework featuring a "knowledge hypergraph environment + multi-turn think–query–retrieve–answer agent + outcome-oriented GRPO." By utilizing lightweight n-ary hypergraph construction and dual-path hyperedge retrieval with RRF fusion, it improves the F1 score of 7B mod
+  [ICML 2026][Information Retrieval & RAG][GraphRAG] Graph-R1 reformulates GraphRAG as an end-to-end RL framework featuring a "knowledge hypergraph environment + multi-turn think–query–retrieve–answer agent + outcome-oriented GRPO." By utilizing lightweight n-ary hypergraph construction and dual-path hyperedge retrieval with RRF fusion, it improves the F1 score of 7B models from Search-R1's 46.19 to 57.82 across six standard RAG datasets.
 tags:
-  - ICML 2026
-  - Information Retrieval & RAG
-  - GraphRAG
-  - Reinforcement Learning
+  - "ICML 2026"
+  - "Information Retrieval & RAG"
+  - "GraphRAG"
+  - "Reinforcement Learning"
+  - "Knowledge Hypergraph"
+  - "Agentic Retrieval"
+  - "Multi-turn Reasoning"
 date: 2026-05-08
-content_hash: d1e8ed4d825a14e9
+content_hash: 4fbb849d8fa2a120
 ---
+
 # Graph-R1: Towards Agentic GraphRAG Framework via End-to-end Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -137,7 +141,7 @@ Mean of 2Wiki + HotpotQA:
 - [\[ACL 2026\] Agentic Conversational Search with Contextualized Reasoning via Reinforcement Learning](../../ACL2026/information_retrieval/agentic_conversational_search_with_contextualized_reasoning_via_reinforcement_le.md)
 - [\[ACL 2025\] Gumbel Reranking: Differentiable End-to-End Reranker Optimization](../../ACL2025/information_retrieval/gumbel_reranking.md)
 - [\[ACL 2026\] Learning to Extract Rational Evidence via Reinforcement Learning for Retrieval-Augmented Generation](../../ACL2026/information_retrieval/learning_to_extract_rational_evidence_via_reinforcement_learning_for_retrieval-a.md)
-- [\[ACL 2025\] MEMERAG: A Multilingual End-to-End Meta-Evaluation Benchmark for Retrieval Augmented Generation](../../ACL2025/information_retrieval/memerag_a_multilingual_end-to-end_meta-evaluation_benchmark_for_retrieval_augmen.md)
+- [\[ICLR 2026\] Youtu-GraphRAG: Vertically Unified Agents for Graph Retrieval-Augmented Complex Reasoning](../../ICLR2026/information_retrieval/youtu-graphrag_vertically_unified_agents_for_graph_retrieval-augmented_complex_r.md)
 
 </div>
 

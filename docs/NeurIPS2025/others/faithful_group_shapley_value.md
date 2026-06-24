@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Faithful Group Shapley Value
 description: >-
-  [NeurIPS 2025][Data Shapley] This paper proposes the Faithful Group Shapley Value (FGSV), the unique group-level data valuation method satisfying five axioms including "faithfulness…
+  [NeurIPS 2025][Data Shapley] This paper proposes the Faithful Group Shapley Value (FGSV), the unique group-level data valuation method satisfying five axioms including "faithfulness," which effectively defends against the "shell company attack" (artificially inflating valuation by splitting subgroups), and introduces an efficient approximation algorithm with $O(n \cdot \text{Poly}(\log n))$ complexity.
 tags:
   - "NeurIPS 2025"
   - "Data Shapley"
@@ -12,7 +12,7 @@ tags:
   - "Copyright Attribution"
   - "Explainable AI"
 date: 2026-05-08
-content_hash: 399590c97137377d
+content_hash: 989f7b1801580ecf
 ---
 
 # Faithful Group Shapley Value
@@ -210,11 +210,11 @@ Key finding: Under the prompt "A logo by Vodafone," the total share of Google/Sp
 
 ## Related Papers
 
+- [\[ICML 2025\] Prediction via Shapley Value Regression (ViaSHAP)](../../ICML2025/others/prediction_via_shapley_value_regression.md)
 - [\[NeurIPS 2025\] FACE: Faithful Automatic Concept Extraction](face_faithful_automatic_concept_extraction.md)
 - [\[NeurIPS 2025\] A Unified Framework for Provably Efficient Algorithms to Estimate Shapley Values](a_unified_framework_for_provably_efficient_algorithms_to_estimate_shapley_values.md)
-- [\[ICML 2026\] On the Coordination of Value-Maximizing Bidders](../../ICML2026/others/on_the_coordination_of_value-maximizing_bidders.md)
-- [\[AAAI 2026\] HyperSHAP: Shapley Values and Interactions for Explaining Hyperparameter Optimization](../../AAAI2026/others/hypershap_shapley_values_and_interactions_for_explaining_hyperparameter_optimiza.md)
-- [\[ICML 2026\] Sequential Group Composition: A Window into the Mechanics of Deep Learning](../../ICML2026/others/sequential_group_composition_a_window_into_the_mechanics_of_deep_learning.md)
+- [\[NeurIPS 2025\] Equivariance by Contrast: Identifiable Equivariant Embeddings from Unlabeled Finite Group Actions](equivariance_by_contrast_identifiable_equivariant_embeddings_from_unlabeled_fini.md)
+- [\[ACL 2025\] Value Residual Learning](../../ACL2025/others/value_residual_learning.md)
 
 </div>
 

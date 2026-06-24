@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Physically Executable 3D Gaussian for Embodied Navigation
 description: >-
-  [ICLR 2026][3D Vision][Embodied AI] This paper proposes the SAGE-3D paradigm, upgrading 3DGS from a "rendering-only" scene representation to an environment for training and evaluating embodied agents by adding **object-level semantics** and **physical collision structures**. It releases the InteriorGS dataset with 1k annotated scenes and SAGE-Bench, the
+  [ICLR 2026][3D Vision][3D Gaussian Splatting] This paper proposes the SAGE-3D paradigm, upgrading 3DGS from a "rendering-only" scene representation to an environment for training and evaluating embodied agents by adding **object-level semantics** and **physical collision structures**. It releases the InteriorGS dataset with 1k annotated scenes and SAGE-Bench, the first 3DGS-based VLN benchmark (2M trajectory-instruction pairs).
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Embodied AI
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Vision-Language Navigation"
+  - "Physical Simulation"
+  - "Semantic Annotation"
+  - "Embodied AI"
 date: 2026-05-08
-content_hash: dc5965dec7714fab
+content_hash: 3bef1e39dddf502a
 ---
+
 # Towards Physically Executable 3D Gaussian for Embodied Navigation
 
 **Conference**: ICLR 2026  
@@ -152,9 +157,9 @@ Lower scene/sample counts significantly dropped SR, indicating that both scene d
 
 - [\[CVPR 2026\] Multi-Scale Gaussian-Language Map for Zero-shot Embodied Navigation and Reasoning](../../CVPR2026/3d_vision/multi-scale_gaussian-language_map_for_zero-shot_embodied_navigation_and_reasonin.md)
 - [\[CVPR 2025\] RoomTour3D: Geometry-Aware Video-Instruction Tuning for Embodied Navigation](../../CVPR2025/3d_vision/roomtour3d_geometry-aware_video-instruction_tuning_for_embodied_navigation.md)
-- [\[CVPR 2026\] MSGNav: Unleashing the Power of Multi-modal 3D Scene Graph for Zero-Shot Embodied Navigation](../../CVPR2026/3d_vision/msgnav_unleashing_the_power_of_multi-modal_3d_scene_graph_for_zero-shot_embodied.md)
 - [\[ICLR 2026\] OpenFly: A Comprehensive Platform for Aerial Vision-Language Navigation](openfly_a_comprehensive_platform_for_aerial_vision-language_navigation.md)
-- [\[AAAI 2026\] VPN: Visual Prompt Navigation](../../AAAI2026/3d_vision/vpn_visual_prompt_navigation.md)
+- [\[CVPR 2026\] MSGNav: Unleashing the Power of Multi-modal 3D Scene Graph for Zero-Shot Embodied Navigation](../../CVPR2026/3d_vision/msgnav_unleashing_the_power_of_multi-modal_3d_scene_graph_for_zero-shot_embodied.md)
+- [\[CVPR 2025\] RainyGS: Efficient Rain Synthesis with Physically-Based Gaussian Splatting](../../CVPR2025/3d_vision/rainygs_efficient_rain_synthesis_with_physically-based_gaussian_splatting.md)
 
 </div>
 

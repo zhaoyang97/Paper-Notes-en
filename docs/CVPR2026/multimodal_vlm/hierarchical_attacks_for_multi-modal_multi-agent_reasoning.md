@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hierarchical Attacks for Multi-Modal Multi-Agent Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper proposes HAM³, which decomposes adversarial attacks on "Multi-Modal Multi-Agent Systems (MM-MAS)" into three interconnected levels: perception, communication, and reasoning. It systematically characterizes how perturbations cascade from single-point inputs to collective decisions. Experiments conducted on th
+  [CVPR 2026][Multimodal VLM][Multi-modal Multi-agent] This paper proposes HAM³, which decomposes adversarial attacks on "Multi-Modal Multi-Agent Systems (MM-MAS)" into three interconnected levels: perception, communication, and reasoning. It systematically characterizes how perturbations cascade from single-point inputs to collective decisions. Experiments conducted on the GQA dataset across ReAct, Plan-and-Solve, and Reflexion paradigms show a maximum Attack Success Rate (ASR…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multi-modal Multi-agent"
+  - "Adversarial Attack"
+  - "Hierarchical Attack"
+  - "Reasoning Chain Injection"
+  - "Communication Topology"
 date: 2026-05-08
-content_hash: 3b7db15440c270e1
+content_hash: e9fba007792ffed6
 ---
+
 # Hierarchical Attacks for Multi-Modal Multi-Agent Reasoning
 
 **Conference**: CVPR 2026  
@@ -129,10 +135,10 @@ The no-attack baseline for all three paradigms is approximately 60%. Following a
 ## Related Papers
 
 - [\[CVPR 2026\] Socratic-Geo: Synthetic Data Generation and Cross-Modal Geometric Reasoning via Multi-Agent Interaction](socratic-geo_synthetic_data_generation_and_cross-modal_geometric_reasoning_via_m.md)
+- [\[CVPR 2026\] Multi-Hierarchical Contrastive Spectral Fusion for Multi-View Clustering](multi-hierarchical_contrastive_spectral_fusion_for_multi-view_clustering.md)
 - [\[CVPR 2026\] ProSoftArena: Benchmarking Hierarchical Capabilities of Multi-modal Agents in Professional Software Environments](prosoftarena_benchmarking_hierarchical_capabilities_of_multi-modal_agents_in_pro.md)
-- [\[ICLR 2026\] Multi-modal Data Spectrum: Multi-modal Datasets are Multi-dimensional](../../ICLR2026/multimodal_vlm/multi-modal_data_spectrum_multi-modal_datasets_are_multi-dimensional.md)
-- [\[CVPR 2026\] CogniVerse: Revolutionizing Multi-Modal Retrieval-Augmented Generation with Cognitive Reflection and Geometric Reasoning](cogniverse_revolutionizing_multi-modal_retrieval-augmented_generation_with_cogni.md)
-- [\[CVPR 2026\] CRIT: Graph-Based Automatic Data Synthesis to Enhance Cross-Modal Multi-Hop Reasoning](crit_graph-based_automatic_data_synthesis_to_enhance_cross-modal_multi-hop_reaso.md)
+- [\[CVPR 2026\] Geometrically-Constrained Agent for Spatial Reasoning](geometrically-constrained_agent_for_spatial_reasoning.md)
+- [\[CVPR 2026\] Multi-SpatialMLLM: Multi-Frame Spatial Understanding with Multi-Modal Large Language Models](multi-spatialmllm_multi-frame_spatial_understanding_with_multi-modal_large_langu.md)
 
 </div>
 

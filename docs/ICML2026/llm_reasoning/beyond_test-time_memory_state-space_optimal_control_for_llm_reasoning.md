@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Beyond Test-Time Memory: State-Space Optimal Control for LLM Reasoning
 description: >-
-  [ICML 2026][LLM Reasoning][LQR] Ours models LLM reasoning as an optimal control problem in latent space (Linear Quadratic Regulator, LQR) and proposes the Test-Time Control (TTC) layer to perform finite-horizon planning during the forward pass. The optimal control action is decoded as the next-token representation. Combined with a Symplectic Iteratio
+  [ICML 2026][Reasoning][Optimal Control] Ours models LLM reasoning as an optimal control problem in latent space (Linear Quadratic Regulator, LQR) and proposes the Test-Time Control (TTC) layer to perform finite-horizon planning during the forward pass. The optimal control action is decoded as the next-token representation. Combined with a Symplectic Iteration CUDA-efficient solver, this adapter-style layer achieves up to +27.8% gain on MATH-500 and a 2-3× increase in Pass@8 o…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - LQR
-  - State Space Model
+  - "ICML 2026"
+  - "Reasoning"
+  - "Optimal Control"
+  - "LQR"
+  - "Test-Time Planning"
+  - "State-Space Models"
+  - "Mathematics Reasoning"
 date: 2026-05-08
-content_hash: 81f9cb1b572e5e90
+content_hash: f0affba648970419
 ---
+
 # Beyond Test-Time Memory: State-Space Optimal Control for LLM Reasoning
 
 **Conference**: ICML 2026  
@@ -137,11 +141,11 @@ A mixed-horizon training strategy is used: in each iteration, the planning horiz
 
 ## Related Papers
 
+- [\[ICLR 2026\] Optimal Aggregation of LLM and PRM Signals for Efficient Test-Time Scaling](../../ICLR2026/llm_reasoning/optimal_aggregation_of_llm_and_prm_signals_for_efficient_test-time_scaling.md)
+- [\[ICLR 2026\] $\nabla$-Reasoner: LLM Reasoning via Test-Time Gradient Descent in Latent Space](../../ICLR2026/llm_reasoning/nabla-reasoner_llm_reasoning_via_test-time_gradient_descent_in_latent_space.md)
 - [\[NeurIPS 2025\] Towards Thinking-Optimal Scaling of Test-Time Compute for LLM Reasoning](../../NeurIPS2025/llm_reasoning/towards_thinking-optimal_scaling_of_test-time_compute_for_llm_reasoning.md)
-- [\[ICLR 2026\] ∇-Reasoner: LLM Reasoning via Test-Time Gradient Descent in Latent Space](../../ICLR2026/llm_reasoning/nabla-reasoner_llm_reasoning_via_test-time_gradient_descent_in_latent_space.md)
-- [\[ICML 2026\] Beyond Two-Stage Training: Cooperative SFT and RL for LLM Reasoning](beyond_two-stage_training_cooperative_sft_and_rl_for_llm_reasoning.md)
 - [\[ICML 2026\] Conformal Thinking: Risk Control for Reasoning on a Compute Budget](conformal_thinking_risk_control_for_reasoning_on_a_compute_budget.md)
-- [\[ICML 2026\] Stabilizing Recurrent Dynamics for Test-Time Scalable Latent Reasoning in Looped Language Models](stabilizing_recurrent_dynamics_for_test-time_scalable_latent_reasoning_in_looped.md)
+- [\[ICML 2026\] Beyond Two-Stage Training: Cooperative SFT and RL for LLM Reasoning](beyond_two-stage_training_cooperative_sft_and_rl_for_llm_reasoning.md)
 
 </div>
 

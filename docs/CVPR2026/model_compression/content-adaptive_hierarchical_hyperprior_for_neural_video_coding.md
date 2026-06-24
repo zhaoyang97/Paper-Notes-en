@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Content-Adaptive Hierarchical Hyperprior for Neural Video Coding
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] Addressing the long-neglected optimization of "hierarchical structure" (quality structure + reference structure) in neural video coding (NVC), this paper extracts a **hierarchical hyperprior (hh)** from the current frame. This prior uniformly guides the content-adaptive joint optimization of quality allocation and dual
+  [CVPR 2026][Model Compression][Neural video coding] Addressing the long-neglected optimization of "hierarchical structure" (quality structure + reference structure) in neural video coding (NVC), this paper extracts a **hierarchical hyperprior (hh)** from the current frame. This prior uniformly guides the content-adaptive joint optimization of quality allocation and dual-reference fusion, saving 15.51% and 12.20% bitrate compared to the previous SOTA, DCVC-FM…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Neural video coding"
+  - "hierarchical structure"
+  - "hyperprior"
+  - "content-adaptive"
+  - "rate-distortion optimization"
 date: 2026-05-08
-content_hash: 6cc2344ba08eb7ee
+content_hash: f5b27c08df248dc6
 ---
+
 # Content-Adaptive Hierarchical Hyperprior for Neural Video Coding
 
 **Conference**: CVPR 2026  
@@ -139,11 +145,11 @@ Ablation by component on HEVC B/C/D/E (IP -1, full sequence) (BD-Rate %, baselin
 
 ## Related Papers
 
-- [\[CVPR 2026\] CADC: Content Adaptive Diffusion-Based Generative Image Compression](cadc_content_adaptive_diffusion-based_generative_image_compression.md)
+- [\[CVPR 2026\] High Resolution Neural Video Coding with Bi-directional Confidence-Guided Reference Information Modeling](high_resolution_neural_video_coding_with_bi-directional_confidence-guided_refere.md)
+- [\[CVPR 2026\] Real-Time Neural Video Compression with Unified Intra and Inter Coding](real-time_neural_video_compression_with_unified_intra_and_inter_coding.md)
 - [\[CVPR 2026\] Ultra-Fast Neural Video Compression](ultra-fast_neural_video_compression.md)
-- [\[CVPR 2026\] Accelerating Streaming Video Large Language Models via Hierarchical Token Compression](accelerating_streaming_video_large_language_models_via_hierarchical_token_compre.md)
-- [\[CVPR 2026\] Vision-Oriented Lightweight Neural Architecture Search with Budget-Adaptive Evaluation](vision-oriented_lightweight_neural_architecture_search_with_budget-adaptive_eval.md)
-- [\[CVPR 2026\] Adaptive Video Distillation: Mitigating Oversaturation and Temporal Collapse in Few-Step Generation](adaptive_video_distillation_mitigating_oversaturation_and_temporal_collapse_in_f.md)
+- [\[CVPR 2026\] CADC: Content Adaptive Diffusion-Based Generative Image Compression](cadc_content_adaptive_diffusion-based_generative_image_compression.md)
+- [\[CVPR 2026\] Perceptual Neural Video Compression with Color Separation and Rank Chain](perceptual_neural_video_compression_with_color_separation_and_rank_chain.md)
 
 </div>
 

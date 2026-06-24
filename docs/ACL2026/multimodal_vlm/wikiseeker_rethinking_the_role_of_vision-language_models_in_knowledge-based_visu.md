@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] WikiSeeker: Rethinking the Role of Vision-Language Models in Knowledge-Based Visual Question Answering
 description: >-
-  [ACL 2026][Multimodal VLM][Reinforcement Learning] WikiSeeker is proposed to redefine the role of VLMs in multi-modal RAG—transforming them from mere answer generators into two specialized agents: a Refiner trained via RL for query rewriting and an Inspector to verify the reliability of retrieved context. It achieves SOTA performance on EVQA, InfoSeek, and M2KR benchma
+  [ACL 2026 Findings][Multimodal VLM][KB-VQA] WikiSeeker is proposed to redefine the role of VLMs in multi-modal RAG—transforming them from mere answer generators into two specialized agents: a Refiner trained via RL for query rewriting and an Inspector to verify the reliability of retrieved context. It achieves SOTA performance on EVQA, InfoSeek, and M2KR benchmarks.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Reinforcement Learning
+  - "ACL 2026 Findings"
+  - "Multimodal VLM"
+  - "KB-VQA"
+  - "Multi-modal RAG"
+  - "Query Rewriting"
+  - "Reinforcement Learning"
+  - "Retrieval-Augmented Generation"
 date: 2026-05-08
-content_hash: d19e9e346532ed8f
+content_hash: 321aadc279e4e1a2
 ---
+
 # WikiSeeker: Rethinking the Role of Vision-Language Models in Knowledge-Based Visual Question Answering
 
 **Conference**: ACL 2026 Findings  
@@ -132,15 +137,16 @@ The Refiner improves EVQA R@1 from 28.0 to 44.1 (+57.5%), outperforming all base
 - Value: ⭐⭐⭐⭐ Provides direct guidance for the architectural design of multi-modal RAG systems.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] CC-VQA: Conflict- and Correlation-Aware Method for Mitigating Knowledge Conflict in Knowledge-Based Visual Question Answering](../../CVPR2026/multimodal_vlm/cc-vqa_conflict-_and_correlation-aware_method_for_mitigating_knowledge_conflict_.md)
+- [\[ICLR 2026\] Knowledge Exchange with Confidence: Cost-Effective LLM Integration for Reliable and Efficient Visual Question Answering](../../ICLR2026/multimodal_vlm/knowledge_exchange_with_confidence_cost-effective_llm_integration_for_reliable_a.md)
 - [\[ACL 2025\] MAGIC-VQA: Multimodal and Grounded Inference with Commonsense Knowledge for Visual Question Answering](../../ACL2025/multimodal_vlm/magic-vqa_multimodal_and_grounded_inference_with_commonsense_knowledge_for_visua.md)
 - [\[CVPR 2026\] VQ-VA World: Towards High-Quality Visual Question-Visual Answering](../../CVPR2026/multimodal_vlm/vq-va_world_towards_high-quality_visual_question-visual_answering.md)
 - [\[CVPR 2026\] VKG-QA: Visual Knowledge Graph-based Question Answer for Large Multimodal Models](../../CVPR2026/multimodal_vlm/vkg-qa_visual_knowledge_graph-based_question_answer_for_large_multimodal_models.md)
-- [\[ICLR 2026\] Meta-Adaptive Prompt Distillation for Few-Shot Visual Question Answering](../../ICLR2026/multimodal_vlm/meta-adaptive_prompt_distillation_for_few-shot_visual_question_answering.md)
-- [\[CVPR 2026\] Love Me, Love My Label: Rethinking the Role of Labels in Prompt Retrieval for Visual In-Context Learning](../../CVPR2026/multimodal_vlm/love_me_love_my_label_rethinking_the_role_of_labels_in_prompt_retrieval_for_visu.md)
 
 </div>
 

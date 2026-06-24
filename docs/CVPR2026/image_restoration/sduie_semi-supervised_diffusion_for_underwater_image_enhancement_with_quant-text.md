@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SDUIE: Semi-Supervised Diffusion for Underwater Image Enhancement with Quant-Text Dual Control
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] To address the issue where existing underwater image enhancement methods only provide fixed outputs despite varying user preferences, SDUIE proposes a semi-supervised dual-branch diffusion framework. It enables **continuous numerical adjustment** via a fusion factor $\alpha$ (SDUIE-Quant) and **semantic adjustment** vi
+  [CVPR 2026][Image Restoration][Underwater Image Enhancement] To address the issue where existing underwater image enhancement methods only provide fixed outputs despite varying user preferences, SDUIE proposes a semi-supervised dual-branch diffusion framework. It enables **continuous numerical adjustment** via a fusion factor $\alpha$ (SDUIE-Quant) and **semantic adjustment** via natural language prompts (SDUIE-Text), achieving SOTA performance while preserving underwater aes…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Underwater Image Enhancement"
+  - "Semi-supervised Diffusion"
+  - "LoRA Weight Fusion"
+  - "Controllable Enhancement Level"
+  - "Text-guided"
 date: 2026-05-08
-content_hash: d98d11151fd83b3f
+content_hash: 896ea274a0a4ffe5
 ---
+
 # SDUIE: Semi-Supervised Diffusion for Underwater Image Enhancement with Quant-Text Dual Control
 
 **Conference**: CVPR 2026  
@@ -135,15 +141,14 @@ Objective scores for SDUIE-Quant across different $\alpha$ values (UCCS) increas
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Restore Text First, Enhance Image Later: Two-Stage Scene Text Image Super-Resolution with Glyph Structure Guidance](restore_text_first_enhance_image_later_two-stage_scene_text_image_super-resoluti.md)
+- [\[CVPR 2026\] Dual Ascent Diffusion for Inverse Problems](dual_ascent_diffusion_for_inverse_problems.md)
 - [\[ICML 2026\] Semi-Supervised Neural Super-Resolution for Mesh-Based Simulations](../../ICML2026/image_restoration/semi-supervised_neural_super-resolution_for_mesh-based_simulations.md)
+- [\[CVPR 2026\] Restore Text First, Enhance Image Later: Two-Stage Scene Text Image Super-Resolution with Glyph Structure Guidance](restore_text_first_enhance_image_later_two-stage_scene_text_image_super-resoluti.md)
 - [\[CVPR 2026\] IFCSR: Inference-Free Fidelity-Realism Control for One-Step Diffusion-based Real-World Image Super-Resolution](ifcsr_inference-free_fidelity-realism_control_for_one-step_diffusion-based_real-.md)
 - [\[CVPR 2026\] Bi-Bridge: Bidirectional Diffusion Bridges for Low-Light Image Enhancement](bi-bridge_bidirectional_diffusion_bridges_for_low-light_image_enhancement.md)
-- [\[CVPR 2026\] MR. Illuminate: Zero-Shot Low-Light Image Enhancement with Diffusion Prior](mr_illuminate_zero-shot_low-light_image_enhancement_with_diffusion_prior.md)
 
 </div>
 

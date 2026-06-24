@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EAMamba: Efficient All-Around Vision State Space Model for Image Restoration
 description: >-
-  [ICCV 2025][Image Restoration][Vision Mamba] This paper proposes EAMamba, a framework that introduces a Multi-Head Selective Scan Module (MHSSM) and an all-around scanning strategy to achieve multi-directional scanning w…
+  [ICCV 2025][Image Restoration][Vision Mamba] This paper proposes EAMamba, a framework that introduces a Multi-Head Selective Scan Module (MHSSM) and an all-around scanning strategy to achieve multi-directional scanning without increasing computational complexity or parameter count. EAMamba addresses the computational overhead and local pixel forgetting issues of Vision Mamba in image restoration, achieving 31–89% FLOPs reduction while maintaining competitive performance acros…
 tags:
   - "ICCV 2025"
   - "Image Restoration"
@@ -11,7 +11,7 @@ tags:
   - "multi-head selective scan"
   - "all-around scanning"
 date: 2026-05-08
-content_hash: 6c1049508eb5e272
+content_hash: 804f42c7e90508d1
 ---
 
 # EAMamba: Efficient All-Around Vision State Space Model for Image Restoration
@@ -126,11 +126,11 @@ EAMamba adopts a UNet encoder-decoder architecture comprising a 4-level encoder 
 
 ## Related Papers
 
+- [\[CVPR 2025\] Efficient Visual State Space Model for Image Deblurring](../../CVPR2025/image_restoration/efficient_visual_state_space_model_for_image_deblurring.md)
 - [\[ICCV 2025\] PRE-Mamba: A 4D State Space Model for Ultra-High-Frequent Event Camera Deraining](pre-mamba_a_4d_state_space_model_for_ultra-high-frequent_event_camera_deraining.md)
-- [\[AAAI 2026\] MFmamba: A Multi-function Network for Panchromatic Image Resolution Restoration Based on State-Space Model](../../AAAI2026/image_restoration/mfmamba_a_multi-function_network_for_panchromatic_image_resolution_restoration_b.md)
-- [\[ICCV 2025\] Efficient Concertormer for Image Deblurring and Beyond](efficient_concertormer_for_image_deblurring_and_beyond.md)
-- [\[ICCV 2025\] Towards a Universal Image Degradation Model via Content-Degradation Disentanglement](towards_a_universal_image_degradation_model_via_content-degradation_disentanglem.md)
-- [\[ICCV 2025\] Emulating Self-Attention with Convolution for Efficient Image Super-Resolution](emulating_self-attention_with_convolution_for_efficient_image_super-resolution.md)
+- [\[CVPR 2025\] MambaIRv2: Attentive State Space Restoration](../../CVPR2025/image_restoration/mambairv2_attentive_state_space_restoration.md)
+- [\[ECCV 2024\] MambaIR: A Simple Baseline for Image Restoration with State-Space Model](../../ECCV2024/image_restoration/mambair_a_simple_baseline_for_image_restoration_with_state-space_model.md)
+- [\[CVPR 2025\] QMambaBSR: Burst Image Super-Resolution with Query State Space Model](../../CVPR2025/image_restoration/qmambabsr_burst_image_super-resolution_with_query_state_space_model.md)
 
 </div>
 

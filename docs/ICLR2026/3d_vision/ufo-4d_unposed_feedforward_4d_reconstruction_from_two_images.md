@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] UFO-4D: Unposed Feedforward 4D Reconstruction from Two Images
 description: >-
-  [ICLR 2026][3D Vision][4D Reconstruction] Ours proposes UFO-4D, a unified feedforward framework that directly predicts dynamic 3D Gaussian representations from only two unposed images, achieving joint consistent estimation of 3D geometry, 3D motion, and camera pose, with performance improvements of up to 3× over existing methods on geometry and motion benchmar
+  [3D Vision] Ours proposes UFO-4D, a unified feedforward framework that directly predicts dynamic 3D Gaussian representations from only two unposed images, achieving joint consistent estimation of 3D geometry, 3D motion, and camera pose, with performance improvements of up to 3× over existing methods on geometry and motion benchmarks.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 4D Reconstruction
-  - Dynamic 3D Gaussians
-  - Feedforward
-  - Scene Flow
-  - Unposed
-  - Self-Supervised
+  - "3D Vision"
 date: 2026-05-08
-content_hash: 8a3e45c310b181b7
+content_hash: f06db6b8522b0116
 ---
+
 # UFO-4D: Unposed Feedforward 4D Reconstruction from Two Images
 
 - **Conference**: ICLR 2026

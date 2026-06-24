@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] FlexRibbon: Joint Sequence and Structure Pretraining for Protein Modeling
 description: >-
-  [ICLR 2026][Computational Biology][Diffusion Model] FlexRibbon bidirectionally couples amino acid sequences and 3D structures during pretraining using "Masked Language Modeling + Diffusion Denoising." Without relying on MSAs, it refreshes SOTA performance across 12 tasks—including antibody/nanobody CDRs, peptide interfaces, protein-ligand docking, and functional annotat
+  [ICLR 2026][Computational Biology][Protein Foundation Models] FlexRibbon bidirectionally couples amino acid sequences and 3D structures during pretraining using "Masked Language Modeling + Diffusion Denoising." Without relying on MSAs, it refreshes SOTA performance across 12 tasks—including antibody/nanobody CDRs, peptide interfaces, protein-ligand docking, and functional annotation—significantly outperforming MSA-based methods like AlphaFold in high-mutation and low-homology…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Diffusion Model
-  - single-sequence
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Protein Foundation Models"
+  - "Joint Sequence-Structure Pretraining"
+  - "Diffusion Models"
+  - "Masked Language Model"
+  - "Antibody Design"
+  - "single-sequence"
 date: 2026-05-08
-content_hash: d9b136c473dd3ebf
+content_hash: b5279a5564f45ed0
 ---
+
 # FlexRibbon: Joint Sequence and Structure Pretraining for Protein Modeling
 
 **Conference**: ICLR 2026  
@@ -117,9 +122,9 @@ Antibody/Nanobody design (Input antigen sequence + structure, design all CDRs an
 
 - [\[ICLR 2026\] A Joint Diffusion Model with Pre-Trained Priors for RNA Sequence-Structure Co-Design](a_joint_diffusion_model_with_pre-trained_priors_for_rna_sequence-structure_co-de.md)
 - [\[ICLR 2026\] SynCoGen: Synthesizable 3D Molecule Generation via Joint Reaction and Coordinate Modeling](syncogen_synthesizable_3d_molecule_generation_via_joint_reaction_and_coordinate_.md)
+- [\[ICLR 2026\] Align Your Structures: Generating Trajectories with Structure Pretraining for Molecular Dynamics](align_your_structures_generating_trajectories_with_structure_pretraining_for_mol.md)
 - [\[ICLR 2026\] PRISM: Enhancing Protein Inverse Folding through Fine-Grained Retrieval on Structure-Sequence Multimodal Representations](prism_enhancing_protein_inverse_folding_through_fine-_grained_retrieval_on_struc.md)
 - [\[ICLR 2026\] AntigenLM: Structure-Aware DNA Language Modeling for Influenza](antigenlm_structure-aware_dna_language_modeling_for_influenza.md)
-- [\[ICML 2026\] Protein Autoregressive Modeling via Multiscale Structure Generation](../../ICML2026/computational_biology/protein_autoregressive_modeling_via_multiscale_structure_generation.md)
 
 </div>
 

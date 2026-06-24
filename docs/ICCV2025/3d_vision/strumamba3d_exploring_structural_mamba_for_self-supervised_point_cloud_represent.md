@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] StruMamba3D: Exploring Structural Mamba for Self-supervised Point Cloud Representation Learning
 description: >-
-  [ICCV 2025][3D Vision][Point cloud representation learning] StruMamba3D is proposed to maintain 3D point adjacency relationships by endowing SSM hidden states with spatial positional attributes (spatial states)…
+  [ICCV 2025][3D Vision][Point cloud representation learning] StruMamba3D is proposed to maintain 3D point adjacency relationships by endowing SSM hidden states with spatial positional attributes (spatial states), and introduces a sequence-length-adaptive strategy to address the sequence length discrepancy between pre-training and downstream tasks. The method achieves 92.75% accuracy on the hardest ScanObjectNN split and 95.1% on ModelNet40, both representing single-modality SO…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "self-supervised learning"
   - "structural modeling"
 date: 2026-05-08
-content_hash: 801fa0720ef7c537
+content_hash: e8d99d114f062bdf
 ---
 
 # StruMamba3D: Exploring Structural Mamba for Self-supervised Point Cloud Representation Learning
@@ -206,9 +206,9 @@ Given a raw point cloud $P_{raw} \in \mathbb{R}^{N_0 \times 3}$, input points $P
 
 - [\[ICCV 2025\] Towards More Diverse and Challenging Pre-training for Point Cloud Learning: Self-Supervised Cross Reconstruction with Decoupled Views](towards_more_diverse_and_challenging_pre-training_for_point_cloud_learning_self-.md)
 - [\[ICCV 2025\] Efficient Spiking Point Mamba for Point Cloud Analysis](efficient_spiking_point_mamba_for_point_cloud_analysis.md)
+- [\[CVPR 2025\] Spectral Informed Mamba for Robust Point Cloud Processing](../../CVPR2025/3d_vision/spectral_informed_mamba_for_robust_point_cloud_processing.md)
+- [\[CVPR 2025\] PMA: Towards Parameter-Efficient Point Cloud Understanding via Point Mamba Adapter](../../CVPR2025/3d_vision/pma_towards_parameter-efficient_point_cloud_understanding_via_point_mamba_adapte.md)
 - [\[ICCV 2025\] RayZer: A Self-supervised Large View Synthesis Model](rayzer_a_self-supervised_large_view_synthesis_model.md)
-- [\[ICCV 2025\] S3E: Self-Supervised State Estimation for Radar-Inertial System](s3e_self-supervised_state_estimation_for_radar-inertial_system.md)
-- [\[ICCV 2025\] UST-SSM: Unified Spatio-Temporal State Space Models for Point Cloud Video Modeling](ust-ssm_unified_spatio-temporal_state_space_models_for_point_cloud_video_modelin.md)
 
 </div>
 

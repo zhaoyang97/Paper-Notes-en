@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bayesian Test-Time Adaptation via Dirichlet feature projection and GMM-Driven Inference for Motor Imagery EEG Decoding
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] BTTA-DG compresses the moment-to-moment prediction sequence of each EEG trial into a Dirichlet parameter vector. It utilizes a GMM fitted on historical trials as the likelihood and the deep model output as the prior to perform a gradient-free Bayesian posterior calibration. It achieves SOTA and real-time performance (1
+  [ICLR2026][Self-Supervised Learning][Test-time adaptation] BTTA-DG compresses the moment-to-moment prediction sequence of each EEG trial into a Dirichlet parameter vector. It utilizes a GMM fitted on historical trials as the likelihood and the deep model output as the prior to perform a gradient-free Bayesian posterior calibration. It achieves SOTA and real-time performance (15.7 ms/trial) in cross-subject/cross-session transfer for motor imagery BCI.
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR2026"
+  - "Self-Supervised Learning"
+  - "Test-time adaptation"
+  - "EEG motor imagery"
+  - "Dirichlet distribution"
+  - "Gaussian mixture"
+  - "Bayesian calibration"
 date: 2026-05-08
-content_hash: 1f3955db94e16c7e
+content_hash: 71704178d2ab51cb
 ---
+
 # Bayesian Test-Time Adaptation via Dirichlet feature projection and GMM-Driven Inference for Motor Imagery EEG Decoding
 
 **Conference**: ICLR2026  
@@ -143,8 +149,8 @@ Breakdown of components (average across datasets):
 - [\[ICLR 2026\] Architecture-Agnostic Test-Time Adaptation via Backprop-Free Embedding Alignment](architecture-agnostic_test-time_adaptation_via_backprop-free_embedding_alignment.md)
 - [\[ICLR 2026\] NEO — No-Optimization Test-Time Adaptation through Latent Re-Centering](neo_no-optimization_test-time_adaptation_through_latent_re-centering.md)
 - [\[CVPR 2026\] Energy Waveify and Redistribution for Test-Time Adaptation: A Control System Perspective](../../CVPR2026/self_supervised/energy_waveify_and_redistribution_for_test-time_adaptation_a_control_system_pers.md)
-- [\[ICLR 2026\] Test-Time Efficient Pretrained Model Portfolios for Time Series Forecasting](test-time_efficient_pretrained_model_portfolios_for_time_series_forecasting.md)
 - [\[ICLR 2026\] ZeroSiam: An Efficient Asymmetry for Test-Time Entropy Optimization without Collapse](zerosiam_an_efficient_asymmetry_for_test-time_entropy_optimization_without_colla.md)
+- [\[ICLR 2026\] Test-Time Efficient Pretrained Model Portfolios for Time Series Forecasting](test-time_efficient_pretrained_model_portfolios_for_time_series_forecasting.md)
 
 </div>
 

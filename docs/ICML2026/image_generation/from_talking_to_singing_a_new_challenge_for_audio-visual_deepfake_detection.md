@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Talking to Singing: A New Challenge for Audio-Visual Deepfake Detection
 description: >-
-  [ICML 2026][Image Generation][Paper Note] Targeting the "Singing Head" challenge—a difficult domain neglected by existing deepfake detectors—the authors construct the SHDF dataset to quantify the "Talking → Singing" domain shift. They propose the T-AVFD framework, which uses Alpha-CLIP with multi-granularity real/fake text contrastive learning to extract "sema
+  [ICML 2026][Image Generation][Deepfake] Targeting the "Singing Head" challenge—a difficult domain neglected by existing deepfake detectors—the authors construct the SHDF dataset to quantify the "Talking → Singing" domain shift. They propose the T-AVFD framework, which uses Alpha-CLIP with multi-granularity real/fake text contrastive learning to extract "semantic patterns of real faces." A differential weight module adaptively fuses lip-audio consistency and facial semantics.…
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML 2026"
+  - "Image Generation"
+  - "Deepfake"
+  - "Cross-scenario generalization"
+  - "Text-guided"
+  - "Singing-driven avatar"
+  - "Multimodal fusion"
 date: 2026-05-08
-content_hash: c71626456ce62e4b
+content_hash: 78a3700f38702f24
 ---
+
 # From Talking to Singing: A New Challenge for Audio-Visual Deepfake Detection
 
 **Conference**: ICML 2026  

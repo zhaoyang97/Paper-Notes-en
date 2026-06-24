@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Robust Tool Use via Fission-GRPO: Learning to Recover from Execution Errors
 description: >-
-  [ACL 2026][LLM Agent][Reinforcement Learning] Ours proposes Fission-GRPO, which dynamically transforms tool execution errors into online-policy correction training instances within the RL loop. By utilizing a learned error simulator to generate diagnostic feedback and resampling recovery trajectories, it improves the error recovery rate of Qwen3-8B by 5.7% and the
+  [ACL 2026][LLM Agent][Tool Use] Ours proposes Fission-GRPO, which dynamically transforms tool execution errors into online-policy correction training instances within the RL loop. By utilizing a learned error simulator to generate diagnostic feedback and resampling recovery trajectories, it improves the error recovery rate of Qwen3-8B by 5.7% and the overall accuracy from 42.75% to 46.75%.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Reinforcement Learning
-  - GRPO
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Tool Use"
+  - "Error Recovery"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Error Simulator"
 date: 2026-05-08
-content_hash: 3b2e253e70827c68
+content_hash: c9982a0900e4a558
 ---
+
 # Robust Tool Use via Fission-GRPO: Learning to Recover from Execution Errors
 
 **Conference**: ACL 2026  
@@ -136,10 +140,10 @@ Generalization results on TAU-Bench show up to a +17.4% Gain on Retail.
 ## Related Papers
 
 - [\[ACL 2026\] ToolOmni: Enabling Open-World Tool Use via Agentic Learning with Proactive Retrieval and Grounded Execution](toolomni_enabling_open-world_tool_use_via_agentic_learning_with_proactive_retrie.md)
-- [\[ACL 2026\] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments](feedback-driven_tool-use_improvements_in_large_language_models_via_automated_bui.md)
 - [\[ICML 2026\] Recovering Policy-Induced Errors: Benchmarking and Trajectory Synthesis for Robust GUI Agents](../../ICML2026/llm_agent/recovering_policy-induced_errors_benchmarking_and_trajectory_synthesis_for_robus.md)
-- [\[ACL 2026\] Temp-R1: A Unified Autonomous Agent for Complex Temporal KGQA via Reverse Curriculum Reinforcement Learning](temp-r1_a_unified_autonomous_agent_for_complex_temporal_kgqa_via_reverse_curricu.md)
-- [\[ACL 2026\] ToolGrad: Efficient Tool-use Dataset Generation with Textual "Gradients"](toolgrad_efficient_tool-use_dataset_generation_with_textual_gradients.md)
+- [\[ACL 2026\] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments](feedback-driven_tool-use_improvements_in_large_language_models_via_automated_bui.md)
+- [\[ACL 2026\] When Agents Look the Same: Quantifying Distillation-Induced Similarity in Tool-Use Behaviors](when_agents_look_the_same_quantifying_distillation-induced_similarity_in_tool-us.md)
+- [\[CVPR 2026\] RAAS: LLM Agentic System Architecture Search with GRPO](../../CVPR2026/llm_agent/raas_llm_agentic_system_architecture_search_with_grpo.md)
 
 </div>
 

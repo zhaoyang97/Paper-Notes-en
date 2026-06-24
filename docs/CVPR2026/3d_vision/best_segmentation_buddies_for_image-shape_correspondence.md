@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Best Segmentation Buddies for Image-Shape Correspondence
 description: >-
-  [CVPR 2026][3D Vision][Best Buddies] This paper proposes Best Segmentation Buddies (BSB), which relaxes the hard "pixel-vertex mutual nearest neighbor" constraint—almost impossible to satisfy between images and 3D meshes—into a "segment-level mutual nearest neighbor." This allows matching a clicked semantic part from an in-the-wild image to its correspond
+  [CVPR 2026][3D Vision][Image-shape correspondence] This paper proposes Best Segmentation Buddies (BSB), which relaxes the hard "pixel-vertex mutual nearest neighbor" constraint—almost impossible to satisfy between images and 3D meshes—into a "segment-level mutual nearest neighbor." This allows matching a clicked semantic part from an in-the-wild image to its corresponding part on an untextured 3D mesh in an unannotated, zero-training manner.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Best Buddies
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Image-shape correspondence"
+  - "cross-modal matching"
+  - "feature distillation"
+  - "zero-shot segmentation"
+  - "Best Buddies"
 date: 2026-05-08
-content_hash: 7903d08b7f546077
+content_hash: b7a4fa0c7fd84b49
 ---
+
 # Best Segmentation Buddies for Image-Shape Correspondence
 
 **Conference**: CVPR 2026  
@@ -138,11 +143,11 @@ BSB significantly outperforms baselines even when they are given more lenient "s
 
 ## Related Papers
 
-- [\[CVPR 2026\] GeoFree-CoSeg: Unsupervised Point Cloud-Image Cross-Modal Co-Segmentation Without Geometric Alignment](geofree-coseg_unsupervised_point_cloud-image_cross-modal_co-segmentation_without.md)
-- [\[CVPR 2026\] Generalizable Structure-Aware Keypoint Correspondence for Category-Unified 3D Single Object Tracking](generalizable_structure-aware_keypoint_correspondence_for_category-unified_3d_si.md)
-- [\[CVPR 2026\] MimiCAT: Mimic with Correspondence-Aware Cascade-Transformer for Category-Free 3D Pose Transfer](mimicat_mimic_with_correspondence-aware_cascade-transformer_for_category-free_3d.md)
-- [\[CVPR 2026\] Learning 3D Shape Fidelity Metric from Real-world Distortions](learning_3d_shape_fidelity_metric_from_real-world_distortions.md)
-- [\[CVPR 2026\] Generalized-CVO: Fast and Correspondence-Free Local Point Cloud Registration with Second Order Riemannian Optimization](generalized-cvo_fast_and_correspondence-free_local_point_cloud_registration_with.md)
+- [\[CVPR 2026\] SGSoft: Learning Fused Semantic-Geometric Features for 3D Shape Correspondence via Template-Guided Soft Signals](sgsoft_learning_fused_semantic-geometric_features_for_3d_shape_correspondence_vi.md)
+- [\[CVPR 2026\] UniCorrn: Unified Correspondence Transformer Across 2D and 3D](unicorrn_unified_correspondence_transformer_across_2d_and_3d.md)
+- [\[CVPR 2026\] Image-to-Point Cloud Feature Back-Projection for Multimodal Training of 3D Semantic Segmentation](image-to-point_cloud_feature_back-projection_for_multimodal_training_of_3d_seman.md)
+- [\[CVPR 2026\] PatchAlign3D: Local Feature Alignment for Dense 3D Shape Understanding](patchalign3d_local_feature_alignment_for_dense_3d_shape_understanding.md)
+- [\[CVPR 2025\] Denoising Functional Maps: Diffusion Models for Shape Correspondence](../../CVPR2025/3d_vision/denoising_functional_maps_diffusion_models_for_shape_correspondence.md)
 
 </div>
 

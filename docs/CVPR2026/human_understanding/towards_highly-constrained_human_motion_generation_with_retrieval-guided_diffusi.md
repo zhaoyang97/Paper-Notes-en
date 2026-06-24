@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Highly-Constrained Human Motion Generation with Retrieval-Guided Diffusion Noise Optimization
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] Addressing extremely difficult spatial-temporal/numerical constraints (e.g., "passing through a 0.4m narrow gap," "walking 4 meters in exactly 6 steps"), this paper introduces a retrieval channel into the training-free Diffusion Noise Optimization (DNO) framework. It first parses the most difficult constraints via rela
+  [CVPR 2026][Human Understanding][Human motion generation] Addressing extremely difficult spatial-temporal/numerical constraints (e.g., "passing through a 0.4m narrow gap," "walking 4 meters in exactly 6 steps"), this paper introduces a retrieval channel into the training-free Diffusion Noise Optimization (DNO) framework. It first parses the most difficult constraints via relational task analysis, retrieves reference motions from a dataset to invert them into reference noise…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Human motion generation"
+  - "diffusion noise optimization"
+  - "retrieval-augmented"
+  - "constrained generation"
+  - "training-free"
 date: 2026-05-08
-content_hash: 252d52d02d5617ff
+content_hash: 727d7218446b8ffc
 ---
+
 # Towards Highly-Constrained Human Motion Generation with Retrieval-Guided Diffusion Noise Optimization
 
 **Conference**: CVPR 2026  
@@ -147,16 +153,16 @@ Constraint errors are generally reduced by more than an order of magnitude compa
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Towards Decompositional Human Motion Generation with Energy-Based Diffusion Models](towards_decompositional_human_motion_generation_with_energy-based_diffusion_mode.md)
-- [\[CVPR 2026\] Stability-Driven Motion Generation for Object-Guided Human-Human Co-Manipulation](stability-driven_motion_generation_for_object-guided_human-human_co-manipulation.md)
+- [\[CVPR 2026\] Causal Motion Diffusion Models for Autoregressive Motion Generation](causal_motion_diffusion_models_for_autoregressive_motion_generation.md)
 - [\[CVPR 2026\] FloodDiffusion: Tailored Diffusion Forcing for Streaming Motion Generation](flooddiffusion_tailored_diffusion_forcing_for_streaming_motion_generation.md)
 - [\[CVPR 2026\] LaMoGen: Language to Motion Generation Through LLM-Guided Symbolic Inference](lamogen_language_to_motion_generation_through_llm-guided_symbolic_inference.md)
-- [\[CVPR 2026\] Ultra Diffusion Poser: Diffusion-Based Human Motion Tracking From Sparse Inertial Sensors and Ranging-Based Between-Sensor Distances](ultra_diffusion_poser_diffusion-based_human_motion_tracking_from_sparse_inertial.md)
+- [\[CVPR 2026\] FrankenMotion: Part-level Human Motion Generation and Composition](frankenmotion_part-level_human_motion_generation_and_composition.md)
 
 </div>
 

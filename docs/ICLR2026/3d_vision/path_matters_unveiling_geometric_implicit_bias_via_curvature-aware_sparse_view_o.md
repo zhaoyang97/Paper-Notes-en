@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Path Matters: Unveiling Geometric Implicit Bias via Curvature-Aware Sparse View Optimization
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] This paper reveals two types of geometric implicit biases in 3DGS under sparse views—stronger supervision requirements for high-curvature regions and sensitivity to the smoothness of input view trajectories. Accordingly, it proposes a "Curvature-aware Camera Trajectory Optimization + Synthetic View Generation" framewor
+  [ICLR 2026][3D Vision][Sparse view reconstruction] This paper reveals two types of geometric implicit biases in 3DGS under sparse views—stronger supervision requirements for high-curvature regions and sensitivity to the smoothness of input view trajectories. Accordingly, it proposes a "Curvature-aware Camera Trajectory Optimization + Synthetic View Generation" framework. This approach ensures that pseudo-label views cover more surface details while maintaining smoothness…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Sparse view reconstruction"
+  - "3D Gaussian Splatting"
+  - "Camera trajectory optimization"
+  - "Curvature coverage"
+  - "Implicit bias"
 date: 2026-05-08
-content_hash: 1e6a02f261551a86
+content_hash: 3b281fd95124eebc
 ---
+
 # Path Matters: Unveiling Geometric Implicit Bias via Curvature-Aware Sparse View Optimization
 
 **Conference**: ICLR 2026  
@@ -138,9 +144,9 @@ Removing components one by one on DTU (PSNR / CD, α=0.2):
 
 - [\[ICLR 2026\] Neural Compression of 3D Meshes using Sparse Implicit Representation](neural_compression_of_3d_meshes_using_sparse_implicit_representation.md)
 - [\[CVPR 2026\] Intrinsic Geometry-Appearance Consistency Optimization for Sparse-View Gaussian Splatting](../../CVPR2026/3d_vision/intrinsic_geometry-appearance_consistency_optimization_for_sparse-view_gaussian_.md)
+- [\[ICLR 2026\] TINKER: Diffusion's Gift to 3D--Multi-View Consistent Editing From Sparse Inputs without Per-Scene Optimization](tinker_diffusions_gift_to_3d--multi-view_consistent_editing_from_sparse_inputs_w.md)
+- [\[CVPR 2026\] Coverage Optimization for Camera View Selection](../../CVPR2026/3d_vision/coverage_optimization_for_camera_view_selection.md)
 - [\[AAAI 2026\] Opt3DGS: Optimizing 3D Gaussian Splatting with Adaptive Exploration and Curvature-Aware Exploitation](../../AAAI2026/3d_vision/opt3dgs_optimizing_3d_gaussian_splatting_with_adaptive_exploration_and_curvature.md)
-- [\[ICLR 2026\] Test-Time Optimization of 3D Point Cloud LLM via Manifold-Aware In-Context Guidance and Refinement](test-time_optimization_of_3d_point_cloud_llm_via_manifold-aware_in-context_guida.md)
-- [\[CVPR 2026\] SMVRT: Implicit Human 3D Modeling Using Sparse Multi-View Volumetric Reconstruction with Transformer Fusion](../../CVPR2026/3d_vision/smvrt_implicit_human_3d_modeling.md)
 
 </div>
 

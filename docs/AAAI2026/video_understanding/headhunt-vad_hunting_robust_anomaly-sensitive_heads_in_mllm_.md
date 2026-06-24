@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] HeadHunt-VAD: Hunting Robust Anomaly-Sensitive Heads in MLLM for Tuning-Free Video Anomaly Detection
 description: >-
-  [AAAI 2026][Video Understanding][Video Anomaly Detection] This paper proposes HeadHunt-VAD, which systematically identifies a sparse set of anomaly-sensitive and stable attention heads within a frozen MLLM…
+  [AAAI 2026 Oral][Video Understanding][Video Anomaly Detection] This paper proposes HeadHunt-VAD, which systematically identifies a sparse set of anomaly-sensitive and stable attention heads within a frozen MLLM, bypassing the information loss inherent in text-based outputs. Using a lightweight classifier, it achieves efficient tuning-free video anomaly detection, establishing state-of-the-art performance among tuning-free methods on UCF-Crime and XD-Violence.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Video Understanding"
   - "Video Anomaly Detection"
   - "Multimodal Large Language Model"
@@ -12,7 +12,7 @@ tags:
   - "Tuning-Free"
   - "Internal Representation Probing"
 date: 2026-05-08
-content_hash: adfdb83fff3e9054
+content_hash: f5358cf860633e51
 ---
 
 # HeadHunt-VAD: Hunting Robust Anomaly-Sensitive Heads in MLLM for Tuning-Free Video Anomaly Detection
@@ -134,10 +134,10 @@ Compared to weakly supervised methods on UCF-Crime: HeadHunt-VAD (87.03%) approa
 ## Related Papers
 
 - [\[CVPR 2026\] No Need For Real Anomaly: MLLM Empowered Zero-Shot Video Anomaly Detection](../../CVPR2026/video_understanding/no_need_for_real_anomaly_mllm_empowered_zero-shot_video_anomaly_detection.md)
-- [\[NeurIPS 2025\] VADTree: Explainable Training-Free Video Anomaly Detection via Hierarchical Granularity](../../NeurIPS2025/video_understanding/vadtree_explainable_training-free_video_anomaly_detection_via_hierarchical_granu.md)
-- [\[AAAI 2026\] RefineVAD: Semantic-Guided Feature Recalibration for Weakly Supervised Video Anomaly Detection](refinevad_semantic-guided_feature_recalibration_for_weakly_supervised_video_anom.md)
-- [\[AAAI 2026\] Learning to Tell Apart: Weakly Supervised Video Anomaly Detection via Disentangled Semantic Alignment](learning_to_tell_apart_weakly_supervised_video_anomaly_detection_via_disentangle.md)
+- [\[CVPR 2026\] Alert-CLIP: Abnormality-aware Latent-Enhanced Representation Tuning of CLIP for Video Anomaly Detection](../../CVPR2026/video_understanding/alert-clip_abnormality-aware_latent-enhanced_representation_tuning_of_clip_for_v.md)
+- [\[CVPR 2026\] Fine-VAD: Towards Fine-Grained Video Anomaly Detection via Progressive Cross-Granularity Learning](../../CVPR2026/video_understanding/fine-vad_towards_fine-grained_video_anomaly_detection_via_progressive_cross-gran.md)
 - [\[ICLR 2026\] Steering and Rectifying Latent Representation Manifolds in Frozen Multi-Modal LLMs for Video Anomaly Detection](../../ICLR2026/video_understanding/steering_and_rectifying_latent_representation_manifolds_in_frozen_multi-modal_ll.md)
+- [\[NeurIPS 2025\] VADTree: Explainable Training-Free Video Anomaly Detection via Hierarchical Granularity](../../NeurIPS2025/video_understanding/vadtree_explainable_training-free_video_anomaly_detection_via_hierarchical_granu.md)
 
 </div>
 

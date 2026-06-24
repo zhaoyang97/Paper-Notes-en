@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards One-for-All Anomaly Detection for Tabular Data
 description: >-
-  [ICML 2026][Self-Supervised Learning][One-for-All] OFA-TAD is proposed: using "neighbor distance" as a cross-domain universal anomaly cue, multi-view distance representations are extracted from metric spaces induced by various feature transformations. These are adaptively fused using a Mixture of Experts (MoE) gating mechanism. After a single training phase, the model
+  [ICML 2026][Self-Supervised Learning][Tabular Anomaly Detection] OFA-TAD is proposed: using "neighbor distance" as a cross-domain universal anomaly cue, multi-view distance representations are extracted from metric spaces induced by various feature transformations. These are adaptively fused using a Mixture of Experts (MoE) gating mechanism. After a single training phase, the model generalizes directly to unseen tabular datasets for anomaly detection without any target-domain…
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
-  - One-for-All
+  - "ICML 2026"
+  - "Self-Supervised Learning"
+  - "Tabular Anomaly Detection"
+  - "One-for-All"
+  - "Multi-view Distance"
+  - "Mixture of Experts"
+  - "Pseudo-anomaly Synthesis"
 date: 2026-05-08
-content_hash: 774c01c26c6a0999
+content_hash: 359d35067f709e7c
 ---
+
 # Towards One-for-All Anomaly Detection for Tabular Data
 
 **Conference**: ICML 2026  
@@ -134,15 +139,16 @@ Interpretation: While "winners" vary on individual datasets, OFA-TAD achieves th
 - Value: ⭐⭐⭐⭐ Significant practical value for large-scale TAD deployment by eliminating retraining.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] One Filters All: A Generalist Filter for State Estimation](../../NeurIPS2025/self_supervised/one_filters_all_a_generalist_filter_for_state_estimation.md)
 - [\[ICML 2026\] From Zero to Hero: Advancing Zero-Shot Foundation Models for Tabular Outlier Detection](from_zero_to_hero_advancing_zero-shot_foundation_models_for_tabular_outlier_dete.md)
+- [\[NeurIPS 2025\] One Filters All: A Generalist Filter for State Estimation](../../NeurIPS2025/self_supervised/one_filters_all_a_generalist_filter_for_state_estimation.md)
 - [\[NeurIPS 2025\] TabSTAR: A Tabular Foundation Model for Tabular Data with Text Fields](../../NeurIPS2025/self_supervised/tabstar_a_tabular_foundation_model_for_tabular_data_with_text_fields.md)
+- [\[ICML 2026\] Inconsistency-Aware Minimization: Improving Generalization with Unlabeled Data](inconsistency-aware_minimization_improving_generalization_with_unlabeled_data.md)
 - [\[ICML 2025\] Towards Benchmarking Foundation Models for Tabular Data With Text](../../ICML2025/self_supervised/towards_benchmarking_foundation_models_for_tabular_data_with_text.md)
-- [\[NeurIPS 2025\] TabArena: A Living Benchmark for Machine Learning on Tabular Data](../../NeurIPS2025/self_supervised/tabarena_a_living_benchmark_for_machine_learning_on_tabular_data.md)
 
 </div>
 

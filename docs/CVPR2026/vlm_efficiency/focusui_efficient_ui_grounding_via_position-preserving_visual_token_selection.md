@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FocusUI: Efficient UI Grounding via Position-Preserving Visual Token Selection
 description: >-
-  [CVPR 2026][Multimodal VLM][UI grounding] FocusUI allow UI grounding VLMs to retain only a few instruction-related visual tokens—first using a lightweight scorer trained with "instruction $\times$ patch" saliency supervision to pick key patches, then using POSPAD to compress discarded continuous tokens into a placeholder mark retaining the final coordinate. Th
+  [CVPR 2026][Multimodal Efficiency][UI grounding] FocusUI allow UI grounding VLMs to retain only a few instruction-related visual tokens—first using a lightweight scorer trained with "instruction $\times$ patch" saliency supervision to pick key patches, then using POSPAD to compress discarded continuous tokens into a placeholder mark retaining the final coordinate. This achieves a 1.44× speedup and 17% lower peak VRAM with only a 3.2% accuracy drop when keeping only 30% of vis…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - UI grounding
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "UI grounding"
+  - "visual token selection"
+  - "position preservation"
+  - "saliency scoring"
+  - "efficient inference"
 date: 2026-05-08
-content_hash: 641ff5e3814497d2
+content_hash: c929703baac07cb4
 ---
+
 # FocusUI: Efficient UI Grounding via Position-Preserving Visual Token Selection
 
 **Conference**: CVPR 2026  
@@ -155,11 +160,11 @@ Reducing the retention rate from 100% to 30% speeds up inference by 1.44× and r
 
 ## Related Papers
 
-- [\[ICLR 2026\] Index-Preserving Lightweight Token Pruning for Efficient Document Understanding](../../ICLR2026/multimodal_vlm/index-preserving_lightweight_token_pruning_for_efficient_document_understanding_.md)
-- [\[CVPR 2026\] EmoThinker: Advancing Visual-Acoustic Emotion Analysis via Structural Token Selection and Chain-of-Thought Reasoning](emothinker_advancing_visual-acoustic_emotion_analysis_via_structural_token_selec.md)
-- [\[CVPR 2026\] Widget2Code: From Visual Widgets to UI Code via Multimodal LLMs](widget2code_from_visual_widgets_to_ui_code_via_multimodal_llms.md)
 - [\[CVPR 2026\] GroundVTS: Visual Token Sampling in Multimodal Large Language Models for Video Temporal Grounding](groundvts_visual_token_sampling_in_multimodal_large_language_models_for_video_te.md)
-- [\[CVPR 2026\] UI-Lens: Assessing General MLLMs' Potential to Automate UI Display Quality Assurance](ui-lens_assessing_general_mllms_potential_to_automate_ui_display_quality_assuran.md)
+- [\[CVPR 2026\] One Layer's Trash is Another Layer's Treasure: Adaptive Layer-wise Visual Token Selection in LVLMs](one_layers_trash_is_another_layers_treasure_adaptive_layer-wise_visual_token_sel.md)
+- [\[CVPR 2026\] Hi-Lo Prune: Look at What You'll Lose before Pruning with Hierarchical Token Selection](hi-lo_prune_look_at_what_youll_lose_before_pruning_with_hierarchical_token_selec.md)
+- [\[ICML 2026\] CLIP Tricks You: Training-free Token Pruning for Efficient Pixel Grounding in Large Vision-Language Models](../../ICML2026/vlm_efficiency/clip_tricks_you_training-free_token_pruning_for_efficient_pixel_grounding_in_lar.md)
+- [\[ECCV 2024\] Groma: Localized Visual Tokenization for Grounding Multimodal Large Language Models](../../ECCV2024/vlm_efficiency/groma_localized_visual_tokenization_for_grounding_multimodal_large_language_mode.md)
 
 </div>
 

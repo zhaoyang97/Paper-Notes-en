@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Amortized Active Generation of Pareto Sets
 description: >-
-  [NeurIPS 2025][Computational Biology][Multi-objective optimization] This paper proposes the A-GPS framework, which learns a conditional generative model over the Pareto set to perform online discrete black-box multi-obje…
+  [NeurIPS 2025][Computational Biology][Multi-objective optimization] This paper proposes the A-GPS framework, which learns a conditional generative model over the Pareto set to perform online discrete black-box multi-objective optimization. It employs a non-dominance class probability estimator (CPE) as an implicit substitute for explicit hypervolume computation in PHVI, and achieves amortized posterior preference conditioning via preference direction vectors (without retraini…
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "active learning"
   - "preference conditioning"
 date: 2026-05-08
-content_hash: 0a7fda3cca46b9ba
+content_hash: d0f0f8f56c3d114c
 ---
 
 # Amortized Active Generation of Pareto Sets
@@ -133,9 +133,9 @@ At each iteration, A-GPS: (1) constructs non-dominance labels $z_n$ and preferen
 
 - [\[NeurIPS 2025\] Amortized Sampling with Transferable Normalizing Flows](amortized_sampling_with_transferable_normalizing_flows.md)
 - [\[NeurIPS 2025\] PROSPERO: Active Learning for Robust Protein Design Beyond Wild-Type Neighborhood](prospero_active_learning_for_robust_protein_design_beyond_wild-type_neighborhood.md)
+- [\[ICML 2025\] MF-LAL: Drug Compound Generation Using Multi-Fidelity Latent Space Active Learning](../../ICML2025/computational_biology/mf-lal_drug_compound_generation_using_multi-fidelity_latent_space_active_learnin.md)
 - [\[ICML 2026\] From Feasible to Practical: Pareto-Optimal Synthesis Planning](../../ICML2026/computational_biology/from_feasible_to_practical_pareto-optimal_synthesis_planning.md)
 - [\[NeurIPS 2025\] Unified All-Atom Molecule Generation with Neural Fields](unified_all-atom_molecule_generation_with_neural_fields.md)
-- [\[NeurIPS 2025\] De novo generation of functional terpene synthases using TpsGPT](de_novo_generation_of_functional_terpene_synthases_using_tpsgpt.md)
 
 </div>
 

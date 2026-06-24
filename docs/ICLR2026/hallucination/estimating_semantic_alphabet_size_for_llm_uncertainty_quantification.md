@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Estimating Semantic Alphabet Size for LLM Uncertainty Quantification
 description: >-
-  [ICLR 2026][Hallucination Detection][unseen species] This paper identifies that the classic "Discrete Semantic Entropy" (DSE) systematically underestimates true semantic entropy in low-sample regimes. Drawing from the "unseen species" problem in population ecology, the authors propose a hybrid semantic alphabet size estimator and apply coverage correction to DSE. This al
+  [ICLR 2026][Hallucination Detection][Semantic Entropy] This paper identifies that the classic "Discrete Semantic Entropy" (DSE) systematically underestimates true semantic entropy in low-sample regimes. Drawing from the "unseen species" problem in population ecology, the authors propose a hybrid semantic alphabet size estimator and apply coverage correction to DSE. This allows black-box uncertainty estimation to match or exceed complex SOTA methods like KLE and SNNE while mai…
 tags:
-  - ICLR 2026
-  - Hallucination Detection
-  - unseen species
-  - Good-Turing
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "Semantic Entropy"
+  - "Uncertainty Quantification"
+  - "Black-box methods"
+  - "unseen species"
+  - "Good-Turing"
+  - "coverage correction"
 date: 2026-05-08
-content_hash: a21318ba6939c1e7
+content_hash: 1657c68ca1c5ff9f
 ---
+
 # Estimating Semantic Alphabet Size for LLM Uncertainty Quantification
 
 **Conference**: ICLR 2026  
@@ -118,15 +123,16 @@ Hybrid DSE achieved the lowest MSE across almost all combinations of 5 models an
 - Value: ⭐⭐⭐⭐ — Addresses the practical need for low-sample black-box UQ with a simple, interpretable, and high-performing solution.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Semantic Uncertainty Quantification of Hallucinations in LLMs: A Quantum Tensor Network Based Method](semantic_uncertainty_quantification_of_hallucinations_in_llms_a_quantum_tensor_n.md)
 - [\[CVPR 2026\] Thinking in Uncertainty: Mitigating Hallucinations in MLRMs with Latent Entropy-Aware Decoding](../../CVPR2026/hallucination/thinking_in_uncertainty_mitigating_hallucinations_in_mlrms_with_latent_entropy-a.md)
-- [\[ACL 2026\] 为什么 LLM 在结构化知识上产生幻觉：推理过程的机制分析](../../ACL2026/hallucination/why_llms_hallucinate_on_structured_knowledge_a_mechanistic_analysis_of_reasoning.md)
-- [\[ACL 2026\] Two Pathways to Truthfulness: On the Intrinsic Encoding of LLM Hallucinations](../../ACL2026/hallucination/two_pathways_to_truthfulness_on_the_intrinsic_encoding_of_llm_hallucinations.md)
-- [\[ACL 2025\] HalluLens: LLM Hallucination Benchmark](../../ACL2025/hallucination/hallulens_llm_hallucination_benchmark.md)
-- [\[ICML 2026\] REALISTA: Realistic Latent Adversarial Attacks that Elicit LLM Hallucinations](../../ICML2026/hallucination/realista_realistic_latent_adversarial_attacks_that_elicit_llm_hallucinations.md)
+- [\[ICLR 2026\] HARP: Hallucination Detection via Reasoning Subspace Projection](harp_hallucination_detection_via_reasoning_subspace_projection.md)
+- [\[ICLR 2026\] HalluGuard: Demystifying Data-Driven and Reasoning-Driven Hallucinations in LLMs](halluguard_demystifying_data-driven_and_reasoning-driven_hallucinations_in_llms.md)
+- [\[ICLR 2026\] Enhancing Hallucination Detection through Noise Injection](enhancing_hallucination_detection_through_noise_injection.md)
 
 </div>
 

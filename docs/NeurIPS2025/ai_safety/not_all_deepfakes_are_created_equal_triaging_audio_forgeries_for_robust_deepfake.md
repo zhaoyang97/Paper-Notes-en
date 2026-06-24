@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Not All Deepfakes Are Created Equal: Triaging Audio Forgeries for Robust Deepfake Singer Identification
 description: >-
-  [NeurIPS 2025 Workshop (Generative and Protective AI for Content Creation)][AI Safety][deepfake detection] This paper proposes a two-stage pipeline grounded in the premise that the most harmful deepfakes are those of the…
+  [NeurIPS 2025 Workshop (Generative and Protective AI for Content Creation)][AI Safety][deepfake detection] This paper proposes a two-stage pipeline grounded in the premise that the most harmful deepfakes are those of the highest quality. A discriminator first filters out low-quality forgeries to reduce noise; a singer identification model trained exclusively on genuine recordings then performs voiceprint matching. The pipeline consistently outperforms baselines across multipl…
 tags:
   - "NeurIPS 2025 Workshop (Generative and Protective AI for Content Creation)"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "two-stage pipeline"
   - "audio forensics"
 date: 2026-05-08
-content_hash: 3120c5ee7bd1e2de
+content_hash: ba2a121dc20df715
 ---
 
 # Not All Deepfakes Are Created Equal: Triaging Audio Forgeries for Robust Deepfake Singer Identification
@@ -139,11 +139,11 @@ Singer identification on high-quality deepfakes (A01–A05) approaches the perfo
 
 ## Related Papers
 
+- [\[CVPR 2026\] X-AVDT: Audio-Visual Cross-Attention for Robust Deepfake Detection](../../CVPR2026/ai_safety/x-avdt_audio-visual_cross-attention_for_robust_deepfake_detection.md)
 - [\[AAAI 2026\] Detect All-Type Deepfake Audio: Wavelet Prompt Tuning for Enhanced Auditory Perception](../../AAAI2026/ai_safety/detect_all-type_deepfake_audio_wavelet_prompt_tuning_for_enhanced_auditory_perce.md)
 - [\[CVPR 2026\] Tutor-Student Reinforcement Learning: A Dynamic Curriculum for Robust Deepfake Detection](../../CVPR2026/ai_safety/tutor-student_reinforcement_learning_a_dynamic_curriculum_for_robust_deepfake_de.md)
 - [\[NeurIPS 2025\] Unifying Re-Identification, Attribute Inference, and Data Reconstruction Risks in Differential Privacy](unifying_re-identification_attribute_inference_and_data_reconstruction_risks_in_.md)
-- [\[ICCV 2025\] FakeRadar: Probing Forgery Outliers to Detect Unknown Deepfake Videos](../../ICCV2025/ai_safety/fakeradar_probing_forgery_outliers_to_detect_unknown_deepfake_videos.md)
-- [\[ICCV 2025\] Vulnerability-Aware Spatio-Temporal Learning for Generalizable Deepfake Video Detection](../../ICCV2025/ai_safety/vulnerability-aware_spatio-temporal_learning_for_generalizable_deepfake_video_de.md)
+- [\[ICML 2026\] FoeGlass: Simple In-Context Learning Is Enough for Red Teaming Audio Deepfake Detectors](../../ICML2026/ai_safety/foeglass_simple_in-context_learning_is_enough_for_red_teaming_audio_deepfake_det.md)
 
 </div>
 

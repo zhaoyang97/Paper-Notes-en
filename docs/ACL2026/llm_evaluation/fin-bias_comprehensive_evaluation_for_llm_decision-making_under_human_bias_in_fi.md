@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Fin-Bias: Comprehensive Evaluation for LLM Decision-Making under human bias in Finance Domain
 description: >-
-  [ACL 2026][LLM Evaluation][Herding] Fin-Bias constructs a control benchmark using 8868 long-form analyst reports with three input versions—"Original / Removed Rating / Replaced with Fake Rating." It demonstrates that 18 LLMs (including GPT-5 and Claude-4-Sonnet) exhibit severe "herding" in financial investment ratings; even fabricated fake ratings are bl
+  [ACL 2026 Findings][LLM Evaluation][Herding] Fin-Bias constructs a control benchmark using 8868 long-form analyst reports with three input versions—"Original / Removed Rating / Replaced with Fake Rating." It demonstrates that 18 LLMs (including GPT-5 and Claude-4-Sonnet) exhibit severe "herding" in financial investment ratings; even fabricated fake ratings are blindly followed in 30% of samples. Combining MPQA subjectivity lexicon filtering with DPO fine-tuning can boost an o…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Herding
-  - MPQA Lexicon
-  - DPO
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Herding"
+  - "Analyst Reports"
+  - "Investment Rating"
+  - "MPQA Lexicon"
+  - "DPO"
 date: 2026-05-08
-content_hash: fca397fc8bb1f4fb
+content_hash: cda65e292d6be2d3
 ---
+
 # Fin-Bias: Comprehensive Evaluation for LLM Decision-Making under human bias in Finance Domain
 
 **Conference**: ACL 2026 Findings  

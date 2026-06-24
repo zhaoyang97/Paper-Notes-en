@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Code2Bench: Scaling Source and Rigor for Dynamic Benchmark Construction
 description: >-
-  [ICLR 2026][Code Intelligence][Paper Note] To address the persistent issues of "static sources prone to contamination" and "superficial testing" in code generation evaluation, this paper proposes the **Dual Scaling** philosophy. It dynamically extracts problems from real-world repositories based on model knowledge cutoff dates (Scaling the Source) and automatic
+  [ICLR2026][Code Intelligence][Code Generation Evaluation] To address the persistent issues of "static sources prone to contamination" and "superficial testing" in code generation evaluation, this paper proposes the **Dual Scaling** philosophy. It dynamically extracts problems from real-world repositories based on model knowledge cutoff dates (Scaling the Source) and automatically generates high-rigor test suites using Property-Based Testing (PBT) coupled with a 100% branch-co…
 tags:
-  - ICLR 2026
-  - Code Intelligence
+  - "ICLR2026"
+  - "Code Intelligence"
+  - "Code Generation Evaluation"
+  - "Dynamic Benchmarks"
+  - "Property-Based Testing (PBT)"
+  - "Data Contamination"
+  - "Dependency Classification"
 date: 2026-05-08
-content_hash: c47320ba87bf8d53
+content_hash: 6de217ca11403e7a
 ---
+
 # Code2Bench: Scaling Source and Rigor for Dynamic Benchmark Construction
 
 **Conference**: ICLR2026  
@@ -142,10 +148,10 @@ Even the strongest model, Claude-4-sonnet, only achieves 40.1% on SC-Python, ind
 ## Related Papers
 
 - [\[ACL 2025\] DynaCode: A Dynamic Complexity-Aware Code Benchmark for Evaluating Large Language Models in Code Generation](../../ACL2025/code_intelligence/dynacode_a_dynamic_complexity-aware_code_benchmark_for_evaluating_large_language.md)
-- [\[ICLR 2026\] ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory](reasoningbank_scaling_agent_self-evolving_with_reasoning_memory.md)
+- [\[ICLR 2026\] TikZilla: Scaling Text-to-TikZ with High-Quality Data and Reinforcement Learning](tikzilla_scaling_text-to-tikz_with_high-quality_data_and_reinforcement_learning.md)
 - [\[ICLR 2026\] Behavioral Embeddings of Programs: A Quasi-Dynamic Approach for Optimization Prediction](behavioral_embeddings_of_programs_a_quasi-dynamic_approach_for_optimization_pred.md)
+- [\[ICLR 2026\] ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory](reasoningbank_scaling_agent_self-evolving_with_reasoning_memory.md)
 - [\[ICLR 2026\] CodeSense: a Real-World Benchmark and Dataset for Code Semantic Reasoning](codesense_a_real-world_benchmark_and_dataset_for_code_semantic_reasoning.md)
-- [\[ICML 2026\] MEnvAgent: Scalable Polyglot Environment Construction for Verifiable Software Engineering](../../ICML2026/code_intelligence/menvagent_scalable_polyglot_environment_construction_for_verifiable_software_eng.md)
 
 </div>
 

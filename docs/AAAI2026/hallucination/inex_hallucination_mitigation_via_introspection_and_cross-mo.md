@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] InEx: Hallucination Mitigation via Introspection and Cross-Modal Multi-Agent Collaboration
 description: >-
-  [AAAI 2026][Hallucination Detection][Multimodal hallucination] This paper proposes InEx, a framework that iteratively verifies and corrects MLLM outputs via internal introspective reasoning (TVER-driven uncertainty-aware…
+  [AAAI 2026][Hallucination Detection][Multimodal hallucination] This paper proposes InEx, a framework that iteratively verifies and corrects MLLM outputs via internal introspective reasoning (TVER-driven uncertainty-aware visual augmentation) and external cross-modal multi-agent collaboration (textual self-reflection + image editing verification + visual self-reflection), achieving an 8.9% improvement on POPE and consistently outperforming OPERA/VCD/ICD across multiple halluci…
 tags:
   - "AAAI 2026"
   - "Hallucination Detection"
@@ -12,7 +12,7 @@ tags:
   - "multi-agent collaboration"
   - "training-free"
 date: 2026-05-08
-content_hash: 39a89b4f3bad9c9c
+content_hash: 73ccae6ceec8c2d4
 ---
 
 # InEx: Hallucination Mitigation via Introspection and Cross-Modal Multi-Agent Collaboration
@@ -107,11 +107,11 @@ The idea of using image editing to verify the accuracy of textual descriptions i
 
 ## Related Papers
 
+- [\[CVPR 2026\] Cross-Modal Attention Calibration for LVLM Hallucination Mitigation](../../CVPR2026/hallucination/cross-modal_attention_calibration_for_lvlm_hallucination_mitigation.md)
 - [\[AAAI 2026\] MUG: Multi-agent Undercover Gaming — Hallucination Removal via Counterfactual Test for Multimodal Reasoning](multi-agent_undercover_gaming_hallucination_removal_via_coun.md)
 - [\[ICML 2026\] Capturing Gaze Shifts for Guidance: Cross-Modal Fusion Enhancement for VLM Hallucination Mitigation](../../ICML2026/hallucination/capturing_gaze_shifts_for_guidance_cross-modal_fusion_enhancement_for_vlm_halluc.md)
-- [\[ACL 2026\] Dialectic-Med: Mitigating Diagnostic Hallucinations via Counterfactual Adversarial Multi-Agent Debate](../../ACL2026/hallucination/dialectic-med_mitigating_diagnostic_hallucinations_via_counterfactual_adversaria.md)
-- [\[CVPR 2026\] KVSmooth: Mitigating Hallucination in Multi-modal Large Language Models through Key-Value Smoothing](../../CVPR2026/hallucination/kvsmooth_mitigating_hallucination_in_multi-modal_large_language_models_through_k.md)
-- [\[CVPR 2026\] MoD-DPO: Towards Mitigating Cross-modal Hallucinations in Omni LLMs using Modality Decoupled Preference Optimization](../../CVPR2026/hallucination/mod-dpo_towards_mitigating_cross-modal_hallucinations_in_omni_llms_using_modalit.md)
+- [\[ICLR 2026\] Visual Multi-Agent System: Mitigating Hallucination Snowballing via Visual Flow](../../ICLR2026/hallucination/visual_multi-agent_system_mitigating_hallucination_snowballing_via_visual_flow.md)
+- [\[CVPR 2026\] MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models](../../CVPR2026/hallucination/mad_modality-adaptive_decoding_for_mitigating_cross-modal_hallucinations_in_mult.md)
 
 </div>
 

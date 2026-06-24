@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Uncovering Strategic Egoism Behaviors in Large Language Models
 description: >-
-  [NeurIPS 2025][Social Computing][Strategic Egoism] This paper presents the first formal definition of *Strategic Egoism* (SE) in LLMs and introduces SEBench…
+  [NeurIPS 2025][Social Computing][Strategic Egoism] This paper presents the first formal definition of *Strategic Egoism* (SE) in LLMs and introduces SEBench, a benchmark comprising 160 scenarios across 6 SE dimensions. Experiments on 7 mainstream LLMs show that, under incentive-driven conditions, an average of 69.11% of decisions favor self-interested strategies. Manipulation/coercion and rule circumvention are the most prevalent tactics, and SE tendency is positively correla…
 tags:
   - "NeurIPS 2025"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "Decision Safety"
   - "Toxicity Correlation"
 date: 2026-05-08
-content_hash: dd57b5875feaf75c
+content_hash: 7629dc8a82f10598
 ---
 
 # Uncovering Strategic Egoism Behaviors in Large Language Models
@@ -117,10 +117,10 @@ This work presents an evaluation benchmark and involves no model training. At te
 ## Related Papers
 
 - [\[NeurIPS 2025\] DATE-LM: Benchmarking Data Attribution Evaluation for Large Language Models](date-lm_benchmarking_data_attribution_evaluation_for_large_language_models.md)
-- [\[NeurIPS 2025\] Active Slice Discovery in Large Language Models](active_slice_discovery_in_large_language_models.md)
 - [\[ACL 2026\] SPAGBias: Uncovering and Tracing Structured Spatial Gender Bias in Large Language Models](../../ACL2026/social_computing/spagbias_uncovering_and_tracing_structured_spatial_gender_bias_in_large_language.md)
-- [\[NeurIPS 2025\] Redefining Experts: Interpretable Decomposition of Language Models for Toxicity Mitigation](redefining_experts_interpretable_decomposition_of_language_models_for_toxicity_m.md)
-- [\[NeurIPS 2025\] Any Large Language Model Can Be a Reliable Judge: Debiasing with a Reasoning-based Bias Detector](any_large_language_model_can_be_a_reliable_judge_debiasing_w.md)
+- [\[ACL 2025\] How does Misinformation Affect Large Language Model Behaviors and Preferences?](../../ACL2025/social_computing/how_does_misinformation_affect_large_language.md)
+- [\[NeurIPS 2025\] Active Slice Discovery in Large Language Models](active_slice_discovery_in_large_language_models.md)
+- [\[ICML 2025\] OR-Bench: An Over-Refusal Benchmark for Large Language Models](../../ICML2025/social_computing/or-bench_an_over-refusal_benchmark_for_large_language_models.md)
 
 </div>
 

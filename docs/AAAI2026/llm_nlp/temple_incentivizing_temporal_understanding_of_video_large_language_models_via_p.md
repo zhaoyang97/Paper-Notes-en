@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] TEMPLE: Incentivizing Temporal Understanding of Video LLMs via Progressive Pre-SFT Alignment
 description: >-
-  [AAAI 2026][LLM/NLP][Video LLM] This paper proposes TEMPLE, which significantly enhances the temporal reasoning capabilities of Video LLMs through an automated video temporal preference data generation pipeline (video fi…
+  [AAAI 2026][LLM (Other)][Video LLM] This paper proposes TEMPLE, which significantly enhances the temporal reasoning capabilities of Video LLMs through an automated video temporal preference data generation pipeline (video filtering → temporal perturbation → contrastive response generation) and a novel Progressive Pre-SFT Alignment strategy (curriculum learning + DPO prior to SFT), using a small amount of self-generated DPO data. Consistent improvements are achieved across mul…
 tags:
   - "AAAI 2026"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "Video LLM"
   - "temporal understanding"
   - "DPO"
   - "preference learning"
   - "curriculum learning"
 date: 2026-05-08
-content_hash: fa38b9146dab654a
+content_hash: 3af0f0b55ad75e17
 ---
 
 # TEMPLE: Incentivizing Temporal Understanding of Video LLMs via Progressive Pre-SFT Alignment
@@ -132,11 +132,11 @@ Two main components: (1) an automated preference data generation pipeline; and (
 
 ## Related Papers
 
+- [\[CVPR 2026\] Single-step Diffusion-based Video Coding with Semantic-Temporal Guidance](../../CVPR2026/llm_nlp/single-step_diffusion-based_video_coding_with_semantic-temporal_guidance.md)
 - [\[AAAI 2026\] ProFuser: Progressive Fusion of Large Language Models](profuser_progressive_fusion_of_large_language_models.md)
-- [\[ACL 2026\] Understanding Structured Financial Data with LLMs: A Case Study on Fraud Detection](../../ACL2026/llm_nlp/understanding_structured_financial_data_with_llms_a_case_study_on_fraud_detectio.md)
-- [\[AAAI 2026\] ParetoHqD: Fast Offline Multiobjective Alignment of Large Language Models Using Pareto High-Quality Data](paretohqd_fast_offline_multiobjective_alignment_of_large_language_models_using_p.md)
-- [\[AAAI 2026\] LoopLLM: Transferable Energy-Latency Attacks in LLMs via Repetitive Generation](loopllm_transferable_energy-latency_attacks_in_llms_via_repetitive_generation.md)
-- [\[AAAI 2026\] Guess or Recall? Training CNNs to Classify and Localize Memorization in LLMs](guess_or_recall_training_cnns_to_classify_and_localize_memorization_in_llms.md)
+- [\[ACL 2025\] TrimLLM: Progressive Layer Dropping for Domain-Specific LLMs](../../ACL2025/llm_nlp/trimllm_layer_dropping.md)
+- [\[ACL 2025\] Cross-Modal Alignment for LLM-Enhanced Spoken Language Understanding](../../ACL2025/llm_nlp/cross-modal_alignment_for_llm-enhanced_spoken_language_understanding.md)
+- [\[ACL 2025\] ChronoSense: Exploring Temporal Understanding in Large Language Models with Time Intervals of Events](../../ACL2025/llm_nlp/chronosense_exploring_temporal_understanding_in_large_language_models_with_time_.md)
 
 </div>
 

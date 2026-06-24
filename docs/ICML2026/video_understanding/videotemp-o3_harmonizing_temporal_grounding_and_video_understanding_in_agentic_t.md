@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VideoTemp-o3: Harmonizing Temporal Grounding and Video Understanding in Agentic Thinking
 description: >-
-  [ICML 2026][Video Understanding][Paper Note] VideoTemp-o3 is a unified agentic video understanding framework. By joint modeling of temporal grounding and video QA through a **unified masking strategy for cold-start SFT** and a **penalty-aware IoU reward**, it achieves high-quality multi-round iterative grounding and precise answering in long video understanding.
+  [ICML 2026][Video Understanding][Long Video Understanding] VideoTemp-o3 is a unified agentic video understanding framework. By joint modeling of temporal grounding and video QA through a **unified masking strategy for cold-start SFT** and a **penalty-aware IoU reward**, it achieves high-quality multi-round iterative grounding and precise answering in long video understanding. It reaches an mIoU of 15.6% on ultra-long videos (> 20 minutes), surpassing Gemini-2.5-Pro's 14.8%.
 tags:
-  - ICML 2026
-  - Video Understanding
+  - "ICML 2026"
+  - "Video Understanding"
+  - "Long Video Understanding"
+  - "Temporal Grounding"
+  - "Agentic Thinking"
+  - "Multi-round Tool Use"
+  - "Penalty-aware RL"
 date: 2026-05-08
-content_hash: fd9c1c1acb3fe579
+content_hash: 1530c7e31c4d0eda
 ---
+
 # VideoTemp-o3: Harmonizing Temporal Grounding and Video Understanding in Agentic Thinking
 
 **Conference**: ICML 2026  
@@ -151,9 +157,9 @@ Data represents mIoU. Temporal grounding benchmark for long videos.
 
 - [\[ICML 2026\] VideoSEAL: Mitigating Evidence Misalignment in Agentic Long Video Understanding by Decoupling Answer Authority](videoseal_mitigating_evidence_misalignment_in_agentic_long_video_understanding_b.md)
 - [\[ICCV 2025\] VTimeCoT: Thinking by Drawing for Video Temporal Grounding and Reasoning](../../ICCV2025/video_understanding/vtimecot_thinking_by_drawing_for_video_temporal_grounding_and_reasoning.md)
-- [\[CVPR 2025\] T*: Re-thinking Temporal Search for Long-Form Video Understanding](../../CVPR2025/video_understanding/re-thinking_temporal_search_for_long-form_video_understanding.md)
 - [\[CVPR 2026\] LensWalk: Agentic Video Understanding by Planning How You See in Videos](../../CVPR2026/video_understanding/lenswalk_agentic_video_understanding_by_planning_how_you_see_in_videos.md)
 - [\[ICML 2026\] Video-MTR: Reinforced Multi-Turn Reasoning for Long Video Understanding](video-mtr_reinforced_multi-turn_reasoning_for_long_video_understanding.md)
+- [\[CVPR 2026\] VideoITG: Multimodal Video Understanding with Instructed Temporal Grounding](../../CVPR2026/video_understanding/videoitg_multimodal_video_understanding_with_instructed_temporal_grounding.md)
 
 </div>
 

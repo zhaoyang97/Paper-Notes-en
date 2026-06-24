@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Emergent Hierarchical Reasoning in LLMs through Reinforcement Learning
 description: >-
-  [ICLR 2026][LLM Reasoning][Reinforcement Learning] Through the analysis of RL training dynamics, this work discovers that the improvement of LLM reasoning capabilities is driven by a two-stage hierarchical mechanism: "low-level program consolidation $\rightarrow$ high-level strategy exploration." Based on this, the HICRA algorithm is proposed to concentrate optimizatio
+  [ICLR 2026][Reasoning][Reinforcement Learning] Through the analysis of RL training dynamics, this work discovers that the improvement of LLM reasoning capabilities is driven by a two-stage hierarchical mechanism: "low-level program consolidation $\rightarrow$ high-level strategy exploration." Based on this, the HICRA algorithm is proposed to concentrate optimization signals on high-impact planning tokens, significantly exceeding GRPO baselines across multiple mathematical rea…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Reinforcement Learning"
+  - "Hierarchical Reasoning"
+  - "Credit Assignment"
+  - "Strategic Planning"
+  - "GRPO"
 date: 2026-05-08
-content_hash: c453d5d53ea10423
+content_hash: f05db3556009968c
 ---
+
 # Emergent Hierarchical Reasoning in LLMs through Reinforcement Learning
 
 **Conference**: ICLR 2026  

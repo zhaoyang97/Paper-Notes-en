@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Metacognitive Sensitivity for Test-Time Dynamic Model Selection
 description: >-
-  [NeurIPS 2025 (CogInterp Workshop)][Multimodal VLM][metacognition] Inspired by the concept of metacognitive sensitivity (meta-d') from cognitive science…
+  [NeurIPS 2025 (CogInterp Workshop)][Multimodal VLM][metacognition] Inspired by the concept of metacognitive sensitivity (meta-d') from cognitive science, this paper proposes a test-time dynamic model selection framework that quantifies a model's ability to "know what it doesn't know" via meta-d', combines it with instantaneous confidence scores to form a context vector, and employs a contextual bandit to online-select the optimal model, outperforming individual models across…
 tags:
   - "NeurIPS 2025 (CogInterp Workshop)"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "contextual bandit"
   - "signal detection theory"
 date: 2026-05-08
-content_hash: 286430104d88180d
+content_hash: 260c526acd54ba92
 ---
 
 # Metacognitive Sensitivity for Test-Time Dynamic Model Selection
@@ -128,10 +128,10 @@ $$s_t = [c_{A,t},\; \mu_{A,t},\; c_{B,t},\; \mu_{B,t}]$$
 ## Related Papers
 
 - [\[NeurIPS 2025\] DOTA: DistributiOnal Test-time Adaptation of Vision-Language Models](dota_distributional_testtime_adaptation_of_visionlanguage_mo.md)
+- [\[CVPR 2026\] Dynamic Logits Adjustment and Exploration for Test-Time Adaptation in Vision Language Models](../../CVPR2026/multimodal_vlm/dynamic_logits_adjustment_and_exploration_for_test-time_adaptation_in_vision_lan.md)
 - [\[NeurIPS 2025\] The Illusion of Progress? A Critical Look at Test-Time Adaptation for Vision-Language Models](the_illusion_of_progress_a_critical_look_at_testtime_adaptat.md)
 - [\[NeurIPS 2025\] TOMCAT: Test-time Comprehensive Knowledge Accumulation for Compositional Zero-Shot Learning](tomcat_test-time_comprehensive_knowledge_accumulation_for_compositional_zero-sho.md)
-- [\[NeurIPS 2025\] Mint: A Simple Test-Time Adaptation of Vision-Language Models against Common Corruptions](mint_a_simple_testtime_adaptation_of_visionlanguage_models_a.md)
-- [\[NeurIPS 2025\] Test-Time Spectrum-Aware Latent Steering for Zero-Shot Generalization in Vision-Language Models](test-time_spectrum-aware_latent_steering_for_zero-shot_generalization_in_vision-.md)
+- [\[CVPR 2025\] Realistic Test-Time Adaptation of Vision-Language Models](../../CVPR2025/multimodal_vlm/realistic_test-time_adaptation_of_vision-language_models.md)
 
 </div>
 

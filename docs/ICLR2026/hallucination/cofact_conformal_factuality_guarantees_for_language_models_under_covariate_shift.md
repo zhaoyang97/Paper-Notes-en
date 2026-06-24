@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] CoFact: Conformal Factuality Guarantees for Language Models under Covariate Shift
 description: >-
-  [ICLR 2026][Hallucination Detection][Conformal Prediction] CoFact replaces the fixed "conformal threshold" in LLM factuality control with an adaptive threshold that adjusts to online test distribution drifts. By using online density ratio estimation to dynamically reweight the calibration set, the method ensures that the hallucination rate does not exceed a user-defined $\alph
+  [ICLR 2026][Hallucination Detection][Conformal Prediction] CoFact replaces the fixed "conformal threshold" in LLM factuality control with an adaptive threshold that adjusts to online test distribution drifts. By using online density ratio estimation to dynamically reweight the calibration set, the method ensures that the hallucination rate does not exceed a user-defined $\alpha$, even in realistic scenarios with continuous covariate shift in prompt streams and unavailable tes…
 tags:
-  - ICLR 2026
-  - Hallucination Detection
-  - Conformal Prediction
-  - Factuality Guarantee
-  - Covariate Shift
-  - Density Ratio Estimation
-  - Online Learning
-  - Hallucination
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "Conformal Prediction"
+  - "Factuality Guarantee"
+  - "Covariate Shift"
+  - "Density Ratio Estimation"
+  - "Online Learning"
+  - "Hallucination"
 date: 2026-05-08
-content_hash: 546a021e3b0326fa
+content_hash: 9960217282fadd38
 ---
+
 # CoFact: Conformal Factuality Guarantees for Language Models under Covariate Shift
 
 **Conference**: ICLR 2026  
@@ -123,10 +124,10 @@ WikiData (Biographical short text):
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Reasoning Models Hallucinate More: Factuality-Aware Reinforcement Learning for Large Reasoning Models](../../NeurIPS2025/hallucination/reasoning_models_hallucinate_more_factuality-aware_reinforcement_learning_for_la.md)
 - [\[ACL 2025\] REFIND at SemEval-2025 Task 3: Retrieval-Augmented Factuality Hallucination Detection in Large Language Models](../../ACL2025/hallucination/refind_at_semeval-2025_task_3_retrieval-augmented_factuality_hallucination_detec.md)
 - [\[CVPR 2026\] FINER: MLLMs Hallucinate under Fine-grained Negative Queries](../../CVPR2026/hallucination/finer_mllms_hallucinate_under_fine-grained_negative_queries.md)
 - [\[ICLR 2026\] NDAD: Negative-Direction Aware Decoding for Large Language Models via Controllable Hallucination Signal Injection](ndad_negative-direction_aware_decoding_for_large_language_models_via_controllabl.md)
-- [\[NeurIPS 2025\] Reasoning Models Hallucinate More: Factuality-Aware Reinforcement Learning for Large Reasoning Models](../../NeurIPS2025/hallucination/reasoning_models_hallucinate_more_factuality-aware_reinforcement_learning_for_la.md)
 - [\[ICLR 2026\] TraceDet: Hallucination Detection from the Decoding Trace of Diffusion Large Language Models](tracedet_hallucination_detection_from_the_decoding_trace_of_diffusion_large_lang.md)
 
 </div>

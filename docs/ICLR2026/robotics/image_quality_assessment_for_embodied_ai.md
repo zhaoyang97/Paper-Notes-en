@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Image Quality Assessment for Embodied AI
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Embodied AI] This work extends Image Quality Assessment (IQA) from "predicting human preference" to "predicting robot task success" for the first time. Based on the Mertonian system, a four-step **Perception-Cognition-Decision-Execution** pipeline is established. The Embodied-IQA database is constructed, containing 36.9k distorted
+  [ICLR 2026][Robotics][Embodied AI] This work extends Image Quality Assessment (IQA) from "predicting human preference" to "predicting robot task success" for the first time. Based on the Mertonian system, a four-step **Perception-Cognition-Decision-Execution** pipeline is established. The Embodied-IQA database is constructed, containing 36.9k distorted image pairs and 5.53M fine-grained annotations (compiled from 15 VLMs, 15 VLAs, and 1.5k real-robot experiments). Evaluations…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Embodied AI
-  - Image Quality Assessment
-  - VLM
-  - VLA
-  - Robot Perception
-  - Benchmark
+  - "ICLR 2026"
+  - "Robotics"
+  - "Embodied AI"
+  - "Image Quality Assessment"
+  - "VLM"
+  - "VLA"
+  - "Robot Perception"
+  - "Benchmark"
 date: 2026-05-08
-content_hash: 67f3fd0d02ce4c49
+content_hash: 88794e743e2db8ff
 ---
+
 # Image Quality Assessment for Embodied AI
 
 **Conference**: ICLR 2026  
@@ -120,7 +121,6 @@ The scoring logic for the entire link is built on **reference/distorted image pa
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

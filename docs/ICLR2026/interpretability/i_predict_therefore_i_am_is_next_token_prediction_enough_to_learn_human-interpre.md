@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] I Predict Therefore I Am: Is Next Token Prediction Enough to Learn Human-Interpretable Concepts from Data?
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper constructs a text generation model that formalizes "human-interpretable concepts" as discrete latent variables and rigorously proves that LLM representations trained solely via next-token prediction are, under mild conditions, approximately equivalent to a linear transformation of the posterior log-probabili
+  [ICLR 2026][Interpretability][Next-token prediction] This paper constructs a text generation model that formalizes "human-interpretable concepts" as discrete latent variables and rigorously proves that LLM representations trained solely via next-token prediction are, under mild conditions, approximately equivalent to a linear transformation of the posterior log-probabilities $\log p(c\mid x)$ of these latent concepts. This provides a unified theoretical foundation for the lin…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Next-token prediction"
+  - "Identifiability"
+  - "Linear Representation Hypothesis"
+  - "Latent Variable Models"
+  - "Sparse Autoencoders (SAE)"
 date: 2026-05-08
-content_hash: a1a982431e3d4f07
+content_hash: 748135eb6a368c67
 ---
+
 # I Predict Therefore I Am: Is Next Token Prediction Enough to Learn Human-Interpretable Concepts from Data?
 
 **Conference**: ICLR 2026  
@@ -129,8 +135,21 @@ Experiments aim to indirectly validate the theorem across simulation, real LLMs,
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[ICLR 2026\] How Stable is the Next Token? A Geometric View of LLM Prediction Stability](how_stable_is_the_next_token_a_geometric_view_of_llm_prediction_stability.md)
+- [\[ICLR 2026\] Sparse Autoencoders Trained on the Same Data Learn Different Features](sparse_autoencoders_trained_on_the_same_data_learn_different_features.md)
+- [\[ICLR 2026\] SAE as a Crystal Ball: Interpretable Features Predict Cross-domain Transferability of LLMs without Training](sae_as_a_crystal_ball_interpretable_features_predict_cross-domain_transferabilit.md)
+- [\[ICLR 2026\] Concepts' Information Bottleneck Models](concepts_information_bottleneck_models.md)
+- [\[ICLR 2026\] Concept-TRAK: Understanding how diffusion models learn concepts through concept attribution](concept-trak_understanding_how_diffusion_models_learn_concepts_through_concept_a.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

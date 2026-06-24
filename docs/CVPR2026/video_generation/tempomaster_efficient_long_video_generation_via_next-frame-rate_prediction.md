@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TempoMaster: Efficient Long Video Generation via Next-Frame-Rate Prediction
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] TempoMaster reformulates long video generation as "next-frame-rate prediction"—generating a low-frame-rate global blueprint first via bidirectional attention, followed by hierarchical frame rate enhancement for details. Since segments within each level can be generated in parallel, it achieves both long-range temporal
+  [CVPR 2026][Video Generation][Long Video Generation] TempoMaster reformulates long video generation as "next-frame-rate prediction"—generating a low-frame-rate global blueprint first via bidirectional attention, followed by hierarchical frame rate enhancement for details. Since segments within each level can be generated in parallel, it achieves both long-range temporal consistency and inference efficiency, reaching SOTA on Vbench-Long and human evaluations.
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Long Video Generation"
+  - "Next-Frame-Rate Prediction"
+  - "Diffusion Transformer"
+  - "Parallel Inference"
+  - "Multi-Mask Conditioning"
 date: 2026-05-08
-content_hash: 91d168f591d831ce
+content_hash: addcf234daac092b
 ---
+
 # TempoMaster: Efficient Long Video Generation via Next-Frame-Rate Prediction
 
 **Conference**: CVPR 2026  

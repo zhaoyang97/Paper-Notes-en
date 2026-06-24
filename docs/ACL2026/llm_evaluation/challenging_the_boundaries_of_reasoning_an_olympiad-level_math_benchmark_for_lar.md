@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Challenging the Boundaries of Reasoning: An Olympiad-Level Math Benchmark for Large Language Models
 description: >-
-  [ACL 2026][LLM Evaluation][Lean4] OlymMATH is proposed as the first Olympiad-level mathematical benchmark that unifies natural language evaluation and formal theorem proving. It contains 350 bilingual (Chinese and English) problems, covering OlymMATH-EASY/HARD (200 problems with numerical answers) and OlymMATH-LEAN (150 Lean 4 formalized problems), rev
+  [ACL 2026][LLM Evaluation][Mathematical reasoning benchmark] OlymMATH is proposed as the first Olympiad-level mathematical benchmark that unifies natural language evaluation and formal theorem proving. It contains 350 bilingual (Chinese and English) problems, covering OlymMATH-EASY/HARD (200 problems with numerical answers) and OlymMATH-LEAN (150 Lean 4 formalized problems), revealing that the strongest models achieve only 58.4% accuracy on the HARD subset.
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Lean4
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Mathematical reasoning benchmark"
+  - "Olympiad math"
+  - "Formal verification"
+  - "Lean4"
+  - "Bilingual evaluation"
 date: 2026-05-08
-content_hash: f337fd047470a359
+content_hash: 86ef2c6dbaea3d5c
 ---
+
 # Challenging the Boundaries of Reasoning: An Olympiad-Level Math Benchmark for Large Language Models
 
 **Conference**: ACL 2026  
@@ -103,10 +108,10 @@ Multilingual reasoning is a practical requirement for LLM deployment, yet previo
 ## Related Papers
 
 - [\[ICML 2025\] Leveraging Online Olympiad-Level Math Problems for LLMs Training and Contamination-Resistant Evaluation](../../ICML2025/llm_evaluation/leveraging_online_olympiad-level_math_problems_for_llms_training_and_contaminati.md)
+- [\[ICLR 2026\] TokUR: Token-Level Uncertainty Estimation for Large Language Model Reasoning](../../ICLR2026/llm_evaluation/tokur_token-level_uncertainty_estimation_for_large_language_model_reasoning.md)
 - [\[ACL 2026\] Revisiting a Pain in the Neck: A Semantic Reasoning Benchmark for Language Models](revisiting_a_pain_in_the_neck_a_semantic_reasoning_benchmark_for_language_models.md)
 - [\[ACL 2026\] ReTraceQA: Evaluating Reasoning Traces of Small Language Models in Commonsense Question Answering](retraceqa_evaluating_reasoning_traces_of_small_language_models_in_commonsense_qu.md)
 - [\[ACL 2026\] Do LLMs Overthink Basic Math Reasoning? Benchmarking the Accuracy-Efficiency Tradeoff](do_llms_overthink_basic_math_reasoning_benchmarking_the_accuracy-efficiency_trad.md)
-- [\[ACL 2026\] EngiBench: A Benchmark for Evaluating Large Language Models on Engineering Problem Solving](engibench_a_benchmark_for_evaluating_large_language_models_on_engineering_proble.md)
 
 </div>
 

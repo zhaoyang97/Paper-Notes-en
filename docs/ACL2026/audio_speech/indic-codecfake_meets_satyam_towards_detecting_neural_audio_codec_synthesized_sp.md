@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Indic-CodecFake meets SATYAM: Towards Detecting Neural Audio Codec Synthesized Speech Deepfakes in Indic Languages
 description: >-
-  [ACL 2026][Audio & Speech][CodecFake] This paper constructs the first multi-Indic language CodecFake detection benchmark, ICF, and proposes SATYAM—a hyperbolic audio large language model. By aligning semantic and paralinguistic representations using Bhattacharyya distance in hyperbolic space and subsequently aligning them with prompts, the model achieves a
+  [ACL 2026][Audio & Speech][Speech Deepfake Detection] This paper constructs the first multi-Indic language CodecFake detection benchmark, ICF, and proposes SATYAM—a hyperbolic audio large language model. By aligning semantic and paralinguistic representations using Bhattacharyya distance in hyperbolic space and subsequently aligning them with prompts, the model achieves a 98.32% detection accuracy with only 3.75M trainable parameters.
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - CodecFake
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "Speech Deepfake Detection"
+  - "Neural Audio Codec"
+  - "Indic Languages"
+  - "Hyperbolic ALM"
+  - "CodecFake"
 date: 2026-05-08
-content_hash: afed1de2b3e7a614
+content_hash: 22c20de0dc370d18
 ---
+
 # Indic-CodecFake meets SATYAM: Towards Detecting Neural Audio Codec Synthesized Speech Deepfakes in Indic Languages
 
 **Conference**: ACL 2026  
@@ -144,8 +149,8 @@ The total loss combines two-stage alignment and language modeling: $\mathcal{L} 
 - [\[ACL 2026\] SN-WER: Script-Normalized WER for Multi-Script Indic ASR Evaluation](sn-wer_script-normalized_wer_for_multi-script_indic_asr_evaluation.md)
 - [\[ICLR 2026\] FlexiCodec: A Dynamic Neural Audio Codec for Low Frame Rates](../../ICLR2026/audio_speech/flexicodec_a_dynamic_neural_audio_codec_for_low_frame_rates.md)
 - [\[ACL 2025\] Analyzing and Mitigating Inconsistency in Discrete Audio Tokens for Neural Codec Language Models](../../ACL2025/audio_speech/audio_token_consistency.md)
-- [\[CVPR 2026\] Hierarchical Codec Diffusion for Video-to-Speech Generation](../../CVPR2026/audio_speech/hierarchical_codec_diffusion_for_video-to-speech_generation.md)
 - [\[ICML 2026\] Alethia: A Foundational Encoder for Voice Deepfakes](../../ICML2026/audio_speech/alethia_a_foundational_encoder_for_voice_deepfakes.md)
+- [\[CVPR 2026\] Hierarchical Codec Diffusion for Video-to-Speech Generation](../../CVPR2026/audio_speech/hierarchical_codec_diffusion_for_video-to-speech_generation.md)
 
 </div>
 

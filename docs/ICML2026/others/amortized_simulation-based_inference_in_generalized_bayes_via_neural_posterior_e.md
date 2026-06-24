@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] Amortized Simulation-Based Inference in Generalized Bayes via Neural Posterior Estimation
 description: >-
-  [ICML 2026][Others][simulation-based inference] This paper amortizes the power posterior family in generalized Bayes into a single neural posterior estimator conditioned on both the observation $x$ and the temperature $\beta$. This allows posterior sampling for different observations and varying temperatures to be completed in a single forward pass, eliminating the
+  [ICML 2026][simulation-based inference] This paper amortizes the power posterior family in generalized Bayes into a single neural posterior estimator conditioned on both the observation $x$ and the temperature $\beta$. This allows posterior sampling for different observations and varying temperatures to be completed in a single forward pass, eliminating the need to run MCMC for every instance.
 tags:
-  - ICML 2026
-  - Others
-  - simulation-based inference
-  - generalized Bayes
-  - power posterior
-  - neural posterior estimation
-  - SNIS
+  - "ICML 2026"
+  - "simulation-based inference"
+  - "generalized Bayes"
+  - "power posterior"
+  - "neural posterior estimation"
+  - "SNIS"
 date: 2026-05-08
-content_hash: d07603cf3e5f8000
+content_hash: f515865b03d7624d
 ---
+
 # Amortized Simulation-Based Inference in Generalized Bayes via Neural Posterior Estimation
 
 **Conference**: ICML 2026  
@@ -146,10 +146,10 @@ While a traditional ablation table is absent, the paper provides diagnostics on 
 ## Related Papers
 
 - [\[ICML 2026\] TabMGP: Martingale Posterior with TabPFN](tabmgp_martingale_posterior_with_tabpfn.md)
-- [\[ICLR 2026\] Neural Force Field: Few-shot Learning of Generalized Physical Reasoning](../../ICLR2026/others/neural_force_field_few-shot_learning_of_generalized_physical_reasoning.md)
+- [\[ICLR 2026\] PriorGuide: Test-Time Prior Adaptation for Simulation-Based Inference](../../ICLR2026/others/priorguide_test-time_prior_adaptation_for_simulation-based_inference.md)
 - [\[ICML 2026\] nD-RoPE: A Generalized RoPE for n-Dimensional Position Embedding](nd-rope_a_generalized_rope_for_n-dimensional_position_embedding.md)
+- [\[ICLR 2026\] Neural Force Field: Few-shot Learning of Generalized Physical Reasoning](../../ICLR2026/others/neural_force_field_few-shot_learning_of_generalized_physical_reasoning.md)
 - [\[AAAI 2026\] Bilevel MCTS for Amortized O(1) Node Selection in Classical Planning](../../AAAI2026/others/bilevel_mcts_for_amortized_o1_node_selection_in_classical_planning.md)
-- [\[AAAI 2026\] ParaRevSNN: A Parallel Reversible Spiking Neural Network for Efficient Training and Inference](../../AAAI2026/others/pararevsnn_a_parallel_reversible_spiking_neural_network_for_efficient_training_a.md)
 
 </div>
 

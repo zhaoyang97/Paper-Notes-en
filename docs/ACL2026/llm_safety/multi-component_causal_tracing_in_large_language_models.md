@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multi-component Causal Tracing in Large Language Models
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper extends causal tracing from single-component analysis to multi-component subset searching and proposes PGB-CT, which efficiently identifies attention heads and MLP neurons that collectively influence LLM behavior using soft intervention, metric transformation, and sparse binary penalties.
+  [ACL 2026][LLM Safety][Causal Tracing] This paper extends causal tracing from single-component analysis to multi-component subset searching and proposes PGB-CT, which efficiently identifies attention heads and MLP neurons that collectively influence LLM behavior using soft intervention, metric transformation, and sparse binary penalties.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Causal Tracing"
+  - "Activation Patching"
+  - "Multi-component Interaction"
+  - "Mechanistic Interpretability"
+  - "Bias Localization"
 date: 2026-05-08
-content_hash: 6facab33f7223472
+content_hash: 724851ef229c0bec
 ---
+
 # Multi-component Causal Tracing in Large Language Models
 
 **Conference**: ACL 2026  
@@ -133,9 +139,9 @@ Experiments cover the GPT-2 family, DistilGPT2, Qwen3-1.7B, and Llama3.2-1B on d
 
 - [\[ACL 2026\] CausalDetox: Causal Head Selection and Intervention for Language Model Detoxification](causaldetox_causal_head_selection_and_intervention_for_language_model_detoxifica.md)
 - [\[ACL 2026\] TROJail: Trajectory-Level Optimization for Multi-Turn Large Language Model Jailbreaks with Process Rewards](trojail_trajectory-level_optimization_for_multi-turn_large_language_model_jailbr.md)
-- [\[ACL 2026\] Reasoning Hijacking: The Fragility of Reasoning Alignment in Large Language Models](reasoning_hijacking_the_fragility_of_reasoning_alignment_in_large_language_model.md)
+- [\[ICLR 2026\] Multi-Feature Quantized Self-Attention for Fair Large Language Models](../../ICLR2026/llm_safety/multi-feature_quantized_self-attention_for_fair_large_language_models.md)
 - [\[AAAI 2026\] AUVIC: Adversarial Unlearning of Visual Concepts for Multi-modal Large Language Models](../../AAAI2026/llm_safety/auvic_adversarial_unlearning_of_visual_concepts_for_multi-mo.md)
-- [\[ACL 2026\] Learning Uncertainty from Sequential Internal Dispersion in Large Language Models](learning_uncertainty_from_sequential_internal_dispersion_in_large_language_model.md)
+- [\[ACL 2026\] Reasoning Hijacking: The Fragility of Reasoning Alignment in Large Language Models](reasoning_hijacking_the_fragility_of_reasoning_alignment_in_large_language_model.md)
 
 </div>
 

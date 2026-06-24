@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision
 description: >-
-  [CVPR 2026][Others][Paper Note] This work embeds domain knowledge into both the "prior" and the "likelihood" of Bayesian inference. An informative prior $p(\theta\mid K)$ is first pre-trained under knowledge constraints, followed by an adaptive "knowledge likelihood" $p(K\mid\theta,D)$ during the main training stage to continuously enforce constraint
+  [CVPR 2026][Bayesian Deep Learning] This work embeds domain knowledge into both the "prior" and the "likelihood" of Bayesian inference. An informative prior $p(\theta\mid K)$ is first pre-trained under knowledge constraints, followed by an adaptive "knowledge likelihood" $p(K\mid\theta,D)$ during the main training stage to continuously enforce constraints. This approach achieves higher accuracy, stable constraint satisfaction, and superior uncertainty estimation in image clas…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Bayesian Deep Learning"
+  - "Knowledge Augmentation"
+  - "Informative Prior"
+  - "Adaptive Likelihood"
+  - "Constrained Optimization"
 date: 2026-05-08
-content_hash: 7ea5bb0cdda7dd78
+content_hash: 93e5b7d39b998ebe
 ---
+
 # Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision
 
 **Conference**: CVPR 2026  
@@ -142,15 +147,16 @@ On Rotated MNIST, this method improved accuracy from 51% (BANANA) to 95%, exposi
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Computer Vision with a Superpixelation Camera](computer_vision_with_a_superpixelation_camera.md)
+- [\[CVPR 2026\] VideoWorld 2: Learning Transferable Knowledge from Real-world Videos](videoworld_2_learning_transferable_knowledge_from_real-world_videos.md)
 - [\[CVPR 2026\] Adaptive Bayesian Early-Exit Networks for Efficient Non-Transferable Learning](adaptive_bayesian_early-exit_networks_for_efficient_non-transferable_learning.md)
-- [\[CVPR 2026\] Learning What Helps: Task-Aligned Context Selection for Vision Tasks](learning_what_helps_task-aligned_context_selection_for_vision_tasks.md)
 - [\[CVPR 2026\] Evidential Deep Partial Label Learning to Quantify Disambiguation Uncertainty](evidential_deep_partial_label_learning_to_quantify_disambiguation_uncertainty.md)
-- [\[CVPR 2026\] AdaPrior: Bayesian-Inspired Adaptive Prior Correction for Long-Tailed Continual Learning](adaprior_bayesian-inspired_adaptive_prior_correction_for_long-tailed_continual_l.md)
+- [\[CVPR 2026\] Learning What Helps: Task-Aligned Context Selection for Vision Tasks](learning_what_helps_task-aligned_context_selection_for_vision_tasks.md)
 
 </div>
 

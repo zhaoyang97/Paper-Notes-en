@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SVRG and Beyond via Posterior Correction
 description: >-
-  [ICML 2026][Optimization & Theory][SVRG] This paper demonstrates that the classic variance reduction algorithm SVRG is essentially a special case of Bayesian "Posterior Correction" (PoCo) under an isotropic Gaussian posterior. Based on this, it automatically derives two new extensions previously difficult to obtain: a Newton-type variant that simultaneously c
+  [ICML2026][Optimization][SVRG] This paper demonstrates that the classic variance reduction algorithm SVRG is essentially a special case of Bayesian "Posterior Correction" (PoCo) under an isotropic Gaussian posterior. Based on this, it automatically derives two new extensions previously difficult to obtain: a Newton-type variant that simultaneously corrects the Hessian, and an Adam-type variant (IVON-PoCo) scalable to deep learning.
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - SVRG
+  - "ICML2026"
+  - "Optimization"
+  - "SVRG"
+  - "Variance Reduction"
+  - "Posterior Correction"
+  - "Bayesian Learning Rule"
+  - "Natural Gradient"
 date: 2026-05-08
-content_hash: 65babd7601612526
+content_hash: 3f14c7c2d2eb7986
 ---
+
 # SVRG and Beyond via Posterior Correction
 
 **Conference**: ICML2026  
@@ -137,11 +142,11 @@ The paper is a theoretical unification of optimization algorithms and introduces
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Stable Coresets via Posterior Sampling: Aligning Induced and Full Loss Landscapes](../../NeurIPS2025/optimization/stable_coresets_via_posterior_sampling_aligning_induced_and_full_loss_landscapes.md)
 - [\[ICLR 2026\] Beyond Short Steps in Frank-Wolfe Algorithms](../../ICLR2026/optimization/beyond_short_steps_in_frank-wolfe_algorithms.md)
 - [\[ICLR 2026\] Learning to Recall with Transformers Beyond Orthogonal Embeddings](../../ICLR2026/optimization/learning_to_recall_with_transformers_beyond_orthogonal_embeddings.md)
-- [\[ICLR 2026\] The Affine Divergence: Aligning Activation Updates Beyond Normalisation](../../ICLR2026/optimization/the_affine_divergence_aligning_activation_updates_beyond_normalisation.md)
+- [\[NeurIPS 2025\] Stable Coresets via Posterior Sampling: Aligning Induced and Full Loss Landscapes](../../NeurIPS2025/optimization/stable_coresets_via_posterior_sampling_aligning_induced_and_full_loss_landscapes.md)
 - [\[ICLR 2026\] Beyond Aggregation: Guiding Clients in Heterogeneous Federated Learning](../../ICLR2026/optimization/beyond_aggregation_guiding_clients_in_heterogeneous_federated_learning.md)
+- [\[ICLR 2026\] Beyond the Heatmap: A Rigorous Evaluation of Component Impact in MCTS-Based TSP Solvers](../../ICLR2026/optimization/beyond_the_heatmap_a_rigorous_evaluation_of_component_impact_in_mcts-based_tsp_s.md)
 
 </div>
 

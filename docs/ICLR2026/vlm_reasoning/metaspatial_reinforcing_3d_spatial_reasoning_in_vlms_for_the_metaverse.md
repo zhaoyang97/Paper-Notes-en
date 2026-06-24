@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] MetaSpatial: Reinforcing 3D Spatial Reasoning in VLMs for the Metaverse
 description: >-
-  [ICLR 2026][vlm_reasoning][VLM] MetaSpatial models 3D indoor scene layout generation as an RL policy learning problem. It proposes the 3D-SPO algorithm, which injects physics-aware advantage modulation into coordinate tokens based on GRPO and stacks discounted returns from multi-round refinement trajectories during training. This enables the VLM to d
+  [ICLR 2026][VLM Reasoning][3D Spatial Reasoning] MetaSpatial models 3D indoor scene layout generation as an RL policy learning problem. It proposes the 3D-SPO algorithm, which injects physics-aware advantage modulation into coordinate tokens based on GRPO and stacks discounted returns from multi-round refinement trajectories during training. This enables the VLM to directly generate physically plausible and format-stable (x,y,z) layouts without any ground-truth annotations or…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - VLM
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "3D Spatial Reasoning"
+  - "VLM"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Scene Layout Generation"
+  - "Physical Constraints"
+  - "Multi-round Refinement"
 date: 2026-05-08
-content_hash: 3427351428a24713
+content_hash: 38ee2c1bcc799228
 ---
+
 # MetaSpatial: Reinforcing 3D Spatial Reasoning in VLMs for the Metaverse
 
 **Conference**: ICLR 2026  
@@ -133,8 +138,8 @@ Algorithm and refinement depth comparison (Selection):
 - [\[ICLR 2026\] SpinBench: Perspective and Rotation as a Lens on Spatial Reasoning in VLMs](spinbench_perspective_and_rotation_as_a_lens_on_spatial_reasoning_in_vlms.md)
 - [\[NeurIPS 2025\] SpatialThinker: Reinforcing 3D Reasoning in Multimodal LLMs via Spatial Rewards](../../NeurIPS2025/vlm_reasoning/spatialthinker_reinforcing_3d_reasoning_in_multimodal_llms_via_spatial_rewards.md)
 - [\[ICLR 2026\] Game-RL: Synthesizing Multimodal Verifiable Game Data to Boost VLMs' General Reasoning](game-rl_synthesizing_multimodal_verifiable_game_data_to_boost_vlms_general_reaso.md)
-- [\[CVPR 2026\] STAR-R1: Multi-View Spatial TrAnsformation Reasoning by Reinforcing Multimodal LLMs](../../CVPR2026/vlm_reasoning/star-r1_multi-view_spatial_transformation_reasoning_by_reinforcing_multimodal_ll.md)
 - [\[CVPR 2026\] SpatialStack: Layered Geometry-Language Fusion for 3D VLM Spatial Reasoning](../../CVPR2026/vlm_reasoning/spatialstack_layered_geometry-language_fusion_for_3d_vlm_spatial_reasoning.md)
+- [\[ICLR 2026\] VideoAnchor: Reinforcing Subspace-Structured Visual Cues for Coherent Visual-Spatial Reasoning](videoanchor_reinforcing_subspace-structured_visual_cues_for_coherent_visual-spat.md)
 
 </div>
 

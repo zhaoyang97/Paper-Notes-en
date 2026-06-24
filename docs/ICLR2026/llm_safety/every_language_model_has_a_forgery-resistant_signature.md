@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Every Language Model Has a Forgery-Resistant Signature
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper points out that due to the geometric constraints of the "normalization + linear projection" in the final layer of language models, the logprob outputs of all modern LMs naturally lie on a high-dimensional ellipsoid. This ellipsoid serves as a "signature"—it **exists naturally, is verifiable in a single step,
+  [ICLR 2026][LLM Safety][Ellipsoidal Signature] This paper points out that due to the geometric constraints of the "normalization + linear projection" in the final layer of language models, the logprob outputs of all modern LMs naturally lie on a high-dimensional ellipsoid. This ellipsoid serves as a "signature"—it **exists naturally, is verifiable in a single step, and is nearly impossible to forge for closed-source models**, allowing for the construction of a model output ve…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Ellipsoidal Signature"
+  - "Model Fingerprinting"
+  - "Output Verification"
+  - "Forgery Resistance"
+  - "Message Authentication Code (MAC)"
+  - "Closed-source Model Forensics"
 date: 2026-05-08
-content_hash: 9535ba31dfda8459
+content_hash: da946b1e2913018e
 ---
+
 # Every Language Model Has a Forgery-Resistant Signature
 
 **Conference**: ICLR 2026  
@@ -122,9 +129,9 @@ Average distance to each model's ellipsoid after projecting logprobs into variou
 
 - [\[ICLR 2026\] Self-Destructive Language Model](self-destructive_language_model.md)
 - [\[ICLR 2026\] A Guardrail for Safety Preservation: When Safety-Sensitive Subspace Meets Harmful-Resistant Null-Space](a_guardrail_for_safety_preservation_when_safety-sensitive_subspace_meets_harmful.md)
+- [\[ICLR 2026\] An Ensemble Framework for Unbiased Language Model Watermarking](an_ensemble_framework_for_unbiased_language_model_watermarking.md)
+- [\[ICLR 2026\] SeedPrints: Fingerprints Can Even Tell Which Seed Your Large Language Model Was Trained From](seedprints_fingerprints_can_even_tell_which_seed_your_large_language_model_was_t.md)
 - [\[ICLR 2026\] Analyzing and Evaluating Unbiased Language Model Watermark](analyzing_and_evaluating_unbiased_language_model_watermark.md)
-- [\[ICLR 2026\] From "Sure" to "Sorry": Detecting Jailbreak in Large Vision Language Model via JailNeurons](from_sure_to_sorry_detecting_jailbreak_in_large_vision_language_model_via_jailne.md)
-- [\[ICLR 2026\] STAR: Strategy-driven Automatic Jailbreak Red-teaming for Large Language Model](star_strategy-driven_automatic_jailbreak_red-teaming_for_large_language_model.md)
 
 </div>
 

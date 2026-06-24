@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Repurposing Synthetic Data for Fine-grained Search Agent Supervision
 description: >-
-  [ICLR 2026][LLM Agent][GRPO] "Gold entities" used during synthetic data generation are repurposed as process supervision signals to propose entity-aware E-GRPO. Partial rewards are assigned to "near-miss" samples (incorrect answers with partially correct reasoning) based on entity hit rates, consistently outperforming GRPO on multiple QA and deep
+  [ICLR 2026][LLM Agent][Search Agent] "Gold entities" used during synthetic data generation are repurposed as process supervision signals to propose entity-aware E-GRPO. Partial rewards are assigned to "near-miss" samples (incorrect answers with partially correct reasoning) based on entity hit rates, consistently outperforming GRPO on multiple QA and deep retrieval benchmarks while learning strategies with fewer tool calls.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - GRPO
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Search Agent"
+  - "GRPO"
+  - "Entity-aware Reward"
+  - "Dense Reward"
+  - "Synthetic Data"
 date: 2026-05-08
-content_hash: 540803e37b37ae06
+content_hash: e63c7c06853d180e
 ---
+
 # Repurposing Synthetic Data for Fine-grained Search Agent Supervision
 
 **Conference**: ICLR 2026  
@@ -138,10 +143,10 @@ Web-30B-E-GRPO achieved the best performance among open-source agents $\le$32B o
 ## Related Papers
 
 - [\[ACL 2026\] SynthAgent: Adapting Web Agents with Synthetic Supervision](../../ACL2026/llm_agent/synthagent_adapting_web_agents_with_synthetic_supervision.md)
+- [\[ICLR 2026\] Search Self-Play: Pushing the Frontier of Agent Capability without Supervision](search_self-play_pushing_the_frontier_of_agent_capability_without_supervision.md)
 - [\[ICLR 2026\] WebSailor-V2: Bridging the Chasm to Proprietary Agents via Synthetic Data and Scalable Reinforcement Learning](websailor-v2_bridging_the_chasm_to_proprietary_agents_via_synthetic_data_and_sca.md)
 - [\[ICLR 2026\] Agent Data Protocol: Unifying Datasets for Diverse, Effective Fine-tuning of LLM Agents](agent_data_protocol_unifying_datasets_for_diverse_effective_fine-tuning_of_llm_a.md)
-- [\[CVPR 2026\] Seeing as Experts Do: A Knowledge-Augmented Agent for Open-Set Fine-Grained Visual Understanding](../../CVPR2026/llm_agent/seeing_as_experts_do_a_knowledge-augmented_agent_for_open-set_fine-grained_visua.md)
-- [\[ACL 2026\] MOOSE-Copilot: A Web-Based Interactive Assistant for Unified Exploratory and Fine-Grained Scientific Hypothesis Discovery](../../ACL2026/llm_agent/moose-copilot_a_web-based_interactive_assistant_for_unified_exploratory_and_fine.md)
+- [\[ICLR 2026\] Tree Search for LLM Agent Reinforcement Learning](tree_search_for_llm_agent_reinforcement_learning.md)
 
 </div>
 

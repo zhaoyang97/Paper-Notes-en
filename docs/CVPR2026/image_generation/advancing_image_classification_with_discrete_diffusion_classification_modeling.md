@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Advancing Image Classification with Discrete Diffusion Classification Modeling
 description: >-
-  [CVPR 2026][Others][Concrete Score] The authors transform image classification from "one-shot label prediction" into "running a diffusion process in a discrete class label space to approximate the posterior $P(c\mid y)$." By predicting a Concrete Score for iterative denoising, the method outperforms equivalent ResNets on ImageNet with only a few diffusio
+  [CVPR 2026][Image Generation][Discrete Diffusion] The authors transform image classification from "one-shot label prediction" into "running a diffusion process in a discrete class label space to approximate the posterior $P(c\mid y)$." By predicting a Concrete Score for iterative denoising, the method outperforms equivalent ResNets on ImageNet with only a few diffusion steps, with the performance gap Widening as input degradation (low resolution / sparse data) increases.
 tags:
-  - CVPR 2026
-  - Others
-  - Concrete Score
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Discrete Diffusion"
+  - "Image Classification"
+  - "Concrete Score"
+  - "Posterior Modeling"
+  - "Uncertainty"
 date: 2026-05-08
-content_hash: 0de906cdd6d6aca5
+content_hash: 1f86b1039e825b1b
 ---
+
 # Advancing Image Classification with Discrete Diffusion Classification Modeling
 
 **Conference**: CVPR 2026  
@@ -148,11 +153,11 @@ Quality-efficiency analysis (res56, full data, Top-1):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Prototype-based Causal Intervention for Multi-Label Image Classification](prototype-based_causal_intervention_for_multi-label_image_classification.md)
-- [\[ECCV 2024\] Active Generation for Image Classification](../../ECCV2024/others/active_generation_for_image_classification.md)
-- [\[CVPR 2026\] Revisiting F-measure Optimization in Multi-Label Classification: A Sampling-based Approach](revisiting_f-measure_optimization_in_multi-label_classification_a_sampling-based.md)
-- [\[CVPR 2026\] Hyperbolic Defect Feature Synthesis for Few-Shot Defect Classification](hyperbolic_defect_feature_synthesis_for_few-shot_defect_classification.md)
-- [\[CVPR 2026\] EXOTIC: External Vision-driven Incomplete Multi-view Classification](exotic_external_vision-driven_incomplete_multi-view_classification.md)
+- [\[CVPR 2026\] Beyond Objects: Contextual Synthetic Data Generation for Fine-Grained Classification](beyond_objects_contextual_synthetic_data_generation_for_fine-grained_classificat.md)
+- [\[CVPR 2026\] BiGain: Unified Token Compression for Joint Generation and Classification](bigain_unified_token_compression_for_joint_generation_and_classification.md)
+- [\[CVPR 2026\] PaCo-RL: Advancing Reinforcement Learning for Consistent Image Generation with Pairwise Reward Modeling](paco-rl_advancing_reinforcement_learning_for_consistent_image_generation_with_pa.md)
+- [\[ICML 2026\] A Diffusive Classification Loss for Learning Energy-based Generative Models](../../ICML2026/image_generation/a_diffusive_classification_loss_for_learning_energy-based_generative_models.md)
+- [\[NeurIPS 2025\] Latent Zoning Network: A Unified Principle for Generative Modeling, Representation Learning, and Classification](../../NeurIPS2025/image_generation/latent_zoning_network_a_unified_principle_for_generative_modeling_representation.md)
 
 </div>
 

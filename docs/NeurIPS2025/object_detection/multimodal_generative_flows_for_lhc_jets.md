@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multimodal Generative Flows for LHC Jets
 description: >-
-  [NeurIPS 2025][Object Detection][flow matching] This paper proposes a Transformer-based multimodal flow matching framework (MMF) that jointly models continuous flow matching and continuous-time Markov jump bridges…
+  [NeurIPS 2025][Object Detection][flow matching] This paper proposes a Transformer-based multimodal flow matching framework (MMF) that jointly models continuous flow matching and continuous-time Markov jump bridges, enabling unified generation of particle kinematics (continuous) and flavor quantum numbers (discrete) in LHC jets.
 tags:
   - "NeurIPS 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "continuous-time Markov jump"
   - "transformer"
 date: 2026-05-08
-content_hash: 42c5ee3523aeab61
+content_hash: a356f104badd85f6
 ---
 
 # Multimodal Generative Flows for LHC Jets
@@ -135,11 +135,11 @@ Dataset: AspenOpenJets (AOJ) from CMS Open Data; 1.25M jets for training, 270K g
 
 ## Related Papers
 
+- [\[CVPR 2025\] Integration of deep generative Anomaly Detection algorithm in high-speed industrial line](../../CVPR2025/object_detection/integration_of_deep_generative_anomaly_detection_algorithm_in_high-speed_industr.md)
 - [\[CVPR 2026\] BUSSARD: Normalizing Flows for Bijective Universal Scene-Specific Anomalous Relationship Detection](../../CVPR2026/object_detection/bussard_normalizing_flows_for_bijective_universal_scene-specific_anomalous_relat.md)
-- [\[ICCV 2025\] LMM-Det: Make Large Multimodal Models Excel in Object Detection](../../ICCV2025/object_detection/lmm-det_make_large_multimodal_models_excel_in_object_detection.md)
-- [\[ICML 2026\] OmniVerifier-M1: Multimodal Meta-Verifier with Explicit Structured Recalibration](../../ICML2026/object_detection/omniverifier-m1_multimodal_meta-verifier_with_explicit_structured_recalibration.md)
-- [\[AAAI 2026\] Commonality in Few: Few-Shot Multimodal Anomaly Detection via Hypergraph-Enhanced Memory](../../AAAI2026/object_detection/commonality_in_few_few-shot_multimodal_anomaly_detection_via_hypergraph-enhanced.md)
-- [\[CVPR 2026\] MMR-AD: A Large-Scale Multimodal Dataset for Benchmarking General Anomaly Detection with MLLMs](../../CVPR2026/object_detection/mmrad_multimodal_anomaly_detection.md)
+- [\[ECCV 2024\] Weak-to-Strong Compositional Learning from Generative Models for Language-based Object Detection](../../ECCV2024/object_detection/weak-to-strong_compositional_learning_from_generative_models_for_language-based_.md)
+- [\[ICML 2025\] Understanding the Emergence of Multimodal Representation Alignment](../../ICML2025/object_detection/understanding_the_emergence_of_multimodal_representation_alignment.md)
+- [\[CVPR 2026\] Towards an Incremental Unified Multimodal Anomaly Detection: Augmenting Multimodal Denoising From an Information Bottleneck Perspective](../../CVPR2026/object_detection/towards_an_incremental_unified_multimodal_anomaly_detection_augmenting_multimoda.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Condition Errors Refinement in Autoregressive Image Generation with Diffusion Loss
 description: >-
-  [ICLR 2026][Image Generation][autoregressive generation] The paper theoretically analyzes the advantages of autoregressive diffusion loss models over conditional diffusion models in condition error correction (exponential decay of gradient norm). It proposes a condition refinement method based on Optimal Transport (Wasserstein Gradient Flow) to solve the "condition inconsist
+  [ICLR 2026][Image Generation][autoregressive generation] The paper theoretically analyzes the advantages of autoregressive diffusion loss models over conditional diffusion models in condition error correction (exponential decay of gradient norm). It proposes a condition refinement method based on Optimal Transport (Wasserstein Gradient Flow) to solve the "condition inconsistency" problem in the autoregressive process, achieving an FID of 1.31 on ImageNet (based on MAR).
 tags:
-  - ICLR 2026
-  - Image Generation
-  - autoregressive generation
-  - diffusion loss
-  - condition refinement
-  - optimal transport
-  - Wasserstein gradient flow
+  - "ICLR 2026"
+  - "Image Generation"
+  - "autoregressive generation"
+  - "diffusion loss"
+  - "condition refinement"
+  - "optimal transport"
+  - "Wasserstein gradient flow"
 date: 2026-05-08
-content_hash: 69aefe380a709c85
+content_hash: 1d294b98cba2d34b
 ---
+
 # Condition Errors Refinement in Autoregressive Image Generation with Diffusion Loss
 
 **Conference**: ICLR 2026  
@@ -161,9 +162,9 @@ This is solved via Sinkhorn iterations, which makes the objective strictly conve
 
 - [\[ICLR 2026\] From Prediction to Perfection: Introducing Refinement to Autoregressive Image Generation](from_prediction_to_perfection_introducing_refinement_to_autoregressive_image_gen.md)
 - [\[ICLR 2026\] BAR: Refactor the Basis of Autoregressive Visual Generation](bar_refactor_the_basis_of_autoregressive_visual_generation.md)
+- [\[ICLR 2026\] From Broad Exploration to Stable Synthesis: Entropy-Guided Optimization for Autoregressive Image Generation](from_broad_exploration_to_stable_synthesis_entropy-guided_optimization_for_autor.md)
 - [\[ICLR 2026\] MADFormer: Mixed Autoregressive and Diffusion Transformers for Continuous Image Generation](textitmadformer_mixed_autoregressive_and_diffusion_transformers_for_continuous_i.md)
-- [\[ICLR 2026\] Autoregressive Image Generation with Randomized Parallel Decoding](autoregressive_image_generation_with_randomized_parallel_decoding.md)
-- [\[ICLR 2026\] NextStep-1: Toward Autoregressive Image Generation with Continuous Tokens at Scale](nextstep-1_toward_autoregressive_image_generation_with_continuous_tokens_at_scal.md)
+- [\[ICLR 2026\] Dual-Path Condition Alignment for Diffusion Transformers](dual-path_condition_alignment_for_diffusion_transformers.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Boosting Vision Semantic Density with Anatomy Normality Modeling for Medical Vision-language Pre-training
 description: >-
-  [ICCV 2025][Medical Imaging][vision-language pre-training] This paper proposes ViSD-Boost, which addresses the alignment bias caused by low visual semantic density in medical vision-language pre-training (VLP). The metho…
+  [ICCV 2025][Medical Imaging][vision-language pre-training] This paper proposes ViSD-Boost, which addresses the alignment bias caused by low visual semantic density in medical vision-language pre-training (VLP). The method employs disease-level visual contrastive learning to enhance visual semantics and VQ-VAE-based anatomical normality modeling to amplify abnormality signals, achieving 84.9% AUC in zero-shot diagnosis across 54 diseases spanning 15 organs.
 tags:
   - "ICCV 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "VQ-VAE"
   - "zero-shot diagnosis"
 date: 2026-05-08
-content_hash: 10a5c8a91f687485
+content_hash: 18e01fe2b43b2a43
 ---
 
 # Boosting Vision Semantic Density with Anatomy Normality Modeling for Medical Vision-language Pre-training
@@ -156,11 +156,11 @@ Abdominal scenario (MedVL-CT69K, zero-shot over 54 diseases across 15 organs):
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Few-Shot Learning from Gigapixel Images via Hierarchical Vision-Language Alignment and Modeling](../../NeurIPS2025/medical_imaging/few-shot_learning_from_gigapixel_images_via_hierarchical_vision-language_alignme.md)
+- [\[CVPR 2025\] Multi-modal Vision Pre-training for Medical Image Analysis (BrainMVP)](../../CVPR2025/medical_imaging/multi-modal_vision_pre-training_for_medical_image_analysis.md)
 - [\[ICCV 2025\] An OpenMind for 3D Medical Vision Self-supervised Learning](an_openmind_for_3d_medical_vision_selfsupervised_learning.md)
+- [\[NeurIPS 2025\] Few-Shot Learning from Gigapixel Images via Hierarchical Vision-Language Alignment and Modeling](../../NeurIPS2025/medical_imaging/few-shot_learning_from_gigapixel_images_via_hierarchical_vision-language_alignme.md)
 - [\[ICCV 2025\] Vector Contrastive Learning for Pixel-wise Pretraining in Medical Vision](vector_contrastive_learning_for_pixel-wise_pretraining_in_medical_vision.md)
 - [\[ICCV 2025\] Alleviating Textual Reliance in Medical Language-guided Segmentation via Prototype-driven Semantic Approximation](alleviating_textual_reliance_in_medical_language-guided_segmentation_via_prototy.md)
-- [\[AAAI 2026\] Sim4Seg: Boosting Multimodal Multi-disease Medical Diagnosis Segmentation with Region-Aware Vision-Language Similarity Masks](../../AAAI2026/medical_imaging/sim4seg_boosting_multimodal_multi-disease_medical_diagnosis_segmentation_with_re.md)
 
 </div>
 

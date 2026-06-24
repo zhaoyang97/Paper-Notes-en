@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GIIM: Graph-based Learning of Inter- and Intra-view Dependencies for Multi-view Medical Image Diagnosis
 description: >-
-  [AAAI 2026][Medical Imaging][Graph Neural Networks] This paper proposes GIIM, a Multi-Heterogeneous Graph (MHG)-based framework that simultaneously models intra-view dependencies among lesions and inter-view dynamic vari…
+  [AAAI 2026][Medical Imaging][Graph Neural Networks] This paper proposes GIIM, a Multi-Heterogeneous Graph (MHG)-based framework that simultaneously models intra-view dependencies among lesions and inter-view dynamic variations via graph structures. Four missing-view representation strategies are introduced. GIIM achieves consistent and significant improvements over existing multi-view methods across three imaging modalities: liver CT, breast X-ray, and breast MRI.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Missing Views"
   - "Medical Image Classification"
 date: 2026-05-08
-content_hash: 916dd0679b54125c
+content_hash: 3aad6648f3e380ad
 ---
 
 # GIIM: Graph-based Learning of Inter- and Intra-view Dependencies for Multi-view Medical Image Diagnosis

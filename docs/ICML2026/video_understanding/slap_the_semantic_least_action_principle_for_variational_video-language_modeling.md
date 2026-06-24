@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SLAP: The Semantic Least Action Principle for Variational Video-Language Modeling
 description: >-
-  [ICML 2026][Video Understanding][Paper Note] SLAP transplants the "Least Action Principle of classical mechanics" onto the video semantic manifold, modeling the completion of missing frames in sparsely sampled videos as a two-point boundary value problem on a Riemannian manifold. By replacing probabilistic generation with semantic dynamics to enforce object perma
+  [ICML 2026][Video Understanding][Video-Language Models] SLAP transplants the "Least Action Principle of classical mechanics" onto the video semantic manifold, modeling the completion of missing frames in sparsely sampled videos as a two-point boundary value problem on a Riemannian manifold. By replacing probabilistic generation with semantic dynamics to enforce object permanence, it achieves 83.9% accuracy on tunnel occlusion tests (outperforming diffusion models by 12 points…
 tags:
-  - ICML 2026
-  - Video Understanding
+  - "ICML 2026"
+  - "Video Understanding"
+  - "Video-Language Models"
+  - "Temporal Interpolation"
+  - "Least Action Principle"
+  - "Variational Methods"
+  - "Object Permanence"
 date: 2026-05-08
-content_hash: 7a7eb7653673685e
+content_hash: c56eb85909f10704
 ---
+
 # SLAP: The Semantic Least Action Principle for Variational Video-Language Modeling
 
 **Conference**: ICML 2026  

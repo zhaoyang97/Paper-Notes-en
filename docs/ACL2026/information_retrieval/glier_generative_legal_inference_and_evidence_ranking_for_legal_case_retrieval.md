@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GLIER: Generative Legal Inference and Evidence Ranking for Legal Case Retrieval
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Knowledge Distillation] This paper proposes **GLIER**: a two-stage framework that reframes Legal Case Retrieval (LCR) from "direct text similarity matching" to "jointly generating latent variables of *Charge + Constitutive Elements* via seq2seq, then fusing them through multi-view (generation confidence + structural matching + lexical BM25) M
+  [ACL 2026][Information Retrieval & RAG][Legal Case Retrieval] This paper proposes **GLIER**: a two-stage framework that reframes Legal Case Retrieval (LCR) from "direct text similarity matching" to "jointly generating latent variables of *Charge + Constitutive Elements* via seq2seq, then fusing them through multi-view (generation confidence + structural matching + lexical BM25) MLP." It outperforms SAILER and KELLER on LeCaRD/LeCaRDv2 and beats strong full-data baselines usin…
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - Knowledge Distillation
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Legal Case Retrieval"
+  - "Generative Inference"
+  - "Charge-Element"
+  - "Multi-view Evidence Fusion"
+  - "Knowledge Distillation"
 date: 2026-05-08
-content_hash: c2799669958fcc73
+content_hash: c7b951b7739d933f
 ---
+
 # GLIER: Generative Legal Inference and Evidence Ranking for Legal Case Retrieval
 
 **Conference**: ACL 2026  
@@ -149,10 +154,10 @@ On LeCaRDv2, GLIER achieves SOTA on all 7 metrics. On LeCaRD, Hits@3 is 11.64 pe
 ## Related Papers
 
 - [\[ACL 2025\] GRAF: Graph Retrieval Augmented by Facts for Romanian Legal Multi-Choice Question Answering](../../ACL2025/information_retrieval/graf_graph_retrieval_augmented_by_facts_for_romanian_legal_multi-choice_question.md)
+- [\[ACL 2026\] Low-Resource Language Dilemma in Multilingual Retrieval: Evidence from Amharic](the_multilingual_curse_at_the_retrieval_layer_evidence_from_amharic.md)
 - [\[ACL 2026\] From Relevance to Authority: Authority-aware Generative Retrieval in Web Search Engines](from_relevance_to_authority_authority-aware_generative_retrieval_in_web_search_e.md)
-- [\[ACL 2026\] Learning to Extract Rational Evidence via Reinforcement Learning for Retrieval-Augmented Generation](learning_to_extract_rational_evidence_via_reinforcement_learning_for_retrieval-a.md)
 - [\[ACL 2026\] CounterRefine: Answer-Conditioned Counterevidence Retrieval for Inference-Time Knowledge Repair in Factual Question Answering](counterrefine_answer-conditioned_counterevidence_retrieval_for_inference-time_kn.md)
-- [\[ACL 2026\] IF-GEO: Conflict-Aware Instruction Fusion for Multi-Query Generative Engine Optimization](if-geo_conflict-aware_instruction_fusion_for_multi-query_generative_engine_optim.md)
+- [\[ACL 2026\] Learning to Extract Rational Evidence via Reinforcement Learning for Retrieval-Augmented Generation](learning_to_extract_rational_evidence_via_reinforcement_learning_for_retrieval-a.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CARE-Edit: Condition-Aware Routing of Experts for Contextual Image Editing
 description: >-
-  [CVPR 2026][Image Generation][Image Editing] Ours proposes CARE-Edit, a condition-aware expert routing framework. By utilizing heterogeneous experts (Text/Mask/Reference/Base) coupled with a lightweight latent-attention router on a DiT backbone, it achieves dynamic computation allocation. This effectively resolves issues like color bleeding and identity drift cau
+  [CVPR2026][Image Generation][Image Editing] Ours proposes CARE-Edit, a condition-aware expert routing framework. By utilizing heterogeneous experts (Text/Mask/Reference/Base) coupled with a lightweight latent-attention router on a DiT backbone, it achieves dynamic computation allocation. This effectively resolves issues like color bleeding and identity drift caused by conflicting multimodal signals (text, mask, reference images) in unified image editors.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Image Editing
-  - Mixture-of-Experts
+  - "CVPR2026"
+  - "Image Generation"
+  - "Image Editing"
+  - "Mixture-of-Experts"
+  - "Condition-Aware Routing"
+  - "Diffusion Transformer"
+  - "Multimodal Fusion"
 date: 2026-05-08
-content_hash: 429f0092fa428a9a
+content_hash: 9d22541176a39a05
 ---
+
 # CARE-Edit: Condition-Aware Routing of Experts for Contextual Image Editing
 
 **Conference**: CVPR2026  
@@ -138,11 +142,11 @@ Removing expert routing significantly degrades performance, validating the core 
 
 ## Related Papers
 
-- [\[CVPR 2026\] HP-Edit: A Human-Preference Post-Training Framework for Image Editing](hp-edit_a_human-preference_post-training_framework_for_image_editing.md)
 - [\[CVPR 2026\] TAG-MoE: Task-Aware Gating for Unified Generative Mixture-of-Experts](tag-moe_task-aware_gating_for_unified_generative_mixture-of-experts.md)
-- [\[CVPR 2026\] Group Editing: Edit Multiple Images in One Go](group_editing_edit_multiple_images_in_one_go.md)
-- [\[CVPR 2026\] Mixture of States: Routing Token-Level Dynamics for Multimodal Generation](mixture_of_states_routing_token-level_dynamics_for_multimodal_generation.md)
-- [\[CVPR 2025\] h-Edit: Effective and Flexible Diffusion-Based Editing via Doob's h-Transform](../../CVPR2025/image_generation/h-edit_effective_and_flexible_diffusion-based_editing_via_doobs_h-transform.md)
+- [\[ICLR 2026\] W-Edit: A Wavelet-based Frequency-aware Framework for Text-driven Image Editing](../../ICLR2026/image_generation/w-edit_a_wavelet-based_frequency-aware_framework_for_text-driven_image_editing.md)
+- [\[CVPR 2026\] HP-Edit: A Human-Preference Post-Training Framework for Image Editing](hp-edit_a_human-preference_post-training_framework_for_image_editing.md)
+- [\[CVPR 2026\] Mixture of Style Experts for Diverse Image Stylization](mixture_of_style_experts_for_diverse_image_stylization.md)
+- [\[CVPR 2026\] Inter-Edit: First Benchmark for Interactive Instruction-Based Image Editing](inter-edit_first_benchmark_for_interactive_instruction-based_image_editing.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Long-Context State-Space Video World Models
 description: >-
-  [ICCV 2025][Video Generation][World Models] This paper proposes integrating State Space Models (SSM/Mamba) into video world models. Through a block-wise SSM scan scheme that balances spatial consistency and temporal memo…
+  [ICCV 2025][Video Generation][World Models] This paper proposes integrating State Space Models (SSM/Mamba) into video world models. Through a block-wise SSM scan scheme that balances spatial consistency and temporal memory, combined with local frame attention, the method achieves persistent long-term spatial memory under linear training complexity and constant inference overhead, substantially outperforming finite-context Transformer baselines on Memory Maze and Minecraft dat…
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -13,7 +13,7 @@ tags:
   - "Video Diffusion Models"
   - "Autoregressive Generation"
 date: 2026-05-08
-content_hash: bfd0bc02bd6fe1ac
+content_hash: c9fc51e38144fa7e
 ---
 
 # Long-Context State-Space Video World Models
@@ -138,10 +138,10 @@ Autoregressive per-frame generation requires only: ① a fixed-length KV-cache o
 ## Related Papers
 
 - [\[ICCV 2025\] Long Context Tuning for Video Generation](long_context_tuning_for_video_generation.md)
+- [\[CVPR 2025\] Out of Sight, Out of Mind? Evaluating State Evolution in Video World Models](../../CVPR2025/video_generation/out_of_sight_out_of_mind_evaluating_state_evolution_in_video_world_models.md)
 - [\[ICCV 2025\] Disentangled World Models: Learning to Transfer Semantic Knowledge from Distracting Videos for Reinforcement Learning](disentangled_world_models_learning_to_transfer_semantic_knowledge_from_distracti.md)
-- [\[ICCV 2025\] WorldScore: A Unified Evaluation Benchmark for World Generation](worldscore_a_unified_evaluation_benchmark_for_world_generation.md)
-- [\[ICCV 2025\] MagicDrive-V2: High-Resolution Long Video Generation for Autonomous Driving with Adaptive Control](magicdrive-v2_high-resolution_long_video_generation_for_autonomous_driving_with_.md)
-- [\[CVPR 2026\] Geometry-as-context: Modulating Explicit 3D in Scene-consistent Video Generation to Geometry Context](../../CVPR2026/video_generation/geometry-as-context_modulating_explicit_3d_in_scene-consistent_video_generation_.md)
+- [\[CVPR 2025\] Navigation World Models](../../CVPR2025/video_generation/navigation_world_models.md)
+- [\[ICLR 2026\] Vid2World: Crafting Video Diffusion Models to Interactive World Models](../../ICLR2026/video_generation/vid2world_crafting_video_diffusion_models_to_interactive_world_models.md)
 
 </div>
 

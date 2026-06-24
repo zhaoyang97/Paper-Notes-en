@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DevFD: Developmental Face Forgery Detection by Learning Shared and Orthogonal LoRA Subspaces
 description: >-
-  [NEURIPS2025][Human Understanding][face forgery detection] This paper proposes DevFD—a developmental MoE architecture that models the common characteristics of real faces via a shared Real-LoRA…
+  [NEURIPS2025][Human Understanding][face forgery detection] This paper proposes DevFD—a developmental MoE architecture that models the common characteristics of real faces via a shared Real-LoRA, incrementally captures new forgery types via a sequence of orthogonal Fake-LoRAs, and mitigates catastrophic forgetting by integrating orthogonal gradient constraints into an orthogonal loss. DevFD achieves state-of-the-art accuracy and the lowest forgetting rate in continual learning…
 tags:
   - "NEURIPS2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "LoRA"
   - "orthogonal subspace"
 date: 2026-05-08
-content_hash: 5a06d210fa9676c7
+content_hash: c95e733b20481079
 ---
 
 # DevFD: Developmental Face Forgery Detection by Learning Shared and Orthogonal LoRA Subspaces
@@ -124,11 +124,11 @@ $$\mathcal{L} = \mathcal{L}_{\text{cls}} + \mathcal{L}_{\text{ort}} + \lambda_3\
 
 ## Related Papers
 
+- [\[ICML 2026\] Learning Instance-Adaptive Low-Rank Orthogonal Subspaces for Clothes-Changing Person Re-Identification](../../ICML2026/human_understanding/learning_instance-adaptive_low-rank_orthogonal_subspaces_for_clothes-changing_pe.md)
+- [\[CVPR 2026\] PRISM: Learning a Shared Primitive Space for Transferable Skeleton Action Representation](../../CVPR2026/human_understanding/prism_learning_a_shared_primitive_space_for_transferable_skeleton_action_represe.md)
 - [\[ICCV 2025\] Bi-Level Optimization for Self-Supervised AI-Generated Face Detection](../../ICCV2025/human_understanding/bi-level_optimization_for_self-supervised_ai-generated_face_detection.md)
-- [\[AAAI 2026\] PA-FAS: Towards Interpretable and Generalizable Multimodal Face Anti-Spoofing via Path-Augmented Reinforcement Learning](../../AAAI2026/human_understanding/pa-fas_towards_interpretable_and_generalizable_multimodal_face_anti-spoofing_via.md)
-- [\[NeurIPS 2025\] Switchable Token-Specific Codebook Quantization for Face Image Compression](switchable_token-specific_codebook_quantization_for_face_image_compression.md)
+- [\[CVPR 2025\] FSFM: A Generalizable Face Security Foundation Model via Self-Supervised Facial Representation Learning](../../CVPR2025/human_understanding/fsfm_a_generalizable_face_security_foundation_model_via_self-supervised_facial_r.md)
 - [\[NeurIPS 2025\] Part-Aware Bottom-Up Group Reasoning for Fine-Grained Social Interaction Detection](part-aware_bottom-up_group_reasoning_for_fine-grained_social_interaction_detecti.md)
-- [\[ICCV 2025\] Sequential Keypoint Density Estimator: An Overlooked Baseline of Skeleton-Based Video Anomaly Detection](../../ICCV2025/human_understanding/sequential_keypoint_density_estimator_an_overlooked_baseline_of_skeleton-based_v.md)
 
 </div>
 

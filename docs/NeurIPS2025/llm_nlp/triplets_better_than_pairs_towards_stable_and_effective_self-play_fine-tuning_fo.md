@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Triplets Better Than Pairs: Towards Stable and Effective Self-Play Fine-Tuning for LLMs
 description: >-
-  [NeurIPS 2025][LLM/NLP][self-play fine-tuning] This paper proposes T-SPIN (Triplet Self-Play Fine-Tuning), which extends SPIN by introducing a "historical advantage" (proto-synthetic responses as anchor points) and an en…
+  [NeurIPS 2025][LLM (Other)][self-play fine-tuning] This paper proposes T-SPIN (Triplet Self-Play Fine-Tuning), which extends SPIN by introducing a "historical advantage" (proto-synthetic responses as anchor points) and an entropy constraint to enable reference-free policy training. T-SPIN addresses two core issues in SPIN: optimization instability and train-generation misalignment, achieving performance comparable to full-data SFT using only 25% of labeled data.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "self-play fine-tuning"
   - "triplet learning"
   - "LLM alignment"
   - "reference-free training"
   - "data scarcity"
 date: 2026-05-08
-content_hash: 23fb825ccc295215
+content_hash: 7c94cc21e9b0ad6e
 ---
 
 # Triplets Better Than Pairs: Towards Stable and Effective Self-Play Fine-Tuning for LLMs
@@ -168,8 +168,8 @@ Removing the historical advantage leads to:
 - [\[NeurIPS 2025\] SPACE: Noise Contrastive Estimation Stabilizes Self-Play Fine-Tuning for Large Language Models](space_noise_contrastive_estimation_stabilizes_self-play_fine-tuning_for_large_la.md)
 - [\[NeurIPS 2025\] Sparse MeZO: Less Parameters for Better Performance in Zeroth-Order LLM Fine-Tuning](sparse_mezo_less_parameters_for_better_performance_in_zeroth-order_llm_fine-tuni.md)
 - [\[NeurIPS 2025\] AceSearcher: Bootstrapping Reasoning and Search for LLMs via Reinforced Self-Play](acesearcher_bootstrapping_reasoning_and_search_for_llms_via_reinforced_self-play.md)
-- [\[NeurIPS 2025\] Synergy over Discrepancy: A Partition-Based Approach to Multi-Domain LLM Fine-Tuning](synergy_over_discrepancy_a_partition-based_approach_to_multi-domain_llm_fine-tun.md)
-- [\[ICLR 2026\] GASP: Guided Asymmetric Self-Play For Coding LLMs](../../ICLR2026/llm_nlp/gasp_guided_asymmetric_self-play_for_coding_llms.md)
+- [\[ACL 2025\] Beware of Your Po! Measuring and Mitigating AI Safety Risks in Role-Play Fine-Tuning of LLMs](../../ACL2025/llm_nlp/sarft_roleplay_safety.md)
+- [\[ACL 2025\] SDD: Self-Degraded Defense against Malicious Fine-tuning](../../ACL2025/llm_nlp/sdd_self-degraded_defense_against_malicious_fine-tuning.md)
 
 </div>
 

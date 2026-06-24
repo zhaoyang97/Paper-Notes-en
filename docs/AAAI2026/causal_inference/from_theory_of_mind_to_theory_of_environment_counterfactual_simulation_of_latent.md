@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From Theory of Mind to Theory of Environment: Counterfactual Simulation of Latent Environmental Dynamics
 description: >-
-  [AAAI 2026 (Workshop: ToM4AI)][Causal Inference][Theory of Mind] This paper proposes the concept of "Theory of Environment" (ToE), arguing that humans may infer latent environmental dynamics through computational mechani…
+  [AAAI 2026 (Workshop: ToM4AI)][Causal Inference][Theory of Mind] This paper proposes the concept of "Theory of Environment" (ToE), arguing that humans may infer latent environmental dynamics through computational mechanisms shared with Theory of Mind (ToM), thereby expanding the dimensionality of motor exploration and facilitating behavioral innovation.
 tags:
   - "AAAI 2026 (Workshop: ToM4AI)"
   - "Causal Inference"
@@ -12,7 +12,7 @@ tags:
   - "Motor Control"
   - "Behavioral Innovation"
 date: 2026-05-08
-content_hash: 6dbbb845d8c9066e
+content_hash: 9f2ae4b6008fb1a8
 ---
 
 # From Theory of Mind to Theory of Environment: Counterfactual Simulation of Latent Environmental Dynamics
@@ -126,11 +126,11 @@ Theoretical paper; no ablation study.
 
 ## Related Papers
 
-- [\[ICML 2026\] Causal-JEPA: Learning World Models through Object-Level Latent Masking](../../ICML2026/causal_inference/causal-jepa_learning_world_models_through_object-level_latent_masking.md)
-- [\[ICLR 2026\] Distributional Equivalence in Linear Non-Gaussian Latent-Variable Cyclic Causal Models](../../ICLR2026/causal_inference/distributional_equivalence_in_linear_non-gaussian_latent-variable_cyclic_causal_.md)
+- [\[ACL 2025\] Leveraging Variation Theory in Counterfactual Data Augmentation for Optimized Active Learning](../../ACL2025/causal_inference/leveraging_variation_theory_in_counterfactual_data_augmentation_for_optimized_ac.md)
+- [\[ECCV 2024\] Understanding Physical Dynamics with Counterfactual World Modeling](../../ECCV2024/causal_inference/understanding_physical_dynamics_with_counterfactual_world_modeling.md)
+- [\[ICLR 2026\] Modeling Interference for Treatment Effect Estimation in Network Dynamic Environment](../../ICLR2026/causal_inference/modeling_interference_for_treatment_effect_estimation_in_network_dynamic_environ.md)
 - [\[AAAI 2026\] KTCF: Actionable Recourse in Knowledge Tracing via Counterfactual Explanations for Education](ktcf_actionable_recourse_in_knowledge_tracing_via_counterfactual_explanations_fo.md)
-- [\[ICLR 2026\] Counterfactual Explanations on Robust Perceptual Geodesics](../../ICLR2026/causal_inference/counterfactual_explanations_on_robust_perceptual_geodesics.md)
-- [\[ICLR 2026\] On the Eligibility of LLMs for Counterfactual Reasoning: A Decompositional Study](../../ICLR2026/causal_inference/on_the_eligibility_of_llms_for_counterfactual_reasoning_a_decompositional_study.md)
+- [\[ICLR 2026\] Causal Score Conditioning for Multi-Resolution Latent Systems](../../ICLR2026/causal_inference/causal_score_conditioning_for_multi-resolution_latent_systems.md)
 
 </div>
 

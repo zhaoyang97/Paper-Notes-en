@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Perception-Aware Policy Optimization for Multimodal Reasoning
 description: >-
-  [ICLR 2026][vlm_reasoning][RLVR] Identifying that 67% of errors in multimodal RLVR stem from the neglected bottleneck of "inaccurate visual perception," this paper proposes PAPO. It introduces an implicit perception KL loss between "original vs. masked images" (plus double entropy regularization) into the GRPO/DAPO optimization objective. Without addi
+  [ICLR 2026][VLM Reasoning][Multimodal Reasoning] Identifying that 67% of errors in multimodal RLVR stem from the neglected bottleneck of "inaccurate visual perception," this paper proposes PAPO. It introduces an implicit perception KL loss between "original vs. masked images" (plus double entropy regularization) into the GRPO/DAPO optimization objective. Without additional annotations, reward models, or teacher models, PAPO achieves an overall improvement of 4.4%–17.5% across…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - RLVR
-  - GRPO
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Multimodal Reasoning"
+  - "RLVR"
+  - "GRPO"
+  - "Implicit Perception Loss"
+  - "Training Stability"
 date: 2026-05-08
-content_hash: 01c97ce60861e1b5
+content_hash: 337f3cdb013cedcb
 ---
+
 # Perception-Aware Policy Optimization for Multimodal Reasoning
 
 **Conference**: ICLR 2026  

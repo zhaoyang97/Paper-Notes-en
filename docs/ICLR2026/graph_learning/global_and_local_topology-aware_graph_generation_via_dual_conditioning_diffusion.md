@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Global and Local Topology-Aware Graph Generation via Dual Conditioning Diffusion
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] DualDiff decomposes graphs into node-level (local) and cluster-level (global) diffusion branches. By employing a "bidirectional conditioning" mechanism, global and local information alternately serve as conditions during the denoising process. This joint modeling of $p(Z_l, Z_g)$ in a unified latent space significantly
+  [ICLR 2026][Graph Learning][Graph Generation] DualDiff decomposes graphs into node-level (local) and cluster-level (global) diffusion branches. By employing a "bidirectional conditioning" mechanism, global and local information alternately serve as conditions during the denoising process. This joint modeling of $p(Z_l, Z_g)$ in a unified latent space significantly improves the generation quality of both general and molecular graphs.
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Graph Generation"
+  - "Latent Diffusion"
+  - "Global-Local Dependencies"
+  - "Bidirectional Conditioning"
+  - "Molecule Generation"
 date: 2026-05-08
-content_hash: f9b32bd51629cda8
+content_hash: 21dfa8335a5573b8
 ---
+
 # Global and Local Topology-Aware Graph Generation via Dual Conditioning Diffusion
 
 **Conference**: ICLR 2026  
@@ -133,9 +139,9 @@ Ablation of Bidirectional Conditioning (ZINC250k):
 
 - [\[NeurIPS 2025\] DuetGraph: Coarse-to-Fine Knowledge Graph Reasoning with Dual-Pathway Global-Local Fusion](../../NeurIPS2025/graph_learning/duetgraph_coarse-to-fine_knowledge_graph_reasoning_with_dual-pathway_global-loca.md)
 - [\[ICLR 2026\] FSD-CAP: Fractional Subgraph Diffusion with Class-Aware Propagation for Graph Feature Imputation](fsd-cap_fractional_subgraph_diffusion_with_class-aware_propagation_for_graph_fea.md)
+- [\[ICLR 2026\] Low-Rank Few-Shot Node Classification by Node-Level Graph Diffusion](low-rank_few-shot_node_classification_by_node-level_graph_diffusion.md)
 - [\[ICLR 2026\] Discrete Bayesian Sample Inference for Graph Generation](discrete_bayesian_sample_inference_for_graph_generation.md)
 - [\[ICLR 2026\] Topology Matters in RTL Circuit Representation Learning](topology_matters_in_rtl_circuit_representation_learning.md)
-- [\[ICML 2026\] L2G-Net: Local to Global Spectral Graph Neural Networks via Cauchy Factorizations](../../ICML2026/graph_learning/l2g-net_local_to_global_spectral_graph_neural_networks_via_cauchy_factorizations.md)
 
 </div>
 

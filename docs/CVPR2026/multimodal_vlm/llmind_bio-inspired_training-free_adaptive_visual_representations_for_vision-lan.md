@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LLMind: Bio-inspired Training-free Adaptive Visual Representations for Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][VQA] Inspired by human foveal encoding and cortical magnification mechanisms, this paper proposes LLMind, a training-free adaptive sampling framework. It implements non-uniform pixel allocation via Möbius transformations and utilizes closed-loop semantic feedback to optimize sampling parameters at test-time, significantly o
+  [CVPR 2026][Multimodal VLM][Bio-inspired visual sampling] Inspired by human foveal encoding and cortical magnification mechanisms, this paper proposes LLMind, a training-free adaptive sampling framework. It implements non-uniform pixel allocation via Möbius transformations and utilizes closed-loop semantic feedback to optimize sampling parameters at test-time, significantly outperforming uniform sampling under tight budgets of only 1%-5% pixels.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VQA
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Bio-inspired visual sampling"
+  - "Möbius transformation"
+  - "training-free"
+  - "pixel budget"
+  - "VQA"
 date: 2026-05-08
-content_hash: 0619686f20c8cb82
+content_hash: 72f16e5e771b0fac
 ---
+
 # LLMind: Bio-inspired Training-free Adaptive Visual Representations for Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -144,11 +149,11 @@ The framework is entirely training-free; all optimizations occur at test-time th
 
 ## Related Papers
 
-- [\[CVPR 2026\] ZOO-Prune: Training-Free Token Pruning via Zeroth-Order Gradient Estimation in Vision-Language Models](zoo-prune_training-free_token_pruning_via_zeroth-order_gradient_estimation_in_vi.md)
-- [\[CVPR 2026\] AdaptVision: Efficient Vision-Language Models via Adaptive Visual Acquisition](adaptvision_efficient_vision-language_models_via_adaptive_visual_acquisition.md)
-- [\[CVPR 2026\] Proxy3D: Efficient 3D Representations for Vision-Language Models via Semantic Clustering and Alignment](proxy3d_efficient_3d_representations_for_vision-language_models_via_semantic_clu.md)
-- [\[CVPR 2026\] TUNA: Taming Unified Visual Representations for Native Unified Multimodal Models](tuna_taming_unified_visual_representations_for_native_unified_multimodal_models.md)
+- [\[CVPR 2026\] MODIX: A Training-Free Multimodal Information-Driven Positional Index Scaling for Vision-Language Models](modix_a_training-free_multimodal_information-driven_positional_index_scaling_for.md)
 - [\[CVPR 2026\] PAS: A Training-Free Stabilizer for Temporal Encoding in Video LLMs](pas_a_training-free_stabilizer_for_temporal_encoding_in_video_llms.md)
+- [\[CVPR 2026\] Aligning What Vision-Language Models See and Perceive with Adaptive Information Flow](aif_adaptive_information_flow_vlm.md)
+- [\[CVPR 2026\] Pointing at Parts: Training-Free Few-Shot Grounding in Multimodal LLMs](pointing_at_parts_training-free_few-shot_grounding_in_multimodal_llms.md)
+- [\[CVPR 2026\] DRS-GUI: Dynamic Region Search for Training-Free GUI Grounding](drs-gui_dynamic_region_search_for_training-free_gui_grounding.md)
 
 </div>
 

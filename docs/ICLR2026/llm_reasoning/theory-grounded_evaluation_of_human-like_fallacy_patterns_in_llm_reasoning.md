@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Theory-Grounded Evaluation of Human-Like Fallacy Patterns in LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] This paper utilizes Erotetic Reasoning Theory (ETR) from cognitive science and its open-source implementation, PyETR, to programmatically generate 383 formal reasoning problems. Evaluating 38 models, the study reveals a counterintuitive phenomenon: as model capability (Chatbot Arena Elo) increases, the proportion of lo
+  [ICLR 2026][Reasoning][Reasoning evaluation] This paper utilizes Erotetic Reasoning Theory (ETR) from cognitive science and its open-source implementation, PyETR, to programmatically generate 383 formal reasoning problems. Evaluating 38 models, the study reveals a counterintuitive phenomenon: as model capability (Chatbot Arena Elo) increases, the proportion of logical errors that "exactly match ETR-predicted human-like fallacies" rises, while overall logical accuracy remains…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Reasoning evaluation"
+  - "Cognitive fallacy"
+  - "Erotetic theory"
+  - "Data contamination resistance"
+  - "Order effects"
 date: 2026-05-08
-content_hash: 39fd67b05bc7cfdd
+content_hash: 638980d0bfd8b1d2
 ---
+
 # Theory-Grounded Evaluation of Human-Like Fallacy Patterns in LLM Reasoning
 
 **Conference**: ICLR 2026  
@@ -133,8 +139,8 @@ In stark contrast, **overall accuracy is completely unrelated to capability**: E
 - Value: ⭐⭐⭐⭐⭐ Provides a reusable pipeline and new metrics, offering counterintuitive evidence on whether scaling yields more rational reasoning.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -142,7 +148,7 @@ In stark contrast, **overall accuracy is completely unrelated to capability**: E
 - [\[ICLR 2026\] SceneCOT: Eliciting Grounded Chain-of-Thought Reasoning in 3D Scenes](scenecot_eliciting_grounded_chain-of-thought_reasoning_in_3d_scenes.md)
 - [\[ICLR 2026\] Expanding Reasoning Potential in Foundation Model by Learning Diverse Chains of Thought Patterns](expanding_reasoning_potential_in_foundation_model_by_learning_diverse_chains_of_.md)
 - [\[ICLR 2026\] TATTOO: Tool-Grounded Thinking PRM for Test-Time Scaling in Tabular Reasoning](tattoo_tool-grounded_thinking_prm_for_test-time_scaling_in_tabular_reasoning.md)
-- [\[ICLR 2026\] Semantic Voting: A Self-Evaluation-Free Approach for Efficient LLM Self-Improvement on Unverifiable Open-ended Tasks](semantic_voting_a_self-evaluation-free_approach_for_efficient_llm_self-improveme.md)
+- [\[ICML 2026\] Scaling-Aware Adapter for Structure-Grounded LLM Reasoning](../../ICML2026/llm_reasoning/scaling-aware_adapter_for_structure-grounded_llm_reasoning.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Prism: Efficient Test-Time Scaling via Hierarchical Search and Self-Verification for Discrete Diffusion Language Models
 description: >-
-  [ICML 2026][LLM Reasoning][dLLM] The authors decompose the problem of "efficient test-time scaling for discrete diffusion language models (dLLMs)" into three components: Hierarchical Trajectory Search (HTS) to allocate computation via an "exploration → progressive pruning → refinement" schedule, local branching via partial remasking to preserve high-c
+  [ICML 2026][Reasoning][dLLM] The authors decompose the problem of "efficient test-time scaling for discrete diffusion language models (dLLMs)" into three components: Hierarchical Trajectory Search (HTS) to allocate computation via an "exploration → progressive pruning → refinement" schedule, local branching via partial remasking to preserve high-confidence "logic skeletons," and using the dLLM itself as a Yes/No validator (SVF). Ultimately…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - dLLM
-  - test-time scaling
+  - "ICML 2026"
+  - "Reasoning"
+  - "dLLM"
+  - "test-time scaling"
+  - "hierarchical trajectory search"
+  - "self-verification"
+  - "partial remask"
 date: 2026-05-08
-content_hash: 206c1b4e623ac366
+content_hash: 02802db236add888
 ---
+
 # Prism: Efficient Test-Time Scaling via Hierarchical Search and Self-Verification for Discrete Diffusion Language Models
 
 **Conference**: ICML 2026  
@@ -136,15 +140,16 @@ Prism $K=4$ on MATH500 achieves $37.70$ with ~622 NFE, close to best-of-16 ($38.
 - Value: ⭐⭐⭐⭐⭐ (Highly practical for inference serving without retraining).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Lookahead Sample Reward Guidance for Test-Time Scaling of Diffusion Models](lookahead_sample_reward_guidance_for_test-time_scaling_of_diffusion_models.md)
 - [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](../../ICLR2026/llm_reasoning/efficient_test-time_scaling_for_small_vision-language_models.md)
+- [\[ICML 2026\] Aligning Tree-Search Policies with Fixed Token Budgets in Test-Time Scaling of LLMs](aligning_tree-search_policies_with_fixed_token_budgets_in_test-time_scaling_of_l.md)
 - [\[ICML 2026\] Stabilizing Recurrent Dynamics for Test-Time Scalable Latent Reasoning in Looped Language Models](stabilizing_recurrent_dynamics_for_test-time_scalable_latent_reasoning_in_looped.md)
-- [\[ICML 2026\] Less Diverse, Less Safe: The Indirect But Pervasive Risk of Test-Time Scaling in Large Language Models](less_diverse_less_safe_the_indirect_but_pervasive_risk_of_test-time_scaling_in_l.md)
-- [\[NeurIPS 2025\] Rethinking Optimal Verification Granularity for Compute-Efficient Test-Time Scaling](../../NeurIPS2025/llm_reasoning/rethinking_optimal_verification_granularity_for_compute-efficient_test-time_scal.md)
+- [\[ICLR 2026\] Test-Time Scaling in Diffusion LLMs via Hidden Semi-Autoregressive Experts](../../ICLR2026/llm_reasoning/test-time_scaling_in_diffusion_llms_via_hidden_semi-autoregressive_experts.md)
 
 </div>
 

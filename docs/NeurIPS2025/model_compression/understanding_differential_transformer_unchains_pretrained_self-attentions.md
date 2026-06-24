@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Understanding Differential Transformer Unchains Pretrained Self-Attentions
 description: >-
-  [NeurIPS 2025][Model Compression][Differential Transformer] This paper conducts an in-depth analysis of the internal mechanism of the Differential Transformer…
+  [NeurIPS 2025][Model Compression][Differential Transformer] This paper conducts an in-depth analysis of the internal mechanism of the Differential Transformer, revealing that the differential operation is equivalent to a robust attention denoising process — it "unchains" pretrained self-attentions from the constraints of softmax normalization, enabling attention weights to be more freely allocated to genuinely important tokens.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "pretrained attention liberation"
   - "interpretability"
 date: 2026-05-08
-content_hash: e3b913b6608f5837
+content_hash: 979fee6a409e169f
 ---
 
 # Understanding Differential Transformer Unchains Pretrained Self-Attentions
@@ -128,9 +128,9 @@ The working mechanism of the Differential Transformer is revealed through three 
 
 - [\[NeurIPS 2025\] Elastic ViTs from Pretrained Models without Retraining](elastic_vits_from_pretrained_models_without_retraining.md)
 - [\[NeurIPS 2025\] Spark Transformer: Reactivating Sparsity in FFN and Attention](spark_transformer_reactivating_sparsity_in_ffn_and_attention.md)
-- [\[NeurIPS 2025\] ReplaceMe: Network Simplification via Depth Pruning and Transformer Block Linearization](replaceme_network_simplification_via_depth_pruning_and_transformer_block_lineari.md)
 - [\[NeurIPS 2025\] Deterministic Continuous Replacement: Fast and Stable Module Replacement in Pretrained Transformers](deterministic_continuous_replacement_fast_and_stable_module_replacement_in_pretr.md)
-- [\[NeurIPS 2025\] The Graphon Limit Hypothesis: Understanding Neural Network Pruning via Infinite Width Analysis](the_graphon_limit_hypothesis_understanding_neural_network_pruning_via_infinite_w.md)
+- [\[NeurIPS 2025\] Learning to Better Search with Language Models via Guided Reinforced Self-Training](learning_to_better_search_with_language_models_via_guided_reinforced_self-traini.md)
+- [\[NeurIPS 2025\] How to Build a Consistency Model: Learning Flow Maps via Self-Distillation](how_to_build_a_consistency_model_learning_flow_maps_via_self-distillation.md)
 
 </div>
 

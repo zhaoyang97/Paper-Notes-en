@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] FlashDecoder: Real-Time Latent-to-Pixel Streaming Decoder with Transformers
 description: >-
-  [CVPR 2026][Image Generation][latent-to-pixel] Addressing the issue in real-time video generation where "denoising is fast enough, but convolutional decoders have become the bottleneck," FlashDecoder uses a pure Transformer decoder to decode latents into pixels **frame-by-frame**. By looking only at the recent $W_{\text{frm}}$ frames via a fixed-length rolling KV c
+  [CVPR 2026][Image Generation][Video decoder] Addressing the issue in real-time video generation where "denoising is fast enough, but convolutional decoders have become the bottleneck," FlashDecoder uses a pure Transformer decoder to decode latents into pixels **frame-by-frame**. By looking only at the recent $W_{\text{frm}}$ frames via a fixed-length rolling KV cache, it achieves constant latency and bounded memory regardless of video length. On 1080p…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - latent-to-pixel
-  - Transformer VAE
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Video decoder"
+  - "latent-to-pixel"
+  - "streaming generation"
+  - "rolling KV cache"
+  - "Transformer VAE"
 date: 2026-05-08
-content_hash: 184f47be768d3b78
+content_hash: 05a1827fde512aab
 ---
+
 # FlashDecoder: Real-Time Latent-to-Pixel Streaming Decoder with Transformers
 
 **Conference**: CVPR 2026  
@@ -140,16 +144,16 @@ Window size ablation: $W_{\text{frm}}\in\{2,3,4\}$ yields stable quality (PSNR 3
 - Value: ⭐⭐⭐⭐⭐ Directly addresses a major bottleneck in real-time video generation with high engineering utility.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] StreamDiT: Real-Time Streaming Text-to-Video Generation](streamdit_real-time_streaming_text-to-video_generation.md)
 - [\[CVPR 2026\] StreamAvatar: Streaming Diffusion Models for Real-Time Interactive Human Avatars](streamavatar_streaming_diffusion_models_for_real-time_interactive_human_avatars.md)
 - [\[CVPR 2026\] PixelDiT: Pixel Diffusion Transformers for Image Generation](pixeldit_pixel_diffusion_transformers_for_image_generation.md)
-- [\[CVPR 2026\] DreamStereo: Towards Real-Time Stereo Inpainting for HD Videos](dreamstereo_towards_real-time_stereo_inpainting_for_hd_videos.md)
 - [\[CVPR 2026\] Your Latent Mask is Wrong: Pixel-Equivalent Latent Compositing for Diffusion Models](your_latent_mask_is_wrong_pixel-equivalent_latent_compositing_for_diffusion_mode.md)
-- [\[CVPR 2026\] Training-free Mixed-Resolution Latent Upsampling for Spatially Accelerated Diffusion Transformers](training-free_mixed-resolution_latent_upsampling_for_spatially_accelerated_diffu.md)
+- [\[CVPR 2026\] DreamStereo: Towards Real-Time Stereo Inpainting for HD Videos](dreamstereo_towards_real-time_stereo_inpainting_for_hd_videos.md)
 
 </div>
 

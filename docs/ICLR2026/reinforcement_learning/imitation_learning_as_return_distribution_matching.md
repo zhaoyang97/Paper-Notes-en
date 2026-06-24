@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Imitation Learning as Return Distribution Matching
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper reformulates risk-sensitive imitation learning as a "matching the complete return distribution of the expert" problem. It designs two algorithms, RS-BC and RS-KT, with sample complexity guarantees using a class of non-Markovian policies that depend on cumulative returns in tabular MDPs.
+  [ICLR 2026][Reinforcement Learning][Risk-sensitive imitation learning] This paper reformulates risk-sensitive imitation learning as a "matching the complete return distribution of the expert" problem. It designs two algorithms, RS-BC and RS-KT, with sample complexity guarantees using a class of non-Markovian policies that depend on cumulative returns in tabular MDPs.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Risk-sensitive imitation learning"
+  - "return distribution matching"
+  - "Wasserstein distance"
+  - "non-Markovian policies"
+  - "sample complexity"
 date: 2026-05-08
-content_hash: faaa83573bccfa24
+content_hash: 08ab1410678be5d9
 ---
+
 # Imitation Learning as Return Distribution Matching
 
 **Conference**: ICLR 2026  
@@ -166,10 +172,20 @@ Baselines like BC and MIMIC-MD hit a performance plateau due to structural bias 
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Q-Learning with Adjoint Matching](q-learning_with_adjoint_matching.md)
+- [\[ICLR 2026\] Latent Wasserstein Adversarial Imitation Learning](latent_wasserstein_adversarial_imitation_learning.md)
+- [\[ICLR 2026\] Flow Matching Policy Gradients](flow_matching_policy_gradients.md)
+- [\[ICLR 2026\] Near-Optimal Second-Order Guarantees for Model-Based Adversarial Imitation Learning](near-optimal_second-order_guarantees_for_model-based_adversarial_imitation_learn.md)
+- [\[ICLR 2026\] On Discovering Algorithms for Adversarial Imitation Learning](on_discovering_algorithms_for_adversarial_imitation_learning.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Q-Learning with Adjoint Matching](q-learning_with_adjoint_matching.md)

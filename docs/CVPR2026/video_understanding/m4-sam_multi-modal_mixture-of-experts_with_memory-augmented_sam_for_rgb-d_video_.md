@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] M4-SAM: Multi-Modal Mixture-of-Experts with Memory-Augmented SAM for RGB-D Video Salient Object Detection
 description: >-
-  [CVPR 2026][Segmentation][SAM2] To efficiently adapt SAM2 for RGB-D Video Salient Object Detection (RGB-D VSOD), M4-SAM injects "Modality-Aware MoE-LoRA" into the frozen SAM2 encoder for parameter-efficient fine-tuning, utilizes "Gated Multi-Level Feature Fusion + Memory Bank" to aggregate multi-scale temporal information, and employs "Pseudo-Guided
+  [CVPR 2026][Video Understanding][RGB-D Video Salient Object Detection] To efficiently adapt SAM2 for RGB-D Video Salient Object Detection (RGB-D VSOD), M4-SAM injects "Modality-Aware MoE-LoRA" into the frozen SAM2 encoder for parameter-efficient fine-tuning, utilizes "Gated Multi-Level Feature Fusion + Memory Bank" to aggregate multi-scale temporal information, and employs "Pseudo-Guided Initialization" to eliminate dependence on manual prompts. It achieves SOTA across all me…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - SAM2
-  - MoE-LoRA
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "RGB-D Video Salient Object Detection"
+  - "SAM2"
+  - "MoE-LoRA"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Temporal Memory"
 date: 2026-05-08
-content_hash: 902f830ed326c9df
+content_hash: cf8ade96c51ef1ac
 ---
+
 # M4-SAM: Multi-Modal Mixture-of-Experts with Memory-Augmented SAM for RGB-D Video Salient Object Detection
 
 **Conference**: CVPR 2026  
@@ -136,11 +140,11 @@ Compared to SAM-based baselines (MDSAM, SAM2-UNet, KAN-SAM), M4-SAM leads by an 
 
 ## Related Papers
 
-- [\[CVPR 2026\] V²-SAM: Marrying SAM2 with Multi-Prompt Experts for Cross-View Object Correspondence](v2-sam_marrying_sam2_with_multi-prompt_experts_for_cross-view_object_corresponde.md)
-- [\[AAAI 2026\] SAM-DAQ: Segment Anything Model with Depth-guided Adaptive Queries for RGB-D Video Salient Object Detection](../../AAAI2026/segmentation/sam-daq_segment_anything_model_with_depth-guided_adaptive_queries_for_rgb-d_vide.md)
-- [\[CVPR 2026\] Uncertainty-Aware Modality Fusion for Unaligned RGB-T Salient Object Detection](uncertainty-aware_modality_fusion_for_unaligned_rgb-t_salient_object_detection.md)
-- [\[CVPR 2026\] Spatial-SAM: Spatially Consistent 3D Electron Microscopy Segmentation with SDF Memory and Semi-Supervised Learning](spatial-sam_spatially_consistent_3d_electron_microscopy_segmentation_with_sdf_me.md)
-- [\[CVPR 2026\] PromptMoE: A Segmentation Refinement Framework Leveraging Mixture of Experts for Improved Prompting](promptmoe_a_segmentation_refinement_framework_leveraging_mixture_of_experts_for_.md)
+- [\[CVPR 2026\] Joint Learning of General and Diverse Patterns with Mixture of Memory Experts for Weakly-Supervised Video Anomaly Detection](joint_learning_of_general_and_diverse_patterns_with_mixture_of_memory_experts_fo.md)
+- [\[CVPR 2026\] VidPrism: Heterogeneous Mixture of Experts for Image-to-Video Transfer](vidprism_heterogeneous_mixture_of_experts_for_image-to-video_transfer.md)
+- [\[CVPR 2026\] Interactive Tracking: A Human-in-the-Loop Paradigm with Memory-Augmented Adaptation](interactive_tracking_a_human-in-the-loop_paradigm_with_memory-augmented_adaptati.md)
+- [\[ICLR 2026\] Exposing and Defending the Achilles' Heel of Video Mixture-of-Experts](../../ICLR2026/video_understanding/exposing_and_defending_the_achilles_heel_of_video_mixture-of-experts.md)
+- [\[ECCV 2024\] Occluded Gait Recognition with Mixture of Experts: An Action Detection Perspective](../../ECCV2024/video_understanding/occluded_gait_recognition_with_mixture_of_experts_an_action_detection_perspectiv.md)
 
 </div>
 

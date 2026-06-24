@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] DiT-IC: Aligned Diffusion Transformer for Efficient Image Compression
 description: >-
-  [CVPR 2026][Image Generation][diffusion transformer] This work adapts a pretrained text-to-image DiT (SANA) into an efficient one-step image compression decoder. Through three alignment mechanisms—variance-guided reconstruction flow (pixel-adaptive denoising intensity), self-distillation alignment (using encoder latents as distillation targets), and latent-conditional gu
+  [CVPR 2026][Image Generation][diffusion transformer] This work adapts a pretrained text-to-image DiT (SANA) into an efficient one-step image compression decoder. Through three alignment mechanisms—variance-guided reconstruction flow (pixel-adaptive denoising intensity), self-distillation alignment (using encoder latents as distillation targets), and latent-conditional guidance (replacing text encoders)—it achieves SOTA perceptual quality (BD-rate DISTS -87.88%) in a 32× downs…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - diffusion transformer
-  - image compression
-  - one-step diffusion
-  - flow matching
-  - latent alignment
-  - variance-guided
+  - "CVPR 2026"
+  - "Image Generation"
+  - "diffusion transformer"
+  - "image compression"
+  - "one-step diffusion"
+  - "flow matching"
+  - "latent alignment"
+  - "variance-guided"
 date: 2026-05-08
-content_hash: 680456372441e663
+content_hash: 473a259f6fc501c2
 ---
+
 # DiT-IC: Aligned Diffusion Transformer for Efficient Image Compression
 
 **Conference**: CVPR 2026  
@@ -159,11 +160,11 @@ Two-stage Implicit Bitrate Pruning (IBP): Stage 1 uses $\lambda_{\text{base}} \i
 
 ## Related Papers
 
-- [\[CVPR 2026\] MMFace-DiT: A Dual-Stream Diffusion Transformer for High-Fidelity Multimodal Face Generation](mmface-dit_a_dual-stream_diffusion_transformer_for_high-fidelity_multimodal_face.md)
 - [\[CVPR 2026\] MPDiT: Multi-Patch Global-to-Local Transformer Architecture for Efficient Flow Matching](mpdit_multi-patch_global-to-local_transformer_architecture_for_efficient_flow_ma.md)
-- [\[CVPR 2026\] Denoising, Fast and Slow: Difficulty-Aware Adaptive Sampling for Image Generation](denoising_fast_and_slow_difficulty-aware_adaptive_sampling_for_image_generation.md)
+- [\[CVPR 2026\] MMFace-DiT: A Dual-Stream Diffusion Transformer for High-Fidelity Multimodal Face Generation](mmface-dit_a_dual-stream_diffusion_transformer_for_high-fidelity_multimodal_face.md)
 - [\[CVPR 2026\] DDT: Decoupled Diffusion Transformer](ddt_decoupled_diffusion_transformer.md)
 - [\[CVPR 2026\] Guiding a Diffusion Transformer with the Internal Dynamics of Itself](guiding_a_diffusion_transformer_with_the_internal_dynamics_of_itself.md)
+- [\[CVPR 2026\] StreamDiT: Real-Time Streaming Text-to-Video Generation](streamdit_real-time_streaming_text-to-video_generation.md)
 
 </div>
 

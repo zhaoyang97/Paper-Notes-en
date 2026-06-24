@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Private Frequency Estimation via Residue Number Systems
 description: >-
-  [AAAI 2026][Local Differential Privacy] This paper proposes ModularSubsetSelection (MSS), a local differential privacy frequency estimation protocol based on the Residue Number System (RNS). MSS achieves estimation accur…
+  [AAAI 2026][Local Differential Privacy] This paper proposes ModularSubsetSelection (MSS), a local differential privacy frequency estimation protocol based on the Residue Number System (RNS). MSS achieves estimation accuracy comparable to SubsetSelection and PGR while significantly reducing communication overhead (up to 50% less than SS), substantially accelerating server-side decoding (11–448× faster than PGR), and attaining the lowest data reconstruction attack success rate.
 tags:
   - "AAAI 2026"
   - "Local Differential Privacy"
@@ -11,7 +11,7 @@ tags:
   - "Communication Efficiency"
   - "Data Reconstruction Attack"
 date: 2026-05-08
-content_hash: 5d5b086217bf78cc
+content_hash: f54d74ebff829647
 ---
 
 # Private Frequency Estimation via Residue Number Systems
@@ -176,11 +176,11 @@ MSS substantially outperforms PGR in runtime across all privacy budgets, with sp
 
 ## Related Papers
 
-- [\[CVPR 2026\] OmniFood8K: Single-Image Nutrition Estimation via Hierarchical Frequency-Aligned Fusion](../../CVPR2026/others/omnifood8k_nutrition_estimation.md)
 - [\[AAAI 2026\] Improved Differentially Private Algorithms for Rank Aggregation](improved_differentially_private_algorithms_for_rank_aggregation.md)
-- [\[AAAI 2026\] Scalable Vision-Guided Crop Yield Estimation](scalable_vision-guided_crop_yield_estimation.md)
-- [\[AAAI 2026\] Reward Redistribution via Gaussian Process Likelihood Estimation](reward_redistribution_via_gaussian_process_likelihood_estimation.md)
 - [\[AAAI 2026\] Designing Incident Reporting Systems for Harms from General-Purpose AI](designing_incident_reporting_systems_for_harms_from_general-purpose_ai.md)
+- [\[AAAI 2026\] Reward Redistribution via Gaussian Process Likelihood Estimation](reward_redistribution_via_gaussian_process_likelihood_estimation.md)
+- [\[AAAI 2026\] A New Strategy for Verifying Reach-Avoid Specifications in Neural Feedback Systems](a_new_strategy_for_verifying_reach-avoid_specifications_in_neural_feedback_syste.md)
+- [\[NeurIPS 2025\] Private Evolution Converges](../../NeurIPS2025/others/private_evolution_converges.md)
 
 </div>
 

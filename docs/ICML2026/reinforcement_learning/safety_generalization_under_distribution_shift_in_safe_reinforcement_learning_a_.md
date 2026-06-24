@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Safety Generalization Under Distribution Shift in Safe Reinforcement Learning: A Diabetes Testbed
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] Based on the UVA-Padova physical model, the authors developed a unified T1D/T2D diabetes simulator. They discovered that while 8 mainstream Safe RL algorithms satisfy safety constraints on training patients, their Time-in-Range (TIR) drops by 8–13% when deployed to unseen patients. They propose using Basis-Adaptive Neu
+  [ICML 2026][Reinforcement Learning][Safe Reinforcement Learning] Based on the UVA-Padova physical model, the authors developed a unified T1D/T2D diabetes simulator. They discovered that while 8 mainstream Safe RL algorithms satisfy safety constraints on training patients, their Time-in-Range (TIR) drops by 8–13% when deployed to unseen patients. They propose using Basis-Adaptive Neural ODEs to predict blood glucose trajectories and apply predictive shielding to filter dangero…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Safe Reinforcement Learning"
+  - "Distribution Shift"
+  - "Test-time Shielding"
+  - "Neural ODE"
+  - "Diabetes Decision-making"
 date: 2026-05-08
-content_hash: 49fe50dda5e6f46e
+content_hash: 5a270ba4b0c95261
 ---
+
 # Safety Generalization Under Distribution Shift in Safe Reinforcement Learning: A Diabetes Testbed
 
 **Conference**: ICML 2026  
@@ -168,10 +174,10 @@ BA-NODE reduced both mean and variance across all metrics, proving function spac
 ## Related Papers
 
 - [\[AAAI 2026\] Partial Action Replacement: Tackling Distribution Shift in Offline MARL](../../AAAI2026/reinforcement_learning/partial_action_replacement_tackling_distribution_shift_in_offline_marl.md)
+- [\[ICLR 2026\] Generalization of RLVR Using Causal Reasoning as a Testbed](../../ICLR2026/reinforcement_learning/generalization_of_rlvr_using_causal_reasoning_as_a_testbed.md)
 - [\[ICML 2026\] Safe In-Context Reinforcement Learning](safe_in-context_reinforcement_learning.md)
 - [\[ICML 2026\] Safe Reinforcement Learning with Preference-Based Constraint Inference](safe_reinforcement_learning_with_preference-based_constraint_inference.md)
 - [\[ICML 2026\] Learning to Search and Searching to Learn for Generalization in Planning](learning_to_search_and_searching_to_learn_for_generalization_in_planning.md)
-- [\[ICML 2026\] DARTS: Distribution-Aware Active Rollout Trajectory Shaping for Accelerating LLM Reinforcement Learning](darts_distribution-aware_active_rollout_trajectory_shaping_for_accelerating_llm_.md)
 
 </div>
 

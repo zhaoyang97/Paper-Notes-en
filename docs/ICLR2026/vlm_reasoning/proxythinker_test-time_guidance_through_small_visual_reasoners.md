@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ProxyThinker: Test-Time Guidance Through Small Visual Reasoners
 description: >-
-  [ICLR 2026][vlm_reasoning][Paper Note] ProxyThinker proposes a **completely training-free** test-time method: by adding the token-level logit difference between a small "RFT Expert" and an equivalent-sized "Base Amateur" to the output logits of a large base model (weighted by coefficient $\alpha$), a 32B/72B model can "inherit" the slow-thinking behaviors (
+  [ICLR 2026][VLM Reasoning][Visual Reasoning] ProxyThinker proposes a **completely training-free** test-time method: by adding the token-level logit difference between a small "RFT Expert" and an equivalent-sized "Base Amateur" to the output logits of a large base model (weighted by coefficient $\alpha$), a 32B/72B model can "inherit" the slow-thinking behaviors (e.g., self-verification, self-correction) from RL-tuned small models without any parameter updates. This approach a…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Visual Reasoning"
+  - "Decoding-time Guidance"
+  - "Logit Difference"
+  - "Reinforcement Fine-Tuning"
+  - "Slow Thinking"
 date: 2026-05-08
-content_hash: f8c0e010a4303cf6
+content_hash: 7ffe6a8365fc6662
 ---
+
 # ProxyThinker: Test-Time Guidance Through Small Visual Reasoners
 
 **Conference**: ICLR 2026  
@@ -135,7 +141,7 @@ A standout result: using OpenVLThinker-7B (which has only 25.3% MathVision accur
 - [\[ICLR 2026\] Small Drafts, Big Verdict: Information-Intensive Visual Reasoning via Speculation](small_drafts_big_verdict_information-intensive_visual_reasoning_via_speculation.md)
 - [\[ICLR 2026\] No Labels, No Problem: Training Visual Reasoners with Multimodal Verifiers](no_labels_no_problem_training_visual_reasoners_with_multimodal_verifiers.md)
 - [\[CVPR 2026\] UniT: Unified Multimodal Chain-of-Thought Test-time Scaling](../../CVPR2026/vlm_reasoning/unit_unified_multimodal_chain-of-thought_test-time_scaling.md)
-- [\[ICLR 2026\] Empowering Small VLMs to Think with Dynamic Memorization and Exploration](empowering_small_vlms_to_think_with_dynamic_memorization_and_exploration.md)
+- [\[ICLR 2026\] Through the Lens of Contrast: Self-Improving Visual Reasoning in VLMs](through_the_lens_of_contrast_self-improving_visual_reasoning_in_vlms.md)
 
 </div>
 

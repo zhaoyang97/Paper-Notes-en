@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Any3D-VLA: Enhancing VLA Robustness via Diverse Point Clouds
 description: >-
-  [ICML 2026][Multimodal VLM][sim-to-real] Through a pilot study, the authors discovered that "explicitly lifting vision to point clouds and fusing them with 2D patches" is the most effective way to inject 3D information into VLA models. To address 3D data scarcity and domain gaps across different point cloud sources (simulation, sensor, or monocular estimation
+  [ICML 2026][Multimodal VLM][Point Cloud Fusion] Through a pilot study, the authors discovered that "explicitly lifting vision to point clouds and fusing them with 2D patches" is the most effective way to inject 3D information into VLA models. To address 3D data scarcity and domain gaps across different point cloud sources (simulation, sensor, or monocular estimation), Any3D-VLA is proposed. By employing hybrid point cloud training to learn source-agnostic geometric representa…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - sim-to-real
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Point Cloud Fusion"
+  - "sim-to-real"
+  - "Domain Generalization"
+  - "Data Augmentation"
+  - "Grasping"
 date: 2026-05-08
-content_hash: 32d14d567a1783af
+content_hash: d28b1b480da05e74
 ---
+
 # Any3D-VLA: Enhancing VLA Robustness via Diverse Point Clouds
 
 **Conference**: ICML 2026  
@@ -144,10 +149,10 @@ Two challenge tasks: Task 1 (Pink tulip in vase) and Task 2 (Transparent cup in 
 
 ## Related Papers
 
-- [\[ICML 2026\] VLANeXt：构建强大 VLA 模型的配方](vlanext_recipes_for_building_strong_vla_models.md)
-- [\[ICML 2026\] VLA-Arena：评估视觉语言动作模型的开源框架](vla-arena_an_open-source_framework_for_benchmarking_vision-language-action_model.md)
-- [\[ICML 2026\] TRAP: 用对抗 patch 劫持 VLA 的 CoT 推理实现目标行为攻击](trap_hijacking_vla_cot-reasoning_via_adversarial_patches.md)
 - [\[AAAI 2026\] Phantom Menace: Exploring and Enhancing the Robustness of VLA Models Against Physical Sensor Attacks](../../AAAI2026/multimodal_vlm/phantom_menace_exploring_and_enhancing_the_robustness_of_vla_models_against_phys.md)
+- [\[ICML 2026\] VLANeXt: A Recipe for Building Robust VLA Models](vlanext_recipes_for_building_strong_vla_models.md)
+- [\[ICML 2026\] TRAP: Hijacking CoT Reasoning of VLA for Targeted Behavior Attacks via Adversarial Patches](trap_hijacking_vla_cot-reasoning_via_adversarial_patches.md)
+- [\[ICML 2026\] VLA-Arena: An Open-Source Framework for Evaluating Vision-Language-Action Models](vla-arena_an_open-source_framework_for_benchmarking_vision-language-action_model.md)
 - [\[AAAI 2026\] FT-NCFM: An Influence-Aware Data Distillation Framework for Efficient VLA Models](../../AAAI2026/multimodal_vlm/ft-ncfm_an_influence-aware_data_distillation_framework_for_efficient_vla_models.md)
 
 </div>

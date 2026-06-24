@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ULF-Loc: Unbiased Landmark Feature for Robust Visual Localization with 3D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper theoretically proves that optimizing 3DGS feature fields via $\alpha$-blending introduces inherent bias to 3D point features. It proposes ULF-Loc, which replaces biased feature optimization with "Geometric Weighted Multi-view Feature Fusion," selects reliable landmarks through "Keypoint Consensus Sampling,"
+  [CVPR 2026][3D Vision][Visual Localization] This paper theoretically proves that optimizing 3DGS feature fields via $\alpha$-blending introduces inherent bias to 3D point features. It proposes ULF-Loc, which replaces biased feature optimization with "Geometric Weighted Multi-view Feature Fusion," selects reliable landmarks through "Keypoint Consensus Sampling," and eliminates mismatches caused by rendering artifacts using "Local Geometric Consistency Verification." On Cambrid…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Visual Localization"
+  - "3D Gaussian Splatting"
+  - "Feature Bias"
+  - "Geometric Weighted Fusion"
+  - "Pose Estimation"
 date: 2026-05-08
-content_hash: 7e5c49ddfa8e2205
+content_hash: 9540738d694860ab
 ---
+
 # ULF-Loc: Unbiased Landmark Feature for Robust Visual Localization with 3D Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -150,14 +156,14 @@ Ablation on Cambridge Landmarks (recall at [50cm/5° | 15cm/5°]):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] AsymLoc: Towards Asymmetric Feature Matching for Efficient Visual Localization](asymloc_towards_asymmetric_feature_matching_for_efficient_visual_localization.md)
 - [\[CVPR 2025\] Gaussian Splatting Feature Fields for Privacy-Preserving Visual Localization](../../CVPR2025/3d_vision/gaussian_splatting_feature_fields_for_privacy-preserving_visual_localization.md)
-- [\[CVPR 2026\] Robust3DGSW: Toward Robust Watermarking for Quantization-Aware 3D Gaussian Splatting](robust3dgsw_toward_robust_watermarking_for_quantization-aware_3d_gaussian_splatt.md)
 - [\[CVPR 2026\] Towards Visual Query Localization in the 3D World](towards_visual_query_localization_in_the_3d_world.md)
+- [\[CVPR 2026\] Robust3DGSW: Toward Robust Watermarking for Quantization-Aware 3D Gaussian Splatting](robust3dgsw_toward_robust_watermarking_for_quantization-aware_3d_gaussian_splatt.md)
 - [\[CVPR 2026\] Hierarchical Visual Relocalization with Nearest View Synthesis from Feature Gaussian Splatting](hierarchical_visual_relocalization_with_nearest_view_synthesis_from_feature_gaus.md)
 
 </div>

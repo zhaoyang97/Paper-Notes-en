@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Visual Implicit Autoregressive Modeling
 description: >-
-  [ICML 2026][Image Generation][VAR] This paper integrates Deep Equilibrium (DEQ) implicit fixed-point layers into the next-scale autoregressive framework of VAR. By utilizing Stochastic Jacobian-Free Backpropagation to achieve constant-memory training, the authors compress the 2 billion parameters of VAR-d30 to 770 million. At inference, the number of it
+  [ICML 2026][Image Generation][VAR] This paper integrates Deep Equilibrium (DEQ) implicit fixed-point layers into the next-scale autoregressive framework of VAR. By utilizing Stochastic Jacobian-Free Backpropagation to achieve constant-memory training, the authors compress the 2 billion parameters of VAR-d30 to 770 million. At inference, the number of iterations per scale becomes a "tunable knob"—maintaining an FID of 2.16 and sFID of 8.07 on ImageNet-256…
 tags:
-  - ICML 2026
-  - Image Generation
-  - VAR
-  - Deep Equilibrium
-  - Jacobian-Free Backprop
-  - Next-scale prediction
+  - "ICML 2026"
+  - "Image Generation"
+  - "VAR"
+  - "Deep Equilibrium"
+  - "Jacobian-Free Backprop"
+  - "Next-scale prediction"
+  - "Adaptive Inference"
 date: 2026-05-08
-content_hash: b58a5f46913162b2
+content_hash: 9d058f157b11decd
 ---
+
 # Visual Implicit Autoregressive Modeling
 
 **Conference**: ICML 2026  

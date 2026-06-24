@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generating Physically Stable and Buildable Brick Structures from Text
 description: >-
-  [ICCV2025][3D Vision][text-to-3D] BrickGPT is the first method to generate physically stable and assemblable interlocking brick structures directly from text prompts. The core idea is to formulate brick assembly as an au…
+  [ICCV2025][3D Vision][text-to-3D] BrickGPT is the first method to generate physically stable and assemblable interlocking brick structures directly from text prompts. The core idea is to formulate brick assembly as an autoregressive text generation task, augmented at inference time with physics-aware validity checking and a rollback mechanism to ensure structural stability and buildability.
 tags:
   - "ICCV2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "autoregressive LLM"
   - "LEGO generation"
 date: 2026-05-08
-content_hash: 31331760e0885130
+content_hash: 669a6720de76737a
 ---
 
 # Generating Physically Stable and Buildable Brick Structures from Text
@@ -145,9 +145,9 @@ The topic is novel, representing the first method to generate physically stable 
 ## Related Papers
 
 - [\[ICCV 2025\] Stable Score Distillation](stable_score_distillation.md)
-- [\[ICCV 2025\] Bolt3D: Generating 3D Scenes in Seconds](bolt3d_generating_3d_scenes_in_seconds.md)
+- [\[CVPR 2025\] Stable-SCore: A Stable Registration-Based Framework for 3D Shape Correspondence](../../CVPR2025/3d_vision/stable-score_a_stable_registration-based_framework_for_3d_shape_correspondence.md)
 - [\[ICCV 2025\] SuperMat: Physically Consistent PBR Material Estimation at Interactive Rates](supermat_physically_consistent_pbr_material_estimation_at_interactive_rates.md)
-- [\[ICCV 2025\] A Recipe for Generating 3D Worlds from a Single Image](a_recipe_for_generating_3d_worlds_from_a_single_image.md)
+- [\[ICCV 2025\] Bolt3D: Generating 3D Scenes in Seconds](bolt3d_generating_3d_scenes_in_seconds.md)
 - [\[CVPR 2026\] BrickNet: Graph-Backed Generative Brick Assembly](../../CVPR2026/3d_vision/bricknet_graph-backed_generative_brick_assembly.md)
 
 </div>

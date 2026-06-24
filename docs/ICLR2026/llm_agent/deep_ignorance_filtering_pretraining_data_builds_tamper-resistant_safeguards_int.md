@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Deep Ignorance: Filtering Pretraining Data Builds Tamper-Resistant Safeguards into Open-Weight LLMs
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] The authors propose a multi-stage pretraining data filtering pipeline utilizing a "blocklist + ModernBERT classifier" to remove dual-use biothreat-related text from the corpus. By training a 6.9B model from scratch, they achieve "harmlessness" that persists even under adversarial fine-tuning of up to 10,000 steps and 3
+  [ICLR2026][LLM Agent][Pretraining data filtering] The authors propose a multi-stage pretraining data filtering pipeline utilizing a "blocklist + ModernBERT classifier" to remove dual-use biothreat-related text from the corpus. By training a 6.9B model from scratch, they achieve "harmlessness" that persists even under adversarial fine-tuning of up to 10,000 steps and 300 million tokens—outperforming existing post-training defenses by over an order of magnitude without compromi…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR2026"
+  - "LLM Agent"
+  - "Pretraining data filtering"
+  - "Tamper-resistance"
+  - "Open-weight security"
+  - "Biothreat knowledge"
+  - "Defense-in-depth"
 date: 2026-05-08
-content_hash: d6c7cea959a7d080
+content_hash: 43a1b5470a06c612
 ---
+
 # Deep Ignorance: Filtering Pretraining Data Builds Tamper-Resistant Safeguards into Open-Weight LLMs
 
 **Conference**: ICLR2026  

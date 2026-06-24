@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] VocSim：单源音频零样本内容身份识别的无训练基准
+  [Paper Note] VocSim: A Training-Free Benchmark for Zero-Shot Content Identity Recognition for Single-Source Audio
 description: >-
-  [ICML 2026][Audio & Speech][Paper Note] VocSim is a training-free benchmark covering 125k single-source audio clips that diagnoses the intrinsic geometry of frozen audio foundation models through label-agnostic PCA whitening—revealing severe generalization defects in current models on low-resource cross-lingual speech.
+  [ICML 2026][Audio & Speech][Audio Representation Learning] VocSim is a training-free benchmark covering 125k single-source audio clips that diagnoses the intrinsic geometry of frozen audio foundation models through label-agnostic PCA whitening—revealing severe generalization defects in current models on low-resource cross-lingual speech.
 tags:
-  - ICML 2026
-  - Audio & Speech
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "Audio Representation Learning"
+  - "Zero-shot"
+  - "Benchmarking"
+  - "Content Identity"
+  - "Unsupervised Evaluation"
 date: 2026-05-08
-content_hash: f3bfa534c43df17e
+content_hash: d92fe5159c34833e
 ---
+
 # VocSim: A Training-Free Benchmark for Zero-Shot Content Identity Recognition for Single-Source Audio
 
 **Conference**: ICML 2026  
@@ -131,11 +137,11 @@ No parameter updates are performed; only the geometry of frozen embeddings is ev
 
 ## Related Papers
 
+- [\[ICML 2026\] MusicDET: Zero-Shot AI-Generated Music Detection](musicdet_zero-shot_ai-generated_music_detection.md)
 - [\[ICML 2026\] NAACA: Training-Free NeuroAuditory Attentive Cognitive Architecture with Oscillatory Working Memory for Salience-Driven Attention Gating](naaca_training-free_neuroauditory_attentive_cognitive_architecture_with_oscillat.md)
-- [\[ICML 2026\] Multiple Choice Learning of Low-Rank Adapters for Language Modeling](multiple_choice_learning_of_low-rank_adapters_for_language_modeling.md)
-- [\[ICML 2026\] Group Cognition Learning: Making Everything Better Through Governed Two-Stage Agents Collaboration](group_cognition_learning_making_everything_better_through_governed_two-stage_age.md)
-- [\[ICML 2026\] Towards Understanding Modality Interaction in Multimodal Language Models via Partial Information Decomposition](towards_understanding_modality_interaction_in_multimodal_language_models_via_par.md)
-- [\[ICML 2026\] Towards Streaming Synchronized Spatial Audio Generation via Autoregressive Diffusion Transformer](towards_streaming_synchronized_spatial_audio_generation_via_autoregressive_diffu.md)
+- [\[ICML 2026\] Polyphonia: Zero-Shot Timbre Transfer in Polyphonic Music with Acoustic-Informed Attention Calibration](polyphonia_zero-shot_timbre_transfer_in_polyphonic_music_with_acoustic-informed_.md)
+- [\[ACL 2026\] Temporal Contrastive Decoding: A Training-Free Method for Large Audio-Language Models](../../ACL2026/audio_speech/temporal_contrastive_decoding_a_training-free_method_for_large_audio-language_mo.md)
+- [\[ICCV 2025\] Zero-AVSR: Zero-Shot Audio-Visual Speech Recognition with LLMs by Learning Language-Agnostic Speech Representations](../../ICCV2025/audio_speech/zero-avsr_zero-shot_audio-visual_speech_recognition_with_llms_by_learning_langua.md)
 
 </div>
 

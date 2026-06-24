@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Hilbert: Recursively Building Formal Proofs with Informal Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Lean 4] HILBERT constructs an agent using a quartet of "General Reasoning LLM + Specialized Proving LLM + Verifier + Theorem Retriever." By recursively decomposing difficult problems into subgoals, proving them layer-by-layer, and reassembling them, it increases the success rate of formal proof from the teens to 70% on PutnamB
+  [ICLR 2026][Reasoning][Formal Theorem Proving] HILBERT constructs an agent using a quartet of "General Reasoning LLM + Specialized Proving LLM + Verifier + Theorem Retriever." By recursively decomposing difficult problems into subgoals, proving them layer-by-layer, and reassembling them, it increases the success rate of formal proof from the teens to 70% on PutnamBench and 99.2% on miniF2F, allowing open-source models to approach informal reasoning levels for the first time.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Lean 4
-  - miniF2F
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Formal Theorem Proving"
+  - "Lean 4"
+  - "Recursive Decomposition"
+  - "Retrieval-Augmented Generation"
+  - "Agents"
+  - "miniF2F"
+  - "PutnamBench"
 date: 2026-05-08
-content_hash: 1787dac8b10d467d
+content_hash: 246866684017bdfb
 ---
+
 # Hilbert: Recursively Building Formal Proofs with Informal Reasoning
 
 **Conference**: ICLR 2026  
@@ -143,11 +149,11 @@ This outperforms the proprietary SeedProver by nearly 20 percentage points and s
 
 ## Related Papers
 
-- [\[ICLR 2026\] ProofBridge: Auto-Formalization of Natural Language Proofs in Lean via Joint Embeddings](proofbridge_auto-formalization_of_natural_language_proofs_in_lean_via_joint_embe.md)
 - [\[ICLR 2026\] Mathesis: Towards Formal Theorem Proving from Natural Languages](mathesis_towards_formal_theorem_proving_from_natural_languages.md)
+- [\[ICLR 2026\] ProofBridge: Auto-Formalization of Natural Language Proofs in Lean via Joint Embeddings](proofbridge_auto-formalization_of_natural_language_proofs_in_lean_via_joint_embe.md)
 - [\[ICLR 2026\] ProofOptimizer: Training Language Models to Simplify Proofs without Human Demonstrations](proofoptimizer_training_language_models_to_simplify_proofs_without_human_demonst.md)
+- [\[ICLR 2026\] Let's Explore Step by Step: Generating Provable Formal Statements with Deductive Exploration](lets_explore_step_by_step_generating_provable_formal_statements_with_deductive_e.md)
 - [\[CVPR 2026\] Hilbert-Geo: Solving Solid Geometric Problems by Neural-Symbolic Reasoning](../../CVPR2026/llm_reasoning/hilbert-geo_solving_solid_geometric_problems_by_neural-symbolic_reasoning.md)
-- [\[ICLR 2026\] FATE: A Formal Benchmark Series for Frontier Algebra of Multiple Difficulty Levels](fate_a_formal_benchmark_series_for_frontier_algebra_of_multiple_difficulty_level.md)
 
 </div>
 

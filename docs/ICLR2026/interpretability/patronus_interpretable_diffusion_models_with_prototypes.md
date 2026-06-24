@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Patronus: Interpretable Diffusion Models with Prototypes
 description: >-
-  [ICLR 2026][Interpretability][Diffusion Model] Patronus grafts Prototype Proposal Networks (ProtoPNet) from the classification domain onto diffusion models: a patch-level prototype encoder encodes images into similarity vectors representing the activation degrees of each prototype. This vector is then used to condition the DDPM, making the diffusion generation proc
+  [ICLR 2026][Interpretability][Diffusion Models] Patronus grafts Prototype Proposal Networks (ProtoPNet) from the classification domain onto diffusion models: a patch-level prototype encoder encodes images into similarity vectors representing the activation degrees of each prototype. This vector is then used to condition the DDPM, making the diffusion generation process "inherently interpretable"—capable of clarifying which visual concepts are learned (what)…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Diffusion Models"
+  - "Prototype Networks"
+  - "Semantic Editing"
+  - "Shortcut Learning Diagnosis"
 date: 2026-05-08
-content_hash: 9d2ccd37b07eba7b
+content_hash: f2def7f3c5349c98
 ---
+
 # Patronus: Interpretable Diffusion Models with Prototypes
 
 **Conference**: ICLR 2026  

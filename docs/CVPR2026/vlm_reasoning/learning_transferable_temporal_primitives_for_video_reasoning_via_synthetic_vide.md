@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning Transferable Temporal Primitives for Video Reasoning via Synthetic Videos
 description: >-
-  [CVPR 2026][Video Understanding][GRPO] This paper proposes SynRL: a method to teach VLMs "temporal primitives" (direction, speed, state tracking, etc.) using synthetic videos (geometric movements/state changes) generated entirely via code. The core finding is that basic temporal skills learned from abstract synthetic videos can be **directly transferred** t
+  [CVPR 2026][VLM Reasoning][Temporal Reasoning] This paper proposes SynRL: a method to teach VLMs "temporal primitives" (direction, speed, state tracking, etc.) using synthetic videos (geometric movements/state changes) generated entirely via code. The core finding is that basic temporal skills learned from abstract synthetic videos can be **directly transferred** to real-world videos. Using only ~7.7K synthetic CoT samples, the model achieves comprehensive improvements across…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Temporal Reasoning"
+  - "Synthetic Video"
+  - "Temporal Primitives"
+  - "Data-efficient"
+  - "GRPO"
 date: 2026-05-08
-content_hash: d1affad175c74897
+content_hash: 23eb941f2dbc511c
 ---
+
 # Learning Transferable Temporal Primitives for Video Reasoning via Synthetic Videos
 
 **Conference**: CVPR 2026  
@@ -131,10 +136,10 @@ Temporal Localization (RexTime / Charades-STA, most significant gains):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
 - [\[CVPR 2026\] Incentivizing Versatile Video Reasoning in MLLMs via Data-Efficient Reinforcement Learning](incentivizing_versatile_video_reasoning_in_mllms_via_data-efficient_reinforcemen.md)
-- [\[CVPR 2026\] StreamReady: Learning What to Answer and When in Long Streaming Videos](streamready_learning_what_to_answer_and_when_in_long_streaming_videos.md)
-- [\[ACL 2026\] TemporalVLM: Video LLMs for Temporal Reasoning in Long Videos](../../ACL2026/video_understanding/temporalvlm_video_llms_for_temporal_reasoning_in_long_videos.md)
-- [\[CVPR 2026\] Learning to Refuse: Refusal-Aware Reinforcement Fine-Tuning for Hard-Irrelevant Queries in Video Temporal Grounding](learning_to_refuse_refusal-aware_reinforcement_fine-tuning_for_hard-irrelevant_q.md)
+- [\[ACL 2026\] TemporalVLM: Video LLMs for Temporal Reasoning in Long Videos](../../ACL2026/vlm_reasoning/temporalvlm_video_llms_for_temporal_reasoning_in_long_videos.md)
+- [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](reinforcing_structured_chain-of-thought_for_video_understanding.md)
 - [\[CVPR 2026\] Streaming Video Crime Anticipation with Spatio-Temporal Causal Reasoning](streaming_video_crime_anticipation_with_spatio-temporal_causal_reasoning.md)
 
 </div>

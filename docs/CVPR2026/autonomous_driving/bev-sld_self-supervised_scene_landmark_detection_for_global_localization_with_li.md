@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] BEV-SLD: Self-Supervised Scene Landmark Detection for Global Localization with LiDAR Bird's-Eye View Images
 description: >-
-  [CVPR 2026][Autonomous Driving][BEV] This paper proposes BEV-SLD, a LiDAR global localization method based on self-supervised Scene Landmark Detection (SLD). By decoupling detection from correspondence prediction, it achieves high-precision $(x, y, \text{azimuth})$ pose estimation across various scenarios with a compact storage footprint of only 20MB.
+  [CVPR 2026][Autonomous Driving][LiDAR localization] This paper proposes BEV-SLD, a LiDAR global localization method based on self-supervised Scene Landmark Detection (SLD). By decoupling detection from correspondence prediction, it achieves high-precision $(x, y, \text{azimuth})$ pose estimation across various scenarios with a compact storage footprint of only 20MB.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - BEV
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "LiDAR localization"
+  - "BEV"
+  - "scene landmark detection"
+  - "self-supervised learning"
+  - "global localization"
 date: 2026-05-08
-content_hash: 07bbaf833fb4e8f8
+content_hash: f45349f0c7109fc5
 ---
+
 # BEV-SLD: Self-Supervised Scene Landmark Detection for Global Localization with LiDAR Bird's-Eye View Images
 
 **Conference**: CVPR 2026  
@@ -162,6 +166,7 @@ BEV-SLD achieves the highest success rate across all datasets, with significant 
 | **Ours (BEV-SLD)** | **Landmark Detection** | **Tiny (20MB)** | **✗ (Self-sup)** | **Strong** | **Highest** |
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -169,8 +174,8 @@ BEV-SLD achieves the highest success rate across all datasets, with significant 
 - [\[CVPR 2026\] BEV-CAR: Enhancing Monocular Bird's Eye View Segmentation with Context-Aware Rasterization](bev-car_enhancing_monocular_birds_eye_view_segmentation_with_context-aware_raste.md)
 - [\[CVPR 2026\] Spe-BEVHead: Rethinking the Detection Head Design for Bird's-Eye-View Object Detection](spe-bevhead_rethinking_the_detection_head_design_for_birds-eye-view_object_detec.md)
 - [\[CVPR 2026\] TerraSeg: Self-Supervised Ground Segmentation for Any LiDAR](terraseg_self-supervised_ground_segmentation_for_any_lidar.md)
+- [\[ICLR 2026\] Bird's-eye-view Informed Reasoning Driver (BIRDriver)](../../ICLR2026/autonomous_driving/birds-eye-view_informed_reasoning_driver.md)
 - [\[CVPR 2026\] TACO: Task-Aware Contrastive Learning for Joint LiDAR Localization and 3D Object Detection](taco_task-aware_contrastive_learning_for_joint_lidar_localization_and_3d_object_.md)
-- [\[CVPR 2026\] CycleBEV: Regularizing View Transformation Networks via View Cycle Consistency for Bird's-Eye-View Semantic Segmentation](cyclebev_regularizing_view_transformation_networks_via_view_cycle_consistency_fo.md)
 
 </div>
 

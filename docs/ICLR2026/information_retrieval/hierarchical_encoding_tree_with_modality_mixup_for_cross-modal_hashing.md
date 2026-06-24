@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Hierarchical Encoding Tree with Modality Mixup for Cross-modal Hashing
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Paper Note] HINT utilizes structural entropy to compress sparse image-text pairings into a hierarchical "encoding tree," excavating multi-granularity semantic communities. By sampling intra-modal and cross-modal proxy samples from the tree, it progressively aligns the two modalities via an MMD-driven curriculum Mixup, achieving mo
+  [ICLR 2026][Information Retrieval & RAG][Cross-modal Retrieval] HINT utilizes structural entropy to compress sparse image-text pairings into a hierarchical "encoding tree," excavating multi-granularity semantic communities. By sampling intra-modal and cross-modal proxy samples from the tree, it progressively aligns the two modalities via an MMD-driven curriculum Mixup, achieving more robust unsupervised cross-modal hashing.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Cross-modal Retrieval"
+  - "Unsupervised Hashing"
+  - "Encoding Tree"
+  - "Structural Entropy"
+  - "Modality Mixup"
+  - "Curriculum Learning"
 date: 2026-05-08
-content_hash: 1ec2459ca29fe513
+content_hash: 8c3dd9ab9f2c6168
 ---
+
 # Hierarchical Encoding Tree with Modality Mixup for Cross-modal Hashing
 
 **Conference**: ICLR 2026  

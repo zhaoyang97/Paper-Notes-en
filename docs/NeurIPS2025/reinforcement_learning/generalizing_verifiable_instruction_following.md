@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generalizing Verifiable Instruction Following
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Instruction Following] This paper introduces IFBench, a benchmark for evaluating generalization in precise instruction following…
+  [NeurIPS 2025][Reinforcement Learning][Instruction Following] This paper introduces IFBench, a benchmark for evaluating generalization in precise instruction following, demonstrating that current SOTA models severely overfit to the 25 constraint templates of IFEval. It further proposes IF-RLVR, a training method based on GRPO with verifiable rewards, which significantly improves both in-domain and out-of-domain instruction following performance.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "GRPO"
   - "Generalization"
 date: 2026-05-08
-content_hash: 535ae99550681650
+content_hash: 91edca3f87134f1c
 ---
 
 # Generalizing Verifiable Instruction Following
@@ -173,9 +173,9 @@ The reward multiplier and weight are generally set to 1, and can be adjusted to 
 
 - [\[NeurIPS 2025\] Incentivizing Reasoning for Advanced Instruction-Following of Large Language Models](incentivizing_reasoning_for_advanced_instruction-following_of_large_language_mod.md)
 - [\[NeurIPS 2025\] Financial Instruction Following Evaluation (FIFE)](financial_instruction_following_evaluation_fife.md)
+- [\[ACL 2026\] ImpRIF: Stronger Implicit Reasoning Leads to Better Complex Instruction Following](../../ACL2026/reinforcement_learning/imprif_stronger_implicit_reasoning_leads_to_better_complex_instruction_following.md)
 - [\[NeurIPS 2025\] Reasoning Gym: Reasoning Environments for Reinforcement Learning with Verifiable Rewards](reasoning_gym_reasoning_environments_for_reinforcement_learning_with_verifiable_.md)
 - [\[ICLR 2026\] From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for RL of Open-ended Generation](../../ICLR2026/reinforcement_learning/from_verifiable_dot_to_reward_chain_harnessing_verifiable_reference-based_reward.md)
-- [\[ACL 2026\] ImpRIF: Stronger Implicit Reasoning Leads to Better Complex Instruction Following](../../ACL2026/reinforcement_learning/imprif_stronger_implicit_reasoning_leads_to_better_complex_instruction_following.md)
 
 </div>
 

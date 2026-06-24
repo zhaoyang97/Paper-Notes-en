@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ToolMATH: A Math Tool Benchmark for Realistic Long-Horizon Multi-Tool Reasoning
 description: >-
-  [ICML 2026][LLM Reasoning][Plan+ReAct] The authors construct the ToolMATH benchmark, containing 8K problems and 12K tools, by translating manual solution steps in the MATH dataset into "reusable Python tools with descriptions and type signatures." It covers long-horizon multi-tool compositions (hops 1-8+), controllable distractor similarity (5 levels × 4 de
+  [ICML 2026][Reasoning][Tool-call Evaluation] The authors construct the ToolMATH benchmark, containing 8K problems and 12K tools, by translating manual solution steps in the MATH dataset into "reusable Python tools with descriptions and type signatures." It covers long-horizon multi-tool compositions (hops 1-8+), controllable distractor similarity (5 levels × 4 densities), and tool-missing scenarios where "gold tools are entirely removed." Evaluations reveal that the dominant…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - Plan+ReAct
+  - "ICML 2026"
+  - "Reasoning"
+  - "Tool-call Evaluation"
+  - "Long-Horizon Multi-Tool Reasoning"
+  - "Distractor Tools"
+  - "Tool-Missing Scenarios"
+  - "Plan+ReAct"
 date: 2026-05-08
-content_hash: afa7a7afaeef9c4e
+content_hash: 84807961f125a75b
 ---
+
 # ToolMATH: A Math Tool Benchmark for Realistic Long-Horizon Multi-Tool Reasoning
 
 **Conference**: ICML 2026  
@@ -146,7 +151,7 @@ ToolMATH-Hard framework comparison (gold-only):
 - [\[ACL 2026\] Evo-Attacker: Memory-Augmented Reinforcement Learning for Long-Horizon Tool Attacks on LLM-MAS](../../ACL2026/llm_reasoning/evo-attacker_memory-augmented_reinforcement_learning_for_long-horizon_tool_attac.md)
 - [\[ICML 2026\] MOSAIC: Learning When to Act or Refuse — Guarding Agentic Reasoning Models for Safe Multi-step Tool Use](learning_when_to_act_or_refuse_guarding_agentic_reasoning_models_for_safe_multi-.md)
 - [\[ICML 2026\] Diversity Over Frequency: Rethinking Tool Use in Visual Chain-of-Thought Agents](diversity_over_frequency_rethinking_tool_use_in_visual_chain-of-thought_agents.md)
-- [\[ICML 2026\] DenseSteer: Steering Small Language Models towards Dense Math Reasoning](densesteer_steering_small_language_models_towards_dense_math_reasoning.md)
+- [\[ICLR 2026\] SimpleTIR: End-to-End Reinforcement Learning for Multi-Turn Tool-Integrated Reasoning](../../ICLR2026/llm_reasoning/simpletir_end-to-end_reinforcement_learning_for_multi-turn_tool-integrated_reaso.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Blink: Dynamic Visual Token Resolution for Enhanced Multimodal Understanding
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] The Blink framework is proposed to adaptively enhance visual perception in a single forward pass by dynamically expanding and discarding visual tokens across different Transformer layers of MLLMs (mimicking human "rapid-blink" scanning), improving LLaVA-1.5 performance across multiple multimodal benchmarks.
+  [CVPR 2026][Multimodal Efficiency][Visual token resolution] The Blink framework is proposed to adaptively enhance visual perception in a single forward pass by dynamically expanding and discarding visual tokens across different Transformer layers of MLLMs (mimicking human "rapid-blink" scanning), improving LLaVA-1.5 performance across multiple multimodal benchmarks.
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Visual token resolution"
+  - "dynamic attention"
+  - "Multimodal Large Language Models"
+  - "saliency-guided"
+  - "token super-resolution"
 date: 2026-05-08
-content_hash: c70eb4a1fe92fe6f
+content_hash: ba6afcd39615db88
 ---
+
 # Blink: Dynamic Visual Token Resolution for Enhanced Multimodal Understanding
 
 **Conference**: CVPR 2026  
@@ -130,11 +136,11 @@ The training objective for TokenSR is to minimize the KL divergence between the 
 
 ## Related Papers
 
-- [\[CVPR 2026\] DreamSR: Towards Ultra-High-Resolution Image Super-Resolution via a Receptive-Field Enhanced Diffusion Transformer](dreamsr_towards_ultra-high-resolution_image_super-resolution_via_a_receptive-fie.md)
-- [\[CVPR 2026\] EMR-Diff: Edge-aware Multimodal Residual Diffusion Model for Hyperspectral Image Super-resolution](emr-diff_edge-aware_multimodal_residual_diffusion_model_for_hyperspectral_image_.md)
-- [\[CVPR 2026\] Towards Generalized Representations for Low-Light Understanding: When Signal Constancy Meets Semantic Enrichment](towards_generalized_representations_for_low-light_understanding_when_signal_cons.md)
-- [\[CVPR 2026\] Dynamic Exposure Burst Image Restoration](dynamic_exposure_burst_image_restoration.md)
-- [\[CVPR 2026\] Beyond the Ground Truth: Enhanced Supervision for Image Restoration](beyond_the_ground_truth_enhanced_supervision_for_image_restoration.md)
+- [\[CVPR 2026\] When Token Pruning is Worse than Random: Understanding Visual Token Information in VLLMs](when_token_pruning_is_worse_than_random_understanding_visual_token_information_i.md)
+- [\[CVPR 2026\] Dynamic Token Reweighting for Robust Vision-Language Models](dynamic_token_reweighting_for_robust_vision-language_models.md)
+- [\[CVPR 2026\] MoDES: Accelerating Mixture-of-Experts Multimodal Large Language Models via Dynamic Expert Skipping](modes_accelerating_mixture-of-experts_multimodal_large_language_models_via_dynam.md)
+- [\[CVPR 2026\] VQRAE: Representation Quantization Autoencoders for Multimodal Understanding, Generation and Reconstruction](vqrae_representation_quantization_autoencoders_for_multimodal_understanding_gene.md)
+- [\[ICCV 2025\] Dynamic-VLM: Simple Dynamic Visual Token Compression for VideoLLM](../../ICCV2025/vlm_efficiency/dynamic-vlm_simple_dynamic_visual_token_compression_for_videollm.md)
 
 </div>
 

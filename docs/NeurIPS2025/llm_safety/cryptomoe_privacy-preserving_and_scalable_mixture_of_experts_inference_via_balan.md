@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CryptoMoE: Privacy-Preserving and Scalable Mixture of Experts Inference via Balanced Expert Routing
 description: >-
-  [NeurIPS 2025][LLM Safety][Privacy-preserving inference] CryptoMoE is the first framework supporting privacy-preserving inference for MoE-based LLMs. By combining balanced expert routing to conceal routing information…
+  [NeurIPS 2025][LLM Safety][Privacy-preserving inference] CryptoMoE is the first framework supporting privacy-preserving inference for MoE-based LLMs. By combining balanced expert routing to conceal routing information, a confidence-aware dispatch protocol, and a batch ciphertext matrix multiplication protocol, it achieves 2.8–3.5× latency reduction and 2.9–4.3× communication reduction compared to a dense baseline, with only 0.8% accuracy loss.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Secure Multi-Party Computation"
   - "Expert Routing"
 date: 2026-05-08
-content_hash: 449ad53fccefcf2a
+content_hash: de7dd6c13104b0ac
 ---
 
 # CryptoMoE: Privacy-Preserving and Scalable Mixture of Experts Inference via Balanced Expert Routing
@@ -131,11 +131,11 @@ CryptoMoE is an inference framework and involves no additional training. It dire
 
 ## Related Papers
 
+- [\[ACL 2025\] SEUF: Is Unlearning One Expert Enough for Mixture-of-Experts LLMs?](../../ACL2025/llm_safety/seuf_is_unlearning_one_expert_enough_for_mixture-of-experts_llms.md)
 - [\[NeurIPS 2025\] FedRW: Efficient Privacy-Preserving Data Reweighting for Enhancing Federated Learning of Language Models](fedrw_efficient_privacy-preserving_data_reweighting_for_enhancing_federated_lear.md)
+- [\[NeurIPS 2025\] MPCache: MPC-Friendly KV Cache Eviction for Efficient Private LLM Inference](mpcache_mpc-friendly_kv_cache_eviction_for_efficient_private_llm_inference.md)
+- [\[NeurIPS 2025\] InvisibleInk: High-Utility and Low-Cost Text Generation with Differential Privacy](invisibleink_high-utility_and_low-cost_text_generation_with_differential_privacy.md)
 - [\[ACL 2026\] SharedRequest: Privacy-Preserving Model-Agnostic Inference for Large Language Models](../../ACL2026/llm_safety/sharedrequest_privacy-preserving_model-agnostic_inference_for_large_language_mod.md)
-- [\[AAAI 2026\] PRISM: Privacy-Aware Routing for Adaptive Cloud-Edge LLM Inference via Semantic Sketch Collaboration](../../AAAI2026/llm_safety/prism_privacy-aware_routing_for_adaptive_cloud-edge_llm_inference_via_semantic_s.md)
-- [\[ACL 2026\] Fast-MIA: Efficient and Scalable Membership Inference for LLMs](../../ACL2026/llm_safety/fast-mia_efficient_and_scalable_membership_inference_for_llms.md)
-- [\[NeurIPS 2025\] Adaptive LoRA Experts Allocation and Selection for Federated Fine-Tuning](adaptive_lora_experts_allocation_and_selection_for_federated_fine-tuning.md)
 
 </div>
 

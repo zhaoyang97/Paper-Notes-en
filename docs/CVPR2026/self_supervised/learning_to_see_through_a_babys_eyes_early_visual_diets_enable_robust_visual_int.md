@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Learning to See Through a Baby's Eyes: Early Visual Diets Enable Robust Visual Intelligence in Humans and Machines
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] The authors encode three laws of infant visual development—grayscale to color, blurry to clear, and temporal continuity—into a "visual diet" for self-supervised training called CATDiet. Training SSL models solely on object-centric videos yields more robust recognition of corrupted images, shape bias, and depth percepti
+  [CVPR 2026][Self-Supervised Learning][Visual Development] The authors encode three laws of infant visual development—grayscale to color, blurry to clear, and temporal continuity—into a "visual diet" for self-supervised training called CATDiet. Training SSL models solely on object-centric videos yields more robust recognition of corrupted images, shape bias, and depth perception across ten datasets. Furthermore, the models spontaneously demonstrate developmental signals consis…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Visual Development"
+  - "Curriculum Learning"
+  - "Robustness"
+  - "Temporal Continuity"
 date: 2026-05-08
-content_hash: e97685a5b1f9475a
+content_hash: 408294ac1eec37cf
 ---
+
 # Learning to See Through a Baby's Eyes: Early Visual Diets Enable Robust Visual Intelligence in Humans and Machines
 
 **Conference**: CVPR 2026  
@@ -141,11 +146,11 @@ Ablation on the order of CATDiet curricula—constructed via four baselines: REV
 
 ## Related Papers
 
-- [\[CVPR 2026\] Exploring Visual Pretraining for Learning Language Intelligence](exploring_visual_pretraining_for_learning_language_intelligence.md)
 - [\[CVPR 2026\] Free-Grained Hierarchical Visual Recognition](free-grained_hierarchical_visual_recognition.md)
 - [\[CVPR 2026\] Franca: Nested Matryoshka Clustering for Scalable Visual Representation Learning](franca_nested_matryoshka_clustering_for_scalable_visual_representation_learning.md)
-- [\[CVPR 2026\] Seeing Through the Shift: Causality-Inspired Robust Generalized Category Discovery](seeing_through_the_shift_causality-inspired_robust_generalized_category_discover.md)
+- [\[CVPR 2026\] In Pursuit of Pixel Supervision for Visual Pre-training](in_pursuit_of_pixel_supervision_for_visual_pre-training.md)
 - [\[CVPR 2026\] OpenVision 2: A Family of Generative Pretrained Visual Encoders for Multimodal Learning](openvision_2_a_family_of_generative_pretrained_visual_encoders_for_multimodal_le.md)
+- [\[CVPR 2026\] Trust-calibrated Collaborative Learning for Long-Tailed Visual Recognition](trust-calibrated_collaborative_learning_for_long-tailed_visual_recognition.md)
 
 </div>
 

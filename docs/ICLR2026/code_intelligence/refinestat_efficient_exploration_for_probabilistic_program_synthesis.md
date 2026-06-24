@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RefineStat: Efficient Exploration for Probabilistic Program Synthesis
 description: >-
-  [ICLR 2026][Code Intelligence][Paper Note] RefineStat enables Small Language Models (SLMs) of 7~8B to reliably synthesize probabilistic programs (PyMC/NumPyro). During the generation phase, it utilizes semantic constrained decoding to prune illegal distributions/parameters segment-by-segment. In the refinement phase, it backtracks and resamples priors or likeli
+  [ICLR 2026][Code Intelligence][Probabilistic Program Synthesis] RefineStat enables Small Language Models (SLMs) of 7~8B to reliably synthesize probabilistic programs (PyMC/NumPyro). During the generation phase, it utilizes semantic constrained decoding to prune illegal distributions/parameters segment-by-segment. In the refinement phase, it backtracks and resamples priors or likelihoods based on Bayesian diagnostic metrics. This allows a single open-source SLM to produce prog…
 tags:
-  - ICLR 2026
-  - Code Intelligence
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Probabilistic Program Synthesis"
+  - "Constrained Decoding"
+  - "Bayesian Workflow"
+  - "Small Language Models"
+  - "Diagnostic-Driven Refinement"
 date: 2026-05-08
-content_hash: 7f4593d109a0028c
+content_hash: a7906bc4f0105714
 ---
+
 # RefineStat: Efficient Exploration for Probabilistic Program Synthesis
 
 **Conference**: ICLR 2026  

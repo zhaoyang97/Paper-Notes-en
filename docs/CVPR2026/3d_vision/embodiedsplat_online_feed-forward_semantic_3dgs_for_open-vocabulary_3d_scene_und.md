@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] EmbodiedSplat is proposed as the first online feed-forward semantic 3DGS framework. It achieves memory-efficient per-Gaussian semantic representation through a sparse coefficient field and a CLIP global codebook. Combined with 3D geometry-aware features, it enables full-scene open-vocabulary 3D understanding at 5-6 FPS
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] EmbodiedSplat is proposed as the first online feed-forward semantic 3DGS framework. It achieves memory-efficient per-Gaussian semantic representation through a sparse coefficient field and a CLIP global codebook. Combined with 3D geometry-aware features, it enables full-scene open-vocabulary 3D understanding at 5-6 FPS under streaming inputs of 300+ frames.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Open-vocabulary scene understanding"
+  - "Online reconstruction"
+  - "Feed-forward 3DGS"
+  - "Semantic embedding"
 date: 2026-05-08
-content_hash: 2d425a6c5040c835
+content_hash: a34fadf92f995d38
 ---
+
 # EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding
 
 **Conference**: CVPR 2026  
@@ -177,11 +183,11 @@ Calculating cosine similarity between a text query and millions of Gaussians is 
 
 ## Related Papers
 
+- [\[CVPR 2026\] OnlinePG: Online Open-Vocabulary Panoptic Mapping with 3D Gaussian Splatting](onlinepg_online_open-vocabulary_panoptic_mapping_with_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] LightSplat: Fast and Memory-Efficient Open-Vocabulary 3D Scene Understanding in Five Seconds](lightsplat_fast_and_memory-efficient_open-vocabulary_3d_scene_understanding_in_f.md)
-- [\[CVPR 2026\] JOPP-3D: Joint Open Vocabulary Semantic Segmentation on Point Clouds and Panoramas](jopp3d_joint_open_vocabulary_semantic_segmentation.md)
-- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
-- [\[CVPR 2026\] From Rays to Projections: Better Inputs for Feed-Forward View Synthesis](from_rays_to_projections_better_inputs_for_feed-forward_view_synthesis.md)
-- [\[CVPR 2026\] Feed-forward Gaussian Registration for Head Avatar Creation and Editing](feed-forward_gaussian_registration_for_head_avatar_creation_and_editing.md)
+- [\[CVPR 2026\] ExtrinSplat: Decoupling Geometry and Semantics for Open-Vocabulary Understanding in 3D Gaussian Splatting](extrinsplat_decoupling_geometry_and_semantics_for_open-vocabulary_understanding_.md)
+- [\[CVPR 2026\] OpenVoxel: Training-Free Grouping and Captioning Voxels for Open-Vocabulary 3D Scene Understanding](openvoxel_training-free_grouping_and_captioning_voxels_for_open-vocabulary_3d_sc.md)
+- [\[CVPR 2026\] Ov3R: Open-Vocabulary Semantic 3D Reconstruction from RGB Videos](ov3r_open-vocabulary_semantic_3d_reconstruction_from_rgb_videos.md)
 
 </div>
 

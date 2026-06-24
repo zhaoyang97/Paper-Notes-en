@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Causally-Grounded Dual-Path Attention Intervention for Object Hallucination Mitigation in LVLMs
 description: >-
-  [AAAI 2026][Hallucination Detection][Object Hallucination] This paper proposes Owl, a framework that models visual and textual attention as mediating variables within a structural causal model…
+  [AAAI 2026][Hallucination Detection][Object Hallucination] This paper proposes Owl, a framework that models visual and textual attention as mediating variables within a structural causal model, introduces the VTACR metric to quantify cross-modal attention imbalance, and designs VTACR-guided adaptive attention modulation combined with a dual-path contrastive decoding strategy, achieving state-of-the-art hallucination mitigation on POPE and CHAIR benchmarks.
 tags:
   - "AAAI 2026"
   - "Hallucination Detection"
@@ -12,7 +12,7 @@ tags:
   - "Contrastive Decoding"
   - "Large Vision-Language Models"
 date: 2026-05-08
-content_hash: 393bab6c948ef3ea
+content_hash: 17b671c681a8233a
 ---
 
 # Causally-Grounded Dual-Path Attention Intervention for Object Hallucination Mitigation in LVLMs
@@ -179,11 +179,11 @@ Owl (**Bi-mOdal attention reWeighting for Layer-wise hallucination mitigation**)
 
 ## Related Papers
 
-- [\[CVPR 2026\] Mitigating Object Hallucination in LVLMs via Attention Imbalance Rectification](../../CVPR2026/hallucination/mitigating_object_hallucinations_in_lvlms_via_attention_imbalance_rectification.md)
 - [\[ACL 2026\] Spotlight and Shadow: Attention-Guided Dual-Anchor Introspective Decoding for MLLM Hallucination Mitigation](../../ACL2026/hallucination/spotlight_and_shadow_attention-guided_dual-anchor_introspective_decoding_for_mll.md)
+- [\[CVPR 2026\] Cross-Modal Attention Calibration for LVLM Hallucination Mitigation](../../CVPR2026/hallucination/cross-modal_attention_calibration_for_lvlm_hallucination_mitigation.md)
+- [\[ICLR 2026\] AFTER: Mitigating Object Hallucinations in LVLMs with Adaptive Fact-guided Activation Editing](../../ICLR2026/hallucination/after_mitigating_the_object_hallucination_of_lvlm_via_adaptive_factual-guided_ac.md)
+- [\[CVPR 2026\] Same Attention, Different Truths: Put Logit-Lens over Visual Attention to Detect and Mitigate LVLM Object Hallucination](../../CVPR2026/hallucination/same_attention_different_truths_put_logit-lens_over_visual_attention_to_detect_a.md)
 - [\[NeurIPS 2025\] GLSim: Detecting Object Hallucinations in LVLMs via Global-Local Similarity](../../NeurIPS2025/hallucination/glsim_detecting_object_hallucinations_in_lvlms_via_globalloc.md)
-- [\[ICCV 2025\] Mitigating Object Hallucinations via Sentence-Level Early Intervention](../../ICCV2025/hallucination/mitigating_object_hallucinations_via_sentence-level_early_intervention.md)
-- [\[AAAI 2026\] ESG-Bench: Benchmarking Long-Context ESG Reports for Hallucination Mitigation](esg-bench_benchmarking_long-context_esg_reports_for_hallucination_mitigation.md)
 
 </div>
 

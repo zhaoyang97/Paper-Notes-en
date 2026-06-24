@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Spe-BEVHead: Rethinking the Detection Head Design for Bird's-Eye-View Object Detection
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] To address the issues of "geometric mismatch in Gaussian kernels / performance collapse after removing NMS / sparse supervision signals" caused by the long-standing use of 2D center-based detection heads in autonomous driving BEV 3D detection, this paper proposes Spe-BEVHead. This plug-and-play detection head employs a
+  [CVPR 2026][Autonomous Driving][BEV Detection] To address the issues of "geometric mismatch in Gaussian kernels / performance collapse after removing NMS / sparse supervision signals" caused by the long-standing use of 2D center-based detection heads in autonomous driving BEV 3D detection, this paper proposes Spe-BEVHead. This plug-and-play detection head employs a Rotated Box Kernel (RBK), a Local Response Refinement Module (LRRM), and a dual-branch structure. It achieves pe…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "BEV Detection"
+  - "Detection Head"
+  - "Rotated Box Kernel"
+  - "End-to-End Detection"
+  - "Dual-branch"
 date: 2026-05-08
-content_hash: 1cf724255066aa49
+content_hash: f2876795c781e558
 ---
+
 # Spe-BEVHead: Rethinking the Detection Head Design for Bird's-Eye-View Object Detection
 
 **Conference**: CVPR 2026  
@@ -132,15 +138,20 @@ FastBEV drops 7.6 mAP / 3.9 NDS without post-processing. Spe-BEVHead remains rel
 - **Value**: ⭐⭐⭐⭐ Engineering value for efficient BEV deployment and NMS removal.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-1. **CenterNet**: Objects as Points, arXiv 2019.
-2. **FastBEV**: A Fast and Strong Bird's-Eye-View Perception Baseline, arXiv 2023.
-3. **BEVDet**: High-Performance Multi-Camera 3D Object Detection in Bird-Eye-View, arXiv 2021.
+## Related Papers
+
+- [\[CVPR 2026\] BEV-SLD: Self-Supervised Scene Landmark Detection for Global Localization with LiDAR Bird's-Eye View Images](bev-sld_self-supervised_scene_landmark_detection_for_global_localization_with_li.md)
+- [\[CVPR 2026\] BEV-CAR: Enhancing Monocular Bird's Eye View Segmentation with Context-Aware Rasterization](bev-car_enhancing_monocular_birds_eye_view_segmentation_with_context-aware_raste.md)
+- [\[CVPR 2026\] CycleBEV: Regularizing View Transformation Networks via View Cycle Consistency for Bird's-Eye-View Semantic Segmentation](cyclebev_regularizing_view_transformation_networks_via_view_cycle_consistency_fo.md)
+- [\[ICLR 2026\] Bird's-eye-view Informed Reasoning Driver (BIRDriver)](../../ICLR2026/autonomous_driving/birds-eye-view_informed_reasoning_driver.md)
+- [\[ICLR 2026\] ARINBEV: Bird's-Eye View Layout Estimation with Conditional Autoregressive Model](../../ICLR2026/autonomous_driving/arinbev_birds-eye_view_layout_estimation_with_conditional_autoregressive_model.md)
 
 </div>
-<!-- RELATED:END -->
 
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] BEV-SLD: Self-Supervised Scene Landmark Detection for Global Localization with LiDAR Bird's-Eye View Images](bev-sld_self-supervised_scene_landmark_detection_for_global_localization_with_li.md)

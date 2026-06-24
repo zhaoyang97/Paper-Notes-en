@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Rethinking Table Pruning in TableQA: From Sequential Revisions to Gold Trajectory-Supervised Parallel Search
 description: >-
-  [ACL 2026][Model Compression][TableQA] This paper proposes TabTrim, transforming table pruning from error-prone single-path sequential revisions into a "SQL trajectory-supervised pruner + loss-aware verifier + parallel trajectory search" framework. It improves average accuracy to 73.5% on WikiTQ, TabFact, and TableBench, significantly outperforming the stro
+  [ACL2026 Oral][Model Compression][TableQA] This paper proposes TabTrim, transforming table pruning from error-prone single-path sequential revisions into a "SQL trajectory-supervised pruner + loss-aware verifier + parallel trajectory search" framework. It improves average accuracy to 73.5% on WikiTQ, TabFact, and TableBench, significantly outperforming the strongest baseline by 3.2 percentage points.
 tags:
-  - ACL 2026
-  - Model Compression
-  - TableQA
-  - table pruning
-  - gold trajectory
-  - verifier
-  - beam search
+  - "ACL2026 Oral"
+  - "Model Compression"
+  - "TableQA"
+  - "table pruning"
+  - "gold trajectory"
+  - "verifier"
+  - "beam search"
 date: 2026-05-08
-content_hash: c96c13b0356f9757
+content_hash: 9dad118b7ffdc719
 ---
+
 # Rethinking Table Pruning in TableQA: From Sequential Revisions to Gold Trajectory-Supervised Parallel Search
 
 **Conference**: ACL2026 Oral  
@@ -156,8 +157,8 @@ TabTrim utilizes WikiSQL and SQUALL to construct over 80K training samples. The 
 - [\[ACL 2026\] DeepPrune: Parallel Scaling without Inter-Trace Redundancy](deepprune_parallel_scaling_without_inter-trace_redundancy.md)
 - [\[ICLR 2026\] Parallel Token Prediction for Language Models](../../ICLR2026/model_compression/parallel_token_prediction_for_language_models.md)
 - [\[ACL 2026\] A Layer-wise Analysis of Supervised Fine-Tuning](a_layer-wise_analysis_of_supervised_fine-tuning.md)
-- [\[ACL 2026\] MTA: Multi-Granular Trajectory Alignment for Large Language Model Distillation](mta_multi-granular_trajectory_alignment_for_large_language_model_distillation.md)
 - [\[ICML 2026\] Detecting Fluent Optimization-Based Adversarial Prompts via Sequential Entropy Changes](../../ICML2026/model_compression/detecting_fluent_optimization-based_adversarial_prompts_via_sequential_entropy_c.md)
+- [\[ACL 2026\] MTA: Multi-Granular Trajectory Alignment for Large Language Model Distillation](mta_multi-granular_trajectory_alignment_for_large_language_model_distillation.md)
 
 </div>
 

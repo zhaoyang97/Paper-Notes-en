@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Figma2Code: Automating Multimodal Design to Code in the Wild
 description: >-
-  [ICLR 2026][Multimodal VLM][Figma2Code] This paper introduces **Figma2Code**, a novel task and dataset that advances design-to-code from unimodal image-based "screenshot-to-code" to a realistic multimodal scenario incorporating Figma metadata, design assets, and screenshots. It provides an evaluation framework measuring **visual fidelity, layout responsivene
+  [ICLR 2026][Multimodal VLM][Figma2Code] This paper introduces **Figma2Code**, a novel task and dataset that advances design-to-code from unimodal image-based "screenshot-to-code" to a realistic multimodal scenario incorporating Figma metadata, design assets, and screenshots. It provides an evaluation framework measuring **visual fidelity, layout responsiveness, and code maintainability**, revealing a core contradiction where current MLLMs struggle to balance visual fidelity w…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Figma2Code
-  - MLLM
-  - Benchmark
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Figma2Code"
+  - "Multimodal Design-to-Code"
+  - "MLLM"
+  - "UI Code Generation"
+  - "Benchmark"
+  - "Figma Metadata"
 date: 2026-05-08
-content_hash: 6b30c39b4c29e6c5
+content_hash: c48813dea3e277a8
 ---
+
 # Figma2Code: Automating Multimodal Design to Code in the Wild
 
 **Conference**: ICLR 2026  
@@ -134,16 +138,16 @@ The exploration agent **F2CAgent** utilizes a ReAct cycle: converting Figma JSON
 - **Value**: ⭐⭐⭐⭐⭐ Directly addresses industrial pain points and provides a reusable set of protocols and datasets.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] VisCodex: Unified Multimodal Code Generation via Merging Vision and Coding Models](viscodex_unified_multimodal_code_generation_via_merging_vision_and_coding_models.md)
 - [\[ICLR 2026\] Breaking the SFT Plateau: Multimodal Structured Reinforcement Learning for Chart-to-Code Generation](breaking_the_sft_plateau_multimodal_structured_reinforcement_learning_for_chart-.md)
-- [\[NeurIPS 2025\] Reading Recognition in the Wild](../../NeurIPS2025/multimodal_vlm/reading_recognition_in_the_wild.md)
 - [\[CVPR 2026\] Widget2Code: From Visual Widgets to UI Code via Multimodal LLMs](../../CVPR2026/multimodal_vlm/widget2code_from_visual_widgets_to_ui_code_via_multimodal_llms.md)
-- [\[ECCV 2024\] Nymeria: A Massive Collection of Multimodal Egocentric Daily Motion in the Wild](../../ECCV2024/multimodal_vlm/nymeria_a_massive_collection_of_multimodal_egocentric_daily_motion_in_the_wild.md)
+- [\[NeurIPS 2025\] Reading Recognition in the Wild](../../NeurIPS2025/multimodal_vlm/reading_recognition_in_the_wild.md)
+- [\[ACL 2026\] From Charts to Code: A Hierarchical Benchmark for Multimodal Models](../../ACL2026/multimodal_vlm/from_charts_to_code_a_hierarchical_benchmark_for_multimodal_models.md)
 
 </div>
 

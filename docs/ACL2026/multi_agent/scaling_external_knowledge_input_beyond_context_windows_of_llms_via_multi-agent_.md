@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Scaling External Knowledge Input Beyond Context Windows of LLMs via Multi-Agent Collaboration
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] The authors propose ExtAgents, a multi-agent framework that addresses the performance bottleneck where existing multi-agent methods fail to scale when external knowledge exceeds the context window. By implementing global knowledge synchronization (information exchange among all Seeking Agents) and cumulative reasoning
+  [ACL 2026][Multi-Agent][Context Window Extension] The authors propose ExtAgents, a multi-agent framework that addresses the performance bottleneck where existing multi-agent methods fail to scale when external knowledge exceeds the context window. By implementing global knowledge synchronization (information exchange among all Seeking Agents) and cumulative reasoning (gradual injection of filtered knowledge into the Reasoning Agent), the framework significantly improves perfo…
 tags:
-  - ACL 2026
-  - Multi-Agent
+  - "ACL 2026"
+  - "Multi-Agent"
+  - "Context Window Extension"
+  - "Multi-Agent Collaboration"
+  - "External Knowledge Scaling"
+  - "Multi-hop QA"
+  - "Knowledge Synchronization"
 date: 2026-05-08
-content_hash: 19e143eec06aa00c
+content_hash: 8307bf0cd3e9cda3
 ---
+
 # Scaling External Knowledge Input Beyond Context Windows of LLMs via Multi-Agent Collaboration
 
 **Conference**: ACL 2026  
@@ -119,15 +125,16 @@ Given an input of ~256k tokens split into 8 chunks for 8 Seeking Agents: In the 
 - Value: ⭐⭐⭐⭐ Provides a practical, training-free solution for ultra-long context reasoning.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[AAAI 2026\] KDR-Agent: A Multi-Agent LLM Framework for Multi-Domain Low-Resource In-Context NER via Knowledge Retrieval](../../AAAI2026/multi_agent/a_multi-agent_llm_framework_for_multi-domain_low-resource_in-context_ner_via_kno.md)
+- [\[ACL 2026\] Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs](topology_matters_measuring_memory_leakage_in_multi-agent_llms.md)
+- [\[ACL 2025\] Beyond Frameworks: Unpacking Collaboration Strategies in Multi-Agent Systems](../../ACL2025/multi_agent/beyond_frameworks_multi_agent_collaboration.md)
 - [\[CVPR 2026\] Visual Document Understanding and Reasoning: A Multi-Agent Collaboration Framework with Agent-Wise Adaptive Test-Time Scaling](../../CVPR2026/multi_agent/visual_document_understanding_and_reasoning_a_multi-agent_collaboration_framewor.md)
 - [\[ACL 2026\] Multi-Agent Reasoning Improves Compute Efficiency: Pareto-Optimal Test-Time Scaling](multi-agent_reasoning_improves_compute_efficiency_pareto-optimal_test-time_scali.md)
-- [\[ACL 2025\] Beyond Frameworks: Unpacking Collaboration Strategies in Multi-Agent Systems](../../ACL2025/multi_agent/beyond_frameworks_multi_agent_collaboration.md)
-- [\[ICLR 2026\] Adaptive Collaboration with Humans: Metacognitive Policy Optimization for Multi-Agent LLMs with Continual Learning](../../ICLR2026/multi_agent/adaptive_collaboration_with_humans_metacognitive_policy_optimization_for_multi-a.md)
 
 </div>
 

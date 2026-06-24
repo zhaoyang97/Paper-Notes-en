@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FlashKAT: Understanding and Addressing Performance Bottlenecks in the Kolmogorov-Arnold Transformer
 description: >-
-  [AAAI 2026][Physics & Scientific Computing][Kolmogorov-Arnold Network] This paper provides an in-depth analysis of the root cause behind KAT (Kolmogorov-Arnold Transformer) training being 123× slower than ViT. The bottle…
+  [AAAI 2026][Physics & Scientific Computing][Kolmogorov-Arnold Network] This paper provides an in-depth analysis of the root cause behind KAT (Kolmogorov-Arnold Transformer) training being 123× slower than ViT. The bottleneck is identified not as FLOPs but as **memory stalls caused by gradient accumulation during backpropagation** (global memory contention from atomic add operations). The proposed FlashKAT restructures GPU kernels to achieve an **86.5× training speedup** and r…
 tags:
   - "AAAI 2026"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "GPU Optimization"
   - "Memory Bottleneck"
 date: 2026-05-08
-content_hash: aeb5b459b0ab0a62
+content_hash: 4b449d058b7da4fe
 ---
 
 # FlashKAT: Understanding and Addressing Performance Bottlenecks in the Kolmogorov-Arnold Transformer
@@ -206,9 +206,9 @@ Warp state analysis comparison:
 
 - [\[AAAI 2026\] Catastrophic Forgetting in Kolmogorov-Arnold Networks](catastrophic_forgetting_in_kolmogorov-arnold_networks.md)
 - [\[AAAI 2026\] Learning Fair Representations with Kolmogorov-Arnold Networks](learning_fair_representations_with_kolmogorov-arnold_networks.md)
+- [\[ICLR 2026\] KANO: Kolmogorov–Arnold Neural Operator](../../ICLR2026/physics/kano_kolmogorov-arnold_neural_operator.md)
 - [\[ICLR 2026\] Initialization Schemes for Kolmogorov-Arnold Networks: An Empirical Study](../../ICLR2026/physics/initialization_schemes_for_kolmogorov-arnold_networks_an_empirical_study.md)
-- [\[ICLR 2026\] Empirical Stability Analysis of Kolmogorov-Arnold Networks in Hard-Constrained Recurrent Physics-Informed Discovery](../../ICLR2026/physics/empirical_stability_analysis_of_kolmogorov-arnold_networks_in_hard-constrained_r.md)
-- [\[AAAI 2026\] SAOT: An Enhanced Locality-Aware Spectral Transformer for Solving PDEs](saot_an_enhanced_locality-aware_spectral_transformer_for_solving_pdes.md)
+- [\[CVPR 2025\] KAC: Kolmogorov-Arnold Classifier for Continual Learning](../../CVPR2025/physics/kac_kolmogorov-arnold_classifier_for_continual_learning.md)
 
 </div>
 

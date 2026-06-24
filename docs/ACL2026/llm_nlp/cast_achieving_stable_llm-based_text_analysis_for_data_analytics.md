@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CAST: Achieving Stable LLM-based Text Analysis for Data Analytics
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] The CAST framework is proposed to constrain the potential reasoning paths of LLMs through two mechanisms: Algorithmic Prompting and Thinking-before-Speaking. This significantly enhances inter-run stability for text summarization and labeling tasks without sacrificing output quality.
+  [ACL 2026 Findings][LLM (Other)][Output Stability] The CAST framework is proposed to constrain the potential reasoning paths of LLMs through two mechanisms: Algorithmic Prompting and Thinking-before-Speaking. This significantly enhances inter-run stability for text summarization and labeling tasks without sacrificing output quality.
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL 2026 Findings"
+  - "LLM (Other)"
+  - "Output Stability"
+  - "Text Analysis"
+  - "Tabular Data"
+  - "Algorithmic Prompting"
+  - "Intermediate State Commitment"
 date: 2026-05-08
-content_hash: 8e823838aaf05bfb
+content_hash: 956bd49b6a3155a8
 ---
+
 # CAST: Achieving Stable LLM-based Text Analysis for Data Analytics
 
 **Conference**: ACL 2026 Findings  
@@ -134,7 +140,7 @@ CAST is a pure inference-time method involving no training or fine-tuning. All c
 - [\[AAAI 2026\] Collaborative LLM Numerical Reasoning with Local Data Protection](../../AAAI2026/llm_nlp/collaborative_llm_numerical_reasoning_with_local_data_protection.md)
 - [\[ACL 2025\] Enabling LLM Knowledge Analysis via Extensive Materialization](../../ACL2025/llm_nlp/enabling_llm_knowledge_analysis_via_extensive_materialization.md)
 - [\[CVPR 2026\] LLM-Guided Probabilistic Fusion for Label-Efficient Document Layout Analysis](../../CVPR2026/llm_nlp/llm-guided_probabilistic_fusion_for_label-efficient_document_layout_analysis.md)
-- [\[ICLR 2026\] Fine-Grained Activation Steering: Steering Less, Achieving More](../../ICLR2026/llm_nlp/fine-grained_activation_steering_steering_less_achieving_more.md)
+- [\[ACL 2026\] Understanding Structured Financial Data with LLMs: A Case Study on Fraud Detection](understanding_structured_financial_data_with_llms_a_case_study_on_fraud_detectio.md)
 
 </div>
 

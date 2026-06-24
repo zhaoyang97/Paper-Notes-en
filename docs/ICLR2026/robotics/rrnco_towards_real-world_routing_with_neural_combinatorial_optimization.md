@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] RRNCO: Towards Real-World Routing with Neural Combinatorial Optimization
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Neural Combinatorial Optimization] Ours proposes the RRNCO architecture, which jointly models asymmetric distance, duration, and orientation angles in a deep routing framework for the first time through two innovations: Adaptive Node Embedding (ANE) and Neural Adaptive Bias (NAB). A VRP benchmark dataset based on 100 real-world cities is constructed, si
+  [ICLR 2026][Robotics][Neural Combinatorial Optimization] Ours proposes the RRNCO architecture, which jointly models asymmetric distance, duration, and orientation angles in a deep routing framework for the first time through two innovations: Adaptive Node Embedding (ANE) and Neural Adaptive Bias (NAB). A VRP benchmark dataset based on 100 real-world cities is constructed, significantly narrowing the sim-to-real gap for NCO methods.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Neural Combinatorial Optimization
-  - Vehicle Routing Problem
-  - Asymmetric Routing
-  - Sim-to-Real Gap
-  - Attention-Free Module
+  - "ICLR 2026"
+  - "Robotics"
+  - "Neural Combinatorial Optimization"
+  - "Vehicle Routing Problem"
+  - "Asymmetric Routing"
+  - "Sim-to-Real Gap"
+  - "Attention-Free Module"
 date: 2026-05-08
-content_hash: b8c2611f6b89f229
+content_hash: 2965ea793b12372d
 ---
+
 # RRNCO: Towards Real-World Routing with Neural Combinatorial Optimization
 
 **Conference**: ICLR 2026  
@@ -160,8 +161,8 @@ ACVRP Task (with capacity constraints):
 - **Value**: ⭐⭐⭐⭐⭐ — Open-source dataset and code push the NCO field from toy problems toward real-world applications.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -169,7 +170,7 @@ ACVRP Task (with capacity constraints):
 - [\[ICLR 2026\] World-In-World: World Models in a Closed-Loop World](world-in-world_world_models_in_a_closed-loop_world.md)
 - [\[ICLR 2026\] D-REX: Differentiable Real-to-Sim-to-Real Engine for Learning Dexterous Grasping](d-rex_differentiable_real-to-sim-to-real_engine_for_learning_dexterous_grasping.md)
 - [\[ICLR 2026\] VER: Vision Expert Transformer for Robot Learning via Foundation Distillation and Dynamic Routing](ver_vision_expert_transformer_for_robot_learning_via_foundation_distillation_and.md)
-- [\[NeurIPS 2025\] Real-World Reinforcement Learning of Active Perception Behaviors](../../NeurIPS2025/robotics/real-world_reinforcement_learning_of_active_perception_behaviors.md)
+- [\[ICLR 2026\] Ctrl-World: A Controllable Generative World Model for Robot Manipulation](ctrl-world_a_controllable_generative_world_model_for_robot_manipulation.md)
 
 </div>
 

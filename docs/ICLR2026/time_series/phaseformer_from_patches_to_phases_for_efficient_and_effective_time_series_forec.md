@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PhaseFormer: From Patches to Phases for Efficient and Effective Time Series Forecasting
 description: >-
-  [ICLR 2026][Time Series][Paper Note] To address the issue of exploding parameter counts and computational costs in long-term forecasting caused by the drift of periodic patterns in patch tokens, this paper adopts a "phase perspective." It aggregates values at the same offset positions across cycles into tokens, proving that they are more stable and lower-
+  [ICLR 2026][Time Series][Periodic modeling] To address the issue of exploding parameter counts and computational costs in long-term forecasting caused by the drift of periodic patterns in patch tokens, this paper adopts a "phase perspective." It aggregates values at the same offset positions across cycles into tokens, proving that they are more stable and lower-dimensional than patches. Based on this, PhaseFormer is designed with only approximately 1k parameters…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Periodic modeling"
+  - "phase tokens"
+  - "lightweight forecasting"
+  - "routing attention"
+  - "efficiency-effectiveness tradeoff"
 date: 2026-05-08
-content_hash: 30a5ec25d1e13937
+content_hash: 18367674d1ddc0f3
 ---
+
 # PhaseFormer: From Patches to Phases for Efficient and Effective Time Series Forecasting
 
 **Conference**: ICLR 2026  
@@ -134,8 +140,8 @@ Ablation of the cross-phase routing layer (each cell is MSE / MAE / FLOPs(M)):
 
 - [\[ICLR 2026\] Efficient Autoregressive Inference for Transformer Probabilistic Models](efficient_autoregressive_inference_for_transformer_probabilistic_models.md)
 - [\[ICML 2025\] TQNet: Temporal Query Network for Efficient Multivariate Time Series Forecasting](../../ICML2025/time_series/temporal_query_network_for_efficient_multivariate_time_series_forecasting.md)
-- [\[ICML 2025\] IMTS is Worth Time × Channel Patches: Visual Masked Autoencoders for Irregular Multivariate Time Series Prediction](../../ICML2025/time_series/imts_is_worth_time_times_channel_patches_visual_masked_autoencoders_for_irregula.md)
 - [\[ICML 2026\] U-Cast: A Surprisingly Simple and Efficient Frontier Probabilistic AI Weather Forecasting](../../ICML2026/time_series/u-cast_a_surprisingly_simple_and_efficient_frontier_probabilistic_ai_weather_for.md)
+- [\[ICML 2025\] IMTS is Worth Time × Channel Patches: Visual Masked Autoencoders for Irregular Multivariate Time Series Prediction](../../ICML2025/time_series/imts_is_worth_time_times_channel_patches_visual_masked_autoencoders_for_irregula.md)
 - [\[ICLR 2026\] ResCP: Reservoir Conformal Prediction for Time Series Forecasting](rescp_reservoir_conformal_prediction_for_time_series_forecasting.md)
 
 </div>

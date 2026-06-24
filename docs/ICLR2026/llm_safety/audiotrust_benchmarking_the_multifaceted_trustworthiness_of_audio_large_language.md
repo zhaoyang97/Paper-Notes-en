@@ -2,17 +2,23 @@
 title: >-
   [Paper Note] AudioTrust: Benchmarking the Multifaceted Trustworthiness of Audio Large Language Models
 description: >-
-  [ICLR 2026][LLM Safety][Audio LLM] This paper proposes AudioTrust, the first multi-dimensional trustworthiness evaluation benchmark for Audio Large Language Models (ALLMs). It covers six dimensions: fairness, hallucination, safety, privacy, robustness, and authentication. With 26 sub-tasks and 4420+ audio samples, it systematically evaluates the trustwo
+  [ICLR 2026][LLM Safety][Audio LLM] This paper proposes AudioTrust, the first multi-dimensional trustworthiness evaluation benchmark for Audio Large Language Models (ALLMs). It covers six dimensions: fairness, hallucination, safety, privacy, robustness, and authentication. With 26 sub-tasks and 4420+ audio samples, it systematically evaluates the trustworthiness boundaries of 14 SOTA open-source and closed-source ALLMs in high-risk audio scenarios.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Audio LLM
-  - trustworthiness
-  - benchmark
-  - safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Audio LLM"
+  - "trustworthiness"
+  - "benchmark"
+  - "fairness"
+  - "hallucination"
+  - "safety"
+  - "privacy"
+  - "robustness"
+  - "authentication"
 date: 2026-05-08
-content_hash: 22af75a1ad9dac1b
+content_hash: cf097152e91644d0
 ---
+
 # AudioTrust: Benchmarking the Multifaceted Trustworthiness of Audio Large Language Models
 
 **Conference**: ICLR 2026  
@@ -137,10 +143,20 @@ Since "trustworthy" means different things across dimensions, AudioTrust uses cu
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Benchmarking Empirical Privacy Protection for Adaptations of Large Language Models](benchmarking_empirical_privacy_protection_for_adaptations_of_large_language_mode.md)
+- [\[AAAI 2026\] StyleBreak: Revealing Alignment Vulnerabilities in Large Audio-Language Models via Style-Aware Audio Jailbreak](../../AAAI2026/llm_safety/stylebreak_revealing_alignment_vulnerabilities_in_large_audio-language_models_vi.md)
+- [\[NeurIPS 2025\] VMDT: Decoding the Trustworthiness of Video Foundation Models](../../NeurIPS2025/llm_safety/vmdt_decoding_the_trustworthiness_of_video_foundation_models.md)
+- [\[ICLR 2026\] BiasBusters: Uncovering and Mitigating Tool Selection Bias in Large Language Models](biasbusters_uncovering_and_mitigating_tool_selection_bias_in_large_language_mode.md)
+- [\[ICLR 2026\] In-Context Watermarks for Large Language Models](in-context_watermarks_for_large_language_models.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Benchmarking Empirical Privacy Protection for Adaptations of Large Language Models](benchmarking_empirical_privacy_protection_for_adaptations_of_large_language_mode.md)

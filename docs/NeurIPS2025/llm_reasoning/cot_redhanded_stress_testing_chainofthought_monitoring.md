@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] CoT Red-Handed: Stress Testing Chain-of-Thought Monitoring
 description: >-
-  [NeurIPS 2025][LLM Reasoning][CoT monitoring] This paper systematically evaluates the effectiveness of Chain-of-Thought monitoring within the AI Control framework. It finds that CoT monitoring outperforms action-only mon…
+  [NeurIPS 2025][Reasoning][CoT monitoring] This paper systematically evaluates the effectiveness of Chain-of-Thought monitoring within the AI Control framework. It finds that CoT monitoring outperforms action-only monitoring by +10pp on subtle sabotage tasks, but underperforms by −25pp on non-subtle tasks (due to deceptive rationalizations in reasoning misleading the monitor). A hybrid monitoring protocol—independently scoring CoT and action then combining via weighted fusion—…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "CoT monitoring"
   - "AI control"
   - "red teaming"
@@ -13,7 +13,7 @@ tags:
   - "deceptive alignment"
   - "hybrid monitor"
 date: 2026-05-08
-content_hash: 5a07aece37d5d74b
+content_hash: 7aae30918fee5acf
 ---
 
 # CoT Red-Handed: Stress Testing Chain-of-Thought Monitoring
@@ -134,10 +134,10 @@ Hybrid outperforms action-only by 21% and CoT by 42%. On subtle tasks, its catch
 ## Related Papers
 
 - [\[NeurIPS 2025\] ChartMuseum: Testing Chart Visual Reasoning in Large Vision-Language Models](chartmuseum_testing_visual_reasoning_capabilities_of_large_v.md)
+- [\[ACL 2025\] CoT-Valve: Length-Compressible Chain-of-Thought Tuning](../../ACL2025/llm_reasoning/cot-valve_length-compressible_chain-of-thought_tuning.md)
+- [\[ICLR 2026\] SIM-CoT: Supervised Implicit Chain-of-Thought](../../ICLR2026/llm_reasoning/sim-cot_supervised_implicit_chain-of-thought.md)
 - [\[NeurIPS 2025\] Latent Chain-of-Thought for Visual Reasoning](latent_chain-of-thought_for_visual_reasoning.md)
 - [\[NeurIPS 2025\] Mind the Gap: Bridging Thought Leap for Improved Chain-of-Thought Tuning](mind_the_gap_bridging_thought_leap_for_improved_chain-of-thought_tuning.md)
-- [\[NeurIPS 2025\] On Learning Verifiers and Implications to Chain-of-Thought Reasoning](on_learning_verifiers_and_implications_to_chain-of-thought_reasoning.md)
-- [\[ICLR 2026\] CoT-RVS: Zero-Shot Chain-of-Thought Reasoning Segmentation for Videos](../../ICLR2026/llm_reasoning/cot-rvs_zero-shot_chain-of-thought_reasoning_segmentation_for_videos.md)
 
 </div>
 

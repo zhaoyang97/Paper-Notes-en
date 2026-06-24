@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Revisiting Semi-Supervised Learning in the Era of Foundation Models
 description: >-
-  [NeurIPS 2025][Model Compression][Semi-Supervised Learning] A systematic study reveals that conventional SSL methods offer limited benefit in the VFM era—PEFT on labeled data alone can match SSL—motivating V-PET: a simpl…
+  [NeurIPS 2025][Model Compression][Semi-Supervised Learning] A systematic study reveals that conventional SSL methods offer limited benefit in the VFM era—PEFT on labeled data alone can match SSL—motivating V-PET: a simple and effective semi-supervised learning approach that ensembles pseudo-labels from multiple PEFT methods and multiple VFMs.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Pseudo-Label Ensembling"
   - "Self-Training"
 date: 2026-05-08
-content_hash: efeb298ba97d3ea1
+content_hash: 6e3a69b2b74c44fc
 ---
 
 # Revisiting Semi-Supervised Learning in the Era of Foundation Models
@@ -123,11 +123,11 @@ V-PET follows a four-stage pipeline: (a) fine-tune multiple VFMs using multiple 
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Enhancing Semi-supervised Learning with Zero-shot Pseudolabels](enhancing_semi-supervised_learning_with_zero-shot_pseudolabels.md)
 - [\[NeurIPS 2025\] VESSA: Video-based objEct-centric Self-Supervised Adaptation for Visual Foundation Models](vessa_video-based_object-centric_self-supervised_adaptation_for_visual_foundatio.md)
 - [\[NeurIPS 2025\] Learning to Factorize and Adapt: A Versatile Approach Toward Universal Spatio-Temporal Foundation Models](learning_to_factorize_and_adapt_a_versatile_approach_toward_universal_spatio-tem.md)
 - [\[NeurIPS 2025\] Learning to Better Search with Language Models via Guided Reinforced Self-Training](learning_to_better_search_with_language_models_via_guided_reinforced_self-traini.md)
 - [\[NeurIPS 2025\] Gated Integration of Low-Rank Adaptation for Continual Learning of Large Language Models](gated_integration_of_low-rank_adaptation_for_continual_learning_of_large_languag.md)
-- [\[NeurIPS 2025\] Graver: Generative Graph Vocabularies for Robust Graph Foundation Models Fine-tuning](graver_generative_graph_vocabularies_for_robust_graph_foundation_models_fine-tun.md)
 
 </div>
 

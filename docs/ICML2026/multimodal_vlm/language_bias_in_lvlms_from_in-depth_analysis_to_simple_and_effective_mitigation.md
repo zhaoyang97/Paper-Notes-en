@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] LBR/LBP: Language Bias in LVLMs — From In-Depth Analysis to Simple and Effective Mitigation
 description: >-
-  [ICML 2026][Multimodal VLM][VIT] This paper systematically quantifies language bias in LVLM training—discovering that both VIT and DPO stages cause the text-only likelihood $\pi(y|x)$ to increase nearly as much as the multimodal likelihood $\pi(y|x,v)$, proving that LVLMs systematically undervalue visual input. The authors propose Language Bias Regula
+  [ICML 2026][Multimodal VLM][Language Bias] This paper systematically quantifies language bias in LVLM training—discovering that both VIT and DPO stages cause the text-only likelihood $\pi(y|x)$ to increase nearly as much as the multimodal likelihood $\pi(y|x,v)$, proving that LVLMs systematically undervalue visual input. The authors propose Language Bias Regularization (using $|\mathcal{B}|$ to anchor the language path to a reference level during VIT) and Language Bias Penalt…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - VIT
-  - DPO
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Language Bias"
+  - "VIT"
+  - "DPO"
+  - "Modality Misalignment"
+  - "Plug-and-play Training"
 date: 2026-05-08
-content_hash: 239f4b372d60996e
+content_hash: 4c380db9276eb46e
 ---
+
 # LBR/LBP: Language Bias in LVLMs — From In-Depth Analysis to Simple and Effective Mitigation
 
 **Conference**: ICML 2026  
@@ -148,8 +152,8 @@ Consistent benefits across model scales and different LVLM families.
 - [\[ACL 2025\] InternLM-XComposer2.5-Reward: A Simple Yet Effective Multi-Modal Reward Model](../../ACL2025/multimodal_vlm/internlm-xcomposer25-reward_a_simple_yet_effective_multi-modal_reward_model.md)
 - [\[ICML 2026\] Self-Prophetic Decoding to Unlock Visual Search in LVLMs](self-prophetic_decoding_to_unlock_visual_search_in_lvlms.md)
 - [\[ICML 2026\] Mitigating Perceptual Judgment Bias in Multimodal LLM-as-a-Judge via Perceptual Perturbation and Reward Modeling](mitigating_perceptual_judgment_bias_in_multimodal_llm-as-a-judge_via_perceptual_.md)
+- [\[ICLR 2026\] Label-Free Mitigation of Spurious Correlations in VLMs using Sparse Autoencoders](../../ICLR2026/multimodal_vlm/label-free_mitigation_of_spurious_correlations_in_vlms_using_sparse_autoencoders.md)
 - [\[CVPR 2026\] SEATrack: Simple, Efficient, and Adaptive Multimodal Tracker](../../CVPR2026/multimodal_vlm/seatrack_multimodal_tracker.md)
-- [\[ACL 2026\] VIGNETTE: Socially Grounded Bias Evaluation for Vision-Language Models](../../ACL2026/multimodal_vlm/vignette_socially_grounded_bias_evaluation_for_vision-language_models.md)
 
 </div>
 

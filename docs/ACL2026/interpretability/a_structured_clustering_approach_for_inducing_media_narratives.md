@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Structured Clustering Approach for Inducing Media Narratives
 description: >-
-  [ACL 2026][Interpretability][Paper Note] The paper proposes a framework to automatically induce media narrative patterns from large-scale news corpora. By jointly modeling causal event chains and role information (Hero/Threat/Victim), it utilizes a role-constrained clustering algorithm to organize narrative chains into semantically coherent patterns. It gener
+  [ACL 2026][Interpretability][Media narratives] The paper proposes a framework to automatically induce media narrative patterns from large-scale news corpora. By jointly modeling causal event chains and role information (Hero/Threat/Victim), it utilizes a role-constrained clustering algorithm to organize narrative chains into semantically coherent patterns. It generates interpretable narrative patterns consistent with framing theory in the domains of immigration and gun contro…
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL 2026"
+  - "Interpretability"
+  - "Media narratives"
+  - "structured clustering"
+  - "causal event chains"
+  - "role analysis"
+  - "framing theory"
 date: 2026-05-08
-content_hash: d9e9e0c5f3520e0a
+content_hash: acea1626881ee117
 ---
+
 # A Structured Clustering Approach for Inducing Media Narratives
 
 **Conference**: ACL 2026  
@@ -132,9 +138,9 @@ Clustering based solely on textual similarity might group "immigrants are victim
 
 - [\[NeurIPS 2025\] SpEx: A Spectral Approach to Explainable Clustering](../../NeurIPS2025/interpretability/spex_a_spectral_approach_to_explainable_clustering.md)
 - [\[ACL 2026\] Interpretable Semantic Gradients in SSD: A PCA Sweep Approach and a Case Study on AI Discourse](interpretable_semantic_gradients_in_ssd_a_pca_sweep_approach_and_a_case_study_on.md)
+- [\[ICLR 2026\] Inducing Dyslexia in Vision Language Models](../../ICLR2026/interpretability/inducing_dyslexia_in_vision_language_models.md)
 - [\[ACL 2026\] Style over Story: Measuring LLM Narrative Preferences via Structured Selection](style_over_story_measuring_llm_narrative_preferences_via_structured_selection.md)
-- [\[ICML 2026\] Learning Coherent Representations: A Topological Approach to Interpretability](../../ICML2026/interpretability/learning_coherent_representations_a_topological_approach_to_interpretability.md)
-- [\[ICLR 2026\] Semantic Regexes: Auto-Interpreting LLM Features with a Structured Language](../../ICLR2026/interpretability/semantic_regexes_auto-interpreting_llm_features_with_a_structured_language_of_re.md)
+- [\[ICLR 2026\] Explainable K-means Neural Networks for Multi-view Clustering](../../ICLR2026/interpretability/explainable_k_-means_neural_networks_for_multi-view_clustering.md)
 
 </div>
 

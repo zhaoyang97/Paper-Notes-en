@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Where Did It Go Wrong? Attributing Undesirable LLM Behaviors via Representation Gradient Tracing
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] When a fine-tuned LLM generates harmful or incorrect responses, this paper proposes RepT (Representation Gradient Tracing). Instead of using expensive and noisy parameter gradients, it utilizes "representation gradients" in the model's **representation (activation) space**. This approach precisely traces bad behaviors
+  [ICLR 2026][LLM Safety][Data Attribution] When a fine-tuned LLM generates harmful or incorrect responses, this paper proposes RepT (Representation Gradient Tracing). Instead of using expensive and noisy parameter gradients, it utilizes "representation gradients" in the model's **representation (activation) space**. This approach precisely traces bad behaviors back to culprit samples or even specific tokens in the training set, achieving nearly 100% auPRC across harmful fine-t…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Data Attribution"
+  - "Representation Gradient"
+  - "Influence Functions"
+  - "Harmful Fine-tuning"
+  - "Backdoor Detection"
+  - "Knowledge Pollution"
 date: 2026-05-08
-content_hash: 77f595b15e8de0ef
+content_hash: 14247b27f4f016c9
 ---
+
 # Where Did It Go Wrong? Attributing Undesirable LLM Behaviors via Representation Gradient Tracing
 
 **Conference**: ICLR 2026  
@@ -136,7 +143,6 @@ Efficiency Comparison (Llama2, Harmful ID P@100 / GPU Memory / Time):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

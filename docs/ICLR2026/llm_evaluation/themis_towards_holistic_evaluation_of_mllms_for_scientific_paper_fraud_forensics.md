@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] THEMIS: Towards Holistic Evaluation of MLLMs for Scientific Paper Fraud Forensics
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] THEMIS constructs a multi-task benchmark for "scientific paper image fraud forensics" (4,054 questions, 5 fraud types, 16 fine-grained manipulations, 7 real academic scenarios). It maps fraud types to 5 expert-level visual reasoning abilities and evaluates 16 mainstream MLLMs. The study reveals systematic shortcomings
+  [ICLR 2026][LLM Evaluation][MLLM Evaluation] THEMIS constructs a multi-task benchmark for "scientific paper image fraud forensics" (4,054 questions, 5 fraud types, 16 fine-grained manipulations, 7 real academic scenarios). It maps fraud types to 5 expert-level visual reasoning abilities and evaluates 16 mainstream MLLMs. The study reveals systematic shortcomings in "forensics" capabilities, with even the strongest GPT-5 achieving an overall score of only 56.15% in complex rea…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "MLLM Evaluation"
+  - "Image Forgery Detection"
+  - "Academic Fraud"
+  - "Visual Reasoning"
+  - "Multi-task Benchmark"
 date: 2026-05-08
-content_hash: 3b827c04536793da
+content_hash: 96ea14a0a81b5438
 ---
+
 # THEMIS: Towards Holistic Evaluation of MLLMs for Scientific Paper Fraud Forensics
 
 **Conference**: ICLR 2026  
@@ -135,11 +141,11 @@ Evaluation of 152 real retracted cases (Table 3) showed Qwen2.5-VL-72B leading i
 
 ## Related Papers
 
-- [\[ICLR 2026\] DISCO: Diversifying Sample Condensation for Efficient Model Evaluation](disco_diversifying_sample_condensation_for_efficient_model_evaluation.md)
-- [\[ICLR 2026\] Teach2Eval: An Interaction-Driven LLMs Evaluation Method via Teaching Effectiveness](teach2eval_an_interaction-driven_llms_evaluation_method_via_teaching_effectivene.md)
-- [\[ICLR 2026\] SparseEval: Efficient Evaluation of Large Language Models by Sparse Optimization](sparseeval_efficient_evaluation_of_large_language_models_by_sparse_optimization.md)
-- [\[ICLR 2026\] PRISM-Physics: Causal DAG-Based Process Evaluation for Physics Reasoning](prism-physics_causal_dag-based_process_evaluation_for_physics_reasoning.md)
-- [\[ICLR 2026\] Rethinking LLM Evaluation: Can We Evaluate LLMs with 200× Less Data?](rethinking_llm_evaluation_can_we_evaluate_llms_with_200_less_data.md)
+- [\[ICLR 2026\] Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation](holistic_agent_leaderboard_the_missing_infrastructure_for_ai_agent_evaluation.md)
+- [\[ACL 2026\] Reward Modeling for Scientific Writing Evaluation](../../ACL2026/llm_evaluation/reward_modeling_for_scientific_writing_evaluation.md)
+- [\[ICLR 2026\] NAIPv2: Debiased Pairwise Learning for Efficient Paper Quality Estimation](naipv2_debiased_pairwise_learning_for_efficient_paper_quality_estimation.md)
+- [\[ACL 2026\] HoWToBench: Holistic Evaluation for LLM's Capability in Human-level Writing using Tree of Writing](../../ACL2026/llm_evaluation/howtobench_holistic_evaluation_for_llms_capability_in_human-level_writing_using_.md)
+- [\[ACL 2026\] SciCustom: A Framework for Custom Evaluation of Scientific Capabilities in Large Language Models](../../ACL2026/llm_evaluation/scicustom_a_framework_for_custom_evaluation_of_scientific_capabilities_in_large_.md)
 
 </div>
 

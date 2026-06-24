@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Bridging Kolmogorov Complexity and Deep Learning: Asymptotically Optimal Description Length Objectives for Transformers
 description: >-
-  [ICLR 2026][Model Compression][Transformer] Starting from Kolmogorov complexity theory, this paper proposes a theoretical framework for "asymptotically optimal description length objectives." It proves the existence of such objectives for Transformers through a new proof of their computational universality and conducts empirical validation via a differentiable v
+  [ICLR 2026][Model Compression][Minimum Description Length] Starting from Kolmogorov complexity theory, this paper proposes a theoretical framework for "asymptotically optimal description length objectives." It proves the existence of such objectives for Transformers through a new proof of their computational universality and conducts empirical validation via a differentiable variational objective based on adaptive Gaussian mixture priors, revealing significant optimization ch…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Transformer
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Minimum Description Length"
+  - "Kolmogorov Complexity"
+  - "Transformer"
+  - "Computational Universality"
+  - "Variational Objectives"
 date: 2026-05-08
-content_hash: 98debed8b0ff1315
+content_hash: bd89a5ae7e25bdbf
 ---
+
 # Bridging Kolmogorov Complexity and Deep Learning: Asymptotically Optimal Description Length Objectives for Transformers
 
 **Conference**: ICLR 2026  
@@ -121,15 +126,13 @@ Empirical analysis was conducted on **algorithmic tasks** to verify if the descr
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[ICLR 2026\] Lookup multivariate Kolmogorov-Arnold Networks](lookup_multivariate_kolmogorov-arnold_networks.md)
-- [\[ICLR 2026\] Faster Vision Transformers with Adaptive Patches](faster_vision_transformers_with_adaptive_patches.md)
 - [\[ICLR 2026\] Textual Equilibrium Propagation for Deep Compound AI Systems](textual_equilibrium_propagation_for_deep_compound_ai_systems.md)
 - [\[ICLR 2026\] Ensembling Pruned Attention Heads for Uncertainty-Aware Efficient Transformers](ensembling_pruned_attention_heads_for_uncertainty-aware_efficient_transformers.md)
 - [\[ICLR 2026\] Compute-Optimal Quantization-Aware Training](compute-optimal_quantization-aware_training.md)
+- [\[ICLR 2026\] Optimal Brain Restoration for Joint Quantization and Sparsification of LLMs](optimal_brain_restoration_for_joint_quantization_and_sparsification_of_llms.md)
 
 </div>
 

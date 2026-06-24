@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Know What You Don't Know: Uncertainty Calibration of Process Reward Models
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Process Reward Model] This paper proposes a quantile regression-based calibration method for PRMs, enabling their output scores to more accurately reflect the actual success probability of L…
+  [NeurIPS 2025][Reasoning][Process Reward Model] This paper proposes a quantile regression-based calibration method for PRMs, enabling their output scores to more accurately reflect the actual success probability of LLM reasoning. Building on the calibrated PRM, the paper further introduces an Instance-Adaptive Scaling (IAS) strategy for inference-time computation, achieving significant cost reduction while maintaining accuracy.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Process Reward Model"
   - "Calibration"
   - "Quantile Regression"
   - "Inference-Time Scaling"
   - "Adaptive Sampling"
 date: 2026-05-08
-content_hash: 14b001d61112c080
+content_hash: 71cbdccfa009df4a
 ---
 
 # Know What You Don't Know: Uncertainty Calibration of Process Reward Models
@@ -127,8 +127,8 @@ Given an off-the-shelf PRM and a target LLM, a calibration dataset is constructe
 - [\[NeurIPS 2025\] Unlocking Multimodal Mathematical Reasoning via Process Reward Model](unlocking_multimodal_mathematical_reasoning_via_process_reward_model.md)
 - [\[NeurIPS 2025\] DreamPRM: Domain-Reweighted Process Reward Model for Multimodal Reasoning](dreamprm_domain-reweighted_process_reward_model_for_multimodal_reasoning.md)
 - [\[NeurIPS 2025\] Stop Summation: Min-Form Credit Assignment Is All Process Reward Model Needs for Reasoning](stop_summation_minform_credit_assignment_is_all_process_rewa.md)
-- [\[ICML 2026\] GRPO is Secretly a Process Reward Model](../../ICML2026/llm_reasoning/grpo_is_secretly_a_process_reward_model.md)
-- [\[ACL 2026\] Calibration-Aware Policy Optimization for Reasoning LLMs](../../ACL2026/llm_reasoning/calibration-aware_policy_optimization_for_reasoning_llms.md)
+- [\[ICLR 2026\] Adaptive Thinking: Large Language Models Know When to Think in Latent Space](../../ICLR2026/llm_reasoning/adaptive_thinking_large_language_models_know_when_to_think_in_latent_space.md)
+- [\[ACL 2025\] Dynamic and Generalizable Process Reward Modeling (DG-PRM)](../../ACL2025/llm_reasoning/dgprm_dynamic_process_reward.md)
 
 </div>
 

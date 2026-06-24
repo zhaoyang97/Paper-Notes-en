@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Sparse Tokens Suffice: Jailbreaking Audio Language Models via Token-Aware Gradient Optimization
 description: >-
-  [ICML 2026][Audio & Speech][Paper Note] This paper discovers that waveform gradients in Audio Language Model (ALM) jailbreak optimization are highly concentrated in a few tokens. It proposes TAGO, which updates only the waveform segments corresponding to the top-$\zeta$ high-energy tokens at each step. On Qwen3-Omni, retaining only 25% of tokens maintains an
+  [ICML 2026][Audio & Speech][Audio Language Models] This paper discovers that waveform gradients in Audio Language Model (ALM) jailbreak optimization are highly concentrated in a few tokens. It proposes TAGO, which updates only the waveform segments corresponding to the top-$\zeta$ high-energy tokens at each step. On Qwen3-Omni, retaining only 25% of tokens maintains an 86% LLM-judge jailbreak success rate (vs. 87% for full tokens).
 tags:
-  - ICML 2026
-  - Audio & Speech
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "Audio Language Models"
+  - "Jailbreaking Attacks"
+  - "Sparse Optimization"
+  - "Gradient Heterogeneity"
+  - "Adversarial Perturbations"
 date: 2026-05-08
-content_hash: 87bd80056b842c58
+content_hash: 373596a27fa0bcb2
 ---
+
 # Sparse Tokens Suffice: Jailbreaking Audio Language Models via Token-Aware Gradient Optimization
 
 **Conference**: ICML 2026  
@@ -136,11 +142,11 @@ Regarding SNR, TAGO ($\zeta=0.25,\rho=0.9$) achieved 20.65 / 21.83 / 22.45 dB on
 
 ## Related Papers
 
-- [\[ACL 2026\] Data-efficient Targeted Token-level Preference Optimization for LLM-based Text-to-Speech](../../ACL2026/audio_speech/data-efficient_targeted_token-level_preference_optimization_for_llm-based_text-t.md)
+- [\[ICLR 2026\] OWL: Geometry-Aware Spatial Reasoning for Audio Large Language Models](../../ICLR2026/audio_speech/owl_geometry-aware_spatial_reasoning_for_audio_large_language_models.md)
 - [\[ICML 2026\] Multimodal Fusion via Self-Consistent Task-Gradient Fields](multimodal_fusion_via_self-consistent_task-gradient_fields.md)
-- [\[ACL 2025\] Analyzing and Mitigating Inconsistency in Discrete Audio Tokens for Neural Codec Language Models](../../ACL2025/audio_speech/audio_token_consistency.md)
-- [\[ICML 2026\] Two-Dimensional Quantization for Geometry-Aware Audio Coding](two-dimensional_quantization_for_geometry-aware_audio_coding.md)
 - [\[ICML 2026\] Sparse Autoencoders for Interpretable Emotion Control in Text-to-Speech](sparse_autoencoders_for_interpretable_emotion_control_in_text-to-speech.md)
+- [\[ICLR 2026\] Measuring Audio's Impact on Correctness: Audio-Contribution-Aware Post-Training of Large Audio Language Models](../../ICLR2026/audio_speech/measuring_audios_impact_on_correctness_audio-contribution-aware_post-training_of.md)
+- [\[ACL 2025\] Analyzing and Mitigating Inconsistency in Discrete Audio Tokens for Neural Codec Language Models](../../ACL2025/audio_speech/audio_token_consistency.md)
 
 </div>
 

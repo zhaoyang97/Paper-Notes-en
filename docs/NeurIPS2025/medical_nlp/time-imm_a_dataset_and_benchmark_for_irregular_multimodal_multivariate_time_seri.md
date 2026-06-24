@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Time-IMM: A Dataset and Benchmark for Irregular Multimodal Multivariate Time Series
 description: >-
-  [NeurIPS 2025][Medical NLP][irregular time series] This work constructs Time-IMM — the first multimodal multivariate time series benchmark that categorizes irregularity according to causal mechanisms (9 irregularity type…
+  [NeurIPS 2025][Medical LLM][irregular time series] This work constructs Time-IMM — the first multimodal multivariate time series benchmark that categorizes irregularity according to causal mechanisms (9 irregularity types organized into three classes: Trigger, Constraint, and Artifact, spanning 9 datasets). An accompanying forecasting library, IMM-TSF, supports asynchronous multimodal fusion. Experiments demonstrate that explicitly modeling multimodal information reduces MSE…
 tags:
   - "NeurIPS 2025"
-  - "Medical NLP"
+  - "Medical LLM"
   - "irregular time series"
   - "multimodal fusion"
   - "causally-driven irregularity"
   - "time series forecasting"
   - "benchmark"
 date: 2026-05-08
-content_hash: dcaa22eb6e8f281e
+content_hash: e3c7c61a325fbd38
 ---
 
 # Time-IMM: A Dataset and Benchmark for Irregular Multimodal Multivariate Time Series
@@ -129,9 +129,9 @@ Time-IMM comprises 9 datasets: Trigger-type (GDELT event-driven / RepoHealth ada
 
 - [\[NeurIPS 2025\] RAxSS: Retrieval-Augmented Sparse Sampling for Explainable Variable-Length Medical Time Series Classification](raxss_retrieval-augmented_sparse_sampling_for_explainable_variable-length_medica.md)
 - [\[ACL 2026\] Learning Dynamic Representations and Policies from Multimodal Clinical Time-Series with Informative Missingness](../../ACL2026/medical_nlp/learning_dynamic_representations_and_policies_from_multimodal_clinical_time-seri.md)
+- [\[ACL 2025\] AfriMed-QA: A Pan-African, Multi-Specialty, Medical Question-Answering Benchmark Dataset](../../ACL2025/medical_nlp/afrimed_qa_pan_african.md)
 - [\[NeurIPS 2025\] CGBench: Benchmarking Language Model Scientific Reasoning for Clinical Genetics Research](cgbench_benchmarking_language_model_scientific_reasoning_for_clinical_genetics_r.md)
 - [\[NeurIPS 2025\] LLM-Assisted Emergency Triage Benchmark: Bridging Hospital-Rich and MCI-Like Field Simulation](llm-assisted_emergency_triage_benchmark_bridging_hospital-rich_and_mci-like_fiel.md)
-- [\[AAAI 2026\] Real-Time Trust Verification for Safe Agentic Actions Using TrustBench](../../AAAI2026/medical_nlp/real-time_trust_verification_for_safe_agentic_actions_using_trustbench.md)
 
 </div>
 

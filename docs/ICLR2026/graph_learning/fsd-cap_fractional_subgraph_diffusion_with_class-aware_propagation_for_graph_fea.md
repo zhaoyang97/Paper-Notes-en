@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] FSD-CAP: Fractional Subgraph Diffusion with Class-Aware Propagation for Graph Feature Imputation
 description: >-
-  [ICLR 2026][Graph Learning][GNN] To address graph node feature imputation under extreme sparsity (up to 99.5% missing rate), FSD-CAP utilizes a fractional diffusion operator with adjustable "sharpness" for locally adaptive propagation, suppresses error accumulation via progressive subgraph diffusion expanding outward from observed nodes, and injects s
+  [ICLR 2026][Graph Learning][Missing Feature Imputation] To address graph node feature imputation under extreme sparsity (up to 99.5% missing rate), FSD-CAP utilizes a fractional diffusion operator with adjustable "sharpness" for locally adaptive propagation, suppresses error accumulation via progressive subgraph diffusion expanding outward from observed nodes, and injects semantic structure through class-aware propagation driven by pseudo-labels and neighborhood entropy. The…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - GNN
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Missing Feature Imputation"
+  - "Diffusion Propagation"
+  - "Fractional Diffusion"
+  - "Subgraph Expansion"
+  - "Class-Aware Propagation"
+  - "GNN"
 date: 2026-05-08
-content_hash: 4a75e592506c72d5
+content_hash: 5c7caeb770aca0fd
 ---
+
 # FSD-CAP: Fractional Subgraph Diffusion with Class-Aware Propagation for Graph Feature Imputation
 
 **Conference**: ICLR 2026  
@@ -127,8 +133,8 @@ Ablation of components under structural missing (mr=0.995, accuracy %):
 - [\[ICLR 2026\] Global and Local Topology-Aware Graph Generation via Dual Conditioning Diffusion](global_and_local_topology-aware_graph_generation_via_dual_conditioning_diffusion.md)
 - [\[ICLR 2026\] Bridging Input Feature Spaces Towards Graph Foundation Models](bridging_input_feature_spaces_towards_graph_foundation_models.md)
 - [\[ICLR 2026\] Geometric Graph Neural Diffusion for Stable Molecular Dynamics Simulations](geometric_graph_neural_diffusion_for_stable_molecular_dynamics_simulations.md)
-- [\[ICLR 2026\] WATS: Wavelet-Aware Temperature Scaling for Reliable Graph Neural Networks](wats_wavelet-aware_temperature_scaling_for_reliable_graph_neural_networks.md)
-- [\[ICLR 2026\] Low-Rank Few-Shot Node Classification by Node-Level Graph Diffusion](low-rank_few-shot_node_classification_by_node-level_graph_diffusion.md)
+- [\[ICLR 2026\] Diverse and Sparse Mixture-of-Experts for Causal Subgraph–Based Out-of-Distribution Graph Learning](diverse_and_sparse_mixture-of-experts_for_causal_subgraphbased_out-of-distributi.md)
+- [\[ICLR 2026\] Structure-Aware Graph Hypernetworks for Neural Program Synthesis](structure-aware_graph_hypernetworks_for_neural_program_synthesis.md)
 
 </div>
 

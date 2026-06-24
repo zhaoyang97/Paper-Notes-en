@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ReTool: Reinforcement Learning for Strategic Tool Use in LLMs
 description: >-
-  [ICLR 2026][Reinforcement Learning][PPO] ReTool employs a training framework of "cold-start SFT + tool-augmented RL" to enable LLMs to autonomously learn "when and how to call a code interpreter" during long-chain reasoning. By using only outcome-based rewards, a 32B model achieved 67.0% on AIME2024, significantly surpassing the text-only RL baseline (40.0%)
+  [ICLR 2026][Reinforcement Learning][Tool-integrated Reasoning] ReTool employs a training framework of "cold-start SFT + tool-augmented RL" to enable LLMs to autonomously learn "when and how to call a code interpreter" during long-chain reasoning. By using only outcome-based rewards, a 32B model achieved 67.0% on AIME2024, significantly surpassing the text-only RL baseline (40.0%) while using only one-third of the training steps.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - PPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Tool-integrated Reasoning"
+  - "Code Interpreter"
+  - "PPO"
+  - "Outcome Reward"
+  - "Mathematical Reasoning"
 date: 2026-05-08
-content_hash: 0c8fcf3304d559f2
+content_hash: 878da268df3411a0
 ---
+
 # ReTool: Reinforcement Learning for Strategic Tool Use in LLMs
 
 **Conference**: ICLR 2026  
@@ -144,8 +149,8 @@ Removing either RL or CI leads to a significant performance drop. The cold-start
 
 - [\[ICLR 2026\] AutoTool: Automatic Scaling of Tool-Use Capabilities in RL via Decoupled Entropy Constraints](autotool_automatic_scaling_of_tool-use_capabilities_in_rl_via_decoupled_entropy_.md)
 - [\[ICLR 2026\] ResT: Reshaping Token-Level Policy Gradients for Tool-Use Large Language Models](rest_reshaping_token-level_policy_gradients_for_tool-use_large_language_models.md)
+- [\[ICML 2026\] What Does Reinforcement Learning for Visual Tool Use Really Learn?](../../ICML2026/reinforcement_learning/what_does_vision_tool-use_reinforcement_learning_really_learn_disentangling_tool.md)
 - [\[ICLR 2026\] Towards Strategic Persuasion with Language Models](towards_strategic_persuasion_with_language_models.md)
-- [\[ICLR 2026\] Use the Online Network If You Can: Towards Fast and Stable Reinforcement Learning](use_the_online_network_if_you_can_towards_fast_and_stable_reinforcement_learning.md)
 - [\[ICLR 2026\] Getting Your LLMs Ready for Reinforcement Learning with Lightweight SFT](getting_your_llms_ready_for_reinforcement_learning_with_lightweight_sft.md)
 
 </div>

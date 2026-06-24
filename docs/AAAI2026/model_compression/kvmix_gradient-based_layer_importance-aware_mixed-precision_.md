@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] KVmix: Gradient-Based Layer Importance-Aware Mixed-Precision Quantization for KV Cache
 description: >-
-  [AAAI 2026][Model Compression][KV Cache Quantization] This paper proposes KVmix, which evaluates the importance of each layer's KV Cache by computing the $L_2$ norm of gradients with respect to Key/Value projection weigh…
+  [AAAI 2026 Oral][Model Compression][KV Cache Quantization] This paper proposes KVmix, which evaluates the importance of each layer's KV Cache by computing the $L_2$ norm of gradients with respect to Key/Value projection weights, enabling layer-wise mixed-precision quantization (Key avg. 2.19-bit, Value avg. 2.38-bit). Combined with a dynamic Recent Pivotal Context (RPC) selection strategy, KVmix achieves near-lossless inference, 4.9× memory compression…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Model Compression"
   - "KV Cache Quantization"
   - "Mixed-Precision"
@@ -13,7 +13,7 @@ tags:
   - "Dynamic Context Selection"
   - "CUDA Optimization"
 date: 2026-05-08
-content_hash: d9040de0515a2e27
+content_hash: b32a02e334883600
 ---
 
 # KVmix: Gradient-Based Layer Importance-Aware Mixed-Precision Quantization for KV Cache
@@ -148,11 +148,11 @@ KVmix comprises three core components: (1) **KVmix Profiler** — offline gradie
 
 ## Related Papers
 
+- [\[ICLR 2026\] PM-KVQ: Progressive Mixed-Precision KV Cache Quantization for Long-CoT LLMs](../../ICLR2026/model_compression/pm-kvq_progressive_mixed-precision_kv_cache_quantization_for_long-cot_llms.md)
 - [\[AAAI 2026\] DynaQuant: Dynamic Mixed-Precision Quantization for Learned Image Compression](dynaquant_dynamic_mixed-precision_quantization_for_learned_i.md)
-- [\[ICML 2026\] GEMQ: Global Expert-Level Mixed-Precision Quantization for MoE LLMs](../../ICML2026/model_compression/gemq_global_expert-level_mixed-precision_quantization_for_moe_llms.md)
-- [\[ICML 2026\] xKV: Cross-Layer KV-Cache Compression via Aligned Singular Vector Extraction](../../ICML2026/model_compression/xkv_cross-layer_kv-cache_compression_via_aligned_singular_vector_extraction.md)
-- [\[ACL 2026\] IMPACT: Importance-Aware Activation Space Reconstruction](../../ACL2026/model_compression/impact_importance-aware_activation_space_reconstruction.md)
-- [\[ACL 2026\] The Pitfalls of KV Cache Compression](../../ACL2026/model_compression/the_pitfalls_of_kv_cache_compression.md)
+- [\[ACL 2025\] MoQAE: Mixed-Precision Quantization for Long-Context LLM Inference via Mixture of Quantization-Aware Experts](../../ACL2025/model_compression/moqae_mixed_precision_kv_cache.md)
+- [\[CVPR 2026\] Gradient Knows Best: Mixed-Precision Quantization via Gradient-Guided Bit Allocation for Super-Resolution](../../CVPR2026/model_compression/gradient_knows_best_mixed-precision_quantization_via_gradient-guided_bit_allocat.md)
+- [\[ICLR 2026\] Channel-Aware Mixed-Precision Quantization for Efficient Long-Context Inference](../../ICLR2026/model_compression/channel-aware_mixed-precision_quantization_for_efficient_long-context_inference.md)
 
 </div>
 

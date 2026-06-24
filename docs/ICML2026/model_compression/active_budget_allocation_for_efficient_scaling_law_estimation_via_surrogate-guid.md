@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Active Budget Allocation for Efficient Scaling Law Estimation via Surrogate-Guided Pruning
 description: >-
-  [ICML 2026][Model Compression][scaling law] This paper models training budget allocation in scaling law experiments as a multi-round resource selection problem. By combining Successive Halving with learning curve surrogates to predict future potential, it approximates the full scaling law with up to 98.7% training cost savings on synthetic and nanoGPT learning c
+  [ICML2026][Model Compression][scaling law] This paper models training budget allocation in scaling law experiments as a multi-round resource selection problem. By combining Successive Halving with learning curve surrogates to predict future potential, it approximates the full scaling law with up to 98.7% training cost savings on synthetic and nanoGPT learning curves.
 tags:
-  - ICML 2026
-  - Model Compression
-  - scaling law
-  - Successive Halving
-  - Gaussian Process
+  - "ICML2026"
+  - "Model Compression"
+  - "scaling law"
+  - "Successive Halving"
+  - "learning curves"
+  - "Gaussian Process"
+  - "budget allocation"
 date: 2026-05-08
-content_hash: e0c6495ab0537cc8
+content_hash: e1769fd0e2ac91fe
 ---
+
 # Active Budget Allocation for Efficient Scaling Law Estimation via Surrogate-Guided Pruning
 
 **Conference**: ICML2026  

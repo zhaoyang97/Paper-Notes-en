@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Foundational Automatic Evaluators: Scaling Multi-Task Generative Evaluator Training for Reasoning-Centric Domains
 description: >-
-  [ICLR 2026][LLM Evaluation][LLM-as-Judge] This paper takes a counter-intuitive approach—rather than chasing new methods like RL, it pushes "data scaling" to the extreme. By meticulously curating 2.5 million training samples across 5 evaluation tasks and multiple reasoning domains, the authors use simple and stable iterative Rejection Sampling SFT to train the
+  [ICLR 2026][LLM Evaluation][Automatic Evaluator] This paper takes a counter-intuitive approach—rather than chasing new methods like RL, it pushes "data scaling" to the extreme. By meticulously curating 2.5 million training samples across 5 evaluation tasks and multiple reasoning domains, the authors use simple and stable iterative Rejection Sampling SFT to train the FARE series evaluators (8B and 20B). FARE-8B challenges larger RL-specific evaluators…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - LLM-as-Judge
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Automatic Evaluator"
+  - "LLM-as-Judge"
+  - "Generative Reward Model"
+  - "Multi-task Training"
+  - "Rejection Sampling SFT"
+  - "Reasoning Verification"
 date: 2026-05-08
-content_hash: 95f5880e0ea0e3ae
+content_hash: a85c80852adec69d
 ---
+
 # Foundational Automatic Evaluators: Scaling Multi-Task Generative Evaluator Training for Reasoning-Centric Domains
 
 **Conference**: ICLR 2026  
@@ -124,8 +130,8 @@ Covering three core benchmarks: pairwise, step-level, and ref-based verification
 - [\[ICLR 2026\] MLE-Smith: Scaling MLE Tasks with Automated Multi-agent Pipeline](mle-smith_scaling_mle_tasks_with_automated_multi-agent_pipeline.md)
 - [\[ICLR 2026\] AutoMetrics: Approximate Human Judgments with Automatically Generated Evaluators](autometrics_approximate_human_judgments_with_automatically_generated_evaluators.md)
 - [\[ACL 2025\] MARS: Benchmarking the Metaphysical Reasoning Abilities of Language Models with a Multi-task Evaluation Dataset](../../ACL2025/llm_evaluation/mars_benchmarking_the_metaphysical_reasoning_abilities_of_language_models_with_a.md)
-- [\[ICLR 2026\] LiveResearchBench: A Live Benchmark for User-Centric Deep Research in the Wild](liveresearchbench_a_live_benchmark_for_user-centric_deep_research_in_the_wild.md)
 - [\[ICLR 2026\] CatalystBench: A Comprehensive Multi-Task Benchmark for Advancing Language Models in Catalysis Science](catalystbench_a_comprehensive_multi-task_benchmark_for_advancing_language_models.md)
+- [\[ICLR 2026\] LiveResearchBench: A Live Benchmark for User-Centric Deep Research in the Wild](liveresearchbench_a_live_benchmark_for_user-centric_deep_research_in_the_wild.md)
 
 </div>
 

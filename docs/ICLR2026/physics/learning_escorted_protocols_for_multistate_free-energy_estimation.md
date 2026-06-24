@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Escorted Protocols For Multistate Free-Energy Estimation
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] This paper employs Conditional Flow Matching (CFM) alongside a proposed Conditional Density Matching (CDM) to **learn** the escorted vector field $b$ and time-varying potential $U$ for Escorted Non-Equilibrium (E-NEQ) free-energy estimation. It utilizes Lie-Trotter splitting to reduce work calculation costs and an Esco
+  [ICLR 2026][Physics & Scientific Computing][Free-energy estimation] This paper employs Conditional Flow Matching (CFM) alongside a proposed Conditional Density Matching (CDM) to **learn** the escorted vector field $b$ and time-varying potential $U$ for Escorted Non-Equilibrium (E-NEQ) free-energy estimation. It utilizes Lie-Trotter splitting to reduce work calculation costs and an Escorted Protocol Flow Graph (EPFG) to compress the number of protocols for multistate estimatio…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Free-energy estimation"
+  - "escorted protocols"
+  - "conditional flow matching"
+  - "Jarzynski equality"
+  - "multistate MBAR"
 date: 2026-05-08
-content_hash: 61b6b7a2c1f21931
+content_hash: 1d954d4c2480a1de
 ---
+
 # Learning Escorted Protocols For Multistate Free-Energy Estimation
 
 **Conference**: ICLR 2026  
@@ -144,8 +150,8 @@ Additionally, comparing the number of successful trajectories (max 50,000): Unde
 - Value: ⭐⭐⭐⭐ Provides a unified learnable framework and cost-reduction tools for neural non-equilibrium free-energy estimation, with potential value for binding affinity prediction.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

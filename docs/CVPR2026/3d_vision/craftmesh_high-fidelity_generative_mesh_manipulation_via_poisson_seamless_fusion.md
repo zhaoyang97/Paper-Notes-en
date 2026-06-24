@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CraftMesh: High-Fidelity Generative Mesh Manipulation via Poisson Seamless Fusion
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] CraftMesh decomposes high-fidelity mesh editing into a three-stage pipeline: "2D image editing → image-to-mesh → seamless fusion." It utilizes Poisson normal fusion (geometry) and Poisson texture coordination (color) within the SDF domain to seamlessly integrate generated editing regions into the original mesh, signifi
+  [CVPR 2026][3D Vision][Mesh Editing] CraftMesh decomposes high-fidelity mesh editing into a three-stage pipeline: "2D image editing → image-to-mesh → seamless fusion." It utilizes Poisson normal fusion (geometry) and Poisson texture coordination (color) within the SDF domain to seamlessly integrate generated editing regions into the original mesh, significantly outperforming SDS-based and multi-view diffusion-based baselines in complex insertion, deletion…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Mesh Editing"
+  - "Generative 3D"
+  - "Poisson Seamless Fusion"
+  - "SDF Representation"
+  - "Texture Coordination"
 date: 2026-05-08
-content_hash: 8ef12609cbe69f42
+content_hash: 7fd02b3f083bd79a
 ---
+
 # CraftMesh: High-Fidelity Generative Mesh Manipulation via Poisson Seamless Fusion
 
 **Conference**: CVPR 2026  
@@ -133,11 +139,11 @@ Combining both fusion modules yields the best results. Performance remains consi
 
 ## Related Papers
 
-- [\[CVPR 2026\] CustomTex: High-fidelity Indoor Scene Texturing via Multi-Reference Customization](customtex_high-fidelity_indoor_scene_texturing_via_multi-reference_customization.md)
-- [\[CVPR 2026\] CrowdGaussian: Reconstructing High-Fidelity 3D Gaussians for Human Crowd from a Single Image](crowdgaussian_reconstructing_high-fidelity_3d_gaussians_for_human_crowd_from_a_s.md)
-- [\[CVPR 2026\] Fusion of Depth and Semantics for Probabilistic Floorplan Localization](fusion_of_depth_and_semantics_for_probabilistic_floorplan_localization.md)
-- [\[CVPR 2026\] BrickNet: Graph-Backed Generative Brick Assembly](bricknet_graph-backed_generative_brick_assembly.md)
-- [\[CVPR 2026\] Intrinsic Image Fusion for Multi-View 3D Material Reconstruction](intrinsic_image_fusion_for_multi-view_3d_material_reconstruction.md)
+- [\[CVPR 2026\] TopoMesh: High-Fidelity Mesh Autoencoding via Topological Unification](topomesh_high-fidelity_mesh_autoencoding_via_topological_unification.md)
+- [\[CVPR 2026\] UniTEX: Universal High Fidelity Generative Texturing for 3D Shapes](unitex_universal_high_fidelity_generative_texturing_for_3d_shapes.md)
+- [\[CVPR 2026\] FACE: A Face-based Autoregressive Representation for High-Fidelity and Efficient Mesh Generation](face_a_face-based_autoregressive_representation_for_high-fidelity_and_efficient_.md)
+- [\[CVPR 2026\] HyperGaussians: High-Dimensional Gaussian Splatting for High-Fidelity Animatable Face Avatars](hypergaussians_high-dimensional_gaussian_splatting_for_high-fidelity_animatable_.md)
+- [\[CVPR 2026\] High-Fidelity Mobile Avatars with Pruned Local Blendshapes](high-fidelity_mobile_avatars_with_pruned_local_blendshapes.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SVL: Spike-based Vision-Language Pretraining for Efficient 3D Open-World Understanding
 description: >-
-  [ICML 2026][3D Vision][Paper Note] SVL injects open-world understanding into Spiking Neural Networks (SNNs) via "3D-Image-Text" tri-modal contrastive pre-training. By "reparameterizing" the text encoder into a set of classification weights, the inference stage becomes entirely free of the text tower, remaining purely spike-driven. It achieves 85.4% zero
+  [ICML 2026 Spotlight][3D Vision][Spiking Neural Networks] SVL injects open-world understanding into Spiking Neural Networks (SNNs) via "3D-Image-Text" tri-modal contrastive pre-training. By "reparameterizing" the text encoder into a set of classification weights, the inference stage becomes entirely free of the text tower, remaining purely spike-driven. It achieves 85.4% zero-shot classification on ModelNet40 while consuming only 0.5%–11% of the energy of equivalent ANN metho…
 tags:
-  - ICML 2026
-  - 3D Vision
+  - "ICML 2026 Spotlight"
+  - "3D Vision"
+  - "Spiking Neural Networks"
+  - "3D Open-World Understanding"
+  - "Vision-Language Pre-training"
+  - "Tri-modal Alignment"
+  - "Neuromorphic Hardware"
 date: 2026-05-08
-content_hash: f9eb376635950ba5
+content_hash: fe66eb3be89e6971
 ---
+
 # SVL: Spike-based Vision-Language Pretraining for Efficient 3D Open-World Understanding
 
 **Conference**: ICML 2026 Spotlight  
@@ -143,7 +149,6 @@ MTA Loss Terms (Tab 6, zero-shot accuracy on Obj. / M40, backbone E-3DSNN-S):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

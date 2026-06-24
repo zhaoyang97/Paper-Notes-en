@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DTO-KD: Dynamic Trade-off Optimization for Effective Knowledge Distillation
 description: >-
-  [ICLR 2026][Model Compression][Knowledge Distillation] DTO-KD treats the trade-off between "task loss vs. imitation loss" in knowledge distillation as a multi-objective optimization problem. It calculates the weights of the two losses dynamically through a closed-form solution at the gradient level to automatically resolve gradient conflict and gradient dominance. This app
+  [ICLR2026][Model Compression][Knowledge Distillation] DTO-KD treats the trade-off between "task loss vs. imitation loss" in knowledge distillation as a multi-objective optimization problem. It calculates the weights of the two losses dynamically through a closed-form solution at the gradient level to automatically resolve gradient conflict and gradient dominance. This approach eliminates the need for manual weight tuning, achieves SOTA results on ImageNet-1K classification an…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Knowledge Distillation
+  - "ICLR2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Multi-Objective Optimization"
+  - "Gradient Conflict"
+  - "Pareto Optimality"
+  - "Dynamic Trade-off"
 date: 2026-05-08
-content_hash: da715402227eabbc
+content_hash: f505de2697374a0c
 ---
+
 # DTO-KD: Dynamic Trade-off Optimization for Effective Knowledge Distillation
 
 **Conference**: ICLR2026  

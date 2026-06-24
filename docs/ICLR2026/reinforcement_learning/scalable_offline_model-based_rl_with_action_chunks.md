@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scalable Offline Model-Based RL with Action Chunks
 description: >-
-  [ICLR 2026][Reinforcement Learning][flow matching] MAC utilizes action chunk models to compress multiple single-step model calls in long-horizon offline MBRL into fewer multi-step predictions. By employing rejection sampling from a flow-based behavioral policy to select conservative and high-value action chunks, it significantly outperforms existing offline MBRL method
+  [ICLR 2026][Reinforcement Learning][Offline RL] MAC utilizes action chunk models to compress multiple single-step model calls in long-horizon offline MBRL into fewer multi-step predictions. By employing rejection sampling from a flow-based behavioral policy to select conservative and high-value action chunks, it significantly outperforms existing offline MBRL methods on 100M-scale OGBench long-horizon manipulation tasks.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - flow matching
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline RL"
+  - "Model-Based RL"
+  - "Action Chunks"
+  - "Value Expansion"
+  - "Flow Matching"
 date: 2026-05-08
-content_hash: dd8c59e0db726171
+content_hash: 8f394ede7c16317d
 ---
+
 # Scalable Offline Model-Based RL with Action Chunks
 
 **Conference**: ICLR 2026  
@@ -149,15 +154,16 @@ In reward-based tasks, MAC demonstrates strong general applicability, achieving 
 - Value: ⭐⭐⭐⭐☆ Highly relevant for long-horizon robot manipulation, though requires further investigation for high-frequency locomotion.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] BA-MCTS: Bayes Adaptive Monte Carlo Tree Search for Offline Model-based RL](bayes_adaptive_monte_carlo_tree_search_for_offline_model-based_reinforcement_lea.md)
 - [\[ICLR 2026\] DEAS: DEtached value learning with Action Sequence for Scalable Offline RL](deas_detached_value_learning_with_action_sequence_for_scalable_offline_rl.md)
 - [\[ICLR 2026\] Learning to Reason as Action Abstractions with Scalable Mid-Training RL](learning_to_reason_as_action_abstractions_with_scalable_mid-training_rl.md)
-- [\[ICLR 2026\] ReFORM: Reflected Flows for On-support Offline RL via Noise Manipulation](reform_reflected_flows_for_on-support_offline_rl_via_noise_manipulation.md)
-- [\[ICLR 2026\] MOBODY: Model-Based Off-Dynamics Offline Reinforcement Learning](mobody_model-based_off-dynamics_offline_reinforcement_learning.md)
 - [\[ICLR 2026\] ROMI: Model-based Offline RL via Robust Value-Aware Model Learning with Implicitly Differentiable Adaptive Weighting](model-based_offline_rl_via_robust_value-aware_model_learning_with_implicitly_dif.md)
+- [\[ICLR 2026\] ReFORM: Reflected Flows for On-support Offline RL via Noise Manipulation](reform_reflected_flows_for_on-support_offline_rl_via_noise_manipulation.md)
 
 </div>
 

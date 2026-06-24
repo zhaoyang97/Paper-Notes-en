@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond Boundaries: Leveraging Vision Foundation Models for Source-Free Object Detection
 description: >-
-  [AAAI 2026][Object Detection][Source-Free Object Detection] This paper proposes a framework leveraging VFMs (DINOv2 + Grounding DINO) to enhance Source-Free Object Detection (SFOD) via three modules: Patch-weighted Globa…
+  [AAAI 2026][Object Detection][Source-Free Object Detection] This paper proposes a framework leveraging VFMs (DINOv2 + Grounding DINO) to enhance Source-Free Object Detection (SFOD) via three modules: Patch-weighted Global Feature Alignment (PGFA), Prototype-based Instance Feature Alignment (PIFA), and Dual-source Enhanced Pseudo-label Fusion (DEPF). The method achieves state-of-the-art results on 6 cross-domain detection benchmarks, e.g., 47.1% mAP on Cityscapes→Foggy Citysca…
 tags:
   - "AAAI 2026"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "Grounding DINO"
   - "Pseudo-label Fusion"
 date: 2026-05-08
-content_hash: a4b65c417beb2b64
+content_hash: 23f3d8b5f025331a
 ---
 
 # Beyond Boundaries: Leveraging Vision Foundation Models for Source-Free Object Detection
@@ -99,11 +99,11 @@ The paradigm of using VFMs as "external knowledge anchors" generalizes naturally
 
 ## Related Papers
 
-- [\[CVPR 2026\] Foundation Model Priors Enhance Object Focus in Feature Space for Source-Free Object Detection](../../CVPR2026/object_detection/foundation_model_priors_enhance_object_focus_in_feature_space_for_source-free_ob.md)
 - [\[ICLR 2026\] FSOD-VFM: Few-Shot Object Detection with Vision Foundation Models and Graph Diffusion](../../ICLR2026/object_detection/fsod-vfm_few-shot_object_detection_with_vision_foundation_models_and_graph_diffu.md)
+- [\[CVPR 2026\] Foundation Model Priors Enhance Object Focus in Feature Space for Source-Free Object Detection](../../CVPR2026/object_detection/foundation_model_priors_enhance_object_focus_in_feature_space_for_source-free_ob.md)
 - [\[CVPR 2026\] AnomalyVFM -- Transforming Vision Foundation Models into Zero-Shot Anomaly Detectors](../../CVPR2026/object_detection/anomalyvfm_--_transforming_vision_foundation_models_into_zero-shot_anomaly_detec.md)
+- [\[CVPR 2026\] Beyond Duality: A Hybrid Framework of Leveraging Shared and Private Features for RGB-Event Object Detection](../../CVPR2026/object_detection/beyond_duality_a_hybrid_framework_of_leveraging_shared_and_private_features_for_.md)
 - [\[ICCV 2025\] SFUOD: Source-Free Unknown Object Detection](../../ICCV2025/object_detection/sfuod_source-free_unknown_object_detection.md)
-- [\[AAAI 2026\] Harnessing Vision-Language Models for Time Series Anomaly Detection](harnessing_vision-language_models_for_time_series_anomaly_detection.md)
 
 </div>
 

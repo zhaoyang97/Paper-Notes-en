@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PathCTM: Thinking in Scales — Accelerating Gigapixel Pathology Image Analysis via Adaptive Continuous Reasoning
 description: >-
-  [ICML 2026][Medical Imaging][Paper Note] PathCTM reframes Whole Slide Image (WSI) analysis from "exhaustive high-magnification patching" to "low-magnification global to high-magnification local" continuous multi-scale reasoning. Based on the Continuous Thought Machine, it introduces a "thinking-in-scales" paradigm combined with attention-guided region pruning
+  [ICML 2026][Medical Imaging][Whole Slide Image] PathCTM reframes Whole Slide Image (WSI) analysis from "exhaustive high-magnification patching" to "low-magnification global to high-magnification local" continuous multi-scale reasoning. Based on the Continuous Thought Machine, it introduces a "thinking-in-scales" paradigm combined with attention-guided region pruning and confidence-aware early stopping, reducing patch counts by 95.95% and inference time by 95.62% while maintai…
 tags:
-  - ICML 2026
-  - Medical Imaging
+  - "ICML 2026"
+  - "Medical Imaging"
+  - "Whole Slide Image"
+  - "MIL Acceleration"
+  - "Continuous Thought Machine"
+  - "Multi-scale Reasoning"
+  - "Confidence-Aware Early Stopping"
 date: 2026-05-08
-content_hash: f680f02f4d2f70c3
+content_hash: c78221c5321c5ebd
 ---
+
 # PathCTM: Thinking in Scales — Accelerating Gigapixel Pathology Image Analysis via Adaptive Continuous Reasoning
 
 **Conference**: ICML 2026  
@@ -138,15 +144,13 @@ Cross-scale fusion (preserving global context) adds +1.4 AUC, proving the necess
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[AAAI 2026\] PanFoMa: A Lightweight Foundation Model and Benchmark for Pan-Cancer Pathology Image Analysis](../../AAAI2026/medical_imaging/panfoma_a_lightweight_foundation_model_and_benchmark_for_pan-cancer.md)
 - [\[CVPR 2025\] Interactive Medical Image Analysis with Concept-based Similarity Reasoning](../../CVPR2025/medical_imaging/interactive_medical_image_analysis_with_concept-based_similarity_reasoning.md)
-- [\[CVPR 2025\] WISE: A Framework for Gigapixel Whole-Slide-Image Lossless Compression](../../CVPR2025/medical_imaging/wise_a_framework_for_gigapixel_whole-slide-image_lossless_compression.md)
+- [\[ICLR 2026\] PathChat-SegR1: Reasoning Segmentation in Pathology via SO-GRPO](../../ICLR2026/medical_imaging/pathchat-segr1_reasoning_segmentation_in_pathology_via_so-grpo.md)
 - [\[ICML 2026\] DGNO: Discontinuous Galerkin Neural Operator for Pathology Defocus Deblurring](discontinuous_galerkin_neural_operator_for_pathology_defocus_deblurring.md)
-- [\[ICML 2026\] Learning Multi-Scale Hypergraph for High-Order Brain Connectivity Analysis](learning_multi-scale_hypergraph_for_high-order_brain_connectivity_analysis.md)
+- [\[CVPR 2026\] Act Like a Pathologist: Tissue-Aware Whole Slide Image Reasoning](../../CVPR2026/medical_imaging/act_like_a_pathologist_tissue-aware_whole_slide_image_reasoning.md)
 
 </div>
 

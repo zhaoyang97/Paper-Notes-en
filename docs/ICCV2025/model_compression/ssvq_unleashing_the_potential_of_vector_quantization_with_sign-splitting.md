@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SSVQ: Unleashing the Potential of Vector Quantization with Sign-Splitting
 description: >-
-  [ICCV 2025][Model Compression][vector quantization] This paper proposes Sign-Splitting Vector Quantization (SSVQ), which decouples the sign bits of weights from the codebook…
+  [ICCV 2025][Model Compression][vector quantization] This paper proposes Sign-Splitting Vector Quantization (SSVQ), which decouples the sign bits of weights from the codebook, introduces learnable sign parameters and an enhanced iterative freezing strategy, enabling each quantized weight to update independently along its own gradient direction during VQ fine-tuning. SSVQ significantly outperforms conventional VQ and scalar quantization under extreme compression ratios.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "iterative freezing"
   - "hardware acceleration"
 date: 2026-05-08
-content_hash: d7ac914cae5c5785
+content_hash: 80c9c1159940ccc7
 ---
 
 # SSVQ: Unleashing the Potential of Vector Quantization with Sign-Splitting
@@ -133,9 +133,9 @@ $$W_q = \mathcal{C}[A] \circ \text{sign}(L_s)$$
 
 - [\[ICCV 2025\] Task Vector Quantization for Memory-Efficient Model Merging](task_vector_quantization_for_memory-efficient_model_merging.md)
 - [\[ICCV 2025\] VQ-SGen: A Vector Quantized Stroke Representation for Creative Sketch Generation](vq-sgen_a_vector_quantized_stroke_representation_for_creative_sketch_generation.md)
-- [\[CVPR 2026\] RDVQ: Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression](../../CVPR2026/model_compression/rdvq_differentiable_vq_image_compression.md)
+- [\[ICML 2026\] UniSVQ: 2-bit Unified Scalar-Vector Quantization](../../ICML2026/model_compression/unisvq_2-bit_unified_scalar-vector_quantization.md)
+- [\[ICLR 2026\] TurboQuant: Online Vector Quantization with Near-Optimal Distortion Rate](../../ICLR2026/model_compression/turboquant_online_vector_quantization_with_near-optimal_distortion_rate.md)
 - [\[AAAI 2026\] SIGN: Schema-Induced Games for Naming](../../AAAI2026/model_compression/sign_schema-induced_games_for_naming.md)
-- [\[ICML 2026\] ArcVQ-VAE: A Spherical Vector Quantization Framework with ArcCosine Additive Margin](../../ICML2026/model_compression/arcvq-vae_a_spherical_vector_quantization_framework_with_arccosine_additive_marg.md)
 
 </div>
 

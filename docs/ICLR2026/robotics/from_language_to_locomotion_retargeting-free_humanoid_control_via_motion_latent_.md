@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] From Language to Locomotion: Retargeting-free Humanoid Control via Motion Latent Guidance
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][retargeting-free] RoboGhost proposes a **retargeting-free** language-driven humanoid control framework: it allows text-generated "motion latents" to directly serve as conditions for a diffusion policy to denoise executable actions from noise. This bypasses the multi-stage pipeline of "decode motion $\rightarrow$ retarget to robot $\righ
+  [ICLR 2026][Robotics][Humanoid Robot] RoboGhost proposes a **retargeting-free** language-driven humanoid control framework: it allows text-generated "motion latents" to directly serve as conditions for a diffusion policy to denoise executable actions from noise. This bypasses the multi-stage pipeline of "decode motion $\rightarrow$ retarget to robot $\rightarrow$ physical tracking," which is prone to error accumulation and high latency, reducing the time from text to deployme…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - retargeting-free
+  - "ICLR 2026"
+  - "Robotics"
+  - "Humanoid Robot"
+  - "Language-guided Motion"
+  - "Retargeting-free"
+  - "Diffusion Policy"
+  - "Motion Latent"
+  - "MoE Teacher Policy"
 date: 2026-05-08
-content_hash: 1c12623d703342ed
+content_hash: 0a549ea453538bb9
 ---
+
 # From Language to Locomotion: Retargeting-free Humanoid Control via Motion Latent Guidance
 
 **Conference**: ICLR 2026  
@@ -125,9 +131,9 @@ Diffusion Backbone (Q3): DiT only showed marginal gains in generation metrics (F
 
 - [\[ICLR 2026\] HWC-Loco: A Hierarchical Whole-Body Control Approach to Robust Humanoid Locomotion](hwc-loco_a_hierarchical_whole-body_control_approach_to_robust_humanoid_locomotio.md)
 - [\[CVPR 2026\] Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control](../../CVPR2026/robotics/do_you_have_freestyle_expressive_humanoid_locomotion_via_audio_control.md)
+- [\[ICLR 2026\] Align-Then-stEer: Adapting the Vision-Language Action Models through Unified Latent Guidance](align-then-steer_adapting_the_vision-language_action_models_through_unified_late.md)
 - [\[NeurIPS 2025\] Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning](../../NeurIPS2025/robotics/adversarial_locomotion_and_motion_imitation_for_humanoid_policy_learning.md)
 - [\[ICLR 2026\] WholeBodyVLA: Towards Unified Latent VLA for Whole-Body Loco-Manipulation Control](wholebodyvla_towards_unified_latent_vla_for_whole-body_loco-manipulation_control.md)
-- [\[CVPR 2026\] Iterative Closed-Loop Motion Synthesis for Scaling the Capabilities of Humanoid Control](../../CVPR2026/robotics/iterative_closed-loop_motion_synthesis_for_scaling_the_capabilities_of_humanoid_.md)
 
 </div>
 

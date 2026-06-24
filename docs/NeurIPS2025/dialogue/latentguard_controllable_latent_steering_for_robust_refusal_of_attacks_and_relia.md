@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LatentGuard: Controllable Latent Steering for Robust Refusal of Attacks and Reliable Response Generation
 description: >-
-  [NEURIPS2025][Dialogue Systems][LLM safety] This paper proposes LatentGuard, a three-stage framework that combines behavior-level alignment fine-tuning, structured VAE-supervised latent space modeling…
+  [NEURIPS2025][Dialogue Systems][LLM safety] This paper proposes LatentGuard, a three-stage framework that combines behavior-level alignment fine-tuning, structured VAE-supervised latent space modeling, and latent-space dimensional manipulation to achieve interpretable and controllable regulation of LLM refusal behavior — robustly defending against adversarial attacks while preserving responsiveness to benign queries.
 tags:
   - "NEURIPS2025"
   - "Dialogue Systems"
@@ -12,7 +12,7 @@ tags:
   - "Refusal Alignment"
   - "Jailbreak Defense"
 date: 2026-05-08
-content_hash: b4857c629a6ac471
+content_hash: 417fa294bd82a5dd
 ---
 
 # LatentGuard: Controllable Latent Steering for Robust Refusal of Attacks and Reliable Response Generation
@@ -149,11 +149,11 @@ The core advantage of LatentGuard lies in unifying behavioral alignment with rep
 
 ## Related Papers
 
-- [\[ICLR 2026\] AQuA: Toward Strategic Response Generation for Ambiguous Visual Questions](../../ICLR2026/dialogue/aqua_toward_strategic_response_generation_for_ambiguous_visual_questions.md)
-- [\[ACL 2026\] Discourse Coherence and Response-Guided Context Rewriting for Multi-Party Dialogue Generation](../../ACL2026/dialogue/discourse_coherence_and_response-guided_context_rewriting_for_multi-party_dialog.md)
+- [\[ACL 2025\] UniConv: Unifying Retrieval and Response Generation for Large Language Models in Conversations](../../ACL2025/dialogue/uniconv_retrieval_response_gen.md)
 - [\[ACL 2026\] LOCKET: Robust Feature-Locking Technique for Language Models](../../ACL2026/dialogue/locket_robust_feature-locking_technique_for_language_models.md)
-- [\[ACL 2026\] Author-in-the-Loop Response Generation and Evaluation: Integrating Author Expertise and Intent in Responses to Peer Review](../../ACL2026/dialogue/author-in-the-loop_response_generation_and_evaluation_integrating_author_experti.md)
-- [\[NeurIPS 2025\] Bridging Human and LLM Judgments: Understanding and Narrowing the Gap](bridging_human_and_llm_judgments_understanding_and_narrowing_the_gap.md)
+- [\[ICLR 2026\] AQuA: Toward Strategic Response Generation for Ambiguous Visual Questions](../../ICLR2026/dialogue/aqua_toward_strategic_response_generation_for_ambiguous_visual_questions.md)
+- [\[ACL 2025\] EnSToM: Enhancing Dialogue Systems with Entropy-Scaled Steering Vectors for Topic Maintenance](../../ACL2025/dialogue/enstom_enhancing_dialogue_systems_with_entropy-scaled_steering_vectors_for_topic.md)
+- [\[ECCV 2024\] BI-MDRG: Bridging Image History in Multimodal Dialogue Response Generation](../../ECCV2024/dialogue/bi-mdrg_bridging_image_history_in_multimodal_dialogue_response_generation.md)
 
 </div>
 

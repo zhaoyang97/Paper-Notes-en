@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UniLumos: Fast and Unified Image and Video Relighting with Physics-Plausible Feedback
 description: >-
-  [NeurIPS 2025][Image Generation][Relighting] This paper proposes UniLumos, a unified image and video relighting framework that enhances physical plausibility by incorporating RGB-space depth and normal geometry feedback…
+  [NeurIPS 2025][Image Generation][Relighting] This paper proposes UniLumos, a unified image and video relighting framework that enhances physical plausibility by incorporating RGB-space depth and normal geometry feedback into a flow matching backbone, while achieving 20× inference speedup through path consistency learning.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "video generation"
   - "geometry supervision"
 date: 2026-05-08
-content_hash: bc12f2ca3e891505
+content_hash: ef91eb4ebbaddc44
 ---
 
 # UniLumos: Fast and Unified Image and Video Relighting with Physics-Plausible Feedback
@@ -136,8 +136,8 @@ where $\lambda_0 = 1.0$ and $\lambda_1 = \lambda_2 = 0.1$. Training adopts a sel
 ## Related Papers
 
 - [\[NeurIPS 2025\] Physics-Driven Spatiotemporal Modeling for AI-Generated Video Detection](physics-driven_spatiotemporal_modeling_for_ai-generated_video_detection.md)
-- [\[NeurIPS 2025\] GenIR: Generative Visual Feedback for Mental Image Retrieval](genir_generative_visual_feedback_for_mental_image_retrieval.md)
 - [\[ICLR 2026\] PI-Light: Physics-Inspired Diffusion for Full-Image Relighting](../../ICLR2026/image_generation/pi-light_physics-inspired_diffusion_for_full-image_relighting.md)
+- [\[NeurIPS 2025\] GenIR: Generative Visual Feedback for Mental Image Retrieval](genir_generative_visual_feedback_for_mental_image_retrieval.md)
 - [\[NeurIPS 2025\] Fast Data Attribution for Text-to-Image Models](fast_data_attribution_for_text-to-image_models.md)
 - [\[NeurIPS 2025\] Show-o2: Improved Native Unified Multimodal Models](show-o2_improved_native_unified_multimodal_models.md)
 

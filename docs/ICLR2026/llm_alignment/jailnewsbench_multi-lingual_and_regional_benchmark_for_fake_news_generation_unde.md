@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] JailNewsBench: Multi-Lingual and Regional Benchmark for Fake News Generation under Jailbreak Attacks
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] This paper proposes JailNewsBench, the first multilingual and multi-regional benchmark to evaluate the robustness of LLMs against fake news generation under jailbreak attacks. Covering 34 regions and 22 languages with approximately 300,000 instances, it reveals attack success rates up to 86.3% and uncovers a safety imb
+  [ICLR 2026][LLM Alignment][Fake news generation] This paper proposes JailNewsBench, the first multilingual and multi-regional benchmark to evaluate the robustness of LLMs against fake news generation under jailbreak attacks. Covering 34 regions and 22 languages with approximately 300,000 instances, it reveals attack success rates up to 86.3% and uncovers a safety imbalance where defenses for English/US topics are significantly weaker than those for other regions.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Fake news generation"
+  - "jailbreak attacks"
+  - "multilingual safety"
+  - "LLM safety evaluation"
+  - "regional safety imbalance"
 date: 2026-05-08
-content_hash: 1447d6a01eee1ae5
+content_hash: 9e80e69346a74236
 ---
+
 # JailNewsBench: Multi-Lingual and Regional Benchmark for Fake News Generation under Jailbreak Attacks
 
 **Conference**: ICLR 2026  
@@ -122,8 +128,8 @@ Whether a response constitutes effective fake news is difficult to measure with 
 
 ## Related Papers
 
-- [\[ICLR 2026\] SEMA: Simple yet Effective Learning for Multi-Turn Jailbreak Attacks](sema_simple_yet_effective_learning_for_multi-turn_jailbreak_attacks.md)
 - [\[ICLR 2026\] CAGE: A Framework for Culturally Adaptive Red-Teaming Benchmark Generation](cage_a_framework_for_culturally_adaptive_red-teaming_benchmark_generation.md)
+- [\[ICLR 2026\] SEMA: Simple yet Effective Learning for Multi-Turn Jailbreak Attacks](sema_simple_yet_effective_learning_for_multi-turn_jailbreak_attacks.md)
 - [\[ACL 2026\] HarDBench: A Benchmark for Draft-Based Co-Authoring Jailbreak Attacks for Safe Human–LLM Collaborative Writing](../../ACL2026/llm_alignment/hardbench_a_benchmark_for_draft-based_co-authoring_jailbreak_attacks_for_safe_hu.md)
 - [\[ICLR 2026\] Toward Universal and Transferable Jailbreak Attacks on Vision-Language Models (UltraBreak)](toward_universal_and_transferable_jailbreak_attacks_on_vision-language_models.md)
 - [\[ICLR 2026\] Enforcing Axioms for AI Alignment under Loss-Based Rules](enforcing_axioms_for_ai_alignment_under_loss-based_rules.md)

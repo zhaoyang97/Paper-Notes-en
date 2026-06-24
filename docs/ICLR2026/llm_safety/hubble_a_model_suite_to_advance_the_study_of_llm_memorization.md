@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Hubble: A Model Suite to Advance the Study of LLM Memorization
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] HUBBLE is a suite of fully open-source LLMs (1B/8B, 100B/500B tokens) that bridges controlled causal experiments and commercial-scale modeling. By **controlled insertion** of "sensitive perturbation texts" (copyrighted passages, biographies, test sets) into the pre-training corpus with randomized repetition counts, it
+  [ICLR 2026][LLM Safety][LLM Memorization] HUBBLE is a suite of fully open-source LLMs (1B/8B, 100B/500B tokens) that bridges controlled causal experiments and commercial-scale modeling. By **controlled insertion** of "sensitive perturbation texts" (copyrighted passages, biographies, test sets) into the pre-training corpus with randomized repetition counts, it systematically quantifies memorization risks and provides best practices for mitigation.
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "LLM Memorization"
+  - "Open-source Model Suite"
+  - "Copyright"
+  - "Privacy"
+  - "Test Set Contamination"
+  - "Membership Inference"
+  - "Machine Unlearning"
 date: 2026-05-08
-content_hash: f141b7d31090b16b
+content_hash: b374a20e83ae5ff1
 ---
+
 # Hubble: A Model Suite to Advance the Study of LLM Memorization
 
 **Conference**: ICLR 2026  
@@ -103,6 +111,7 @@ As repetitions increase, MIA accuracy improves. Since non-members are derived fr
 - **Value**: ⭐⭐⭐⭐⭐ Essential infrastructure for the privacy, safety, and evaluation communities.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -110,8 +119,8 @@ As repetitions increase, MIA accuracy improves. Since non-members are derived fr
 - [\[ICLR 2026\] Information-Theoretic Membership Inference for Granular Quantification of Memorization](information-theoretic_membership_inference_for_granular_quantification_of_memori.md)
 - [\[ICLR 2026\] Reasoning or Retrieval? A Study of Answer Attribution on Large Reasoning Models](reasoning_or_retrieval_a_study_of_answer_attribution_on_large_reasoning_models.md)
 - [\[ICLR 2026\] Hey, That's My Model! Introducing Chain & Hash, An LLM Fingerprinting Technique](hey_thats_my_model_introducing_chain_hash_an_llm_fingerprinting_technique.md)
+- [\[ACL 2025\] Which Retain Set Matters for LLM Unlearning? A Case Study on Entity Unlearning](../../ACL2025/llm_safety/which_retain_set_matters_for_llm_unlearning_a_case_study_on_entity_unlearning.md)
 - [\[NeurIPS 2025\] LLM Strategic Reasoning: Agentic Study through Behavioral Game Theory](../../NeurIPS2025/llm_safety/llm_strategic_reasoning_agentic_study_through_behavioral_gam.md)
-- [\[ICLR 2026\] Revisiting the Past: Data Unlearning with Model State History](revisiting_the_past_data_unlearning_with_model_state_history.md)
 
 </div>
 

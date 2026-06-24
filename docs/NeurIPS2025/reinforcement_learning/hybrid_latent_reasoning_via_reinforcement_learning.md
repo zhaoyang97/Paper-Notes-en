@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hybrid Latent Reasoning via Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Latent reasoning] HRPO proposes a hybrid latent reasoning policy optimization framework: a learnable gating mechanism progressively blends the hidden state representation from the p…
+  [NeurIPS 2025][Reinforcement Learning][Latent reasoning] HRPO proposes a hybrid latent reasoning policy optimization framework: a learnable gating mechanism progressively blends the hidden state representation from the previous step into the sampled token embeddings, enabling LLMs to leverage both discrete tokens and continuous latent representations during inference. Without requiring CoT annotations, HRPO is trained entirely via RL and outperforms baselines such as PPO and…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "gating mechanism"
   - "continuous representation"
 date: 2026-05-08
-content_hash: 09362a1c242b171d
+content_hash: 650fb25d1b8d4a03
 ---
 
 # Hybrid Latent Reasoning via Reinforcement Learning
@@ -135,8 +135,8 @@ Base models: Qwen2.5-1.5B-Instruct and Qwen2.5-3B-Instruct.
 - [\[NeurIPS 2025\] Decoder-Hybrid-Decoder Architecture for Efficient Reasoning with Long Generation](decoderhybriddecoder_architecture_for_efficient_reasoning_wi.md)
 - [\[ACL 2026\] SpiralThinker: Latent Reasoning through an Iterative Process with Text-Latent Interleaving](../../ACL2026/reinforcement_learning/spiralthinker_latent_reasoning_through_an_iterative_process_with_text-latent_int.md)
 - [\[NeurIPS 2025\] Interactive and Hybrid Imitation Learning: Provably Beating Behavior Cloning](interactive_and_hybrid_imitation_learning_provably_beating_behavior_cloning.md)
-- [\[NeurIPS 2025\] Reasoning Gym: Reasoning Environments for Reinforcement Learning with Verifiable Rewards](reasoning_gym_reasoning_environments_for_reinforcement_learning_with_verifiable_.md)
 - [\[NeurIPS 2025\] Exploration with Foundation Models: Capabilities, Limitations, and Hybrid Approaches](exploration_with_foundation_models_capabilities_limitations_and_hybrid_approache.md)
+- [\[NeurIPS 2025\] Blending Complementary Memory Systems in Hybrid Quadratic-Linear Transformers](blending_complementary_memory_systems_in_hybrid_quadratic-linear_transformers.md)
 
 </div>
 

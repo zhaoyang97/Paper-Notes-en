@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From LLM-Generated Conjectures to Lean Formalizations: Automated Polynomial Inequality Proving via Sum-of-Squares Certificates
 description: >-
-  [ICML 2026][LLM Reasoning][GRPO] NSPI allows LLMs to propose approximate Sum-of-Squares (SOS) structural conjectures, which are refined through Gauss–Newton iteration and rational recovery into rigorous SOS decompositions with rational coefficients. These are then automatically verified by machines using Lean's `linear_combination` + `positivity` tact
+  [ICML 2026][Reasoning][Polynomial Inequalities] NSPI allows LLMs to propose approximate Sum-of-Squares (SOS) structural conjectures, which are refined through Gauss–Newton iteration and rational recovery into rigorous SOS decompositions with rational coefficients. These are then automatically verified by machines using Lean's `linear_combination` + `positivity` tactics, extending inequality proving to up to 10 variables.
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - GRPO
+  - "ICML 2026"
+  - "Reasoning"
+  - "Polynomial Inequalities"
+  - "SOS Decomposition"
+  - "Lean Formalization"
+  - "Neuro-symbolic"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 05b06d69f61af6de
+content_hash: 958fa578a084ec91
 ---
+
 # From LLM-Generated Conjectures to Lean Formalizations: Automated Polynomial Inequality Proving via Sum-of-Squares Certificates
 
 **Conference**: ICML 2026  
@@ -140,11 +145,11 @@ Key Trend: Pure symbolic methods (Maple/Z3) nearly perfect at $n=3$ but drop to 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Process-Verified Reinforcement Learning for Theorem Proving via Lean](../../ICLR2026/llm_reasoning/process-verified_reinforcement_learning_for_theorem_proving_via_lean.md)
+- [\[ICML 2026\] Calibration of Structured Ignorance Certificates for Diagnosing Unknown Unknowns in Reasoning Models](calibration_of_structured_ignorance_certificates_for_diagnosing_unknown_unknowns.md)
 - [\[ACL 2025\] Local Look-Ahead Guidance via Verifier-in-the-Loop for Automated Theorem Proving](../../ACL2025/llm_reasoning/local_look-ahead_guidance_via_verifier-in-the-loop_for_automated_theorem_proving.md)
 - [\[ICLR 2026\] EvolProver: Advancing Automated Theorem Proving by Evolving Formalized Problems via Symmetry and Difficulty](../../ICLR2026/llm_reasoning/evolprover_advancing_automated_theorem_proving_by_evolving_formalized_problems_v.md)
-- [\[ICML 2026\] ResRL: Boosting LLM Reasoning via Negative Sample Projection Residual Reinforcement Learning](resrl_boosting_llm_reasoning_via_negative_sample_projection_residual_reinforceme.md)
-- [\[ICML 2026\] Calibration of Structured Ignorance Certificates for Diagnosing Unknown Unknowns in Reasoning Models](calibration_of_structured_ignorance_certificates_for_diagnosing_unknown_unknowns.md)
-- [\[ICML 2026\] TRACE: 用 Toulmin 论证模型评 LLM CoT 推理过程质量](trace_toulmin-based_reasoning_assessment_through_constructive_elements_for_llm_c.md)
+- [\[ICLR 2026\] Premise Selection for a Lean Hammer](../../ICLR2026/llm_reasoning/premise_selection_for_a_lean_hammer.md)
 
 </div>
 

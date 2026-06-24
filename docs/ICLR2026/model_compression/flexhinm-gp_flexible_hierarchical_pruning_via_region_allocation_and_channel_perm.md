@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] FlexHiNM-GP: Flexible Hierarchical Pruning via Region Allocation and Channel Permutation
 description: >-
-  [ICLR 2026][Model Compression][Sparse Tensor Core] Weight layers are adaptively partitioned into "dense (4:4)", "N:M (2:4)", and "fully pruned (0:4)" regions. This is coupled with a structure-aware Gyro-Permutation and differentiable 2:4 mask learning, enabling structured pruning to approach unstructured accuracy while maintaining GPU Sparse Tensor Core compatibility.
+  [ICLR 2026][Model Compression][N:M Sparsity] Weight layers are adaptively partitioned into "dense (4:4)", "N:M (2:4)", and "fully pruned (0:4)" regions. This is coupled with a structure-aware Gyro-Permutation and differentiable 2:4 mask learning, enabling structured pruning to approach unstructured accuracy while maintaining GPU Sparse Tensor Core compatibility.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Sparse Tensor Core
-  - Hard Concrete
+  - "ICLR 2026"
+  - "Model Compression"
+  - "N:M Sparsity"
+  - "Hierarchical Sparsity"
+  - "Channel Permutation"
+  - "Sparse Tensor Core"
+  - "Hard Concrete"
+  - "Gradual Pruning"
 date: 2026-05-08
-content_hash: 1f660d1d793400ae
+content_hash: 46c4b2099dce3280
 ---
+
 # FlexHiNM-GP: Flexible Hierarchical Pruning via Region Allocation and Channel Permutation
 
 **Conference**: ICLR 2026  
@@ -111,13 +116,12 @@ Both Flexible region allocation and Hard Concrete contribute positively. At high
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] PermLLM: Learnable Channel Permutation for N:M Sparse Large Language Models](../../NeurIPS2025/model_compression/permllm_learnable_channel_permutation_for_nm_sparse_large_language_models.md)
-- [\[ICLR 2026\] LSA: Layer-wise Sparsity Allocation for Large Language Model Pruning Based on Minimal Linear Reconstruction Error](lsa_layer-wise_sparsity_allocation_for_large_language_model_pruning_based_on_min.md)
 - [\[ICLR 2026\] FlexLoRA: Entropy-Guided Flexible Low-Rank Adaptation](flexlora_entropy-guided_flexible_low-rank_adaptation.md)
+- [\[ICLR 2026\] LSA: Layer-wise Sparsity Allocation for Large Language Model Pruning Based on Minimal Linear Reconstruction Error](lsa_layer-wise_sparsity_allocation_for_large_language_model_pruning_based_on_min.md)
 - [\[ICLR 2026\] Navigating the Accuracy-Size Trade-Off with Flexible Model Merging](navigating_the_accuracy-size_trade-off_with_flexible_model_merging.md)
 - [\[ICML 2026\] ToaSt: Token Channel Selection and Structured Pruning for Efficient ViT](../../ICML2026/model_compression/toast_token_channel_selection_and_structured_pruning_for_efficient_vit.md)
 

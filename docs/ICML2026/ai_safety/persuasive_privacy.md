@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Persuasive Privacy
 description: >-
-  [ICML 2026][AI Safety][Paper Note] This paper reformulates "privacy" as the relative scoring rule loss of a Receiver under the worst-case data-prior using a Sender–Receiver two-party Stackelberg game and Bayesian Persuasion. It provides a unified definition $(\mathcal{S},\mathcal{Q}_x,\kappa,\delta)$-PP, which subsumes pure DP and probabilistic DP as sp
+  [ICML 2026][AI Safety][Differential Privacy] This paper reformulates "privacy" as the relative scoring rule loss of a Receiver under the worst-case data-prior using a Sender–Receiver two-party Stackelberg game and Bayesian Persuasion. It provides a unified definition $(\mathcal{S},\mathcal{Q}_x,\kappa,\delta)$-PP, which subsumes pure DP and probabilistic DP as special cases, while providing non-trivial formal privacy guarantees for **deterministic algorithms** (e.g.…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "Bayesian Persuasion"
+  - "Scoring Rules"
+  - "Stackelberg Game"
+  - "Deterministic Mechanisms"
 date: 2026-05-08
-content_hash: 4401c1088efcb1bc
+content_hash: f7a6112615ae05ce
 ---
+
 # Persuasive Privacy
 
 **Conference**: ICML 2026  
@@ -113,11 +119,11 @@ As a theoretical work, there are no large-scale numerical experiments. Instead, 
 
 ## Related Papers
 
+- [\[ICML 2026\] Privacy Amplification in Differentially Private Zeroth-Order Optimization with Hidden States](privacy_amplification_in_differentially_private_zeroth-order_optimization_with_h.md)
 - [\[ICML 2026\] Mind the Gap: Mixtures of Gaussians in Approximate Differential Privacy](mind_the_gap_mixtures_of_gaussians_in_approximate_differential_privacy.md)
 - [\[ICML 2026\] VPD-100K: Towards Generalizable and Fine-grained Visual Privacy Protection](vpd-100k_towards_generalizable_and_fine-grained_visual_privacy_protection.md)
 - [\[ICML 2026\] Position: Embodied AI Requires a Privacy-Utility Trade-off](position_embodied_ai_requires_a_privacy-utility_trade-off.md)
-- [\[ICML 2026\] Privacy Amplification in Differentially Private Zeroth-Order Optimization with Hidden States](privacy_amplification_in_differentially_private_zeroth-order_optimization_with_h.md)
-- [\[ICML 2026\] MetaMoE: Diversity-Aware Proxy Selection for Privacy-Preserving Mixture-of-Experts Unification](metamoe_diversity-aware_proxy_selection_for_privacy-preserving_mixture-of-expert.md)
+- [\[ICLR 2026\] Privacy Beyond Pixels: Latent Anonymization for Privacy-Preserving Video Understanding](../../ICLR2026/ai_safety/privacy_beyond_pixels_latent_anonymization_for_privacy-preserving_video_understa.md)
 
 </div>
 

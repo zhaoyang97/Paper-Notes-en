@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Tri-Subspaces Disentanglement for Multimodal Sentiment Analysis
 description: >-
-  [CVPR 2026][Audio & Speech][HSIC] The TSD framework is proposed to explicitly decompose multimodal features into three complementary subspaces: global shared, pairwise shared, and modality-private. A subspace-aware cross-attention fusion module adaptively integrates these three layers of information, achieving state-of-the-art (SOTA) performance on CMU
+  [CVPR 2026][Audio & Speech][Multimodal Sentiment Analysis] The TSD framework is proposed to explicitly decompose multimodal features into three complementary subspaces: global shared, pairwise shared, and modality-private. A subspace-aware cross-attention fusion module adaptively integrates these three layers of information, achieving state-of-the-art (SOTA) performance on CMU-MOSI and CMU-MOSEI datasets.
 tags:
-  - CVPR 2026
-  - Audio & Speech
-  - HSIC
+  - "CVPR 2026"
+  - "Audio & Speech"
+  - "Multimodal Sentiment Analysis"
+  - "Tri-Subspaces Disentanglement"
+  - "Cross-Attention Fusion"
+  - "Pairwise Shared"
+  - "HSIC"
 date: 2026-05-08
-content_hash: f3c8223956fd4fe9
+content_hash: 9b1e6997c58db6aa
 ---
+
 # Tri-Subspaces Disentanglement for Multimodal Sentiment Analysis
 
 **Conference**: CVPR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rao-Blackwellised Reparameterisation Gradients
 description: >-
-  [NeurIPS 2025][Optimization][Rao-Blackwell] This paper proposes the R2-G2 estimator as a Rao-Blackwellised variant of reparameterisation gradients…
+  [NeurIPS 2025][Optimization][Rao-Blackwell] This paper proposes the R2-G2 estimator as a Rao-Blackwellised variant of reparameterisation gradients, proves that local reparameterisation in Bayesian MLPs is a special case thereof, and extends the low-variance gradient advantage to a broad class of probabilistic models.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "variational inference"
   - "Bayesian MLP"
 date: 2026-05-08
-content_hash: 010184ec804380bd
+content_hash: 219a0db0fa60144c
 ---
 
 # Rao-Blackwellised Reparameterisation Gradients
@@ -148,10 +148,10 @@ Variance reduction ratio of R2-G2 across different model depths:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Efficient Federated Learning against Byzantine Attacks and Data Heterogeneity via Aggregating Normalized Gradients](efficient_federated_learning_against_byzantine_attacks_and_data_heterogeneity_vi.md)
+- [\[ICML 2026\] A2SG: Adaptive and Asymmetric Surrogate Gradients for Training Deep Spiking Neural Networks](../../ICML2026/optimization/a2sgadaptive_and_asymmetric_surrogate_gradients_for_training_deep_spiking_neural.md)
+- [\[ICLR 2026\] DR-Submodular Maximization with Stochastic Biased Gradients: Classical and Quantum Gradient Algorithms](../../ICLR2026/optimization/dr-submodular_maximization_with_stochastic_biased_gradients_classical_and_quantu.md)
 - [\[NeurIPS 2025\] VIKING: Deep Variational Inference with Stochastic Projections](viking_deep_variational_inference_with_stochastic_projections.md)
 - [\[NeurIPS 2025\] Improving the Straight-Through Estimator with Zeroth-Order Information](improving_the_straight-through_estimator_with_zeroth-order_information.md)
-- [\[NeurIPS 2025\] VERA: Variational Inference Framework for Jailbreaking Large Language Models](vera_variational_inference_framework_for_jailbreaking_large_language_models.md)
-- [\[NeurIPS 2025\] NeuSymEA: Neuro-symbolic Entity Alignment via Variational Inference](neuro-symbolic_entity_alignment_via_variational_inference.md)
 
 </div>
 

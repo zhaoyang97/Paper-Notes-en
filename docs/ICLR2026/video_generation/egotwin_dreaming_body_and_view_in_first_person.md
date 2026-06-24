@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EgoTwin: Dreaming Body and View in First Person
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] EgoTwin jointly models "first-person video generation" and "human motion generation" within a single Diffusion Transformer. By utilizing a head-centric motion representation and cross-modal attention with causal constraints, the model ensures that the generated video perspective trajectories and human movements are syn
+  [ICLR 2026][Video Generation][First-person video generation] EgoTwin jointly models "first-person video generation" and "human motion generation" within a single Diffusion Transformer. By utilizing a head-centric motion representation and cross-modal attention with causal constraints, the model ensures that the generated video perspective trajectories and human movements are synchronized in time and aligned geometrically.
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "First-person video generation"
+  - "Joint video-motion modeling"
+  - "Diffusion Transformer"
+  - "Head-centric representation"
+  - "Cross-modal temporal consistency"
 date: 2026-05-08
-content_hash: 0d8e36fac97f4ca1
+content_hash: 8b4c2a05d6664c48
 ---
+
 # EgoTwin: Dreaming Body and View in First Person
 
 **Conference**: ICLR 2026  
@@ -148,10 +154,10 @@ Removing Motion Reformulation (MR), the Interaction Mechanism (IM), or Asynchron
 ## Related Papers
 
 - [\[ICLR 2026\] Generative View Stitching](generative_view_stitching.md)
+- [\[ICLR 2026\] DanceTogether: Generating Interactive Multi-Person Video without Identity Drifting](dancetogether_generating_interactive_multi-person_video_without_identity_driftin.md)
 - [\[ICLR 2026\] Anchor Frame Bridging for Coherent First-Last Frame Video Generation](anchor_frame_bridging_for_coherent_first-last_frame_video_generation.md)
 - [\[CVPR 2026\] EgoControl: Controllable Egocentric Video Generation via 3D Full-Body Poses](../../CVPR2026/video_generation/egocontrol_controllable_egocentric_video_generation_via_3d_full-body_poses.md)
 - [\[ICLR 2026\] Controllable First-Frame-Guided Video Editing via Mask-Aware LoRA Fine-Tuning](controllable_first-frame-guided_video_editing_via_mask-aware_lora_fine-tuning.md)
-- [\[CVPR 2026\] ConsID-Gen: View-Consistent and Identity-Preserving Image-to-Video Generation](../../CVPR2026/video_generation/consid-gen_view-consistent_and_identity-preserving_image-to-video_generation.md)
 
 </div>
 

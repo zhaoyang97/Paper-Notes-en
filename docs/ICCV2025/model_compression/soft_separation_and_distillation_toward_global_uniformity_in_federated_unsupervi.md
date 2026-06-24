@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Soft Separation and Distillation: Toward Global Uniformity in Federated Unsupervised Learning
 description: >-
-  [ICCV 2025][Model Compression][Federated Unsupervised Learning] This paper proposes the Soft Separation and Distillation (SSD) framework, which addresses insufficient inter-client representation uniformity in federated u…
+  [ICCV 2025][Model Compression][Federated Unsupervised Learning] This paper proposes the Soft Separation and Distillation (SSD) framework, which addresses insufficient inter-client representation uniformity in federated unsupervised learning through two modules — Dimension Scaling Regularization (DSR) and Projector Distillation (PD) — significantly improving global representation quality without incurring additional communication overhead.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Projector Distillation"
   - "Non-IID"
 date: 2026-05-08
-content_hash: f730fbc5490fa1de
+content_hash: a0ea7bf88cf99a90
 ---
 
 # Soft Separation and Distillation: Toward Global Uniformity in Federated Unsupervised Learning
@@ -132,11 +132,11 @@ where $\beta, \gamma, \delta$ are set to 1.0, 1.0, and 0.1, respectively.
 
 ## Related Papers
 
+- [\[ECCV 2024\] Simple Unsupervised Knowledge Distillation With Space Similarity](../../ECCV2024/model_compression/simple_unsupervised_knowledge_distillation_with_space_similarity.md)
 - [\[ICML 2026\] FedSDR: Federated Self-Distillation with Rectification](../../ICML2026/model_compression/fedsdr_federated_self-distillation_with_rectification.md)
 - [\[ICCV 2025\] Competitive Distillation: A Simple Learning Strategy for Improving Visual Classification](competitive_distillation_a_simple_learning_strategy_for_improving_visual_classif.md)
 - [\[NeurIPS 2025\] Rectifying Soft-Label Entangled Bias in Long-Tailed Dataset Distillation](../../NeurIPS2025/model_compression/rectifying_soft-label_entangled_bias_in_long-tailed_dataset_distillation.md)
 - [\[ICCV 2025\] SAMO: A Lightweight Sharpness-Aware Approach for Multi-Task Optimization with Joint Global-Local Perturbation](samo_a_lightweight_sharpness-aware_approach_for_multi-task_optimization_with_joi.md)
-- [\[ICCV 2025\] Knowledge Distillation with Refined Logits](knowledge_distillation_with_refined_logits.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] MathNet: A Global Multimodal Benchmark for Mathematical Reasoning and Retrieval
 description: >-
-  [ICLR 2026][vlm_reasoning][Olympiad Math] MathNet constructs the largest Olympiad-level math problem database to date (30K+ problems, 47 countries, 17 languages, spanning 40 years of official exams). It introduces "math-aware retrieval" as an independent task and provides benchmarks for problem-solving, retrieval, and retrieval-augmented generation (RAG), reve
+  [ICLR 2026][VLM Reasoning][Olympiad Math] MathNet constructs the largest Olympiad-level math problem database to date (30K+ problems, 47 countries, 17 languages, spanning 40 years of official exams). It introduces "math-aware retrieval" as an independent task and provides benchmarks for problem-solving, retrieval, and retrieval-augmented generation (RAG), revealing that frontier models remain severely limited in geometry, discrete mathematics…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Olympiad Math
-  - Multilingual
-  - Math-Aware Retrieval
-  - RAG
-  - Benchmark
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Olympiad Math"
+  - "Multilingual"
+  - "Math-Aware Retrieval"
+  - "RAG"
+  - "Benchmark"
 date: 2026-05-08
-content_hash: 0033df8b13e306cd
+content_hash: 70a9e53b36e94c34
 ---
+
 # MathNet: A Global Multimodal Benchmark for Mathematical Reasoning and Retrieval
 
 **Conference**: ICLR 2026  
@@ -131,12 +132,12 @@ Even for the strongest embeddings, Recall@1 is only approximately 5%. Counter-in
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] RMIR: A Benchmark Dataset for Reasoning-Intensive Multimodal Image Retrieval](../../CVPR2026/vlm_reasoning/rmir_a_benchmark_dataset_for_reasoning-intensive_multimodal_image_retrieval.md)
-- [\[ICLR 2026\] We-Math 2.0: A Versatile MathBook System for Incentivizing Visual Mathematical Reasoning](we-math_20_a_versatile_mathbook_system_for_incentivizing_visual_mathematical_rea.md)
+- [\[ICLR 2026\] VideoMathQA: Benchmarking Mathematical Reasoning via Multimodal Understanding in Video](videomathqa_benchmarking_mathematical_reasoning_via_multimodal_understanding_in_.md)
 - [\[ICLR 2026\] PuzzleWorld: A Benchmark for Multimodal, Open-Ended Reasoning in Puzzlehunts](puzzleworld_a_benchmark_for_multimodal_open-ended_reasoning_in_puzzlehunts.md)
 - [\[ICLR 2026\] GIR-Bench: Versatile Benchmark for Generating Images with Reasoning](gir-bench_versatile_benchmark_for_generating_images_with_reasoning.md)
 - [\[ICLR 2026\] JointAVBench: A Benchmark for Joint Audio-Visual Reasoning Evaluation](jointavbench_a_benchmark_for_joint_audio-visual_reasoning_evaluation.md)

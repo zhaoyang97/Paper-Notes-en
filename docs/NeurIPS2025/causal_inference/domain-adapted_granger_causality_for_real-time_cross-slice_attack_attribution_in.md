@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Domain-Adapted Granger Causality for Real-Time Cross-Slice Attack Attribution in 6G Networks
 description: >-
-  [NEURIPS2025][Causal Inference][Granger causality] This paper proposes a domain-adapted Granger causality framework for 6G network slicing that integrates enhanced Granger causality testing with network resource contenti…
+  [NEURIPS2025][Causal Inference][Granger causality] This paper proposes a domain-adapted Granger causality framework for 6G network slicing that integrates enhanced Granger causality testing with network resource contention modeling to enable real-time cross-slice attack attribution, achieving 89.2% accuracy and 87 ms response time across 1,100 attack scenarios, substantially outperforming existing statistical, deep learning, and causal discovery methods.
 tags:
   - "NEURIPS2025"
   - "Causal Inference"
@@ -12,7 +12,7 @@ tags:
   - "resource contention"
   - "real-time security"
 date: 2026-05-08
-content_hash: 2fd9113be0a60e47
+content_hash: 177940db75c3c425
 ---
 
 # Domain-Adapted Granger Causality for Real-Time Cross-Slice Attack Attribution in 6G Networks
@@ -137,11 +137,11 @@ The Domain-Adapted Granger Causality framework receives security telemetry strea
 
 ## Related Papers
 
+- [\[ICLR 2026\] Frequency-Domain Better than Time-Domain for Causal Structure Recovery in Dynamical Systems on Networks](../../ICLR2026/causal_inference/frequency-domain_better_than_time-domain_for_causal_structure_recovery_in_dynami.md)
 - [\[NeurIPS 2025\] Revealing Multimodal Causality with Large Language Models](revealing_multimodal_causality_with_large_language_models.md)
-- [\[NeurIPS 2025\] GST-UNet: A Neural Framework for Spatiotemporal Causal Inference with Time-Varying Confounding](gst-unet_a_neural_framework_for_spatiotemporal_causal_inference_with_time-varyin.md)
 - [\[NeurIPS 2025\] Causality-Induced Positional Encoding for Transformer-Based Representation Learning of Non-Sequential Features](causality-induced_positional_encoding_for_transformer-based_representation_learn.md)
+- [\[NeurIPS 2025\] GST-UNet: A Neural Framework for Spatiotemporal Causal Inference with Time-Varying Confounding](gst-unet_a_neural_framework_for_spatiotemporal_causal_inference_with_time-varyin.md)
 - [\[NeurIPS 2025\] Transferring Causal Effects using Proxies](transferring_causal_effects_using_proxies.md)
-- [\[NeurIPS 2025\] Differentiable Structure Learning and Causal Discovery for General Binary Data](differentiable_structure_learning_and_causal_discovery_for_general_binary_data.md)
 
 </div>
 

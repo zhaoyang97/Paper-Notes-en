@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Vivid-VR: Distilling Concepts from Text-to-Video Diffusion Transformer for Photorealistic Video Restoration
 description: >-
-  [ICLR 2026][Image Restoration][Text-to-Video] Vivid-VR performs generative video restoration by attaching a ControlNet to a pre-trained T2V diffusion Transformer (CogVideoX1.5-5B). It utilizes a "concept distillation" training strategy, where the T2V model synthesizes its own text-aligned training data to suppress distribution drift during fine-tuning. Combined wi
+  [ICLR 2026][Image Restoration][Video Restoration] Vivid-VR performs generative video restoration by attaching a ControlNet to a pre-trained T2V diffusion Transformer (CogVideoX1.5-5B). It utilizes a "concept distillation" training strategy, where the T2V model synthesizes its own text-aligned training data to suppress distribution drift during fine-tuning. Combined with a lightweight control feature projector and a dual-branch connector, it achieves more realistic textures an…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - Text-to-Video
-  - DiT
-  - ControlNet
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Video Restoration"
+  - "Text-to-Video"
+  - "DiT"
+  - "ControlNet"
+  - "Concept Distillation"
 date: 2026-05-08
-content_hash: e064af922919ed6c
+content_hash: e107629c11a3e72c
 ---
+
 # Vivid-VR: Distilling Concepts from Text-to-Video Diffusion Transformer for Photorealistic Video Restoration
 
 **Conference**: ICLR 2026  
@@ -153,15 +156,15 @@ Evaluated on UGC50, where (i) is the full Vivid-VR:
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Text-Aware Image Restoration with Diffusion Models](text-aware_image_restoration_with_diffusion_models.md)
+- [\[ICLR 2026\] SeedVR2: One-Step Video Restoration via Diffusion Adversarial Post-Training](seedvr2_one-step_video_restoration_via_diffusion_adversarial_post-training.md)
 - [\[ICLR 2026\] Improved Adversarial Diffusion Compression for Real-World Video Super-Resolution](improved_adversarial_diffusion_compression_for_real-world_video_super-resolution.md)
 - [\[CVPR 2026\] TextOVSR: Text-Guided Real-World Opera Video Super-Resolution](../../CVPR2026/image_restoration/textovsr_text-guided_real-world_opera_video_super-resolution.md)
 - [\[ICLR 2026\] Trajectory-aware Shifted State Space Models for Online Video Super-Resolution](trajectory-aware_shifted_state_space_models_for_online_video_super-resolution.md)
-- [\[CVPR 2026\] Gyro-based Deep Video Deblurring](../../CVPR2026/image_restoration/gyro-based_deep_video_deblurring.md)
 
 </div>
 

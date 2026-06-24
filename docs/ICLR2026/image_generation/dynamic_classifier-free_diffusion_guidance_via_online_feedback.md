@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Dynamic Classifier-Free Diffusion Guidance via Online Feedback
 description: >-
-  [ICLR 2026][Image Generation][Imagen 3] This paper replaces the static classifier-free guidance scale in diffusion models with a dynamic schedule selected online at each step. By using lightweight latent space evaluators to score candidate CFG scales during each reverse diffusion step and greedily selecting the optimal value, the method simultaneously improv
+  [ICLR2026][Image Generation][Dynamic CFG] This paper replaces the static classifier-free guidance scale in diffusion models with a dynamic schedule selected online at each step. By using lightweight latent space evaluators to score candidate CFG scales during each reverse diffusion step and greedily selecting the optimal value, the method simultaneously improves text alignment, visual quality, text rendering, and counting capabilities with negligible additional sampling cost.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Imagen 3
+  - "ICLR2026"
+  - "Image Generation"
+  - "Dynamic CFG"
+  - "online feedback"
+  - "latent space evaluator"
+  - "T2I sampling"
+  - "Imagen 3"
 date: 2026-05-08
-content_hash: 818f09edf41ac279
+content_hash: e43620a59aa9c3d4
 ---
+
 # Dynamic Classifier-Free Diffusion Guidance via Online Feedback
 
 **Conference**: ICLR2026  
@@ -164,8 +169,8 @@ On Imagen 3, side-by-side human preference win rates relative to default Imagen 
 - Value: ⭐⭐⭐⭐⭐ Extremely practical for T2I inference, especially for low-cost quality and capability enhancement on strong models.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

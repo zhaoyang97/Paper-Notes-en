@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Action-Free Offline-to-Online RL via Discretised State Policies
 description: >-
-  [ICLR 2026][AI Safety][DecQN] This paper formally defines the "Action-Free Offline-to-Online RL" setting for the first time and proposes the OSO-DecQN algorithm. By discretizing continuous state differences into three categorical tokens $\{-1, 0, 1\}$, the method pre-trains a state policy (predicting desired directions of state change rather than a
+  [ICLR 2026][AI Safety][Action-free offline RL] This paper formally defines the "Action-Free Offline-to-Online RL" setting for the first time and proposes the OSO-DecQN algorithm. By discretizing continuous state differences into three categorical tokens $\{-1, 0, 1\}$, the method pre-trains a state policy (predicting desired directions of state change rather than actions) on data containing only $(s, r, s')$ tuples. During the online phase, the state policy is converted into…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - DecQN
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Action-free offline RL"
+  - "state policy"
+  - "state discretization"
+  - "DecQN"
+  - "guided online learning"
 date: 2026-05-08
-content_hash: 7809de7e35a7d254
+content_hash: fee200dfd0798ee9
 ---
+
 # Action-Free Offline-to-Online RL via Discretised State Policies
 
 **Conference**: ICLR 2026  
@@ -164,6 +169,7 @@ Comparison with AF-Guide (Zhu et al., 2023) shows AF-Guide performs **below** th
 - Value: ⭐⭐⭐⭐ Practical path for action-missing RL, though validation remains in simulated environments.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -172,7 +178,7 @@ Comparison with AF-Guide (Zhu et al., 2023) shows AF-Guide performs **below** th
 - [\[ICLR 2026\] TrojanTO: Action-Level Backdoor Attacks Against Trajectory Optimization Models](trojanto_action-level_backdoor_attacks_against_trajectory_optimization_models.md)
 - [\[ICLR 2026\] Sample-Efficient Distributionally Robust Multi-Agent Reinforcement Learning via Online Interaction](sample-efficient_distributionally_robust_multi-agent_reinforcement_learning_via_.md)
 - [\[ICML 2026\] Alignment Risks from Capability-Seeking RL Training](../../ICML2026/ai_safety/alignment_risks_from_capability-seeking_rl_training.md)
-- [\[ICLR 2026\] FERD: Fairness-Enhanced Data-Free Adversarial Robustness Distillation](ferd_fairness-enhanced_data-free_adversarial_robustness_distillation.md)
+- [\[ICLR 2026\] Mitigating Privacy Risk via Forget Set-Free Unlearning](mitigating_privacy_risk_via_forget_set-free_unlearning.md)
 
 </div>
 

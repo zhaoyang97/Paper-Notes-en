@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RoboWheel: A Data Engine from Real-World Human Demonstrations for Cross-Embodiment Robotic Learning
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLA] RoboWheel automatically converts monocular RGB(D) videos of "human-hand-object interaction" into robot supervision data suitable for training VLA / imitation learning policies. Through high-precision reconstruction, physics-plausible optimization, cross-embodiment retargeting, and simulation-domain augmentation, it gen
+  [CVPR 2026][Robotics][Data Engine] RoboWheel automatically converts monocular RGB(D) videos of "human-hand-object interaction" into robot supervision data suitable for training VLA / imitation learning policies. Through high-precision reconstruction, physics-plausible optimization, cross-embodiment retargeting, and simulation-domain augmentation, it generates the HORA dataset with 150,000 trajectories, providing the first quantitative proof that HOI videos can serve as effect…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "CVPR 2026"
+  - "Robotics"
+  - "Data Engine"
+  - "Hand-Object Interaction Reconstruction"
+  - "Cross-Embodiment Retargeting"
+  - "Physics-Plausible"
+  - "VLA"
 date: 2026-05-08
-content_hash: 3b316ba0c0900a76
+content_hash: 370b884b6e7c250d
 ---
+
 # RoboWheel: A Data Engine from Real-World Human Demonstrations for Cross-Embodiment Robotic Learning
 
 **Conference**: CVPR 2026  
@@ -142,15 +147,14 @@ Data augmentation robustness (Tab. 4, RDT under distribution shift):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] TraceGen: World Modeling in 3D Trace Space Enables Learning from Cross-Embodiment Videos](tracegen_world_modeling_in_3d_trace_space_enables_learning_from_cross-embodiment.md)
 - [\[CVPR 2026\] Beyond Mimicry: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations](beyond_mimicry_learning_whole-body_human-humanoid_interaction_from_human-human_d.md)
 - [\[CVPR 2026\] GraspGen-X: Cross-Embodiment 6-DOF Diffusion-based Grasping](graspgen-x_cross-embodiment_6-dof_diffusion-based_grasping.md)
-- [\[CVPR 2026\] VideoWorld 2: Learning Transferable Knowledge from Real-world Videos](videoworld_2_learning_transferable_knowledge_from_real-world_videos.md)
 - [\[ICLR 2026\] D-REX: Differentiable Real-to-Sim-to-Real Engine for Learning Dexterous Grasping](../../ICLR2026/robotics/d-rex_differentiable_real-to-sim-to-real_engine_for_learning_dexterous_grasping.md)
+- [\[CVPR 2026\] IGen: Scalable Data Generation for Robot Learning from Open-World Images](igen_scalable_data_generation_for_robot_learning_from_open-world_images.md)
 
 </div>
 

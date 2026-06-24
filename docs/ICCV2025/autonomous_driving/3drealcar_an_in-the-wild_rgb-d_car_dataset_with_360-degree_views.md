@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 3DRealCar: An In-the-wild RGB-D Car Dataset with 360-degree Views
 description: >-
-  [ICCV 2025][Autonomous Driving][3D vehicle dataset] This paper presents 3DRealCar, the first large-scale real-world 3D vehicle dataset comprising 2,500 vehicles from 100+ brands…
+  [ICCV 2025][Autonomous Driving][3D vehicle dataset] This paper presents 3DRealCar, the first large-scale real-world 3D vehicle dataset comprising 2,500 vehicles from 100+ brands, each with approximately 200 high-resolution 360-degree RGB-D views captured under three lighting conditions (standard, reflective, and low-light), along with 13-category vehicle parsing annotations, supporting tasks including 3D reconstruction, detection, and generation.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -11,7 +11,7 @@ tags:
   - "360-degree views"
   - "3D reconstruction"
 date: 2026-05-08
-content_hash: a1730ccd9b77a7b9
+content_hash: 3b7c939bef41e333
 ---
 
 # 3DRealCar: An In-the-wild RGB-D Car Dataset with 360-degree Views
@@ -131,8 +131,8 @@ The dataset construction pipeline consists of three stages: (1) **Data Collectio
 
 - [\[ICCV 2025\] Detect Anything 3D in the Wild](detect_anything_3d_in_the_wild.md)
 - [\[ICCV 2025\] UAVScenes: A Multi-Modal Dataset for UAVs](uavscenes_a_multi-modal_dataset_for_uavs.md)
-- [\[ICCV 2025\] LangTraj: Diffusion Model and Dataset for Language-Conditioned Trajectory Simulation](langtraj_diffusion_model_and_dataset_for_language-conditioned_trajectory_simulat.md)
 - [\[NeurIPS 2025\] LabelAny3D: Label Any Object 3D in the Wild](../../NeurIPS2025/autonomous_driving/labelany3d_label_any_object_3d_in_the_wild.md)
+- [\[ICCV 2025\] LangTraj: Diffusion Model and Dataset for Language-Conditioned Trajectory Simulation](langtraj_diffusion_model_and_dataset_for_language-conditioned_trajectory_simulat.md)
 - [\[ICCV 2025\] Mixed Signals: A Diverse Point Cloud Dataset for Heterogeneous LiDAR V2X Collaboration](mixed_signals_a_diverse_point_cloud_dataset_for_heterogeneous_lidar_v2x_collabor.md)
 
 </div>

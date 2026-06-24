@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Importance-Aware Data Selection for Efficient LLM Instruction Tuning
 description: >-
-  [AAAI 2026][LLM Alignment][Data Selection] This paper proposes MIWV (Model Instruction Weakness Value), a metric that measures the importance of each instruction sample for improving model capability by comparing LLM los…
+  [AAAI 2026 Oral][LLM Alignment][Data Selection] This paper proposes MIWV (Model Instruction Weakness Value), a metric that measures the importance of each instruction sample for improving model capability by comparing LLM loss with and without a one-shot ICL demonstration. Using only 1% (520 samples) of the Alpaca dataset, the method comprehensively outperforms fine-tuning on the full 52,002 samples.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "LLM Alignment"
   - "Data Selection"
   - "MIWV"
@@ -12,7 +12,7 @@ tags:
   - "Data Efficiency"
   - "Instruction Tuning"
 date: 2026-05-08
-content_hash: 2e04cee104fc4c21
+content_hash: 30491a11ee0a27a2
 ---
 
 # Importance-Aware Data Selection for Efficient LLM Instruction Tuning
@@ -131,10 +131,10 @@ The input is the full instruction dataset $D = \{(x_1,y_1),...,(x_n,y_n)\}$, and
 ## Related Papers
 
 - [\[NeurIPS 2025\] T-SHIRT: Token-Selective Hierarchical Data Selection for Instruction Tuning](../../NeurIPS2025/llm_alignment/t-shirt_token-selective_hierarchical_data_selection_for_instruction_tuning.md)
-- [\[ICML 2026\] GIST: Targeted Data Selection for Instruction Tuning via Gradient Subspace Projection](../../ICML2026/llm_alignment/gist_targeted_data_selection_for_instruction_tuning_via_coupled_optimization_geo.md)
-- [\[ACL 2026\] What Makes Good Instruction-Tuning Data? An In-Context Learning Perspective](../../ACL2026/llm_alignment/what_makes_good_instruction-tuning_data_an_in-context_learning_perspective.md)
+- [\[ICML 2026\] GIST: Targeted Data Selection for Instruction Tuning with Gradient Subspace Projection](../../ICML2026/llm_alignment/gist_targeted_data_selection_for_instruction_tuning_via_coupled_optimization_geo.md)
 - [\[ACL 2026\] Alignment Data Map for Efficient Preference Data Selection and Diagnosis](../../ACL2026/llm_alignment/alignment_data_map_for_efficient_preference_data_selection_and_diagnosis.md)
-- [\[ACL 2026\] SFTMix: Elevating Language Model Instruction Tuning with Mixup Recipe](../../ACL2026/llm_alignment/sftmix_elevating_language_model_instruction_tuning_with_mixup_recipe.md)
+- [\[ACL 2026\] What Makes Good Instruction-Tuning Data? An In-Context Learning Perspective](../../ACL2026/llm_alignment/what_makes_good_instruction-tuning_data_an_in-context_learning_perspective.md)
+- [\[ACL 2025\] Federated Data-Efficient Instruction Tuning for Large Language Models](../../ACL2025/llm_alignment/federated_data-efficient_instruction_tuning_for_large_language_models.md)
 
 </div>
 

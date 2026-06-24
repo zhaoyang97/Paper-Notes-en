@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Decoupled Q-Chunking
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] Addressing the contradiction where "chunked critics accelerate value propagation but require the policy to output a whole open-loop action chunk—which is hard to learn and inflexible," this paper proposes Decoupled Q-Chunking (DQC). By decoupling the critic's action chunk length $h$ from the policy's action chunk lengt
+  [ICLR2026][Reinforcement Learning][Offline Reinforcement Learning] Addressing the contradiction where "chunked critics accelerate value propagation but require the policy to output a whole open-loop action chunk—which is hard to learn and inflexible," this paper proposes Decoupled Q-Chunking (DQC). By decoupling the critic's action chunk length $h$ from the policy's action chunk length $h_a$ ($h_a \ll h$), the policy only predicts a short section of actions. This policy is gu…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Offline Reinforcement Learning"
+  - "Action Chunking"
+  - "Temporal Difference"
+  - "Value Bootstrapping Bias"
+  - "Goal-Conditioned RL"
 date: 2026-05-08
-content_hash: 043dd84ffc7d03bb
+content_hash: 203b35e67cd071f7
 ---
+
 # Decoupled Q-Chunking
 
 **Conference**: ICLR2026  
@@ -142,7 +148,7 @@ On the six most difficult environments of OGBench (a long-horizon goal-condition
 - [\[ICLR 2026\] AutoTool: Automatic Scaling of Tool-Use Capabilities in RL via Decoupled Entropy Constraints](autotool_automatic_scaling_of_tool-use_capabilities_in_rl_via_decoupled_entropy_.md)
 - [\[ICLR 2026\] Beyond Penalization: Diffusion-based Out-of-Distribution Detection and Selective Regularization in Offline Reinforcement Learning](beyond_penalization_diffusion-based_out-of-distribution_detection_and_selective_.md)
 - [\[ICLR 2026\] Recurrent Action Transformer with Memory](recurrent_action_transformer_with_memory.md)
-- [\[ICLR 2026\] ADM-v2: Pursuing Full-Horizon Roll-out in Dynamics Models for Offline Policy Learning and Evaluation](adm-v2_pursuing_full-horizon_roll-out_in_dynamics_models_for_offline_policy_lear.md)
+- [\[ICLR 2026\] Efficient Offline Reinforcement Learning via Peer-Influenced Constraint](efficient_offline_reinforcement_learning_via_peer-influenced_constraint.md)
 
 </div>
 

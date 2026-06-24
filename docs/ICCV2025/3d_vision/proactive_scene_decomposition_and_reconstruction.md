@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Proactive Scene Decomposition and Reconstruction
 description: >-
-  [ICCV 2025][3D Vision][Dynamic SLAM] This paper proposes an online scene decomposition and reconstruction task grounded in proactive human-object interaction…
+  [ICCV 2025][3D Vision][Dynamic SLAM] This paper proposes an online scene decomposition and reconstruction task grounded in proactive human-object interaction, where interaction behavior observed from an egocentric viewpoint defines the decomposition granularity, enabling progressive object decoupling and high-quality global reconstruction.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Gaussian Splatting"
   - "Online Reconstruction"
 date: 2026-05-08
-content_hash: ec74a0aba00aa17a
+content_hash: 49ab24eff63dcb2a
 ---
 
 # Proactive Scene Decomposition and Reconstruction
@@ -140,7 +140,7 @@ The most significant improvement is observed on Seq 3 (complex scissors), where 
 - [\[ICCV 2025\] InstaScene: Towards Complete 3D Instance Decomposition and Reconstruction from Cluttered Scenes](instascene_towards_complete_3d_instance_decomposition_and_reconstruction_from_cl.md)
 - [\[ICCV 2025\] DeGauss: Dynamic-Static Decomposition with Gaussian Splatting for Distractor-free 3D Reconstruction](degauss_dynamic-static_decomposition_with_gaussian_splatting_for_distractor-free.md)
 - [\[ICCV 2025\] Scene Coordinate Reconstruction Priors](scene_coordinate_reconstruction_priors.md)
-- [\[ICCV 2025\] Back on Track: Bundle Adjustment for Dynamic Scene Reconstruction](back_on_track_bundle_adjustment_for_dynamic_scene_reconstruction.md)
+- [\[CVPR 2026\] Semantic Foam: Unifying Spatial and Semantic Scene Decomposition](../../CVPR2026/3d_vision/semantic_foam_unifying_spatial_and_semantic_scene_decomposition.md)
 
 </div>
 

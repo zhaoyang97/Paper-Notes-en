@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SelvaBox: A high-resolution dataset for tropical tree crown detection
 description: >-
-  [ICLR 2026][Remote Sensing][Raster-level F1] SelvaBox constructs the largest open-access high-resolution UAV RGB tree crown detection dataset for tropical forests. Using a unified multi-resolution detection benchmark, it demonstrates that high-resolution inputs, DINO-Swin detectors, and cross-dataset training significantly improve in-distribution and zero-shot ge
+  [ICLR2026][Remote Sensing][Tropical Forest] SelvaBox constructs the largest open-access high-resolution UAV RGB tree crown detection dataset for tropical forests. Using a unified multi-resolution detection benchmark, it demonstrates that high-resolution inputs, DINO-Swin detectors, and cross-dataset training significantly improve in-distribution and zero-shot generalization for tropical tree crown detection.
 tags:
-  - ICLR 2026
-  - Remote Sensing
-  - Raster-level F1
+  - "ICLR2026"
+  - "Remote Sensing"
+  - "Tropical Forest"
+  - "Tree Crown Detection"
+  - "UAV Remote Sensing"
+  - "Multi-resolution Training"
+  - "Raster-level F1"
 date: 2026-05-08
-content_hash: 68f37b37fcc25481
+content_hash: 3b365a01f2d18981
 ---
+
 # SelvaBox: A high-resolution dataset for tropical tree crown detection
 
 **Conference**: ICLR2026  
@@ -147,7 +152,8 @@ Multi-resolution training shows minimal loss in in-distribution performance whil
 - Value: ⭐⭐⭐⭐⭐ High impact for tropical remote sensing and ecological monitoring.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1"></div>
+
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

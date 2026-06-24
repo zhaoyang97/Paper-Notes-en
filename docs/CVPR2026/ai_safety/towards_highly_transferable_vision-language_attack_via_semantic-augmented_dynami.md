@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Highly Transferable Vision-Language Attack via Semantic-Augmented Dynamic Contrastive Interaction
 description: >-
-  [CVPR 2026][AI Safety][Vision-Language Model] Ours proposes SADCA (Semantic-Augmented Dynamic Contrastive Attack), which iteratively disrupts the cross-modal semantic consistency between adversarial images and text through a dynamic contrastive interaction mechanism and a semantic augmentation module. It significantly improves adversarial transferability against V
+  [CVPR 2026][AI Safety][Adversarial Attack] Ours proposes SADCA (Semantic-Augmented Dynamic Contrastive Attack), which iteratively disrupts the cross-modal semantic consistency between adversarial images and text through a dynamic contrastive interaction mechanism and a semantic augmentation module. It significantly improves adversarial transferability against Vision-Language Pre-trained (VLP) models, outperforming existing SOTA methods in both cross-model and cross-task attac…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Adversarial Attack"
+  - "Vision-Language Models"
+  - "Adversarial Transferability"
+  - "Contrastive Learning"
+  - "Semantic Augmentation"
 date: 2026-05-08
-content_hash: a76d5b87ab798dc1
+content_hash: e749b26bc42299ee
 ---
+
 # Towards Highly Transferable Vision-Language Attack via Semantic-Augmented Dynamic Contrastive Interaction
 
 **Conference**: CVPR 2026  
@@ -158,9 +163,9 @@ SADCA significantly outperforms SOTA across all source models, with an average A
 
 - [\[CVPR 2026\] VCP-Attack: Visual-Contrastive Projection for Transferable Black-Box Targeted Attacks on Large Vision-Language Models](vcp-attack_visual-contrastive_projection_for_transferable_black-box_targeted_att.md)
 - [\[CVPR 2026\] When Robots Obey the Patch: Universal Transferable Patch Attacks on Vision-Language-Action Models](when_robots_obey_the_patch_universal_transferable_patch_attacks_on_vision-langua.md)
+- [\[CVPR 2026\] SIF: Semantically In-Distribution Fingerprints for Large Vision-Language Models](sif_semantically_in-distribution_fingerprints_for_large_vision-language_models.md)
 - [\[CVPR 2026\] FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching Vision-Language-Action Models](flowhijack_a_dynamics-aware_backdoor_attack_on_flow-matching_vision-language-act.md)
 - [\[CVPR 2026\] Transform to Transfer: Boosting Adversarial Attack Transferability on Vision-Language Pre-training Models](transform_to_transfer_boosting_adversarial_attack_transferability_on_vision-lang.md)
-- [\[CVPR 2026\] PureProof: Diffusion-Resistant Black-box Targeted Attack on Large Vision-Language Models](pureproof_diffusion-resistant_black-box_targeted_attack_on_large_vision-language.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Gradient Descent with Large Step Size Restores Symmetry in Deep Linear Networks with Multi-Pathway
 description: >-
-  [ICML 2026][Optimization & Theory][Edge of Stability] Previous analyses using Gradient Flow (GF) for multi-pathway deep linear networks concluded a "winner-takes-all" phenomenon—signals concentrate on a single path, leading to symmetry breaking. This paper demonstrates that discrete Gradient Descent (GD) with large step sizes tell a different story: single-path solutions
+  [ICML 2026][Optimization][Multi-pathway Deep Linear Networks] Previous analyses using Gradient Flow (GF) for multi-pathway deep linear networks concluded a "winner-takes-all" phenomenon—signals concentrate on a single path, leading to symmetry breaking. This paper demonstrates that discrete Gradient Descent (GD) with large step sizes tell a different story: single-path solutions are sharp minima; distributing signals across multiple paths reduces sharpness by a factor of $H^{…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - Edge of Stability
+  - "ICML 2026"
+  - "Optimization"
+  - "Multi-pathway Deep Linear Networks"
+  - "Large Learning Rate"
+  - "Symmetry Breaking"
+  - "Edge of Stability"
+  - "Sharpness"
 date: 2026-05-08
-content_hash: eda1c821bb8d66e9
+content_hash: a218a54bfbd1c496
 ---
+
 # Gradient Descent with Large Step Size Restores Symmetry in Deep Linear Networks with Multi-Pathway
 
 **Conference**: ICML 2026  
@@ -137,10 +142,10 @@ As this is a theoretical paper, "experiments" consist of numerical/visualization
 ## Related Papers
 
 - [\[ICML 2026\] Flatland: The Adventures of Gradient Descent with Large Step Sizes](flatland_the_adventures_of_gradient_descent_with_large_step_sizes.md)
-- [\[NeurIPS 2025\] Multi-head Transformers Provably Learn Symbolic Multi-step Reasoning via Gradient Descent](../../NeurIPS2025/optimization/multi-head_transformers_provably_learn_symbolic_multi-step_reasoning_via_gradien.md)
-- [\[ICML 2026\] Adaptive Sharpness-Aware Minimization with a Polyak-type Step size: A Theory-Grounded Scheduler](adaptive_sharpness-aware_minimization_with_a_polyak-type_step_size_a_theory-grou.md)
+- [\[ICLR 2026\] Gradient Descent with Large Step Sizes: Chaos and Fractal Convergence Region](../../ICLR2026/optimization/gradient_descent_with_large_step_sizes_chaos_and_fractal_convergence_region.md)
 - [\[ICML 2026\] Balancing Learning Rates Across Layers: Exact Two-Step Dynamics and Optimal Scaling in Linear Neural Networks](balancing_learning_rates_across_layers_exact_two-step_dynamics_and_optimal_scali.md)
 - [\[ICML 2026\] Dynamics and Representation Structure of Local Approximations to Gradient-Based Learning in Linear Recurrent Neural Networks](dynamics_and_representation_structure_of_local_approximations_to_gradient-based_.md)
+- [\[ICML 2026\] Adaptive Sharpness-Aware Minimization with a Polyak-type Step size: A Theory-Grounded Scheduler](adaptive_sharpness-aware_minimization_with_a_polyak-type_step_size_a_theory-grou.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] STEM Faculty Perspectives on Generative AI in Higher Education
 description: >-
-  [AAAI 2026][Generative AI] Through focus group research with 29 STEM faculty at a large public university in the United States, this study reveals how instructors integrate GenAI into teaching…
+  [AAAI 2026][Generative AI] Through focus group research with 29 STEM faculty at a large public university in the United States, this study reveals how instructors integrate GenAI into teaching, the observed benefits and challenges for student learning, and the institutional support required. A key finding is that GenAI shifts faculty labor from content creation to expert review and may obscure students' underlying competency gaps.
 tags:
   - "AAAI 2026"
   - "Generative AI"
@@ -11,7 +11,7 @@ tags:
   - "Focus Groups"
   - "Teaching Strategies"
 date: 2026-05-08
-content_hash: c869a83213d79a94
+content_hash: 7689b728c9b20661
 ---
 
 # STEM Faculty Perspectives on Generative AI in Higher Education
@@ -131,7 +131,7 @@ Seven focus group sessions with 29 participants (11 CS, 4 engineering, 4 psychol
 - [\[AAAI 2026\] Higher-Order Responsibility](higher-order_responsibility.md)
 - [\[AAAI 2026\] Beyond World Models: Rethinking Understanding in AI Models](beyond_world_models_rethinking_understanding_in_ai_models.md)
 - [\[AAAI 2026\] Designing Incident Reporting Systems for Harms from General-Purpose AI](designing_incident_reporting_systems_for_harms_from_general-purpose_ai.md)
-- [\[AAAI 2026\] Align When They Want, Complement When They Need! Human-Centered Ensembles for Adaptive Human-AI Collaboration](align_when_they_want_complement_when_they_need_human-centere.md)
+- [\[ICLR 2026\] What happens when generative AI models train recursively on each others' outputs?](../../ICLR2026/others/what_happens_when_generative_ai_models_train_recursively_on_each_others_outputs.md)
 
 </div>
 

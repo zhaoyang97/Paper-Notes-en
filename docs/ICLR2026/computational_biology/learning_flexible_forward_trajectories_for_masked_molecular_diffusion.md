@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning Flexible Forward Trajectories for Masked Molecular Diffusion
 description: >-
-  [ICLR 2026][Computational Biology][state-clashing] This paper discovers that directly applying Masked Diffusion Models (MDM) to molecular graph generation leads to severe degradation due to "state-clashing," where different molecules collapse into the same intermediate state during forward noise addition. The authors propose MELD, which uses a learnable noise schedule
+  [ICLR 2026][Computational Biology][Masked Diffusion Models] This paper discovers that directly applying Masked Diffusion Models (MDM) to molecular graph generation leads to severe degradation due to "state-clashing," where different molecules collapse into the same intermediate state during forward noise addition. The authors propose MELD, which uses a learnable noise schedule network to assign unique masking rates to each atom/bond, effectively staggering forward trajectorie…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - state-clashing
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Masked Diffusion Models"
+  - "Molecular Graph Generation"
+  - "Learnable Noise Schedule"
+  - "state-clashing"
+  - "Element-wise Diffusion"
 date: 2026-05-08
-content_hash: 774358ba8ef5dd6d
+content_hash: 93f1a2048cce1614
 ---
+
 # Learning Flexible Forward Trajectories for Masked Molecular Diffusion
 
 **Conference**: ICLR 2026  
@@ -138,11 +143,11 @@ compelling.
 
 ## Related Papers
 
+- [\[ICLR 2026\] Align Your Structures: Generating Trajectories with Structure Pretraining for Molecular Dynamics](align_your_structures_generating_trajectories_with_structure_pretraining_for_mol.md)
+- [\[ICLR 2026\] MolEditRL: Structure-Preserving Molecular Editing via Discrete Diffusion and Reinforcement Learning](moleditrl_structure-preserving_molecular_editing_via_discrete_diffusion_and_rein.md)
 - [\[ICLR 2026\] DCFold: Efficient Protein Structure Generation with Single Forward Pass](dcfold_efficient_protein_structure_generation_with_single_forward_pass.md)
 - [\[ICLR 2026\] Graph Diffusion Transformers are In-Context Molecular Designers](graph_diffusion_transformers_are_in-context_molecular_designers.md)
 - [\[ICLR 2026\] Enhancing Diffusion-Based Sampling with Molecular Collective Variables](enhancing_diffusion-based_sampling_with_molecular_collective_variables.md)
-- [\[ICLR 2026\] SigmaDock: Untwisting Molecular Docking with Fragment-Based SE(3) Diffusion](sigmadock_untwisting_molecular_docking_with_fragment-based_se3_diffusion.md)
-- [\[ICLR 2026\] Controllable Sequence Editing for Biological and Clinical Trajectories](controllable_sequence_editing_for_biological_and_clinical_trajectories.md)
 
 </div>
 

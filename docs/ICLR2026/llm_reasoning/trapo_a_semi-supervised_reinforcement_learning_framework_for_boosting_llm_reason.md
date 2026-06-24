@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] TRAPO：用半监督强化学习增强 LLM 推理
+  [Paper Note] TRAPO: Enhancing LLM Reasoning with Semi-supervised Reinforcement Learning
 description: >-
-  [ICLR 2026][LLM Reasoning][RLVR] TRAPO proposes a semi-supervised RLVR paradigm that uses a small set of labeled samples to "anchor" the consistency rewards of unlabeled samples. By comparing the similarity of "pass rate trajectories" between labeled and unlabeled samples, it selects reliable unlabeled data. With only 1K labeled and 3K unlabeled sampl
+  [ICLR 2026][Reasoning][RLVR] TRAPO proposes a semi-supervised RLVR paradigm that uses a small set of labeled samples to "anchor" the consistency rewards of unlabeled samples. By comparing the similarity of "pass rate trajectories" between labeled and unlabeled samples, it selects reliable unlabeled data. With only 1K labeled and 3K unlabeled samples, it achieves a 42.6% average accuracy, surpassing the strongest unsupervised method trained on 45K unlabeled samples (38.3%)…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - RLVR
+  - "ICLR 2026"
+  - "Reasoning"
+  - "RLVR"
+  - "Semi-supervised Learning"
+  - "Pass Rate Trajectory"
+  - "Pseudo-label"
+  - "Data Efficiency"
 date: 2026-05-08
-content_hash: 7bcd9a033c83da55
+content_hash: 3634d678239d113d
 ---
+
 # TRAPO: Enhancing LLM Reasoning with Semi-supervised Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -150,11 +155,11 @@ Naive semi-supervised methods even degrade under domain shift (self-certainty ID
 
 ## Related Papers
 
-- [\[ICLR 2026\] Rectifying LLM Thought from Lens of Optimization](rectifying_llm_thought_from_lens_of_optimization.md)
-- [\[ICLR 2026\] Nudging the Boundaries of LLM Reasoning](nudging_the_boundaries_of_llm_reasoning.md)
-- [\[ICLR 2026\] Quantile Advantage Estimation: Stabilizing RLVR for LLM Reasoning](quantile_advantage_estimation_stabilizing_rlvr_for_llm_reasoning.md)
-- [\[ICLR 2026\] Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning](reference-guided_policy_optimization_for_molecular_optimization_via_llm_reasonin.md)
-- [\[ICLR 2026\] Random Policy Valuation is Enough for LLM Reasoning with Verifiable Rewards](random_policy_valuation_is_enough_for_llm_reasoning_with_verifiable_rewards.md)
+- [\[ICLR 2026\] NFT: Bridging Supervised Learning and Reinforcement Learning in Math Reasoning](nft_bridging_supervised_learning_and_reinforcement_learning_in_math_reasoning.md)
+- [\[ICLR 2026\] Generative Adversarial Reasoner: Enhancing LLM Reasoning with Adversarial Reinforcement Learning](generative_adversarial_reasoner_enhancing_llm_reasoning_with_adversarial_reinfor.md)
+- [\[ICLR 2026\] $\textbf{Re}^{2}$: Unlocking LLM Reasoning via Reinforcement Learning with Re-solving](textbfre2_unlocking_llm_reasoning_via_reinforcement_learning_with_re-solving.md)
+- [\[ICLR 2026\] Stabilizing Policy Gradients for Sample-Efficient Reinforcement Learning in LLM Reasoning](stabilizing_policy_gradients_for_sample-efficient_reinforcement_learning_in_llm_.md)
+- [\[ICLR 2026\] RL of Thoughts: Navigating LLM Reasoning with Inference-Time Reinforcement Learning](rl_of_thoughts_navigating_llm_reasoning_with_inference-time_reinforcement_learni.md)
 
 </div>
 

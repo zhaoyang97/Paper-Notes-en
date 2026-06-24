@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FreqSIC: Frequency-aware Stereo Image Compression with Bi-directional Checkerboard Context Model
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] Addressing the two pain points of learned stereo image compression—"loss of high-frequency details" and "slow autoregressive entropy models"—FreqSIC introduces the Frequency-aware Stereo Context Transfer (FSCT) module. This module models left-right view redundancy separately on high and low-frequency components with ad
+  [CVPR 2026][Model Compression][Stereo Image Compression] Addressing the two pain points of learned stereo image compression—"loss of high-frequency details" and "slow autoregressive entropy models"—FreqSIC introduces the Frequency-aware Stereo Context Transfer (FSCT) module. This module models left-right view redundancy separately on high and low-frequency components with adaptive weighting. Furthermore, it replaces the cumbersome spatial autoregressive entropy model with a b…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Stereo Image Compression"
+  - "Frequency Domain Decomposition"
+  - "Cross-view Attention"
+  - "Checkerboard Context"
+  - "Entropy Coding"
 date: 2026-05-08
-content_hash: d4cb4af785eee04c
+content_hash: f6ea4675238f1579
 ---
+
 # FreqSIC: Frequency-aware Stereo Image Compression with Bi-directional Checkerboard Context Model
 
 **Conference**: CVPR 2026  
@@ -160,10 +166,10 @@ BD-PSNR loss measured against the full model (negative values indicate performan
 ## Related Papers
 
 - [\[CVPR 2026\] MambaSIC: Mamba-based Stereo Image Compression with Bi-directional Multi-reference Entropy Model](mambasic_mamba-based_stereo_image_compression_with_bi-directional_multi-referenc.md)
-- [\[CVPR 2026\] On the Robustness of Diffusion-Based Image Compression to Bit-Flip Errors](on_the_robustness_of_diffusion-based_image_compression_to_bit-flip_errors.md)
-- [\[CVPR 2026\] Block-based Learned Image Compression without Blocking Artifacts](block-based_learned_image_compression_without_blocking_artifacts.md)
-- [\[CVPR 2026\] CADC: Content Adaptive Diffusion-Based Generative Image Compression](cadc_content_adaptive_diffusion-based_generative_image_compression.md)
-- [\[CVPR 2026\] Bridging Domains through Subspace-Aware Model Merging](bridging_domains_through_subspace-aware_model_merging.md)
+- [\[CVPR 2026\] High Resolution Neural Video Coding with Bi-directional Confidence-Guided Reference Information Modeling](high_resolution_neural_video_coding_with_bi-directional_confidence-guided_refere.md)
+- [\[ECCV 2024\] Bidirectional Stereo Image Compression with Cross-Dimensional Entropy Model](../../ECCV2024/model_compression/bidirectional_stereo_image_compression_with_cross-dimensional_entropy_model.md)
+- [\[CVPR 2026\] FAST: Topology-Aware Frequency-Domain Distribution Matching for Coreset Selection](fast_topology-aware_frequency-domain_distribution_matching_for_coreset_selection.md)
+- [\[CVPR 2026\] What Matters in Practical Learned Image Compression](what_matters_in_practical_learned_image_compression.md)
 
 </div>
 

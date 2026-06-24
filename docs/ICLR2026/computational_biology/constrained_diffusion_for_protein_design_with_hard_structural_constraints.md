@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Constrained Diffusion for Protein Design with Hard Structural Constraints
 description: >-
-  [ICLR 2026][Computational Biology][ADMM] This work reinterprets constrained diffusion as "stochastic proximal optimization." By applying feasibility corrections to the **predicted clean structure** at each step and then re-noising back to the data manifold (predict-prox-renoise), and using ADMM to decouple local stereochemistry from global topological constra
+  [ICLR2026][Computational Biology][Constrained Diffusion] This work reinterprets constrained diffusion as "stochastic proximal optimization." By applying feasibility corrections to the **predicted clean structure** at each step and then re-noising back to the data manifold (predict-prox-renoise), and using ADMM to decouple local stereochemistry from global topological constraints, the method achieves **100% strict satisfaction of bond length and angle constraints** in protein…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - ADMM
-  - motif scaffolding
+  - "ICLR2026"
+  - "Computational Biology"
+  - "Constrained Diffusion"
+  - "Protein Design"
+  - "Proximal Optimization"
+  - "ADMM"
+  - "motif scaffolding"
 date: 2026-05-08
-content_hash: 7ef493ee025c4cad
+content_hash: fec8513c2d55f66f
 ---
+
 # Constrained Diffusion for Protein Design with Hard Structural Constraints
 
 **Conference**: ICLR2026  
@@ -162,11 +166,11 @@ The main tables include comparisons that serve as ablations—the core variable 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Rigidity-Aware Geometric Pretraining for Protein Design and Conformational Ensembles](rigidity-aware_geometric_pretraining_for_protein_design_and_conformational_ensem.md)
 - [\[NeurIPS 2025\] Constrained Discrete Diffusion](../../NeurIPS2025/computational_biology/constrained_discrete_diffusion.md)
 - [\[ICML 2026\] Constrained Flow Optimization via Sequential Fine-Tuning for Molecular Design](../../ICML2026/computational_biology/constrained_flow_optimization_via_sequential_fine_tuning_for_molecular_design.md)
 - [\[ICLR 2026\] SAIR: Enabling Deep Learning for Protein-Ligand Interactions with a Synthetic Structural Dataset](sair_enabling_deep_learning_for_protein-ligand_interactions_with_a_synthetic_str.md)
 - [\[ICLR 2026\] A Joint Diffusion Model with Pre-Trained Priors for RNA Sequence-Structure Co-Design](a_joint_diffusion_model_with_pre-trained_priors_for_rna_sequence-structure_co-de.md)
-- [\[ICLR 2026\] Iterative Distillation for Reward-Guided Fine-Tuning of Diffusion Models in Biomolecular Design](iterative_distillation_for_reward-guided_fine-tuning_of_diffusion_models_in_biom.md)
 
 </div>
 

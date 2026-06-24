@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OrderDP: A Theoretically Guaranteed Lossless Dynamic Data Pruning Framework
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] OrderDP reformulates dynamic data pruning as a straightforward two-stage process: uniformly sampling a candidate pool followed by training on the Top-q samples with the highest losses. It proves that this mechanism unbiasedly minimizes a surrogate loss defined by weighted order statistics. This provides the first theor
+  [ICLR 2026][Model Compression][Dynamic Data Pruning] OrderDP reformulates dynamic data pruning as a straightforward two-stage process: uniformly sampling a candidate pool followed by training on the Top-q samples with the highest losses. It proves that this mechanism unbiasedly minimizes a surrogate loss defined by weighted order statistics. This provides the first theoretical guarantee for convergence and generalization in dynamic pruning, achieving near-lossless performance…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Dynamic Data Pruning"
+  - "Unbiased Gradient"
+  - "Surrogate Loss"
+  - "Order Statistics"
+  - "Convergence and Generalization"
 date: 2026-05-08
-content_hash: 43b1946f1a0e99cb
+content_hash: 4cd466a916ae2a04
 ---
+
 # OrderDP: A Theoretically Guaranteed Lossless Dynamic Data Pruning Framework
 
 **Conference**: ICLR 2026  
@@ -143,10 +149,17 @@ Varying exploration/exploitation decomposition while fixing the effective prunin
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] Inconsistency Biases in Dynamic Data Pruning](inconsistency_biases_in_dynamic_data_pruning.md)
+- [\[CVPR 2026\] Batch Loss Score for Dynamic Data Pruning](../../CVPR2026/model_compression/batch_loss_score_for_dynamic_data_pruning.md)
+- [\[ICCV 2025\] Partial Forward Blocking: A Novel Data Pruning Paradigm for Lossless Training Acceleration](../../ICCV2025/model_compression/partial_forward_blocking_a_novel_data_pruning_paradigm_for_lossless_training_acc.md)
+- [\[ICLR 2026\] To Compress or Not? Pushing the Frontier of Lossless GenAI Model Weights Compression with Exponent Concentration](to_compress_or_not_pushing_the_frontier_of_lossless_genai_model_weights_compress.md)
+- [\[ICLR 2026\] Towards Lossless Memory-efficient Training of Spiking Neural Networks via Gradient Checkpointing and Spike Compression](towards_lossless_memory-efficient_training_of_spiking_neural_networks_via_gradie.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Inconsistency Biases in Dynamic Data Pruning](inconsistency_biases_in_dynamic_data_pruning.md)

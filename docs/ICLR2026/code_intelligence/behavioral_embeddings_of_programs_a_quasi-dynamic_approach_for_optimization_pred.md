@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Behavioral Embeddings of Programs: A Quasi-Dynamic Approach for Optimization Prediction
 description: >-
-  [ICLR 2026][Code Intelligence][Paper Note] To address the dilemma of "static representations being too rigid and dynamic profiling being too expensive" in compiler optimization, this paper proposes a **quasi-dynamic** program representation. By "probing" LLVM IR with a set of optimization sequences, the changes in static features before and after optimization a
+  [ICLR2026][Code Intelligence][Program Embeddings] To address the dilemma of "static representations being too rigid and dynamic profiling being too expensive" in compiler optimization, this paper proposes a **quasi-dynamic** program representation. By "probing" LLVM IR with a set of optimization sequences, the changes in static features before and after optimization are quantified as a **Program Behavior Spectrum**. Product Quantization (PQ) is then used to discretize continu…
 tags:
-  - ICLR 2026
-  - Code Intelligence
+  - "ICLR2026"
+  - "Code Intelligence"
+  - "Program Embeddings"
+  - "Compiler Optimization"
+  - "Quasi-Dynamic Representation"
+  - "Product Quantization"
+  - "Pre-trained Transformer"
 date: 2026-05-08
-content_hash: fa29809a85191fbb
+content_hash: 67d68e89d2299a24
 ---
+
 # Behavioral Embeddings of Programs: A Quasi-Dynamic Approach for Optimization Prediction
 
 **Conference**: ICLR2026  
@@ -133,6 +139,7 @@ Comparing three variants: KMeans (no PQ), No-Relative (absolute differences), an
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Leveraging Multispectral Sensors for Color Correction in Mobile Cameras
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] A unified end-to-end color correction framework is proposed to jointly fuse data from a high-resolution RGB sensor and an auxiliary low-resolution multispectral (MS) sensor. By integrating illuminant estimation, illuminant compensation, and color space conversion into a single model, color error ($\Delta E_{00}$) is re
+  [CVPR 2026][Image Generation][Multispectral Sensors] A unified end-to-end color correction framework is proposed to jointly fuse data from a high-resolution RGB sensor and an auxiliary low-resolution multispectral (MS) sensor. By integrating illuminant estimation, illuminant compensation, and color space conversion into a single model, color error ($\Delta E_{00}$) is reduced by up to 50% compared to RGB-only and MS-only baselines.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Multispectral Sensors"
+  - "Color Correction"
+  - "Auto White Balance"
+  - "Sensor Fusion"
+  - "Mobile Cameras"
 date: 2026-05-08
-content_hash: c92bb9a623a5ed6c
+content_hash: 7a90c06a189a0b7d
 ---
+
 # Leveraging Multispectral Sensors for Color Correction in Mobile Cameras
 
 **Conference**: CVPR 2026  
@@ -136,10 +142,10 @@ End-to-end training is conducted using $\Delta E_{00}$ color difference between 
 ## Related Papers
 
 - [\[CVPR 2026\] Leveraging Verifier-Based Reinforcement Learning in Image Editing](leveraging_verifier-based_reinforcement_learning_in_image_editing.md)
+- [\[CVPR 2026\] Nonlinear Color Transfer via Learnable Bezier Flows](nonlinear_color_transfer_via_learnable_bezier_flows.md)
 - [\[CVPR 2026\] GenColorBench: A Color Evaluation Benchmark for Text-to-Image Generation](gencolorbench_a_color_evaluation_benchmark_for_text-to-image_generation.md)
-- [\[CVPR 2026\] Too Vivid to Be Real? Benchmarking and Calibrating Generative Color Fidelity](too_vivid_to_be_real_benchmarking_and_calibrating_generative_color_fidelity.md)
 - [\[CVPR 2026\] Ar2Can: An Architect and an Artist Leveraging a Canvas for Multi-Human Generation](ar2can_an_architect_and_an_artist_leveraging_a_canvas_for_multi-human_generation.md)
-- [\[CVPR 2025\] GCC: Generative Color Constancy via Diffusing a Color Checker](../../CVPR2025/image_generation/gcc_generative_color_constancy_via_diffusing_a_color_checker.md)
+- [\[CVPR 2026\] Too Vivid to Be Real? Benchmarking and Calibrating Generative Color Fidelity](too_vivid_to_be_real_benchmarking_and_calibrating_generative_color_fidelity.md)
 
 </div>
 

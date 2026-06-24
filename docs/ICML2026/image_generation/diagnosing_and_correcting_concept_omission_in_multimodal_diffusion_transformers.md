@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Diagnosing and Correcting Concept Omission in Multimodal Diffusion Transformers
 description: >-
-  [ICML 2026][Image Generation][MM-DiT] The paper utilizes linear probes to discover that in the intermediate layers of MM-DiT (FLUX / SD3.5), the key vectors of text tokens naturally encode a binary signal indicating "whether the target concept will appear." Based on this, the authors propose Omission Signal Intervention (OSI): during inference, the mean di
+  [ICML 2026][Image Generation][MM-DiT] The paper utilizes linear probes to discover that in the intermediate layers of MM-DiT (FLUX / SD3.5), the key vectors of text tokens naturally encode a binary signal indicating "whether the target concept will appear." Based on this, the authors propose Omission Signal Intervention (OSI): during inference, the mean difference direction of "omission class - existence class" is injected into the key vectors of the Top-K heads with an inten…
 tags:
-  - ICML 2026
-  - Image Generation
-  - MM-DiT
+  - "ICML 2026"
+  - "Image Generation"
+  - "MM-DiT"
+  - "Concept Omission"
+  - "Linear Probe"
+  - "Attention Key Intervention"
+  - "Training-free Guidance"
 date: 2026-05-08
-content_hash: 0db994c929335ae0
+content_hash: 04953a19104c6892
 ---
+
 # Diagnosing and Correcting Concept Omission in Multimodal Diffusion Transformers
 
 **Conference**: ICML 2026  

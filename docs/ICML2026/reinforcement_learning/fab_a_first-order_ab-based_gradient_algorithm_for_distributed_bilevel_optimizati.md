@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FAB: A First-Order AB-based Gradient Algorithm for Distributed Bilevel Optimization over Time-Varying Directed Graphs
 description: >-
-  [ICML 2026][Reinforcement Learning][Push-Pull/AB] This paper proposes FAB—the first purely first-order algorithm for distributed bilevel optimization over time-varying directed graphs. By combining AB/Push-Pull communication with the value function penalty method, it achieves a non-asymptotic $\mathcal{O}(K^{-2/3})$ convergence rate and simultaneously resolves the lon
+  [ICML 2026][Reinforcement Learning][Push-Pull/AB] This paper proposes FAB—the first purely first-order algorithm for distributed bilevel optimization over time-varying directed graphs. By combining AB/Push-Pull communication with the value function penalty method, it achieves a non-asymptotic $\mathcal{O}(K^{-2/3})$ convergence rate and simultaneously resolves the long-standing open problem regarding the convergence rate of AB/Push-Pull in non-convex scenarios over time-varyi…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - Push-Pull/AB
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Push-Pull/AB"
+  - "Time-Varying Directed Graphs"
+  - "Bilevel Optimization"
+  - "First-Order Algorithm"
+  - "Consensus Error"
 date: 2026-05-08
-content_hash: 0bde6e685a1b3a7c
+content_hash: 656b6acd315495ef
 ---
+
 # FAB: A First-Order AB-based Gradient Algorithm for Distributed Bilevel Optimization over Time-Varying Directed Graphs
 
 **Conference**: ICML 2026  
@@ -124,8 +129,8 @@ Local penalty $\mathcal{L}_i(x,y,z)=f_i(x,y)+\lambda(g_i(x,y)-g_i(x,z))$, with $
 - [\[ICML 2026\] Bilevel Optimization over Saddle Points of Zero-Sum Markov Games](bilevel_optimization_over_saddle_points_of_zero-sum_markov_games.md)
 - [\[AAAI 2026\] First-Order Representation Languages for Goal-Conditioned RL](../../AAAI2026/reinforcement_learning/first-order_representation_languages_for_goal-conditioned_rl.md)
 - [\[ICML 2026\] Parameter-free Dynamic Regret: Time-varying Movement Costs, Delayed Feedback, and Memory](parameter-free_dynamic_regret_time-varying_movement_costs_delayed_feedback_and_m.md)
-- [\[AAAI 2026\] Do It for HER: First-Order Temporal Logic Reward Specification in Reinforcement Learning](../../AAAI2026/reinforcement_learning/do_it_for_her_first-order_temporal_logic_reward_specification_in_reinforcement_l.md)
-- [\[ICML 2026\] Laplacian Representations for Decision-Time Planning](laplacian_representations_for_decision-time_planning.md)
+- [\[ICLR 2026\] Asynchronous Policy Gradient Aggregation for Efficient Distributed Reinforcement Learning](../../ICLR2026/reinforcement_learning/asynchronous_policy_gradient_aggregation_for_efficient_distributed_reinforcement.md)
+- [\[ICLR 2026\] Direct Preference Optimization for Primitive-Enabled Hierarchical RL: A Bilevel Approach](../../ICLR2026/reinforcement_learning/direct_preference_optimization_for_primitive-enabled_hierarchical_rl_a_bilevel_a.md)
 
 </div>
 

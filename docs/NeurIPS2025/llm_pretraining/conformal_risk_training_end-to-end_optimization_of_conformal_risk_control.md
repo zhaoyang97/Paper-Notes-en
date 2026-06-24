@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Conformal Risk Training: End-to-End Optimization of Conformal Risk Control
 description: >-
-  [NeurIPS 2025][LLM Pretraining][conformal prediction] This paper extends Conformal Risk Control (CRC) from expected loss to the generalized Optimized Certainty-Equivalent (OCE) risk measure (encompassing tail risks such…
+  [NeurIPS 2025][LLM Pretraining][conformal prediction] This paper extends Conformal Risk Control (CRC) from expected loss to the generalized Optimized Certainty-Equivalent (OCE) risk measure (encompassing tail risks such as CVaR), and proposes *conformal risk training*—an end-to-end approach that differentiates through the conformal risk control procedure during training, achieving provable risk guarantees while significantly improving average-case performance.
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "OCE risk"
   - "end-to-end training"
 date: 2026-05-08
-content_hash: b66c7a2a144ad373
+content_hash: 0fa988478044ed6b
 ---
 
 # Conformal Risk Training: End-to-End Optimization of Conformal Risk Control
@@ -188,11 +188,11 @@ Objective: Control the CVaR of economic loss in battery storage scheduling.
 
 ## Related Papers
 
+- [\[ICLR 2026\] Dynamic Chunking for End-to-End Hierarchical Sequence Modeling](../../ICLR2026/llm_pretraining/dynamic_chunking_for_end-to-end_hierarchical_sequence_modeling.md)
 - [\[NeurIPS 2025\] Enhancing Training Data Attribution with Representational Optimization](enhancing_training_data_attribution_with_representational_optimization.md)
+- [\[ACL 2025\] Diversity Explains Inference Scaling Laws: Through a Case Study of Minimum Bayes Risk Decoding](../../ACL2025/llm_pretraining/diversity_explains_inference_scaling_laws_through_a_case_study_of_minimum_bayes_.md)
 - [\[NeurIPS 2025\] Breaking the Frozen Subspace: Importance Sampling for Low-Rank Optimization in LLM Pretraining](breaking_the_frozen_subspace_importance_sampling_for_low-rank_optimization_in_ll.md)
 - [\[NeurIPS 2025\] Disaggregation Reveals Hidden Training Dynamics: The Case of Agreement Attraction](disaggregation_reveals_hidden_training_dynamics_the_case_of_agreement_attraction.md)
-- [\[NeurIPS 2025\] Predict Training Data Quality via Its Geometry in Metric Space](predict_training_data_quality_via_its_geometry_in_metric_space.md)
-- [\[NeurIPS 2025\] Through the River: Understanding the Benefit of Schedule-Free Methods for Language Model Training](through_the_river_understanding_the_benefit_of_schedule-free_methods_for_languag.md)
 
 </div>
 

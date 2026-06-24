@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Learning under Quantization for High-Dimensional Linear Regression
 description: >-
-  [ICLR 2026][learning_theory][SGD] This paper provides the first systematic theoretical framework characterizing "how quantization affects learning performance." Under high-dimensional linear regression and finite-step SGD, the authors derive precise excess risk upper bounds for five quantization targets: data, labels, parameters, activations, and gradi
+  [ICLR 2026][Learning Theory][Low-bit quantization] This paper provides the first systematic theoretical framework characterizing "how quantization affects learning performance." Under high-dimensional linear regression and finite-step SGD, the authors derive precise excess risk upper bounds for five quantization targets: data, labels, parameters, activations, and gradients. They demonstrate that additive quantization (corresponding to INT) contaminates the data spectrum…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - SGD
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Quantized Training"
+  - "Low-bit quantization"
+  - "high-dimensional linear regression"
+  - "SGD"
+  - "excess risk bound"
+  - "additive quantization"
+  - "multiplicative quantization"
 date: 2026-05-08
-content_hash: bd458b9c8613300e
+content_hash: 3e8baec6484922a6
 ---
+
 # Learning under Quantization for High-Dimensional Linear Regression
 
 **Conference**: ICLR 2026  
@@ -116,8 +123,8 @@ Experiments used a synthetic Gaussian least squares model: covariance spectrum $
 
 - [\[NeurIPS 2025\] Transfer Learning for Benign Overfitting in High-Dimensional Linear Regression](../../NeurIPS2025/learning_theory/transfer_learning_for_benign_overfitting_in_high-dimensional_linear_regression.md)
 - [\[ICLR 2026\] High-dimensional Analysis of Synthetic Data Selection](high-dimensional_analysis_of_synthetic_data_selection.md)
+- [\[ICLR 2026\] High-Dimensional Analysis of Single-Layer Attention for Sparse-Token Classification](high-dimensional_analysis_of_single-layer_attention_for_sparse-token_classificat.md)
 - [\[ICLR 2026\] Improved High-Dimensional Estimation with Langevin Dynamics and Stochastic Weight Averaging](improved_high-dimensional_estimation_with_langevin_dynamics_and_stochastic_weigh.md)
-- [\[ICLR 2026\] Larger Datasets Can Be Repeated More: A Theoretical Analysis of Multi-Epoch Scaling in Linear Regression](larger_datasets_can_be_repeated_more_a_theoretical_analysis_of_multi-epoch_scali.md)
 - [\[ICLR 2026\] Physics-informed learning under mixing: How physical knowledge speeds up learning](physics-informed_learning_under_mixing_how_physical_knowledge_speeds_up_learning.md)
 
 </div>

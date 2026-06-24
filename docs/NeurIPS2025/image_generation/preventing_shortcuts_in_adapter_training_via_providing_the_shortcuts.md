@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Preventing Shortcuts in Adapter Training via Providing the Shortcuts
 description: >-
-  [NeurIPS 2025][Image Generation][Adapter Training] This paper proposes Shortcut-Rerouted Adapter Training, which actively provides dedicated pathways for confounding factors during adapter training (e.g.…
+  [NeurIPS 2025][Image Generation][Adapter Training] This paper proposes Shortcut-Rerouted Adapter Training, which actively provides dedicated pathways for confounding factors during adapter training (e.g., a LoRA absorbing distribution shifts, a ControlNet absorbing pose/expression), thereby constraining the adapter to learn only the target attribute (e.g., identity). The auxiliary modules are discarded at inference time, yielding a disentangled adapter.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Personalized Generation"
   - "Identity Preservation"
 date: 2026-05-08
-content_hash: 75102ffd0af253f3
+content_hash: c16c3179eb7d11e2
 ---
 
 # Preventing Shortcuts in Adapter Training via Providing the Shortcuts
@@ -133,11 +133,11 @@ Training is based on FLUX.1 Dev (DiT backbone + Conditional Flow Matching object
 
 ## Related Papers
 
+- [\[CVPR 2026\] Adapter Shield: A Unified Framework with Built-in Authentication for Preventing Unauthorized Zero-Shot Image-to-Image Generation](../../CVPR2026/image_generation/adapter_shield_a_unified_framework_with_built-in_authentication_for_preventing_u.md)
+- [\[CVPR 2025\] UNIC-Adapter: Unified Image-Instruction Adapter with Multi-modal Transformer for Image Generation](../../CVPR2025/image_generation/unic-adapter_unified_image-instruction_adapter_with_multi-modal_transformer_for_.md)
 - [\[ICCV 2025\] Trans-Adapter: A Plug-and-Play Framework for Transparent Image Inpainting](../../ICCV2025/image_generation/trans-adapter_a_plug-and-play_framework_for_transparent_image_inpainting.md)
-- [\[ICLR 2026\] Mod-Adapter: Tuning-Free and Versatile Multi-concept Personalization via Modulation Adapter](../../ICLR2026/image_generation/mod-adapter_tuning-free_and_versatile_multi-concept_personalization_via_modulati.md)
 - [\[ICCV 2025\] Meta-Unlearning on Diffusion Models: Preventing Relearning Unlearned Concepts](../../ICCV2025/image_generation/meta-unlearning_on_diffusion_models_preventing_relearning_unlearned_concepts.md)
-- [\[NeurIPS 2025\] Training-Free Constrained Generation with Stable Diffusion Models](training-free_constrained_generation_with_stable_diffusion_models.md)
-- [\[NeurIPS 2025\] RLVR-World: Training World Models with Reinforcement Learning](rlvr-world_training_world_models_with_reinforcement_learning.md)
+- [\[ICLR 2026\] Mod-Adapter: Tuning-Free and Versatile Multi-concept Personalization via Modulation Adapter](../../ICLR2026/image_generation/mod-adapter_tuning-free_and_versatile_multi-concept_personalization_via_modulati.md)
 
 </div>
 

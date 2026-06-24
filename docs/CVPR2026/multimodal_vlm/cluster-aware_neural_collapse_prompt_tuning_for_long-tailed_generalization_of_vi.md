@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Cluster-Aware Neural Collapse Prompt Tuning for Long-Tailed Generalization of Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][ETF] CPT constrains the "Neural Collapse / ETF equiangular separation" from **all global classes** to the **internal semantic clusters** inherent in pre-trained VLMs. By incorporating a rotation stability loss that anchors learnable text prototypes to frozen ones, it enhances tail-class separability in long-tailed prompt tu
+  [CVPR 2026][Multimodal VLM][Prompt tuning] CPT constrains the "Neural Collapse / ETF equiangular separation" from **all global classes** to the **internal semantic clusters** inherent in pre-trained VLMs. By incorporating a rotation stability loss that anchors learnable text prototypes to frozen ones, it enhances tail-class separability in long-tailed prompt tuning without destroying CLIP's global semantic hierarchy—outperforming SOTAs like DPC/DeKg/NPT across 11 datasets.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - ETF
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Prompt tuning"
+  - "Neural Collapse"
+  - "Long-tail recognition"
+  - "ETF"
+  - "Semantic clustering"
 date: 2026-05-08
-content_hash: b162da004f09adc4
+content_hash: b6a3b19f8d42dabf
 ---
+
 # Cluster-Aware Neural Collapse Prompt Tuning for Long-Tailed Generalization of Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -148,10 +153,10 @@ When balanced, CPT is comparable to the strongest methods (not sacrificing norma
 ## Related Papers
 
 - [\[CVPR 2026\] Towards Calibrating Prompt Tuning of Vision-Language Models](towards_calibrating_prompt_tuning_of_vision-language_models.md)
-- [\[CVPR 2026\] Improving Calibration in Test-Time Prompt Tuning for Vision-Language Models via Data-Free Flatness-Aware Prompt Pretraining](improving_calibration_in_test-time_prompt_tuning_for_vision-language_models_via_.md)
-- [\[CVPR 2026\] FedMPT: Federated Multi-Label Prompt Tuning of Vision-Language Models](fedmpt_federated_multi-label_prompt_tuning_of_vision-language_models.md)
 - [\[CVPR 2026\] CAPT: Confusion-Aware Prompt Tuning for Reducing Vision-Language Misalignment](capt_confusion-aware_prompt_tuning_for_reducing_vision-language_misalignment.md)
-- [\[CVPR 2026\] CoVFT: Context-aware Visual Fine-tuning for Multimodal Large Language Models](covft_context-aware_visual_fine-tuning_for_multimodal_large_language_models.md)
+- [\[CVPR 2026\] Improving Calibration in Test-Time Prompt Tuning for Vision-Language Models via Data-Free Flatness-Aware Prompt Pretraining](improving_calibration_in_test-time_prompt_tuning_for_vision-language_models_via_.md)
+- [\[ICLR 2026\] Long-tailed Test-Time Adaptation for Vision-Language Models](../../ICLR2026/multimodal_vlm/long-tailed_test-time_adaptation_for_vision-language_models.md)
+- [\[CVPR 2026\] FedMPT: Federated Multi-Label Prompt Tuning of Vision-Language Models](fedmpt_federated_multi-label_prompt_tuning_of_vision-language_models.md)
 
 </div>
 

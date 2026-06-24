@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sim-to-Real: An Unsupervised Noise Layer for Screen-Camera Watermarking Robustness
 description: >-
-  [AAAI 2026][Robotics][Screen-camera watermarking] This paper proposes the Simulation-to-Real (S2R) framework, which introduces a novel two-stage noise approximation strategy of "mathematical modeling → unsupervised domai…
+  [AAAI 2026][Robotics][Screen-camera watermarking] This paper proposes the Simulation-to-Real (S2R) framework, which introduces a novel two-stage noise approximation strategy of "mathematical modeling → unsupervised domain transfer": a mathematical transform $T$ first maps clean images to a known noise domain $\mathcal{C}$, and an unsupervised image-to-image network $G$ then maps $\mathcal{C}$ to the real screen-camera (SC) noise domain $\mathcal{U}$. Without requiring paired…
 tags:
   - "AAAI 2026"
   - "Robotics"
@@ -13,7 +13,7 @@ tags:
   - "GAN"
   - "robust watermarking"
 date: 2026-05-08
-content_hash: b2d21a43da480b5d
+content_hash: fd86d81db28f8b36
 ---
 
 # Sim-to-Real: An Unsupervised Noise Layer for Screen-Camera Watermarking Robustness
@@ -181,10 +181,10 @@ Key findings: (1) The S2R framework can plug-and-play with different mathematica
 ## Related Papers
 
 - [\[ICLR 2026\] D-REX: Differentiable Real-to-Sim-to-Real Engine for Learning Dexterous Grasping](../../ICLR2026/robotics/d-rex_differentiable_real-to-sim-to-real_engine_for_learning_dexterous_grasping.md)
-- [\[NeurIPS 2025\] Generalizable Domain Adaptation for Sim-and-Real Policy Co-Training](../../NeurIPS2025/robotics/generalizable_domain_adaptation_for_sim-and-real_policy_co-training.md)
-- [\[CVPR 2026\] Rethinking Camera Choice: An Empirical Study on Fisheye Camera Properties in Robotic Manipulation](../../CVPR2026/robotics/rethinking_camera_choice_an_empirical_study_on_fisheye_camera_properties_in_robo.md)
-- [\[CVPR 2026\] GeCo-SRT: Geometry-aware Continual Adaptation for Robotic Cross-Task Sim-to-Real Transfer](../../CVPR2026/robotics/gecosrt_geometryaware_continual_adaptation_for_rob.md)
-- [\[ICML 2026\] Towards Efficient and Expressive Offline RL via Flow-Anchored Noise-conditioned Q-Learning](../../ICML2026/robotics/towards_efficient_and_expressive_offline_rl_via_flow-anchored_noise-conditioned_.md)
+- [\[ICLR 2026\] RobotArena ∞: Scalable Robot Benchmarking via Real-to-Sim Translation](../../ICLR2026/robotics/robotarena_infty_scalable_robot_benchmarking_via_real-to-sim_translation.md)
+- [\[ICLR 2026\] Latent Adaptation of Foundation Policies for Sim-to-Real Transfer](../../ICLR2026/robotics/latent_adaptation_of_foundation_policies_for_sim-to-real_transfer.md)
+- [\[CVPR 2026\] VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation](../../CVPR2026/robotics/viral_visual_sim-to-real_at_scale_for_humanoid_loco-manipulation.md)
+- [\[CVPR 2026\] Opening the Sim-to-Real Door for Humanoid Pixel-to-Action Policy Transfer](../../CVPR2026/robotics/opening_the_sim-to-real_door_for_humanoid_pixel-to-action_policy_transfer.md)
 
 </div>
 

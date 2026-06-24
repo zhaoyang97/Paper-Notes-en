@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] YieldSAT: A Multimodal Benchmark Dataset for High-Resolution Crop Yield Prediction
 description: >-
-  [CVPR 2026][Remote Sensing][Sentinel-2] YieldSAT formulates crop yield prediction as a "per-pixel regression" task, constructing the first multimodal remote sensing benchmark covering 4 countries and 4 crops, featuring 2,173 expert-validated fields and 12.2 million yield labels at 10m resolution. It integrates Sentinel-2 time series imagery with meteorologic
+  [CVPR 2026][Remote Sensing][Crop Yield Prediction] YieldSAT formulates crop yield prediction as a "per-pixel regression" task, constructing the first multimodal remote sensing benchmark covering 4 countries and 4 crops, featuring 2,173 expert-validated fields and 12.2 million yield labels at 10m resolution. It integrates Sentinel-2 time series imagery with meteorological, soil, and topographic auxiliary data while systematically revealing model collapse caused by yield distri…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - Sentinel-2
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Crop Yield Prediction"
+  - "Pixel Regression"
+  - "Multimodal Remote Sensing"
+  - "Sentinel-2"
+  - "Distribution Shift"
 date: 2026-05-08
-content_hash: 358e1a5e7dee6349
+content_hash: 4b1d8e72f7f77ceb
 ---
+
 # YieldSAT: A Multimodal Benchmark Dataset for High-Resolution Crop Yield Prediction
 
 **Conference**: CVPR 2026  
@@ -144,9 +149,9 @@ YieldSAT totals ~12.2 million 10m yield labels and 113,555 annotated S2 images a
 
 - [\[CVPR 2026\] PhenoYieldNet: Learning Crop-Aware Phenological Responses for Multi-Crop Yield Prediction](phenoyieldnet_learning_crop-aware_phenological_responses_for_multi-crop_yield_pr.md)
 - [\[CVPR 2026\] RAMEN: Resolution-Adjustable Multimodal Encoder for Earth Observation](ramen_resolution-adjustable_multimodal_encoder_for_earth_observation.md)
+- [\[ICLR 2026\] SelvaBox: A high-resolution dataset for tropical tree crown detection](../../ICLR2026/remote_sensing/selvabox_a_highresolution_dataset_for_tropical_tree_crown_detection.md)
 - [\[CVPR 2026\] ZoomEarth: Active Perception for Ultra-High-Resolution Geospatial Vision-Language Tasks](zoomearth_active_perception_for_ultra-high-resolution_geospatial_vision-language.md)
 - [\[CVPR 2026\] Cross-Scale Pansharpening via ScaleFormer and the PanScale Benchmark](cross-scale_pansharpening_via_scaleformer_and_the_panscale_benchmark.md)
-- [\[CVPR 2026\] UniGeoRS: A Unified Benchmark for Tri-view Geo-Localization](unigeors_a_unified_benchmark_for_tri-view_geo-localization.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] scSplit: Bringing Severity Cognizance to Image Decomposition in Fluorescence Microscopy
 description: >-
-  [NEURIPS2025][Image Restoration][fluorescence microscopy] This paper proposes scSplit, which introduces a severity-cognizant input normalization module (SCIN) and a regression network (Reg) to endow an InDI-based iterati…
+  [NEURIPS2025][Image Restoration][fluorescence microscopy] This paper proposes scSplit, which introduces a severity-cognizant input normalization module (SCIN) and a regression network (Reg) to endow an InDI-based iterative image decomposition framework with awareness of the mixing severity of two overlapping structures in fluorescence microscopy images. The method unifies image splitting and bleedthrough removal across five public datasets under a single framework.
 tags:
   - "NEURIPS2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "mixing ratio"
   - "bleedthrough removal"
 date: 2026-05-08
-content_hash: 751e7651762090a8
+content_hash: 39572dd06d688bee
 ---
 
 # scSplit: Bringing Severity Cognizance to Image Decomposition in Fluorescence Microscopy
@@ -123,11 +123,11 @@ Given two structures $c_0 \in C_0$ and $c_1 \in C_1$, the mixed input is defined
 
 ## Related Papers
 
+- [\[ICLR 2026\] Recover Cell Tensor: Diffusion-Equivalent Tensor Completion for Fluorescence Microscopy Imaging](../../ICLR2026/image_restoration/recover_cell_tensor_diffusion-equivalent_tensor_completion_for_fluorescence_micr.md)
+- [\[ECCV 2024\] DenoiSplit: A Method for Joint Microscopy Image Splitting and Unsupervised Denoising](../../ECCV2024/image_restoration/denoisplit_a_method_for_joint_microscopy_image_splitting_and_unsupervised_denois.md)
 - [\[NeurIPS 2025\] Learning Cocoercive Conservative Denoisers via Helmholtz Decomposition for Poisson Inverse Problems](learning_cocoercive_conservative_denoisers_via_helmholtz_decomposition_for_poiss.md)
+- [\[CVPR 2025\] A Flag Decomposition for Hierarchical Datasets](../../CVPR2025/image_restoration/a_flag_decomposition_for_hierarchical_datasets.md)
 - [\[ICCV 2025\] Lightweight and Fast Real-time Image Enhancement via Decomposition of the Spatial-aware Lookup Tables](../../ICCV2025/image_restoration/lightweight_and_fast_real-time_image_enhancement_via_decomposition_of_the_spatia.md)
-- [\[CVPR 2026\] Statistical Characteristic-Guided Denoising for Rapid High-Resolution Transmission Electron Microscopy Imaging](../../CVPR2026/image_restoration/statistical_characteristic-guided_denoising_for_rapid_high-resolution_transmissi.md)
-- [\[ICML 2026\] PODiff: Latent Diffusion in Proper Orthogonal Decomposition Space for Scientific Super-Resolution](../../ICML2026/image_restoration/podiff_latent_diffusion_in_proper_orthogonal_decomposition_space_for_scientific_.md)
-- [\[NeurIPS 2025\] Spiking Meets Attention: Efficient Remote Sensing Image Super-Resolution with Attention Spiking Neural Networks](spiking_meets_attention_efficient_remote_sensing_image_super-resolution_with_att.md)
 
 </div>
 

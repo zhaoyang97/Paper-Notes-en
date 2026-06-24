@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Lingo_Research_Group at SemEval-2026 Task 9: Evaluating Prompt Variants for Polarization Detection
 description: >-
-  [ACL 2026][Multilingual & Translation][SemEval] This SemEval-2026 Task 9 system paper utilizes Gemma3-27B and 12 types of English prompt variants to perform online polarization detection across 22 languages. It finds that prompt-only methods effectively complete coarse-grained binary classification but exhibit significant degradation in fine-grained multi-label task
+  [ACL 2026][Multilingual & Machine Translation][Multilingual Classification] This SemEval-2026 Task 9 system paper utilizes Gemma3-27B and 12 types of English prompt variants to perform online polarization detection across 22 languages. It finds that prompt-only methods effectively complete coarse-grained binary classification but exhibit significant degradation in fine-grained multi-label tasks such as identifying polarization targets and manifestations.
 tags:
-  - ACL 2026
-  - Multilingual & Translation
-  - SemEval
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Multilingual Classification"
+  - "Polarization Detection"
+  - "Prompt Engineering"
+  - "SemEval"
+  - "Social Issues"
 date: 2026-05-08
-content_hash: 8057e682f9198a65
+content_hash: 1292d16fc3f69a0c
 ---
+
 # Lingo_Research_Group at SemEval-2026 Task 9: Evaluating Prompt Variants for Polarization Detection
 
 **Conference**: ACL 2026  
@@ -127,10 +132,20 @@ The paper does not report individual dev set scores for all 12 prompts, so an ex
 - Value: ⭐⭐⭐⭐ (Strong reference for prompt baselines, error analysis, and task difficulty in multilingual social NLP)
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2026\] DFKI-MLT at SemEval-2026 TASK 7: Steering Multilingual Models Towards Cultural Knowledge](dfki-mlt_at_semeval-2026_task_7_steering_multilingual_models_towards_cultural_kn.md)
+- [\[ACL 2026\] Is Human-Like Text Liked by Humans? Multilingual Human Detection and Preference Against AI](is_human-like_text_liked_by_humans_multilingual_human_detection_and_preference_a.md)
+- [\[ACL 2026\] BhashaSutra: A Task-Centric Unified Survey of Indian NLP Datasets, Corpora, and Resources](bhashasutra_a_task-centric_unified_survey_of_indian_nlp_datasets_corpora_and_res.md)
+- [\[ACL 2026\] MORPHOGEN: A Multilingual Benchmark for Evaluating Gender-Aware Morphological Generation](morphogen_a_multilingual_benchmark_for_evaluating_gender-aware_morphological_gen.md)
+- [\[ACL 2026\] Evaluating the Impact of Verbal Multiword Expressions on Machine Translation](evaluating_the_impact_of_verbal_multiword_expressions_on_machine_translation.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] DFKI-MLT at SemEval-2026 TASK 7: Steering Multilingual Models Towards Cultural Knowledge](dfki-mlt_at_semeval-2026_task_7_steering_multilingual_models_towards_cultural_kn.md)

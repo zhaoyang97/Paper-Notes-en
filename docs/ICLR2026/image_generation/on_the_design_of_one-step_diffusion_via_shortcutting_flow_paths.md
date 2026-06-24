@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] On the Design of One-Step Diffusion via Shortcutting Flow Paths
 description: >-
-  [ICLR 2026][Image Generation][shortcut model] This paper unifies various "train-from-scratch one-step diffusion (shortcut models)" into a design framework of "approximating a two-step flow map target with a one-step prediction." This allows for the decoupling of entangled components (flow paths, time samplers, network parameterization, loss metrics) for comparativ
+  [ICLR 2026][Image Generation][shortcut model] This paper unifies various "train-from-scratch one-step diffusion (shortcut models)" into a design framework of "approximating a two-step flow map target with a one-step prediction." This allows for the decoupling of entangled components (flow paths, time samplers, network parameterization, loss metrics) for comparative experiments. Based on this, improvements such as plug-in velocity and progressive time samplers are proposed…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - shortcut model
-  - flow map
+  - "ICLR 2026"
+  - "Image Generation"
+  - "shortcut model"
+  - "one-step diffusion"
+  - "flow map"
+  - "continuous time"
+  - "ImageNet generation"
 date: 2026-05-08
-content_hash: ad8dc7edfb26d3ab
+content_hash: d479ff35eae8cbf8
 ---
+
 # On the Design of One-Step Diffusion via Shortcutting Flow Paths
 
 **Conference**: ICLR 2026  
@@ -140,15 +144,15 @@ SiT-B/2, 1-NFE generation, MeanFlow (CFG) as baseline (FID50k 6.09):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] FARI: Robust One-Step Inversion for Watermarking in Diffusion Models](fari_robust_one-step_inversion_for_watermarking_in_diffusion_models.md)
 - [\[ICLR 2026\] One Step Further with Monte-Carlo Sampler to Guide Diffusion Better](one_step_further_with_monte-carlo_sampler_to_guide_diffusion_better.md)
 - [\[CVPR 2026\] Stable Mean Flow: Lyapunov-Inspired One-Step Flow Matching](../../CVPR2026/image_generation/stable_mean_flow_lyapunov-inspired_one-step_flow_matching.md)
+- [\[ICLR 2026\] Generalised Flow Maps for Few-Step Generative Modelling on Riemannian Manifolds](generalised_flow_maps_for_few-step_generative_modelling_on_riemannian_manifolds.md)
 - [\[ICLR 2026\] TwinFlow: Realizing One-step Generation on Large Models with Self-adversarial Flows](twinflow_realizing_one-step_generation_on_large_models_with_self-adversarial_flo.md)
-- [\[CVPR 2026\] InverFill: One-Step Inversion for Enhanced Few-Step Diffusion Inpainting](../../CVPR2026/image_generation/inverfill_one-step_inversion_for_enhanced_few-step_diffusion_inpainting.md)
 
 </div>
 

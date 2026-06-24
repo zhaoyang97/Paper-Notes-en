@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Fewer Battles, More Gain: An Information-Efficient Framework for Arena-based LLM Evaluation
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] The selection of "which two models should battle" in an Arena is modeled as an optimal experimental design problem. By utilizing the A-optimal/D-optimal criteria of the Fisher Information Matrix to actively select battles with the highest information gain, the framework achieves more reliable rankings with the same amo
+  [ICLR 2026][LLM Evaluation][Arena Evaluation] The selection of "which two models should battle" in an Arena is modeled as an optimal experimental design problem. By utilizing the A-optimal/D-optimal criteria of the Fisher Information Matrix to actively select battles with the highest information gain, the framework achieves more reliable rankings with the same amount of human labeling, effectively realizing "fewer battles, more gain."
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Arena Evaluation"
+  - "ELO Rating"
+  - "Fisher Information"
+  - "Active Sampling"
+  - "A/D-optimal Experimental Design"
+  - "Labeling Efficiency"
 date: 2026-05-08
-content_hash: cc747b1a7ca7726e
+content_hash: 8d8a3cf990fd4853
 ---
+
 # Fewer Battles, More Gain: An Information-Efficient Framework for Arena-based LLM Evaluation
 
 **Conference**: ICLR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Value Matching: Scalable and Gradient-Free Reward-Guided Flow Adaptation
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] The authors reformulate "reward adaptation for large-scale flow/diffusion models" as a stochastic optimal control (SOC) problem, **learning only a small value network online** while freezing the base model. This approach supports non-differentiable (black-box) rewards and allows for on-demand GPU memory adjustment, ach
+  [ICLR 2026][Image Generation][Flow model adaptation] The authors reformulate "reward adaptation for large-scale flow/diffusion models" as a stochastic optimal control (SOC) problem, **learning only a small value network online** while freezing the base model. This approach supports non-differentiable (black-box) rewards and allows for on-demand GPU memory adjustment, achieving comparable performance on image and molecular generation using less than 5% of the memory required b…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Flow model adaptation"
+  - "value function learning"
+  - "stochastic optimal control"
+  - "non-differentiable rewards"
+  - "memory-efficient"
 date: 2026-05-08
-content_hash: 0f15e8192e3182ef
+content_hash: cfcddd26d7115107
 ---
+
 # Value Matching: Scalable and Gradient-Free Reward-Guided Flow Adaptation
 
 **Conference**: ICLR 2026  
@@ -122,15 +128,16 @@ Inference overhead (Batch 128, RTX 4090): VM adds only 1–30% time compared to 
 - **Value**: ⭐⭐⭐⭐⭐ High impact for large-scale model adaptation and scientific discovery with black-box rewards due to the 95% memory reduction.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Source-Guided Flow Matching](source-guided_flow_matching.md)
 - [\[NeurIPS 2025\] Value Gradient Guidance for Flow Matching Alignment](../../NeurIPS2025/image_generation/value_gradient_guidance_for_flow_matching_alignment.md)
 - [\[ICLR 2026\] FlowCast: Trajectory Forecasting for Scalable Zero-Cost Speculative Flow Matching](flowcast_trajectory_forecasting_for_scalable_zero-cost_speculative_flow_matching.md)
 - [\[ICLR 2026\] DenseGRPO: From Sparse to Dense Reward for Flow Matching Model Alignment](densegrpo_from_sparse_to_dense_reward_for_flow_matching_model_alignment.md)
 - [\[ICLR 2026\] Training-Free Reward-Guided Image Editing via Trajectory Optimal Control](training-free_reward-guided_image_editing_via_trajectory_optimal_control.md)
-- [\[ICLR 2026\] Flow Map Learning via Non-Gradient Vector Flow](flow_map_learning_via_non-gradient_vector_flow.md)
 
 </div>
 

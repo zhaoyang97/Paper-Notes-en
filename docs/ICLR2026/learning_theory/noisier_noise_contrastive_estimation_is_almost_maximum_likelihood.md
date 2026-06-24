@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] "Noisier" Noise Contrastive Estimation is (Almost) Maximum Likelihood
 description: >-
-  [ICLR 2026][learning_theory][NCE] By artificially magnifying the noise distribution by a factor $M$, the gradient of the NCE objective gradually converges to the Maximum Likelihood (MLE) gradient. This enables fast and stable density ratio estimation even under the classic "density-chasm" challenge—where the target and noise distributions differ signif
+  [ICLR 2026][Learning Theory][NCE] By artificially magnifying the noise distribution by a factor $M$, the gradient of the NCE objective gradually converges to the Maximum Likelihood (MLE) gradient. This enables fast and stable density ratio estimation even under the classic "density-chasm" challenge—where the target and noise distributions differ significantly—with almost zero additional cost.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - NCE
-  - density-chasm
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Density Ratio Estimation"
+  - "Energy-Based Models"
+  - "NCE"
+  - "Maximum Likelihood"
+  - "density-chasm"
+  - "Diffusion Distillation"
 date: 2026-05-08
-content_hash: 44b9704c5c0d4d48
+content_hash: c0449abbd06758e1
 ---
+
 # "Noisier" Noise Contrastive Estimation is (Almost) Maximum Likelihood
 
 **Conference**: ICLR 2026  
@@ -141,11 +146,11 @@ Additionally, the predicted $M$ U-shaped curve was replicated across settings fr
 
 ## Related Papers
 
+- [\[ICLR 2026\] Almost Bayesian: Dynamics of SGD Through Singular Learning Theory](almost_bayesian_dynamics_of_sgd_through_singular_learning_theory.md)
+- [\[ICLR 2026\] UniCon: Unified Framework for Efficient Contrastive Alignment via Kernels](unicon_unified_framework_for_efficient_contrastive_alignment_via_kernels.md)
 - [\[ICLR 2026\] Know When to Abstain: Optimal Selective Classification with Likelihood Ratios](know_when_to_abstain_optimal_selective_classification_with_likelihood_ratios.md)
 - [\[ICLR 2026\] Noise Tolerance of Distributionally Robust Learning](noise_tolerance_of_distributionally_robust_learning.md)
-- [\[ICLR 2026\] Information Estimation with Discrete Diffusion](information_estimation_with_discrete_diffusion.md)
 - [\[ICLR 2026\] Minimax-Optimal Aggregation for Density Ratio Estimation](minimax-optimal_aggregation_for_density_ratio_estimation.md)
-- [\[ICLR 2026\] Theoretical Analysis of Contrastive Learning under Imbalanced Data: From Training Dynamics to a Pruning Solution](theoretical_analysis_of_contrastive_learning_under_imbalanced_data_from_training.md)
 
 </div>
 

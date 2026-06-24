@@ -4,13 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][LLM Evaluation][LLM-as-a-Judge] Proposes BiasScope, a fully LLM-driven iterative framework that automatically discovers latent unknown biases in LLM-as-a-Judge at scale. Based on this, it constructs the more challenging JudgeBench-Pro benchmark, where even strong LLM evaluators exhibit error rates exceeding 50%.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - LLM-as-a-Judge
-  - JudgeBench-Pro
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "LLM-as-a-Judge"
+  - "Bias Discovery"
+  - "Evaluation Robustness"
+  - "Automated Bias Mining"
+  - "JudgeBench-Pro"
 date: 2026-05-08
-content_hash: e86d905997de8068
+content_hash: b43d8d374b4a9365
 ---
+
 # BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation
 
 **Conference**: ICLR 2026  
@@ -167,8 +171,8 @@ Verified using discovered biases to construct augmented preference data for DPO 
 - [\[ACL 2026\] Contrastive Decoding Mitigates Score Range Bias in LLM-as-a-Judge](../../ACL2026/llm_evaluation/contrastive_decoding_mitigates_score_range_bias_in_llm-as-a-judge.md)
 - [\[ICLR 2026\] Talk, Evaluate, Diagnose: User-aware Agent Evaluation with Automated Error Analysis](talk_evaluate_diagnose_user-aware_agent_evaluation_with_automated_error_analysis.md)
 - [\[ICLR 2026\] Preference Leakage: A Contamination Problem in LLM-as-a-judge](preference_leakage_a_contamination_problem_in_llm-as-a-judge.md)
-- [\[ACL 2026\] Fin-Bias: Comprehensive Evaluation for LLM Decision-Making under human bias in Finance Domain](../../ACL2026/llm_evaluation/fin-bias_comprehensive_evaluation_for_llm_decision-making_under_human_bias_in_fi.md)
 - [\[ICLR 2026\] Rethinking LLM-as-a-Judge: Representation-as-a-Judge with Small Language Models via Semantic Capacity Asymmetry](rethinking_llm-as-a-judge_representation-as-a-judge_with_small_language_models_v.md)
+- [\[ACL 2026\] Fin-Bias: Comprehensive Evaluation for LLM Decision-Making under human bias in Finance Domain](../../ACL2026/llm_evaluation/fin-bias_comprehensive_evaluation_for_llm_decision-making_under_human_bias_in_fi.md)
 
 </div>
 

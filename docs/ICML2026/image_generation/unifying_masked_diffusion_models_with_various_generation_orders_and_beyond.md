@@ -1,14 +1,19 @@
 ---
 title: >-
-  [Paper Note] 统一不同生成顺序的掩码扩散模型
+  [Paper Note] Unified Masked Diffusion Models with Diverse Generation Orders
 description: >-
-  [ICML 2026][Image Generation][Paper Note] This paper proposes a unified framework OeMDM and its learnable version LoMDM—unifying random masking, autoregressive, and block diffusion models under a single NELBO by explicitly modeling "velocity" (generation priority), enabling joint learning of generation order and the diffusion backbone from scratch.
+  [ICML 2026][Image Generation][Masked Diffusion Models] This paper proposes a unified framework OeMDM and its learnable version LoMDM—unifying random masking, autoregressive, and block diffusion models under a single NELBO by explicitly modeling "velocity" (generation priority), enabling joint learning of generation order and the diffusion backbone from scratch.
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML 2026"
+  - "Image Generation"
+  - "Masked Diffusion Models"
+  - "Generation Order"
+  - "Velocity Field"
+  - "Joint Learning"
 date: 2026-05-08
-content_hash: e0d2149a87640f17
+content_hash: 50eddba9ecd9c00a
 ---
+
 # Unified Masked Diffusion Models with Diverse Generation Orders
 
 **Conference**: ICML 2026  
@@ -103,11 +108,11 @@ Adding a large separate network for the velocity field can lead to unstable join
 
 ## Related Papers
 
-- [\[ICML 2026\] ViewMask-1-to-3: Multi-View Consistent Image Generation via Multimodal Discrete Diffusion Models](viewmask-1-to-3_multi-view_consistent_image_generation_via_multimodal_discrete_d.md)
-- [\[ICML 2026\] Stage-wise Distortion-Perception Traversal in Zero-shot Inverse Problems with Diffusion Models](stage-wise_distortion-perception_traversal_in_zero-shot_inverse_problems_with_di.md)
-- [\[ICML 2026\] Support-Proximity Augmented Diffusion Estimation for Offline Black-Box Optimization](support-proximity_augmented_diffusion_estimation_for_offline_black-box_optimizat.md)
-- [\[ICML 2026\] Let EEG Models Learn EEG](let_eeg_models_learn_eeg.md)
-- [\[ICML 2026\] From Talking to Singing: A New Challenge for Audio-Visual Deepfake Detection](from_talking_to_singing_a_new_challenge_for_audio-visual_deepfake_detection.md)
+- [\[ECCV 2024\] MacDiff: Unified Skeleton Modeling with Masked Conditional Diffusion](../../ECCV2024/image_generation/macdiff_unified_skeleton_modeling_with_masked_conditional_diffusion.md)
+- [\[ICML 2026\] Forgetting in Diffusion Models: A Unified Framework via KL Divergence and Likelihood Constraints](unlearning_in_diffusion_models_a_unified_framework_with_kl_divergence_and_likeli.md)
+- [\[ICLR 2026\] Bringing Stability to Diffusion: Decomposing and Reducing Variance of Training Masked Diffusion Models](../../ICLR2026/image_generation/bringing_stability_to_diffusion_decomposing_and_reducing_variance_of_training_ma.md)
+- [\[ICML 2026\] A Unified Framework for Diffusion Model Unlearning with f-Divergence](a_unified_framework_for_diffusion_model_unlearning_with_f-divergence.md)
+- [\[ICCV 2025\] LoRAverse: A Submodular Framework to Retrieve Diverse Adapters for Diffusion Models](../../ICCV2025/image_generation/loraverse_a_submodular_framework_to_retrieve_diverse_adapters_for_diffusion_mode.md)
 
 </div>
 

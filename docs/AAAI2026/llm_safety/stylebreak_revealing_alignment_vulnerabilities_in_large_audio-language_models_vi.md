@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] StyleBreak: Revealing Alignment Vulnerabilities in Large Audio-Language Models via Style-Aware Audio Jailbreak
 description: >-
-  [AAAI 2026][LLM Safety][Audio jailbreak] This paper proposes StyleBreak, the first audio jailbreak framework based on speech style, which systematically investigates the impact of linguistic, paralinguistic…
+  [AAAI 2026][LLM Safety][Audio jailbreak] This paper proposes StyleBreak, the first audio jailbreak framework based on speech style, which systematically investigates the impact of linguistic, paralinguistic, and extralinguistic attributes on LAM alignment robustness through a two-stage style-aware transformation pipeline and a query-adaptive policy network. StyleBreak improves ASR by 7.1%–22.3% across multiple attack paradigms.
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "speech style attack"
   - "adaptive strategy"
 date: 2026-05-08
-content_hash: d58926521e00ca50
+content_hash: 2ee8d0f52f2ff003
 ---
 
 # StyleBreak: Revealing Alignment Vulnerabilities in Large Audio-Language Models via Style-Aware Audio Jailbreak
@@ -193,10 +193,10 @@ Each module contributes a distinct improvement, and the full StyleBreak consiste
 ## Related Papers
 
 - [\[ICLR 2026\] AudioTrust: Benchmarking the Multifaceted Trustworthiness of Audio Large Language Models](../../ICLR2026/llm_safety/audiotrust_benchmarking_the_multifaceted_trustworthiness_of_audio_large_language.md)
-- [\[ICML 2026\] MedMosaic: A Challenging Large Scale Benchmark of Diverse Medical Audio](../../ICML2026/llm_safety/medmosaic_a_challenging_large_scale_benchmark_of_diverse_medical_audio.md)
 - [\[NeurIPS 2025\] ALMGuard: Safety Shortcuts and Where to Find Them as Guardrails for Audio-Language Models](../../NeurIPS2025/llm_safety/almguard_safety_shortcuts_and_where_to_find_them_as_guardrails_for_audio-languag.md)
 - [\[AAAI 2026\] Multi-Faceted Attack: Exposing Cross-Model Vulnerabilities in Defense-Equipped Vision-Language Models](multi-faceted_attack_exposing_cross-model_vulnerabilities_in_defense-equipped_vi.md)
 - [\[AAAI 2026\] Gender Bias in Emotion Recognition by Large Language Models](gender_bias_in_emotion_recognition_by_large_language_models.md)
+- [\[AAAI 2026\] Anti-adversarial Learning: Desensitizing Prompts for Large Language Models](anti-adversarial_learning_desensitizing_prompts_for_large_la.md)
 
 </div>
 

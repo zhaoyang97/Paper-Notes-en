@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AG-VAS: Anchor-Guided Zero-Shot Visual Anomaly Segmentation with Large Multimodal Models
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] AG-VAS introduces three learnable "semantic anchor" tokens into the Large Multimodal Model (LMM) vocabulary: an absolute anchor `[SEG]` that translates abstract "anomalies" into concrete visual entities (e.g., holes, scratches), and relative anchors `[NOR]`/`[ANO]` that model contrastive contexts between normal and ano
+  [CVPR 2026][Multimodal VLM][Zero-shot Anomaly Segmentation] AG-VAS introduces three learnable "semantic anchor" tokens into the Large Multimodal Model (LMM) vocabulary: an absolute anchor `[SEG]` that translates abstract "anomalies" into concrete visual entities (e.g., holes, scratches), and relative anchors `[NOR]`/`[ANO]` that model contrastive contexts between normal and anomalous regions. Combined with a Semantic-Pixel Alignment Module (SPAM) and an Anchor-Guided Mask Dec…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Zero-shot Anomaly Segmentation"
+  - "Large Multimodal Models"
+  - "Semantic Anchors"
+  - "Instruction Segmentation"
+  - "Industrial/Medical Defects"
 date: 2026-05-08
-content_hash: b105a90282616cf6
+content_hash: 4a311957a6c98f6e
 ---
+
 # AG-VAS: Anchor-Guided Zero-Shot Visual Anomaly Segmentation with Large Multimodal Models
 
 **Conference**: CVPR 2026  
@@ -147,15 +153,16 @@ Impact of modules and data (MVTec-AD):
 - Value: ⭐⭐⭐⭐⭐ A practical solution for ZSAS with direct binary output and strong rejection capabilities.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Metric-Guided Feature Fusion of Visual Foundation Models for Segmentation Tasks](metric-guided_feature_fusion_of_visual_foundation_models_for_segmentation_tasks.md)
-- [\[CVPR 2026\] DSS: Discover, Segment, and Select for Zero-shot Camouflaged Object Segmentation](discover_segment_and_select_a_progressive_mechanism_for_zero-shot_camouflaged_ob.md)
-- [\[NeurIPS 2025\] PARTONOMY: Large Multimodal Models with Part-Level Visual Understanding](../../NeurIPS2025/segmentation/partonomy_large_multimodal_models_with_part-level_visual_understanding.md)
-- [\[CVPR 2026\] SGMA: Semantic-Guided Modality-Aware Segmentation for Remote Sensing with Incomplete Multimodal Data](sgma_semantic-guided_modality-aware_segmentation_for_remote_sensing_with_incompl.md)
-- [\[CVPR 2026\] MV3DIS: Multi-View Mask Matching via 3D Guides for Zero-Shot 3D Instance Segmentation](mv3dis_multi-view_mask_matching_via_3d_guides_for_zero-shot_3d_instance_segmenta.md)
+- [\[CVPR 2026\] From Attraction to Equilibrium: Physics-Inspired Semantic Gravitons for Zero-Shot Anomaly Detection](from_attraction_to_equilibrium_physics-inspired_semantic_gravitons_for_zero-shot.md)
+- [\[CVPR 2026\] Anchor-Guided Gradient Alignment for Incomplete Multimodal Learning](anchor-guided_gradient_alignment_for_incomplete_multimodal_learning.md)
+- [\[CVPR 2026\] Self-guided Semantic Inspection for Zero-Shot Composed Image Retrieval](self-guided_semantic_inspection_for_zero-shot_composed_image_retrieval.md)
+- [\[CVPR 2026\] AGFT: Alignment-Guided Fine-Tuning for Zero-Shot Adversarial Robustness of Vision-Language Models](agft_alignment-guided_fine-tuning_for_zero-shot_adversarial_robustness_of_vision.md)
+- [\[CVPR 2026\] VKG-QA: Visual Knowledge Graph-based Question Answer for Large Multimodal Models](vkg-qa_visual_knowledge_graph-based_question_answer_for_large_multimodal_models.md)
 
 </div>
 

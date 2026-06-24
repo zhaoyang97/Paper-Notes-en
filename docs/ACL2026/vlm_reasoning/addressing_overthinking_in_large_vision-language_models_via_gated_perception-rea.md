@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Addressing Overthinking in Large Vision-Language Models via Gated Perception-Reasoning Optimization
 description: >-
-  [ACL 2026][vlm_reasoning][Paper Note] The GPRO framework is proposed to address overthinking in LVLMs by dynamically routing computation to three paths (Fast/Perception Re-check/Reasoning Reflection) at each token generation step through a meta-reasoning controller, simultaneously improving both accuracy and efficiency.
+  [ACL 2026][VLM Reasoning][Overthinking] The GPRO framework is proposed to address overthinking in LVLMs by dynamically routing computation to three paths (Fast/Perception Re-check/Reasoning Reflection) at each token generation step through a meta-reasoning controller, simultaneously improving both accuracy and efficiency.
 tags:
-  - ACL 2026
-  - vlm_reasoning
+  - "ACL 2026"
+  - "VLM Reasoning"
+  - "Overthinking"
+  - "Perception-Reasoning Separation"
+  - "Meta-Reasoning Controller"
+  - "Adaptive Computation"
+  - "Multi-Objective Reinforcement Learning"
 date: 2026-05-08
-content_hash: dfb642acf249a80a
+content_hash: 283d7c9ff857e589
 ---
+
 # Addressing Overthinking in Large Vision-Language Models via Gated Perception-Reasoning Optimization
 
 **Conference**: ACL 2026  
@@ -134,9 +140,9 @@ Multi-objective PPO training is employed with a reward function $R(\tau) = R_{ta
 
 - [\[ACL 2026\] GeoArena: Evaluating Open-World Geographic Reasoning in Large Vision-Language Models](geoarena_evaluating_open-world_geographic_reasoning_in_large_vision-language_mod.md)
 - [\[ACL 2026\] OMIBench: Benchmarking Olympiad-Level Multi-Image Reasoning in Large Vision-Language Models](omibench_benchmarking_olympiad-level_multi-image_reasoning_in_large_vision-langu.md)
+- [\[CVPR 2026\] Improving Vision-language Models with Perception-centric Process Reward Models](../../CVPR2026/vlm_reasoning/improving_vision-language_models_with_perception-centric_process_reward_models.md)
+- [\[ICLR 2026\] Perception-Aware Policy Optimization for Multimodal Reasoning](../../ICLR2026/vlm_reasoning/perception-aware_policy_optimization_for_multimodal_reasoning.md)
 - [\[ACL 2026\] VL-Calibration: Decoupled Confidence Calibration for Large Vision-Language Models Reasoning](vl-calibration_decoupled_confidence_calibration_for_large_vision-language_models.md)
-- [\[ACL 2026\] ChemVLR: Prioritizing Reasoning in Perception for Chemical Vision-Language Understanding](chemvlr_prioritizing_reasoning_in_perception_for_chemical_vision-language_unders.md)
-- [\[ACL 2026\] MMErroR: A Benchmark for Erroneous Reasoning in Vision-Language Models](mmerror_a_benchmark_for_erroneous_reasoning_in_vision-language_models.md)
 
 </div>
 

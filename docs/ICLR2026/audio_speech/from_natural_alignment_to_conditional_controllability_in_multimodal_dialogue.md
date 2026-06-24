@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Natural Alignment to Conditional Controllability in Multimodal Dialogue
 description: >-
-  [ICLR 2026][Audio & Speech][MM-DIA] Ours proposes MM-DIA, a large-scale expressive multimodal dialogue dataset (360 hours, 54.7k dialogues) automatically constructed from movies and TV series, along with the MM-DIA-BENCH benchmark. "Controllable Multimodal Dialogue Generation (MDG)" is formalized as a unified conditional generation problem covering expli
+  [ICLR 2026][Audio & Speech][Multimodal Dialogue] Ours proposes MM-DIA, a large-scale expressive multimodal dialogue dataset (360 hours, 54.7k dialogues) automatically constructed from movies and TV series, along with the MM-DIA-BENCH benchmark. "Controllable Multimodal Dialogue Generation (MDG)" is formalized as a unified conditional generation problem covering explicit prompt control and implicit cross-modal control tasks.
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - MM-DIA
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Multimodal Dialogue"
+  - "Controllable Speech Synthesis"
+  - "Movie/TV Data Annotation"
+  - "Cross-modal Style Consistency"
+  - "MM-DIA"
 date: 2026-05-08
-content_hash: aa22a546249cc372
+content_hash: a7a03d08d91e0315
 ---
+
 # From Natural Alignment to Conditional Controllability in Multimodal Dialogue
 
 **Conference**: ICLR 2026  
@@ -127,16 +132,16 @@ Fine-tuning on MM-DIA reduced Higgs-Audio's WER from 31.3 to 4.5 and cp-WER from
 *   **Value**: ⭐⭐⭐⭐⭐ — Provides essential infrastructure for controllable multimodal dialogue and identifies key challenges for the community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] FlexiVoice: Enabling Flexible Style Control in Zero-Shot TTS with Natural Language Instructions](flexivoice_enabling_flexible_style_control_in_zero-shot_tts_with_natural_languag.md)
 - [\[NeurIPS 2025\] A TRIANGLE Enables Multimodal Alignment Beyond Cosine Similarity](../../NeurIPS2025/audio_speech/a_triangle_enables_multimodal_alignment_beyond_cosine_simila.md)
+- [\[ACL 2026\] RespiraMFM: A Multimodal Foundation Model for Respiratory Disease Recognition via Contrastive Audio-Language Alignment](../../ACL2026/audio_speech/respiramfm_a_multimodal_foundation_model_with_contrastive_audio-language_alignme.md)
 - [\[ACL 2026\] ImmersiveTTS: Environment-Aware Text-to-Speech with Multimodal Diffusion Transformer and Domain-Specific Representation Alignment](../../ACL2026/audio_speech/immersivetts_environment-aware_text-to-speech_with_multimodal_diffusion_transfor.md)
 - [\[ICLR 2026\] When Style Breaks Safety: Defending LLMs Against Superficial Style Alignment](when_style_breaks_safety_defending_llms_against_superficial_style_alignment.md)
-- [\[ICLR 2026\] Scalable Multilingual Multimodal Machine Translation with Speech-Text Fusion](scalable_multilingual_multimodal_machine_translation_with_speech-text_fusion.md)
 
 </div>
 

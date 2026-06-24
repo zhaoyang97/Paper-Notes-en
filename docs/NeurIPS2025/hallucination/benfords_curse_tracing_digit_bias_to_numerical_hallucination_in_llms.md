@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Benford's Curse: Tracing Digit Bias to Numerical Hallucination in LLMs
 description: >-
-  [NeurIPS 2025][Hallucination Detection][Benford's Law] This paper demonstrates that numerical hallucinations in LLMs originate from the Benford's Law-conforming digit frequency distribution in pretraining corpora—where d…
+  [NeurIPS 2025][Hallucination Detection][Benford's Law] This paper demonstrates that numerical hallucinations in LLMs originate from the Benford's Law-conforming digit frequency distribution in pretraining corpora—where digit 1 appears with ~30% probability while digit 9 appears with only ~5%—and that this bias is internalized by specific "digit-selective neurons" in the later FFN layers. A Digit Selectivity Coefficient (DSC) is proposed to localize biased neurons…
 tags:
   - "NeurIPS 2025"
   - "Hallucination Detection"
@@ -12,7 +12,7 @@ tags:
   - "FFN neurons"
   - "selective pruning"
 date: 2026-05-08
-content_hash: 723485f72ee8bb7a
+content_hash: acb57954a9d3b144
 ---
 
 # Benford's Curse: Tracing Digit Bias to Numerical Hallucination in LLMs
@@ -128,11 +128,11 @@ Analyze digit distribution in pretraining corpora (verify Benford's Law) → con
 
 ## Related Papers
 
+- [\[ACL 2025\] ETF: An Entity Tracing Framework for Hallucination Detection in Code Summaries](../../ACL2025/hallucination/etf_an_entity_tracing_framework_for_hallucination_detection_in_code_summaries.md)
 - [\[NeurIPS 2025\] Robust Hallucination Detection in LLMs via Adaptive Token Selection](robust_hallucination_detection_in_llms_via_adaptive_token_selection.md)
 - [\[NeurIPS 2025\] Teaming LLMs to Detect and Mitigate Hallucinations](teaming_llms_to_detect_and_mitigate_hallucinations.md)
 - [\[ICLR 2026\] SHIELD: Suppressing Hallucinations In LVLM Encoders via Bias and Vulnerability Defense](../../ICLR2026/hallucination/shield_suppressing_hallucinations_in_lvlm_encoders_via_bias_and_vulnerability_de.md)
-- [\[ACL 2026\] Distorted or Fabricated? A Survey on Hallucination in Video LLMs](../../ACL2026/hallucination/distorted_or_fabricated_a_survey_on_hallucination_in_video_llms.md)
-- [\[ACL 2026\] Hallucination Detection in LLMs with Topological Divergence on Attention Graphs](../../ACL2026/hallucination/hallucination_detection_in_llms_with_topological_divergence_on_attention_graphs.md)
+- [\[ACL 2025\] Mixture of Decoding: An Attention-Inspired Adaptive Decoding Strategy to Mitigate Hallucination in Multimodal LLMs](../../ACL2025/hallucination/mixture_of_decoding_an_attention-inspired_adaptive_decoding_strategy_to_mitigate.md)
 
 </div>
 

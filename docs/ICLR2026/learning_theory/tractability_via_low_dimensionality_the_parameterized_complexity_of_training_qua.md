@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Tractability via Low Dimensionality: The Parameterized Complexity of Training Quantized Neural Networks
 description: >-
-  [ICLR 2026][learning_theory][treewidth] This paper systematically investigates the (parameterized) complexity of "training fully quantized ReLU networks" for the first time. It proves that training is NP-hard even under extremely simplified architectures such as binary quantization, single output, and no hidden layers. However, by treating the **input dimens
+  [ICLR 2026][Learning Theory][Quantized Neural Networks] This paper systematically investigates the (parameterized) complexity of "training fully quantized ReLU networks" for the first time. It proves that training is NP-hard even under extremely simplified architectures such as binary quantization, single output, and no hidden layers. However, by treating the **input dimension $\alpha$** combined with network width (or more generally, treewidth) and either the output dimensio…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - treewidth
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Parameterized Complexity"
+  - "Quantized Neural Networks"
+  - "Training Complexity"
+  - "Fixed-Parameter Tractable"
+  - "treewidth"
 date: 2026-05-08
-content_hash: 2ef16b0ca5c425da
+content_hash: 36e0ab7c3aed6a9d
 ---
+
 # Tractability via Low Dimensionality: The Parameterized Complexity of Training Quantized Neural Networks
 
 **Conference**: ICLR 2026  
@@ -125,9 +130,9 @@ This is a pure complexity theory paper with **no empirical experiments**. Its "r
 
 - [\[ICLR 2026\] Parameterized Hardness of Zonotope Containment and Neural Network Verification](parameterized_hardness_of_zonotope_containment_and_neural_network_verification.md)
 - [\[ICLR 2026\] Minimax Sample Complexity of Graph Neural Networks: Lower Bounds and Structural Effects](minimax_sample_complexity_of_graph_neural_networks_lower_bounds_and_structural_e.md)
+- [\[NeurIPS 2025\] The Parameterized Complexity of Computing the VC-Dimension](../../NeurIPS2025/learning_theory/the_parameterized_complexity_of_computing_the_vc-dimension.md)
+- [\[ICLR 2026\] The Logical Expressiveness of Topological Neural Networks](the_logical_expressiveness_of_topological_neural_networks.md)
 - [\[ICLR 2026\] From Neural Networks to Logical Theories: The Correspondence between Fibring Modal Logics and Fibring Neural Networks](from_neural_networks_to_logical_theories_the_correspondence_between_fibring_moda.md)
-- [\[ICLR 2026\] Reducing Symmetry Increase in Equivariant Neural Networks](reducing_symmetry_increase_in_equivariant_neural_networks.md)
-- [\[ICLR 2026\] Random Spiking Neural Networks are Stable and Spectrally Simple](random_spiking_neural_networks_are_stable_and_spectrally_simple.md)
 
 </div>
 

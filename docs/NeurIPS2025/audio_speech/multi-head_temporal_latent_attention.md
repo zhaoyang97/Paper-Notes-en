@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multi-head Temporal Latent Attention
 description: >-
-  [NeurIPS 2025][Audio & Speech][KV cache compression] MTLA extends MLA's low-rank latent compression along the feature dimension by introducing a hyper-network that dynamically merges temporally adjacent KV vectors…
+  [NeurIPS 2025][Audio & Speech][KV cache compression] MTLA extends MLA's low-rank latent compression along the feature dimension by introducing a hyper-network that dynamically merges temporally adjacent KV vectors, achieving dual-axis compression of the KV cache across both feature and temporal dimensions. Combined with a stride-aware causal mask to ensure training–inference consistency, MTLA achieves 4.29× speedup and 6.58× memory reduction on speech translation and related…
 tags:
   - "NeurIPS 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "hyper-network"
   - "stride-aware causal mask"
 date: 2026-05-08
-content_hash: 79e2e1735aa1baaa
+content_hash: bce56c5384d552d0
 ---
 
 # Multi-head Temporal Latent Attention
@@ -137,10 +137,10 @@ Input sequence $\mathbf{X} \in \mathbb{R}^{T \times d}$ → standard projection 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Latent Space Factorization in LoRA](latent_space_factorization_in_lora.md)
+- [\[CVPR 2025\] DualTalk: Dual-Speaker Interaction for 3D Talking Head Conversations](../../CVPR2025/audio_speech/dualtalk_dual-speaker_interaction_for_3d_talking_head_conversations.md)
 - [\[NeurIPS 2025\] Efficient Speech Language Modeling via Energy Distance in Continuous Latent Space](efficient_speech_language_modeling_via_energy_distance_in_continuous_latent_spac.md)
-- [\[ICCV 2025\] Latent Swap Joint Diffusion for 2D Long-Form Latent Generation](../../ICCV2025/audio_speech/latent_swap_joint_diffusion_for_2d_long-form_latent_generation.md)
-- [\[NeurIPS 2025\] MGE-LDM: Joint Latent Diffusion for Simultaneous Music Generation and Source Extraction](mge-ldm_joint_latent_diffusion_for_simultaneous_music_generation_and_source_extr.md)
 - [\[AAAI 2026\] Multi-granularity Interactive Attention Framework for Residual Hierarchical Pronunciation Assessment](../../AAAI2026/audio_speech/multi-granularity_interactive_attention_framework_for_residual_hierarchical_pron.md)
+- [\[NeurIPS 2025\] MGE-LDM: Joint Latent Diffusion for Simultaneous Music Generation and Source Extraction](mge-ldm_joint_latent_diffusion_for_simultaneous_music_generation_and_source_extr.md)
 
 </div>
 

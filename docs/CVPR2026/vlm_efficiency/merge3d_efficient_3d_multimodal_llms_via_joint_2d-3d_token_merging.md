@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Merge3D: Efficient 3D Multimodal LLMs via Joint 2D-3D Token Merging
 description: >-
-  [CVPR 2026][Model Compression][Inference Acceleration] Merge3D introduces a semantic-geometric joint token merger (SemGeo Merger) for 3D video MLLMs with "2D semantic + 3D geometric" dual encoders. It uses 2D attention to select semantically salient main tokens and utilizes joint 2D×3D similarity to merge context tokens into spatial neighborhoods. While reducing visual tok
+  [CVPR 2026][Multimodal Efficiency][3D Multimodal LLM] Merge3D introduces a semantic-geometric joint token merger (SemGeo Merger) for 3D video MLLMs with "2D semantic + 3D geometric" dual encoders. It uses 2D attention to select semantically salient main tokens and utilizes joint 2D×3D similarity to merge context tokens into spatial neighborhoods. While reducing visual tokens by up to 70% and achieving ~3× acceleration, it preserves performance in 3D grounding, description…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Inference Acceleration
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "3D Multimodal LLM"
+  - "Visual Token Merging"
+  - "Geometry-Aware Compression"
+  - "Dual Encoder"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: 33b00e79622601a7
+content_hash: 64df31bf197b583d
 ---
+
 # Merge3D: Efficient 3D Multimodal LLMs via Joint 2D-3D Token Merging
 
 **Conference**: CVPR 2026  
@@ -131,10 +136,10 @@ CV-Bench Average Accuracy (5% Retention): Merge3D 74.8% vs Visionzip-2D 68.9% / 
 ## Related Papers
 
 - [\[CVPR 2026\] MeToM: Metadata-Guided Token Merging for Efficient Video LLMs](metom_metadata-guided_token_merging_for_efficient_video_llms.md)
-- [\[CVPR 2026\] Mining Attribute Subspaces for Efficient Fine-tuning of 3D Foundation Models](mining_attribute_subspaces_for_efficient_fine-tuning_of_3d_foundation_models.md)
-- [\[CVPR 2026\] PlanaReLoc: Camera Relocalization in 3D Planar Primitives via Region-Based Structure Matching](planareloc_camera_relocalization_in_3d_planar_primitives_via_region-based_struct.md)
-- [\[CVPR 2026\] CoIn: Coverage and Informativeness-Guided Token Reduction for Efficient Large Multimodal Models](coin_coverage_and_informativeness-guided_token_reduction_for_efficient_large_mul.md)
+- [\[CVPR 2026\] ViLearn: Accelerating Training Convergence of Image-to-3D Generation via Visibility Learning](vilearn_accelerating_training_convergence_of_image-to-3d_generation_via_visibili.md)
 - [\[CVPR 2026\] Co-Me: Confidence Guided Token Merging for Visual Geometric Transformers](co-me_confidence_guided_token_merging_for_visual_geometric_transformers.md)
+- [\[CVPR 2026\] Saliency-Driven Token Merging for Vision Transformers](saliency-driven_token_merging_for_vision_transformers.md)
+- [\[CVPR 2026\] HTTM: Head-wise Temporal Token Merging for Faster VGGT](httm_head-wise_temporal_token_merging_for_faster_vggt.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] UI-Ins: Enhancing GUI Grounding with Multi-Perspective Instruction-as-Reasoning
 description: >-
-  [ICLR 2026][LLM Agent][GUI grounding] This paper upgrades "natural language instructions" from passive inputs to active reasoning paths (Instruction-as-Reasoning). It uses a data pipeline to clean noisy annotations and expand each instruction into four perspectives: appearance, function, location, and intent. Subsequently, SFT is employed to teach the mode
+  [ICLR 2026][LLM Agent][GUI grounding] This paper upgrades "natural language instructions" from passive inputs to active reasoning paths (Instruction-as-Reasoning). It uses a data pipeline to clean noisy annotations and expand each instruction into four perspectives: appearance, function, location, and intent. Subsequently, SFT is employed to teach the model to treat "rewriting instructions into a specific perspective" as explicit reasoning, followed by GRPO to enable the mode…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - GUI grounding
-  - SFT+GRPO
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "GUI grounding"
+  - "Multi-perspective instructions"
+  - "Instruction-as-Reasoning"
+  - "SFT+GRPO"
+  - "Data cleaning"
 date: 2026-05-08
-content_hash: f086935e84d7a1c3
+content_hash: 75c008b67972d6b3
 ---
+
 # UI-Ins: Enhancing GUI Grounding with Multi-Perspective Instruction-as-Reasoning
 
 **Conference**: ICLR 2026  
@@ -139,10 +143,10 @@ Online agent: Using UI-Ins-7B as executor and GPT-5 as planner, a success rate o
 ## Related Papers
 
 - [\[CVPR 2026\] Towards GUI Agents: Vision-Language Diffusion Models for GUI Grounding](../../CVPR2026/llm_agent/towards_gui_agents_vision-language_diffusion_models_for_gui_grounding.md)
-- [\[ICLR 2026\] An Information Theoretic Perspective on Agentic System Design](an_information_theoretic_perspective_on_agentic_system_design.md)
+- [\[ICLR 2026\] GUI-Shift: Enhancing VLM-Based GUI Agents through Self-supervised Reinforcement Learning](gui-shift_enhancing_vlm-based_gui_agents_through_self-supervised_reinforcement_l.md)
 - [\[CVPR 2026\] BAMI: Training-Free Bias Mitigation in GUI Grounding](../../CVPR2026/llm_agent/bami_training-free_bias_mitigation_in_gui_grounding.md)
-- [\[ICLR 2026\] MC-Search: Evaluating and Enhancing Multimodal Agentic Search with Structured Long Reasoning Chains](mc-search_evaluating_and_enhancing_multimodal_agentic_search_with_structured_lon.md)
 - [\[NeurIPS 2025\] BTL-UI: Blink-Think-Link Reasoning Model for GUI Agent](../../NeurIPS2025/llm_agent/btlui_blinkthinklink_reasoning_model_for_gui_agent.md)
+- [\[ICLR 2026\] An Information Theoretic Perspective on Agentic System Design](an_information_theoretic_perspective_on_agentic_system_design.md)
 
 </div>
 

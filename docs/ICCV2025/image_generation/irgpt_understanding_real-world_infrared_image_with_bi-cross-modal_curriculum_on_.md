@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] IRGPT: Understanding Real-world Infrared Image with Bi-cross-modal Curriculum on Large-scale Benchmark
 description: >-
-  [ICCV 2025][Image Generation][Infrared Image] This paper proposes IRGPT, the first multimodal large language model grounded in real-world infrared images. It introduces IR-TD…
+  [ICCV 2025][Image Generation][Infrared Image] This paper proposes IRGPT, the first multimodal large language model grounded in real-world infrared images. It introduces IR-TD, a large-scale infrared-text dataset containing 260K+ image-text pairs, and designs a Bi-cross-modal Curriculum transfer learning strategy. IRGPT achieves state-of-the-art performance across 9 infrared task benchmarks, with zero-shot psum outperforming the baseline InternVL2-8B by 76.35.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Cross-modal Transfer"
   - "Vision-Language Model"
 date: 2026-05-08
-content_hash: 64de6f5e2ae6b6b8
+content_hash: 33950df3ac6da850
 ---
 
 # IRGPT: Understanding Real-world Infrared Image with Bi-cross-modal Curriculum on Large-scale Benchmark
@@ -159,9 +159,9 @@ The stratified ascending-random strategy achieves the best results, balancing st
 
 - [\[ICCV 2025\] Rethinking Cross-Modal Interaction in Multimodal Diffusion Transformers](rethinking_cross-modal_interaction_in_multimodal_diffusion_transformers.md)
 - [\[ICCV 2025\] StyleMotif: Multi-Modal Motion Stylization using Style-Content Cross Fusion](stylemotif_multi-modal_motion_stylization_using_style-content_cross_fusion.md)
-- [\[CVPR 2026\] Cross-Modal Emotion Transfer for Emotion Editing in Talking Face Video](../../CVPR2026/image_generation/cross-modal_emotion_transfer_for_emotion_editing_in_talking_face_video.md)
-- [\[AAAI 2026\] Multi-Aspect Cross-modal Quantization for Generative Recommendation](../../AAAI2026/image_generation/multi-aspect_cross-modal_quantization_for_generative_recommendation.md)
-- [\[NeurIPS 2025\] UltraHR-100K: Enhancing UHR Image Synthesis with A Large-Scale High-Quality Dataset](../../NeurIPS2025/image_generation/ultrahr-100k_enhancing_uhr_image_synthesis_with_a_large-scale_high-quality_datas.md)
+- [\[CVPR 2025\] ORIDa: Object-Centric Real-World Image Composition Dataset](../../CVPR2025/image_generation/orida_object-centric_real-world_image_composition_dataset.md)
+- [\[CVPR 2025\] UniReal: Universal Image Generation and Editing via Learning Real-world Dynamics](../../CVPR2025/image_generation/unireal_universal_image_generation_and_editing_via_learning_real-world_dynamics.md)
+- [\[ECCV 2024\] XPSR: Cross-modal Priors for Diffusion-based Image Super-Resolution](../../ECCV2024/image_generation/xpsr_crossmodal_priors_for_diffusionbased_image_superresolut.md)
 
 </div>
 

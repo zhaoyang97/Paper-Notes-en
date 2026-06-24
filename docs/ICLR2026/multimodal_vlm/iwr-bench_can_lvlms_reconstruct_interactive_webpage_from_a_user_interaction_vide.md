@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] IWR-Bench: Can LVLMs Reconstruct Interactive Webpage from a User Interaction Video?
 description: >-
-  [ICLR 2026][Multimodal VLM][Agent-as-a-Judge] This paper introduces IWR-Bench, the first benchmark for Large Vision-Language Models (LVLMs) to reconstruct **interactive** webpages from "user interaction videos + complete static assets." Using an agent-as-a-judge protocol to evaluate both functional correctness and visual fidelity, experiments on 28 models reveal t
+  [ICLR 2026][Multimodal VLM][LVLM Evaluation] This paper introduces IWR-Bench, the first benchmark for Large Vision-Language Models (LVLMs) to reconstruct **interactive** webpages from "user interaction videos + complete static assets." Using an agent-as-a-judge protocol to evaluate both functional correctness and visual fidelity, experiments on 28 models reveal that even the strongest model scores only 36.35, with functionality scores (IFS 24.39%) significantly lagging behind…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Agent-as-a-Judge
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "LVLM Evaluation"
+  - "Webpage Reconstruction"
+  - "Video Understanding"
+  - "Interactive Code Generation"
+  - "Agent-as-a-Judge"
 date: 2026-05-08
-content_hash: 9feffa6d7a7fa47c
+content_hash: 39ee9e6da638727e
 ---
+
 # IWR-Bench: Can LVLMs Reconstruct Interactive Webpage from a User Interaction Video?
 
 **Conference**: ICLR 2026  
@@ -122,10 +127,17 @@ The high weight for IFS ensures that "unreachable states" are appropriately pena
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[CVPR 2026\] Interactive Episodic Memory with User Feedback](../../CVPR2026/multimodal_vlm/interactive_episodic_memory_with_user_feedback.md)
+- [\[ICLR 2026\] ODI-Bench: Can MLLMs Understand Immersive Omnidirectional Environments?](odi-bench_can_mllms_understand_immersive_omnidirectional_environments.md)
+- [\[ICLR 2026\] MMDuet2: Enhancing Proactive Interaction of Video MLLMs with Multi-Turn Reinforcement Learning](mmduet2_enhancing_proactive_interaction_of_video_mllms_with_multi-turn_reinforce.md)
+- [\[NeurIPS 2025\] Video-SafetyBench: A Benchmark for Safety Evaluation of Video LVLMs](../../NeurIPS2025/multimodal_vlm/video-safetybench_a_benchmark_for_safety_evaluation_of_video_lvlms.md)
+- [\[CVPR 2026\] HAVE-Bench: Hierarchical Audio-Visual Evaluation from Perception to Interaction](../../CVPR2026/multimodal_vlm/have-bench_hierarchical_audio-visual_evaluation_from_perception_to_interaction.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Interactive Episodic Memory with User Feedback](../../CVPR2026/multimodal_vlm/interactive_episodic_memory_with_user_feedback.md)

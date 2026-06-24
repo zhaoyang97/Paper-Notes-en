@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Supplement Generation Training for Enhancing Agentic Task Performance
 description: >-
-  [ACL 2026][LLM Agent][DPO] SGT (Supplement Generation Training) trains a small LLM (1.7B) to generate instance-specific supplemental text (reasoning clues, summaries, error reminders, etc.). When appended to the input, these supplements allow a frozen large Actor model to solve tasks more effectively, achieving an average improvement of 21% acro
+  [ACL 2026 Findings][LLM Agent][Supplement Generation Training] SGT (Supplement Generation Training) trains a small LLM (1.7B) to generate instance-specific supplemental text (reasoning clues, summaries, error reminders, etc.). When appended to the input, these supplements allow a frozen large Actor model to solve tasks more effectively, achieving an average improvement of 21% across 5 benchmarks without modifying the Actor's parameters.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - DPO
+  - "ACL 2026 Findings"
+  - "LLM Agent"
+  - "Supplement Generation Training"
+  - "Prompt Optimization"
+  - "Small Model Assistant"
+  - "DPO"
+  - "Agentic Tasks"
 date: 2026-05-08
-content_hash: fa85e7de8994df9c
+content_hash: 731ffb2f36dcb3bb
 ---
+
 # Supplement Generation Training for Enhancing Agentic Task Performance
 
 **Conference**: ACL 2026 Findings  
@@ -136,10 +141,10 @@ The SFT phase employs standard cross-entropy loss. The DPO phase utilizes DPO lo
 ## Related Papers
 
 - [\[ICLR 2026\] PerfGuard: A Performance-Aware Agent for Visual Content Generation](../../ICLR2026/llm_agent/radiometrically_consistent_gaussian_surfels_for_inverse_rendering.md)
+- [\[ICLR 2026\] Scaling Synthetic Task Generation for Agents via Exploration](../../ICLR2026/llm_agent/scaling_synthetic_task_generation_for_agents_via_exploration.md)
 - [\[ICLR 2026\] AgentSynth: Scalable Task Generation for Generalist Computer-Use Agents](../../ICLR2026/llm_agent/agentsynth_scalable_task_generation_for_generalist_computer-use_agents.md)
+- [\[ICLR 2026\] TaskCraft: Automated Generation of Agentic Tasks](../../ICLR2026/llm_agent/taskcraft_automated_generation_of_agentic_tasks.md)
 - [\[ACL 2026\] GOAT: A Training Framework for Goal-Oriented Agent with Tools](goat_a_training_framework_for_goal-oriented_agent_with_tools.md)
-- [\[ICLR 2026\] MC-Search: Evaluating and Enhancing Multimodal Agentic Search with Structured Long Reasoning Chains](../../ICLR2026/llm_agent/mc-search_evaluating_and_enhancing_multimodal_agentic_search_with_structured_lon.md)
-- [\[ACL 2025\] Agentic Reasoning: A Streamlined Framework for Enhancing LLM Reasoning with Agentic Tools](../../ACL2025/llm_agent/agentic_reasoning_tools.md)
 
 </div>
 

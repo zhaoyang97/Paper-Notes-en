@@ -4,16 +4,17 @@ title: >-
 description: >-
   [CVPR 2026][3D Vision][test-time optimization] A Test-Time Constrained Optimization (TCO) framework is proposed. Without retraining or modifying pre-trained multiview Transformer architectures, it significantly improves 3D reconstruction accuracy by optimizing priors (camera pose, intrinsics, depth) as prediction constraints during inference.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - test-time optimization
-  - 3D reconstruction
-  - multiview transformer
-  - camera pose
-  - LoRA
+  - "CVPR 2026"
+  - "3D Vision"
+  - "test-time optimization"
+  - "3D reconstruction"
+  - "multiview transformer"
+  - "camera pose"
+  - "LoRA"
 date: 2026-05-08
-content_hash: 60b0a295aa877e00
+content_hash: 38804b6e647c99c8
 ---
+
 # Learning 3D Reconstruction with Priors in Test Time
 
 **Conference**: CVPR 2026  
@@ -129,9 +130,9 @@ Test-time optimization loss = Self-supervised compatibility objective + $\sum$ P
 
 - [\[CVPR 2026\] tttLRM: Test-Time Training for Long Context and Autoregressive 3D Reconstruction](tttlrm_test-time_training_for_long_context_and_autoregressive_3d_reconstruction.md)
 - [\[CVPR 2026\] ZipMap: Linear-Time Stateful 3D Reconstruction via Test-Time Training](zipmap_linear-time_stateful_3d_reconstruction_via_test-time_training.md)
+- [\[CVPR 2026\] Scal3R: Scalable Test-Time Training for Large-Scale 3D Reconstruction](scal3r_scalable_test-time_training_for_large-scale_3d_reconstruction.md)
 - [\[CVPR 2026\] Low-Rank Test-Time Training for Pre-Trained Point Cloud Models](low-rank_test-time_training_for_pre-trained_point_cloud_models.md)
-- [\[CVPR 2026\] Rethinking Dense Optical Flow without Test-Time Scaling](rethinking_dense_optical_flow_without_test-time_scaling.md)
-- [\[CVPR 2026\] Scene Reconstruction as Mapping Priors for 3D Detection](scene_reconstruction_as_mapping_priors_for_3d_detection.md)
+- [\[ICLR 2026\] TTT3R: 3D Reconstruction as Test-Time Training](../../ICLR2026/3d_vision/ttt3r_3d_reconstruction_as_test-time_training.md)
 
 </div>
 

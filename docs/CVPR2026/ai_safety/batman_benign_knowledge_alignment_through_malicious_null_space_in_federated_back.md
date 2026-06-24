@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Batman: Benign Knowledge Alignment Through Malicious Null Space in Federated Backdoor Attack
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] Addressing the dilemma in federated backdoor attacks where "aligning benign knowledge weakens the attack, while failing to align makes it easily detected by defenses," Batman utilizes SVD to compress malicious knowledge into the dominant directions of parameter matrices. It aligns benign knowledge within the orthogonal
+  [CVPR 2026][AI Safety][Federated Learning] Addressing the dilemma in federated backdoor attacks where "aligning benign knowledge weakens the attack, while failing to align makes it easily detected by defenses," Batman utilizes SVD to compress malicious knowledge into the dominant directions of parameter matrices. It aligns benign knowledge within the orthogonal "malicious null space," significantly enhancing stealthiness while maintaining backdoor functionality. It achieves h…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Federated Learning"
+  - "Backdoor Attack"
+  - "Null Space"
+  - "Benign Knowledge Alignment"
+  - "Stealthiness"
 date: 2026-05-08
-content_hash: e41d52e193baca0a
+content_hash: 65c3a7704debedc6
 ---
+
 # Batman: Benign Knowledge Alignment Through Malicious Null Space in Federated Backdoor Attack
 
 **Conference**: CVPR 2026  
@@ -137,11 +143,11 @@ Setup: 100 clients, 100 communication rounds, 10 compromised clients, 10% sampli
 
 ## Related Papers
 
+- [\[ICCV 2025\] Mind the Cost of Scaffold! Benign Clients May Even Become Accomplices of Backdoor Attack](../../ICCV2025/ai_safety/mind_the_cost_of_scaffold_benign_clients_may_even_become_accomplices_of_backdoor.md)
+- [\[CVPR 2025\] Detecting Backdoor Attacks in Federated Learning via Direction Alignment Inspection](../../CVPR2025/ai_safety/detecting_backdoor_attacks_in_federated_learning_via_direction_alignment_inspect.md)
 - [\[CVPR 2025\] Geometric Knowledge-Guided Localized Global Distribution Alignment for Federated Learning](../../CVPR2025/ai_safety/geometric_knowledge-guided_localized_global_distribution_alignment_for_federated.md)
 - [\[CVPR 2026\] Eliminate Distance Differences Induced by Backdoor Attacks: Layer-Selective Training and Clipping to Mask Backdoor Models](eliminate_distance_differences_induced_by_backdoor_attacks_layer-selective_train.md)
-- [\[CVPR 2025\] Infighting in the Dark: Multi-Label Backdoor Attack in Federated Learning](../../CVPR2025/ai_safety/infighting_in_the_dark_multi-label_backdoor_attack_in_federated_learning.md)
 - [\[ICML 2026\] Extending Fair Null-Space Projections for Continuous Attributes to Kernel Methods](../../ICML2026/ai_safety/extending_fair_null-space_projections_for_continuous_attributes_to_kernel_method.md)
-- [\[CVPR 2026\] FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching Vision-Language-Action Models](flowhijack_a_dynamics-aware_backdoor_attack_on_flow-matching_vision-language-act.md)
 
 </div>
 

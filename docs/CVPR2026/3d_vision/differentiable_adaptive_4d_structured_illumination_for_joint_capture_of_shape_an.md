@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Differentiable Adaptive 4D Structured Illumination for Joint Capture of Shape and Reflectance
 description: >-
-  [CVPR 2026][3D Vision][GGX SVBRDF] Using a unified "spatial-angular 4D structured light" hardware (LED array + LCD mask + single camera), this work **differentiably optimizes the next set of light/mask patterns in real-time** during the capture process to minimize pixel-wise depth uncertainty. This enables efficient joint reconstruction of object shape
+  [CVPR2026][3D Vision][4D Structured Light] Using a unified "spatial-angular 4D structured light" hardware (LED array + LCD mask + single camera), this work **differentiably optimizes the next set of light/mask patterns in real-time** during the capture process to minimize pixel-wise depth uncertainty. This enables efficient joint reconstruction of object shape (depth map) and reflectance (GGX SVBRDF) from a single viewpoint, reducing exposure time by up to 100$\times$ and tot…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - GGX SVBRDF
+  - "CVPR2026"
+  - "3D Vision"
+  - "4D Structured Light"
+  - "Differentiable Capture"
+  - "Adaptive Illumination"
+  - "Depth Uncertainty"
+  - "GGX SVBRDF"
 date: 2026-05-08
-content_hash: 84d0ac62e8006a14
+content_hash: 43f4a6a9cac039b1
 ---
+
 # Differentiable Adaptive 4D Structured Illumination for Joint Capture of Shape and Reflectance
 
 **Conference**: CVPR2026  
@@ -147,10 +152,10 @@ Multi-LED lighting reduces RMSE and increases completeness by filling shadows fr
 ## Related Papers
 
 - [\[CVPR 2026\] D-Prism: Differentiable Primitives for Structured Dynamic Modeling](d-prism_differentiable_primitives_for_structured_dynamic_modeling.md)
-- [\[CVPR 2026\] Illumination-Consistent Human-Scene Reconstruction from Monocular Video](illumination-consistent_human-scene_reconstruction_from_monocular_video.md)
-- [\[CVPR 2026\] Color-Encoded Illumination for High-Speed Volumetric Scene Reconstruction](color-encoded_illumination_for_high-speed_volumetric_scene_reconstruction.md)
-- [\[CVPR 2026\] JRM: Joint Reconstruction Model for Multiple Objects without Alignment](jrm_joint_reconstruction_model_for_multiple_objects_without_alignment.md)
-- [\[CVPR 2026\] Hermite Radial Basis Function for Surface Reconstruction via Differentiable Rendering](hermite_radial_basis_function_for_surface_reconstruction_via_differentiable_rend.md)
+- [\[CVPR 2026\] Unified Primitive Proxies for Structured Shape Completion](unified_primitive_proxies_for_structured_shape_completion.md)
+- [\[CVPR 2026\] MoCapAnything: Unified 3D Motion Capture for Arbitrary Skeletons from Monocular Videos](mocapanything_unified_3d_motion_capture_for_arbitrary_skeletons_from_monocular_v.md)
+- [\[CVPR 2026\] Hierarchical Point-Patch Fusion with Adaptive Patch Codebook for 3D Shape Anomaly Detection](hierarchical_point-patch_fusion_with_adaptive_patch_codebook_for_3d_shape_anomal.md)
+- [\[ICLR 2026\] Joint Optimization for 4D Human-Scene Reconstruction in the Wild](../../ICLR2026/3d_vision/joint_optimization_for_4d_human-scene_reconstruction_in_the_wild.md)
 
 </div>
 

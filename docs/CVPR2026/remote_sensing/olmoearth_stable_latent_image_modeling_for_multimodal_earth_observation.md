@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OlmoEarth: Stable Latent Image Modeling for Multimodal Earth Observation
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] OlmoEarth utilizes a self-supervised recipe designed specifically for Earth Observation (Latent MIM Lite with frozen random projections as target encoders + modality-aware masking + intra-modality contrastive loss). This approach stably trains spatio-temporal multimodal foundation models in latent space. It outperforms
+  [CVPR 2026][Remote Sensing][Earth Observation] OlmoEarth utilizes a self-supervised recipe designed specifically for Earth Observation (Latent MIM Lite with frozen random projections as target encoders + modality-aware masking + intra-modality contrastive loss). This approach stably trains spatio-temporal multimodal foundation models in latent space. It outperforms 12 other foundation models on 15 out of 24 embedding tasks and 19 out of 29 fine-tuning tasks…
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Earth Observation"
+  - "Foundation Models"
+  - "Latent Masked Modeling"
+  - "Multimodal"
+  - "Stable Training"
 date: 2026-05-08
-content_hash: 5d19efd5d533c02f
+content_hash: c73748fe54532c27
 ---
+
 # OlmoEarth: Stable Latent Image Modeling for Multimodal Earth Observation
 
 **Conference**: CVPR 2026  
@@ -138,8 +144,8 @@ Pre-training data consists of 285,288 samples (2.56km $\times$ 2.56km over 1 yea
 - [\[CVPR 2026\] RAMEN: Resolution-Adjustable Multimodal Encoder for Earth Observation](ramen_resolution-adjustable_multimodal_encoder_for_earth_observation.md)
 - [\[CVPR 2026\] NeighborMAE: Exploiting Spatial Dependencies between Neighboring Earth Observation Images in Masked Autoencoders Pretraining](neighbormae_exploiting_spatial_dependencies_between_neighboring_earth_observatio.md)
 - [\[ICLR 2026\] Earth-Agent: Unlocking the Full Landscape of Earth Observation with Agents](../../ICLR2026/remote_sensing/earth-agent_unlocking_the_full_landscape_of_earth_observation_with_agents.md)
-- [\[CVPR 2026\] UniChange: Unifying Change Detection with Multimodal Large Language Model](unichange_unifying_change_detection_with_multimodal_large_language_model.md)
-- [\[ICML 2025\] High-Resolution Live Fuel Moisture Content (LFMC) Maps for Wildfire Risk from Multimodal Earth Observation Data](../../ICML2025/remote_sensing/high-resolution_live_fuel_moisture_content_lfmc_maps_for_wildfire_risk_from_mult.md)
+- [\[CVPR 2026\] ChangeBridge: Spatiotemporal Image Generation with Multimodal Controls for Remote Sensing](changebridge_spatiotemporal_image_generation_with_multimodal_controls_for_remote.md)
+- [\[CVPR 2026\] TriSim: Tri-Dimensional Similarity Modeling with Extreme Value Theory for False-Negative Mitigation in Remote Sensing Image-Text Retrieval](trisim_tri-dimensional_similarity_modeling_with_extreme_value_theory_for_false-n.md)
 
 </div>
 

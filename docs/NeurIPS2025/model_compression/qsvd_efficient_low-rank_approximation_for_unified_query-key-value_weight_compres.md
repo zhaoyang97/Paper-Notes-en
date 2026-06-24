@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] QSVD: Efficient Low-Rank Approximation for Unified Query-Key-Value Weight Compression
 description: >-
-  [NeurIPS 2025][Model Compression][VLM compression] This paper proposes QSVD, which performs SVD on the joint QKV weight matrix and shares a single down-projection matrix across Q, K…
+  [NeurIPS 2025 Spotlight][Model Compression][VLM compression] This paper proposes QSVD, which performs SVD on the joint QKV weight matrix and shares a single down-projection matrix across Q, K, and V to reduce KV cache size and computational overhead. Combined with importance-score-based adaptive rank allocation and a quantization scheme compatible with low-rank decomposition, QSVD achieves over 10% accuracy improvement on VLMs at lower hardware cost.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Model Compression"
   - "VLM compression"
   - "SVD"
@@ -12,7 +12,7 @@ tags:
   - "quantization"
   - "low-rank approximation"
 date: 2026-05-08
-content_hash: c7a3e1e293eda125
+content_hash: fdd4a942d5eca8fe
 ---
 
 # QSVD: Efficient Low-Rank Approximation for Unified Query-Key-Value Weight Compression
@@ -150,11 +150,11 @@ No training is required. All operations constitute post-training compression (PT
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Accurate and Efficient Low-Rank Model Merging in Core Space](accurate_and_efficient_low-rank_model_merging_in_core_space.md)
-- [\[NeurIPS 2025\] Beyond Higher Rank: Token-wise Input-Output Projections for Efficient Low-Rank Adaptation](beyond_higher_rank_token-wise_input-output_projections_for_efficient_low-rank_ad.md)
-- [\[NeurIPS 2025\] A*-Thought: Efficient Reasoning via Bidirectional Compression for Low-Resource Settings](a-thought_efficient_reasoning_via_bidirectional_compression_for_low-resource_set.md)
-- [\[NeurIPS 2025\] RefLoRA: Refactored Low-Rank Adaptation for Efficient Fine-Tuning of Large Models](reflora_refactored_low-rank_adaptation_for_efficient_fine-tuning_of_large_models.md)
+- [\[ICLR 2026\] WSVD: Weighted Low-Rank Approximation for Fast and Efficient Execution of Low-Precision Vision-Learning Models](../../ICLR2026/model_compression/wsvd_weighted_low-rank_approximation_for_fast_and_efficient_execution_of_low-pre.md)
+- [\[ACL 2025\] SCOPE: Optimizing Key-Value Cache Compression in Long-context Generation](../../ACL2025/model_compression/scope_optimizing_key-value_cache_compression_in_long-context_generation.md)
+- [\[ACL 2025\] Assigning Distinct Roles to Quantized and Low-Rank Matrices Toward Optimal Weight Decomposition](../../ACL2025/model_compression/assigning_distinct_roles_to_quantized_and_low-rank_matrices_toward_optimal_weigh.md)
 - [\[ICLR 2026\] FreqKV: Key-Value Compression in Frequency Domain for Context Window Extension](../../ICLR2026/model_compression/freqkv_key-value_compression_in_frequency_domain_for_context_window_extension.md)
+- [\[ICLR 2026\] Revisiting Weight Regularization for Low-Rank Continual Learning](../../ICLR2026/model_compression/revisiting_weight_regularization_for_low-rank_continual_learning.md)
 
 </div>
 

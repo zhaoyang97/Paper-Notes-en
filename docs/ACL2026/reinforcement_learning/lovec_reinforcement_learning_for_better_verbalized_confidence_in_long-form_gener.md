@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] LoVeC: Reinforcement Learning for Better Verbalized Confidence in Long-Form Generations
 description: >-
-  [ACL 2026][Reinforcement Learning][GRPO] LoVeC trains LLMs to append a numerical `<confidence>` tag (0–10) after each sentence during long-form generation. Using GRPO (online, requiring an oracle fact-checker) or DPO (offline preference pairs), the model aligns these tags with factuality determined by GPT-4o. This enables single-pass decoding to output calibr
+  [ACL 2026][Reinforcement Learning][Long-form Generation] LoVeC trains LLMs to append a numerical `<confidence>` tag (0–10) after each sentence during long-form generation. Using GRPO (online, requiring an oracle fact-checker) or DPO (offline preference pairs), the model aligns these tags with factuality determined by GPT-4o. This enables single-pass decoding to output calibratable, machine-parseable confidence scores, outperforming the Prev. SOTA LUQ across Brier/ECE/Spearman…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - GRPO
-  - DPO
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Long-form Generation"
+  - "Verbalized Confidence"
+  - "GRPO"
+  - "DPO"
+  - "Factuality Calibration"
 date: 2026-05-08
-content_hash: 9ec486b4448cc863
+content_hash: 838ea1a096c14c97
 ---
+
 # LoVeC: Reinforcement Learning for Better Verbalized Confidence in Long-Form Generations
 
 **Conference**: ACL 2026  
@@ -147,16 +151,16 @@ GRPO dynamics: Mean reward improved from 13.86 to 29.83 (5667 steps / 1 epoch), 
 - **Value**: ⭐⭐⭐⭐ 20× speedup with significant calibration gains is highly attractive for production; the reward design and preference construction are reusable paradigms.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] UniCreative: Unifying Long-form Logic and Short-form Sparkle via Reference-Free Reinforcement Learning](unicreative_unifying_long-form_logic_and_short-form_sparkle_via_reference-free_r.md)
 - [\[ACL 2026\] ImpRIF: Stronger Implicit Reasoning Leads to Better Complex Instruction Following](imprif_stronger_implicit_reasoning_leads_to_better_complex_instruction_following.md)
 - [\[ICML 2026\] CAMEL: Confidence-Gated Reflection for Reward Modeling](../../ICML2026/reinforcement_learning/camel_confidence-gated_reflection_for_reward_modeling.md)
+- [\[ICLR 2026\] RLAC: Reinforcement Learning with Adversarial Critic for Free-Form Generation Tasks](../../ICLR2026/reinforcement_learning/rlac_reinforcement_learning_with_adversarial_critic_for_free-form_generation_tas.md)
 - [\[ACL 2026\] A Goal Without a Plan Is Just a Wish: Efficient and Effective Global Planner Training for Long-Horizon Agent Tasks (EAGLET)](a_goal_without_a_plan_is_just_a_wish_efficient_and_effective_global_planner_trai.md)
-- [\[ICLR 2026\] LoongRL: Reinforcement Learning for Advanced Reasoning over Long Contexts](../../ICLR2026/reinforcement_learning/loongrl_rl_for_reasoning_long_contexts.md)
 
 </div>
 

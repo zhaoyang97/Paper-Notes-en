@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Mamba Learns in Context: Structure-Aware Domain Generalization for Multi-Task Point Cloud Understanding
 description: >-
-  [CVPR 2026][3D Vision][Mamba] Ours proposes the SADG framework, which introduces Mamba into in-context learning for multi-task point cloud domain generalization for the first time. Through structure-aware serialization (Centroid Distance Spectrogram + Geodesic Curvature Spectrogram), hierarchical domain-aware modeling, and spectral graph alignment,
+  [CVPR 2026][3D Vision][Point cloud understanding] Ours proposes the SADG framework, which introduces Mamba into in-context learning for multi-task point cloud domain generalization for the first time. Through structure-aware serialization (Centroid Distance Spectrogram + Geodesic Curvature Spectrogram), hierarchical domain-aware modeling, and spectral graph alignment, it comprehensively outperforms SOTA in reconstruction, denoising, and registration tasks.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Mamba
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Point cloud understanding"
+  - "Domain generalization"
+  - "Mamba"
+  - "In-context learning"
+  - "Structure-aware serialization"
 date: 2026-05-08
-content_hash: ef0e86e11e7ded0a
+content_hash: 9ed08f5a9bacce48
 ---
+
 # Mamba Learns in Context: Structure-Aware Domain Generalization for Multi-Task Point Cloud Understanding
 
 **Conference**: CVPR 2026  
@@ -157,11 +162,11 @@ Following the DG-PIC framework, it uses the AdamW optimizer with a learning rate
 
 ## Related Papers
 
+- [\[ECCV 2024\] DG-PIC: Domain Generalized Point-In-Context Learning for Point Cloud Understanding](../../ECCV2024/3d_vision/dg-pic_domain_generalized_point-in-context_learning_for_point_cloud_understandin.md)
 - [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](deformation-based_in-context_learning_for_point_cloud_understanding.md)
+- [\[AAAI 2026\] DAPointMamba: Domain Adaptive Point Mamba for Point Cloud Completion](../../AAAI2026/3d_vision/dapointmamba_domain_adaptive_point_mamba_for_point_cloud_completion.md)
+- [\[CVPR 2025\] PMA: Towards Parameter-Efficient Point Cloud Understanding via Point Mamba Adapter](../../CVPR2025/3d_vision/pma_towards_parameter-efficient_point_cloud_understanding_via_point_mamba_adapte.md)
 - [\[CVPR 2026\] 3D-Aware Multi-Task Learning with Cross-View Correlations for Dense Scene Understanding](3d-aware_multi-task_learning_with_cross-view_correlations_for_dense_scene_unders.md)
-- [\[CVPR 2026\] MHopReg: Efficient Hierarchical Multi-Hop Graph Search for Point Cloud Registration](mhopreg_efficient_hierarchical_multi-hop_graph_search_for_point_cloud_registrati.md)
-- [\[CVPR 2026\] Geometric-Aware Hypergraph Reasoning for Novel Class Discovery in Point Cloud Segmentation](geometric-aware_hypergraph_reasoning_for_novel_class_discovery_in_point_cloud_se.md)
-- [\[CVPR 2026\] Ghosts in the Point Clouds: De-glaring LiDAR in the Transient Domain](ghosts_in_the_point_clouds_de-glaring_lidar_in_the_transient_domain.md)
 
 </div>
 

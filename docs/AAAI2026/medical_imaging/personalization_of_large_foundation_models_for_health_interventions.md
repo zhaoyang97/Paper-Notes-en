@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Personalization of Large Foundation Models for Health Interventions
 description: >-
-  [AAAI 2026][Medical Imaging][Large Foundation Models] This paper systematically analyzes four structural tensions in applying large foundation models (LFMs) to personalized health interventions…
+  [AAAI 2026][Medical Imaging][Large Foundation Models] This paper systematically analyzes four structural tensions in applying large foundation models (LFMs) to personalized health interventions, argues that LFMs cannot replace N-of-1 trials, and proposes a hybrid framework that combines LFM-based hypothesis generation with causal validation via N-of-1 trials.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -13,7 +13,7 @@ tags:
   - "Health Interventions"
   - "Digital Twins"
 date: 2026-05-08
-content_hash: 7bff903d15c510f4
+content_hash: 03ee3947ffa56a8d
 ---
 
 # Personalization of Large Foundation Models for Health Interventions

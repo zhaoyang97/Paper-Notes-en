@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multi-Class Support Vector Machine with Differential Privacy
 description: >-
-  [NeurIPS 2025][AI Safety][Differential Privacy] This paper proposes the PMSVM framework, which exploits the single-pass data access property of all-in-one multi-class SVMs. By combining weight perturbation and gradient p…
+  [NeurIPS 2025][AI Safety][Differential Privacy] This paper proposes the PMSVM framework, which exploits the single-pass data access property of all-in-one multi-class SVMs. By combining weight perturbation and gradient perturbation, PMSVM substantially reduces the privacy budget consumption of multi-class SVMs under differential privacy, achieving a superior privacy–utility trade-off.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "Privacy-Preserving Machine Learning"
   - "Gradient Perturbation"
 date: 2026-05-08
-content_hash: 3a2e1a936198deff
+content_hash: 843f53dce8c34a6c
 ---
 
 # Multi-Class Support Vector Machine with Differential Privacy
@@ -127,8 +127,8 @@ Evaluation is conducted on 6 UCI multi-class classification datasets with fixed 
 - [\[NeurIPS 2025\] Sequentially Auditing Differential Privacy](sequentially_auditing_differential_privacy.md)
 - [\[NeurIPS 2025\] Unifying Re-Identification, Attribute Inference, and Data Reconstruction Risks in Differential Privacy](unifying_re-identification_attribute_inference_and_data_reconstruction_risks_in_.md)
 - [\[NeurIPS 2025\] Differential Privacy for Euclidean Jordan Algebra with Applications to Private Symmetric Cone Programming](differential_privacy_for_euclidean_jordan_algebra_with_applications_to_private_s.md)
+- [\[ACL 2025\] Building a Long Text Privacy Policy Corpus with Multi-Class Labels](../../ACL2025/ai_safety/building_a_long_text_privacy_policy_corpus_with_multi-class_labels.md)
 - [\[NeurIPS 2025\] Mitigating Privacy-Utility Trade-off in Decentralized Federated Learning via f-Differential Privacy](mitigating_privacy-utility_trade-off_in_decentralized_federated_learning_via_f-d.md)
-- [\[NeurIPS 2025\] Rewind-to-Delete: Certified Machine Unlearning for Nonconvex Functions](rewind-to-delete_certified_machine_unlearning_for_nonconvex_functions.md)
 
 </div>
 

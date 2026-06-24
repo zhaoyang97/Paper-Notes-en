@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Medic-AD: Towards Medical Vision-Language Model's Clinical Intelligence
 description: >-
-  [CVPR 2026][Multimodal VLM][Interpretability] Medic-AD upgrades general-purpose medical VLMs into clinical intelligence models capable of lesion detection, symptom tracking, and visual explainability through a three-stage progressive training framework involving an anomaly detection token (`<Ano>`), a temporal difference reasoning token (`<Diff>`), and visual heat
+  [CVPR 2026][Multimodal VLM][Medical VLM] Medic-AD upgrades general-purpose medical VLMs into clinical intelligence models capable of lesion detection, symptom tracking, and visual explainability through a three-stage progressive training framework involving an anomaly detection token (`<Ano>`), a temporal difference reasoning token (`<Diff>`), and visual heatmaps. It achieves SOTA performance across multiple medical tasks.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Interpretability
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Medical VLM"
+  - "Anomaly Detection"
+  - "Longitudinal Tracking"
+  - "Explainability"
+  - "Heatmap"
 date: 2026-05-08
-content_hash: 19323ff0eda19d51
+content_hash: bdcff13326c3b236
 ---
+
 # Medic-AD: Towards Medical Vision-Language Model's Clinical Intelligence
 
 **Conference**: CVPR 2026  
@@ -141,11 +146,11 @@ Progressive three-stage training is employed, freezing previous modules at each 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Vision-Language Models Encode Clinical Guidelines for Concept-Based Medical Reasoning](vision-language_models_encode_clinical_guidelines_for_concept-based_medical_reas.md)
 - [\[ICML 2025\] MMedPO: Aligning Medical Vision-Language Models with Clinical-Aware Multimodal Preference Optimization](../../ICML2025/multimodal_vlm/mmedpo_aligning_medical_vision-language_models_with_clinical-aware_multimodal_pr.md)
 - [\[CVPR 2026\] Abstract 3D Perception for Spatial Intelligence in Vision-Language Models](abstract_3d_perception_for_spatial_intelligence_in_vision-language_models.md)
 - [\[CVPR 2026\] RNED: Rotary Number Encoding and Decoding for Medical VLMs](rned_rotary_number_encoding_and_decoding_for_medical_vlms.md)
 - [\[CVPR 2026\] Sparse Spectral LoRA: Routed Experts for Medical VLMs](sparse_spectral_lora_routed_experts_for_medical_vlms.md)
+- [\[CVPR 2026\] µVLM: A Vision Language Model for µNPUs](mvlm_a_vision_language_model_for_mnpus.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FlareX: A Physics-Informed Dataset for Lens Flare Removal via 2D Synthesis and 3D Rendering
 description: >-
-  [NeurIPS 2025][3D Vision][lens flare removal] This paper proposes the FlareX dataset, generated through three stages—parameterized template creation, illumination-law-guided 2D synthesis…
+  [NeurIPS 2025][3D Vision][lens flare removal] This paper proposes the FlareX dataset, generated through three stages—parameterized template creation, illumination-law-guided 2D synthesis, and physics-engine-based 3D rendering—to produce physically realistic lens flare data. Models trained on FlareX significantly outperform those trained on all prior datasets on real-world test sets.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "2D synthesis"
   - "3D rendering"
 date: 2026-05-08
-content_hash: a26b239b79ec0185
+content_hash: e63cddb27d642eee
 ---
 
 # FlareX: A Physics-Informed Dataset for Lens Flare Removal via 2D Synthesis and 3D Rendering
@@ -144,9 +144,9 @@ Uformer trained on FlareX achieves a **+1.84 dB PSNR** improvement over Flare7K+
 
 - [\[NeurIPS 2025\] UMAMI: Unifying Masked Autoregressive Models and Deterministic Rendering for View Synthesis](umami_unifying_masked_autoregressive_models_and_deterministic_rendering_for_view.md)
 - [\[NeurIPS 2025\] MPMAvatar: Learning 3D Gaussian Avatars with Accurate and Robust Physics-Based Dynamics](mpmavatar_learning_3d_gaussian_avatars_with_accurate_and_robust_physics-based_dy.md)
+- [\[CVPR 2025\] PBR-NeRF: Inverse Rendering with Physics-Based Neural Fields](../../CVPR2025/3d_vision/pbr-nerf_inverse_rendering_with_physics-based_neural_fields.md)
 - [\[CVPR 2026\] Dynamic Black-hole Emission Tomography with Physics-informed Neural Fields](../../CVPR2026/3d_vision/dynamic_black-hole_emission_tomography_with_physics-informed_neural_fields.md)
 - [\[ICLR 2026\] DiffWind: Physics-Informed Differentiable Modeling of Wind-Driven Object Dynamics](../../ICLR2026/3d_vision/diffwind_physics-informed_differentiable_modeling_of_wind-driven_object_dynamics.md)
-- [\[NeurIPS 2025\] Robust Neural Rendering in the Wild with Asymmetric Dual 3D Gaussian Splatting](robust_neural_rendering_in_the_wild_with_asymmetric_dual_3d_gaussian_splatting.md)
 
 </div>
 

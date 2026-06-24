@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Event-based Tiny Object Detection: A Benchmark Dataset and Baseline
 description: >-
-  [ICCV 2025][3D Vision][Event Camera] This paper introduces EV-UAV, the first large-scale event camera benchmark for anti-UAV tiny object detection (147 sequences / 23M+ event-level annotations / average target size only…
+  [ICCV 2025][3D Vision][Event Camera] This paper introduces EV-UAV, the first large-scale event camera benchmark for anti-UAV tiny object detection (147 sequences / 23M+ event-level annotations / average target size only 6.8×5.4 pixels), and proposes EV-SpSegNet — a detection framework based on sparse 3D point cloud segmentation. The method exploits the observation that tiny moving targets form continuous elongated curves in spatiotemporal event point clouds…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "Spatiotemporal Correlation"
   - "benchmark"
 date: 2026-05-08
-content_hash: 57adc193e851d254
+content_hash: b8fdbf33a37ebf62
 ---
 
 # Event-based Tiny Object Detection: A Benchmark Dataset and Baseline
@@ -208,10 +208,10 @@ Small-increment dilation rates (1,2,3,4) achieve the best performance; excessive
 
 ## Related Papers
 
-- [\[AAAI 2026\] Griffin: Aerial-Ground Cooperative Detection and Tracking Dataset and Benchmark](../../AAAI2026/3d_vision/griffin_aerial-ground_cooperative_detection_and_tracking_dataset_and_benchmark.md)
-- [\[ICCV 2025\] SiM3D: Single-Instance Multiview Multimodal and Multisetup 3D Anomaly Detection Benchmark](sim3d_single-instance_multiview_multimodal_and_multisetup_3d_anomaly_detection_b.md)
-- [\[ICCV 2025\] MVGBench: a Comprehensive Benchmark for Multi-view Generation Models](mvgbench_a_comprehensive_benchmark_for_multi-view_generation_models.md)
 - [\[NeurIPS 2025\] HouseLayout3D: A Benchmark and Training-Free Baseline for 3D Layout Estimation in the Wild](../../NeurIPS2025/3d_vision/houselayout3d_a_benchmark_and_training-free_baseline_for_3d_layout_estimation_in.md)
+- [\[ICCV 2025\] SiM3D: Single-Instance Multiview Multimodal and Multisetup 3D Anomaly Detection Benchmark](sim3d_single-instance_multiview_multimodal_and_multisetup_3d_anomaly_detection_b.md)
+- [\[AAAI 2026\] Griffin: Aerial-Ground Cooperative Detection and Tracking Dataset and Benchmark](../../AAAI2026/3d_vision/griffin_aerial-ground_cooperative_detection_and_tracking_dataset_and_benchmark.md)
+- [\[ICCV 2025\] MVGBench: a Comprehensive Benchmark for Multi-view Generation Models](mvgbench_a_comprehensive_benchmark_for_multi-view_generation_models.md)
 - [\[ICCV 2025\] MuGS: Multi-Baseline Generalizable Gaussian Splatting Reconstruction](mugs_multi-baseline_generalizable_gaussian_splatting_reconstruction.md)
 
 </div>

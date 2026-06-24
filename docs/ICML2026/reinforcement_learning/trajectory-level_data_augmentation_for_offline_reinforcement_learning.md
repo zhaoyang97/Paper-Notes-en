@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Trajectory-Level Data Augmentation for Offline Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][shortcut] This paper proposes LIFT: in active alignment tasks, it leverages the geometric properties of trajectories to turn redundant zig-zag paths from suboptimal logging policies into "shortcuts." These synthetic transitions are fed to a lightweight augmentor that replaces logging actions during data collection. Consequently,
+  [ICML 2026][Reinforcement Learning][Offline RL] This paper proposes LIFT: in active alignment tasks, it leverages the geometric properties of trajectories to turn redundant zig-zag paths from suboptimal logging policies into "shortcuts." These synthetic transitions are fed to a lightweight augmentor that replaces logging actions during data collection. Consequently, offline CQL significantly outperforms standard offline RL and warm-start SAC across various settings…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - shortcut
-  - CQL
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Offline RL"
+  - "trajectory augmentation"
+  - "shortcut"
+  - "CQL"
+  - "active alignment"
 date: 2026-05-08
-content_hash: 18dfa25bf163836e
+content_hash: 060e6eb1b991d137
 ---
+
 # Trajectory-Level Data Augmentation for Offline Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -142,11 +146,11 @@ LIFT-SC leads across almost all settings in high-dimensional, partially observab
 
 ## Related Papers
 
+- [\[ICLR 2026\] Koopman-Assisted Trajectory Synthesis: A Data Augmentation Framework for Offline Imitation Learning](../../ICLR2026/reinforcement_learning/koopman-assisted_trajectory_synthesis_a_data_augmentation_framework_for_offline_.md)
 - [\[ICML 2026\] Offline Reinforcement Learning with Generative Trajectory Policies](offline_reinforcement_learning_with_generative_trajectory_policies.md)
-- [\[ICML 2026\] Beyond the Proxy: Trajectory-Distilled Guidance for Offline GFlowNet Training](beyond_the_proxy_trajectory-distilled_guidance_for_offline_gflownet_training.md)
-- [\[NeurIPS 2025\] NoisyRollout: Reinforcing Visual Reasoning with Data Augmentation](../../NeurIPS2025/reinforcement_learning/noisyrollout_reinforcing_visual_reasoning_with_data_augmenta.md)
-- [\[ICML 2026\] Offline Reinforcement Learning with Universal Horizon Models](offline_reinforcement_learning_with_universal_horizon_models.md)
-- [\[ICML 2026\] DARTS: Distribution-Aware Active Rollout Trajectory Shaping for Accelerating LLM Reinforcement Learning](darts_distribution-aware_active_rollout_trajectory_shaping_for_accelerating_llm_.md)
+- [\[ICLR 2026\] Trajectory Generation with Conservative Value Guidance for Offline Reinforcement Learning](../../ICLR2026/reinforcement_learning/trajectory_generation_with_conservative_value_guidance_for_offline_reinforcement.md)
+- [\[ICML 2026\] Long-Horizon Model-Based Offline Reinforcement Learning Without Explicit Conservatism](long-horizon_model-based_offline_reinforcement_learning_without_explicit_conserv.md)
+- [\[ICML 2026\] Counterfactual Transport Flows for Offline Conservative Trajectory Refinement](counterfactual_transport_flows_for_offline_conservative_trajectory_refinement.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Randomized Advantage Transformation (RAT): Computing Natural Policy Gradients via Direct Backpropagation
 description: >-
-  [ICML 2026][Reinforcement Learning][on-policy RL] This work reformulates Tikhonov-regularized Natural Policy Gradient (NPG) as a "standard policy gradient with transformed advantages" via the Woodbury identity. By utilizing Randomized Block Kaczmarz iterations on mini-batches to solve this transformation, the method bypasses explicit Fisher matrix construction, Conjug
+  [ICML2026][Reinforcement Learning][Natural Policy Gradient] This work reformulates Tikhonov-regularized Natural Policy Gradient (NPG) as a "standard policy gradient with transformed advantages" via the Woodbury identity. By utilizing Randomized Block Kaczmarz iterations on mini-batches to solve this transformation, the method bypasses explicit Fisher matrix construction, Conjugate Gradient inner loops, and architecture-dependent curvature approximations like KFAC. It computes…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - on-policy RL
+  - "ICML2026"
+  - "Reinforcement Learning"
+  - "Natural Policy Gradient"
+  - "Woodbury Formula"
+  - "Kaczmarz Iteration"
+  - "Advantage Transformation"
+  - "on-policy RL"
 date: 2026-05-08
-content_hash: 9ec436e0c3672295
+content_hash: b1e4d4401a1916df
 ---
+
 # Randomized Advantage Transformation (RAT): Computing Natural Policy Gradients via Direct Backpropagation
 
 **Conference**: ICML2026  
@@ -152,11 +157,11 @@ On high-dimensional Procgen (ResNet policy), RAT met or exceeded baselines acros
 
 ## Related Papers
 
-- [\[AAAI 2026\] DiffOP: Reinforcement Learning of Optimization-Based Control Policies via Implicit Policy Gradients](../../AAAI2026/reinforcement_learning/diffop_reinforcement_learning_of_optimization-based_control_policies_via_implici.md)
-- [\[ICLR 2026\] Learning to Orchestrate Agents in Natural Language with the Conductor](../../ICLR2026/reinforcement_learning/learning_to_orchestrate_agents_in_natural_language_with_the_conductor.md)
+- [\[ICLR 2026\] Flow Matching Policy Gradients](../../ICLR2026/reinforcement_learning/flow_matching_policy_gradients.md)
+- [\[ICLR 2026\] Does “Do Differentiable Simulators Give Better Policy Gradients?” Give Better Policy Gradients?](../../ICLR2026/reinforcement_learning/does_do_differentiable_simulators_give_better_policy_gradients_give_better_polic.md)
 - [\[ICML 2026\] PAWS: Preference Learning with Advantage-Weighted Segments](paws_preference_learning_with_advantage-weighted_segments.md)
-- [\[ICML 2026\] RL4RLA: Teaching ML to Discover Randomized Linear Algebra Algorithms Through Curriculum Design and Graph-Based Search](rl4rla_teaching_ml_to_discover_randomized_linear_algebra_algorithms_through_curr.md)
-- [\[CVPR 2026\] Talk2Move: Reinforcement Learning for Text-Instructed Object-Level Geometric Transformation in Scenes](../../CVPR2026/reinforcement_learning/talk2move_reinforcement_learning_for_text-instructed_object-level_geometric_tran.md)
+- [\[ICLR 2026\] Learning to Orchestrate Agents in Natural Language with the Conductor](../../ICLR2026/reinforcement_learning/learning_to_orchestrate_agents_in_natural_language_with_the_conductor.md)
+- [\[AAAI 2026\] DiffOP: Reinforcement Learning of Optimization-Based Control Policies via Implicit Policy Gradients](../../AAAI2026/reinforcement_learning/diffop_reinforcement_learning_of_optimization-based_control_policies_via_implici.md)
 
 </div>
 

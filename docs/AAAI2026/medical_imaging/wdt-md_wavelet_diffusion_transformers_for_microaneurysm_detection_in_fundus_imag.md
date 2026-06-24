@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] WDT-MD: Wavelet Diffusion Transformers for Microaneurysm Detection in Fundus Images
 description: >-
-  [AAAI 2026][Medical Imaging][Microaneurysm Detection] This paper proposes WDT-MD, a framework that addresses three fundamental challenges in fundus image microaneurysm (MA) detection—identity mapping…
+  [AAAI 2026][Medical Imaging][Microaneurysm Detection] This paper proposes WDT-MD, a framework that addresses three fundamental challenges in fundus image microaneurysm (MA) detection—identity mapping, high false positives, and poor normal-feature reconstruction quality—through noise-encoded image conditioning, pseudo-normal pattern synthesis, and a wavelet diffusion Transformer architecture.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Anomaly Detection"
   - "Diabetic Retinopathy"
 date: 2026-05-08
-content_hash: d8009e6c6a2de19f
+content_hash: f3868cc5260bb95d
 ---
 
 # WDT-MD: Wavelet Diffusion Transformers for Microaneurysm Detection in Fundus Images
@@ -135,11 +135,11 @@ WDT-MD is a supervised, DiT-based anomaly detection framework operating in the w
 
 ## Related Papers
 
+- [\[CVPR 2026\] Post-training Feature Pruning for Fundus Images Classification](../../CVPR2026/medical_imaging/post-training_feature_pruning_for_fundus_images_classification.md)
 - [\[AAAI 2026\] Towards Effective and Efficient Context-aware Nucleus Detection in Histopathology Whole Slide Images](towards_effective_and_efficient_context-aware_nucleus_detection_in_histopatholog.md)
 - [\[AAAI 2026\] Training-Free Policy Violation Detection via Activation-Space Whitening in LLMs](training-free_policy_violation_detection_via_activation-space_whitening_in_llms.md)
-- [\[AAAI 2026\] TAlignDiff: Automatic Tooth Alignment assisted by Diffusion-based Transformation Learning](taligndiff_automatic_tooth_alignment_assisted_by_diffusion-based_transformation_.md)
 - [\[AAAI 2026\] Personality-guided Public-Private Domain Disentangled Hypergraph-Former Network for Multimodal Depression Detection](personality-guided_public-private_domain_disentangled_hypergraph-former_network_.md)
-- [\[ICML 2026\] Scaling Vision Transformers for Functional MRI with Flat Maps](../../ICML2026/medical_imaging/scaling_vision_transformers_for_functional_mri_with_flat_maps.md)
+- [\[AAAI 2026\] Small but Mighty: Dynamic Wavelet Expert-Guided Fine-Tuning of Large-Scale Models for Optical Remote Sensing Object Segmentation](small_but_mighty_dynamic_wavelet_expert-guided_fine-tuning_of_large-scale_models.md)
 
 </div>
 

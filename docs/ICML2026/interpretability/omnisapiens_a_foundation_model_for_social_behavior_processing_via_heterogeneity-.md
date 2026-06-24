@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OmniSapiens: A Foundation Model for Social Behavior Processing via Heterogeneity-Aware Relative Policy Optimization
 description: >-
-  [ICML 2026][Interpretability][Paper Note] Addressing the issue where GRPO-style reasoning RL is dominated by a few tasks due to the inherent heterogeneity of social behavior data (10 tasks across emotion/cognition/pathology/socializing, spanning speech/vision/text modalities), this paper proposes HARPO. By approximating the contribution of each sample and task
+  [ICML 2026][Interpretability][Social Intelligence] Addressing the issue where GRPO-style reasoning RL is dominated by a few tasks due to the inherent heterogeneity of social behavior data (10 tasks across emotion/cognition/pathology/socializing, spanning speech/vision/text modalities), this paper proposes HARPO. By approximating the contribution of each sample and task to policy updates using advantage magnitudes, HARPO derives structured modulation factors via "geometric mea…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML 2026"
+  - "Interpretability"
+  - "Social Intelligence"
+  - "Behavior Foundation Model"
+  - "Heterogeneous RL"
+  - "GRPO Improvement"
+  - "Advantage Reweighting"
 date: 2026-05-08
-content_hash: 6917cfe7dda6bfbe
+content_hash: 4c7be29aaba4a009
 ---
+
 # OmniSapiens: A Foundation Model for Social Behavior Processing via Heterogeneity-Aware Relative Policy Optimization
 
 **Conference**: ICML 2026  
@@ -137,14 +143,17 @@ Ours won all 5 held-out tasks, while reasoning consistency jumped from 66.5% to 
 
 <div class="related-papers" markdown="1">
 
-1. **Shao et al. (2024)**: DeepSeek-V3 Technical Report (GRPO Introduction).
-2. **Feng et al. (2025)**: EMA-based Multi-task balancing in GRPO.
-3. **Ong et al. (2026)**: Human Behavior Atlas: A Large-scale Multimodal Dataset for Social Intelligence.
+## Related Papers
+
+- [\[ICML 2026\] ExPLAIND: Unifying Model, Data, and Training Attribution to Study Model Behavior](explaind_unifying_model_data_and_training_attribution_to_study_model_behavior.md)
+- [\[ACL 2026\] Dual Alignment Between Language Model Layers and Human Sentence Processing](../../ACL2026/interpretability/dual_alignment_between_language_model_layers_and_human_sentence_processing.md)
+- [\[ICML 2026\] Is One Layer Enough? Understanding Inference Dynamics in Tabular Foundation Models](is_one_layer_enough_understanding_inference_dynamics_in_tabular_foundation_model.md)
+- [\[ICML 2026\] Discovering Differences in Strategic Behavior Between Humans and LLMs](discovering_differences_in_strategic_behavior_between_humans_and_llms.md)
+- [\[ICML 2026\] Courtroom Analogy: New Perspective on Uncertainty-Aware Classification](courtroom_analogy_new_perspective_on_uncertainty-aware_classification.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Behavior Learning (BL): Learning Hierarchical Optimization Structures from Data](../../ICLR2026/interpretability/behavior_learning_bl_learning_hierarchical_optimization_structures_from_data.md)

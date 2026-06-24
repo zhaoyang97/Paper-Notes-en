@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Do Not Merge My Model! Safeguarding Open-Source LLMs Against Unauthorized Model Merging
 description: >-
-  [AAAI 2026][Model Compression][model merging theft] This paper proposes MergeBarrier, a plug-and-play defense method that disrupts linear mode connectivity (LMC) between a protected model and its homologous counterparts…
+  [AAAI 2026][Model Compression][model merging theft] This paper proposes MergeBarrier, a plug-and-play defense method that disrupts linear mode connectivity (LMC) between a protected model and its homologous counterparts by applying orthogonal projection transformations to attention layers and activation-function-unfolding reparameterization to FFN layers, thereby actively preventing unauthorized model merging without degrading model performance.
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "weight reparameterization"
   - "linear mode connectivity"
 date: 2026-05-08
-content_hash: bad2d7364226ddee
+content_hash: 93e5fb94585ac151
 ---
 
 # Do Not Merge My Model! Safeguarding Open-Source LLMs Against Unauthorized Model Merging
@@ -153,11 +153,11 @@ The theoretical motivation is clear, the method design is elegant, and the mathe
 
 ## Related Papers
 
+- [\[ICLR 2026\] MergOPT: A Merge-Aware Optimizer for Robust Model Merging](../../ICLR2026/model_compression/mergopt_a_merge-aware_optimizer_for_robust_model_merging.md)
 - [\[AAAI 2026\] From Parameter to Representation: A Closed-Form Approach for Controllable Model Merging](from_parameter_to_representation_a_closed-form_approach_for_controllable_model_m.md)
+- [\[ICML 2026\] Post-Hoc Merging Is Not Enough: Many-Shot Model Merging with Loss-Gap Balancing](../../ICML2026/model_compression/post-hoc_merging_is_not_enough_many-shot_model_merging_with_loss-gap_balancing.md)
 - [\[ICML 2026\] Saliency-Aware Model Merging](../../ICML2026/model_compression/saliency-aware_model_merging.md)
-- [\[ICLR 2026\] AdaRank: Adaptive Rank Pruning for Enhanced Model Merging](../../ICLR2026/model_compression/adarank_adaptive_rank_pruning_for_enhanced_model_merging.md)
-- [\[ICML 2026\] Model Merging Scaling Laws in Large Language Models](../../ICML2026/model_compression/model_merging_scaling_laws_in_large_language_models.md)
-- [\[ICCV 2025\] FREE-Merging: Fourier Transform for Efficient Model Merging](../../ICCV2025/model_compression/free-merging_fourier_transform_for_efficient_model_merging.md)
+- [\[CVPR 2026\] Back to Source: Open-Set Continual Test-Time Adaptation via Domain Compensation](../../CVPR2026/model_compression/back_to_source_open-set_continual_test-time_adaptation_via_domain_compensation.md)
 
 </div>
 

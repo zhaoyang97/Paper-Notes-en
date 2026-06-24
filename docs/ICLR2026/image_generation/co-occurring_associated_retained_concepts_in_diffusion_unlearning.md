@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Co-occurring Associated REtained concepts in Diffusion Unlearning
 description: >-
-  [ICLR 2026][Image Generation][Concept Erasure] When diffusion models erase harmful concepts (e.g., nudity), they often inadvertently suppress benign concepts that co-occur with them (e.g., "person"). This paper defines such concepts as CARE (Co-occurring Associated REtained concepts) and proposes the CARE score for quantification. The proposed ReCARE framework auto
+  [ICLR 2026][Image Generation][Diffusion Unlearning] When diffusion models erase harmful concepts (e.g., nudity), they often inadvertently suppress benign concepts that co-occur with them (e.g., "person"). This paper defines such concepts as CARE (Co-occurring Associated REtained concepts) and proposes the CARE score for quantification. The proposed ReCARE framework automatically constructs a benign co-occurring vocabulary (CARE-set) from target images to simultaneously guide…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Concept Erasure
-  - CARE score
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion Unlearning"
+  - "Concept Erasure"
+  - "Co-occurring Concept Retention"
+  - "CARE score"
+  - "Disentanglement"
 date: 2026-05-08
-content_hash: 2f1f2c8a5cea9d83
+content_hash: 10c72d6a78f2aca8
 ---
+
 # Co-occurring Associated REtained concepts in Diffusion Unlearning
 
 **Conference**: ICLR 2026  

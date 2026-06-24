@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Safe Reinforcement Learning with Preference-Based Constraint Inference
 description: >-
-  [ICML 2026][Reinforcement Learning][Safe RL] This paper proposes PbCRL, which utilizes an extended Bradley-Terry preference model with a "dead-zone" to learn safety constraints from trajectory comparisons. By incorporating a signal-to-noise ratio (SNR) regularization to prevent the cost function from flattening and employing a two-stage training pipeline (offline
+  [ICML 2026][Reinforcement Learning][Safe RL] This paper proposes PbCRL, which utilizes an extended Bradley-Terry preference model with a "dead-zone" to learn safety constraints from trajectory comparisons. By incorporating a signal-to-noise ratio (SNR) regularization to prevent the cost function from flattening and employing a two-stage training pipeline (offline pre-training + online sparse-label fine-tuning), the method significantly reduces costs while maintaining rewards…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - Safe RL
-  - Bradley-Terry
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Safe RL"
+  - "Preference Learning"
+  - "Bradley-Terry"
+  - "Dead-zone loss"
+  - "SNR Regularization"
 date: 2026-05-08
-content_hash: 4b02038f81128d57
+content_hash: 2f32dbf306f1ff3c
 ---
+
 # Safe Reinforcement Learning with Preference-Based Constraint Inference
 
 **Conference**: ICML 2026  
@@ -133,8 +137,8 @@ Evaluated on Safety Gymnasium against PPO-Lag (Oracle with ground truth cost) an
 - [\[ICML 2026\] CSPO: Constraint-Sensitive Policy Optimization for Safe Reinforcement Learning](cspo_constraint-sensitive_policy_optimization_for_safe_reinforcement_learning.md)
 - [\[ICML 2026\] Safe In-Context Reinforcement Learning](safe_in-context_reinforcement_learning.md)
 - [\[ICML 2026\] From Reward-Free Representations to Preferences: Rethinking Offline Preference-Based Reinforcement Learning](from_reward-free_representations_to_preferences_rethinking_offline_preference-ba.md)
-- [\[ICML 2026\] Safety Generalization Under Distribution Shift in Safe Reinforcement Learning: A Diabetes Testbed](safety_generalization_under_distribution_shift_in_safe_reinforcement_learning_a_.md)
 - [\[ICML 2026\] Video-Based Optimal Transport for Feedback-Efficient Offline Preference-Based Reinforcement Learning](video-based_optimal_transport_for_feedback-efficient_offline_preference-based_re.md)
+- [\[ICLR 2026\] Learning What Matters Now: Dynamic Preference Inference under Contextual Shifts](../../ICLR2026/reinforcement_learning/learning_what_matters_now_dynamic_preference_inference_under_contextual_shifts.md)
 
 </div>
 

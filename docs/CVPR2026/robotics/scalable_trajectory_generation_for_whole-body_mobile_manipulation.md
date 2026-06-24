@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Scalable Trajectory Generation for Whole-Body Mobile Manipulation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] AutoMoMa unifies the mobile base, robotic arm, and the manipulated object into a single "Augmented Kinematic Representation (AKR)," then offloads trajectory optimization and collision detection to the GPU for batch parallelism. This enables the automatic synthesis of 500,000 physically feasible whole-body coordinated t
+  [CVPR 2026][Robotics][Whole-body mobile manipulation] AutoMoMa unifies the mobile base, robotic arm, and the manipulated object into a single "Augmented Kinematic Representation (AKR)," then offloads trajectory optimization and collision detection to the GPU for batch parallelism. This enables the automatic synthesis of 500,000 physically feasible whole-body coordinated trajectories at a rate of 5,000 per GPU-hour (approximately 80x faster than CPU baselines)…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Whole-body mobile manipulation"
+  - "trajectory generation"
+  - "GPU-accelerated motion planning"
+  - "augmented kinematic representation"
+  - "imitation learning"
 date: 2026-05-08
-content_hash: 3913da936578c23c
+content_hash: 268d764c95f8024d
 ---
+
 # Scalable Trajectory Generation for Whole-Body Mobile Manipulation
 
 **Conference**: CVPR 2026  
@@ -132,10 +138,20 @@ Using the SOTA 3D diffusion method DP3, the success criterion is the door reachi
 - Value: ⭐⭐⭐⭐⭐ (500k trajectories and the "data bottleneck" proof offer massive community value).
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] End-to-End Language-Action Model for Humanoid Whole Body Control](end-to-end_language-action_model_for_humanoid_whole_body_control.md)
+- [\[CVPR 2026\] Beyond Mimicry: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations](beyond_mimicry_learning_whole-body_human-humanoid_interaction_from_human-human_d.md)
+- [\[ICLR 2026\] WholeBodyVLA: Towards Unified Latent VLA for Whole-Body Loco-Manipulation Control](../../ICLR2026/robotics/wholebodyvla_towards_unified_latent_vla_for_whole-body_loco-manipulation_control.md)
+- [\[CVPR 2026\] IGen: Scalable Data Generation for Robot Learning from Open-World Images](igen_scalable_data_generation_for_robot_learning_from_open-world_images.md)
+- [\[ICML 2026\] WestWorld: Scalable Trajectory World Models with Knowledge Encoding](../../ICML2026/robotics/westworld_a_knowledge-encoded_scalable_trajectory_world_model_for_diverse_roboti.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] End-to-End Language-Action Model for Humanoid Whole Body Control](end-to-end_language-action_model_for_humanoid_whole_body_control.md)

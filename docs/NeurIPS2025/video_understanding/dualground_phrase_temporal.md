@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DualGround: Structured Phrase and Sentence-Level Temporal Grounding
 description: >-
-  [NeurIPS 2025][Video Understanding][Video Temporal Grounding] This paper identifies that existing video temporal grounding (VTG) models over-rely on the global sentence semantics encoded in the [EOS] token while neglecti…
+  [NeurIPS 2025][Video Understanding][Video Temporal Grounding] This paper identifies that existing video temporal grounding (VTG) models over-rely on the global sentence semantics encoded in the [EOS] token while neglecting word-level signals. It proposes DualGround, a dual-branch architecture that explicitly decouples global and local semantics via a sentence-level path (adaptive cross-attention) and a phrase-level path (recurrent phrase generation + Slot Attention)…
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Attention Decoupling"
   - "Highlight Detection"
 date: 2026-05-08
-content_hash: 57716243622a69d7
+content_hash: 8b44c7c64878e7c0
 ---
 
 # DualGround: Structured Phrase and Sentence-Level Temporal Grounding
@@ -132,10 +132,10 @@ Built on the FlashVTG framework using InternVideo2/CLIP features. $L_d$ learnabl
 ## Related Papers
 
 - [\[ICCV 2025\] Moment Quantization for Video Temporal Grounding](../../ICCV2025/video_understanding/moment_quantization_for_video_temporal_grounding.md)
+- [\[CVPR 2026\] HERO: Hierarchical Embedding-Refinement for Open-Vocabulary Temporal Sentence Grounding in Videos](../../CVPR2026/video_understanding/hero_hierarchical_embedding-refinement_for_open-vocabulary_temporal_sentence_gro.md)
+- [\[CVPR 2025\] Number it: Temporal Grounding Videos like Flipping Manga](../../CVPR2025/video_understanding/number_it_temporal_grounding_videos_like_flipping_manga.md)
 - [\[ICCV 2025\] VTimeCoT: Thinking by Drawing for Video Temporal Grounding and Reasoning](../../ICCV2025/video_understanding/vtimecot_thinking_by_drawing_for_video_temporal_grounding_and_reasoning.md)
 - [\[ICCV 2025\] Sparse-Dense Side-Tuner for Efficient Video Temporal Grounding](../../ICCV2025/video_understanding/sparse-dense_side-tuner_for_efficient_video_temporal_grounding.md)
-- [\[ICCV 2025\] TimeExpert: An Expert-Guided Video LLM for Video Temporal Grounding](../../ICCV2025/video_understanding/timeexpert_an_expert-guided_video_llm_for_video_temporal_grounding.md)
-- [\[NeurIPS 2025\] MUVR: A Multi-Modal Untrimmed Video Retrieval Benchmark with Multi-Level Visual Correspondence](muvr_a_multi-modal_untrimmed_video_retrieval_benchmark_with_multi-level_visual_c.md)
 
 </div>
 

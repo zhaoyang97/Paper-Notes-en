@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning AND-OR Templates for Compositional Representation in Art and Design
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] This paper extends the AND-OR Template from object recognition to scene composition in art and design. By employing a maximum entropy log-linear model to provide decomposable consistency scores and utilizing EM-style block-pursuit with semi-supervised structural expansion, the authors learn interpretable templates. The
+  [ICLR 2026][Image Generation][AND-OR Template] This paper extends the AND-OR Template from object recognition to scene composition in art and design. By employing a maximum entropy log-linear model to provide decomposable consistency scores and utilizing EM-style block-pursuit with semi-supervised structural expansion, the authors learn interpretable templates. These templates demonstrate lightweight, interpretable, and data-efficient structural priors in aesthetic classifica…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "AND-OR Template"
+  - "Compositional Representation"
+  - "Interpretable Aesthetic Scoring"
+  - "Semi-supervised Structure Learning"
+  - "AIGC Structural Control"
 date: 2026-05-08
-content_hash: ee748f304b215ef2
+content_hash: 89152a360842f1d1
 ---
+
 # Learning AND-OR Templates for Compositional Representation in Art and Design
 
 **Conference**: ICLR 2026  
@@ -136,10 +142,20 @@ Ours achieves competitive accuracy with ResNet50 and ViT while using 4–5 order
 - Value: ⭐⭐⭐⭐☆
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] ShadowDraw: From Any Object to Shadow-Drawing Compositional Art](../../CVPR2026/image_generation/shadowdraw_from_any_object_to_shadow-drawing_compositional_art.md)
+- [\[ICLR 2026\] RIDER: 3D RNA Inverse Design with Reinforcement Learning-Guided Diffusion](rider_3d_rna_inverse_design_with_reinforcement_learning-guided_diffusion.md)
+- [\[ICLR 2026\] Generalization of Diffusion Models Arises with a Balanced Representation Space](generalization_of_diffusion_models_arises_with_a_balanced_representation_space.md)
+- [\[ICLR 2026\] Exploring the Design Space of Transition Matching](exploring_the_design_space_of_transition_matching.md)
+- [\[ICLR 2026\] On the Design of One-Step Diffusion via Shortcutting Flow Paths](on_the_design_of_one-step_diffusion_via_shortcutting_flow_paths.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] ShadowDraw: From Any Object to Shadow-Drawing Compositional Art](../../CVPR2026/image_generation/shadowdraw_from_any_object_to_shadow-drawing_compositional_art.md)

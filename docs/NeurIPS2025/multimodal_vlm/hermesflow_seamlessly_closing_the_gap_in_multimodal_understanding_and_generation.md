@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HermesFlow: Seamlessly Closing the Gap in Multimodal Understanding and Generation
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Pair-DPO] This work is the first to identify the systematic phenomenon that understanding capability consistently surpasses generation capability in unified multimodal large language models…
+  [NeurIPS 2025][Multimodal VLM][Pair-DPO] This work is the first to identify the systematic phenomenon that understanding capability consistently surpasses generation capability in unified multimodal large language models. It proposes the HermesFlow framework, which constructs paired understanding-generation preference data from homologous inputs, and employs Pair-DPO with iterative self-play optimization to simultaneously improve both capabilities and narrow the gap between t…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "self-play optimization"
   - "homologous preference data"
 date: 2026-05-08
-content_hash: 0af63aa0157b42a9
+content_hash: c71bf1294083c9c5
 ---
 
 # HermesFlow: Seamlessly Closing the Gap in Multimodal Understanding and Generation
@@ -153,10 +153,10 @@ This work is the first to identify the systematic phenomenon that understanding 
 ## Related Papers
 
 - [\[ICLR 2026\] Closing the Modality Gap Aligns Group-Wise Semantics](../../ICLR2026/multimodal_vlm/closing_the_modality_gap_aligns_group-wise_semantics.md)
+- [\[NeurIPS 2025\] Windsock is Dancing: Adaptive Multimodal Retrieval-Augmented Generation](windsock_is_dancing_adaptive_multimodal_retrieval-augmented_generation.md)
 - [\[NeurIPS 2025\] UniTok: A Unified Tokenizer for Visual Generation and Understanding](unitok_a_unified_tokenizer_for_visual_generation_and_understanding.md)
-- [\[ICCV 2025\] MetaMorph: Multimodal Understanding and Generation via Instruction Tuning](../../ICCV2025/multimodal_vlm/metamorph_multimodal_understanding_and_generation_via_instruction_tuning.md)
-- [\[ICCV 2025\] Harmonizing Visual Representations for Unified Multimodal Understanding and Generation](../../ICCV2025/multimodal_vlm/harmonizing_visual_representations_for_unified_multimodal_un.md)
-- [\[NeurIPS 2025\] Nautilus: A Large Multimodal Model for Underwater Scene Understanding](nautilus_a_large_multimodal_model_for_underwater_scene_understanding.md)
+- [\[NeurIPS 2025\] Benchmarking Retrieval-Augmented Multimodal Generation for Document Question Answering](benchmarking_retrievalaugmented_multimodal_generation_for_do.md)
+- [\[ICLR 2026\] Turning Internal Gap into Self-Improvement: Promoting the Generation-Understanding Unification in MLLMs](../../ICLR2026/multimodal_vlm/turning_internal_gap_into_self-improvement_promoting_the_generation-understandin.md)
 
 </div>
 

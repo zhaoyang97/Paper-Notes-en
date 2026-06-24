@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reject Only Critical Tokens: Pivot-Aware Speculative Decoding
 description: >-
-  [NeurIPS 2025][Model Compression][speculative decoding] PAD proposes a new speculative decoding paradigm based on utility matching rather than distribution matching. It trains a lightweight classifier to identify *pivot…
+  [NeurIPS 2025][Model Compression][speculative decoding] PAD proposes a new speculative decoding paradigm based on utility matching rather than distribution matching. It trains a lightweight classifier to identify *pivot tokens* and rejects only those draft tokens that would degrade final output utility, achieving a 2.46× speedup on GSM8K with negligible accuracy loss.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "LLM inference"
   - "acceptance rate"
 date: 2026-05-08
-content_hash: cbe4d723d7032f85
+content_hash: 1c01946801aec6a3
 ---
 
 # Reject Only Critical Tokens: Pivot-Aware Speculative Decoding
@@ -138,9 +138,9 @@ The PAD (Pivot-Aware Speculative Decoding) pipeline:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Traversal Verification for Speculative Tree Decoding](traversal_verification_for_speculative_tree_decoding.md)
+- [\[ICML 2025\] Gumiho: A Hybrid Architecture to Prioritize Early Tokens in Speculative Decoding](../../ICML2025/model_compression/gumiho_a_hybrid_architecture_to_prioritize_early_tokens_in_speculative_decoding.md)
 - [\[NeurIPS 2025\] CAS-Spec: Cascade Adaptive Self-Speculative Decoding for On-the-Fly Lossless Inference Acceleration of LLMs](casspec_cascade_adaptive_selfspeculative_decoding_for_onthef.md)
-- [\[ACL 2026\] SSSD: Simply-Scalable Speculative Decoding](../../ACL2026/model_compression/sssd_simply-scalable_speculative_decoding.md)
-- [\[AAAI 2026\] Steering Pretrained Drafters during Speculative Decoding](../../AAAI2026/model_compression/steering_pretrained_drafters_during_speculative_decoding.md)
+- [\[ICML 2025\] VocabTrim: Vocabulary Pruning for Efficient Speculative Decoding in LLMs](../../ICML2025/model_compression/vocabtrim_vocabulary_pruning_for_efficient_speculative_decoding_in_llms.md)
 - [\[NeurIPS 2025\] AutoJudge: Judge Decoding Without Manual Annotation](autojudge_judge_decoding_without_manual_annotation.md)
 
 </div>

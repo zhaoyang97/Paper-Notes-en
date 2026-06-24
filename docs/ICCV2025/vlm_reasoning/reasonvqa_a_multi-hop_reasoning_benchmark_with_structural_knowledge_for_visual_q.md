@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] ReasonVQA: A Multi-hop Reasoning Benchmark with Structural Knowledge for Visual Question Answering
 description: >-
-  [ICCV 2025][Multimodal VLM][VQA] This paper proposes ReasonVQA, a dataset constructed through a low-cost and scalable framework that automatically integrates structured encyclopedic knowledge (Wikidata) with images…
+  [ICCV 2025][VLM Reasoning][VQA] This paper proposes ReasonVQA, a dataset constructed through a low-cost and scalable framework that automatically integrates structured encyclopedic knowledge (Wikidata) with images, generating 1/2/3-hop multi-hop reasoning questions. The benchmark comprises 598K images and 4.2M questions, posing significant challenges to existing VQA models.
 tags:
   - "ICCV 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "VQA"
   - "Multi-hop Reasoning"
   - "Knowledge Graph"
   - "Wikidata"
   - "Benchmark Dataset"
 date: 2026-05-08
-content_hash: 815cd16dd92aaeb1
+content_hash: 369487908926bfe5
 ---
 
 # ReasonVQA: A Multi-hop Reasoning Benchmark with Structural Knowledge for Visual Question Answering
@@ -173,11 +173,11 @@ Although the multiple-choice format substantially improves accuracy, performance
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] WearVQA: A Visual Question Answering Benchmark for Wearables in Egocentric Authentic Real-world scenarios](../../NeurIPS2025/multimodal_vlm/wearvqa_a_visual_question_answering_benchmark_for_wearables_in_egocentric_authen.md)
-- [\[NeurIPS 2025\] Are Vision Language Models Ready for Clinical Diagnosis? A 3D Medical Benchmark for Tumor-centric Visual Question Answering](../../NeurIPS2025/multimodal_vlm/are_vision_language_models_ready_for_clinical_diagnosis_a_3d_medical_benchmark_f.md)
-- [\[ACL 2026\] WikiSeeker: Rethinking the Role of Vision-Language Models in Knowledge-Based Visual Question Answering](../../ACL2026/multimodal_vlm/wikiseeker_rethinking_the_role_of_vision-language_models_in_knowledge-based_visu.md)
-- [\[ICCV 2025\] MultiVerse: A Multi-Turn Conversation Benchmark for Evaluating Large Vision and Language Models](multiverse_a_multi-turn_conversation_benchmark_for_evaluating_large_vision_and_l.md)
-- [\[ICCV 2025\] MC-Bench: A Benchmark for Multi-Context Visual Grounding in the Era of MLLMs](mc-bench_a_benchmark_for_multi-context_visual_grounding_in_the_era_of_mllms.md)
+- [\[CVPR 2026\] StaR-KVQA: Structured Reasoning Traces for Implicit-Knowledge Visual Question Answering](../../CVPR2026/vlm_reasoning/star-kvqa_structured_reasoning_traces_for_implicit-knowledge_visual_question_ans.md)
+- [\[ACL 2025\] Answering Complex Geographic Questions by Adaptive Reasoning with Visual Context and External Commonsense Knowledge](../../ACL2025/vlm_reasoning/answering_complex_geographic_questions_by_adaptive_reasoning_with_visual_context.md)
+- [\[ICCV 2025\] From Easy to Hard: The MIR Benchmark for Progressive Interleaved Multi-Image Reasoning](from_easy_to_hard_the_mir_benchmark_for_progressive_interleaved_multi-image_reas.md)
+- [\[ICCV 2025\] Taming the Untamed: Graph-Based Knowledge Retrieval and Reasoning for MLLMs to Conquer the Unknown](taming_the_untamed_graph-based_knowledge_retrieval_and_reasoning_for_mllms_to_co.md)
+- [\[CVPR 2026\] ChartR: Evaluating Reasoning Accuracy and Robustness in Chart Question Answering](../../CVPR2026/vlm_reasoning/chartr_evaluating_reasoning_accuracy_and_robustness_in_chart_question_answering.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning From Dictionary: Enhancing Robustness of Machine-Generated Text Detection in Zero-Shot Language via Adversarial Training
 description: >-
-  [ICLR 2026][AIGC Detection][Paper Note] To address the sharp drop in robustness of Machine-Generated Text (MGT) detectors on unseen languages, this paper proposes the TASTE framework: it uses translation dictionaries to perform "code-switching" on MGTs to generate multilingual adversarial samples. Combined with a gradient-reversal language discriminator (LAA
+  [ICLR 2026][AIGC Detection][Machine-Generated Text Detection] To address the sharp drop in robustness of Machine-Generated Text (MGT) detectors on unseen languages, this paper proposes the TASTE framework: it uses translation dictionaries to perform "code-switching" on MGTs to generate multilingual adversarial samples. Combined with a gradient-reversal language discriminator (LAAL loss), it forces the detector to learn language-agnostic features. Using only single-language an…
 tags:
-  - ICLR 2026
-  - AIGC Detection
+  - "ICLR 2026"
+  - "AIGC Detection"
+  - "Machine-Generated Text Detection"
+  - "Zero-Shot Language"
+  - "Adversarial Training"
+  - "Translation Dictionary"
+  - "Language-Agnostic Features"
 date: 2026-05-08
-content_hash: 7dc57dba03081b46
+content_hash: 78b494aad234d985
 ---
+
 # Learning From Dictionary: Enhancing Robustness of Machine-Generated Text Detection in Zero-Shot Language via Adversarial Training
 
 **Conference**: ICLR 2026  

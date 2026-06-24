@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Inference-Time Diffusion Model Distillation
 description: >-
-  [ICCV 2025][Image Generation][Diffusion Distillation] This paper proposes Distillation++, an inference-time diffusion distillation framework that leverages a pretrained teacher model during the student model's sampling p…
+  [ICCV 2025][Image Generation][Diffusion Distillation] This paper proposes Distillation++, an inference-time diffusion distillation framework that leverages a pretrained teacher model during the student model's sampling process to correct its denoising trajectory, significantly narrowing the teacher–student performance gap without requiring additional training data or fine-tuning.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Teacher-Guided Sampling"
   - "Few-Step Generation"
 date: 2026-05-08
-content_hash: 0e3ef3c2c05f690c
+content_hash: 50d3e7a0b232de75
 ---
 
 # Inference-Time Diffusion Model Distillation
@@ -155,9 +155,9 @@ Computational cost comparison (LCM, 4+1 steps vs. 5 steps vs. 6 steps):
 
 - [\[ICCV 2025\] SANA-Sprint: One-Step Diffusion with Continuous-Time Consistency Distillation](sana-sprint_one-step_diffusion_with_continuous-time_consistency_distillation.md)
 - [\[ICCV 2025\] Fewer Denoising Steps or Cheaper Per-Step Inference: Towards Compute-Optimal Diffusion Model Deployment](fewer_denoising_steps_or_cheaper_per-step_inference_towards_compute-optimal_diff.md)
-- [\[ICLR 2026\] Large Scale Diffusion Distillation via Score-Regularized Continuous-Time Consistency](../../ICLR2026/image_generation/large_scale_diffusion_distillation_via_score-regularized_continuous-time_consist.md)
+- [\[CVPR 2025\] Random Conditioning for Diffusion Model Compression with Distillation](../../CVPR2025/image_generation/random_conditioning_for_diffusion_model_compression_with_distillation.md)
 - [\[ICCV 2025\] CaO2: Rectifying Inconsistencies in Diffusion-Based Dataset Distillation](cao2_rectifying_inconsistencies_in_diffusion-based_dataset_distillation.md)
-- [\[NeurIPS 2025\] Progressive Inference-Time Annealing of Diffusion Models for Sampling from Boltzmann Densities](../../NeurIPS2025/image_generation/progressive_inference-time_annealing_of_diffusion_models_for_sampling_from_boltz.md)
+- [\[ICLR 2026\] Large Scale Diffusion Distillation via Score-Regularized Continuous-Time Consistency](../../ICLR2026/image_generation/large_scale_diffusion_distillation_via_score-regularized_continuous-time_consist.md)
 
 </div>
 

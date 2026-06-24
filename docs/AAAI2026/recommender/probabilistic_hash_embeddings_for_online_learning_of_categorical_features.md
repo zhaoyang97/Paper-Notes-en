@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Probabilistic Hash Embeddings for Online Learning of Categorical Features
 description: >-
-  [AAAI 2026][Recommender Systems][hash embedding] This paper proposes Probabilistic Hash Embeddings (PHE), which models hash embedding tables as random variables and performs posterior inference via Bayesian online learni…
+  [AAAI 2026 Oral][Recommender Systems][hash embedding] This paper proposes Probabilistic Hash Embeddings (PHE), which models hash embedding tables as random variables and performs posterior inference via Bayesian online learning. PHE addresses the catastrophic forgetting problem caused by parameter sharing in deterministic hash embeddings under streaming data settings. It significantly outperforms deterministic baselines across classification, sequential modeling…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Recommender Systems"
   - "hash embedding"
   - "Bayesian online learning"
@@ -12,7 +12,7 @@ tags:
   - "continual learning"
   - "variational inference"
 date: 2026-05-08
-content_hash: c3a5396d9b723a7c
+content_hash: a328f0cfa0d01b3a
 ---
 
 # Probabilistic Hash Embeddings for Online Learning of Categorical Features
@@ -136,10 +136,10 @@ PHE as a plug-and-play module across different tasks:
 ## Related Papers
 
 - [\[ICML 2026\] T-POP: Test-Time Personalization with Online Preference Feedback](../../ICML2026/recommender/t-pop_test-time_personalization_with_online_preference_feedback.md)
-- [\[AAAI 2026\] MultiTab: A Scalable Foundation for Multitask Learning on Tabular Data](multitab_a_scalable_foundation_for_multitask_learning_on_tabular_data.md)
 - [\[NeurIPS 2025\] FACE: A General Framework for Mapping Collaborative Filtering Embeddings into LLM Tokens](../../NeurIPS2025/recommender/face_a_general_framework_for_mapping_collaborative_filtering_embeddings_into_llm.md)
+- [\[AAAI 2026\] MultiTab: A Scalable Foundation for Multitask Learning on Tabular Data](multitab_a_scalable_foundation_for_multitask_learning_on_tabular_data.md)
+- [\[ICLR 2026\] On the Mechanisms of Collaborative Learning in VAE Recommenders](../../ICLR2026/recommender/on_the_mechanisms_of_collaborative_learning_in_vae_recommenders.md)
 - [\[ICML 2026\] Learning Design Skills as Memory Policies for Agentic Photonic Inverse Design](../../ICML2026/recommender/learning_design_skills_as_memory_policies_for_agentic_photonic_inverse_design.md)
-- [\[ICLR 2026\] C2AL: Cohort-Contrastive Auxiliary Learning for Large-scale Recommendation Systems](../../ICLR2026/recommender/c2al_cohort-contrastive_auxiliary_learning_for_large-scale_recommendation_system.md)
 
 </div>
 

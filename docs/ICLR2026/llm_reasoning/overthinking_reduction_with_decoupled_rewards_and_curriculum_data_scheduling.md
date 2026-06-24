@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Overthinking Reduction with Decoupled Rewards and Curriculum Data Scheduling
 description: >-
-  [ICLR 2026][LLM Reasoning][overthinking] Theoretically reveals two fundamental flaws of existing length penalty methods—incorrectly punishing high-entropy exploration tokens and incorrectly rewarding redundant tokens. Proposes the DeCS framework, which, through decoupled token-level rewards and curriculum batch scheduling, reduces inference tokens by more tha
+  [ICLR 2026 Oral][Reasoning][overthinking] Theoretically reveals two fundamental flaws of existing length penalty methods—incorrectly punishing high-entropy exploration tokens and incorrectly rewarding redundant tokens. Proposes the DeCS framework, which, through decoupled token-level rewards and curriculum batch scheduling, reduces inference tokens by more than 50% across 7 benchmarks while maintaining or even improving model performance.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - overthinking
-  - RLVR
-  - NRP
+  - "ICLR 2026 Oral"
+  - "Reasoning"
+  - "overthinking"
+  - "decoupled rewards"
+  - "curriculum learning"
+  - "RLVR"
+  - "NRP"
 date: 2026-05-08
-content_hash: 3e0ac21149952665
+content_hash: 9e3ac3ea2c4c2cc7
 ---
+
 # Overthinking Reduction with Decoupled Rewards and Curriculum Data Scheduling
 
 **Conference**: ICLR 2026 Oral  
@@ -126,10 +129,10 @@ Training follows the GRPO-based PPO surrogate loss (Eq. 3), with token-level adv
 ## Related Papers
 
 - [\[ICLR 2026\] DRPO: Efficient Reasoning via Decoupled Reward Policy Optimization](drpo_efficient_reasoning_via_decoupled_reward_policy_optimization.md)
-- [\[ICLR 2026\] CyclicReflex: Improving Reasoning Models via Cyclical Reflection Token Scheduling](cyclicreflex_improving_reasoning_models_via_cyclical_reflection_token_scheduling.md)
+- [\[NeurIPS 2025\] Curriculum Abductive Learning](../../NeurIPS2025/llm_reasoning/curriculum_abductive_learning.md)
 - [\[ICLR 2026\] Curriculum Reinforcement Learning from Easy to Hard Tasks Improves LLM Reasoning](curriculum_reinforcement_learning_from_easy_to_hard_tasks_improves_llm_reasoning.md)
-- [\[ICLR 2026\] Random Policy Valuation is Enough for LLM Reasoning with Verifiable Rewards](random_policy_valuation_is_enough_for_llm_reasoning_with_verifiable_rewards.md)
-- [\[ICLR 2026\] Your Models Have Thought Enough: Training Large Reasoning Models to Stop Overthinking](your_models_have_thought_enough_training_large_reasoning_models_to_stop_overthin.md)
+- [\[ICLR 2026\] CyclicReflex: Improving Reasoning Models via Cyclical Reflection Token Scheduling](cyclicreflex_improving_reasoning_models_via_cyclical_reflection_token_scheduling.md)
+- [\[ICLR 2026\] The First Impression Problem: Internal Bias Triggers Overthinking in Reasoning Models](the_first_impression_problem_internal_bias_triggers_overthinking_in_reasoning_mo.md)
 
 </div>
 

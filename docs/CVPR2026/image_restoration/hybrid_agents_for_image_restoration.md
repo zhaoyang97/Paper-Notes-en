@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Hybrid Agents for Image Restoration
 description: >-
-  [CVPR 2026][Image Restoration][Multi-Agent] To address the pain points of "non-experts being unable to select the right tools" and "sequential restoration causing error propagation" in real-world image restoration, HybridAgent is proposed. It employs a triad of "Fast, Slow, and Feedback" agents for collaborative scheduling, working with a suite of single and mix
+  [CVPR 2026][Image Restoration][Multi-Agent] To address the pain points of "non-experts being unable to select the right tools" and "sequential restoration causing error propagation" in real-world image restoration, HybridAgent is proposed. It employs a triad of "Fast, Slow, and Feedback" agents for collaborative scheduling, working with a suite of single and mixed degradation restoration tools trained in three stages. The system routes simple instructions through a lightweigh…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Multi-Agent
-  - LoRA
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Multi-Agent"
+  - "Multimodal Large Language Models (MLLM)"
+  - "Mixed Degradation"
+  - "LoRA"
 date: 2026-05-08
-content_hash: 3f6ad19df6c93c8c
+content_hash: df1167c83363dcb2
 ---
+
 # Hybrid Agents for Image Restoration
 
 **Conference**: CVPR 2026  
@@ -138,8 +141,8 @@ Mixed tools outperform sequential single tools across all combinations, with the
 - [\[CVPR 2026\] Zero-Shot Image Denoising via Hybrid Prior-Guided Pseudo Sample Generation](zero-shot_image_denoising_via_hybrid_prior-guided_pseudo_sample_generation.md)
 - [\[CVPR 2026\] MMDIR: Multimodal Instruction-Driven Framework for Mixed-Degradation Document Image Restoration](mmdir_multimodal_instruction-driven_framework_for_mixed-degradation_document_ima.md)
 - [\[CVPR 2026\] Dynamic Exposure Burst Image Restoration](dynamic_exposure_burst_image_restoration.md)
-- [\[CVPR 2026\] Residual Diffusion Bridge Model for Image Restoration](residual_diffusion_bridge_model_for_image_restoration.md)
 - [\[CVPR 2026\] Beyond the Ground Truth: Enhanced Supervision for Image Restoration](beyond_the_ground_truth_enhanced_supervision_for_image_restoration.md)
+- [\[CVPR 2026\] Beyond Ground-Truth: Leveraging Image Quality Priors for Real-World Image Restoration](beyond_ground-truth_leveraging_image_quality_priors_for_real-world_image_restora.md)
 
 </div>
 

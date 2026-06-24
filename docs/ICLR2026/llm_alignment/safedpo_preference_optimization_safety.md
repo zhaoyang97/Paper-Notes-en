@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] SafeDPO: A Simple Approach to Direct Preference Optimization with Enhanced Safety
 description: >-
-  [ICLR 2026][Alignment & RLHF][safety alignment] By revisiting the safety-constrained RLHF objective and proving it possesses a closed-form optimal policy, this work derives an equivalent tractable objective, SafeDPO. It requires only safety-aware data transformation and a safety margin term (one additional hyperparameter) on top of standard DPO. Without needing rewa
+  [ICLR 2026 Oral][LLM Alignment][safety alignment] By revisiting the safety-constrained RLHF objective and proving it possesses a closed-form optimal policy, this work derives an equivalent tractable objective, SafeDPO. It requires only safety-aware data transformation and a safety margin term (one additional hyperparameter) on top of standard DPO. Without needing reward/cost models, it achieves a 96.87% harmless rate on PKU-SafeRLHF-30K while maintaining competitive helpfulne…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - safety alignment
-  - DPO
-  - constrained optimization
-  - safety margin
-  - PKU-SafeRLHF
+  - "ICLR 2026 Oral"
+  - "LLM Alignment"
+  - "safety alignment"
+  - "DPO"
+  - "constrained optimization"
+  - "safety margin"
+  - "PKU-SafeRLHF"
 date: 2026-05-08
-content_hash: e204af0f40d051d0
+content_hash: af46c377dafc6555
 ---
+
 # SafeDPO: A Simple Approach to Direct Preference Optimization with Enhanced Safety
 
 **Conference**: ICLR 2026 Oral  
@@ -126,11 +127,11 @@ Based on the standard DPO training framework, $\beta=0.1$, $\Delta=10$ (default)
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning from Noisy Preferences: A Semi-Supervised Learning Approach to Direct Preference Optimization](learning_from_noisy_preferences_a_semi-supervised_learning_approach_to_direct_pr.md)
+- [\[ICLR 2026\] Alignment-Weighted DPO: A Principled Reasoning Approach to Improve Safety Alignment](alignment-weighted_dpo_a_principled_reasoning_approach_to_improve_safety_alignme.md)
 - [\[ICML 2026\] Autoregressive Direct Preference Optimization](../../ICML2026/llm_alignment/autoregressive_direct_preference_optimization.md)
-- [\[ICML 2026\] Boosting Direct Preference Optimization with Penalization](../../ICML2026/llm_alignment/boosting_direct_preference_optimization_with_penalization.md)
 - [\[ICLR 2026\] Token-Importance Guided Direct Preference Optimization (TI-DPO)](token-importance_guided_direct_preference_optimization.md)
 - [\[ICLR 2026\] ActiveDPO: Active Direct Preference Optimization for Sample-Efficient Alignment](activedpo_active_direct_preference_optimization_for_sample-efficient_alignment.md)
-- [\[ICLR 2026\] Alignment-Weighted DPO: A Principled Reasoning Approach to Improve Safety Alignment](alignment-weighted_dpo_a_principled_reasoning_approach_to_improve_safety_alignme.md)
 
 </div>
 

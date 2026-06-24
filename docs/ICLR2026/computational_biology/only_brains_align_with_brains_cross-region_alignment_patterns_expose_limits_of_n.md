@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Only Brains Align with Brains: Cross-Region Alignment Patterns Expose Limits of Normative Models
 description: >-
-  [ICLR 2026][Computational Biology][fMRI] The authors point out that existing "model-brain alignment" benchmarks only perform pointwise (ROI-layer) scoring and suffer from extremely low discriminability (where many architecturally diverse visual models have indistinguishable scores). They propose **Alignment Pattern Analysis (APA)**—mapping the alignment of ea
+  [ICLR 2026][Computational Biology][Brain alignment benchmarks] The authors point out that existing "model-brain alignment" benchmarks only perform pointwise (ROI-layer) scoring and suffer from extremely low discriminability (where many architecturally diverse visual models have indistinguishable scores). They propose **Alignment Pattern Analysis (APA)**—mapping the alignment of each brain region relative to all other brain regions as a "fingerprint" curve. This requires model…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - fMRI
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Brain alignment benchmarks"
+  - "Visual cortex"
+  - "fMRI"
+  - "Representational similarity"
+  - "Discriminability"
 date: 2026-05-08
-content_hash: 7aafdf05cf92009b
+content_hash: db867915dc714fb0
 ---
+
 # Only Brains Align with Brains: Cross-Region Alignment Patterns Expose Limits of Normative Models
 
 **Conference**: ICLR 2026  
@@ -126,16 +131,16 @@ Evaluation of 47 SOTA visual models (26 Taskonomy models, supervised/self-superv
 - Value: ⭐⭐⭐⭐⭐ Directly addresses a major methodological weakness in the NeuroAI community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Pretraining with Re-parametrized Self-Attention: Unlocking Generalization in SNN-Based Neural Decoding Across Time, Brains, and Tasks](pretraining_with_re-parametrized_self-attention_unlocking_generalizationin_snn-b.md)
+- [\[ICLR 2026\] Align Your Structures: Generating Trajectories with Structure Pretraining for Molecular Dynamics](align_your_structures_generating_trajectories_with_structure_pretraining_for_mol.md)
+- [\[ICLR 2026\] Coupled Transformer Autoencoder for Disentangling Multi-Region Neural Latent Dynamics](coupled_transformer_autoencoder_for_disentangling_multi-region_neural_latent_dyn.md)
 - [\[ICLR 2026\] Diffusion Alignment as Variational Expectation-Maximization](diffusion_alignment_as_variational_expectation-maximization.md)
-- [\[ACL 2025\] Align-Pro: Align Protein Representations Through Multi-Modal Learning](../../ACL2025/computational_biology/align-pro_align_protein_representations_through_multi-modal_learning.md)
 - [\[ICLR 2026\] Fast and Interpretable Protein Substructure Alignment via Optimal Transport](fast_and_interpretable_protein_substructure_alignment_via_optimal_transport.md)
-- [\[ICLR 2026\] Quantifying Cross-Attention Interaction in Transformers for Interpreting TCR-pMHC Binding](quantifying_cross-attention_interaction_in_transformers_for_interpreting_tcr-pmh.md)
 
 </div>
 

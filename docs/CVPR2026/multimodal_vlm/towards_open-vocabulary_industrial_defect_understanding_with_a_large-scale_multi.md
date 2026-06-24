@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Open-Vocabulary Industrial Defect Understanding with a Large-Scale Multimodal Dataset
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper constructs the first million-scale industrial defect "image-text pair" dataset, IMDD-1M (1.24 million images, 63 manufacturing domains, 421 defect types), and trains a text-conditioned diffusion foundation model from scratch. It unifies segmentation, detection, classification, and generation into a single fr
+  [CVPR 2026][Multimodal VLM][Industrial defects] This paper constructs the first million-scale industrial defect "image-text pair" dataset, IMDD-1M (1.24 million images, 63 manufacturing domains, 421 defect types), and trains a text-conditioned diffusion foundation model from scratch. It unifies segmentation, detection, classification, and generation into a single framework. Downstream tasks achieve performance close to specialized models using only about 200 samples per class…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Industrial defects"
+  - "image-text pair dataset"
+  - "diffusion foundation model"
+  - "open-vocabulary classification"
+  - "data-efficient"
 date: 2026-05-08
-content_hash: b4805554652a65b4
+content_hash: 4b3d4a53f6cb489b
 ---
+
 # Towards Open-Vocabulary Industrial Defect Understanding with a Large-Scale Multimodal Dataset
 
 **Conference**: CVPR 2026  
@@ -146,8 +152,8 @@ Ablations on VisA (Full model Acc 91.0% / IoU 52.9%):
 ## Related Papers
 
 - [\[CVPR 2026\] Vocabulary Scaling Law: Tuning Open-vocabulary Predictors for Their Openness](vocabulary_scaling_law_tuning_open-vocabulary_predictors_for_their_openness.md)
-- [\[CVPR 2026\] Reconstructing CLIP for Open-Vocabulary Dense Perception](reconstructing_clip_for_open-vocabulary_dense_perception.md)
-- [\[CVPR 2026\] SldprtNet: A Large-Scale Multimodal Dataset for CAD Generation in Language-Driven 3D Design](sldprtnet_a_large-scale_multimodal_dataset_for_cad_generation_in_language-driven.md)
+- [\[CVPR 2026\] ChartNet: A Million-Scale, High-Quality Multimodal Dataset for Robust Chart Understanding](chartnet_a_million-scale_high-quality_multimodal_dataset_for_robust_chart_unders.md)
+- [\[ICLR 2026\] TABLET: A Large-Scale Dataset for Robust Visual Table Understanding](../../ICLR2026/multimodal_vlm/tablet_a_large-scale_dataset_for_robust_visual_table_understanding.md)
 - [\[CVPR 2026\] SynCLIP: Synonym-Coherent Language-Image Pretraining for Robust Open-Vocabulary Dense Perception](synclip_synonym-coherent_language-image_pretraining_for_robust_open-vocabulary_d.md)
 - [\[AAAI 2026\] O3SLM: Open Weight, Open Data, and Open Vocabulary Sketch-Language Model](../../AAAI2026/multimodal_vlm/o3slm_open_weight_open_data_and_open_vocabulary_sketch-language_model.md)
 

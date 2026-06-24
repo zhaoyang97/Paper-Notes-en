@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Alignment-Weighted DPO: A Principled Reasoning Approach to Improve Safety Alignment
 description: >-
-  [ICLR 2026][Alignment & RLHF][Chain-of-Thought] The authors first use causal intervention to prove that "current safety alignment is shallow and unrelated to deep reasoning," then release an open-source CoT safety fine-tuning dataset to teach models to "refuse with reasoning." Finally, they propose **Alignment-Weighted DPO**: decomposing responses into a "reasoning
+  [ICLR 2026][LLM Alignment][Safety Alignment] The authors first use causal intervention to prove that "current safety alignment is shallow and unrelated to deep reasoning," then release an open-source CoT safety fine-tuning dataset to teach models to "refuse with reasoning." Finally, they propose **Alignment-Weighted DPO**: decomposing responses into a "reasoning segment" and a "response segment" with different weights, applying heavier preference updates to the segment that i…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - Chain-of-Thought
-  - DPO
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Safety Alignment"
+  - "Jailbreak Attacks"
+  - "Causal Intervention"
+  - "Chain-of-Thought"
+  - "DPO"
+  - "Reasoning-Aware Alignment"
 date: 2026-05-08
-content_hash: 63fb65fd486fb4b0
+content_hash: 1d3574d307f33aa6
 ---
+
 # Alignment-Weighted DPO: A Principled Reasoning Approach to Improve Safety Alignment
 
 **Conference**: ICLR 2026  
@@ -127,11 +132,11 @@ STAIR-DPO-3 has higher utility but requires three iterations of SFT+DPO with hig
 
 ## Related Papers
 
+- [\[ICLR 2026\] SafeDPO: A Simple Approach to Direct Preference Optimization with Enhanced Safety](safedpo_preference_optimization_safety.md)
 - [\[ICML 2026\] Curriculum Learning for Safety Alignment](../../ICML2026/llm_alignment/curriculum_learning_for_safety_alignment.md)
 - [\[ICLR 2026\] Superficial Safety Alignment Hypothesis](superficial_safety_alignment_hypothesis.md)
-- [\[ICLR 2026\] SafeDPO: A Simple Approach to Direct Preference Optimization with Enhanced Safety](safedpo_preference_optimization_safety.md)
+- [\[ICLR 2026\] Mitigating the Safety Alignment Tax with Null-Space Constrained Policy Optimization](mitigating_the_safety_alignment_tax_with_null-space_constrained_policy_optimizat.md)
 - [\[ICLR 2026\] Align Once, Benefit Multilingually: Enforcing Multilingual Consistency for LLM Safety Alignment](align_once_benefit_multilingually_enforcing_multilingual_consistency_for_llm_saf.md)
-- [\[ICLR 2026\] Displacement-Resistant Extensions of DPO with Nonconvex $f$-Divergences](displacement-resistant_extensions_of_dpo_with_nonconvex_f-divergences.md)
 
 </div>
 

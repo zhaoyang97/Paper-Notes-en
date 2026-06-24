@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] The More You Automate, the Less You See: Hidden Pitfalls of AI Scientist Systems
 description: >-
-  [NeurIPS 2025][Recommender Systems][AI scientist] This paper systematically identifies four methodological pitfalls in current AI scientist systems—inappropriate benchmark selection, data leakage, metric misuse…
+  [NeurIPS 2025 Spotlight][Recommender Systems][AI scientist] This paper systematically identifies four methodological pitfalls in current AI scientist systems—inappropriate benchmark selection, data leakage, metric misuse, and post-hoc selection bias—through controlled experiments on Agent Laboratory and The AI Scientist v2 using a carefully designed synthetic task (SPR). Both systems exhibit these issues to varying degrees. The paper further demonstrates that auditing trace l…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Recommender Systems"
   - "AI scientist"
   - "scientific integrity"
@@ -12,7 +12,7 @@ tags:
   - "data leakage"
   - "reward hacking"
 date: 2026-05-08
-content_hash: 346b994e453cf2c9
+content_hash: 3a66a5ce694096b6
 ---
 
 # The More You Automate, the Less You See: Hidden Pitfalls of AI Scientist Systems
@@ -159,10 +159,10 @@ The AI Scientist v2 exhibits more severe bias: in the manipulated condition, it 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Who You Are Matters: Bridging Topics and Social Roles via LLM-Enhanced Logical Recommendation](who_you_are_matters_bridging_topics_and_social_roles_via_llm-enhanced_logical_re.md)
+- [\[ICML 2025\] How to Set AdamW's Weight Decay as You Scale Model and Dataset Size](../../ICML2025/recommender/how_to_set_adamws_weight_decay_as_you_scale_model_and_dataset_size.md)
 - [\[NeurIPS 2025\] Position: Towards Bidirectional Human-AI Alignment](position_towards_bidirectional_human-ai_alignment.md)
 - [\[NeurIPS 2025\] Validating LLM-as-a-Judge Systems under Rating Indeterminacy](validating_llm-as-a-judge_systems_under_rating_indeterminacy.md)
 - [\[NeurIPS 2025\] NeurIPS Should Lead Scientific Consensus on AI Policy](neurips_should_lead_scientific_consensus_on_ai_policy.md)
-- [\[NeurIPS 2025\] EMPATHIA: Multi-Faceted Human-AI Collaboration for Refugee Integration](empathia_multi-faceted_human-ai_collaboration_for_refugee_integration.md)
 
 </div>
 

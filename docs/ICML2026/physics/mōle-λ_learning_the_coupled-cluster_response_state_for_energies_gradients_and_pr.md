@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] MōLe-Λ: Learning the Coupled-Cluster Response State for Energies, Gradients, and Properties
 description: >-
-  [ICML 2026][Physics & Scientific Computing][CCSD] MōLe-Λ extends molecular orbital learning from predicting only Coupled-Cluster right-state $T$ amplitudes to simultaneously predicting left-state $\Lambda$ amplitudes. Using a single equivariant network to read out $(T_1, T_2, \Lambda_1, \Lambda_2)$ directly from localized Hartree–Fock orbitals, it achieves MAEs for en
+  [ICML 2026][Physics & Scientific Computing][Coupled Cluster Theory] MōLe-Λ extends molecular orbital learning from predicting only Coupled-Cluster right-state $T$ amplitudes to simultaneously predicting left-state $\Lambda$ amplitudes. Using a single equivariant network to read out $(T_1, T_2, \Lambda_1, \Lambda_2)$ directly from localized Hartree–Fock orbitals, it achieves MAEs for energy and force of only 0.10 mHa and 0.12 mHa/Bohr on QM7. It derives response properties inc…
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
-  - CCSD
+  - "ICML 2026"
+  - "Physics & Scientific Computing"
+  - "Coupled Cluster Theory"
+  - "CCSD"
+  - "$\\Lambda$ Amplitudes"
+  - "Equivariant Neural Networks"
+  - "Molecular Orbitals"
+  - "Response Properties"
 date: 2026-05-08
-content_hash: 3a5ec2624c5e12ae
+content_hash: 10b70241f96248e6
 ---
+
 # MōLe-Λ: Learning the Coupled-Cluster Response State for Energies, Gradients, and Properties
 
 **Conference**: ICML 2026  
@@ -140,7 +146,7 @@ Amplitude MAE on QM7: $T_1, \Lambda_1 \approx 2.6\text{-}2.7\times 10^{-5}$, $T_
 
 - [\[ICLR 2026\] DRIFT-Net: A Spectral--Coupled Neural Operator for PDEs Learning](../../ICLR2026/physics/drift-net_a_spectral--coupled_neural_operator_for_pdes_learning.md)
 - [\[CVPR 2025\] Learning Phase Distortion with Selective State Space Models for Video Turbulence Mitigation](../../CVPR2025/physics/learning_phase_distortion_with_selective_state_space_models_for_video_turbulence.md)
-- [\[ICLR 2026\] HyperKKL: Enabling Non-Autonomous State Estimation through Dynamic Weight Conditioning](../../ICLR2026/physics/hyperkkl_enabling_non-autonomous_state_estimation_through_dynamic_weight_conditi.md)
+- [\[ICLR 2026\] Extending Fourier Neural Operators for Modeling Parameterized and Coupled PDEs](../../ICLR2026/physics/extending_fourier_neural_operators_for_modeling_parameterized_and_coupled_pdes.md)
 - [\[ICML 2026\] Topology-Preserving Neural Operator Learning via Hodge Decomposition](topology-preserving_neural_operator_learning_via_hodge_decomposition.md)
 - [\[ICML 2026\] Hermite-NGP: Gradient-Augmented Hash Encoding for Learning PDEs](hermite-ngp_gradient-augmented_hash_encoding_for_learning_pdes.md)
 

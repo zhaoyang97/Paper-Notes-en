@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Is the Reversal Curse a Binding Problem? Uncovering Limitations of Transformers from a Basic Generalization Failure
 description: >-
-  [ICLR 2026][LLM (Other)][JEPA] This paper proposes that the "Reversal Curse" is a manifestation of the "binding problem" from cognitive science in Transformers—stemming from inconsistency and entanglement of concept representations. It designs an architecture based on JEPA and memory layers to truly break the reversal curse for the first time withou
+  [ICLR 2026][LLM (Other)][Reversal Curse] This paper proposes that the "Reversal Curse" is a manifestation of the "binding problem" from cognitive science in Transformers—stemming from inconsistency and entanglement of concept representations. It designs an architecture based on JEPA and memory layers to truly break the reversal curse for the first time without relying on data augmentation.
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - JEPA
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Reversal Curse"
+  - "Binding Problem"
+  - "JEPA"
+  - "Concept Representation"
+  - "Transformer Limitations"
 date: 2026-05-08
-content_hash: edbe5a2e4a6e891a
+content_hash: e70cb1d0750a2390
 ---
+
 # Is the Reversal Curse a Binding Problem? Uncovering Limitations of Transformers from a Basic Generalization Failure
 
 **Conference**: ICLR 2026  
@@ -119,11 +124,11 @@ The reversal capability unlocks a form of parametric memory integration. For exa
 
 ## Related Papers
 
-- [\[ICLR 2026\] Trapped by simplicity: When Transformers fail to learn from noisy features](trapped_by_simplicity_when_transformers_fail_to_learn_from_noisy_features.md)
 - [\[ACL 2025\] Veracity Bias and Beyond: Uncovering LLMs' Hidden Beliefs in Problem-Solving Reasoning](../../ACL2025/llm_nlp/veracity_bias_llm_hidden_beliefs.md)
 - [\[ICLR 2026\] Compositional-ARC: Assessing Systematic Generalization in Abstract Spatial Reasoning](compositional-arc_assessing_systematic_generalization_in_abstract_spatial_reason.md)
-- [\[AAAI 2026\] Learning Spatial Decay for Vision Transformers](../../AAAI2026/llm_nlp/learning_spatial_decay_for_vision_transformers.md)
-- [\[AAAI 2026\] Vision Transformers are Circulant Attention Learners](../../AAAI2026/llm_nlp/vision_transformers_are_circulant_attention_learners.md)
+- [\[ICLR 2026\] Trapped by simplicity: When Transformers fail to learn from noisy features](trapped_by_simplicity_when_transformers_fail_to_learn_from_noisy_features.md)
+- [\[AAAI 2026\] Control Illusion: The Failure of Instruction Hierarchies in Large Language Models](../../AAAI2026/llm_nlp/control_illusion_the_failure_of_instruction_hierarchies_in_large_language_models.md)
+- [\[ICML 2025\] Theoretical Limitations of Ensembles in the Age of Overparameterization](../../ICML2025/llm_nlp/theoretical_limitations_of_ensembles_in_the_age_of_overparameterization.md)
 
 </div>
 

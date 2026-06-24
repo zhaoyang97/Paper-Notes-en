@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] CrossHOI-Bench: A Unified Benchmark for HOI Evaluation across Vision-Language Models and HOI-Specific Methods
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Ours proposes CrossHOI-Bench, the first HOI benchmark for unified evaluation of VLMs and HOI-specific models via multiple-choice questions. By avoiding erroneous penalties from incomplete annotations through curated positive and negative examples, it reveals that large VLMs outperform SOTA HOI methods by $+5.18\%$ in I
+  [CVPR 2026][Multimodal VLM][HOI Detection] Ours proposes CrossHOI-Bench, the first HOI benchmark for unified evaluation of VLMs and HOI-specific models via multiple-choice questions. By avoiding erroneous penalties from incomplete annotations through curated positive and negative examples, it reveals that large VLMs outperform SOTA HOI methods by $+5.18\%$ in Instance-F1 zero-shot, while identifying systematic weaknesses in multi-action recognition and cross-human attribution…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "HOI Detection"
+  - "VLM Evaluation"
+  - "Multiple Choice Benchmark"
+  - "Cross-Paradigm Comparison"
 date: 2026-05-08
-content_hash: 7ce1387fb5eeadfe
+content_hash: ee499ec47c62c903
 ---
+
 # CrossHOI-Bench: A Unified Benchmark for HOI Evaluation across Vision-Language Models and HOI-Specific Methods
 
 **Conference**: CVPR 2026  
@@ -145,11 +150,11 @@ To determine whether VLM failures stem from localization or recognition, the ben
 
 ## Related Papers
 
-- [\[CVPR 2026\] AVA-Bench: Atomic Visual Ability Benchmark for Vision Foundation Models](ava-bench_atomic_visual_ability_benchmark_for_vision_foundation_models.md)
 - [\[ICLR 2026\] Zero-shot HOI Detection with MLLM-based Detector-agnostic Interaction Recognition](../../ICLR2026/multimodal_vlm/zero-shot_hoi_detection_with_mllm-based_detector-agnostic_interaction_recognitio.md)
 - [\[CVPR 2026\] SO-Bench: A Structural Output Evaluation of Multimodal LLM](so-bench_a_structural_output_evaluation_of_multimodal_llm.md)
 - [\[CVPR 2026\] LVLM-Aided Alignment of Task-Specific Vision Models](lvlm-aided_alignment_of_task-specific_vision_models.md)
-- [\[CVPR 2026\] PAI-Bench: A Comprehensive Benchmark for Physical AI](pai-bench_a_comprehensive_benchmark_for_physical_ai.md)
+- [\[CVPR 2026\] HAVE-Bench: Hierarchical Audio-Visual Evaluation from Perception to Interaction](have-bench_hierarchical_audio-visual_evaluation_from_perception_to_interaction.md)
+- [\[CVPR 2026\] UNICBench: UNIfied Counting Benchmark for MLLM](unicbench_unified_counting_benchmark_for_mllm.md)
 
 </div>
 

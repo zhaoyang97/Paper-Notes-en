@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SwingArena: Adversarial Programming Arena for Long-context GitHub Issue Solving
 description: >-
-  [ICLR 2026][LLM Efficiency][Submitter-Reviewer] Ours proposes SwingArena, an adversarial evaluation framework where two LLMs alternately play the roles of patch submitter and test reviewer on real GitHub issues. Verified end-to-end via repository-native CI pipelines (compilation/lint/regression testing), across 400 instances in C++, Python, Rust, and Go, it reveals
+  [ICLR 2026 Oral][LLM Efficiency][Adversarial Evaluation] Ours proposes SwingArena, an adversarial evaluation framework where two LLMs alternately play the roles of patch submitter and test reviewer on real GitHub issues. Verified end-to-end via repository-native CI pipelines (compilation/lint/regression testing), across 400 instances in C++, Python, Rust, and Go, it reveals a behavioral divergence between "aggressive patch generation" and "defensive quality assurance."
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Submitter-Reviewer
+  - "ICLR 2026 Oral"
+  - "LLM Efficiency"
+  - "Adversarial Evaluation"
+  - "CI Pipeline"
+  - "Submitter-Reviewer"
+  - "Retrieval-Augmented Code Generation (RACG)"
+  - "Multilingual Code Benchmark"
 date: 2026-05-08
-content_hash: aa981dba0fc18350
+content_hash: bbfb68e7e45b3231
 ---
+
 # SwingArena: Adversarial Programming Arena for Long-context GitHub Issue Solving
 
 **Conference**: ICLR 2026 Oral  
@@ -145,10 +150,10 @@ RPR=Reviewer test pass rate on golden patch, SPR=Submitter patch pass rate on CI
 ## Related Papers
 
 - [\[ICML 2025\] Curse of High Dimensionality Issue in Transformer for Long-context Modeling](../../ICML2025/llm_efficiency/curse_of_high_dimensionality_issue_in_transformer_for_long-context_modeling.md)
+- [\[ICLR 2026\] Revisiting Long-context Modeling from Context Denoising Perspective](revisiting_long-context_modeling_from_context_denoising_perspective.md)
 - [\[ICLR 2026\] Long-Context Attention Benchmark: From Kernel Efficiency to Distributed Context Parallelism](long-context_attention_benchmark_from_kernel_efficiency_to_distributed_context_p.md)
+- [\[ICLR 2026\] SoLoPO: Unlocking Long-Context Capabilities in LLMs via Short-to-Long Preference Optimization](solopo_unlocking_long-context_capabilities_in_llms_via_short-to-long_preference_.md)
 - [\[ICLR 2026\] EntropyLong: Effective Long-Context Training via Predictive Uncertainty](entropylong_effective_long-context_training_via_predictive_uncertainty.md)
-- [\[ICLR 2026\] Retrospective Sparse Attention for Efficient Long-Context Generation](retrospective_sparse_attention_for_efficient_long-context_generation.md)
-- [\[ICLR 2026\] Let's (not) just put things in Context: Test-time Training for Long-context LLMs](lets_not_just_put_things_in_context_test-time_training_for_long-context_llms.md)
 
 </div>
 

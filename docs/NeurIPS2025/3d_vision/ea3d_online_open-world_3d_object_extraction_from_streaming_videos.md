@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EA3D: Online Open-World 3D Object Extraction from Streaming Videos
 description: >-
-  [NeurIPS 2025][3D Vision][Online 3D Reconstruction] This paper proposes EA3D (ExtractAnything3D), an online open-world 3D object extraction framework that performs simultaneous geometric reconstruction and comprehensive…
+  [NeurIPS 2025][3D Vision][Online 3D Reconstruction] This paper proposes EA3D (ExtractAnything3D), an online open-world 3D object extraction framework that performs simultaneous geometric reconstruction and comprehensive scene understanding from streaming videos via knowledge-integrated feature maps, online visual odometry, and recurrent joint optimization.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "Feature Gaussians"
   - "Semantic Segmentation"
 date: 2026-05-08
-content_hash: fc5654c820df9163
+content_hash: 94af1ce202b9cae1
 ---
 
 # EA3D: Online Open-World 3D Object Extraction from Streaming Videos
@@ -149,10 +149,10 @@ The triple constraint of "online + pose-free + open-world" is both highly challe
 ## Related Papers
 
 - [\[NeurIPS 2025\] Towards 3D Objectness Learning in an Open World](towards_3d_objectness_learning_in_an_open_world.md)
-- [\[NeurIPS 2025\] OnlineSplatter: Pose-Free Online 3D Reconstruction for Free-Moving Objects](onlinesplatter_pose-free_online_3d_reconstruction_for_free-moving_objects.md)
+- [\[CVPR 2025\] DepthCrafter: Generating Consistent Long Depth Sequences for Open-world Videos](../../CVPR2025/3d_vision/depthcrafter_generating_consistent_long_depth_sequences_for_open-world_videos.md)
+- [\[CVPR 2025\] Open-World Amodal Appearance Completion](../../CVPR2025/3d_vision/open-world_amodal_appearance_completion.md)
 - [\[NeurIPS 2025\] OpenLex3D: A Tiered Evaluation Benchmark for Open-Vocabulary 3D Scene Representations](openlex3d_a_tiered_evaluation_benchmark_for_open-vocabulary_3d_scene_representat.md)
-- [\[NeurIPS 2025\] 4DGT: Learning a 4D Gaussian Transformer Using Real-World Monocular Videos](4dgt_learning_a_4d_gaussian_transformer_using_realworld_mono.md)
-- [\[NeurIPS 2025\] Online Segment Any 3D Thing as Instance Tracking](online_segment_any_3d_thing_as_instance_tracking.md)
+- [\[CVPR 2025\] ODHSR: Online Dense 3D Reconstruction of Humans and Scenes from Monocular Videos](../../CVPR2025/3d_vision/odhsr_online_dense_3d_reconstruction_of_humans_and_scenes_from_monocular_videos.md)
 
 </div>
 

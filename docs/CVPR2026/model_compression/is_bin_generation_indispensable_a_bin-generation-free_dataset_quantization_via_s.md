@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Is Bin Generation Indispensable? A Bin-Generation-Free Dataset Quantization via Semantic Perspective
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] Addressing the pain points of the "bin generation" step scaling cubically with the number of intra-class samples and fixed patch dropping ratios being unable to adapt to sample redundancy, BGFDQ replaces expensive bin generation with lightweight KNN identification, uses neighbor-aware coreset selection to ensure covera
+  [CVPR 2026][Model Compression][Dataset Quantization] Addressing the pain points of the "bin generation" step scaling cubically with the number of intra-class samples and fixed patch dropping ratios being unable to adapt to sample redundancy, BGFDQ replaces expensive bin generation with lightweight KNN identification, uses neighbor-aware coreset selection to ensure coverage and remove redundancy, and adaptively selects dropping ratios for each image via semantic offset. This r…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Dataset Quantization"
+  - "Coreset Selection"
+  - "KNN"
+  - "Adaptive Patch Dropping"
+  - "Scalability"
 date: 2026-05-08
-content_hash: d5421ae02c4dd09d
+content_hash: 34d60e8e7699e130
 ---
+
 # Is Bin Generation Indispensable? A Bin-Generation-Free Dataset Quantization via Semantic Perspective
 
 **Conference**: CVPR 2026  
@@ -134,9 +140,9 @@ Runtime Breakdown (CIFAR-10, ρ=20%, seconds):
 
 - [\[CVPR 2026\] SG-LoRA: Semantic-guided LoRA Parameters Generation](sg-lora_semantic-guided_lora_parameters_generation.md)
 - [\[CVPR 2026\] DMGD: Train-Free Dataset Distillation with Semantic-Distribution Matching in Diffusion Models](dmgd_train-free_dataset_distillation_with_semantic-distribution_matching_in_diff.md)
+- [\[ICLR 2026\] Q&C: When Quantization Meets Cache in Efficient Generation](../../ICLR2026/model_compression/qc_when_quantization_meets_cache_in_efficient_generation.md)
 - [\[CVPR 2026\] Adaptive Video Distillation: Mitigating Oversaturation and Temporal Collapse in Few-Step Generation](adaptive_video_distillation_mitigating_oversaturation_and_temporal_collapse_in_f.md)
 - [\[ICLR 2026\] PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models](../../ICLR2026/model_compression/ptq4arvg_post-training_quantization_for_autoregressive_visual_generation_models.md)
-- [\[ACL 2025\] Predicting Through Generation: Why Generation Is Better for Prediction](../../ACL2025/model_compression/predicting_through_generation_why_generation_is_better_for_prediction.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Seeing through boxes: Non-Line-of-Sight 3D Reconstruction from Radar Signals
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Addressing the issues of high reconstruction noise, training instability, and surface position ambiguity when millimeter-wave (mmWave) radar "sees through boxes to reconstruct interior objects," this paper proposes GeRaF 2.0. It unifies line-of-sight (LoS) geometry outside the box and non-line-of-sight (NLoS) geometry
+  [CVPR 2026][3D Vision][Non-line-of-sight reconstruction] Addressing the issues of high reconstruction noise, training instability, and surface position ambiguity when millimeter-wave (mmWave) radar "sees through boxes to reconstruct interior objects," this paper proposes GeRaF 2.0. It unifies line-of-sight (LoS) geometry outside the box and non-line-of-sight (NLoS) geometry inside into a Unified LoS (ULoS) Signed Distance Field. By using a visually pre-trained SDF for stable…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Non-line-of-sight reconstruction"
+  - "RF/Radar imaging"
+  - "Neural implicit surfaces"
+  - "Signed Distance Field (SDF)"
+  - "Visual priors"
 date: 2026-05-08
-content_hash: 1595468eec0b348c
+content_hash: be435092555967b9
 ---
+
 # Seeing through boxes: Non-Line-of-Sight 3D Reconstruction from Radar Signals
 
 **Conference**: CVPR 2026  
@@ -127,11 +133,11 @@ Ablation was conducted on the RSDF alignment weight $\lambda_{\mathrm{RSDF}}$:
 
 ## Related Papers
 
+- [\[CVPR 2026\] X-band Radar Non-Line-of-Sight Imaging](x-band_radar_non-line-of-sight_imaging.md)
+- [\[CVPR 2026\] DENALI: A Dataset Enabling Non-Line-of-Sight Spatial Reasoning with Low-Cost LiDARs](denali_a_dataset_enabling_non-line-of-sight_spatial_reasoning_with_low-cost_lida.md)
 - [\[CVPR 2026\] Seeing Depth Through Frequency and Motion: A Progressive Training Paradigm for Monocular Depth Estimation](seeing_depth_through_frequency_and_motion_a_progressive_training_paradigm_for_mo.md)
 - [\[CVPR 2026\] Seeing through Light and Darkness: Sensor-Physics Grounded Deblurring HDR NeRF from Single-Exposure Images and Events](seeing_through_light_and_darkness_sensor-physics_grounded_deblurring_hdr_nerf_fr.md)
-- [\[CVPR 2026\] Neural Field-Based 3D Surface Reconstruction of Microstructures from Multi-Detector Signals in Scanning Electron Microscopy](neural_field-based_3d_surface_reconstruction_of_microstructures_from_multi-detec.md)
-- [\[ICCV 2025\] Seeing and Seeing Through the Glass: Real and Synthetic Data for Multi-Layer Depth Estimation](../../ICCV2025/3d_vision/seeing_and_seeing_through_the_glass_real_and_synthetic_data_for_multi-layer_dept.md)
-- [\[CVPR 2026\] Radar-Guided Polynomial Fitting for Metric Depth Estimation](radar-guided_polynomial_fitting_for_metric_depth_estimation.md)
+- [\[CVPR 2026\] LocateAnything3D: Vision-Language 3D Detection with Chain-of-Sight](locateanything3d_vision-language_3d_detection_with_chain-of-sight.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning by Analogy: A Causal Framework for Compositional Generalization
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] This paper formalizes "compositional generalization by analogy"—a form of human cognition—into a latent hierarchical generative process using causal language (modularity + principle of minimal change). It proves that this structure supports compositional generalization for complex conceptual interactions and can be ide
+  [CVPR 2026][Self-Supervised Learning][Compositional Generalization] This paper formalizes "compositional generalization by analogy"—a form of human cognition—into a latent hierarchical generative process using causal language (modularity + principle of minimal change). It proves that this structure supports compositional generalization for complex conceptual interactions and can be identifiably recovered from image-text pairs. Based on this, it interprets diffusion timesteps…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Compositional Generalization"
+  - "Causal Modularity"
+  - "Latent Hierarchical Models"
+  - "Identifiability"
+  - "Text-to-Image Diffusion"
 date: 2026-05-08
-content_hash: d7fd784e27c5ddf9
+content_hash: 0782a608b70e5049
 ---
+
 # Learning by Analogy: A Causal Framework for Compositional Generalization
 
 **Conference**: CVPR 2026  
@@ -137,11 +143,11 @@ Sparse regularization (w/o SR) and time-dependent injection (w/o TD) were sequen
 
 ## Related Papers
 
-- [\[CVPR 2026\] From Feature Learning to Spectral Basis Learning: A Unifying and Flexible Framework for Efficient and Robust Shape Matching](from_feature_learning_to_spectral_basis_learning_a_unifying_and_flexible_framewo.md)
-- [\[ICML 2026\] Statistical Consistency and Generalization of Contrastive Representation Learning](../../ICML2026/self_supervised/statistical_consistency_and_generalization_of_contrastive_representation_learnin.md)
+- [\[ICLR 2026\] A Bayesian Nonparametric Framework for Learning Disentangled Representations](../../ICLR2026/self_supervised/a_bayesian_nonparametric_framework_for_learning_disentangled_representations.md)
+- [\[ICLR 2026\] Symmetric Space Learning for Combinatorial Generalization](../../ICLR2026/self_supervised/symmetric_space_learning_for_combinatorial_generalization.md)
 - [\[CVPR 2026\] MemFlow: A Lightweight Forward Memorizing Framework for Quick Domain Adaptive Feature Mapping](memflow_a_lightweight_forward_memorizing_framework_for_quick_domain_adaptive_fea.md)
-- [\[ICML 2026\] A Refined Generalization Analysis for Extreme Multi-class Supervised Contrastive Representation Learning](../../ICML2026/self_supervised/a_refined_generalization_analysis_for_extreme_multi-class_supervised_contrastive.md)
-- [\[AAAI 2026\] HiLoMix: Robust High- and Low-Frequency Graph Learning Framework for Mixing Address Association](../../AAAI2026/self_supervised/hilomix_robust_high-_and_low-frequency_graph_learning_framework_for_mixing_addre.md)
+- [\[ICML 2026\] Statistical Consistency and Generalization of Contrastive Representation Learning](../../ICML2026/self_supervised/statistical_consistency_and_generalization_of_contrastive_representation_learnin.md)
+- [\[ICLR 2026\] Detect, Decide, Unlearn: A Transfer-Aware Framework for Continual Learning](../../ICLR2026/self_supervised/detect_decide_unlearn_a_transfer-aware_framework_for_continual_learning.md)
 
 </div>
 

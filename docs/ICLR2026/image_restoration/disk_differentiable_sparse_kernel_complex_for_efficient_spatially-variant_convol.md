@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DISK: Differentiable Sparse Kernel Complex for Efficient Spatially-Variant Convolution
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] A large and complex dense kernel is re-represented as a "cascade of sparse kernels." End-to-end differentiable optimization (instead of heuristic search) is used to learn the offsets and weights of sampling points in each layer. Combined with shape-aware initialization and filter space interpolation, this achieves up t
+  [ICLR2026][Image Restoration][Sparse kernel decomposition] A large and complex dense kernel is re-represented as a "cascade of sparse kernels." End-to-end differentiable optimization (instead of heuristic search) is used to learn the offsets and weights of sampling points in each layer. Combined with shape-aware initialization and filter space interpolation, this achieves up to approximately 20× acceleration for spatially-variant filtering on mobile devices with image quality…
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR2026"
+  - "Image Restoration"
+  - "Sparse kernel decomposition"
+  - "Spatially-variant convolution"
+  - "Differentiable optimization"
+  - "Real-time rendering"
+  - "Mobile imaging"
 date: 2026-05-08
-content_hash: c6b983a2af554c51
+content_hash: 4017751ded7b2760
 ---
+
 # DISK: Differentiable Sparse Kernel Complex for Efficient Spatially-Variant Convolution
 
 **Conference**: ICLR2026  

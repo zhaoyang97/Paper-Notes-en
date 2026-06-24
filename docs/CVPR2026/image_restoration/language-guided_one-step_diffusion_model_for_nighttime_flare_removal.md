@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Language-Guided One-Step Diffusion Model for Nighttime Flare Removal
 description: >-
-  [CVPR 2026][Image Restoration][Vision-Language Model] Addressing the issue where nighttime flares from strong light sources occlude local areas and existing methods lack semantic priors for these regions—leading to artifacts or lost details—this paper introduces Flare-VLM, the first flare-specific Vision-Language Model. Flare-VLM outputs structured descriptions to guide a
+  [CVPR 2026][Image Restoration][Nighttime Flare Removal] Addressing the issue where nighttime flares from strong light sources occlude local areas and existing methods lack semantic priors for these regions—leading to artifacts or lost details—this paper introduces Flare-VLM, the first flare-specific Vision-Language Model. Flare-VLM outputs structured descriptions to guide a one-step diffusion model for reconstruction in a single forward pass. Furthermore…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Nighttime Flare Removal"
+  - "One-step Diffusion"
+  - "Vision-Language Model"
+  - "Semantic Distillation"
+  - "Data Synthesis"
 date: 2026-05-08
-content_hash: f1f3fcf43af284c1
+content_hash: af4bf0c395fc706a
 ---
+
 # Language-Guided One-Step Diffusion Model for Nighttime Flare Removal
 
 **Conference**: CVPR 2026  
@@ -137,16 +142,16 @@ Ablation of components on the self-synthesized test set, focusing on regional PS
 - Value: ⭐⭐⭐⭐ High-quality one-step inference results and benefit to downstream night detection; the paradigm of language-prior integration has high portability.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Bridging Fidelity-Reality with Controllable One-Step Diffusion for Image Super-Resolution](bridging_fidelity-reality_with_controllable_one-step_diffusion_for_image_super-r.md)
 - [\[CVPR 2026\] One-Step Diffusion Transformer for Controllable Real-World Image Super-Resolution](one-step_diffusion_transformer_for_controllable_real-world_image_super-resolutio.md)
-- [\[CVPR 2026\] IFCSR: Inference-Free Fidelity-Realism Control for One-Step Diffusion-based Real-World Image Super-Resolution](ifcsr_inference-free_fidelity-realism_control_for_one-step_diffusion-based_real-.md)
-- [\[CVPR 2026\] FiDeSR: High-Fidelity and Detail-Preserving One-Step Diffusion Super-Resolution](fidesr_high-fidelity_and_detail-preserving_one-step_diffusion_super-resolution.md)
 - [\[CVPR 2026\] Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution](time-aware_one_step_diffusion_network_for_real-world_image_super-resolution.md)
+- [\[CVPR 2026\] IFCSR: Inference-Free Fidelity-Realism Control for One-Step Diffusion-based Real-World Image Super-Resolution](ifcsr_inference-free_fidelity-realism_control_for_one-step_diffusion-based_real-.md)
+- [\[CVPR 2026\] UniSER: A Foundation Model for Unified Soft Effects Removal](uniser_a_foundation_model_for_unified_soft_effects_removal.md)
+- [\[CVPR 2026\] HDW-SR: High-Frequency Guided Diffusion Model based on Wavelet Decomposition for Image Super-Resolution](hdw-sr_high-frequency_guided_diffusion_model_based_on_wavelet_decomposition_for_.md)
 
 </div>
 

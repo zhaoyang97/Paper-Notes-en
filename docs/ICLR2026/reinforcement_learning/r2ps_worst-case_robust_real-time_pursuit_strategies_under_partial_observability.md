@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] R2PS: Worst-Case Robust Real-Time Pursuit Strategies under Partial Observability
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper addresses Pursuit-Evasion Games (PEG) on graphs in the most challenging scenario where the evader predicts pursuer moves (asynchronous movement) and the pursuer has only partial observability. By extending optimal strategies from dynamic programming (DP) through a belief maintenance mechanism and cross-graph
+  [ICLR 2026][Reinforcement Learning][Pursuit-evasion games] This paper addresses Pursuit-Evasion Games (PEG) on graphs in the most challenging scenario where the evader predicts pursuer moves (asynchronous movement) and the pursuer has only partial observability. By extending optimal strategies from dynamic programming (DP) through a belief maintenance mechanism and cross-graph adversarial reinforcement learning, a GNN-based pursuit strategy is trained. It achieves real-time (…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Pursuit-evasion games"
+  - "partial observability"
+  - "belief maintenance"
+  - "cross-graph generalization"
+  - "worst-case robustness"
 date: 2026-05-08
-content_hash: 6f81f15bc759925a
+content_hash: 567705452989c127
 ---
+
 # R2PS: Worst-Case Robust Real-Time Pursuit Strategies under Partial Observability
 
 **Conference**: ICLR 2026  
@@ -141,9 +147,9 @@ Ours demonstrates robust zero-shot performance, whereas PSRO (trained directly o
 
 - [\[ICLR 2026\] Guided Policy Optimization under Partial Observability](guided_policy_optimization_under_partial_observability.md)
 - [\[ICLR 2026\] Information-based Value Iteration Networks for Decision Making Under Uncertainty](information-based_value_iteration_networks_for_decision_making_under_uncertainty.md)
+- [\[ICLR 2026\] Robustness in the Face of Partial Identifiability in Reward Learning](robustness_in_the_face_of_partial_identifiability_in_reward_learning.md)
 - [\[ICLR 2026\] DR-SAC: Distributionally Robust Soft Actor-Critic for Reinforcement Learning under Uncertainty](dr-sac_distributionally_robust_soft_actor-critic_for_reinforcement_learning_unde.md)
 - [\[ICLR 2026\] Representation-Based Exploration for Language Models: From Test-Time to Post-Training](representation-based_exploration_for_language_models_from_test-time_to_post-trai.md)
-- [\[ICLR 2026\] Safe Continuous-time Multi-Agent Reinforcement Learning via Epigraph Form](safe_continuous-time_multi-agent_reinforcement_learning_via_epigraph_form.md)
 
 </div>
 

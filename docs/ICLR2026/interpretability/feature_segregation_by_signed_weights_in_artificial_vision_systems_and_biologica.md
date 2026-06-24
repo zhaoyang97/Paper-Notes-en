@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Feature Segregation by Signed Weights in Artificial Vision Systems and Biological Models
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This study discovers that ImageNet-trained CNNs spontaneously assign "object/foreground" features to positive weights and "background/contextual texture" features to negative weights, even without enforcing the biological Dale's Law. This homologous "feature segregation by sign" strategy is further validated in neural
+  [ICLR 2026][Interpretability][Signed weights] This study discovers that ImageNet-trained CNNs spontaneously assign "object/foreground" features to positive weights and "background/contextual texture" features to negative weights, even without enforcing the biological Dale's Law. This homologous "feature segregation by sign" strategy is further validated in neural models of the macaque ventral visual cortex (V1/V4/IT).
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Signed weights"
+  - "Dale's Law"
+  - "feature visualization"
+  - "ablation analysis"
+  - "ventral visual pathway"
+  - "adversarial robustness"
 date: 2026-05-08
-content_hash: 5c2d4ab5c4ba6151
+content_hash: 689710dea374c531
 ---
+
 # Feature Segregation by Signed Weights in Artificial Vision Systems and Biological Models
 
 **Conference**: ICLR 2026  

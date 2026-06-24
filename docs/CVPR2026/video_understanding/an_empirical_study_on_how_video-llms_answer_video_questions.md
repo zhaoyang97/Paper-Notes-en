@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] An Empirical Study on How Video-LLMs Answer Video Questions
 description: >-
-  [CVPR 2026][Video Understanding][Video-LLM] This paper systematically dissects the internal mechanisms of how Video-LLMs answer video questions using "attention knockout." It identifies a clear "early-layer perception, late-layer reasoning" two-stage pattern and finds that spatiotemporal modeling relies primarily on language-to-video retrieval rather than intra/
+  [CVPR 2026][Video Understanding][Video-LLM] This paper systematically dissects the internal mechanisms of how Video-LLMs answer video questions using "attention knockout." It identifies a clear "early-layer perception, late-layer reasoning" two-stage pattern and finds that spatiotemporal modeling relies primarily on language-to-video retrieval rather than intra/inter-frame video self-attention. Furthermore, only a few intermediate layers are critical. Based on these insights…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Video-LLM
-  - Interpretability
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video-LLM"
+  - "Interpretability"
+  - "Attention Knockout"
+  - "Two-stage processing"
+  - "VideoQA"
 date: 2026-05-08
-content_hash: 7f1a817555c3efc8
+content_hash: 1afb96bbf257b932
 ---
+
 # An Empirical Study on How Video-LLMs Answer Video Questions
 
 **Conference**: CVPR 2026  
@@ -147,7 +151,7 @@ When attention FLOPs are reduced to ~37.5%, performance drops are generally <2 p
 - [\[CVPR 2026\] LensWalk: Agentic Video Understanding by Planning How You See in Videos](lenswalk_agentic_video_understanding_by_planning_how_you_see_in_videos.md)
 - [\[CVPR 2026\] StreamReady: Learning What to Answer and When in Long Streaming Videos](streamready_learning_what_to_answer_and_when_in_long_streaming_videos.md)
 - [\[CVPR 2026\] Unified Spatiotemporal Token Compression for Video-LLMs at Ultra-Low Retention](unified_spatiotemporal_token_compression_for_video-llms_at_ultra-low_retention.md)
-- [\[CVPR 2026\] Video Panels for Long Video Understanding](video_panels_for_long_video_understanding.md)
+- [\[CVPR 2026\] VideoITG: Multimodal Video Understanding with Instructed Temporal Grounding](videoitg_multimodal_video_understanding_with_instructed_temporal_grounding.md)
 
 </div>
 

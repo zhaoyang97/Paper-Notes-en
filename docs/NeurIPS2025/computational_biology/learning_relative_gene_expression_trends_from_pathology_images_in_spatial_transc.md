@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Relative Gene Expression Trends from Pathology Images in Spatial Transcriptomics
 description: >-
-  [NeurIPS 2025][Computational Biology][spatial transcriptomics] This paper proposes STRank, a loss function that reformulates gene expression estimation from pathology images as a ranking score estimation task. By modelin…
+  [NeurIPS 2025][Computational Biology][spatial transcriptomics] This paper proposes STRank, a loss function that reformulates gene expression estimation from pathology images as a ranking score estimation task. By modeling the stochastic noise inherent in expression counts via binomial/multinomial distributions, STRank enables models to learn robust relative expression relationships from spatial transcriptomics data subject to batch effects and random fluctuations.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "pathology images"
   - "batch effects"
 date: 2026-05-08
-content_hash: b9c473b09c3df64d
+content_hash: d2c97da459c8a81c
 ---
 
 # Learning Relative Gene Expression Trends from Pathology Images in Spatial Transcriptomics
@@ -144,10 +144,10 @@ The listwise formulation captures global expression patterns, outperforming pair
 ## Related Papers
 
 - [\[CVPR 2026\] Cell-Type Prototype-Informed Neural Network for Gene Expression Estimation from Pathology Images](../../CVPR2026/computational_biology/cell-type_prototype-informed_neural_network_for_gene_expression_estimation_from_.md)
+- [\[CVPR 2026\] From Spots to Pixels: Dense Spatial Gene Expression Prediction from Histology Images](../../CVPR2026/computational_biology/from_spots_to_pixels_dense_spatial_gene_expression_prediction_from_histology_ima.md)
 - [\[NeurIPS 2025\] Modeling Microenvironment Trajectories on Spatial Transcriptomics with NicheFlow](modeling_microenvironment_trajectories_on_spatial_transcriptomics_with_nicheflow.md)
+- [\[ICML 2025\] Scalable Generation of Spatial Transcriptomics from Histology Images via Whole-Slide Flow Matching](../../ICML2025/computational_biology/scalable_generation_of_spatial_transcriptomics_from_histology_images_via_whole-s.md)
 - [\[CVPR 2026\] HINGE: Adapting a Pre-trained Single-Cell Foundation Model to Spatial Gene Expression Generation from Histology Images](../../CVPR2026/computational_biology/adapting_a_pre-trained_single-cell_foundation_model_to_spatial_gene_expression_g.md)
-- [\[CVPR 2026\] Cross-Slice Knowledge Transfer via Masked Multi-Modal Heterogeneous Graph Contrastive Learning for Spatial Gene Expression Inference](../../CVPR2026/computational_biology/cross-slice_knowledge_transfer_via_masked_multi-modal_heterogeneous_graph_contra.md)
-- [\[AAAI 2026\] Gene Incremental Learning for Single-Cell Transcriptomics](../../AAAI2026/computational_biology/gene_incremental_learning_for_single-cell_transcriptomics.md)
 
 </div>
 

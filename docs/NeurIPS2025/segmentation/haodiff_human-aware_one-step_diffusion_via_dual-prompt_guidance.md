@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HAODiff: Human-Aware One-Step Diffusion via Dual-Prompt Guidance
 description: >-
-  [NeurIPS 2025][Segmentation][Human image restoration] This paper proposes HAODiff, a human-aware one-step diffusion model that generates adaptive positive–negative prompt pairs via a three-branch Dual-Prompt Guidance (DP…
+  [NeurIPS 2025][Segmentation][Human image restoration] This paper proposes HAODiff, a human-aware one-step diffusion model that generates adaptive positive–negative prompt pairs via a three-branch Dual-Prompt Guidance (DPG) module. Combined with an explicit Human Motion Blur (HMB) degradation pipeline and Classifier-Free Guidance (CFG), HAODiff substantially outperforms existing state-of-the-art methods on human image restoration tasks.
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "dual-prompt guidance"
   - "classifier-free guidance"
 date: 2026-05-08
-content_hash: 4e1847437361235b
+content_hash: 332319fb867d1e3f
 ---
 
 # HAODiff: Human-Aware One-Step Diffusion via Dual-Prompt Guidance
@@ -162,11 +162,11 @@ The HMB-R (motion blur residual ratio) of 0.1167 is half that of OSDHuman, demon
 
 ## Related Papers
 
-- [\[ICCV 2025\] Prompt Guidance and Human Proximal Perception for HOT Prediction with Regional Joint Loss](../../ICCV2025/segmentation/prompt_guidance_and_human_proximal_perception_for_hot_prediction_with_regional_j.md)
 - [\[NeurIPS 2025\] HopaDIFF: Holistic-Partial Aware Fourier Conditioned Diffusion for Referring Human Action Segmentation in Multi-Person Scenarios](hopadiff_holistic-partial_aware_fourier_conditioned_diffusion_for_referring_huma.md)
+- [\[ICCV 2025\] Prompt Guidance and Human Proximal Perception for HOT Prediction with Regional Joint Loss](../../ICCV2025/segmentation/prompt_guidance_and_human_proximal_perception_for_hot_prediction_with_regional_j.md)
 - [\[NeurIPS 2025\] FAST: Foreground-aware Diffusion with Accelerated Sampling Trajectory for Segmentation-oriented Anomaly Synthesis](fast_foreground-aware_diffusion_with_accelerated_sampling_trajectory_for_segment.md)
 - [\[NeurIPS 2025\] STEP: A Unified Spiking Transformer Evaluation Platform for Fair and Reproducible Benchmarking](step_a_unified_spiking_transformer_evaluation_platform_for_fair_and_reproducible.md)
-- [\[NeurIPS 2025\] Robust Egocentric Referring Video Object Segmentation via Dual-Modal Causal Intervention](robust_egocentric_referring_video_object_segmentation_via_dual-modal_causal_inte.md)
+- [\[CVPR 2025\] DPSeg: Dual-Prompt Cost Volume Learning for Open-Vocabulary Semantic Segmentation](../../CVPR2025/segmentation/dpseg_dual-prompt_cost_volume_learning_for_open-vocabulary_semantic_segmentation.md)
 
 </div>
 

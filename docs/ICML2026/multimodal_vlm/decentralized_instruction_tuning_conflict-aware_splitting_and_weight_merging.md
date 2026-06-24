@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Decentralized Instruction Tuning: Conflict-Aware Splitting and Weight Merging
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] The authors develop a local quadratic theory for weight merging starting from "merge-ready flat basins": merging gain equals curvature-weighted checkpoint variance. Splitting along the principal directions of gradient conflict via PCA maximizes this gain. Based on this, the MERIT pipeline is proposed: PCA-based splitti
+  [ICML2026][Multimodal VLM][Instruction tuning] The authors develop a local quadratic theory for weight merging starting from "merge-ready flat basins": merging gain equals curvature-weighted checkpoint variance. Splitting along the principal directions of gradient conflict via PCA maximizes this gain. Based on this, the MERIT pipeline is proposed: PCA-based splitting by dataset conflict, independent fine-tuning with zero communication, and final one-shot token-weighted averag…
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML2026"
+  - "Multimodal VLM"
+  - "Instruction tuning"
+  - "Weight merging"
+  - "Gradient conflict"
+  - "PCA splitting"
+  - "Multimodal alignment"
 date: 2026-05-08
-content_hash: b1df16d9eebca8fa
+content_hash: 940a366949ee7c59
 ---
+
 # Decentralized Instruction Tuning: Conflict-Aware Splitting and Weight Merging
 
 **Conference**: ICML2026  
@@ -156,8 +162,8 @@ Merge-readiness diagnostics for Qwen2.5-VL-3B / MERIT-2D / K=4 branches:
 - [\[CVPR 2026\] Streaming Video Instruction Tuning (Streamo)](../../CVPR2026/multimodal_vlm/streaming_video_instruction_tuning.md)
 - [\[ICML 2026\] WeatherSyn: An Instruction Tuning MLLM For Weather Forecasting Report Generation](weathersyn_an_instruction_tuning_mllm_for_weather_forecasting_report_generation.md)
 - [\[ICML 2026\] SAME: Stabilized Mixture-of-Experts for Multimodal Continual Instruction Tuning](same_stabilized_mixture-of-experts_for_multimodal_continual_instruction_tuning.md)
+- [\[CVPR 2026\] CC-VQA: Conflict- and Correlation-Aware Method for Mitigating Knowledge Conflict in Knowledge-Based Visual Question Answering](../../CVPR2026/multimodal_vlm/cc-vqa_conflict-_and_correlation-aware_method_for_mitigating_knowledge_conflict_.md)
 - [\[NeurIPS 2025\] Visual Instruction Bottleneck Tuning](../../NeurIPS2025/multimodal_vlm/visual_instruction_bottleneck_tuning.md)
-- [\[CVPR 2026\] Conflict-Aware Adaptive Cross-Reconstruction for Multimodal Sentiment Analysis](../../CVPR2026/multimodal_vlm/conflict-aware_adaptive_cross-reconstruction_for_multimodal_sentiment_analysis.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] SteerEval: Inference-time Interventions Strengthen Multilingual Generalization in Neural Summarization Metrics
 description: >-
-  [ACL 2026][Multilingual & Translation][activation steering] SteerEval investigates aligning the hidden representations of multilingual evaluation models toward high-resource pivot languages during inference. It finds that steering toward English or French generally improves the correlation between automated multilingual summarization metrics and human scores, particularly benef
+  [ACL2026][Multilingual & Machine Translation][activation steering] SteerEval investigates aligning the hidden representations of multilingual evaluation models toward high-resource pivot languages during inference. It finds that steering toward English or French generally improves the correlation between automated multilingual summarization metrics and human scores, particularly benefiting low-baseline languages and encoder-based COMET metrics.
 tags:
-  - ACL 2026
-  - Multilingual & Translation
-  - activation steering
-  - LLM-as-a-judge
-  - COMET
+  - "ACL2026"
+  - "Multilingual & Machine Translation"
+  - "activation steering"
+  - "multilingual summarization evaluation"
+  - "LLM-as-a-judge"
+  - "COMET"
+  - "English pivot language"
 date: 2026-05-08
-content_hash: 0e5a6ad36b5d5633
+content_hash: 754a854e0c789f27
 ---
+
 # SteerEval: Inference-time Interventions Strengthen Multilingual Generalization in Neural Summarization Metrics
 
 **Conference**: ACL2026  
@@ -145,7 +148,7 @@ The analysis experiments focus on steering methods, strength parameters, and tar
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Disentangling Length Bias in Preference Learning via Response-Conditioned Modeling
 description: >-
-  [ICLR 2026][Alignment & RLHF][Bradley-Terry] This paper transforms the implicit "length bias" in reward models into explicit "length instruction understanding." It proposes the Response-conditioned Bradley-Terry (Rc-BT) model—fixing the response and comparing different prompts—to simultaneously eliminate length cheating and enable the model to follow length instr
+  [ICLR2026][LLM Alignment][Length bias] This paper transforms the implicit "length bias" in reward models into explicit "length instruction understanding." It proposes the Response-conditioned Bradley-Terry (Rc-BT) model—fixing the response and comparing different prompts—to simultaneously eliminate length cheating and enable the model to follow length instructions. This approach integrates seamlessly with Reward Modeling (Rc-RM) and DPO (Rc-DPO).
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - Bradley-Terry
+  - "ICLR2026"
+  - "LLM Alignment"
+  - "Length bias"
+  - "preference learning"
+  - "reward modeling"
+  - "Bradley-Terry"
+  - "response conditioning"
 date: 2026-05-08
-content_hash: b5c8cccc8cacaf55
+content_hash: edf10b46f3881d87
 ---
+
 # Disentangling Length Bias in Preference Learning via Response-Conditioned Modeling
 
 **Conference**: ICLR2026  
@@ -149,15 +154,15 @@ Rc-DPO achieves the highest quality win rate with controlled response lengths.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Bradley–Terry and Multi-Objective Reward Modeling Are Complementary](bradley-terry_and_multi-objective_reward_modeling_are_complementary.md)
 - [\[NeurIPS 2025\] ResponseRank: Data-Efficient Reward Modeling through Preference Strength Learning](../../NeurIPS2025/llm_alignment/responserank_data-efficient_reward_modeling_through_preference_strength_learning.md)
 - [\[NeurIPS 2025\] Short-length Adversarial Training Helps LLMs Defend Long-length Jailbreak Attacks](../../NeurIPS2025/llm_alignment/short-length_adversarial_training_helps_llms_defend_long-length_jailbreak_attack.md)
+- [\[ICLR 2026\] Learning from Noisy Preferences: A Semi-Supervised Learning Approach to Direct Preference Optimization](learning_from_noisy_preferences_a_semi-supervised_learning_approach_to_direct_pr.md)
 - [\[ICLR 2026\] Aligner, Diagnose Thyself: A Meta-Learning Paradigm for Fusing Intrinsic Feedback in Preference Alignment](aligner_diagnose_thyself_a_meta-learning_paradigm_for_fusing_intrinsic_feedback_.md)
-- [\[ICLR 2026\] Stackelberg Learning from Human Feedback: Preference Optimization as a Sequential Game](stackelberg_learning_from_human_feedback_preference_optimization_as_a_sequential.md)
-- [\[ICLR 2026\] Beyond Binary Preferences: A Principled Framework for Reward Modeling with Ordinal Feedback](beyond_binary_preferences_a_principled_framework_for_reward_modeling_with_ordina.md)
 
 </div>
 

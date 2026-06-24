@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Cross-Sample Augmented Test-Time Adaptation for Personalized Intraoperative Hypotension Prediction
 description: >-
-  [AAAI 2026][Medical Imaging][intraoperative hypotension prediction] This paper proposes the CSA-TTA framework, which enhances personalized intraoperative hypotension prediction at test time by constructing a cross-sample…
+  [AAAI 2026][Medical Imaging][intraoperative hypotension prediction] This paper proposes the CSA-TTA framework, which enhances personalized intraoperative hypotension prediction at test time by constructing a cross-sample bank, performing coarse-to-fine retrieval, and applying multi-task optimization to retrieve hypotension event signals from other patients' data.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "time series forecasting"
   - "personalized medicine"
 date: 2026-05-08
-content_hash: 6e517ef4b39122a7
+content_hash: df25caa14cb58bd1
 ---
 
 # Cross-Sample Augmented Test-Time Adaptation for Personalized Intraoperative Hypotension Prediction
@@ -207,8 +207,8 @@ Recall +9.56%, F1 +7.70%.
 - [\[ICCV 2025\] Progressive Test Time Energy Adaptation for Medical Image Segmentation](../../ICCV2025/medical_imaging/progressive_test_time_energy_adaptation_for_medical_image_segmentation.md)
 - [\[CVPR 2026\] SPEGC: Continual Test-Time Adaptation via Semantic-Prompt-Enhanced Graph Clustering for Medical Image Segmentation](../../CVPR2026/medical_imaging/spegc_continual_test-time_adaptation_via_semantic-prompt-enhanced_graph_clusteri.md)
 - [\[AAAI 2026\] MindCross: Fast New Subject Adaptation with Limited Data for Cross-subject Video Reconstruction from Brain Signals](mindcross_fast_new_subject_adaptation_with_limited_data_for_cross-subject_video_.md)
+- [\[CVPR 2026\] Personalized Longitudinal Medical Report Generation via Temporally-Aware Federated Adaptation](../../CVPR2026/medical_imaging/personalized_longitudinal_medical_report_generation_via_temporally-aware_federat.md)
 - [\[AAAI 2026\] Q-FSRU: Quantum-Augmented Frequency-Spectral Fusion for Medical Visual Question Answering](q-fsru_quantum-augmented_frequency-spectral_fusion_for_medical_visual_question_a.md)
-- [\[AAAI 2026\] NutriScreener: Retrieval-Augmented Multi-Pose Graph Attention Network for Malnourishment Screening](nutriscreener_retrieval-augmented_multi-pose_graph_attention_network_for_malnour.md)
 
 </div>
 

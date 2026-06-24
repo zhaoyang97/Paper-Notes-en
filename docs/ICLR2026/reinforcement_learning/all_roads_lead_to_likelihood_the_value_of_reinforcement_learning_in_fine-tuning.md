@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] All Roads Lead to Likelihood: The Value of Reinforcement Learning in Fine-Tuning
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLHF] This paper explains why the "two-stage reward model + online RL" approach in language model fine-tuning often outperforms direct offline maximum likelihood from the perspectives of information geometry, controlled experiments, and complexity intuition. The core conclusion is that the value of RL lies not in creating ne
+  [ICLR2026][Reinforcement Learning][RLHF] This paper explains why the "two-stage reward model + online RL" approach in language model fine-tuning often outperforms direct offline maximum likelihood from the perspectives of information geometry, controlled experiments, and complexity intuition. The core conclusion is that the value of RL lies not in creating new information, but in using an easier-to-learn verifier to constrain policy search to a small class of generators induc…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLHF
-  - DPO
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "RLHF"
+  - "Preference Optimization"
+  - "DPO"
+  - "Reward Model"
+  - "Generation-Verification Gap"
 date: 2026-05-08
-content_hash: 0e062cbcac978534
+content_hash: 852011d7d2ab3a3a
 ---
+
 # All Roads Lead to Likelihood: The Value of Reinforcement Learning in Fine-Tuning
 
 **Conference**: ICLR2026  

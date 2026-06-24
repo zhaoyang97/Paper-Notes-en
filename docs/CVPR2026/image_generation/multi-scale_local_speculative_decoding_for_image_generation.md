@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multi-Scale Local Speculative Decoding for Image Generation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] MuLo-SD introduces a multi-scale approach—"low-resolution draft + upsampling + high-resolution parallel verification"—into speculative decoding. By replacing traditional raster-scan full-sequence backtracking with "local neighborhood resampling of rejected tokens" combined with parallel decoding, it achieves up to $5.3
+  [CVPR2026][Image Generation][Autoregressive image generation] MuLo-SD introduces a multi-scale approach—"low-resolution draft + upsampling + high-resolution parallel verification"—into speculative decoding. By replacing traditional raster-scan full-sequence backtracking with "local neighborhood resampling of rejected tokens" combined with parallel decoding, it achieves up to $5.33\times$ end-to-end acceleration for autoregressive image generation on Tar-1.5B/7B while maintain…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR2026"
+  - "Image Generation"
+  - "Autoregressive image generation"
+  - "speculative decoding"
+  - "multi-scale"
+  - "spatial locality"
+  - "parallel decoding"
 date: 2026-05-08
-content_hash: 2ab5090bf77ba66e
+content_hash: 10e4dac7d3d5250f
 ---
+
 # Multi-Scale Local Speculative Decoding for Image Generation
 
 **Conference**: CVPR2026  
@@ -121,15 +127,16 @@ Tests were conducted on Tar-1.5B/7B (unified MLLM) and LlamaGen-XL. Efficiency i
 - **Value**: ⭐⭐⭐⭐⭐ High practical value for unified MLLM deployment with up to 5.3x gains.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Parallel Jacobi Decoding for Fast Autoregressive Image Generation](parallel_jacobi_decoding_for_fast_autoregressive_image_generation.md)
-- [\[ICML 2026\] Speculative Coupled Decoding for Training-Free Lossless Acceleration of Autoregressive Visual Generation](../../ICML2026/image_generation/speculative_coupled_decoding_for_training-free_lossless_acceleration_of_autoregr.md)
 - [\[AAAI 2026\] Annealed Relaxation of Speculative Decoding for Faster Autoregressive Image Generation](../../AAAI2026/image_generation/annealed_relaxation_of_speculative_decoding_for_faster_autor.md)
+- [\[CVPR 2026\] Parallel Jacobi Decoding for Fast Autoregressive Image Generation](parallel_jacobi_decoding_for_fast_autoregressive_image_generation.md)
 - [\[ICCV 2025\] Grouped Speculative Decoding for Autoregressive Image Generation](../../ICCV2025/image_generation/grouped_speculative_decoding_for_autoregressive_image_generation.md)
 - [\[CVPR 2026\] SJD-PAC: Accelerating Speculative Jacobi Decoding via Proactive Drafting and Adaptive Continuation](sjd-pac_accelerating_speculative_jacobi_decoding_via_proactive_drafting_and_adap.md)
+- [\[ICML 2026\] Speculative Coupled Decoding for Training-Free Lossless Acceleration of Autoregressive Visual Generation](../../ICML2026/image_generation/speculative_coupled_decoding_for_training-free_lossless_acceleration_of_autoregr.md)
 
 </div>
 

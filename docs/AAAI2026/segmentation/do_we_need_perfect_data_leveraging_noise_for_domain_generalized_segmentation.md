@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Do We Need Perfect Data? Leveraging Noise for Domain Generalized Segmentation
 description: >-
-  [AAAI 2026][Segmentation][Domain generalized semantic segmentation] This paper proposes FLEX-Seg, a framework that reframes the inherent **boundary misalignment** between images and semantic masks in diffusion-model-synt…
+  [AAAI 2026][Segmentation][Domain generalized semantic segmentation] This paper proposes FLEX-Seg, a framework that reframes the inherent **boundary misalignment** between images and semantic masks in diffusion-model-synthesized data as an opportunity to learn robust representations. Through three modules—Granular Adaptive Prototypes (GAP), Uncertainty Boundary Emphasis (UBE), and Hardness-Aware Sampling (HAS)—FLEX-Seg achieves state-of-the-art performance on domain generalize…
 tags:
   - "AAAI 2026"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "adaptive prototypes"
   - "uncertainty weighting"
 date: 2026-05-08
-content_hash: c7ea5bd7ee72bc22
+content_hash: c762df84e3c9f423
 ---
 
 # Do We Need Perfect Data? Leveraging Noise for Domain Generalized Segmentation
@@ -171,10 +171,10 @@ Sigmoid decay vs. linear decay vs. no decay: Sigmoid 38.04% > no decay 36.82% > 
 ## Related Papers
 
 - [\[AAAI 2026\] Causal-Tune: Mining Causal Factors from Vision Foundation Models for Domain Generalized Semantic Segmentation](causal-tune_mining_causal_factors_from_vision_foundation_mod.md)
-- [\[CVPR 2026\] Phrase-Instance Alignment for Generalized Referring Segmentation](../../CVPR2026/segmentation/phrase-instance_alignment_for_generalized_referring_segmentation.md)
+- [\[CVPR 2025\] MambaOut: Do We Really Need Mamba for Vision?](../../CVPR2025/segmentation/mambaout_do_we_really_need_mamba_for_vision.md)
+- [\[ICLR 2026\] QPrompt-R1: Real-Time Reasoning for Domain-Generalized Semantic Segmentation via Group-Relative Query Alignment](../../ICLR2026/segmentation/qprompt-r1_real-time_reasoning_for_domain-generalized_semantic_segmentation_via_.md)
 - [\[AAAI 2026\] Bridging Granularity Gaps: Hierarchical Semantic Learning for Cross-Domain Few-Shot Segmentation](bridging_granularity_gaps_hierarchical_semantic_learning_for_cross-domain_few-sh.md)
-- [\[ICML 2026\] What Makes Synthetic Data Effective in Image Segmentation](../../ICML2026/segmentation/what_makes_synthetic_data_effective_in_image_segmentation.md)
-- [\[CVPR 2026\] Masked Representation Modeling for Domain-Adaptive Segmentation](../../CVPR2026/segmentation/mrm_masked_representation_modeling_domain_adaptive.md)
+- [\[CVPR 2026\] Leveraging Class Distributions in CLIP for Weakly Supervised Semantic Segmentation](../../CVPR2026/segmentation/leveraging_class_distributions_in_clip_for_weakly_supervised_semantic_segmentati.md)
 
 </div>
 

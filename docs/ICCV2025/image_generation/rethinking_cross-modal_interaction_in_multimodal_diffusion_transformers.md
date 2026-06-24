@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rethinking Cross-Modal Interaction in Multimodal Diffusion Transformers
 description: >-
-  [ICCV 2025][Image Generation][MM-DiT] This paper identifies two structural issues in MM-DiT architectures (FLUX, SD3.5): the token count asymmetry between visual and text modalities suppresses cross-modal attention…
+  [ICCV 2025][Image Generation][MM-DiT] This paper identifies two structural issues in MM-DiT architectures (FLUX, SD3.5): the token count asymmetry between visual and text modalities suppresses cross-modal attention, and attention weights are insensitive to timestep. To address these, the authors propose TACA (Temperature-Adjusted Cross-modal Attention), which rebalances multimodal interaction via temperature scaling and timestep-adaptive adjustment. Combined with LoRA fine-tu…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "SD3.5"
   - "Text-Image Alignment"
 date: 2026-05-08
-content_hash: afcd9c51cd7267dc
+content_hash: 603e7233ffdd9476
 ---
 
 # Rethinking Cross-Modal Interaction in Multimodal Diffusion Transformers
@@ -154,7 +154,7 @@ Comparisons show that TACA substantially amplifies the attention from visual tok
 - [\[ICCV 2025\] StyleMotif: Multi-Modal Motion Stylization using Style-Content Cross Fusion](stylemotif_multi-modal_motion_stylization_using_style-content_cross_fusion.md)
 - [\[ICCV 2025\] IRGPT: Understanding Real-world Infrared Image with Bi-cross-modal Curriculum on Large-scale Benchmark](irgpt_understanding_real-world_infrared_image_with_bi-cross-modal_curriculum_on_.md)
 - [\[ICCV 2025\] End-to-End Multi-Modal Diffusion Mamba](end-to-end_multi-modal_diffusion_mamba.md)
-- [\[ICML 2026\] Diagnosing and Correcting Concept Omission in Multimodal Diffusion Transformers](../../ICML2026/image_generation/diagnosing_and_correcting_concept_omission_in_multimodal_diffusion_transformers.md)
+- [\[ICLR 2026\] Rethinking Global Text Conditioning in Diffusion Transformers](../../ICLR2026/image_generation/rethinking_global_text_conditioning_in_diffusion_transformers.md)
 
 </div>
 

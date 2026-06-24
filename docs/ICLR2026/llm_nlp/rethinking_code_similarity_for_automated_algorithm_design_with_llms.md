@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] Rethinking Code Similarity for Automated Algorithm Design with LLMs
 description: >-
-  [ICLR 2026][LLM (Other)][LLM-AAD] This paper proposes BehaveSim, an algorithmic similarity metric based on "Problem Solving Trajectories" (PSTrajs) and Dynamic Time Warping (DTW). It measures algorithmic differences at the execution behavior level rather than the syntax or output level. Integrating BehaveSim into LLM-AAD frameworks like FunSearch/EoH s
+  [ICLR 2026][LLM (Other)][LLM-AAD] This paper proposes BehaveSim, an algorithmic similarity metric based on "Problem Solving Trajectories" (PSTrajs) and Dynamic Time Warping (DTW). It measures algorithmic differences at the execution behavior level rather than the syntax or output level. Integrating BehaveSim into LLM-AAD frameworks like FunSearch/EoH significantly enhances performance.
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - LLM-AAD
-  - FunSearch
-  - EoH
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "LLM-AAD"
+  - "Code Similarity"
+  - "Behavioral Similarity"
+  - "Dynamic Time Warping"
+  - "FunSearch"
+  - "EoH"
+  - "Algorithmic Diversity"
 date: 2026-05-08
-content_hash: e007e150ccdb32b9
+content_hash: 3ee1c1d6825c4345
 ---
+
 # Rethinking Code Similarity for Automated Algorithm Design with LLMs
 
 **Conference**: ICLR 2026  

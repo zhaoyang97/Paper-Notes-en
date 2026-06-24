@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Cross-Timestep: 3D Diffusion Model with Trans-temporal Memory LSTM and Adaptive Priori Decoding Strategy for Medical Segmentation
 description: >-
-  [ICLR 2026][Medical Imaging][Diffusion Model] To address the two major issues of "initial-stage collapse" at high-noise starting points and isolated timesteps when applying diffusion models to 3D medical segmentation, this paper proposes Cross-Timestep. It utilizes an "Adaptive Priori Decoding Strategy (APDS)" to inject time-decaying structural priors from conditi
+  [ICLR2026][Medical Imaging][3D Medical Segmentation] To address the two major issues of "initial-stage collapse" at high-noise starting points and isolated timesteps when applying diffusion models to 3D medical segmentation, this paper proposes Cross-Timestep. It utilizes an "Adaptive Priori Decoding Strategy (APDS)" to inject time-decaying structural priors from conditional images to stabilize the initial stages of reverse diffusion, and a "Trans-temporal Memory LSTM (tLSTM)…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Diffusion Model
+  - "ICLR2026"
+  - "Medical Imaging"
+  - "3D Medical Segmentation"
+  - "Diffusion Models"
+  - "Initial-stage Collapse"
+  - "Cross-timestep Memory"
+  - "Time-weighted Prior"
 date: 2026-05-08
-content_hash: 61c70e1c3e20d788
+content_hash: 1cdb0a7180614a21
 ---
+
 # Cross-Timestep: 3D Diffusion Model with Trans-temporal Memory LSTM and Adaptive Priori Decoding Strategy for Medical Segmentation
 
 **Conference**: ICLR2026  
@@ -144,10 +149,10 @@ Ablation of tLSTM components (Table 1) and APDS/SC/FFT modules (Table 3):
 ## Related Papers
 
 - [\[ICLR 2026\] Adaptive Domain Shift in Diffusion Models for Cross-Modality Image Translation](adaptive_domain_shift_in_diffusion_models_for_cross-modality_image_translation.md)
-- [\[ICLR 2026\] Johnson-Lindenstrauss Lemma Guided Network for Efficient 3D Medical Segmentation](johnson-lindenstrauss_lemma_guided_network_for_efficient_3d_medical_segmentation.md)
-- [\[CVPR 2026\] GeoSemba: Reconstructing State Space Model for Cross Paradigm Representation in Medical Image Segmentation](../../CVPR2026/medical_imaging/geosemba_reconstructing_state_space_model_for_cross_paradigm_representation_in_m.md)
 - [\[CVPR 2025\] VISTA3D: A Unified Segmentation Foundation Model For 3D Medical Imaging](../../CVPR2025/medical_imaging/vista3d_a_unified_segmentation_foundation_model_for_3d_medical_imaging.md)
-- [\[ICLR 2026\] Improving 2D Diffusion Models for 3D Medical Imaging with Inter-Slice Consistent Stochasticity](improving_2d_diffusion_models_for_3d_medical_imaging_with_inter-slice_consistent.md)
+- [\[ICLR 2026\] Johnson-Lindenstrauss Lemma Guided Network for Efficient 3D Medical Segmentation](johnson-lindenstrauss_lemma_guided_network_for_efficient_3d_medical_segmentation.md)
+- [\[ICLR 2026\] K-Prism: A Knowledge-Guided and Prompt Integrated Universal Medical Image Segmentation Model](k-prism_a_knowledge-guided_and_prompt_integrated_universal_medical_image_segment.md)
+- [\[ICLR 2026\] Rethinking Model Calibration through Spectral Entropy Regularization in Medical Image Segmentation](rethinking_model_calibration_through_spectral_entropy_regularization_in_medical_.md)
 
 </div>
 

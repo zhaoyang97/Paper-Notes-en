@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Mobile-GS: Real-time Gaussian Splatting for Mobile Devices
 description: >-
-  [ICLR 2026][3D Vision][3D Gaussian Splatting] Mobile-GS incorporates a suite of five techniques—"depth-aware order-independent rendering, neural view enhancement, first-order SH distillation, neural vector quantization, and contribution pruning"—to compress 3DGS to 4.6 MB and achieve 1100+ FPS on desktop. It marks the first implementation of real-time Gaussian Spl
+  [ICLR 2026][3D Vision][3D Gaussian Splatting] Mobile-GS incorporates a suite of five techniques—"depth-aware order-independent rendering, neural view enhancement, first-order SH distillation, neural vector quantization, and contribution pruning"—to compress 3DGS to 4.6 MB and achieve 1100+ FPS on desktop. It marks the first implementation of real-time Gaussian Splatting at 116 FPS on a Snapdragon 8 Gen 3 mobile device.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Model Compression
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Real-time rendering"
+  - "Mobile deployment"
+  - "Order-independent rendering"
+  - "Model compression"
 date: 2026-05-08
-content_hash: 8e636f9b5856c57d
+content_hash: 626dc45296d6613d
 ---
+
 # Mobile-GS: Real-time Gaussian Splatting for Mobile Devices
 
 **Conference**: ICLR 2026  
@@ -129,6 +133,7 @@ Ablations on Mip-NeRF360 (FPS on RTX 3090):
 - **Value**: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -137,7 +142,7 @@ Ablations on Mip-NeRF360 (FPS on RTX 3090):
 - [\[ICLR 2026\] 3DGEER: 3D Gaussian Rendering Made Exact and Efficient for Generic Cameras](3dgeer_3d_gaussian_rendering_made_exact_and_efficient_for_generic_cameras.md)
 - [\[ICLR 2026\] MoE-GS: Mixture of Experts for Dynamic Gaussian Splatting](moe-gs_mixture_of_experts_for_dynamic_gaussian_splatting.md)
 - [\[ICLR 2026\] FastGHA: Generalized Few-Shot 3D Gaussian Head Avatars with Real-Time Animation](fastgha_generalized_few-shot_3d_gaussian_head_avatars_with_real-time_animation.md)
-- [\[ICLR 2026\] PD²GS: Part-Level Decoupling and Continuous Deformation of Articulated Objects via Gaussian Splatting](pd2gs_part-level_decoupling_and_continuous_deformation_of_articulated_objects_vi.md)
+- [\[ICLR 2026\] Sharp Monocular View Synthesis in Less Than a Second](sharp_monocular_view_synthesis_in_less_than_a_second.md)
 
 </div>
 

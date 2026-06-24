@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Reliable Cryptographic Framework for Empirical Machine Unlearning Evaluation
 description: >-
-  [NeurIPS 2025][LLM Safety][machine unlearning] This paper models the machine unlearning evaluation problem as a cryptographic game (the unlearning sample inference game)…
+  [NeurIPS 2025][LLM Safety][machine unlearning] This paper models the machine unlearning evaluation problem as a cryptographic game (the unlearning sample inference game), quantifies unlearning quality via the adversary's "advantage," and addresses multiple shortcomings of traditional MIA accuracy as an evaluation metric—namely, the lack of a retrain-as-zero baseline, sensitivity to data partitioning, and sensitivity to the choice of MIA. A SWAP test is further proposed as an…
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "membership inference attack"
   - "SWAP test"
 date: 2026-05-08
-content_hash: dab0960e9923d1c7
+content_hash: 125db7fc6b6bded2
 ---
 
 # A Reliable Cryptographic Framework for Empirical Machine Unlearning Evaluation
@@ -123,7 +123,7 @@ Experiments are conducted on CIFAR-10 with ResNet-20, comparing seven unlearning
 - [\[ICLR 2026\] OFMU: Optimization-Driven Framework for Machine Unlearning](../../ICLR2026/llm_safety/ofmu_optimization-driven_framework_for_machine_unlearning.md)
 - [\[NeurIPS 2025\] PULSE: Practical Evaluation Scenarios for Large Multimodal Model Unlearning](pulse_practical_evaluation_scenarios_for_large_multimodal_model_unlearning.md)
 - [\[ICCV 2025\] MUNBa: Machine Unlearning via Nash Bargaining](../../ICCV2025/llm_safety/munba_machine_unlearning_via_nash_bargaining.md)
-- [\[NeurIPS 2025\] On the Empirical Power of Goodness-of-Fit Tests in Watermark Detection](on_the_empirical_power_of_goodness-of-fit_tests_in_watermark_detection.md)
+- [\[CVPR 2025\] LoTUS: Large-Scale Machine Unlearning with a Taste of Uncertainty](../../CVPR2025/llm_safety/lotus_large-scale_machine_unlearning_with_a_taste_of_uncertainty.md)
 
 </div>
 

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] CoRVid: Improving Multimodal Large Language Models Towards Chain-of-Thought Reasoning
 description: >-
-  [ICCV 2025][LLM Reasoning][Multimodal Large Language Models] This paper proposes Corvid, which comprehensively enhances the chain-of-thought reasoning capability of MLLMs through a hybrid visual encoder…
+  [ICCV 2025][Reasoning][Multimodal Large Language Models] This paper proposes Corvid, which comprehensively enhances the chain-of-thought reasoning capability of MLLMs through a hybrid visual encoder, a GateMixer connector, a high-quality CoT dataset, and a test-time self-verification strategy, surpassing open-source models of comparable parameter scale on mathematical reasoning and scientific problem solving.
 tags:
   - "ICCV 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Multimodal Large Language Models"
   - "Chain-of-Thought Reasoning"
   - "Visual Encoder"
   - "Test-Time Scaling"
   - "CoT"
 date: 2026-05-08
-content_hash: c84b41263417f541
+content_hash: a5019d9aa9e68c91
 ---
 
 # CoRVid: Improving Multimodal Large Language Models Towards Chain-of-Thought Reasoning
@@ -163,11 +163,11 @@ Connector ablation (average accuracy): FC_GELU_FC: 54.0, 2×FC_GELU_FC: 53.7, Ga
 
 ## Related Papers
 
+- [\[ACL 2025\] MM-Verify: Enhancing Multimodal Reasoning with Chain-of-Thought Verification](../../ACL2025/llm_reasoning/mm-verify_enhancing_multimodal_reasoning_with_chain-of-thought_verification.md)
+- [\[ACL 2025\] Can Large Language Models Detect Errors in Long Chain-of-Thought Reasoning?](../../ACL2025/llm_reasoning/can_large_language_models_detect_errors_in_long_chain-of-thought_reasoning.md)
+- [\[ACL 2025\] Improving Chain-of-Thought Reasoning via Quasi-Symbolic Abstractions](../../ACL2025/llm_reasoning/improving_chain-of-thought_reasoning_via_quasi-symbolic_abstractions.md)
 - [\[ICLR 2026\] Vision-R1: Incentivizing Reasoning Capability in Multimodal Large Language Models](../../ICLR2026/llm_reasoning/vision-r1_incentivizing_reasoning_capability_in_multimodal_large_language_models.md)
-- [\[NeurIPS 2025\] Large Language Models Can Learn and Generalize Steganographic Chain-of-Thought under Process Supervision](../../NeurIPS2025/llm_reasoning/large_language_models_can_learn_and_generalize_steganographic_chain-of-thought_u.md)
-- [\[ICLR 2026\] AIMCoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning](../../ICLR2026/llm_reasoning/aimcot_active_information-driven_multimodal_chain-of-thought_for_vision-language.md)
-- [\[NeurIPS 2025\] Visual Thoughts: A Unified Perspective of Understanding Multimodal Chain-of-Thought](../../NeurIPS2025/llm_reasoning/visual_thoughts_a_unified_perspective_of_understanding_multi.md)
-- [\[ACL 2026\] AIM-CoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning](../../ACL2026/llm_reasoning/aim-cot_active_information-driven_multimodal_chain-of-thought_for_vision-languag.md)
+- [\[ACL 2025\] Unlocking General Long Chain-of-Thought Reasoning Capabilities of Large Language Models via Representation Engineering](../../ACL2025/llm_reasoning/glore_long_cot_representation.md)
 
 </div>
 

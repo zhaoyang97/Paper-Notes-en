@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] UniABG: Unified Adversarial View Bridging and Graph Correspondence for Unsupervised Cross-View Geo-Localization
 description: >-
-  [AAAI 2026][Remote Sensing][cross-view geo-localization] This paper proposes UniABG, a two-stage unsupervised cross-view geo-localization framework that employs View-Aware Adversarial Bridging (VAAB) to eliminate the dom…
+  [AAAI 2026 Oral][Remote Sensing][cross-view geo-localization] This paper proposes UniABG, a two-stage unsupervised cross-view geo-localization framework that employs View-Aware Adversarial Bridging (VAAB) to eliminate the domain gap between UAV and satellite views, followed by Heterogeneous Graph Filtering Calibration (HGFC) to purify cross-view correspondences. UniABG achieves 93.29% Satellite→Drone AP on University-1652, surpassing most supervised methods.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Remote Sensing"
   - "cross-view geo-localization"
   - "unsupervised"
@@ -12,7 +12,7 @@ tags:
   - "graph filtering"
   - "pseudo-label"
 date: 2026-05-08
-content_hash: 81cb45649f86ea88
+content_hash: 653c27e803c82643
 ---
 
 # UniABG: Unified Adversarial View Bridging and Graph Correspondence for Unsupervised Cross-View Geo-Localization
@@ -105,11 +105,11 @@ UniABG adopts a two-stage design: Stage 1 learns view-invariant features via VAA
 
 ## Related Papers
 
+- [\[CVPR 2026\] UniGeoRS: A Unified Benchmark for Tri-view Geo-Localization](../../CVPR2026/remote_sensing/unigeors_a_unified_benchmark_for_tri-view_geo-localization.md)
+- [\[CVPR 2026\] Geo2: Geometry-Guided Cross-view Geo-Localization and Image Synthesis](../../CVPR2026/remote_sensing/geo2_geometry-guided_cross-view_geo-localization_and_image_synthesis.md)
 - [\[CVPR 2026\] RHO: Robust Holistic OSM-Based Metric Cross-View Geo-Localization](../../CVPR2026/remote_sensing/rho_robust_holistic_osm-based_metric_cross-view_geo-localization.md)
-- [\[NeurIPS 2025\] C3PO: Cross-View Cross-Modality Correspondence by Pointmap Prediction](../../NeurIPS2025/remote_sensing/c3po_cross-view_cross-modality_correspondence_by_pointmap_prediction.md)
-- [\[ICCV 2025\] GeoDistill: Geometry-Guided Self-Distillation for Weakly Supervised Cross-View Localization](../../ICCV2025/remote_sensing/geodistill_geometry-guided_self-distillation_for_weakly_supervised_cross-view_lo.md)
-- [\[CVPR 2026\] GeoFlow: Real-Time Fine-Grained Cross-View Geolocalization via Iterative Flow Prediction](../../CVPR2026/remote_sensing/geoflow_real-time_fine-grained_cross-view_geolocalization.md)
-- [\[AAAI 2026\] Perceive, Act and Correct: Confidence Is Not Enough for Hyperspectral Classification](perceive_act_and_correct_confidence_is_not_enough_for_hyperspectral_classificati.md)
+- [\[ECCV 2024\] ConGeo: Robust Cross-View Geo-Localization Across Ground View Variations](../../ECCV2024/remote_sensing/congeo_robust_cross-view_geo-localization_across_ground_view_variations.md)
+- [\[CVPR 2026\] SinGeo: Unlock Single Model's Potential for Robust Cross-View Geo-Localization](../../CVPR2026/remote_sensing/singeo_unlock_single_models_potential_for_robust_cross-view_geo-localization.md)
 
 </div>
 

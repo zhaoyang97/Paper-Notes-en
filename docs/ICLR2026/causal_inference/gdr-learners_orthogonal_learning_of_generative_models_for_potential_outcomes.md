@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GDR-learners: Orthogonal Learning of Generative Models for Potential Outcomes
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] This paper proposes a suite of universal **Neyman-orthogonal (doubly robust) generative learners, GDR-learners**. These learners integrate any SOTA conditional generative model (NF / GAN / VAE / Diffusion) into a two-stage objective loss that is first-order insensitive to nuisance estimation errors. This allows for est
+  [ICLR 2026][Causal Inference][Conditional Distribution of Potential Outcomes (CDPO)] This paper proposes a suite of universal **Neyman-orthogonal (doubly robust) generative learners, GDR-learners**. These learners integrate any SOTA conditional generative model (NF / GAN / VAE / Diffusion) into a two-stage objective loss that is first-order insensitive to nuisance estimation errors. This allows for estimating the **entire conditional distribution** of potential outcomes (rath…
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Conditional Distribution of Potential Outcomes (CDPO)"
+  - "Neyman-orthogonality"
+  - "Doubly Robust"
+  - "quasi-oracle efficiency"
+  - "conditional generative models"
 date: 2026-05-08
-content_hash: 6611a324a54d1725
+content_hash: 6da11238c9691f49
 ---
+
 # GDR-learners: Orthogonal Learning of Generative Models for Potential Outcomes
 
 **Conference**: ICLR 2026  
@@ -119,14 +125,17 @@ GDR is consistently optimal across most generative models and treatment arms, pr
 
 <div class="related-papers" markdown="1">
 
-- **DiffPO**: Ma et al., 2024. (Partial orthogonality for diffusion models).
-- **DR-learner**: Kennedy, 2023. (Doubly robust learning for conditional average treatment effects).
-- **GANITE**: Yoon et al., 2018. (GAN-based potential outcome estimation).
+## Related Papers
+
+- [\[ICLR 2026\] An Orthogonal Learner for Individualized Outcomes in Markov Decision Processes](an_orthogonal_learner_for_individualized_outcomes_in_markov_decision_processes.md)
+- [\[ICLR 2026\] Debiased Front-Door Learners for Heterogeneous Effects](debiased_front-door_learners_for_heterogeneous_effects.md)
+- [\[ICLR 2026\] IGC-Net for Conditional Average Potential Outcome Estimation Over Time](igc-net_for_conditional_average_potential_outcome_estimation_over_time.md)
+- [\[ICLR 2026\] Overlap-Weighted Orthogonal Meta-Learner for Treatment Effect Estimation over Time](overlap-weighted_orthogonal_meta-learner_for_treatment_effect_estimation_over_ti.md)
+- [\[ICML 2026\] Rank-Learner: Orthogonal Ranking of Treatment Effects](../../ICML2026/causal_inference/rank-learner_orthogonal_ranking_of_treatment_effects.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] An Orthogonal Learner for Individualized Outcomes in Markov Decision Processes](an_orthogonal_learner_for_individualized_outcomes_in_markov_decision_processes.md)

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A$^2$FM: An Adaptive Agent Foundation Model for Tool-Aware Hybrid Reasoning
 description: >-
-  [ICLR 2026][LLM Agent][Reinforcement Learning] A2FM integrates three execution modes—instant, reasoning, and agentic—into a single backbone. It first learns the optimal routing path and then aligns mode-specific trajectories. By employing a cost-regularized reinforcement learning method (APO), the model avoids unnecessary computation for simple queries while mainta
+  [ICLR 2026][LLM Agent][Adaptive Routing] A2FM integrates three execution modes—instant, reasoning, and agentic—into a single backbone. It first learns the optimal routing path and then aligns mode-specific trajectories. By employing a cost-regularized reinforcement learning method (APO), the model avoids unnecessary computation for simple queries while maintaining accuracy for complex ones, reducing the cost per correct answer by approximately 45% on a 32B scale.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Adaptive Routing"
+  - "Tool-Use"
+  - "Hybrid Reasoning"
+  - "Reinforcement Learning"
+  - "Cost-Efficiency"
 date: 2026-05-08
-content_hash: 97ca6cec1f18c90c
+content_hash: 01812d4191a6ffd6
 ---
+
 # A$^2$FM: An Adaptive Agent Foundation Model for Tool-Aware Hybrid Reasoning
 
 **Conference**: ICLR 2026  
@@ -145,9 +150,9 @@ Adaptive execution costs approximately half as much as pure reasoning per correc
 
 - [\[ICLR 2026\] Empowering LLM Tool Invocation with Tool-call Reward Model](empowering_llm_tool_invocation_with_tool-call_reward_model.md)
 - [\[ICLR 2026\] Exploratory Memory-Augmented LLM Agent via Hybrid On- and Off-Policy Optimization](exploratory_memory-augmented_llm_agent_via_hybrid_on-_and_off-policy_optimizatio.md)
-- [\[ICLR 2026\] Nemotron-Research-Tool-N1: Exploring Tool-Using Language Models with Reinforced Reasoning](nemotron-research-tool-n1_exploring_tool-using_language_models_with_reinforced_r.md)
-- [\[ICLR 2026\] GTool: Graph Enhanced Tool Planning with Large Language Model](gtool_graph_enhanced_tool_planning_with_large_language_model.md)
+- [\[ICLR 2026\] TRAJECT-Bench: A Trajectory-Aware Evaluation Benchmark for Agent Tool Calling](traject-bencha_trajectory-aware_benchmark_for_evaluating_agentic_tool_use.md)
 - [\[AAAI 2026\] History-Aware Reasoning for GUI Agents](../../AAAI2026/llm_agent/history-aware_reasoning_for_gui_agents.md)
+- [\[ICLR 2026\] GTool: Graph Enhanced Tool Planning with Large Language Model](gtool_graph_enhanced_tool_planning_with_large_language_model.md)
 
 </div>
 

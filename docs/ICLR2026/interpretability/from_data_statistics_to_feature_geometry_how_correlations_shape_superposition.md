@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] From Data Statistics to Feature Geometry: How Correlations Shape Superposition
 description: >-
-  [ICLR 2026][Interpretability][superposition] This paper argues that the classic "superposition = interference = noise" paradigm is incomplete for real-world data. When features are correlated, interference can be **constructive**: models arrange features based on co-activation patterns, allowing interference between active features to mutually reinforce signals.
+  [ICLR 2026][Interpretability][superposition] This paper argues that the classic "superposition = interference = noise" paradigm is incomplete for real-world data. When features are correlated, interference can be **constructive**: models arrange features based on co-activation patterns, allowing interference between active features to mutually reinforce signals. This enables reconstruction with smaller weight norms and lower rank, naturally explaining geometric structures lik…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - superposition
-  - mechanistic interpretability
-  - feature geometry
-  - sparse autoencoder
-  - constructive interference
+  - "ICLR 2026"
+  - "Interpretability"
+  - "superposition"
+  - "mechanistic interpretability"
+  - "feature geometry"
+  - "sparse autoencoder"
+  - "constructive interference"
 date: 2026-05-08
-content_hash: a50e0335bbd8bbf4
+content_hash: 481fd2d9203dbda1
 ---
+
 # From Data Statistics to Feature Geometry: How Correlations Shape Superposition
 
 **Conference**: ICLR 2026  
@@ -135,9 +136,9 @@ Replacing 90%+ of dimensions with the mean still preserves most accuracy, while 
 
 - [\[ICLR 2026\] Temporal Superposition and Feature Geometry of RNNs under Memory Demands](temporal_superposition_and_feature_geometry_of_rnns_under_memory_demands.md)
 - [\[ICLR 2026\] Emergence of Superposition: Unveiling the Training Dynamics of Chain of Continuous Thought](emergence_of_superposition_unveiling_the_training_dynamics_of_chain_of_continuou.md)
-- [\[ICLR 2026\] The Geometry of Reasoning: Flowing Logics in Representation Space](the_geometry_of_reasoning_flowing_logics_in_representation_space.md)
 - [\[ICLR 2026\] On The Geometry and Topology of Representations: the Manifolds of Modular Addition](on_the_geometry_and_topology_of_representations_the_manifolds_of_modular_additio.md)
-- [\[ICLR 2026\] The Shape of Adversarial Influence: Characterizing LLM Latent Spaces with Persistent Homology](the_shape_of_adversarial_influence_characterizing_llm_latent_spaces_with_persist.md)
+- [\[ICLR 2026\] Mixing Mechanisms: How Language Models Retrieve Bound Entities In-Context](mixing_mechanisms_how_language_models_retrieve_bound_entities_in-context.md)
+- [\[ICLR 2026\] The Geometry of Reasoning: Flowing Logics in Representation Space](the_geometry_of_reasoning_flowing_logics_in_representation_space.md)
 
 </div>
 

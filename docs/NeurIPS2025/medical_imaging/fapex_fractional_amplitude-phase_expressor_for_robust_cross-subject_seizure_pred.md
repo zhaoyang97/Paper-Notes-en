@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] FAPEX: Fractional Amplitude-Phase Expressor for Robust Cross-Subject Seizure Prediction
 description: >-
-  [NEURIPS2025][Medical Imaging][seizure prediction] This paper proposes FAPEX, a framework that achieves adaptive time-frequency decomposition via a learnable Fractional Neural Frame Operator (FrNFO)…
+  [NEURIPS2025 Spotlight][Medical Imaging][seizure prediction] This paper proposes FAPEX, a framework that achieves adaptive time-frequency decomposition via a learnable Fractional Neural Frame Operator (FrNFO), combined with Amplitude-Phase Cross-Encoding (APCE) and Spatial Correlation Aggregation (SCA). FAPEX comprehensively outperforms 33 baseline methods across 12 cross-species, cross-modality seizure prediction benchmarks.
 tags:
-  - "NEURIPS2025"
+  - "NEURIPS2025 Spotlight"
   - "Medical Imaging"
   - "seizure prediction"
   - "EEG"
@@ -12,7 +12,7 @@ tags:
   - "state-space model"
   - "phase-amplitude coupling"
 date: 2026-05-08
-content_hash: e2ecc9f5a751fcd5
+content_hash: 47ce9be971c54806
 ---
 
 # FAPEX: Fractional Amplitude-Phase Expressor for Robust Cross-Subject Seizure Prediction
@@ -131,9 +131,9 @@ FAPEX consists of three core modules: FrNFO backbone encoder → Amplitude-Phase
 ## Related Papers
 
 - [\[NeurIPS 2025\] Zebra: Towards Zero-Shot Cross-Subject Generalization for Universal Brain Visual Decoding](zebra_towards_zero-shot_cross-subject_generalization_for_universal_brain_visual_.md)
-- [\[ICLR 2026\] COMPASS: Robust Feature Conformal Prediction for Medical Segmentation Metrics](../../ICLR2026/medical_imaging/compass_robust_feature_conformal_prediction_for_medical_segmentation_metrics.md)
-- [\[NeurIPS 2025\] MoRE-Brain: Routed Mixture of Experts for Interpretable and Generalizable Cross-Subject fMRI Visual Decoding](more-brain_routed_mixture_of_experts_for_interpretable_and_generalizable_cross-s.md)
 - [\[AAAI 2026\] MindCross: Fast New Subject Adaptation with Limited Data for Cross-subject Video Reconstruction from Brain Signals](../../AAAI2026/medical_imaging/mindcross_fast_new_subject_adaptation_with_limited_data_for_cross-subject_video_.md)
+- [\[NeurIPS 2025\] MoRE-Brain: Routed Mixture of Experts for Interpretable and Generalizable Cross-Subject fMRI Visual Decoding](more-brain_routed_mixture_of_experts_for_interpretable_and_generalizable_cross-s.md)
+- [\[ICLR 2026\] COMPASS: Robust Feature Conformal Prediction for Medical Segmentation Metrics](../../ICLR2026/medical_imaging/compass_robust_feature_conformal_prediction_for_medical_segmentation_metrics.md)
 - [\[NeurIPS 2025\] EEGReXferNet: A Lightweight Gen-AI Framework for EEG Subspace Reconstruction via Cross-Subject Transfer Learning and Channel-Aware Embedding](eegrexfernet_a_lightweight_gen-ai_framework_for_eeg_subspace_reconstruction_via_.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Inheritance to Saturation: Disentangling the Evolution of Visual Redundancy for Architecture-Aware MLLM Inference Acceleration
 description: >-
-  [ACL 2026][vlm_efficiency][Paper Note] This work reveals two sources of visual redundancy in MLLM inference: Inherited Visual Redundancy (IVR) caused by dense ViT tokenization and Secondary Saturation Redundancy (SSR) caused by deep semantic saturation, which manifests differently across backbone architectures. The proposed HalfV framework handles these two
+  [ACL 2026][Multimodal Efficiency][Visual Redundancy] This work reveals two sources of visual redundancy in MLLM inference: Inherited Visual Redundancy (IVR) caused by dense ViT tokenization and Secondary Saturation Redundancy (SSR) caused by deep semantic saturation, which manifests differently across backbone architectures. The proposed HalfV framework handles these two types of redundancy separately, achieving a 4.1x FLOPs acceleration on Qwen2.5-VL while preserving 96.8% o…
 tags:
-  - ACL 2026
-  - vlm_efficiency
+  - "ACL 2026"
+  - "Multimodal Efficiency"
+  - "Visual Redundancy"
+  - "MLLM Acceleration"
+  - "Architecture-Aware"
+  - "Token Pruning"
+  - "Matrix Entropy"
 date: 2026-05-08
-content_hash: 049cef15f73d4c7c
+content_hash: 3b03a13ea19bc1d1
 ---
+
 # From Inheritance to Saturation: Disentangling the Evolution of Visual Redundancy for Architecture-Aware MLLM Inference Acceleration
 
 **Conference**: ACL 2026  
@@ -134,15 +140,14 @@ HalfV is a training-free inference-time acceleration method. It only requires a 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[AAAI 2026\] Filter, Correlate, Compress: Training-Free Token Reduction for MLLM Acceleration](../../AAAI2026/vlm_efficiency/filter_correlate_compress_training-free_token_reduction_for_.md)
+- [\[ICLR 2026\] VisionTrim: Unified Vision Token Compression for Training-Free MLLM Acceleration](../../ICLR2026/vlm_efficiency/visiontrim_unified_vision_token_compression_for_training-free_mllm_acceleration.md)
 - [\[ACL 2026\] MACS: Modality-Aware Capacity Scaling for Efficient Multimodal MoE Inference](macs_modality-aware_capacity_scaling_for_efficient_multimodal_moe_inference.md)
 - [\[AAAI 2026\] Global Compression Commander: Plug-and-Play Inference Acceleration for High-Resolution Large Vision-Language Models](../../AAAI2026/vlm_efficiency/global_compression_commander_plug-and-play_inference_acceler.md)
-- [\[ICML 2025\] CoreMatching: A Co-adaptive Sparse Inference Framework with Token and Neuron Pruning for Comprehensive Acceleration of Vision-Language Models](../../ICML2025/vlm_efficiency/corematching_a_co-adaptive_sparse_inference_framework_with_token_and_neuron_prun.md)
-- [\[ACL 2025\] RedundancyLens: Revealing and Exploiting Visual Token Processing Redundancy for Efficient Decoder-Only MLLMs](../../ACL2025/vlm_efficiency/redundancylens_revealing_and_exploiting_visual_token_processing_redundancy_for_e.md)
+- [\[ICCV 2025\] SparseVILA: Decoupling Visual Sparsity for Efficient VLM Inference](../../ICCV2025/vlm_efficiency/sparsevila_decoupling_visual_sparsity_for_efficient_vlm_inference.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Explaining and Mitigating Crosslingual Tokenizer Inequities
 description: >-
-  [NeurIPS 2025][Model Compression][Token Premium] This work systematically trains approximately 7,000 monolingual tokenizers covering 97 languages…
+  [NeurIPS 2025][Model Compression][Token Premium] This work systematically trains approximately 7,000 monolingual tokenizers covering 97 languages, providing the first demonstration that significant token premium disparities persist across languages even after controlling for training data size, vocabulary size, and algorithm. It further identifies vocabulary size and pre-tokenization strategy as key contributing factors, and proposes two mitigation approaches: language-specif…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -13,7 +13,7 @@ tags:
   - "Pre-tokenization"
   - "Compression Rate"
 date: 2026-05-08
-content_hash: bd9d1337e3b4a2c9
+content_hash: 6bfab1ba3243f2bd
 ---
 
 # Explaining and Mitigating Crosslingual Tokenizer Inequities
@@ -124,8 +124,8 @@ The idea of customizing optimal vocabulary size per language generalizes natural
 - [\[NeurIPS 2025\] Universal Cross-Tokenizer Distillation via Approximate Likelihood Matching](universal_cross-tokenizer_distillation_via_approximate_likelihood_matching.md)
 - [\[NeurIPS 2025\] Mitigating Semantic Collapse in Partially Relevant Video Retrieval](mitigating_semantic_collapse_in_partially_relevant_video_retrieval.md)
 - [\[NeurIPS 2025\] Towards Effective Federated Graph Foundation Model via Mitigating Knowledge Entanglement](towards_effective_federated_graph_foundation_model_via_mitigating_knowledge_enta.md)
+- [\[ACL 2025\] Explaining Puzzle Solutions in Natural Language: An Exploratory Study on 6×6 Sudoku](../../ACL2025/model_compression/explaining_puzzle_solutions_in_natural_language_an_exploratory_study_on_6x6_sudo.md)
 - [\[AAAI 2026\] CTPD: Cross Tokenizer Preference Distillation](../../AAAI2026/model_compression/ctpd_cross_tokenizer_preference_distillation.md)
-- [\[ICLR 2026\] UniFlow: A Unified Pixel Flow Tokenizer for Visual Understanding and Generation](../../ICLR2026/model_compression/uniflow_a_unified_pixel_flow_tokenizer_for_visual_understanding_and_generation.md)
 
 </div>
 

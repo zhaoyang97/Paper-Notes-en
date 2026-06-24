@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unlocking the Potential of Diffusion Priors in Blind Face Restoration
 description: >-
-  [ICCV 2025][Image Generation][Blind face restoration] This paper proposes FLIPNET, a unified framework built upon a T2I diffusion model that switches between a restoration mode (BoostHub selectively fuses LQ features + B…
+  [ICCV 2025][Image Generation][Blind face restoration] This paper proposes FLIPNET, a unified framework built upon a T2I diffusion model that switches between a restoration mode (BoostHub selectively fuses LQ features + BFR-oriented facial embeddings) and a degradation mode (learns from real degradation datasets and synthesizes degraded images) by simply flipping the inputs, simultaneously addressing two key challenges: the HQ/LQ distribution gap and the synthetic/real degrada…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "degradation modeling"
   - "LoRA"
 date: 2026-05-08
-content_hash: d0a4809a59d1743d
+content_hash: 73aee13846d286cc
 ---
 
 # Unlocking the Potential of Diffusion Priors in Blind Face Restoration
@@ -146,10 +146,10 @@ where $\mathcal{L}_{mse}$ and $\mathcal{L}_p$ impose image-level constraints on 
 ## Related Papers
 
 - [\[ICCV 2025\] BVINet: Unlocking Blind Video Inpainting with Zero Annotations](bvinet_unlocking_blind_video_inpainting_with_zero_annotations.md)
-- [\[ICCV 2025\] MoFRR: Mixture of Diffusion Models for Face Retouching Restoration](mofrr_mixture_of_diffusion_models_for_face_retouching_restoration.md)
 - [\[ICCV 2025\] FedDifRC: Unlocking the Potential of Text-to-Image Diffusion Models in Heterogeneous Federated Learning](feddifrc_unlocking_the_potential_of_text-to-image_diffusion_models_in_heterogene.md)
-- [\[ICCV 2025\] REPA-E: Unlocking VAE for End-to-End Tuning with Latent Diffusion Transformers](repa-e_unlocking_vae_for_end-to-end_tuning_of_latent_diffusion_transformers.md)
-- [\[ICCV 2025\] Less-to-More Generalization: Unlocking More Controllability by In-Context Generation](less-to-more_generalization_unlocking_more_controllability_by_in-context_generat.md)
+- [\[ICCV 2025\] MoFRR: Mixture of Diffusion Models for Face Retouching Restoration](mofrr_mixture_of_diffusion_models_for_face_retouching_restoration.md)
+- [\[CVPR 2025\] OSDFace: One-Step Diffusion Model for Face Restoration](../../CVPR2025/image_generation/osdface_one-step_diffusion_model_for_face_restoration.md)
+- [\[CVPR 2025\] SVFR: A Unified Framework for Generalized Video Face Restoration](../../CVPR2025/image_generation/svfr_a_unified_framework_for_generalized_video_face_restoration.md)
 
 </div>
 

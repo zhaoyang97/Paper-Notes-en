@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] MASS: MoErging through Adaptive Subspace Selection
 description: >-
-  [ICLR 2026][Model Compression][model merging] MASS stores the low-rank singular subspaces updated by each task into a shared model. During inference, it utilizes a data-free and training-free "projection residual" router to automatically select the task subspace and classification head that best match the input without knowing the task identity, pushing model merg
+  [ICLR 2026][Model Compression][model merging] MASS stores the low-rank singular subspaces updated by each task into a shared model. During inference, it utilizes a data-free and training-free "projection residual" router to automatically select the task subspace and classification head that best match the input without knowing the task identity, pushing model merging accuracy to approximately 98% of individually fine-tuned models.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - model merging
-  - MoErging
-  - task vectors
-  - SVD
-  - training-free routing
+  - "ICLR 2026"
+  - "Model Compression"
+  - "model merging"
+  - "MoErging"
+  - "task vectors"
+  - "SVD"
+  - "training-free routing"
 date: 2026-05-08
-content_hash: 7ae9a5df38395d3c
+content_hash: ff0300f0054cc219
 ---
+
 # MASS: MoErging through Adaptive Subspace Selection
 
 **Conference**: ICLR 2026  
@@ -131,11 +132,11 @@ MASS achieved the highest absolute accuracy in 5 out of 9 GLUE subtasks, trailin
 
 ## Related Papers
 
-- [\[ICLR 2026\] Achieving low-bit Muon through subspace preservation and grid quantization](achieving_low-bit_muon_through_subspace_preservation_and_grid_quantization.md)
-- [\[CVPR 2026\] Bridging Domains through Subspace-Aware Model Merging](../../CVPR2026/model_compression/bridging_domains_through_subspace-aware_model_merging.md)
-- [\[ICML 2026\] MIC: Maximizing Informational Capacity in Adaptive Representations via Isotropic Subspace Alignment](../../ICML2026/model_compression/mic_maximizing_informational_capacity_in_adaptive_representations_via_isotropic_.md)
-- [\[ICLR 2026\] Efficient Orthogonal Fine-Tuning with Principal Subspace Adaptation](efficient_orthogonal_fine-tuning_with_principal_subspace_adaptation.md)
 - [\[ICLR 2026\] AdaRank: Adaptive Rank Pruning for Enhanced Model Merging](adarank_adaptive_rank_pruning_for_enhanced_model_merging.md)
+- [\[CVPR 2026\] Bridging Domains through Subspace-Aware Model Merging](../../CVPR2026/model_compression/bridging_domains_through_subspace-aware_model_merging.md)
+- [\[ICLR 2026\] Achieving low-bit Muon through subspace preservation and grid quantization](achieving_low-bit_muon_through_subspace_preservation_and_grid_quantization.md)
+- [\[ICLR 2026\] GPTailor: Large Language Model Pruning Through Layer Cutting and Stitching](gptailor_large_language_model_pruning_through_layer_cutting_and_stitching.md)
+- [\[ICML 2026\] MIC: Maximizing Informational Capacity in Adaptive Representations via Isotropic Subspace Alignment](../../ICML2026/model_compression/mic_maximizing_informational_capacity_in_adaptive_representations_via_isotropic_.md)
 
 </div>
 

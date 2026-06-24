@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] Jackpot: Align Actor-Policy Distribution for Scalable and Stable RL for LLM
 description: >-
-  [ICLR 2026][Reinforcement Learning][off-policy RL] Jackpot utilizes "Optimal Budgeted Rejection Sampling (OBRS)" to directly align the actor (rollout) distribution with the policy (training) distribution. Combined with Top-K probability estimation and a stabilized Jackpot-PPO loss, it enables stable convergence for LLM reinforcement learning under extreme off-policy se
+  [ICLR 2026][Reinforcement Learning][off-policy RL] Jackpot utilizes "Optimal Budgeted Rejection Sampling (OBRS)" to directly align the actor (rollout) distribution with the policy (training) distribution. Combined with Top-K probability estimation and a stabilized Jackpot-PPO loss, it enables stable convergence for LLM reinforcement learning under extreme off-policy settings, including large-batch, asynchronous, and even "disparate model" rollout/training configurations.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - off-policy RL
-  - OBRS
-  - PPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "off-policy RL"
+  - "distribution mismatch"
+  - "rejection sampling"
+  - "OBRS"
+  - "importance sampling"
+  - "PPO"
+  - "large-batch training"
 date: 2026-05-08
-content_hash: 2e3606d4e9a14cef
+content_hash: 8c273cd30c047b22
 ---
+
 # Jackpot: Align Actor-Policy Distribution for Scalable and Stable RL for LLM
 
 **Conference**: ICLR 2026  
@@ -114,15 +119,16 @@ Under extreme mismatch where rollout and training models are different, Jackpot 
 - **Value**: ⭐⭐⭐⭐ —— Directly addresses the 70% cost bottleneck of RL rollouts; plug-and-play and low-overhead for high-throughput RL.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] GEPO: Group Expectation Policy Optimization for Stable Heterogeneous Reinforcement Learning](gepo_group_expectation_policy_optimization_for_stable_heterogeneous_reinforcemen.md)
+- [\[ICLR 2026\] Scalable Offline Model-Based RL with Action Chunks](scalable_offline_model-based_rl_with_action_chunks.md)
+- [\[ICLR 2026\] Escaping Policy Contraction: Contraction-Aware PPO (CaPPO) for Stable Language Model Fine-Tuning](escaping_policy_contraction_contraction-aware_ppo_cappo_for_stable_language_mode.md)
 - [\[ICLR 2026\] Sample-efficient and Scalable Exploration in Continuous-Time RL](sample-efficient_and_scalable_exploration_in_continuous-time_rl.md)
 - [\[ICLR 2026\] Master Skill Learning with Policy-Grounded Synergy of LLM-based Reward Shaping and Exploring](master_skill_learning_with_policy-grounded_synergy_of_llm-based_reward_shaping_a.md)
-- [\[ICLR 2026\] Learning to Reason as Action Abstractions with Scalable Mid-Training RL](learning_to_reason_as_action_abstractions_with_scalable_mid-training_rl.md)
-- [\[NeurIPS 2025\] Scalable Policy-Based RL Algorithms for POMDPs](../../NeurIPS2025/reinforcement_learning/scalable_policy-based_rl_algorithms_for_pomdps.md)
 
 </div>
 

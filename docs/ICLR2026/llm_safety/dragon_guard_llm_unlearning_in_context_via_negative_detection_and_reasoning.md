@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] DRAGON: Guard LLM Unlearning in Context via Negative Detection and Reasoning
 description: >-
-  [ICLR 2026][LLM Safety][LLM Unlearning] DRAGON shifts LLM unlearning from "weight modification" to "context modification": it first utilizes a dual-layer detection module, independent of retain data, to determine if an input falls within the unlearning scope. Upon a match, a fine-tuned CoT guider model dynamically generates reasoning instructions, which are
+  [ICLR2026][LLM Safety][LLM Unlearning] DRAGON shifts LLM unlearning from "weight modification" to "context modification": it first utilizes a dual-layer detection module, independent of retain data, to determine if an input falls within the unlearning scope. Upon a match, a fine-tuned CoT guider model dynamically generates reasoning instructions, which are prepended to the prompt along with retrieved safety policies. This achieves "on-demand shielding" of target knowledge wit…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - LLM Unlearning
-  - In-context Intervention
-  - Chain-of-Thought
+  - "ICLR2026"
+  - "LLM Safety"
+  - "LLM Unlearning"
+  - "In-context Intervention"
+  - "Chain-of-Thought"
+  - "Black-box safety"
+  - "Continual unlearning"
 date: 2026-05-08
-content_hash: 16cde79c0bf09a68
+content_hash: d7bc95184f7954b5
 ---
+
 # DRAGON: Guard LLM Unlearning in Context via Negative Detection and Reasoning
 
 **Conference**: ICLR2026  
@@ -167,8 +170,8 @@ Removing CoT worsens DS from 21.4 to 43.9, proving dynamic CoT is the primary so
 - [\[ICLR 2026\] DUET: Distilled LLM Unlearning from an Efficiently Contextualized Teacher](duet_distilled_llm_unlearning_from_an_efficiently_contextualized_teacher.md)
 - [\[ICLR 2026\] CLUE: Conflict-guided Localization for LLM Unlearning Framework](clue_conflict-guided_localization_for_llm_unlearning_framework.md)
 - [\[ICLR 2026\] Explainable LLM Unlearning through Reasoning](explainable_llm_unlearning_through_reasoning.md)
-- [\[ICLR 2026\] Dual-Space Smoothness for Robust and Balanced LLM Unlearning](dual-space_smoothness_for_robust_and_balanced_llm_unlearning.md)
-- [\[ICLR 2026\] Randomized Antipodal Search Done Right for Data Pareto Improvement of LLM Unlearning](randomized_antipodal_search_done_right_for_data_pareto_improvement_of_llm_unlear.md)
+- [\[ICLR 2026\] LLM Unlearning with LLM Beliefs](llm_unlearning_with_llm_beliefs.md)
+- [\[ICLR 2026\] DynaGuard: A Dynamic Guardian Model With User-Defined Policies](dynaguard_a_dynamic_guardian_model_with_user-defined_policies.md)
 
 </div>
 

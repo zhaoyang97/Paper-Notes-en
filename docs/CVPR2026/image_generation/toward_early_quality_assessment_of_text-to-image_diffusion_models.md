@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Toward Early Quality Assessment of Text-to-Image Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] This paper proposes Probe-Select, a lightweight probe attached to the intermediate activations of diffusion denoisers. By running only 20% of the generation trajectory, it predicts the final quality score of an image, allowing for the early pruning of unpromising random seeds. This approach reduces the sampling overhea
+  [CVPR 2026][Image Generation][Early Quality Assessment] This paper proposes Probe-Select, a lightweight probe attached to the intermediate activations of diffusion denoisers. By running only 20% of the generation trajectory, it predicts the final quality score of an image, allowing for the early pruning of unpromising random seeds. This approach reduces the sampling overhead of the "generate-then-select" pipeline by approximately 64% while simultaneously improving the quality…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Early Quality Assessment"
+  - "Text-to-Image Diffusion"
+  - "Intermediate Activation Probes"
+  - "Selective Generation"
+  - "Sampling Acceleration"
 date: 2026-05-08
-content_hash: 2d57afe297d4e3f8
+content_hash: 18024ddb7e8fbc93
 ---
+
 # Toward Early Quality Assessment of Text-to-Image Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -139,14 +145,14 @@ Performance improves across all backbones. FID also improves (e.g., SD3-M 25.26 
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] TINA: Text-Free Inversion Attack for Unlearned Text-to-Image Diffusion Models](tina_text-free_inversion_attack_for_unlearned_text-to-image_diffusion_models.md)
 - [\[CVPR 2026\] Erasing Thousands of Concepts: Towards Scalable and Practical Concept Erasure for Text-to-Image Diffusion Models](erasing_thousands_of_concepts_towards_scalable_and_practical_concept_erasure_for.md)
 - [\[CVPR 2026\] DBMSolver: A Training-free Diffusion Bridge Sampler for High-Quality Image-to-Image Translation](dbmsolver_a_training-free_diffusion_bridge_sampler_for_high-quality_image-to-ima.md)
-- [\[CVPR 2026\] TINA: Text-Free Inversion Attack for Unlearned Text-to-Image Diffusion Models](tina_text-free_inversion_attack_for_unlearned_text-to-image_diffusion_models.md)
 - [\[CVPR 2026\] Test-Time Alignment of Text-to-Image Diffusion Models via Null-Text Embedding Optimisation](test-time_alignment_of_text-to-image_diffusion_models_via_null-text_embedding_op.md)
 - [\[CVPR 2026\] Frequency-Aware Flow Matching for High-Quality Image Generation](freqflow_frequency_aware_flow_matching.md)
 

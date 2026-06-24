@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Detecting Misbehaviors of Large Vision-Language Models by Evidential Uncertainty Quantification
 description: >-
-  [ICLR 2026][Multimodal VLM][LVLM uncertainty] The authors propose EUQ (Evidential Uncertainty Quantification), which decomposes the epistemic uncertainty of LVLMs into **Conflict (CF)** (internal contradiction) and **Ignorance (IG)** (lack of information) based on Dempster-Shafer evidence theory. Without training and using only a single forward pass, EUQ detects f
+  [ICLR2026][Multimodal VLM][LVLM uncertainty] The authors propose EUQ (Evidential Uncertainty Quantification), which decomposes the epistemic uncertainty of LVLMs into **Conflict (CF)** (internal contradiction) and **Ignorance (IG)** (lack of information) based on Dempster-Shafer evidence theory. Without training and using only a single forward pass, EUQ detects four types of misbehaviors: hallucination, jailbreaking, adversarial attacks, and OOD failures…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - LVLM uncertainty
-  - evidential reasoning
-  - Dempster-Shafer
-  - misbehavior detection
-  - hallucination
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "LVLM uncertainty"
+  - "evidential reasoning"
+  - "Dempster-Shafer"
+  - "misbehavior detection"
+  - "hallucination"
 date: 2026-05-08
-content_hash: 5cbd4f8be0060566
+content_hash: e14578fcd4c28772
 ---
+
 # Detecting Misbehaviors of Large Vision-Language Models by Evidential Uncertainty Quantification
 
 **Conference**: ICLR2026  
@@ -168,7 +169,7 @@ Key findings: **Hallucination ↔ High Conflict** (CF best), **OOD ↔ High Igno
 - [\[ICML 2026\] Debate with Images: Detecting Deceptive Behaviors in Multimodal Large Language Models](../../ICML2026/multimodal_vlm/debate_with_images_detecting_deceptive_behaviors_in_multimodal_large_language_mo.md)
 - [\[CVPR 2026\] Uncertainty-Aware Knowledge Distillation for Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/uncertainty-aware_knowledge_distillation_for_multimodal_large_language_models.md)
 - [\[ICLR 2026\] CityLens: Evaluating Large Vision-Language Models for Urban Socioeconomic Sensing](citylens_evaluating_large_vision-language_models_for_urban_socioeconomic_sensing.md)
-- [\[CVPR 2025\] Topo-R1: Detecting Topological Anomalies via Vision-Language Models](../../CVPR2025/multimodal_vlm/topo-r1_detecting_topological_anomalies_via_vision-language_models.md)
+- [\[ICLR 2026\] Teaching VLMs to Admit Uncertainty in OCR from Lossy Visual Inputs](teaching_vlms_to_admit_uncertainty_in_ocr_from_lossy_visual_inputs.md)
 
 </div>
 

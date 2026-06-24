@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hyperbolic Neural Population Geometry Benefits Computation
 description: >-
-  [ICML 2026][Computational Biology][Paper Note] This paper establishes a theoretical framework for the experimental phenomenon where "hippocampal population activity exhibits a hyperbolic structure." It proves that place cells with exponentially distributed receptive field widths **statistically induce tree-like/hyperbolic stimulus geometry**. It further reveals tha
+  [ICML2026][Computational Biology][Neural population geometry] This paper establishes a theoretical framework for the experimental phenomenon where "hippocampal population activity exhibits a hyperbolic structure." It proves that place cells with exponentially distributed receptive field widths **statistically induce tree-like/hyperbolic stimulus geometry**. It further reveals that the update rules of Modern Hopfield Networks essentially compute the MMSE optimal decoder. Based…
 tags:
-  - ICML 2026
-  - Computational Biology
+  - "ICML2026"
+  - "Computational Biology"
+  - "Neural population geometry"
+  - "Hippocampal place cells"
+  - "Modern Hopfield Networks"
+  - "MMSE decoding"
+  - "Memory capacity"
 date: 2026-05-08
-content_hash: 5d66c4e1f124620e
+content_hash: ce770f3d62223178
 ---
+
 # Hyperbolic Neural Population Geometry Benefits Computation
 
 **Conference**: ICML2026  
@@ -117,9 +123,9 @@ The ML layers (KFAttention / KFPooling) can be constructed without introducing a
 
 - [\[CVPR 2026\] Hyperbolic Busemann Neural Networks](../../CVPR2026/computational_biology/hyperbolic_busemann_neural_networks.md)
 - [\[ICML 2026\] Viral Proteins Reveal Geometry of Protein Language Models](viral_proteins_reveal_geometry_of_protein_language_models.md)
-- [\[CVPR 2026\] HyperST: Hierarchical Hyperbolic Learning for Spatial Transcriptomics Prediction](../../CVPR2026/computational_biology/hyperst_hierarchical_hyperbolic_learning_for_spatial_transcriptomics_prediction.md)
-- [\[ICLR 2026\] PoinnCARE: Hyperbolic Multi-Modal Learning for Enzyme Classification](../../ICLR2026/computational_biology/poinncare_hyperbolic_multi-modal_learning_for_enzyme_classification.md)
+- [\[ICML 2026\] CoSiNE: Conditional Site-Independent Neural Evolution Model for Antibody Sequences](conditionally_site-independent_neural_evolution_of_antibody_sequences.md)
 - [\[ICML 2026\] Neural Estimation of Pairwise Mutual Information in Masked Discrete Sequence Models](neural_estimation_of_pairwise_mutual_information_in_masked_discrete_sequence_mod.md)
+- [\[CVPR 2026\] HyperST: Hierarchical Hyperbolic Learning for Spatial Transcriptomics Prediction](../../CVPR2026/computational_biology/hyperst_hierarchical_hyperbolic_learning_for_spatial_transcriptomics_prediction.md)
 
 </div>
 

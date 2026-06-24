@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] The Data Manifold under the Microscope
 description: >-
-  [ICML 2026][learning_theory][reach] Addressing the gap where "manifold fitting theory's generalization/approximation bounds are nearly unverifiable on real data," this paper proposes a **controllable geometric benchmark framework**. By recreating datasets like dSprites and COIL-20 as low-dimensional manifolds sampled on **dense regular grids** along tran
+  [ICML 2026][Learning Theory][Manifold Hypothesis] Addressing the gap where "manifold fitting theory's generalization/approximation bounds are nearly unverifiable on real data," this paper proposes a **controllable geometric benchmark framework**. By recreating datasets like dSprites and COIL-20 as low-dimensional manifolds sampled on **dense regular grids** along transformation axes, and using **finite difference geometric estimators**, quantities like curvature, reach…
 tags:
-  - ICML 2026
-  - learning_theory
-  - reach
+  - "ICML 2026"
+  - "Learning Theory"
+  - "Manifold Geometry"
+  - "Representation Analysis"
+  - "Manifold Hypothesis"
+  - "Intrinsic Dimension"
+  - "Curvature"
+  - "Reach"
+  - "Finite Difference Estimation"
 date: 2026-05-08
-content_hash: 17eb3665a35230bd
+content_hash: 26e90541856d47e5
 ---
+
 # The Data Manifold under the Microscope
 
 **Conference**: ICML 2026  
@@ -124,11 +131,11 @@ This paper is an analysis framework rather than a training method, so it does no
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Adaptive Data Analysis for Growing Data](../../NeurIPS2025/learning_theory/adaptive_data_analysis_for_growing_data.md)
-- [\[ICML 2026\] Matroid Algorithms Under Size-Sensitive Independence Oracles](matroid_algorithms_under_size-sensitive_independence_oracles.md)
+- [\[ICLR 2026\] Fast Escape, Slow Convergence: Learning Dynamics of Phase Retrieval under Power-Law Data](../../ICLR2026/learning_theory/fast_escape_slow_convergence_learning_dynamics_of_phase_retrieval_under_power-la.md)
+- [\[ICLR 2026\] Theoretical Analysis of Contrastive Learning under Imbalanced Data: From Training Dynamics to a Pruning Solution](../../ICLR2026/learning_theory/theoretical_analysis_of_contrastive_learning_under_imbalanced_data_from_training.md)
 - [\[ICML 2026\] Active Learning with Low-Rank Structure for Data Selection](active_learning_with_low-rank_structure_for_data_selection.md)
-- [\[ICML 2026\] Expectation Consistency Loss: Rethink Confidence Calibration under Covariate Shift](expectation_consistency_loss_rethink_confidence_calibration_under_covariate_shif.md)
-- [\[ICML 2026\] Provably Data-driven Multiple Hyper-parameter Tuning with Structured Loss Function](provably_data-driven_multiple_hyper-parameter_tuning_with_structured_loss_functi.md)
+- [\[ICLR 2026\] Closed-form $\ell_r$ norm scaling with data for overparameterized linear regression and diagonal linear networks under $\ell_p$ bias](../../ICLR2026/learning_theory/closed-form_ell_r_norm_scaling_with_data_for_overparameterized_linear_regression.md)
+- [\[ICLR 2026\] Decision Aggregation under Quantal Response](../../ICLR2026/learning_theory/decision_aggregation_under_quantal_response.md)
 
 </div>
 

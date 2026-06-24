@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Agint: Agentic Graph Compilation for Software Engineering Agents
 description: >-
-  [NeurIPS 2025 (DL4C Workshop)][Graph Learning][agentic graph compiler] This paper proposes Agint, an agentic graph compiler that compiles natural language intent into typed…
+  [NeurIPS 2025 (DL4C Workshop)][Graph Learning][agentic graph compiler] This paper proposes Agint, an agentic graph compiler that compiles natural language intent into typed, effect-aware DAGs (directed acyclic graphs) through a six-level type floor (TEXT→TYPED→SPEC→STUB→SHIM→PURE), progressively refining natural language into executable code while supporting executable intermediate representations, a hybrid JIT runtime, and a Unix-style composable toolchain.
 tags:
   - "NeurIPS 2025 (DL4C Workshop)"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "code generation"
   - "workflow orchestration"
 date: 2026-05-08
-content_hash: 443834069ea54a3a
+content_hash: dc7d595942cba30a
 ---
 
 # Agint: Agentic Graph Compilation for Software Engineering Agents
@@ -90,11 +90,11 @@ Compared to multi-agent frameworks such as ChatDev/MetaGPT, Agint draws on compi
 
 ## Related Papers
 
+- [\[ICLR 2026\] CLAUSE: Agentic Neuro-Symbolic Knowledge Graph Reasoning via Dynamic Learnable Context Engineering](../../ICLR2026/graph_learning/clause_agentic_neuro-symbolic_knowledge_graph_reasoning_via_dynamic_learnable_co.md)
 - [\[ACL 2026\] AgentGL: Towards Agentic Graph Learning with LLMs via Reinforcement Learning](../../ACL2026/graph_learning/agentgl_towards_agentic_graph_learning_with_llms_via_reinforcement_learning.md)
 - [\[CVPR 2026\] Graph2Eval: Automatic Multimodal Task Generation for Agents via Knowledge Graphs](../../CVPR2026/graph_learning/graph2eval_automatic_multimodal_task_generation_for_agents_via_knowledge_graphs.md)
 - [\[NeurIPS 2025\] GraphTOP: Graph Topology-Oriented Prompting for Graph Neural Networks](graphtop_graph_topology-oriented_prompting_for_graph_neural_networks.md)
 - [\[NeurIPS 2025\] Graph Persistence goes Spectral](graph_persistence_goes_spectral.md)
-- [\[NeurIPS 2025\] Generative Graph Pattern Machine](generative_graph_pattern_machine.md)
 
 </div>
 

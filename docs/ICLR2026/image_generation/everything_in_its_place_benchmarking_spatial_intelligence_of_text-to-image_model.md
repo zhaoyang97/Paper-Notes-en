@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Everything in Its Place: Benchmarking Spatial Intelligence of Text-to-Image Models
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] SpatialGenEval is proposed as a benchmark covering 10 spatial sub-domains through 1,230 long, information-dense prompts. It systematically evaluates 23 SOTA T2I models, revealing that spatial reasoning is the primary bottleneck. Additionally, the SpatialT2I dataset is constructed to achieve data-centric improvements in
+  [ICLR 2026][Image Generation][Spatial Intelligence] SpatialGenEval is proposed as a benchmark covering 10 spatial sub-domains through 1,230 long, information-dense prompts. It systematically evaluates 23 SOTA T2I models, revealing that spatial reasoning is the primary bottleneck. Additionally, the SpatialT2I dataset is constructed to achieve data-centric improvements in spatial intelligence.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Spatial Intelligence"
+  - "Text-to-Image Generation"
+  - "Benchmark Evaluation"
+  - "Information-Dense Prompts"
+  - "Data-Centric Paradigm"
 date: 2026-05-08
-content_hash: 70533db0f2f5e77b
+content_hash: 81c38fccacfd0845
 ---
+
 # Everything in Its Place: Benchmarking Spatial Intelligence of Text-to-Image Models
 
 **Conference**: ICLR 2026  

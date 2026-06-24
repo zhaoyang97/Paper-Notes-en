@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Deterministic Horizon: When Extended Reasoning Fails and Tool Delegation Becomes Necessary
 description: >-
-  [ICML 2026][LLM Reasoning][Paper Note] This paper identifies a "**Deterministic Horizon**" (approx. 19-31 steps) in decoder-only Transformers for tasks requiring deterministic state tracking, where extending reasoning beyond this threshold leads to performance collapse due to attention capacity limits. Through information theory and large-scale empirical an
+  [ICML 2026][Reasoning][Reasoning Failure] This paper identifies a "**Deterministic Horizon**" (approx. 19-31 steps) in decoder-only Transformers for tasks requiring deterministic state tracking, where extending reasoning beyond this threshold leads to performance collapse due to attention capacity limits. Through information theory and large-scale empirical analysis (720,000 evaluations), the authors prove this is an **architectural capability** failure ("Decoherence") rather…
 tags:
-  - ICML 2026
-  - LLM Reasoning
+  - "ICML 2026"
+  - "Reasoning"
+  - "Reasoning Failure"
+  - "Chain-of-Thought"
+  - "Attention Capacity"
+  - "Tool Delegation"
+  - "State Tracking"
 date: 2026-05-08
-content_hash: 4c28d6b2f8409ac4
+content_hash: 1d856ef2e51d3178
 ---
+
 # The Deterministic Horizon: When Extended Reasoning Fails and Tool Delegation Becomes Necessary
 
 **Conference**: ICML 2026  
@@ -137,9 +143,9 @@ Tool delegation achieves 86-94% accuracy across all models and tasks (compared t
 
 - [\[ICML 2026\] ToolMATH: A Math Tool Benchmark for Realistic Long-Horizon Multi-Tool Reasoning](toolmath_a_math_tool_benchmark_for_realistic_long-horizon_multi-tool_reasoning.md)
 - [\[ICML 2026\] MOSAIC: Learning When to Act or Refuse — Guarding Agentic Reasoning Models for Safe Multi-step Tool Use](learning_when_to_act_or_refuse_guarding_agentic_reasoning_models_for_safe_multi-.md)
-- [\[ICML 2026\] When to Re-Plan: Subgoal Persistence in Hierarchical Latent Reasoning](when_to_re-plan_subgoal_persistence_in_hierarchical_latent_reasoning.md)
-- [\[ACL 2026\] Evo-Attacker: Memory-Augmented Reinforcement Learning for Long-Horizon Tool Attacks on LLM-MAS](../../ACL2026/llm_reasoning/evo-attacker_memory-augmented_reinforcement_learning_for_long-horizon_tool_attac.md)
 - [\[ACL 2026\] Reasoning Fails Where Step Flow Breaks](../../ACL2026/llm_reasoning/reasoning_fails_where_step_flow_breaks.md)
+- [\[ICML 2026\] How Far Ahead Do LLMs Plan? Uncovering the Latent Horizon in Chain-of-Thought Reasoning](how_far_ahead_do_llms_plan_uncovering_the_latent_horizon_in_chain-of-thought_rea.md)
+- [\[ICML 2026\] When the Chain of Thought Knows Better: Failure Modes in Multi-Turn Reasoning Models](when_the_chain_of_thought_knows_better_failure_modes_in_multi-turn_reasoning_mod.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Long-Tailed Recognition via Information-Preservable Two-Stage Learning
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][Long-tailed recognition] This paper proposes an information-preservable two-stage learning framework: Stage 1 employs Balanced Negative Sampling (BNS) to learn an effective and se…
+  [NeurIPS 2025 Spotlight][Self-Supervised Learning][Long-tailed recognition] This paper proposes an information-preservable two-stage learning framework: Stage 1 employs Balanced Negative Sampling (BNS) to learn an effective and separable feature space via mutual information maximization; Stage 2 uses Information-Preservable DPP (IP-DPP) to sample the most informative examples in a mathematically principled manner to correct majority-biased decision boundaries. The method achi…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Self-Supervised Learning"
   - "Long-tailed recognition"
   - "contrastive learning"
@@ -13,7 +13,7 @@ tags:
   - "two-stage learning"
   - "representation learning"
 date: 2026-05-08
-content_hash: 2a6ec90450e4bc7a
+content_hash: 5de82a3f59420f9a
 ---
 
 # Long-Tailed Recognition via Information-Preservable Two-Stage Learning
@@ -155,10 +155,10 @@ $$\mathcal{L}_{BNS} = -\frac{1}{m+1}\left[\sum_{q_* \in \{q_i\} \cup \boldsymbol
 ## Related Papers
 
 - [\[AAAI 2026\] BCE3S: Binary Cross-Entropy Based Tripartite Synergistic Learning for Long-tailed Recognition](../../AAAI2026/self_supervised/bce3s_binary_cross-entropy_based_tripartite_synergistic_learning_for_long-tailed.md)
+- [\[CVPR 2026\] Trust-calibrated Collaborative Learning for Long-Tailed Visual Recognition](../../CVPR2026/self_supervised/trust-calibrated_collaborative_learning_for_long-tailed_visual_recognition.md)
+- [\[ICLR 2026\] GUIDE: Gated Uncertainty-Informed Disentangled Experts for Long-tailed Recognition](../../ICLR2026/self_supervised/guide_gated_uncertainty-informed_disentangled_experts_for_long-tailed_recognitio.md)
+- [\[CVPR 2026\] Decision Boundary-aware Generation for Long-tailed Learning](../../CVPR2026/self_supervised/decision_boundary-aware_generation_for_long-tailed_learning.md)
 - [\[CVPR 2026\] Reframing Long-Tailed Learning via Loss Landscape Geometry](../../CVPR2026/self_supervised/reframing_long-tailed_learning_via_loss_landscape_geometry.md)
-- [\[NeurIPS 2025\] Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning](self-supervised_contrastive_learning_is_approximately_supervised_contrastive_lea.md)
-- [\[NeurIPS 2025\] Know Thyself by Knowing Others: Learning Neuron Identity from Population Context](know_thyself_by_knowing_others_learning_neuron_identity_from_population_context.md)
-- [\[ICLR 2026\] Maximizing Incremental Information Entropy for Contrastive Learning](../../ICLR2026/self_supervised/maximizing_incremental_information_entropy_for_contrastive_learning.md)
 
 </div>
 

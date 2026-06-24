@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Verifying Meta-Awareness via Predictive Rewards in Reasoning Models
 description: >-
-  [ICML 2026][LLM Reasoning][Reinforcement Learning] Optimizing model metacognition by requiring reasoning models to self-predict solution length, pass rates, and necessary concepts—aligning predictions with ground-truth statistics—significantly enhances mathematical reasoning performance and accelerates training.
+  [ICML 2026][Reasoning][Metacognition] Optimizing model metacognition by requiring reasoning models to self-predict solution length, pass rates, and necessary concepts—aligning predictions with ground-truth statistics—significantly enhances mathematical reasoning performance and accelerates training.
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - Reinforcement Learning
+  - "ICML 2026"
+  - "Reasoning"
+  - "Metacognition"
+  - "Reasoning Models"
+  - "Reinforcement Learning"
+  - "Predictive Rewards"
 date: 2026-05-08
-content_hash: 29a1695872d154db
+content_hash: 3cd7a881a87c2dd3
 ---
+
 # Verifying Meta-Awareness via Predictive Rewards in Reasoning Models
 
 **Conference**: ICML 2026  
@@ -142,11 +146,11 @@ Shapley value decomposition: Difficulty reward contributes the most (43%), follo
 
 ## Related Papers
 
-- [\[ICML 2026\] Hidden Error Awareness in Chain-of-Thought Reasoning: The Signal Is Diagnostic, Not Causal](hidden_error_awareness_in_chain-of-thought_reasoning_the_signal_is_diagnostic_no.md)
 - [\[ICLR 2026\] Dynamics-Predictive Sampling for Active RL Finetuning of Large Reasoning Models](../../ICLR2026/llm_reasoning/dynamics-predictive_sampling_for_active_rl_finetuning_of_large_reasoning_models.md)
-- [\[ACL 2026\] Self-Awareness before Action: Mitigating Logical Inertia via Proactive Cognitive Awareness](../../ACL2026/llm_reasoning/self-awareness_before_action_mitigating_logical_inertia_via_proactive_cognitive_.md)
-- [\[NeurIPS 2025\] Smaller Models, Smarter Rewards: A Two-Sided Approach to Process and Outcome Rewards](../../NeurIPS2025/llm_reasoning/smaller_models_smarter_rewards_a_two-sided_approach_to_process_and_outcome_rewar.md)
 - [\[NeurIPS 2025\] The Hawthorne Effect in Reasoning Models: Evaluating and Steering Test Awareness](../../NeurIPS2025/llm_reasoning/the_hawthorne_effect_in_reasoning_models_evaluating_and_steering_test_awareness.md)
+- [\[ICML 2026\] Hidden Error Awareness in Chain-of-Thought Reasoning: The Signal Is Diagnostic, Not Causal](hidden_error_awareness_in_chain-of-thought_reasoning_the_signal_is_diagnostic_no.md)
+- [\[ACL 2026\] Self-Awareness before Action: Mitigating Logical Inertia via Proactive Cognitive Awareness](../../ACL2026/llm_reasoning/self-awareness_before_action_mitigating_logical_inertia_via_proactive_cognitive_.md)
+- [\[ICLR 2026\] Verifying Chain-of-Thought Reasoning via Its Computational Graph](../../ICLR2026/llm_reasoning/verifying_chain-of-thought_reasoning_via_its_computational_graph.md)
 
 </div>
 

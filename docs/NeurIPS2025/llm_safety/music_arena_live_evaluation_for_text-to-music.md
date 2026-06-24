@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Music Arena: Live Evaluation for Text-to-Music
 description: >-
-  [NeurIPS 2025][LLM Safety][text-to-music] Music Arena is the first online live evaluation platform for text-to-music (TTM) generation. It addresses the heterogeneous signature problem of TTM systems via an LLM-driven mod…
+  [NeurIPS 2025][LLM Safety][text-to-music] Music Arena is the first online live evaluation platform for text-to-music (TTM) generation. It addresses the heterogeneous signature problem of TTM systems via an LLM-driven moderation and routing system, collects multi-level preference data including fine-grained listening behavior and natural language feedback, and provides the community with a sustainable open preference data source through monthly rolling data releases.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "leaderboard"
   - "preference data"
 date: 2026-05-08
-content_hash: 67ad7bf843dca0e6
+content_hash: 4d775643b9f03a9b
 ---
 
 # Music Arena: Live Evaluation for Text-to-Music
@@ -153,8 +153,8 @@ Initial data collection period (July 28 – August 31, 2025):
 
 - [\[ACL 2026\] Subject-level Inference for Realistic Text Anonymization Evaluation](../../ACL2026/llm_safety/subject-level_inference_for_realistic_text_anonymization_evaluation.md)
 - [\[NeurIPS 2025\] Evaluation of Vision-LLMs in Surveillance Video](evaluation_of_vision-llms_in_surveillance_video.md)
-- [\[NeurIPS 2025\] A Reliable Cryptographic Framework for Empirical Machine Unlearning Evaluation](a_reliable_cryptographic_framework_for_empirical_machine_unl.md)
 - [\[NeurIPS 2025\] MaskSQL: Safeguarding Privacy for LLM-Based Text-to-SQL via Abstraction](masksql_safeguarding_privacy_for_llm-based_text-to-sql_via_abstraction.md)
+- [\[NeurIPS 2025\] A Reliable Cryptographic Framework for Empirical Machine Unlearning Evaluation](a_reliable_cryptographic_framework_for_empirical_machine_unl.md)
 - [\[NeurIPS 2025\] AgentDAM: Privacy Leakage Evaluation for Autonomous Web Agents](agentdam_privacy_leakage_evaluation_for_autonomous_web_agent.md)
 
 </div>

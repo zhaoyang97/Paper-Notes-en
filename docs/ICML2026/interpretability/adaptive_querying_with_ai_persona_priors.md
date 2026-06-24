@@ -4,12 +4,17 @@ title: >-
 description: >-
   [ICML 2026][Interpretability][AI Persona] The authors package "LLM response distributions conditioned on personas" into a finite mixture Bayesian prior. This allows for efficient prediction of remaining responses via closed-form posterior updates on personas after asking only a few questions, outperforming classic CAT/IRT baselines.
 tags:
-  - ICML 2026
-  - Interpretability
-  - AI Persona
+  - "ICML 2026"
+  - "Interpretability"
+  - "AI Persona"
+  - "Bayesian Adaptive Querying"
+  - "Digital Twin"
+  - "Adaptive Testing"
+  - "Cold Start"
 date: 2026-05-08
-content_hash: 46ec5d26f6f174f7
+content_hash: 58c29b6db1575678
 ---
+
 # Adaptive Querying with AI Persona Priors
 
 **Conference**: ICML 2026  
@@ -135,10 +140,10 @@ WorldValuesBench (91 items, 88,459 users, 4-point Likert) + 100,000 synthetic us
 ## Related Papers
 
 - [\[ICML 2026\] LLMs Lean on Priors, Not Programming Language Semantics](llms_lean_on_priors_not_programming_language_semantics.md)
-- [\[ICLR 2026\] AnveshanaAI: A Multimodal Platform for Adaptive AI/ML Education through Automated Question Generation and Interactive Assessment](../../ICLR2026/interpretability/anveshanaai_a_multimodal_platform_for_adaptive_aiml_education_through_automated_.md)
+- [\[ICLR 2026\] Persona Features Control Emergent Misalignment](../../ICLR2026/interpretability/persona_features_control_emergent_misalignment.md)
 - [\[ICML 2026\] Prompt Optimization Is a Coin Flip: Diagnosing When It Helps in Compound AI Systems](prompt_optimization_is_a_coin_flip_diagnosing_when_it_helps_in_compound_ai_syste.md)
-- [\[ICLR 2026\] PERSONA: Dynamic and Compositional Inference-Time Personality Control via Activation Vector Algebra](../../ICLR2026/interpretability/persona_dynamic_and_compositional_inference-time_personality_control_via_activat.md)
-- [\[ICLR 2026\] Modal Logical Neural Networks for Financial AI](../../ICLR2026/interpretability/modal_logical_neural_networks_for_financial_ai.md)
+- [\[ICML 2026\] AI Engram: In Search of Memory Traces in Artificial Intelligence](ai_engram_in_search_of_memory_traces_in_artificial_intelligence.md)
+- [\[ICLR 2026\] Tackling the XAI Disagreement Problem with Adaptive Feature Grouping](../../ICLR2026/interpretability/tackling_the_xai_disagreement_problem_with_adaptive_feature_grouping.md)
 
 </div>
 

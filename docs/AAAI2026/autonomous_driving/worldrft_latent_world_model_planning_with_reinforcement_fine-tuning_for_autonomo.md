@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] WorldRFT: Latent World Model Planning with Reinforcement Fine-Tuning for Autonomous Driving
 description: >-
-  [AAAI 2026][Autonomous Driving][Latent World Model] WorldRFT is a planning-oriented latent world model framework that integrates VGGT-based spatial encoding…
+  [AAAI 2026][Autonomous Driving][Latent World Model] WorldRFT is a planning-oriented latent world model framework that integrates VGGT-based spatial encoding, hierarchical planning decomposition with local-aware iterative refinement, and GRPO-based collision-aware reinforcement fine-tuning. It reduces collision rate by 83% on nuScenes (0.30% → 0.05%) and achieves near-LiDAR SOTA performance using camera only on NavSim (87.8 vs. 88.1 PDMS).
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -13,7 +13,7 @@ tags:
   - "VGGT"
   - "Collision Awareness"
 date: 2026-05-08
-content_hash: 79ee16799a529701
+content_hash: a21dccfa77c45cb9
 ---
 
 # WorldRFT: Latent World Model Planning with Reinforcement Fine-Tuning for Autonomous Driving
@@ -140,11 +140,11 @@ Surround-view RGB → **SWE** (ResNet + frozen VGGT fusion, outputs spatially-aw
 
 ## Related Papers
 
+- [\[ICLR 2026\] $AutoDrive\text{-}P^3$: Unified Chain of Perception-Prediction-Planning Thought via Reinforcement Fine-Tuning](../../ICLR2026/autonomous_driving/autodrivetext-p3_unified_chain_of_perceptionpredictionplanning_thought_via_reinf.md)
+- [\[ICML 2026\] CoIRL-AD: Collaborative-Competitive Imitation-Reinforcement Learning in Latent World Models for Autonomous Driving](../../ICML2026/autonomous_driving/coirl-ad_collaborative-competitive_imitation-reinforcement_learning_in_latent_wo.md)
 - [\[ICLR 2026\] SMART-R1: Advancing Multi-agent Traffic Simulation via R1-Style Reinforcement Fine-Tuning](../../ICLR2026/autonomous_driving/advancing_multi-agent_traffic_simulation_via_r1-style_reinforcement_fine-tuning.md)
-- [\[ICCV 2025\] World4Drive: End-to-End Autonomous Driving via Intention-aware Physical Latent World Model](../../ICCV2025/autonomous_driving/world4drive_end-to-end_autonomous_driving_via_intention-aware_physical_latent_wo.md)
-- [\[AAAI 2026\] DiffRefiner: Coarse to Fine Trajectory Planning via Diffusion Refinement with Semantic Interaction for End to End Autonomous Driving](diffrefiner_coarse_to_fine_trajectory_planning_via_diffusion_refinement_with_sem.md)
-- [\[AAAI 2026\] ReflexDiffusion: Reflexion-Enhanced Trajectory Planning for High Lateral Acceleration in Autonomous Driving](reflexdiffusion_reflection-enhanced_trajectory_planning_for_.md)
-- [\[CVPR 2026\] ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory Planning in Autonomous Driving](../../CVPR2026/autonomous_driving/colavla_leveraging_cognitive_latent_reasoning_for_hierarchical_parallel_trajecto.md)
+- [\[CVPR 2026\] RLFTSim: Realistic and Controllable Multi-Agent Traffic Simulation via Reinforcement Learning Fine-Tuning](../../CVPR2026/autonomous_driving/rlftsim_realistic_and_controllable_multi-agent_traffic_simulation_via_reinforcem.md)
+- [\[CVPR 2026\] WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching for Autonomous Driving](../../CVPR2026/autonomous_driving/wam-flow_parallel_coarse-to-fine_motion_planning_via_discrete_flow_matching_for_.md)
 
 </div>
 

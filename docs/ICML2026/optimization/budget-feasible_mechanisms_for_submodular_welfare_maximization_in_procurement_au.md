@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Budget-Feasible Mechanisms for Submodular Welfare Maximization in Procurement Auctions
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] This paper introduces BFM-SWM, the first truthful mechanism with approximation guarantees for submodular welfare maximization in procurement auctions under budget constraints and private costs. By utilizing a descending clock auction with geometrically increasing thresholds, single-point protection, and a price/payment
+  [ICML 2026][Optimization][Procurement Auctions] This paper introduces BFM-SWM, the first truthful mechanism with approximation guarantees for submodular welfare maximization in procurement auctions under budget constraints and private costs. By utilizing a descending clock auction with geometrically increasing thresholds, single-point protection, and a price/payment ratio parameter $\beta$ to ensure non-negative surplus and budget feasibility…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML 2026"
+  - "Optimization"
+  - "Procurement Auctions"
+  - "Budget-Feasible"
+  - "Submodular Social Welfare"
+  - "Descending Clock Auction"
+  - "Approximation Ratio"
 date: 2026-05-08
-content_hash: c19ac2af66806951
+content_hash: 3f7e4a837fa7b12a
 ---
+
 # Budget-Feasible Mechanisms for Submodular Welfare Maximization in Procurement Auctions
 
 **Conference**: ICML 2026  
@@ -136,10 +142,10 @@ Appendix C demonstrates BFM-VM's advantage over SOTA (e.g., Balkanski 2022) in c
 
 ## Related Papers
 
-- [\[ICML 2026\] A General Framework for Dynamic Consistent Submodular Maximization](a_general_framework_for_dynamic_consistent_submodular_maximization.md)
 - [\[ICML 2026\] Differentially Private Submodular Maximization with a Knapsack Constraint](differentially_private_submodular_maximization_with_a_knapsack_constraint.md)
+- [\[ICML 2026\] A General Framework for Dynamic Consistent Submodular Maximization](a_general_framework_for_dynamic_consistent_submodular_maximization.md)
+- [\[ICLR 2026\] Efficient Submodular Maximization for Sums of Concave over Modular Functions](../../ICLR2026/optimization/efficient_submodular_maximization_for_sums_of_concave_over_modular_functions.md)
 - [\[NeurIPS 2025\] Online Two-Stage Submodular Maximization](../../NeurIPS2025/optimization/online_two-stage_submodular_maximization.md)
-- [\[NeurIPS 2025\] A Unified Approach to Submodular Maximization Under Noise](../../NeurIPS2025/optimization/a_unified_approach_to_submodular_maximization_under_noise.md)
 - [\[ICML 2026\] Depth over Fidelity in Fixed-Budget Noisy Evolution Strategies](depth_over_fidelity_in_fixed-budget_noisy_evolution_strategies.md)
 
 </div>

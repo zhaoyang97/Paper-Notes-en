@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CFO: Learning Continuous-Time PDE Dynamics via Flow-Matched Neural Operators
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Flow Matching] CFO "borrows" flow matching from generative modeling to learn the right-hand side (RHS) dynamics of time-varying PDEs. By fitting splines to trajectories and using finite differences to estimate temporal derivatives at nodes as velocity field labels, it trains a neural operator to regress this analytical velocity. This
+  [ICLR2026][Physics & Scientific Computing][Neural Operators] CFO "borrows" flow matching from generative modeling to learn the right-hand side (RHS) dynamics of time-varying PDEs. By fitting splines to trajectories and using finite differences to estimate temporal derivatives at nodes as velocity field labels, it trains a neural operator to regress this analytical velocity. This bypasses backpropagating through ODE solvers (unlike Neural ODEs)…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - Flow Matching
+  - "ICLR2026"
+  - "Physics & Scientific Computing"
+  - "Neural Operators"
+  - "Flow Matching"
+  - "Continuous-time Dynamics"
+  - "PDE Surrogate Models"
+  - "Time Resolution Invariance"
 date: 2026-05-08
-content_hash: 509f3481c5f111a9
+content_hash: 0b1dfdc9b69420bf
 ---
+
 # CFO: Learning Continuous-Time PDE Dynamics via Flow-Matched Neural Operators
 
 **Conference**: ICLR2026  
@@ -122,15 +127,16 @@ Benchmarks: Lorenz (3D ODE), 1D Burgers, 2D Diffusion-Reaction (DR), 2D Shallow 
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Adaptive Mamba Neural Operators](adaptive_mamba_neural_operators.md)
-- [\[AAAI 2026\] SVD-NO: Learning PDE Solution Operators with SVD Integral Kernels](../../AAAI2026/physics/svd-no_learning_pde_solution_operators_with_svd_integral_kernels.md)
 - [\[ICLR 2026\] Locally Subspace-Informed Neural Operators for Efficient Multiscale PDE Solving](locally_subspace-informed_neural_operators_for_efficient_multiscale_pde_solving.md)
-- [\[NeurIPS 2025\] DeltaPhi: Physical States Residual Learning for Neural Operators in Data-Limited PDE Solving](../../NeurIPS2025/physics/deltaphi_physical_states_residual_learning_for_neural_operators_in_data-limited_.md)
+- [\[ICLR 2026\] Adaptive Mamba Neural Operators](adaptive_mamba_neural_operators.md)
 - [\[ICLR 2026\] Learning Data-Efficient and Generalizable Neural Operators via Fundamental Physics Knowledge](learning_data-efficient_and_generalizable_neural_operators_via_fundamental_physi.md)
+- [\[AAAI 2026\] SVD-NO: Learning PDE Solution Operators with SVD Integral Kernels](../../AAAI2026/physics/svd-no_learning_pde_solution_operators_with_svd_integral_kernels.md)
+- [\[NeurIPS 2025\] DeltaPhi: Physical States Residual Learning for Neural Operators in Data-Limited PDE Solving](../../NeurIPS2025/physics/deltaphi_physical_states_residual_learning_for_neural_operators_in_data-limited_.md)
 
 </div>
 

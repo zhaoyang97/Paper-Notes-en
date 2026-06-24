@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] M3DLayout: A Multi-Source Dataset of 3D Indoor Layouts and Structured Descriptions for 3D Generation
 description: >-
-  [CVPR 2026][3D Vision][Dataset] The authors constructed M3DLayout, a multi-source large-scale 3D indoor layout dataset (21,367 layouts, 433k+ object instances), integrating real scans, professional designs, and procedural generation. Complemented by structured text descriptions, it provides a high-quality foundation for text-driven 3D scene generatio
+  [CVPR 2026][3D Vision][3D indoor layout] The authors constructed M3DLayout, a multi-source large-scale 3D indoor layout dataset (21,367 layouts, 433k+ object instances), integrating real scans, professional designs, and procedural generation. Complemented by structured text descriptions, it provides a high-quality foundation for text-driven 3D scene generation.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Dataset
-  - Diffusion Model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D indoor layout"
+  - "dataset"
+  - "text-driven scene generation"
+  - "diffusion model"
+  - "autoregressive model"
 date: 2026-05-08
-content_hash: a4af19421b94cfda
+content_hash: 812877db3413f4cc
 ---
+
 # M3DLayout: A Multi-Source Dataset of 3D Indoor Layouts and Structured Descriptions for 3D Generation
 
 **Conference**: CVPR 2026  
@@ -152,10 +156,10 @@ Note: The higher FID on 3D-FRONT for the proposed methods is due to distribution
 ## Related Papers
 
 - [\[CVPR 2026\] MajutsuCity: Language-driven Aesthetic-adaptive City Generation with Controllable 3D Assets and Layouts](majutsucity_language-driven_aesthetic-adaptive_city_generation_with_controllable.md)
-- [\[CVPR 2026\] 3DReflecNet: A Large-Scale Dataset for 3D Reconstruction of Reflective, Transparent, and Low-Texture Objects](3dreflecnet_a_large-scale_dataset_for_3d_reconstruction_of_reflective_transparen.md)
+- [\[CVPR 2026\] Native and Compact Structured Latents for 3D Generation](native_and_compact_structured_latents_for_3d_generation.md)
+- [\[CVPR 2026\] MeshRipple: Structured Autoregressive Generation of Artist-Meshes](meshripple_structured_autoregressive_generation_of_artist-meshes.md)
+- [\[CVPR 2026\] WonderZoom: Multi-Scale 3D World Generation](wonderzoom_multi-scale_3d_world_generation.md)
 - [\[CVPR 2026\] CustomTex: High-fidelity Indoor Scene Texturing via Multi-Reference Customization](customtex_high-fidelity_indoor_scene_texturing_via_multi-reference_customization.md)
-- [\[CVPR 2026\] Breaking the 3D Dataset Bottleneck: Fast Scalable Generation of Aligned 3D Assets from Scratch for Category 6D Pose Estimation and Robotic Grasping](breaking_the_3d_dataset_bottleneck_fast_scalable_generation_of_aligned_3d_assets.md)
-- [\[CVPR 2026\] Glove2Hand: Synthesizing Natural Hand-Object Interaction from Multi-Modal Sensing Gloves](glove2hand_synthesizing_natural_hand-object_interaction_from_multi-modal_sensing.md)
 
 </div>
 

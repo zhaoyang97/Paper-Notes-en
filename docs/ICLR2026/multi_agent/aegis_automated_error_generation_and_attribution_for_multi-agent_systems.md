@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Aegis: Automated Error Generation and Attribution for Multi-Agent Systems
 description: >-
-  [ICLR 2026][Multi-Agent][Paper Note] Aegis uses an LLM manipulator to "actively inject" successful multi-agent trajectories into labeled failure trajectories, automatically generating 9,533 data entries labeled with "erroneous agent + error mode." This transforms the expensive manual labeling bottleneck into a scalable engineering problem and supports tra
+  [ICLR 2026][Multi-Agent][Multi-Agent Systems] Aegis uses an LLM manipulator to "actively inject" successful multi-agent trajectories into labeled failure trajectories, automatically generating 9,533 data entries labeled with "erroneous agent + error mode." This transforms the expensive manual labeling bottleneck into a scalable engineering problem and supports training error attribution models via SFT, RL, and contrastive learning.
 tags:
-  - ICLR 2026
-  - Multi-Agent
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "Multi-Agent Systems"
+  - "Error Attribution"
+  - "Automated Data Synthesis"
+  - "Error Injection"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: c227fed0e5b81f7d
+content_hash: 478316e092a9da7f
 ---
+
 # Aegis: Automated Error Generation and Attribution for Multi-Agent Systems
 
 **Conference**: ICLR 2026  
@@ -126,11 +132,11 @@ Hierarchical consistency constraints ($L_{\text{hier}}$) contribute the most, va
 
 ## Related Papers
 
-- [\[ACL 2026\] Memory-Augmented LLM-based Multi-Agent System for Automated Feature Generation on Tabular Data](../../ACL2026/multi_agent/memory-augmented_llm-based_multi-agent_system_for_automated_feature_generation_o.md)
-- [\[ACL 2025\] DocAgent: A Multi-Agent System for Automated Code Documentation Generation](../../ACL2025/multi_agent/docagent_a_multi-agent_system_for_automated_code_documentation_generation.md)
 - [\[ACL 2026\] Seeing the Whole Elephant: A Benchmark for Failure Attribution in LLM-based Multi-Agent Systems](../../ACL2026/multi_agent/seeing_the_whole_elephant_a_benchmark_for_failure_attribution_in_llm-based_multi.md)
 - [\[ACL 2026\] Towards Self-Improving Error Diagnosis in Multi-Agent Systems](../../ACL2026/multi_agent/towards_self-improving_error_diagnosis_in_multi-agent_systems.md)
-- [\[ICLR 2026\] Stop Wasting Your Tokens: Towards Efficient Runtime Multi-Agent Systems](stop_wasting_your_tokens_towards_efficient_runtime_multi-agent_systems.md)
+- [\[ACL 2026\] Memory-Augmented LLM-based Multi-Agent System for Automated Feature Generation on Tabular Data](../../ACL2026/multi_agent/memory-augmented_llm-based_multi-agent_system_for_automated_feature_generation_o.md)
+- [\[ACL 2025\] DocAgent: A Multi-Agent System for Automated Code Documentation Generation](../../ACL2025/multi_agent/docagent_a_multi-agent_system_for_automated_code_documentation_generation.md)
+- [\[ICLR 2026\] Stochastic Self-Organization in Multi-Agent Systems](stochastic_self-organization_in_multi-agent_systems.md)
 
 </div>
 

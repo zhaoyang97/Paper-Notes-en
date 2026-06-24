@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] ReCast: Reliability-aware Codebook Assisted Lightweight Time Series Forecasting
 description: >-
-  [AAAI 2026][Time Series][Codebook quantization] This paper proposes ReCast, which encodes time series into discrete embeddings via patch-level vector quantization. It introduces a dual-path architecture consisting of a q…
+  [AAAI 2026 Oral][Time Series][Codebook quantization] This paper proposes ReCast, which encodes time series into discrete embeddings via patch-level vector quantization. It introduces a dual-path architecture consisting of a quantization path (modeling regular structures) and a residual path (capturing irregular fluctuations), along with a reliability-aware codebook update strategy based on distributionally robust optimization (DRO). ReCast achieves state-of-the-art accuracy w…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Time Series"
   - "Codebook quantization"
   - "lightweight forecasting"
@@ -12,7 +12,7 @@ tags:
   - "reliability-aware update"
   - "distributionally robust optimization"
 date: 2026-05-08
-content_hash: 7346ae4a855c289b
+content_hash: e49bcda7bf2bb8fb
 ---
 
 # ReCast: Reliability-aware Codebook Assisted Lightweight Time Series Forecasting
@@ -175,11 +175,11 @@ Transferability experiments:
 
 ## Related Papers
 
-- [\[AAAI 2026\] A Unified Shape-Aware Foundation Model for Time Series Classification](a_unified_shape-aware_foundation_model_for_time_series_class.md)
 - [\[NeurIPS 2025\] SEMPO: Lightweight Foundation Models for Time Series Forecasting](../../NeurIPS2025/time_series/sempo_lightweight_foundation_models_for_time_series_forecasting.md)
-- [\[AAAI 2026\] Task-Aware Retrieval Augmentation for Dynamic Recommendation](task-aware_retrieval_augmentation_for_dynamic_recommendation.md)
-- [\[AAAI 2026\] Harmonic Dataset Distillation for Time Series Forecasting](harmonic_dataset_distillation_for_time_series_forecasting.md)
-- [\[AAAI 2026\] Finding Time Series Anomalies using Granular-ball Vector Data Description](finding_time_series_anomalies_using_granular-ball_vector_data_description.md)
+- [\[AAAI 2026\] A Unified Shape-Aware Foundation Model for Time Series Classification](a_unified_shape-aware_foundation_model_for_time_series_class.md)
+- [\[ICLR 2026\] Bridging Past and Future: Distribution-Aware Alignment for Time Series Forecasting](../../ICLR2026/time_series/bridging_past_and_future_distribution-aware_alignment_for_time_series_forecastin.md)
+- [\[ICLR 2026\] COSA: Context-aware Output-Space Adapter for Test-Time Adaptation in Time Series Forecasting](../../ICLR2026/time_series/cosa_context-aware_output-space_adapter_for_test-time_adaptation_in_time_series_.md)
+- [\[ICLR 2026\] CoRA: Boosting Time Series Foundation Models for Multivariate Forecasting through Correlation-aware Adapter](../../ICLR2026/time_series/cora_boosting_time_series_foundation_models_for_multivariate_forecasting_through.md)
 
 </div>
 

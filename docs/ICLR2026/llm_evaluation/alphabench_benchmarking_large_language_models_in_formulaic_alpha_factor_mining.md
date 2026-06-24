@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AlphaBench: Benchmarking Large Language Models in Formulaic Alpha Factor Mining
 description: >-
-  [ICLR 2026][LLM Evaluation][LLM Benchmark] AlphaBench is the first benchmark to systematically evaluate Large Language Models (LLMs) in "Formulaic Alpha Factor Mining" (FAFM). It decomposes the real workflow of quantitative researchers into three major tasks: factor generation, factor evaluation, and factor searching. By cross-evaluating over ten open-source an
+  [ICLR2026][LLM Evaluation][Alpha Factor Mining] AlphaBench is the first benchmark to systematically evaluate Large Language Models (LLMs) in "Formulaic Alpha Factor Mining" (FAFM). It decomposes the real workflow of quantitative researchers into three major tasks: factor generation, factor evaluation, and factor searching. By cross-evaluating over ten open-source and closed-source models in a real-world backtesting environment (Qlib + CSI300)…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - LLM Benchmark
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "Alpha Factor Mining"
+  - "LLM Benchmark"
+  - "Factor Generation"
+  - "Factor Evaluation"
+  - "Factor Searching"
 date: 2026-05-08
-content_hash: ab019ce4c824400d
+content_hash: d4ed0f64f012c942
 ---
+
 # AlphaBench: Benchmarking Large Language Models in Formulaic Alpha Factor Mining
 
 **Conference**: ICLR2026  
@@ -138,15 +143,16 @@ Environment: Qlib framework + Alpha158 pool + CSI300 daily data 2020–2025. Mod
 - Value: ⭐⭐⭐⭐⭐ Provides direct guidance for deploying LLMs in quantitative finance.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] SimBench: Benchmarking the Ability of Large Language Models to Simulate Human Behaviors](simbench_benchmarking_the_ability_of_large_language_models_to_simulate_human_beh.md)
 - [\[ACL 2025\] AD-LLM: Benchmarking Large Language Models for Anomaly Detection](../../ACL2025/llm_evaluation/ad-llm_benchmarking_large_language_models_for_anomaly_detection.md)
-- [\[ACL 2025\] Retrieval Models Aren't Tool-Savvy: Benchmarking Tool Retrieval for Large Language Models](../../ACL2025/llm_evaluation/retrieval_models_arent_tool-savvy_benchmarking_tool_retrieval_for_large_language.md)
+- [\[ICLR 2026\] AutoCodeBench: Large Language Models are Automatic Code Benchmark Generators](autocodebench_large_language_models_are_automatic_code_benchmark_generators.md)
+- [\[ICLR 2026\] Detecting Data Contamination from Reinforcement Learning Post-training for Large Language Models](detecting_data_contamination_from_reinforcement_learning_post-training_for_large.md)
 - [\[ACL 2025\] CodeMEnv: Benchmarking Large Language Models on Code Migration](../../ACL2025/llm_evaluation/codemenv_benchmarking_large_language_models_on_code_migration.md)
-- [\[ICML 2026\] PoliticsBench: Benchmarking Political Values in Large Language Models with Multi-Stage Roleplay](../../ICML2026/llm_evaluation/politicsbench_benchmarking_political_values_in_large_language_models_with_multi-.md)
 
 </div>
 

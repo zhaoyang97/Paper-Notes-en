@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Policy Newton Algorithm in Reproducing Kernel Hilbert Space
 description: >-
-  [ICLR 2026][Reinforcement Learning][RKHS] This paper proposes the first second-order policy optimization method in RKHS, dubbed Policy Newton in RKHS. By optimizing a cubic-regularized auxiliary objective, the method bypasses the infinite-dimensional Hessian inversion. Leveraging the Representer Theorem, the infinite-dimensional optimization is equivalently tr
+  [ICLR 2026][Reinforcement Learning][RKHS] This paper proposes the first second-order policy optimization method in RKHS, dubbed Policy Newton in RKHS. By optimizing a cubic-regularized auxiliary objective, the method bypasses the infinite-dimensional Hessian inversion. Leveraging the Representer Theorem, the infinite-dimensional optimization is equivalently transformed into a finite-dimensional problem where the dimension scales with the trajectory data $NT$. The authors theo…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RKHS
-  - Policy Newton
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RKHS"
+  - "Second-order Optimization"
+  - "Policy Newton"
+  - "Representer Theorem"
+  - "Quadratic Convergence"
 date: 2026-05-08
-content_hash: dbd805b8d8152fd5
+content_hash: f5e72effd849246e
 ---
+
 # Policy Newton Algorithm in Reproducing Kernel Hilbert Space
 
 **Conference**: ICLR 2026  
@@ -131,8 +135,6 @@ Key Observation: Since all methods have identical representation capabilities in
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-</div>
 
 ## Related Papers
 

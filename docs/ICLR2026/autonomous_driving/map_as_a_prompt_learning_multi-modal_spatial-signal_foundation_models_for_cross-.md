@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Map as a Prompt: Learning Multi-Modal Spatial-Signal Foundation Models for Cross-scenario Wireless Localization
 description: >-
-  [ICLR 2026][Autonomous Driving][Paper Note] The authors propose **SigMap**, a method that feeds 3D maps as "soft prompts" into a wireless channel foundation model. Using cycle-adaptive masking for self-supervised pre-training and map-conditioned Graph Neural Network (GNN) prompts for parameter-efficient fine-tuning, the model achieves strong zero-shot/few-shot g
+  [ICLR 2026][Autonomous Driving][Wireless Localization] The authors propose **SigMap**, a method that feeds 3D maps as "soft prompts" into a wireless channel foundation model. Using cycle-adaptive masking for self-supervised pre-training and map-conditioned Graph Neural Network (GNN) prompts for parameter-efficient fine-tuning, the model achieves strong zero-shot/few-shot generalization in cross-scenario wireless localization.
 tags:
-  - ICLR 2026
-  - Autonomous Driving
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Wireless Localization"
+  - "Channel State Information (CSI)"
+  - "Self-Supervised Pre-training"
+  - "Masked Modeling"
+  - "Prompt Tuning"
+  - "3D Map"
+  - "Foundation Model"
 date: 2026-05-08
-content_hash: ef8988efecdeb1b3
+content_hash: 35bd8fd11968e953
 ---
+
 # Map as a Prompt: Learning Multi-Modal Spatial-Signal Foundation Models for Cross-scenario Wireless Localization
 
 **Conference**: ICLR 2026  

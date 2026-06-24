@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] NeMo-map: Neural Implicit Flow Fields for Spatio-Temporal Motion Mapping
 description: >-
-  [ICLR 2026][Autonomous Driving][Paper Note] The paper proposes NeMo-map, a continuous spatio-temporal dynamic map based on neural implicit functions. By directly mapping spatio-temporal coordinates to Semi-Wrapped Gaussian Mixture Model (SWGMM) parameters, it eliminates the constraints of spatial discretization and temporal segmentation in traditional methods, a
+  [ICLR 2026][Autonomous Driving][Dynamic Maps] The paper proposes NeMo-map, a continuous spatio-temporal dynamic map based on neural implicit functions. By directly mapping spatio-temporal coordinates to Semi-Wrapped Gaussian Mixture Model (SWGMM) parameters, it eliminates the constraints of spatial discretization and temporal segmentation in traditional methods, achieving lower NLL and smoother velocity distributions on real human tracking datasets.
 tags:
-  - ICLR 2026
-  - Autonomous Driving
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Dynamic Maps"
+  - "Neural Implicit Representation"
+  - "Semi-Wrapped Gaussian Mixture"
+  - "Human Motion Patterns"
+  - "Spatio-Temporal Continuity"
 date: 2026-05-08
-content_hash: e2e11573bdc0658e
+content_hash: 390e58ab6e297796
 ---
+
 # NeMo-map: Neural Implicit Flow Fields for Spatio-Temporal Motion Mapping
 
 **Conference**: ICLR 2026  
@@ -133,7 +139,7 @@ Training Efficiency: NeMo-map trains on full-day data in less than 20 minutes.
 - [\[ICLR 2026\] UniSplat: Unified Spatio-Temporal Fusion via 3D Latent Scaffolds for Dynamic Driving Scene Reconstruction](unisplat_unified_spatio-temporal_fusion_via_3d_latent_scaffolds_for_dynamic_driv.md)
 - [\[CVPR 2026\] SG-NLF: Spectral-Geometric Neural Fields for Pose-Free LiDAR View Synthesis](../../CVPR2026/autonomous_driving/sgnlf_spectralgeometric_neural_fields_for_posefre.md)
 - [\[AAAI 2026\] Rethinking the Spatio-Temporal Alignment of End-to-End 3D Perception](../../AAAI2026/autonomous_driving/rethinking_the_spatio-temporal_alignment_of_end-to-end_3d_perception.md)
-- [\[ICLR 2026\] Low-Latency Neural LiDAR Compression with 2D Context Models](low-latency_neural_lidar_compression_with_2d_context_models.md)
+- [\[AAAI 2026\] RAST: A Retrieval Augmented Spatio-Temporal Framework for Traffic Prediction](../../AAAI2026/autonomous_driving/rast_a_retrieval_augmented_spatio-temporal_framework_for_traffic_prediction.md)
 
 </div>
 

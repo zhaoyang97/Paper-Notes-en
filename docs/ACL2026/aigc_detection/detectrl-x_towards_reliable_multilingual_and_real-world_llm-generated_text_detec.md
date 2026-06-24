@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DetectRL-X: Towards Reliable Multilingual and Real-World LLM-Generated Text Detection
 description: >-
-  [ACL 2026][AIGC Detection][DetectRL-X] DetectRL-X constructs a benchmark containing 3.456 million samples across multiple languages, domains, attacks, and lengths with parallel binary/ternary classification, proving that existing detectors still have significant robustness gaps in real-world multilingual and human-AI collaborative writing scenarios.
+  [ACL2026][AIGC Detection][LLM-Generated Text Detection] DetectRL-X constructs a benchmark containing 3.456 million samples across multiple languages, domains, attacks, and lengths with parallel binary/ternary classification, proving that existing detectors still have significant robustness gaps in real-world multilingual and human-AI collaborative writing scenarios.
 tags:
-  - ACL 2026
-  - AIGC Detection
-  - DetectRL-X
+  - "ACL2026"
+  - "AIGC Detection"
+  - "LLM-Generated Text Detection"
+  - "Multilingual Robustness"
+  - "Ternary Classification"
+  - "Attack Evaluation"
+  - "DetectRL-X"
 date: 2026-05-08
-content_hash: 982f8b04f97132a6
+content_hash: 6e07267e25c9d8e4
 ---
+
 # DetectRL-X: Towards Reliable Multilingual and Real-World LLM-Generated Text Detection
 
 **Conference**: ACL2026  
@@ -138,10 +143,10 @@ The paper does not propose a new training loss but evaluates 12 existing detecto
 ## Related Papers
 
 - [\[ACL 2026\] C-ReD: A Comprehensive Chinese Benchmark for AI-Generated Text Detection Derived from Real-World Prompts](c-red_a_comprehensive_chinese_benchmark_for_ai-generated_text_detection_derived_.md)
+- [\[ICLR 2026\] TSM-Bench: Detecting LLM-Generated Text in Real-World Wikipedia Editing Practices](../../ICLR2026/aigc_detection/tsm-bench_detecting_llm-generated_text_in_real-world_wikipedia_editing_practices.md)
 - [\[ACL 2026\] Temporal Flattening in LLM-Generated Text: Comparing Human and LLM Writing Trajectories](temporal_flattening_in_llm-generated_text_comparing_human_and_llm_writing_trajec.md)
-- [\[ACL 2026\] Beyond the Final Actor: Modeling the Dual Roles of Creator and Editor for Fine-Grained LLM-Generated Text Detection](beyond_the_final_actor_modeling_the_dual_roles_of_creator_and_editor_for_fine-gr.md)
 - [\[ACL 2026\] BIASEDTALES-ML: A Multilingual Dataset for Analyzing Narrative Attribute Distributions in LLM-Generated Stories](biasedtales-ml_a_multilingual_dataset_for_analyzing_narrative_attribute_distribu.md)
-- [\[NeurIPS 2025\] DuoLens: A Framework for Robust Detection of Machine-Generated Multilingual Text and Code](../../NeurIPS2025/aigc_detection/duolens_a_framework_for_robust_detection_of_machine-generated_multilingual_text_.md)
+- [\[ACL 2026\] Beyond the Final Actor: Modeling the Dual Roles of Creator and Editor for Fine-Grained LLM-Generated Text Detection](beyond_the_final_actor_modeling_the_dual_roles_of_creator_and_editor_for_fine-gr.md)
 
 </div>
 

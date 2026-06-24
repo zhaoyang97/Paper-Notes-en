@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VITRIX-CLIPIN: Enhancing Fine-Grained Visual Understanding in CLIP via Instruction Editing Data and Long Captions
 description: >-
-  [NeurIPS 2025][Multimodal VLM][CLIP] This paper proposes the CLIP-IN framework, which leverages instruction editing datasets as hard negatives and incorporates long captions to enhance CLIP's fine-grained visual understa…
+  [NeurIPS 2025][Multimodal VLM][CLIP] This paper proposes the CLIP-IN framework, which leverages instruction editing datasets as hard negatives and incorporates long captions to enhance CLIP's fine-grained visual understanding. The approach achieves significant improvements on benchmarks such as MMVP without compromising zero-shot performance, and when integrated into MLLMs, it substantially reduces visual hallucinations.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "hard negatives"
   - "long captions"
 date: 2026-05-08
-content_hash: ed4581e6d020d459
+content_hash: a44369d69e4695b4
 ---
 
 # VITRIX-CLIPIN: Enhancing Fine-Grained Visual Understanding in CLIP via Instruction Editing Data and Long Captions
@@ -155,10 +155,10 @@ $$\mathcal{L} = \mathcal{L}_{\text{CLIP}} + \alpha \mathcal{L}_{\text{HN}} + \be
 ## Related Papers
 
 - [\[NeurIPS 2025\] Advancing Compositional Awareness in CLIP with Efficient Fine-Tuning](advancing_compositional_awareness_in_clip_with_efficient_fin.md)
-- [\[NeurIPS 2025\] READ: Enhancing Compositional Reasoning in CLIP via Reconstruction and Alignment of Text Descriptions](enhancing_compositional_reasoning_in_clip_via_reconstruction.md)
+- [\[ICCV 2025\] Visual-Oriented Fine-Grained Knowledge Editing for MultiModal Large Language Models](../../ICCV2025/multimodal_vlm/visual-oriented_fine-grained_knowledge_editing_for_multimodal_large_language_mod.md)
 - [\[NeurIPS 2025\] FOCUS: Internal MLLM Representations for Efficient Fine-Grained Visual Question Answering](focus_internal_mllm_representations_for_efficient_fine-grained_visual_question_a.md)
+- [\[ICLR 2026\] UniLIP: Revamping CLIP to Unify Multimodal Understanding, Generation, and Editing](../../ICLR2026/multimodal_vlm/unilip_adapting_clip_for_unified_multimodal_understanding_generation_and_editing.md)
 - [\[NeurIPS 2025\] CoIDO: Efficient Data Selection for Visual Instruction Tuning via Coupled Importance-Diversity Optimization](coido_efficient_data_selection_for_visual_instruction_tuning_via_coupled_importa.md)
-- [\[NeurIPS 2025\] Visual Instruction Bottleneck Tuning](visual_instruction_bottleneck_tuning.md)
 
 </div>
 

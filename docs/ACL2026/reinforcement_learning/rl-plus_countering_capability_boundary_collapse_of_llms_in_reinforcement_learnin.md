@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RL-PLUS: Countering Capability Boundary Collapse of LLMs in Reinforcement Learning with Hybrid-policy Optimization
 description: >-
-  [ACL 2026][Reinforcement Learning][RLVR] RL-PLUS proposes a hybrid-policy optimization method that addresses external data distribution mismatch through Multiple Importance Sampling (MIS) and guides the model to learn low-probability but correct reasoning paths via the Exploration-based Advantage Function (EAF). It successfully breaks the capability boundary
+  [ACL 2026][Reinforcement Learning][Capability Boundary Collapse] RL-PLUS proposes a hybrid-policy optimization method that addresses external data distribution mismatch through Multiple Importance Sampling (MIS) and guides the model to learn low-probability but correct reasoning paths via the Exploration-based Advantage Function (EAF). It successfully breaks the capability boundary collapse caused by RLVR, achieving SOTA (average 53.4) across six mathematical reasoning benchm…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - RLVR
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Capability Boundary Collapse"
+  - "Hybrid-policy Optimization"
+  - "Multiple Importance Sampling"
+  - "Exploration Advantage Function"
+  - "RLVR"
 date: 2026-05-08
-content_hash: ce3f3bf2d15cef1c
+content_hash: 687579126eeaf084
 ---
+
 # RL-PLUS: Countering Capability Boundary Collapse of LLMs in Reinforcement Learning with Hybrid-policy Optimization
 
 **Conference**: ACL 2026  
@@ -154,10 +159,10 @@ The model is trained based on Qwen2.5-Math-7B using NuminaMath-1.5 as training d
 ## Related Papers
 
 - [\[ACL 2026\] HEALing Entropy Collapse: Enhancing Exploration in Few-Shot RLVR via Hybrid-Domain Entropy Dynamics Alignment](healing_entropy_collapse_enhancing_exploration_in_few-shot_rlvr_via_hybrid-domai.md)
+- [\[ICLR 2026\] Prosperity before Collapse: How Far Can Off-Policy RL Reach with Stale Data on LLMs?](../../ICLR2026/reinforcement_learning/prosperity_before_collapse_how_far_can_off-policy_rl_reach_with_stale_data_on_ll.md)
 - [\[ACL 2026\] EvoCoT: Overcoming the Exploration Bottleneck in Reinforcement Learning for LLMs](evocot_overcoming_the_exploration_bottleneck_in_reinforcement_learning.md)
-- [\[ICLR 2026\] Controllable Exploration in Hybrid-Policy RLVR for Multi-Modal Reasoning](../../ICLR2026/reinforcement_learning/controllable_exploration_in_hybrid-policy_rlvr_for_multi-modal_reasoning.md)
 - [\[ACL 2026\] Bridging SFT and RL: Dynamic Policy Optimization for Robust Reasoning](bridging_sft_and_rl_dynamic_policy_optimization_for_robust_reasoning.md)
-- [\[ICML 2026\] Metis: Learning to Jailbreak LLMs via Self-Evolving Metacognitive Policy Optimization](../../ICML2026/reinforcement_learning/metis_learning_to_jailbreak_llms_via_self-evolving_metacognitive_policy_optimiza.md)
+- [\[ICLR 2026\] BAPO: Stabilizing Off-Policy Reinforcement Learning for LLMs via Balanced Policy Optimization with Adaptive Clipping](../../ICLR2026/reinforcement_learning/bapo_stabilizing_off-policy_reinforcement_learning_for_llms_via_balanced_policy_.md)
 
 </div>
 

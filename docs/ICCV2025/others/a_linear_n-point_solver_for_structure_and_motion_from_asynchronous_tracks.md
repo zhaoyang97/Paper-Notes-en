@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Linear N-Point Solver for Structure and Motion from Asynchronous Tracks
 description: >-
-  [ICCV 2025][Motion Estimation] This paper proposes a unified linear N-point solver that recovers camera linear velocity and 3D point structure from 2D point correspondences with arbitrary timestamps…
+  [ICCV 2025][Motion Estimation] This paper proposes a unified linear N-point solver that recovers camera linear velocity and 3D point structure from 2D point correspondences with arbitrary timestamps, supporting global shutter, rolling shutter, and event camera sensor modalities.
 tags:
   - "ICCV 2025"
   - "Motion Estimation"
@@ -11,7 +11,7 @@ tags:
   - "Event Camera"
   - "Rolling Shutter"
 date: 2026-05-08
-content_hash: 075b04c3e11c9ae7
+content_hash: aa87cc20c5d6d811
 ---
 
 # A Linear N-Point Solver for Structure and Motion from Asynchronous Tracks
@@ -127,10 +127,10 @@ Metric: angular error in velocity direction (mean / median, degrees); lower is b
 ## Related Papers
 
 - [\[ICCV 2025\] SyncDiff: Synchronized Motion Diffusion for Multi-Body Human-Object Interaction Synthesis](syncdiff_synchronized_motion_diffusion_for_multi-body_human-object_interaction_s.md)
-- [\[NeurIPS 2025\] Fixed-Point RNNs: Interpolating from Diagonal to Dense](../../NeurIPS2025/others/fixed-point_rnns_interpolating_from_diagonal_to_dense.md)
 - [\[ICCV 2025\] Recover Biological Structure from Sparse-View Diffraction Images with Neural Volumetric Prior](recover_biological_structure_from_sparse-view_diffraction_images_with_neural_vol.md)
-- [\[NeurIPS 2025\] Generalized Linear Mode Connectivity for Transformers](../../NeurIPS2025/others/generalized_linear_mode_connectivity_for_transformers.md)
-- [\[NeurIPS 2025\] Addressing Mark Imbalance in Integration-free Neural Marked Temporal Point Processes](../../NeurIPS2025/others/addressing_mark_imbalance_in_integrationfree_neural_marked_t.md)
+- [\[ECCV 2024\] Improving Point-based Crowd Counting and Localization Based on Auxiliary Point Guidance](../../ECCV2024/others/improving_point-based_crowd_counting_and_localization_based_on_auxiliary_point_g.md)
+- [\[ACL 2025\] The Harmonic Structure of Information Contours](../../ACL2025/others/the_harmonic_structure_of_information_contours.md)
+- [\[NeurIPS 2025\] Fixed-Point RNNs: Interpolating from Diagonal to Dense](../../NeurIPS2025/others/fixed-point_rnns_interpolating_from_diagonal_to_dense.md)
 
 </div>
 

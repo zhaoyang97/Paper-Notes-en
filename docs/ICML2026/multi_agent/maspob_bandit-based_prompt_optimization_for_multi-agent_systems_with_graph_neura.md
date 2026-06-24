@@ -1,18 +1,21 @@
 ---
 title: >-
-  [Paper Note] MASPOB: 用 GNN 代理 + LinUCB + 坐标上升做多智能体提示优化
+  [Paper Note] MASPOB: Multi-Agent Prompt Optimization via GNN Surrogate + LinUCB + Coordinate Ascent
 description: >-
-  [ICML 2026][Multi-Agent][MAS] MASPOB reformulates multi-agent system prompt optimization as budget-constrained black-box optimization. It utilizes a GAT surrogate model to capture prompt coupling under workflow topologies, LinUCB in the embedding space to compute epistemic uncertainty, and coordinate ascent to decompose joint search into sequential
+  [ICML 2026 Spotlight][Multi-Agent][MAS] MASPOB reformulates multi-agent system prompt optimization as budget-constrained black-box optimization. It utilizes a GAT surrogate model to capture prompt coupling under workflow topologies, LinUCB in the embedding space to compute epistemic uncertainty, and coordinate ascent to decompose joint search into sequential individual problems. This reduces search complexity from $\mathcal{O}(\prod |\mathcal{P}_i|)$ to $\mathcal{O}(\sum |\ma…
 tags:
-  - ICML 2026
-  - Multi-Agent
-  - MAS
-  - prompt optimization
-  - GAT
-  - LinUCB
+  - "ICML 2026 Spotlight"
+  - "Multi-Agent"
+  - "MAS"
+  - "prompt optimization"
+  - "GAT"
+  - "LinUCB"
+  - "coordinate ascent"
+  - "black-box optimization"
 date: 2026-05-08
-content_hash: b657693eefad91ef
+content_hash: dd366b3d354245a0
 ---
+
 # MASPOB: Multi-Agent Prompt Optimization via GNN Surrogate + LinUCB + Coordinate Ascent
 
 **Conference**: ICML 2026 Spotlight  
@@ -134,11 +137,11 @@ Ours achieves SOTA in 5 out of 6 tasks, with an average of 80.58 vs. Prev. SOTA 
 
 ## Related Papers
 
-- [\[ICML 2026\] OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration](omac_a_holistic_optimization_framework_for_llm-based_multi-agent_collaboration.md)
-- [\[ICML 2026\] E-mem: Multi-Agent Based Episodic Context Reconstruction for LLM Agent Memory](e-mem_multi-agent_based_episodic_context_reconstruction_for_llm_agent_memory.md)
+- [\[ICML 2026\] MASPO: Joint Prompt Optimization for LLM-based Multi-Agent Systems](maspo_joint_prompt_optimization_for_llm-based_multi-agent_systems.md)
+- [\[ACL 2026\] ATLAS: Adaptive Trading with LLM AgentS Through Dynamic Prompt Optimization and Multi-Agent Coordination](../../ACL2026/multi_agent/atlas_adaptive_trading_with_llm_agents_through_dynamic_prompt_optimization_and_m.md)
 - [\[ICML 2026\] CoOT: Learning to Coordinate In-Context with Coordination Transformers](coot_learning_to_coordinate_in-context_with_coordination_transformers.md)
-- [\[ICML 2026\] Systematic Failures in Collective Reasoning under Distributed Information in Multi-Agent LLMs](systematic_failures_in_collective_reasoning_under_distributed_information_in_mul.md)
-- [\[ICML 2026\] When Cloud Agents Meet Device Agents: Lessons from Hybrid Multi-Agent Systems](when_cloud_agents_meet_device_agents_lessons_from_hybrid_multi-agent_systems.md)
+- [\[ICML 2026\] OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration](omac_a_holistic_optimization_framework_for_llm-based_multi-agent_collaboration.md)
+- [\[ACL 2026\] Conjunctive Prompt Attacks in Multi-Agent LLM Systems](../../ACL2026/multi_agent/conjunctive_prompt_attacks_in_multi-agent_llm_systems.md)
 
 </div>
 

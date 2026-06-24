@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Stability Analysis of Sharpness-Aware Minimization
 description: >-
-  [ICML 2026][Optimization & Theory][SAM] This paper analyzes the convergence instability of SAM near saddle points from a dynamical systems perspective. It first proves under deterministic gradient flow that a saddle point becomes an attractor for SAM as long as the neighborhood radius $\rho > -1/\lambda_1$. Subsequently, within a stochastic diffusion framewo
+  [ICML 2026][Optimization][SAM] This paper analyzes the convergence instability of SAM near saddle points from a dynamical systems perspective. It first proves under deterministic gradient flow that a saddle point becomes an attractor for SAM as long as the neighborhood radius $\rho > -1/\lambda_1$. Subsequently, within a stochastic diffusion framework, it demonstrates that the mean square displacement for saddle point escape in SAM is smaller than that of SGD by $2\eta t^2|\l…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - SAM
+  - "ICML 2026"
+  - "Optimization"
+  - "SAM"
+  - "saddle point escape"
+  - "dynamical systems"
+  - "diffusion equations"
+  - "momentum and batch size"
 date: 2026-05-08
-content_hash: 4fa29ec69a1efa2e
+content_hash: b418b64edd984a79
 ---
+
 # Stability Analysis of Sharpness-Aware Minimization
 
 **Conference**: ICML 2026  
@@ -122,9 +127,9 @@ This paper does not introduce a new loss function; the experimental losses used 
 
 - [\[ICML 2026\] Adaptive Sharpness-Aware Minimization with a Polyak-type Step size: A Theory-Grounded Scheduler](adaptive_sharpness-aware_minimization_with_a_polyak-type_step_size_a_theory-grou.md)
 - [\[ICML 2025\] Tilted Sharpness-Aware Minimization](../../ICML2025/optimization/tilted_sharpness-aware_minimization.md)
-- [\[ICLR 2026\] Minor First, Major Last: A Depth-Induced Implicit Bias of Sharpness-Aware Minimization](../../ICLR2026/optimization/minor_first_major_last_a_depth-induced_implicit_bias_of_sharpness-aware_minimiza.md)
+- [\[ICLR 2026\] Towards Understanding the Calibration Benefits of Sharpness-Aware Minimization](../../ICLR2026/optimization/towards_understanding_the_calibration_benefits_of_sharpness-aware_minimization.md)
+- [\[ICLR 2026\] MASAM: Multimodal Adaptive Sharpness-Aware Minimization for Heterogeneous Data Fusion](../../ICLR2026/optimization/masam_multimodal_adaptive_sharpness-aware_minimization_for_heterogeneous_data_fu.md)
 - [\[ICML 2026\] Conflicting Biases at the Edge of Stability: Norm versus Sharpness Regularization](conflicting_biases_at_the_edge_of_stability_norm_versus_sharpness_regularization.md)
-- [\[ICML 2026\] Cost-Aware Stopping for Bayesian Optimization](cost-aware_stopping_for_bayesian_optimization.md)
 
 </div>
 

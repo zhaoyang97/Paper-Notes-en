@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MoNE: Replacing Redundant Experts with Lightweight Novices for Structured Pruning of MoE
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] This paper proposes MoNE (Mixture-of-Novices-and-Experts), which identifies redundant experts by jointly evaluating expert access frequency and output variance. These experts are replaced with their output mean (a "novice" constant vector). MoNE achieves more effective and robust compression across five MoE models comp
+  [ICLR 2026][Model Compression][MoE Pruning] This paper proposes MoNE (Mixture-of-Novices-and-Experts), which identifies redundant experts by jointly evaluating expert access frequency and output variance. These experts are replaced with their output mean (a "novice" constant vector). MoNE achieves more effective and robust compression across five MoE models compared to existing pruning methods, with an average accuracy drop of only 0.14 at a 25% pruning rate.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "MoE Pruning"
+  - "Expert Redundancy"
+  - "Novice Replacement"
+  - "Structured Compression"
+  - "Access Frequency"
 date: 2026-05-08
-content_hash: 8c6a2845d96934e1
+content_hash: 320d5f309ce5f6b4
 ---
+
 # MoNE: Replacing Redundant Experts with Lightweight Novices for Structured Pruning of MoE
 
 **Conference**: ICLR 2026  
@@ -137,8 +143,8 @@ MoNE is a training-free post-processing method that does not update any weights.
 - [\[ICLR 2026\] REAP the Experts: Why Pruning Prevails for One-Shot MoE Compression](reap_the_experts_why_pruning_prevails_for_one-shot_moe_compression.md)
 - [\[ACL 2025\] STUN: Structured-Then-Unstructured Pruning for Scalable MoE Pruning](../../ACL2025/model_compression/stun_moe_pruning.md)
 - [\[ICLR 2026\] MoBE: Mixture-of-Basis-Experts for Compressing MoE-based LLMs](mobe_mixture-of-basis-experts_for_compressing_moe-based_llms.md)
+- [\[ICLR 2026\] TD-MoE: Tensor Decomposition for MoE Models](td-moe_tensor_decomposition_for_moe_models.md)
 - [\[ICLR 2026\] RCPU: Rotation-Constrained Error Compensation for Structured Pruning of Large Language Models](rcpu_rotation-constrained_error_compensation_for_structured_pruning_of_large_lan.md)
-- [\[ICLR 2026\] Unveiling Super Experts in Mixture-of-Experts Large Language Models](unveiling_super_experts_in_mixture-of-experts_large_language_models.md)
 
 </div>
 

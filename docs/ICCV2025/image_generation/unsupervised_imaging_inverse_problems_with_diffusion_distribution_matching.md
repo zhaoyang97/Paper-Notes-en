@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unsupervised Imaging Inverse Problems with Diffusion Distribution Matching
 description: >-
-  [ICCV 2025][Image Generation][Unsupervised Image Restoration] DDM4IP proposes an unsupervised framework that models the degradation distribution via Conditional Flow Matching…
+  [ICCV 2025][Image Generation][Unsupervised Image Restoration] DDM4IP proposes an unsupervised framework that models the degradation distribution via Conditional Flow Matching, while simultaneously learning an unknown forward degradation model through a distribution matching loss. Using only a small number of unpaired images, the method achieves competitive or superior performance on deblurring, spatially-varying PSF calibration, and blind super-resolution tasks.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Distribution Matching"
   - "Forward Model Learning"
 date: 2026-05-08
-content_hash: d28efe16278d53fc
+content_hash: 486b3c4c43b30d9d
 ---
 
 # Unsupervised Imaging Inverse Problems with Diffusion Distribution Matching
@@ -157,9 +157,9 @@ DDM4IP follows a three-stage pipeline:
 
 - [\[ICCV 2025\] FlowDPS: Flow-Driven Posterior Sampling for Inverse Problems](flowdps_flow-driven_posterior_sampling_for_inverse_problems.md)
 - [\[NeurIPS 2025\] NPN: Non-Linear Projections of the Null-Space for Imaging Inverse Problems](../../NeurIPS2025/image_generation/npn_non-linear_projections_of_the_null-space_for_imaging_inverse_problems.md)
-- [\[ICCV 2025\] Learning Few-Step Diffusion Models by Trajectory Distribution Matching](learning_few-step_diffusion_models_by_trajectory_distribution_matching.md)
 - [\[ICML 2026\] Saving Foundation Flow-Matching Priors for Inverse Problems](../../ICML2026/image_generation/saving_foundation_flow-matching_priors_for_inverse_problems.md)
-- [\[ICCV 2025\] Pretrained Reversible Generation as Unsupervised Visual Representation Learning](pretrained_reversible_generation_as_unsupervised_visual_representation_learning.md)
+- [\[ICCV 2025\] Learning Few-Step Diffusion Models by Trajectory Distribution Matching](learning_few-step_diffusion_models_by_trajectory_distribution_matching.md)
+- [\[ICLR 2026\] Contrastive Diffusion Guidance for Spatial Inverse Problems](../../ICLR2026/image_generation/contrastive_diffusion_guidance_for_spatial_inverse_problems.md)
 
 </div>
 

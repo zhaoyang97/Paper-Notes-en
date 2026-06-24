@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] UniDef: Universal Defense Against Unauthorized Image Manipulation
 description: >-
-  [CVPR 2026][AI Safety][Diffusion Model] UniDef applies an invisible adversarial perturbation to images, causing any diffusion-based editing or generation (SD, InstructPix2Pix, SR, Image-to-Video, Image-to-3D) to produce semantically collapsed results. Instead of perturbing single-step denoising directions, it pushes the output distribution away from the orig
+  [CVPR 2026][AI Safety][Unauthorized Manipulation Defense] UniDef applies an invisible adversarial perturbation to images, causing any diffusion-based editing or generation (SD, InstructPix2Pix, SR, Image-to-Video, Image-to-3D) to produce semantically collapsed results. Instead of perturbing single-step denoising directions, it pushes the output distribution away from the original image along the **entire denoising trajectory** and utilizes **finite difference-based Jacobian e…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Diffusion Model
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Unauthorized Manipulation Defense"
+  - "Diffusion Models"
+  - "Distribution Shift"
+  - "Jacobian Estimation"
+  - "Transferable Protection"
 date: 2026-05-08
-content_hash: 6877d50862cc6a47
+content_hash: 6c565fd1dd9f2162
 ---
+
 # UniDef: Universal Defense Against Unauthorized Image Manipulation
 
 **Conference**: CVPR 2026  
@@ -159,7 +164,7 @@ UniDef achieves **the lowest CLIP and highest FID simultaneously** across five d
 - [\[CVPR 2026\] No Way To Steal My Face: Proactive Defense Against Identity-Preserving Personalized Generation](no_way_to_steal_my_face_proactive_defense_against_identity-preserving_personaliz.md)
 - [\[CVPR 2026\] AdvMark: Decoupling Defense Strategies for Robust Image Watermarking](decoupling_defense_strategies_for_robust_image_watermarking.md)
 - [\[CVPR 2026\] Frequency-domain Manipulation for Face Obfuscation](frequency-domain_manipulation_for_face_obfuscation.md)
-- [\[CVPR 2026\] R$^2$TUA: Reconstruction-residual Based Targeted and Untargeted Attack Against Text-Image Person Re-Identification](r2tua_reconstruction-residual_based_targeted_and_untargeted_attack_against_text-.md)
+- [\[CVPR 2026\] A Unified Perspective on Adversarial Membership Manipulation in Vision Models](a_unified_perspective_on_adversarial_membership_manipulation_in_vision_models.md)
 
 </div>
 

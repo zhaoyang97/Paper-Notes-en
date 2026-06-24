@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Mixture of Mini Experts: Overcoming the Linear Layer Bottleneck in Multiple Instance Learning
 description: >-
-  [ICLR 2026][Medical Imaging][Multiple Instance Learning] This paper identifies the "task-specific linear layer," often overlooked in Multiple Instance Learning (MIL) pipelines, as the performance bottleneck. It proposes MAMMOTH, a plug-and-play multi-head soft-routing MoE module, to replace this layer. Without increasing the parameter count, MAMMOTH significantly improves th
+  [ICLR 2026][Medical Imaging][Multiple Instance Learning] This paper identifies the "task-specific linear layer," often overlooked in Multiple Instance Learning (MIL) pipelines, as the performance bottleneck. It proposes MAMMOTH, a plug-and-play multi-head soft-routing MoE module, to replace this layer. Without increasing the parameter count, MAMMOTH significantly improves the performance of any MIL model (including simple max/mean pooling).
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Multiple Instance Learning
-  - Mixture of Experts
-  - Computational Pathology
-  - Whole-Slide Image
-  - Soft Routing
-  - Low-Rank
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Multiple Instance Learning"
+  - "Mixture of Experts"
+  - "Computational Pathology"
+  - "Whole-Slide Image"
+  - "Soft Routing"
+  - "Low-Rank"
 date: 2026-05-08
-content_hash: 9ee475160624f5fa
+content_hash: 608568ab5173a81e
 ---
+
 # Mixture of Mini Experts: Overcoming the Linear Layer Bottleneck in Multiple Instance Learning
 
 **Conference**: ICLR 2026  
@@ -123,15 +124,13 @@ Improvement was observed in 46 out of 48 configurations for tissue subtyping, wi
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
-- [\[ICML 2025\] Do Multiple Instance Learning Models Transfer?](../../ICML2025/medical_imaging/do_multiple_instance_learning_models_transfer.md)
 - [\[ICLR 2026\] ASMIL: Attention-Stabilized Multiple Instance Learning for Whole-Slide Imaging](asmil_attention-stabilized_multiple_instance_learning_for_whole-slide_imaging.md)
+- [\[ICML 2025\] Do Multiple Instance Learning Models Transfer?](../../ICML2025/medical_imaging/do_multiple_instance_learning_models_transfer.md)
 - [\[ICML 2026\] EEG-Based Multimodal Learning via Hyperbolic Mixture-of-Curvature Experts](../../ICML2026/medical_imaging/eeg-based_multimodal_learning_via_hyperbolic_mixture-of-curvature_experts.md)
-- [\[CVPR 2025\] DFLMoE: Decentralized Federated Learning via Mixture of Experts for Medical Data](../../CVPR2025/medical_imaging/dflmoe_decentralized_federated_learning_via_mixture_of_experts_for_medical_data_.md)
-- [\[CVPR 2025\] MIL-PF: Multiple Instance Learning on Precomputed Features for Mammography Classification](../../CVPR2025/medical_imaging/mil-pf_multiple_instance_learning_on_precomputed_features_for_mammography_classi.md)
+- [\[CVPR 2026\] Contrastive Cross-Bag Augmentation for Multiple Instance Learning-based Whole Slide Image Classification](../../CVPR2026/medical_imaging/contrastive_cross-bag_augmentation_for_multiple_instance_learning-based_whole_sl.md)
+- [\[AAAI 2026\] SEMC: Structure-Enhanced Mixture-of-Experts Contrastive Learning for Ultrasound Standard Plane Recognition](../../AAAI2026/medical_imaging/semc_structure-enhanced_mixture-of-experts_contrastive_learning_for_ultrasound_s.md)
 
 </div>
 

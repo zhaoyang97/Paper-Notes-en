@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Divid: Disentangled Spatial-Temporal Modeling within LLMs for Temporally Grounded Video Understanding
 description: >-
-  [ICLR 2026][Video Understanding][Video LLM] Divid explicitly disentangles temporal and spatial branches within the Video LLM decoder. It utilizes temporal attention to select high-resolution keyframes for queries and fuses information via a token-level soft-router. Combined with the 559K timestamp-supervised dataset TempGCap, it improves both accuracy and comput
+  [ICLR 2026][Video Understanding][Temporal Grounding Video Understanding] Divid explicitly disentangles temporal and spatial branches within the Video LLM decoder. It utilizes temporal attention to select high-resolution keyframes for queries and fuses information via a token-level soft-router. Combined with the 559K timestamp-supervised dataset TempGCap, it improves both accuracy and computational efficiency in temporal grounding and evidenced VideoQA.
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - Video LLM
-  - Grounded VideoQA
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Temporal Grounding Video Understanding"
+  - "Video LLM"
+  - "Spatio-temporal Disentanglement"
+  - "Keyframe Selection"
+  - "Grounded VideoQA"
 date: 2026-05-08
-content_hash: f7a75299886da64f
+content_hash: 6f5914aaf65f840f
 ---
+
 # Divid: Disentangled Spatial-Temporal Modeling within LLMs for Temporally Grounded Video Understanding
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Fully Dynamic Algorithms for Chamfer Distance
 description: >-
-  [NeurIPS 2025][3D Vision][Chamfer distance] This paper proposes the first fully dynamic algorithm for maintaining Chamfer distance, reducing the problem to approximate nearest neighbor (ANN) queries to achieve a $(1+\eps…
+  [NeurIPS 2025][3D Vision][Chamfer distance] This paper proposes the first fully dynamic algorithm for maintaining Chamfer distance, reducing the problem to approximate nearest neighbor (ANN) queries to achieve a $(1+\epsilon)$ approximation with update time $\tilde{O}(\epsilon^{-d})$, significantly surpassing the linear-time lower bound of static recomputation. On real-world datasets, the algorithm achieves <10% relative error while running orders of magnitude faster than nai…
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "importance sampling"
   - "point cloud similarity"
 date: 2026-05-08
-content_hash: 9767f66d1dba02c6
+content_hash: 8b3b56c5921dcdcf
 ---
 
 # Fully Dynamic Algorithms for Chamfer Distance
@@ -141,10 +141,10 @@ This paper proposes the first fully dynamic algorithm for maintaining Chamfer di
 ## Related Papers
 
 - [\[AAAI 2026\] Parameterized Approximation Algorithms for TSP on Non-Metric Graphs](../../AAAI2026/3d_vision/parameterized_approximation_algorithms_for_tsp_on_non-metric_graphs.md)
+- [\[CVPR 2025\] FSHNet: Fully Sparse Hybrid Network for 3D Object Detection](../../CVPR2025/3d_vision/fshnet_fully_sparse_hybrid_network_for_3d_object_detection.md)
 - [\[NeurIPS 2025\] DGH: Dynamic Gaussian Hair](dgh_dynamic_gaussian_hair.md)
-- [\[CVPR 2026\] KASALv2: Fully Automatic 3D Rotational Symmetry Classification and Axis Localization](../../CVPR2026/3d_vision/kasalv2_fully_automatic_3d_rotational_symmetry_classification_and_axis_localizat.md)
-- [\[CVPR 2026\] Long-SCOPE: Fully Sparse Long-Range Cooperative 3D Perception](../../CVPR2026/3d_vision/long_scope_fully_sparse_long_range_cooperative_3d_perception.md)
-- [\[ICCV 2025\] RayletDF: Raylet Distance Fields for Generalizable 3D Surface Reconstruction from Point Clouds or Gaussians](../../ICCV2025/3d_vision/rayletdf_raylet_distance_fields_for_generalizable_3d_surface_reconstruction_from.md)
+- [\[CVPR 2025\] GaussianUDF: Inferring Unsigned Distance Functions through 3D Gaussian Splatting](../../CVPR2025/3d_vision/gaussianudf_inferring_unsigned_distance_functions_through_3d_gaussian_splatting.md)
+- [\[NeurIPS 2025\] Dynamic Gaussian Splatting from Defocused and Motion-blurred Monocular Videos](dynamic_gaussian_splatting_from_defocused_and_motion-blurred_monocular_videos.md)
 
 </div>
 

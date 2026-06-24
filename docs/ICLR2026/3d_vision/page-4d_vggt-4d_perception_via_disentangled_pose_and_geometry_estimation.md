@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PAGE-4D: VGGT-4D Perception via Disentangled Pose and Geometry Estimation
 description: >-
-  [ICLR 2026][3D Vision][VGGT] PAGE-4D attaches a "Dynamics-Aware Aggregator" to the feed-forward 3D foundation model VGGT. It utilizes a self-supervised dynamic mask to decouple motion information based on the specific task—masking it during pose estimation and amplifying it during geometry reconstruction. Fine-tuning only the middle 10 layers enab
+  [ICLR 2026][3D Vision][Dynamic scene reconstruction] PAGE-4D attaches a "Dynamics-Aware Aggregator" to the feed-forward 3D foundation model VGGT. It utilizes a self-supervised dynamic mask to decouple motion information based on the specific task—masking it during pose estimation and amplifying it during geometry reconstruction. Fine-tuning only the middle 10 layers enables VGGT to outperform the original version in pose, depth, and point cloud reconstruction for dynamic scen…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - VGGT
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Dynamic scene reconstruction"
+  - "VGGT"
+  - "Camera pose estimation"
+  - "Dynamics-aware mask"
+  - "Feed-forward 3D model"
 date: 2026-05-08
-content_hash: 82b2842322ffdfac
+content_hash: ec88ee02f49400e4
 ---
+
 # PAGE-4D: VGGT-4D Perception via Disentangled Pose and Geometry Estimation
 
 **Conference**: ICLR 2026  

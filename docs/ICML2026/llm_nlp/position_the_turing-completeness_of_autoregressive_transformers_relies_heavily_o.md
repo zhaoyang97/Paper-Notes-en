@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Position: The Turing-Completeness of Autoregressive Transformers Relies Heavily on Context Management
 description: >-
-  [ICML 2026][LLM (Other)][position paper] The authors point out that the popular claim "Transformers are Turing-complete" in most existing proofs actually substitutes "a family of different Transformers together can simulate a Turing machine." They formalize a fixed system $(T, D, C)$ reflective of real-world deployment, proving that the computational power of
+  [ICML2026][LLM (Other)][Transformer Turing-completeness] The authors point out that the popular claim "Transformers are Turing-complete" in most existing proofs actually substitutes "a family of different Transformers together can simulate a Turing machine." They formalize a fixed system $(T, D, C)$ reflective of real-world deployment, proving that the computational power of the same fixed Transformer can shift from merely recognizing regular languages to reaching Turing-comp…
 tags:
-  - ICML 2026
-  - LLM (Other)
-  - position paper
+  - "ICML2026"
+  - "LLM (Other)"
+  - "Transformer Turing-completeness"
+  - "Autoregressive decoding"
+  - "Context management"
+  - "Computational complexity"
+  - "position paper"
 date: 2026-05-08
-content_hash: fe65e19affdf47c9
+content_hash: 5cee1c05dbf37532
 ---
+
 # Position: The Turing-Completeness of Autoregressive Transformers Relies Heavily on Context Management
 
 **Conference**: ICML2026  
@@ -128,11 +133,11 @@ As a position paper, there are no numerical experiments; the key "data" consists
 
 ## Related Papers
 
+- [\[ICML 2026\] Position: The ML Community Must Build an AI-Augmented Peer-Review Ecosystem](position_the_ml_community_must_build_an_ai-augmented_peer-review_ecosystem.md)
+- [\[ICML 2026\] Position: Hippocampal Explicit Memory Is the Cornerstone for AGI](position_hippocampal_explicit_memory_is_the_cornerstone_for_agi.md)
 - [\[ACL 2025\] Why Are Positional Encodings Nonessential for Deep Autoregressive Transformers? Revisiting a Petroglyph](../../ACL2025/llm_nlp/why_are_positional_encodings_nonessential_for_deep_autoregressive_transformers_r.md)
 - [\[ACL 2025\] X-Turing: Towards an Enhanced and Efficient Turing Test for Long-Term Dialogue Agents](../../ACL2025/llm_nlp/xturing_enhanced_turing_test.md)
-- [\[NeurIPS 2025\] In-Context Learning of Linear Dynamical Systems with Transformers: Approximation Bounds and Depth-Separation](../../NeurIPS2025/llm_nlp/in-context_learning_of_linear_dynamical_systems_with_transformers_approximation_.md)
-- [\[ICLR 2026\] In-Context Algebra](../../ICLR2026/llm_nlp/in-context_algebra.md)
-- [\[AAAI 2026\] Learning Spatial Decay for Vision Transformers](../../AAAI2026/llm_nlp/learning_spatial_decay_for_vision_transformers.md)
+- [\[ICML 2026\] Position: Adversarial ML for LLMs Is Not Making Any Progress](position_adversarial_ml_for_llms_is_not_making_any_progress.md)
 
 </div>
 

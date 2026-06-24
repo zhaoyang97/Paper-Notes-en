@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] FlowMo: Flow to the Mode — Mode-Seeking Diffusion Autoencoders for State-of-the-Art Image Tokenization
 description: >-
-  [LLM Pretraining] This paper proposes FlowMo, a Transformer-based diffusion autoencoder trained in two stages (mode-matching pretraining + mode-seeking post-training)…
+  [LLM Pretraining] This paper proposes FlowMo, a Transformer-based diffusion autoencoder trained in two stages (mode-matching pretraining + mode-seeking post-training), achieving state-of-the-art performance on ImageNet-1K discrete image tokenization for the first time among diffusion autoencoders — without convolutions, adversarial losses, 2D spatially-aligned latents, or distillation from other tokenizers.
 tags:
   - "LLM Pretraining"
 date: 2026-05-08
-content_hash: 5cc90d9fd4a02302
+content_hash: 9729d6ea11dfd495
 ---
 
 # FlowMo: Flow to the Mode — Mode-Seeking Diffusion Autoencoders for State-of-the-Art Image Tokenization
@@ -173,11 +173,11 @@ A pioneering contribution. FlowMo is the first diffusion autoencoder to achieve 
 
 ## Related Papers
 
+- [\[ACL 2025\] FR-Spec: Accelerating Large-Vocabulary Language Models via Frequency-Ranked Speculative Sampling](../../ACL2025/llm_pretraining/fr_spec_speculative_sampling.md)
 - [\[ICLR 2026\] Understanding and Improving Shampoo and SOAP via Kullback-Leibler Minimization](../../ICLR2026/llm_pretraining/understanding_and_improving_shampoo_and_soap_via_kullback-leibler_minimization.md)
 - [\[ICML 2026\] Annotations Mitigate Post-Training Mode Collapse](../../ICML2026/llm_pretraining/annotations_mitigate_post-training_mode_collapse.md)
 - [\[ICML 2026\] Beyond Structural Symmetries: Linear Mode Connectivity via Neuron Identifiability](../../ICML2026/llm_pretraining/beyond_structural_symmetries_linear_mode_connectivity_via_neuron_identifiability.md)
-- [\[ICCV 2025\] Image Intrinsic Scale Assessment: Bridging the Gap Between Quality and Resolution](image_intrinsic_scale_assessment_bridging_the_gap_between_quality_and_resolution.md)
-- [\[NeurIPS 2025\] Differentiable Hierarchical Visual Tokenization](../../NeurIPS2025/llm_pretraining/differentiable_hierarchical_visual_tokenization.md)
+- [\[ACL 2025\] Adversarial Tokenization](../../ACL2025/llm_pretraining/adversarial_tokenization.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SwiftVLA: Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal Overhead
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLA] SwiftVLA enables a 0.45B lightweight VLA to "borrow" 4D spatiotemporal features during training to learn geometric and dynamic reasoning. These insights are distilled into the 2D branch via masked reconstruction, allowing the 4D module to be discarded at inference. On edge devices, it runs $18\times$ faster and saves $
+  [CVPR 2026][Robotics][VLA] SwiftVLA enables a 0.45B lightweight VLA to "borrow" 4D spatiotemporal features during training to learn geometric and dynamic reasoning. These insights are distilled into the 2D branch via masked reconstruction, allowing the 4D module to be discarded at inference. On edge devices, it runs $18\times$ faster and saves $12\times$ VRAM compared to $\pi0$, while achieving success rates comparable to models with $7\times$ more parameters.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA"
+  - "Lightweight"
+  - "4D Spatiotemporal Features"
+  - "Masked Reconstruction"
+  - "Edge Deployment"
 date: 2026-05-08
-content_hash: bf60712fb2a4119c
+content_hash: 1d4e92292acc3dfe
 ---
+
 # SwiftVLA: Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal Overhead
 
 **Conference**: CVPR 2026  

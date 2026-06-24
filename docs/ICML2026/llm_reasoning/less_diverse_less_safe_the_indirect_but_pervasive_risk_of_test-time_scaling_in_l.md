@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Less Diverse, Less Safe: The Indirect But Pervasive Risk of Test-Time Scaling in Large Language Models
 description: >-
-  [ICML 2026][LLM Reasoning][TTS] The paper reveals an overlooked failure mode of Test-Time Scaling (TTS): by suppressing the diversity of candidate responses, TTS becomes more susceptible to outputting unsafe content than direct adversarial prompting. It proposes RefDiv, a genetic algorithm driven by dual signals of Shannon entropy and reference guida
+  [ICML 2026][Reasoning][TTS] The paper reveals an overlooked failure mode of Test-Time Scaling (TTS): by suppressing the diversity of candidate responses, TTS becomes more susceptible to outputting unsafe content than direct adversarial prompting. It proposes RefDiv, a genetic algorithm driven by dual signals of Shannon entropy and reference guidance, which efficiently jailbreaks MCTS and Best-of-N across models, closed-source APIs, and guardrails.
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - TTS
-  - MCTS
-  - Best-of-N
+  - "ICML 2026"
+  - "Reasoning"
+  - "TTS"
+  - "Diversity Attack"
+  - "Shannon Entropy"
+  - "MCTS"
+  - "Best-of-N"
 date: 2026-05-08
-content_hash: 0156871ad2eb725f
+content_hash: cfab3206a9fe407a
 ---
+
 # Less Diverse, Less Safe: The Indirect But Pervasive Risk of Test-Time Scaling in Large Language Models
 
 **Conference**: ICML 2026  
@@ -131,9 +134,9 @@ RefDiv is an inference-time attack and requires no training phase. Key hyperpara
 
 - [\[ICML 2026\] Prism: Efficient Test-Time Scaling via Hierarchical Search and Self-Verification for Discrete Diffusion Language Models](prism_efficient_test-time_scaling_via_hierarchical_search_and_self-verification_.md)
 - [\[NeurIPS 2025\] Provable Scaling Laws for the Test-Time Compute of Large Language Models](../../NeurIPS2025/llm_reasoning/provable_scaling_laws_for_the_testtime_compute_of_large_lang.md)
-- [\[ICML 2026\] Stabilizing Recurrent Dynamics for Test-Time Scalable Latent Reasoning in Looped Language Models](stabilizing_recurrent_dynamics_for_test-time_scalable_latent_reasoning_in_looped.md)
-- [\[ICML 2026\] Lookahead Sample Reward Guidance for Test-Time Scaling of Diffusion Models](lookahead_sample_reward_guidance_for_test-time_scaling_of_diffusion_models.md)
-- [\[ICML 2026\] ETS: Energy-Guided Test-Time Scaling for Training-Free RL Alignment](ets_energy-guided_test-time_scaling_for_training-free_rl_alignment.md)
+- [\[ICLR 2026\] When More Is Less: Understanding Chain-of-Thought Length in LLMs](../../ICLR2026/llm_reasoning/when_more_is_less_understanding_chain-of-thought_length_in_llms.md)
+- [\[ICLR 2026\] T1: Tool-Integrated Verification for Test-Time Compute Scaling in Small Language Models](../../ICLR2026/llm_reasoning/t1_tool-integrated_verification_for_test-time_compute_scaling_in_small_language_.md)
+- [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](../../ICLR2026/llm_reasoning/efficient_test-time_scaling_for_small_vision-language_models.md)
 
 </div>
 

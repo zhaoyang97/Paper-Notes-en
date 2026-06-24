@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Free Energy-Driven Reinforcement Learning with Adaptive Advantage Shaping for Unsupervised Reasoning in LLMs
 description: >-
-  [ACL 2026][Reinforcement Learning][Free Energy Principle] FREIA introduces the Free Energy Principle (FEP) into label-free RL fine-tuning, simultaneously addressing the premature convergence of traditional majority voting/confidence rewards and the advantage estimation mismatch during training. It employs a "consensus + exploration" adaptive reward (FER) and adaptive advantag
+  [ACL 2026][Reinforcement Learning][Free Energy Principle] FREIA introduces the Free Energy Principle (FEP) into label-free RL fine-tuning, simultaneously addressing the premature convergence of traditional majority voting/confidence rewards and the advantage estimation mismatch during training. It employs a "consensus + exploration" adaptive reward (FER) and adaptive advantage shaping (AAS) based on reward distribution skewness, achieving performance comparable to or better t…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Free Energy Principle
-  - Unsupervised RL
-  - Advantage Shaping
-  - GRPO
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Free Energy Principle"
+  - "Unsupervised RL"
+  - "Advantage Shaping"
+  - "GRPO"
+  - "Self-improvement"
 date: 2026-05-08
-content_hash: fd610497d98ddef0
+content_hash: d370ab3a5a68255e
 ---
+
 # Free Energy-Driven Reinforcement Learning with Adaptive Advantage Shaping for Unsupervised Reasoning in LLMs
 
 **Conference**: ACL 2026  
@@ -154,11 +156,11 @@ Average Pass@1 on Qwen2.5-Math-1.5B-Instruct: Base=33.2 → Entropy=35.7 → Int
 
 ## Related Papers
 
-- [\[ACL 2026\] Verifier-Free RL for LLMs via Intrinsic Gradient-Norm Reward](verifier-free_rl_for_llms_via_intrinsic_gradient-norm_reward.md)
 - [\[ACL 2026\] LANG: Reinforcement Learning for Multilingual Reasoning with Language-Adaptive Hint Guidance](lang_reinforcement_learning_for_multilingual_reasoning_with_language-adaptive_hi.md)
+- [\[ACL 2026\] Verifier-Free RL for LLMs via Intrinsic Gradient-Norm Reward](verifier-free_rl_for_llms_via_intrinsic_gradient-norm_reward.md)
 - [\[ICLR 2026\] Unsupervised Learning of Efficient Exploration: Pre-training Adaptive Policies via Self-Imposed Goals](../../ICLR2026/reinforcement_learning/unsupervised_learning_of_efficient_exploration_pre-training_adaptive_policies_vi.md)
-- [\[ICML 2026\] CPMöbius: Iterative Coach–Player Reasoning for Data-Free Reinforcement Learning](../../ICML2026/reinforcement_learning/cpmobius_iterative_coach-player_reasoning_for_data-free_reinforcement_learning.md)
-- [\[ICLR 2026\] Reasoning Boosts Opinion Alignment in LLMs](../../ICLR2026/reinforcement_learning/reasoning_boosts_opinion_alignment_in_llms.md)
+- [\[ICLR 2026\] MIRACLE: Model-free Imitation and Reinforcement Learning for Adaptive Cut-Selection](../../ICLR2026/reinforcement_learning/miracle_model-free_imitation_and_reinforcement_learning_for_adaptive_cut-selecti.md)
+- [\[ICLR 2026\] Learn to Reason Efficiently with Adaptive Length-based Reward Shaping](../../ICLR2026/reinforcement_learning/learn_to_reason_efficiently_with_adaptive_length-based_reward_shaping.md)
 
 </div>
 

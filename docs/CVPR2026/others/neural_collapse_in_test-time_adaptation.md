@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Neural Collapse in Test-Time Adaptation
 description: >-
-  [CVPR 2026][Others][Paper Note] The authors extend Neural Collapse (NC) theory from the class level to the sample level, discovering the NC3+ phenomenon (alignment between sample feature embeddings and corresponding classifier weights). Based on this, they reveal that performance degradation under distribution shift is fundamentally caused by sample-
+  [CVPR 2026][Neural Collapse] The authors extend Neural Collapse (NC) theory from the class level to the sample level, discovering the NC3+ phenomenon (alignment between sample feature embeddings and corresponding classifier weights). Based on this, they reveal that performance degradation under distribution shift is fundamentally caused by sample-level feature-classifier misalignment. They propose the NCTTA method, which uses a mixed objective of geometric proximity and predi…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Neural Collapse"
+  - "Test-Time Adaptation"
+  - "Out-of-Distribution Robustness"
+  - "Feature-Classifier Alignment"
+  - "Mixed Objective"
 date: 2026-05-08
-content_hash: afc051fa8493b1d2
+content_hash: b2ec9d2e723f9a07
 ---
+
 # Neural Collapse in Test-Time Adaptation
 
 **Conference**: CVPR 2026  
@@ -140,10 +145,10 @@ NCTTA improves by 14.59% over Tent and 2.97% over DeYO on ImageNet-C.
 
 ## Related Papers
 
-- [\[CVPR 2026\] Back to Source: Open-Set Continual Test-Time Adaptation via Domain Compensation](back_to_source_open-set_continual_test-time_adaptation_via_domain_compensation.md)
-- [\[CVPR 2026\] Curvature-Aware Zeroth-Order Optimization for Memory-Efficient Test-Time Adaptation](curvature-aware_zeroth-order_optimization_for_memory-efficient_test-time_adaptat.md)
 - [\[CVPR 2026\] WiTTA-Bench: Benchmarking Test-Time Adaptation for WiFi Sensing](witta-bench_benchmarking_test-time_adaptation_for_wifi_sensing.md)
-- [\[CVPR 2026\] Towards Stable Federated Continual Test-Time Adaptation in Wild World](towards_stable_federated_continual_test-time_adaptation_in_wild_world.md)
+- [\[CVPR 2026\] Basis-Oriented Low-rank Transfer for Few-Shot and Test-Time Adaptation](basis-oriented_low-rank_transfer_for_few-shot_and_test-time_adaptation.md)
+- [\[ICLR 2026\] Prior-Free Tabular Test-Time Adaptation](../../ICLR2026/others/prior-free_tabular_test-time_adaptation.md)
+- [\[ICML 2026\] Private and Stable Test-Time Adaptation with Differential Privacy](../../ICML2026/others/private_and_stable_test-time_adaptation_with_differential_privacy.md)
 - [\[NeurIPS 2025\] Test-Time Adaptation by Causal Trimming](../../NeurIPS2025/others/test-time_adaptation_by_causal_trimming.md)
 
 </div>

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Post-training Large Language Models for Diverse High-Quality Responses
 description: >-
-  [ICLR 2026][Reinforcement Learning][GRPO] The authors propose DQO (Diversity Quality Optimization), which defines a diversity metric in the semantic embedding space based on Determinantal Point Processes (DPP). By jointly optimizing this metric with reward signals, LLM post-training improves both semantic diversity and response quality. DQO can be integrated o
+  [ICLR 2026][Reinforcement Learning][Diversity] The authors propose DQO (Diversity Quality Optimization), which defines a diversity metric in the semantic embedding space based on Determinantal Point Processes (DPP). By jointly optimizing this metric with reward signals, LLM post-training improves both semantic diversity and response quality. DQO can be integrated on top of GRPO/PPO.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Diversity"
+  - "Determinantal Point Processes"
+  - "GRPO"
+  - "Post-training"
+  - "Quality-Diversity Trade-off"
 date: 2026-05-08
-content_hash: 6333b4d41a0485f1
+content_hash: cccf27972fe092d1
 ---
+
 # Post-training Large Language Models for Diverse High-Quality Responses
 
 **Conference**: ICLR 2026  
@@ -143,8 +148,8 @@ to replace the original $\log\det$. Adding the identity matrix $I_k$ as regulari
 - [\[ICLR 2026\] Representation-Based Exploration for Language Models: From Test-Time to Post-Training](representation-based_exploration_for_language_models_from_test-time_to_post-trai.md)
 - [\[ICLR 2026\] Using Reinforcement Learning to Train Large Language Models to Explain Human Decisions](using_reinforcement_learning_to_train_large_language_models_to_explain_human_dec.md)
 - [\[ICLR 2026\] AutoQD: Automatic Discovery of Diverse Behaviors with Quality-Diversity Optimization](autoqd_automatic_discovery_of_diverse_behaviors_with_quality-diversity_optimizat.md)
+- [\[ICLR 2026\] Risk-Sensitive Reinforcement Learning for Alleviating Exploration Dilemmas in Large Language Models](risk-sensitive_reinforcement_learning_for_alleviating_exploration_dilemmas_in_la.md)
 - [\[ACL 2025\] MAPoRL: Multi-Agent Post-Co-Training for Collaborative Large Language Models with Reinforcement Learning](../../ACL2025/reinforcement_learning/maporl_multi-agent_post-co-training_for_collaborative_large_language_models_with.md)
-- [\[ICLR 2026\] On Predictability of Reinforcement Learning Dynamics for Large Language Models](on_predictability_of_reinforcement_learning_dynamics_for_large_language_models.md)
 
 </div>
 

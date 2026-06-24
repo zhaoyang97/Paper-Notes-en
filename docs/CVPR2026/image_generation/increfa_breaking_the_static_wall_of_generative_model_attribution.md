@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] IncreFA: Breaking the Static Wall of Generative Model Attribution
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] This paper redefines the static classification problem of "identifying which generative model produced an image" as **incremental attribution**. By encoding the "lineage" of generative models with hierarchical orthogonal priors and using a latent space memory bank for replay and synthesizing pseudo-unseen samples, the
+  [CVPR 2026][Image Generation][Generative model attribution] This paper redefines the static classification problem of "identifying which generative model produced an image" as **incremental attribution**. By encoding the "lineage" of generative models with hierarchical orthogonal priors and using a latent space memory bank for replay and synthesizing pseudo-unseen samples, the system evolves continuously without forgetting. It achieves SOTA attribution accuracy and a 98.93% u…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Generative model attribution"
+  - "incremental learning"
+  - "hierarchical orthogonal prior"
+  - "latent space memory"
+  - "open-set recognition"
 date: 2026-05-08
-content_hash: b40233ce5efa370e
+content_hash: 6116d11204d80335
 ---
+
 # IncreFA: Breaking the Static Wall of Generative Model Attribution
 
 **Conference**: CVPR 2026  
@@ -136,10 +142,20 @@ The final task accuracy of 78.80% outperforms the second-best DGR (75.68%) by **
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Attribution as Retrieval: Model-Agnostic AI-Generated Image Attribution](attribution_as_retrieval_modelagnostic_aigenerated.md)
+- [\[CVPR 2026\] Breaking Semantic Boundaries: Distribution-Guided Semantic Exploration for Creative Generation](breaking_semantic_boundaries_distribution-guided_semantic_exploration_for_creati.md)
+- [\[CVPR 2026\] VOSR: A Vision-Only Generative Model for Image Super-Resolution](vosr_a_vision_only_generative_model_for_image_super_resolution.md)
+- [\[CVPR 2026\] Taming Generative Diffusion Model for Task-Oriented Infrared Imaging](taming_generative_diffusion_model_for_task-oriented_infrared_imaging.md)
+- [\[CVPR 2026\] Generative Modeling of Weights: Generalization or Memorization?](generative_modeling_of_weights_generalization_or_memorization.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Attribution as Retrieval: Model-Agnostic AI-Generated Image Attribution](attribution_as_retrieval_modelagnostic_aigenerated.md)

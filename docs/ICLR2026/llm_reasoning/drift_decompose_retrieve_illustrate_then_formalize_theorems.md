@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DRIFT: Decompose, Retrieve, Illustrate, then Formalize Theorems
 description: >-
-  [ICLR 2026][LLM Reasoning][Lean] DRIFT decomposes the task of "translating natural language mathematical propositions into Lean formal statements" into four steps: Decompose → Retrieve → Illustrate → Formalize. It first directs the LLM to split information-dense informal propositions into atomic sub-queries focused on single concepts to retrieve preci
+  [ICLR2026][Reasoning][Autoformalization] DRIFT decomposes the task of "translating natural language mathematical propositions into Lean formal statements" into four steps: Decompose → Retrieve → Illustrate → Formalize. It first directs the LLM to split information-dense informal propositions into atomic sub-queries focused on single concepts to retrieve precise formal definitions from Mathlib. Then, it uses a greedy algorithm to select example theorems demonstrating how these…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Lean
-  - Mathlib
+  - "ICLR2026"
+  - "Reasoning"
+  - "Autoformalization"
+  - "Dependency Retrieval"
+  - "Query Decomposition"
+  - "Lean"
+  - "Mathlib"
 date: 2026-05-08
-content_hash: 6b35fe872507f4a6
+content_hash: a6d2289d02c148a2
 ---
+
 # DRIFT: Decompose, Retrieve, Illustrate, then Formalize Theorems
 
 **Conference**: ICLR2026  
@@ -140,15 +144,16 @@ On the OOD ConNF dataset, GPT-4.1 with DRIFT improved BEq+@10 from 6.76% to 62.3
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Characterizing and Mitigating Reasoning Drift in Large Language Models](characterizing_and_mitigating_reasoning_drift_in_large_language_models.md)
 - [\[ACL 2025\] Aristotle: Mastering Logical Reasoning with A Logic-Complete Decompose-Search-Resolve Framework](../../ACL2025/llm_reasoning/aristotle_logical_reasoning.md)
+- [\[CVPR 2025\] Reason-before-Retrieve: One-Stage Reflective Chain-of-Thoughts for Training-Free Zero-Shot Composed Image Retrieval](../../CVPR2025/llm_reasoning/osrcir_reflective_cot.md)
 - [\[ICLR 2026\] FATE: A Formal Benchmark Series for Frontier Algebra of Multiple Difficulty Levels](fate_a_formal_benchmark_series_for_frontier_algebra_of_multiple_difficulty_level.md)
 - [\[ICLR 2026\] Divide and Abstract: Autoformalization via Decomposition and Abstraction Learning](divide_and_abstract_autoformalization_via_decomposition_and_abstraction_learning.md)
-- [\[ICLR 2026\] LogicReward: Incentivizing LLM Reasoning via Step-Wise Logical Supervision](logicreward_incentivizing_llm_reasoning_via_step-wise_logical_supervision.md)
 
 </div>
 

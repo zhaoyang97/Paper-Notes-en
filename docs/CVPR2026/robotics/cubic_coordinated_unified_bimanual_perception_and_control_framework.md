@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CUBic: Coordinated Unified Bimanual Perception and Control Framework
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] CUBic reformulates "bimanual coordination" as a unified perception representation problem—using a pair of shared-mapping VQ codebooks to bind the perception tokens of the left and right arms in the same latent space, followed by a DiT diffusion policy to output actions. Both "arm independence" and "bimanual coordinatio
+  [CVPR 2026][Robotics][Bimanual manipulation] CUBic reformulates "bimanual coordination" as a unified perception representation problem—using a pair of shared-mapping VQ codebooks to bind the perception tokens of the left and right arms in the same latent space, followed by a DiT diffusion policy to output actions. Both "arm independence" and "bimanual coordination" emerge naturally from the architecture, achieving an average success rate on RoboTwin 12% higher than SOTA visuo…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Bimanual manipulation"
+  - "Visuomotor policy"
+  - "Diffusion policy"
+  - "Vector quantization"
+  - "Shared codebook"
 date: 2026-05-08
-content_hash: bd0f0c9a3deb301a
+content_hash: 1e5c27e29f03a4d8
 ---
+
 # CUBic: Coordinated Unified Bimanual Perception and Control Framework
 
 **Conference**: CVPR 2026  
@@ -140,8 +146,8 @@ Real-world results using Agibot with 3 D435 cameras:
 - [\[CVPR 2026\] EnergyAction: Unimanual to Bimanual Composition with Energy-Based Models](energyaction_unimanual_to_bimanual_composition_with_energy-based_models.md)
 - [\[AAAI 2026\] TouchFormer: A Robust Transformer-based Framework for Multimodal Material Perception](../../AAAI2026/robotics/touchformer_a_robust_transformer-based_framework_for_multimodal_material_percept.md)
 - [\[CVPR 2026\] CycleManip: Enabling Cycle-based Manipulation via Effective History Perception and Understanding](cyclemanip_enabling_cycle-based_manipulation_via_effective_history_perception_an.md)
-- [\[CVPR 2026\] Motus: A Unified Latent Action World Model](motus_a_unified_latent_action_world_model.md)
-- [\[CVPR 2026\] Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control](do_you_have_freestyle_expressive_humanoid_locomotion_via_audio_control.md)
+- [\[ICLR 2026\] OmniNav: A Unified Framework for Prospective Exploration and Visual-Language Navigation](../../ICLR2026/robotics/omninav_a_unified_framework_for_prospective_exploration_and_visual-language_navi.md)
+- [\[CVPR 2026\] Extending Embodied Question Answering from Perception to Decision](extending_embodied_question_answering_from_perception_to_decision.md)
 
 </div>
 

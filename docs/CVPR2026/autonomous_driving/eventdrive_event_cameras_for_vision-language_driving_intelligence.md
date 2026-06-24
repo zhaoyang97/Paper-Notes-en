@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EventDrive: Event Cameras for Vision-Language Driving Intelligence
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] EventDrive establishes the first benchmark that integrates event streams, RGB frames, and language supervision across the entire driving chain (Perception → Understanding → Prediction → Planning, featuring 4 levels, 17 sub-tasks, and 470,000 samples). It introduces EventDrive-VLM—utilizing "multi-scale voxelization + M
+  [CVPR 2026][Autonomous Driving][Event Cameras] EventDrive establishes the first benchmark that integrates event streams, RGB frames, and language supervision across the entire driving chain (Perception → Understanding → Prediction → Planning, featuring 4 levels, 17 sub-tasks, and 470,000 samples). It introduces EventDrive-VLM—utilizing "multi-scale voxelization + MoE-gated dynamic temporal encoders" and an "Event Q-Former" to align asynchronous events into the LLM semantic sp…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Event Cameras"
+  - "Vision-Language Driving"
+  - "Multimodal Benchmark"
+  - "Multi-scale Temporal Encoding"
+  - "Q-Former Alignment"
 date: 2026-05-08
-content_hash: 96d8ae489438d1bd
+content_hash: 19d1de28c78d4c28
 ---
+
 # EventDrive: Event Cameras for Vision-Language Driving Intelligence
 
 **Conference**: CVPR 2026  
@@ -144,15 +150,16 @@ Decomposition of the three core modules (values are task averages):
 - Value: ⭐⭐⭐⭐⭐ Provides a large-scale real-world benchmark and framework, serving as reusable infrastructure for event-driven driving intelligence.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] DriveVLN: Towards Mapless Vision-and-Language Navigation in Autonomous Driving](drivevln_towards_mapless_vision-and-language_navigation_in_autonomous_driving.md)
-- [\[CVPR 2026\] Learning Vision-Language-Action World Models for Autonomous Driving](vla_world_learning_vision_language_action_world_models_for_autonomous_driving.md)
-- [\[CVPR 2026\] FlashCap: Millisecond-Accurate Human Motion Capture via Flashing LEDs and Event-Based Vision](flashcap_millisecond-accurate_human_motion_capture_via_flashing_leds_and_event-b.md)
-- [\[CVPR 2026\] DSERT-RoLL: Robust Multi-Modal Perception for Diverse Driving Conditions with Stereo Event-RGB-Thermal Cameras, 4D Radar, and Dual-LiDAR](dsert-roll_robust_multi-modal_perception_for_diverse_driving_conditions_with_ste.md)
 - [\[CVPR 2026\] VGGDrive: Empowering Vision-Language Models with Cross-View Geometric Grounding for Autonomous Driving](vggdrive_empowering_vision-language_models_with_cross-view_geometric_grounding_f.md)
+- [\[CVPR 2026\] DriveMoE: Mixture-of-Experts for Vision-Language-Action Model in End-to-End Autonomous Driving](drivemoe_mixture-of-experts_for_vision-language-action_model_in_end-to-end_auton.md)
+- [\[CVPR 2026\] Drive My Way: Preference Alignment of Vision-Language-Action Model for Personalized Driving](drive_my_way_preference_alignment_of_vision-language-action_model_for_personaliz.md)
+- [\[CVPR 2026\] FlashCap: Millisecond-Accurate Human Motion Capture via Flashing LEDs and Event-Based Vision](flashcap_millisecond-accurate_human_motion_capture_via_flashing_leds_and_event-b.md)
 
 </div>
 

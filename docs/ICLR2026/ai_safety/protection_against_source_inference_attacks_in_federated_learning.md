@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Protection against Source Inference Attacks in Federated Learning
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] Addressing Source Inference Attacks (SIA) in Federated Learning—where a server guesses which client a specific data record belongs to—this paper demonstrates that standard shuffling is insufficient as attackers can remap shuffled models back to owners using shadow datasets. The authors propose combining **parameter-lev
+  [ICLR 2026][AI Safety][Federated Learning] Addressing Source Inference Attacks (SIA) in Federated Learning—where a server guesses which client a specific data record belongs to—this paper demonstrates that standard shuffling is insufficient as attackers can remap shuffled models back to owners using shadow datasets. The authors propose combining **parameter-level shuffling with the Residue Number System (RNS) and unary encoding** at bit-level granularity. This ensures the ser…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Federated Learning"
+  - "Source Inference Attack"
+  - "Shuffle Model"
+  - "Residue Number System"
+  - "Privacy Protection"
 date: 2026-05-08
-content_hash: dc0302f3926db587
+content_hash: 41853a7ed49c17f7
 ---
+
 # Protection against Source Inference Attacks in Federated Learning
 
 **Conference**: ICLR 2026  
@@ -113,15 +119,16 @@ $r=3$ provides near-vanilla accuracy, while $r=8$ matches it exactly. Computatio
 - Value: ⭐⭐⭐⭐⭐ Highly practical for privacy-preserving cross-silo FL and serves as a general secure aggregation primitive.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Curation Leaks: Membership Inference Attacks against Data Curation for Machine Learning](curation_leaks_membership_inference_attacks_against_data_curation_for_machine_le.md)
 - [\[ICLR 2026\] Federated Learning of Quantile Inference under Local Differential Privacy](federated_learning_of_quantile_inference_under_local_differential_privacy.md)
 - [\[ICLR 2026\] Robust Federated Inference](robust_federated_inference.md)
 - [\[ICML 2025\] Theoretically Unmasking Inference Attacks Against LDP-Protected Clients in Federated Vision Models](../../ICML2025/ai_safety/theoretically_unmasking_inference_attacks_against_ldp-protected_clients_in_feder.md)
 - [\[ICLR 2026\] Traceable Black-box Watermarks for Federated Learning](traceable_black-box_watermarks_for_federated_learning.md)
-- [\[ICCV 2025\] Find a Scapegoat: Poisoning Membership Inference Attack and Defense to Federated Learning](../../ICCV2025/ai_safety/find_a_scapegoat_poisoning_membership_inference_attack_and_defense_to_federated_.md)
 
 </div>
 

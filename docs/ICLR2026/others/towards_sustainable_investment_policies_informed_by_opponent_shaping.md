@@ -2,17 +2,13 @@
 title: >-
   [Paper Note] Towards Sustainable Investment Policies Informed by Opponent Shaping
 description: >-
-  [ICLR 2026][Others][Opponent Shaping] This paper formally proves the conditions under which the InvestESG simulation environment constitutes a social dilemma and applies the Advantage Alignment opponent shaping algorithm to guide economic agents toward a sustainable investment equilibrium.
+  This paper formally proves the conditions under which the InvestESG simulation environment constitutes a social dilemma and applies the Advantage Alignment opponent shaping algorithm to guide economic agents toward a sustainable investment equilibrium.
 tags:
-  - ICLR 2026
-  - Others
-  - Opponent Shaping
-  - Advantage Alignment
-  - ESG
-  - InvestESG
+
 date: 2026-05-08
-content_hash: ec70e9cb80bc8f14
+content_hash: 31de977eee650b83
 ---
+
 # Towards Sustainable Investment Policies Informed by Opponent Shaping
 
 ## Paper Information

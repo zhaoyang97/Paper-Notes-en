@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Cross-Modal Masked Compositional Concept Modeling for Enhancing Visio-Linguistic Compositionality
 description: >-
-  [ACL 2026][Multimodal VLM][CLIP] MACCO enables CLIP to mask compositional concepts such as "relations/attributes" in one modality and reconstruct them using complete information from the other modality. Combined with two auxiliary alignment losses, it significantly enhances the compositional understanding of VLMs without generating hard negative sampl
+  [ACL 2026][Multimodal VLM][Compositional Understanding] MACCO enables CLIP to mask compositional concepts such as "relations/attributes" in one modality and reconstruct them using complete information from the other modality. Combined with two auxiliary alignment losses, it significantly enhances the compositional understanding of VLMs without generating hard negative samples.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - CLIP
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Compositional Understanding"
+  - "CLIP"
+  - "Masked Modeling"
+  - "Cross-Modal Alignment"
+  - "Vision-Language"
 date: 2026-05-08
-content_hash: e8e262bf0790b33b
+content_hash: 52a92d3668a08998
 ---
+
 # Cross-Modal Masked Compositional Concept Modeling for Enhancing Visio-Linguistic Compositionality
 
 **Conference**: ACL 2026  
@@ -127,10 +132,10 @@ Compared to original CLIP, gains include +14.4% on ARO-Relation and +21.9% on AR
 ## Related Papers
 
 - [\[ICLR 2026\] SpectralGCD: Spectral Concept Selection and Cross-modal Representation Learning for Generalized Category Discovery](../../ICLR2026/multimodal_vlm/spectralgcd_spectral_concept_selection_and_cross-modal_representation_learning_f.md)
-- [\[ICLR 2026\] Unified Vision-Language Modeling via Concept Space Alignment](../../ICLR2026/multimodal_vlm/unified_vision-language_modeling_via_concept_space_alignment.md)
-- [\[ACL 2025\] CART: A Generative Cross-Modal Retrieval Framework with Coarse-To-Fine Semantic Modeling](../../ACL2025/multimodal_vlm/cart_a_generative_cross-modal_retrieval_framework_with_coarse-to-fine_semantic_m.md)
+- [\[CVPR 2026\] Mask to Align, Weight to Disambiguate: Reliable Unsupervised Cross-Modal Hashing with Masked-Weight Contrast](../../CVPR2026/multimodal_vlm/mask_to_align_weight_to_disambiguate_reliable_unsupervised_cross-modal_hashing_w.md)
 - [\[ACL 2026\] Cross-Modal Taxonomic Generalization in (Vision-) Language Models](cross-modal_taxonomic_generalization_in_vision-_language_models.md)
-- [\[CVPR 2026\] Modeling Cross-vision Synergy for Unified Large Vision Model](../../CVPR2026/multimodal_vlm/modeling_cross-vision_synergy_for_unified_large_vision_model.md)
+- [\[ICLR 2026\] Unified Vision-Language Modeling via Concept Space Alignment](../../ICLR2026/multimodal_vlm/unified_vision-language_modeling_via_concept_space_alignment.md)
+- [\[ICLR 2026\] Exploring Cross-Modal Flows for Few-Shot Learning](../../ICLR2026/multimodal_vlm/exploring_cross-modal_flows_for_few-shot_learning.md)
 
 </div>
 

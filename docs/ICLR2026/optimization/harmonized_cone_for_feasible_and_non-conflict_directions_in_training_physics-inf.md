@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Harmonized Cone for Feasible and Non-conflict Directions in Training Physics-Informed Neural Networks
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] The paper unifies "implementability by non-negative loss weights" and "avoiding loss increase for any component" into a harmonized cone. It proposes HARMONIC, which uses the Double Description method to construct update directions within this cone, consistently outperforming existing reweighting and multi-objective gra
+  [ICLR2026][Optimization][PINN Training] The paper unifies "implementability by non-negative loss weights" and "avoiding loss increase for any component" into a harmonized cone. It proposes HARMONIC, which uses the Double Description method to construct update directions within this cone, consistently outperforming existing reweighting and multi-objective gradient methods across multiple PDE / IDE benchmarks.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "PINN Training"
+  - "Multi-Objective Optimization"
+  - "Gradient Conflict"
+  - "Loss Reweighting"
+  - "Cone Geometry"
 date: 2026-05-08
-content_hash: 2da361fb16988107
+content_hash: 54d27874ccf4c9e4
 ---
+
 # Harmonized Cone for Feasible and Non-conflict Directions in Training Physics-Informed Neural Networks
 
 **Conference**: ICLR2026  

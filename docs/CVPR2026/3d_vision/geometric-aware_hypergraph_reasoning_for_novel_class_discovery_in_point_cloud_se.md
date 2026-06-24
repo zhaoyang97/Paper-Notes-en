@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Geometric-Aware Hypergraph Reasoning for Novel Class Discovery in Point Cloud Segmentation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] High-order relationships where "a novel class simultaneously associates with multiple known class prototypes" are modeled using hypergraphs. By augmenting each prototype with geometric structural features, the model collaboratively infers semantics for unseen point cloud classes (e.g., bed) based on known classes (e.g.
+  [CVPR 2026][3D Vision][Point cloud segmentation] High-order relationships where "a novel class simultaneously associates with multiple known class prototypes" are modeled using hypergraphs. By augmenting each prototype with geometric structural features, the model collaboratively infers semantics for unseen point cloud classes (e.g., bed) based on known classes (e.g., chair/sofa/table), leading to a significant lead in novel class mIoU on SemanticKITTI and SemanticPOSS.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Point cloud segmentation"
+  - "Novel Class Discovery"
+  - "Hypergraph reasoning"
+  - "Geometric-aware prototypes"
+  - "Open-world"
 date: 2026-05-08
-content_hash: 2db1250326661977
+content_hash: d6f036c8e80edf96
 ---
+
 # Geometric-Aware Hypergraph Reasoning for Novel Class Discovery in Point Cloud Segmentation
 
 **Conference**: CVPR 2026  
@@ -136,11 +142,11 @@ Performed on SemanticPOSS Split 0 (GAP = Geometric-Aware Prototype, HSC = Hyperg
 
 ## Related Papers
 
-- [\[CVPR 2026\] GeoFree-CoSeg: Unsupervised Point Cloud-Image Cross-Modal Co-Segmentation Without Geometric Alignment](geofree-coseg_unsupervised_point_cloud-image_cross-modal_co-segmentation_without.md)
+- [\[ECCV 2024\] Dual-level Adaptive Self-Labeling for Novel Class Discovery in Point Cloud Segmentation](../../ECCV2024/3d_vision/dual-level_adaptive_self-labeling_for_novel_class_discovery_in_point_cloud_segme.md)
+- [\[NeurIPS 2025\] Novel Class Discovery for Point Cloud Segmentation via Joint Learning of Causal Representation and Reasoning](../../NeurIPS2025/3d_vision/novel_class_discovery_for_point_cloud_segmentation_via_joint_learning_of_causal_.md)
 - [\[CVPR 2026\] Hyper-PCN: Hypergraph-Based Point Cloud Completion via High-Order Correlation Modeling](hyper-pcn_hypergraph-based_point_cloud_completion_via_high-order_correlation_mod.md)
-- [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](deformation-based_in-context_learning_for_point_cloud_understanding.md)
-- [\[CVPR 2026\] Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning](adapting_point_cloud_analysis_via_multimodal_bayesian_distribution_learning.md)
-- [\[CVPR 2026\] JOPP-3D: Joint Open Vocabulary Semantic Segmentation on Point Clouds and Panoramas](jopp3d_joint_open_vocabulary_semantic_segmentation.md)
+- [\[CVPR 2026\] GeoFree-CoSeg: Unsupervised Point Cloud-Image Cross-Modal Co-Segmentation Without Geometric Alignment](geofree-coseg_unsupervised_point_cloud-image_cross-modal_co-segmentation_without.md)
+- [\[CVPR 2026\] QD-PCQA: Quality-Aware Domain Adaptation for Point Cloud Quality Assessment](qd-pcqa_quality-aware_domain_adaptation_for_point_cloud_quality_assessment.md)
 
 </div>
 

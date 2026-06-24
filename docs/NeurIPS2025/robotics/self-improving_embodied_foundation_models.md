@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Self-Improving Embodied Foundation Models
 description: >-
-  [NeurIPS 2025][Robotics][Embodied foundation models] This paper proposes a two-stage post-training framework for embodied foundation models: Stage 1 performs supervised fine-tuning via behavior cloning and steps-to-go pr…
+  [NeurIPS 2025][Robotics][Embodied foundation models] This paper proposes a two-stage post-training framework for embodied foundation models: Stage 1 performs supervised fine-tuning via behavior cloning and steps-to-go prediction; Stage 2 leverages the resulting self-reward function and success detector for online RL self-improvement. Using only 1–3% additional data, the method achieves over 1.5× improvement in success rate and, for the first time…
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "steps-to-go prediction"
   - "robot manipulation"
 date: 2026-05-08
-content_hash: 8019b99f80928bb6
+content_hash: dfbf397bb9ccdfda
 ---
 
 # Self-Improving Embodied Foundation Models
@@ -133,11 +133,11 @@ A two-stage post-training framework:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Self-Improving Vision-Language-Action Models with Data Generation via Residual RL](../../ICLR2026/robotics/self-improving_vision-language-action_models_with_data_generation_via_residual_r.md)
 - [\[NeurIPS 2025\] DexFlyWheel: A Scalable Self-Improving Data Generation Framework for Dexterous Manipulation](dexflywheel_a_scalable_and_self-improving_data_generation_framework_for_dexterou.md)
+- [\[CVPR 2025\] UniAct: Universal Actions for Enhanced Embodied Foundation Models](../../CVPR2025/robotics/universal_actions_for_enhanced_embodied_foundation_models.md)
+- [\[ICML 2025\] FOUNDER: Grounding Foundation Models in World Models for Open-Ended Embodied Decision Making](../../ICML2025/robotics/founder_grounding_foundation_models_in_world_models_for_open-ended_embodied_deci.md)
 - [\[NeurIPS 2025\] Sample-Efficient Tabular Self-Play for Offline Robust Reinforcement Learning](sample-efficient_tabular_self-play_for_offline_robust_reinforcement_learning.md)
-- [\[ICCV 2025\] TesserAct: Learning 4D Embodied World Models](../../ICCV2025/robotics/learning_4d_embodied_world_models.md)
-- [\[CVPR 2026\] AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention](../../CVPR2026/robotics/ava_vla_improving_vision_language_action_models_with_active_visual_attention.md)
-- [\[NeurIPS 2025\] NeSyPr: Neurosymbolic Proceduralization For Efficient Embodied Reasoning](nesypr_neurosymbolic_proceduralization_for_efficient_embodied_reasoning.md)
 
 </div>
 

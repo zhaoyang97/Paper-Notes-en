@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TF-CADE: Foreground-Concentrated Text-Video Alignment for Zero-Shot Temporal Action Detection
 description: >-
-  [CVPR 2026][Video Understanding][ZSTAD] Addressing the issue where "text does not influence predictions" in zero-shot temporal action detection, this paper introduces an Action-Concentrated Aggregation (ACA) module. ACA aggregates video features into a foreground video embedding based on temporal foreground saliency for explicit alignment with text. Furtherm
+  [CVPR 2026][Video Understanding][Zero-Shot Temporal Action Detection] Addressing the issue where "text does not influence predictions" in zero-shot temporal action detection, this paper introduces an Action-Concentrated Aggregation (ACA) module. ACA aggregates video features into a foreground video embedding based on temporal foreground saliency for explicit alignment with text. Furthermore, a Certainty-based Confidence Reweighting (CCR) mechanism injects video-level priors b…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - ZSTAD
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Zero-Shot Temporal Action Detection"
+  - "Text-Video Alignment"
+  - "Foreground Aggregation"
+  - "Confidence Reweighting"
+  - "ZSTAD"
 date: 2026-05-08
-content_hash: b7d4caba05583d62
+content_hash: aad5cd87946c50fc
 ---
+
 # TF-CADE: Foreground-Concentrated Text-Video Alignment for Zero-Shot Temporal Action Detection
 
 **Conference**: CVPR 2026  
@@ -145,10 +150,10 @@ Ablation on ACA internal design (50%-50% THUMOS14): Certainty-weighted aggregati
 ## Related Papers
 
 - [\[CVPR 2026\] CVA: Context-aware Video-text Alignment for Video Temporal Grounding](cva_context-aware_video-text_alignment_for_video_temporal_grounding.md)
-- [\[CVPR 2026\] Decompose and Transfer: CoT-Prompting Enhanced Alignment for Open-Vocabulary Temporal Action Detection](decompose_and_transfer_cot-prompting_enhanced_alignment_for_open-vocabulary_temp.md)
 - [\[CVPR 2026\] No Need For Real Anomaly: MLLM Empowered Zero-Shot Video Anomaly Detection](no_need_for_real_anomaly_mllm_empowered_zero-shot_video_anomaly_detection.md)
 - [\[CVPR 2026\] Memory Matters: Boosting Training-Free Zero-Shot Temporal Action Localization with a Learnable Lookup Table](memory_matters_boosting_training-free_zero-shot_temporal_action_localization_wit.md)
 - [\[CVPR 2026\] SkeletonContext: Skeleton-side Context Prompt Learning for Zero-Shot Skeleton-based Action Recognition](skeletoncontext_skeleton-side_context_prompt_learning_for_zero-shot_skeleton-bas.md)
+- [\[CVPR 2025\] Temporal Alignment-Free Video Matching for Few-Shot Action Recognition](../../CVPR2025/video_understanding/temporal_alignment-free_video_matching_for_few-shot_action_recognition.md)
 
 </div>
 

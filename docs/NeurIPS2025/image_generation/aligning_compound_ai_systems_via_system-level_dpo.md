@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Aligning Compound AI Systems via System-level DPO
 description: >-
-  [NeurIPS 2025][Image Generation][compound AI system] This paper models compound AI systems as DAGs and proposes the SysDPO framework, which extends DPO to joint multi-component alignment. By leveraging DAG decomposition…
+  [NeurIPS 2025][Image Generation][compound AI system] This paper models compound AI systems as DAGs and proposes the SysDPO framework, which extends DPO to joint multi-component alignment. By leveraging DAG decomposition, system-level preferences are transformed into an end-to-end optimizable loss function. The authors provide theoretical guarantees of $\beta$-perfect alignment and demonstrate substantial improvements in collaborative quality on both LLM+diffusion model and LL…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "DAG"
   - "multi-component optimization"
 date: 2026-05-08
-content_hash: fc9e68793b243f27
+content_hash: c6bd2240fc1e5695
 ---
 
 # Aligning Compound AI Systems via System-level DPO
@@ -143,9 +143,9 @@ The unaligned compound system achieves only 32% accuracy on complex instructions
 ## Related Papers
 
 - [\[NeurIPS 2025\] System-Embedded Diffusion Bridge Models](system-embedded_diffusion_bridge_models.md)
+- [\[CVPR 2025\] PatchDPO: Patch-level DPO for Finetuning-free Personalized Image Generation](../../CVPR2025/image_generation/patchdpo_patch-level_dpo_for_finetuning-free_personalized_image_generation.md)
 - [\[NeurIPS 2025\] UtilGen: Utility-Centric Generative Data Augmentation with Dual-Level Task Adaptation](utilgen_utility-centric_generative_data_augmentation_with_dual-level_task_adapta.md)
 - [\[NeurIPS 2025\] Instance-Level Composed Image Retrieval](instance-level_composed_image_retrieval.md)
-- [\[NeurIPS 2025\] Aligning Text to Image in Diffusion Models is Easier Than You Think](aligning_text_to_image_in_diffusion_models_is_easier_than_you_think.md)
 - [\[NeurIPS 2025\] Diffusion Model as a Noise-Aware Latent Reward Model for Step-Level Preference Optimization](diffusion_model_as_a_noiseaware_latent_reward_model_for_step.md)
 
 </div>

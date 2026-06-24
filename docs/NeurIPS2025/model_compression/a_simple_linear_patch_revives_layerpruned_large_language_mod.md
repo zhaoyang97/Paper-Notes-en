@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Simple Linear Patch Revives Layer-Pruned Large Language Models
 description: >-
-  [NeurIPS 2025][Model Compression][Layer Pruning] LinearPatch inserts a lightweight symmetric matrix — fusing a Hadamard transform with channel scaling — at the pruning interface to repair activation magnitude mismatches…
+  [NeurIPS 2025][Model Compression][Layer Pruning] LinearPatch inserts a lightweight symmetric matrix — fusing a Hadamard transform with channel scaling — at the pruning interface to repair activation magnitude mismatches caused by layer pruning. On LLaMA-3-8B, it retains 94.15% of the original performance without any training, and reaches 95.16% after 30 minutes of distillation.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Channel Scaling"
   - "Knowledge Distillation"
 date: 2026-05-08
-content_hash: 141c461f93caaece
+content_hash: 8c3ea6ecb0017c35
 ---
 
 # A Simple Linear Patch Revives Layer-Pruned Large Language Models
@@ -129,8 +129,8 @@ An optional knowledge distillation stage stores the teacher model's top-100 logi
 ## Related Papers
 
 - [\[NeurIPS 2025\] Restoring Pruned Large Language Models via Lost Component Compensation](restoring_pruned_large_language_models_via_lost_component_compensation.md)
-- [\[NeurIPS 2025\] The Structure of Relation Decoding Linear Operators in Large Language Models](the_structure_of_relation_decoding_linear_operators_in_large_language_models.md)
 - [\[NeurIPS 2025\] LayerIF: Estimating Layer Quality for Large Language Models using Influence Functions](layerif_estimating_layer_quality_for_large_language_models_using_influence_funct.md)
+- [\[NeurIPS 2025\] The Structure of Relation Decoding Linear Operators in Large Language Models](the_structure_of_relation_decoding_linear_operators_in_large_language_models.md)
 - [\[NeurIPS 2025\] Correlation Dimension of Auto-Regressive Large Language Models](correlation_dimension_of_auto-regressive_large_language_models.md)
 - [\[NeurIPS 2025\] PermLLM: Learnable Channel Permutation for N:M Sparse Large Language Models](permllm_learnable_channel_permutation_for_nm_sparse_large_language_models.md)
 

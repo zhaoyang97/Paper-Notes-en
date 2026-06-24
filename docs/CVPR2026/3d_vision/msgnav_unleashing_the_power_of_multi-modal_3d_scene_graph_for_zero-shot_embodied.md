@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] MSGNav: Unleashing the Power of Multi-modal 3D Scene Graph for Zero-Shot Embodied Navigation
 description: >-
-  [CVPR 2026][3D Vision][VLM] A Multi-modal 3D Scene Graph (M3DSG) is proposed, utilizing dynamically allocated image edges instead of traditional text relation edges to preserve visual information. Based on this, a zero-shot navigation system, MSGNav, is constructed. A Visibility Viewpoint Decision (VVD) module is introduced to address the "last-m
+  [CVPR 2026][3D Vision][Embodied Navigation] A Multi-modal 3D Scene Graph (M3DSG) is proposed, utilizing dynamically allocated image edges instead of traditional text relation edges to preserve visual information. Based on this, a zero-shot navigation system, MSGNav, is constructed. A Visibility Viewpoint Decision (VVD) module is introduced to address the "last-mile" problem in navigation, achieving SOTA performance on GOAT-Bench and HM3D-ObjNav.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - VLM
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Embodied Navigation"
+  - "3D Scene Graph"
+  - "Zero-Shot Navigation"
+  - "Multi-modal Scene Graph"
+  - "Viewpoint Decision"
+  - "VLM"
 date: 2026-05-08
-content_hash: 067fdb063201664b
+content_hash: ca5f0370ebcc3609
 ---
+
 # MSGNav: Unleashing the Power of Multi-modal 3D Scene Graph for Zero-Shot Embodied Navigation
 
 **Conference**: CVPR 2026  
@@ -227,7 +233,7 @@ Image edges improve performance by **+3.8% SR and +4.3% SPL** compared to text e
 - [\[CVPR 2026\] GeoSAM2: Unleashing the Power of SAM2 for 3D Part Segmentation](geosam2_unleashing_the_power_of_sam2_for_3d_part_segmentation.md)
 - [\[CVPR 2026\] Unleashing the Power of Chain-of-Prediction for Monocular 3D Object Detection](unleashing_the_power_of_chain-of-prediction_for_monocular_3d_object_detection.md)
 - [\[CVPR 2026\] Zoo3D: Zero-Shot 3D Object Detection at Scene Level](zoo3d_zero-shot_3d_object_detection_at_scene_level.md)
-- [\[CVPR 2026\] SAGE: Scalable Agentic 3D Scene Generation for Embodied AI](sage_scalable_agentic_3d_scene_generation_for_embodied_ai.md)
+- [\[CVPR 2026\] Multi-modal Frequency Decomposition Network for Semantic Scene Completion](multi-modal_frequency_decomposition_network_for_semantic_scene_completion.md)
 
 </div>
 

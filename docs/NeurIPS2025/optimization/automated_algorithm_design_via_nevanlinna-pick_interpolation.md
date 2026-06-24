@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Automated Algorithm Design via Nevanlinna-Pick Interpolation
 description: >-
-  [NeurIPS 2025 (DynaFront Workshop)][Optimization][Automated algorithm design] This paper proposes an automated algorithm design framework based on Nevanlinna-Pick interpolation from frequency-domain robust control theory…
+  [NeurIPS 2025 (DynaFront Workshop)][Optimization][Automated algorithm design] This paper proposes an automated algorithm design framework based on Nevanlinna-Pick interpolation from frequency-domain robust control theory, targeting strongly convex optimization with equality constraints, and achieves an optimal trade-off between the number of matrix-vector multiplications and the convergence rate.
 tags:
   - "NeurIPS 2025 (DynaFront Workshop)"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "equality-constrained optimization"
   - "convergence rate"
 date: 2026-05-08
-content_hash: ee2e232998f693ea
+content_hash: 2ee8a9ff5d7e4fd0
 ---
 
 # Automated Algorithm Design via Nevanlinna-Pick Interpolation
@@ -147,9 +147,9 @@ Here $\kappa_f = L/m$ is the condition number of $f$, and $\kappa_E = \sigma_1/\
 
 - [\[ICML 2026\] PathWise: Planning through World Model for Automated Heuristic Design via Self-Evolving LLMs](../../ICML2026/optimization/pathwise_planning_through_world_model_for_automated_heuristic_design_via_self-ev.md)
 - [\[NeurIPS 2025\] An Adaptive Algorithm for Bilevel Optimization on Riemannian Manifolds](an_adaptive_algorithm_for_bilevel_optimization_on_riemannian_manifolds.md)
+- [\[ICLR 2026\] New Hybrid Fine-Tuning Paradigm for LLMs: Algorithm Design and Convergence Analysis Framework](../../ICLR2026/optimization/new_hybrid_fine-tuning_paradigm_for_llms_algorithm_design_and_convergence_analys.md)
 - [\[NeurIPS 2025\] A Single-Loop First-Order Algorithm for Linearly Constrained Bilevel Optimization](a_single-loop_first-order_algorithm_for_linearly_constrained_bilevel_optimizatio.md)
-- [\[ICML 2026\] Memory-Efficient LLM Pretraining via Minimalist Optimizer Design](../../ICML2026/optimization/memory-efficient_llm_pretraining_via_minimalist_optimizer_design.md)
-- [\[AAAI 2026\] A Distributed Asynchronous Generalized Momentum Algorithm Without Delay Bounds](../../AAAI2026/optimization/a_distributed_asynchronous_generalized_momentum_algorithm_wi.md)
+- [\[ICLR 2026\] Leveraging Discrete Function Decomposability for Scientific Design](../../ICLR2026/optimization/leveraging_discrete_function_decomposability_for_scientific_design.md)
 
 </div>
 

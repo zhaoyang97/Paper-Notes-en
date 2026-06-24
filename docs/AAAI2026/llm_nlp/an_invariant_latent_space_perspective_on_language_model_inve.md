@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] An Invariant Latent Space Perspective on Language Model Inversion
 description: >-
-  [AAAI 2026][LLM/NLP][language model inversion] This paper proposes the Invariant Latent Space Hypothesis (ILSH), which reframes the LLM inversion problem as reusing the LLM's own latent space. The Inv²A framework is desi…
+  [AAAI 2026][LLM (Other)][language model inversion] This paper proposes the Invariant Latent Space Hypothesis (ILSH), which reframes the LLM inversion problem as reusing the LLM's own latent space. The Inv²A framework is designed to map outputs to denoised pseudo-representations via a lightweight inverse encoder, which are then decoded by a frozen LLM to recover hidden prompts. Inv²A achieves an average BLEU improvement of 4.77% across 9 datasets and attains comparable perform…
 tags:
   - "AAAI 2026"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "language model inversion"
   - "privacy attack"
   - "invariant latent space"
   - "prompt recovery"
   - "contrastive learning"
 date: 2026-05-08
-content_hash: 977de5d74eb74903
+content_hash: 175f0ad0b3451d3d
 ---
 
 # An Invariant Latent Space Perspective on Language Model Inversion
@@ -126,11 +126,11 @@ The core advantage of Inv²A lies in activating the LLM's existing inverse mappi
 
 ## Related Papers
 
+- [\[ICLR 2026\] PerFit: Exploring Personalization Shifts in Representation Space of LLMs](../../ICLR2026/llm_nlp/perfit_exploring_personalization_shifts_in_representation_space_of_llms.md)
 - [\[AAAI 2026\] TransMamba: A Sequence-Level Hybrid Transformer-Mamba Language Model](transmamba_a_sequence-level_hybrid_transformer-mamba_language_model.md)
-- [\[NeurIPS 2025\] Are Language Models Efficient Reasoners? A Perspective from Logic Programming](../../NeurIPS2025/llm_nlp/are_language_models_efficient_reasoners_a_perspective_from_logic_programming.md)
-- [\[ICML 2026\] Rethinking LLM Ensembling from the Perspective of Mixture Models](../../ICML2026/llm_nlp/rethinking_llm_ensembling_from_the_perspective_of_mixture_models.md)
 - [\[ACL 2026\] DeCoVec: Building Decoding Space based Task Vector for Large Language Models via In-Context Learning](../../ACL2026/llm_nlp/decovec_building_decoding_space_based_task_vector_for_large_language_models_via_.md)
-- [\[AAAI 2026\] IROTE: Human-like Traits Elicitation of Large Language Model via In-Context Self-Reflective Optimization](irote_human-like_traits_elicitation_of_large_language_model_via_in-context_self-.md)
+- [\[ICML 2026\] Rethinking LLM Ensembling from the Perspective of Mixture Models](../../ICML2026/llm_nlp/rethinking_llm_ensembling_from_the_perspective_of_mixture_models.md)
+- [\[NeurIPS 2025\] Are Language Models Efficient Reasoners? A Perspective from Logic Programming](../../NeurIPS2025/llm_nlp/are_language_models_efficient_reasoners_a_perspective_from_logic_programming.md)
 
 </div>
 

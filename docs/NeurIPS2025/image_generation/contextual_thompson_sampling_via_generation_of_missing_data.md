@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Contextual Thompson Sampling via Generation of Missing Data
 description: >-
-  [NeurIPS 2025][Image Generation][Thompson sampling] This paper proposes Generative Thompson Sampling (TS-Gen), which reframes uncertainty in contextual bandits as missing data rather than unknown parameters. A generative…
+  [NeurIPS 2025][Image Generation][Thompson sampling] This paper proposes Generative Thompson Sampling (TS-Gen), which reframes uncertainty in contextual bandits as missing data rather than unknown parameters. A generative model autoregressively imputes missing outcomes to implement Thompson sampling, and a regret bound directly tied to offline prediction loss is established.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "meta-learning"
   - "regret bounds"
 date: 2026-05-08
-content_hash: 8f8f471c7e5c0f2e
+content_hash: 79aa702046c0e6bd
 ---
 
 # Contextual Thompson Sampling via Generation of Missing Data
@@ -137,9 +137,9 @@ $T=500$, $|\mathcal{A}|=10$, binary outcomes $Y \in \{0,1\}$, prior information 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Diffusion Models Meet Contextual Bandits](diffusion_models_meet_contextual_bandits.md)
+- [\[CVPR 2026\] Beyond Objects: Contextual Synthetic Data Generation for Fine-Grained Classification](../../CVPR2026/image_generation/beyond_objects_contextual_synthetic_data_generation_for_fine-grained_classificat.md)
 - [\[NeurIPS 2025\] Exploring Variational Graph Autoencoders for Distribution Grid Data Generation](exploring_variational_graph_autoencoders_for_distribution_grid_data_generation.md)
 - [\[NeurIPS 2025\] DiffEye: Diffusion-Based Continuous Eye-Tracking Data Generation Conditioned on Natural Images](diffeye_diffusion-based_continuous_eye-tracking_data_generation_conditioned_on_n.md)
-- [\[ICCV 2025\] FICGen: Frequency-Inspired Contextual Disentanglement for Layout-driven Degraded Image Generation](../../ICCV2025/image_generation/ficgen_frequency-inspired_contextual_disentanglement_for_layout-driven_degraded_.md)
 - [\[NeurIPS 2025\] A Diffusion Model for Regular Time Series Generation from Irregular Data with Completion and Masking](a_diffusion_model_for_regular_time_series_generation_from_irregular_data_with_co.md)
 
 </div>

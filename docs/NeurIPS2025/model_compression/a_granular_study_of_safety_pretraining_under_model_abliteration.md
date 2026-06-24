@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Granular Study of Safety Pretraining under Model Abliteration
 description: >-
-  [NeurIPS 2025][Model Compression][LLM safety] This paper systematically investigates the effects of model abliteration—a inference-time activation space editing attack—on various data-driven safety pretraining stages. It…
+  [NeurIPS 2025][Model Compression][LLM safety] This paper systematically investigates the effects of model abliteration—a inference-time activation space editing attack—on various data-driven safety pretraining stages. It finds that safety mechanisms relying solely on refusal training are highly vulnerable, whereas **combining multiple safety signals** (safe-only filtering + rephrasing + metatags + refusals) distributes safety behavior across a broader representational space…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "activation space editing"
   - "refusal behavior"
 date: 2026-05-08
-content_hash: 0bc25f8b105dc99f
+content_hash: f009b4cacbc1c15b
 ---
 
 # A Granular Study of Safety Pretraining under Model Abliteration
@@ -139,11 +139,11 @@ This paper systematically investigates the effects of model abliteration—a inf
 
 ## Related Papers
 
+- [\[ICLR 2026\] Beyond Outliers: A Study of Optimizers Under Quantization](../../ICLR2026/model_compression/beyond_outliers_a_study_of_optimizers_under_quantization.md)
 - [\[NeurIPS 2025\] RCCDA: Adaptive Model Updates in the Presence of Concept Drift under a Constrained Resource Budget](rccda_adaptive_model_updates_in_the_presence_of_concept_drift_under_a_constraine.md)
 - [\[NeurIPS 2025\] Perturbation Bounds for Low-Rank Inverse Approximations under Noise](perturbation_bounds_for_low-rank_inverse_approximations_under_noise.md)
-- [\[ACL 2026\] MTA: Multi-Granular Trajectory Alignment for Large Language Model Distillation](../../ACL2026/model_compression/mta_multi-granular_trajectory_alignment_for_large_language_model_distillation.md)
+- [\[ICML 2025\] Q-resafe: Assessing Safety Risks and Quantization-aware Safety Patching for Quantized Large Language Models](../../ICML2025/model_compression/q-resafe_assessing_safety_risks_and_quantization-aware_safety_patching_for_quant.md)
 - [\[NeurIPS 2025\] FiRA: Can We Achieve Full-Rank Training of LLMs Under Low-Rank Constraint?](fira_can_we_achieve_full-rank_training_of_llms_under_low-rank_constraint.md)
-- [\[NeurIPS 2025\] Multi-Task Vehicle Routing Solver via Mixture of Specialized Experts under State-Decomposable MDP](multi-task_vehicle_routing_solver_via_mixture_of_specialized_experts_under_state.md)
 
 </div>
 

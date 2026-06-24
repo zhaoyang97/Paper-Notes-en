@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] VERINA: Benchmarking Verifiable Code Generation
 description: >-
-  [ICLR 2026][Code Intelligence][Lean] VERINA uses 189 manually refined Lean programming tasks to decompose "verifiable code generation" into three independent yet combinable base tasks: CodeGen, SpecGen, and ProofGen. It provides a multi-stage specification evaluator combining "theorem proving + full coverage testing." Results show that even the strongest
+  [ICLR 2026][Code Intelligence][Verifiable code generation] VERINA uses 189 manually refined Lean programming tasks to decompose "verifiable code generation" into three independent yet combinable base tasks: CodeGen, SpecGen, and ProofGen. It provides a multi-stage specification evaluator combining "theorem proving + full coverage testing." Results show that even the strongest o3 achieves only 72.6% code correctness and 52.3% specification success…
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - Lean
-  - Benchmark
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Verifiable code generation"
+  - "Lean"
+  - "formal specification"
+  - "theorem proving"
+  - "Benchmark"
 date: 2026-05-08
-content_hash: 995be5c87c4b7984
+content_hash: 520c7826d0a91c2d
 ---
+
 # VERINA: Benchmarking Verifiable Code Generation
 
 **Conference**: ICLR 2026  

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Adjoint Schrödinger Bridge Sampler
 description: >-
-  [NeurIPS 2025][Schrödinger Bridge] This paper proposes the Adjoint Schrödinger Bridge Sampler (ASBS), which reinterprets the Schrödinger Bridge problem as a stochastic optimal control (SOC) problem. This eliminates the m…
+  [NeurIPS 2025 Oral][Schrödinger Bridge] This paper proposes the Adjoint Schrödinger Bridge Sampler (ASBS), which reinterprets the Schrödinger Bridge problem as a stochastic optimal control (SOC) problem. This eliminates the memoryless condition required by prior diffusion samplers, supports arbitrary source distributions (e.g., Gaussian, harmonic priors), and employs a scalable matching objective without importance weight estimation. ASBS consistently outperforms prior method…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Oral"
   - "Schrödinger Bridge"
   - "Diffusion Sampler"
   - "Boltzmann Distribution"
   - "Adjoint Matching"
   - "Stochastic Optimal Control"
 date: 2026-05-08
-content_hash: 247e49a4c16cd5f7
+content_hash: 05dab9a8bdd77f7d
 ---
 
 # Adjoint Schrödinger Bridge Sampler
@@ -131,8 +131,8 @@ ASBS learns an SDE $dX_t = [f_t(X_t) + \sigma_t u_t^\theta(X_t)] dt + \sigma_t d
 - [\[NeurIPS 2025\] Modeling Cell Dynamics and Interactions with Unbalanced Mean Field Schrödinger Bridge](modeling_cell_dynamics_and_interactions_with_unbalanced_mean_field_schrödinger_b.md)
 - [\[NeurIPS 2025\] Learning non-equilibrium diffusions with Schrödinger bridges: from exactly solvable to simulation-free](learning_non-equilibrium_diffusions_with_schrödinger_bridges_from_exactly_solvab.md)
 - [\[NeurIPS 2025\] Rethinking Losses for Diffusion Bridge Samplers](rethinking_losses_for_diffusion_bridge_samplers.md)
-- [\[NeurIPS 2025\] MetaFind: Scene-Aware 3D Asset Retrieval for Coherent Metaverse Scene Generation](metafind_scene-aware_3d_asset_retrieval_for_coherent_metaverse_scene_generation.md)
-- [\[NeurIPS 2025\] Semi-infinite Nonconvex Constrained Min-Max Optimization](semi-infinite_nonconvex_constrained_min-max_optimization.md)
+- [\[CVPR 2025\] TensoFlow: Tensorial Flow-based Sampler for Inverse Rendering](../../CVPR2025/others/tensoflow_tensorial_flow-based_sampler_for_inverse_rendering.md)
+- [\[NeurIPS 2025\] Learning (Approximately) Equivariant Networks via Constrained Optimization](learning_approximately_equivariant_networks_via_constrained_optimization.md)
 
 </div>
 

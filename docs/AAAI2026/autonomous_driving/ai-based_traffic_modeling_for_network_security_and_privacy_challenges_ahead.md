@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AI-based Traffic Modeling for Network Security and Privacy: Challenges Ahead
 description: >-
-  [AAAI 2026][Autonomous Driving][network traffic analysis] A survey and position paper on AI-based traffic modeling for Network Security & Privacy (NetS&P) tasks. It systematically reviews AI approaches for anomaly detect…
+  [AAAI 2026][Autonomous Driving][network traffic analysis] A survey and position paper on AI-based traffic modeling for Network Security & Privacy (NetS&P) tasks. It systematically reviews AI approaches for anomaly detection, attack classification, IoT device identification, and website fingerprinting attacks, and provides an in-depth discussion of four frontier challenges: data quality, practical deployment, explainability, and foundation models.
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -15,7 +15,7 @@ tags:
   - "anomaly detection"
   - "website fingerprinting"
 date: 2026-05-08
-content_hash: b1f5d98def00b9d6
+content_hash: 46b036152d351fc7
 ---
 
 # AI-based Traffic Modeling for Network Security and Privacy: Challenges Ahead
@@ -151,11 +151,11 @@ This paper is a survey/position paper and proposes no concrete model; therefore 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Micro-Macro Coupled Koopman Modeling on Graph for Traffic Flow Prediction](../../ICLR2026/autonomous_driving/micro-macro_coupled_koopman_modeling_on_graph_for_traffic_flow_prediction.md)
 - [\[AAAI 2026\] Minimum-Cost Network Flow with Dual Predictions](minimum-cost_network_flow_with_dual_predictions.md)
 - [\[AAAI 2026\] Meta Dynamic Graph for Traffic Flow Prediction](meta_dynamic_graph_for_traffic_flow_prediction.md)
 - [\[AAAI 2026\] GenCast: Generalizing Traffic Forecasting to Regions without Observations](generalising_traffic_forecasting_to_regions_without_traffic_observations.md)
-- [\[AAAI 2026\] LiDARCrafter: Dynamic 4D World Modeling from LiDAR Sequences](lidarcrafter_dynamic_4d_world_modeling_from_lidar_sequences.md)
-- [\[AAAI 2026\] Dual-branch Spatial-Temporal Self-supervised Representation for Enhanced Road Network Learning](dual-branch_spatial-temporal_self-supervised_representation_for_enhanced_road_ne.md)
+- [\[AAAI 2026\] Unlocking Efficient Vehicle Dynamics Modeling via Analytic World Models](unlocking_efficient_vehicle_dynamics_modeling_via_analytic_world_models.md)
 
 </div>
 

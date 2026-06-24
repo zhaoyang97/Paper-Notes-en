@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] RegionReasoner: Region-Grounded Multi-Round Visual Reasoning
 description: >-
-  [ICLR 2026][Segmentation][multi-round reasoning] RegionReasoner is proposed as a multi-round visual reasoning framework based on reinforcement learning. By utilizing reference grounding rewards and global-local consistency rewards, the model is compelled to explicitly reference coordinates of specified regions and maintain semantic coherence throughout reasoning traj
+  [ICLR 2026][Segmentation][multi-round reasoning] RegionReasoner is proposed as a multi-round visual reasoning framework based on reinforcement learning. By utilizing reference grounding rewards and global-local consistency rewards, the model is compelled to explicitly reference coordinates of specified regions and maintain semantic coherence throughout reasoning trajectories. This results in significant improvements in multi-round localization and segmentation accuracy on the…
 tags:
-  - ICLR 2026
-  - Segmentation
-  - multi-round reasoning
-  - region grounding
-  - reinforcement-learning
-  - GRPO
-  - VLM
-  - referring segmentation
+  - "ICLR 2026"
+  - "Segmentation"
+  - "multi-round reasoning"
+  - "region grounding"
+  - "reinforcement-learning"
+  - "GRPO"
+  - "VLM"
+  - "referring segmentation"
 date: 2026-05-08
-content_hash: af7f4bebeeffc7f1
+content_hash: 3a6e1ef3a10c3708
 ---
+
 # RegionReasoner: Region-Grounded Multi-Round Visual Reasoning
 
 **Conference**: ICLR 2026  

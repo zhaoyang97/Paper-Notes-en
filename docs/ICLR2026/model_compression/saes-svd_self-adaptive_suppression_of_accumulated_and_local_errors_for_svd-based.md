@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SAES-SVD: Self-Adaptive Suppression of Accumulated and Local Errors for SVD-based LLM Compression
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] SAES-SVD explicitly incorporates a "full-precision reference output alignment" cumulative error compensation term into the objective of layer-wise SVD low-rank compression. It derives a closed-form solution relying only on second-order activation statistics and adaptively selects the optimal compensation weight for eac
+  [ICLR 2026][Model Compression][SVD low-rank compression] SAES-SVD explicitly incorporates a "full-precision reference output alignment" cumulative error compensation term into the objective of layer-wise SVD low-rank compression. It derives a closed-form solution relying only on second-order activation statistics and adaptively selects the optimal compensation weight for each layer. This ensures the compressed model's output remains close to the full-precision baseline—reduci…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "SVD low-rank compression"
+  - "accumulated error"
+  - "closed-form solution"
+  - "adaptive weights"
+  - "LLM compression"
 date: 2026-05-08
-content_hash: c25c1d741402f80a
+content_hash: 9460beb7587fd106
 ---
+
 # SAES-SVD: Self-Adaptive Suppression of Accumulated and Local Errors for SVD-based LLM Compression
 
 **Conference**: ICLR 2026  

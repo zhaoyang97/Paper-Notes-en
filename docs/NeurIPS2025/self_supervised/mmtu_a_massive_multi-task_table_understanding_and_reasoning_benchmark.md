@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MMTU: A Massive Multi-Task Table Understanding and Reasoning Benchmark
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][table understanding] This paper introduces MMTU, a large-scale benchmark comprising 28,136 questions spanning 25 real-world table tasks…
+  [NeurIPS 2025][Self-Supervised Learning][table understanding] This paper introduces MMTU, a large-scale benchmark comprising 28,136 questions spanning 25 real-world table tasks, designed to systematically evaluate LLMs on professional-level table understanding, reasoning, and manipulation. Even frontier reasoning models such as GPT-5 achieve only approximately 69.6% on this benchmark.
 tags:
   - "NeurIPS 2025"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "multi-task reasoning"
   - "structured data"
 date: 2026-05-08
-content_hash: 1cde311b9fa7198e
+content_hash: b79e4ab5cd77fd1e
 ---
 
 # MMTU: A Massive Multi-Task Table Understanding and Reasoning Benchmark
@@ -131,10 +131,10 @@ Not applicable (benchmark paper).
 ## Related Papers
 
 - [\[NeurIPS 2025\] Contrastive Representations for Temporal Reasoning](contrastive_representations_for_temporal_reasoning.md)
-- [\[NeurIPS 2025\] TabArena: A Living Benchmark for Machine Learning on Tabular Data](tabarena_a_living_benchmark_for_machine_learning_on_tabular_data.md)
+- [\[ICML 2025\] MTL-UE: Learning to Learn Nothing for Multi-Task Learning](../../ICML2025/self_supervised/mtl-ue_learning_to_learn_nothing_for_multi-task_learning.md)
+- [\[NeurIPS 2025\] CleverBirds: A Multiple-Choice Benchmark for Fine-grained Human Knowledge Tracing](cleverbirds_a_multiple-choice_benchmark_for_fine-grained_human_knowledge_tracing.md)
 - [\[NeurIPS 2025\] Understanding Ice Crystal Habit Diversity with Self-Supervised Learning](understanding_ice_crystal_habit_diversity_with_self-supervised_learning.md)
-- [\[NeurIPS 2025\] Soft Task-Aware Routing of Experts for Equivariant Representation Learning](soft_task-aware_routing_of_experts_for_equivariant_representation_learning.md)
-- [\[NeurIPS 2025\] STaRFormer: Semi-Supervised Task-Informed Representation Learning via Dynamic Attention-Based Regional Masking](starformer_semi-supervised_task-informed_representation_learning_via_dynamic_att.md)
+- [\[NeurIPS 2025\] TabArena: A Living Benchmark for Machine Learning on Tabular Data](tabarena_a_living_benchmark_for_machine_learning_on_tabular_data.md)
 
 </div>
 

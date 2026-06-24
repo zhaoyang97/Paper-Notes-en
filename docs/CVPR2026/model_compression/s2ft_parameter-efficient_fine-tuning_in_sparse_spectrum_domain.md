@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] S2FT: Parameter-Efficient Fine-Tuning in Sparse Spectrum Domain
 description: >-
-  [CVPR 2026][Model Compression][PEFT] Addressing the issue that Fourier-based PEFT incorrectly assumes the weight change $\Delta W$ has a sparse spectrum (when it is actually close to a power-uniform distribution), S2FT first estimates $\Delta W$ and then uses row-column permutation to find a reversible transformation that maps it to a latent matrix $\Delt
+  [CVPR2026][Model Compression][PEFT] Addressing the issue that Fourier-based PEFT incorrectly assumes the weight change $\Delta W$ has a sparse spectrum (when it is actually close to a power-uniform distribution), S2FT first estimates $\Delta W$ and then uses row-column permutation to find a reversible transformation that maps it to a latent matrix $\Delta\bar W$ with a truly sparse spectrum. By training only a few spectral coefficients in this sparse domain…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - PEFT
+  - "CVPR2026"
+  - "Model Compression"
+  - "PEFT"
+  - "Fourier Transform"
+  - "Sparse Spectrum"
+  - "Row-column Permutation"
+  - "Weight Change Modeling"
 date: 2026-05-08
-content_hash: 0bf8589bb9592a3c
+content_hash: b49bf2c95d95479e
 ---
+
 # S2FT: Parameter-Efficient Fine-Tuning in Sparse Spectrum Domain
 
 **Conference**: CVPR2026  
@@ -141,12 +146,20 @@ Training cost (Table 8, ViT-B): S2FT takes 4.2s/epoch, uses 8.5GB VRAM, and 0.08
 - Value: ⭐⭐⭐⭐ High utility for memory-sensitive deployment; the permutation-for-smoothness concept is highly transferable.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- **FourierFT**: [2405.03003](https://arxiv.org/abs/2405.03003) - Leading Fourier-based PEFT baseline.
-- **LoRA**: [2106.09685](https://arxiv.org/abs/2106.09685) - Foundational low-rank adaptation work.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] PiCa: Parameter-Efficient Fine-Tuning with Column Space Projection](../../ICLR2026/model_compression/pica_parameter-efficient_fine-tuning_with_column_space_projection.md)
+- [\[ICLR 2026\] Memba: Membrane-driven Parameter-Efficient Fine-Tuning for Mamba](../../ICLR2026/model_compression/memba_membrane-driven_parameter-efficient_fine-tuning_for_mamba.md)
+- [\[CVPR 2026\] ReFTA: Breaking the Weight Reconstruction Bottleneck in Tensorized Parameter-Efficient Fine-Tuning](refta_breaking_the_weight_reconstruction_bottleneck_in_tensorized_parameter-effi.md)
+- [\[ACL 2025\] C3A: Parameter-Efficient Fine-Tuning via Circular Convolution](../../ACL2025/model_compression/parameter-efficient_fine-tuning_via_circular_convolution.md)
+- [\[ICLR 2026\] SumRA: Parameter Efficient Fine-Tuning with Singular Value Decomposition and Summed Orthogonal Basis](../../ICLR2026/model_compression/sumra_parameter_efficient_fine-tuning_with_singular_value_decomposition_and_summ.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Memba: Membrane-driven Parameter-Efficient Fine-Tuning for Mamba](../../ICLR2026/model_compression/memba_membrane-driven_parameter-efficient_fine-tuning_for_mamba.md)

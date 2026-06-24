@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CoRe-Fed: Bridging Collaborative and Representation Fairness via Federated Embedding Distillation
 description: >-
-  [AAAI 2026][AI Safety][Federated Learning] This paper proposes CoRe-Fed, a framework that simultaneously addresses representation fairness and collaborative fairness in federated learning through two synergistic modules—…
+  [AAAI 2026][AI Safety][Federated Learning] The CoRe-Fed framework is proposed to simultaneously address both representation fairness and collaborative fairness in federated learning through two synergistic modules: embedding-level contrastive alignment and contribution-aware aggregation, significantly improving the fairness and generalization of the global model under heterogeneous data distributions.
 tags:
   - "AAAI 2026"
   - "AI Safety"
@@ -12,79 +12,80 @@ tags:
   - "Contrastive Learning"
   - "Knowledge Distillation"
 date: 2026-05-08
-content_hash: 559cb7874af2bbb0
+content_hash: 2d0b9d34eba0743b
 ---
 
 # CoRe-Fed: Bridging Collaborative and Representation Fairness via Federated Embedding Distillation
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026  
 **arXiv**: [2602.00647](https://arxiv.org/abs/2602.00647)  
 **Code**: [Available](https://github.com/Noorain1/CoRe-Fed)  
-**Area**: AI Safety
+**Area**: AI Security  
 **Keywords**: Federated Learning, Fairness, Representation Alignment, Contrastive Learning, Knowledge Distillation
 
 ## TL;DR
 
-This paper proposes CoRe-Fed, a framework that simultaneously addresses representation fairness and collaborative fairness in federated learning through two synergistic modules—embedding-level contrastive alignment and contribution-aware aggregation—achieving significant improvements in both fairness and generalization of the global model under heterogeneous data distributions.
+The CoRe-Fed framework is proposed to simultaneously address both representation fairness and collaborative fairness in federated learning through two synergistic modules: embedding-level contrastive alignment and contribution-aware aggregation, significantly improving the fairness and generalization of the global model under heterogeneous data distributions.
 
 ## Background & Motivation
 
-Federated learning (FL) enables multiple clients to collaboratively train models without sharing raw data. However, conventional FL algorithms suffer from three types of bias under heterogeneous data distributions:
+Federated learning (FL) allows multiple clients to collaboratively train models without sharing raw data. However, traditional FL algorithms face three types of bias under heterogeneous data distributions:
 
-**Performance Bias**: Statistical heterogeneity and label correlations across client datasets cause the model to perform well on some clients while neglecting others.
+**Performance Bias**: Statistical heterogeneity and label correlations in client datasets cause the model to perform well on some clients while neglecting others.
 
-**Representation Bias**: Uneven data distributions lead to poor alignment of client embedding vectors in the global latent space—for example, CIFAR-10 images of automobiles and trucks may produce angular discrepancies across clients.
+**Representation Bias**: Uneven data distribution leads to poorly aligned embedding vectors of different clients in the global latent space, e.g., CIFAR-10 car/truck images producing angular deviations across different clients.
 
-**Collaborative Bias**: Standard aggregation strategies such as FedAvg may suppress updates from disadvantaged clients, or assign equal weight to noisy or misaligned contributions alongside high-quality ones.
+**Collaborative Bias**: Standard aggregation strategies (such as FedAvg) may suppress updates from underrepresented clients or give noisy/misaligned contributions the same weight as high-quality ones.
 
-Existing work either focuses solely on group-level fairness or handles only representation fairness, rarely addressing the systematic interplay between representation alignment and aggregation fairness. The core insight of CoRe-Fed is that **representation fairness and collaborative fairness are mutually reinforcing**—improved representation quality enhances embeddings, while fair aggregation ensures high-quality embeddings are not diluted during aggregation.
+Existing works either focus solely on level-based fairness or deal exclusively with representation fairness, rarely considering the systematic connection between representation alignment and aggregation fairness. The core insight of CoRe-Fed is that **representation fairness and collaborative fairness are mutually reinforcing**—representation fairness improves embedding quality, while collaborative fairness ensures that high-quality embeddings are not diluted during aggregation.
 
 ## Method
 
 ### Overall Architecture
 
-CoRe-Fed comprises two synergistic modules executed on the server side:
+CoRe-Fed consists of two collaborative modules executed on the server side:
 
-1. **Representation Alignment Module**: Aligns client embeddings via contrastive learning and knowledge distillation.
+1. **Representation Alignment Module**: Aligns client embeddings through contrastive learning and knowledge distillation.
 2. **Contribution-Aware Aggregation Module**: Dynamically adjusts client weights based on participation frequency and representation similarity.
 
-Workflow: local client training → embedding extraction → server computes global embeddings → contrastive loss quantifies representation similarity → alignment vectors guide knowledge distillation → fair aggregation based on participation frequency and alignment scores.
+Workflow: Client local training $\to$ embedding vector extraction $\to$ server computes global embedding $\to$ contrastive loss quantifies representation similarity $\to$ construct alignment vector to guide knowledge distillation $\to$ fair aggregation based on participation frequency and alignment scores.
 
 ### Key Designs
 
-**Embedding Extraction and Normalization**: Each client $i$ extracts features from its local dataset to obtain an L2-normalized mean embedding vector. The global embedding is computed as the average of embeddings from all participating clients.
+**Embedding Extraction and Normalization**: Each client $i$ extracts features from its local dataset to obtain an $L_2$-normalized average embedding vector. The global embedding is obtained by averaging the embeddings of the participating client set.
 
-**Contrastive Learning Alignment**: A temperature-scaled NT-Xent loss aligns each client's embedding with the global embedding while contrasting against embeddings from other clients. The temperature parameter $\tau_c = 0.07$ controls distribution sharpness.
+**Contrastive Learning Alignment**: A temperature-scaled NT-Xent loss aligns client embeddings with the global embedding while contrasting them with other clients' embeddings. The temperature parameter $\tau_c = 0.07$ controls the sharpness of the distribution.
 
-**Embedding-Level Knowledge Distillation**: An alignment vector is computed as the cosine similarity alignment score multiplied by the global embedding, softly steering the client embedding toward the global direction:
+**Embedding-Level Knowledge Distillation**: Computes the alignment vector (cosine similarity alignment score multiplied by the global embedding) to soft-align client embeddings toward the global direction:
 
-- Update rule: $\tilde{z}_i = z_i + \beta \cdot (\tilde{z}_g^{(i)} - z_i)$
-- $\beta \in [0,1]$ controls distillation strength, preserving local client characteristics while encouraging convergence toward the global semantic space.
+- Update formula: $\tilde{z}_i = z_i + \beta (\tilde{z}_g^{(i)} - z_i)$
+- $\beta \in [0,1]$ controls the distillation strength, preserving local client features while moving toward the global semantic space.
 
-**Participation Frequency Estimation**: Client participation frequency is tracked within a dynamic sliding window $\tau = M / |C_t|$, ensuring low-activity clients are not forgotten.
+**Participation Frequency Estimation**: Counts client participation frequency within a dynamic sliding window $\tau = M/|C_t|$ to ensure less active clients are not forgotten.
 
-**Sigmoid-Modulated Fair Weights**: Aggregation weights are computed jointly from participation frequency and representation alignment:
+**Sigmoid-Modulated Fair Weights**: Computes aggregation weights by combining participation frequency and representation alignment:
 
-- Weight formula: $w_i = \frac{(1/f_i)^\gamma \cdot \sigma(k \cdot \rho_i)}{\sum_l (1/f_l)^\gamma \cdot \sigma(k \cdot \rho_l)}$
-- $(1/f_i)^\gamma$ amplifies the influence of low-participation clients.
+$$w_i = \frac{(1/f_i)^\gamma \cdot \sigma(k \cdot \rho_i)}{\sum_l (1/f_l)^\gamma \cdot \sigma(k \cdot \rho_l)}$$
+
+- $(1/f_i)^\gamma$ amplifies the influence of less active clients.
 - $\sigma(k \cdot \rho_i)$ favors clients well-aligned with the global model.
-- This forms a reward-penalty mechanism: low frequency + high alignment = high weight.
+- Establishes a reward-penalty mechanism: low-frequency participation + high representation alignment = high weight.
 
-**Gradient Reuse Strategy**: For temporarily offline clients, historical gradients within the sliding window are reused so that these clients continue to influence global model updates.
+**Gradient Reuse Strategy**: For temporarily offline clients, their historical gradients are reused within the sliding window, allowing them to still influence the global model updates.
 
 ### Loss & Training
 
 - Local training uses standard cross-entropy loss.
-- The server performs representation alignment via contrastive loss.
-- Global model updates incorporate fair weights and (potentially reused) gradients.
+- Representation alignment is performed via contrastive loss on the server side.
+- Global model updates combine fair weights and (potentially reused) gradients.
 - Key hyperparameters: $\gamma \in \{0.5, 2\}$ (fairness exponent), $k \in \{0.5, 2\}$ (sigmoid slope), $\beta = 0.5$ (distillation coefficient), $\tau_c = 0.07$ (temperature).
-- SGD optimizer with learning rate $\eta = 0.1$, decay factor $0.999$/round, local epochs $E = 1$.
+- SGD optimizer, learning rate $\eta = 0.1$, decay factor of 0.999/round, local epochs $E = 1$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Evaluated on FMNIST and CIFAR-10 with Dirichlet($\alpha=0.5$) non-IID partitioning, 100 clients with 20 selected per round:
+On FMNIST and CIFAR-10, with a Dirichlet($\alpha=0.5$) non-IID partition, 100 clients are set up with 20 selected to participate in each round:
 
 | Algorithm | FMNIST Acc | D_Cosine | D_Manhattan | CIFAR-10 Acc | D_Cosine | D_Manhattan |
 |---|---|---|---|---|---|---|
@@ -95,52 +96,52 @@ Evaluated on FMNIST and CIFAR-10 with Dirichlet($\alpha=0.5$) non-IID partitioni
 | qFedAvg | 0.884 | 0.401 | 76.2 | 0.628 | 0.702 | 52.9 |
 | **CoRe-Fed** | **0.891** | **0.294** | **73.5** | **0.722** | **0.430** | **36.0** |
 
-On CIFAR-10, CoRe-Fed improves accuracy by 6.0% over the best baseline, reduces angular distance by 43.9%, and reduces Manhattan distance by 69%.
+CoRe-Fed improves the accuracy on CIFAR-10 by 6.0% compared to the best baseline, reducing cosine distance by 43.9% and Manhattan distance by 69%.
 
 ### Ablation Study
 
-| Variant | Setting | Comparison to Full Model |
+| Scenario | Setting | Comparison with Full Model |
 |---|---|---|
-| Co-Fed | Contribution-aware aggregation only | Marginal fairness gain but accuracy drop |
-| Re-Fed | Contrastive learning + distillation only | Reduced representation bias but aggregation still dominated by majority clients |
-| CoRe-Fed | Both modules combined | Highest accuracy and lowest distance |
+| Co-Fed | Contribution-aware aggregation only | Slight improvement in fairness but accuracy drops |
+| Re-Fed | Contrastive learning + knowledge distillation only | Representation bias is reduced but aggregation is still dominated by active clients |
+| CoRe-Fed | Combination of both | Highest accuracy and lowest distance |
 
-Hyperparameter trade-off: $k=2.0, \gamma=0.5$ yields +0.81% accuracy, −0.16 cosine distance, and −0.32 Manhattan distance compared to $k=0.5, \gamma=2.0$. Excessively large $\gamma$ over-amplifies stale updates from inactive clients.
+Trade-off between hyperparameters $k$ and $\gamma$: $k=2.0, \gamma=0.5$ compared to $k=0.5, \gamma=2.0$ improves accuracy by 0.81%, reduces cosine distance by 0.16%, and reduces Manhattan distance by 0.32%. An excessively high $\gamma$ will over-amplify stale updates from inactive clients.
 
 ### Key Findings
 
-- The two fairness objectives are **complementary**: neither module alone matches the performance of their combination.
-- CoRe-Fed is particularly stable under small batch sizes (50), whereas FedMGDA+ and FedRDN exhibit notable oscillations.
-- Per-client accuracy analysis demonstrates that CoRe-Fed achieves both high mean accuracy and low inter-client variance.
+- The two types of fairness are **complementary**: using either module in isolation is less effective than their combination.
+- CoRe-Fed performs particularly stably under a small batch size (50), while FedMGDA+ and FedRDN exhibit significant oscillations.
+- Per-client accuracy analysis shows that CoRe-Fed achieves both high average accuracy and low variance across clients.
 
 ## Highlights & Insights
 
-1. **Unified Framework Design Philosophy**: CoRe-Fed is the first to jointly address representation fairness and collaborative fairness within a single framework, demonstrating their mutually reinforcing relationship.
-2. **Sigmoid-Modulated Weight Mechanism** elegantly combines the inverse of participation frequency with alignment cosine similarity, yielding an intuitive reward-penalty scheme.
-3. **Gradient Reuse Strategy** allows temporarily offline clients to continue influencing global model updates within a defined window, improving applicability to real-world scenarios.
-4. **Embedding-Level Distillation Rather Than Model-Level Distillation** incurs lower computational overhead and is theoretically straightforward.
+1. **Design Philosophy of a Unified Framework**: First to unify representation fairness and collaborative fairness within a single framework, demonstrating their mutually reinforcing relationship.
+2. The **Sigmoid-modulated weight mechanism** cleverly combines the reciprocal of participation frequency with the alignment cosine similarity, establishing an intuitively clear reward-and-punishment mechanism.
+3. The **gradient reuse strategy** allows temporarily offline clients to still influence the global model within a certain window, enhancing applicability to real-world scenarios.
+4. **Embedding-level distillation instead of model-level distillation** reduces computational overhead and offers an intuitive theoretical formulation.
 
 ## Limitations & Future Work
 
-1. Experiments are conducted only on FMNIST and CIFAR-10, two relatively simple datasets, lacking large-scale validation.
-2. Model architectures are limited to MLPs and simple CNNs; generalization to modern architectures such as ResNet and ViT remains unverified.
-3. The sliding window parameter $\tau$ is set heuristically, without theoretical optimality analysis.
-4. Robustness under Byzantine settings (malicious clients) is not discussed.
-5. The scalar multiplication in the alignment vector has limited expressiveness; richer transformations could be explored.
+1. Experiments are only validated on FMNIST and CIFAR-10, two relatively simple datasets, lacking large-scale evaluation.
+2. The model architecture is limited to MLP and simple CNNs, without validation on modern architectures like ResNet/ViT.
+3. The setting of the gradient reuse window $\tau$ is highly heuristic and lacks theoretical optimality analysis.
+4. Robustness under malicious client (Byzantine robustness) scenarios is not explored.
+5. The expressiveness of scalar multiplication in the alignment vector is limited; richer transformations could be considered.
 
 ## Related Work & Insights
 
-- **FedMDFG** (Pan et al. 2023): Performs aggregation via multi-directional fair gradients; serves as the primary baseline.
-- **FedRDN** (Yan et al. 2025): Mitigates feature drift through data augmentation but does not address aggregation fairness.
-- **Shapley Value Methods** (Tastan et al. 2024): Approximate Shapley values via last-layer gradients for weighted aggregation.
-- Insight: Embedding space alignment can serve as a general coordination bridge across clients, with potential applicability to model-heterogeneous federated learning.
+- **FedMDFG** (Pan et al. 2023): Performs aggregation via multi-directional fair gradients, serving as the primary baseline for comparison in this work.
+- **FedRDN** (Yan et al. 2025): Uses data augmentation to mitigate feature drift, but does not consider collaborative fairness in aggregation.
+- **Shapley value methods** (Tastan et al. 2024): Weighted aggregation using approximations of the Shapley values of the last-layer gradients.
+- Insight: Embedding space alignment can serve as a universal bridge for cross-client coordination, showing potential for generalization to heterogeneous federated learning.
 
 ## Rating
 
-- Novelty: 4/5 — A unified framework jointly addressing both fairness objectives is a genuine contribution.
-- Technical Depth: 3/5 — Individual components are well-established; the primary innovation lies in their combination.
-- Experimental Thoroughness: 3/5 — Ablation and analysis are detailed, but dataset and model scales are limited.
-- Writing Quality: 4/5 — Problem motivation is clear and figures are intuitive.
+- Novelty: 4/5 - The unified framework addressing both types of fairness is a novel contribution.
+- Technical Depth: 3/5 - The components are relatively mature; their combination is the primary innovation.
+- Experimental Thoroughness: 3/5 - Detailed ablation and analysis, but the datasets and model scales are relatively small.
+- Writing Quality: 4/5 - Clear motivation of the problem, intuitive illustrations.
 - Overall: 3.5/5
 
 <!-- RELATED:START -->
@@ -150,10 +151,10 @@ Hyperparameter trade-off: $k=2.0, \gamma=0.5$ yields +0.81% accuracy, −0.16 co
 ## Related Papers
 
 - [\[ICLR 2026\] Bridging Fairness and Explainability: Can Input-Based Explanations Promote Fairness in Hate Speech Detection?](../../ICLR2026/ai_safety/bridging_fairness_and_explainability_can_input-based_explanations_promote_fairne.md)
-- [\[ICLR 2026\] Toward Enhancing Representation Learning in Federated Multi-Task Settings](../../ICLR2026/ai_safety/toward_enhancing_representation_learning_in_federated_multi-task_settings.md)
 - [\[AAAI 2026\] HealSplit: Towards Self-Healing through Adversarial Distillation in Split Federated Learning](healsplit_towards_self-healing_through_adversarial_distillation_in_split_federat.md)
+- [\[ICLR 2026\] Toward Enhancing Representation Learning in Federated Multi-Task Settings](../../ICLR2026/ai_safety/toward_enhancing_representation_learning_in_federated_multi-task_settings.md)
 - [\[AAAI 2026\] Credal Ensemble Distillation for Uncertainty Quantification](credal_ensemble_distillation_for_uncertainty_quantification.md)
-- [\[CVPR 2026\] FedRE: A Representation Entanglement Framework for Model-Heterogeneous Federated Learning](../../CVPR2026/ai_safety/fedre_a_representation_entanglement_framework_for_model-heterogeneous_federated_.md)
+- [\[CVPR 2026\] FedAFD: Multimodal Federated Learning via Adversarial Fusion and Distillation](../../CVPR2026/ai_safety/fedafd_multimodal_federated_learning_via_adversarial_fusion_and_distillation.md)
 
 </div>
 

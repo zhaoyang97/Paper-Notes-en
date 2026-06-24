@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Causal Discovery in the Wild: A Voting-Theoretic Ensemble Approach
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] This work treats multiple causal discovery algorithms as "fallible voting experts" and establishes a theoretically guaranteed weighted Bayesian voting framework for structural ensemble using voting theory. By decomposing graphs into edge-level substructures and estimating each expert's "ability matrix" via optimal tran
+  [ICLR2026][Causal Inference][Causal Discovery] This work treats multiple causal discovery algorithms as "fallible voting experts" and establishes a theoretically guaranteed weighted Bayesian voting framework for structural ensemble using voting theory. By decomposing graphs into edge-level substructures and estimating each expert's "ability matrix" via optimal transport, the approach is more robust and accurate than existing heuristic ensemble methods on both synthetic and re…
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR2026"
+  - "Causal Inference"
+  - "Causal Discovery"
+  - "Structure Ensemble"
+  - "Bayesian Voting"
+  - "Optimal Transport"
+  - "Uncertainty Quantification"
 date: 2026-05-08
-content_hash: 49b73ec8aa690d61
+content_hash: cc830d608662a7c1
 ---
+
 # Causal Discovery in the Wild: A Voting-Theoretic Ensemble Approach
 
 **Conference**: ICLR2026  
@@ -117,15 +123,16 @@ The core optimization objective is the minimum Kantorovich estimation $\widehat\
 - Value: ⭐⭐⭐⭐⭐ Provides a guaranteed, deployable paradigm for "in the wild" causal discovery.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Efficient Ensemble Conditional Independence Test Framework for Causal Discovery](efficient_ensemble_conditional_independence_test_framework_for_causal_discovery.md)
+- [\[ICLR 2026\] Causal Discovery via Quantile Partial Effect](causal_discovery_via_quantile_partial_effect.md)
 - [\[ICLR 2026\] Theoretical Guarantees for Causal Discovery on Large Random Graphs](theoretical_guarantees_for_causal_discovery_on_large_random_graphs.md)
 - [\[CVPR 2026\] A Polynomial Chaos Framework for Causal Discovery in Nonlinear Uncertain Systems](../../CVPR2026/causal_inference/a_polynomial_chaos_framework_for_causal_discovery_in_nonlinear_uncertain_systems.md)
-- [\[ICLR 2026\] Conditional Independent Component Analysis for Estimating Causal Structure with Latent Variables](conditional_independent_component_analysis_for_estimating_causal_structure_with_.md)
-- [\[ICLR 2026\] Influence without Confounding: Causal Discovery from Temporal Data with Long-term Carry-over Effects](influence_without_confounding_causal_discovery_from_temporal_data_with_long-term.md)
+- [\[ICLR 2026\] Independence Test for Linear Non-Gaussian Data and Applications in Causal Discovery](independence_test_for_linear_non-gaussian_data_and_applications_in_causal_discov.md)
 
 </div>
 

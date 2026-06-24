@@ -2,17 +2,21 @@
 title: >-
   [Paper Note] SAME: Stabilized Mixture-of-Experts for Multimodal Continual Instruction Tuning
 description: >-
-  [ICML 2026][Multimodal VLM][SAME] SAME explicitly decomposes "catastrophic forgetting" in multimodal continual instruction tuning (MCIT) for MoE-LoRA into two independent sources: router drift and expert drift. It addresses these using spectral-aware subspace constrained updates for the router, Riemannian preconditioning with historical input covarianc
+  [ICML2026][Multimodal VLM][SAME] SAME explicitly decomposes "catastrophic forgetting" in multimodal continual instruction tuning (MCIT) for MoE-LoRA into two independent sources: router drift and expert drift. It addresses these using spectral-aware subspace constrained updates for the router, Riemannian preconditioning with historical input covariance for experts, and an adaptive task-level freezing mechanism to eliminate redundant updates. Ours consistently outperforms exis…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - SAME
-  - MCIT
-  - router drift
-  - expert drift
+  - "ICML2026"
+  - "Multimodal VLM"
+  - "SAME"
+  - "MCIT"
+  - "router drift"
+  - "expert drift"
+  - "spectral-aware updates"
+  - "curvature-aware Riemannian scaling"
+  - "adaptive expert activation"
 date: 2026-05-08
-content_hash: 1736205142bfd861
+content_hash: ed13ef27ab553cf9
 ---
+
 # SAME: Stabilized Mixture-of-Experts for Multimodal Continual Instruction Tuning
 
 **Conference**: ICML2026  
@@ -142,14 +146,17 @@ On UCIT (6 tasks), SAME leads with an average accuracy of 67.12% (vs. 65.52% for
 
 <div class="related-papers" markdown="1">
 
-- **MoELoRA**: [Chen et al., "MoELoRA: Contrastive Learning for Multi-task Multimodal Instruction Tuning", 2024]
-- **HiDe-LLaVA**: [Guo et al., "HiDe-LLaVA: Hierarchical Decomposed Low-Rank Adaptation for Multimodal Continual Learning", 2025]
-- **O-LoRA**: [Wang et al., "O-LoRA: Orthogonal Low-Rank Adaptation for Continual Learning", 2023]
+## Related Papers
+
+- [\[ICML 2025\] Dynamic Mixture of Curriculum LoRA Experts for Continual Multimodal Instruction Tuning](../../ICML2025/multimodal_vlm/dynamic_mixture_of_curriculum_lora_experts_for_continual_multimodal_instruction_.md)
+- [\[ICML 2026\] Toward Structural Multimodal Representations: Specialization, Selection, and Sparsification via Mixture-of-Experts](toward_structural_multimodal_representations_specialization_selection_and_sparsi.md)
+- [\[CVPR 2026\] Multimodal Continual Instruction Tuning with Dynamic Gradient Guidance](../../CVPR2026/multimodal_vlm/multimodal_continual_instruction_tuning_with_dynamic_gradient_guidance.md)
+- [\[ICML 2026\] Decentralized Instruction Tuning: Conflict-Aware Splitting and Weight Merging](decentralized_instruction_tuning_conflict-aware_splitting_and_weight_merging.md)
+- [\[ICLR 2026\] PCLR: Progressively Compressed LoRA for Multimodal Continual Instruction Tuning](../../ICLR2026/multimodal_vlm/pclr_progressively_compressed_lora_for_multimodal_continual_instruction_tuning.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2025\] Dynamic Mixture of Curriculum LoRA Experts for Continual Multimodal Instruction Tuning](../../ICML2025/multimodal_vlm/dynamic_mixture_of_curriculum_lora_experts_for_continual_multimodal_instruction_.md)

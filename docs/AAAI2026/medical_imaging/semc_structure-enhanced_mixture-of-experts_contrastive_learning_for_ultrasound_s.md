@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SEMC: Structure-Enhanced Mixture-of-Experts Contrastive Learning for Ultrasound Standard Plane Recognition
 description: >-
-  [AAAI 2026][Medical Imaging][Ultrasound standard plane recognition] This paper proposes the SEMC framework, which aligns shallow structural cues with deep semantic representations via a **Semantic-Structure Fusion Module…
+  [AAAI 2026][Medical Imaging][Ultrasound standard plane recognition] This paper proposes the SEMC framework, which aligns shallow structural cues with deep semantic representations via a **Semantic-Structure Fusion Module (SSFM)**, and performs hierarchical contrastive learning over multi-level features through a **Mixture-of-Experts Contrastive Recognition Module (MCRM)**, thereby enhancing fine-grained discriminability for ultrasound standard plane recognition. A new liver u…
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "semantic-structure fusion"
   - "liver ultrasound"
 date: 2026-05-08
-content_hash: 31e9323f23bf72ff
+content_hash: c2d1a87b68ef5b2a
 ---
 
 # SEMC: Structure-Enhanced Mixture-of-Experts Contrastive Learning for Ultrasound Standard Plane Recognition
@@ -130,10 +130,10 @@ Results on the FPUS23 and CAMUS public datasets:
 ## Related Papers
 
 - [\[ICML 2026\] EEG-Based Multimodal Learning via Hyperbolic Mixture-of-Curvature Experts](../../ICML2026/medical_imaging/eeg-based_multimodal_learning_via_hyperbolic_mixture-of-curvature_experts.md)
+- [\[ICLR 2026\] Mixture of Mini Experts: Overcoming the Linear Layer Bottleneck in Multiple Instance Learning](../../ICLR2026/medical_imaging/mixture_of_mini_experts_overcoming_the_linear_layer_bottleneck_in_multiple_insta.md)
+- [\[CVPR 2025\] DFLMoE: Decentralized Federated Learning via Mixture of Experts for Medical Data](../../CVPR2025/medical_imaging/dflmoe_decentralized_federated_learning_via_mixture_of_experts_for_medical_data_.md)
+- [\[CVPR 2025\] Enhanced Contrastive Learning with Multi-view Longitudinal Data for Chest X-ray Report Generation](../../CVPR2025/medical_imaging/enhanced_contrastive_learning_with_multi-view_longitudinal_data_for_chest_x-ray_.md)
 - [\[CVPR 2026\] Ultrasound-CLIP: Semantic-Aware Contrastive Pre-training for Ultrasound Image-Text Understanding](../../CVPR2026/medical_imaging/ultrasound-clip_semantic-aware_contrastive_pre-training_for_ultrasound_image-tex.md)
-- [\[AAAI 2026\] MAPI-GNN: Multi-Activation Plane Interaction Graph Neural Network for Multimodal Medical Diagnosis](mapi-gnn_multi-activation_plane_interaction_graph_neural_network_for_multimodal_.md)
-- [\[AAAI 2026\] GROVER: Graph-guided Representation of Omics and Vision with Expert Regulation for Cancer Survival Prediction](grover_graph-guided_representation_of_omics_and_vision_with_expert_regulation_fo.md)
-- [\[AAAI 2026\] Self-supervised Multiplex Consensus Mamba for General Image Fusion](self-supervised_multiplex_consensus_mamba_for_general_image_fusion.md)
 
 </div>
 

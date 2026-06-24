@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Mitigating Error Accumulation in Continuous Navigation via Memory-Augmented Kalman Filtering
 description: >-
-  [ICML 2026][Autonomous Driving][VLN] This work reformulates step-by-step prediction in continuous UAV VLN as a closed-loop "recursive Bayesian estimation = GRU prior + memory likelihood + learnable Kalman gain." By fine-tuning on only 10% of the data in TravelUAV, the Success Rate (SR) of L1-Full is improved from 17.6% to 25.9%, while the positional drift
+  [ICML 2026][Autonomous Driving][Kalman Filter] This work reformulates step-by-step prediction in continuous UAV VLN as a closed-loop "recursive Bayesian estimation = GRU prior + memory likelihood + learnable Kalman gain." By fine-tuning on only 10% of the data in TravelUAV, the Success Rate (SR) of L1-Full is improved from 17.6% to 25.9%, while the positional drift—which typically accumulates continuously after 100 steps—is flattened to 30–40 meters.
 tags:
-  - ICML 2026
-  - Autonomous Driving
-  - VLN
+  - "ICML 2026"
+  - "Autonomous Driving"
+  - "Kalman Filter"
+  - "Memory Retrieval"
+  - "State Drift"
+  - "VLN"
+  - "Bayesian Estimation"
 date: 2026-05-08
-content_hash: 1e1d7f843afd91b6
+content_hash: a65907f9cb09a91f
 ---
+
 # Mitigating Error Accumulation in Continuous Navigation via Memory-Augmented Kalman Filtering
 
 **Conference**: ICML 2026  
@@ -140,9 +145,9 @@ The most significant comparison is on Test-Seen-Hard: Under 10% data fine-tuning
 
 - [\[ICLR 2026\] MARC: Memory-Augmented RL Token Compression for Efficient Video Understanding](../../ICLR2026/autonomous_driving/marc_memory-augmented_rl_token_compression_for_efficient_video_un.md)
 - [\[ICML 2026\] Plug-and-Play Label Map Diffusion for Universal Goal-Oriented Navigation](plug-and-play_label_map_diffusion_for_universal_goal-oriented_navigation.md)
-- [\[NeurIPS 2025\] Continuous Simplicial Neural Networks](../../NeurIPS2025/autonomous_driving/continuous_simplicial_neural_networks.md)
 - [\[CVPR 2026\] Spatial Retrieval Augmented Autonomous Driving](../../CVPR2026/autonomous_driving/spatial_retrieval_augmented_autonomous_driving.md)
-- [\[ICCV 2025\] Occupancy Learning with Spatiotemporal Memory](../../ICCV2025/autonomous_driving/occupancy_learning_with_spatiotemporal_memory.md)
+- [\[NeurIPS 2025\] Continuous Simplicial Neural Networks](../../NeurIPS2025/autonomous_driving/continuous_simplicial_neural_networks.md)
+- [\[ICLR 2026\] SceneStreamer: Continuous Scenario Generation as Next Token Group Prediction](../../ICLR2026/autonomous_driving/scenestreamer_continuous_scenario_generation_as_next_token_group_prediction.md)
 
 </div>
 

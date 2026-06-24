@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Graph Attention Prototypical Network for Robust Few-Shot Classification
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] To address the "prototype shift" problem where Prototypical Networks experience sharp accuracy drops due to mislabeled samples in the support set, GAPNet introduces a four-step pipeline: "Global+Local Dual Features → Pseudo-label Guided Graph Construction → Edge-Aware Graph Attention → Adaptive Noise-Robust Prototype G
+  [CVPR 2026][Few-shot classification] To address the "prototype shift" problem where Prototypical Networks experience sharp accuracy drops due to mislabeled samples in the support set, GAPNet introduces a four-step pipeline: "Global+Local Dual Features → Pseudo-label Guided Graph Construction → Edge-Aware Graph Attention → Adaptive Noise-Robust Prototype Generation." By explicitly modeling intra/inter-class relationships and dynamically suppressing noise sample weights…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Few-shot classification"
+  - "Label noise"
+  - "Prototypical networks"
+  - "Graph attention"
+  - "Robust learning"
 date: 2026-05-08
-content_hash: 1b489f0cf004660c
+content_hash: 1d2daf6424b5c902
 ---
+
 # Graph Attention Prototypical Network for Robust Few-Shot Classification
 
 **Conference**: CVPR 2026  
@@ -132,15 +137,16 @@ Ablation on CIFAR-FS (Acc.%, Clean / IE-20%):
 - Value: ⭐⭐⭐⭐ Strong robustness gains for a practical FSL challenge.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1"></div>
+
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] From Few-way to Many-way: Rethinking Few-shot Fine-grained Image Classification](from_few-way_to_many-way_rethinking_few-shot_fine-grained_image_classification.md)
-- [\[ICLR 2026\] Exploiting Low-Dimensional Manifold of Features for Few-Shot Whole Slide Image Classification](../../ICLR2026/self_supervised/exploiting_low-dimensional_manifold_of_features_for_few-shot_whole_slide_image_c.md)
-- [\[CVPR 2026\] Semantic-Guided Global-Local Collaborative Prompt Learning for Few-Shot Class Incremental Learning](semantic-guided_global-local_collaborative_prompt_learning_for_few-shot_class_in.md)
-- [\[CVPR 2026\] Quantized Residuals to Continuous Prompts for Few-Shot Class Incremental Learning in Vision-Language Models](quantized_residuals_to_continuous_prompts_for_few-shot_class_incremental_learning.md)
-- [\[CVPR 2026\] Few-Shot Hybrid Incremental Learning: Continually Learning under Data Scarcity and Task Uncertainty](few-shot_hybrid_incremental_learningcontinually_learning_under_data_scarcity_and.md)
+- [\[CVPR 2026\] Hyperbolic Defect Feature Synthesis for Few-Shot Defect Classification](hyperbolic_defect_feature_synthesis_for_few-shot_defect_classification.md)
+- [\[CVPR 2026\] Data-Centric Meta-Learning for Robust Few-Shot Generalization](data-centric_meta-learning_for_robust_few-shot_generalization.md)
+- [\[CVPR 2026\] NAF: Zero-Shot Feature Upsampling via Neighborhood Attention Filtering](naf_zero-shot_feature_upsampling_via_neighborhood_attention_filtering.md)
+- [\[ICCV 2025\] Is Meta-Learning Out? Rethinking Unsupervised Few-Shot Classification with Limited Entropy](../../ICCV2025/others/is_meta-learning_out_rethinking_unsupervised_few-shot_classification_with_limite.md)
+- [\[CVPR 2026\] Language Does Matter for Cross-Domain Few-Shot Visual Feature Enhancement](language_does_matter_for_cross-domain_few-shot_visual_feature_enhancement.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Temporal Smoothness-Aware Rate-Distortion Optimized 4D Gaussian Splatting
 description: >-
-  [NeurIPS 2025][3D Vision][4D Gaussian Splatting] This paper proposes the first end-to-end rate-distortion (RD) optimized compression framework for 4D Gaussian Splatting. By exploiting the temporal smoothness prior of dyn…
+  [NeurIPS 2025][3D Vision][4D Gaussian Splatting] This paper proposes the first end-to-end rate-distortion (RD) optimized compression framework for 4D Gaussian Splatting. By exploiting the temporal smoothness prior of dynamic point trajectories via Haar wavelet transforms, the method achieves up to 91× compression over Ex4DGS (average model size ~1.1% of the original) while maintaining reasonable rendering quality and flexible rate-quality trade-off control.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Temporal Compression"
   - "Dynamic Scenes"
 date: 2026-05-08
-content_hash: f56700131e071423
+content_hash: 13e55e293611c09c
 ---
 
 # Temporal Smoothness-Aware Rate-Distortion Optimized 4D Gaussian Splatting
@@ -136,11 +136,11 @@ Training follows a two-stage procedure: the base model is first trained using th
 
 ## Related Papers
 
+- [\[CVPR 2025\] 4DGC: Rate-Aware 4D Gaussian Compression for Efficient Streamable Free-Viewpoint Video](../../CVPR2025/3d_vision/4dgc_rate-aware_4d_gaussian_compression_for_efficient_streamable_free-viewpoint_.md)
 - [\[ICCV 2025\] MEGA: Memory-Efficient 4D Gaussian Splatting for Dynamic Scenes](../../ICCV2025/3d_vision/mega_memory-efficient_4d_gaussian_splatting_for_dynamic_scenes.md)
-- [\[ICCV 2025\] Compression of 3D Gaussian Splatting with Optimized Feature Planes and Standard Video Codecs](../../ICCV2025/3d_vision/compression_of_3d_gaussian_splatting_with_optimized_feature_planes_and_standard_.md)
 - [\[NeurIPS 2025\] Orientation-anchored Hyper-Gaussian for 4D Reconstruction from Casual Videos](orientation-anchored_hyper-gaussian_for_4d_reconstruction_from_casual_videos.md)
-- [\[ICCV 2025\] 4D Gaussian Splatting SLAM](../../ICCV2025/3d_vision/4d_gaussian_splatting_slam.md)
-- [\[ICCV 2025\] 7DGS: Unified Spatial-Temporal-Angular Gaussian Splatting](../../ICCV2025/3d_vision/7dgs_unified_spatial-temporal-angular_gaussian_splatting.md)
+- [\[CVPR 2026\] ST4R-Splat: Spatio-Temporal Referring Segmentation in 4D Gaussian Splatting](../../CVPR2026/3d_vision/st4r-splat_spatio-temporal_referring_segmentation_in_4d_gaussian_splatting.md)
+- [\[ICLR 2026\] Mango-GS: Enhancing Spatio-Temporal Consistency in Dynamic Scenes Reconstruction using Multi-Frame Node-Guided 4D Gaussian Splatting](../../ICLR2026/3d_vision/mango-gs_enhancing_spatio-temporal_consistency_in_dynamic_scenes_reconstruction_.md)
 
 </div>
 

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] AeroDGS: Physically Consistent Dynamic Gaussian Splatting for Single-Sequence Aerial 4D Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] AeroDGS is proposed as a physics-guided 4D Gaussian Splatting framework for monocular UAV videos. It reconstructs reliable static and dynamic geometry through a Monocular Geometry Lifting module and introduces differentiable physical priors—ground support, upright stability, and trajectory smoothness—to transform ambig
+  [CVPR2026][3D Vision][4D reconstruction] AeroDGS is proposed as a physics-guided 4D Gaussian Splatting framework for monocular UAV videos. It reconstructs reliable static and dynamic geometry through a Monocular Geometry Lifting module and introduces differentiable physical priors—ground support, upright stability, and trajectory smoothness—to transform ambiguous image cues into physically consistent motion estimations, outperforming existing methods on both synthetic and rea…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR2026"
+  - "3D Vision"
+  - "4D reconstruction"
+  - "3D Gaussian Splatting"
+  - "Physical Prior"
+  - "Monocular UAV Video"
+  - "Dynamic Scene"
+  - "Aerial Photography"
 date: 2026-05-08
-content_hash: 9001afce62cbe744
+content_hash: 6a51b0b8930bc7ff
 ---
+
 # AeroDGS: Physically Consistent Dynamic Gaussian Splatting for Single-Sequence Aerial 4D Reconstruction
 
 **Conference**: CVPR2026  
@@ -179,11 +186,11 @@ The incremental addition of the three physical priors yields gains, validating t
 
 ## Related Papers
 
+- [\[CVPR 2026\] PhysIR-Splat: Physically Consistent Thermal Infrared Radiative Transfer in 3D Gaussian Splatting](physir-splat_physically_consistent_thermal_infrared_radiative_transfer_in_3d_gau.md)
+- [\[ICLR 2026\] Uncertainty Matters in Dynamic Gaussian Splatting for Monocular 4D Reconstruction](../../ICLR2026/3d_vision/uncertainty_matters_in_dynamic_gaussian_splatting_for_monocular_4d_reconstructio.md)
 - [\[CVPR 2026\] Mark4D: Temporally-Consistent Watermarking for 4D Gaussian Splatting](mark4d_temporally-consistent_watermarking_for_4d_gaussian_splatting.md)
-- [\[CVPR 2026\] InstantHDR: Single-forward Gaussian Splatting for High Dynamic Range 3D Reconstruction](instanthdr_singleforward_gaussian_splatting_for_hi.md)
+- [\[CVPR 2026\] RetimeGS: Continuous-Time Reconstruction of 4D Gaussian Splatting](retimegs_continuous-time_reconstruction_of_4d_gaussian_splatting.md)
 - [\[CVPR 2026\] FastEventDGS: Deformable Gaussian Splatting for Fast Dynamic Scenes from a Single Event Camera](fasteventdgs_deformable_gaussian_splatting_for_fast_dynamic_scenes_from_a_single.md)
-- [\[CVPR 2026\] 4C4D: 4 Camera 4D Gaussian Splatting](4c4d_4_camera_4d_gaussian_splatting.md)
-- [\[CVPR 2026\] Consistent Instance Field for Dynamic Scene Understanding](consistent_instance_field_for_dynamic_scene_understanding.md)
 
 </div>
 

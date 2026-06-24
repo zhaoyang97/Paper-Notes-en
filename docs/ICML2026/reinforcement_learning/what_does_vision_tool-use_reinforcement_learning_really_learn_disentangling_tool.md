@@ -1,14 +1,19 @@
 ---
 title: >-
-  [Paper Note] 视觉工具使用强化学习究竟学到了什么？
+  [Paper Note] What Does Reinforcement Learning for Visual Tool Use Really Learn?
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] This paper proposes the MED framework to systematically analyze the actual learning effects of visual tool-use RL in crop-and-zoom scenarios—finding that the performance gains brought by RL training primarily stem from **intrinsic capability improvement** rather than enhanced tool mastery; the model mainly learns how t
+  [ICML 2026][Reinforcement Learning][Visual Tool Use] This paper proposes the MED framework to systematically analyze the actual learning effects of visual tool-use RL in crop-and-zoom scenarios—finding that the performance gains brought by RL training primarily stem from **intrinsic capability improvement** rather than enhanced tool mastery; the model mainly learns how to safely coexist with tools rather than truly mastering them.
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Visual Tool Use"
+  - "RL Interpretation"
+  - "Crop-and-Zoom Tool"
+  - "Multimodal Reasoning"
 date: 2026-05-08
-content_hash: c097dba0f5aecc6f
+content_hash: d9c4e36970380d38
 ---
+
 # What Does Reinforcement Learning for Visual Tool Use Really Learn?
 
 **Conference**: ICML 2026  
@@ -140,11 +145,11 @@ The tool contribution ratio for both models is well below 0.5, indicating that o
 
 ## Related Papers
 
-- [\[ICML 2026\] RL-SPH: Learning to Achieve Feasible Solutions for Integer Linear Programs](rl-sph_learning_to_achieve_feasible_solutions_for_integer_linear_programs.md)
-- [\[ICML 2026\] 跨域离线强化学习中统一值对齐与值分配](unifying_value_alignment_and_assignment_in_cross-domain_offline_reinforcement_le.md)
-- [\[ICML 2026\] FAB: A First-Order AB-based Gradient Algorithm for Distributed Bilevel Optimization over Time-Varying Directed Graphs](fab_a_first-order_ab-based_gradient_algorithm_for_distributed_bilevel_optimizati.md)
-- [\[ICML 2026\] Perceptual Flow Network for Visually Grounded Reasoning](perceptual_flow_network_for_visually_grounded_reasoning.md)
-- [\[ICML 2026\] One Bias After Another: Mechanistic Reward Shaping and Persistent Biases in Language Reward Models](one_bias_after_another_mechanistic_reward_shaping_and_persistent_biases_in_langu.md)
+- [\[ICLR 2026\] ReTool: Reinforcement Learning for Strategic Tool Use in LLMs](../../ICLR2026/reinforcement_learning/retool_reinforcement_learning_for_strategic_tool_use_in_llms.md)
+- [\[ICML 2026\] Learning to Search and Searching to Learn for Generalization in Planning](learning_to_search_and_searching_to_learn_for_generalization_in_planning.md)
+- [\[ICLR 2026\] AutoTool: Automatic Scaling of Tool-Use Capabilities in RL via Decoupled Entropy Constraints](../../ICLR2026/reinforcement_learning/autotool_automatic_scaling_of_tool-use_capabilities_in_rl_via_decoupled_entropy_.md)
+- [\[ICLR 2026\] ResT: Reshaping Token-Level Policy Gradients for Tool-Use Large Language Models](../../ICLR2026/reinforcement_learning/rest_reshaping_token-level_policy_gradients_for_tool-use_large_language_models.md)
+- [\[ICML 2026\] You Can Learn Tokenization End-to-End with Reinforcement Learning](you_can_learn_tokenization_end-to-end_with_reinforcement_learning.md)
 
 </div>
 

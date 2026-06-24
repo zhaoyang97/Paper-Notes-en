@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] SABER: Spatially Consistent 3D Universal Adversarial Objects for BEV Detectors
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] This paper proposes SABER, the first non-intrusive, 3D-consistent universal adversarial object generation framework for BEV 3D detectors. By placing optimized 3D meshes in the scene to interfere with multi-view and multi-frame detection, it reveals the over-reliance of BEV models on environmental context priors.
+  [CVPR2026][Autonomous Driving][Adversarial Attack] This paper proposes SABER, the first non-intrusive, 3D-consistent universal adversarial object generation framework for BEV 3D detectors. By placing optimized 3D meshes in the scene to interfere with multi-view and multi-frame detection, it reveals the over-reliance of BEV models on environmental context priors.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR2026"
+  - "Autonomous Driving"
+  - "Adversarial Attack"
+  - "BEV 3D detection"
+  - "non-intrusive attack"
+  - "differentiable rendering"
+  - "universal adversarial object"
+  - "multi-view consistency"
 date: 2026-05-08
-content_hash: 5e968edb2c70e92a
+content_hash: e1c512d2fd3226a9
 ---
+
 # SABER: Spatially Consistent 3D Universal Adversarial Objects for BEV Detectors
 
 **Conference**: CVPR2026  
@@ -157,9 +164,9 @@ where $\alpha = \beta = 10$.
 
 - [\[CVPR 2026\] Learning to Identify Out-of-Distribution Objects for 3D LiDAR Anomaly Segmentation](learning_to_identify_out-of-distribution_objects_for_3d_lidar_anomaly_segmentati.md)
 - [\[CVPR 2026\] ReScene4D: Temporally Consistent Semantic Instance Segmentation of Evolving Indoor 3D Scenes](rescene4d_temporally_consistent_semantic_instance_segmentation_of_evolving_indoo.md)
-- [\[CVPR 2026\] Learning Mutual View Information Graph for Adaptive Adversarial Collaborative Perception](learning_mutual_view_information_graph_for_adaptive_adversarial_collaborative_pe.md)
 - [\[ICCV 2025\] Counting Stacked Objects](../../ICCV2025/autonomous_driving/counting_stacked_objects.md)
 - [\[ICML 2026\] Plug-and-Play Label Map Diffusion for Universal Goal-Oriented Navigation](../../ICML2026/autonomous_driving/plug-and-play_label_map_diffusion_for_universal_goal-oriented_navigation.md)
+- [\[CVPR 2026\] Learning Mutual View Information Graph for Adaptive Adversarial Collaborative Perception](learning_mutual_view_information_graph_for_adaptive_adversarial_collaborative_pe.md)
 
 </div>
 

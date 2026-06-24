@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Monet: Reasoning in Latent Visual Space Beyond Image and Language
 description: >-
-  [CVPR 2026][Multimodal VLM][Reinforcement Learning] Monet enables Multimodal Large Language Models (MLLMs) to perform visual reasoning within a continuous latent visual space by generating sequences of latent embeddings as "intermediate visual thoughts," rather than relying on image cropping or external tools. Through a three-stage distilled SFT and a specialized Reinfo
+  [CVPR 2026][VLM Reasoning][Latent Visual Reasoning] Monet enables Multimodal Large Language Models (MLLMs) to perform visual reasoning within a continuous latent visual space by generating sequences of latent embeddings as "intermediate visual thoughts," rather than relying on image cropping or external tools. Through a three-stage distilled SFT and a specialized Reinforcement Learning (RL) method called VLPO—which incorporates latent embeddings into the policy gradient—the 7…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Latent Visual Reasoning"
+  - "MLLM"
+  - "Distilled SFT"
+  - "Reinforcement Learning"
+  - "Continuous Latent Embeddings"
 date: 2026-05-08
-content_hash: 933d8863f757254a
+content_hash: f36830f5741a7f27
 ---
+
 # Monet: Reasoning in Latent Visual Space Beyond Image and Language
 
 **Conference**: CVPR 2026  
@@ -154,11 +159,11 @@ On the OOD abstract reasoning benchmark VisualPuzzles, Monet achieves SOTA among
 
 ## Related Papers
 
-- [\[CVPR 2026\] Reasoning Palette: Modulating Reasoning via Latent Contextualization for Controllable Exploration for (V)LMs](reasoning_palette_modulating_reasoning_via_latent_contextualization_for_controll.md)
-- [\[CVPR 2026\] ANTS: Adaptive Negative Textual Space Shaping for OOD Detection via Test-Time MLLM Understanding and Reasoning](ants_adaptive_negative_textual_space_shaping_for_ood_detection_via_test-time_mll.md)
-- [\[CVPR 2026\] VisMem: Latent Vision Memory Unlocks Potential of Vision-Language Models](vismem_latent_vision_memory_unlocks_potential_of_vision-language_models.md)
-- [\[CVPR 2026\] LASAR: Towards Spatio-temporal Reasoning with Latent Cognitive Map](lasar_towards_spatio-temporal_reasoning_with_latent_cognitive_map.md)
-- [\[CVPR 2026\] R4: Retrieval-Augmented Reasoning for Vision-Language Models in 4D Spatio-Temporal Space](r4_retrieval-augmented_reasoning_for_vision-language_models_in_4d_spatio-tempora.md)
+- [\[ICML 2026\] Imagination Helps Visual Reasoning, But Not Yet in Latent Space](../../ICML2026/vlm_reasoning/imagination_helps_visual_reasoning_but_not_yet_in_latent_space.md)
+- [\[CVPR 2026\] Latent Implicit Visual Reasoning](latent_implicit_visual_reasoning.md)
+- [\[ICLR 2026\] Latent Visual Reasoning](../../ICLR2026/vlm_reasoning/latent_visual_reasoning.md)
+- [\[CVPR 2026\] Machine Mental Imagery: Empower Multimodal Reasoning with Latent Visual Tokens](machine_mental_imagery_empower_multimodal_reasoning_with_latent_visual_tokens.md)
+- [\[CVPR 2026\] OneThinker: All-in-one Reasoning Model for Image and Video](onethinker_all-in-one_reasoning_model_for_image_and_video.md)
 
 </div>
 

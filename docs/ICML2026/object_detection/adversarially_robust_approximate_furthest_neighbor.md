@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adversarially Robust Approximate Furthest Neighbor
 description: >-
-  [ICML 2026][Object Detection][Paper Note] This theoretical paper provides the first approximate furthest neighbor data structure resistant to adaptive query adversaries. While maintaining a query complexity with $n$-dependence similar to Indyk's classical oblivious algorithm, it demonstrates that traditional random projection furthest neighbor algorithms can b
+  [ICML 2026][Object Detection][Approximate Furthest Neighbor] This theoretical paper provides the first approximate furthest neighbor data structure resistant to adaptive query adversaries. While maintaining a query complexity with $n$-dependence similar to Indyk's classical oblivious algorithm, it demonstrates that traditional random projection furthest neighbor algorithms can be broken by adaptive queries.
 tags:
-  - ICML 2026
-  - Object Detection
+  - "ICML 2026"
+  - "Object Detection"
+  - "Approximate Furthest Neighbor"
+  - "Adaptive Query"
+  - "Adversarially Robust Data Structures"
+  - "Random Projection"
+  - "High-dimensional Geometry"
 date: 2026-05-08
-content_hash: 4ec7a363424d219b
+content_hash: c3c723270a49685f
 ---
+
 # Adversarially Robust Approximate Furthest Neighbor
 
 **Conference**: ICML 2026  
@@ -115,10 +121,10 @@ Ablation here refers to the analysis of algorithmic components: removing a compo
 ## Related Papers
 
 - [\[CVPR 2026\] Distribution-Aligned Multimodal Fusion for Robust Object Detection](../../CVPR2026/object_detection/distribution-aligned_multimodal_fusion_for_robust_object_detection.md)
+- [\[ICLR 2026\] DETR-ViP: Detection Transformer with Robust Discriminative Visual Prompts](../../ICLR2026/object_detection/detr-vip_detection_transformer_with_robust_discriminative_visual_prompts.md)
 - [\[CVPR 2026\] RHCNet: Residual-Guided Hierarchical Calibration Network for Robust Underwater Object Detection](../../CVPR2026/object_detection/rhcnet_residual-guided_hierarchical_calibration_network_for_robust_underwater_ob.md)
 - [\[NeurIPS 2025\] Semi-supervised Graph Anomaly Detection via Robust Homophily Learning](../../NeurIPS2025/object_detection/semi-supervised_graph_anomaly_detection_via_robust_homophily_learning.md)
 - [\[NeurIPS 2025\] Scalable, Explainable and Provably Robust Anomaly Detection with One-Step Flow Matching](../../NeurIPS2025/object_detection/scalable_explainable_and_provably_robust_anomaly_detection_with_one-step_flow_ma.md)
-- [\[ICML 2025\] Causality-Aware Contrastive Learning for Robust Multivariate Time-Series Anomaly Detection](../../ICML2025/object_detection/causality-aware_contrastive_learning_for_robust_multivariate_time-series_anomaly.md)
 
 </div>
 

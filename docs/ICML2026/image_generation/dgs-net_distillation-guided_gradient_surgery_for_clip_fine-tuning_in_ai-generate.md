@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DGS-Net: Distillation-Guided Gradient Surgery for CLIP Fine-Tuning in AI-Generated Image Detection
 description: >-
-  [ICML 2026][Image Generation][CLIP LoRA] To address the issue where "fine-tuning CLIP for AI-generated image detection causes catastrophic forgetting that destroys transferable priors," this paper proposes DGS-Net. It decomposes the classification loss gradient by coordinates into harmful positive components $g^+$ and beneficial negative components $g^-$. The
+  [ICML 2026 Spotlight][Image Generation][AIGI Detection] To address the issue where "fine-tuning CLIP for AI-generated image detection causes catastrophic forgetting that destroys transferable priors," this paper proposes DGS-Net. It decomposes the classification loss gradient by coordinates into harmful positive components $g^+$ and beneficial negative components $g^-$. The image gradients of the training network are first orthogonally projected onto the complement space of t…
 tags:
-  - ICML 2026
-  - Image Generation
-  - CLIP LoRA
+  - "ICML 2026 Spotlight"
+  - "Image Generation"
+  - "AIGI Detection"
+  - "CLIP LoRA"
+  - "Catastrophic Forgetting"
+  - "Orthogonal Gradient Projection"
+  - "Distillation Alignment"
 date: 2026-05-08
-content_hash: e9462a87550efb21
+content_hash: f90b9bddb75de6d8
 ---
+
 # DGS-Net: Distillation-Guided Gradient Surgery for CLIP Fine-Tuning in AI-Generated Image Detection
 
 **Conference**: ICML 2026 Spotlight  
@@ -125,8 +130,8 @@ Average detection accuracy across 50 generative models is **6.6%** higher than t
 - Value: ⭐⭐⭐⭐ Significant mAcc gain (+6.6%) and a framework transferable to other fine-tuning tasks requiring prior preservation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

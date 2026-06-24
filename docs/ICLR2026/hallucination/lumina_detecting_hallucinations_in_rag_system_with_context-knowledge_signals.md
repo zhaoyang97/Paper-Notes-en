@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LUMINA: Detecting Hallucinations in RAG System with Context-Knowledge Signals
 description: >-
-  [ICLR 2026][Hallucination Detection][Paper Note] Ours proposes the Lumina framework, which detects hallucinations in RAG systems via "context-knowledge signals": MMD is used to measure the extent of **external context utilization**, while cross-layer token prediction evolution measures **internal knowledge utilization**. The method generalizes without hyperparameter
+  [ICLR 2026][Hallucination Detection][RAG hallucination detection] Ours proposes the Lumina framework, which detects hallucinations in RAG systems via "context-knowledge signals": MMD is used to measure the extent of **external context utilization**, while cross-layer token prediction evolution measures **internal knowledge utilization**. The method generalizes without hyperparameter tuning.
 tags:
-  - ICLR 2026
-  - Hallucination Detection
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "RAG hallucination detection"
+  - "external context utilization"
+  - "internal knowledge utilization"
+  - "Maximum Mean Discrepancy (MMD)"
+  - "information processing rate"
 date: 2026-05-08
-content_hash: 6932d0f76f4d9ec9
+content_hash: 9b23cf4393071d1c
 ---
+
 # LUMINA: Detecting Hallucinations in RAG System with Context-Knowledge Signals
 
 **Conference**: ICLR 2026  

@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Beyond Pairwise: Empowering LLM Alignment With Ranked Choice Modeling
 description: >-
-  [ICLR 2026][Alignment & RLHF][preference optimization] The RCPO framework is proposed to extend LLM alignment from pairwise preferences to ranked choice modeling. It unifies utility models (MNL) and ranking models (Mallows-RMJ) via MLE, outperforming DPO and its variants in both single-best and top-k feedback formats.
+  [ICLR 2026][LLM Alignment][preference optimization] The RCPO framework is proposed to extend LLM alignment from pairwise preferences to ranked choice modeling. It unifies utility models (MNL) and ranking models (Mallows-RMJ) via MLE, outperforming DPO and its variants in both single-best and top-k feedback formats.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - preference optimization
-  - ranked choice
-  - DPO
-  - Mallows model
-  - multinomial logit
-  - alignment
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "preference optimization"
+  - "ranked choice"
+  - "DPO"
+  - "Mallows model"
+  - "multinomial logit"
+  - "alignment"
 date: 2026-05-08
-content_hash: dfc4cd4716c63840
+content_hash: a557776351e51ad5
 ---
+
 # Beyond Pairwise: Empowering LLM Alignment With Ranked Choice Modeling
 
 **Conference**: ICLR 2026  

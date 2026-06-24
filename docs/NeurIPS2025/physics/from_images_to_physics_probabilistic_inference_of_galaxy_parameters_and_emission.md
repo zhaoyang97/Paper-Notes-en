@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From Images to Physics: Probabilistic Inference of Galaxy Parameters and Emission Lines via VAE & Normalizing Flows
 description: >-
-  [NEURIPS2025][Physics & Scientific Computing][VAE] This work proposes a VAE–Normalizing Flow hybrid framework that jointly infers galaxy physical parameters (stellar mass, SFR, redshift, gas-phase metallicity…
+  [NEURIPS2025][Physics & Scientific Computing][VAE] This work proposes a VAE–Normalizing Flow hybrid framework that jointly infers galaxy physical parameters (stellar mass, SFR, redshift, gas-phase metallicity, central black hole mass) and emission line fluxes (Hα, Hβ, [N II], [O III]) in a probabilistic manner from SDSS gri images and photometric data, achieving over 100× speedup relative to SED fitting while providing well-calibrated posterior distributions.
 tags:
   - "NEURIPS2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "emission line prediction"
   - "probabilistic inference"
 date: 2026-05-08
-content_hash: 098ff98a5cf6228f
+content_hash: 70771a9f24ccf5ab
 ---
 
 # From Images to Physics: Probabilistic Inference of Galaxy Parameters and Emission Lines via VAE & Normalizing Flows
@@ -141,11 +141,11 @@ Approximately 250,000 SDSS Main Galaxy Sample galaxies ($z \leq 0.3$), of which 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Efficient Regression-based Training of Normalizing Flows for Boltzmann Generators](../../ICLR2026/physics/efficient_regression-based_training_of_normalizing_flows_for_boltzmann_generator.md)
 - [\[NeurIPS 2025\] Unsupervised Discovery of High-Redshift Galaxy Populations with Variational Autoencoders](unsupervised_discovery_of_high-redshift_galaxy_populations_with_variational_auto.md)
 - [\[NeurIPS 2025\] Neural Network for Simulating Radio Emission from Extensive Air Showers](neural_network_for_simulating_radio_emission_from_extensive_air_showers.md)
 - [\[NeurIPS 2025\] From Simulations to Surveys: Domain Adaptation for Galaxy Observations](from_simulations_to_surveys_domain_adaptation_for_galaxy_observations.md)
 - [\[NeurIPS 2025\] Neural Deprojection of Galaxy Stellar Mass Profiles](neural_deprojection_of_galaxy_stellar_mass_profiles.md)
-- [\[NeurIPS 2025\] Exoplanet Formation Inference Using Conditional Invertible Neural Networks](exoplanet_formation_inference_using_conditional_invertible_neural_networks.md)
 
 </div>
 

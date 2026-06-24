@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Position: AI Researchers Must Help Lead Arms Control to Mitigate Military AI Risks
 description: >-
-  [ICML 2026][AI Safety][Paper Note] This is a position paper arguing that **AI researchers must look beyond distant superintelligence risks and proactively lead technical research into "arms control" for military AI**. Using historical precedents from nuclear arms control as a template, the authors demonstrate that integrating frontier models into milita
+  [ICML 2026][AI Safety][Military AI] This is a position paper arguing that **AI researchers must look beyond distant superintelligence risks and proactively lead technical research into "arms control" for military AI**. Using historical precedents from nuclear arms control as a template, the authors demonstrate that integrating frontier models into military systems introduces risks with extremely poor verifiability—such as escalation, alignment faking…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Military AI"
+  - "Arms Control"
+  - "Nuclear Deterrence Analogy"
+  - "Escalation Risk"
+  - "Responsibility of AI Researchers"
 date: 2026-05-08
-content_hash: 68a88d39d407e921
+content_hash: afb92845bab67ffe
 ---
+
 # Position: AI Researchers Must Help Lead Arms Control to Mitigate Military AI Risks
 
 **Conference**: ICML 2026  
@@ -121,8 +127,8 @@ As a position paper, it cites existing research rather than conducting new exper
 - [\[ICML 2026\] Position: 'AI Alignment' Encompasses Competing Technical Priorities](ai_alignment_encompasses_competing_technical_priorities.md)
 - [\[ICML 2026\] Position: Embodied AI Requires a Privacy-Utility Trade-off](position_embodied_ai_requires_a_privacy-utility_trade-off.md)
 - [\[ICML 2026\] Position: Generative Engine Optimization Creates Underexamined Risks, Governance Must Target Concentration, Disclosure, and Academic Blind Spots](position_generative_engine_optimization_creates_underexamined_risks_governance_m.md)
-- [\[CVPR 2026\] SAIDO: 基于场景感知与重要性引导动态优化的可泛化 AI 生成图像检测](../../CVPR2026/ai_safety/saido_generalizable_detection_of_ai-generated_images_via_scene-aware_and_importa.md)
-- [\[NeurIPS 2025\] Position: Bridge the Gaps between Machine Unlearning and AI Regulation](../../NeurIPS2025/ai_safety/position_bridge_the_gaps_between_machine_unlearning_and_ai_regulation.md)
+- [\[ICLR 2026\] Control Tax: The Price of Keeping AI in Check](../../ICLR2026/ai_safety/control_tax_the_price_of_keeping_ai_in_check.md)
+- [\[ICML 2026\] BioAgent Bench: An AI Agent Evaluation Suite for Bioinformatics](bioagent_bench_an_ai_agent_evaluation_suite_for_bioinformatics.md)
 
 </div>
 

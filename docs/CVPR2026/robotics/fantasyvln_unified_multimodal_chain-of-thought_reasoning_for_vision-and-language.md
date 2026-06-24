@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FantasyVLN: Unified Multimodal Chain-of-Thought Reasoning for Vision-and-Language Navigation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] FantasyVLN enables a VLN model to learn textual, visual, and multimodal Chain-of-Thought (CoT) during training. It compresses "imagined future observations" into a Visual AutoRegressive (VAR) latent space to avoid token explosion. Through cross-modal alignment constraints, these reasoning capabilities are distilled int
+  [CVPR 2026][Robotics][VLN] FantasyVLN enables a VLN model to learn textual, visual, and multimodal Chain-of-Thought (CoT) during training. It compresses "imagined future observations" into a Visual AutoRegressive (VAR) latent space to avoid token explosion. Through cross-modal alignment constraints, these reasoning capabilities are distilled into a "direct decision-making" path that bypasses explicit CoT generation during inference. This achieves instruction-to-action mapping…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLN"
+  - "Multimodal CoT"
+  - "Implicit Reasoning"
+  - "VAR Latent Space"
+  - "Cross-modal Alignment"
 date: 2026-05-08
-content_hash: 626584747b995187
+content_hash: 1a92be424cefbdf8
 ---
+
 # FantasyVLN: Unified Multimodal Chain-of-Thought Reasoning for Vision-and-Language Navigation
 
 **Conference**: CVPR 2026  
@@ -153,14 +159,17 @@ Implicit methods are ~5× faster than explicit CoT-VLA.
 
 <div class="related-papers" markdown="1">
 
-- **Aux-Think**: Implicit textual CoT for VLN.
-- **WorldVLA**: Explicit pixel-level world modeling for VLA.
-- **NavCoT**: Explicit textual reasoning for navigation tasks.
+## Related Papers
+
+- [\[CVPR 2026\] TRM-VLA: Temporal-Aware Chain-of-Thought Reasoning and Memorization for Vision-Language-Action Models](trm-vla_temporal-aware_chain-of-thought_reasoning_and_memorization_for_vision-la.md)
+- [\[CVPR 2026\] Parse, Search, and Confirmation: Training-Free Aerial Vision-and-Dialog Navigation with Chain-of-Thought Reasoning and Structured Spatial Memory](parse_search_and_confirmation_training-free_aerial_vision-and-dialog_navigation_.md)
+- [\[CVPR 2026\] ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](acot-vla_action_chain-of-thought_for_vision-language-action_models.md)
+- [\[CVPR 2026\] From Manuals to Actions: A Unified VLA Model for Chain-of-Thought Manual Generation and Robotic Manipulation](from_manuals_to_actions_a_unified_vla_model_for_chain-of-thought_manual_generati.md)
+- [\[CVPR 2026\] ProFocus: Proactive Perception and Focused Reasoning in Vision-and-Language Navigation](profocus_proactive_perception_and_focused_reasoning_in_vision-and-language_navig.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] TRM-VLA: Temporal-Aware Chain-of-Thought Reasoning and Memorization for Vision-Language-Action Models](trm-vla_temporal-aware_chain-of-thought_reasoning_and_memorization_for_vision-la.md)

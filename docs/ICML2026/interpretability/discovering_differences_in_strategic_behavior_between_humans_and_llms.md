@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Discovering Differences in Strategic Behavior Between Humans and LLMs
 description: >-
-  [ICML 2026][Interpretability][AlphaEvolve] This paper utilizes AlphaEvolve (an LLM-based program synthesis framework) to "evolve" interpretable Python behavior models directly from behavioral data. By comparing humans with frontier LLMs in Iterated Rock-Paper-Scissors (IRPS), the study finds that Gemini 2.5 Pro/Flash and GPT 5.1 significantly outperform humans
+  [ICML 2026][Interpretability][Behavioral Game Theory] This paper utilizes AlphaEvolve (an LLM-based program synthesis framework) to "evolve" interpretable Python behavior models directly from behavioral data. By comparing humans with frontier LLMs in Iterated Rock-Paper-Scissors (IRPS), the study finds that Gemini 2.5 Pro/Flash and GPT 5.1 significantly outperform humans in both win rates and "opponent modeling" dimensions, whereas GPT OSS 120B exhibits deteriorating performa…
 tags:
-  - ICML 2026
-  - Interpretability
-  - AlphaEvolve
+  - "ICML 2026"
+  - "Interpretability"
+  - "Behavioral Game Theory"
+  - "AlphaEvolve"
+  - "Program Synthesis"
+  - "Iterated Rock-Paper-Scissors"
+  - "Opponent Modeling"
 date: 2026-05-08
-content_hash: b0752ac4b5354aa8
+content_hash: a47a41128c70b773
 ---
+
 # Discovering Differences in Strategic Behavior Between Humans and LLMs
 
 **Conference**: ICML 2026  
@@ -143,10 +148,10 @@ Mechanism configurations of SBB programs:
 ## Related Papers
 
 - [\[AAAI 2026\] ElementaryNet: A Non-Strategic Neural Network for Predicting Human Behavior in Normal-Form Games](../../AAAI2026/interpretability/elementarynet_a_non-strategic_neural_network_for_predicting_human_behavior_in_no.md)
-- [\[AAAI 2026\] Finding the Translation Switch: Discovering and Exploiting the Task-Initiation Features in LLMs](../../AAAI2026/interpretability/finding_the_translation_switch_discovering_and_exploiting_the_task-initiation_fe.md)
+- [\[ICLR 2026\] From Tokens to Thoughts: How LLMs and Humans Trade Compression for Meaning](../../ICLR2026/interpretability/from_tokens_to_thoughts_how_llms_and_humans_trade_compression_for_meaning.md)
 - [\[ICML 2026\] Discovering Implicit Large Language Model Alignment Objectives](discovering_implicit_large_language_model_alignment_objectives.md)
 - [\[ICML 2026\] On the Relationship Between Activation Outliers and Feature Death in Sparse Autoencoders](on_the_relationship_between_activation_outliers_and_feature_death_in_sparse_auto.md)
-- [\[ICML 2026\] OmniSapiens: A Foundation Model for Social Behavior Processing via Heterogeneity-Aware Relative Policy Optimization](omnisapiens_a_foundation_model_for_social_behavior_processing_via_heterogeneity-.md)
+- [\[AAAI 2026\] Finding the Translation Switch: Discovering and Exploiting the Task-Initiation Features in LLMs](../../AAAI2026/interpretability/finding_the_translation_switch_discovering_and_exploiting_the_task-initiation_fe.md)
 
 </div>
 

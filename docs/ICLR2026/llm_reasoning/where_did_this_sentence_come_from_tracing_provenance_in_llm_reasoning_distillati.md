@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Where Did This Sentence Come From? Tracing Provenance in LLM Reasoning Distillation
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] This work attributes each sentence output by a distilled student model at test time to its true source model across four categories: Teacher, Student, Shared, and Boosted. It demonstrates that students indeed reuse teacher sentences in new scenarios and that these sentences correlate with correct answers. Based on this
+  [ICLR 2026][Reasoning][Reasoning Distillation] This work attributes each sentence output by a distilled student model at test time to its true source model across four categories: Teacher, Student, Shared, and Boosted. It demonstrates that students indeed reuse teacher sentences in new scenarios and that these sentences correlate with correct answers. Based on this, a "Teacher-guided Data Selection" strategy is proposed to select training samples with the most teacher sentenc…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Reasoning Distillation"
+  - "Provenance Tracing"
+  - "Teacher-guided Data Selection"
+  - "Sentence-level Attribution"
+  - "Generalization Analysis"
 date: 2026-05-08
-content_hash: 004097255e6c564c
+content_hash: eaf578022b28c5e9
 ---
+
 # Where Did This Sentence Come From? Tracing Provenance in LLM Reasoning Distillation
 
 **Conference**: ICLR 2026  
@@ -153,16 +159,16 @@ Ours ranks best across all groups (+1.7% to +2.5%) and remains stable across Dee
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Tracing the Traces: Latent Temporal Signals for Efficient and Accurate Reasoning](tracing_the_traces_latent_temporal_signals_for_efficient_and_accurate_reasoning.md)
 - [\[ICLR 2026\] Probing to Refine: Reinforcement Distillation of LLMs via Explanatory Inversion](probing_to_refine_reinforcement_distillation_of_llm_reasoners_via_explanatory_in.md)
 - [\[ICLR 2026\] KaVa: Latent Reasoning via Compressed KV-Cache Distillation](kava_latent_reasoning_via_compressed_kv-cache_distillation.md)
+- [\[ACL 2026\] Reasoning Fails Where Step Flow Breaks](../../ACL2026/llm_reasoning/reasoning_fails_where_step_flow_breaks.md)
 - [\[ICLR 2026\] Explain in Your Own Words: Improving Reasoning via Token-Selective Dual Knowledge Distillation](explain_in_your_own_words_improving_reasoning_via_token-selective_dual_knowledge.md)
-- [\[ICLR 2026\] SkillFactory: Self-Distillation for Learning Cognitive Behaviors](skillfactory_self-distillation_for_learning_cognitive_behaviors.md)
 
 </div>
 

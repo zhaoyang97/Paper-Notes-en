@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Alignment Waltz: Jointly Training Agents to Collaborate for Safety
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] WALTZRL reformulates safety alignment as a "positive-sum collaborative game" between a chat agent and a feedback agent. It jointly trains both agents using a Dynamic Improvement Reward (DIR) that evolves during training. This approach ensures that unsafe responses and over-refusals are "fixed" rather than "blocked," si
+  [ICLR 2026][LLM Safety][Multi-Agent Reinforcement Learning] WALTZRL reformulates safety alignment as a "positive-sum collaborative game" between a chat agent and a feedback agent. It jointly trains both agents using a Dynamic Improvement Reward (DIR) that evolves during training. This approach ensures that unsafe responses and over-refusals are "fixed" rather than "blocked," significantly reducing the Attack Success Rate (39.0%→4.6%) and Over-refusal Rate (45.3%→9.9%) across…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Multi-Agent Reinforcement Learning"
+  - "Safety Alignment"
+  - "Over-refusal"
+  - "Collaborative Feedback"
+  - "Dynamic Improvement Reward"
 date: 2026-05-08
-content_hash: 25426f3b73cfa90d
+content_hash: 5c0a580f433ec97e
 ---
+
 # The Alignment Waltz: Jointly Training Agents to Collaborate for Safety
 
 **Conference**: ICLR 2026  
@@ -149,11 +155,11 @@ Ablations on feedback reward design compared variants: (A) all three terms, (B) 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Self-Jailbreaking: Language Models Can Reason Themselves Out of Safety Alignment After Benign Reasoning Training](self-jailbreaking_language_models_can_reason_themselves_out_of_safety_alignment_.md)
 - [\[ICLR 2026\] SOSBench: Benchmarking Safety Alignment on Six Scientific Domains](sosbench_benchmarking_safety_alignment_on_six_scientific_domains.md)
+- [\[ICLR 2026\] AdvChain: Adversarial Chain-of-Thought Tuning for Robust Safety Alignment of Large Reasoning Models](advchain_adversarial_chain-of-thought_tuning_for_robust_safety_alignment_of_larg.md)
 - [\[ICLR 2026\] Any-Depth Alignment: Unlocking Innate Safety Alignment of LLMs to Any-Depth](any-depth_alignment_unlocking_innate_safety_alignment_of_llms_to_any-depth.md)
-- [\[ACL 2026\] Reasoning Structure Matters for Safety Alignment of Reasoning Models](../../ACL2026/llm_safety/reasoning_structure_matters_for_safety_alignment_of_reasoning_models.md)
-- [\[ACL 2026\] Why Agents Compromise Safety Under Pressure](../../ACL2026/llm_safety/why_agents_compromise_safety_under_pressure.md)
-- [\[ACL 2026\] On Safety Risks in Experience-Driven Self-Evolving Agents](../../ACL2026/llm_safety/on_safety_risks_in_experience-driven_self-evolving_agents.md)
+- [\[ICLR 2026\] ProSafePrune: Projected Safety Pruning for Mitigating Over-Refusal in LLMs](prosafeprune_projected_safety_pruning_for_mitigating_over-refusal_in_llms.md)
 
 </div>
 

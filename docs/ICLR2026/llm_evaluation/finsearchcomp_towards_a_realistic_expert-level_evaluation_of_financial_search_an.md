@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FinSearchComp: Towards a Realistic, Expert-Level Evaluation of Financial Search and Reasoning
 description: >-
-  [ICLR 2026][LLM Evaluation][LLM-as-a-Judge] FinSearchComp is the first fully open-source, end-to-end open-domain financial search and reasoning agent benchmark. It comprises 635 analyst tasks across Global and Greater China markets annotated by 70 financial experts. Evaluations of 21 models reveal that the strongest, Grok 4 (web), still lags behind human experts
+  [ICLR 2026][LLM Evaluation][Financial Search] FinSearchComp is the first fully open-source, end-to-end open-domain financial search and reasoning agent benchmark. It comprises 635 analyst tasks across Global and Greater China markets annotated by 70 financial experts. Evaluations of 21 models reveal that the strongest, Grok 4 (web), still lags behind human experts by 6.1 percentage points.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - LLM-as-a-Judge
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Financial Search"
+  - "Agent Evaluation"
+  - "Time-sensitive Data"
+  - "End-to-end Agent"
+  - "LLM-as-a-Judge"
 date: 2026-05-08
-content_hash: de812a1b694b6ee4
+content_hash: 0eb72a9ba7a5b6ca
 ---
+
 # FinSearchComp: Towards a Realistic, Expert-Level Evaluation of Financial Search and Reasoning
 
 **Conference**: ICLR 2026  
@@ -115,7 +120,7 @@ Without search, all models score 0 on T1 (inability to access real-time data). F
 - [\[ICLR 2026\] DRBench: A Realistic Benchmark for Enterprise Deep Research](drbench_a_realistic_benchmark_for_enterprise_deep_research.md)
 - [\[ACL 2026\] K-MetBench: A Multi-Dimensional Benchmark for Fine-Grained Evaluation of Expert Reasoning, Locality, and Multimodality in Meteorology](../../ACL2026/llm_evaluation/k-metbench_a_multi-dimensional_benchmark_for_fine-grained_evaluation_of_expert_r.md)
 - [\[ACL 2026\] Aggregate vs. Personalized Judges in Business Idea Evaluation: Evidence from Expert Disagreement](../../ACL2026/llm_evaluation/aggregate_vs_personalized_judges_in_business_idea_evaluation_evidence_from_exper.md)
-- [\[ICLR 2026\] PRISM-Physics: Causal DAG-Based Process Evaluation for Physics Reasoning](prism-physics_causal_dag-based_process_evaluation_for_physics_reasoning.md)
+- [\[ICLR 2026\] ChemEval: A Multi-level and Fine-grained Chemical Capability Evaluation for Large Language Models](chemeval_a_multi-level_and_fine-grained_chemical_capability_evaluation_for_large.md)
 
 </div>
 

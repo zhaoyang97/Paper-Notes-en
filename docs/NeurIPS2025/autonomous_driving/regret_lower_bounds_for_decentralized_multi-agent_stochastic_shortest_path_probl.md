@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Regret Lower Bounds for Decentralized Multi-Agent Stochastic Shortest Path Problems
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Multi-Agent Reinforcement Learning] This paper establishes the first $\Omega(\sqrt{K})$ regret lower bound for the Decentralized Multi-Agent Stochastic Shortest Path (Dec-MASSP) problem…
+  [NeurIPS 2025][Autonomous Driving][Multi-Agent Reinforcement Learning] This paper establishes the first $\Omega(\sqrt{K})$ regret lower bound for the Decentralized Multi-Agent Stochastic Shortest Path (Dec-MASSP) problem under linear function approximation. By constructing a family of hard-to-learn instances and employing a symmetry argument to identify the structure of optimal policies, the paper demonstrates that this lower bound matches existing upper bounds in terms of th…
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Decentralized Learning"
   - "Linear Function Approximation"
 date: 2026-05-08
-content_hash: 756728e7c18a531a
+content_hash: 28d23595db5474f7
 ---
 
 # Regret Lower Bounds for Decentralized Multi-Agent Stochastic Shortest Path Problems
@@ -135,11 +135,11 @@ This paper establishes the first regret lower bound for Dec-MASSP, offering a so
 
 ## Related Papers
 
-- [\[CVPR 2026\] F3DGS: Federated 3D Gaussian Splatting for Decentralized Multi-Agent World Modeling](../../CVPR2026/autonomous_driving/f3dgs_federated_3d_gaussian_splatting_for_decentralized_multi-agent_world_modeli.md)
 - [\[NeurIPS 2025\] BayesG: Bayesian Ego-Graph Inference for Networked Multi-Agent Reinforcement Learning](bayesian_ego-graph_inference_for_networked_multi-agent_reinforcement_learning.md)
+- [\[ICML 2025\] Hybrid Quantum-Classical Multi-Agent Pathfinding](../../ICML2025/autonomous_driving/hybrid_quantum-classical_multi-agent_pathfinding.md)
+- [\[CVPR 2026\] Unsupervised Multi-agent and Single-agent Perception from Cooperative Views](../../CVPR2026/autonomous_driving/unsupervised_multi-agent_and_single-agent_perception_from_cooperative_views.md)
+- [\[ICML 2025\] R3DM: Enabling Role Discovery and Diversity Through Dynamics Models in Multi-agent Reinforcement Learning](../../ICML2025/autonomous_driving/r3dm_enabling_role_discovery_and_diversity_through_dynamics_models_in_multi-agen.md)
 - [\[ICCV 2025\] SRefiner: Soft-Braid Attention for Multi-Agent Trajectory Refinement](../../ICCV2025/autonomous_driving/srefiner_soft-braid_attention_for_multi-agent_trajectory_refinement.md)
-- [\[NeurIPS 2025\] UrbanIng-V2X: A Large-Scale Multi-Vehicle Multi-Infrastructure Dataset Across Multiple Intersections for Cooperative Perception](urbaning-v2x_a_large-scale_multi-vehicle_multi-infrastructure_dataset_across_mul.md)
-- [\[NeurIPS 2025\] V2X-Radar: A Multi-Modal Dataset with 4D Radar for Cooperative Perception](v2x-radar_a_multi-modal_dataset_with_4d_radar_for_cooperative_perception.md)
 
 </div>
 

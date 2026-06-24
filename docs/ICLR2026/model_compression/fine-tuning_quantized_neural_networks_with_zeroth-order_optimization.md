@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Fine-tuning Quantized Neural Networks with Zeroth-order Optimization
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] The paper proposes QZO, a method that estimates gradients by applying zeroth-order perturbations to quantization scaling factors (rather than discrete weights). Combined with Directional Derivative Clipping (DDC) to stabilize training, it achieves extreme memory-efficient fine-tuning for 4-bit/2-bit LLMs, reducing tota
+  [ICLR 2026][Model Compression][Zeroth-order optimization] The paper proposes QZO, a method that estimates gradients by applying zeroth-order perturbations to quantization scaling factors (rather than discrete weights). Combined with Directional Derivative Clipping (DDC) to stabilize training, it achieves extreme memory-efficient fine-tuning for 4-bit/2-bit LLMs, reducing total memory by over 18x.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Zeroth-order optimization"
+  - "fine-tuning quantized models"
+  - "memory-efficient training"
+  - "quantization scaling factors"
+  - "gradient variance"
 date: 2026-05-08
-content_hash: 97a4af45ecb11620
+content_hash: 121e1e989d686a5e
 ---
+
 # Fine-tuning Quantized Neural Networks with Zeroth-order Optimization
 
 **Conference**: ICLR 2026  
@@ -132,10 +138,10 @@ The update uses ZO-SGD: $\Delta_{t+1} = \max(\Delta_t - \eta \cdot d' \cdot z, 0
 ## Related Papers
 
 - [\[CVPR 2026\] FOZO: Forward-Only Zeroth-Order Prompt Optimization for Test-Time Adaptation](../../CVPR2026/model_compression/fozo_forward-only_zeroth-order_prompt_optimization_for_test-time_adaptation.md)
-- [\[ICLR 2026\] Adaptive Width Neural Networks](adaptive_width_neural_networks.md)
 - [\[ICML 2026\] Turning Stale Gradients into Stable Gradients: Coherent Coordinate Descent with Implicit Landscape Smoothing for Lightweight Zeroth-Order Optimization](../../ICML2026/model_compression/turning_stale_gradients_into_stable_gradients_coherent_coordinate_descent_with_i.md)
+- [\[ICLR 2026\] Adaptive Width Neural Networks](adaptive_width_neural_networks.md)
 - [\[ICLR 2026\] A Recovery Guarantee for Sparse Neural Networks](a_recovery_guarantee_for_sparse_neural_networks.md)
-- [\[ICLR 2026\] BEP: A Binary Error Propagation Algorithm for Binary Neural Networks Training](bep_a_binary_error_propagation_algorithm_for_binary_neural_networks_training.md)
+- [\[ICLR 2026\] Robust Training of Neural Networks at Arbitrary Precision and Sparsity](robust_training_of_neural_networks_at_arbitrary_precision_and_sparsity.md)
 
 </div>
 

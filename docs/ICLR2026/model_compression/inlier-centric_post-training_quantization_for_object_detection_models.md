@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Inlier-Centric Post-Training Quantization for Object Detection Models
 description: >-
-  [ICLR 2026][Model Compression][Post-Training Quantization] InlierQ decomposes object detection activations into "task-relevant inliers" and "anomalies caused by background clutter or sensor noise." It separates the two using gradient-aware voxel saliency scores combined with EM fitting for posterior probabilities. Quantization error minimization is performed exclusively on the
+  [ICLR 2026][Model Compression][Post-Training Quantization] InlierQ decomposes object detection activations into "task-relevant inliers" and "anomalies caused by background clutter or sensor noise." It separates the two using gradient-aware voxel saliency scores combined with EM fitting for posterior probabilities. Quantization error minimization is performed exclusively on the inlier set, significantly improving 2D/3D camera and LiDAR detection accuracy under low-bit (W4A4) s…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Post-Training Quantization
-  - Object Detection
-  - Inlier-Anomaly Separation
-  - EM
-  - Heatmap Saliency
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Post-Training Quantization"
+  - "Object Detection"
+  - "Inlier-Anomaly Separation"
+  - "EM"
+  - "Heatmap Saliency"
 date: 2026-05-08
-content_hash: 7d16c90f2e70871c
+content_hash: 5518a225879acf9c
 ---
+
 # Inlier-Centric Post-Training Quantization for Object Detection Models
 
 **Conference**: ICLR 2026  
@@ -116,10 +117,10 @@ flowchart LR
 
 ## Related Papers
 
-- [\[ICLR 2026\] Gradient-Aligned Calibration for Post-Training Quantization of Diffusion Models](gradient-aligned_calibration_for_post-training_quantization_of_diffusion_models.md)
 - [\[ICLR 2026\] PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models](ptq4arvg_post-training_quantization_for_autoregressive_visual_generation_models.md)
 - [\[ICLR 2026\] Post-Training Quantization for Video Matting](post-training_quantization_for_video_matting.md)
 - [\[ICLR 2026\] Training Dynamics Impact Post-Training Quantization Robustness](training_dynamics_impact_post-training_quantization_robustness.md)
+- [\[ICLR 2026\] Gradient-Aligned Calibration for Post-Training Quantization of Diffusion Models](gradient-aligned_calibration_for_post-training_quantization_of_diffusion_models.md)
 - [\[ICLR 2026\] SliderQuant: Accurate Post-Training Quantization for LLMs](sliderquant_accurate_post-training_quantization_for_llms.md)
 
 </div>

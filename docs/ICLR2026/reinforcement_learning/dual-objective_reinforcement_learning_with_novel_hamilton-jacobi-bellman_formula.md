@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Dual-Objective Reinforcement Learning with Novel Hamilton-Jacobi-Bellman Formulations
 description: >-
-  [ICLR 2026][Reinforcement Learning][Hamilton-Jacobi-Bellman] This paper extends HJ-RL (Hamilton-Jacobi Reinforcement Learning) from single "Reach / Avoid / Reach-Avoid" objectives to two types of dual-objective problems—Reach-Always-Avoid (RAA) and Reach-Reach (RR). It demonstrates that their Bellman equations can be **exactly decomposed** into combinations of previously studied
+  [ICLR2026][Reinforcement Learning][Hamilton-Jacobi-Bellman] This paper extends HJ-RL (Hamilton-Jacobi Reinforcement Learning) from single "Reach / Avoid / Reach-Avoid" objectives to two types of dual-objective problems—Reach-Always-Avoid (RAA) and Reach-Reach (RR). It demonstrates that their Bellman equations can be **exactly decomposed** into combinations of previously studied simple reach/avoid sub-problems. Based on this, the DOHJ-PPO algorithm is designed…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Hamilton-Jacobi-Bellman
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Hamilton-Jacobi-Bellman"
+  - "Safe Reinforcement Learning"
+  - "Reach-Avoid"
+  - "Dual-Objective"
+  - "Value Function Decomposition"
 date: 2026-05-08
-content_hash: 8a1dcb4339d8e7f0
+content_hash: d3c24ce531bd972e
 ---
+
 # Dual-Objective Reinforcement Learning with Novel Hamilton-Jacobi-Bellman Formulations
 
 **Conference**: ICLR2026  
@@ -155,8 +160,8 @@ The core ablation focuses on **robustness to stochastic dynamics** (Figure 5): a
 
 - [\[ICLR 2026\] RLP: Reinforcement as a Pretraining Objective](rlp_reinforcement_as_a_pretraining_objective.md)
 - [\[ICLR 2026\] A Reward-Free Viewpoint on Multi-Objective Reinforcement Learning](a_reward-free_viewpoint_on_multi-objective_reinforcement_learning.md)
-- [\[ICLR 2026\] BoreaRL: A Multi-Objective Reinforcement Learning Environment for Climate-Adaptive Boreal Forest Management](borearl_a_multi-objective_reinforcement_learning_environment_for_climate-adaptiv.md)
 - [\[ICLR 2026\] Spectral Bellman Method: Unifying Representation and Exploration in RL](spectral_bellman_method_unifying_representation_and_exploration_in_rl.md)
+- [\[ICLR 2026\] BoreaRL: A Multi-Objective Reinforcement Learning Environment for Climate-Adaptive Boreal Forest Management](borearl_a_multi-objective_reinforcement_learning_environment_for_climate-adaptiv.md)
 - [\[ICLR 2026\] Dual Goal Representations](dual_goal_representations.md)
 
 </div>

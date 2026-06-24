@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] AFUNet: Cross-Iterative Alignment-Fusion Synergy for HDR Reconstruction via Deep Unfolding Paradigm
 description: >-
-  [ICCV 2025][HDR imaging] This paper formulates multi-exposure HDR reconstruction from a MAP estimation perspective, decomposes the problem into two alternating subproblems—alignment and fusion—via a spatial correspondenc…
+  [ICCV 2025][Image Restoration][HDR imaging] This paper formulates multi-exposure HDR reconstruction from a MAP estimation perspective, decomposes the problem into two alternating subproblems—alignment and fusion—via a spatial correspondence prior, and unfolds them into an end-to-end trainable AFUNet comprising SAM (spatial alignment), CFM (channel fusion), and DCM (data consistency) modules. The method achieves state-of-the-art performance on three HDR benchmarks…
 tags:
   - "ICCV 2025"
+  - "Image Restoration"
   - "HDR imaging"
   - "deep unfolding network"
   - "MAP estimation"
   - "alignment-fusion alternating optimization"
   - "deghosting"
 date: 2026-05-08
-content_hash: b9992c2c39574880
+content_hash: d664a96ace419043
 ---
 
 # AFUNet: Cross-Iterative Alignment-Fusion Synergy for HDR Reconstruction via Deep Unfolding Paradigm
@@ -113,11 +114,11 @@ Three multi-exposure LDR images $(y_1, y_2, y_3)$ → SFEM shallow feature extra
 
 ## Related Papers
 
+- [\[CVPR 2025\] Vision-Language Gradient Descent-driven All-in-One Deep Unfolding Networks](../../CVPR2025/image_restoration/vision-language_gradient_descent-driven_all-in-one_deep_unfolding_networks.md)
+- [\[ECCV 2024\] Intrinsic Single-Image HDR Reconstruction](../../ECCV2024/image_restoration/intrinsic_single-image_hdr_reconstruction.md)
 - [\[ICCV 2025\] IDF: Iterative Dynamic Filtering Networks for Generalizable Image Denoising](idf_iterative_dynamic_filtering_networks_for_generalizable_image_denoising.md)
-- [\[ICCV 2025\] Decouple to Reconstruct: High Quality UHD Restoration via Active Feature Disentanglement and Reversible Fusion](decouple_to_reconstruct_high_quality_uhd_restoration_via_active_feature_disentan.md)
-- [\[ICLR 2026\] Are Deep Speech Denoising Models Robust to Adversarial Noise?](../../ICLR2026/image_restoration/are_deep_speech_denoising_models_robust_to_adversarial_noise.md)
-- [\[NeurIPS 2025\] MoE-Gyro: Self-Supervised Over-Range Reconstruction and Denoising for MEMS Gyroscopes](../../NeurIPS2025/image_restoration/moe-gyro_self-supervised_over-range_reconstruction_and_denoising_for_mems_gyrosc.md)
-- [\[ICML 2026\] Coloring the Noise: Adversarial Sobolev Alignment for Faithful Image Super Resolution](../../ICML2026/image_restoration/coloring_the_noise_adversarial_sobolev_alignment_for_faithful_image_super_resolu.md)
+- [\[CVPR 2026\] LRHDR: Learning Representation-enhanced HDR Video Reconstruction](../../CVPR2026/image_restoration/lrhdr_learning_representation-enhanced_hdr_video_reconstruction.md)
+- [\[CVPR 2026\] LRDUN: A Low-Rank Deep Unfolding Network for Efficient Spectral Compressive Imaging](../../CVPR2026/image_restoration/lrdun_a_low-rank_deep_unfolding_network_for_efficient_spectral_compressive_imagi.md)
 
 </div>
 

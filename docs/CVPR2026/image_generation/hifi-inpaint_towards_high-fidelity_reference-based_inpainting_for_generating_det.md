@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HiFi-Inpaint: Towards High-Fidelity Reference-Based Inpainting for Generating Detail-Preserving Human-Product Images
 description: >-
-  [CVPR 2026][Image Generation][DiT] The HiFi-Inpaint framework is proposed, utilizing Shared Enhanced Attention (SEA) to leverage high-frequency information for enhancing product detail features, combined with Detail-Aware Loss (DAL) for pixel-level high-frequency supervision, achieving SOTA detail fidelity in human-product image generation.
+  [CVPR 2026][Image Generation][Reference-based Inpainting] The HiFi-Inpaint framework is proposed, utilizing Shared Enhanced Attention (SEA) to leverage high-frequency information for enhancing product detail features, combined with Detail-Aware Loss (DAL) for pixel-level high-frequency supervision, achieving SOTA detail fidelity in human-product image generation.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - DiT
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Reference-based Inpainting"
+  - "High-Fidelity Detail Preservation"
+  - "Human-Product Image Generation"
+  - "High-Frequency Information Guidance"
+  - "DiT"
 date: 2026-05-08
-content_hash: 61db841cc38f75f6
+content_hash: 0dee6d0ca5b8c7e9
 ---
+
 # HiFi-Inpaint: Towards High-Fidelity Reference-Based Inpainting for Generating Detail-Preserving Human-Product Images
 
 **Conference**: CVPR 2026  
@@ -155,8 +160,8 @@ Ours achieves the best performance in visual consistency (CLIP-I, DINO, SSIM, SS
 - [\[CVPR 2026\] FlowFixer: Towards Detail-Preserving Subject-Driven Generation](flowfixer_towards_detail-preserving_subject-driven_generation.md)
 - [\[CVPR 2026\] Preserving Source Video Realism: High-Fidelity Face Swapping for Cinematic Quality](preserving_source_video_realism_high-fidelity_face_swapping_for_cinematic_qualit.md)
 - [\[CVPR 2026\] Garments2Look: A Multi-Reference Dataset for High-Fidelity Outfit-Level Virtual Try-On with Clothing and Accessories](garments2look_a_multi-reference_dataset_for_high-fidelity_outfit-level_virtual_t.md)
+- [\[CVPR 2026\] Towards High-resolution and Disentangled Reference-based Sketch Colorization](towards_high-resolution_and_disentangled_reference-based_sketch_colorization.md)
 - [\[CVPR 2026\] Refracting Reality: Generating Images with Realistic Transparent Objects](refracting_reality_generating_images_with_realistic_transparent_objects.md)
-- [\[CVPR 2026\] Say Cheese! Detail-Preserving Portrait Collection Generation via Natural Language Edits](say_cheese_detail-preserving_portrait_collection_generation_via_natural_language.md)
 
 </div>
 

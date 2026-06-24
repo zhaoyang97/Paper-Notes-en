@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Angel or Demon: Investigating the Plasticity Interventions' Impact on Backdoor Threats in Deep Reinforcement Learning
 description: >-
-  [ICML 2026][AI Safety][DRL backdoor] The authors provide the first systematic evaluation of the impact of 7 mainstream plasticity interventions (SAM, Shrink & Perturb, Weight Clip, SN, WD, LN, ReDo) on deep reinforcement learning (DRL) backdoor attacks through 14,664 experiments. It is discovered that only SAM acts as a "demon"—significantly intensifying
+  [ICML 2026][AI Safety][DRL backdoor] The authors provide the first systematic evaluation of the impact of 7 mainstream plasticity interventions (SAM, Shrink & Perturb, Weight Clip, SN, WD, LN, ReDo) on deep reinforcement learning (DRL) backdoor attacks through 14,664 experiments. It is discovered that only SAM acts as a "demon"—significantly intensifying backdoor threats. Consequently, the "Sweeper-Converter-Connector" robust backdoor injection framework is proposed…
 tags:
-  - ICML 2026
-  - AI Safety
-  - DRL backdoor
-  - plasticity intervention
-  - SAM
-  - loss landscape sharpness
-  - robust backdoor injection
+  - "ICML 2026"
+  - "AI Safety"
+  - "DRL backdoor"
+  - "plasticity intervention"
+  - "SAM"
+  - "loss landscape sharpness"
+  - "robust backdoor injection"
 date: 2026-05-08
-content_hash: d56584c3b30951d0
+content_hash: 10c2d54f7fa9e065
 ---
+
 # Angel or Demon: Investigating the Plasticity Interventions' Impact on Backdoor Threats in Deep Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -147,10 +148,20 @@ Comparison of intervention combinations (Robotics + SAM series):
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[NeurIPS 2025\] Impact of Dataset Properties on Membership Inference Vulnerability of Deep Transfer Learning](../../NeurIPS2025/ai_safety/impact_of_dataset_properties_on_membership_inference_vulnerability_of_deep_trans.md)
+- [\[ICML 2026\] Decoupled Training with Local Reinforcement Fine-Tuning in Federated Learning](decoupled_training_with_local_reinforcement_fine-tuning_in_federated_learning.md)
+- [\[ICML 2026\] Regret-Based Federated Causal Discovery with Unknown Interventions](regret-based_federated_causal_discovery_with_unknown_interventions.md)
+- [\[ICLR 2026\] Beware Untrusted Simulators -- Reward-Free Backdoor Attacks in Reinforcement Learning](../../ICLR2026/ai_safety/beware_untrusted_simulators_--_reward-free_backdoor_attacks_in_reinforcement_lea.md)
+- [\[ICML 2025\] Adversarial Inception Backdoor Attacks against Reinforcement Learning](../../ICML2025/ai_safety/adversarial_inception_backdoor_attacks_against_reinforcement_learning.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[NeurIPS 2025\] Impact of Dataset Properties on Membership Inference Vulnerability of Deep Transfer Learning](../../NeurIPS2025/ai_safety/impact_of_dataset_properties_on_membership_inference_vulnerability_of_deep_trans.md)

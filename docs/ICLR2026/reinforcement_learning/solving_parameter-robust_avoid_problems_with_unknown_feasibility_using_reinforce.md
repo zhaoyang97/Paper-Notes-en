@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] Solving Parameter-Robust Avoid Problems with Unknown Feasibility using Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][safe RL] The authors propose Feasibility-Guided Exploration (FGE) to simultaneously identify feasible parameter subsets and learn safe policies within those subsets. It addresses parameter-robust avoidance problems where feasibility is unknown, achieving over 50% higher coverage than state-of-the-art methods in MuJoCo tasks.
+  [Reinforcement Learning] The authors propose Feasibility-Guided Exploration (FGE) to simultaneously identify feasible parameter subsets and learn safe policies within those subsets. It addresses parameter-robust avoidance problems where feasibility is unknown, achieving over 50% higher coverage than state-of-the-art methods in MuJoCo tasks.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - safe RL
-  - Hamilton-Jacobi
-  - robust optimization
-  - feasibility
-  - curriculum learning
-  - MuJoCo
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: f48eb1785f043a14
+content_hash: ceac7faecdf2e6ab
 ---
+
 # Solving Parameter-Robust Avoid Problems with Unknown Feasibility using Reinforcement Learning
 
 ## Meta-info

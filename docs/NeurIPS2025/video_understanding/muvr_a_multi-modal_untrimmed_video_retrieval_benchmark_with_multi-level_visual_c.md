@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MUVR: A Multi-Modal Untrimmed Video Retrieval Benchmark with Multi-Level Visual Correspondence
 description: >-
-  [NeurIPS 2025][Video Understanding][Video Retrieval] This paper introduces MUVR, a benchmark for multi-modal untrimmed video retrieval targeting real-world long-video platforms. It proposes a video-centric multi-modal qu…
+  [NeurIPS 2025][Video Understanding][Video Retrieval] This paper introduces MUVR, a benchmark for multi-modal untrimmed video retrieval targeting real-world long-video platforms. It proposes a video-centric multi-modal query format (video + text + tag + mask) and a six-level visual correspondence matching criterion, comprising 53K videos and 1,050 queries, and systematically evaluates the limitations of retrieval models and MLLMs.
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Multi-Level Visual Correspondence"
   - "Benchmark Dataset"
 date: 2026-05-08
-content_hash: 0ba1dd70b2ef019f
+content_hash: 06d8f6291ff4b8de
 ---
 
 # MUVR: A Multi-Modal Untrimmed Video Retrieval Benchmark with Multi-Level Visual Correspondence
@@ -169,7 +169,7 @@ where $p = \pm 0.3$ is determined by the sign of the tag prompt (positive or neg
 - [\[ICCV 2025\] Multi-modal Multi-platform Person Re-Identification: Benchmark and Method](../../ICCV2025/video_understanding/multi-modal_multi-platform_person_re-identification_benchmark_and_method.md)
 - [\[NeurIPS 2025\] When One Moment Isn't Enough: Multi-Moment Retrieval with Cross-Moment Interactions](when_one_moment_isnt_enough_multi-moment_retrieval_with_cross-moment_interaction.md)
 - [\[ICCV 2025\] DynImg: Key Frames with Visual Prompts are Good Representation for Multi-Modal Video Understanding](../../ICCV2025/video_understanding/dynimg_key_frames_with_visual_prompts_are_good_representation_for_multi-modal_vi.md)
-- [\[NeurIPS 2025\] SAMA: Towards Multi-Turn Referential Grounded Video Chat with Large Language Models](sama_towards_multi-turn_referential_grounded_video_chat_with_large_language_mode.md)
+- [\[CVPR 2025\] MMVU: Measuring Expert-Level Multi-Discipline Video Understanding](../../CVPR2025/video_understanding/mmvu_measuring_expert-level_multi-discipline_video_understanding.md)
 
 </div>
 

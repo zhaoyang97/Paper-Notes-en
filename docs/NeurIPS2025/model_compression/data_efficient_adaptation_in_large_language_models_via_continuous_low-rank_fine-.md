@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Data Efficient Adaptation in Large Language Models via Continuous Low-Rank Fine-Tuning
 description: >-
-  [NeurIPS 2025][Model Compression][Continual Learning] This paper proposes DEAL, a framework that leverages wavelet kernel feature filtering to preserve core historical knowledge in LoRA low-rank matrices…
+  [NeurIPS 2025][Model Compression][Continual Learning] This paper proposes DEAL, a framework that leverages wavelet kernel feature filtering to preserve core historical knowledge in LoRA low-rank matrices, combined with a controlled knowledge update module and asymmetric regularization, enabling LLMs to acquire new knowledge without forgetting old tasks under few-shot continual fine-tuning.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Knowledge Retention"
   - "Parameter-Efficient Fine-Tuning"
 date: 2026-05-08
-content_hash: 0cd5cc30fe39b49d
+content_hash: fdaa8e77b9f9d50d
 ---
 
 # Data Efficient Adaptation in Large Language Models via Continuous Low-Rank Fine-Tuning

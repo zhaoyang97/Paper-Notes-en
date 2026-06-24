@@ -52,10 +52,10 @@ To be added after in-depth reading
 ## Related Papers
 
 - [\[ICLR 2026\] Fine-Grained Activation Steering: Steering Less, Achieving More](fine-grained_activation_steering_steering_less_achieving_more.md)
-- [\[ICLR 2026\] Enhancing Persona Following at Decoding Time via Dynamic Importance-Guided Token Estimation for Role-Playing Agents](enhancing_persona_following_at_decoding_time_via_dynamic_importance-guided_token.md)
-- [\[ICLR 2026\] IA2: Alignment with ICL Activations improves Supervised Fine-Tuning](ia2_alignment_with_icl_activations_improves_supervised_fine-tuning.md)
-- [\[ICLR 2026\] Differential Fine-Tuning Large Language Models Towards Better Diverse Reasoning Abilities](differential_fine-tuning_large_language_models_towards_better_diverse_reasoning_.md)
 - [\[ICLR 2026\] Parameters vs. Context: Fine-Grained Control of Knowledge Reliance in Language Models](parameters_vs_context_fine-grained_control_of_knowledge_reliance_in_language_mod.md)
+- [\[ICML 2025\] Breaking Silos: Adaptive Model Fusion Unlocks Better Time Series Forecasting](../../ICML2025/llm_nlp/breaking_silos_adaptive_model_fusion_unlocks_better_time_series_forecasting.md)
+- [\[ICML 2025\] When Will It Fail?: Anomaly to Prompt for Forecasting Future Anomalies in Time Series](../../ICML2025/llm_nlp/when_will_it_fail_anomaly_to_prompt_for_forecasting_future_anomalies_in_time_ser.md)
+- [\[ICLR 2026\] IA2: Alignment with ICL Activations improves Supervised Fine-Tuning](ia2_alignment_with_icl_activations_improves_supervised_fine-tuning.md)
 
 </div>
 

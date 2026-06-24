@@ -2,18 +2,20 @@
 title: >-
   [Paper Note] LLMs Process Lists With General Filter Heads
 description: >-
-  [ICLR 2026][Interpretability][filter heads] This paper discovers that when LLMs perform tasks like "selecting items from a list that satisfy a condition," a small set of mid-layer attention heads (filter heads) encode the "filtering predicate" as a compact, portable geometric direction in the query space, replicating the abstract computational primitive of the `
+  [ICLR 2026][Interpretability][filter heads] This paper discovers that when LLMs perform tasks like "selecting items from a list that satisfy a condition," a small set of mid-layer attention heads (filter heads) encode the "filtering predicate" as a compact, portable geometric direction in the query space, replicating the abstract computational primitive of the `filter` operation in functional programming.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - filter heads
-  - causal mediation
-  - activation patching
-  - list processing
-  - functional programming
+  - "ICLR 2026"
+  - "Interpretability"
+  - "filter heads"
+  - "causal mediation"
+  - "activation patching"
+  - "list processing"
+  - "functional programming"
+  - "predicate representation"
 date: 2026-05-08
-content_hash: 83d1894808d38482
+content_hash: a63aefde6f87c23e
 ---
+
 # LLMs Process Lists With General Filter Heads
 
 **Conference**: ICLR 2026  

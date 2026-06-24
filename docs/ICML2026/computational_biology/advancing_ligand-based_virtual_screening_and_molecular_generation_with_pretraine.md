@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Advancing Ligand-based Virtual Screening and Molecular Generation with Pretrained Molecular Embedding Distance
 description: >-
-  [ICML 2026][Computational Biology][Paper Note] This paper proposes utilizing **frozen pretrained molecular models** (GeoDiff, MoLFormer) to calculate the distance between embeddings (PED) as a measure of molecular similarity without any specialized similarity training. This approach serves both for candidate ranking in virtual screening and as a reward signal for m
+  [ICML 2026][Computational Biology][Ligand Virtual Screening] This paper proposes utilizing **frozen pretrained molecular models** (GeoDiff, MoLFormer) to calculate the distance between embeddings (PED) as a measure of molecular similarity without any specialized similarity training. This approach serves both for candidate ranking in virtual screening and as a reward signal for molecular generation; it correlates strongly with industrial-standard 3D similarity (ROCS/ROSHAMBO2)…
 tags:
-  - ICML 2026
-  - Computational Biology
+  - "ICML 2026"
+  - "Computational Biology"
+  - "Ligand Virtual Screening"
+  - "Molecular Generation"
+  - "Pretrained Molecular Embeddings"
+  - "Molecular Similarity"
+  - "RL Rewards"
 date: 2026-05-08
-content_hash: d61d7474eedbdf5d
+content_hash: 9f1322d4dbcd07f7
 ---
+
 # Advancing Ligand-based Virtual Screening and Molecular Generation with Pretrained Molecular Embedding Distance
 
 **Conference**: ICML 2026  
@@ -138,11 +144,11 @@ Among 8 targets deemed "3D shape-friendly" (ROCS EF1%>2), PED achieved >2 on 7 t
 
 ## Related Papers
 
-- [\[AAAI 2026\] S2Drug: Bridging Protein Sequence and 3D Structure in Contrastive Representation Learning for Virtual Screening](../../AAAI2026/computational_biology/s2drug_bridging_protein_sequence_and_3d_structure_in_contrastive_representation_.md)
-- [\[NeurIPS 2025\] AANet: Virtual Screening under Structural Uncertainty via Alignment and Aggregation](../../NeurIPS2025/computational_biology/aanet_virtual_screening_under_structural_uncertainty_via_alignment_and_aggregati.md)
+- [\[ICLR 2026\] SubDyve: Subgraph-Driven Dynamic Propagation for Virtual Screening Enhancement](../../ICLR2026/computational_biology/subdyve_subgraph-driven_dynamic_propagation_for_virtual_screening_enhancement_co.md)
+- [\[ICLR 2026\] h-MINT: Modeling Pocket-Ligand Binding with Hierarchical Molecular Interaction Network](../../ICLR2026/computational_biology/h-mint_modeling_pocket-ligand_binding_with_hierarchical_molecular_interaction_ne.md)
+- [\[ICML 2026\] SIGMA: Structure-Invariant Generative Molecular Alignment for Chemical Language Models via Autoregressive Contrastive Learning](sigma_structure-invariant_generative_molecular_alignment_for_chemical_language_m.md)
+- [\[ICLR 2026\] Hierarchical Multi-Scale Molecular Conformer Generation](../../ICLR2026/computational_biology/hierarchical_multi-scale_molecular_conformer_generation.md)
 - [\[ICLR 2026\] Unified Biomolecular Trajectory Generation via Pretrained Variational Bridge](../../ICLR2026/computational_biology/unified_biomolecular_trajectory_generation_via_pretrained_variational_bridge.md)
-- [\[ICML 2026\] Constrained Flow Optimization via Sequential Fine-Tuning for Molecular Design](constrained_flow_optimization_via_sequential_fine_tuning_for_molecular_design.md)
-- [\[ICML 2026\] Learning the Neighborhood: Contrast-Free Multimodal Self-Supervised Molecular Graph Pretraining](learning_the_neighborhood_contrast-free_multimodal_self-supervised_molecular_gra.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unsupervised Multi-Scale Segmentation of 3D Subcellular World with Stable Diffusion Foundation Model
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] Without training or manual annotation, this work directly utilizes attention features from a pre-trained Stable Diffusion model for spectral clustering, combined with heuristic feature aggregation and adaptive thresholding. This framework segments multi-scale subcellular structures—ranging from large membranes to small
+  [CVPR 2026][3D Vision][Cryo-electron tomography] Without training or manual annotation, this work directly utilizes attention features from a pre-trained Stable Diffusion model for spectral clustering, combined with heuristic feature aggregation and adaptive thresholding. This framework segments multi-scale subcellular structures—ranging from large membranes to small ribosomes—in cryo-electron tomograms (cryo-ET). Downstream models trained on the resulting pseudo-labels appro…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Cryo-electron tomography"
+  - "unsupervised segmentation"
+  - "Stable Diffusion features"
+  - "spectral clustering"
+  - "subcellular structures"
 date: 2026-05-08
-content_hash: 782f84660a6d8abc
+content_hash: c98e45cedde09470
 ---
+
 # Unsupervised Multi-Scale Segmentation of 3D Subcellular World with Stable Diffusion Foundation Model
 
 **Conference**: CVPR 2026  
@@ -150,15 +156,15 @@ Key findings from ablation (Supp. Mat. S11):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Making Training-Free Diffusion Segmentors Scale with the Generative Power](making_training-free_diffusion_segmentors_scale_with_the_generative_power.md)
-- [\[CVPR 2026\] XSeg: A Large-scale X-ray Contraband Segmentation Benchmark for Real-World Security Screening](xseg_a_large-scale_x-ray_contraband_segmentation_benchmark_for_real-world_securi.md)
-- [\[CVPR 2026\] MV3DIS: Multi-View Mask Matching via 3D Guides for Zero-Shot 3D Instance Segmentation](mv3dis_multi-view_mask_matching_via_3d_guides_for_zero-shot_3d_instance_segmenta.md)
-- [\[ICLR 2026\] TRACE: Your Diffusion Model is Secretly an Instance Edge Detector](../../ICLR2026/segmentation/trace_your_diffusion_model_is_secretly_an_instance_edge_detector.md)
-- [\[CVPR 2026\] Prompt-Driven Lightweight Foundation Model for Instance Segmentation-Based Fault Detection in Freight Trains](promptdriven_lightweight_foundation_model_for_inst.md)
+- [\[CVPR 2026\] WonderZoom: Multi-Scale 3D World Generation](wonderzoom_multi-scale_3d_world_generation.md)
+- [\[CVPR 2026\] Unsupervised Monocular 3D Keypoint Discovery from Multi-View Diffusion Priors](unsupervised_monocular_3d_keypoint_discovery_from_multi-view_diffusion_priors.md)
+- [\[CVPR 2026\] PatchScene: Patch-based Voxel Diffusion Model for Large-Scale Scene Completion](patchscene_patch-based_voxel_diffusion_model_for_large-scale_scene_completion.md)
+- [\[CVPR 2026\] OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control](olatverse_a_large-scale_real-world_object_dataset_with_precise_lighting_control.md)
+- [\[CVPR 2026\] Iris: Bringing Real-World Priors into Diffusion Model for Monocular Depth Estimation](iris_bringing_realworld_priors_into_diffusion_model_for_monocular_depth_estimation.md)
 
 </div>
 

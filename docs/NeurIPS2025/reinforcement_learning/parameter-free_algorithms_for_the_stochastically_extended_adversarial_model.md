@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Parameter-Free Algorithms for the Stochastically Extended Adversarial Model
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][online convex optimization] This work presents the first parameter-free algorithms for the Stochastically Extended Adversarial (SEA) model…
+  [NeurIPS 2025][Reinforcement Learning][online convex optimization] This work presents the first parameter-free algorithms for the Stochastically Extended Adversarial (SEA) model, which bridges adversarial and stochastic online convex optimization. Without prior knowledge of the domain diameter $D$ and/or the Lipschitz constant $G$, the proposed algorithms—built upon Optimistic Online Newton Step (OONS)—achieve regret bounds comparable to those of parameter-aware methods.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "comparator-adaptive"
   - "Lipschitz-adaptive"
 date: 2026-05-08
-content_hash: 59cfe3beb13b980d
+content_hash: 3f32ba8ef1e21372
 ---
 
 # Parameter-Free Algorithms for the Stochastically Extended Adversarial Model
@@ -120,9 +120,9 @@ The setting is online learning with no explicit training loss. Algorithms rely o
 
 - [\[NeurIPS 2025\] When Can Model-Free Reinforcement Learning be Enough for Thinking?](when_can_model-free_reinforcement_learning_be_enough_for_thinking.md)
 - [\[NeurIPS 2025\] Improving Planning and MBRL with Temporally-Extended Actions](improving_planning_and_mbrl_with_temporally-extended_actions.md)
-- [\[NeurIPS 2025\] Deep RL Needs Deep Behavior Analysis: Exploring Implicit Planning by Model-Free Agents](deep_rl_needs_deep_behavior_analysis_exploring_implicit_planning_by_model-free_a.md)
 - [\[ICLR 2026\] On Discovering Algorithms for Adversarial Imitation Learning](../../ICLR2026/reinforcement_learning/on_discovering_algorithms_for_adversarial_imitation_learning.md)
-- [\[NeurIPS 2025\] Parameter Efficient Fine-tuning via Explained Variance Adaptation](parameter_efficient_fine-tuning_via_explained_variance_adaptation.md)
+- [\[NeurIPS 2025\] Deep RL Needs Deep Behavior Analysis: Exploring Implicit Planning by Model-Free Agents](deep_rl_needs_deep_behavior_analysis_exploring_implicit_planning_by_model-free_a.md)
+- [\[NeurIPS 2025\] Scalable Policy-Based RL Algorithms for POMDPs](scalable_policy-based_rl_algorithms_for_pomdps.md)
 
 </div>
 

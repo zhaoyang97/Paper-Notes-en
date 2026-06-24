@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] GRL-SNAM: Geometric Reinforcement Learning with Differential Hamiltonians for Navigation and Mapping in Unknown Environments
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] The paper reformulates "navigation + mapping" as a Hamiltonian energy optimization problem on the cotangent bundle. Control actions are generated directly from the gradients of a learned energy landscape, replacing the Bellman bootstrapping common in mainstream RL. This allows for high-quality navigation with only loca
+  [ICLR 2026][Reinforcement Learning][Geometric Reinforcement Learning] The paper reformulates "navigation + mapping" as a Hamiltonian energy optimization problem on the cotangent bundle. Control actions are generated directly from the gradients of a learned energy landscape, replacing the Bellman bootstrapping common in mainstream RL. This allows for high-quality navigation with only local observations and minimal global mapping, while generalizing well to unseen environments.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Geometric Reinforcement Learning"
+  - "Hamiltonian Dynamics"
+  - "Simultaneous Navigation and Mapping (SNAM)"
+  - "Differential Policy Optimization"
+  - "Energy Landscapes"
+  - "Deformable Robots"
 date: 2026-05-08
-content_hash: a6821ab26e7bfbaf
+content_hash: 4cd590c6bbaed2c6
 ---
+
 # GRL-SNAM: Geometric Reinforcement Learning with Differential Hamiltonians for Navigation and Mapping in Unknown Environments
 
 **Conference**: ICLR 2026  
@@ -124,13 +131,20 @@ Navigation performance under short rollouts with identical perception/architectu
 - **Value**: ⭐⭐⭐⭐ Provides a reproducible (open-source) template for structured RL and geometric navigation with minimal mapping and strong generalization.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- **Symplectic ODE-Net**: Structure-preserving neural networks for Hamiltonian systems.
-- **HAVEN**: Hierarchical navigation for deformable robots.
-- **Deep-PH-RL**: Deep Reinforcement Learning for Port-Hamiltonian Systems.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Geometric-Mean Policy Optimization](geometric-mean_policy_optimization.md)
+- [\[ICLR 2026\] Bayesian Robust Cooperative Multi-Agent Reinforcement Learning Against Unknown Adversaries](bayesian_robust_cooperative_multi-agent_reinforcement_learning_against_unknown_a.md)
+- [\[ICLR 2026\] Solving Parameter-Robust Avoid Problems with Unknown Feasibility using Reinforcement Learning](solving_parameter-robust_avoid_problems_with_unknown_feasibility_using_reinforce.md)
+- [\[ICLR 2026\] OCTAX: Accelerated CHIP-8 Arcade Environments for Reinforcement Learning in JAX](octax_accelerated_chip-8_arcade_environments_for_reinforcement_learning_in_jax.md)
+- [\[ICLR 2026\] Beyond Distributions: Geometric Action Control for Continuous Reinforcement Learning](beyond_distributions_geometric_action_control_for_continuous_reinforcement_learn.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Solving Parameter-Robust Avoid Problems with Unknown Feasibility using Reinforcement Learning](solving_parameter-robust_avoid_problems_with_unknown_feasibility_using_reinforce.md)

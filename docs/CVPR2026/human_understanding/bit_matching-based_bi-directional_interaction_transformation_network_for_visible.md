@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BIT: Matching-based Bi-directional Interaction Transformation Network for Visible-Infrared Person Re-Identification
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] Addressing the large modality gap and infrared sample scarcity in Visible-Infrared Person Re-Identification (VI-ReID), BIT discards the conventional approach of aligning features into a shared space. Instead, it adopts a **matching-based** paradigm: a bi-directional cross-interaction module allows visible-infrared imag
+  [CVPR 2026][Human Understanding][Visible-Infrared Re-ID] Addressing the large modality gap and infrared sample scarcity in Visible-Infrared Person Re-Identification (VI-ReID), BIT discards the conventional approach of aligning features into a shared space. Instead, it adopts a **matching-based** paradigm: a bi-directional cross-interaction module allows visible-infrared image pairs to mutually absorb complementary information, followed by a query-aware scoring module that min…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Visible-Infrared Re-ID"
+  - "Cross-modal Matching"
+  - "Bi-directional Interaction"
+  - "Reciprocal Patch Mining"
+  - "Query-aware Scoring"
 date: 2026-05-08
-content_hash: 093e0dad636b2be5
+content_hash: 66a6165447cb6ad9
 ---
+
 # BIT: Matching-based Bi-directional Interaction Transformation Network for Visible-Infrared Person Re-Identification
 
 **Conference**: CVPR 2026  
@@ -142,6 +148,7 @@ Ablations on the bi-directional design show that standard cross-attention actual
 - Value: ⭐⭐⭐⭐ The shift to relationship modeling provides general insights for any imbalanced cross-modal retrieval task.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

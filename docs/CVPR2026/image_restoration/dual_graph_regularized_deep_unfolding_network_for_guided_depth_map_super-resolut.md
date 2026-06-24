@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Dual Graph Regularized Deep Unfolding Network for Guided Depth Map Super-resolution
 description: >-
-  [CVPR 2026][Image Restoration][ADMM] This paper proposes LapNet, which integrates a "row/column dual-graph Laplacian prior + deep implicit prior" into a unified variational model. Through ADMM, closed-form updates are derived and unfolded into an interpretable multi-stage network. It reduces graph construction complexity from $O(H^3W^3)$ to $O(H^3+W^3)$ w
+  [CVPR 2026][Image Restoration][Guided Depth Super-resolution] This paper proposes LapNet, which integrates a "row/column dual-graph Laplacian prior + deep implicit prior" into a unified variational model. Through ADMM, closed-form updates are derived and unfolded into an interpretable multi-stage network. It reduces graph construction complexity from $O(H^3W^3)$ to $O(H^3+W^3)$ while achieving SOTA performance in Guided Depth Super-Resolution (GDSR) with only 3.84M parameters…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - ADMM
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Guided Depth Super-resolution"
+  - "Dual Graph Laplacian Prior"
+  - "Deep Unfolding"
+  - "ADMM"
+  - "Interpretable Network"
 date: 2026-05-08
-content_hash: 6ccf6eeb673e8219
+content_hash: c31457e566b7f816
 ---
+
 # Dual Graph Regularized Deep Unfolding Network for Guided Depth Map Super-resolution
 
 **Conference**: CVPR 2026  
@@ -143,15 +148,16 @@ Ablation results on NYU v2 8× (lower RMSE is better):
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Beyond Single Solution: Multi-Hypothesis Collaborative Deep Unfolding Network for Image Compressive Sensing](beyond_single_solution_multi-hypothesis_collaborative_deep_unfolding_network_for.md)
+- [\[CVPR 2026\] LRDUN: A Low-Rank Deep Unfolding Network for Efficient Spectral Compressive Imaging](lrdun_a_low-rank_deep_unfolding_network_for_efficient_spectral_compressive_imagi.md)
 - [\[CVPR 2026\] Spectral Super-Resolution via Adversarial Unfolding and Data-Driven Spectrum Regularization](spectral_super-resolution_via_adversarial_unfolding_and_data-driven_spectrum_reg.md)
 - [\[AAAI 2026\] SpatioTemporal Difference Network for Video Depth Super-Resolution](../../AAAI2026/image_restoration/spatiotemporal_difference_network_for_video_depth_super-resolution.md)
-- [\[CVPR 2026\] RawMetaDiff: Unlocking Extreme Darkness from Dual-Exposure RAW with Meta-Guided Diffusion](rawmetadiff_unlocking_extreme_darkness_from_dual-exposure_raw_with_meta-guided_d.md)
-- [\[CVPR 2026\] Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution](time-aware_one_step_diffusion_network_for_real-world_image_super-resolution.md)
+- [\[CVPR 2026\] DPGF-Net: Dual-Prior Guided Fusion Network for Joint Assessment of Perceptual Quality and Semantic Consistency in AI-Generated Images](dpgf-net_dual-prior_guided_fusion_network_for_joint_assessment_of_perceptual_qua.md)
+- [\[CVPR 2026\] Dual Ascent Diffusion for Inverse Problems](dual_ascent_diffusion_for_inverse_problems.md)
 
 </div>
 

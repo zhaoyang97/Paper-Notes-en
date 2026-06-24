@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AGiLe: Learning Robust Long-Horizon Manipulation via Affordance-Grounded Bidirectional Latent Planning
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] AGiLe jointly trains a "backward planner + forward evaluator" to generate latent sub-goal sequences that are both goal-aligned and dynamically reachable (temporal robustness). These abstract sub-goals are used as queries to filter visual features via cross-attention, implicitly grounding them to pixel-level affordances
+  [CVPR 2026][Robotics][Long-horizon manipulation] AGiLe jointly trains a "backward planner + forward evaluator" to generate latent sub-goal sequences that are both goal-aligned and dynamically reachable (temporal robustness). These abstract sub-goals are used as queries to filter visual features via cross-attention, implicitly grounding them to pixel-level affordances to drive actions (spatial robustness). It achieves a 97.1% average success rate on LIBERO-LONG…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Long-horizon manipulation"
+  - "Latent space planning"
+  - "Visual affordance"
+  - "Diffusion policy"
+  - "Language-guided manipulation"
 date: 2026-05-08
-content_hash: e894bb668da27dd9
+content_hash: 206e506c92d72469
 ---
+
 # AGiLe: Learning Robust Long-Horizon Manipulation via Affordance-Grounded Bidirectional Latent Planning
 
 **Conference**: CVPR 2026  
@@ -137,11 +143,11 @@ Ablations on LIBERO-LONG removing individual modules:
 
 ## Related Papers
 
-- [\[CVPR 2026\] PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation](palm_progress-aware_policy_learning_via_affordance_reasoning_for_long-horizon_ro.md)
 - [\[CVPR 2026\] CLaD: Planning with Grounded Foresight via Cross-Modal Latent Dynamics](clad_planning_with_grounded_foresight_via_cross-modal_latent_dynamics.md)
 - [\[CVPR 2026\] BiPreManip: Learning Affordance-Based Bimanual Preparatory Manipulation through Anticipatory Collaboration](bipremanip_learning_affordance-based_bimanual_preparatory_manipulation_through_a.md)
-- [\[ICML 2026\] HDFlow: Hierarchical Diffusion-Flow Planning for Long-horizon Tasks](../../ICML2026/robotics/hdflow_hierarchical_diffusion-flow_planning_for_long-horizon_tasks.md)
-- [\[CVPR 2026\] Recurrent Reasoning with Vision-Language Models for Estimating Long-Horizon Embodied Task Progress](recurrent_reasoning_with_vision-language_models_for_estimating_long-horizon_embo.md)
+- [\[AAAI 2026\] ManiLong-Shot: Interaction-Aware One-Shot Imitation Learning for Long-Horizon Manipulation](../../AAAI2026/robotics/manilong-shot_interaction-aware_one-shot_imitation_learning_for_long-horizon_man.md)
+- [\[ICLR 2026\] Compositional Diffusion with Guided Search for Long-Horizon Planning](../../ICLR2026/robotics/compositional_diffusion_with_guided_search_for_long-horizon_planning.md)
+- [\[ICLR 2026\] SARM: Stage-Aware Reward Modeling for Long Horizon Robot Manipulation](../../ICLR2026/robotics/sarm_stage-aware_reward_modeling_for_long_horizon_robot_manipulation.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] 3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding
 description: >-
-  [CVPR 2026][Hallucination Detection][3D-LLM] 3D-VCD is the first **inference-time** hallucination mitigation framework for 3D embodied agents. It applies semantic/geometric perturbations to object-centric 3D scene graphs to generate a "corrupted" negative sample context. By running the MLLM on both the original and perturbed graphs and using a contrastive decodin
+  [CVPR 2026][3D Vision][3D-LLM] 3D-VCD is the first **inference-time** hallucination mitigation framework for 3D embodied agents. It applies semantic/geometric perturbations to object-centric 3D scene graphs to generate a "corrupted" negative sample context. By running the MLLM on both the original and perturbed graphs and using a contrastive decoding formula, it suppresses tokens that maintain "high probability even when the scene changes." This method requires no retraining…
 tags:
-  - CVPR 2026
-  - Hallucination Detection
-  - 3D-LLM
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D-LLM"
+  - "Visual Contrastive Decoding"
+  - "Scene Graph Perturbation"
+  - "Object Hallucination"
+  - "Inference-time Intervention"
 date: 2026-05-08
-content_hash: 23878cbc3f998c90
+content_hash: 850cd8f0bf5279e3
 ---
+
 # 3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding
 
 **Conference**: CVPR 2026  
@@ -146,11 +151,11 @@ The authors compared semantic, geometric, and structural (sparsity, flipped rela
 
 ## Related Papers
 
-- [\[CVPR 2025\] 3D-GRAND: A Million-Scale Dataset for 3D-LLMs with Better Grounding and Less Hallucination](../../CVPR2025/hallucination/3d-grand_a_million-scale_dataset_for_3d-llms_with_better_grounding_and_less_hall.md)
-- [\[CVPR 2026\] SEASON: Mitigating Temporal Hallucination in Video Large Language Models via Self-Diagnostic Contrastive Decoding](season_mitigating_temporal_hallucination_in_video_large_language_models_via_self.md)
-- [\[CVPR 2026\] Locate-then-Sparsify: Attribution Guided Sparse Strategy for Visual Hallucination Mitigation](locate-then-sparsify_attribution_guided_sparse_strategy_for_visual_hallucination.md)
-- [\[CVPR 2026\] First Logit Boosting: Visual Grounding Method to Mitigate Object Hallucination in Large Vision-Language Models](first_logit_boosting_visual_grounding_method_to_mitigate_object_hallucination_in.md)
-- [\[CVPR 2026\] Same Attention, Different Truths: Put Logit-Lens over Visual Attention to Detect and Mitigate LVLM Object Hallucination](same_attention_different_truths_put_logit-lens_over_visual_attention_to_detect_a.md)
+- [\[CVPR 2026\] EmbodMocap: In-the-Wild 4D Human-Scene Reconstruction for Embodied Agents](embodmocap_in-the-wild_4d_human-scene_reconstruction_for_embodied_agents.md)
+- [\[CVPR 2026\] 3DrawAgent: Teaching LLM to Draw in 3D with Early Contrastive Experience](3drawagent_teaching_llm_to_draw_in_3d_with_early_contrastive_experience.md)
+- [\[CVPR 2026\] CoSMo3D: Open-World Promptable 3D Semantic Segmentation through LLM-Guided Canonical Spatial Modeling](cosmo3d_open-world_promptable_3d_semantic_segmentation_through_llm-guided_canoni.md)
+- [\[CVPR 2026\] More Natural, More Real: Object-aware Gaussian Splatting for 3D Visual Decoding from Human Brain](more_natural_more_real_object-aware_gaussian_splatting_for_3d_visual_decoding_fr.md)
+- [\[CVPR 2026\] Multimodal Semantic Bias Mitigation for Diverse Text-To-3D Generation](multimodal_semantic_bias_mitigation_for_diverse_text-to-3d_generation.md)
 
 </div>
 

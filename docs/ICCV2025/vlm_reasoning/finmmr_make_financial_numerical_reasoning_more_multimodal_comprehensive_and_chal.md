@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] FinMMR: Make Financial Numerical Reasoning More Multimodal, Comprehensive, and Challenging
 description: >-
-  [ICCV 2025][Multimodal VLM][financial numerical reasoning] This paper proposes FinMMR, a bilingual (Chinese–English) multimodal financial numerical reasoning benchmark containing 4,300 questions and 8…
+  [ICCV 2025][VLM Reasoning][financial numerical reasoning] This paper proposes FinMMR, a bilingual (Chinese–English) multimodal financial numerical reasoning benchmark containing 4,300 questions and 8,700 images spanning 14 financial sub-domains, requiring models to perform multi-step precise numerical computation. Evaluation of 15 state-of-the-art MLLMs shows that the best model achieves only 53% accuracy on the Hard subset, exposing fundamental bottlenecks in current MLLMs f…
 tags:
   - "ICCV 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "financial numerical reasoning"
   - "multimodal benchmark"
   - "LLM evaluation"
   - "chain-of-thought reasoning"
   - "knowledge augmentation"
 date: 2026-05-08
-content_hash: 1da98f14c6e31679
+content_hash: b4e6684d46f229fa
 ---
 
 # FinMMR: Make Financial Numerical Reasoning More Multimodal, Comprehensive, and Challenging
@@ -140,11 +140,11 @@ The visual filtering–reasoning pipeline improves accuracy on the Medium valida
 
 ## Related Papers
 
-- [\[ICCV 2025\] GRAB: A Challenging GRaph Analysis Benchmark for Large Multimodal Models](grab_a_challenging_graph_analysis_benchmark_for_large_multimodal_models.md)
-- [\[AAAI 2026\] FinMMDocR: Benchmarking Financial Multimodal Reasoning with Scenario Awareness, Document Understanding, and Multi-Step Computation](../../AAAI2026/multimodal_vlm/finmmdocr_benchmarking_financial_multimodal_reasoning_with_scenario_awareness_do.md)
-- [\[ICCV 2025\] Is Less More? Exploring Token Condensation as Training-free Test-time Adaptation](is_less_more_exploring_token_condensation_as_training-free_test-time_adaptation.md)
-- [\[AAAI 2026\] CrossVid: A Comprehensive Benchmark for Evaluating Cross-Video Reasoning in Multimodal Large Language Models](../../AAAI2026/multimodal_vlm/crossvid_a_comprehensive_benchmark_for_evaluating_cross-vide.md)
-- [\[NeurIPS 2025\] MMPerspective: Do MLLMs Understand Perspective? A Comprehensive Benchmark for Perspective Perception, Reasoning, and Robustness](../../NeurIPS2025/multimodal_vlm/mmperspective_do_mllms_understand_perspective_a_comprehensive_benchmark_for_pers.md)
+- [\[ACL 2025\] LongDocURL: a Comprehensive Multimodal Long Document Benchmark Integrating Understanding, Reasoning, and Locating](../../ACL2025/vlm_reasoning/longdocurl_multimodal_long_doc.md)
+- [\[AAAI 2026\] FinMMDocR: Benchmarking Financial Multimodal Reasoning with Scenario Awareness, Document Understanding, and Multi-Step Computation](../../AAAI2026/vlm_reasoning/finmmdocr_benchmarking_financial_multimodal_reasoning_with_scenario_awareness_do.md)
+- [\[ACL 2025\] FinMME: Benchmark Dataset for Financial Multi-Modal Reasoning Evaluation](../../ACL2025/vlm_reasoning/finmme_benchmark_dataset_for_financial_multi-modal_reasoning_evaluation.md)
+- [\[ACL 2026\] Thinking Like a Botanist: Challenging Multimodal Language Models with Intent-Driven Chain-of-Inquiry](../../ACL2026/vlm_reasoning/thinking_like_a_botanist_challenging_multimodal_language_models_with_intent-driv.md)
+- [\[ACL 2025\] FCMR: Robust Evaluation of Financial Cross-Modal Multi-Hop Reasoning](../../ACL2025/vlm_reasoning/fcmr_robust_evaluation_of_financial_cross-modal_multi-hop_reasoning.md)
 
 </div>
 

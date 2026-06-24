@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] VisRef: Visual Refocusing while Thinking Improves Test-Time Scaling in Multi-Modal Large Reasoning Models
 description: >-
-  [CVPR 2026][LLM Reasoning][visual refocusing] Ours proposes VisRef, a training-free visual refocusing framework. During the inference of Multi-modal Large Reasoning Models (MLRMs), VisRef adaptively selects and re-injects a subset of visual tokens that are semantically relevant to the current reasoning state and visually diverse using Determinantal Point Processes
+  [CVPR 2026][Reasoning][visual refocusing] Ours proposes VisRef, a training-free visual refocusing framework. During the inference of Multi-modal Large Reasoning Models (MLRMs), VisRef adaptively selects and re-injects a subset of visual tokens that are semantically relevant to the current reasoning state and visually diverse using Determinantal Point Processes (DPP). Combined with an entropy-based stopping criterion to prevent over-reasoning…
 tags:
-  - CVPR 2026
-  - LLM Reasoning
-  - visual refocusing
-  - test-time scaling
-  - multimodal reasoning
-  - DPP
-  - visual token selection
-  - training-free
+  - "CVPR 2026"
+  - "Reasoning"
+  - "visual refocusing"
+  - "test-time scaling"
+  - "multimodal reasoning"
+  - "DPP"
+  - "visual token selection"
+  - "training-free"
 date: 2026-05-08
-content_hash: 8b5ccc64e1cc07ad
+content_hash: 845fa430b5982af1
 ---
+
 # VisRef: Visual Refocusing while Thinking Improves Test-Time Scaling in Multi-Modal Large Reasoning Models
 
 **Conference**: CVPR 2026  
@@ -158,16 +159,16 @@ Comparison with training-based Look-Back (InternVL-3.5-8B):
 - **Value**: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] ReProbe: Efficient Test-Time Scaling of Multi-Step Reasoning by Probing Internal States of Large Language Models](../../ACL2026/llm_reasoning/reprobe_efficient_test-time_scaling_of_multi-step_reasoning_by_probing_internal_.md)
-- [\[CVPR 2026\] Rationale-Enhanced Decoding for Multi-modal Chain-of-Thought](rationale-enhanced_decoding_for_multi-modal_chain-of-thought.md)
-- [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](../../ICLR2026/llm_reasoning/efficient_test-time_scaling_for_small_vision-language_models.md)
-- [\[ICML 2026\] Lookahead Sample Reward Guidance for Test-Time Scaling of Diffusion Models](../../ICML2026/llm_reasoning/lookahead_sample_reward_guidance_for_test-time_scaling_of_diffusion_models.md)
+- [\[ICLR 2026\] TATTOO: Tool-Grounded Thinking PRM for Test-Time Scaling in Tabular Reasoning](../../ICLR2026/llm_reasoning/tattoo_tool-grounded_thinking_prm_for_test-time_scaling_in_tabular_reasoning.md)
 - [\[ACL 2026\] Parallel Test-Time Scaling for Latent Reasoning Models](../../ACL2026/llm_reasoning/parallel_test-time_scaling_for_latent_reasoning_models.md)
+- [\[ICLR 2026\] ContextPRM: Leveraging Contextual Coherence for multi-domain Test-Time Scaling](../../ICLR2026/llm_reasoning/contextprm_leveraging_contextual_coherence_for_multi-domain_test-time_scaling.md)
+- [\[ICLR 2026\] TUMIX: Multi-Agent Test-Time Scaling with Tool-Use Mixture](../../ICLR2026/llm_reasoning/tumix_multi-agent_test-time_scaling_with_tool-use_mixture.md)
 
 </div>
 

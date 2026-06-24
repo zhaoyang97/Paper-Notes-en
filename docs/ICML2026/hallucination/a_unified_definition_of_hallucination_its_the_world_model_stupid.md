@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Unified Definition of Hallucination: It's The World Model, Stupid!
 description: >-
-  [ICML 2026][Hallucination Detection][position paper] This is a position paper advocating that "hallucinations" across various tasks—translation, summarization, open-domain QA, RAG, multimodal, and agents—be unified as one phenomenon: **user-observable, inaccurate world modeling relative to a "reference world model."** Every scenario is simply a different configuration of
+  [ICML2026][Hallucination Detection][Hallucination definition] This is a position paper advocating that "hallucinations" across various tasks—translation, summarization, open-domain QA, RAG, multimodal, and agents—be unified as one phenomenon: **user-observable, inaccurate world modeling relative to a "reference world model."** Every scenario is simply a different configuration of the "$(W, V, P)$" triplet (Reference World $W$, View Function $V$, Conflict Policy $P$)…
 tags:
-  - ICML 2026
-  - Hallucination Detection
-  - position paper
+  - "ICML2026"
+  - "Hallucination Detection"
+  - "Hallucination definition"
+  - "reference world model"
+  - "conflict policy"
+  - "evaluation benchmark"
+  - "position paper"
 date: 2026-05-08
-content_hash: 057aac4408e895a1
+content_hash: bd95c5af62e44e8f
 ---
+
 # A Unified Definition of Hallucination: It's The World Model, Stupid!
 
 **Conference**: ICML2026  
@@ -133,11 +138,20 @@ As a position paper, it excludes traditional model comparison experiments. Its "
 - **Value**: ⭐⭐⭐⭐ Provides a universal language for hallucination evaluation and a methodology for automated benchmark generation, offering practical guidance for future research.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Related papers would go here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Copy-Paste to Mitigate Large Language Model Hallucinations](../../ICLR2026/hallucination/copy-paste_to_mitigate_large_language_model_hallucinations.md)
+- [\[CVPR 2025\] Stop Learning It All to Mitigate Visual Hallucination, Focus on the Hallucination Target](../../CVPR2025/hallucination/stop_learning_it_all_to_mitigate_visual_hallucination_focus_on_the_hallucination.md)
+- [\[ICLR 2026\] Mitigating Hallucination in Vision-Language Model with Depth and Spatial-aware Key-Value Refinement](../../ICLR2026/hallucination/mitigating_hallucination_in_vision-language_model_with_depth_and_spatial-aware_k.md)
+- [\[CVPR 2026\] Tell Model Where to Look: Mitigating Hallucinations in MLLMs by Vision-Guided Attention](../../CVPR2026/hallucination/tell_model_where_to_look_mitigating_hallucinations_in_mllms_by_vision-guided_att.md)
+- [\[CVPR 2026\] One Token, Two Fates: A Unified Framework via Vision Token Manipulation Against MLLMs Hallucination](../../CVPR2026/hallucination/one_token_two_fates_a_unified_framework_via_vision_token_manipulation_against_ml.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2025\] Stop Learning It All to Mitigate Visual Hallucination, Focus on the Hallucination Target](../../CVPR2025/hallucination/stop_learning_it_all_to_mitigate_visual_hallucination_focus_on_the_hallucination.md)

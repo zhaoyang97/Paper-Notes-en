@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] On the Benefits of Weight Normalization for Overparameterized Matrix Sensing
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper provides the first theoretical characterization of Weight Normalization (WN) in overparameterized matrix sensing. By decoupling matrix variables into "direction (Stiefel manifold) + magnitude (symmetric matrix)" and applying Riemannian Gradient Descent, the method achieves **linear convergence** under finite
+  [ICLR 2026][Learning Theory][Weight Normalization] This paper provides the first theoretical characterization of Weight Normalization (WN) in overparameterized matrix sensing. By decoupling matrix variables into "direction (Stiefel manifold) + magnitude (symmetric matrix)" and applying Riemannian Gradient Descent, the method achieves **linear convergence** under finite samples (an exponential acceleration compared to the sublinear lower bound of standard GD). Notably…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Optimization"
+  - "Weight Normalization"
+  - "Matrix Sensing"
+  - "Overparameterization"
+  - "Riemannian Optimization"
+  - "Saddle Point Escape"
 date: 2026-05-08
-content_hash: 04d5d7bad9f62032
+content_hash: b44ec2480bf21d08
 ---
+
 # On the Benefits of Weight Normalization for Overparameterized Matrix Sensing
 
 **Conference**: ICLR 2026  
@@ -127,10 +134,10 @@ Experiments focus on verifying the theory using synthetic data ($A=U\Sigma U^\to
 ## Related Papers
 
 - [\[ICLR 2026\] Testing Fourier Sparsity via Implicit Sensing](testing_fourier_sparsity_via_implicit_sensing.md)
-- [\[ICLR 2026\] In-Context Algorithm Emulation in Fixed-Weight Transformers](in-context_algorithm_emulation_in_fixed-weight_transformers.md)
 - [\[ICLR 2026\] Gradient Descent Dynamics of Rank-One Matrix Denoising](gradient_descent_dynamics_of_rank-one_matrix_denoising.md)
+- [\[ICLR 2026\] In-Context Algorithm Emulation in Fixed-Weight Transformers](in-context_algorithm_emulation_in_fixed-weight_transformers.md)
 - [\[ICLR 2026\] Improved High-Dimensional Estimation with Langevin Dynamics and Stochastic Weight Averaging](improved_high-dimensional_estimation_with_langevin_dynamics_and_stochastic_weigh.md)
-- [\[ICLR 2026\] Closed-form $\ell_r$ norm scaling with data for overparameterized linear regression and diagonal linear networks under $\ell_p$ bias](closed-form_ell_r_norm_scaling_with_data_for_overparameterized_linear_regression.md)
+- [\[ICLR 2026\] Enabling Fine-Tuning of Direct Feedback Alignment via Feedback-Weight Matching](enabling_fine-tuning_of_direct_feedback_alignment_via_feedback-weight_matching.md)
 
 </div>
 

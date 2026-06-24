@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FlexRank: Nested Low-Rank Knowledge Decomposition for Adaptive Model Deployment
 description: >-
-  [ICML 2026][Pretraining][Knowledge Distillation] FlexRank performs activation-aware low-rank decomposition (DataSVD) on each linear layer of a pre-trained large model, uses dynamic programming to select a set of **strictly nested** sub-models corresponding to different compute budgets in $O(L\cdot K)$ time, and jointly trains this shared weight set using knowledge di
+  [ICML 2026 Spotlight][LLM Pretraining][Elastic Models] FlexRank performs activation-aware low-rank decomposition (DataSVD) on each linear layer of a pre-trained large model, uses dynamic programming to select a set of **strictly nested** sub-models corresponding to different compute budgets in $O(L\cdot K)$ time, and jointly trains this shared weight set using knowledge distillation. Finally, via Gauge-Aligned Reparametrization, rank savings are translated into actual FLOPs s…
 tags:
-  - ICML 2026
-  - Pretraining
-  - Knowledge Distillation
+  - "ICML 2026 Spotlight"
+  - "LLM Pretraining"
+  - "Elastic Models"
+  - "Low-Rank Decomposition"
+  - "Nested Sub-models"
+  - "Knowledge Distillation"
+  - "Pareto Frontier"
 date: 2026-05-08
-content_hash: 4fb72059ef446ffa
+content_hash: 54dda6fd59506ea8
 ---
+
 # FlexRank: Nested Low-Rank Knowledge Decomposition for Adaptive Model Deployment
 
 **Conference**: ICML 2026 Spotlight  
@@ -133,7 +138,7 @@ The total objective is $\min_\theta \sum_k \alpha_k \ell_k(\theta)$, optimized v
 - [\[NeurIPS 2025\] Breaking the Frozen Subspace: Importance Sampling for Low-Rank Optimization in LLM Pretraining](../../NeurIPS2025/llm_pretraining/breaking_the_frozen_subspace_importance_sampling_for_low-rank_optimization_in_ll.md)
 - [\[ACL 2026\] KoCo: Conditioning Language Model Pre-training on Knowledge Coordinates](../../ACL2026/llm_pretraining/koco_conditioning_language_model_pre-training_on_knowledge_coordinates.md)
 - [\[ICML 2026\] SPARe: Stacked Parallelism with Adaptive Reordering for Fault-Tolerant LLM Pretraining Systems with 100k+ GPUs](spare_stacked_parallelism_with_adaptive_reordering_for_fault-tolerant_llm_pretra.md)
-- [\[ICLR 2026\] FictionalQA: A Dataset for Studying Memorization and Knowledge Acquisition](../../ICLR2026/llm_pretraining/fictionalqa_a_dataset_for_studying_memorization_and_knowledge_acquisition.md)
+- [\[ICLR 2026\] ADEPT: Continual Pretraining via Adaptive Expansion and Dynamic Decoupled Tuning](../../ICLR2026/llm_pretraining/adept_continual_pretraining_via_adaptive_expansion_and_dynamic_decoupled_tuning.md)
 
 </div>
 

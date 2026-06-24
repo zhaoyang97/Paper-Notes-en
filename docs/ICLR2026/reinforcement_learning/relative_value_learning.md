@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Relative Value Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][R-GAE] Addressing the observation that "control only cares about value differences while the absolute value scale is a redundant degree of freedom," this paper proposes Relative Value Learning (RV). The critic directly learns an antisymmetric function $\Delta_\theta(s_i,s_j)=V^\pi(s_i)-V^\pi(s_j)$ supported by a Pairwise Bell
+  [ICLR 2026][Reinforcement Learning][Relative Value] Addressing the observation that "control only cares about value differences while the absolute value scale is a redundant degree of freedom," this paper proposes Relative Value Learning (RV). The critic directly learns an antisymmetric function $\Delta_\theta(s_i,s_j)=V^\pi(s_i)-V^\pi(s_j)$ supported by a Pairwise Bellman Operator (proven to be a $\gamma$-contraction with its unique fixed point equal to the true value differ…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - R-GAE
-  - PPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Relative Value"
+  - "Antisymmetric Functions"
+  - "Pairwise Bellman Operator"
+  - "R-GAE"
+  - "PPO"
 date: 2026-05-08
-content_hash: bcb42f277b11bc48
+content_hash: 03b2c7f7e9efc57f
 ---
+
 # Relative Value Learning
 
 **Conference**: ICLR 2026  
@@ -138,11 +142,11 @@ Aggregated metrics (human-normalized IQM, Median, Mean) show that PPO+RV outperf
 
 ## Related Papers
 
+- [\[ICLR 2026\] transitive rl value learning via divide and conquer](transitive_rl_value_learning_via_divide_and_conquer.md)
 - [\[ICLR 2026\] Relative Entropy Pathwise Policy Optimization](relative_entropy_pathwise_policy_optimization.md)
+- [\[ICLR 2026\] Negotiated Reasoning: On Provably Addressing Relative Over-Generalization](negotiated_reasoning_on_provably_addressing_relative_over-generalization.md)
 - [\[ICLR 2026\] Value Flows](value_flows.md)
 - [\[ICLR 2026\] Reinforcement Learning via Value Gradient Flow](reinforcement_learning_via_value_gradient_flow.md)
-- [\[ICLR 2026\] Inter-Agent Relative Representations for Multi-Agent Option Discovery](inter-agent_relative_representations_for_multi-agent_option_discovery.md)
-- [\[ICLR 2026\] Transitive RL: Value Learning via Divide and Conquer](transitive_rl_value_learning_via_divide_and_conquer.md)
 
 </div>
 

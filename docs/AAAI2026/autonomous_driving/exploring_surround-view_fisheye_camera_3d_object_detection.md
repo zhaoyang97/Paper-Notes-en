@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Exploring Surround-View Fisheye Camera 3D Object Detection
 description: >-
-  [AAAI 2026][Autonomous Driving][fisheye camera] This paper systematically investigates 3D object detection with surround-view fisheye cameras. It constructs the Fisheye3DOD benchmark dataset containing both pinhole and f…
+  [AAAI 2026][Autonomous Driving][fisheye camera] This paper systematically investigates 3D object detection with surround-view fisheye cameras. It constructs the Fisheye3DOD benchmark dataset containing both pinhole and fisheye camera data, and proposes two frameworks—FisheyeBEVDet and FisheyePETR—that embed fisheye geometric modeling into mainstream detection paradigms via spherical feature representations, achieving up to 6.2 FDS improvement over rectification-based baseline…
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "spherical representation"
   - "surround-view perception"
 date: 2026-05-08
-content_hash: ac7601fb360361d7
+content_hash: b2f16d220acdd992
 ---
 
 # Exploring Surround-View Fisheye Camera 3D Object Detection
@@ -147,9 +147,9 @@ Training is conducted on a single NVIDIA A6000 GPU. The first 70% of frames per 
 
 - [\[AAAI 2026\] FQ-PETR: Fully Quantized Position Embedding Transformation for Multi-View 3D Object Detection](fq-petr_fully_quantized_position_embedding_transformation_fo.md)
 - [\[ICCV 2025\] CVFusion: Cross-View Fusion of 4D Radar and Camera for 3D Object Detection](../../ICCV2025/autonomous_driving/cvfusion_cross-view_fusion_of_4d_radar_and_camera_for_3d_object_detection.md)
-- [\[AAAI 2026\] DriveFlow: Rectified Flow Adaptation for Robust 3D Object Detection in Autonomous Driving](driveflow_rectified_flow_adaptation_for_robust_3d_object_detection_in_autonomous.md)
+- [\[CVPR 2025\] RaCFormer: Towards High-Quality 3D Object Detection via Query-based Radar-Camera Fusion](../../CVPR2025/autonomous_driving/racformer_towards_high-quality_3d_object_detection_via_query-based_radar-camera_.md)
 - [\[CVPR 2026\] CoIn3D: Revisiting Configuration-Invariant Multi-Camera 3D Object Detection](../../CVPR2026/autonomous_driving/coin3d_revisiting_configuration-invariant_multi-camera_3d_object_detection.md)
-- [\[CVPR 2026\] R4Det: 4D Radar-Camera Fusion for High-Performance 3D Object Detection](../../CVPR2026/autonomous_driving/r4det_4d_radar-camera_fusion_for_high-performance_3d_object_detection.md)
+- [\[AAAI 2026\] DriveFlow: Rectified Flow Adaptation for Robust 3D Object Detection in Autonomous Driving](driveflow_rectified_flow_adaptation_for_robust_3d_object_detection_in_autonomous.md)
 
 </div>
 

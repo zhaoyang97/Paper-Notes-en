@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FairContrast: Enhancing Fairness through Contrastive Learning and Customized Augmentation
 description: >-
-  [NeurIPS 2025][AI Safety][Fairness] FairContrast proposes a fair contrastive learning framework for tabular data. By strategically selecting positive pairs—pairing advantaged-group samples with favorable outcomes against…
+  [NeurIPS 2025][AI Safety][Fairness] FairContrast proposes a fair contrastive learning framework for tabular data. By strategically selecting positive pairs—pairing advantaged-group samples with favorable outcomes against their disadvantaged-group counterparts—and training end-to-end with supervised or self-supervised contrastive loss combined with cross-entropy loss, the framework achieves significant bias reduction with minimal accuracy loss…
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "Representation Learning"
   - "Demographic Parity"
 date: 2026-05-08
-content_hash: 74e95e348ec53671
+content_hash: 3c4da3c49cb2129c
 ---
 
 # FairContrast: Enhancing Fairness through Contrastive Learning and Customized Augmentation
@@ -177,9 +177,9 @@ Key Findings:
 
 - [\[NeurIPS 2025\] Mitigating Disparate Impact of Differentially Private Learning through Bounded Adaptive Clipping](mitigating_disparate_impact_of_differentially_private_learning_through_bounded_a.md)
 - [\[ICCV 2025\] Backdooring Self-Supervised Contrastive Learning by Noisy Alignment](../../ICCV2025/ai_safety/backdooring_self-supervised_contrastive_learning_by_noisy_alignment.md)
-- [\[NeurIPS 2025\] Incentivizing Time-Aware Fairness in Data Sharing](incentivizing_time-aware_fairness_in_data_sharing.md)
-- [\[NeurIPS 2025\] Efficient Fairness-Performance Pareto Front Computation](efficient_fairness-performance_pareto_front_computation.md)
+- [\[CVPR 2025\] A Simple Data Augmentation for Feature Distribution Skewed Federated Learning](../../CVPR2025/ai_safety/a_simple_data_augmentation_for_feature_distribution_skewed_federated_learning.md)
 - [\[NeurIPS 2025\] Enhancing Graph Classification Robustness with Singular Pooling](enhancing_graph_classification_robustness_with_singular_pooling.md)
+- [\[NeurIPS 2025\] Incentivizing Time-Aware Fairness in Data Sharing](incentivizing_time-aware_fairness_in_data_sharing.md)
 
 </div>
 

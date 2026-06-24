@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FALCON: Fine-grained Activation Manipulation by Contrastive Orthogonal Unalignment for Large Language Model
 description: >-
-  [NeurIPS 2025][LLM Safety][machine unlearning] This paper proposes FALCON, a representation-guided LLM unlearning framework that employs mutual information for parameter selection…
+  [NeurIPS 2025][LLM Safety][machine unlearning] This paper proposes FALCON, a representation-guided LLM unlearning framework that employs mutual information for parameter selection, a contrastive mechanism for fine-grained knowledge separation, and gradient orthogonal projection to resolve forgetting–retention conflicts. FALCON consistently outperforms existing methods on harmful knowledge, copyright, and entity unlearning benchmarks.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "mutual information"
   - "knowledge disentanglement"
 date: 2026-05-08
-content_hash: 1809dc331d276fba
+content_hash: 47a1072219e5af0c
 ---
 
 # FALCON: Fine-grained Activation Manipulation by Contrastive Orthogonal Unalignment for Large Language Model
@@ -128,11 +128,11 @@ The final update direction is: $\nabla\mathcal{L}_{FALCON} = \alpha\nabla\mathca
 
 ## Related Papers
 
+- [\[ACL 2025\] Improving Model Factuality with Fine-grained Critique-based Evaluator](../../ACL2025/llm_safety/improving_model_factuality_with_fine-grained_critique-based_evaluator.md)
 - [\[NeurIPS 2025\] Geo-Sign: Hyperbolic Contrastive Regularisation for Geometrically Aware Sign Language Translation](geo-sign_hyperbolic_contrastive_regularisation_for_geometrically_aware_sign_lang.md)
 - [\[NeurIPS 2025\] PULSE: Practical Evaluation Scenarios for Large Multimodal Model Unlearning](pulse_practical_evaluation_scenarios_for_large_multimodal_model_unlearning.md)
 - [\[NeurIPS 2025\] AgentStealth: Reinforcing Large Language Model for Anonymizing User-generated Text](agentstealth_reinforcing_large_language_model_for_anonymizing_user-generated_tex.md)
-- [\[ICML 2026\] Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models](../../ICML2026/llm_safety/towards_fine-grained_robustness_attention-guided_test-time_prompt_tuning_for_vis.md)
-- [\[NeurIPS 2025\] Self-Refining Language Model Anonymizers via Adversarial Distillation](self-refining_language_model_anonymizers_via_adversarial_distillation.md)
+- [\[NeurIPS 2025\] When AI Democratizes Exploitation: LLM-Assisted Strategic Manipulation of Fair Division Algorithms](when_ai_democratizes_exploitation_llm-assisted_strategic_manipulation_of_fair_di.md)
 
 </div>
 

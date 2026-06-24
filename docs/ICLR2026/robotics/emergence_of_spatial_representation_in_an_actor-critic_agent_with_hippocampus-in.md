@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Emergence of Spatial Representation in an Actor-Critic Agent with Hippocampus-Inspired Sequence Generator
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Actor-Critic] Inspired by the intrinsic recurrent loops in the hippocampal CA3 region, this paper proposes a minimal sequence generator (shift register) integrated with an actor-critic agent. This approach achieves maze navigation using sparse visual inputs while facilitating the emergence of neurobiological phenomena such as place
+  [ICLR 2026][Robotics][Hippocampal Sequence Generator] Inspired by the intrinsic recurrent loops in the hippocampal CA3 region, this paper proposes a minimal sequence generator (shift register) integrated with an actor-critic agent. This approach achieves maze navigation using sparse visual inputs while facilitating the emergence of neurobiological phenomena such as place fields, DG orthogonalization, distance-dependent spatial kernels, and task-dependent remapping.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Actor-Critic
+  - "ICLR 2026"
+  - "Robotics"
+  - "Hippocampal Sequence Generator"
+  - "Spatial Representation"
+  - "Actor-Critic"
+  - "Sparse Coding"
+  - "Place Cells"
 date: 2026-05-08
-content_hash: 4b258932bad8370d
+content_hash: f9bba21e4b0467d4
 ---
+
 # Emergence of Spatial Representation in an Actor-Critic Agent with Hippocampus-Inspired Sequence Generator
 
 **Conference**: ICLR 2026  
@@ -137,10 +142,10 @@ This indicates the agent acquires a generalizable representation of the spatial 
 ## Related Papers
 
 - [\[AAAI 2026\] Actor-Critic for Continuous Action Chunks: A Reinforcement Learning Framework for Long-Horizon Robotic Manipulation with Sparse Reward](../../AAAI2026/robotics/actor-critic_for_continuous_action_chunks_a_reinforcement_le.md)
+- [\[ICLR 2026\] Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action Model](spatial_forcing_implicit_spatial_representation_alignment_for_vision-language-ac.md)
 - [\[ICLR 2026\] From Spatial to Actions: Grounding Vision-Language-Action Model in Spatial Foundation Priors](from_spatial_to_actions_grounding_vision-language-action_model_in_spatial_founda.md)
 - [\[ICLR 2026\] RoboInter: A Holistic Intermediate Representation Suite Towards Robotic Manipulation](robointer_a_holistic_intermediate_representation_suite_towards_robotic_manipulat.md)
 - [\[ICLR 2026\] AnyTouch 2: General Optical Tactile Representation Learning For Dynamic Tactile Perception](anytouch_2_general_optical_tactile_representation_learning_for_dynamic_tactile_p.md)
-- [\[ICLR 2026\] Theory of Space: Can Foundation Models Construct Spatial Beliefs through Active Exploration?](theory_of_space_can_foundation_models_construct_spatial_beliefs_through_active_e.md)
 
 </div>
 

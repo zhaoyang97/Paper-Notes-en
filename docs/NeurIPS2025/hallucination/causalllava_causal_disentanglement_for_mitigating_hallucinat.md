@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Causal-LLaVA: Causal Disentanglement for Mitigating Hallucination in Multimodal Large Language Models
 description: >-
-  [NeurIPS 2025][Hallucination Detection][hallucination] This paper identifies the root cause of object hallucination in MLLMs at the representation level—semantic entanglement induced by dataset co-occurrence bias—and pro…
+  [NeurIPS 2025][Hallucination Detection][hallucination] This paper identifies the root cause of object hallucination in MLLMs at the representation level—semantic entanglement induced by dataset co-occurrence bias—and proposes a dual-path causal disentanglement framework (Causal-Driven Projector + Causal Intervention Module). By applying backdoor adjustment at both the projector and the final Transformer layer to decouple co-occurring object representations…
 tags:
   - "NeurIPS 2025"
   - "Hallucination Detection"
@@ -13,7 +13,7 @@ tags:
   - "co-occurrence bias"
   - "backdoor adjustment"
 date: 2026-05-08
-content_hash: 584a6f751c8dfeb5
+content_hash: 87f04cd650af17f1
 ---
 
 # Causal-LLaVA: Causal Disentanglement for Mitigating Hallucination in Multimodal Large Language Models
@@ -126,9 +126,9 @@ Visual understanding capabilities are also improved concurrently: MMBench +2.0%,
 
 - [\[NeurIPS 2025\] Seeing is Believing? Mitigating OCR Hallucinations in Multimodal Large Language Models](seeing_is_believing_mitigating_ocr_hallucinations_in_multimodal_large_language_m.md)
 - [\[ICML 2026\] Mitigating Hallucinations in Large Vision-Language Models via Causal Route Gating](../../ICML2026/hallucination/mitigating_hallucinations_in_large_vision-language_models_via_causal_route_gatin.md)
-- [\[NeurIPS 2025\] Auditing Meta-Cognitive Hallucinations in Reasoning Large Language Models](auditing_meta-cognitive_hallucinations_in_reasoning_large_language_models.md)
 - [\[NeurIPS 2025\] When Semantics Mislead Vision: Mitigating Large Multimodal Models Hallucinations](when_semantics_mislead_vision_mitigating_large_multimodal_models_hallucinations_.md)
-- [\[AAAI 2026\] Hallucinate Less by Thinking More: Aspect-Based Causal Abstention for Large Language Models](../../AAAI2026/hallucination/hallucinate_less_by_thinking_more_aspect-based_causal_absten.md)
+- [\[NeurIPS 2025\] Auditing Meta-Cognitive Hallucinations in Reasoning Large Language Models](auditing_meta-cognitive_hallucinations_in_reasoning_large_language_models.md)
+- [\[ICML 2025\] Look Twice Before You Answer: Memory-Space Visual Retracing for Hallucination Mitigation in Multimodal Large Language Models](../../ICML2025/hallucination/look_twice_before_you_answer_memory-space_visual_retracing_for_hallucination_mit.md)
 
 </div>
 

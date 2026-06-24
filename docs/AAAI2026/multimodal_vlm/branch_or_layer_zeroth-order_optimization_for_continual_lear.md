@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Branch, or Layer? Zeroth-Order Optimization for Continual Learning of Vision-Language Models
 description: >-
-  [AAAI 2026][Multimodal VLM][Zeroth-order optimization] This paper systematically investigates the application of zeroth-order (ZO) optimization in PEFT-based vision-language continual learning (VLCL). It finds that naive…
+  [AAAI 2026][Multimodal VLM][Zeroth-order optimization] This paper systematically investigates the application of zeroth-order (ZO) optimization in PEFT-based vision-language continual learning (VLCL). It finds that naively replacing first-order (FO) optimization with ZO causes training instability, and proposes a progressive ZO-FO hybrid strategy ranging from branch-wise to layer-wise granularity. Building on the theoretical finding that visual modality exhibits larger gradie…
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "parameter-efficient fine-tuning"
   - "modality-aware optimization"
 date: 2026-05-08
-content_hash: 4b187f9bc91b76f4
+content_hash: 1ee7556b869a68f8
 ---
 
 # Branch, or Layer? Zeroth-Order Optimization for Continual Learning of Vision-Language Models
@@ -127,10 +127,10 @@ The baseline is MoE4Adapter (CVPR 2024 SOTA) with CLIP-ViT-B/16 backbone.
 ## Related Papers
 
 - [\[ICLR 2026\] Enhanced Continual Learning of Vision-Language Models with Model Fusion](../../ICLR2026/multimodal_vlm/enhanced_continual_learning_of_vision-language_models_with_model_fusion.md)
-- [\[CVPR 2026\] Continual Learning with Vision-Language Models via Semantic-Geometry Preservation](../../CVPR2026/multimodal_vlm/continual_learning_with_vision-language_models_via_semantic-geometry_preservatio.md)
+- [\[CVPR 2026\] Enhancing Continual Learning of Vision-Language Models via Dynamic Prefix Weighting](../../CVPR2026/multimodal_vlm/enhancing_continual_learning_of_vision-language_models_via_dynamic_prefix_weight.md)
 - [\[AAAI 2026\] Harnessing Textual Semantic Priors for Knowledge Transfer and Refinement in CLIP-Driven Continual Learning](harnessing_textual_semantic_priors_for_knowledge_transfer_and_refinement_in_clip.md)
 - [\[AAAI 2026\] BOFA: Bridge-Layer Orthogonal Low-Rank Fusion for CLIP-Based Class-Incremental Learning](bofa_bridge-layer_orthogonal_low-rank_fusion_for_clip-based_.md)
-- [\[AAAI 2026\] BiPrompt: Bilateral Prompt Optimization for Visual and Textual Debiasing in Vision-Language Models](biprompt_bilateral_prompt_optimization_for_visual_and_textual_debiasing_in_visio.md)
+- [\[ICLR 2026\] Memory-Free Continual Learning with Null Space Adaptation for Zero-Shot Vision-Language Models](../../ICLR2026/multimodal_vlm/memory-free_continual_learning_with_null_space_adaptation_for_zero-shot_vision-l.md)
 
 </div>
 

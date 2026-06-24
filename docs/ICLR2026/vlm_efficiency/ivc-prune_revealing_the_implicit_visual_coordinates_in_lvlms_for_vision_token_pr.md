@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] IVC-Prune: Revealing the Implicit Visual Coordinates in LVLMs for Vision Token Pruning
 description: >-
-  [ICLR 2026][vlm_efficiency][Paper Note] This work reveals the implicit visual coordinate system (IVC tokens) established by RoPE positional encoding in LVLMs and proposes a training-free, prompt-aware vision token pruning strategy. By preserving both IVC tokens and semantic foreground tokens, it reduces visual tokens by approximately 50% while maintaining $\
+  [ICLR 2026][Multimodal Efficiency][Vision token pruning] This work reveals the implicit visual coordinate system (IVC tokens) established by RoPE positional encoding in LVLMs and proposes a training-free, prompt-aware vision token pruning strategy. By preserving both IVC tokens and semantic foreground tokens, it reduces visual tokens by approximately 50% while maintaining $\ge 99\%$ of the original performance.
 tags:
-  - ICLR 2026
-  - vlm_efficiency
+  - "ICLR 2026"
+  - "Multimodal Efficiency"
+  - "Vision token pruning"
+  - "RoPE positional encoding"
+  - "Implicit visual coordinates"
+  - "Spatial reasoning"
+  - "Training-free"
 date: 2026-05-08
-content_hash: c361a86bf6752a19
+content_hash: e4c3a8433220eeeb
 ---
+
 # IVC-Prune: Revealing the Implicit Visual Coordinates in LVLMs for Vision Token Pruning
 
 **Conference**: ICLR 2026  
@@ -168,10 +174,10 @@ Similar to the concept of retaining "attention sink" tokens and delimiter tokens
 ## Related Papers
 
 - [\[ICLR 2026\] Prune Redundancy, Preserve Essence: Vision Token Compression in VLMs via Synergistic Importance-Diversity](prune_redundancy_preserve_essence_vision_token_compression_in_vlms_via_synergist.md)
-- [\[CVPR 2026\] IF-Prune: Information-Flow Guided Token Pruning for Efficient Vision-Language Models](../../CVPR2026/vlm_efficiency/if-prune_information-flow_guided_token_pruning_for_efficient_vision-language_mod.md)
 - [\[CVPR 2026\] ZOO-Prune: Training-Free Token Pruning via Zeroth-Order Gradient Estimation in Vision-Language Models](../../CVPR2026/vlm_efficiency/zoo-prune_training-free_token_pruning_via_zeroth-order_gradient_estimation_in_vi.md)
-- [\[ICLR 2026\] LearnPruner: Rethinking Attention-based Token Pruning in Vision Language Models](learnpruner_rethinking_attention-based_token_pruning_in_vision_language_models.md)
-- [\[ICLR 2026\] Nüwa: Mending the Spatial Integrity Torn by VLM Token Pruning](nüwa_mending_the_spatial_integrity_torn_by_vlm_token_pruning.md)
+- [\[AAAI 2026\] Rethinking Visual Token Reduction in LVLMs under Cross-Modal Misalignment](../../AAAI2026/vlm_efficiency/rethinking_visual_token_reduction_in_lvlms_under_cross-modal_misalignment.md)
+- [\[CVPR 2026\] IF-Prune: Information-Flow Guided Token Pruning for Efficient Vision-Language Models](../../CVPR2026/vlm_efficiency/if-prune_information-flow_guided_token_pruning_for_efficient_vision-language_mod.md)
+- [\[CVPR 2026\] Hi-Lo Prune: Look at What You'll Lose before Pruning with Hierarchical Token Selection](../../CVPR2026/vlm_efficiency/hi-lo_prune_look_at_what_youll_lose_before_pruning_with_hierarchical_token_selec.md)
 
 </div>
 

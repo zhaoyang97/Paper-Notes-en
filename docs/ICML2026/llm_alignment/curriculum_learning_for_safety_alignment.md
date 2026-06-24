@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Curriculum Learning for Safety Alignment
 description: >-
-  [ICML 2026][Alignment & RLHF][DPO] This paper proposes Staged-Competence—a DPO safety alignment framework that utilizes "model-specific preference alignment margin" as a difficulty score. It employs a dual curriculum of "staged reference model updates + within-stage competence-based sampling." Across three 8B-scale LLMs, it reduces OOD harmful response
+  [ICML 2026][LLM Alignment][DPO] This paper proposes Staged-Competence—a DPO safety alignment framework that utilizes "model-specific preference alignment margin" as a difficulty score. It employs a dual curriculum of "staged reference model updates + within-stage competence-based sampling." Across three 8B-scale LLMs, it reduces OOD harmful response rates by an average of 16% and jailbreak success rates by 20%, while maintaining general capabilities and avoiding over-refusal.
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - DPO
+  - "ICML 2026"
+  - "LLM Alignment"
+  - "DPO"
+  - "Safety Alignment"
+  - "Curriculum Learning"
+  - "OOD Robustness"
+  - "Jailbreak Attacks"
 date: 2026-05-08
-content_hash: 69a678f9216b5c2c
+content_hash: b67898dd69ceb35f
 ---
+
 # Curriculum Learning for Safety Alignment
 
 **Conference**: ICML 2026  
@@ -130,11 +135,11 @@ Average across three models: OOD harmful rate reduced by 16%, attack success rat
 
 ## Related Papers
 
+- [\[ICLR 2026\] AlphaAlign: Incentivizing Safety Alignment with Extremely Simplified Reinforcement Learning](../../ICLR2026/llm_alignment/alphaalign_incentivizing_safety_alignment_with_extremely_simplified_reinforcemen.md)
+- [\[ICLR 2026\] Alignment-Weighted DPO: A Principled Reasoning Approach to Improve Safety Alignment](../../ICLR2026/llm_alignment/alignment-weighted_dpo_a_principled_reasoning_approach_to_improve_safety_alignme.md)
 - [\[ICML 2026\] Towards Context-Invariant Safety Alignment for Large Language Models](towards_context-invariant_safety_alignment_for_large_language_models.md)
 - [\[ICML 2026\] Implicit Safety Alignment from Crowd Preferences](implicit_safety_alignment_from_crowd_preferences.md)
 - [\[ICML 2026\] MESA: Improving MoE Safety Alignment via Decentralized Expertise](mesa_improving_moe_safety_alignment_via_decentralized_expertise.md)
-- [\[ICLR 2026\] Superficial Safety Alignment Hypothesis](../../ICLR2026/llm_alignment/superficial_safety_alignment_hypothesis.md)
-- [\[AAAI 2026\] Differentiated Directional Intervention: A Framework for Evading LLM Safety Alignment](../../AAAI2026/llm_alignment/differentiated_directional_intervention_a_framework_for_evading_llm_safety_align.md)
 
 </div>
 

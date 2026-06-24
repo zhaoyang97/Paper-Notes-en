@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Transformers as Measure-Theoretic Associative Memory: A Statistical Perspective and Minimax Optimality
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper re-models the "associative memory" of Transformers at the level of probability measures—where the context is a mixture of token distributions and attention is an integral operator acting on measures. It proves that a shallow (depth 2) "Measure-theoretic Transformer + MLP" trained via Empirical Risk Minimizat
+  [ICLR 2026][Learning Theory][Associative Memory] This paper re-models the "associative memory" of Transformers at the level of probability measures—where the context is a mixture of token distributions and attention is an integral operator acting on measures. It proves that a shallow (depth 2) "Measure-theoretic Transformer + MLP" trained via Empirical Risk Minimization (ERM) can learn the mapping of "recalling the distribution of relevant components and then predicting scala…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Transformer Theory"
+  - "Associative Memory"
+  - "Measure Theory"
+  - "Softmax Attention"
+  - "Minimax Optimality"
+  - "Generalization Bounds"
 date: 2026-05-08
-content_hash: 37f9e79bdc88e691
+content_hash: 4b025286754f39ae
 ---
+
 # Transformers as Measure-Theoretic Associative Memory: A Statistical Perspective and Minimax Optimality
 
 **Conference**: ICLR 2026  
@@ -138,15 +145,16 @@ Conclusion: The spectral decay parameter $\alpha$ systematically affects the con
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Dynamical properties of dense associative memory](dynamical_properties_of_dense_associative_memory.md)
 - [\[ICLR 2026\] A Biologically Plausible Dense Associative Memory with Exponential Capacity](a_biologically_plausible_dense_associative_memory_with_exponential_capacity.md)
+- [\[ICLR 2026\] Adaptive Hopfield Network: Rethinking Similarities in Associative Memory](adaptive_hopfield_network_rethinking_similarities_in_associative_memory.md)
+- [\[ICLR 2026\] An evolutionary perspective on modes of learning in Transformers](an_evolutionary_perspective_on_modes_of_learning_in_transformers.md)
 - [\[ICLR 2026\] Curse of Slicing: Why Sliced Mutual Information is a Deceptive Measure of Statistical Dependence](curse_of_slicing_why_sliced_mutual_information_is_a_deceptive_measure_of_statist.md)
-- [\[ICLR 2026\] A Statistical Learning Perspective on Semi-dual Adversarial Neural Optimal Transport Solvers](a_statistical_learning_perspective_on_semi-dual_adversarial_neural_optimal_trans.md)
-- [\[ICLR 2026\] Best-of-Majority: Minimax-Optimal Strategy for Pass@k Inference Scaling](best-of-majority_minimax-optimal_strategy_for_passk_inference_scaling.md)
 
 </div>
 

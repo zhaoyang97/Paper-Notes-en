@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dynamics-Predictive Sampling for Active RL Finetuning of Large Reasoning Models
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] The solving progress of each prompt in RL finetuning is modeled as a Hidden Markov Model (HMM) dynamic system. Through lightweight online Bayesian inference, the solving state of prompts is predicted, prioritizing "partially solved" prompts. This achieves equivalent or superior reasoning performance with less than 30%
+  [ICLR 2026][Reasoning][RL Finetuning] The solving progress of each prompt in RL finetuning is modeled as a Hidden Markov Model (HMM) dynamic system. Through lightweight online Bayesian inference, the solving state of prompts is predicted, prioritizing "partially solved" prompts. This achieves equivalent or superior reasoning performance with less than 30% of the rollout volume compared to DS.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "RL Finetuning"
+  - "Prompt Sampling"
+  - "Hidden Markov Model"
+  - "Large Reasoning Models"
+  - "Online Bayesian Inference"
 date: 2026-05-08
-content_hash: f077ca5b853f68b2
+content_hash: 673e8e3c0a35ebca
 ---
+
 # Dynamics-Predictive Sampling for Active RL Finetuning of Large Reasoning Models
 
 **Conference**: ICLR 2026  
@@ -172,7 +178,7 @@ DPS matches DS performance in Countdown (numerical planning) and Geometry3k (vis
 - [\[ICLR 2026\] A Simple "Motivation" Can Enhance Reinforcement Finetuning of Large Reasoning Models](a_simple_motivation_can_enhance_reinforcement_finetuning_of_large_reasoning_mode.md)
 - [\[ICLR 2026\] Variation in Verification: Understanding Verification Dynamics in Large Language Models](variation_in_verification_understanding_verification_dynamics_in_large_language_.md)
 - [\[ICLR 2026\] Co-rewarding: Stable Self-supervised RL for Eliciting Reasoning in Large Language Models](co-rewarding_stable_self-supervised_rl_for_eliciting_reasoning_in_large_language.md)
-- [\[ICLR 2026\] Towards Safe Reasoning in Large Reasoning Models via Corrective Intervention](towards_safe_reasoning_in_large_reasoning_models_via_corrective_intervention.md)
+- [\[ICML 2026\] Verifying Meta-Awareness via Predictive Rewards in Reasoning Models](../../ICML2026/llm_reasoning/verifying_meta-awareness_via_predictive_rewards_in_reasoning_models.md)
 - [\[ICLR 2026\] Training Large Reasoning Models Efficiently via Progressive Thought Encoding](training_large_reasoning_models_efficiently_via_progressive_thought_encoding.md)
 
 </div>

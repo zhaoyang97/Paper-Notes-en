@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Beware Untrusted Simulators -- Reward-Free Backdoor Attacks in Reinforcement Learning
 description: >-
-  [ICLR 2026][AI Safety][backdoor attack] The authors propose the Daze attack—where a malicious simulator developer implants backdoors solely by manipulating state transitions without accessing or modifying the agent's reward function. When the agent fails to perform a target action in a trigger state, it is forced to execute random actions ("dazed"), theoreti
+  [ICLR 2026][AI Safety][backdoor attack] The authors propose the Daze attack—where a malicious simulator developer implants backdoors solely by manipulating state transitions without accessing or modifying the agent's reward function. When the agent fails to perform a target action in a trigger state, it is forced to execute random actions ("dazed"), theoretically guaranteeing attack success and stealth. This work also provides the first demonstration of RL backdoor attacks on…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - backdoor attack
-  - reinforcement-learning
-  - simulator security
-  - reward-free
-  - supply chain attack
+  - "ICLR 2026"
+  - "AI Safety"
+  - "backdoor attack"
+  - "reinforcement-learning"
+  - "simulator security"
+  - "reward-free"
+  - "supply chain attack"
 date: 2026-05-08
-content_hash: c0529158145b4160
+content_hash: c161d89b823787e4
 ---
+
 # Beware Untrusted Simulators -- Reward-Free Backdoor Attacks in Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -130,8 +131,8 @@ Two practical issues are solved in Algorithm 1. First, the attacker cannot query
 - [\[ICML 2026\] Robust In-Context Reinforcement Learning Under Reward Poisoning Attacks](../../ICML2026/ai_safety/robust_in-context_reinforcement_learning_under_reward_poisoning_attacks.md)
 - [\[ICLR 2026\] ReTrace: Reinforcement Learning-Guided Reconstruction Attacks on Machine Unlearning](retrace_reinforcement_learning-guided_reconstruction_attacks_on_machine_unlearni.md)
 - [\[ICML 2025\] Adversarial Inception Backdoor Attacks against Reinforcement Learning](../../ICML2025/ai_safety/adversarial_inception_backdoor_attacks_against_reinforcement_learning.md)
-- [\[ICLR 2026\] Fair Reinforcement Learning for Just AI](fair_reinforcement_learning_for_just_ai.md)
 - [\[ICLR 2026\] Defending against Backdoor Attacks via Module Switching](defending_against_backdoor_attacks_via_module_switching.md)
+- [\[ICLR 2026\] TrojanTO: Action-Level Backdoor Attacks Against Trajectory Optimization Models](trojanto_action-level_backdoor_attacks_against_trajectory_optimization_models.md)
 
 </div>
 

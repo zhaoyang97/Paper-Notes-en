@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Premise Selection for a Lean Hammer
 description: >-
-  [ICLR 2026][LLM Reasoning][Lean] This paper proposes the neural premise selector LeanPremise (a sentence encoder trained via contrastive learning) and integrates it with Aesop / Lean-auto / Duper to create LeanHammer, the first end-to-end general-purpose hammer tool for Lean. It proves 21% more theorems than existing premise selectors and generalizes
+  [ICLR 2026][Reasoning][Premise Selection] This paper proposes the neural premise selector LeanPremise (a sentence encoder trained via contrastive learning) and integrates it with Aesop / Lean-auto / Duper to create LeanHammer, the first end-to-end general-purpose hammer tool for Lean. It proves 21% more theorems than existing premise selectors and generalizes to libraries unseen during training.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Lean
-  - Hammer
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Premise Selection"
+  - "Lean"
+  - "Hammer"
+  - "Contrastive Learning"
+  - "Neuro-symbolic"
 date: 2026-05-08
-content_hash: e8da2dc75cc204a7
+content_hash: f14af98353a4adda
 ---
+
 # Premise Selection for a Lean Hammer
 
 **Conference**: ICLR 2026  
@@ -139,10 +143,18 @@ On Mathlib-valid (medium model):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Process-Verified Reinforcement Learning for Theorem Proving via Lean](process-verified_reinforcement_learning_for_theorem_proving_via_lean.md)
+- [\[ICLR 2026\] ProofBridge: Auto-Formalization of Natural Language Proofs in Lean via Joint Embeddings](proofbridge_auto-formalization_of_natural_language_proofs_in_lean_via_joint_embe.md)
+- [\[ICLR 2026\] Selection, Reflection and Self-Refinement: Revisit Reasoning Tasks via a Causal Lens](selection_reflection_and_self-refinement_revisit_reasoning_tasks_via_a_causal_le.md)
+- [\[ACL 2026\] On the Step Length Confounding in LLM Reasoning Data Selection](../../ACL2026/llm_reasoning/on_the_step_length_confounding_in_llm_reasoning_data_selection.md)
+- [\[ACL 2026\] Stabilizing Efficient Reasoning with Step-Level Advantage Selection](../../ACL2026/llm_reasoning/stabilizing_efficient_reasoning_with_step-level_advantage_selection.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Process-Verified Reinforcement Learning for Theorem Proving via Lean](process-verified_reinforcement_learning_for_theorem_proving_via_lean.md)

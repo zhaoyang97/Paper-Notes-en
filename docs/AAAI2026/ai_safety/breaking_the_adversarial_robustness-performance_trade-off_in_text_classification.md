@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Breaking the Adversarial Robustness-Performance Trade-off in Text Classification via Manifold Purification
 description: >-
-  [AAAI 2026][AI Safety][Adversarial Defense] This paper proposes the Manifold-Correcting Causal Flow (MC²F) framework, which employs a Stratified Riemannian Continuous Normalizing Flow (SR-CNF) to learn the manifold densi…
+  [AAAI 2026][AI Safety][Adversarial Defense] The paper proposes the Manifold-Correcting Causal Flow (MC²F) framework. It learns the manifold density of clean data embeddings using a Stratified Riemannian Continuous Normalizing Flow (SR-CNF) for adversarial sample detection. It then utilizes a Geodesic Purification Solver to project embeddings detected as adversarial back to the clean manifold along the shortest path. This approach comprehensively outperforms state-of-the-art (…
 tags:
   - "AAAI 2026"
   - "AI Safety"
@@ -14,74 +14,74 @@ tags:
   - "OOD Detection"
   - "Geodesic Purification"
 date: 2026-05-08
-content_hash: 4d7d7dd9d8981f0a
+content_hash: 047c51735816e60c
 ---
 
 # Breaking the Adversarial Robustness-Performance Trade-off in Text Classification via Manifold Purification
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026  
 **arXiv**: [2511.07888](https://arxiv.org/abs/2511.07888)  
 **Code**: To be confirmed  
-**Area**: AI Safety / Adversarial Robustness
+**Area**: AI Safety/Adversarial Robustness  
 **Keywords**: Adversarial Defense, Text Classification, Manifold Correction, Normalizing Flow, Riemannian Geometry, OOD Detection, Geodesic Purification
 
 ## TL;DR
 
-This paper proposes the Manifold-Correcting Causal Flow (MC²F) framework, which employs a Stratified Riemannian Continuous Normalizing Flow (SR-CNF) to learn the manifold density of clean data embeddings for adversarial example detection, and subsequently applies a Geodesic Purification Solver to project detected adversarial embeddings back onto the clean manifold along geodesic paths. MC²F comprehensively surpasses state-of-the-art methods in adversarial robustness across SST-2, AGNews, and YELP benchmarks, while incurring no loss—and even achieving marginal gains—in clean accuracy.
+The paper proposes the Manifold-Correcting Causal Flow (MC²F) framework. It learns the manifold density of clean data embeddings using a Stratified Riemannian Continuous Normalizing Flow (SR-CNF) for adversarial sample detection. It then utilizes a Geodesic Purification Solver to project embeddings detected as adversarial back to the clean manifold along the shortest path. This approach comprehensively outperforms state-of-the-art (SOTA) adversarial robustness on three datasets (SST-2, AGNews, and YELP) without any loss in (and even slightly improving) clean data accuracy.
 
 ## Background & Motivation
 
-- **Background**: Pre-trained language models (PLMs, e.g., BERT) have achieved remarkable success in text classification, yet remain highly vulnerable to adversarial attacks (e.g., TextFooler, BERT-Attack)—subtle, semantically imperceptible textual perturbations can completely flip model predictions.
-- **Limitations of Prior Work**: Existing defenses (adversarial training, embedding denoising, etc.) suffer from a pervasive robustness–accuracy trade-off: improving adversarial robustness inevitably degrades clean accuracy, which is unacceptable in safety-critical applications.
-- **Key Challenge**: Adversarial training (AT) forcibly enhances robustness via data augmentation at high computational cost, and frequently produces "robustness illusions" due to gradient masking. Purification-based methods avoid modifying model training but lack precise modeling of the geometric structure of the embedding space, limiting their purification efficacy.
-- **Key Insight**: Through empirical analysis, the authors find that clean and adversarial text embeddings occupy geometrically separable regions of BERT's embedding space—reframing adversarial defense as a geometric correction problem rather than a brute-force training problem.
+- **Background**: Pre-trained language models (PLMs, such as BERT) have achieved remarkable success in text classification tasks, but they remain highly vulnerable to adversarial attacks (e.g., TextFooler, BERT-Attack). Tiny, semantically imperceptible text perturbations can lead to completely incorrect model predictions.
+- **Limitations of Prior Work**: Existing defense methods (such as adversarial training, embedding denoising, etc.) face a pervasive robustness-accuracy trade-off, where enhancing adversarial robustness inevitably degrades performance on clean data. This trade-off is unacceptable in safety-critical applications.
+- **Key Challenge**: Adversarial training (AT) forcibly improves robustness via data augmentation but incurs high computational costs and often suffers from "robustness illusions" due to gradient masking. Although purification methods avoid modifying model training, they struggle with limited purification effects due to a lack of precise geometric modeling of the embedding space.
+- **Key Insight**: Empirical analysis reveals that clean and adversarial text embeddings occupy geometrically separable, distinct manifold regions within the BERT embedding space. Consequently, adversarial defense can be reframed from a brute-force training problem into a geometric correction problem.
 
 ## Core Problem
 
-**Can adversarial examples be detected as outliers and projected back onto the clean manifold by precisely modeling the manifold structure of clean data embeddings, thereby achieving both high robustness and zero accuracy loss simultaneously?**
+**Can we detect adversarial samples as outliers and project them back to the clean manifold by precisely modeling the manifold structure of clean data embeddings, thereby simultaneously achieving high robustness and zero accuracy loss?**
 
 ## Method
 
 ### Empirical Foundation: Manifold Separability Hypothesis
 
-The paper first conducts systematic geometric analysis on the SST-2 dataset:
+The paper first conducts a systematic geometric analysis on the SST-2 dataset:
 
-1. **Visualization Evidence**: PCA, t-SNE, and UMAP all reveal visibly separated clusters between clean and adversarial embeddings.
-2. **Statistical Distance Evidence**: MMD, JSD, and Wasserstein distances between clean and adversarial distributions are significantly larger than intra-distribution distances within clean data.
-3. **Local Intrinsic Dimensionality (LID) Evidence**: The mean LID of adversarial embeddings (28.20) is significantly higher than that of clean embeddings (23.74), with a p-value approaching $10^{-43}$—adversarial perturbations systematically push embeddings toward geometrically more complex regions.
+1. **Visual Evidence**: Three dimensionality reduction methods (PCA, t-SNE, and UMAP) all demonstrate visible, separate clustering between clean and adversarial embeddings.
+2. **Statistical Distance Evidence**: The MMD, JSD, and Wasserstein distances between clean and adversarial distributions are significantly larger than the distributional distances within the clean data itself.
+3. **Local Intrinsic Dimension (LID) Evidence**: The average LID value of adversarial embeddings (28.20) is significantly higher than that of clean embeddings (23.74), with a p-value close to $10^{-43}$—implying that adversarial perturbations systematically push embeddings into regions of higher geometric complexity.
 
-Based on these findings, two hypotheses are established: (1) Manifold Separability—clean and adversarial embeddings are statistically and geometrically separable; (2) Stratified Manifold Structure—the embedding space is composed of sub-manifolds with varying intrinsic dimensionalities.
+Based on these findings, two hypotheses are established: (1) Manifold Separability—clean and adversarial embeddings are statistically and geometrically separable; (2) Stratified Manifold Structure—the embedding space consists of sub-manifolds with different intrinsic dimensions.
 
 ### Overall Architecture
 
-MC²F comprises two core modules: (1) SR-CNF for adversarial example detection; (2) Geodesic Purification Solver for embedding correction. At inference time, the log-likelihood $\log p(z_{in})$ is computed for an input embedding $z_{in}$; if it falls below threshold $\tau$, purification is triggered; otherwise, the embedding passes through directly.
+MC²F consists of two core modules: (1) SR-CNF for adversarial sample detection; (2) Geodesic Purification Solver for embedding correction. During inference, the system computes the log-likelihood $\log p(z_{in})$ for the input embedding $z_{in}$. If it falls below a threshold $\tau$, purification is triggered; otherwise, it passes through directly.
 
 ### Key Designs
 
 1. **Stratified Riemannian Continuous Normalizing Flow (SR-CNF)**
 
-    - **Function**: Learns the probability density $p_{clean}(z)$ of clean data embeddings to detect OOD adversarial examples.
-    - **Mechanism**: Rather than assuming a fixed geometry, a Mixture-of-Experts (MoE) network learns a position-dependent Riemannian metric tensor $G(z) = \sum_{k=1}^{K} \alpha_k(z) E_{\psi_k}(z)$.
-    - A gating network $g_\phi(z)$ outputs mixture weights; $K$ expert networks each specialize in the local geometry of a particular stratum.
-    - Positive definiteness is ensured by constructing each expert output as $L_k(z)L_k(z)^T + \epsilon I$.
-    - A CNF is defined on the learned Riemannian manifold, and log-likelihood is computed via Riemannian divergence (Equations 3–4).
-    - **Detection Mechanism**: $\log p(z_{in}) < \tau$ flags the input as adversarial.
-    - **Design Motivation**: The embedding space is not a single uniform manifold but a stratified structure with varying intrinsic dimensionalities; MoE adaptively captures this layered geometry.
+    - **Function**: Learns the probability density of clean data embeddings $p_{clean}(z)$, which is used to detect OOD adversarial samples.
+    - **Mechanism**: Instead of assuming a fixed geometry, a Mixture-of-Experts (MoE) network is used to learn a position-dependent Riemannian metric tensor $G(z) = \sum_{k=1}^{K} \alpha_k(z) E_{\psi_k}(z)$.
+    - The gating network $g_\phi(z)$ outputs weights, and each of the $K$ expert networks specializes in the local geometry of a specific stratum.
+    - Ensuring positive definiteness: Each expert outputs $L_k(z)L_k(z)^T + \epsilon I$.
+    - A CNF is defined on the learned Riemannian manifold, and the log-likelihood is calculated via Riemannian divergence (Equations 3-4).
+    - Detection Mechanism: An input embedding is classified as an adversarial sample if $\log p(z_{in}) < \tau$.
+    - **Design Motivation**: The embedding space is not a single homogeneous manifold but a stratified structure composed of different intrinsic dimensions. The MoE adaptively learns this stratified geometry.
 
 2. **Geodesic Purification Solver**
 
-    - **Function**: Projects detected adversarial embeddings back onto the clean manifold along geodesics (shortest paths on the manifold).
+    - **Function**: Projects embeddings detected as adversarial back to the clean manifold along the geodesic (the shortest path on the manifold).
     - **Formulation**: Minimizes the path energy functional $\mathcal{L}[\gamma] = \int_0^1 \langle \gamma'(t), \gamma'(t) \rangle_{G(\gamma(t))} dt$.
-    - **Boundary Conditions**: $\gamma(0) = z_{adv}$, $\gamma(1) = z_{corr} \in \mathcal{M}_{clean}$.
-    - **Optimization**: The path is discretized and its waypoints are optimized via gradient descent to minimize the energy functional; the constraint $\log p(z_{corr}) \geq \tau$ is enforced via a soft penalty.
-    - **Design Motivation**: Rather than arbitrary denoising, this approach finds the geometrically nearest clean representation—maximally preserving semantic information.
+    - Boundary Conditions: $\gamma(0) = z_{adv}$ and $\gamma(1) = z_{corr} \in \mathcal{M}_{clean}$.
+    - Solver: Discretizes the path and minimizes the energy functional of the path points using gradient descent. The constraint $\log p(z_{corr}) \geq \tau$ is implemented via soft penalty.
+    - **Design Motivation**: Instead of arbitrary denoising, the solver finds the geometrically closest clean representation to preserve maximum semantic information.
 
 3. **Multi-Objective Training Paradigm**
 
-    - **Density Estimation Loss** $\mathcal{L}_{NLL}$: Standard negative log-likelihood of the normalizing flow, driving the learning of the clean data distribution.
-    - **Topological Regularization** $\mathcal{L}_{topo}$: Based on differentiable persistent homology, computes the Wasserstein distance between persistence diagrams of clean embedding batches and their latent-space counterparts, ensuring the flow transformation preserves global topological structure.
-    - **Causal Semantic Regularization** $\mathcal{L}_{causal}$: Treats the purification process as a causal intervention (removing the confounding effect of adversarial perturbations), using Fisher-Rao distance to constrain the classifier output distribution of purified embeddings to be consistent with that of original clean embeddings.
-    - **Total Loss**: $\mathcal{L}_{total} = \mathcal{L}_{NLL} + \lambda_{topo}\mathcal{L}_{topo} + \lambda_{causal}\mathcal{L}_{causal}$
+    - Density Estimation Loss $\mathcal{L}_{NLL}$: The negative log-likelihood of standard normalizing flows, driving the learning of clean data distributions.
+    - Topological Regularization $\mathcal{L}_{topo}$: Based on differentiable persistent homology, this calculates the Wasserstein distance between the persistence diagrams of a batch of clean embeddings and their counterparts in the latent space, ensuring the flow transformation preserves the global topological structure.
+    - Causal Semantic Regularization $\mathcal{L}_{causal}$: Models the purification process as a causal intervention (removing the confounding effect of adversarial perturbations). It uses the Fisher-Rao distance to constrain the classifier's output distribution of the purified embedding to match that of the original clean embedding.
+    - Total Loss: $\mathcal{L}_{total} = \mathcal{L}_{NLL} + \lambda_{topo}\mathcal{L}_{topo} + \lambda_{causal}\mathcal{L}_{causal}$
 
 ## Key Experimental Results
 
@@ -110,40 +110,40 @@ MC²F comprises two core modules: (1) SR-CNF for adversarial example detection; 
 
 ### Key Findings
 
-- **Zero accuracy loss with marginal gains**: MC²F achieves 95.13% Clean% on AGNews (vs. 94.68% for fine-tuning) and 95.26% on YELP (vs. 95.19%)—completely breaking the robustness–accuracy trade-off.
-- **Substantially increased attack query counts**: Against BERT-Attack on YELP, MC²F requires 586.4 queries (vs. 320.7 for SD), indicating a significantly harder-to-explore decision boundary.
-- **Topological regularization contributes most**: Removing $\mathcal{L}_{topo}$ causes Aua% to drop sharply from 53.8% to 32.9%—preserving the global topological structure of the manifold is critical for preventing brittle representations.
-- **All three loss terms are indispensable**: Removing any individual loss term leads to significant degradation in robustness and/or clean accuracy.
+- **Zero accuracy loss with even slight improvement**: MC²F achieves a Clean% of 95.13% on AGNews (compared to 94.68% for fine-tuning) and 95.26% on YELP (compared to 95.19% for fine-tuning), completely breaking the robustness-accuracy trade-off.
+- **Significant increase in attack query budget**: When facing BERT-Attack on YELP, MC²F requires 586.4 queries (compared to only 320.7 for SD), indicating that its decision boundary is much harder to explore.
+- **Topological regularization makes the largest contribution**: After removing $\mathcal{L}_{topo}$, the Aua% plummets from 53.8% to 32.9%, validating that preserving the global topological structure of the manifold is crucial to preventing fragile representations.
+- **All three losses are indispensable**: Removing any of the loss terms leads to a significant drop in robustness and/or accuracy.
 
 ## Highlights & Insights
 
-- **"Detect-then-correct" paradigm as an alternative to adversarial training**: The method operates as an embedding-space input filter at inference time without modifying the model training process—fully decoupled from downstream models and thus highly generalizable.
-- **Complete chain from empirical observation to method design**: The manifold separability hypothesis is validated through multiple lenses (PCA/t-SNE/UMAP/MMD/JSD/LID) before informing method design, rather than post-hoc rationalization.
-- **MoE for learning stratified Riemannian geometry**: Mixture-of-Experts adaptively captures the non-uniform geometric structure of the embedding space, offering greater flexibility than fixed metrics.
-- **Importance of topological regularization**: Persistent homology constraints enforce topological invariance under the flow transformation—its role in adversarial robustness is explicitly validated for the first time.
+- **"Detection-Purification" paradigm replacing adversarial training**: Instead of modifying the model training process, this approach acts as an input filter in the embedding space during inference. It is decoupled from any downstream model, offering high generalizability.
+- **A complete workflow from empirical evidence to method design**: The framework validates the "manifold separability" hypothesis from multiple perspectives (PCA, t-SNE, UMAP, MMD, JSD, LID) before designing the method accordingly, rather than designing a method first and searching for experimental support later.
+- **MoE for stratified Riemannian geometry**: Utilizing a Mixture-of-Experts allows the framework to adaptively capture the non-homogeneous geometric structures of the embedding space, which is far more flexible than fixed metrics.
+- **Importance of topological regularization**: By using persistent homology to constrain the flow transformation to keep topological invariants, its critical role in adversarial robustness is explicitly verified for the first time.
 
 ## Limitations & Future Work
 
-- Inference requires additional density estimation and potentially iterative geodesic optimization steps; computational overhead is not reported in detail and may become a bottleneck in real-time applications.
-- Validation is limited to BERT-base; generalization to larger models (RoBERTa-large, LLMs, etc.) is untested.
-- The detection threshold $\tau$ is determined on the validation set; in real deployments, the clean/adversarial distribution may shift continuously.
-- Experiments cover only word-level attacks (TextFooler/BERT-Attack/TextBugger); sentence-level (paraphrase) and character-level adversarial attacks are not evaluated.
-- The convergence analysis and number of iteration steps for the geodesic solver are insufficiently characterized.
-- The purification process may introduce subtle semantic drift, potentially affecting non-adversarial examples in edge cases.
+- The inference phase requires additional density estimation and potential geodesic optimization steps, the computational overhead of which is not reported in detail; this could become a bottleneck for real-time applications.
+- The model was only validated on BERT-base; its generalizability to larger models (e.g., RoBERTa-large, LLMs) has not been tested.
+- The detection threshold $\tau$ is determined using the validation set, but in real deployments, the clean and adversarial distributions may suffer from continuous domain shift.
+- Experiments only cover word-level attacks (TextFooler, BERT-Attack, TextBugger); sentence-level (paraphrase) or character-level adversarial attacks have not been tested.
+- The number of iterations and convergence analysis for the geodesic solver are insufficient.
+- The purification process might introduce subtle semantic drift, which in extreme cases could affect the performance of non-adversarial samples.
 
 ## Related Work & Insights
 
-- **vs. Adversarial Training (FreeLB/WLRE)**: Adversarial training modifies model weights and typically incurs 0.5–1.5% clean accuracy degradation; MC²F operates as a post-processing module that leaves model weights unchanged, achieving clean accuracy gains rather than losses.
-- **vs. Subspace Defense (SD)**: SD removes adversarial components via subspace projection, but the projection is linear; MC²F performs geodesic projection under a learned nonlinear Riemannian metric, more precisely adapting to the curved geometry of the embedding space.
-- **vs. DAD (Zhang et al. 2025)**: DAD uses MMD for detection and a denoiser for purification; MC²F employs Riemannian CNF for more precise detection (density estimation vs. two-sample testing) and offers geometric optimality guarantees for purification (geodesics vs. heuristic denoising).
-- **Insight**: The "learn data manifold → OOD detection → geometric projection correction" paradigm of this framework is transferable to adversarial defense in image and multimodal domains.
+- **vs. Adversarial Training (FreeLB/WLRE)**: Adversarial training modifies model weights, which typically degrades Clean% by 0.5-1.5%. As a post-processing module, MC²F does not alter the model, resulting in no degradation—and even slight improvements—in Clean%.
+- **vs. Subspace Defense (SD)**: SD removes adversarial components via subspace projection, but the projection is linear. MC²F performs geodesic projection via learned non-linear Riemannian metrics, which more accurately conforms to the curved geometry of the embedding space.
+- **vs. DAD (Zhang et al. 2025)**: DAD uses MMD for detection and a denoiser for purification. MC²F's detection utilizing Riemannian CNF is more precise (relying on density estimation rather than a two-sample test), and its purification provides geometric optimality guarantees (geodesics vs. heuristic denoising).
+- **Insights**: The logic of "learning data manifolds $\rightarrow$ OOD detection $\rightarrow$ geometric projection correction" within this framework can be generalized to adversarial defense in image and multimodal domains.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ First work to unify stratified Riemannian CNF, geodesic purification, and topological regularization into a cohesive adversarial defense framework with complete theoretical derivations.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers 3 datasets × 3 attacks × 4 baselines + ablation + preliminary validation, but lacks evaluation on larger models and a broader range of attack types.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ The logical chain from empirical hypotheses to method design to experimental validation is exceptionally clear, with rigorous mathematical exposition.
-- **Value**: ⭐⭐⭐⭐ Addresses the long-standing robustness–accuracy trade-off in text classification with high practical utility.
+- **Novelty**: ⭐⭐⭐⭐⭐ Unifies stratified Riemannian CNF, geodesic purification, and topological regularization into an adversarial defense framework for the first time, backed by complete theoretical derivations.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Tested on 3 datasets × 3 attacks × 4 baselines, complete with ablation studies and preliminary empirical analyses, though it lacks evaluations on larger models and more attack types.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ The logical chain from empirical hypotheses to method design and experimental validation is exceptionally clear, with rigorous mathematical formulations.
+- **Value**: ⭐⭐⭐⭐ Resolves the long-standing pain point of the robustness-accuracy trade-off in text classification, offering high practical utility.
 
 <!-- RELATED:START -->
 
@@ -153,8 +153,8 @@ MC²F comprises two core modules: (1) SR-CNF for adversarial example detection; 
 
 - [\[AAAI 2026\] TopoReformer: Mitigating Adversarial Attacks Using Topological Purification in OCR Models](toporeformer_mitigating_adversarial_attacks_using_topological_purification_in_oc.md)
 - [\[ICML 2026\] Position: Embodied AI Requires a Privacy-Utility Trade-off](../../ICML2026/ai_safety/position_embodied_ai_requires_a_privacy-utility_trade-off.md)
+- [\[ICLR 2026\] Rethinking Pareto Frontier: On the Optimal Trade-offs in Fair Classification](../../ICLR2026/ai_safety/rethinking_pareto_frontier_on_the_optimal_trade-offs_in_fair_classification.md)
 - [\[ICCV 2025\] Failure Cases Are Better Learned But Boundary Says Sorry: Facilitating Smooth Perception Change for Accuracy-Robustness Trade-Off in Adversarial Training](../../ICCV2025/ai_safety/failure_cases_are_better_learned_but_boundary_says_sorry_facilitating_smooth_per.md)
-- [\[NeurIPS 2025\] Enhancing Graph Classification Robustness with Singular Pooling](../../NeurIPS2025/ai_safety/enhancing_graph_classification_robustness_with_singular_pooling.md)
 - [\[AAAI 2026\] Breaking the Dyadic Barrier: Rethinking Fairness in Link Prediction Beyond Demographic Parity](breaking_the_dyadic_barrier_rethinking_fairness_in_link_prediction_beyond_demogr.md)
 
 </div>

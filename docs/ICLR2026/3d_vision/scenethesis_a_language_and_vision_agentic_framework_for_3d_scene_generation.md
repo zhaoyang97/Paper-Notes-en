@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Scenethesis: A Language and Vision Agentic Framework for 3D Scene Generation
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] Scenethesis is a training-free agentic framework that utilizes LLMs to draft coarse layouts, vision foundation models for visual grounding and scene graph extraction, and a physics-aware optimizer (semantic correspondence + SDF contact/support constraints) for object-wise pose correction. A GPT-5 judge verifies spatial
+  [ICLR 2026][3D Vision][text-to-3D scene] Scenethesis is a training-free agentic framework that utilizes LLMs to draft coarse layouts, vision foundation models for visual grounding and scene graph extraction, and a physics-aware optimizer (semantic correspondence + SDF contact/support constraints) for object-wise pose correction. A GPT-5 judge verifies spatial consistency and triggers re-planning, enabling the generation of collision-free, stable…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "text-to-3D scene"
+  - "Agentic framework"
+  - "physical plausibility"
+  - "layout optimization"
+  - "vision foundation models"
 date: 2026-05-08
-content_hash: 6d0661adf2b014fc
+content_hash: 961e4327fe003a8e
 ---
+
 # Scenethesis: A Language and Vision Agentic Framework for 3D Scene Generation
 
 **Conference**: ICLR 2026  
@@ -149,16 +155,16 @@ Incremental impact of physics-aware optimization components:
 - Value: ⭐⭐⭐⭐⭐ High utility for virtual content, simulation, and embodied AI due to its training-free, general-purpose nature.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] PAT3D: Physics-Augmented Text-to-3D Scene Generation](pat3d_physics-augmented_text-to-3d_scene_generation.md)
 - [\[CVPR 2026\] SAGE: Scalable Agentic 3D Scene Generation for Embodied AI](../../CVPR2026/3d_vision/sage_scalable_agentic_3d_scene_generation_for_embodied_ai.md)
+- [\[ICLR 2026\] PAT3D: Physics-Augmented Text-to-3D Scene Generation](pat3d_physics-augmented_text-to-3d_scene_generation.md)
+- [\[ICLR 2026\] FlashWorld: High-quality 3D Scene Generation within Seconds](flashworld_high-quality_3d_scene_generation_within_seconds.md)
 - [\[ICLR 2026\] OpenFly: A Comprehensive Platform for Aerial Vision-Language Navigation](openfly_a_comprehensive_platform_for_aerial_vision-language_navigation.md)
 - [\[ICLR 2026\] DepthLM: Metric Depth from Vision Language Models](depthlm_metric_depth_from_vision_language_models.md)
-- [\[ICLR 2026\] EgoNight: Towards Egocentric Vision Understanding at Night with a Challenging Benchmark](egonight_towards_egocentric_vision_understanding_at_night_with_a_challenging_ben.md)
 
 </div>
 

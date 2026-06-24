@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Enhancing Multimodal Misinformation Detection by Replaying the Whole Story from Image Modality Perspective
 description: >-
-  [AAAI 2026][Image Generation][Multimodal misinformation detection] This paper proposes RetSimd, which "replays the whole story" by segmenting text and generating a series of supplementary images via a text-to-image model…
+  [AAAI 2026][Image Generation][Multimodal misinformation detection] This paper proposes RetSimd, which "replays the whole story" by segmenting text and generating a series of supplementary images via a text-to-image model, combined with a graph neural network to fuse multi-image relationships. The approach significantly enhances the contribution of the image modality to misinformation detection, consistently improving the performance of five SOTA methods across three benchmark…
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "modality contribution"
   - "information gain"
 date: 2026-05-08
-content_hash: 5ccca7c9a3544245
+content_hash: f931f1610512dd19
 ---
 
 # Enhancing Multimodal Misinformation Detection by Replaying the Whole Story from Image Modality Perspective
@@ -148,10 +148,10 @@ On the GossipCop dataset, RetSimd consistently improves all five baseline method
 ## Related Papers
 
 - [\[AAAI 2026\] UNSEEN: Enhancing Dataset Pruning from a Generalization Perspective](unseen_enhancing_dataset_pruning_from_a_generalization_perspective.md)
-- [\[AAAI 2026\] Infinite-Story: A Training-Free Consistent Text-to-Image Generation](infinite-story_a_training-free_consistent_text-to-image_gene.md)
-- [\[ICLR 2026\] When One Modality Rules Them All: Backdoor Modality Collapse in Multimodal Diffusion Models](../../ICLR2026/image_generation/when_one_modality_rules_them_all_backdoor_modality_collapse_in_multimodal_diffus.md)
-- [\[CVPR 2026\] Enhancing Image Aesthetics with Dual-Conditioned Diffusion Models Guided by Multimodal Perception](../../CVPR2026/image_generation/enhancing_image_aesthetics_with_dualconditioned_di.md)
 - [\[ICML 2026\] Enhancing Membership Inference Attacks on Diffusion Models from a Frequency-Domain Perspective](../../ICML2026/image_generation/enhancing_membership_inference_attacks_on_diffusion_models_from_a_frequency-doma.md)
+- [\[AAAI 2026\] Infinite-Story: A Training-Free Consistent Text-to-Image Generation](infinite-story_a_training-free_consistent_text-to-image_gene.md)
+- [\[AAAI 2026\] Aggregating Diverse Cue Experts for AI-Generated Image Detection](aggregating_diverse_cue_experts_for_ai-generated_image_detec.md)
+- [\[AAAI 2026\] Studying Classifier(-Free) Guidance From A Classifier-Centric Perspective](studying_classifier-free_guidance_from_a_classifier-centric_perspective.md)
 
 </div>
 

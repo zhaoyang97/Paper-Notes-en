@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] All Patches Matter, More Patches Better: Enhance AI-Generated Image Detection via Panoptic Patch Learning
 description: >-
-  [ICLR 2026][AIGC Detection][Generalizability] This paper proposes the detection principles "All Patches Matter, More Patches Better," identifying that existing AI-generated image (AIGI) detectors suffer from a "Few-Patch Bias"—focusing only on a minimal set of patches. A Panoptic Patch Learning (PPL) framework is designed, using Randomized Patch Reconstruction (RP
+  [ICLR2026][AIGC Detection][AIGI Detection] This paper proposes the detection principles "All Patches Matter, More Patches Better," identifying that existing AI-generated image (AIGI) detectors suffer from a "Few-Patch Bias"—focusing only on a minimal set of patches. A Panoptic Patch Learning (PPL) framework is designed, using Randomized Patch Reconstruction (RPR) and Patch-wise Contrastive Learning (PCL) to spread discriminative power across all patches. This significantly im…
 tags:
-  - ICLR 2026
-  - AIGC Detection
-  - Generalizability
+  - "ICLR2026"
+  - "AIGC Detection"
+  - "AIGI Detection"
+  - "Patch-level Learning"
+  - "Contrastive Learning"
+  - "Diffusion Reconstruction"
+  - "Generalizability"
 date: 2026-05-08
-content_hash: bd239b4dbd163ec3
+content_hash: 413bfec610b95ede
 ---
+
 # All Patches Matter, More Patches Better: Enhance AI-Generated Image Detection via Panoptic Patch Learning
 
 **Conference**: ICLR2026  

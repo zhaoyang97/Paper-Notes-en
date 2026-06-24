@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Spectral Super-Resolution via Adversarial Unfolding and Data-Driven Spectrum Regularization
 description: >-
-  [CVPR 2026][Image Restoration][Remote Sensing] Proposes UALNet, which achieves spectral super-resolution from Sentinel-2 multispectral data (12 bands) to NASA AVIRIS hyperspectral images (186 bands) by embedding data-driven spectral priors (PriorNet) and adversarial learning terms into a deep unfolding framework. It outperforms Transformers while requiring only 15%
+  [CVPR 2026][Image Restoration][Spectral Super-Resolution] Proposes UALNet, which achieves spectral super-resolution from Sentinel-2 multispectral data (12 bands) to NASA AVIRIS hyperspectral images (186 bands) by embedding data-driven spectral priors (PriorNet) and adversarial learning terms into a deep unfolding framework. It outperforms Transformers while requiring only 15% of the computation and 1/20 of the parameters.
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Remote Sensing
-  - Sentinel-2
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Spectral Super-Resolution"
+  - "Deep Unfolding"
+  - "Adversarial Learning"
+  - "Hyperspectral Reconstruction"
+  - "Remote Sensing"
+  - "Sentinel-2"
+  - "AVIRIS"
 date: 2026-05-08
-content_hash: 81b71f835b651952
+content_hash: 3322d5388b2cda8e
 ---
+
 # Spectral Super-Resolution via Adversarial Unfolding and Data-Driven Spectrum Regularization
 
 **Conference**: CVPR 2026  
@@ -147,11 +153,11 @@ Ablation results show:
 
 ## Related Papers
 
+- [\[CVPR 2026\] LRDUN: A Low-Rank Deep Unfolding Network for Efficient Spectral Compressive Imaging](lrdun_a_low-rank_deep_unfolding_network_for_efficient_spectral_compressive_imagi.md)
 - [\[CVPR 2026\] Dual Graph Regularized Deep Unfolding Network for Guided Depth Map Super-resolution](dual_graph_regularized_deep_unfolding_network_for_guided_depth_map_super-resolut.md)
+- [\[CVPR 2026\] Self-Attention Driven Tensor Representation for High-Order Data Recovery](self-attention_driven_tensor_representation_for_high-order_data_recovery.md)
+- [\[ICLR 2026\] Taming Hierarchical Image Coding Optimization: A Spectral Regularization Perspective](../../ICLR2026/image_restoration/taming_hierarchical_image_coding_optimization_a_spectral_regularization_perspect.md)
 - [\[ICML 2026\] Coloring the Noise: Adversarial Sobolev Alignment for Faithful Image Super Resolution](../../ICML2026/image_restoration/coloring_the_noise_adversarial_sobolev_alignment_for_faithful_image_super_resolu.md)
-- [\[ECCV 2024\] Learning Exhaustive Correlation for Spectral Super-Resolution: Where Spatial-Spectral Attention Meets Linear Dependence](../../ECCV2024/image_restoration/learning_exhaustive_correlation_for_spectral_super-resolution_where_spatial-spec.md)
-- [\[ICML 2026\] Phy-CoSF: Physics-Guided Continuous Spectral Fields Reconstruction and Super-Resolution for Snapshot Compressive Imaging](../../ICML2026/image_restoration/phy-cosf_physics-guided_continuous_spectral_fields_reconstruction_and_super-reso.md)
-- [\[ECCV 2024\] Rethinking Image Super-Resolution from Training Data Perspectives](../../ECCV2024/image_restoration/rethinking_image_super-resolution_from_training_data_perspectives.md)
 
 </div>
 

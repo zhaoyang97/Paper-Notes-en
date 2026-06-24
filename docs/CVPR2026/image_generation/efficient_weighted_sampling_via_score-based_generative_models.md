@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Efficient Weighted Sampling via Score-based Generative Models
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] To address the requirement of "sampling from weighted distributions such as $w(x)p(x)$," this paper proposes LAGS: a first-order guidance approximation **without second-order derivatives or Hessians** added to the score of a pre-trained diffusion model, combined with a **single-parameter time scheduler** derived from e
+  [CVPR 2026][Image Generation][Weighted sampling] To address the requirement of "sampling from weighted distributions such as $w(x)p(x)$," this paper proposes LAGS: a first-order guidance approximation **without second-order derivatives or Hessians** added to the score of a pre-trained diffusion model, combined with a **single-parameter time scheduler** derived from error theory to dynamically adjust guidance strength. Achieving a completely training-free approach…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Weighted sampling"
+  - "score-based generative models"
+  - "training-free guidance"
+  - "uncertainty-adaptive scheduling"
+  - "diffusion sampling acceleration"
 date: 2026-05-08
-content_hash: f726db96f3dcc8ad
+content_hash: 85a2c93d7bad939a
 ---
+
 # Efficient Weighted Sampling via Score-based Generative Models
 
 **Conference**: CVPR 2026  
@@ -151,11 +157,11 @@ In target metrics PickScore and HPS, LAGS is the best and fastest on SD/SDXL. Wh
 
 ## Related Papers
 
-- [\[CVPR 2026\] Memory-Efficient Fine-Tuning Diffusion Transformers via Dynamic Patch Sampling and Block Skipping](memory-efficient_fine-tuning_diffusion_transformers_via_dynamic_patch_sampling_a.md)
 - [\[CVPR 2026\] Smoothing the Score Function to Enhance Generalization in Diffusion Models](smoothing_the_score_function_to_enhance_generalization_in_diffusion_models.md)
-- [\[CVPR 2026\] Bias at the End of the Score: Demographic Biases in Reward Models for T2I](bias_reward_models_t2i.md)
+- [\[CVPR 2026\] Memory-Efficient Fine-Tuning Diffusion Transformers via Dynamic Patch Sampling and Block Skipping](memory-efficient_fine-tuning_diffusion_transformers_via_dynamic_patch_sampling_a.md)
+- [\[CVPR 2026\] Diffusion Sampling Path Tells More: An Efficient Plug-and-Play Strategy for Sample Filtering](diffusion_sampling_path_tells_more_an_efficient_plug-and-play_strategy_for_sampl.md)
 - [\[CVPR 2026\] Adaptive Spectral Feature Forecasting for Diffusion Sampling Acceleration](adaptive_spectral_feature_forecasting_for_diffusion_sampling_acceleration.md)
-- [\[CVPR 2026\] Few-Step Diffusion Sampling Through Instance-Aware Discretizations](few-step_diffusion_sampling_through_instance-aware_discretizations.md)
+- [\[CVPR 2026\] Reviving ConvNeXt for Efficient Convolutional Diffusion Models](reviving_convnext_for_efficient_convolutional_diffusion_models.md)
 
 </div>
 

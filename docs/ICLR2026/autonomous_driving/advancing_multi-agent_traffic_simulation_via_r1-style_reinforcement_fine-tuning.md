@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SMART-R1: Advancing Multi-agent Traffic Simulation via R1-Style Reinforcement Fine-Tuning
 description: >-
-  [ICLR 2026][Autonomous Driving][Paper Note] SMART-R1 introduces R1-style Reinforcement Fine-Tuning (RFT) to multi-agent traffic simulation for the first time, proposing the Metric-oriented Policy Optimization (MPO) algorithm and an "SFT-RFT-SFT" iterative training strategy. It achieved first place on the WOSAC 2025 leaderboard with a Realism Meta score of 0.7858
+  [ICLR 2026][Autonomous Driving][Multi-agent traffic simulation] SMART-R1 introduces R1-style Reinforcement Fine-Tuning (RFT) to multi-agent traffic simulation for the first time, proposing the Metric-oriented Policy Optimization (MPO) algorithm and an "SFT-RFT-SFT" iterative training strategy. It achieved first place on the WOSAC 2025 leaderboard with a Realism Meta score of 0.7858.
 tags:
-  - ICLR 2026
-  - Autonomous Driving
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Multi-agent traffic simulation"
+  - "R1-style"
+  - "Reinforcement Fine-Tuning"
+  - "Next-token prediction"
+  - "Policy optimization"
 date: 2026-05-08
-content_hash: d0af5aa6cf59286e
+content_hash: c29e74eb589a06d3
 ---
+
 # SMART-R1: Advancing Multi-agent Traffic Simulation via R1-Style Reinforcement Fine-Tuning
 
 **Conference**: ICLR 2026  
@@ -138,16 +144,16 @@ Policy Optimization Comparison (Post-SFT):
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] RLFTSim: Realistic and Controllable Multi-Agent Traffic Simulation via Reinforcement Learning Fine-Tuning](../../CVPR2026/autonomous_driving/rlftsim_realistic_and_controllable_multi-agent_traffic_simulation_via_reinforcem.md)
+- [\[ICLR 2026\] $AutoDrive\text{-}P^3$: Unified Chain of Perception-Prediction-Planning Thought via Reinforcement Fine-Tuning](autodrivetext-p3_unified_chain_of_perceptionpredictionplanning_thought_via_reinf.md)
 - [\[ICLR 2026\] DriveAgent-R1: Advancing VLM-based Autonomous Driving with Active Perception and Hybrid Thinking](driveagent-r1_advancing_vlm-based_autonomous_driving_with_active_perception_and_.md)
 - [\[ICLR 2026\] Plan-R1: Safe and Feasible Trajectory Planning as Language Modeling](plan-r1_safe_and_feasible_trajectory_planning_as_language_modeling.md)
-- [\[AAAI 2026\] WorldRFT: Latent World Model Planning with Reinforcement Fine-Tuning for Autonomous Driving](../../AAAI2026/autonomous_driving/worldrft_latent_world_model_planning_with_reinforcement_fine-tuning_for_autonomo.md)
-- [\[ECCV 2024\] Improving Agent Behaviors with RL Fine-tuning for Autonomous Driving](../../ECCV2024/autonomous_driving/improving_agent_behaviors_with_rl_fine-tuning_for_autonomous_driving.md)
+- [\[ICLR 2026\] DecompGAIL: Learning Realistic Traffic Behaviors with Decomposed Multi-Agent Generative Adversarial Imitation Learning](decompgail_learning_realistic_traffic_behaviors_with_decomposed_multi-agent_gene.md)
 
 </div>
 

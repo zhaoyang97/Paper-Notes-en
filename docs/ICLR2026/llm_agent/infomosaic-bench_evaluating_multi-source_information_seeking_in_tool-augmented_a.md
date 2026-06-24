@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] InfoMosaic-Bench: Evaluating Multi-Source Information Seeking in Tool-Augmented Agents
 description: >-
-  [ICLR 2026][LLM Agent][Benchmark] InfoMosaic-Bench is the first benchmark specifically designed to evaluate the capability of tool-augmented Agents in "cross-multi-source information retrieval." Using the InfoMosaic-Flow pipeline with an organizer–worker architecture, it synthesized 621 tasks that must be solved by simultaneously calling general web se
+  [ICLR 2026][LLM Agent][Multi-source information retrieval] InfoMosaic-Bench is the first benchmark specifically designed to evaluate the capability of tool-augmented Agents in "cross-multi-source information retrieval." Using the InfoMosaic-Flow pipeline with an organizer–worker architecture, it synthesized 621 tasks that must be solved by simultaneously calling general web searches and domain-specific MCP tools. The results reveal that even the most powerful GPT-5 achieves o…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Benchmark
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Multi-source information retrieval"
+  - "MCP tools"
+  - "Tool-augmented Agent"
+  - "Benchmark"
+  - "Agentic data synthesis"
 date: 2026-05-08
-content_hash: b1e05b390ca49031
+content_hash: cb13df951f6ad971
 ---
+
 # InfoMosaic-Bench: Evaluating Multi-Source Information Seeking in Tool-Augmented Agents
 
 **Conference**: ICLR 2026  

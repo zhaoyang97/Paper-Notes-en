@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ReFeed: Retrieval Feedback-Guided Dataset Construction for Style-Aware Query Rewriting
 description: >-
-  [AAAI 2026][Information Retrieval & RAG][query rewriting] This paper proposes a retrieval feedback-driven dataset construction framework that automatically builds high-quality style-aware query rewriting datasets through…
+  [AAAI 2026][Information Retrieval & RAG][query rewriting] This paper proposes a retrieval feedback-driven dataset construction framework that automatically builds high-quality style-aware query rewriting datasets through a closed-loop pipeline of three steps: identifying retrieval failure cases, LLM-based stylistic rewriting, and re-retrieval verification. The resulting dataset provides a data foundation for training retrieval-aligned rewriting models.
 tags:
   - "AAAI 2026"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "data-centric IR"
   - "RAG"
 date: 2026-05-08
-content_hash: 012b1725395e6367
+content_hash: bfc98cb7bef5a0a2
 ---
 
 # ReFeed: Retrieval Feedback-Guided Dataset Construction for Style-Aware Query Rewriting
@@ -136,8 +136,8 @@ ReFeed is a data generation framework rather than a model training method. The g
 
 - [\[ACL 2026\] Feedback Adaptation for Retrieval-Augmented Generation](../../ACL2026/information_retrieval/feedback_adaptation_for_retrieval-augmented_generation.md)
 - [\[ACL 2026\] Multi-Faceted Self-Consistent Preference Alignment for Query Rewriting in Conversational Search](../../ACL2026/information_retrieval/multi-faceted_self-consistent_preference_alignment_for_query_rewriting_in_conver.md)
-- [\[ICLR 2026\] Multimodal Dataset Distillation Made Simple by Prototype-Guided Data Synthesis](../../ICLR2026/information_retrieval/multimodal_dataset_distillation_made_simple_by_prototype-guided_data_synthesis.md)
-- [\[AAAI 2026\] Knowledge Completes the Vision: A Multimodal Entity-aware Retrieval-Augmented Generation Framework for News Image Captioning](knowledge_completes_the_vision_a_multimodal_entity-aware_retrieval-augmented_gen.md)
+- [\[ICLR 2026\] Query-Aware Flow Diffusion for Graph-Based RAG with Retrieval Guarantees](../../ICLR2026/information_retrieval/query-aware_flow_diffusion_for_graph-based_rag_with_retrieval_guarantees.md)
+- [\[ICLR 2026\] SmartChunk Retrieval: Query-Aware Chunk Compression with Planning for Efficient Document RAG](../../ICLR2026/information_retrieval/smartchunk_retrieval_query-aware_chunk_compression_with_planning_for_efficient_d.md)
 - [\[ACL 2026\] Enhancing Multilingual RAG Systems with Debiased Language Preference-Guided Query Fusion](../../ACL2026/information_retrieval/enhancing_multilingual_rag_systems_with_debiased_language_preference-guided_quer.md)
 
 </div>

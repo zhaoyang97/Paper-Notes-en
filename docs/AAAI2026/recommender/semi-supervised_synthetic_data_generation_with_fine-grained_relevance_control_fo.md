@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Semi-Supervised Synthetic Data Generation with Fine-Grained Relevance Control for Short Video Search Relevance Modeling
 description: >-
-  [AAAI 2026][Recommender Systems][Synthetic Data] This paper proposes SSRA (Semi-Supervised Relevance-Aware synthetic data pipeline), a two-stage framework that generates domain-adaptive short video data with controllable…
+  [AAAI 2026][Recommender Systems][Synthetic Data] This paper proposes SSRA (Semi-Supervised Relevance-Aware synthetic data pipeline), a two-stage framework that generates domain-adaptive short video data with controllable fine-grained relevance labels (4 levels) to enhance the semantic relevance modeling capability of embedding models. Online A/B testing on Douyin's dual-column feed achieves a 1.45% CTR improvement.
 tags:
   - "AAAI 2026"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "Semi-Supervised Learning"
   - "Embedding Model"
 date: 2026-05-08
-content_hash: d0e70336d742a62e
+content_hash: 39f5a55aacd3ae20
 ---
 
 # Semi-Supervised Synthetic Data Generation with Fine-Grained Relevance Control for Short Video Search Relevance Modeling
@@ -225,8 +225,8 @@ Randomized experiment on Douyin's dual-column feed with 190 million users/day, c
 - [\[AAAI 2026\] CroPS: Improving Dense Retrieval with Cross-Perspective Positive Samples in Short-Video Search](crops_improving_dense_retrieval_with_cross-perspective_positive_samples_in_short.md)
 - [\[AAAI 2026\] Generalization Bounds for Semi-supervised Matrix Completion with Distributional Side Information](generalization_bounds_for_semi-supervised_matrix_completion_with_distributional_.md)
 - [\[AAAI 2026\] Length-Adaptive Interest Network for Balancing Long and Short Sequence Modeling in CTR Prediction](length-adaptive_interest_network_for_balancing_long_and_short_sequence_modeling_.md)
+- [\[CVPR 2025\] FineVQ: Fine-Grained User Generated Content Video Quality Assessment](../../CVPR2025/recommender/finevq_fine-grained_user_generated_content_video_quality_assessment.md)
 - [\[AAAI 2026\] When Top-ranked Recommendations Fail: Modeling Multi-Granular Negative Feedback for Explainable and Robust Video Recommendation](when_top-ranked_recommendations_fail_modeling_multi-granular_negative_feedback_f.md)
-- [\[AAAI 2026\] MultiTab: A Scalable Foundation for Multitask Learning on Tabular Data](multitab_a_scalable_foundation_for_multitask_learning_on_tabular_data.md)
 
 </div>
 

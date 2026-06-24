@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VIKI-R: Coordinating Embodied Multi-Agent Cooperation via Reinforcement Learning
 description: >-
-  [NeurIPS 2025 (Datasets and Benchmarks Track)][Robotics][Multi-agent cooperation] This paper introduces VIKI-Bench, the first hierarchical benchmark for embodied multi-agent cooperation…
+  [NeurIPS 2025 (Datasets and Benchmarks Track)][Robotics][Multi-agent cooperation] This paper introduces VIKI-Bench, the first hierarchical benchmark for embodied multi-agent cooperation, comprising three evaluation levels—agent activation, task planning, and trajectory perception—and proposes VIKI-R, a two-stage training framework combining CoT-supervised fine-tuning with multi-level reward reinforcement learning. The framework achieves significant improvements over baselines…
 tags:
   - "NeurIPS 2025 (Datasets and Benchmarks Track)"
   - "Robotics"
@@ -13,7 +13,7 @@ tags:
   - "multi-level rewards"
   - "heterogeneous robots"
 date: 2026-05-08
-content_hash: 618be097e57747f8
+content_hash: 2ac25e58caafa24a
 ---
 
 # VIKI-R: Coordinating Embodied Multi-Agent Cooperation via Reinforcement Learning
@@ -124,11 +124,11 @@ Stage 1 employs standard sequence-to-sequence cross-entropy loss for fine-tuning
 
 ## Related Papers
 
-- [\[ICLR 2026\] Distributionally Robust Cooperative Multi-Agent Reinforcement Learning via Robust Value Factorization](../../ICLR2026/robotics/distributionally_robust_cooperative_multi-agent_reinforcement_learning_via_robus.md)
+- [\[ICLR 2026\] Empowering Multi-Robot Cooperation via Sequential World Models](../../ICLR2026/robotics/empowering_multi-robot_cooperation_via_sequential_world_models.md)
 - [\[NeurIPS 2025\] Robot-R1: Reinforcement Learning for Enhanced Embodied Reasoning in Robotics](robot-r1_reinforcement_learning_for_enhanced_embodied_reasoning_in_robotics.md)
 - [\[NeurIPS 2025\] Memo: Training Memory-Efficient Embodied Agents with Reinforcement Learning](memo_training_memory-efficient_embodied_agents_with_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Reinforcement Learning with Action Chunking](reinforcement_learning_with_action_chunking.md)
-- [\[NeurIPS 2025\] Learning Interactive World Model for Object-Centric Reinforcement Learning](learning_interactive_world_model_for_object-centric_reinforcement_learning.md)
+- [\[AAAI 2026\] Towards Reinforcement Learning from Neural Feedback: Mapping fNIRS Signals to Agent Performance](../../AAAI2026/robotics/towards_reinforcement_learning_from_neural_feedback_mapping_.md)
 
 </div>
 

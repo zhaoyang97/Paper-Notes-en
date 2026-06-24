@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] LongHorizonUI: A Unified Framework for Robust Long-Horizon Task Automation of GUI Agent
 description: >-
-  [ICLR 2026][LLM Agent][GUI Agent] LongHorizonUI employs a "Enhanced Perception + Three-layer Closed-loop Reflective Decision-making + Multi-level Compensatory Execution" toolkit to enhance the success rate of training-free MLLM GUI agents in long-horizon tasks exceeding 15 steps, supplemented by the release of the LongGUIBench benchmark (averaging 22 s
+  [ICLR 2026][LLM Agent][GUI Agent] LongHorizonUI employs a "Enhanced Perception + Three-layer Closed-loop Reflective Decision-making + Multi-level Compensatory Execution" toolkit to enhance the success rate of training-free MLLM GUI agents in long-horizon tasks exceeding 15 steps, supplemented by the release of the LongGUIBench benchmark (averaging 22 steps).
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - GUI Agent
-  - Long-Horizon
-  - MLLM
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "Long-Horizon"
+  - "MLLM"
+  - "Enhanced Perception"
+  - "Reflective Decision-making"
+  - "Compensatory Execution"
 date: 2026-05-08
-content_hash: 9a6e9abd4e38b36d
+content_hash: fb0e4f4cc37f48f6
 ---
+
 # LongHorizonUI: A Unified Framework for Robust Long-Horizon Task Automation of GUI Agent
 
 **Conference**: ICLR 2026  

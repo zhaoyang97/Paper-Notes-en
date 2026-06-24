@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Limited Preference Data? Learning Better Reward Model with Latent Space Synthesis
 description: >-
-  [NeurIPS 2025][LLM Alignment][reward modeling] This paper proposes LENS, a framework that synthesizes preference data pairs in the latent space of LLM embeddings via a VAE…
+  [NeurIPS 2025][LLM Alignment][reward modeling] This paper proposes LENS, a framework that synthesizes preference data pairs in the latent space of LLM embeddings via a VAE, bypassing costly text generation and achieving substantial improvements in reward model performance at dramatically reduced computational cost (16,000× smaller model, 18× faster generation).
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "preference data augmentation"
   - "RLHF"
 date: 2026-05-08
-content_hash: 408918d006c5fe32
+content_hash: 9c632163a0db7431
 ---
 
 # Limited Preference Data? Learning Better Reward Model with Latent Space Synthesis
@@ -172,9 +172,9 @@ LENS outperforms all baselines across augmentation ratios and datasets. At 8× a
 ## Related Papers
 
 - [\[NeurIPS 2025\] ResponseRank: Data-Efficient Reward Modeling through Preference Strength Learning](responserank_data-efficient_reward_modeling_through_preference_strength_learning.md)
+- [\[NeurIPS 2025\] Inference-time Alignment in Continuous Space](inference-time_alignment_in_continuous_space.md)
 - [\[NeurIPS 2025\] What Makes a Reward Model a Good Teacher? An Optimization Perspective](what_makes_a_reward_model_a_good_teacher_an_optimization_perspective.md)
 - [\[NeurIPS 2025\] Ask a Strong LLM Judge when Your Reward Model is Uncertain](ask_a_strong_llm_judge_when_your_reward_model_is_uncertain.md)
-- [\[NeurIPS 2025\] Inference-time Alignment in Continuous Space](inference-time_alignment_in_continuous_space.md)
 - [\[NeurIPS 2025\] Preference Optimization by Estimating the Ratio of the Data Distribution](preference_optimization_by_estimating_the_ratio_of_the_data_distribution.md)
 
 </div>

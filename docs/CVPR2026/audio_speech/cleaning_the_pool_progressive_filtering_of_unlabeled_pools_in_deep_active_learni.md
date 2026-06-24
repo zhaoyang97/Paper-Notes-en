@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cleaning the Pool: Progressive Filtering of Unlabeled Pools in Deep Active Learning
 description: >-
-  [CVPR 2026][Audio & Speech][Paper Note] The authors propose Refine, an ensemble active learning method that consistently outperforms individual AL strategies and existing ensemble methods. It employs a two-stage strategy: progressive filtering (iterative refinement of the unlabeled pool using multiple strategies) followed by coverage selection (selecting hig
+  [CVPR 2026][Audio & Speech][Active learning] The authors propose Refine, an ensemble active learning method that consistently outperforms individual AL strategies and existing ensemble methods. It employs a two-stage strategy: progressive filtering (iterative refinement of the unlabeled pool using multiple strategies) followed by coverage selection (selecting high-value diverse samples from the refined pool) without requiring prior knowledge of the optimal strategy.
 tags:
-  - CVPR 2026
-  - Audio & Speech
+  - "CVPR 2026"
+  - "Audio & Speech"
+  - "Active learning"
+  - "ensemble strategies"
+  - "progressive filtering"
+  - "foundation models"
+  - "coverage selection"
 date: 2026-05-08
-content_hash: b65db78ac780f378
+content_hash: 6e26f23eb9661310
 ---
+
 # Cleaning the Pool: Progressive Filtering of Unlabeled Pools in Deep Active Learning
 
 **Conference**: CVPR 2026  
@@ -158,10 +164,10 @@ The reliability of progressive filtering is supported by three proven properties
 
 ## Related Papers
 
+- [\[ICLR 2026\] STAR-Bench: Probing Deep Spatio-Temporal Reasoning as Audio 4D Intelligence](../../ICLR2026/audio_speech/star-bench_probing_deep_spatio-temporal_reasoning_as_audio_4d_intelligence.md)
 - [\[ACL 2026\] ControlAudio: Tackling Text-Guided, Timing-Indicated and Intelligible Audio Generation via Progressive Diffusion Modeling](../../ACL2026/audio_speech/controlaudio_tackling_text-guided_timing-indicated_and_intelligible_audio_genera.md)
 - [\[CVPR 2026\] Pushing the Frontier of Audiovisual Perception with Large-Scale Multimodal Correspondence Learning](pushing_the_frontier_of_audiovisual_perception_with_large-scale_multimodal_corre.md)
 - [\[CVPR 2026\] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval](save_speech-aware_video_representation_learning_for_video-text_retrieval.md)
-- [\[CVPR 2026\] Semantic Noise Reduction via Teacher-Guided Dual-Path Audio-Visual Representation Learning](semantic_noise_reduction_via_teacher-guided_dual-path_audio-visual_representatio.md)
 - [\[ACL 2026\] Privacy-preserving Prosody Representation Learning](../../ACL2026/audio_speech/privacy-preserving_prosody_representation_learning.md)
 
 </div>

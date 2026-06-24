@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Understanding Co-speech Gestures in-the-wild
 description: >-
-  [ICCV 2025][Audio & Speech][Co-speech gestures] This paper proposes JEGAL — a joint gesture-audio-language tri-modal embedding space that learns co-speech gesture representations under weak supervision via a global phras…
+  [ICCV 2025][Audio & Speech][Co-speech gestures] This paper proposes JEGAL — a joint gesture-audio-language tri-modal embedding space that learns co-speech gesture representations under weak supervision via a global phrase-level contrastive loss and a local gesture-word coupling loss. Three new gesture understanding tasks and benchmarks are introduced, and the method outperforms a range of baselines including large vision-language models.
 tags:
   - "ICCV 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "gesture word spotting"
   - "active speaker detection"
 date: 2026-05-08
-content_hash: 4720a85b977bbed3
+content_hash: 2ff2485ddc19c46f
 ---
 
 # Understanding Co-speech Gestures in-the-wild
@@ -176,11 +176,11 @@ GestSync achieves the best performance on this task due to its strong frame-leve
 
 ## Related Papers
 
+- [\[CVPR 2025\] HOP: Heterogeneous Topology-based Multimodal Entanglement for Co-Speech Gesture Generation](../../CVPR2025/audio_speech/hop_heterogeneous_topology-based_multimodal_entanglement_for_co-speech_gesture_g.md)
 - [\[NeurIPS 2025\] Instance-Specific Test-Time Training for Speech Editing in the Wild](../../NeurIPS2025/audio_speech/instance-specific_test-time_training_for_speech_editing_in_the_wild.md)
+- [\[ACL 2025\] In-the-wild Audio Spatialization with Flexible Text-guided Localization](../../ACL2025/audio_speech/tas_audio_spatialization.md)
+- [\[ACL 2025\] Chain-Talker: Chain Understanding and Rendering for Empathetic Conversational Speech Synthesis](../../ACL2025/audio_speech/chain-talker_chain_understanding_and_rendering_for_empathetic_conversational_spe.md)
 - [\[ACL 2026\] Computational Narrative Understanding for Expressive Text-to-Speech](../../ACL2026/audio_speech/computational_narrative_understanding_for_expressive_text-to-speech.md)
-- [\[AAAI 2026\] DualSpeechLM: Towards Unified Speech Understanding and Generation via Dual Speech Token Modeling](../../AAAI2026/audio_speech/dualspeechlm_towards_unified_speech_understanding_and_generation_via_dual_speech.md)
-- [\[ICCV 2025\] Zero-AVSR: Zero-Shot Audio-Visual Speech Recognition with LLMs by Learning Language-Agnostic Speech Representations](zero-avsr_zero-shot_audio-visual_speech_recognition_with_llms_by_learning_langua.md)
-- [\[AAAI 2026\] HPSU: A Benchmark for Human-Level Perception in Real-World Spoken Speech Understanding](../../AAAI2026/audio_speech/hpsu_a_benchmark_for_human-level_perception_in_real-world_spoken_speech_understa.md)
 
 </div>
 

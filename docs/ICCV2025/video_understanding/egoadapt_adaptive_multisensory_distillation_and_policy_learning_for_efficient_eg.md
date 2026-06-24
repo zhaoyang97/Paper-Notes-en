@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EgoAdapt: Adaptive Multisensory Distillation and Policy Learning for Efficient Egocentric Perception
 description: >-
-  [ICCV 2025][Video Understanding][egocentric perception] EgoAdapt is a framework that jointly trains cross-modal distillation and policy learning to adaptively select the optimal modality combination…
+  [ICCV 2025][Video Understanding][egocentric perception] EgoAdapt is a framework that jointly trains cross-modal distillation and policy learning to adaptively select the optimal modality combination, achieving up to 89% GMACs reduction while maintaining performance on par with or superior to SOTA on egocentric perception tasks.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "efficient inference"
   - "multisensory fusion"
 date: 2026-05-08
-content_hash: 8f68dd340943694b
+content_hash: 0b59680737d4f062
 ---
 
 # EgoAdapt: Adaptive Multisensory Distillation and Policy Learning for Efficient Egocentric Perception
@@ -128,11 +128,11 @@ Training stage ablation: CFD with a random policy yields only 67.41 mAP; Stages 
 
 ## Related Papers
 
+- [\[CVPR 2026\] AdaSpark: Adaptive Sparsity for Efficient Long-Video Understanding](../../CVPR2026/video_understanding/adaspark_adaptive_sparsity_for_efficient_long_video_understanding.md)
 - [\[ICCV 2025\] Fine-grained Spatiotemporal Grounding on Egocentric Videos](fine-grained_spatiotemporal_grounding_on_egocentric_videos.md)
-- [\[CVPR 2026\] A Multi-Agent Perception-Action Alliance for Efficient Long Video Reasoning](../../CVPR2026/video_understanding/a_multi-agent_perception-action_alliance_for_efficient_long_video_reasoning.md)
 - [\[ICCV 2025\] MobileViCLIP: An Efficient Video-Text Model for Mobile Devices](mobileviclip_an_efficient_video-text_model_for_mobile_devices.md)
 - [\[ICCV 2025\] General Compression Framework for Efficient Transformer Object Tracking](general_compression_framework_for_efficient_transformer_object_tracking.md)
-- [\[CVPR 2026\] AdaSpark: Adaptive Sparsity for Efficient Long-Video Understanding](../../CVPR2026/video_understanding/adaspark_adaptive_sparsity_for_efficient_long_video_understanding.md)
+- [\[ICCV 2025\] VideoMiner: Iteratively Grounding Key Frames of Hour-Long Videos via Tree-based Group Relative Policy Optimization](videominer_iteratively_grounding_key_frames_of_hour-long_videos_via_tree-based_g.md)
 
 </div>
 

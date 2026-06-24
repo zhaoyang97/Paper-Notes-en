@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Automated Detection of Visual Attribute Reliance with a Self-Reflective Agent
 description: >-
-  [NeurIPS 2025][Object Detection][visual attribute reliance] This paper proposes a self-reflective agent framework that automatically detects attribute reliance in visual models through an iterative hypothesis generation–…
+  [NeurIPS 2025][Object Detection][visual attribute reliance] This paper proposes a self-reflective agent framework that automatically detects attribute reliance in visual models through an iterative hypothesis generation–testing–verification–reflection loop (e.g., CLIP recognizing "teacher" via classroom backgrounds, YOLOv8 detecting pedestrians via crosswalks). Evaluated on a benchmark of 130 models with injected known attribute dependencies, self-reflection is shown to signi…
 tags:
   - "NeurIPS 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "hypothesis testing"
   - "bias detection"
 date: 2026-05-08
-content_hash: d152242bae310715
+content_hash: b12c35da337426cc
 ---
 
 # Automated Detection of Visual Attribute Reliance with a Self-Reflective Agent
@@ -121,10 +121,10 @@ No training is involved. A multimodal LLM (e.g., GPT-4V) is used as the backbone
 ## Related Papers
 
 - [\[NeurIPS 2025\] AutoSciDACT: Automated Scientific Discovery through Contrastive Embedding and Hypothesis Testing](autoscidact_automated_scientific_discovery_through_contrastive_embedding_and_hyp.md)
+- [\[ICML 2025\] Self-Organizing Visual Prototypes for Non-Parametric Representation Learning](../../ICML2025/object_detection/self-organizing_visual_prototypes_for_non-parametric_representation_learning.md)
 - [\[ICCV 2025\] Automated Model Evaluation for Object Detection via Prediction Consistency and Reliability](../../ICCV2025/object_detection/automated_model_evaluation_for_object_detection_via_prediction_consistency_and_r.md)
-- [\[AAAI 2026\] CASL: Curvature-Augmented Self-supervised Learning for 3D Anomaly Detection](../../AAAI2026/object_detection/casl_curvature-augmented_self-supervised_learning_for_3d_anomaly_detection.md)
 - [\[ICCV 2025\] Visual-RFT: Visual Reinforcement Fine-Tuning](../../ICCV2025/object_detection/visual-rft_visual_reinforcement_fine-tuning.md)
-- [\[ICCV 2025\] Kaputt: A Large-Scale Dataset for Visual Defect Detection](../../ICCV2025/object_detection/kaputt_a_large-scale_dataset_for_visual_defect_detection.md)
+- [\[CVPR 2025\] Large Self-Supervised Models Bridge the Gap in Domain Adaptive Object Detection](../../CVPR2025/object_detection/large_self-supervised_models_bridge_the_gap_in_domain_adaptive_object_detection.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reinforcement Learning with Action Chunking
 description: >-
-  [NeurIPS 2025][Robotics][Action chunking] This paper proposes Q-chunking, which extends action chunking from imitation learning to TD-based reinforcement learning by running RL directly over a "chunked" action space…
+  [NeurIPS 2025][Robotics][Action chunking] This paper proposes Q-chunking, which extends action chunking from imitation learning to TD-based reinforcement learning by running RL directly over a "chunked" action space, thereby improving exploration and sample efficiency in long-horizon sparse-reward tasks.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "sparse rewards"
   - "manipulation tasks"
 date: 2026-05-08
-content_hash: 1bc2ff6047ded700
+content_hash: fd244ece42e778ad
 ---
 
 # Reinforcement Learning with Action Chunking
@@ -152,8 +152,8 @@ Effect of chunk size $H$ (Nut Assembly success rate):
 - [\[ICML 2026\] Mixture of Horizons in Action Chunking](../../ICML2026/robotics/mixture_of_horizons_in_action_chunking.md)
 - [\[NeurIPS 2025\] Learning Interactive World Model for Object-Centric Reinforcement Learning](learning_interactive_world_model_for_object-centric_reinforcement_learning.md)
 - [\[CVPR 2026\] Adaptive Action Chunking at Inference-time for Vision-Language-Action Models](../../CVPR2026/robotics/adaptive_action_chunking_at_inference-time_for_vision-language-action_models.md)
-- [\[ICLR 2026\] Real-Time Robot Execution with Masked Action Chunking](../../ICLR2026/robotics/real-time_robot_execution_with_masked_action_chunking.md)
 - [\[NeurIPS 2025\] Real-World Reinforcement Learning of Active Perception Behaviors](real-world_reinforcement_learning_of_active_perception_behaviors.md)
+- [\[ICLR 2026\] Real-Time Robot Execution with Masked Action Chunking](../../ICLR2026/robotics/real-time_robot_execution_with_masked_action_chunking.md)
 
 </div>
 

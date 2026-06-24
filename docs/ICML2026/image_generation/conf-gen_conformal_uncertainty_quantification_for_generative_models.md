@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Conf-Gen: Conformal Uncertainty Quantification for Generative Models
 description: >-
-  [ICML 2026][Image Generation][Generative Model] The Conf-Gen framework is proposed to extend Conformal Risk Control (CRC) to generative tasks. Using parameterized selection functions and admissibility functions, it provides formal uncertainty guarantees for tasks such as LLM QA, image generation, dialogue systems, and AI agents, while relaxing theoretical assumption
+  [ICML 2026][Image Generation][Conformal Prediction] The Conf-Gen framework is proposed to extend Conformal Risk Control (CRC) to generative tasks. Using parameterized selection functions and admissibility functions, it provides formal uncertainty guarantees for tasks such as LLM QA, image generation, dialogue systems, and AI agents, while relaxing theoretical assumptions like the monotonicity of CRC.
 tags:
-  - ICML 2026
-  - Image Generation
-  - Generative Model
+  - "ICML 2026"
+  - "Image Generation"
+  - "Conformal Prediction"
+  - "Uncertainty Quantification"
+  - "Generative Models"
+  - "Conformal Risk Control"
+  - "Selection Functions"
 date: 2026-05-08
-content_hash: dc1b8594cc98756c
+content_hash: 3de1edc1f0d555a9
 ---
+
 # Conf-Gen: Conformal Uncertainty Quantification for Generative Models
 
 **Conference**: ICML 2026  
@@ -108,10 +113,10 @@ The paper validates Conf-Gen effectiveness across 5 tasks:
 ## Related Papers
 
 - [\[ICML 2026\] Conformal Reliability: A New Evaluation Metric for Conditional Generation](conformal_reliability_a_new_evaluation_metric_for_conditional_generation.md)
-- [\[ICLR 2026\] Unsupervised Conformal Inference: Bootstrapping and Alignment to Control LLM Uncertainty](../../ICLR2026/image_generation/unsupervised_conformal_inference_bootstrapping_and_alignment_to_control_llm_unce.md)
 - [\[ACL 2025\] D-GEN: Automatic Distractor Generation and Evaluation for Reliable Assessment of Generative Models](../../ACL2025/image_generation/d-gen_automatic_distractor_generation_and_evaluation_for_reliable_assessment_of_.md)
 - [\[ICML 2026\] Generative Visual Code Mobile World Models](generative_visual_code_mobile_world_models.md)
 - [\[ICML 2026\] Threshold-Guided Optimization for Visual Generative Models](threshold-guided_optimization_for_visual_generative_models.md)
+- [\[ICML 2026\] RAIGen: Rare Attribute Identification in Text-to-Image Generative Models](raigen_rare_attribute_identification_in_text-to-image_generative_models.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Autoregressive-based Progressive Coding for Ultra-Low Bitrate Image Compression
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] ARPC utilizes the "next-scale prediction" of Visual Autoregressive (VAR) models for ultra-low bitrate image compression. The encoder uses a multi-scale residual quantizer to decompose images into $K$ sets of coarse-to-fine discrete tokens. By transmitting only the first $k$ sets and letting VAR autoregressively generat
+  [ICLR 2026][Image Generation][Ultra-low bitrate compression] ARPC utilizes the "next-scale prediction" of Visual Autoregressive (VAR) models for ultra-low bitrate image compression. The encoder uses a multi-scale residual quantizer to decompose images into $K$ sets of coarse-to-fine discrete tokens. By transmitting only the first $k$ sets and letting VAR autoregressively generate the remaining $K-k$ sets, a single model achieves continuous bitrate adjustment. Furthermore…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Ultra-low bitrate compression"
+  - "Visual Autoregression (VAR)"
+  - "Progressive coding"
+  - "Residual quantization"
+  - "Lossless entropy coding"
 date: 2026-05-08
-content_hash: 1e9167fb89a5b648
+content_hash: b4effcab4e774d5e
 ---
+
 # Autoregressive-based Progressive Coding for Ultra-Low Bitrate Image Compression
 
 **Conference**: ICLR 2026  
@@ -136,8 +142,8 @@ The following table shows inference efficiency and BD-rate (relative to ARPC) on
 
 - [\[NeurIPS 2025\] FocalCodec: Low-Bitrate Speech Coding via Focal Modulation Networks](../../NeurIPS2025/image_generation/focalcodec_low-bitrate_speech_coding_via_focal_modulation_networks.md)
 - [\[ICLR 2026\] Latent Wavelet Diffusion for Ultra-High-Resolution Image Synthesis](latent_wavelet_diffusion_for_ultra_high-resolution_image_synthesis.md)
-- [\[ICLR 2026\] Autoregressive Image Generation with Randomized Parallel Decoding](autoregressive_image_generation_with_randomized_parallel_decoding.md)
 - [\[ICLR 2026\] From Parameters to Behaviors: Unsupervised Compression of the Policy Space](from_parameters_to_behaviors_unsupervised_compression_of_the_policy_space.md)
+- [\[ICLR 2026\] Autoregressive Image Generation with Randomized Parallel Decoding](autoregressive_image_generation_with_randomized_parallel_decoding.md)
 - [\[ICLR 2026\] NextStep-1: Toward Autoregressive Image Generation with Continuous Tokens at Scale](nextstep-1_toward_autoregressive_image_generation_with_continuous_tokens_at_scal.md)
 
 </div>

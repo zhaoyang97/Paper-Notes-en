@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Global Underwater Geolocation from Time-Lapse Polarization Imagery
 description: >-
-  [CVPR 2026][Others][Transformer] By using a single underwater polarization camera to capture a time-lapse sequence looking up at the sky with UTC timestamps, this work employs "physically-guided synthesis of 2.8 million training sequences + a two-stage Transformer to first reconstruct the solar elevation curve and then regress latitude and longitude."
+  [CVPR 2026][Underwater Geolocation] By using a single underwater polarization camera to capture a time-lapse sequence looking up at the sky with UTC timestamps, this work employs "physically-guided synthesis of 2.8 million training sequences + a two-stage Transformer to first reconstruct the solar elevation curve and then regress latitude and longitude." This reduces the median cross-site (unseen waters) localization error from the SOTA of approximately 3000 km to approximate…
 tags:
-  - CVPR 2026
-  - Others
-  - Transformer
+  - "CVPR 2026"
+  - "Underwater Geolocation"
+  - "Sky Polarization"
+  - "Solar Elevation"
+  - "Physically-guided Synthesis"
+  - "Transformer"
 date: 2026-05-08
-content_hash: 75f2d9220f919740
+content_hash: 1002c8d390f29597
 ---
+
 # Global Underwater Geolocation from Time-Lapse Polarization Imagery
 
 **Conference**: CVPR 2026  
@@ -145,11 +149,11 @@ Cross-site on Champaign site, changing one component at a time:
 
 ## Related Papers
 
-- [\[CVPR 2026\] AVGGT: Rethinking Global Attention for Accelerating VGGT](avggt_rethinking_global_attention_for_accelerating_vggt.md)
-- [\[CVPR 2026\] Beyond Global Similarity: Multi-Conditional Retrieval for Fine-Grained Cross-Modal Understanding](beyond_global_similarity_multi-conditional_retrieval_for_fine-grained_cross-moda.md)
+- [\[CVPR 2026\] Global Information Thresholding for Sufficient and Necessary Circuits](global_information_thresholding_for_sufficient_and_necessary_circuits.md)
 - [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](neural_collapse_in_test-time_adaptation.md)
-- [\[CVPR 2026\] ViT3: Unlocking Test-Time Training in Vision](vit3_unlocking_test_time_training_in_vision.md)
-- [\[ICLR 2026\] The Invisibility Hypothesis: Promises of AGI and the Future of the Global South](../../ICLR2026/others/the_invisibility_hypothesis_promises_of_agi_and_the_future_of_the_global_south.md)
+- [\[ICML 2025\] Probably Approximately Global Robustness Certification](../../ICML2025/others/probably_approximately_global_robustness_certification.md)
+- [\[CVPR 2026\] PhysSkin: Real-Time and Generalizable Physics-Based Skin Simulation](physskin_real-time_and_generalizable_physics-based_animation_via_self-supervised.md)
+- [\[CVPR 2026\] WiTTA-Bench: Benchmarking Test-Time Adaptation for WiFi Sensing](witta-bench_benchmarking_test-time_adaptation_for_wifi_sensing.md)
 
 </div>
 

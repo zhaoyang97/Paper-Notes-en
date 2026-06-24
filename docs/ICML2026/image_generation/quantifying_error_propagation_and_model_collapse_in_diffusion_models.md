@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Quantifying Error Propagation and Model Collapse in Diffusion Models
 description: >-
-  [ICML 2026][Image Generation][Diffusion Model] This work provides the first set of paired upper and lower bounds for the phenomenon of "model collapse induced by recursive training with synthetic data" in score-based diffusion models. Specifically, it establishes that the single-generation divergence satisfies $\chi^2(\hat p^{i+1}\|q_i)\asymp \varepsilon_{\star,i}^
+  [ICML 2026][Image Generation][Diffusion models] This work provides the first set of paired upper and lower bounds for the phenomenon of "model collapse induced by recursive training with synthetic data" in score-based diffusion models. Specifically, it establishes that the single-generation divergence satisfies $\chi^2(\hat p^{i+1}\|q_i)\asymp \varepsilon_{\star,i}^2$, and the multi-generation cumulative divergence $D_N$ is a weighted sum of previous score error energies deca…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Diffusion Model
-  - score matching
-  - Error Accumulation
+  - "ICML 2026"
+  - "Image Generation"
+  - "Diffusion models"
+  - "model collapse"
+  - "recursive training"
+  - "score matching"
+  - "error accumulation"
 date: 2026-05-08
-content_hash: 535210698b4ee004
+content_hash: 942f536535ea324b
 ---
+
 # Quantifying Error Propagation and Model Collapse in Diffusion Models
 
 **Conference**: ICML 2026  
@@ -120,9 +123,9 @@ The paper lacks traditional component ablation (being purely theoretical and val
 
 - [\[ICLR 2026\] Test-Time Iterative Error Correction for Efficient Diffusion Models](../../ICLR2026/image_generation/test-time_iterative_error_correction_for_efficient_diffusion_models.md)
 - [\[ICML 2026\] Escaping Mode Collapse in LLM Generation via Geometric Regulation](escaping_mode_collapse_in_llm_generation_via_geometric_regulation.md)
+- [\[NeurIPS 2025\] A Closer Look at Model Collapse: From a Generalization-to-Memorization Perspective](../../NeurIPS2025/image_generation/a_closer_look_at_model_collapse_from_a_generalization-to-memorization_perspectiv.md)
 - [\[ICML 2026\] Alignment-Guided Score Matching for Text-to-Image Alignment in Diffusion Models](alignment-guided_score_matching_for_text-to-image_alignment_in_diffusion_models.md)
 - [\[ICML 2026\] A Unified Framework for Diffusion Model Unlearning with f-Divergence](a_unified_framework_for_diffusion_model_unlearning_with_f-divergence.md)
-- [\[ICLR 2026\] Error as Signal: Stiffness-Aware Diffusion Sampling via Embedded Runge-Kutta Guidance](../../ICLR2026/image_generation/error_as_signal_stiffness-aware_diffusion_sampling_via_embedded_runge-kutta_guid.md)
 
 </div>
 

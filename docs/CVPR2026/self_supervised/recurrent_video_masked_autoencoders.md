@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Recurrent Video Masked Autoencoders
 description: >-
-  [CVPR 2026][Self-Supervised Learning][GRU] RVM utilizes a "Transformer + GRU hybrid recurrent core" to aggregate video features frame-by-frame. Trained solely on an asymmetric pixel reconstruction objective—where unmasked past frames reconstruct a 95% masked future frame—it yields a general-purpose encoder proficient in both spatiotemporal tasks (action recogni
+  [CVPR 2026][Self-Supervised Learning][Video Masked Autoencoder] RVM utilizes a "Transformer + GRU hybrid recurrent core" to aggregate video features frame-by-frame. Trained solely on an asymmetric pixel reconstruction objective—where unmasked past frames reconstruct a 95% masked future frame—it yields a general-purpose encoder proficient in both spatiotemporal tasks (action recognition, point/object tracking) and dense spatial tasks (depth, segmentation correspondence). Furth…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - GRU
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Video Masked Autoencoder"
+  - "Recurrent Network"
+  - "GRU"
+  - "Asymmetric Masking"
+  - "General Vision Encoder"
 date: 2026-05-08
 content_hash: 9115c75faee475d4
 ---
+
 # Recurrent Video Masked Autoencoders
 
 **Conference**: CVPR 2026  
@@ -142,11 +147,11 @@ Small models (No distillation):
 
 ## Related Papers
 
+- [\[ECCV 2024\] ViC-MAE: Self-Supervised Representation Learning from Images and Video with Contrastive Masked Autoencoders](../../ECCV2024/self_supervised/vic-mae_self-supervised_representation_learning_from_images_and_video_with_contr.md)
+- [\[CVPR 2026\] VideoSSR: Video Self-Supervised Reinforcement Learning](videossr_video_self-supervised_reinforcement_learning.md)
+- [\[ICLR 2026\] HiMAE: Hierarchical Masked Autoencoders Discover Resolution-Specific Structure in Wearable Time Series](../../ICLR2026/self_supervised/himae_hierarchical_masked_autoencoders_discover_resolution-specific_structure_in.md)
 - [\[CVPR 2026\] Suppressing Non-Semantic Noise in Masked Image Modeling Representations](suppressing_non-semantic_noise_in_masked_image_modeling_representations.md)
-- [\[CVPR 2026\] Towards Stable Self-Supervised Object Representations in Unconstrained Egocentric Video](towards_stable_self-supervised_object_representations_in_unconstrained_egocentri.md)
-- [\[CVPR 2026\] How Much 3D Do Video Foundation Models Encode?](how_much_3d_do_video_foundation_models_encode.md)
-- [\[CVPR 2026\] Progressive Mask Distillation for Self-supervised Video Representation](progressive_mask_distillation_for_self-supervised_video_representation.md)
-- [\[CVPR 2026\] MuM: Multi-View Masked Image Modeling for 3D Vision](mum_multi-view_masked_image_modeling_for_3d_vision.md)
+- [\[ECCV 2024\] Efficient Image Pre-Training with Siamese Cropped Masked Autoencoders](../../ECCV2024/self_supervised/efficient_image_pre-training_with_siamese_cropped_masked_autoencoders.md)
 
 </div>
 

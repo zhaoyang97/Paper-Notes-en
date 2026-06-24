@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Distilling the Thought, Watermarking the Answer: A Principle Semantic Guided Watermark for Reasoning Large Language Models
 description: >-
-  [ICLR 2026][LLM Safety][Chain-of-Thought] ReasonMark decouples the generation of reasoning LLMs into an perturbation-free "thought phase" and a watermarked "answer phase." It distills a Principal Semantic Vector (PSV) from the thought phase to dynamically adjust the watermark intensity of green-list tokens, enabling detectable and attack-resistant watermarks w
+  [ICLR 2026][LLM Safety][Text Watermarking] ReasonMark decouples the generation of reasoning LLMs into an perturbation-free "thought phase" and a watermarked "answer phase." It distills a Principal Semantic Vector (PSV) from the thought phase to dynamically adjust the watermark intensity of green-list tokens, enabling detectable and attack-resistant watermarks with almost no loss in reasoning accuracy.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Chain-of-Thought
-  - KGW
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Text Watermarking"
+  - "Reasoning LLMs"
+  - "Chain-of-Thought"
+  - "Semantic Guidance"
+  - "KGW"
+  - "Traceability"
 date: 2026-05-08
 content_hash: 02274a9751eeb892
 ---
+
 # Distilling the Thought, Watermarking the Answer: A Principle Semantic Guided Watermark for Reasoning Large Language Models
 
 **Conference**: ICLR 2026  
@@ -129,11 +134,11 @@ Removing the selection of critical tokens (CTs) results in the worst quality dro
 
 ## Related Papers
 
+- [\[ICLR 2026\] Reasoning or Retrieval? A Study of Answer Attribution on Large Reasoning Models](reasoning_or_retrieval_a_study_of_answer_attribution_on_large_reasoning_models.md)
 - [\[ICLR 2026\] AdvChain: Adversarial Chain-of-Thought Tuning for Robust Safety Alignment of Large Reasoning Models](advchain_adversarial_chain-of-thought_tuning_for_robust_safety_alignment_of_larg.md)
-- [\[ICLR 2026\] PMark: Towards Robust and Distortion-free Semantic-level Watermarking with Channel Constraints](pmark_towards_robust_and_distortion-free_semantic-level_watermarking_with_channe.md)
-- [\[ICLR 2026\] ARMOR: Aligning Secure and Safe Large Language Models via Meticulous Reasoning](armor_aligning_secure_and_safe_large_language_models_via_meticulous_reasoning.md)
-- [\[ICLR 2026\] Strategic Obfuscation of Deceptive Reasoning in Language Models](strategic_obfuscation_of_deceptive_reasoning_in_language_models.md)
 - [\[ICLR 2026\] Watermarking Diffusion Language Models](watermarking_diffusion_language_models.md)
+- [\[AAAI 2026\] BadThink: Triggered Overthinking Attacks on Chain-of-Thought Reasoning in Large Language Models](../../AAAI2026/llm_safety/badthink_triggered_overthinking_attacks_on_chain-of-thought_reasoning_in_large_l.md)
+- [\[ICLR 2026\] PMark: Towards Robust and Distortion-free Semantic-level Watermarking with Channel Constraints](pmark_towards_robust_and_distortion-free_semantic-level_watermarking_with_channe.md)
 
 </div>
 

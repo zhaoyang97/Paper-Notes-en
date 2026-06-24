@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] ProofSketch: Efficient Verified Reasoning for Large Language Models
 description: >-
-  [NeurIPS 2025][LLM Reasoning][verified reasoning] ProofSketch is a framework that combines symbolic closure-based forward reasoning, compact sketch generation, and formal verification in a multi-stage pipeline…
+  [NeurIPS 2025][Reasoning][verified reasoning] ProofSketch is a framework that combines symbolic closure-based forward reasoning, compact sketch generation, and formal verification in a multi-stage pipeline, achieving formal correctness guarantees for logical reasoning while reducing token consumption.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "verified reasoning"
   - "symbolic closure"
   - "sketch generation"
   - "token efficiency"
   - "logical reasoning"
 date: 2026-05-08
-content_hash: ec3f0d50362a6112
+content_hash: 41fde0e346ed40a0
 ---
 
 # ProofSketch: Efficient Verified Reasoning for Large Language Models

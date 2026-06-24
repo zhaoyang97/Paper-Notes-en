@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Missing Point in Vision Transformers for Universal Image Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] This paper argues that the bottleneck of current mask segmentation models (Mask2Former/OneFormer, etc.) lies in mask classification rather than mask generation. It proposes ViT-P—a two-stage framework that decouples mask generation from classification: a frozen proposal generator produces class-agnostic masks, and a Vi
+  [CVPR 2026][Segmentation][Universal Segmentation] This paper argues that the bottleneck of current mask segmentation models (Mask2Former/OneFormer, etc.) lies in mask classification rather than mask generation. It proposes ViT-P—a two-stage framework that decouples mask generation from classification: a frozen proposal generator produces class-agnostic masks, and a ViT-based "point classifier" classifies the maximum value point of each mask. It achieves SOTA on multiple bench…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Universal Segmentation"
+  - "Mask Classification"
+  - "ViT Adapter"
+  - "Point Prompt"
+  - "Labeling Cost"
 date: 2026-05-08
-content_hash: 224111766fecf2cc
+content_hash: 718f8d0fef029794
 ---
+
 # The Missing Point in Vision Transformers for Universal Image Segmentation
 
 **Conference**: CVPR 2026  
@@ -138,11 +144,11 @@ ViT-P sets new SOTA benchmarks (e.g., 54.0 PQ on ADE20K, 87.4 mIoU on Cityscapes
 
 ## Related Papers
 
-- [\[CVPR 2026\] MPM: Mutual Pair Merging for Efficient Vision Transformers](mpm_mutual_pair_merging_for_efficient_vision_transformers.md)
-- [\[CVPR 2026\] GeomPrompt: Geometric Prompt Learning for RGB-D Semantic Segmentation Under Missing and Degraded Depth](geomprompt_rgbd_segmentation.md)
 - [\[ECCV 2024\] UniFS: Universal Few-Shot Instance Perception with Point Representations](../../ECCV2024/segmentation/unifs_universal_few-shot_instance_perception_with_point_representations.md)
 - [\[ICLR 2026\] Revisiting \[CLS\] and Patch Token Interaction in Vision Transformers](../../ICLR2026/segmentation/revisiting_cls_and_patch_token_interaction_in_vision_transformers.md)
+- [\[NeurIPS 2025\] Vision Transformers with Self-Distilled Registers](../../NeurIPS2025/segmentation/vision_transformers_with_self-distilled_registers.md)
 - [\[CVPR 2026\] ReSAM: Refine, Requery, and Reinforce: Self-Prompting Point-Supervised Segmentation for Remote Sensing Images](resam_refine_requery_and_reinforce_self-prompting_point-supervised_segmentation_.md)
+- [\[CVPR 2026\] Attack for Defense: Adversarial Agents for Point Prompt Optimization Empowering Segment Anything Model](attack_for_defense_adversarial_agents_for_point_prompt_optimization_empowering_s.md)
 
 </div>
 

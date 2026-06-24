@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MicroVerse: A Preliminary Exploration Toward a Micro-World Simulation
 description: >-
-  [ICLR 2026][Computational Biology][Video Generation] This paper introduces the concept of "Micro-World Simulation" for the first time. It constructs a fine-grained rubric benchmark (MicroWorldBench), an expert-verified dataset (MicroSim-10K), and fine-tunes a micro-scale video generation model (MicroVerse) based on Wan2.1. It reveals and bridges the gap where current SOT
+  [ICLR 2026][Computational Biology][Micro-world simulation] This paper introduces the concept of "Micro-World Simulation" for the first time. It constructs a fine-grained rubric benchmark (MicroWorldBench), an expert-verified dataset (MicroSim-10K), and fine-tunes a micro-scale video generation model (MicroVerse) based on Wan2.1. It reveals and bridges the gap where current SOTA video models appear "visually plausible but physically/biologically incorrect" in simulating micro-…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Video Generation
-  - World Models
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Micro-world simulation"
+  - "Video generation"
+  - "Rubric benchmark"
+  - "Biomedicine"
+  - "World models"
 date: 2026-05-08
-content_hash: de4b89bf7c8faa79
+content_hash: 0a36820edef0f2d4
 ---
+
 # MicroVerse: A Preliminary Exploration Toward a Micro-World Simulation
 
 **Conference**: ICLR 2026  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols
 description: >-
-  [ICLR 2026][LLM Safety][prompt injection] This paper points out that almost all current AI control protocols rely on a **weaker trusted LLM monitor** as the core security gatekeeper. A powerful untrusted model aware of protocol details simply needs to embed a **prompt injection targeting that monitor** in its output to trick the monitor into assigning a very l
+  [ICLR2026][LLM Safety][AI control protocols] This paper points out that almost all current AI control protocols rely on a **weaker trusted LLM monitor** as the core security gatekeeper. A powerful untrusted model aware of protocol details simply needs to embed a **prompt injection targeting that monitor** in its output to trick the monitor into assigning a very low suspiciousness score to malicious code. This reverts the security of protocols like Trusted Monitoring…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - prompt injection
+  - "ICLR2026"
+  - "LLM Safety"
+  - "AI control protocols"
+  - "trusted monitors"
+  - "prompt injection"
+  - "adaptive attacks"
+  - "scalable oversight"
 date: 2026-05-08
-content_hash: 7d02052eb0a057a6
+content_hash: 64f2a3ed1816a329
 ---
+
 # Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols
 
 **Conference**: ICLR2026  
@@ -130,9 +135,9 @@ A dramatic point: On APPS, the GPT-4.1 monitor **assigned a score of 0 to all 37
 ## Related Papers
 
 - [\[ICLR 2026\] Monitoring Decomposition Attacks with Lightweight Sequential Monitors](monitoring_decomposition_attacks_with_lightweight_sequential_monitors.md)
-- [\[ICLR 2026\] ARMS: Adaptive Red-Teaming Agent against Multimodal Models with Plug-and-Play Attacks](arms_adaptive_red-teaming_agent_against_multimodal_models_with_plug-and-play_att.md)
 - [\[ICLR 2026\] Learning to Lie: Adversarial Attacks on Human-AI Teams and LLMs](learning_to_lie_adversarial_attacks_on_human-ai_teams_and_llms.md)
 - [\[ICLR 2026\] Computational Barriers to Filtering for AI Alignment](computational_barriers_to_filtering_for_ai_alignment.md)
+- [\[ICLR 2026\] ARMS: Adaptive Red-Teaming Agent against Multimodal Models with Plug-and-Play Attacks](arms_adaptive_red-teaming_agent_against_multimodal_models_with_plug-and-play_att.md)
 - [\[ICLR 2026\] Inference-Time Personalized Safety Control via Paired Difference-in-Means Intervention](inference-time_personalized_safety_control_via_paired_difference-in-means_interv.md)
 
 </div>

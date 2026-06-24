@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PC-Talk: Precise Facial Animation Control for Audio-Driven Talking Face Generation
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] PC-Talk performs "additive deformation" on the intermediate representation of implicit keypoints. It employs a LAC module to control lip-audio alignment with speaking styles and an EMC module to decouple pure emotional deformation by "subtracting neutral expressions." This enables fine-grained, controllable, real-time
+  [CVPR 2026][Human Understanding][Audio-driven talking face] PC-Talk performs "additive deformation" on the intermediate representation of implicit keypoints. It employs a LAC module to control lip-audio alignment with speaking styles and an EMC module to decouple pure emotional deformation by "subtracting neutral expressions." This enables fine-grained, controllable, real-time (30 FPS) talking face generation for speaking styles, lip-motion amplitude, emotional intensity…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Audio-driven talking face"
+  - "implicit keypoints"
+  - "lip-audio alignment"
+  - "emotion control"
+  - "speaking style"
 date: 2026-05-08
-content_hash: 556514baa749fa80
+content_hash: 08bf22161b06a566
 ---
+
 # PC-Talk: Precise Facial Animation Control for Audio-Driven Talking Face Generation
 
 **Conference**: CVPR 2026  
@@ -140,12 +146,17 @@ PC-Talk achieves the highest emotion accuracy (72.32) and the best FID/E-FID, in
 
 <div class="related-papers" markdown="1">
 
-// Related papers list would go here
+## Related Papers
+
+- [\[CVPR 2026\] ActAvatar: Temporally-Aware Precise Action Control for Talking Avatars](actavatar_temporally-aware_precise_action_control_for_talking_avatars.md)
+- [\[CVPR 2026\] AudioAvatar: Personalized Audio-driven Whole-body Talking Avatars](audioavatar_personalized_audio-driven_whole-body_talking_avatars.md)
+- [\[ECCV 2024\] Audio-Driven Talking Face Generation with Stabilized Synchronization Loss](../../ECCV2024/human_understanding/audio-driven_talking_face_generation_with_stabilized_synchronization_loss.md)
+- [\[CVPR 2026\] Unifying Precise Keyframes and Semantic Control via Multi-level Diffusion](unifying_precise_keyframes_and_semantic_control_via_multi-level_diffusion.md)
+- [\[CVPR 2026\] Bridging Facial Understanding and Animation via Language Models](bridging_facial_understanding_and_animation_via_language_models.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] ActAvatar: Temporally-Aware Precise Action Control for Talking Avatars](actavatar_temporally-aware_precise_action_control_for_talking_avatars.md)

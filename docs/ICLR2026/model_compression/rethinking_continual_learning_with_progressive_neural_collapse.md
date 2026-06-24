@@ -2,18 +2,13 @@
 title: >-
   [Paper Note] Rethinking Continual Learning with Progressive Neural Collapse
 description: >-
-  [ICLR 2026][Model Compression][Continual Learning] Ours proposes the ProNC framework, which balances maximum inter-class separation and minimum forgetting in continual learning by progressively expanding Equiangular Tight Frame (ETF) targets instead of using fixed, predefined ETFs.
+  [Model Compression] Ours proposes the ProNC framework, which balances maximum inter-class separation and minimum forgetting in continual learning by progressively expanding Equiangular Tight Frame (ETF) targets instead of using fixed, predefined ETFs.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Continual Learning
-  - Neural Collapse
-  - ETF
-  - Class-Incremental Learning
-  - Knowledge Distillation
+  - "Model Compression"
 date: 2026-05-08
-content_hash: 2fbc597ed89d2971
+content_hash: 4f6ccc43470cabc3
 ---
+
 # Rethinking Continual Learning with Progressive Neural Collapse
 
 ## Basic Information

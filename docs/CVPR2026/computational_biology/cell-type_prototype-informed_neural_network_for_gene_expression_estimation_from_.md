@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cell-Type Prototype-Informed Neural Network for Gene Expression Estimation from Pathology Images
 description: >-
-  [CVPR 2026][Computational Biology][Paper Note] Ours proposes CPNN, which leverages public single-cell RNA-seq data to construct cell-type prototypes. It models slide/patch-level gene expression as a weighted combination of these prototypes, achieving Prev. SOTA performance in gene expression estimation while providing interpretability.
+  [CVPR 2026][Computational Biology][Gene Expression Estimation] Ours proposes CPNN, which leverages public single-cell RNA-seq data to construct cell-type prototypes. It models slide/patch-level gene expression as a weighted combination of these prototypes, achieving Prev. SOTA performance in gene expression estimation while providing interpretability.
 tags:
-  - CVPR 2026
-  - Computational Biology
+  - "CVPR 2026"
+  - "Computational Biology"
+  - "Gene Expression Estimation"
+  - "Pathology Images"
+  - "Single-cell RNA sequencing"
+  - "Cell-Type Prototypes"
+  - "Multiple Instance Learning"
 date: 2026-05-08
-content_hash: 340723836b127245
+content_hash: 7ccf4370438e7f0b
 ---
+
 # Cell-Type Prototype-Informed Neural Network for Gene Expression Estimation from Pathology Images
 
 **Conference**: CVPR 2026  
@@ -141,15 +147,16 @@ The total loss is $L_{\text{total}} = L_{\text{NB}} + \lambda L_R$, where $L_{\t
 - **Value**: ⭐⭐⭐⭐ Interpretability and performance gains are significant for computational pathology.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning Relative Gene Expression Trends from Pathology Images in Spatial Transcriptomics](../../NeurIPS2025/computational_biology/learning_relative_gene_expression_trends_from_pathology_images_in_spatial_transc.md)
-- [\[CVPR 2026\] HINGE: Adapting a Pre-trained Single-Cell Foundation Model to Spatial Gene Expression Generation from Histology Images](adapting_a_pre-trained_single-cell_foundation_model_to_spatial_gene_expression_g.md)
 - [\[CVPR 2026\] From Spots to Pixels: Dense Spatial Gene Expression Prediction from Histology Images](from_spots_to_pixels_dense_spatial_gene_expression_prediction_from_histology_ima.md)
+- [\[CVPR 2026\] HINGE: Adapting a Pre-trained Single-Cell Foundation Model to Spatial Gene Expression Generation from Histology Images](adapting_a_pre-trained_single-cell_foundation_model_to_spatial_gene_expression_g.md)
 - [\[CVPR 2026\] Predicting Spatial Transcriptomics from Histology Images via High-Order Multi-Cell Interaction Modeling](predicting_spatial_transcriptomics_from_histology_images_via_high-order_multi-ce.md)
-- [\[ICLR 2026\] Intrinsic Lorentz Neural Network](../../ICLR2026/computational_biology/intrinsic_lorentz_neural_network.md)
+- [\[CVPR 2026\] Cross-Slice Knowledge Transfer via Masked Multi-Modal Heterogeneous Graph Contrastive Learning for Spatial Gene Expression Inference](cross-slice_knowledge_transfer_via_masked_multi-modal_heterogeneous_graph_contra.md)
 
 </div>
 

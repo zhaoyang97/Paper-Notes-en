@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] MindCube: Spatial Mental Modeling from Limited Views
 description: >-
-  [ICLR 2026][vlm_reasoning][Cognitive Map] The MindCube benchmark (21,154 questions / 3,268 images) is proposed to systematically expose the deficiency of VLMs in "reconstructing unseen spaces from limited views," where they perform near random guessing. A "map-then-reason" (SFT + RL) scheme is introduced, where the model first draws a cognitive map and then re
+  [ICLR 2026][VLM Reasoning][Spatial Mental Model] The MindCube benchmark (21,154 questions / 3,268 images) is proposed to systematically expose the deficiency of VLMs in "reconstructing unseen spaces from limited views," where they perform near random guessing. A "map-then-reason" (SFT + RL) scheme is introduced, where the model first draws a cognitive map and then reasons upon it, improving the accuracy of Qwen2.5-VL-3B from 37.8% to 61.3%.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Cognitive Map
-  - map-then-reason
-  - GRPO
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Spatial Mental Model"
+  - "Cognitive Map"
+  - "View Interpolation"
+  - "map-then-reason"
+  - "GRPO"
+  - "VLM Spatial Reasoning"
 date: 2026-05-08
-content_hash: cb212bef954ebadc
+content_hash: 293a1853c16df2e5
 ---
+
 # MindCube: Spatial Mental Modeling from Limited Views
 
 **Conference**: ICLR 2026  
@@ -122,8 +126,8 @@ flowchart LR
 - [\[CVPR 2026\] Think with 3D: Geometric Imagination Grounded Spatial Reasoning from Limited Views](../../CVPR2026/vlm_reasoning/think_with_3d_geometric_imagination_grounded_spatial_reasoning_from_limited_view.md)
 - [\[ICML 2026\] 3ViewSense: Spatial and Mental Perspective Reasoning from Orthographic Views in Vision-Language Models](../../ICML2026/vlm_reasoning/3viewsense_spatial_and_mental_perspective_reasoning_from_orthographic_views_in_v.md)
 - [\[ICLR 2026\] Seeing Across Views: Benchmarking Spatial Reasoning of Vision-Language Models in Robotic Scenes](seeing_across_views_benchmarking_spatial_reasoning_of_vision-language_models_in_.md)
-- [\[ICLR 2026\] Spatial Reasoning with Vision-Language Models in Ego-Centric Multi-View Scenes](spatial_reasoning_with_vision-language_models_in_ego-centric_multi-view_scenes.md)
-- [\[ICLR 2026\] MetaSpatial: Reinforcing 3D Spatial Reasoning in VLMs for the Metaverse](metaspatial_reinforcing_3d_spatial_reasoning_in_vlms_for_the_metaverse.md)
+- [\[ICLR 2026\] Read the Room: Video Social Reasoning with Mental-Physical Causal Chains](read_the_room_video_social_reasoning_with_mental-physical_causal_chains.md)
+- [\[ICLR 2026\] SpatialLadder: Building Spatial Reasoning Capabilities for Vision-Language Models via Progressive Training](spatialladder_progressive_training_for_spatial_reasoning_in_vision-language_mode.md)
 
 </div>
 

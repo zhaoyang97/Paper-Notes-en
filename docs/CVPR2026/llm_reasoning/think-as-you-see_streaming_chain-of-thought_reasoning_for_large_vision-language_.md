@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Think-as-You-See: Streaming Chain-of-Thought Reasoning for Large Vision-Language Models
 description: >-
-  [CVPR 2026][LLM Reasoning][LVLM] TaYS transforms the video reasoning of Large Vision-Language Models (LVLMs) from a "batch" paradigm (look-at-all-then-think) to a "streaming" paradigm (think-while-looking). By utilizing a streaming attention mask, decoupled positional encoding, and a parallel dual KV cache, reasoning proceeds incrementally in synchron
+  [CVPR 2026][Reasoning][Streaming Reasoning] TaYS transforms the video reasoning of Large Vision-Language Models (LVLMs) from a "batch" paradigm (look-at-all-then-think) to a "streaming" paradigm (think-while-looking). By utilizing a streaming attention mask, decoupled positional encoding, and a parallel dual KV cache, reasoning proceeds incrementally in synchronization with video frames. On VideoEspresso, the Time-to-First-Token (TTFT) is reduced from 10.6s to near zero…
 tags:
-  - CVPR 2026
-  - LLM Reasoning
-  - LVLM
+  - "CVPR 2026"
+  - "Reasoning"
+  - "Streaming Reasoning"
+  - "Video CoT"
+  - "KV Cache"
+  - "Temporal Causality"
+  - "LVLM"
 date: 2026-05-08
-content_hash: 91701787fe1c053c
+content_hash: f01c817253eabc54
 ---
+
 # Think-as-You-See: Streaming Chain-of-Thought Reasoning for Large Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -141,15 +146,15 @@ Latency and accuracy comparison across different FPS:
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Improving Vision-language Models with Perception-centric Process Reward Models](improving_vision-language_models_with_perception-centric_process_reward_models.md)
+- [\[ICLR 2026\] StreamingThinker: Large Language Models Can Think While Reading](../../ICLR2026/llm_reasoning/streamingthinker_large_language_models_can_think_while_reading.md)
 - [\[CVPR 2026\] Revisiting the Necessity of Lengthy Chain-of-Thought in Vision-centric Reasoning Generalization](revisiting_the_necessity_of_lengthy_chain-of-thought_in_vision-centric_reasoning.md)
 - [\[ICLR 2026\] Vision-R1: Incentivizing Reasoning Capability in Multimodal Large Language Models](../../ICLR2026/llm_reasoning/vision-r1_incentivizing_reasoning_capability_in_multimodal_large_language_models.md)
-- [\[ICLR 2026\] AIMCoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning](../../ICLR2026/llm_reasoning/aimcot_active_information-driven_multimodal_chain-of-thought_for_vision-language.md)
+- [\[ICLR 2026\] Reasoning with Sampling: Your Base Model is Smarter Than You Think](../../ICLR2026/llm_reasoning/reasoning_with_sampling_your_base_model_is_smarter_than_you_think.md)
 - [\[ACL 2025\] Improve Vision Language Model Chain-of-thought Reasoning](../../ACL2025/llm_reasoning/improve_vlm_cot_reasoning.md)
 
 </div>

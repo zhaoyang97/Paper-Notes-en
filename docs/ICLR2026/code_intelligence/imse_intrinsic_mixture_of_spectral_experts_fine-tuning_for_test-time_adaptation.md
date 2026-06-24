@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] IMSE: Intrinsic Mixture of Spectral Experts Fine-tuning for Test-Time Adaptation
 description: >-
-  [ICLR 2026][Code Intelligence][test-time adaptation] Ours proposes IMSE, which reinterprets pre-trained ViT linear layers as "spectral experts" via SVD. By fine-tuning only the singular values, it achieves extreme parameter efficiency for Test-Time Adaptation. Combining a diversity maximization loss and a domain-aware spectral code retrieval mechanism, it reaches SOTA pe
+  [ICLR 2026][Code Intelligence][test-time adaptation] Ours proposes IMSE, which reinterprets pre-trained ViT linear layers as "spectral experts" via SVD. By fine-tuning only the singular values, it achieves extreme parameter efficiency for Test-Time Adaptation. Combining a diversity maximization loss and a domain-aware spectral code retrieval mechanism, it reaches SOTA performance across TTA, CTTA, and progressive CTTA scenarios.
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - test-time adaptation
-  - singular value decomposition
-  - mixture of experts
-  - continual adaptation
-  - distribution shift
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "test-time adaptation"
+  - "singular value decomposition"
+  - "mixture of experts"
+  - "continual adaptation"
+  - "distribution shift"
 date: 2026-05-08
-content_hash: c50e8d052f76e63c
+content_hash: fe4bf9141490b536
 ---
+
 # IMSE: Intrinsic Mixture of Spectral Experts Fine-tuning for Test-Time Adaptation
 
 **Conference**: ICLR 2026  

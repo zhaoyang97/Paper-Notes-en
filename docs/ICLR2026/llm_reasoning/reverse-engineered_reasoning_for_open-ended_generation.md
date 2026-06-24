@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reverse-Engineered Reasoning for Open-Ended Generation
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] To address the challenge that "deep reasoning is difficult to implement in open-ended creative tasks," this paper proposes REER (Reverse-Engineered Reasoning). Instead of forward-constructing reasoning processes through Reinforcement Learning (RL) trial-and-error or distillation, it "back-deduces" implicit chains of th
+  [ICLR 2026][Reasoning][Deep Reasoning] To address the challenge that "deep reasoning is difficult to implement in open-ended creative tasks," this paper proposes REER (Reverse-Engineered Reasoning). Instead of forward-constructing reasoning processes through Reinforcement Learning (RL) trial-and-error or distillation, it "back-deduces" implicit chains of thought (CoT) from existing high-quality answers. Using perplexity as a quality proxy and gradient-free local search…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Deep Reasoning"
+  - "Open-Ended Generation"
+  - "Reverse-Engineered Reasoning"
+  - "Perplexity Search"
+  - "Chain-of-Thought Data Synthesis"
 date: 2026-05-08
-content_hash: f9afc7d6d46f5180
+content_hash: 5b4cafd9ef055f68
 ---
+
 # Reverse-Engineered Reasoning for Open-Ended Generation
 
 **Conference**: ICLR 2026  
@@ -132,15 +138,16 @@ DeepWriter-8B significantly outperforms LongWriter-8B in all WritingBench domain
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] ShinkaEvolve: Towards Open-Ended and Sample-Efficient Program Evolution](shinkaevolve_towards_open-ended_and_sample-efficient_program_evolution.md)
 - [\[ICLR 2026\] Think in Parallel, Answer as One: Logit Averaging for Open-Ended Reasoning](think_in_parallel_answer_as_one_logit_averaging_for_open-ended_reasoning.md)
+- [\[ICLR 2026\] Semantic Voting: A Self-Evaluation-Free Approach for Efficient LLM Self-Improvement on Unverifiable Open-ended Tasks](semantic_voting_a_self-evaluation-free_approach_for_efficient_llm_self-improveme.md)
 - [\[ICLR 2026\] MetaMuse: Algorithm Generation via Creative Ideation](metamuse_algorithm_generation_via_creative_ideation.md)
 - [\[ICLR 2026\] Log-Augmented Generation: Scaling Test-Time Reasoning with Reusable Computation](log-augmented_generation_scaling_test-time_reasoning_with_reusable_computation.md)
-- [\[ICLR 2026\] Unleashing Scientific Reasoning for Bio-Experimental Protocol Generation via Structured Component-based Reward Mechanism](unleashing_scientific_reasoning_for_bio-experimental_protocol_generation_via_str.md)
 
 </div>
 

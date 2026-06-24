@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] BAMAS: Structuring Budget-Aware Multi-Agent Systems
 description: >-
-  [AAAI 2026][Multi-Agent][Budget-Aware] This paper proposes the BAMAS framework, which employs Integer Linear Programming (ILP) to select the optimal LLM combination under budget constraints…
+  [AAAI 2026 Oral][Multi-Agent][Budget-Aware] This paper proposes the BAMAS framework, which employs Integer Linear Programming (ILP) to select the optimal LLM combination under budget constraints, and uses a reinforcement learning policy to choose the best collaboration topology (Linear/Star/Feedback/Planner-Driven). BAMAS achieves accuracy comparable to state-of-the-art multi-agent systems on GSM8K, MBPP, and MATH, while reducing costs by up to 86%.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Multi-Agent"
   - "Budget-Aware"
   - "Multi-Agent Collaboration"
@@ -12,7 +12,7 @@ tags:
   - "Topology Selection"
   - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 56bb7e763cec67fb
+content_hash: 9ac9afebb1ecc300
 ---
 
 # BAMAS: Structuring Budget-Aware Multi-Agent Systems
@@ -132,11 +132,11 @@ MATH dataset:
 
 ## Related Papers
 
-- [\[AAAI 2026\] LLandMark: A Multi-Agent Framework for Landmark-Aware Multimodal Interactive Video Retrieval](llandmark_a_multi-agent_framework_for_landmark-aware_multimodal_interactive_vide.md)
+- [\[ICLR 2026\] Goal-Aware Identification and Rectification of Misinformation in Multi-Agent Systems](../../ICLR2026/multi_agent/goal-aware_identification_and_rectification_of_misinformation_in_multi-agent_sys.md)
 - [\[ICML 2026\] RADAR: Redundancy-Aware Diffusion for Multi-Agent Communication Structure Generation](../../ICML2026/multi_agent/radar_redundancy-aware_diffusion_for_multi-agent_communication_structure_generat.md)
 - [\[ACL 2026\] BookAgent: Orchestrating Safety-Aware Visual Narratives via Multi-Agent Cognitive Calibration](../../ACL2026/multi_agent/bookagent_orchestrating_safety-aware_visual_narratives_via_multi-agent_cognitive.md)
-- [\[AAAI 2026\] Parallelism Meets Adaptiveness: Scalable Documents Understanding in Multi-Agent LLM Systems](parallelism_meets_adaptiveness_scalable_documents_understanding_in_multi-agent_l.md)
-- [\[AAAI 2026\] Shadows in the Code: Exploring the Risks and Defenses of LLM-based Multi-Agent Software Development Systems](shadows_in_the_code_exploring_the_risks_and_defenses_of_llm-.md)
+- [\[AAAI 2026\] LLandMark: A Multi-Agent Framework for Landmark-Aware Multimodal Interactive Video Retrieval](llandmark_a_multi-agent_framework_for_landmark-aware_multimodal_interactive_vide.md)
+- [\[ICLR 2026\] ATLAS: Constraints-Aware Multi-Agent Collaboration for Real-World Travel Planning](../../ICLR2026/multi_agent/atlas_constraints-aware_multi-agent_collaboration_for_real-world_travel_planning.md)
 
 </div>
 

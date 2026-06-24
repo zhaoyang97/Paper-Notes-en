@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Context Informs Pragmatic Interpretation in Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Pragmatic reasoning] This work systematically evaluates the pragmatic reasoning capabilities of VLMs using iterated reference games. Models perform substantially worse than humans in the ab…
+  [NeurIPS 2025][Multimodal VLM][Pragmatic reasoning] This work systematically evaluates the pragmatic reasoning capabilities of VLMs using iterated reference games. Models perform substantially worse than humans in the absence of context, but can rapidly leverage relevant dialogue history to achieve approximately 80% accuracy, revealing a strong dependence on contextual information.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "cognitive evaluation of VLMs"
   - "abstract visual reasoning"
 date: 2026-05-08
-content_hash: ac33065ab88126be
+content_hash: 941e43fe9148a88b
 ---
 
 # Context Informs Pragmatic Interpretation in Vision-Language Models
@@ -150,9 +150,9 @@ Each model receives a system prompt, a concatenated image of 12 labeled figures,
 ## Related Papers
 
 - [\[NeurIPS 2025\] HoPE: Hybrid of Position Embedding for Long Context Vision-Language Models](hope_hybrid_of_position_embedding_for_long_context_visionlan.md)
+- [\[NeurIPS 2025\] ExGra-Med: Extended Context Graph Alignment for Medical Vision-Language Models](exgra-med_extended_context_graph_alignment_for_medical_vision-language_models.md)
 - [\[NeurIPS 2025\] MMLongBench: Benchmarking Long-Context Vision-Language Models Effectively and Thoroughly](mmlongbench_benchmarking_longcontext_visionlanguage_models_e.md)
 - [\[NeurIPS 2025\] NeedleInATable: Exploring Long-Context Capability of Large Language Models towards Long-Structured Tables](needleinatable_exploring_long-context_capability_of_large_language_models_toward.md)
-- [\[ICCV 2025\] Physics Context Builders: A Modular Framework for Physical Reasoning in Vision-Language Models](../../ICCV2025/multimodal_vlm/physics_context_builders_a_modular_framework_for_physical_reasoning_in_vision-la.md)
 - [\[ACL 2026\] CArtBench: Evaluating Vision-Language Models on Chinese Art Understanding, Interpretation, and Authenticity](../../ACL2026/multimodal_vlm/cartbench_evaluating_vision-language_models_on_chinese_art_understanding_interpr.md)
 
 </div>

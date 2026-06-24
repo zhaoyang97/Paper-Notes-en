@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] ViT3: Unlocking Test-Time Training in Vision
 description: >-
-  [CVPR 2026][Others][Test-Time Training] Systematically explores the design space of Test-Time Training (TTT) for vision tasks, summarizes six practical design insights, and proposes ViT3—a pure TTT vision architecture with linear complexity that matches or exceeds Mamba and linear attention methods in classification, generation, detection, and segmentation t
+  [CVPR 2026 Oral][Test-Time Training] Systematically explores the design space of Test-Time Training (TTT) for vision tasks, summarizes six practical design insights, and proposes ViT3—a pure TTT vision architecture with linear complexity that matches or exceeds Mamba and linear attention methods in classification, generation, detection, and segmentation tasks.
 tags:
-  - CVPR 2026
-  - Others
-  - Test-Time Training
+  - "CVPR 2026 Oral"
+  - "Test-Time Training"
+  - "Linear Complexity"
+  - "Internal Model"
+  - "Vision Transformer"
+  - "Convolution"
 date: 2026-05-08
-content_hash: e242468ef924bb1e
+content_hash: 271304a9279dca99
 ---
+
 # ViT3: Unlocking Test-Time Training in Vision
 
 **Conference**: CVPR 2026 Oral  
@@ -138,9 +142,9 @@ The internal model architecture determines the upper bound of TTT. Increasing wi
 
 - [\[ICML 2026\] Test-Time Training with KV Binding Is Secretly Linear Attention](../../ICML2026/others/test-time_training_with_kv_binding_is_secretly_linear_attention.md)
 - [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](neural_collapse_in_test-time_adaptation.md)
-- [\[CVPR 2026\] Towards Stable Federated Continual Test-Time Adaptation in Wild World](towards_stable_federated_continual_test-time_adaptation_in_wild_world.md)
 - [\[CVPR 2026\] Bootstrapping Multi-view Learning for Test-time Noisy Correspondence](bootstrapping_multi-view_learning_for_test-time_noisy_correspondence.md)
 - [\[CVPR 2026\] WiTTA-Bench: Benchmarking Test-Time Adaptation for WiFi Sensing](witta-bench_benchmarking_test-time_adaptation_for_wifi_sensing.md)
+- [\[ICML 2026\] TEMPORA: Characterising the Time-Contingent Utility of Online Test-Time Adaptation](../../ICML2026/others/tempora_characterising_the_time-contingent_utility_of_online_test-time_adaptatio.md)
 
 </div>
 

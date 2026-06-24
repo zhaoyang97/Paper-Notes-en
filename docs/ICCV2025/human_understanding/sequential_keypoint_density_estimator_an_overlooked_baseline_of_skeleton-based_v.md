@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Sequential Keypoint Density Estimator: An Overlooked Baseline of Skeleton-Based Video Anomaly Detection
 description: >-
-  [Human Understanding] > SeeKer proposes to autoregressively factorize the joint density of skeleton sequences at the keypoint level…
+  [Human Understanding] > SeeKer proposes to autoregressively factorize the joint density of skeleton sequences at the keypoint level, detecting abnormal human behaviors by predicting conditional Gaussian distributions over subsequent keypoints. It substantially outperforms existing methods on the UBnormal and MSAD-HR benchmarks.
 tags:
   - "Human Understanding"
 date: 2026-05-08
-content_hash: 61c2267d673175ae
+content_hash: ea087f97cf3cc82e
 ---
 
 # Sequential Keypoint Density Estimator: An Overlooked Baseline of Skeleton-Based Video Anomaly Detection
@@ -155,7 +155,7 @@ Learned covariance improves over fixed covariance by more than **10pp**, undersc
 - [\[ICCV 2025\] SemGes: Semantics-aware Co-Speech Gesture Generation using Semantic Coherence and Relevance Learning](semges_semantics-aware_co-speech_gesture_generation_using_semantic_coherence_and.md)
 - [\[ICCV 2025\] RayPose: Ray Bundling Diffusion for Template Views in Unseen 6D Object Pose Estimation](raypose_ray_bundling_diffusion_for_template_views_in_unseen_6d_object_pose_estim.md)
 - [\[ICCV 2025\] OpenAnimals: Revisiting Person Re-Identification for Animals Towards Better Generalization](openanimals_revisiting_person_re-identification_for_animals_towards_better_gener.md)
-- [\[CVPR 2026\] Unleashing Vision-Language Semantics for Deepfake Video Detection](../../CVPR2026/human_understanding/unleashing_vision-language_semantics_for_deepfake_video_detection.md)
+- [\[ICCV 2025\] SemTalk: Holistic Co-speech Motion Generation with Frame-level Semantic Emphasis](semtalk_holistic_co-speech_motion_generation_with_frame-level_semantic_emphasis.md)
 
 </div>
 

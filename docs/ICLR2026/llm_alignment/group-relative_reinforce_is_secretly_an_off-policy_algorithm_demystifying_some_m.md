@@ -2,18 +2,20 @@
 title: >-
   [Paper Note] Group-Relative REINFORCE Is Secretly an Off-Policy Algorithm: Demystifying Some Myths About GRPO and Its Friends
 description: >-
-  [ICLR 2026][Alignment & RLHF][GRPO] By constructing a KL-regularized surrogate objective and deriving the pairwise consistency condition, this work proves from first principles that group-relative REINFORCE (GRPO) is naturally an off-policy algorithm. Furthermore, through component isolation experiments, it finds that clipping is the key to training stab
+  [ICLR 2026][LLM Alignment][GRPO] By constructing a KL-regularized surrogate objective and deriving the pairwise consistency condition, this work proves from first principles that group-relative REINFORCE (GRPO) is naturally an off-policy algorithm. Furthermore, through component isolation experiments, it finds that clipping is the key to training stability while importance sampling can be entirely removed. Under this unified framework, it re-interprets several seemingly indep…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - GRPO
-  - off-policy RL
-  - importance sampling
-  - clipping
-  - REINFORCE
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "GRPO"
+  - "off-policy RL"
+  - "importance sampling"
+  - "clipping"
+  - "REINFORCE"
+  - "Policy Optimization"
 date: 2026-05-08
-content_hash: 48ec85046e35f1b9
+content_hash: 8edc9d25c96b7fac
 ---
+
 # Group-Relative REINFORCE Is Secretly an Off-Policy Algorithm: Demystifying Some Myths About GRPO and Its Friends
 
 **Conference**: ICLR 2026  
@@ -160,10 +162,10 @@ Core Conclusion: Removing IS results in nearly perfectly overlapping reward curv
 ## Related Papers
 
 - [\[ACL 2026\] MDP-GRPO: Stabilized Group Relative Policy Optimization for Multi-Constraint Instruction Following](../../ACL2026/llm_alignment/mdp-grpo_stabilized_group_relative_policy_optimization_for_multi-constraint_inst.md)
-- [\[ICLR 2026\] Mitigating the Safety Alignment Tax with Null-Space Constrained Policy Optimization](mitigating_the_safety_alignment_tax_with_null-space_constrained_policy_optimizat.md)
-- [\[ICML 2026\] UDM-GRPO: 统一离散扩散模型的稳定高效 GRPO](../../ICML2026/llm_alignment/udm-grpo_stable_and_efficient_group_relative_policy_optimization_for_uniform_dis.md)
-- [\[ICLR 2026\] When Data Is the Algorithm: A Systematic Study and Curation of Preference Optimization Datasets](when_data_is_the_algorithm_a_systematic_study_and_curation_of_preference_optimiz.md)
 - [\[ICLR 2026\] Learning More with Less: A Dynamic Dual-Level Down-Sampling Framework for Efficient Policy Optimization](learning_more_with_less_a_dynamic_dual-level_down-sampling_framework_for_efficie.md)
+- [\[ICLR 2026\] Mitigating the Safety Alignment Tax with Null-Space Constrained Policy Optimization](mitigating_the_safety_alignment_tax_with_null-space_constrained_policy_optimizat.md)
+- [\[NeurIPS 2025\] GVPO: Group Variance Policy Optimization for Large Language Model Post-Training](../../NeurIPS2025/llm_alignment/gvpo_group_variance_policy_optimization_for_large_language_model_post-training.md)
+- [\[ICLR 2026\] Group-Normalized Implicit Value Optimization for Language Models](group-normalized_implicit_value_optimization_for_language_models.md)
 
 </div>
 

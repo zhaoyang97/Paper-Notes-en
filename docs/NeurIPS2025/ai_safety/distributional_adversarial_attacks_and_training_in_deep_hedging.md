@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Distributional Adversarial Attacks and Training in Deep Hedging
 description: >-
-  [NeurIPS 2025][AI Safety][Adversarial Training] This paper is the first to introduce distributional adversarial attacks into the deep hedging framework. It proposes computationally tractable adversarial training methods…
+  [NeurIPS 2025][AI Safety][Adversarial Training] This paper is the first to introduce distributional adversarial attacks into the deep hedging framework. It proposes computationally tractable adversarial training methods based on Wasserstein balls (WPGD and WBPGD), achieving substantial improvements in robustness and out-of-sample performance under distribution shift and real market data.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "Wasserstein Distance"
   - "Financial Derivatives"
 date: 2026-05-08
-content_hash: 90c2f9590a7bc9be
+content_hash: c106be462a1f6b20
 ---
 
 # Distributional Adversarial Attacks and Training in Deep Hedging
@@ -129,11 +129,11 @@ The adversarial training loss is $\mathcal{L}_{\text{adv}}(\theta) = \alpha \sum
 
 ## Related Papers
 
+- [\[ICML 2025\] Identifying and Understanding Cross-Class Features in Adversarial Training](../../ICML2025/ai_safety/identifying_and_understanding_cross-class_features_in_adversarial_training.md)
 - [\[ICML 2026\] SORA: Free Second-Order Attacks in Fast Adversarial Training](../../ICML2026/ai_safety/sora_free_second-order_attacks_in_fast_adversarial_training.md)
 - [\[NeurIPS 2025\] Factor Decorrelation Enhanced Data Removal from Deep Predictive Models](factor_decorrelation_enhanced_data_removal_from_deep_predictive_models.md)
-- [\[NeurIPS 2025\] Provable Watermarking for Data Poisoning Attacks](provable_watermarking_for_data_poisoning_attacks.md)
-- [\[ICCV 2025\] Failure Cases Are Better Learned But Boundary Says Sorry: Facilitating Smooth Perception Change for Accuracy-Robustness Trade-Off in Adversarial Training](../../ICCV2025/ai_safety/failure_cases_are_better_learned_but_boundary_says_sorry_facilitating_smooth_per.md)
-- [\[NeurIPS 2025\] Impact of Dataset Properties on Membership Inference Vulnerability of Deep Transfer Learning](impact_of_dataset_properties_on_membership_inference_vulnerability_of_deep_trans.md)
+- [\[ICLR 2026\] Benchmarking Stochastic Approximation Algorithms for Fairness-Constrained Training of Deep Neural Networks](../../ICLR2026/ai_safety/benchmarking_stochastic_approximation_algorithms_for_fairness-constrained_traini.md)
+- [\[ICLR 2026\] Distributional Machine Unlearning via Selective Data Removal](../../ICLR2026/ai_safety/distributional_machine_unlearning_via_selective_data_removal.md)
 
 </div>
 

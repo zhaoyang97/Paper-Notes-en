@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SpikePingpong: Spike Vision-based Fast-Slow Pingpong Robot System
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] SpikePingpong integrates the high-frequency vision of a spike camera into a "fast-slow dual-system" perception framework. System 1 utilizes a standard RGB-D camera combined with a physical model for rapid point-of-fall prediction, while System 2 employs a spike camera to train a neural calibrator for correcting physica
+  [ICLR 2026][Robotics][Spike camera] SpikePingpong integrates the high-frequency vision of a spike camera into a "fast-slow dual-system" perception framework. System 1 utilizes a standard RGB-D camera combined with a physical model for rapid point-of-fall prediction, while System 2 employs a spike camera to train a neural calibrator for correcting physical errors. Combined with the IMPACT module for imitation learning to control the return zone…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Spike camera"
+  - "Fast-slow dual system"
+  - "Ping-pong robot"
+  - "Imitation learning"
+  - "High-speed manipulation"
 date: 2026-05-08
-content_hash: 199cb0b30f1e234a
+content_hash: 1a1459c83995df3a
 ---
+
 # SpikePingpong: Spike Vision-based Fast-Slow Pingpong Robot System
 
 **Conference**: ICLR 2026  

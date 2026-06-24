@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LiDAR Prompted Spatio-Temporal Multi-View Stereo for Autonomous Driving
 description: >-
-  [CVPR 2026][3D Vision][Autonomous Driving] DriveMVS injects sparse LiDAR as "geometric prompts" into Multi-View Stereo (MVS): serving both as hard constraints to anchor the absolute scale of the cost volume and as soft features fused via a Triple-Cue Combiner with monocular and geometric priors. A spatio-temporal decoder ensures cross-frame consistency, enablin
+  [CVPR 2026][3D Vision][Multi-view stereo] DriveMVS injects sparse LiDAR as "geometric prompts" into Multi-View Stereo (MVS): serving both as hard constraints to anchor the absolute scale of the cost volume and as soft features fused via a Triple-Cue Combiner with monocular and geometric priors. A spatio-temporal decoder ensures cross-frame consistency, enabling the model to achieve metric accuracy, temporal stability, and generalization under zero-shot cross-domain settings (…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Multi-view stereo"
+  - "metric depth"
+  - "LiDAR prompt"
+  - "temporal consistency"
+  - "autonomous driving"
 date: 2026-05-08
-content_hash: 56410f213a915800
+content_hash: a2e235a95d5a6def
 ---
+
 # LiDAR Prompted Spatio-Temporal Multi-View Stereo for Autonomous Driving
 
 **Conference**: CVPR 2026  
@@ -122,11 +127,11 @@ Ablation on KITTI for the three modules and two losses:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Ghosts in the Point Clouds: De-glaring LiDAR in the Transient Domain](ghosts_in_the_point_clouds_de-glaring_lidar_in_the_transient_domain.md)
-- [\[CVPR 2026\] Intrinsic Image Fusion for Multi-View 3D Material Reconstruction](intrinsic_image_fusion_for_multi-view_3d_material_reconstruction.md)
-- [\[CVPR 2026\] Changes in Real Time: Online Scene Change Detection with Multi-View Fusion](changes_in_real_time_online_scene_change_detection_with_multi-view_fusion.md)
-- [\[CVPR 2026\] 3D-Aware Multi-Task Learning with Cross-View Correlations for Dense Scene Understanding](3d-aware_multi-task_learning_with_cross-view_correlations_for_dense_scene_unders.md)
-- [\[CVPR 2026\] EcoSplat: Efficiency-controllable Feed-forward 3D Gaussian Splatting from Multi-view Images](ecosplat_efficiency-controllable_feed-forward_3d_gaussian_splatting_from_multi-v.md)
+- [\[CVPR 2026\] DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving](dynamicvggt_learning_dynamic_point_maps_for_4d_scene_reconstruction_in_autonomou.md)
+- [\[CVPR 2026\] Revisiting Monocular SLAM with Spatio-Temporal Scene Modeling](revisiting_monocular_slam_with_spatio-temporal_scene_modeling.md)
+- [\[CVPR 2026\] SPE-MVS: Spatial Position Encoding Enhanced Multi-View Stereo with Monocular Depth Priors](spe-mvs_spatial_position_encoding_enhanced_multi-view_stereo_with_monocular_dept.md)
+- [\[CVPR 2026\] ST4R-Splat: Spatio-Temporal Referring Segmentation in 4D Gaussian Splatting](st4r-splat_spatio-temporal_referring_segmentation_in_4d_gaussian_splatting.md)
+- [\[CVPR 2026\] TROPHIES: Temporal Reconstruction of Places, Humans, and Cameras from Multi-view Videos](trophies_temporal_reconstruction_of_places_humans_and_cameras_from_multi-view_vi.md)
 
 </div>
 

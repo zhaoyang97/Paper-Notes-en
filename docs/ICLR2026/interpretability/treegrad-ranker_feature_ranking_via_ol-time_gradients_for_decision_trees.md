@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TreeGrad-Ranker: Feature Ranking via O(L)-Time Gradients for Decision Trees
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] Addressing feature ranking for decision trees, the authors theoretically prove that "probabilistic values" such as Shapley or Banzhaf values are no better than random guessing when optimizing the joint goal corresponding to insertion/deletion metrics. They propose TreeGrad, which computes gradients on multilinear exten
+  [ICLR 2026][Interpretability][Feature Ranking] Addressing feature ranking for decision trees, the authors theoretically prove that "probabilistic values" such as Shapley or Banzhaf values are no better than random guessing when optimizing the joint goal corresponding to insertion/deletion metrics. They propose TreeGrad, which computes gradients on multilinear extensions in $O(L)$ time, and construct TreeGrad-Ranker to directly optimize the joint goal along with the numericall…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Feature Ranking"
+  - "Shapley Values"
+  - "Probabilistic Values"
+  - "Multilinear Extension"
+  - "Numerical Stability"
 date: 2026-05-08
-content_hash: 2a219ee7abec8c07
+content_hash: e4664ddd2a8f769b
 ---
+
 # TreeGrad-Ranker: Feature Ranking via O(L)-Time Gradients for Decision Trees
 
 **Conference**: ICLR 2026  
@@ -141,11 +147,11 @@ Core Conclusion: For Beta Shapley values, the parameters that yield the best ins
 
 ## Related Papers
 
+- [\[AAAI 2026\] ShapBPT: Image Feature Attributions Using Data-Aware Binary Partition Trees](../../AAAI2026/interpretability/shapbpt_image_feature_attributions_using_data-aware_binary_partition_trees.md)
 - [\[ICML 2025\] Leveraging Predictive Equivalence in Decision Trees](../../ICML2025/interpretability/leveraging_predictive_equivalence_in_decision_trees.md)
 - [\[NeurIPS 2025\] Empowering Decision Trees via Shape Function Branching](../../NeurIPS2025/interpretability/empowering_decision_trees_via_shape_function_branching.md)
 - [\[ICML 2025\] Near-Optimal Decision Trees in a SPLIT Second](../../ICML2025/interpretability/near_optimal_decision_trees_in_a_split_second.md)
 - [\[ICML 2026\] Manifold-Aligned Guided Integrated Gradients for Reliable Feature Attribution](../../ICML2026/interpretability/manifold-aligned_guided_integrated_gradients_for_reliable_feature_attribution.md)
-- [\[AAAI 2026\] ShapBPT: Image Feature Attributions Using Data-Aware Binary Partition Trees](../../AAAI2026/interpretability/shapbpt_image_feature_attributions_using_data-aware_binary_partition_trees.md)
 
 </div>
 

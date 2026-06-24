@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FGBench: A Dataset and Benchmark for Molecular Property Reasoning at Functional Group-Level in Large Language Models
 description: >-
-  [NeurIPS 2025][Computational Biology][Functional Groups] This paper presents FGBench, a dataset comprising 625K molecular property reasoning questions focused on functional group-level reasoning evaluation. Through three…
+  [NeurIPS 2025][Computational Biology][Functional Groups] This paper presents FGBench, a dataset comprising 625K molecular property reasoning questions focused on functional group-level reasoning evaluation. Through three dimensions (single functional group effect, multi-functional group interaction, and molecular comparison), it systematically reveals the severe deficiencies of current LLMs in fine-grained chemical reasoning.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "Structure-Activity Relationship"
   - "LLM Reasoning"
 date: 2026-05-08
-content_hash: 204e4b75bfa6d5c4
+content_hash: 5eeb0269f8c623d0
 ---
 
 # FGBench: A Dataset and Benchmark for Molecular Property Reasoning at Functional Group-Level in Large Language Models
@@ -142,9 +142,9 @@ The data construction methodology is rigorous (validation-by-reconstruction stra
 
 - [\[NeurIPS 2025\] scPilot: Large Language Model Reasoning Toward Automated Single-Cell Analysis and Discovery](scpilot_large_language_model_reasoning_toward_automated_single-cell_analysis_and.md)
 - [\[NeurIPS 2025\] Mol-LLaMA: Towards General Understanding of Molecules in Large Molecular Language Models](mol-llama_towards_general_understanding_of_molecules_in_large_molecular_language.md)
-- [\[NeurIPS 2025\] EDBench: Large-Scale Electron Density Data for Molecular Modeling](edbench_large-scale_electron_density_data_for_molecular_modeling.md)
 - [\[ACL 2026\] BioTool: A Comprehensive Tool-Calling Dataset for Enhancing Biomedical Capabilities of Large Language Models](../../ACL2026/computational_biology/biotool_a_comprehensive_tool-calling_dataset_for_enhancing_biomedical_capabiliti.md)
-- [\[ICLR 2026\] Tracing Pharmacological Knowledge in Large Language Models](../../ICLR2026/computational_biology/tracing_pharmacological_knowledge_in_large_language_models.md)
+- [\[NeurIPS 2025\] EDBench: Large-Scale Electron Density Data for Molecular Modeling](edbench_large-scale_electron_density_data_for_molecular_modeling.md)
+- [\[ICML 2025\] CFP-Gen: Combinatorial Functional Protein Generation via Diffusion Language Models](../../ICML2025/computational_biology/cfp-gen_combinatorial_functional_protein_generation_via_diffusion_language_model.md)
 
 </div>
 

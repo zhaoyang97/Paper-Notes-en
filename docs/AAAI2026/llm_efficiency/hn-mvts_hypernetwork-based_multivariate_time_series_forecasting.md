@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HN-MVTS: HyperNetwork-based Multivariate Time Series Forecasting
 description: >-
-  [AAAI 2026][LLM Efficiency][Multivariate time series forecasting] This paper proposes HN-MVTS, which employs a HyperNetwork to generate channel-specific weights for the final prediction layer…
+  [AAAI 2026][LLM Efficiency][Multivariate time series forecasting] This paper proposes HN-MVTS, which employs a HyperNetwork to generate channel-specific weights for the final prediction layer, striking a balance between channel-independent (CI) and channel-dependent (CD) modeling. As a plug-and-play module, it improves forecasting accuracy of various backbone models including DLinear, PatchTST, and TSMixer without incurring additional inference overhead.
 tags:
   - "AAAI 2026"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "channel independence"
   - "plug-and-play"
 date: 2026-05-08
-content_hash: 1eda41a3c5432837
+content_hash: f5af2cb9a0a57726
 ---
 
 # HN-MVTS: HyperNetwork-based Multivariate Time Series Forecasting
@@ -143,11 +143,11 @@ HN-MVTS yields statistically significant improvements (Wilcoxon rank-sum test, $
 
 ## Related Papers
 
+- [\[ICLR 2026\] In-Place Test-Time Training](../../ICLR2026/llm_efficiency/in-place_test-time_training.md)
 - [\[AAAI 2026\] MoETTA: Test-Time Adaptation Under Mixed Distribution Shifts with MoE-LayerNorm](moetta_test-time_adaptation_under_mixed_distribution_shifts_with_moe-layernorm.md)
+- [\[ICLR 2026\] Test-Time Training Done Right](../../ICLR2026/llm_efficiency/test-time_training_done_right.md)
 - [\[ICLR 2026\] xLSTM Scaling Laws: Competitive Performance with Linear Time-Complexity](../../ICLR2026/llm_efficiency/xlstm_scaling_laws_competitive_performance_with_linear_time-complexity.md)
-- [\[ICLR 2026\] RACE Attention: A Strictly Linear-Time Attention for Long-Sequence Training](../../ICLR2026/llm_efficiency/race_attention_a_strictly_linear-time_attention_for_long-sequence_training.md)
-- [\[AAAI 2026\] Harnessing the Unseen: The Hidden Influence of Intrinsic Knowledge in Long-Context Language Models](harnessing_the_unseen_the_hidden_influence_of_intrinsic_knowledge_in_long-contex.md)
-- [\[AAAI 2026\] InterMoE: Individual-Specific 3D Human Interaction Generation via Dynamic Temporal-Selective MoE](intermoe_individual-specific_3d_human_interaction_generation_via_dynamic_tempora.md)
+- [\[ICLR 2026\] Guided Speculative Inference for Efficient Test-Time Alignment of LLMs](../../ICLR2026/llm_efficiency/guided_speculative_inference_for_efficient_test-time_alignment_of_llms.md)
 
 </div>
 

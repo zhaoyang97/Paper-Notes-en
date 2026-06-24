@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] From Feasible to Practical: Pareto-Optimal Synthesis Planning
 description: >-
-  [ICML 2026][Computational Biology][MCTS] PareSP utilizes **multi-objective MCTS search** to jointly optimize synthesis pathway **cost / time / feasibility / environmental impact**—identifying the complete Pareto front rather than a single "optimal" path. On USPTO and ASKCOS benchmarks, it achieves a 23% reduction in cost and a 35% reduction in time compared t
+  [ICML 2026][Computational Biology][Multi-objective search] PareSP utilizes **multi-objective MCTS search** to jointly optimize synthesis pathway **cost / time / feasibility / environmental impact**—identifying the complete Pareto front rather than a single "optimal" path. On USPTO and ASKCOS benchmarks, it achieves a 23% reduction in cost and a 35% reduction in time compared to single-objective methods, while maintaining $\ge 95\%$ chemical feasibility.
 tags:
-  - ICML 2026
-  - Computational Biology
-  - MCTS
+  - "ICML 2026"
+  - "Computational Biology"
+  - "Multi-objective search"
+  - "Pareto optimization"
+  - "Synthesis planning"
+  - "MCTS"
 date: 2026-05-08
-content_hash: c8d3ba7d6af4dace
+content_hash: 94e164175b5d5618
 ---
+
 # From Feasible to Practical: Pareto-Optimal Synthesis Planning
 
 **Conference**: ICML 2026  
@@ -143,8 +147,8 @@ Pure MCTS is inefficient in the vast chemical reaction space. PareSP links objec
 - [\[NeurIPS 2025\] Amortized Active Generation of Pareto Sets](../../NeurIPS2025/computational_biology/amortized_active_generation_of_pareto_sets.md)
 - [\[ACL 2026\] ProtoCycle: Reflective Tool-Augmented Planning for Text-Guided Protein Design](../../ACL2026/computational_biology/protocycle_reflective_tool-augmented_planning_for_text-guided_protein_design.md)
 - [\[CVPR 2026\] TRIDENT: A Trimodal Cascade Generative Framework for Drug and RNA-Conditioned Cellular Morphology Synthesis](../../CVPR2026/computational_biology/trident_a_trimodal_cascade_generative_framework_for_drug_and_rna-conditioned_cel.md)
+- [\[ICLR 2026\] Fast and Interpretable Protein Substructure Alignment via Optimal Transport](../../ICLR2026/computational_biology/fast_and_interpretable_protein_substructure_alignment_via_optimal_transport.md)
 - [\[ICML 2025\] Compositional Flows for 3D Molecule and Synthesis Pathway Co-design](../../ICML2025/computational_biology/compositional_flows_for_3d_molecule_and_synthesis_pathway_co-design.md)
-- [\[AAAI 2026\] CellStream: Dynamical Optimal Transport Informed Embeddings for Reconstructing Cellular Trajectories from Snapshots Data](../../AAAI2026/computational_biology/cellstream_dynamical_optimal_transport_informed_embeddings_for_reconstructing_ce.md)
 
 </div>
 

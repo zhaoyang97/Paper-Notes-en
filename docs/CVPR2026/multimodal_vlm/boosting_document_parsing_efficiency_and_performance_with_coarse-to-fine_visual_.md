@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Boosting Document Parsing Efficiency and Performance with Coarse-to-Fine Visual Processing
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] PaddleOCR-VL utilizes a lightweight "coarse-to-fine" two-stage framework that "localizes valid regions first, then identifies chunk-by-chunk," filtering out redundant backgrounds in high-resolution documents from the VLM. With only 0.9B parameters and approximately 2.5k visual tokens, it achieves a SOTA overall score o
+  [CVPR 2026][Multimodal VLM][Document parsing] PaddleOCR-VL utilizes a lightweight "coarse-to-fine" two-stage framework that "localizes valid regions first, then identifies chunk-by-chunk," filtering out redundant backgrounds in high-resolution documents from the VLM. With only 0.9B parameters and approximately 2.5k visual tokens, it achieves a SOTA overall score of 92.62 on OmniDocBench v1.5, while delivering 50% higher throughput than the strongest baseline.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Document parsing"
+  - "coarse-to-fine"
+  - "visual token compression"
+  - "layout analysis"
+  - "reading order"
 date: 2026-05-08
-content_hash: 999ab188d42727b7
+content_hash: b2f04de7c736ec42
 ---
+
 # Boosting Document Parsing Efficiency and Performance with Coarse-to-Fine Visual Processing
 
 **Conference**: CVPR 2026  
@@ -139,11 +145,11 @@ Text recognition achieved the lowest EditDist across almost all categories: PPT 
 
 ## Related Papers
 
-- [\[CVPR 2026\] PaddleOCR-VL: Boosting Document Parsing Efficiency and Performance with Coarse-to-Fine Visual Processing](paddleocr_vl_coarse_to_fine_document_parsing.md)
 - [\[CVPR 2026\] Towards Real-World Document Parsing via Realistic Scene Synthesis and Document-Aware Training](towards_real-world_document_parsing_via_realistic_scene_synthesis_and_document-a.md)
-- [\[CVPR 2026\] Efficient Document Parsing via Parallel Token Prediction](efficient_document_parsing_via_parallel_token_prediction.md)
-- [\[CVPR 2026\] EvoComp: Learning Visual Token Compression for Multimodal Large Language Models via Semantic-Guided Evolutionary Labeling](evocomp_learning_visual_token_compression_for_multimodal_large_language_models_v.md)
+- [\[ICLR 2026\] SigLIP-HD by Fine-to-Coarse Supervision](../../ICLR2026/multimodal_vlm/siglip-hd_by_fine-to-coarse_supervision.md)
 - [\[CVPR 2026\] Boosting Visual Reprogramming for CLIP with Dual Granularity Alignment](boosting_visual_reprogramming_for_clip_with_dual_granularity_alignment.md)
+- [\[CVPR 2026\] RxnCaption: Reformulating Reaction Diagram Parsing as Visual Prompt Guided Captioning](rxncaption_reformulating_reaction_diagram_parsing_as_visual_prompt_guided_captio.md)
+- [\[CVPR 2026\] SEA: Evaluating Sketch Abstraction Efficiency via Element-level Commonsense Visual Question Answering](sea_evaluating_sketch_abstraction_efficiency_via_element-level_commonsense_visua.md)
 
 </div>
 

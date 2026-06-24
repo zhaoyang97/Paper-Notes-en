@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MMSU: A Massive Multi-task Spoken Language Understanding and Reasoning Benchmark
 description: >-
-  [ICLR 2026][Audio & Speech][SpeechLLM] The authors propose MMSU (5,000 audio QAs, 47 tasks), the first speech understanding and reasoning benchmark to systematically integrate linguistic theories. Evaluating 22 SpeechLLMs reveals that existing models still exhibit significant performance gaps in phonological perception and complex reasoning.
+  [ICLR 2026][Audio & Speech][Speech Understanding] The authors propose MMSU (5,000 audio QAs, 47 tasks), the first speech understanding and reasoning benchmark to systematically integrate linguistic theories. Evaluating 22 SpeechLLMs reveals that existing models still exhibit significant performance gaps in phonological perception and complex reasoning.
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - SpeechLLM
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Speech Understanding"
+  - "SpeechLLM"
+  - "Linguistic Benchmark"
+  - "Multi-task Evaluation"
+  - "Perception & Reasoning"
 date: 2026-05-08
-content_hash: ab2cc8288c524e9a
+content_hash: f8262712c55ec0e3
 ---
+
 # MMSU: A Massive Multi-task Spoken Language Understanding and Reasoning Benchmark
 
 **Conference**: ICLR 2026  

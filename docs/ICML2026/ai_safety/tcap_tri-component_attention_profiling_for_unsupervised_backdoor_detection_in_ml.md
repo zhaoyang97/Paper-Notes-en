@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TCAP: Tri-Component Attention Profiling for Unsupervised Backdoor Detection in MLLM Fine-Tuning
 description: >-
-  [ICML 2026][AI Safety][Paper Note] Addressing the issue of poisoned fine-tuning in Multi-modal Large Language Models (MLLM) under Fine-Tuning-as-a-Service (FTaaS) scenarios, this paper identifies a universal fingerprint: triggered samples cause "abnormal polarization of attention for the first generated token across system, vision, and text components."
+  [ICML 2026][AI Safety][Backdoor Defense] Addressing the issue of poisoned fine-tuning in Multi-modal Large Language Models (MLLM) under Fine-Tuning-as-a-Service (FTaaS) scenarios, this paper identifies a universal fingerprint: triggered samples cause "abnormal polarization of attention for the first generated token across system, vision, and text components." Based on this, the unsupervised TCAP framework is proposed: it uses a Gaussian Mixture Model (GMM) to identify trigger…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Backdoor Defense"
+  - "MLLM Fine-tuning"
+  - "Attention Allocation"
+  - "Gaussian Mixture Model"
+  - "EM Voting"
 date: 2026-05-08
-content_hash: bd9ece16d3c8ae12
+content_hash: c67526a43769e8ed
 ---
+
 # TCAP: Tri-Component Attention Profiling for Unsupervised Backdoor Detection in MLLM Fine-Tuning
 
 **Conference**: ICML 2026  
@@ -134,16 +140,16 @@ Detection F1 under Blend attack:
 - Value: ⭐⭐⭐⭐ Addresses real FTaaS pain points with a zero-external-dependency solution.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models](towards_fine-grained_robustness_attention-guided_test-time_prompt_tuning_for_vis.md)
 - [\[ICML 2026\] PFT: Phonon Fine-tuning for Machine Learned Interatomic Potentials](pft_phonon_fine-tuning_for_machine_learned_interatomic_potentials.md)
 - [\[ICML 2026\] Decoupled Training with Local Reinforcement Fine-Tuning in Federated Learning](decoupled_training_with_local_reinforcement_fine-tuning_in_federated_learning.md)
+- [\[AAAI 2026\] Fine-Grained DINO Tuning with Dual Supervision for Face Forgery Detection](../../AAAI2026/ai_safety/fine-grained_dino_tuning_with_dual_supervision_for_face_forgery_detection.md)
 - [\[ICML 2026\] From Parameter Dynamics to Risk Scoring: Quantifying Sample-Level Safety Degradation in LLM Fine-tuning](from_parameter_dynamics_to_risk_scoring_quantifying_sample-level_safety_degradat.md)
-- [\[ICML 2026\] FedTreeLoRA: Reconciling Statistical and Functional Heterogeneity in Federated LoRA Fine-Tuning](fedtreelora_reconciling_statistical_and_functional_heterogeneity_in_federated_lo.md)
 
 </div>
 

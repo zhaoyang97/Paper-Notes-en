@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RestoreVAR: Visual Autoregressive Generation for All-in-One Image Restoration
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] RestoreVAR adapts the visual autoregressive model VAR from pure image generation into an all-in-one image restoration model. It utilizes continuous latents of degraded images as cross-attention conditions, further supplemented by a latent refiner and a continuous latent decoder to recover details. It achieves superior
+  [ICLR 2026][Image Restoration][Visual Autoregressive] RestoreVAR adapts the visual autoregressive model VAR from pure image generation into an all-in-one image restoration model. It utilizes continuous latents of degraded images as cross-attention conditions, further supplemented by a latent refiner and a continuous latent decoder to recover details. It achieves superior restoration quality among generative AiOR methods while reducing the multi-second inference time of LDM-ba…
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Visual Autoregressive"
+  - "All-in-One Image Restoration"
+  - "Multi-scale Quantization"
+  - "Latent Space Refinement"
+  - "Generative Restoration"
 date: 2026-05-08
-content_hash: 7484bbc6592eaebc
+content_hash: 85315a32cf3b7633
 ---
+
 # RestoreVAR: Visual Autoregressive Generation for All-in-One Image Restoration
 
 **Conference**: ICLR 2026  
@@ -155,10 +161,20 @@ RestoreVAR is $10\times$ to $40\times$ faster than diffusion-based methods.
 - Value: ⭐⭐⭐⭐⭐ Provides a fast and faithful generative restoration path, suitable for real-time applications.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Rethinking Expressivity and Degradation-Awareness in Attention for All-in-One Blind Image Restoration](rethinking_expressivity_and_degradation-awareness_in_attention_for_all-in-one_bl.md)
+- [\[ICLR 2026\] Learning Domain-Aware Task Prompt Representations for Multi-Domain All-in-One Image Restoration](learning_domain-aware_task_prompt_representations_for_multi-domain_all-in-one_im.md)
+- [\[CVPR 2025\] Visual-Instructed Degradation Diffusion for All-in-One Image Restoration](../../CVPR2025/image_restoration/visual-instructed_degradation_diffusion_for_all-in-one_image_restoration.md)
+- [\[CVPR 2026\] Degradation-Consistent Test-Time Adaptation for All-in-One Image Restoration](../../CVPR2026/image_restoration/degradation-consistent_test-time_adaptation_for_all-in-one_image_restoration.md)
+- [\[CVPR 2026\] UniLDiff: Unlocking the Power of Diffusion Priors for All-in-One Image Restoration](../../CVPR2026/image_restoration/unildiff_unlocking_the_power_of_diffusion_priors_for_all-in-one_image_restoratio.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Rethinking Expressivity and Degradation-Awareness in Attention for All-in-One Blind Image Restoration](rethinking_expressivity_and_degradation-awareness_in_attention_for_all-in-one_bl.md)

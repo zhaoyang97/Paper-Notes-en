@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning from Noisy Preferences: A Semi-Supervised Learning Approach to Direct Preference Optimization
 description: >-
-  [ICLR 2026][Alignment & RLHF][Diffusion DPO] Addressing the gradient conflict problem in Diffusion-DPO caused by multi-dimensional human visual preferences being compressed into a binary label, this paper proposes Semi-DPO. By treating samples agreed upon by multiple reward models as clean labels and dimensionally conflicting samples as noisy unlabeled data, the
+  [ICLR 2026][LLM Alignment][Diffusion DPO] Addressing the gradient conflict problem in Diffusion-DPO caused by multi-dimensional human visual preferences being compressed into a binary label, this paper proposes Semi-DPO. By treating samples agreed upon by multiple reward models as clean labels and dimensionally conflicting samples as noisy unlabeled data, the method uses the diffusion model itself as an implicit classifier to generate pseudo-labels across different timesteps…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - Diffusion DPO
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Diffusion DPO"
+  - "Preference Alignment"
+  - "Label Noise"
+  - "Semi-Supervised Learning"
+  - "Pseudo-labeling"
 date: 2026-05-08
-content_hash: a3688ebf8a9aae84
+content_hash: 9f8add9da84aac11
 ---
+
 # Learning from Noisy Preferences: A Semi-Supervised Learning Approach to Direct Preference Optimization
 
 **Conference**: ICLR 2026  

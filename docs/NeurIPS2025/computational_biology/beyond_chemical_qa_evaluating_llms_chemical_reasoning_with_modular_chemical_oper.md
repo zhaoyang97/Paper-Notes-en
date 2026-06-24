@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond Chemical QA: Evaluating LLM's Chemical Reasoning with Modular Chemical Operations
 description: >-
-  [NeurIPS 2025][Computational Biology][chemical reasoning] This paper introduces ChemCoTBench, the first CoT-based benchmark for evaluating chemical reasoning in LLMs. It decomposes complex chemical problems into modular…
+  [NeurIPS 2025][Computational Biology][chemical reasoning] This paper introduces ChemCoTBench, the first CoT-based benchmark for evaluating chemical reasoning in LLMs. It decomposes complex chemical problems into modular chemical operations (adding/deleting/substituting functional groups), and is accompanied by ChemCoTDataset — a large-scale dataset of 22,000 expert-annotated CoT samples — enabling systematic evaluation of both reasoning and non-reasoning LLMs across molecular…
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "molecular operations"
   - "SMILES"
 date: 2026-05-08
-content_hash: 32dffb18b06d5034
+content_hash: 8f626f2d76b48be2
 ---
 
 # Beyond Chemical QA: Evaluating LLM's Chemical Reasoning with Modular Chemical Operations
@@ -136,10 +136,10 @@ The benchmark itself does not involve training. ChemCoTDataset is used for SFT f
 ## Related Papers
 
 - [\[ACL 2026\] ToxReason: A Benchmark for Mechanistic Chemical Toxicity Reasoning via Adverse Outcome Pathway](../../ACL2026/computational_biology/toxreason_a_benchmark_for_mechanistic_chemical_toxicity_reasoning_via_adverse_ou.md)
+- [\[ICLR 2026\] Exploring Synthesizable Chemical Space with Iterative Pathway Refinements](../../ICLR2026/computational_biology/exploring_synthesizable_chemical_space_with_iterative_pathway_refinements.md)
+- [\[ICLR 2026\] CP-Agent: Context-Aware Multimodal Reasoning for Cellular Morphological Profiling under Chemical Perturbations](../../ICLR2026/computational_biology/cp-agent_contextaware_multimodal_reasoning_for_cellular_morphological_profiling_.md)
 - [\[ICML 2026\] SIGMA: Structure-Invariant Generative Molecular Alignment for Chemical Language Models via Autoregressive Contrastive Learning](../../ICML2026/computational_biology/sigma_structure-invariant_generative_molecular_alignment_for_chemical_language_m.md)
 - [\[NeurIPS 2025\] Evaluating Multiple Models Using Labeled and Unlabeled Data](evaluating_multiple_models_using_labeled_and_unlabeled_data.md)
-- [\[NeurIPS 2025\] Compressing Biology: Evaluating the Stable Diffusion VAE for Phenotypic Drug Discovery](compressing_biology_evaluating_the_stable_diffusion_vae_for_phenotypic_drug_disc.md)
-- [\[NeurIPS 2025\] Flow Density Control: Generative Optimization Beyond Entropy-Regularized Fine-Tuning](flow_density_control_generative_optimization_beyond_entropy-regularized_fine-tun.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Deliberate Evolution: Agentic Reasoning for Sample-Efficient Symbolic Regression with LLMs
 description: >-
-  [ICML 2026][LLM Reasoning][agentic reasoning] The proposal-score loop dominated by LLMs in symbolic regression is decomposed into two layers: "Proposal vs. Navigation." By explicitly guiding the LLM with three types of signals—adaptive operators (direction), diagnostic tools (residuals/dimensions), and reflective memory (trajectory experience)—this method reduces
+  [ICML 2026][Reasoning][Symbolic Regression] The proposal-score loop dominated by LLMs in symbolic regression is decomposed into two layers: "Proposal vs. Navigation." By explicitly guiding the LLM with three types of signals—adaptive operators (direction), diagnostic tools (residuals/dimensions), and reflective memory (trajectory experience)—this method reduces the average NMSE by 37–55% on LLM-SRBench using only 40% of the evaluation budget.
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - agentic reasoning
+  - "ICML 2026"
+  - "Reasoning"
+  - "Symbolic Regression"
+  - "Evolutionary Search"
+  - "Agentic Reasoning"
+  - "Sample Efficiency"
+  - "LLM Tool Calling"
 date: 2026-05-08
-content_hash: c39faa9a74188137
+content_hash: 6abb2fa6b34e1fd5
 ---
+
 # Deliberate Evolution: Agentic Reasoning for Sample-Efficient Symbolic Regression with LLMs
 
 **Conference**: ICML 2026  
@@ -144,11 +149,11 @@ Physics + Qwen3-4B:
 
 ## Related Papers
 
+- [\[ICLR 2026\] ShinkaEvolve: Towards Open-Ended and Sample-Efficient Program Evolution](../../ICLR2026/llm_reasoning/shinkaevolve_towards_open-ended_and_sample-efficient_program_evolution.md)
 - [\[ICLR 2026\] Stabilizing Policy Gradients for Sample-Efficient Reinforcement Learning in LLM Reasoning](../../ICLR2026/llm_reasoning/stabilizing_policy_gradients_for_sample-efficient_reinforcement_learning_in_llm_.md)
 - [\[ICML 2026\] ResRL: Boosting LLM Reasoning via Negative Sample Projection Residual Reinforcement Learning](resrl_boosting_llm_reasoning_via_negative_sample_projection_residual_reinforceme.md)
-- [\[ACL 2025\] FineReason: Evaluating and Improving LLMs' Deliberate Reasoning through Reflective Puzzle Solving](../../ACL2025/llm_reasoning/finereason_evaluating_and_improving_llms_deliberate_reasoning_through_reflective.md)
 - [\[ICML 2026\] MOSAIC: Learning When to Act or Refuse — Guarding Agentic Reasoning Models for Safe Multi-step Tool Use](learning_when_to_act_or_refuse_guarding_agentic_reasoning_models_for_safe_multi-.md)
-- [\[ICML 2026\] Lookahead Sample Reward Guidance for Test-Time Scaling of Diffusion Models](lookahead_sample_reward_guidance_for_test-time_scaling_of_diffusion_models.md)
+- [\[ICML 2026\] Evaluating Relational Reasoning in LLMs with REL](evaluating_relational_reasoning_in_llms_with_rel.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Progressive Supernet Training for Efficient Visual Autoregressive Modeling
 description: >-
-  [CVPR 2026][Model Compression][supernet] VARiant identifies a "scale-depth asymmetric dependence" in Visual Autoregressive (VAR) models: early low-resolution scales are highly dependent on network depth, while later high-resolution scales are robust to depth reductions. Based on this, a 30-layer VAR is trained as a **weight-sharing elastic depth supernet** (e
+  [CVPR 2026][Model Compression][Visual Autoregressive] VARiant identifies a "scale-depth asymmetric dependence" in Visual Autoregressive (VAR) models: early low-resolution scales are highly dependent on network depth, while later high-resolution scales are robust to depth reductions. Based on this, a 30-layer VAR is trained as a **weight-sharing elastic depth supernet** (early scales use the full network; late scales use 2–16 layer subnets). Using a three-stage dynamic ratio p…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - supernet
-  - KV cache
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Visual Autoregressive"
+  - "supernet"
+  - "elastic depth"
+  - "KV cache"
+  - "progressive training"
 date: 2026-05-08
-content_hash: 39c2d53df94105b7
+content_hash: f521f4e6d4157690
 ---
+
 # Progressive Supernet Training for Efficient Visual Autoregressive Modeling
 
 **Conference**: CVPR 2026  
@@ -117,15 +121,16 @@ ImageNet 256×256 class-conditional generation using a single 2.0B model. Effici
 - Value: ⭐⭐⭐⭐⭐ Highly practical for VAR deployment, offering 40–80% memory savings.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Balanced Dataset Distillation via Modeling Multiple Visual Pattern Distribution](balanced_dataset_distillation_via_modeling_multiple_visual_pattern_distribution.md)
-- [\[CVPR 2026\] VVS: Accelerating Speculative Decoding for Visual Autoregressive Generation via Partial Verification Skipping](vvs_accelerating_speculative_decoding_for_visual_autoregressive_generation_via_p.md)
-- [\[ICLR 2026\] PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models](../../ICLR2026/model_compression/ptq4arvg_post-training_quantization_for_autoregressive_visual_generation_models.md)
 - [\[ICCV 2025\] FastVAR: Linear Visual Autoregressive Modeling via Cached Token Pruning](../../ICCV2025/model_compression/fastvar_linear_visual_autoregressive_modeling_via_cached_token_pruning.md)
-- [\[CVPR 2026\] QVGGT: Post-Training Quantized Visual Geometry Grounded Transformer](qvggt_post-training_quantized_visual_geometry_grounded_transformer.md)
+- [\[CVPR 2026\] Balanced Dataset Distillation via Modeling Multiple Visual Pattern Distribution](balanced_dataset_distillation_via_modeling_multiple_visual_pattern_distribution.md)
+- [\[ICLR 2026\] PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models](../../ICLR2026/model_compression/ptq4arvg_post-training_quantization_for_autoregressive_visual_generation_models.md)
+- [\[ICLR 2026\] Shift-and-Sum Quantization for Visual Autoregressive Models](../../ICLR2026/model_compression/shift-and-sum_quantization_for_visual_autoregressive_models.md)
+- [\[CVPR 2026\] PRISM: Video Dataset Condensation with Progressive Refinement and Insertion for Sparse Motion](prism_video_dataset_condensation_with_progressive_refinement_and_insertion_for_s.md)
 
 </div>
 

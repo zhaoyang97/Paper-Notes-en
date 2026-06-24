@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Hot PATE: Private Aggregation of Distributions for Diverse Tasks
 description: >-
-  [ICLR 2026][LLM Safety][PATE] This paper proposes Hot PATE, which utilizes "coordinated sampling" to let teacher ensembles vote under shared randomness. This makes the private histogram sharp and high-variance, allowing the output diversity of generative models to be losslessly transferred to the student without increasing the privacy cost. It fund
+  [ICLR 2026][LLM Safety][PATE] This paper proposes Hot PATE, which utilizes "coordinated sampling" to let teacher ensembles vote under shared randomness. This makes the private histogram sharp and high-variance, allowing the output diversity of generative models to be losslessly transferred to the student without increasing the privacy cost. It fundamentally improves the privacy-utility tradeoff of Cold PATE in high-diversity scenarios.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - PATE
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "PATE"
+  - "Differential Privacy"
+  - "Diversity Preservation"
+  - "Coordinated Sampling"
+  - "Synthetic Data Generation"
+  - "In-Context Learning"
 date: 2026-05-08
-content_hash: 38434f3188acb475
+content_hash: 38d6ff330170b3c6
 ---
+
 # Hot PATE: Private Aggregation of Distributions for Diverse Tasks
 
 **Conference**: ICLR 2026  
@@ -120,8 +126,8 @@ The authors isolated components through several controls:
 - [\[ICLR 2026\] RedCodeAgent: Automatic Red-teaming Agent against Diverse Code Agents](redcodeagent_automatic_red-teaming_agent_against_diverse_code_agents.md)
 - [\[ICLR 2026\] Secret-Protected Evolution for Differentially Private Synthetic Text Generation](secret-protected_evolution_for_differentially_private_synthetic_text_generation.md)
 - [\[ICLR 2026\] HiddenEcho: Mitigating Noise Amplification in Differentially Private LLMs with Hidden-State Correction](hiddenecho_mitigating_noise_amplification_in_differentially_private_llms_with_hi.md)
+- [\[ICLR 2026\] SafeDialBench: A Fine-grained Safety Evaluation Benchmark for LLMs in Multi-turn Dialogues and Diverse Jailbreak Attacks](safedialbench_a_fine-grained_safety_evaluation_benchmark_for_large_language_mode.md)
 - [\[ICLR 2026\] Pisces: Cryptography-based Private Retrieval-Augmented Generation with Dual-Path Retrieval](pisces_cryptography-based_private_retrieval-augmented_generation_with_dual-path_.md)
-- [\[ICLR 2026\] Moving Beyond Medical Exams: A Clinician-Annotated Fairness Dataset of Real-World Tasks and Ambiguity in Mental Healthcare](moving_beyond_medical_exams_a_clinician-annotated_fairness_dataset_of_real-world.md)
 
 </div>
 

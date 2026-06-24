@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Differentially Private Equilibrium Finding in Polymatrix Games
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper characterizes the boundaries of **distributed equilibrium finding in polymatrix games that simultaneously satisfy high accuracy and low differential privacy budgets**. It proves that this is impossible if an adversary monitors all channels or if accuracy is measured by Euclidean distance. However, by replaci
+  [ICLR 2026][Learning Theory][Polymatrix Games] This paper characterizes the boundaries of **distributed equilibrium finding in polymatrix games that simultaneously satisfy high accuracy and low differential privacy budgets**. It proves that this is impossible if an adversary monitors all channels or if accuracy is measured by Euclidean distance. However, by replacing the distance metric with exploitability and assuming the adversary monitors limited channels…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Differential Privacy"
+  - "Game Theory"
+  - "Polymatrix Games"
+  - "Nash Equilibrium"
+  - "Coarse Correlated Equilibrium"
+  - "Distributed Optimization"
+  - "Impossibility Bounds"
 date: 2026-05-08
-content_hash: 1bdcc9c96a2e4213
+content_hash: 15d8ba1e57f426e7
 ---
+
 # Differentially Private Equilibrium Finding in Polymatrix Games
 
 **Conference**: ICLR 2026  
@@ -101,14 +109,15 @@ The exploitability magnitude ranges from $2.2\times10^{-1}$ to $2.8\times10^{-1}
 - Value: ⭐⭐⭐⭐ (Provides critical theoretical guardrails for the intersection of DP and game theory).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Online Learning and Equilibrium Computation with Ranking Feedback](online_learning_and_equilibrium_computation_with_ranking_feedback.md)
 - [\[ICLR 2026\] Computing Equilibrium beyond Unilateral Deviation](computing_equilibrium_beyond_unilateral_deviation.md)
-- [\[ICLR 2026\] Toward Practical Equilibrium Propagation: Brain-Inspired Recurrent Neural Network with Feedback Regulation and Residual Connections](toward_practical_equilibrium_propagation_brain-inspired_recurrent_neural_network.md)
 - [\[NeurIPS 2025\] Efficient Kernelized Learning in Polyhedral Games Beyond Full-Information: From Colonel Blotto to Congestion Games](../../NeurIPS2025/learning_theory/efficient_kernelized_learning_in_polyhedral_games_beyond_full-information_from_c.md)
+- [\[ICLR 2026\] Toward Practical Equilibrium Propagation: Brain-Inspired Recurrent Neural Network with Feedback Regulation and Residual Connections](toward_practical_equilibrium_propagation_brain-inspired_recurrent_neural_network.md)
 - [\[NeurIPS 2025\] Optimism Without Regularization: Constant Regret in Zero-Sum Games](../../NeurIPS2025/learning_theory/optimism_without_regularization_constant_regret_in_zero-sum_games.md)
 
 </div>

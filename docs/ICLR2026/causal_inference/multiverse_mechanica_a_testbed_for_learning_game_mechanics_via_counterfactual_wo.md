@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Multiverse Mechanica: A Testbed for Learning Game Mechanics via Counterfactual Worlds
 description: >-
-  [ICLR 2026][Causal Inference][World Models] The study reformulates the ambiguous question of whether a "game world model has truly learned game rules (mechanics)"—previously judged only via *a posteriori* visual inspection—into a formal **causal counterfactual inference task**. It introduces Multiverse Mechanica, a playable game testbed capable of natively outpu
+  [ICLR 2026][Causal Inference][Game Mechanics Learning] The study reformulates the ambiguous question of whether a "game world model has truly learned game rules (mechanics)"—previously judged only via *a posteriori* visual inspection—into a formal **causal counterfactual inference task**. It introduces Multiverse Mechanica, a playable game testbed capable of natively outputting "parallel world contrastive data + causal graphs for each mechanic…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - World Models
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Game Mechanics Learning"
+  - "Counterfactual Reasoning"
+  - "Causal Consistency"
+  - "World Models"
+  - "Parallel World Comparison"
+  - "Pearl's Causal Ladder"
 date: 2026-05-08
-content_hash: 90c9ec9736ad6c45
+content_hash: 7d2ab339a4b43606
 ---
+
 # Multiverse Mechanica: A Testbed for Learning Game Mechanics via Counterfactual Worlds
 
 **Conference**: ICLR 2026  
@@ -102,9 +108,9 @@ This is a **proof-of-concept** evaluation: a pre-trained conditional diffusion m
 
 - [\[ECCV 2024\] Learning Chain of Counterfactual Thought for Bias-Robust Vision-Language Reasoning](../../ECCV2024/causal_inference/learning_chain_of_counterfactual_thought_for_bias-robust_vision-language_reasoni.md)
 - [\[ICLR 2026\] Counterfactual Explanations on Robust Perceptual Geodesics](counterfactual_explanations_on_robust_perceptual_geodesics.md)
+- [\[ICLR 2026\] Counterfactual LLM-based Framework for Measuring Rhetorical Style](counterfactual_llm-based_framework_for_measuring_rhetorical_style.md)
+- [\[ICLR 2026\] On the Eligibility of LLMs for Counterfactual Reasoning: A Decompositional Study](on_the_eligibility_of_llms_for_counterfactual_reasoning_a_decompositional_study.md)
 - [\[ICLR 2026\] Counterfactual Structural Causal Bandits](counterfactual_structural_causal_bandits.md)
-- [\[ACL 2025\] Leveraging Variation Theory in Counterfactual Data Augmentation for Optimized Active Learning](../../ACL2025/causal_inference/leveraging_variation_theory_in_counterfactual_data_augmentation_for_optimized_ac.md)
-- [\[ICLR 2026\] Self-Supervised Learning from Structural Invariance](self-supervised_learning_from_structural_invariance.md)
 
 </div>
 

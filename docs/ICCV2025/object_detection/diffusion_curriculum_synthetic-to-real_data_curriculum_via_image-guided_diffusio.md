@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Diffusion Curriculum: Synthetic-to-Real Data Curriculum via Image-Guided Diffusion
 description: >-
-  [ICCV 2025][Object Detection][Diffusion Models] This paper leverages the image guidance strength of diffusion models to generate a continuous synthetic-to-real spectrum of data…
+  [ICCV 2025][Object Detection][Diffusion Models] This paper leverages the image guidance strength of diffusion models to generate a continuous synthetic-to-real spectrum of data, and proposes a Diffusion Curriculum Learning (DisCL) strategy that adaptively selects synthetic data at optimal guidance levels across different training stages, effectively addressing long-tail classification and low-quality data learning challenges.
 tags:
   - "ICCV 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "Long-Tail Classification"
   - "Low-Quality Data"
 date: 2026-05-08
-content_hash: 61b0029141ba2c15
+content_hash: e648232205f38ae5
 ---
 
 # Diffusion Curriculum: Synthetic-to-Real Data Curriculum via Image-Guided Diffusion
@@ -157,10 +157,10 @@ OOD and ID F1 scores improve by 2.7% and 2.1%, respectively.
 ## Related Papers
 
 - [\[ICCV 2025\] DISTIL: Data-Free Inversion of Suspicious Trojan Inputs via Latent Diffusion](distil_data-free_inversion_of_suspicious_trojan_inputs_via_latent_diffusion.md)
+- [\[CVPR 2025\] Generalized Diffusion Detector: Mining Robust Features from Diffusion Models for Domain-Generalized Detection](../../CVPR2025/object_detection/generalized_diffusion_detector_mining_robust_features_from_diffusion_models_for_.md)
+- [\[CVPR 2026\] CrossVL: Complexity-Aware Feature Routing and Paired Curriculum for Cross-View Vision-Language Detection](../../CVPR2026/object_detection/crossvl_complexity-aware_feature_routing_and_paired_curriculum_for_cross-view_vi.md)
+- [\[CVPR 2025\] One-for-More: Continual Diffusion Model for Anomaly Detection](../../CVPR2025/object_detection/one-for-more_continual_diffusion_model_for_anomaly_detection.md)
 - [\[AAAI 2026\] CountSteer: Steering Attention for Object Counting in Diffusion Models](../../AAAI2026/object_detection/countsteer_steering_attention_for_object_counting_in_diffusion_models.md)
-- [\[CVPR 2026\] InvAD: Inversion-based Reconstruction-Free Anomaly Detection with Diffusion Models](../../CVPR2026/object_detection/invad_inversion-based_reconstruction-free_anomaly_detection_with_diffusion_model.md)
-- [\[ICCV 2025\] YOLOE: Real-Time Seeing Anything](yoloe_realtime_seeing_anything.md)
-- [\[ICCV 2025\] EvRT-DETR: Latent Space Adaptation of Image Detectors for Event-based Vision](evrt-detr_latent_space_adaptation_of_image_detectors_for_event-based_vision.md)
 
 </div>
 

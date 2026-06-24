@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Resting Neurons, Active Insights: Robustify Activation Sparsity for Large Language Models
 description: >-
-  [ICML 2026][LLM (Other)][Paper Note] This paper attributes the performance degradation of LLMs caused by activation sparsity to "representation drift." By mimicking biological spontaneous firing, it injects an input-independent small vector (SPON) into each layer. This vector can be absorbed into the bias after training, significantly narrowing the gap be
+  [ICML 2026][LLM (Other)][Activation Sparsity] This paper attributes the performance degradation of LLMs caused by activation sparsity to "representation drift." By mimicking biological spontaneous firing, it injects an input-independent small vector (SPON) into each layer. This vector can be absorbed into the bias after training, significantly narrowing the gap between sparse and dense models with near-zero inference overhead.
 tags:
-  - ICML 2026
-  - LLM (Other)
+  - "ICML 2026"
+  - "LLM (Other)"
+  - "Activation Sparsity"
+  - "Representation Stability"
+  - "Spontaneous Neurons"
+  - "Bias Absorption"
+  - "Knowledge Retention"
 date: 2026-05-08
-content_hash: 53b7ce14c04529cb
+content_hash: b50ccf4dd1efcfb4
 ---
+
 # Resting Neurons, Active Insights: Robustify Activation Sparsity for Large Language Models
 
 **Conference**: ICML 2026  

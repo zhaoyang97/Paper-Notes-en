@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] CliCARE: Grounding Large Language Models in Clinical Guidelines for Decision Support over Longitudinal Cancer Electronic Health Records
 description: >-
-  [AAAI 2026][LLM/NLP][LLM clinical decision support] This paper proposes CliCARE, a framework that transforms unstructured longitudinal cancer EHRs into temporal knowledge graphs (TKGs)…
+  [AAAI 2026][Medical LLM][LLM clinical decision support] This paper proposes CliCARE, a framework that transforms unstructured longitudinal cancer EHRs into temporal knowledge graphs (TKGs), aligns them with clinical practice guideline (CPG) knowledge graphs, and provides evidence-grounded clinical decision support for LLMs. An LLM-as-a-Judge evaluation protocol highly correlated with expert assessments is also introduced.
 tags:
   - "AAAI 2026"
-  - "LLM/NLP"
+  - "Medical LLM"
   - "LLM clinical decision support"
   - "electronic health records"
   - "temporal knowledge graph"
   - "clinical guideline alignment"
   - "RAG"
 date: 2026-05-08
-content_hash: 65dc1c231b3d83b6
+content_hash: b30591a937d94989
 ---
 
 # CliCARE: Grounding Large Language Models in Clinical Guidelines for Decision Support over Longitudinal Cancer Electronic Health Records
@@ -196,10 +196,10 @@ TKG compression is the most critical component; its removal causes a substantial
 ## Related Papers
 
 - [\[ACL 2026\] HypEHR: Hyperbolic Modeling of Electronic Health Records for Efficient Question Answering](../../ACL2026/medical_nlp/hypehr_hyperbolic_modeling_of_electronic_health_records_for_efficient_question_a.md)
-- [\[ACL 2026\] MHGraphBench: Knowledge Graph-Grounded Benchmarking of Mental Health Knowledge in Large Language Models](../../ACL2026/medical_nlp/mhgraphbench_knowledge_graph-grounded_benchmarking_of_mental_health_knowledge_in.md)
+- [\[ICLR 2026\] Cancer-Myth: Evaluating Large Language Models on Patient Questions with False Presuppositions](../../ICLR2026/medical_nlp/cancer-myth_evaluating_large_language_models_on_patient_questions_with_false_pre.md)
 - [\[AAAI 2026\] Measuring Stability Beyond Accuracy in Small Open-Source Medical Large Language Models for Pediatric Endocrinology](measuring_stability_beyond_accuracy_in_small_open-source_medical_large_language_.md)
-- [\[ACL 2026\] MHSafeEval: Role-Aware Interaction-Level Evaluation of Mental Health Safety in Large Language Models](../../ACL2026/medical_nlp/mhsafeeval_role-aware_interaction-level_evaluation_of_mental_health_safety_in_la.md)
-- [\[ACL 2026\] RePrompT: Recurrent Prompt Tuning for Integrating Structured EHR Encoders with Large Language Models](../../ACL2026/medical_nlp/reprompt_recurrent_prompt_tuning_for_integrating_structured_ehr_encoders_with_la.md)
+- [\[ACL 2026\] MHGraphBench: Knowledge Graph-Grounded Benchmarking of Mental Health Knowledge in Large Language Models](../../ACL2026/medical_nlp/mhgraphbench_knowledge_graph-grounded_benchmarking_of_mental_health_knowledge_in.md)
+- [\[ICLR 2026\] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of Large Language Models in Mental Health Question Answering](../../ICLR2026/medical_nlp/counselbench_a_large-scale_expert_evaluation_and_adversarial_benchmarking_of_lar.md)
 
 </div>
 

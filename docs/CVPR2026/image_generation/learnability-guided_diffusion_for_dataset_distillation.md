@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learnability-Guided Diffusion for Dataset Distillation
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] Proposes LGD, a learnability-driven incremental dataset distillation framework that constructs the distilled dataset in stages. Each stage generates training samples that are complementary rather than redundant by conditioning on the current model state. By injecting learnability gradient guidance during diffusion samp
+  [CVPR 2026][Image Generation][Dataset Distillation] Proposes LGD, a learnability-driven incremental dataset distillation framework that constructs the distilled dataset in stages. Each stage generates training samples that are complementary rather than redundant by conditioning on the current model state. By injecting learnability gradient guidance during diffusion sampling, it reduces inter-sample information redundancy (which is 80-90% in existing methods) by 39.1%. It achi…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Dataset Distillation"
+  - "Learnability Guidance"
+  - "Diffusion Models"
+  - "Incremental Synthesis"
+  - "Redundancy Analysis"
 date: 2026-05-08
-content_hash: ad9b0662dbb1cf2b
+content_hash: 1dc2dfa07ead0fe8
 ---
+
 # Learnability-Guided Diffusion for Dataset Distillation
 
 **Conference**: CVPR 2026  
@@ -153,11 +158,11 @@ Key hyperparameters include guidance scale $\lambda = 15$, reference weight $\om
 
 ## Related Papers
 
-- [\[CVPR 2026\] Imagine Before Concentration: Diffusion-Guided Registers Enhance Partially Relevant Video Retrieval](imagine_before_concentration_diffusion-guided_registers_enhance_partially_releva.md)
-- [\[CVPR 2026\] OpenDPR: Open-Vocabulary Change Detection via Vision-Centric Diffusion-Guided Prototype Retrieval for Remote Sensing Imagery](opendpr_open-vocabulary_change_detection_via_vision-centric_diffusion-guided_pro.md)
-- [\[CVPR 2026\] FG-Portrait: 3D Flow Guided Editable Portrait Animation](fg-portrait_3d_flow_guided_editable_portrait_animation.md)
-- [\[CVPR 2026\] SynthRGB-T: Language-Vision Guided Image Translation for Diversity Synthesis](synthrgb-t_language-vision_guided_image_translation_for_diversity_synthesis.md)
-- [\[CVPR 2026\] Diffusion Mental Averages](diffusion_mental_averages.md)
+- [\[ICCV 2025\] CaO2: Rectifying Inconsistencies in Diffusion-Based Dataset Distillation](../../ICCV2025/image_generation/cao2_rectifying_inconsistencies_in_diffusion-based_dataset_distillation.md)
+- [\[ICML 2025\] Taming Diffusion for Dataset Distillation with High Representativeness (D³HR)](../../ICML2025/image_generation/taming_diffusion_for_dataset_distillation_with_high_representativeness.md)
+- [\[CVPR 2026\] Pico-Banana-400K: A Large-Scale Dataset for Text-Guided Image Editing](pico-banana-400k_a_large-scale_dataset_for_text-guided_image_editing.md)
+- [\[CVPR 2026\] RecTok: Reconstruction Distillation along Rectified Flow](rectok_reconstruction_distillation_along_rectified_flow.md)
+- [\[CVPR 2026\] Pluggable Pruning with Contiguous Layer Distillation for Diffusion Transformers](pluggable_pruning_with_contiguous_layer_distillation_for_diffusion_transformers.md)
 
 </div>
 

@@ -2,19 +2,21 @@
 title: >-
   [Paper Note] Learning from Algorithm Feedback: One-Shot SAT Solver Guidance with GNNs
 description: >-
-  [ICLR 2026][Optimization & Theory][SAT solver] A GNN is used in a single forward pass to generate "weights + polarities" for every variable in a SAT formula. These are multiplied into the solver's existing branching score function, and the GNN is trained end-to-end via policy gradient (GRPO) using the solver's own search cost as the reward—a paradigm the authors ca
+  [ICLR 2026][Optimization][SAT solver] A GNN is used in a single forward pass to generate "weights + polarities" for every variable in a SAT formula. These are multiplied into the solver's existing branching score function, and the GNN is trained end-to-end via policy gradient (GRPO) using the solver's own search cost as the reward—a paradigm the authors call RLAF (Reinforcement Learning from Algorithm Feedback). This approach accelerates base solvers by up to $2\times$ across…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - SAT solver
-  - branching heuristic
-  - GNN
-  - reinforcement learning
-  - GRPO
-  - RLAF
+  - "ICLR 2026"
+  - "Optimization"
+  - "SAT solver"
+  - "branching heuristic"
+  - "GNN"
+  - "reinforcement learning"
+  - "GRPO"
+  - "RLAF"
+  - "one-shot guidance"
 date: 2026-05-08
-content_hash: b0700459b02648aa
+content_hash: f481ba5f1547360c
 ---
+
 # Learning from Algorithm Feedback: One-Shot SAT Solver Guidance with GNNs
 
 **Conference**: ICLR 2026  
@@ -127,7 +129,7 @@ Two base solvers were used: the CDCL-based **Glucose** (EVSIDS heuristic, good f
 - [\[ICML 2026\] Distribution Alignment for One-Shot Federated Learning via Optimal Transport](../../ICML2026/optimization/distribution_alignment_for_one-shot_federated_learning_via_optimal_transport.md)
 - [\[ICLR 2026\] Error Feedback for Muon and Friends](error_feedback_for_muon_and_friends.md)
 - [\[AAAI 2026\] PEOAT: Personalization-Guided Evolutionary Question Assembly for One-Shot Adaptive Testing](../../AAAI2026/optimization/peoat_personalization-guided_evolutionary_question_assembly_for_one-shot_adaptiv.md)
-- [\[ICML 2026\] On the Expressive Power of GNNs to Solve Linear SDPs](../../ICML2026/optimization/on_the_expressive_power_of_gnns_to_solve_linear_sdps.md)
+- [\[ICLR 2026\] Composite Optimization with Error Feedback: the Dual Averaging Approach](composite_optimization_with_error_feedback_the_dual_averaging_approach.md)
 - [\[ICLR 2026\] COLD-Steer: Steering Large Language Models via In-Context One-step Learning Dynamics](cold-steer_steering_large_language_models_via_in-context_one-step_learning_dynam.md)
 
 </div>

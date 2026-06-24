@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FOAM: Frequency and Operator Error-Based Adaptive Damping Method for Reducing Staleness-Oriented Error for Shampoo
 description: >-
-  [ICML 2026][Optimization & Theory][Shampoo] FOAM couples Shampoo's damping coefficient $\epsilon$ and eigenvalue decomposition (EVD) trigger frequency into a feedback control loop via a "relative operator error proxy $h_t$" that can be cheaply estimated in the stale eigenspace. It reduces EVD calls by over 80% on large model training while maintaining convergenc
+  [ICML2026][Optimization][Shampoo] FOAM couples Shampoo's damping coefficient $\epsilon$ and eigenvalue decomposition (EVD) trigger frequency into a feedback control loop via a "relative operator error proxy $h_t$" that can be cheaply estimated in the stale eigenspace. It reduces EVD calls by over 80% on large model training while maintaining convergence quality.
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - Shampoo
+  - "ICML2026"
+  - "Optimization"
+  - "Shampoo"
+  - "Adaptive Damping"
+  - "EVD Frequency"
+  - "Preconditioner Staleness"
+  - "Kronecker Decomposition"
 date: 2026-05-08
-content_hash: 3ec68c92810c2bd8
+content_hash: 60b109e117e79246
 ---
+
 # FOAM: Frequency and Operator Error-Based Adaptive Damping Method for Reducing Staleness-Oriented Error for Shampoo
 
 **Conference**: ICML2026  
@@ -135,10 +140,10 @@ FOAM is compared with stale Shampoo across three large-scale tasks: (1) ViT-smal
 ## Related Papers
 
 - [\[ICML 2026\] Taming the Loss Landscape of PINNs with Noisy Feynman-Kac Supervision: Operator Preconditioning and Non-Asymptotic Error Bounds](taming_the_loss_landscape_of_pinns_with_noisy_feynman-kac_supervision_operator_p.md)
+- [\[ICLR 2026\] Error Feedback for Muon and Friends](../../ICLR2026/optimization/error_feedback_for_muon_and_friends.md)
+- [\[ICLR 2026\] Composite Optimization with Error Feedback: the Dual Averaging Approach](../../ICLR2026/optimization/composite_optimization_with_error_feedback_the_dual_averaging_approach.md)
 - [\[NeurIPS 2025\] Revisiting Orbital Minimization Method for Neural Operator Decomposition](../../NeurIPS2025/optimization/revisiting_orbital_minimization_method_for_neural_operator_decomposition.md)
-- [\[NeurIPS 2025\] Purifying Shampoo: Investigating Shampoo's Heuristics by Decomposing its Preconditioner](../../NeurIPS2025/optimization/purifying_shampoo_investigating_shampoos_heuristics_by_decomposing_its_precondit.md)
-- [\[ICML 2026\] Adaptive Preconditioners Trigger Loss Spikes in Adam](adaptive_preconditioners_trigger_loss_spikes_in_adam.md)
-- [\[ICML 2026\] Multi-Objective Bayesian Optimization via Adaptive ε-Constraints Decomposition](multi-objective_bayesian_optimization_via_adaptive_varepsilon-constraints_decomp.md)
+- [\[ICLR 2026\] Nesterov Finds GRAAL: Optimal and Adaptive Gradient Method for Convex Optimization](../../ICLR2026/optimization/nesterov_finds_graal_optimal_and_adaptive_gradient_method_for_convex_optimizatio.md)
 
 </div>
 

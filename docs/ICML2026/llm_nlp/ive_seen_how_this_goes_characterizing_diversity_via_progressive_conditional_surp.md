@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] "I've Seen How This Goes"：用渐进条件惊奇度刻画 LLM 与人类写作的多样性
+  [Paper Note] "I've Seen How This Goes": Characterizing LLM vs. Human Writing Diversity using Progressive Conditional Surprisal
 description: >-
-  [ICML 2026][LLM (Other)][Paper Note] This paper proposes $D_{Ca_n}=C\cdot a_n$, an embedding-free, reference-free, and label-free diversity metric. It uses a base model $\theta$ to process all responses in a single forward pass to measure "how much per-byte conditional surprisal remains in the last response after seeing $n-1$ priors," multiplied by the "o
+  [ICML 2026][LLM (Other)][Diversity Measurement] This paper proposes $D_{Ca_n}=C\cdot a_n$, an embedding-free, reference-free, and label-free diversity metric. It uses a base model $\theta$ to process all responses in a single forward pass to measure "how much per-byte conditional surprisal remains in the last response after seeing $n-1$ priors," multiplied by the "overall coherence of the responses." It approaches SentBERT performance on the McDiv human evaluation benchmark a…
 tags:
-  - ICML 2026
-  - LLM (Other)
+  - "ICML 2026"
+  - "LLM (Other)"
+  - "Diversity Measurement"
+  - "Conditional Surprisal"
+  - "In-Context Learning"
+  - "Mode Collapse"
+  - "RLHF Evaluation"
 date: 2026-05-08
-content_hash: e78fb65befd568f0
+content_hash: 749bb1116bef2a59
 ---
+
 # "I've Seen How This Goes": Characterizing LLM vs. Human Writing Diversity using Progressive Conditional Surprisal
 
 **Conference**: ICML 2026  
@@ -143,15 +149,16 @@ Synthetic results (Table 1) confirm the necessity of $C$: noise sets have high $
 - Value: ⭐⭐⭐⭐ Provides an immediately usable tool for RLHF and decoding strategy diagnostics.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] How Catastrophic is Your LLM? Certifying Risk in Conversation](../../ICLR2026/llm_nlp/how_catastrophic_is_your_llm_certifying_risk_in_conversation.md)
-- [\[ACL 2025\] A Survey of LLM-based Agents in Medicine: How Far Are We from Baymax?](../../ACL2025/llm_nlp/a_survey_of_llm-based_agents_in_medicine_how_far_are_we_from_baymax.md)
-- [\[ICML 2026\] How Many Different Outputs Can a Transformer Generate?](how_many_different_outputs_can_a_transformer_generate.md)
-- [\[ACL 2026\] One Persona, Many Cues, Different Results: How Sociodemographic Cues Impact LLM Personalization](../../ACL2026/llm_nlp/one_persona_many_cues_different_results_how_sociodemographic_cues_impact_llm_per.md)
-- [\[ICML 2026\] Universal Reasoner: 冻结 LLM 的可组合即插即用推理器](universal_reasoner_a_single_composable_plug-and-play_reasoner_for_frozen_llms.md)
+- [\[NeurIPS 2025\] Writing in Symbiosis: Mapping Human Creative Agency in the AI Era](../../NeurIPS2025/llm_nlp/writing_in_symbiosis_mapping_human_creative_agency_in_the_ai_era.md)
+- [\[ICML 2026\] Optimizing Diversity and Quality through Base-Aligned Model Collaboration](optimizing_diversity_and_quality_through_base-aligned_model_collaboration.md)
+- [\[ACL 2026\] Clozing the Gap: Exploring Why Language Model Surprisal Outperforms Cloze Surprisal](../../ACL2026/llm_nlp/clozing_the_gap_exploring_why_language_model_surprisal_outperforms_cloze_surpris.md)
+- [\[ACL 2025\] Brevity is the soul of sustainability: Characterizing LLM response lengths](../../ACL2025/llm_nlp/brevity_is_the_soul_of_sustainability_characterizing_llm_response_lengths.md)
+- [\[ACL 2026\] Characterizing the Expressivity of Local Attention in Transformers](../../ACL2026/llm_nlp/characterizing_the_expressivity_of_local_attention_in_transformers.md)
 
 </div>
 

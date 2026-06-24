@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Masks: Efficient, Flexible Diffusion Language Models via Deletion-Insertion Processes
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] DID completely replaces the "mask-unmask" paradigm in diffusion language models with two continuous-time Markov chains (CTMC) representing "deletion-insertion": the forward process reduces a sequence to empty by deleting tokens, while the backward process reconstructs it by inserting tokens. By incorporating an "insert
+  [ICLR 2026][LLM Efficiency][Discrete Diffusion] DID completely replaces the "mask-unmask" paradigm in diffusion language models with two continuous-time Markov chains (CTMC) representing "deletion-insertion": the forward process reduces a sequence to empty by deleting tokens, while the backward process reconstructs it by inserting tokens. By incorporating an "insertion score"-based DISE training objective and parallel dynamic programming, DID eliminates `<MASK>` and `<PAD>` t…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Discrete Diffusion"
+  - "Deletion-Insertion Process"
+  - "Insertion Score"
+  - "Variable-length Generation"
+  - "Self-correction"
 date: 2026-05-08
-content_hash: 74435628df829f97
+content_hash: 7af92091c9108218
 ---
+
 # Beyond Masks: Efficient, Flexible Diffusion Language Models via Deletion-Insertion Processes
 
 **Conference**: ICLR 2026  
@@ -131,16 +137,16 @@ Variable-length setting (Stories dataset): DID maintains lower PPL and significa
 - **Value**: ⭐⭐⭐⭐ Provides a highly efficient and flexible alternative to existing DLMs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Beyond Fixed: Training-Free Variable-Length Denoising for Diffusion Large Language Models](beyond_fixed_training-free_variable-length_denoising_for_diffusion_large_languag.md)
 - [\[ICLR 2026\] DPad: Efficient Diffusion Language Models with Suffix Dropout](dpad_efficient_diffusion_language_models_with_suffix_dropout.md)
+- [\[ICLR 2026\] SparseD: Sparse Attention for Diffusion Language Models](sparsed_sparse_attention_for_diffusion_language_models.md)
 - [\[ICLR 2026\] Diffusion Language Models Know the Answer Before Decoding](diffusion_language_model_knows_the_answer_before_it_decodes.md)
 - [\[ICLR 2026\] FlashDLM: Accelerating Diffusion Language Model Inference via Efficient KV Caching and Guided Diffusion](flashdlm_accelerating_diffusion_language_model_inference_via_efficient_kv_cachin.md)
-- [\[ICLR 2026\] UltraLLaDA: Scaling the Context Length to 128K for Diffusion Large Language Models](ultrallada_scaling_the_context_length_to_128k_for_diffusion_large_language_model.md)
 
 </div>
 

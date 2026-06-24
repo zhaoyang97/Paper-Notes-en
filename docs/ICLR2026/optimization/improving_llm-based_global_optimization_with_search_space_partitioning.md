@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Improving LLM-based Global Optimization with Search Space Partitioning
 description: >-
-  [ICLR 2026][Optimization & Theory][KD-tree] HOLLM adaptively partitions the search space into a set of "sub-region meta-arms" using a KD-tree, selects promising local regions via a bandit-style scoring function, and restricts the LLM to sample candidate points only within these small regions. This converts the LLM's weakness in global sampling—characterized by u
+  [ICLR 2026][Optimization][Black-box optimization] HOLLM adaptively partitions the search space into a set of "sub-region meta-arms" using a KD-tree, selects promising local regions via a bandit-style scoring function, and restricts the LLM to sample candidate points only within these small regions. This converts the LLM's weakness in global sampling—characterized by uneven and biased distribution—into a localized low-dimensional sampling advantage…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - KD-tree
+  - "ICLR 2026"
+  - "Optimization"
+  - "Black-box optimization"
+  - "Large Language Models"
+  - "Space Partitioning"
+  - "KD-tree"
+  - "Multi-armed Bandit"
+  - "Bayesian Optimization"
 date: 2026-05-08
-content_hash: 9fbef03b39adc11a
+content_hash: 5f040ee1101a4d79
 ---
+
 # Improving LLM-based Global Optimization with Search Space Partitioning
 
 **Conference**: ICLR 2026  
@@ -113,10 +119,10 @@ Settings: Starting from $n_0=5$ random points, $T=50$ evaluations, mean ± SE re
 
 ## Related Papers
 
+- [\[ICLR 2026\] Compositional Generalization through Gradient Search in Nonparametric Latent Space](compositional_generalization_through_gradient_search_in_nonparametric_latent_spa.md)
 - [\[ICLR 2026\] Local Entropy Search over Descent Sequences for Bayesian Optimization](local_entropy_search_over_descent_sequences_for_bayesian_optimization.md)
 - [\[ICLR 2026\] Improving Online-to-Nonconvex Conversion for Smooth Optimization via Double Optimism](improving_online-to-nonconvex_conversion_for_smooth_optimization_via_double_opti.md)
 - [\[ICLR 2026\] HeuriGym: An Agentic Benchmark for LLM-Crafted Heuristics in Combinatorial Optimization](heurigym_an_agentic_benchmark_for_llm-crafted_heuristics_in_combinatorial_optimi.md)
-- [\[AAAI 2026\] ECPv2: Fast, Efficient, and Scalable Global Optimization of Lipschitz Functions](../../AAAI2026/optimization/ecpv2_fast_efficient_and_scalable_global_optimization_of_lipschitz_functions.md)
 - [\[ICLR 2026\] Improving Feasibility via Fast Autoencoder-Based Projections](improving_feasibility_via_fast_autoencoder-based_projections.md)
 
 </div>

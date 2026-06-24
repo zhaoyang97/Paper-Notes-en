@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] What Happens During the Loss Plateau? Understanding Abrupt Learning in Transformers
 description: >-
-  [NeurIPS 2025][Interpretability][abrupt learning] This paper systematically investigates the phenomenon of "abrupt learning" in Transformer training…
+  [NeurIPS 2025][Interpretability][abrupt learning] This paper systematically investigates the phenomenon of "abrupt learning" in Transformer training, revealing that during the loss plateau the model has already learned partial solutions while simultaneously exhibiting output repetition bias and representation collapse. It further demonstrates that the slow learning of attention maps constitutes the key bottleneck, with findings validated in the early pretraining stages of LLM…
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -13,7 +13,7 @@ tags:
   - "repetition bias"
   - "attention map"
 date: 2026-05-08
-content_hash: b76be2f887637f44
+content_hash: 296f9114df55e620
 ---
 
 # What Happens During the Loss Plateau? Understanding Abrupt Learning in Transformers
@@ -191,10 +191,10 @@ All three phenomena are consistently observed across all tasks, confirming the u
 ## Related Papers
 
 - [\[NeurIPS 2025\] Understanding Prompt Tuning and In-Context Learning via Meta-Learning](understanding_prompt_tuning_and_in-context_learning_via_meta-learning.md)
+- [\[ICML 2025\] What Makes an Ensemble (Un)interpretable?](../../ICML2025/interpretability/what_makes_an_ensemble_un_interpretable.md)
 - [\[NeurIPS 2025\] Improving Perturbation-based Explanations by Understanding the Role of Uncertainty Calibration](improving_perturbation-based_explanations_by_understanding_the_role_of_uncertain.md)
 - [\[NeurIPS 2025\] LLM Probing with Contrastive Eigenproblems: Improving Understanding and Applicability of CCS](llm_probing_with_contrastive_eigenproblems_improving_understanding_and_applicabi.md)
-- [\[NeurIPS 2025\] Causal Head Gating: A Framework for Interpreting Roles of Attention Heads in Transformers](causal_head_gating_a_framework_for_interpreting_roles_of_attention_heads_in_tran.md)
-- [\[NeurIPS 2025\] An Analysis of Concept Bottleneck Models: Measuring, Understanding, and Mitigating the Impact of Noisy Annotations](an_analysis_of_concept_bottleneck_models_measuring_understanding_and_mitigating_.md)
+- [\[ICML 2026\] What Linear Probes Miss: Multi-View Probing for Weight-Space Learning](../../ICML2026/interpretability/what_linear_probes_miss_multi-view_probing_for_weight-space_learning.md)
 
 </div>
 

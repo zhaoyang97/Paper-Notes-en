@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Distilling Long-CoT Reasoning through Collaborative Step-wise Multi-Teacher Decoding (CoRD)
 description: >-
-  [ACL 2026][LLM Reasoning][Long-CoT] The authors propose CoRD (Collaborative Reasoning Decoding), which transforms multi-teacher Long-CoT reasoning distillation from "generating full trajectories followed by post-hoc selection" into "step-wise collaborative decoding." In each step, multiple LRMs propose candidate steps, which are scored by the predictive
+  [ACL 2026 Findings][Reasoning][Multi-teacher distillation] The authors propose CoRD (Collaborative Reasoning Decoding), which transforms multi-teacher Long-CoT reasoning distillation from "generating full trajectories followed by post-hoc selection" into "step-wise collaborative decoding." In each step, multiple LRMs propose candidate steps, which are scored by the predictive perplexity of a meta-prover. Top-B partial trajectories are maintained via beam search. Consequently…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Long-CoT
-  - step-wise decoding
-  - beam search
-  - predictive perplexity
+  - "ACL 2026 Findings"
+  - "Reasoning"
+  - "Multi-teacher distillation"
+  - "Long-CoT"
+  - "step-wise decoding"
+  - "beam search"
+  - "predictive perplexity"
 date: 2026-05-08
-content_hash: 1fa7224cdb07bfc3
+content_hash: 34d1b2cec50e901a
 ---
+
 # Distilling Long-CoT Reasoning through Collaborative Step-wise Multi-Teacher Decoding (CoRD)
 
 **Conference**: ACL 2026 Findings  
@@ -183,12 +185,13 @@ The 32B student distilled via CoRD **surpasses** the strongest teacher (Phi4) on
 - Value: ⭐⭐⭐⭐⭐ Training-free method (no RM training required) with rare results where students surpass teachers.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ACL 2026\] Long-Context Reasoning Through Proxy-Based Chain-of-Thought Tuning](long-context_reasoning_through_proxy-based_chain-of-thought_tuning.md)
 - [\[ICLR 2026\] LogicReward: Incentivizing LLM Reasoning via Step-Wise Logical Supervision](../../ICLR2026/llm_reasoning/logicreward_incentivizing_llm_reasoning_via_step-wise_logical_supervision.md)
+- [\[ACL 2026\] Long-Context Reasoning Through Proxy-Based Chain-of-Thought Tuning](long-context_reasoning_through_proxy-based_chain-of-thought_tuning.md)
 - [\[CVPR 2026\] Rationale-Enhanced Decoding for Multi-modal Chain-of-Thought](../../CVPR2026/llm_reasoning/rationale-enhanced_decoding_for_multi-modal_chain-of-thought.md)
 - [\[ACL 2026\] On the Step Length Confounding in LLM Reasoning Data Selection](on_the_step_length_confounding_in_llm_reasoning_data_selection.md)
 - [\[ACL 2026\] ReProbe: Efficient Test-Time Scaling of Multi-Step Reasoning by Probing Internal States of Large Language Models](reprobe_efficient_test-time_scaling_of_multi-step_reasoning_by_probing_internal_.md)

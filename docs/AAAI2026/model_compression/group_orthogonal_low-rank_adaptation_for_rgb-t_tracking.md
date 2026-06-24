@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Group Orthogonal Low-Rank Adaptation for RGB-T Tracking
 description: >-
-  [AAAI 2026][Model Compression][RGB-T Tracking] This paper proposes the GOLA framework, which quantifies LoRA rank importance via SVD decomposition, freezes critical ranks to preserve pre-trained priors…
+  [AAAI 2026][Model Compression][RGB-T Tracking] This paper proposes the GOLA framework, which quantifies LoRA rank importance via SVD decomposition, freezes critical ranks to preserve pre-trained priors, clusters redundant ranks into groups, and imposes inter-group orthogonal constraints to enable more efficient RGB-T tracking adaptation.
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Orthogonal Constraint"
   - "Parameter-Efficient Fine-Tuning"
 date: 2026-05-08
-content_hash: c3ef27f0a1eb9e52
+content_hash: 762fcbda2bd4c9cb
 ---
 
 # Group Orthogonal Low-Rank Adaptation for RGB-T Tracking
@@ -181,11 +181,11 @@ GOLA outperforms LoRA by 1.2%/0.9% (PR/SR) while reducing trainable parameters b
 
 ## Related Papers
 
+- [\[ACL 2025\] CoLA: Collaborative Low-Rank Adaptation](../../ACL2025/model_compression/cola_collaborative_low-rank_adaptation.md)
+- [\[CVPR 2026\] Adaptive Depth Lightweight RGB-T Tracking with Holistic Token Routing](../../CVPR2026/model_compression/adaptive_depth_lightweight_rgb-t_tracking_with_holistic_token_routing.md)
+- [\[ICLR 2026\] Stable-LoRA: Stabilizing Feature Learning of Low-Rank Adaptation](../../ICLR2026/model_compression/stable-lora_stabilizing_feature_learning_of_low-rank_adaptation.md)
 - [\[ICLR 2026\] LoFT: Low-Rank Adaptation That Behaves Like Full Fine-Tuning](../../ICLR2026/model_compression/loft_low-rank_adaptation_that_behaves_like_full_fine-tuning.md)
 - [\[ACL 2026\] TLoRA: Task-aware Low Rank Adaptation of Large Language Models](../../ACL2026/model_compression/tlora_task-aware_low_rank_adaptation_of_large_language_models.md)
-- [\[NeurIPS 2025\] GoRA: Gradient-Driven Adaptive Low Rank Adaptation](../../NeurIPS2025/model_compression/gora_gradient-driven_adaptive_low_rank_adaptation.md)
-- [\[ICML 2026\] Energy-Structured Low-Rank Adaptation for Continual Learning](../../ICML2026/model_compression/energy-structured_low-rank_adaptation_for_continual_learning.md)
-- [\[ACL 2026\] TalkLoRA: Communication-Aware Mixture of Low-Rank Adaptation for Large Language Models](../../ACL2026/model_compression/talklora_communication-aware_mixture_of_low-rank_adaptation_for_large_language_m.md)
 
 </div>
 

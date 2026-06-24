@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VLRMBench: A Comprehensive and Challenging Benchmark for Vision-Language Reward Models
 description: >-
-  [ICCV 2025][Time Series][reward model] This paper proposes VLRMBench, a comprehensive and challenging benchmark for vision-language reward models (VLRMs) comprising 12,634 questions across 12 tasks…
+  [ICCV 2025][Time Series][reward model] This paper proposes VLRMBench, a comprehensive and challenging benchmark for vision-language reward models (VLRMs) comprising 12,634 questions across 12 tasks, covering three dimensions: process understanding, outcome judgment, and criticism generation. Extensive experiments on 26 models reveal significant deficiencies in current VLRMs.
 tags:
   - "ICCV 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "process reasoning"
   - "multimodal evaluation"
 date: 2026-05-08
-content_hash: a54cd931b221df05
+content_hash: 666cd4fe2b83a383
 ---
 
 # VLRMBench: A Comprehensive and Challenging Benchmark for Vision-Language Reward Models
@@ -163,10 +163,10 @@ As a benchmarking study, no model training is required. Evaluation metrics inclu
 ## Related Papers
 
 - [\[ICLR 2026\] Omni-iEEG: A Large-Scale, Comprehensive iEEG Dataset and Benchmark for Epilepsy Research](../../ICLR2026/time_series/omni-ieeg_a_large-scale_comprehensive_ieeg_dataset_and_benchmark_for_epilepsy_re.md)
+- [\[ICLR 2026\] Battery Fault: A Comprehensive Dataset and Benchmark for Battery Fault Diagnosis](../../ICLR2026/time_series/battery_fault_a_comprehensive_dataset_and_benchmark_for_battery_fault_diagnosis.md)
 - [\[NeurIPS 2025\] CausalDynamics: A Large-Scale Benchmark for Structural Discovery of Dynamical Causal Models](../../NeurIPS2025/time_series/causaldynamics_a_large-scale_benchmark_for_structural_discovery_of_dynamical_cau.md)
-- [\[NeurIPS 2025\] Causal Masking on Spatial Data: An Information-Theoretic Case for Learning Spatial Datasets with Unimodal Language Models](../../NeurIPS2025/time_series/causal_masking_on_spatial_data_an_information-theoretic_case_for_learning_spatia.md)
-- [\[ICLR 2026\] TimeOmni-1: Incentivizing Complex Reasoning with Time Series in Large Language Models](../../ICLR2026/time_series/timeomni-1_incentivizing_complex_reasoning_with_time_series_in_large_language_mo.md)
-- [\[NeurIPS 2025\] NSW-EPNews: A News-Augmented Benchmark for Electricity Price Forecasting with LLMs](../../NeurIPS2025/time_series/nsw-epnews_a_news-augmented_benchmark_for_electricity_price_forecasting_with_llm.md)
+- [\[ICML 2026\] Building Social World Models with Large Language Models](../../ICML2026/time_series/building_social_world_models_with_large_language_models.md)
+- [\[ACL 2025\] G2S: A General-to-Specific Learning Framework for Temporal Knowledge Graph Forecasting with Large Language Models](../../ACL2025/time_series/g2s_a_general-to-specific_learning_framework_for_temporal_knowledge_graph_foreca.md)
 
 </div>
 

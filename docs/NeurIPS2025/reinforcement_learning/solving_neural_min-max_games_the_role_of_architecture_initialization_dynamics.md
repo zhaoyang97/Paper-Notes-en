@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Solving Neural Min-Max Games: The Role of Architecture, Initialization & Dynamics
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Neural network games] This paper provides the first convergence guarantees for zero-sum games parameterized by two-layer neural networks…
+  [NeurIPS 2025][Reinforcement Learning][Neural network games] This paper provides the first convergence guarantees for zero-sum games parameterized by two-layer neural networks, proving that under sufficient overparameterization, random Gaussian initialization, and alternating gradient descent-ascent (AltGDA), the dynamics converge to an $\epsilon$-approximate Nash equilibrium with high probability.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "hidden convexity"
   - "AltGDA"
 date: 2026-05-08
-content_hash: 0b748f13632ffd16
+content_hash: 8dceb0dd670967f6
 ---
 
 # Solving Neural Min-Max Games: The Role of Architecture, Initialization & Dynamics
@@ -141,10 +141,10 @@ The theoretical contribution is important and novel—this is the first work to 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Solving Continuous Mean Field Games: Deep Reinforcement Learning for Non-Stationary Dynamics](solving_continuous_mean_field_games_deep_reinforcement_learning_for_non-stationa.md)
 - [\[NeurIPS 2025\] Multi-Objective Reinforcement Learning with Max-Min Criterion: A Game-Theoretic Approach](multi-objective_reinforcement_learning_with_max-min_criterion_a_game-theoretic_a.md)
+- [\[NeurIPS 2025\] Solving Continuous Mean Field Games: Deep Reinforcement Learning for Non-Stationary Dynamics](solving_continuous_mean_field_games_deep_reinforcement_learning_for_non-stationa.md)
+- [\[ICML 2025\] Solving Zero-Sum Convex Markov Games](../../ICML2025/reinforcement_learning/solving_zero-sum_convex_markov_games.md)
 - [\[NeurIPS 2025\] Decoder-Hybrid-Decoder Architecture for Efficient Reasoning with Long Generation](decoderhybriddecoder_architecture_for_efficient_reasoning_wi.md)
-- [\[NeurIPS 2025\] TensorRL-QAS: Reinforcement Learning with Tensor Networks for Improved Quantum Architecture Search](tensorrl-qas_reinforcement_learning_with_tensor_networks_for_improved_quantum_ar.md)
 - [\[NeurIPS 2025\] Thompson Sampling in Function Spaces via Neural Operators](thompson_sampling_in_function_spaces_via_neural_operators.md)
 
 </div>

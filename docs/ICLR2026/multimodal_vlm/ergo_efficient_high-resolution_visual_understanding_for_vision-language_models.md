@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] ERGO: Efficient High-Resolution Visual Understanding for Vision-Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][coarse-to-fine] ERGO introduces a suite of RL rewards designed for efficiency (region-verification reward + box adjustment reward), enabling LVLMs to perform "reasoning-driven perception" on low-resolution coarse images. Even when target objects are downsampled to a point of indiscernibility, the model utilizes contextual cues to loca
+  [ICLR 2026][Multimodal VLM][High-resolution understanding] ERGO introduces a suite of RL rewards designed for efficiency (region-verification reward + box adjustment reward), enabling LVLMs to perform "reasoning-driven perception" on low-resolution coarse images. Even when target objects are downsampled to a point of indiscernibility, the model utilizes contextual cues to locate and re-encode the correct region. On the V* benchmark, ERGO outperforms Qwen2.5-VL-7B by 4.7 point…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - coarse-to-fine
-  - thinking with images
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "High-resolution understanding"
+  - "coarse-to-fine"
+  - "thinking with images"
+  - "reinforcement learning"
+  - "visual token efficiency"
 date: 2026-05-08
-content_hash: e27f891970671256
+content_hash: b0ac9ac3af8d8a91
 ---
+
 # ERGO: Efficient High-Resolution Visual Understanding for Vision-Language Models
 
 **Conference**: ICLR 2026  
@@ -117,7 +120,6 @@ Ablation of reward designs (Average of 6 benchmarks):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -125,7 +127,7 @@ Ablation of reward designs (Average of 6 benchmarks):
 - [\[CVPR 2026\] SenseSearch: Empowering Vision-Language Models with High-Resolution Agentic Search-Reasoning via Reinforcement Learning](../../CVPR2026/multimodal_vlm/sensesearch_empowering_vision-language_models_with_high-resolution_agentic_searc.md)
 - [\[ICLR 2026\] Shuffle-R1: Efficient RL Framework for Multimodal Large Language Models via Data-centric Dynamic Shuffle](shuffle-r1_efficient_rl_framework_for_multimodal_large_language_models_via_data-.md)
 - [\[ICLR 2026\] One Patch Doesn't Fit All: Adaptive Patching for Native-Resolution Multimodal Large Language Models](one_patch_doesnt_fit_all_adaptive_patching_for_native-resolution_multimodal_larg.md)
-- [\[ICLR 2026\] Reading Images Like Texts: Sequential Image Understanding in Vision-Language Models](reading_images_like_texts_sequential_image_understanding_in_vision-language_mode.md)
+- [\[ICLR 2026\] EventFlash: Towards Efficient MLLMs for Event-Based Vision](eventflash_towards_efficient_mllms_for_event-based_vision.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Geometry-driven OOD Detectors Are Class-Incremental Learners
 description: >-
-  [CVPR 2026][Self-Supervised Learning][LoRA] GOD treats "each task classifier head possessing both IND recognition and OOD rejection capabilities" as a sufficient condition for Class-Incremental Learning (CIL). By replacing learnable classifier heads with fixed Equiangular Tight Frame (ETF) anchors and utilizing ETF loss (inter-class separation) along with ArcFac
+  [CVPR 2026][Self-Supervised Learning][Class-Incremental Learning] GOD treats "each task classifier head possessing both IND recognition and OOD rejection capabilities" as a sufficient condition for Class-Incremental Learning (CIL). By replacing learnable classifier heads with fixed Equiangular Tight Frame (ETF) anchors and utilizing ETF loss (inter-class separation) along with ArcFace loss (intra-class compactness), it unifies "classification" and "uncertainty estimation" wit…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - LoRA
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Class-Incremental Learning"
+  - "OOD Detection"
+  - "Equiangular Tight Frame (ETF)"
+  - "Neural Collapse"
+  - "LoRA"
 date: 2026-05-08
-content_hash: 3deb5a327f949b50
+content_hash: 6c2e4915f501dff4
 ---
+
 # Geometry-driven OOD Detectors Are Class-Incremental Learners
 
 **Conference**: CVPR 2026  
@@ -118,15 +123,16 @@ GOD shows the most significant gains on fine-grained and complex benchmarks, suc
 - Value: ⭐⭐⭐⭐ (SOTA performance with reduced parameter overhead; transferable insights for open-world learning).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] DGS: Dual Gradient and Semantic-Shift Guided Low-Rank Adaptation for Class Incremental Learning](dgs_dual_gradient_and_semantic-shift_guided_low-rank_adaptation_for_class_increm.md)
+- [\[CVPR 2026\] Representation-Steered Incremental Adapter-Tuning for Class-Incremental Learning with Pre-Trained Models](representation-steered_incremental_adapter-tuning_for_class-incremental_learning.md)
 - [\[CVPR 2026\] Exemplar-Free Class Incremental Learning via Preserving Class-Discriminative Structure](exemplar-free_class_incremental_learning_via_preserving_class-discriminative_str.md)
-- [\[CVPR 2025\] Order-Robust Class Incremental Learning: Graph-Driven Dynamic Similarity Grouping](../../CVPR2025/self_supervised/order-robust_class_incremental_learning_graph-driven_dynamic_similarity_grouping.md)
+- [\[CVPR 2026\] DGS: Dual Gradient and Semantic-Shift Guided Low-Rank Adaptation for Class Incremental Learning](dgs_dual_gradient_and_semantic-shift_guided_low-rank_adaptation_for_class_increm.md)
 - [\[CVPR 2026\] An Optimal Transport-driven Approach for Cultivating Latent Space in Online Incremental Learning](an_optimal_transport_driven_approach_for_cultivating_latent_space_in_online_incr.md)
-- [\[CVPR 2026\] Beyond Myopic Alignment: Lookahead Optimization for Online Class-Incremental Learning](beyond_myopic_alignment_lookahead_optimization_for_online_class-incremental_lear.md)
+- [\[CVPR 2026\] Temporal Imbalance of Positive and Negative Supervision in Class-Incremental Learning](temporal_imbalance_of_positive_and_negative_supervision_in_class-incremental_lea.md)
 
 </div>
 

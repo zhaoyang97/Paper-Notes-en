@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Out of Control -- Why Alignment Needs Formal Control Theory (and an Alignment Control Stack)
 description: >-
-  [NeurIPS 2025][Interpretability][AI alignment] This position paper argues for formal optimal control theory as a foundational tool for AI alignment research…
+  [NeurIPS 2025][Interpretability][AI alignment] This position paper argues for formal optimal control theory as a foundational tool for AI alignment research, and proposes the Alignment Control Stack (ACS)—a ten-layer hierarchical framework spanning from the physical hardware layer to the social governance layer—for systematically organizing and analyzing measurement, control, and interoperability across different alignment methods.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "formal verification"
   - "stochastic optimal control"
 date: 2026-05-08
-content_hash: 6c16cc5c0c60f1c7
+content_hash: 09779231160d0911
 ---
 
 # Out of Control -- Why Alignment Needs Formal Control Theory (and an Alignment Control Stack)
@@ -135,11 +135,11 @@ This is a position paper with no conventional experiments. The core contribution
 
 ## Related Papers
 
+- [\[ICLR 2026\] Persona Features Control Emergent Misalignment](../../ICLR2026/interpretability/persona_features_control_emergent_misalignment.md)
 - [\[NeurIPS 2025\] Probabilistic Token Alignment for Large Language Model Fusion](probabilistic_token_alignment_for_large_language_model_fusion.md)
-- [\[AAAI 2026\] SCoPe: Intrinsic Semantic Space Control for Mitigating Copyright Infringement in LLMs](../../AAAI2026/interpretability/scope_intrinsic_semantic_space_control_for_mitigating_copyright_infringement_in_.md)
 - [\[NeurIPS 2025\] VL-SAE: Interpreting and Enhancing Vision-Language Alignment with a Unified Concept Set](vlsae_interpreting_and_enhancing_visionlanguage_alignment_wi.md)
-- [\[ICLR 2026\] PERSONA: Dynamic and Compositional Inference-Time Personality Control via Activation Vector Algebra](../../ICLR2026/interpretability/persona_dynamic_and_compositional_inference-time_personality_control_via_activat.md)
-- [\[ICLR 2026\] SALVE: Sparse Autoencoder-Latent Vector Editing for Mechanistic Control of Neural Networks](../../ICLR2026/interpretability/salve_sparse_autoencoder-latent_vector_editing_for_mechanistic_control_of_neural.md)
+- [\[ICLR 2026\] Watch the Weights: Unsupervised Monitoring and Control of Fine-tuned LLMs](../../ICLR2026/interpretability/watch_the_weights_unsupervised_monitoring_and_control_of_fine-tuned_llms.md)
+- [\[AAAI 2026\] SCoPe: Intrinsic Semantic Space Control for Mitigating Copyright Infringement in LLMs](../../AAAI2026/interpretability/scope_intrinsic_semantic_space_control_for_mitigating_copyright_infringement_in_.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Spectral-Progressive Thought Flow for Lightweight Multimodal Reasoning
 description: >-
-  [ICML 2026][vlm_reasoning][Flow Matching] SpecFlow shifts multimodal spatial reasoning from "pixel thinking" to "spectral thinking"—using Block Discrete Cosine Transform + Flow Matching + Progressive Frequency Activation to maintain visual intermediate thoughts in a fixed-size spectral workspace, combined with Classifier-Free Guidance (CFG) to let text guide v
+  [ICML 2026][VLM Reasoning][Multimodal Spatial Reasoning] SpecFlow shifts multimodal spatial reasoning from "pixel thinking" to "spectral thinking"—using Block Discrete Cosine Transform + Flow Matching + Progressive Frequency Activation to maintain visual intermediate thoughts in a fixed-size spectral workspace, combined with Classifier-Free Guidance (CFG) to let text guide visual evolution, reducing KV cache by 1.6–2.1× while maintaining spatial reasoning accuracy.
 tags:
-  - ICML 2026
-  - vlm_reasoning
-  - Flow Matching
+  - "ICML 2026"
+  - "VLM Reasoning"
+  - "Multimodal Spatial Reasoning"
+  - "Flow Matching"
+  - "Spectral Methods"
+  - "Progressive Frequency"
+  - "Efficiency Optimization"
 date: 2026-05-08
-content_hash: a2ee299df9514fec
+content_hash: 4a775dfa015c488d
 ---
+
 # Spectral-Progressive Thought Flow for Lightweight Multimodal Reasoning
 
 **Conference**: ICML 2026  
@@ -141,11 +146,11 @@ Ours achieved 18.5% higher accuracy than Heima on VSR with comparable latency, 1
 
 ## Related Papers
 
+- [\[CVPR 2026\] COT-FM: Cluster-wise Optimal Transport Flow Matching](../../CVPR2026/vlm_reasoning/cot-fm_cluster-wise_optimal_transport_flow_matching.md)
 - [\[ACL 2025\] Progressive Multimodal Reasoning via Active Retrieval](../../ACL2025/vlm_reasoning/progressive_multimodal_reasoning_via_active_retrieval.md)
 - [\[CVPR 2026\] Grounded Chain-of-Thought for Multimodal Large Language Models](../../CVPR2026/vlm_reasoning/grounded_chain-of-thought_for_multimodal_large_language_models.md)
-- [\[CVPR 2026\] COT-FM: Cluster-wise Optimal Transport Flow Matching](../../CVPR2026/vlm_reasoning/cot-fm_cluster-wise_optimal_transport_flow_matching.md)
+- [\[ICLR 2026\] ThinkMorph: Emergent Properties in Multimodal Interleaved Chain-of-Thought Reasoning](../../ICLR2026/vlm_reasoning/thinkmorph_emergent_properties_in_multimodal_interleaved_chain-of-thought_reason.md)
 - [\[CVPR 2026\] UniT: Unified Multimodal Chain-of-Thought Test-time Scaling](../../CVPR2026/vlm_reasoning/unit_unified_multimodal_chain-of-thought_test-time_scaling.md)
-- [\[CVPR 2026\] ReaGEN: Adaptive Generation of Structured Chains-of-Thought for Efficient Multimodal Reasoning](../../CVPR2026/vlm_reasoning/reagen_adaptive_generation_of_structured_chains-of-thought_for_efficient_multimo.md)
 
 </div>
 

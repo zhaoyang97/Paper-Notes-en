@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GenCtrl — A Formal Controllability Toolkit for Generative Models
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper models the "user-generative model dialogue" as a discrete-time nonlinear control system. It proposes a Monte Carlo algorithm to estimate the **reachable set** and **controllable set** of the model, providing distribution-agnostic PAC (probably-approximately-correct) error bounds that require only an assumpti
+  [ICLR 2026][Interpretability][Controllability] This paper models the "user-generative model dialogue" as a discrete-time nonlinear control system. It proposes a Monte Carlo algorithm to estimate the **reachable set** and **controllable set** of the model, providing distribution-agnostic PAC (probably-approximately-correct) error bounds that require only an assumption of bounded outputs. This allows for the first formal answer to whether a generative model is controllable. Exp…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Controllability"
+  - "Reachability"
+  - "PAC Bounds"
+  - "Control Theory"
+  - "Black-box Generative Models"
 date: 2026-05-08
-content_hash: 9b06b52f46456027
+content_hash: de2827be01ca1030
 ---
+
 # GenCtrl — A Formal Controllability Toolkit for Generative Models
 
 **Conference**: ICLR 2026  

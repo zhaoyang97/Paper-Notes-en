@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Streaming Autoregressive Video Generation via Diagonal Distillation
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] Diagonal Distillation (DiagDistill) achieves 277.3x acceleration in streaming autoregressive video generation, reaching 31 FPS real-time generation through a diagonal denoising strategy (more steps for early stages, fewer for later stages) and a flow distribution matching loss.
+  [ICLR 2026][Video Generation][Autoregressive Generation] Diagonal Distillation (DiagDistill) achieves 277.3x acceleration in streaming autoregressive video generation, reaching 31 FPS real-time generation through a diagonal denoising strategy (more steps for early stages, fewer for later stages) and a flow distribution matching loss.
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Autoregressive Generation"
+  - "Distillation"
+  - "Streaming Generation"
+  - "Real-time Video"
 date: 2026-05-08
-content_hash: 8e2700311939103d
+content_hash: 8a91f66cc6ce6610
 ---
+
 # Streaming Autoregressive Video Generation via Diagonal Distillation
 
 **Conference**: ICLR 2026  
@@ -135,8 +140,8 @@ VBench evaluation (5s video generation, single H100 GPU):
 
 - [\[CVPR 2026\] Reward Forcing: Efficient Streaming Video Generation with Rewarded Distribution Matching Distillation](../../CVPR2026/video_generation/reward_forcing_efficient_streaming_video_generation_with_rewarded_distribution_m.md)
 - [\[ICLR 2026\] Towards One-Step Causal Video Generation via Adversarial Self-Distillation](towards_one-step_causal_video_generation_via_adversarial_self-distillation.md)
-- [\[ICLR 2026\] Flow Caching for Autoregressive Video Generation](flow_caching_for_autoregressive_video_generation.md)
 - [\[ICML 2026\] AAD-1: Asymmetric Adversarial Distillation for One-Step Autoregressive Video Generation](../../ICML2026/video_generation/aad-1_asymmetric_adversarial_distillation_for_one-step_autoregressive_video_gene.md)
+- [\[ICLR 2026\] Flow Caching for Autoregressive Video Generation](flow_caching_for_autoregressive_video_generation.md)
 - [\[CVPR 2025\] Teller: Real-Time Streaming Audio-Driven Portrait Animation with Autoregressive Motion Generation](../../CVPR2025/video_generation/teller_real-time_streaming_audio-driven_portrait_animation_with_autoregressive_m.md)
 
 </div>

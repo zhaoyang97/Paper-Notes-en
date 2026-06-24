@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Seeing the Whole Elephant: A Benchmark for Failure Attribution in LLM-based Multi-Agent Systems
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] TraceElephant advocates that failure attribution in multi-agent systems should be evaluated under full execution traces visible to developers. It provides 220 failed traces with annotations for responsible agents and critical failure steps, demonstrating that full observability improves step-level attribution from 16%
+  [ACL 2026][Multi-Agent][Failure Attribution] TraceElephant advocates that failure attribution in multi-agent systems should be evaluated under full execution traces visible to developers. It provides 220 failed traces with annotations for responsible agents and critical failure steps, demonstrating that full observability improves step-level attribution from 16% (output-only) to over 28%-30%.
 tags:
-  - ACL 2026
-  - Multi-Agent
+  - "ACL 2026"
+  - "Multi-Agent"
+  - "Failure Attribution"
+  - "Multi-agent Systems"
+  - "Execution Trace"
+  - "Observability"
+  - "Debugging Benchmark"
 date: 2026-05-08
-content_hash: fa71010a967a9473
+content_hash: 8bee667029fdd409
 ---
+
 # Seeing the Whole Elephant: A Benchmark for Failure Attribution in LLM-based Multi-Agent Systems
 
 **Conference**: ACL 2026  
@@ -131,10 +137,10 @@ Observability ablations verify that inputs and metadata are indispensable. Degra
 ## Related Papers
 
 - [\[ACL 2026\] Diversity Collapse in Multi-Agent LLM Systems: Structural Coupling and Collective Failure in Open-Ended Idea Generation](diversity_collapse_in_multi-agent_llm_systems_structural_coupling_and_collective.md)
-- [\[ACL 2026\] OxyGent: Making Multi-Agent Systems Modular, Observable, and Evolvable via Oxy Abstraction](oxygent_making_multi-agent_systems_modular_observable_and_evolvable_via_oxy_abst.md)
+- [\[ICLR 2026\] Aegis: Automated Error Generation and Attribution for Multi-Agent Systems](../../ICLR2026/multi_agent/aegis_automated_error_generation_and_attribution_for_multi-agent_systems.md)
 - [\[ACL 2026\] Conjunctive Prompt Attacks in Multi-Agent LLM Systems](conjunctive_prompt_attacks_in_multi-agent_llm_systems.md)
 - [\[ACL 2026\] CIA: Inferring the Communication Topology from LLM-based Multi-Agent Systems](cia_inferring_the_communication_topology_from_llm-based_multi-agent_systems.md)
-- [\[ICML 2026\] MASPO: Joint Prompt Optimization for LLM-based Multi-Agent Systems](../../ICML2026/multi_agent/maspo_joint_prompt_optimization_for_llm-based_multi-agent_systems.md)
+- [\[ICLR 2026\] DoVer: Intervention-Driven Auto Debugging for LLM Multi-Agent Systems](../../ICLR2026/multi_agent/dover_intervention-driven_auto_debugging_for_llm_multi-agent_systems.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Semantic Parallelism: Redefining Efficient MoE Inference via Model-Data Co-Scheduling
 description: >-
-  [ICLR 2026][LLM Efficiency][Mixture-of-Experts] The authors propose the Semantic Parallelism paradigm, which significantly reduces all-to-all communication overhead in MoE inference by predicting token-expert routing paths and co-scheduling model placement and data distribution. This achieves up to 2.78× throughput improvement in Attention-DP scenarios and up to 24.
+  [ICLR 2026][LLM Efficiency][Mixture-of-Experts] The authors propose the Semantic Parallelism paradigm, which significantly reduces all-to-all communication overhead in MoE inference by predicting token-expert routing paths and co-scheduling model placement and data distribution. This achieves up to 2.78× throughput improvement in Attention-DP scenarios and up to 24.9% latency reduction in Attention-TP scenarios.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Mixture-of-Experts
-  - Expert Parallelism
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Mixture-of-Experts"
+  - "Expert Parallelism"
+  - "all-to-all communication"
+  - "model-data co-scheduling"
+  - "Token-Expert affinity"
 date: 2026-05-08
-content_hash: 93cb24832440f8ab
+content_hash: 833b611a2846dd81
 ---
+
 # Semantic Parallelism: Redefining Efficient MoE Inference via Model-Data Co-Scheduling
 
 **Conference**: ICLR 2026  
@@ -131,8 +135,8 @@ Theoretical benefits are realized through efficient kernels to prevent rearrange
 - [\[ICLR 2026\] Libra: Effective yet Efficient Load Balancing for Large-scale MoE Inference](libra_effective_yet_efficient_load_balancing_for_large-scale_moe_inference.md)
 - [\[ICLR 2026\] Universal Model Routing for Efficient LLM Inference](universal_model_routing_for_efficient_llm_inference.md)
 - [\[ICLR 2026\] Scaling Laws Meet Model Architecture: Toward Inference-Efficient LLMs](scaling_laws_meet_model_architecture_toward_inference-efficient_llms.md)
+- [\[ICLR 2026\] ICaRus: Identical Cache Reuse for Efficient Multi-Model Inference](icarus_identical_cache_reuse_for_efficient_multi-model_inference.md)
 - [\[ICLR 2026\] FlashDLM: Accelerating Diffusion Language Model Inference via Efficient KV Caching and Guided Diffusion](flashdlm_accelerating_diffusion_language_model_inference_via_efficient_kv_cachin.md)
-- [\[CVPR 2026\] Rejection Mixing: Fast Semantic Propagation of Mask Tokens for Efficient DLLM Inference](../../CVPR2026/llm_efficiency/rejection_mixing_fast_semantic_propagation_of_mask_tokens_for_efficient_dllm_inf.md)
 
 </div>
 

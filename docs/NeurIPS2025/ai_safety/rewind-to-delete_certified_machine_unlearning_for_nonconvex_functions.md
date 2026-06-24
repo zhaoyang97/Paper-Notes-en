@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rewind-to-Delete: Certified Machine Unlearning for Nonconvex Functions
 description: >-
-  [NeurIPS 2025][AI Safety][machine unlearning] This paper proposes R2D (Rewind-to-Delete), the first first-order, black-box certified machine unlearning algorithm for general nonconvex loss functions. It achieves data del…
+  [NeurIPS 2025][AI Safety][machine unlearning] This paper proposes R2D (Rewind-to-Delete), the first first-order, black-box certified machine unlearning algorithm for general nonconvex loss functions. It achieves data deletion by rewinding to an earlier checkpoint in the training trajectory and then performing gradient descent on the retained data, while providing $(ε, δ)$-certified unlearning guarantees and theoretical trade-offs among privacy, utility, and efficiency.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "certified unlearning"
   - "privacy protection"
 date: 2026-05-08
-content_hash: 611a055b63cdb815
+content_hash: 1d572e1088a43224
 ---
 
 # Rewind-to-Delete: Certified Machine Unlearning for Nonconvex Functions
@@ -132,11 +132,11 @@ R2D consists of two phases: learning and unlearning. In the learning phase, stan
 
 ## Related Papers
 
+- [\[ICML 2025\] A Certified Unlearning Approach without Access to Source Data](../../ICML2025/ai_safety/a_certified_unlearning_approach_without_access_to_source_data.md)
 - [\[NeurIPS 2025\] Efficient Verified Machine Unlearning for Distillation](efficient_verified_machine_unlearning_for_distillation.md)
-- [\[NeurIPS 2025\] Position: Bridge the Gaps between Machine Unlearning and AI Regulation](position_bridge_the_gaps_between_machine_unlearning_and_ai_regulation.md)
 - [\[NeurIPS 2025\] The Unseen Threat: Residual Knowledge in Machine Unlearning under Perturbed Samples](the_unseen_threat_residual_knowledge_in_machine_unlearning_under_perturbed_sampl.md)
-- [\[NeurIPS 2025\] Machine Unlearning Doesn't Do What You Think: Lessons for Generative AI Policy and Research](machine_unlearning_doesnt_do_what_you_think_lessons_for_generative_ai_policy_and.md)
-- [\[ICML 2026\] Two Blind Spots of Machine Unlearning: Over-unlearning and Prototype Relearning Attacks](../../ICML2026/ai_safety/unlearnings_blind_spots_over-unlearning_and_prototypical_relearning_attack.md)
+- [\[CVPR 2025\] Towards Source-Free Machine Unlearning](../../CVPR2025/ai_safety/towards_source-free_machine_unlearning.md)
+- [\[NeurIPS 2025\] Position: Bridge the Gaps between Machine Unlearning and AI Regulation](position_bridge_the_gaps_between_machine_unlearning_and_ai_regulation.md)
 
 </div>
 

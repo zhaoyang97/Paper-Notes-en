@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] WorldEdit: Towards Open-World Image Editing with a Knowledge-Informed Benchmark
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] Addressing implicit editing instructions that provide causes without results (e.g., "throw a ball at a cactus"), this paper constructs WorldEdit, an 11k high-quality dataset emphasizing real-world causal transformations, along with the WorldEdit-Test benchmark. By employing a two-stage fine-tuning of Bagel via "CoT Sup
+  [ICLR 2026][Image Generation][Open-world editing] Addressing implicit editing instructions that provide causes without results (e.g., "throw a ball at a cactus"), this paper constructs WorldEdit, an 11k high-quality dataset emphasizing real-world causal transformations, along with the WorldEdit-Test benchmark. By employing a two-stage fine-tuning of Bagel via "CoT Supervised Fine-Tuning + Flow-GRPO Reinforcement Learning (including inverse causal verification reward)…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Open-world editing"
+  - "Implicit instructions"
+  - "Causal reasoning"
+  - "Dataset and benchmark"
+  - "Reinforcement learning rewards"
 date: 2026-05-08
-content_hash: d4212d8663319d92
+content_hash: f987a0d39a04b00e
 ---
+
 # WorldEdit: Towards Open-World Image Editing with a Knowledge-Informed Benchmark
 
 **Conference**: ICLR 2026  
@@ -132,8 +138,21 @@ Ours achieves SOTA (4.07) among open-source models, a Gain of +1.31 over origina
 - Value: ⭐⭐⭐⭐ (Provides critical training data for world knowledge editing).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[ICML 2026\] WISE: A World Knowledge-Informed Semantic Evaluation for Text-to-Image Generation](../../ICML2026/image_generation/wise_a_world_knowledge-informed_semantic_evaluation_for_text-to-image_generation.md)
+- [\[ICLR 2026\] ImagenWorld: Stress-Testing Image Generation Models with Explainable Human Evaluation on Open-ended Real-World Tasks](imagenworld_stress-testing_image_generation_models_with_explainable_human_evalua.md)
+- [\[ICLR 2026\] ChronoEdit: Towards Temporal Reasoning for In-Context Image Editing and World Simulation](chronoedit_towards_temporal_reasoning_for_in-context_image_editing_and_world_sim.md)
+- [\[CVPR 2026\] WiseEdit: Benchmarking Cognition- and Creativity-Informed Image Editing](../../CVPR2026/image_generation/wiseedit_benchmarking_cognition-_and_creativity-informed_image_editing.md)
+- [\[ICLR 2026\] Learning an Image Editing Model without Image Editing Pairs](learning_an_image_editing_model_without_image_editing_pairs.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

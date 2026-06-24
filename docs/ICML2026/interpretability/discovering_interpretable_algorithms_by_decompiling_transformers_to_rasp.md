@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Discovering Interpretable Algorithms by Decompiling Transformers to RASP
 description: >-
-  [ICML 2026][Interpretability][RASP] This paper proposes a "decompilation" pipeline that **faithfully** rewrites a trained GPT-2 style Transformer into an equivalent RASP program (D-RASP), then prunes it using causal intervention into a **short, readable symbolic algorithm**. Experiments demonstrate the automatic recovery of known algorithms such as histo
+  [ICML2026][Interpretability][RASP] This paper proposes a "decompilation" pipeline that **faithfully** rewrites a trained GPT-2 style Transformer into an equivalent RASP program (D-RASP), then prunes it using causal intervention into a **short, readable symbolic algorithm**. Experiments demonstrate the automatic recovery of known algorithms such as histogram mode, induction head copying, and Dyck counting from length-generalizing small models…
 tags:
-  - ICML 2026
-  - Interpretability
-  - RASP
+  - "ICML2026"
+  - "Interpretability"
+  - "RASP"
+  - "Decompilation"
+  - "Causal Intervention"
+  - "Length Generalization"
+  - "Transformer Mechanisms"
 date: 2026-05-08
-content_hash: 88b77c0cbc83d254
+content_hash: d4c6a923c7263f1c
 ---
+
 # Discovering Interpretable Algorithms by Decompiling Transformers to RASP
 
 **Conference**: ICML2026  
@@ -128,9 +133,9 @@ Decompilation was performed on small GPT-2 style models (1-layer/4-heads to 4-la
 
 - [\[ICML 2026\] Discovering Differences in Strategic Behavior Between Humans and LLMs](discovering_differences_in_strategic_behavior_between_humans_and_llms.md)
 - [\[ICML 2026\] Discovering Implicit Large Language Model Alignment Objectives](discovering_implicit_large_language_model_alignment_objectives.md)
-- [\[CVPR 2025\] Prompt-CAM: Making Vision Transformers Interpretable for Fine-Grained Analysis](../../CVPR2025/interpretability/prompt-cam_making_vision_transformers_interpretable_for_fine-grained_analysis.md)
-- [\[ICML 2026\] Cognitive Fatigue in Autoregressive Transformers: Formalization and Measurement](cognitive_fatigue_in_autoregressive_transformers_formalization_and_measurement.md)
 - [\[AAAI 2026\] Finding the Translation Switch: Discovering and Exploiting the Task-Initiation Features in LLMs](../../AAAI2026/interpretability/finding_the_translation_switch_discovering_and_exploiting_the_task-initiation_fe.md)
+- [\[ICML 2026\] Cognitive Fatigue in Autoregressive Transformers: Formalization and Measurement](cognitive_fatigue_in_autoregressive_transformers_formalization_and_measurement.md)
+- [\[CVPR 2025\] Prompt-CAM: Making Vision Transformers Interpretable for Fine-Grained Analysis](../../CVPR2025/interpretability/prompt-cam_making_vision_transformers_interpretable_for_fine-grained_analysis.md)
 
 </div>
 

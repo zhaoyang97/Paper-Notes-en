@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] XModBench: Benchmarking Cross-Modal Capabilities and Consistency in Omni-Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] XModBench is the first "tri-modal fully balanced" multiple-choice benchmark, comprising 61,000 questions that ask the same semantic content across Audio/Image/Text modalities and 6 "context $\to$ candidate" directions. It specifically diagnoses whether Omni-modal Large Language Models (OLLMs) achieve modality-agnostic
+  [ICLR 2026][Multimodal VLM][Omni-modal LLM] XModBench is the first "tri-modal fully balanced" multiple-choice benchmark, comprising 61,000 questions that ask the same semantic content across Audio/Image/Text modalities and 6 "context $\to$ candidate" directions. It specifically diagnoses whether Omni-modal Large Language Models (OLLMs) achieve modality-agnostic reasoning or rely on surface-level features—concluding that even the strongest Gemini 2.5 Pro falls far short of the…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Omni-modal LLM"
+  - "cross-modal consistency"
+  - "audio-video-text"
+  - "evaluation benchmark"
+  - "modality bias"
 date: 2026-05-08
-content_hash: 7a14641028efcdde
+content_hash: 092897040044a056
 ---
+
 # XModBench: Benchmarking Cross-Modal Capabilities and Consistency in Omni-Language Models
 
 **Conference**: ICLR 2026  
@@ -122,15 +128,16 @@ Evaluation was conducted on 14 OLLMs (Gemini, Qwen2.5-Omni, EchoInk-R1, etc.) wi
 - **Value**: ⭐⭐⭐⭐⭐ (Provides clear improvement directions for OLLM alignment)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] OmniVinci: Enhancing Architecture and Data for Omni-Modal Understanding LLM](omnivinci_enhancing_architecture_and_data_for_omni-modal_understanding_llm.md)
 - [\[ICLR 2026\] Omni-Captioner: Data Pipeline, Models, and Benchmark for Omni Detailed Perception](omni-captioner_data_pipeline_models_and_benchmark_for_omni_detailed_perception.md)
 - [\[ICLR 2026\] PhysLLM: Harnessing Large Language Models for Cross-Modal Remote Physiological Sensing](physllm_harnessing_large_language_models_for_cross-modal_remote_physiological_se.md)
-- [\[ICLR 2026\] OmniVinci: Enhancing Architecture and Data for Omni-Modal Understanding LLM](omnivinci_enhancing_architecture_and_data_for_omni-modal_understanding_llm.md)
 - [\[CVPR 2026\] ProSoftArena: Benchmarking Hierarchical Capabilities of Multi-modal Agents in Professional Software Environments](../../CVPR2026/multimodal_vlm/prosoftarena_benchmarking_hierarchical_capabilities_of_multi-modal_agents_in_pro.md)
-- [\[ICLR 2026\] OmniVideoBench: Towards Audio-Visual Understanding Evaluation for Omni MLLMs](omnivideobench_towards_audio-visual_understanding_evaluation_for_omni_mllms.md)
+- [\[ICLR 2026\] FLARE: Fully Integration of Vision-Language Representations for Deep Cross-Modal Understanding](flare_fully_integration_of_vision-language_representations_for_deep_cross-modal_.md)
 
 </div>
 

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] APC-RL: Exceeding Data-Driven Behavior Priors with Adaptive Policy Composition
 description: >-
-  [ICLR 2026][Reinforcement Learning][Normalizing Flow] APC employs a "learning-free arbitrator selector" to adaptively switch between multiple Normalizing Flow data priors and a prior-free actor. This approach accelerates learning when demonstrations are aligned and bypasses priors when they are suboptimal or misaligned, thereby "exceeding" the performance upper bound of t
+  [ICLR 2026][Reinforcement Learning][Demonstration data] APC employs a "learning-free arbitrator selector" to adaptively switch between multiple Normalizing Flow data priors and a prior-free actor. This approach accelerates learning when demonstrations are aligned and bypasses priors when they are suboptimal or misaligned, thereby "exceeding" the performance upper bound of the demonstration data itself.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Normalizing Flow
-  - demonstration misalignment
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Demonstration data"
+  - "behavior prior"
+  - "Normalizing Flow"
+  - "hierarchical reinforcement learning"
+  - "policy composition"
+  - "demonstration misalignment"
 date: 2026-05-08
-content_hash: 1633e8495c462030
+content_hash: 8fe104552fa373df
 ---
+
 # APC-RL: Exceeding Data-Driven Behavior Priors with Adaptive Policy Composition
 
 **Conference**: ICLR 2026  

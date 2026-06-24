@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VidPrism: Heterogeneous Mixture of Experts for Image-to-Video Transfer
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] VidPrism transforms the Mixture-of-Experts in Image-to-Video (I2V) transfer from a "group of homogeneous generalists" into "heterogeneous experts specialized by temporal resolution." By utilizing content-aware multi-rate sampling to feed different rhythms of video streams to each expert and dynamic bidirectional intera
+  [CVPR 2026][Video Understanding][Image-to-Video Transfer] VidPrism transforms the Mixture-of-Experts in Image-to-Video (I2V) transfer from a "group of homogeneous generalists" into "heterogeneous experts specialized by temporal resolution." By utilizing content-aware multi-rate sampling to feed different rhythms of video streams to each expert and dynamic bidirectional interaction for information exchange between fast/slow paths, it achieves new SOTA results on K400/UCF-101/H…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Image-to-Video Transfer"
+  - "Heterogeneous Mixture of Experts"
+  - "Multi-rate Sampling"
+  - "Temporal Modeling"
+  - "CLIP Adaptation"
 date: 2026-05-08
-content_hash: b1c7e18c67704bd3
+content_hash: 1b4e20dc0f999998
 ---
+
 # VidPrism: Heterogeneous Mixture of Experts for Image-to-Video Transfer
 
 **Conference**: CVPR 2026  
@@ -145,15 +151,16 @@ Few-shot Recognition (HMDB51 / UCF101 / SSv2, VidPrism-C uses CLIP, VidPrism-M u
 - Value: ⭐⭐⭐⭐ Solid I2V transfer framework with reusable tricks like RgSTA; code availability is a strong plus.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] From Static to Dynamic: Exploring Self-supervised Image-to-Video Representation Transfer Learning](from_static_to_dynamic_exploring_self-supervised_image-to-video_representation_t.md)
-- [\[CVPR 2026\] One-to-All Animation: Alignment-Free Character Animation and Image Pose Transfer](one-to-all_animation_alignment-free_character_animation_and_image_pose_transfer.md)
-- [\[CVPR 2026\] Let Your Image Move with Your Motion! – Implicit Multi-Object Multi-Motion Transfer](let_your_image_move_with_your_motion_--_implicit_multi-object_multi-motion_trans.md)
-- [\[CVPR 2026\] Accelerating Diffusion-based Video Editing via Heterogeneous Caching: Beyond Full Computing at Sampled Denoising Timestep](accelerating_diffusion-based_video_editing_via_heterogeneous_caching_beyond_full.md)
-- [\[CVPR 2026\] Are Image-to-Video Models Good Zero-Shot Image Editors?](are_image-to-video_models_good_zero-shot_image_editors.md)
+- [\[CVPR 2026\] Joint Learning of General and Diverse Patterns with Mixture of Memory Experts for Weakly-Supervised Video Anomaly Detection](joint_learning_of_general_and_diverse_patterns_with_mixture_of_memory_experts_fo.md)
+- [\[CVPR 2026\] M4-SAM: Multi-Modal Mixture-of-Experts with Memory-Augmented SAM for RGB-D Video Salient Object Detection](m4-sam_multi-modal_mixture-of-experts_with_memory-augmented_sam_for_rgb-d_video_.md)
+- [\[ICLR 2026\] Exposing and Defending the Achilles' Heel of Video Mixture-of-Experts](../../ICLR2026/video_understanding/exposing_and_defending_the_achilles_heel_of_video_mixture-of-experts.md)
+- [\[ECCV 2024\] R²-Tuning: Efficient Image-to-Video Transfer Learning for Video Temporal Grounding](../../ECCV2024/video_understanding/r2tuning_efficient_imagetovideo_transfer_learning_for_video.md)
+- [\[ICML 2026\] Unified Multimodal Visual Tracking with Dual Mixture-of-Experts](../../ICML2026/video_understanding/unified_multimodal_visual_tracking_with_dual_mixture-of-experts.md)
 
 </div>
 

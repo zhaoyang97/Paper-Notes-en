@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Combinatorial Bandit Bayesian Optimization for Tensor Outputs
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] Addressing expensive black-box systems where the output is a multi-modal tensor, this paper proposes a Tensor Output Bayesian Optimization framework (TOBO). It utilizes a Tensor Gaussian Process (TOGP) as a surrogate model to capture cross-modal dependencies and employs Upper Confidence Bound (UCB) sampling. The framew
+  [ICLR2026][Optimization][Tensor outputs] Addressing expensive black-box systems where the output is a multi-modal tensor, this paper proposes a Tensor Output Bayesian Optimization framework (TOBO). It utilizes a Tensor Gaussian Process (TOGP) as a surrogate model to capture cross-modal dependencies and employs Upper Confidence Bound (UCB) sampling. The framework is further extended to a Combinatorial Bandit Bayesian Optimization (CBBO) setting where only a subset of tensor el…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "Tensor outputs"
+  - "Bayesian optimization"
+  - "Combinatorial bandits"
+  - "Tensor Gaussian Process"
+  - "regret bounds"
 date: 2026-05-08
-content_hash: 7228cbf822c5af78
+content_hash: 74aef97bcea3e910
 ---
+
 # Combinatorial Bandit Bayesian Optimization for Tensor Outputs
 
 **Conference**: ICLR2026  
@@ -155,10 +161,20 @@ TOGP achieved the lowest NLL/MAE across all settings. Optimization performance (
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Contextual Causal Bayesian Optimisation](contextual_causal_bayesian_optimisation.md)
+- [\[ICLR 2026\] BoGrape: Bayesian optimization over graphs with shortest-path encoded](bogrape_bayesian_optimization_over_graphs_with_shortest-path_encoded.md)
+- [\[ICLR 2026\] Adaptive Acquisition Selection for Bayesian Optimization with Large Language Models](adaptive_acquisition_selection_for_bayesian_optimization_with_large_language_mod.md)
+- [\[ICLR 2026\] Unleashing LLMs in Bayesian Optimization: Preference-Guided Framework for Scientific Discovery](unleashing_llms_in_bayesian_optimization_preference-guided_framework_for_scienti.md)
+- [\[ICLR 2026\] Symmetry-Aware Bayesian Optimization via Max Kernels](symmetry-aware_bayesian_optimization_via_max_kernels.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] BoGrape: Bayesian optimization over graphs with shortest-path encoded](bogrape_bayesian_optimization_over_graphs_with_shortest-path_encoded.md)

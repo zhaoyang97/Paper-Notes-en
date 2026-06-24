@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Long Context Tuning for Video Generation
 description: >-
-  [ICCV 2025][Video Generation][Scene-level video generation] This paper proposes Long Context Tuning (LCT), which extends the context window of pretrained single-shot video diffusion models to the scene level. By introduc…
+  [ICCV 2025][Video Generation][Scene-level video generation] This paper proposes Long Context Tuning (LCT), which extends the context window of pretrained single-shot video diffusion models to the scene level. By introducing interleaved 3D positional embeddings and an asynchronous noise strategy, LCT achieves cross-shot visual and temporal consistency without additional parameters, supporting both joint and autoregressive multi-shot generation…
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "asynchronous timestep"
   - "causal attention"
 date: 2026-05-08
-content_hash: 5d15598cc07dae47
+content_hash: ca3542cbd5a0e09e
 ---
 
 # Long Context Tuning for Video Generation
@@ -120,8 +120,8 @@ In the user study, LCT achieves a mean rank of 3.79 (out of 4), significantly ou
 - [\[ICCV 2025\] Long-Context State-Space Video World Models](long-context_state-space_video_world_models.md)
 - [\[ICCV 2025\] MagicDrive-V2: High-Resolution Long Video Generation for Autonomous Driving with Adaptive Control](magicdrive-v2_high-resolution_long_video_generation_for_autonomous_driving_with_.md)
 - [\[CVPR 2026\] Geometry-as-context: Modulating Explicit 3D in Scene-consistent Video Generation to Geometry Context](../../CVPR2026/video_generation/geometry-as-context_modulating_explicit_3d_in_scene-consistent_video_generation_.md)
-- [\[NeurIPS 2025\] Scaling RL to Long Videos](../../NeurIPS2025/video_generation/scaling_rl_to_long_videos.md)
-- [\[NeurIPS 2025\] Radial Attention: O(n log n) Sparse Attention with Energy Decay for Long Video Generation](../../NeurIPS2025/video_generation/radial_attention_onlog_n_sparse_attention_with_energy_decay_for_long_video_gener.md)
+- [\[ICLR 2026\] Unified In-Context Video Editing](../../ICLR2026/video_generation/unified_in-context_video_editing.md)
+- [\[ICLR 2026\] EditVerse: Unifying Image and Video Editing and Generation with In-Context Learning](../../ICLR2026/video_generation/editverse_unifying_image_and_video_editing_and_generation_with_in-context_learni.md)
 
 </div>
 

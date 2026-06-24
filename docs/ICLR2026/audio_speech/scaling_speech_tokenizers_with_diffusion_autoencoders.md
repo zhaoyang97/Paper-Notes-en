@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Scaling Speech Tokenizers with Diffusion Autoencoders
 description: >-
-  [ICLR 2026][Audio & Speech][Speech Tokenizer] Ours proposes SiTok (Speech Diffusion Tokenizer), which utilizes a diffusion autoencoder to jointly train the encoder-quantizer-decoder (as a single-stage process). By incorporating CTC semantic regularization, it ensures that discrete tokens retain linguistic information. Scaled to 1.6B parameters and 22 million hours
+  [ICLR 2026][Audio & Speech][Speech Tokenizer] Ours proposes SiTok (Speech Diffusion Tokenizer), which utilizes a diffusion autoencoder to jointly train the encoder-quantizer-decoder (as a single-stage process). By incorporating CTC semantic regularization, it ensures that discrete tokens retain linguistic information. Scaled to 1.6B parameters and 22 million hours of speech data, SiTok achieves strong performance with a 3.34% WER (reconstruction) and 4.95 WER (LLM ASR) at an…
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - Speech Tokenizer
-  - Diffusion Autoencoder
-  - Semantic Regularization
-  - Low Bitrate
-  - CTC Loss
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Speech Tokenizer"
+  - "Diffusion Autoencoder"
+  - "Semantic Regularization"
+  - "Low Bitrate"
+  - "CTC Loss"
 date: 2026-05-08
-content_hash: c94ade7910f07c1e
+content_hash: bc671f076edc8e8d
 ---
+
 # Scaling Speech Tokenizers with Diffusion Autoencoders
 
 **Conference**: ICLR 2026  
@@ -149,11 +150,11 @@ The WER of the 12.5 TPS model without CTC regularization surges to 33.0%, provin
 
 ## Related Papers
 
-- [\[ICLR 2026\] MambaVoiceCloning: Efficient and Expressive Text-to-Speech via State-Space Modeling and Diffusion Control](mambavoicecloning_efficient_and_expressive_text-to-speech_via_state-space_modeli.md)
 - [\[ICLR 2026\] Music Flamingo: Scaling Music Understanding in Audio Language Models](music_flamingo_scaling_music_understanding_in_audio_language_models.md)
-- [\[ICLR 2026\] VibeVoice: Expressive Podcast Generation with Next-Token Diffusion](vibevoice_expressive_podcast_generation_with_next-token_diffusion.md)
 - [\[ICML 2026\] Sparse Autoencoders for Interpretable Emotion Control in Text-to-Speech](../../ICML2026/audio_speech/sparse_autoencoders_for_interpretable_emotion_control_in_text-to-speech.md)
 - [\[ICLR 2026\] YuE: Scaling Open Foundation Models for Long-Form Music Generation](yue_scaling_open_foundation_models_for_long-form_music_generation.md)
+- [\[ICLR 2026\] Token-based Audio Inpainting via Discrete Diffusion](token-based_audio_inpainting_via_discrete_diffusion.md)
+- [\[ICLR 2026\] MambaVoiceCloning: Efficient and Expressive Text-to-Speech via State-Space Modeling and Diffusion Control](mambavoicecloning_efficient_and_expressive_text-to-speech_via_state-space_modeli.md)
 
 </div>
 

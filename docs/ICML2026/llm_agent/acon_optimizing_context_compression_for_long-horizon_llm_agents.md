@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] ACON: Optimizing Context Compression for Long-horizon LLM Agents
 description: >-
-  [ICML 2026][LLM Agent][Paper Note] Acon utilizes failure trajectory contrast to optimize natural language compression guidelines, simultaneously compressing agent history and observation contexts. It reduces peak tokens by 26% to 54% on AppWorld, OfficeBench, and multi-objective QA while maintaining or improving success rates in long-horizon tasks.
+  [ICML2026][LLM Agent][Context Compression] Acon utilizes failure trajectory contrast to optimize natural language compression guidelines, simultaneously compressing agent history and observation contexts. It reduces peak tokens by 26% to 54% on AppWorld, OfficeBench, and multi-objective QA while maintaining or improving success rates in long-horizon tasks.
 tags:
-  - ICML 2026
-  - LLM Agent
+  - "ICML2026"
+  - "LLM Agent"
+  - "Context Compression"
+  - "Prompt Optimization"
+  - "Trajectory Contrast"
+  - "Compression Distillation"
 date: 2026-05-08
-content_hash: c889723eece77f01
+content_hash: da714ee04f6ea809
 ---
+
 # ACON: Optimizing Context Compression for Long-horizon LLM Agents
 
 **Conference**: ICML2026  
@@ -153,10 +158,10 @@ The paper analyzes compression thresholds, prompt optimizers, and actual API/lat
 
 ## Related Papers
 
-- [\[ACL 2026\] OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory](../../ACL2026/llm_agent/ocr-memory_optical_context_retrieval_for_long-horizon_agent_memory.md)
 - [\[ICLR 2026\] AgentFold: Long-Horizon Web Agents with Proactive Context Folding](../../ICLR2026/llm_agent/agentfold_long-horizon_web_agents_with_proactive_context_folding.md)
+- [\[ACL 2026\] OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory](../../ACL2026/llm_agent/ocr-memory_optical_context_retrieval_for_long-horizon_agent_memory.md)
+- [\[ICLR 2026\] MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents](../../ICLR2026/llm_agent/mem1_learning_to_synergize_memory_and_reasoning_for_efficient_long-horizon_agent.md)
 - [\[ICLR 2026\] Solving the Granularity Mismatch: Hierarchical Preference Learning for Long-Horizon LLM Agents](../../ICLR2026/llm_agent/solving_the_granularity_mismatch_hierarchical_preference_learning_for_long-horiz.md)
-- [\[ICLR 2026\] Harnessing Uncertainty: Entropy-Modulated Policy Gradients for Long-Horizon LLM Agents](../../ICLR2026/llm_agent/harnessing_uncertainty_entropy-modulated_policy_gradients_for_long-horizon_llm_a.md)
 - [\[AAAI 2026\] When Refusals Fail: Unstable Safety Mechanisms in Long-Context LLM Agents](../../AAAI2026/llm_agent/when_refusals_fail_unstable_safety_mechanisms_in_long-context_llm_agents.md)
 
 </div>

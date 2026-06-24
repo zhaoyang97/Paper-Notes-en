@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] 专业化的幻觉：揭示混合专家模型中的"常设委员会"
+  [Paper Note] The Illusion of Specialization: Revealing the "Standing Committee" in Mixture-of-Experts Models
 description: >-
-  [ACL 2026][LLM Efficiency][Paper Note] By introducing the CommitteeAudit framework, the authors discover a "Standing Committee" in MoE models—a compact, persistent set of experts consistently activated and dominating routing weights across different domains. This contrasts with the widely assumed domain-specific specialization, revealing an inherent central
+  [ACL2026][LLM Efficiency][Mixture-of-Experts] By introducing the CommitteeAudit framework, the authors discover a "Standing Committee" in MoE models—a compact, persistent set of experts consistently activated and dominating routing weights across different domains. This contrasts with the widely assumed domain-specific specialization, revealing an inherent centralized structure in sparse computation.
 tags:
-  - ACL 2026
-  - LLM Efficiency
+  - "ACL2026"
+  - "LLM Efficiency"
+  - "Mixture-of-Experts"
+  - "Routing Analysis"
+  - "Expert Specialization"
+  - "Model Interpretability"
+  - "Sparse Computation"
 date: 2026-05-08
-content_hash: 4157419e12e87444
+content_hash: ed3159abc30e0f13
 ---
+
 # The Illusion of Specialization: Revealing the "Standing Committee" in Mixture-of-Experts Models
 
 **Conference**: ACL2026  
@@ -149,11 +155,11 @@ Experiments were conducted on three MoE models of varying scales and architectur
 
 ## Related Papers
 
-- [\[ACL 2026\] Understanding LLM Performance Degradation in Multi-Instance Processing: The Roles of Instance Count and Context Length](understanding_llm_performance_degradation_in_multi-instance_processing_the_roles.md)
-- [\[ACL 2026\] TokenTiming: A Dynamic Alignment Method for Universal Speculative Decoding Model Pairs](tokentiming_a_dynamic_alignment_method_for_universal_speculative_decoding_model_.md)
-- [\[ACL 2026\] BOSCH: Black-Box Binary Optimization for Short-Context Attention-Head Selection in LLMs](bosch_black-box_binary_optimization_for_short-context_attention-head_selection_i.md)
-- [\[ACL 2026\] Saber: Efficient Sampling with Adaptive Acceleration and Backtracking Enhanced Remasking for DLMs](saber_an_efficient_sampling_with_adaptive_acceleration_and_backtracking_enhanced.md)
-- [\[ACL 2026\] MTRouter: Cost-Aware Multi-Turn LLM Routing with History-Model Joint Embeddings](mtrouter_cost-aware_multi-turn_llm_routing_with_history-model_joint_embeddings.md)
+- [\[AAAI 2026\] How Many Experts Are Enough? Towards Optimal Semantic Specialization for Mixture-of-Experts](../../AAAI2026/llm_efficiency/how_many_experts_are_enough_towards_optimal_semantic_specialization_for_mixture-.md)
+- [\[ICLR 2026\] DirMoE: Dirichlet-Routed Mixture of Experts](../../ICLR2026/llm_efficiency/dirmoe_dirichlet-routed_mixture_of_experts.md)
+- [\[ACL 2026\] Alloc-MoE: Budget-Aware Expert Activation Allocation for Efficient Mixture-of-Experts Inference](alloc-moe_budget-aware_expert_activation_allocation_for_efficient_mixture-of-exp.md)
+- [\[NeurIPS 2025\] Advancing Expert Specialization for Better MoE](../../NeurIPS2025/llm_efficiency/advancing_expert_specialization_for_better_moe.md)
+- [\[ICLR 2026\] Understanding the Mixture-of-Experts with Nadaraya-Watson Kernel](../../ICLR2026/llm_efficiency/understanding_the_mixture-of-experts_with_nadaraya-watson_kernel.md)
 
 </div>
 

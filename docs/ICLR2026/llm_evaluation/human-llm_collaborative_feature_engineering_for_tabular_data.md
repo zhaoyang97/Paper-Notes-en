@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Human-LLM Collaborative Feature Engineering for Tabular Learning
 description: >-
-  [ICLR 2026][LLM Evaluation][LLM] A human-LLM collaborative feature engineering framework is proposed, which decouples LLM feature operation proposals from the selection process. It models operation utility and uncertainty via Bayesian Neural Networks (BNN) to guide selection and selectively introduces human preference feedback. The approach achieves a
+  [ICLR 2026][LLM Evaluation][Feature Engineering] A human-LLM collaborative feature engineering framework is proposed, which decouples LLM feature operation proposals from the selection process. It models operation utility and uncertainty via Bayesian Neural Networks (BNN) to guide selection and selectively introduces human preference feedback. The approach achieves an average error rate reduction of 8.96% to 11.23% across 18 tabular datasets.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - LLM
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Feature Engineering"
+  - "Human-in-the-loop"
+  - "Bayesian Optimization"
+  - "LLM"
+  - "Tabular Data"
 date: 2026-05-08
-content_hash: 8f821382dd3bfb88
+content_hash: 35b6ca84faa6074c
 ---
+
 # Human-LLM Collaborative Feature Engineering for Tabular Learning
 
 **Conference**: ICLR 2026  
@@ -138,11 +143,11 @@ The BNN is trained by minimizing the ELBO: $\text{KL}(q_t(\boldsymbol{\theta}) \
 
 ## Related Papers
 
+- [\[ICLR 2026\] The Ideation-Execution Gap: Execution Outcomes of LLM-Generated versus Human Research Ideas](the_ideation-execution_gap_execution_outcomes_of_llm-generated_versus_human_rese.md)
 - [\[ECCV 2024\] Image-Feature Weak-to-Strong Consistency: An Enhanced Paradigm for Semi-Supervised Learning](../../ECCV2024/llm_evaluation/image-feature_weak-to-strong_consistency_an_enhanced_paradigm_for_semi-supervise.md)
 - [\[ACL 2026\] TabReX: Tabular Referenceless eXplainable Evaluation](../../ACL2026/llm_evaluation/tabrex_tabular_referenceless_explainable_evaluation.md)
-- [\[ICLR 2026\] In-Context Learning for Pure Exploration](in-context_learning_for_pure_exploration.md)
 - [\[NeurIPS 2025\] Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs](../../NeurIPS2025/llm_evaluation/toward_engineering_agi_benchmarking_the_engineering_design_capabilities_of_llms.md)
-- [\[ICLR 2026\] AutoMetrics: Approximate Human Judgments with Automatically Generated Evaluators](autometrics_approximate_human_judgments_with_automatically_generated_evaluators.md)
+- [\[ICLR 2026\] In-Context Learning for Pure Exploration](in-context_learning_for_pure_exploration.md)
 
 </div>
 

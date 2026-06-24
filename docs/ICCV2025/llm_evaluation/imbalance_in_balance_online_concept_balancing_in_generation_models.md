@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Imbalance in Balance: Online Concept Balancing in Generation Models
 description: >-
-  [ICCV 2025][LLM Evaluation][Concept Composition] Through carefully designed causal experiments, this work reveals that data distribution—rather than model scale or data volume—is the decisive factor for concept compositi…
+  [ICCV 2025][LLM Evaluation][Concept Composition] Through carefully designed causal experiments, this work reveals that data distribution—rather than model scale or data volume—is the decisive factor for concept composition ability in diffusion models. It further proposes IMBA Loss, an online concept-level balancing loss that adaptively reweights token-level losses via the discrepancy between conditional and unconditional distributions (the IMBA distance). With only a few line…
 tags:
   - "ICCV 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "Diffusion Model Training"
   - "Long-Tail Distribution"
 date: 2026-05-08
-content_hash: 96d3cdad7029665f
+content_hash: 0da7da38fdffa667
 ---
 
 # Imbalance in Balance: Online Concept Balancing in Generation Models
@@ -156,10 +156,10 @@ Token-wise reweighting outperforms sample-wise reweighting because it can assign
 ## Related Papers
 
 - [\[ICCV 2025\] BATCLIP: Bimodal Online Test-Time Adaptation for CLIP](batclip_bimodal_online_test-time_adaptation_for_clip.md)
+- [\[ACL 2025\] Ad-hoc Concept Forming in the Game Codenames as a Means for Evaluating Large Language Models](../../ACL2025/llm_evaluation/ad-hoc_concept_forming_in_the_game_codenames_as_a_means_for_evaluating_large_lan.md)
 - [\[NeurIPS 2025\] Exploiting Vocabulary Frequency Imbalance in Language Model Pre-training](../../NeurIPS2025/llm_evaluation/exploiting_vocabulary_frequency_imbalance_in_language_model_pre-training.md)
 - [\[ICCV 2025\] Lay2Story: Extending Diffusion Transformers for Layout-Togglable Story Generation](lay2story_extending_diffusion_transformers_for_layout-togglable_story_generation.md)
-- [\[ACL 2026\] Attribution, Citation, and Quotation: A Survey of Evidence-based Text Generation with Large Language Models](../../ACL2026/llm_evaluation/attribution_citation_and_quotation_a_survey_of_evidence-based_text_generation_wi.md)
-- [\[ACL 2026\] Dynamic Infilling Anchors for Format-Constrained Generation in Diffusion Large Language Models](../../ACL2026/llm_evaluation/dynamic_infilling_anchors_for_format-constrained_generation_in_diffusion_large_l.md)
+- [\[CVPR 2025\] PosterO: Structuring Layout Trees to Enable Language Models in Generalized Content-Aware Layout Generation](../../CVPR2025/llm_evaluation/postero_structuring_layout_trees_to_enable_language_models_in_generalized_conten.md)
 
 </div>
 

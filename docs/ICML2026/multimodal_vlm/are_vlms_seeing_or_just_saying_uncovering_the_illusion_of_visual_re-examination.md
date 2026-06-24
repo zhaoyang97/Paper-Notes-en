@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Are VLMs Seeing or Just Saying? Uncovering the Illusion of Visual Re-examination
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] This paper introduces VisualSwap and VS-Bench to test real visual re-examination capabilities by replacing the image after a VLM claims to "take another look." The study finds that current reasoning-heavy VLMs often follow the inertia of previous text, with only explicit multi-turn user instructions or enhanced visual
+  [ICML2026 Oral][Multimodal VLM][Visual re-examination] This paper introduces VisualSwap and VS-Bench to test real visual re-examination capabilities by replacing the image after a VLM claims to "take another look." The study finds that current reasoning-heavy VLMs often follow the inertia of previous text, with only explicit multi-turn user instructions or enhanced visual attention significantly restoring grounding.
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML2026 Oral"
+  - "Multimodal VLM"
+  - "Visual re-examination"
+  - "multimodal reasoning"
+  - "self-reflection"
+  - "attention analysis"
+  - "benchmark"
 date: 2026-05-08
-content_hash: 4a6e704619195129
+content_hash: 8c1c295a8a3bfcef
 ---
+
 # Are VLMs Seeing or Just Saying? Uncovering the Illusion of Visual Re-examination
 
 **Conference**: ICML2026 Oral  
@@ -159,11 +165,11 @@ Several analyses were conducted to rule out alternative explanations like image 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Seeing Through Deception: Uncovering Misleading Creator Intent in Multimodal News with Vision-Language Models](../../ICLR2026/multimodal_vlm/seeing_through_deception_uncovering_misleading_creator_intent_in_multimodal_news.md)
 - [\[CVPR 2026\] Seeing Through Touch: Tactile-Driven Visual Localization of Material Regions](../../CVPR2026/multimodal_vlm/seeing_through_touch_tactile_localization.md)
 - [\[ICLR 2026\] ICYM2I: The Illusion of Multimodal Informativeness under Missingness](../../ICLR2026/multimodal_vlm/icym2i_the_illusion_of_multimodal_informativeness_under_missingness.md)
 - [\[ICCV 2025\] Generalizable Object Re-Identification via Visual In-Context Prompting](../../ICCV2025/multimodal_vlm/generalizable_object_re-identification_via_visual_in-context_prompting.md)
 - [\[NeurIPS 2025\] Don't Just Chase "Highlighted Tokens" in MLLMs: Revisiting Visual Holistic Context Retention](../../NeurIPS2025/multimodal_vlm/dont_just_chase_highlighted_tokens_in_mllms_revisiting_visual_holistic_context_r.md)
-- [\[ICML 2026\] Seeing is Understanding: Unlocking Causal Attention into Modality-Mutual Attention for Multimodal LLMs](seeing_is_understanding_unlocking_causal_attention_into_modality-mutual_attentio.md)
 
 </div>
 

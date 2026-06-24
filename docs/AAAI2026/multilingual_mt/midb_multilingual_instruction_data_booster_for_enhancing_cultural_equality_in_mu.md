@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MIDB: Multilingual Instruction Data Booster for Enhancing Cultural Equality in Multilingual Instruction Synthesis
 description: >-
-  [AAAI 2026][Multilingual & Machine Translation][Multilingual instruction tuning] This paper proposes MIDB (Multilingual Instruction Data Booster), a unified model trained on 36.8k expert-annotated revision samples…
+  [AAAI 2026][Multilingual & Machine Translation][Multilingual instruction tuning] This paper proposes MIDB (Multilingual Instruction Data Booster), a unified model trained on 36.8k expert-annotated revision samples, which automatically repairs content errors, machine translation defects, and localization deficiencies in multilingual synthetic instruction data, significantly improving instruction data quality across 16 languages and enhancing downstream LLM multilingual/cultura…
 tags:
   - "AAAI 2026"
   - "Multilingual & Machine Translation"
@@ -12,7 +12,7 @@ tags:
   - "machine translation correction"
   - "LLM multilingual capability"
 date: 2026-05-08
-content_hash: c78a6489958fa1c5
+content_hash: 5af372afaeab612d
 ---
 
 # MIDB: Multilingual Instruction Data Booster for Enhancing Cultural Equality in Multilingual Instruction Synthesis
@@ -178,11 +178,11 @@ Multilingual versions of existing English benchmarks produced via direct transla
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] XIFBench: Evaluating Large Language Models on Multilingual Instruction Following](../../NeurIPS2025/multilingual_mt/xifbench_evaluating_large_language_models_on_multilingual_instruction_following.md)
+- [\[ACL 2025\] CulFiT: A Fine-grained Cultural-aware LLM Training Paradigm via Multilingual Critique Data Synthesis](../../ACL2025/multilingual_mt/culfit_a_fine-grained_cultural-aware_llm_training_paradigm_via_multilingual_crit.md)
+- [\[ACL 2025\] MaXIFE: Multilingual and Cross-lingual Instruction Following Evaluation](../../ACL2025/multilingual_mt/maxife_multilingual_and_cross-lingual_instruction_following_evaluation.md)
 - [\[ACL 2026\] Exploring Two-Phase Continual Instruction Fine-tuning for Multilingual Adaptation in Large Language Models](../../ACL2026/multilingual_mt/exploring_continual_fine-tuning_for_enhancing_language_ability_in_large_language.md)
-- [\[ACL 2026\] DFKI-MLT at SemEval-2026 TASK 7: Steering Multilingual Models Towards Cultural Knowledge](../../ACL2026/multilingual_mt/dfki-mlt_at_semeval-2026_task_7_steering_multilingual_models_towards_cultural_kn.md)
-- [\[AAAI 2026\] How Does Alignment Enhance LLMs' Multilingual Capabilities? A Language Neurons Perspective](how_does_alignment_enhance_llms_multilingual_capabilities_a_language_neurons_per.md)
-- [\[AAAI 2026\] Focusing on Language: Revealing and Exploiting Language Attention Heads in Multilingual Large Language Models](focusing_on_language_revealing_and_exploiting_language_attention_heads_in_multil.md)
+- [\[NeurIPS 2025\] XIFBench: Evaluating Large Language Models on Multilingual Instruction Following](../../NeurIPS2025/multilingual_mt/xifbench_evaluating_large_language_models_on_multilingual_instruction_following.md)
+- [\[ACL 2025\] SIFT-50M: A Large-Scale Multilingual Dataset for Speech Instruction Fine-Tuning](../../ACL2025/multilingual_mt/sift-50m_a_large-scale_multilingual_dataset_for_speech_instruction_fine-tuning.md)
 
 </div>
 

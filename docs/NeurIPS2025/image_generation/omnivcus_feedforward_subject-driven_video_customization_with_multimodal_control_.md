@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OmniVCus: Feedforward Subject-driven Video Customization with Multimodal Control Conditions
 description: >-
-  [NeurIPS 2025][Image Generation][Subject-driven video customization] OmniVCus proposes a feedforward DiT framework that achieves multi-subject, multimodal-controlled video customization through a data construction pipeli…
+  [NeurIPS 2025][Image Generation][Subject-driven video customization] OmniVCus proposes a feedforward DiT framework that achieves multi-subject, multimodal-controlled video customization through a data construction pipeline called VideoCus-Factory and two novel embedding mechanisms (Lottery Embedding and Temporally Aligned Embedding), significantly surpassing prior SOTA in identity preservation and controllability.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "multi-subject generation"
   - "feedforward generation"
 date: 2026-05-08
-content_hash: 6fccfddc2b2f1046
+content_hash: 7627b98c9127413b
 ---
 
 # OmniVCus: Feedforward Subject-driven Video Customization with Multimodal Control Conditions
@@ -143,10 +143,10 @@ OmniVCus is built upon the DiT architecture. Text, images, video, and control si
 ## Related Papers
 
 - [\[ICCV 2025\] FreeCus: Free Lunch Subject-driven Customization in Diffusion Transformers](../../ICCV2025/image_generation/freecus_free_lunch_subject-driven_customization_in_diffusion_transformers.md)
-- [\[NeurIPS 2025\] Mind-the-Glitch: Visual Correspondence for Detecting Inconsistencies in Subject-Driven Generation](mind-the-glitch_visual_correspondence_for_detecting_inconsistencies_in_subject-d.md)
-- [\[NeurIPS 2025\] Physics-Driven Spatiotemporal Modeling for AI-Generated Video Detection](physics-driven_spatiotemporal_modeling_for_ai-generated_video_detection.md)
 - [\[NeurIPS 2025\] Track, Inpaint, Resplat: Subject-driven 3D and 4D Generation with Progressive Texture Infilling](track_inpaint_resplat_subject-driven_3d_and_4d_generation_with_progressive_textu.md)
-- [\[CVPR 2026\] Exploring Conditions for Diffusion Models in Robotic Control](../../CVPR2026/image_generation/exploring_conditions_for_diffusion_models_in_robotic_control.md)
+- [\[CVPR 2025\] Multi-party Collaborative Attention Control for Image Customization](../../CVPR2025/image_generation/multi-party_collaborative_attention_control_for_image_customization.md)
+- [\[CVPR 2025\] DreamVideo-Omni: Omni-Motion Controlled Multi-Subject Video Customization with Latent Identity Reinforcement Learning](../../CVPR2025/image_generation/dreamvideo-omni_omni-motion_controlled_multi-subject_video_customization_with_la.md)
+- [\[NeurIPS 2025\] Mind-the-Glitch: Visual Correspondence for Detecting Inconsistencies in Subject-Driven Generation](mind-the-glitch_visual_correspondence_for_detecting_inconsistencies_in_subject-d.md)
 
 </div>
 

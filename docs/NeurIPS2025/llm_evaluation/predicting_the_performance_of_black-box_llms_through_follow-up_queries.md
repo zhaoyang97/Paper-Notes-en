@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Predicting the Performance of Black-Box LLMs through Follow-Up Queries
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Black-box LLM] This paper proposes QueRE, a method that poses approximately 50 follow-up questions to a black-box LLM (e.g.…
+  [NeurIPS 2025][LLM Evaluation][Black-box LLM] This paper proposes QueRE, a method that poses approximately 50 follow-up questions to a black-box LLM (e.g., "Are you confident in your answer?") and uses the resulting "Yes" token probabilities as features to train a linear classifier. QueRE achieves strong performance on predicting model correctness, detecting adversarial manipulation, and distinguishing between different LLMs — surpassing even white-box methods that require ac…
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "uncertainty quantification"
   - "adversarial detection"
 date: 2026-05-08
-content_hash: 082e5ed1e901f16d
+content_hash: b7a47dfa512e821a
 ---
 
 # Predicting the Performance of Black-Box LLMs through Follow-Up Queries
@@ -167,11 +167,11 @@ Cross-domain transferability (OOD generalization):
 
 ## Related Papers
 
-- [\[ICLR 2026\] Enabling Fine-Grained Operating Points for Black-Box LLMs](../../ICLR2026/llm_evaluation/enabling_fine-grained_operating_points_for_black-box_llms.md)
+- [\[ICML 2025\] Hyperband-based Bayesian Optimization for Black-box Prompt Selection](../../ICML2025/llm_evaluation/hyperband-based_bayesian_optimization_for_black-box_prompt_selection.md)
 - [\[ICML 2026\] Investigating Advanced Reasoning of Large Language Models via Black-Box Environment Interaction](../../ICML2026/llm_evaluation/investigating_advanced_reasoning_of_large_language_models_via_black-box_environm.md)
 - [\[NeurIPS 2025\] PARROT: A Benchmark for Evaluating LLMs in Cross-System SQL Translation](parrot_a_benchmark_for_evaluating_llms_in_cross-system_sql_translation.md)
+- [\[ACL 2025\] EducationQ: Evaluating LLMs' Teaching Capabilities Through Multi-Agent Dialogue Framework](../../ACL2025/llm_evaluation/educationq_evaluating_llms_teaching_capabilities_through_multi-agent_dialogue_fr.md)
 - [\[NeurIPS 2025\] On Evaluating LLM Alignment by Evaluating LLMs as Judges](on_evaluating_llm_alignment_by_evaluating_llms_as_judges.md)
-- [\[NeurIPS 2025\] EvaLearn: Quantifying the Learning Capability and Efficiency of LLMs via Sequential Problem Solving](evalearn_quantifying_the_learning_capability_and_efficiency_of_llms_via_sequenti.md)
 
 </div>
 

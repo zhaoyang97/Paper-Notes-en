@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] What Matters for Representation Alignment: Global Information or Spatial Structure?
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] This paper systematically proves that Representation Alignment (REPA) accelerates diffusion model training not by relying on the **global semantic information** of the target representation (ImageNet linear probe accuracy), but rather on the **spatial self-similarity structure between its patch tokens**. Based on this,
+  [ICLR 2026][Image Generation][Representation Alignment (REPA)] This paper systematically proves that Representation Alignment (REPA) accelerates diffusion model training not by relying on the **global semantic information** of the target representation (ImageNet linear probe accuracy), but rather on the **spatial self-similarity structure between its patch tokens**. Based on this, the authors propose iREPA with only 4 lines of code (convolutional projection + spatial normaliz…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Representation Alignment (REPA)"
+  - "Diffusion Transformer"
+  - "Spatial Structure"
+  - "Convergence Acceleration"
+  - "Visual Encoder"
 date: 2026-05-08
-content_hash: 49d9213b0e46ec1d
+content_hash: d852010a39196dc8
 ---
+
 # What Matters for Representation Alignment: Global Information or Spatial Structure?
 
 **Conference**: ICLR 2026  

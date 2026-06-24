@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Memory is Reconstructed, Not Retrieved: Graph Memory for LLM Agents
 description: >-
-  [ICML 2026][LLM Agent][Cue-Tag-Content] MRAgent replaces the static "retrieve-then-reason" memory paradigm with "reason-while-reconstructing." By utilizing a Cue–Tag–Content associative memory graph and an active reconstruction loop, the agent dynamically selects traversal directions and prunes irrelevant branches based on intermediate evidence. It achieves
+  [ICML2026][LLM Agent][Long-term Memory] MRAgent replaces the static "retrieve-then-reason" memory paradigm with "reason-while-reconstructing." By utilizing a Cue–Tag–Content associative memory graph and an active reconstruction loop, the agent dynamically selects traversal directions and prunes irrelevant branches based on intermediate evidence. It achieves a maximum improvement of 23% over the strongest baseline on LoCoMo / LongMemEval, while significantly reducing token con…
 tags:
-  - ICML 2026
-  - LLM Agent
-  - Cue-Tag-Content
+  - "ICML2026"
+  - "LLM Agent"
+  - "Long-term Memory"
+  - "Active Memory Reconstruction"
+  - "Associative Memory Graph"
+  - "Cue-Tag-Content"
 date: 2026-05-08
-content_hash: 55d883f8eb8078e0
+content_hash: d8eb5a1c310a9042
 ---
+
 # Memory is Reconstructed, Not Retrieved: Graph Memory for LLM Agents
 
 **Conference**: ICML2026  
@@ -131,10 +135,10 @@ Ablation Results (Figure 5): ① Structurally, CE < CTE < CTC (performance incre
 ## Related Papers
 
 - [\[ACL 2026\] MAGMA: A Multi-Graph based Agentic Memory Architecture for AI Agents](../../ACL2026/llm_agent/magma_a_multi-graph_based_agentic_memory_architecture_for_ai_agents.md)
-- [\[ACL 2026\] SEARL: Joint Optimization of Policy and Tool Graph Memory for Self-Evolving Agents](../../ACL2026/llm_agent/searl_joint_optimization_of_policy_and_tool_graph_memory_for_self-evolving_agent.md)
-- [\[ICML 2026\] Position: Modular Memory is the Key to Continual Learning Agents](position_modular_memory_is_the_key_to_continual_learning_agents.md)
-- [\[ICML 2026\] AdaMEM: Test-Time Adaptive Memory for Language Agents](adamem_test-time_adaptive_memory_for_language_agents.md)
 - [\[ACL 2026\] PersonaAgent: Bridging Memory and Action for Personalized LLM Agents](../../ACL2026/llm_agent/personaagent_bridging_memory_and_action_for_personalized_llm_agents.md)
+- [\[ICML 2026\] From Player to Master: Enhancing Test-Time Learning of LLM Agents via Reinforcement Learning over Memory](from_player_to_master_enhancing_test-time_learning_of_llm_agents_via_reinforceme.md)
+- [\[NeurIPS 2025\] A-MEM: Agentic Memory for LLM Agents](../../NeurIPS2025/llm_agent/a-mem_agentic_memory_for_llm_agents.md)
+- [\[ACL 2026\] SEARL: Joint Optimization of Policy and Tool Graph Memory for Self-Evolving Agents](../../ACL2026/llm_agent/searl_joint_optimization_of_policy_and_tool_graph_memory_for_self-evolving_agent.md)
 
 </div>
 

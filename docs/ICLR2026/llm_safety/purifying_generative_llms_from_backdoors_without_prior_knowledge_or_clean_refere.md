@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Purifying Generative LLMs from Backdoors without Prior Knowledge or Clean Reference
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper proposes a backdoor purification method for LLMs that requires no prior knowledge or clean reference models. By analyzing the mechanism, it is discovered that backdoor associations are redundantly distributed in MLP layers. Using an immune-analogous approach, "signatures" are extracted from multiple backdoor
+  [ICLR 2026][LLM Safety][LLM Backdoor] This paper proposes a backdoor purification method for LLMs that requires no prior knowledge or clean reference models. By analyzing the mechanism, it is discovered that backdoor associations are redundantly distributed in MLP layers. Using an immune-analogous approach, "signatures" are extracted from multiple backdoor variants to locate and suppress suspicious neurons, followed by lightweight fine-tuning for recovery. The method reduces…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "LLM Backdoor"
+  - "Backdoor Purification"
+  - "Mechanistic Analysis"
+  - "MLP Encoding"
+  - "Immune-Analogous Signature Extraction"
 date: 2026-05-08
-content_hash: 6e6e22f387f0844e
+content_hash: a3f3a95ad3d57c3c
 ---
+
 # Purifying Generative LLMs from Backdoors without Prior Knowledge or Clean Reference
 
 **Conference**: ICLR 2026  
@@ -161,11 +167,11 @@ Purification involves clearing the parameters of these suspicious neurons and re
 
 ## Related Papers
 
+- [\[ICLR 2026\] TrustGen: A Dynamic Evaluation Platform for Generative Foundation Model Trustworthiness](trustgen_a_platform_of_dynamic_benchmarking_on_the_trustworthiness_of_generative.md)
+- [\[ICLR 2026\] Bi-directional Bias Attribution: Debiasing Large Language Models without Modifying Prompts](bi-directional_bias_attribution_debiasing_large_language_models_without_modifyin.md)
 - [\[ICLR 2026\] Unmasking Backdoors: An Explainable Defense via Gradient-Attention Anomaly Scoring for Pre-trained Language Models](unmasking_backdoors_an_explainable_defense_via_gradient-attention_anomaly_scorin.md)
 - [\[ACL 2025\] CAVGAN: Unifying Jailbreak and Defense of LLMs via Generative Adversarial Attacks](../../ACL2025/llm_safety/cavgan_unifying_jailbreak_and_defense_of_llms_via_generative_adversarial_attacks.md)
-- [\[AAAI 2026\] Learning from the Undesirable: Robust Adaptation of Language Models without Forgetting](../../AAAI2026/llm_safety/learning_from_the_undesirable_robust_adaptation_of_language_models_without_forge.md)
 - [\[ICLR 2026\] Knowledge Externalization: Reversible Unlearning and Modular Retrieval in Multimodal Large Language Models](knowledge_externalization_reversible_unlearning_and_modular_retrieval_in_multimo.md)
-- [\[ICLR 2026\] Fine-Grained Privacy Extraction from Retrieval-Augmented Generation Systems by Exploiting Knowledge Asymmetry](fine-grained_privacy_extraction_from_retrieval-augmented_generation_systems_by_e.md)
 
 </div>
 

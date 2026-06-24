@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Recurrent Memory for Online Interdomain Gaussian Processes
 description: >-
-  [NeurIPS 2025][Image Generation][Gaussian Processes] This paper proposes OHSVGP (Online HiPPO Sparse Variational Gaussian Process), which introduces the HiPPO (High-order Polynomial Projection Operator) framework from de…
+  [NeurIPS 2025][Image Generation][Gaussian Processes] This paper proposes OHSVGP (Online HiPPO Sparse Variational Gaussian Process), which introduces the HiPPO (High-order Polynomial Projection Operator) framework from deep learning into sparse variational Gaussian processes as interdomain inducing variables. By leveraging time-varying orthogonal polynomial basis functions, the method achieves long-term memory retention in online learning, with kernel matrices updated efficien…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Long-term Memory"
   - "State Space Models"
 date: 2026-05-08
-content_hash: cd2444986da0425b
+content_hash: d143586697fc2b1c
 ---
 
 # Recurrent Memory for Online Interdomain Gaussian Processes
@@ -145,10 +145,10 @@ OHSGPR is **300–450× faster** than OSGPR, as it does not require optimizing i
 ## Related Papers
 
 - [\[NeurIPS 2025\] Flow Matching Neural Processes](flow_matching_neural_processes.md)
-- [\[ICCV 2025\] LD-RPS: Zero-Shot Unified Image Restoration via Latent Diffusion Recurrent Posterior Sampling](../../ICCV2025/image_generation/ld-rps_zero-shot_unified_image_restoration_via_latent_diffusion_recurrent_poster.md)
-- [\[AAAI 2026\] ORVIT: Near-Optimal Online Distributionally Robust Reinforcement Learning](../../AAAI2026/image_generation/orvit_near-optimal_online_distributionally_robust_reinforcement_learning.md)
-- [\[ICML 2026\] Adapting Noise to Data: Generative Flows from Learned 1D Processes](../../ICML2026/image_generation/adapting_noise_to_data_generative_flows_from_1d_processes.md)
-- [\[ICLR 2026\] DiffusionNFT: Online Diffusion Reinforcement with Forward Process](../../ICLR2026/image_generation/diffusionnft_online_diffusion_reinforcement_with_forward_process.md)
+- [\[ICML 2025\] Gaussian Mixture Flow Matching Models](../../ICML2025/image_generation/gaussian_mixture_flow_matching_models.md)
+- [\[CVPR 2025\] Improving Editability in Image Generation with Layer-wise Memory](../../CVPR2025/image_generation/improving_editability_in_image_generation_with_layer-wise_memory.md)
+- [\[ICML 2025\] Quantum Algorithms for Finite-horizon Markov Decision Processes](../../ICML2025/image_generation/quantum_algorithms_for_finite-horizon_markov_decision_processes.md)
+- [\[CVPR 2025\] Nonisotropic Gaussian Diffusion for Realistic 3D Human Motion Prediction](../../CVPR2025/image_generation/nonisotropic_gaussian_diffusion_for_realistic_3d_human_motion_prediction.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Ar2Can: An Architect and an Artist Leveraging a Canvas for Multi-Human Generation
 description: >-
-  [CVPR 2026][Image Generation][Multi-Human Generation] Ar2Can proposes decomposing multi-human image generation into two stages: spatial planning (Architect) and identity-preserving rendering (Artist). By utilizing GRPO reinforcement learning combined with a spatial-anchored face reward function based on Hungarian matching to train the Artist model, it achieves an identity
+  [CVPR 2026][Image Generation][Multi-Human Generation] Ar2Can proposes decomposing multi-human image generation into two stages: spatial planning (Architect) and identity-preserving rendering (Artist). By utilizing GRPO reinforcement learning combined with a spatial-anchored face reward function based on Hungarian matching to train the Artist model, it achieves an identity preservation score of 68.2 and a count accuracy of 90.2 on the MultiHuman-Testbench…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Multi-Human Generation
-  - Identity Preservation
-  - Spatial Planning
-  - GRPO
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Multi-Human Generation"
+  - "Identity Preservation"
+  - "Spatial Planning"
+  - "GRPO"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 1477b18a31394616
+content_hash: 6f13ed08524d364f
 ---
+
 # Ar2Can: An Architect and an Artist Leveraging a Canvas for Multi-Human Generation
 
 **Conference**: CVPR 2026  
@@ -144,7 +145,7 @@ A major practical hurdle is the lack of large-scale multi-human training data. A
 
 - [\[CVPR 2026\] Leveraging Verifier-Based Reinforcement Learning in Image Editing](leveraging_verifier-based_reinforcement_learning_in_image_editing.md)
 - [\[CVPR 2026\] Aligning Multi-Character Narrative Image Generation with Multi-Aspect Human Preferences](aligning_multi-character_narrative_image_generation_with_multi-aspect_human_pref.md)
-- [\[CVPR 2026\] InterEdit: Navigating Text-Guided Multi-Human 3D Motion Editing](interedit_navigating_textguided_multihuman_3d_moti.md)
+- [\[CVPR 2026\] Stability-Driven Motion Generation for Object-Guided Human-Human Co-Manipulation](stability-driven_motion_generation_for_object-guided_human-human_co-manipulation.md)
 - [\[CVPR 2026\] Harmonic Canvas: Inversion-Free Editing for Visually-Guided Music Style Transfer](harmonic_canvas_inversion-free_editing_for_visually-guided_music_style_transfer.md)
 - [\[CVPR 2026\] Leveraging Multispectral Sensors for Color Correction in Mobile Cameras](leveraging_multispectral_sensors_for_color_correction_in_mobile_cameras.md)
 

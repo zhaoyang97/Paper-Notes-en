@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Temporal Representation Enhancement (TRE): Learning to Forget Dominant Patterns for Enhanced Temporal Spiking Features
 description: >-
-  [CVPR 2026][Others][Paper Note] To address the issue of temporal redundancy in Spiking Neural Networks (SNNs), where the same set of dominant channels are repeatedly activated across multiple timesteps, this paper proposes TRE. TRE estimates the contribution of each channel per category during training and uses adaptive threshold gating to temporaril
+  [CVPR 2026][Self-Supervised Learning][Spiking Neural Network (SNN)] To address the issue of temporal redundancy in Spiking Neural Networks (SNNs), where the same set of dominant channels are repeatedly activated across multiple timesteps, this paper proposes TRE. TRE estimates the contribution of each channel per category during training and uses adaptive threshold gating to temporarily mask "overly dominant" channels, forcing subsequent timesteps to mine complementary semant…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Spiking Neural Network (SNN)"
+  - "Temporal Redundancy"
+  - "Learning to Forget"
+  - "Channel Gating"
+  - "Category Contribution Estimation"
 date: 2026-05-08
-content_hash: 8118a9dda435bb88
+content_hash: d7dc604e9ca69934
 ---
+
 # Temporal Representation Enhancement (TRE): Learning to Forget Dominant Patterns for Enhanced Temporal Spiking Features
 
 **Conference**: CVPR 2026  
@@ -148,13 +154,17 @@ Gating strategy analysis (CIFAR-100, $T=4$):
 
 <div class="related-papers" markdown="1">
 
-- **TET**: [Temporal Efficient Training of Spiking Neural Network via Gradient Re-weighting (ICLR 2022)](https://openreview.net/forum?id=h_uYv_7v0Z)
-- **PSN**: [Parallel Spiking Networks with Forward and Backward Optimization (CVPR 2024)](https://openaccess.thecvf.com/search_cvf)
+## Related Papers
+
+- [\[CVPR 2026\] Robust Spiking Neural Networks by Temporal Mutual Information](robust_spiking_neural_networks_by_temporal_mutual_information.md)
+- [\[CVPR 2026\] Temporal Interaction in Spiking Transformers with Multi-Delay Mixer](temporal_interaction_in_spiking_transformers_with_multi-delay_mixer.md)
+- [\[CVPR 2026\] On the Role of Temporal Granularity in the Robustness of Spiking Neural Networks](on_the_role_of_temporal_granularity_in_the_robustness_of_spiking_neural_networks.md)
+- [\[ICLR 2026\] PredNext: Explicit Cross-View Temporal Prediction for Unsupervised Learning in Spiking Neural Networks](../../ICLR2026/self_supervised/prednext_explicit_cross-view_temporal_prediction_for_unsupervised_learning_in_sp.md)
+- [\[CVPR 2026\] Temporal Imbalance of Positive and Negative Supervision in Class-Incremental Learning](temporal_imbalance_of_positive_and_negative_supervision_in_class-incremental_lea.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] On the Role of Temporal Granularity in the Robustness of Spiking Neural Networks](on_the_role_of_temporal_granularity_in_the_robustness_of_spiking_neural_networks.md)

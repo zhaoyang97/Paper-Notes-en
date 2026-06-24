@@ -2,19 +2,21 @@
 title: >-
   [Paper Note] BioX-Bridge: Model Bridging for Unsupervised Cross-Modal Knowledge Transfer across Biosignals
 description: >-
-  [ICLR 2026][Medical Imaging][biosignal] Instead of training a full student model for distillation, this work freezes two biosignal foundation models and trains only a lightweight "bridge network" to project intermediate representations of a new modality into the space of an old modality. This achieves unsupervised cross-modal knowledge transfer across ECG↔EE
+  [ICLR 2026][Medical Imaging][biosignal] Instead of training a full student model for distillation, this work freezes two biosignal foundation models and trains only a lightweight "bridge network" to project intermediate representations of a new modality into the space of an old modality. This achieves unsupervised cross-modal knowledge transfer across ECG↔EEG↔PPG↔EMG with only 1%–12% of trainable parameters.
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - biosignal
-  - cross-modal transfer
-  - model bridging
-  - foundation model
-  - ECG/EEG/PPG/EMG
-  - low-rank
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "biosignal"
+  - "cross-modal transfer"
+  - "model bridging"
+  - "foundation model"
+  - "ECG/EEG/PPG/EMG"
+  - "low-rank"
+  - "prototype network"
 date: 2026-05-08
-content_hash: 25fa0d2b67858aa9
+content_hash: 8720d7ea8bd6abc7
 ---
+
 # BioX-Bridge: Model Bridging for Unsupervised Cross-Modal Knowledge Transfer across Biosignals
 
 **Conference**: ICLR 2026  
@@ -118,10 +120,20 @@ Ablation on WESAD (PPG→ECG):
 - **Value**: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] sleep2vec: Unified Cross-Modal Alignment for Heterogeneous Nocturnal Biosignals](sleep2vec_unified_cross-modal_alignment_for_heterogeneous_nocturnal_biosignals.md)
+- [\[ICLR 2026\] CodeBrain: Bridging Decoupled Tokenizer and Multi-Scale Architecture for EEG Foundation Model](codebrain_bridging_decoupled_tokenizer_and_multi-scale_architecture_for_eeg_foun.md)
+- [\[ICLR 2026\] A Brain Graph Foundation Model: Pre-Training and Prompt-Tuning across Broad Atlases and Disorders](a_brain_graph_foundation_model_pre-training_and_prompt-tuning_across_broad_atlas.md)
+- [\[CVPR 2026\] Any2Any 3D Diffusion Models with Knowledge Transfer: A Radiotherapy Planning Study](../../CVPR2026/medical_imaging/any2any_3d_diffusion_models_with_knowledge_transfer_a_radiotherapy_planning_stud.md)
+- [\[ICLR 2026\] K-Prism: A Knowledge-Guided and Prompt Integrated Universal Medical Image Segmentation Model](k-prism_a_knowledge-guided_and_prompt_integrated_universal_medical_image_segment.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] sleep2vec: Unified Cross-Modal Alignment for Heterogeneous Nocturnal Biosignals](sleep2vec_unified_cross-modal_alignment_for_heterogeneous_nocturnal_biosignals.md)

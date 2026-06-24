@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CE-Nav: Flow-Guided Reinforcement Refinement for Cross-Embodiment Local Navigation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Reinforcement Learning] CE-Nav proposes a two-stage framework: first, an offline imitation learning stage trains a normalizing flow expert (VelFlow) that is independent of any specific robot embodiment and focuses solely on geometric obstacle avoidance; second, this expert is frozen as a prior for a lightweight online RL refiner to adapt to t
+  [ICLR2026][Robotics][Cross-embodiment navigation] CE-Nav proposes a two-stage framework: first, an offline imitation learning stage trains a normalizing flow expert (VelFlow) that is independent of any specific robot embodiment and focuses solely on geometric obstacle avoidance; second, this expert is frozen as a prior for a lightweight online RL refiner to adapt to the specific dynamics of new robots. It achieves SOTA navigation performance on quadruped, biped…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Robotics"
+  - "Cross-embodiment navigation"
+  - "Normalizing Flows"
+  - "Imitation Learning"
+  - "Reinforcement Learning"
+  - "Multimodal decision making"
 date: 2026-05-08
-content_hash: 1804b9adcc61fa7f
+content_hash: 1984d429a643cc7e
 ---
+
 # CE-Nav: Flow-Guided Reinforcement Refinement for Cross-Embodiment Local Navigation
 
 **Conference**: ICLR2026  
@@ -165,10 +170,10 @@ Ablation across four obstacle densities ($N_o\in\{100,300,500,700\}$) on Go2 (SR
 ## Related Papers
 
 - [\[ICLR 2026\] Cross-Embodiment Offline Reinforcement Learning for Heterogeneous Robot Datasets](cross-embodiment_offline_reinforcement_learning_for_heterogeneous_robot_datasets.md)
+- [\[ICLR 2026\] X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model](x-vla_soft-prompted_transformer_as_scalable_cross-embodiment_vision-language-act.md)
 - [\[ICLR 2026\] Scalable Exploration for High-Dimensional Continuous Control via Value-Guided Flow](scalable_exploration_for_high-dimensional_continuous_control_via_value-guided_fl.md)
 - [\[CVPR 2026\] GraspGen-X: Cross-Embodiment 6-DOF Diffusion-based Grasping](../../CVPR2026/robotics/graspgen-x_cross-embodiment_6-dof_diffusion-based_grasping.md)
 - [\[CVPR 2026\] GeniNav: Generative Model Driven Image-Goal Navigation via Imagination-Guided Consistency Flow Matching](../../CVPR2026/robotics/geninav_generative_model_driven_image-goal_navigation_via_imagination-guided_con.md)
-- [\[ICLR 2026\] RFS: Reinforcement Learning with Residual Flow Steering for Dexterous Manipulation](rfs_reinforcement_learning_with_residual_flow_steering_for_dexterous_manipulatio.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SERQ: Saliency-Aware Low-Rank Error Reconstruction for LLM Quantization
 description: >-
-  [ICLR 2026][Model Compression][W4A4] SERQ unifies activation outliers and weight saliency into a **single** low-rank compensation matrix. Through three steps—static activation flattening, saliency-aware error reconstruction, and offline weight permutation—linear layers achieve a pure 4-bit end-to-end computation path under W4A4. It outperforms previous Lo
+  [ICLR 2026][Model Compression][LLM Quantization] SERQ unifies activation outliers and weight saliency into a **single** low-rank compensation matrix. Through three steps—static activation flattening, saliency-aware error reconstruction, and offline weight permutation—linear layers achieve a pure 4-bit end-to-end computation path under W4A4. It outperforms previous LoRA-style reconstruction and rotation-based methods in accuracy while adding negligible inference latency.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - W4A4
+  - "ICLR 2026"
+  - "Model Compression"
+  - "LLM Quantization"
+  - "Post-Training Quantization"
+  - "Low-Rank Error Reconstruction"
+  - "Saliency"
+  - "W4A4"
 date: 2026-05-08
-content_hash: b897f956e15f3f06
+content_hash: 9a1fec8572f1d2ad
 ---
+
 # SERQ: Saliency-Aware Low-Rank Error Reconstruction for LLM Quantization
 
 **Conference**: ICLR 2026  
@@ -138,11 +143,11 @@ Under training-free conditions, Ours outperforms SpinQuant (which requires learn
 
 ## Related Papers
 
-- [\[ICLR 2026\] UniQL: Unified Quantization and Low-Rank Compression for Adaptive Edge LLMs](uniql_unified_quantization_and_low-rank_compression_for_adaptive_edge_llms.md)
 - [\[ICML 2026\] Preserve-Then-Quantize: Balancing Rank Budgets for Quantization Error Reconstruction in LLMs](../../ICML2026/model_compression/preserve-then-quantize_balancing_rank_budgets_for_quantization_error_reconstruct.md)
 - [\[ICLR 2026\] Rethinking Residual Errors in Compensation-based LLM Quantization](rethinking_residual_errors_in_compensation-based_llm_quantization.md)
 - [\[ICLR 2026\] Towards Quantization-Aware Training for Ultra-Low-Bit Reasoning LLMs](towards_quantization-aware_training_for_ultra-low-bit_reasoning_llms.md)
 - [\[ICML 2026\] Saliency-Aware Model Merging](../../ICML2026/model_compression/saliency-aware_model_merging.md)
+- [\[ICLR 2026\] GlowQ: Group-Shared Low-Rank Approximation for Quantized LLMs](glowq_group-shared_low-rank_approximation_for_quantized_llms.md)
 
 </div>
 

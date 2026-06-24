@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] FAMA: Failure-Aware Meta-Agentic Framework for Open-Source LLMs in Interactive Tool Use Environments
 description: >-
-  [ACL 2026][LLM Agent][Meta-Agent] FAMA employs an independent "failure analysis agent + orchestration agent" set to automatically diagnose dominant failure modes of a baseline tool-use agent on multi-turn benchmarks like τ-bench. It then directs a mitigation agent to select a minimal subset of helper agents for context injection, achieving up to a 27%
+  [ACL 2026 Findings][LLM Agent][Failure-aware] FAMA employs an independent "failure analysis agent + orchestration agent" set to automatically diagnose dominant failure modes of a baseline tool-use agent on multi-turn benchmarks like τ-bench. It then directs a mitigation agent to select a minimal subset of helper agents for context injection, achieving up to a 27% increase in task success rate on Qwen series open-source models.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Meta-Agent
-  - Tool-use
-  - τ-bench
+  - "ACL 2026 Findings"
+  - "LLM Agent"
+  - "Failure-aware"
+  - "Meta-Agent"
+  - "Tool-use"
+  - "τ-bench"
+  - "Open-source LLM"
 date: 2026-05-08
-content_hash: 3b711ae12ed7f4c9
+content_hash: 729100eb9b4912f6
 ---
+
 # FAMA: Failure-Aware Meta-Agentic Framework for Open-Source LLMs in Interactive Tool Use Environments
 
 **Conference**: ACL 2026 Findings  
@@ -139,15 +142,14 @@ Regarding efficiency (Qwen3-32B): IRMA overhead is 50-58% with 111-150s average 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] ToolOmni: Enabling Open-World Tool Use via Agentic Learning with Proactive Retrieval and Grounded Execution](toolomni_enabling_open-world_tool_use_via_agentic_learning_with_proactive_retrie.md)
 - [\[ACL 2026\] Meta-Tool: Efficient Few-Shot Tool Adaptation for Small Language Models](meta-tool_efficient_few-shot_tool_adaptation_for_small_language_models.md)
-- [\[ACL 2026\] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments](feedback-driven_tool-use_improvements_in_large_language_models_via_automated_bui.md)
+- [\[ICLR 2026\] ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data](../../ICLR2026/llm_agent/scalecua_scaling_open-source_computer_use_agents_with_cross-platform_data.md)
 - [\[ACL 2026\] How Adversarial Environments Mislead Agentic AI](how_adversarial_environments_mislead_agentic_ai.md)
-- [\[ACL 2025\] Adaptive Tool Use in Large Language Models with Meta-Cognition Trigger](../../ACL2025/llm_agent/meco_metacognition_tool_use.md)
+- [\[ACL 2026\] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments](feedback-driven_tool-use_improvements_in_large_language_models_via_automated_bui.md)
 
 </div>
 

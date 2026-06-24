@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Multiplicative Diffusion Models: Beyond Gaussian Latents
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] This paper proposes Multiplicative Score-based Generative Models (MSGM), which replace the classical additive Gaussian noise in diffusion models with **skew-symmetric multiplicative noise**. This ensures the forward process converges to a non-Gaussian latent distribution that naturally aligns with the data while keepin
+  [ICLR 2026][Image Generation][Multiplicative noise] This paper proposes Multiplicative Score-based Generative Models (MSGM), which replace the classical additive Gaussian noise in diffusion models with **skew-symmetric multiplicative noise**. This ensures the forward process converges to a non-Gaussian latent distribution that naturally aligns with the data while keeping the data norm distribution invariant, enabling more accurate generation of rare extreme events in heavy-ta…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Multiplicative noise"
+  - "diffusion models"
+  - "non-Gaussian latent space"
+  - "heavy-tailed distribution"
+  - "extreme events"
+  - "sliced score matching"
+  - "physics-inspired"
 date: 2026-05-08
-content_hash: 3d32503d0ccc315c
+content_hash: 6fe00cddc06f3d60
 ---
+
 # Multiplicative Diffusion Models: Beyond Gaussian Latents
 
 **Conference**: ICLR 2026  
@@ -96,11 +103,11 @@ flowchart LR
 
 ## Related Papers
 
-- [\[ICLR 2026\] Improving Discrete Diffusion Unmasking Policies Beyond Explicit Reference Policies (UPO)](improving_discrete_diffusion_unmasking_policies_beyond_explicit_reference_polici.md)
 - [\[ICLR 2026\] Hyperspherical Latents Improve Continuous-Token Autoregressive Generation](hyperspherical_latents_improve_continuous-token_autoregressive_generation.md)
 - [\[ICML 2025\] Gaussian Mixture Flow Matching Models](../../ICML2025/image_generation/gaussian_mixture_flow_matching_models.md)
 - [\[CVPR 2026\] What Is It Like to Be a Noise? An Entropy-based Gaussian Noise Regularization for Diffusion Models](../../CVPR2026/image_generation/what_is_it_like_to_be_a_noise_an_entropy-based_gaussian_noise_regularization_for.md)
-- [\[ICML 2026\] Beyond Generative Priors: Minority Sampling with JEPA-Guided Diffusion](../../ICML2026/image_generation/beyond_generative_priors_minority_sampling_with_jepa-guided_diffusion.md)
+- [\[ICLR 2026\] Improving Discrete Diffusion Unmasking Policies Beyond Explicit Reference Policies (UPO)](improving_discrete_diffusion_unmasking_policies_beyond_explicit_reference_polici.md)
+- [\[ICLR 2026\] Score Distillation Beyond Acceleration: Generative Modeling from Corrupted Data](score_distillation_beyond_acceleration_generative_modeling_from_corrupted_data.md)
 
 </div>
 

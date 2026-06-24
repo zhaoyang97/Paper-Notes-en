@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Back to Point: Exploring Point-Language Models for Zero-Shot 3D Anomaly Detection
 description: >-
-  [CVPR 2026][Object Detection][Zero-Shot 3D Anomaly Detection] BTP applies pre-trained Point-Language Models (PLM, e.g., ULIP) to zero-shot 3D anomaly detection for the first time. It proposes a Multi-Granularity Feature Embedding Module (MGFEM) to fuse patch-level semantics, geometric descriptors, and global CLS tokens. Combined with a joint representation learning strategy, it a
+  [CVPR 2026][Object Detection][Zero-Shot 3D Anomaly Detection] BTP applies pre-trained Point-Language Models (PLM, e.g., ULIP) to zero-shot 3D anomaly detection for the first time. It proposes a Multi-Granularity Feature Embedding Module (MGFEM) to fuse patch-level semantics, geometric descriptors, and global CLS tokens. Combined with a joint representation learning strategy, it achieves 84.5% point-level AUROC on Real3D-AD, significantly surpassing the VLM-based rendering app…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Zero-Shot 3D Anomaly Detection
-  - Point-Language Model
-  - ULIP
-  - Multi-Granularity
-  - Geometric Feature
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Zero-Shot 3D Anomaly Detection"
+  - "Point-Language Model"
+  - "ULIP"
+  - "Multi-Granularity"
+  - "Geometric Feature"
 date: 2026-05-08
-content_hash: 8c60c957a14b9481
+content_hash: cca370faeafeb6ed
 ---
+
 # Back to Point: Exploring Point-Language Models for Zero-Shot 3D Anomaly Detection
 
 **Conference**: CVPR 2026  
@@ -151,7 +152,7 @@ $$\mathcal{L} = \mathcal{L}_{local} + \lambda_1 \mathcal{L}_{global} + \lambda_2
 
 ## Related Papers
 
-- [\[CVPR 2026\] Hierarchical Point-Patch Fusion with Adaptive Patch Codebook for 3D Shape Anomaly Detection](hierarchical_point-patch_fusion_with_adaptive_patch_codebook_for_3d_shape_anomal.md)
+- [\[CVPR 2026\] GS-CLIP: Zero-shot 3D Anomaly Detection by Geometry-Aware Prompt and Synergistic View Representation Learning](gs-clip_zero-shot_3d_anomaly_detection_by_geometry-aware_prompt_and_synergistic_.md)
 - [\[CVPR 2026\] VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer](visualad_language-free_zero-shot_anomaly_detection_via_vision_transformer.md)
 - [\[CVPR 2026\] AnomalyVFM -- Transforming Vision Foundation Models into Zero-Shot Anomaly Detectors](anomalyvfm_--_transforming_vision_foundation_models_into_zero-shot_anomaly_detec.md)
 - [\[CVPR 2026\] Detect Anything via Next Point Prediction](detect_anything_via_next_point_prediction.md)

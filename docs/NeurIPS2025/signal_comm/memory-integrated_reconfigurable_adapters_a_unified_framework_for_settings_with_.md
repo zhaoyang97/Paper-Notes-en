@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Memory-Integrated Reconfigurable Adapters: A Unified Framework for Settings with Multiple Tasks
 description: >-
-  [NeurIPS 2025][Signal & Communication][Associative Memory] MIRA embeds Hopfield-style associative memory modules into each layer of a ViT, storing and retrieving LoRA adapter weights as key-value pairs. Through a two-sta…
+  [NeurIPS 2025][Signal & Communication][Associative Memory] MIRA embeds Hopfield-style associative memory modules into each layer of a ViT, storing and retrieving LoRA adapter weights as key-value pairs. Through a two-stage training procedure (Adaptation + Consolidation), a single unified architecture simultaneously addresses Domain Generalization (DG), Class-Incremental Learning (CIL), and Domain-Incremental Learning (DIL), achieving substantial improvements over task-specifi…
 tags:
   - "NeurIPS 2025"
   - "Signal & Communication"
@@ -12,7 +12,7 @@ tags:
   - "Continual Learning"
   - "Domain Generalization"
 date: 2026-05-08
-content_hash: d6a54000a60bf9a6
+content_hash: cf7bb882a911da0d
 ---
 
 # Memory-Integrated Reconfigurable Adapters: A Unified Framework for Settings with Multiple Tasks

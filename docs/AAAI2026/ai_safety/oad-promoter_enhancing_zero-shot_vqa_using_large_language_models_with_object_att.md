@@ -2,61 +2,61 @@
 title: >-
   [Paper Note] OAD-Promoter: Enhancing Zero-shot VQA using Large Language Models with Object Attribute Description
 description: >-
-  [AAAI 2026][AI Safety][Visual Question Answering] This paper proposes OAD-Promoter, a framework comprising three collaborative modules—Object-concentrated Example Generation (OEG), Memory Knowledge Assistance (MKA)…
+  [AAAI 2026][AI Safety][Visual Question Answering] This paper proposes OAD-Promoter, which cooperatively utilizes three modules—Object-concentrated Example Generation (OEG), Memory Knowledge Assistance (MKA), and OAD Prompt—to mitigate language bias inherited by LLMs and enhance domain adaptation capabilities under the zero-shot setting, achieving SOTA performance on multiple benchmarks such as VQAv2.
 tags:
   - "AAAI 2026"
   - "AI Safety"
   - "Visual Question Answering"
   - "Zero-shot VQA"
   - "Language Bias"
-  - "Domain Transfer"
+  - "Domain Adaptation"
   - "Object Attribute Description"
 date: 2026-05-08
-content_hash: e2f86866c420f267
+content_hash: 520637379a918165
 ---
 
 # OAD-Promoter: Enhancing Zero-shot VQA using Large Language Models with Object Attribute Description
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026  
 **arXiv**: [2511.12131](https://arxiv.org/abs/2511.12131)  
 **Code**: None  
-**Area**: Information Retrieval
-**Keywords**: Visual Question Answering, Zero-shot VQA, Language Bias, Domain Transfer, Object Attribute Description
+**Area**: Information Retrieval  
+**Keywords**: Visual Question Answering, Zero-shot VQA, Language Bias, Domain Adaptation, Object Attribute Description
 
 ## TL;DR
-This paper proposes OAD-Promoter, a framework comprising three collaborative modules—Object-concentrated Example Generation (OEG), Memory Knowledge Assistance (MKA), and OAD Prompt—to mitigate language bias inherited by LLMs and improve domain transfer under zero-shot settings, achieving state-of-the-art performance on VQAv2 and multiple other benchmarks.
+This paper proposes OAD-Promoter, which cooperatively utilizes three modules—Object-concentrated Example Generation (OEG), Memory Knowledge Assistance (MKA), and OAD Prompt—to mitigate language bias inherited by LLMs and enhance domain adaptation capabilities under the zero-shot setting, achieving SOTA performance on multiple benchmarks such as VQAv2.
 
 ## Background & Motivation
 
-**Background**: LLMs have become a critical tool for handling knowledge-intensive questions in VQA tasks. Existing LLM-based KBVQA methods (PICa, Prophet, Img2LLM, etc.) have achieved notable results in both few-shot and zero-shot settings.
+**Background**: LLMs have become key tools for processing knowledge-intensive questions in VQA tasks. Existing LLM-based KBVQA methods (such as PICa, Prophet, Img2LLM, etc.) have achieved remarkable results in few-shot and zero-shot scenarios.
 
-**Core Limitation — Language Bias**: Language bias is a persistent problem in VQA. For instance, the dominant answer to "What color...bananas?" in training data is "yellow," and models tend to exploit such superficial correlations rather than genuinely understanding the image. This issue exists not only in conventional VQA models but is **equally severe in LLM-based approaches**, as LLMs inevitably learn spurious correlations (shortcut learning) during large-scale pretraining.
+**Limitations of Prior Work—Language Bias**: Language bias is a persistent issue in the VQA domain. For example, in the training data, the dominant answer to "What color... bananas?" is "yellow," causing the model to exploit this superficial correlation instead of truly understanding the image. This problem is not only present in traditional VQA models but is **equally severe in LLM-based methods**, as LLMs inevitably learn shortcut correlations (shortcut learning) during pre-training on large-scale datasets.
 
-**Two Major Negative Effects** (Figure 1):
+**Two Major Negative Impacts** (Figure 1):
 
-**Unreliable Predictions**: LLMs exploit inherited language biases during inference, leading to biased answers.
+**Unreliable Predictions**: LLMs use inherited language bias for reasoning, leading to biased answers.
 
-**Poor OOD Generalization**: Despite strong knowledge reasoning capabilities, language bias exacerbates difficulties in domain transfer.
+**Poor OOD Generalization**: Although LLMs possess strong knowledge reasoning capabilities, language bias exacerbates the difficulties of domain adaptation.
 
 **Blind Spots of Existing Methods**:
-- Existing LLM-based KBVQA methods overlook the integration of global and regional visual information.
-- No auxiliary memory module exists to help LLMs handle distribution-shifted scenarios.
-- Debiasing methods (e.g., LMH, CSS) directly integrated into the LLM pipeline actually degrade performance (verified experimentally).
+- Existing LLM-based KBVQA methods neglect the integration of global and regional visual information.
+- There is no auxiliary memory module to help LLMs handle scenarios with distribution shifts.
+- Directly integrating debiasing methods (e.g., LMH, CSS) into the LLM pipeline degrades performance (as verified by experiments).
 
-**Core Mechanism**:
-1. Richer visual information can alleviate language bias by enabling LLMs to "see" more, thereby reducing reliance on linguistic priors.
-2. Memory-augmented examples improve inference reliability, particularly in domain transfer scenarios.
-3. A prompt that integrates the above two components continuously enhances domain adaptation.
+**Mechanism**:
+1. Finer-grained visual information can mitigate language bias (allowing LLMs to "see" more, reducing dependence on language priors).
+2. Assistance from memory examples can enhance reasoning reliability, especially in domain adaptation scenarios.
+3. Prompts integrating the above two points can continuously enhance domain adaptation capabilities.
 
 ## Method
 
 ### Overall Architecture
-OAD-Promoter consists of three collaborative modules (Figure 2):
+OAD-Promoter contains three synergistic modules (Figure 2):
 1. **OEG Module** (green box): Generates global captions and object-concentrated examples.
-2. **MKA Module** (blue box): Leverages stored examples to assist LLMs in processing new inputs.
-3. **OAD Prompt** (red box): Integrates outputs from the preceding two modules to guide LLM reasoning.
+2. **MKA Module** (blue box): Uses stored examples to assist the LLM in processing new inputs.
+3. **OAD Prompt** (red box): Integrates outputs of the first two modules to guide LLM reasoning.
 
-The entire pipeline relies on no external knowledge sources or retrieval corpora, constituting a purely zero-shot approach.
+The entire pipeline does not rely on any external knowledge sources or data that needs retrieval, making it a purely zero-shot method.
 
 ### Key Designs
 
@@ -65,68 +65,68 @@ The entire pipeline relies on no external knowledge sources or retrieval corpora
 Contains two generation processes:
 
 **Multi-level Caption Generation**:
-- A pretrained BLIP2 generates **global captions** ($C_G$) to capture overall image semantics.
-- A VinVL detector generates **region-level captions** (object-concentrated captions) focusing on individual object attributes.
+- A pre-trained BLIP2 is used to generate a **global caption**, capturing the overall semantics of the image.
+- A VinVL detector is used to generate **object-concentrated captions** (regional captions), focusing on individual object attributes.
 
 **Synthetic Question Generation**:
-- A caption evaluation tool extracts candidate answers from object captions (noun phrases, verb phrases, adjectives, numbers, Boolean words).
-- A T5-large model fine-tuned on SQuAD2.0, MultiRC, BookQA, CommonsenseQA, and Social IQa generates corresponding questions.
-- Complete object-concentrated examples are formed as $E_i = (C, Q, A)$.
+- A caption parser is used to extract potential answers (noun phrases, verb phrases, adjectives, numbers, boolean words) from object captions.
+- A T5-large model fine-tuned on SQuAD2.0, MultiRC, BookQA, CommonsenseQA, and Social IQa is used to generate corresponding questions.
+- A complete object-concentrated example $E_i = (C, Q, A)$ is formed.
 
-**Design Motivation**: Global captions provide macro-level understanding, while region-level captions supply fine-grained information. Their combination gives LLMs more complete visual information, reducing opportunities to rely on linguistic priors. These generated examples serve simultaneously as the MKA memory bank and as components of the prompt.
+Design Motivation: The global caption provides macro-level understanding, while the regional captions supplement fine-grained information. Combining both grants the LLM more complete visual information, reducing the likelihood of relying on language priors. These generated examples serve as both the memory bank for MKA and components of the Prompt.
 
 #### 2. **MKA Module (Memory Knowledge Assistance)**
 
 Contains two processes:
 
 **Answer Estimation**:
-- **Standard VQA model** (UpDn): Outputs a vision-aware answer $A_O$.
-- **Bias-only QA model** (off-shift model from LMH): Outputs a biased answer $A_B$ without visual input (pure language bias).
+- **Vanilla VQA Model** (UpDn): Outputs a vanilla answer $A_O$ (containing visual information).
+- **Biased QA Model** (the off-shift model in LMH): Outputs a biased answer $A_B$ (lacking visual information, pure language bias).
 
-Mode determination:
+Selection Mode Decision:
 $$M = \begin{cases} Positive, & \text{if } A_O \neq A_B \\ Negative, & \text{if } A_O = A_B \end{cases}$$
 
-**Key Insight**: If $A_B = A_O$, the same answer is obtainable without viewing the image, suggesting the standard model is exploiting language bias. Since LLMs are trained on far larger corpora than standard VQA models, they are even more prone to such bias.
+Key Insight: If $A_B = A_O$, it indicates that the same answer can be obtained even without looking at the image—implying that the vanilla model is utilizing language bias. Since the training scale of LLMs is far larger than that of vanilla VQA models, the probability of LLMs exploiting this bias is even higher.
 
-**Similarity Computation**:
+**Similarity Calculation**:
 $$E_S = \begin{cases} \text{argTopN} \frac{f^T f_j}{\|f\|_2 \|f_j\|_2}, & \text{if } M = Positive \\ \text{argBottomN} \frac{f^T f_j}{\|f\|_2 \|f_j\|_2}, & \text{if } M = Negative \end{cases}$$
 
-- Positive mode: Selects the most similar stored examples (supporting normal reasoning).
-- **Negative mode**: Selects the **least similar** stored examples (counteracting language bias).
+- Positive Mode: Selects the most similar stored examples (supporting normal reasoning).
+- **Negative Mode**: Selects the **least similar** stored examples (countering language bias).
 
-**Design Motivation**: By anticipating bias signals, the module proactively selects auxiliary examples in the direction opposing the bias, thereby guiding LLMs away from language shortcuts. As inference proceeds, the memory bank grows continuously, progressively enhancing domain adaptation.
+Design Motivation: By pre-registering bias signals and actively choosing auxiliary examples opposite to the bias direction, the LLM is guided to bypass language bias. As inference proceeds, the memory bank continuously grows, and the domain adaptation capability is steadily enhanced.
 
 #### 3. **OAD Prompt**
 
-A structured prompt integrating outputs from the preceding two modules:
+A structured prompt that integrates outputs from the first two modules:
 $$[\text{Instruction } I \;/\; \text{Global Caption } C_G \;/\; \text{Object Examples } E_O \;/\; \text{Memory Examples } E_S \;/\; \text{Question } Q_O]$$
 
-At initialization, the MKA memory is empty and the prompt reduces to $[I / C_G / E_O / Q_O]$; from the second sample onward, the full form is used.
+Initially, the MKA memory is empty, and the prompt is $[I / C_G / E_O / Q_O]$. From the second sample onward, it transitions to the full form.
 
-**Key Distinction from Prior Methods**: The prompt simultaneously incorporates global descriptions and object attribute descriptions, rather than relying solely on global captions. Ablation experiments confirm that the CQA-CQA-CQA arrangement (each example as a complete triple) outperforms the CCC-QAQAQA arrangement (separated layout).
+Key Difference from Existing Methods: It simultaneously considers both global descriptions and object attribute descriptions, rather than relying solely on global captions. Ablation studies demonstrate that CQA-CQA-CQA (keeping the complete triple for each example) outperforms CCC-QAQAQA (separated arrangement).
 
 ### Loss & Training
-- OAD-Promoter itself requires no training; it operates as an inference-time framework.
-- The UpDn model is first pretrained on VQAv2 + Visual Genome, then fine-tuned on the OKVQA training set.
+- OAD-Promoter itself is not trained; it is an inference-time framework.
+- The UpDn model is first pre-trained on VQAv2+Visual Genome, and then fine-tuned on the OKVQA training set.
 - Main experiments use GPT-3 and OPT as frozen LLMs.
-- To avoid data contamination, images appearing in the OKVQA test set are removed from pretraining data.
+- Avoiding Data Contamination: Images that appear in the OKVQA test set are removed from the pre-training data.
 
 ## Key Experimental Results
 
-### Main Results — Zero-shot Performance
+### Main Results—Performance under Zero-shot Settings
 
 | Method | VQAv2 test | A-OKVQA test | OKVQA test |
-|--------|-----------|-------------|------------|
+|------|-----------|-------------|------------|
 | Flamingo-80B | 56.21 | - | 50.57 |
 | Img2LLM w/ GPT-3 | 59.22 | 43.39 | 42.80 |
 | Img2LLM w/ OPT | 61.83 | 40.69 | 45.58 |
 | **OAD-Promoter w/ OPT** | **61.93** | **40.68** | **45.58** |
 | **OAD-Promoter w/ GPT-3** | **61.98** | **41.71** | **45.61** |
 
-### Generalization Across Different LLMs (OKVQA Zero-shot)
+### Generalization Verification on Different LLMs (OKVQA Zero-shot)
 
 | LLM | Parameters | OKVQA |
-|-----|-----------|-------|
+|-----|--------|-------|
 | GPT-Neo | 2.7B | 33.41 |
 | GPT-J | 6B | 38.89 |
 | BLOOM | 7.1B | 33.77 |
@@ -138,20 +138,20 @@ At initialization, the MKA memory is empty and the prompt reduces to $[I / C_G /
 ### Ablation Study
 
 | Configuration | OKVQA (Few-shot) | OKVQA (Zero-shot) | Note |
-|---------------|-----------------|-------------------|------|
-| w/o OEG + w/o MKA | 47.33 | 42.50 | Baseline |
-| w/ OEG + w/o MKA | 54.68 | 44.26 | OEG contributes most |
-| w/o OEG + w/ MKA | 48.95 | 43.64 | MKA alone also helps |
-| **w/ OEG + w/ MKA** | **60.04** | **45.61** | Best synergy |
+|------|-----------------|-------------------|------|
+| No OEG + No MKA | 47.33 | 42.50 | Baseline |
+| With OEG + No MKA | 54.68 | 44.26 | OEG contributes the most |
+| No OEG + With MKA | 48.95 | 43.64 | MKA is also helpful independently |
+| **With OEG + With MKA** | **60.04** | **45.61** | Synergy of both yields the best results |
 
-| MKA Memory Size K | OKVQA | Note |
-|-------------------|-------|------|
+| Number of MKA Memory Examples K | OKVQA | Note |
+|---------------|-------|------|
 | 0 | 43.64 | No memory |
 | 60 | 43.65 | Few examples |
-| 200 | 43.92 | Moderate examples |
-| 400 | 44.15 | More examples is better |
+| 200 | 43.92 | Medium examples |
+| 400 | 44.15 | More examples yield better performance |
 
-### Domain Transfer (Few-shot, Different LLMs)
+### Domain Adaptation Experiments (Few-shot, Different LLMs)
 
 | LLM | VQA-CP | GQA-OOD |
 |-----|--------|---------|
@@ -159,31 +159,31 @@ At initialization, the MKA memory is empty and the prompt reduces to $[I / C_G /
 | **GPT-4 (OAD-Promoter)** | 55.93 | **50.21** |
 
 ### Key Findings
-1. A new state-of-the-art is achieved on VQAv2 zero-shot (61.98), surpassing all large-scale multimodal pretraining methods and frozen LLM methods.
-2. The OEG module contributes the most in the few-shot setting (+7.35), confirming that fine-grained visual information is critical for mitigating language bias.
-3. Directly integrating conventional debiasing methods (LMH, CSS) into the LLM pipeline degrades OKVQA performance (Table 4), indicating that language bias in LLMs requires fundamentally different remediation strategies.
-4. With GPT-4, OAD-Promoter achieves the best result on GQA-OOD (50.21), suggesting that stronger LLMs can better leverage domain transfer capabilities.
-5. The growing memory bank mechanism yields continuous performance improvement (K=400 > K=200 > K=60).
-6. OAD-Promoter is invariant to input ordering (100% correct rate), whereas Img2LLM is sensitive to ordering.
+1. A new SOTA (61.98) is achieved under the VQAv2 zero-shot setting, outperforming all large-scale multimodal pre-training and frozen LLM methods.
+2. The OEG module contributes the most (+7.35) under the few-shot setting, proving that fine-grained visual information is key to mitigating language bias.
+3. Directly integrating traditional debiasing methods (LMH, CSS) into the LLM pipeline degrades OKVQA performance (Table 4), indicating that language bias in LLMs requires different handling strategies.
+4. With GPT-4, OAD-Promoter achieves the best performance on GQA-OOD (50.21), showing that stronger LLMs can better leverage domain adaptation capabilities.
+5. The mechanism where the memory bank grows during inference leads to continuous performance improvements (K=400 > K=200 > K=60).
+6. Changing the input order has no impact on OAD-Promoter (100% robustness), whereas Img2LLM is sensitive to order.
 
 ## Highlights & Insights
-1. **Exposes the severity of language bias in LLMs**: Language bias is not limited to conventional VQA models; LLM-based methods suffer equally, and conventional debiasing approaches are ineffective in this context.
-2. **Novel strategy for counteracting bias**: Selecting the least similar examples in Negative mode to counteract bias is both innovative and empirically effective.
-3. **Zero-shot surpasses few-shot**: Thanks to the growing memory mechanism in MKA, reasoning capability continuously improves in the zero-shot setting.
-4. **Plug-and-play**: The framework is compatible with various LLMs (GPT-3, OPT, BLOOM, GPT-Neo, GPT-J, GPT-4, etc.).
-5. **Self-growing memory bank**: The MKA module naturally accumulates knowledge throughout inference, representing an elegant form of continual learning.
+1. **Reveals the Severity of Language Bias in LLMs**: Not only do traditional VQA models suffer from bias issues, but LLM-based methods do too, and traditional debiasing methods prove ineffective.
+2. **Innovative Bias Countering Strategy**: Actively choosing the least similar examples via Negative Mode to counter bias is a novel and effective idea.
+3. **Zero-shot Outperforming Few-shot**: Thanks to the memory growth mechanism of MKA, the reasoning capability under the zero-shot setting is continuously strengthened.
+4. **Plug-and-play**: The framework can be combined with various LLMs (e.g., GPT-3, OPT, BLOOM, GPT-Neo, GPT-J, GPT-4).
+5. **Self-growing Memory Bank**: The MKA module naturally accumulates knowledge as inference proceeds, representing an elegant form of continual learning.
 
 ## Limitations & Future Work
-1. The framework depends on the quality of pretrained models such as VinVL and BLIP2; failures in these components degrade OEG output.
-2. Bias detection in MKA relies on the UpDn and LMH QA modules, whose individual capabilities are limited.
-3. Performance gains on A-OKVQA and OKVQA under the zero-shot setting are modest (<1%), indicating a ceiling for more challenging knowledge-intensive reasoning tasks.
-4. Unbounded growth of the memory bank may introduce storage and retrieval efficiency concerns.
-5. The Positive/Negative mode selection is a hard switch; soft interpolation could be considered.
+1. Dependency on the quality of pre-trained models like VinVL and BLIP2; failure of these models degrades the output of the OEG module.
+2. Bias detection in the MKA module relies on the QA modules of UpDn and LMH, which have limited capabilities themselves.
+3. The performance gain under the zero-shot setting on A-OKVQA and OKVQA is limited (<1%), showing the ceiling of this method on more difficult knowledge-reasoning problems.
+4. Infinite growth of the memory bank may pose storage and retrieval efficiency challenges.
+5. The selection mode between Positive and Negative is a hard switch; soft interpolation could be explored.
 
 ## Related Work & Insights
-- The bias detection strategy (comparing predictions with vs. without visual input) is generalizable to other settings where shortcut learning detection is needed.
-- The memory-augmented inference framework offers a useful reference for other reasoning tasks requiring continuous improvement.
-- The multi-granularity visual information integration strategy (global + regional) is worth adopting in other vision-language model research.
+- The mechanism of bias detection (comparing predictions with vs. without visual cues) can be extended to other scenarios requiring shortcut learning detection.
+- The memory-augmented reasoning framework serves as a valuable reference for other reasoning tasks that require continuous improvement.
+- The integration strategy of multi-granularity visual information (global + regional) is worth borrowing for other VLM works.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐
@@ -197,11 +197,11 @@ At initialization, the MKA memory is empty and the prompt reduces to $[I / C_G /
 
 ## Related Papers
 
+- [\[CVPR 2026\] Hierarchically Robust Zero-shot Vision-language Models](../../CVPR2026/ai_safety/hierarchically_robust_zero-shot_vision-language_models.md)
 - [\[ICML 2026\] Calibrating Uncertainty for Zero-Shot Adversarial CLIP](../../ICML2026/ai_safety/calibrating_uncertainty_for_zero-shot_adversarial_clip.md)
-- [\[CVPR 2026\] $\varphi$-DPO: Fairness Direct Preference Optimization Approach to Continual Learning in Large Multimodal Models](../../CVPR2026/ai_safety/φ-dpo_fairness_direct_preference_optimization_approach_to_continual_learning_in_.md)
-- [\[AAAI 2026\] TopoReformer: Mitigating Adversarial Attacks Using Topological Purification in OCR Models](toporeformer_mitigating_adversarial_attacks_using_topological_purification_in_oc.md)
-- [\[AAAI 2026\] Transferable Backdoor Attacks for Code Models via Sharpness-Aware Adversarial Perturbation](transferable_backdoor_attacks_for_code_models_via_sharpness-aware_adversarial_pe.md)
-- [\[CVPR 2026\] When Robots Obey the Patch: Universal Transferable Patch Attacks on Vision-Language-Action Models](../../CVPR2026/ai_safety/when_robots_obey_the_patch_universal_transferable_patch_attacks_on_vision-langua.md)
+- [\[CVPR 2026\] Towards Robust Multimodal Large Language Models Against Jailbreak Attacks](../../CVPR2026/ai_safety/towards_robust_multimodal_large_language_models_against_jailbreak_attacks.md)
+- [\[CVPR 2026\] SIF: Semantically In-Distribution Fingerprints for Large Vision-Language Models](../../CVPR2026/ai_safety/sif_semantically_in-distribution_fingerprints_for_large_vision-language_models.md)
+- [\[CVPR 2026\] GenBreak: Red Teaming Text-to-Image Generation Using Large Language Models](../../CVPR2026/ai_safety/genbreak_red_teaming_text-to-image_generation_using_large_language_models.md)
 
 </div>
 

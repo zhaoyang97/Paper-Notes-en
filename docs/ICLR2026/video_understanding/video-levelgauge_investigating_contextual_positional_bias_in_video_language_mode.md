@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Video-LevelGauge: Investigating Contextual Positional Bias in Video Language Models
 description: >-
-  [ICLR 2026][Video Understanding][Paper Note] This paper proposes Video-LevelGauge, a benchmark specifically designed to evaluate the "contextual positional bias" of Large Video Language Models (LVLMs). By inserting standardized probe clips at different positions within a context, it uses relative scores and bias pattern recognition to quantify whether a model und
+  [ICLR 2026][Video Understanding][Positional Bias] This paper proposes Video-LevelGauge, a benchmark specifically designed to evaluate the "contextual positional bias" of Large Video Language Models (LVLMs). By inserting standardized probe clips at different positions within a context, it uses relative scores and bias pattern recognition to quantify whether a model understands the same content consistently across locations. Evaluating 27 SOTA models…
 tags:
-  - ICLR 2026
-  - Video Understanding
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Positional Bias"
+  - "Video Large Language Models"
+  - "Evaluation Benchmark"
+  - "Standardized Probes"
+  - "Context Length"
 date: 2026-05-08
-content_hash: d54d9cc7dabc9c86
+content_hash: b419ef59aa4ab227
 ---
+
 # Video-LevelGauge: Investigating Contextual Positional Bias in Video Language Models
 
 **Conference**: ICLR 2026  
@@ -124,15 +130,16 @@ Key Observations: ① $S_{\text{meta}}$ (general capability) **does not correlat
 - Value: ⭐⭐⭐⭐⭐ Identifies a critical blind spot in current evaluation and guides long-video model improvement.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] FlashVID: Efficient Video Large Language Models via Training-free Tree-Based Spatiotemporal Token Merging](flashvid_efficient_video_large_language_models_via_training-free_tree-based_spat.md)
 - [\[ACL 2025\] Addressing Blind Guessing: Calibration of Selection Bias in Multiple-Choice Question Answering by Video Language Models](../../ACL2025/video_understanding/addressing_blind_guessing_calibration_of_selection_bias_in_multiple-choice_quest.md)
 - [\[ICLR 2026\] LLaVAction: Evaluating and Training Multi-modal Large Language Models for Action Understanding](llavaction_evaluating_and_training_multi-modal_large_language_models_for_action_.md)
+- [\[CVPR 2025\] On the Consistency of Video Large Language Models in Temporal Comprehension](../../CVPR2025/video_understanding/on_the_consistency_of_video_large_language_models_in_temporal_comprehension.md)
 - [\[ICLR 2026\] Point Prompting: Counterfactual Tracking with Video Diffusion Models](point_prompting_counterfactual_tracking_with_video_diffusion_models.md)
-- [\[ICLR 2026\] FlashVID: Efficient Video Large Language Models via Training-free Tree-Based Spatiotemporal Token Merging](flashvid_efficient_video_large_language_models_via_training-free_tree-based_spat.md)
-- [\[ICLR 2026\] IF-VidCap: Can Video Caption Models Follow Instructions?](if-vidcap_can_video_caption_models_follow_instructions.md)
 
 </div>
 

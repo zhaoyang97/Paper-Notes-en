@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Lightweight LLM Agent Memory with Small Language Models
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] This paper proposes LightMem, a lightweight LLM agent memory system driven by multiple specialized Small Language Models (SLMs). By modularizing memory operations into a Controller (SLM-1), Selector (SLM-2), and Writer (SLM-3), and decoupling online processing from offline consolidation, it achieves an average F1 impro
+  [ACL 2024 (Assuming 2026 is a typo in source or futuristic placeholder)][LLM Agent][Agent Memory] This paper proposes LightMem, a lightweight LLM agent memory system driven by multiple specialized Small Language Models (SLMs). By modularizing memory operations into a Controller (SLM-1), Selector (SLM-2), and Writer (SLM-3), and decoupling online processing from offline consolidation, it achieves an average F1 improvement of approximately 2.5 on the LoCoMo benchmark (compared…
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2024 (Assuming 2026 is a typo in source or futuristic placeholder)"
+  - "LLM Agent"
+  - "Agent Memory"
+  - "Small Language Models"
+  - "Lightweight Retrieval"
+  - "Online-Offline Decoupling"
+  - "Long-term Dialogue"
 date: 2026-05-08
-content_hash: cfe7918c19652479
+content_hash: 935b40e5b6c89128
 ---
+
 # Lightweight LLM Agent Memory with Small Language Models
 
 **Conference**: ACL 2024 (Assuming 2026 is a typo in source or futuristic placeholder)
@@ -165,7 +171,7 @@ SLM-2 is fine-tuned using LoRA on 2,000 constructed (Query, Subgraph, Path) samp
 - [\[ACL 2026\] CLAG: Adaptive Memory Organization via Agent-Driven Clustering for Small Language Model Agents](clag_adaptive_memory_organization_via_agent-driven_clustering_for_small_language.md)
 - [\[ACL 2026\] Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair](polaris_a_gödel_agent_framework_for_small_language_models_through_experience-abs.md)
 - [\[ACL 2026\] Meta-Tool: Efficient Few-Shot Tool Adaptation for Small Language Models](meta-tool_efficient_few-shot_tool_adaptation_for_small_language_models.md)
-- [\[ACL 2026\] AnchorMem: Anchored Facts with Associative Contexts for Building Memory in Large Language Models](anchormem_anchored_facts_with_associative_contexts_for_building_memory_in_large_.md)
+- [\[NeurIPS 2025\] Distilling LLM Agent into Small Models with Retrieval and Code Tools](../../NeurIPS2025/llm_agent/distilling_llm_agent_into_small_models_with_retrieval_and_co.md)
 
 </div>
 

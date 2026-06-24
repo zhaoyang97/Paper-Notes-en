@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Interpretability in Deep Time Series Models Demands Semantic Alignment
 description: >-
-  [ICML 2026][Time Series][Interpretability] This is a **position paper**—proposing that deep time series models should enforce **semantic alignment**: making a model's internal variables and mechanisms correspond to a domain expert's reasoning rather than just explaining internal computations. The core innovation defines persistence constraints for semantic alig
+  [ICML 2026][Time Series][Semantic Alignment] This is a **position paper**—proposing that deep time series models should enforce **semantic alignment**: making a model's internal variables and mechanisms correspond to a domain expert's reasoning rather than just explaining internal computations. The core innovation defines persistence constraints for semantic alignment regarding temporal evolution (a challenge unique to time series).
 tags:
-  - ICML 2026
-  - Time Series
-  - Interpretability
+  - "ICML 2026"
+  - "Time Series"
+  - "Semantic Alignment"
+  - "Interpretability"
+  - "Concept Bottleneck"
+  - "Neuro-symbolic"
 date: 2026-05-08
-content_hash: 9e42cf2479394392
+content_hash: 410cbca72c8d5773
 ---
+
 # Interpretability in Deep Time Series Models Demands Semantic Alignment
 
 **Conference**: ICML 2026  
@@ -130,11 +134,11 @@ To guide modeling, the paper provides an actionable blueprint mapping the three 
 
 ## Related Papers
 
-- [\[ICML 2026\] Position: Current Benchmarking Hinders Real Progress in Deep Learning for Time Series](position_current_benchmarking_hinders_real_progress_in_deep_learning_for_time_se.md)
+- [\[ICLR 2026\] Towards Multimodal Time Series Anomaly Detection with Semantic Alignment and Condensed Interaction](../../ICLR2026/time_series/towards_multimodal_time_series_anomaly_detection_with_semantic_alignment_and_con.md)
+- [\[ICLR 2026\] Semantic-Enhanced Time-Series Forecasting via Large Language Models](../../ICLR2026/time_series/semantic-enhanced_time-series_forecasting_via_large_language_models.md)
 - [\[ICML 2026\] PATRA: Pattern-Aware Alignment and Balanced Reasoning for Time Series Question Answering](patra_pattern-aware_alignment_and_balanced_reasoning_for_time_series_question_an.md)
-- [\[NeurIPS 2025\] SynTSBench: Rethinking Temporal Pattern Learning in Deep Learning Models for Time Series](../../NeurIPS2025/time_series/syntsbench_rethinking_temporal_pattern_learning_in_deep_learning_models_for_time.md)
+- [\[ICML 2026\] Position: Current Benchmarking Hinders Real Progress in Deep Learning for Time Series](position_current_benchmarking_hinders_real_progress_in_deep_learning_for_time_se.md)
 - [\[ICML 2026\] OLIVIA: Harmonizing Time Series Foundation Models with Power Spectral Density](olivia_harmonizing_time_series_foundation_models_with_power_spectral_density.md)
-- [\[ICML 2026\] TimeOmni-VL: Unified Models for Time Series Understanding and Generation](timeomni-vl_unified_models_for_time_series_understanding_and_generation.md)
 
 </div>
 

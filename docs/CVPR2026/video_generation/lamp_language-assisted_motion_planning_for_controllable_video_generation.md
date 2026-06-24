@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] LAMP: Language-Assisted Motion Planning for Controllable Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] The LAMP framework models motion control as a language-to-program synthesis problem. By designing a cinematography-inspired motion DSL, the authors train an LLM to transform natural language descriptions into structured motion programs. These programs are deterministically mapped to 3D object and camera trajectories to
+  [CVPR 2026][Video Generation][Motion Control] The LAMP framework models motion control as a language-to-program synthesis problem. By designing a cinematography-inspired motion DSL, the authors train an LLM to transform natural language descriptions into structured motion programs. These programs are deterministically mapped to 3D object and camera trajectories to condition video generation, enabling the simultaneous generation of object and camera motion from natural languag…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Motion Control"
+  - "LLM Planning"
+  - "Domain-Specific Language"
+  - "Cinematography"
 date: 2026-05-08
-content_hash: 8e3faa1213bea001
+content_hash: a3f31144c5e32dfc
 ---
+
 # LAMP: Language-Assisted Motion Planning for Controllable Video Generation
 
 **Conference**: CVPR 2026  
@@ -132,10 +137,20 @@ The LLM planner is trained using a standard autoregressive target without additi
 - Value: ⭐⭐⭐⭐⭐ Significant contribution to controllable video generation with an elegant and scalable framework.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] DriveLaW: Unifying Planning and Video Generation in a Latent Driving World](drivelaw_unifying_planning_and_video_generation_in_a_latent_driving_world.md)
+- [\[CVPR 2026\] TV2TV: A Unified Framework for Interleaved Language and Video Generation](tv2tv_a_unified_framework_for_interleaved_language_and_video_generation.md)
+- [\[AAAI 2026\] MotionCharacter: Fine-Grained Motion Controllable Human Video Generation](../../AAAI2026/video_generation/motioncharacter_fine-grained_motion_controllable_human_video_generation.md)
+- [\[CVPR 2026\] MultiShotMaster: A Controllable Multi-Shot Video Generation Framework](multishotmaster_a_controllable_multi-shot_video_generation_framework.md)
+- [\[ICLR 2026\] Real-Time Motion-Controllable Autoregressive Video Diffusion](../../ICLR2026/video_generation/real-time_motion-controllable_autoregressive_video_diffusion.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] MotionEnhancer: Leveraging Video Diffusion for Motion-Enhanced Vision-Language Models](motionenhancer_leveraging_video_diffusion_for_motion-enhanced_vision-language_mo.md)

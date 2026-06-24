@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Mixture-of-Experts] The TVVE framework is proposed, which selects optimal virtual camera viewpoints through a reinforcement learning-driven Multi-View Exploration Policy (MVEP) and performs online observation re-rendering. Concurrently, a task-aware MoE visual encoder (TaskMoE) is designed to resolve feature interference in multi-task set
+  [CVPR 2026][Robotics][View Exploration] The TVVE framework is proposed, which selects optimal virtual camera viewpoints through a reinforcement learning-driven Multi-View Exploration Policy (MVEP) and performs online observation re-rendering. Concurrently, a task-aware MoE visual encoder (TaskMoE) is designed to resolve feature interference in multi-task settings, achieving an average success rate of 86.6% across 18 RLBench tasks.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Mixture-of-Experts
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Robotics"
+  - "View Exploration"
+  - "Multi-task Manipulation"
+  - "Mixture-of-Experts"
+  - "Virtual View Rendering"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: ce7a4ce7961d1ab1
+content_hash: 99f5ad3ef040c6de
 ---
+
 # Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation
 
 **Conference**: CVPR 2026  
@@ -166,15 +170,16 @@ In occlusion scenarios (Occlusion 2), TVVE achieves an **+11.1% Gain** over RVT2
 ⭐⭐⭐⭐ High design completeness (MVEP + TaskMoE + 3-stage training). Experimental coverage includes simulation, OOD, and real-world robots, achieving significant Gains on 18 RLBench tasks. However, inference efficiency and point cloud reliance remain deployment bottlenecks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Learning to Act Robustly with View-Invariant Latent Actions](learning_to_act_robustly_with_view-invariant_latent_actions.md)
 - [\[CVPR 2026\] DiffuView: Multi-View Diffusion Pretraining for 3D-Aware Robotic Manipulation](diffuview_multi-view_diffusion_pretraining_for_3d_aware_robotic_manipulation.md)
-- [\[CVPR 2026\] PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation](palm_progress-aware_policy_learning_via_affordance_reasoning_for_long-horizon_ro.md)
+- [\[CVPR 2026\] GeCo-SRT: Geometry-aware Continual Adaptation for Cross-Task Sim-to-Real Transfer](geco-srt_geometry-aware_continual_adaptation_for_cross-task_sim-to-real_transfer.md)
 - [\[NeurIPS 2025\] Act to See, See to Act: Diffusion-Driven Perception-Action Interplay for Adaptive Policies](../../NeurIPS2025/robotics/act_to_see_see_to_act_diffusion-driven_perception-action_interplay_for_adaptive_.md)
-- [\[CVPR 2026\] GeCo-SRT: Geometry-aware Continual Adaptation for Robotic Cross-Task Sim-to-Real Transfer](gecosrt_geometryaware_continual_adaptation_for_rob.md)
+- [\[CVPR 2026\] MM-ACT: Learn from Multimodal Parallel Generation to Act](mm-act_learn_from_multimodal_parallel_generation_to_act.md)
 
 </div>
 

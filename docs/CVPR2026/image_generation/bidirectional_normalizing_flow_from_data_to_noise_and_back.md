@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Bidirectional Normalizing Flow: From Data to Noise and Back
 description: >-
-  [CVPR 2026][Others][Normalizing Flow] BiFlow removes the hard constraint in standard Normalizing Flow where the "backward process must be the exact analytical inverse of the forward process." Instead, it trains a separate backward model to **approximate** the inverse mapping (supervised by hidden state alignment). This allows the backward model to utilize
+  [CVPR 2026][Image Generation][Normalizing Flow] BiFlow removes the hard constraint in standard Normalizing Flow where the "backward process must be the exact analytical inverse of the forward process." Instead, it trains a separate backward model to **approximate** the inverse mapping (supervised by hidden state alignment). This allows the backward model to utilize a bidirectional attention Transformer, enabling image generation in a single forward pass (1-NFE). On ImageNet 2…
 tags:
-  - CVPR 2026
-  - Others
-  - Normalizing Flow
-  - ImageNet
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Normalizing Flow"
+  - "Learning Inverse Mapping"
+  - "Hidden State Alignment"
+  - "1-NFE Generation"
+  - "ImageNet"
 date: 2026-05-08
-content_hash: 65302dfd3c52a687
+content_hash: d467bbd542cf63a6
 ---
+
 # Bidirectional Normalizing Flow: From Data to Noise and Back
 
 **Conference**: CVPR 2026  
@@ -168,11 +172,11 @@ Ablation of other key designs (BiFlow-B/2, FID w/o CFG):
 
 ## Related Papers
 
-- [\[CVPR 2026\] A Unified Framework for Knowledge Transfer in Bidirectional Model Scaling](a_unified_framework_for_knowledge_transfer_in_bidirectional_model_scaling.md)
-- [\[CVPR 2026\] Bidirectional Query-Driven Generation of Parametric CAD Sketch](bidirectional_query-driven_generation_of_parametric_cad_sketch.md)
-- [\[ICML 2025\] Learning Distances from Data with Normalizing Flows and Score Matching](../../ICML2025/others/learning_distances_from_data_with_normalizing_flows_and_score_matching.md)
-- [\[ICML 2026\] Cascaded Flow Matching for Heterogeneous Tabular Data with Mixed-Type Features](../../ICML2026/others/cascaded_flow_matching_for_heterogeneous_tabular_data_with_mixed-type_features.md)
-- [\[CVPR 2026\] Back to Source: Open-Set Continual Test-Time Adaptation via Domain Compensation](back_to_source_open-set_continual_test-time_adaptation_via_domain_compensation.md)
+- [\[CVPR 2026\] BiFM: Bidirectional Flow Matching for Few-Step Image Editing and Generation](bifm_bidirectional_flow_matching_for_few-step_image_editing_and_generation.md)
+- [\[ICML 2026\] The Coupling Within: Flow Matching via Distilled Normalizing Flows](../../ICML2026/image_generation/the_coupling_within_flow_matching_via_distilled_normalizing_flows.md)
+- [\[CVPR 2026\] Flow Map Distillation Without Data](flow_map_distillation_without_data.md)
+- [\[ICLR 2026\] There and Back Again: On the Relation between Noise and Image Inversions in Diffusion Models](../../ICLR2026/image_generation/there_and_back_again_on_the_relation_between_noise_and_image_inversions_in_diffu.md)
+- [\[CVPR 2026\] Back to Basics: Let Denoising Generative Models Denoise](back_to_basics_let_denoising_generative_models_denoise.md)
 
 </div>
 

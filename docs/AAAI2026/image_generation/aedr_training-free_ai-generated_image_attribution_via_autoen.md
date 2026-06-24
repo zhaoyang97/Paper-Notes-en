@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] AEDR: Training-Free AI-Generated Image Attribution via Autoencoder Double-Reconstruction
 description: >-
-  [AAAI 2026][Image Generation][Image Attribution] This paper proposes a training-free image attribution method based on the ratio of autoencoder double-reconstruction losses. By incorporating image uniformity calibration…
+  [AAAI 2026 Oral][Image Generation][Image Attribution] This paper proposes a training-free image attribution method based on the ratio of autoencoder double-reconstruction losses. By incorporating image uniformity calibration to eliminate texture complexity bias, the method achieves an average accuracy of 95.1% across 8 mainstream diffusion models, surpassing the strongest baseline by 24.7%, while being approximately 100× faster.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Image Generation"
   - "Image Attribution"
   - "Autoencoder Reconstruction"
@@ -12,7 +12,7 @@ tags:
   - "Latent Diffusion Models"
   - "Kernel Density Estimation"
 date: 2026-05-08
-content_hash: 196516b499689924
+content_hash: b6e53b1f6e63c284
 ---
 
 # AEDR: Training-Free AI-Generated Image Attribution via Autoencoder Double-Reconstruction
@@ -134,9 +134,9 @@ RONAN and LatentTracer rely on the absolute value of single-pass reconstruction 
 
 - [\[CVPR 2026\] Attribution as Retrieval: Model-Agnostic AI-Generated Image Attribution](../../CVPR2026/image_generation/attribution_as_retrieval_modelagnostic_aigenerated.md)
 - [\[AAAI 2026\] Infinite-Story: A Training-Free Consistent Text-to-Image Generation](infinite-story_a_training-free_consistent_text-to-image_gene.md)
-- [\[AAAI 2026\] Aggregating Diverse Cue Experts for AI-Generated Image Detection](aggregating_diverse_cue_experts_for_ai-generated_image_detec.md)
-- [\[AAAI 2026\] Beyond Semantic Features: Pixel-Level Mapping for Generalized AI-Generated Image Detection](beyond_semantic_features_pixel-level_mapping_for_generalized_ai-generated_image_.md)
 - [\[AAAI 2026\] Melodia: Training-Free Music Editing Guided by Attention Probing in Diffusion Models](melodia_training-free_music_editing_guided_by_attention_probing_in_diffusion_mod.md)
+- [\[AAAI 2026\] Aggregating Diverse Cue Experts for AI-Generated Image Detection](aggregating_diverse_cue_experts_for_ai-generated_image_detec.md)
+- [\[CVPR 2025\] A Bias-Free Training Paradigm for More General AI-generated Image Detection](../../CVPR2025/image_generation/a_bias-free_training_paradigm_for_more_general_ai-generated_image_detection.md)
 
 </div>
 

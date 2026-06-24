@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Make Mechanistic Interpretability Auditable: A Call to Develop Guidelines via Continuous Collaborative Reviewing
 description: >-
-  [ACL 2026][Interpretability][Paper Note] This is a position paper arguing that mechanistic interpretability research must incorporate a layer of "auditability." By establishing a continuous collaborative reviewing platform, community-refined guidelines, and source evidence tracking systems, it aims to transform fragmented replications, negative results, and m
+  [ACL2026][Interpretability][Mechanistic Interpretability] This is a position paper arguing that mechanistic interpretability research must incorporate a layer of "auditability." By establishing a continuous collaborative reviewing platform, community-refined guidelines, and source evidence tracking systems, it aims to transform fragmented replications, negative results, and methodological critiques into auditing protocols suitable for safety-critical scenarios.
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL2026"
+  - "Interpretability"
+  - "Mechanistic Interpretability"
+  - "Auditing Standards"
+  - "Continuous Reviewing"
+  - "Community Guidelines"
+  - "Source Evidence Tracking"
 date: 2026-05-08
-content_hash: 5d0cf02d08b738eb
+content_hash: b1cbb2e270cd53fe
 ---
+
 # Make Mechanistic Interpretability Auditable: A Call to Develop Guidelines via Continuous Collaborative Reviewing
 
 **Conference**: ACL2026  
@@ -114,11 +120,11 @@ The paper has no ablation experiments. The three proposed components can be unde
 
 ## Related Papers
 
+- [\[ICML 2025\] MIB: A Mechanistic Interpretability Benchmark](../../ICML2025/interpretability/mib_a_mechanistic_interpretability_benchmark.md)
 - [\[ICLR 2026\] Formal Mechanistic Interpretability: Automated Circuit Discovery with Provable Guarantees](../../ICLR2026/interpretability/formal_mechanistic_interpretability_automated_circuit_discovery_with_provable_gu.md)
 - [\[ACL 2026\] Mechanistic Interpretability of Large-Scale Counting in LLMs through a System-2 Strategy](mechanistic_interpretability_of_large-scale_counting_in_llms_through_a_system-2_.md)
-- [\[ICML 2025\] MIB: A Mechanistic Interpretability Benchmark](../../ICML2025/interpretability/mib_a_mechanistic_interpretability_benchmark.md)
+- [\[NeurIPS 2025\] nnterp: A Standardized Interface for Mechanistic Interpretability of Transformers](../../NeurIPS2025/interpretability/nnterp_a_standardized_interface_for_mechanistic_interpretability_of_transformers.md)
 - [\[ACL 2026\] Preference Heads in Large Language Models: A Mechanistic Framework for Interpretable Personalization](preference_heads_in_large_language_models_a_mechanistic_framework_for_interpreta.md)
-- [\[ACL 2025\] Mechanistic Interpretability of Emotion Inference in Large Language Models](../../ACL2025/interpretability/mechanistic_interpretability_of_emotion_inference_in_large_language_models.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Modeling LLM Unlearning as an Asymmetric Two-Task Learning Problem
 description: >-
-  [ACL 2026][LLM Safety][LLM Unlearning] LLM unlearning is explicitly modeled as an asymmetric two-task problem where "retention is primary and forgetting is auxiliary." The proposed SAGO method applies **element-wise sign alignment gating** to retain/forget gradients, achieving retention performance close to the original model on WMDP and RWKU benchmarks wit
+  [ACL 2026][LLM Safety][LLM Unlearning] LLM unlearning is explicitly modeled as an asymmetric two-task problem where "retention is primary and forgetting is auxiliary." The proposed SAGO method applies **element-wise sign alignment gating** to retain/forget gradients, achieving retention performance close to the original model on WMDP and RWKU benchmarks with almost no loss in forgetting effectiveness.
 tags:
-  - ACL 2026
-  - LLM Safety
-  - LLM Unlearning
-  - PCGrad
+  - "ACL 2026"
+  - "LLM Safety"
+  - "LLM Unlearning"
+  - "Gradient Conflict"
+  - "Multi-Task Learning"
+  - "PCGrad"
+  - "Sign Alignment"
 date: 2026-05-08
-content_hash: be9c6654528a9d3c
+content_hash: 6aeb71ceb58890e9
 ---
+
 # Modeling LLM Unlearning as an Asymmetric Two-Task Learning Problem
 
 **Conference**: ACL 2026  
@@ -142,10 +146,10 @@ Gradient Geometry (100-step average, WMDP Cyber):
 ## Related Papers
 
 - [\[AAAI 2026\] ALTER: Asymmetric LoRA for Token-Entropy-Guided Unlearning of LLMs](../../AAAI2026/llm_safety/alter_asymmetric_lora_for_token-entropy-guided_unlearning_of.md)
-- [\[ACL 2026\] Unlearners Can Lie: Evaluating and Improving Honesty in LLM Unlearning](unlearners_can_lie_evaluating_and_improving_honesty_in_llm_unlearning.md)
-- [\[ACL 2025\] ZJUKLAB at SemEval-2025 Task 4: Unlearning via Model Merging](../../ACL2025/llm_safety/zjuklab_at_semeval-2025_task_4_unlearning_via_model_merging.md)
-- [\[ACL 2026\] Privacy-R1: Privacy-Aware Multi-LLM Agent Collaboration via Reinforcement Learning](privacy-r1_privacy-aware_multi-llm_agent_collaboration_via_reinforcement_learnin.md)
+- [\[ICLR 2026\] On Fairness of Task Arithmetic: The Role of Task Vectors](../../ICLR2026/llm_safety/on_fairness_of_task_arithmetic_the_role_of_task_vectors.md)
+- [\[ACL 2026\] Maximizing Local Entropy Where It Matters: Prefix-Aware Localized LLM Unlearning](maximizing_local_entropy_where_it_matters_prefix-aware_localized_llm_unlearning.md)
 - [\[ICLR 2026\] LLM Unlearning with LLM Beliefs](../../ICLR2026/llm_safety/llm_unlearning_with_llm_beliefs.md)
+- [\[ACL 2026\] Representation-Guided Parameter-Efficient LLM Unlearning](representation-guided_parameter-efficient_llm_unlearning.md)
 
 </div>
 

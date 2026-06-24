@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MemFlow: A Lightweight Forward Memorizing Framework for Quick Domain Adaptive Feature Mapping
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] MemFlow proposes a "forward memorizing framework" inspired by the brain's memory mechanism that entirely bypasses backpropagation. By freezing the backbone and using randomly connected neurons to record feature-label associations as Gaussian distributions—retrieved and fused based on confidence—it enables rapid on-devi
+  [CVPR 2026][Self-Supervised Learning][Source-Free Domain Adaptation] MemFlow proposes a "forward memorizing framework" inspired by the brain's memory mechanism that entirely bypasses backpropagation. By freezing the backbone and using randomly connected neurons to record feature-label associations as Gaussian distributions—retrieved and fused based on confidence—it enables rapid on-device domain adaptation. It achieves up to a 10% improvement across four cross-domain datasets…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Source-Free Domain Adaptation"
+  - "Gradient-Free Learning"
+  - "Forward Memorizing"
+  - "Spiking Propagation"
+  - "Edge Devices"
 date: 2026-05-08
-content_hash: 71cceec9f0602e69
+content_hash: 7b1c214d57af0bfe
 ---
+
 # MemFlow: A Lightweight Forward Memorizing Framework for Quick Domain Adaptive Feature Mapping
 
 **Conference**: CVPR 2026  
@@ -126,8 +132,8 @@ Component ablation (Accuracy %). CU=Confidence Update, GB=Gaussian Blur, SM=Spik
 
 - [\[CVPR 2026\] Measure The Feature Universe: Topology-based Pseudo Labeling and Gravity Consistency for Source-Free Domain Adaptation](measure_the_feature_universe_topology-based_pseudo_labeling_and_gravity_consiste.md)
 - [\[CVPR 2026\] HCL-FF: Hierarchical and Contrastive Learning for Forward-Forward Algorithm](hcl-ff_hierarchical_and_contrastive_learning_for_forward-forward_algorithm.md)
-- [\[CVPR 2026\] From Feature Learning to Spectral Basis Learning: A Unifying and Flexible Framework for Efficient and Robust Shape Matching](from_feature_learning_to_spectral_basis_learning_a_unifying_and_flexible_framewo.md)
 - [\[CVPR 2026\] Learning by Analogy: A Causal Framework for Compositional Generalization](learning_by_analogy_a_causal_framework_for_compositional_generalization.md)
+- [\[CVPR 2026\] UPLiFT: Efficient Pixel-Dense Feature Upsampling with Local Attenders](uplift_efficient_pixel-dense_feature_upsampling_with_local_attenders.md)
 - [\[CVPR 2026\] TeFlow: Enabling Multi-frame Supervision for Self-Supervised Feed-forward Scene Flow Estimation](teflow_enabling_multi-frame_supervision_for_self-supervised_feed-forward_scene_f.md)
 
 </div>

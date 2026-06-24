@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Beyond Distribution Estimation: Simplex Anchored Structural Inference Towards Universal Semi-Supervised Learning
 description: >-
-  [ICML 2026][Self-Supervised Learning][Paper Note] Ours proposes SAGE, which replaces "estimating unlabeled data distributions" with "structural inference in the representation space." By combining simplex ETF geometric anchors, high-order graph propagation, and distribution-agnostic reliability weighting, SAGE achieves an average accuracy improvement of 8.52% under th
+  [ICML 2026][Self-Supervised Learning][Universal Semi-Supervised Learning] Ours proposes SAGE, which replaces "estimating unlabeled data distributions" with "structural inference in the representation space." By combining simplex ETF geometric anchors, high-order graph propagation, and distribution-agnostic reliability weighting, SAGE achieves an average accuracy improvement of 8.52% under the UniSSL setting with extreme label scarcity and arbitrary unlabeled distributions.
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
+  - "ICML 2026"
+  - "Self-Supervised Learning"
+  - "Universal Semi-Supervised Learning"
+  - "Equiangular Tight Frame"
+  - "Structural Inference"
+  - "Pseudo-label Reliability"
 date: 2026-05-08
-content_hash: bc4e1a5a16d7fd4d
+content_hash: 010e5b40f19a8999
 ---
+
 # Beyond Distribution Estimation: Simplex Anchored Structural Inference Towards Universal Semi-Supervised Learning
 
 **Conference**: ICML 2026  
@@ -143,10 +148,10 @@ Based on the paper's results (refer to text for visual values):
 ## Related Papers
 
 - [\[ICML 2026\] Understanding Self-Supervised Learning via Latent Distribution Matching](understanding_self-supervised_learning_via_latent_distribution_matching.md)
-- [\[AAAI 2026\] Explanation-Preserving Augmentation for Semi-Supervised Graph Representation Learning](../../AAAI2026/self_supervised/explanation-preserving_augmentation_for_semi-supervised_graph_representation_lea.md)
-- [\[CVPR 2026\] PAF: Perturbation-Aware Filtering for Open-Set Semi-Supervised Learning](../../CVPR2026/self_supervised/paf_perturbation-aware_filtering_for_open-set_semi-supervised_learning.md)
+- [\[ICLR 2026\] In Context Semi-Supervised Learning](../../ICLR2026/self_supervised/in_context_semi-supervised_learning.md)
 - [\[ICML 2026\] InfoAtlas: A Foundation Model for Zero-Shot Statistical Dependence Estimation](infoatlas_a_foundation_model_for_zero-shot_statistical_dependence_estimate.md)
-- [\[CVPR 2026\] SECOS: Semantic Capture for Rigorous Classification in Open-World Semi-Supervised Learning](../../CVPR2026/self_supervised/secos_semantic_capture_for_rigorous_classification_in_open-world_semi-supervised.md)
+- [\[ICLR 2026\] FedOpenMatch: Towards Semi-Supervised Federated Learning in Open-Set Environments](../../ICLR2026/self_supervised/fedopenmatch_towards_semi-supervised_federated_learning_in_open-set_environments.md)
+- [\[AAAI 2026\] Explanation-Preserving Augmentation for Semi-Supervised Graph Representation Learning](../../AAAI2026/self_supervised/explanation-preserving_augmentation_for_semi-supervised_graph_representation_lea.md)
 
 </div>
 

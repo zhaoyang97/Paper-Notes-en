@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Integrating Biological Knowledge for Robust Microscopy Image Profiling on De Novo Cell Lines
 description: >-
-  [ICCV 2025][Computational Biology][Microscopy image representation learning] This paper proposes integrating external biological knowledge — protein–protein interaction graphs and transcriptomic features from single-cell…
+  [ICCV 2025][Computational Biology][Microscopy image representation learning] This paper proposes integrating external biological knowledge — protein–protein interaction graphs and transcriptomic features from single-cell foundation models — into microscopy image pretraining, explicitly decoupling perturbation-specific and cell-line-specific representations to improve generalization of perturbation screening on unseen (de novo) cell lines.
 tags:
   - "ICCV 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "single-cell foundation model"
   - "de novo cell lines"
 date: 2026-05-08
-content_hash: 46949c0593884534
+content_hash: adf7f7e90d8a1b1b
 ---
 
 # Integrating Biological Knowledge for Robust Microscopy Image Profiling on De Novo Cell Lines
@@ -154,10 +154,10 @@ Ablation on scFM embedding dimensionality (WSL pretraining, evaluated on U2OS):
 ## Related Papers
 
 - [\[NeurIPS 2025\] De novo generation of functional terpene synthases using TpsGPT](../../NeurIPS2025/computational_biology/de_novo_generation_of_functional_terpene_synthases_using_tpsgpt.md)
+- [\[ICML 2025\] UniMoMo: Unified Generative Modeling of 3D Molecules for De Novo Binder Design](../../ICML2025/computational_biology/unimomo_unified_generative_modeling_of_3d_molecules_for_de_novo_binder_design.md)
+- [\[ICML 2025\] Latent Imputation before Prediction: A New Computational Paradigm for De Novo Peptide Sequencing](../../ICML2025/computational_biology/latent_imputation_before_prediction_a_new_computational_paradigm_for_de_novo_pep.md)
+- [\[ICML 2025\] PepTune: De Novo Generation of Therapeutic Peptides with Multi-Objective-Guided Discrete Diffusion](../../ICML2025/computational_biology/peptune_de_novo_generation_of_therapeutic_peptides_with_multi-objective-guided_d.md)
 - [\[NeurIPS 2025\] One Small Step with Fingerprints, One Giant Leap for De Novo Molecule Generation from Mass Spectra](../../NeurIPS2025/computational_biology/one_small_step_with_fingerprints_one_giant_leap_for_de_novo_molecule_generation_.md)
-- [\[NeurIPS 2025\] Uncertainty-Aware Multi-Objective Reinforcement Learning-Guided Diffusion Models for 3D De Novo Molecular Design](../../NeurIPS2025/computational_biology/uncertainty-aware_multi-objective_reinforcement_learning-guided_diffusion_models.md)
-- [\[ICLR 2026\] VCWorld: A Biological World Model for Virtual Cell Simulation](../../ICLR2026/computational_biology/vcworld_a_biological_world_model_for_virtual_cell_simulation.md)
-- [\[ICLR 2026\] scDFM: Distributional Flow Matching for Robust Single-Cell Perturbation Prediction](../../ICLR2026/computational_biology/scdfm_distributional_flow_matching_model_for_robust_single-cell_perturbation_pre.md)
 
 </div>
 

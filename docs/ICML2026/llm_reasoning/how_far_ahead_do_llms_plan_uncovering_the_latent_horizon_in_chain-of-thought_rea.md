@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] How Far Ahead Do LLMs Plan? Uncovering the Latent Horizon in Chain-of-Thought Reasoning
 description: >-
-  [ICML 2026][LLM Reasoning][Chain-of-Thought] This paper systematically measures the predictive power of LLM latent states regarding "future reasoning" across 12 cross-domain tasks using a low-rank adapter probe called Tele-Lens. The study reveals that internal LLM planning is **myopic**—it precisely locks onto answers only at the end of the CoT. Based on this, th
+  [ICML 2026][Reasoning][Chain-of-Thought] This paper systematically measures the predictive power of LLM latent states regarding "future reasoning" across 12 cross-domain tasks using a low-rank adapter probe called Tele-Lens. The study reveals that internal LLM planning is **myopic**—it precisely locks onto answers only at the end of the CoT. Based on this, the "Wooden Barrel Principle" is proposed, using uncertainty at sparse pivot positions to represent the entire CoT…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - Chain-of-Thought
+  - "ICML 2026"
+  - "Reasoning"
+  - "Chain-of-Thought"
+  - "Latent State Probes"
+  - "Planning Horizon"
+  - "Uncertainty Estimation"
+  - "CoT Bypass"
 date: 2026-05-08
-content_hash: 9719b0ca46f798f3
+content_hash: 5eed95d6e416b97e
 ---
+
 # How Far Ahead Do LLMs Plan? Uncovering the Latent Horizon in Chain-of-Thought Reasoning
 
 **Conference**: ICML 2026  
@@ -128,16 +133,16 @@ Notably, the bypass mechanism correctly preserved tasks like Parity that require
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] R-HORIZON: How Far Can Your Large Reasoning Model Really Go in Breadth and Depth?](../../ICLR2026/llm_reasoning/r-horizon_how_far_can_your_large_reasoning_model_really_go_in_breadth_and_depth.md)
 - [\[ICML 2026\] When to Re-Plan: Subgoal Persistence in Hierarchical Latent Reasoning](when_to_re-plan_subgoal_persistence_in_hierarchical_latent_reasoning.md)
 - [\[ICML 2026\] A Formal Comparison Between Chain of Thought and Latent Thought](a_formal_comparison_between_chain_of_thought_and_latent_thought.md)
-- [\[ACL 2026\] How Chain-of-Thought Works? Tracing Information Flow from Decoding, Projection, and Activation](../../ACL2026/llm_reasoning/how_chain-of-thought_works_tracing_information_flow_from_decoding_projection_and.md)
+- [\[ICML 2026\] The Deterministic Horizon: When Extended Reasoning Fails and Tool Delegation Becomes Necessary](the_deterministic_horizon_when_extended_reasoning_fails_and_tool_delegation_beco.md)
 - [\[ICML 2026\] Dynamics Within Latent Chain-of-Thought: An Empirical Study of Causal Structure](dynamics_within_latent_chain-of-thought_an_empirical_study_of_causal_structure.md)
-- [\[NeurIPS 2025\] Latent Chain-of-Thought for Visual Reasoning](../../NeurIPS2025/llm_reasoning/latent_chain-of-thought_for_visual_reasoning.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Physics-Informed Inference Time Scaling for Solving High-Dimensional Partial Differential Equations via Defect Correction
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Multilevel Picard] SCaSML reformulates the error of a pre-trained PDE surrogate (e.g., PINN or Gaussian Process) as a structure-preserving semilinear PDE. During inference, this "error equation" is solved via Monte Carlo simulation and added back to the initial solution. Without retraining, this approach reduces solution errors for high-
+  [ICLR 2026][Physics & Scientific Computing][High-dimensional PDEs] SCaSML reformulates the error of a pre-trained PDE surrogate (e.g., PINN or Gaussian Process) as a structure-preserving semilinear PDE. During inference, this "error equation" is solved via Monte Carlo simulation and added back to the initial solution. Without retraining, this approach reduces solution errors for high-dimensional PDEs (up to 160D) by 20–80%, with a theoretical proof that the final error is the…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - Multilevel Picard
-  - PINN
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "High-dimensional PDEs"
+  - "Inference-time Scaling"
+  - "Defect Correction"
+  - "Multilevel Picard"
+  - "PINN"
 date: 2026-05-08
-content_hash: f67e0b6206af9c34
+content_hash: 28f00c3075b87fcf
 ---
+
 # Physics-Informed Inference Time Scaling for Solving High-Dimensional Partial Differential Equations via Defect Correction
 
 **Conference**: ICLR 2026  
@@ -144,10 +148,10 @@ The ablation focuses on comparing SCaSML against its individual components.
 
 ## Related Papers
 
+- [\[ICLR 2026\] Riesz Neural Operator for Solving Partial Differential Equations](riesz_neural_operator_for_solving_partial_differential_equations.md)
 - [\[ICLR 2026\] Disentangled Representation Learning for Parametric Partial Differential Equations](disentangled_representation_learning_for_parametric_partial_differential_equatio.md)
 - [\[AAAI 2026\] Towards a Foundation Model for Partial Differential Equations Across Physics Domains](../../AAAI2026/physics/towards_a_foundation_model_for_partial_differential_equations_across_physics_dom.md)
 - [\[ICLR 2026\] $\partial^\infty$-Grid: A Neural Differential Equation Solver with Differentiable Feature Grids](boldsymbolpartialinfty-grid_a_neural_differential_equation_solver_with_different.md)
-- [\[ICML 2026\] Foundation Inference Models for Ordinary Differential Equations](../../ICML2026/physics/foundation_inference_models_for_ordinary_differential_equations.md)
 - [\[ICLR 2026\] Self-Supervised Evolution Operator Learning for High-Dimensional Dynamical Systems](self-supervised_evolution_operator_learning_for_high-dimensional_dynamical_syste.md)
 
 </div>

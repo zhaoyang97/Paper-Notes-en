@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Sunk Costs: Boosting LLM Pre-training Efficiency via Orthogonal Growth of Mixture-of-Experts
 description: >-
-  [ICML 2026][LLM Efficiency][Paper Note] The authors propose an "orthogonal growth" strategy for converged MoE models—using interpositional layer replication for depth and noisy expert cloning for width—scaling a 17B model to 70B. This achieve a 10.6% accuracy improvement over training from scratch under the same additional compute budget.
+  [ICML 2026][LLM Efficiency][MoE Model Growth] The authors propose an "orthogonal growth" strategy for converged MoE models—using interpositional layer replication for depth and noisy expert cloning for width—scaling a 17B model to 70B. This achieve a 10.6% accuracy improvement over training from scratch under the same additional compute budget.
 tags:
-  - ICML 2026
-  - LLM Efficiency
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "MoE Model Growth"
+  - "Checkpoint Recycling"
+  - "Efficient Pre-training"
+  - "Orthogonal Expansion"
+  - "Sunk Costs"
 date: 2026-05-08
-content_hash: dd74dd5f169905ab
+content_hash: eee5c22d5d06d3ee
 ---
+
 # Beyond Sunk Costs: Boosting LLM Pre-training Efficiency via Orthogonal Growth of Mixture-of-Experts
 
 **Conference**: ICML 2026  
@@ -138,8 +144,8 @@ Depth and width growth are nearly orthogonal in the optimization space—final p
 
 - [\[ICML 2026\] Hyperparameter Transfer with Mixture-of-Experts Layers](hyperparameter_transfer_with_mixture-of-expert_layers.md)
 - [\[ICML 2026\] ProbMoE: Differentiable Probabilistic Routing for Mixture-of-Experts](probmoe_differentiable_probabilistic_routing_for_mixture-of-experts.md)
-- [\[ICML 2026\] ReMoE: Boosting Expert Reuse through Router Fine-Tuning in Memory-Constrained MoE LLM Inference](remoe_boosting_expert_reuse_through_router_fine-tuning_in_memory-constrained_moe.md)
 - [\[ICML 2026\] SiameseNorm: Breaking the Barrier to Reconciling Pre/Post-Norm](siamesenorm_breaking_the_barrier_to_reconciling_prepost-norm.md)
+- [\[ICML 2026\] ReMoE: Boosting Expert Reuse through Router Fine-Tuning in Memory-Constrained MoE LLM Inference](remoe_boosting_expert_reuse_through_router_fine-tuning_in_memory-constrained_moe.md)
 - [\[ACL 2025\] Decoding Knowledge Attribution in Mixture-of-Experts: A Framework of Basic-Refinement Collaboration and Efficiency Analysis](../../ACL2025/llm_efficiency/decoding_knowledge_attribution_in_mixture-of-experts_a_framework_of_basic-refine.md)
 
 </div>

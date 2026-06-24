@@ -2,18 +2,21 @@
 title: >-
   [Paper Note] CUB: Benchmarking Context Utilisation Techniques for Language Models
 description: >-
-  [ACL 2026][LLM Evaluation][RAG] The authors evaluate 7 mainstream types of "Context Utilisation Manipulation Techniques" (CMTs) using the unified CUB benchmark. Covering 3 datasets (CounterFact / NQ / DRUID) × 3 context types (gold / conflicting / irrelevant) × 11 LLMs with approximately 800 experimental points, the study demonstrates a fundamental t
+  [ACL 2026][LLM Evaluation][Context Utilisation] The authors evaluate 7 mainstream types of "Context Utilisation Manipulation Techniques" (CMTs) using the unified CUB benchmark. Covering 3 datasets (CounterFact / NQ / DRUID) × 3 context types (gold / conflicting / irrelevant) × 11 LLMs with approximately 800 experimental points, the study demonstrates a fundamental trade-off between "sensitivity to relevant context vs. robustness to irrelevant context" across all existing CMTs…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - RAG
-  - CMT
-  - Fine-tuning
-  - Prompting
-  - Contrastive Decoding
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Context Utilisation"
+  - "RAG"
+  - "CMT"
+  - "Fine-tuning"
+  - "Prompting"
+  - "Contrastive Decoding"
+  - "Mechanistic Intervention"
 date: 2026-05-08
-content_hash: 5a1609f9c035781e
+content_hash: 8b42d393b88ebef6
 ---
+
 # CUB: Benchmarking Context Utilisation Techniques for Language Models
 
 **Conference**: ACL 2026  
@@ -114,16 +117,16 @@ Findings: (1) Model size gains can be diametrically opposite for different conte
 - **Value**: ⭐⭐⭐⭐⭐ High community impact by exposing systematic evaluation biases and setting a new standard for CMT papers.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] E2EDev: Benchmarking Large Language Models in End-to-End Software Development Task](e2edev_benchmarking_large_language_models_in_end-to-end_software_development_tas.md)
 - [\[ICLR 2026\] In-Context Learning of Temporal Point Processes with Foundation Inference Models](../../ICLR2026/llm_evaluation/in-context_learning_of_temporal_point_processes_with_foundation_inference_models.md)
+- [\[ICML 2026\] On Cost-Effective LLM-as-a-Judge Improvement Techniques](../../ICML2026/llm_evaluation/on_cost-effective_llm-as-a-judge_improvement_techniques.md)
 - [\[ICLR 2026\] In-Context Learning for Pure Exploration](../../ICLR2026/llm_evaluation/in-context_learning_for_pure_exploration.md)
 - [\[ACL 2026\] IF-RewardBench: Benchmarking Judge Models for Instruction-Following Evaluation](if-rewardbench_benchmarking_judge_models_for_instruction-following_evaluation.md)
-- [\[ACL 2026\] Attribution, Citation, and Quotation: A Survey of Evidence-based Text Generation with Large Language Models](attribution_citation_and_quotation_a_survey_of_evidence-based_text_generation_wi.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PixelDiT: Pixel Diffusion Transformers for Image Generation
 description: >-
-  [CVPR 2026][Image Generation][Text-to-Image] PixelDiT proposes a dual-layer pixel-space diffusion model based entirely on Transformers: a patch-level DiT captures global semantics and a pixel-level DiT refines texture details. Without a VAE, it achieves 1.61 FID on ImageNet and allows direct training of text-to-image models in 1024 resolution pixel space.
+  [CVPR 2026][Image Generation][Pixel Diffusion] PixelDiT proposes a dual-layer pixel-space diffusion model based entirely on Transformers: a patch-level DiT captures global semantics and a pixel-level DiT refines texture details. Without a VAE, it achieves 1.61 FID on ImageNet and allows direct training of text-to-image models in 1024 resolution pixel space.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Text-to-Image
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Pixel Diffusion"
+  - "Dual-layer Transformer"
+  - "End-to-end Generation"
+  - "Pixel Modeling"
+  - "Text-to-Image"
 date: 2026-05-08
-content_hash: 287a649bc4a5924a
+content_hash: dc8eaf50d0a9a4ab
 ---
+
 # PixelDiT: Pixel Diffusion Transformers for Image Generation
 
 **Conference**: CVPR 2026  
@@ -119,9 +124,9 @@ The training objective is the standard conditional flow matching loss, regressin
 
 - [\[CVPR 2026\] DeCo: Frequency-Decoupled Pixel Diffusion for End-to-End Image Generation](deco_frequency-decoupled_pixel_diffusion_for_end-to-end_image_generation.md)
 - [\[CVPR 2026\] FlashDecoder: Real-Time Latent-to-Pixel Streaming Decoder with Transformers](flashdecoder_real-time_latent-to-pixel_streaming_decoder_with_transformers.md)
-- [\[CVPR 2026\] Circuit Mechanisms for Spatial Relation Generation in Diffusion Transformers](circuit_mechanisms_for_spatial_relation_generation_in_diffusion_models.md)
 - [\[CVPR 2026\] DiP: Taming Diffusion Models in Pixel Space](dip_taming_diffusion_models_in_pixel_space.md)
-- [\[CVPR 2026\] Region-Adaptive Sampling for Diffusion Transformers](region-adaptive_sampling_for_diffusion_transformers.md)
+- [\[CVPR 2026\] LacTokGen: Latent Consistency Tokenizer for 1024-pixel Image Generation by 256 Tokens](lactokgen_latent_consistency_tokenizer_for_1024-pixel_image_generation_by_256_to.md)
+- [\[CVPR 2026\] Circuit Mechanisms for Spatial Relation Generation in Diffusion Transformers](circuit_mechanisms_for_spatial_relation_generation_in_diffusion_models.md)
 
 </div>
 

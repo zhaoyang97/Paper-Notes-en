@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] SweRank：用代码排序做软件 Issue 定位
+  [Paper Note] SweRank: Software Issue Localization via Code Ranking
 description: >-
-  [ICLR 2026][Code Intelligence][Paper Note] SweRank reframes "finding functions to be modified based on bug reports" from expensive multi-step LLM agent reasoning into a one-time "retrieve-and-rerank" problem. By training a bi-encoder retriever (SweRankEmbed) and a listwise LLM reranker (SweRankLLM) on a self-constructed large-scale dataset, SweLoc, it achieves
+  [ICLR 2026][Code Intelligence][Software Issue Localization] SweRank reframes "finding functions to be modified based on bug reports" from expensive multi-step LLM agent reasoning into a one-time "retrieve-and-rerank" problem. By training a bi-encoder retriever (SweRankEmbed) and a listwise LLM reranker (SweRankLLM) on a self-constructed large-scale dataset, SweLoc, it achieves SOTA localization accuracy across file, module, and function granularities on SWE-Bench-Lite and Loc…
 tags:
-  - ICLR 2026
-  - Code Intelligence
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Software Issue Localization"
+  - "Code Ranking"
+  - "Retrieve-and-Rerank"
+  - "Contrastive Learning"
+  - "Listwise Reranking"
 date: 2026-05-08
-content_hash: 6290883204fd8bcc
+content_hash: 8aa1df31bb55b6a4
 ---
+
 # SweRank: Software Issue Localization via Code Ranking
 
 **Conference**: ICLR 2026  
@@ -144,11 +150,11 @@ The "enhancement" capability of SweLoc (fine-tuning existing models, Func. Acc@1
 
 ## Related Papers
 
-- [\[ICLR 2026\] ShieldedCode: Learning Robust Representations for Virtual Machine Protected Code](shieldedcode_learning_robust_representations_for_virtual_machine_protected_code.md)
-- [\[ICLR 2026\] An Agentic Framework with LLMs for Solving Complex Vehicle Routing Problems](an_agentic_framework_with_llms_for_solving_complex_vehicle_routing_problems.md)
-- [\[ICLR 2026\] VERINA: Benchmarking Verifiable Code Generation](verina_benchmarking_verifiable_code_generation.md)
-- [\[ICLR 2026\] IMSE: Intrinsic Mixture of Spectral Experts Fine-tuning for Test-Time Adaptation](imse_intrinsic_mixture_of_spectral_experts_fine-tuning_for_test-time_adaptation.md)
-- [\[ICLR 2026\] VisCoder2: Building Multi-Language Visualization Coding Agents](viscoder2_building_multi-language_visualization_coding_agents.md)
+- [\[ICLR 2026\] Improving Code Localization with Repository Memory](improving_code_localization_with_repository_memory.md)
+- [\[ACL 2026\] Learning Adaptive Parallel Execution for Efficient Code Localization](../../ACL2026/code_intelligence/learning_adaptive_parallel_execution_for_efficient_code_localization.md)
+- [\[ACL 2026\] R$^3$-SQL: Ranking Reward and Resampling for Text-to-SQL](../../ACL2026/code_intelligence/r3-sql_ranking_reward_and_resampling_for_text-to-sql.md)
+- [\[ICLR 2026\] From Assistant to Independent Developer — Are GPTs Ready for Software Development?](from_assistant_to_independent_developer_are_gpts_ready_for_software_development.md)
+- [\[ICLR 2026\] Ambig-SWE: Interactive Agents to Overcome Underspecificity in Software Engineering](ambig-swe_interactive_agents_to_overcome_underspecificity_in_software_engineerin.md)
 
 </div>
 

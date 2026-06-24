@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TD3B: Transition-Directed Discrete Diffusion for Allosteric Binder Generation
 description: >-
-  [ICML 2026][Computational Biology][Paper Note] TD3B formalizes the design of agonists and antagonists as a generation task for "directional transition operators." By employing a framework consisting of a direction Oracle, affinity gating, and tree-search amortized fine-tuning of a masked discrete diffusion model, it enables pre-trained peptide generators to produce
+  [ICML 2026 Spotlight][Computational Biology][Allosteric regulation] TD3B formalizes the design of agonists and antagonists as a generation task for "directional transition operators." By employing a framework consisting of a direction Oracle, affinity gating, and tree-search amortized fine-tuning of a masked discrete diffusion model, it enables pre-trained peptide generators to produce sequences that directionally shift transitions between active and inactive protein conforma…
 tags:
-  - ICML 2026
-  - Computational Biology
+  - "ICML 2026 Spotlight"
+  - "Computational Biology"
+  - "Allosteric regulation"
+  - "agonist/antagonist"
+  - "masked discrete diffusion"
+  - "direction Oracle"
+  - "gated reward"
 date: 2026-05-08
-content_hash: b200a9ae4c547d33
+content_hash: ce22c14ff0cbad0e
 ---
+
 # TD3B: Transition-Directed Discrete Diffusion for Allosteric Binder Generation
 
 **Conference**: ICML 2026 Spotlight  
@@ -126,8 +132,8 @@ The paper validates whether TD3B can outperform structural and inference-time gu
 - [\[ICLR 2026\] Ultra-Fast Language Generation via Discrete Diffusion Divergence Instruct](../../ICLR2026/computational_biology/ultra-fast_language_generation_via_discrete_diffusion_divergence_instruct.md)
 - [\[NeurIPS 2025\] Constrained Discrete Diffusion](../../NeurIPS2025/computational_biology/constrained_discrete_diffusion.md)
 - [\[ICLR 2026\] Discrete Diffusion Trajectory Alignment via Stepwise Decomposition](../../ICLR2026/computational_biology/discrete_diffusion_trajectory_alignment_via_stepwise_decomposition.md)
-- [\[ICML 2025\] PepTune: De Novo Generation of Therapeutic Peptides with Multi-Objective-Guided Discrete Diffusion](../../ICML2025/computational_biology/peptune_de_novo_generation_of_therapeutic_peptides_with_multi-objective-guided_d.md)
 - [\[ICML 2026\] Plug-and-Play Guidance for Discrete Diffusion Models via Gradient-Informed Logit Correction](plug-and-play_guidance_for_discrete_diffusion_models_via_gradient-informed_logit.md)
+- [\[ICML 2025\] PepTune: De Novo Generation of Therapeutic Peptides with Multi-Objective-Guided Discrete Diffusion](../../ICML2025/computational_biology/peptune_de_novo_generation_of_therapeutic_peptides_with_multi-objective-guided_d.md)
 
 </div>
 

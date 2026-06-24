@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CIAR: Interval-based Collaborative Decoding for Image Generation Acceleration
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] CIAR introduces speculative decoding for autoregressive image generation into an edge-cloud collaborative framework. It employs an on-device "Inter-Head" to output continuous probability intervals for each visual token to quantify uncertainty. This allows low-uncertainty regions to be generated locally on the device, w
+  [ICLR2026][Image Generation][Autoregressive image generation] CIAR introduces speculative decoding for autoregressive image generation into an edge-cloud collaborative framework. It employs an on-device "Inter-Head" to output continuous probability intervals for each visual token to quantify uncertainty. This allows low-uncertainty regions to be generated locally on the device, while only high-uncertainty boundary detail tokens and their interval features are uploaded to the…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR2026"
+  - "Image Generation"
+  - "Autoregressive image generation"
+  - "speculative decoding"
+  - "edge-cloud collaboration"
+  - "uncertainty quantization"
+  - "probability intervals"
 date: 2026-05-08
-content_hash: 44fe9172e2515828
+content_hash: cc8ca2340e944f6b
 ---
+
 # CIAR: Interval-based Collaborative Decoding for Image Generation Acceleration
 
 **Conference**: ICLR2026  
@@ -147,11 +153,11 @@ Continuous vs. Discrete uncertainty estimation (LlamaGen Stage I):
 
 ## Related Papers
 
-- [\[ICLR 2026\] Autoregressive Image Generation with Randomized Parallel Decoding](autoregressive_image_generation_with_randomized_parallel_decoding.md)
 - [\[ICML 2026\] Speculative Coupled Decoding for Training-Free Lossless Acceleration of Autoregressive Visual Generation](../../ICML2026/image_generation/speculative_coupled_decoding_for_training-free_lossless_acceleration_of_autoregr.md)
+- [\[ICLR 2026\] Autoregressive Image Generation with Randomized Parallel Decoding](autoregressive_image_generation_with_randomized_parallel_decoding.md)
+- [\[CVPR 2026\] Multi-Scale Local Speculative Decoding for Image Generation](../../CVPR2026/image_generation/multi-scale_local_speculative_decoding_for_image_generation.md)
 - [\[AAAI 2026\] Annealed Relaxation of Speculative Decoding for Faster Autoregressive Image Generation](../../AAAI2026/image_generation/annealed_relaxation_of_speculative_decoding_for_faster_autor.md)
 - [\[ICCV 2025\] Grouped Speculative Decoding for Autoregressive Image Generation](../../ICCV2025/image_generation/grouped_speculative_decoding_for_autoregressive_image_generation.md)
-- [\[CVPR 2026\] Parallel Jacobi Decoding for Fast Autoregressive Image Generation](../../CVPR2026/image_generation/parallel_jacobi_decoding_for_fast_autoregressive_image_generation.md)
 
 </div>
 

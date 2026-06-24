@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MotionMaster: Generalizable Text-Driven Motion Generation and Editing
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] MotionMaster treats human motion as a new modality integrated into the shared vocabulary of a pre-trained multimodal large language model (Qwen2.5-VL). It utilizes a 10,000-hour annotated motion dataset (MotionGB) and an FSQ discretizer that balances local joint precision with global trajectory consistency. By employin
+  [CVPR 2026][Human Understanding][Human motion generation] MotionMaster treats human motion as a new modality integrated into the shared vocabulary of a pre-trained multimodal large language model (Qwen2.5-VL). It utilizes a 10,000-hour annotated motion dataset (MotionGB) and an FSQ discretizer that balances local joint precision with global trajectory consistency. By employing an end-to-end autoregressive model to perform both text-driven motion generation and editing simulta…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Human motion generation"
+  - "motion editing"
+  - "MLLM fine-tuning"
+  - "FSQ discretization"
+  - "multi-motion composition"
 date: 2026-05-08
-content_hash: 7480cb9b0d3cc777
+content_hash: c265eb24c9e1c5ec
 ---
+
 # MotionMaster: Generalizable Text-Driven Motion Generation and Editing
 
 **Conference**: CVPR 2026  
@@ -139,10 +145,10 @@ Discretizer quality comparison (Tab. 3, lower is better):
 ## Related Papers
 
 - [\[CVPR 2026\] Hierarchical Enhancement of Semantic Priors for Disentangled Text-Driven Motion Generation](hierarchical_enhancement_of_semantic_priors_for_disentangled_text-driven_motion_.md)
-- [\[CVPR 2026\] Text-Driven 3D Hand Motion Generation from Sign Language Data](text-driven_3d_hand_motion_generation_from_sign_language_data.md)
 - [\[CVPR 2026\] MoLingo: Motion-Language Alignment for Text-to-Human Motion Generation](molingo_motion-language_alignment_for_text-to-motion_generation.md)
 - [\[CVPR 2026\] Next-Scale Autoregressive Models for Text-to-Motion Generation](next-scale_autoregressive_models_for_text-to-motion_generation.md)
 - [\[CVPR 2025\] SimMotionEdit: Text-Based Human Motion Editing with Motion Similarity Prediction](../../CVPR2025/human_understanding/simmotionedit_text-based_human_motion_editing_with_motion_similarity_prediction.md)
+- [\[CVPR 2026\] Omni-Supervised Motion Editing: Balancing Change and Invariance through Positive-Negative Learning](omni-supervised_motion_editing_balancing_change_and_invariance_through_positive-.md)
 
 </div>
 

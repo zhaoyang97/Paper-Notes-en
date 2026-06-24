@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Refine and Align: Confidence Calibration through Multi-Agent Interaction in VQA
 description: >-
-  [AAAI 2026][Medical Imaging][VQA] This paper proposes AlignVQA, a multi-agent debate framework for VQA confidence calibration: specialist agents generate candidate answers…
+  [AAAI 2026][Medical Imaging][VQA] This paper proposes AlignVQA, a multi-agent debate framework for VQA confidence calibration: specialist agents generate candidate answers, followed by structured debate (supporting vs. opposing arguments) by generalist agents to refine confidence scores. A differentiable calibration-aware loss, AlignCal, is also introduced to minimize the upper bound of calibration error (UBCE) during training. The approach reduces ECE from 0.375 to 0.098 on…
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -13,7 +13,7 @@ tags:
   - "AlignCal loss"
   - "medical image question answering"
 date: 2026-05-08
-content_hash: 7d58a0a3c9f6c89c
+content_hash: dc42fa7ad408d463
 ---
 
 # Refine and Align: Confidence Calibration through Multi-Agent Interaction in VQA
@@ -189,11 +189,11 @@ All VLMs exhibit severe calibration issues, with Gemma 3 reaching an ECE of 0.37
 
 ## Related Papers
 
+- [\[ICLR 2026\] Rethinking Model Calibration through Spectral Entropy Regularization in Medical Image Segmentation](../../ICLR2026/medical_imaging/rethinking_model_calibration_through_spectral_entropy_regularization_in_medical_.md)
 - [\[AAAI 2026\] MAPI-GNN: Multi-Activation Plane Interaction Graph Neural Network for Multimodal Medical Diagnosis](mapi-gnn_multi-activation_plane_interaction_graph_neural_network_for_multimodal_.md)
 - [\[AAAI 2026\] ReCoN-Ipsundrum: An Inspectable Recurrent Persistence Loop Agent with Affect-Coupled Cognition](recon-ipsundrum_an_inspectable_recurrent_persistence_loop_agent_with_affect-coup.md)
 - [\[AAAI 2026\] Bidirectional Channel-selective Semantic Interaction for Semi-Supervised Medical Segmentation](bidirectional_channel-selective_semantic_interaction_for_semi-supervised_medical.md)
-- [\[CVPR 2026\] Adaptive Confidence Regularization for Multimodal Failure Detection](../../CVPR2026/medical_imaging/adaptive_confidence_regularization_for_multimodal_failure_detection.md)
-- [\[NeurIPS 2025\] 3D-RAD: A Comprehensive 3D Radiology Med-VQA Dataset with Multi-Temporal Analysis and Diverse Diagnostic Tasks](../../NeurIPS2025/medical_imaging/3drad_a_comprehensive_3d_radiology_medvqa_dataset_with_multi.md)
+- [\[CVPR 2026\] MedFG-VQA: Low-Frequency Memory and Graph Attention for Lightweight Medical VQA](../../CVPR2026/medical_imaging/medfg-vqa_low-frequency_memory_and_graph_attention_for_lightweight_medical_vqa.md)
 
 </div>
 

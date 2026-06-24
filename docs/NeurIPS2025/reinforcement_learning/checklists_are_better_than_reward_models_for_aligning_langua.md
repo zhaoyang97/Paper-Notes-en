@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Checklists Are Better Than Reward Models For Aligning Language Models
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][RLCF] This paper proposes Reinforcement Learning from Checklist Feedback (RLCF), which decomposes instructions into dynamically generated yes/no checklists…
+  [NeurIPS 2025][Reinforcement Learning][RLCF] This paper proposes Reinforcement Learning from Checklist Feedback (RLCF), which decomposes instructions into dynamically generated yes/no checklists, scores each item using an AI judge and code verifier, and trains with DPO. RLCF consistently improves Qwen2.5-7B-Instruct across 5 benchmarks and is the only method that achieves positive gains on all benchmarks (FollowBench +4pt, InFoBench +6pt, Arena-Hard +3pt).
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -13,7 +13,7 @@ tags:
   - "instruction following"
   - "alignment"
 date: 2026-05-08
-content_hash: f55c6db7c8a7275d
+content_hash: a1f63739d80e3e70
 ---
 
 # Checklists Are Better Than Reward Models For Aligning Language Models

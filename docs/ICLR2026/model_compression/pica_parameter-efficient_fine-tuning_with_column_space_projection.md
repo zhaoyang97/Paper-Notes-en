@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PiCa: Parameter-Efficient Fine-Tuning with Column Space Projection
 description: >-
-  [ICLR 2026][Model Compression][PEFT] PiCa demonstrates that projecting the fine-tuning update $\Delta W$ onto the principal column space of pre-trained weights (the subspace spanned by top-$r$ left singular vectors) is a theoretically supported and effective inductive bias. Building on this, it enables layers within the same functional group to share a si
+  [ICLR 2026][Model Compression][PEFT] PiCa demonstrates that projecting the fine-tuning update $\Delta W$ onto the principal column space of pre-trained weights (the subspace spanned by top-$r$ left singular vectors) is a theoretically supported and effective inductive bias. Building on this, it enables layers within the same functional group to share a single trainable matrix, achieving stable performance gains over SOTA methods like SVFT while using fewer parameters than ran…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - PEFT
-  - LoRA
+  - "ICLR 2026"
+  - "Model Compression"
+  - "PEFT"
+  - "LoRA"
+  - "SVD"
+  - "Column Space Projection"
+  - "Weight Sharing"
 date: 2026-05-08
-content_hash: 56ddb125ca808572
+content_hash: b8be93da886d2ad0
 ---
+
 # PiCa: Parameter-Efficient Fine-Tuning with Column Space Projection
 
 **Conference**: ICLR 2026  
@@ -142,8 +146,8 @@ PiCa achieves superior performance with the **fewest** parameters in high-rank c
 - [\[ICLR 2026\] SumRA: Parameter Efficient Fine-Tuning with Singular Value Decomposition and Summed Orthogonal Basis](sumra_parameter_efficient_fine-tuning_with_singular_value_decomposition_and_summ.md)
 - [\[ICLR 2026\] Memba: Membrane-driven Parameter-Efficient Fine-Tuning for Mamba](memba_membrane-driven_parameter-efficient_fine-tuning_for_mamba.md)
 - [\[ICLR 2026\] TRAC: Tensor-Train Based Across-Layer Compression for Parameter-Efficient Fine-Tuning](trac_tensor-train_based_across-layer_compression_for_parameter-efficient_fine-tu.md)
+- [\[ICLR 2026\] Sculpting Subspaces: Constrained Full Fine-Tuning in LLMs for Continual Learning](sculpting_subspaces_constrained_full_fine-tuning_in_llms_for_continual_learning.md)
 - [\[ICML 2025\] Parameter-Efficient Fine-Tuning of State Space Models](../../ICML2025/model_compression/parameter-efficient_fine-tuning_of_state_space_models.md)
-- [\[ICLR 2026\] ABBA-Adapters: Efficient and Expressive Fine-Tuning of Foundation Models](abba-adapters_efficient_and_expressive_fine-tuning_of_foundation_models.md)
 
 </div>
 

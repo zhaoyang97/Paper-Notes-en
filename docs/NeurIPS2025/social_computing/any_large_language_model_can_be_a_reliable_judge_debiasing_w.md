@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Any Large Language Model Can Be a Reliable Judge: Debiasing with a Reasoning-based Bias Detector
 description: >-
-  [NeurIPS 2025][Social Computing][LLM-as-judge] This paper proposes the Reasoning-based Bias Detector (RBD), a plug-and-play debiasing module for LLM judges. By externally detecting four types of evaluation bias (verbosit…
+  [NeurIPS 2025][Social Computing][LLM-as-judge] This paper proposes the Reasoning-based Bias Detector (RBD), a plug-and-play debiasing module for LLM judges. By externally detecting four types of evaluation bias (verbosity, position, bandwagon, and sentiment), RBD generates structured feedback with reasoning chains to guide judges toward self-correction. RBD-8B achieves an average accuracy improvement of 18.5% and consistency improvement of 10.9% across 8 LLM judges.
 tags:
   - "NeurIPS 2025"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "self-correction"
   - "evaluation reliability"
 date: 2026-05-08
-content_hash: cec13caa0e23298a
+content_hash: d8fc923ff072923d
 ---
 
 # Any Large Language Model Can Be a Reliable Judge: Debiasing with a Reasoning-based Bias Detector
@@ -140,11 +140,11 @@ A four-stage pipeline: (1) construct datasets $D$ and $D_{bias}$ for four bias t
 
 ## Related Papers
 
+- [\[ACL 2025\] Translate With Care: Addressing Gender Bias, Neutrality, and Reasoning in Large Language Model Translations](../../ACL2025/social_computing/translate_with_care_addressing_gender_bias_neutrality_and_reasoning_in_large_lan.md)
+- [\[ACL 2025\] BiasGuard: A Reasoning-Enhanced Bias Detection Tool for Large Language Models](../../ACL2025/social_computing/biasguard_a_reasoning-enhanced_bias_detection_tool_for_large_language_models.md)
 - [\[ICLR 2026\] BiasFreeBench: a Benchmark for Mitigating Bias in Large Language Model Responses](../../ICLR2026/social_computing/biasfreebench_a_benchmark_for_mitigating_bias_in_large_language_model_responses.md)
 - [\[NeurIPS 2025\] Uncovering Strategic Egoism Behaviors in Large Language Models](uncovering_strategic_egoism_behaviors_in_large_language_models.md)
-- [\[NeurIPS 2025\] DATE-LM: Benchmarking Data Attribution Evaluation for Large Language Models](date-lm_benchmarking_data_attribution_evaluation_for_large_language_models.md)
-- [\[ICML 2026\] Self-Debias: Self-correcting for Debiasing Large Language Models](../../ICML2026/social_computing/self-debias_self-correcting_for_debiasing_large_language_models.md)
-- [\[NeurIPS 2025\] Active Slice Discovery in Large Language Models](active_slice_discovery_in_large_language_models.md)
+- [\[ACL 2025\] How does Misinformation Affect Large Language Model Behaviors and Preferences?](../../ACL2025/social_computing/how_does_misinformation_affect_large_language.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Linguistic Nepotism: Trading-off Quality for Language Preference in Multilingual RAG
 description: >-
-  [ICML 2026][Information Retrieval & RAG][logit lens] This paper designs a controllable method to measure "language preference" in multilingual RAG using internal signals (next-token citation prediction probability). It finds that six open-source LLMs systematically prefer citing English documents during long-form generation, even when English documents are irrelevant—sug
+  [ICML 2026][Information Retrieval & RAG][Multilingual RAG] This paper designs a controllable method to measure "language preference" in multilingual RAG using internal signals (next-token citation prediction probability). It finds that six open-source LLMs systematically prefer citing English documents during long-form generation, even when English documents are irrelevant—suggesting language itself influences citation selection more than document relevance.
 tags:
-  - ICML 2026
-  - Information Retrieval & RAG
-  - logit lens
+  - "ICML 2026"
+  - "Information Retrieval & RAG"
+  - "Multilingual RAG"
+  - "Citation Preference"
+  - "Linguistic Bias"
+  - "Next-token Prediction"
+  - "Logit Lens"
 date: 2026-05-08
-content_hash: 4e41f14a0e1f495a
+content_hash: 7a8112438d5b96c9
 ---
+
 # Linguistic Nepotism: Trading-off Quality for Language Preference in Multilingual RAG
 
 **Conference**: ICML 2026  
@@ -139,9 +144,9 @@ Every model across all target languages showed a consistent English preference (
 
 - [\[ACL 2025\] Investigating Language Preference of Multilingual RAG Systems](../../ACL2025/information_retrieval/investigating_language_preference_of_multilingual_rag_systems.md)
 - [\[ACL 2026\] Enhancing Multilingual RAG Systems with Debiased Language Preference-Guided Query Fusion](../../ACL2026/information_retrieval/enhancing_multilingual_rag_systems_with_debiased_language_preference-guided_quer.md)
-- [\[NeurIPS 2025\] MuRating: A High Quality Data Selecting Approach to Multilingual Large Language Model Pretraining](../../NeurIPS2025/information_retrieval/murating_a_high_quality_data_selecting_approach_to_multilingual_large_language_m.md)
 - [\[ACL 2026\] All Languages Matter: Understanding and Mitigating Language Bias in Multilingual RAG](../../ACL2026/information_retrieval/all_languages_matter_understanding_and_mitigating_language_bias_in_multilingual_.md)
 - [\[ICML 2026\] Temporal Preference Optimization for Unsupervised Retrieval](temporal_preference_optimization_for_unsupervised_retrieval.md)
+- [\[ACL 2026\] Language-Coupled Reinforcement Learning for Multilingual Retrieval-Augmented Generation](../../ACL2026/information_retrieval/language-coupled_reinforcement_learning_for_multilingual_retrieval-augmented_gen.md)
 
 </div>
 

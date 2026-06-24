@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Monocular Facial Appearance Capture in the Wild
 description: >-
-  [ICCV 2025][Human Understanding][facial appearance capture] This paper proposes a method for reconstructing facial appearance attributes (diffuse albedo, specular intensity…
+  [ICCV 2025][Human Understanding][facial appearance capture] This paper proposes a method for reconstructing facial appearance attributes (diffuse albedo, specular intensity, specular roughness) from monocular head-rotation videos. By introducing an occlusion-aware split-sum approximation shading model, the method achieves studio-grade facial appearance capture quality without imposing any simplifying assumptions on the illumination environment.
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "monocular video"
   - "split-sum approximation"
 date: 2026-05-08
-content_hash: 4e746f3b10b1eec7
+content_hash: dc9607d346f180ae
 ---
 
 # Monocular Facial Appearance Capture in the Wild
@@ -135,7 +135,7 @@ Evaluation on a synthetic dataset further confirms the substantial advantage of 
 
 - [\[CVPR 2026\] WildCap: Facial Albedo Capture in the Wild via Hybrid Inverse Rendering](../../CVPR2026/human_understanding/wildcap_facial_albedo_capture_in_the_wild_via_hybrid_inverse_rendering.md)
 - [\[ICCV 2025\] NGD: Neural Gradient Based Deformation for Monocular Garment Reconstruction](ngd_neural_gradient_based_deformation_for_monocular_garment_reconstruction.md)
-- [\[ICCV 2025\] SynFER: Towards Boosting Facial Expression Recognition with Synthetic Data](synfer_towards_boosting_facial_expression_recognition_with_synthetic_data.md)
+- [\[ECCV 2024\] ReLoo: Reconstructing Humans Dressed in Loose Garments from Monocular Video in the Wild](../../ECCV2024/human_understanding/reloo_reconstructing_humans_dressed_in_loose_garments_from_monocular_video_in_th.md)
 - [\[ICCV 2025\] PoseSyn: Synthesizing Diverse 3D Pose Data from In-the-Wild 2D Data](posesyn_synthesizing_diverse_3d_pose_data_from_in-the-wild_2d_data.md)
 - [\[ICCV 2025\] MagShield: Towards Better Robustness in Sparse Inertial Motion Capture Under Magnetic Disturbances](magshield_towards_better_robustness_in_sparse_inertial_motion_capture_under_magn.md)
 

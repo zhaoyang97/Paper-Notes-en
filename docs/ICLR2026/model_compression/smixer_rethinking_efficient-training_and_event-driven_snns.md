@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SMixer: Rethinking Efficient-Training and Event-Driven SNNs
 description: >-
-  [ICLR 2026][Model Compression][Token Mixer] Addressing the dilemma where high-performance Spiking Neural Network (SNN) architectures are not truly event-driven and suffer from high training overheads, this paper proposes the Spiking-token Mixer (SMixer) backbone for deployment on asynchronous chips, combined with a zero-parameter Dynamic Spatial-Temporal Spiking
+  [ICLR 2026][Model Compression][Spiking Neural Networks] Addressing the dilemma where high-performance Spiking Neural Network (SNN) architectures are not truly event-driven and suffer from high training overheads, this paper proposes the Spiking-token Mixer (SMixer) backbone for deployment on asynchronous chips, combined with a zero-parameter Dynamic Spatial-Temporal Spiking Pruning (DSTSP) framework. This approach reduces training memory and energy consumption by approximatel…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Token Mixer
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Spiking Neural Networks"
+  - "Event-Driven"
+  - "Efficient Training"
+  - "Feature Pruning"
+  - "Token Mixer"
 date: 2026-05-08
-content_hash: d7b5b0fe16bfd21e
+content_hash: b1f5a674b7292abf
 ---
+
 # SMixer: Rethinking Efficient-Training and Event-Driven SNNs
 
 **Conference**: ICLR 2026  
@@ -152,15 +157,15 @@ Temporal pruning provides the highest efficiency gain with minimal accuracy loss
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Memba: Membrane-driven Parameter-Efficient Fine-Tuning for Mamba](memba_membrane-driven_parameter-efficient_fine-tuning_for_mamba.md)
 - [\[ICLR 2026\] INSTANT: Compressing Gradients and Activations for Resource-Efficient Training](instant_compressing_gradients_and_activations_for_resource-efficient_training.md)
 - [\[ICLR 2026\] Rethinking Residual Errors in Compensation-based LLM Quantization](rethinking_residual_errors_in_compensation-based_llm_quantization.md)
+- [\[ICLR 2026\] LaplacianFormer: Rethinking Linear Attention with Laplacian Kernels](laplacianformerrethinking_linear_attention_with_laplacian_kernel.md)
 - [\[ICLR 2026\] Rethinking Continual Learning with Progressive Neural Collapse](rethinking_continual_learning_with_progressive_neural_collapse.md)
-- [\[CVPR 2025\] DELT: A Simple Diversity-driven EarlyLate Training for Dataset Distillation](../../CVPR2025/model_compression/delt_a_simple_diversity-driven_earlylate_training_for_dataset_distillation.md)
 
 </div>
 

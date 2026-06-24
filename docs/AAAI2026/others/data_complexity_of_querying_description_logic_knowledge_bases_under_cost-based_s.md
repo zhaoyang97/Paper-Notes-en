@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Data Complexity of Querying Description Logic Knowledge Bases under Cost-Based Semantics
 description: >-
-  [AAAI 2026][Description Logics] This paper systematically investigates the data complexity of query answering over weighted description logic knowledge bases under cost-based semantics. It establishes that optimal-cost s…
+  [AAAI 2026][Description Logics] This paper systematically investigates the data complexity of query answering over weighted description logic knowledge bases under cost-based semantics. It establishes that optimal-cost semantics is decidable within $\Delta_2^p$, and delivers a surprising positive result: for DL-Lite$_{\text{bool}}^{\mathcal{H}}$ ontologies with a fixed cost bound, both certain answers to instance queries and possible answers to conjunctive queries admit first…
 tags:
   - "AAAI 2026"
   - "Description Logics"
@@ -11,7 +11,7 @@ tags:
   - "Ontology-Mediated Query Answering"
   - "Computational Complexity"
 date: 2026-05-08
-content_hash: c1e2db7a3eab262b
+content_hash: aa93990d1be54d33
 ---
 
 # Data Complexity of Querying Description Logic Knowledge Bases under Cost-Based Semantics
@@ -195,8 +195,8 @@ The **core size** is constant with respect to $|\mathcal{A}|$, so all relevant v
 - [\[AAAI 2026\] Description Logics with Two Types of Definite Descriptions: Complexity, Expressiveness, and Automated Deduction](description_logics_with_two_types_of_definite_descriptions_complexity_expressive.md)
 - [\[AAAI 2026\] Model Change for Description Logic Concepts](model_change_for_description_logic_concepts.md)
 - [\[AAAI 2026\] Cost-Free Neutrality for the River Method](cost-free_neutrality_for_the_river_method.md)
-- [\[AAAI 2026\] LeanRAG: Knowledge-Graph-Based Generation with Semantic Aggregation and Hierarchical Retrieval](leanrag_knowledge-graph-based_generation_with_semantic_aggregation_and_hierarchi.md)
 - [\[AAAI 2026\] From Decision Trees to Boolean Logic: A Fast and Unified SHAP Algorithm](from_decision_trees_to_boolean_logic_a_fast_and_unified_shap_algorithm.md)
+- [\[AAAI 2026\] LeanRAG: Knowledge-Graph-Based Generation with Semantic Aggregation and Hierarchical Retrieval](leanrag_knowledge-graph-based_generation_with_semantic_aggregation_and_hierarchi.md)
 
 </div>
 

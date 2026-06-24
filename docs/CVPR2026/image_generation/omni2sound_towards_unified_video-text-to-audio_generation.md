@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Omni2Sound: Towards Unified Video-Text-to-Audio Generation
 description: >-
-  [CVPR 2026][Audio & Speech][Paper Note] This paper aims to train a **single model to simultaneously excel** in video-to-audio (V2A), text-to-audio (T2A), and video-text-to-audio (VT2A). The research identifies two primary hurdles: the scarcity of high-quality V-A-T aligned captions and the competition between/within tasks. To address these, the authors devel
+  [CVPR 2026][Image Generation][Unified Audio Generation] This paper aims to train a **single model to simultaneously excel** in video-to-audio (V2A), text-to-audio (T2A), and video-text-to-audio (VT2A). The research identifies two primary hurdles: the scarcity of high-quality V-A-T aligned captions and the competition between/within tasks. To address these, the authors developed SoundAtlas, a dataset of 470k pairs of tightly aligned captions generated via an agent-based labeli…
 tags:
-  - CVPR 2026
-  - Audio & Speech
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Unified Audio Generation"
+  - "Video-Text-to-Audio"
+  - "Diffusion Transformer"
+  - "Dataset Construction"
+  - "Multi-task Training"
 date: 2026-05-08
-content_hash: f209ced8732bdee5
+content_hash: 3af93acdcad8e0a5
 ---
+
 # Omni2Sound: Towards Unified Video-Text-to-Audio Generation
 
 **Conference**: CVPR 2026  
@@ -131,15 +137,16 @@ On the VGGSound-Omni benchmark, Omni2Sound achieves SOTA across all tasks:
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] OmniSonic: Towards Universal and Holistic Audio Generation from Video and Text](omnisonic_towards_universal_and_holistic_audio_generation_from_video_and_text.md)
-- [\[ACL 2026\] UniSonate: A Unified Model for Speech, Music, and Sound Effect Generation with Text Instructions](../../ACL2026/audio_speech/unisonate_a_unified_model_for_speech_music_and_sound_effect_generation_with_text.md)
-- [\[CVPR 2025\] VinTAGe: Joint Video and Text Conditioning for Holistic Audio Generation](../../CVPR2025/audio_speech/vintage_joint_video_and_text_conditioning_for_holistic_audio_generation.md)
-- [\[CVPR 2026\] Echoes Over Time: Unlocking Length Generalization in Video-to-Audio Generation Models](echoes_over_time_unlocking_length_generalization_in_video-to-audio_generation_mo.md)
-- [\[CVPR 2026\] Hear What You See: Video-to-Audio Generation with Diffusion Transformer and Semantic-Temporal Alignment-Ranked Direct Preference Optimization](hear_what_you_see_video-to-audio_generation_with_diffusion_transformer_and_seman.md)
+- [\[CVPR 2026\] Harmony: Harmonizing Audio and Video Generation through Cross-Task Synergy](harmony_harmonizing_audio_and_video_generation_through_cross-task_synergy.md)
+- [\[CVPR 2026\] StreamDiT: Real-Time Streaming Text-to-Video Generation](streamdit_real-time_streaming_text-to-video_generation.md)
+- [\[CVPR 2026\] VideoCoF: Unified Video Editing with Temporal Reasoner](videocof_unified_video_editing_with_temporal_reasoner.md)
+- [\[CVPR 2026\] Unified Customized Generation by Disentangled Reward Modeling](unified_customized_generation_by_disentangled_reward_modeling.md)
+- [\[CVPR 2026\] DCoAR: Deep Concept Injection into Unified Autoregressive Models for Personalized Text-to-Image Generation](dcoar_deep_concept_injection_into_unified_autoregressive_models_for_personalized.md)
 
 </div>
 

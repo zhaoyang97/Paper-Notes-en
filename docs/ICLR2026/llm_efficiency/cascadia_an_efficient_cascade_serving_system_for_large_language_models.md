@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Cascadia: An Efficient Cascade Serving System for Large Language Models
 description: >-
-  [ICLR 2026][LLM Efficiency][MILP] Cascadia is a cascade serving system for large language models. it formulates the decisions of "which model size to use, how many GPUs to allocate, and which parallelism strategy to apply" as a constrained optimization problem. By using a bi-level iterative framework that combines MILP for deployment and Chebyshev-guid
+  [ICLR2026][LLM Efficiency][Model Cascade] Cascadia is a cascade serving system for large language models. it formulates the decisions of "which model size to use, how many GPUs to allocate, and which parallelism strategy to apply" as a constrained optimization problem. By using a bi-level iterative framework that combines MILP for deployment and Chebyshev-guided search for routing, it jointly solves these variables. While maintaining answer quality…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - MILP
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "Model Cascade"
+  - "LLM Serving System"
+  - "Bi-level Optimization"
+  - "MILP"
+  - "Request Routing"
 date: 2026-05-08
-content_hash: 1a1bd2722c4612d5
+content_hash: 600f338fc932d60a
 ---
+
 # Cascadia: An Efficient Cascade Serving System for Large Language Models
 
 **Conference**: ICLR2026  
@@ -145,10 +150,20 @@ Hardware: 4 servers with 8$\times$ H100-80GB each (NVLink 400GB/s, InfiniBand 20
 - **Value**: ⭐⭐⭐⭐ Directly applicable to providers hosting multi-model cascades, offering significant latency and cost benefits.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Out of the Memory Barrier: A Highly Memory-Efficient Training System for LLMs with Million-Token Contexts](out_of_the_memory_barrier_a_highly_memory-efficient_training_system_for_llms_wit.md)
+- [\[ACL 2026\] Lizard: An Efficient Linearization Framework for Large Language Models](../../ACL2026/llm_efficiency/lizard_an_efficient_linearization_framework_for_large_language_models.md)
+- [\[ICLR 2026\] DPad: Efficient Diffusion Language Models with Suffix Dropout](dpad_efficient_diffusion_language_models_with_suffix_dropout.md)
+- [\[ICLR 2026\] Inference-Cost-Aware Dynamic Tree Construction for Efficient Inference in Large Language Models](inference-cost-aware_dynamic_tree_construction_for_efficient_inference_in_large_.md)
+- [\[ICLR 2026\] Beyond Fixed: Training-Free Variable-Length Denoising for Diffusion Large Language Models](beyond_fixed_training-free_variable-length_denoising_for_diffusion_large_languag.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] Lizard: An Efficient Linearization Framework for Large Language Models](../../ACL2026/llm_efficiency/lizard_an_efficient_linearization_framework_for_large_language_models.md)

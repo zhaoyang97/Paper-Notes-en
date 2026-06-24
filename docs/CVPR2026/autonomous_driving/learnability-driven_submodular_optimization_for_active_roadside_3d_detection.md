@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Learnability-Driven Submodular Optimization for Active Roadside 3D Detection
 description: >-
-  [CVPR 2026][Autonomous Driving][BEV] The LH3D framework is proposed, utilizing a three-stage submodular optimization active learning strategy—"Depth Confidence → Semantic Balance → Geometric Diversity"—to suppress the selection of inherently ambiguous samples in roadside monocular 3D detection. It significantly outperforms traditional uncertainty/diversit
+  [CVPR2026][Autonomous Driving][Active Learning] The LH3D framework is proposed, utilizing a three-stage submodular optimization active learning strategy—"Depth Confidence → Semantic Balance → Geometric Diversity"—to suppress the selection of inherently ambiguous samples in roadside monocular 3D detection. It significantly outperforms traditional uncertainty/diversity-based AL methods using only a 20% annotation budget.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - BEV
+  - "CVPR2026"
+  - "Autonomous Driving"
+  - "Active Learning"
+  - "Roadside Perception"
+  - "Monocular 3D Detection"
+  - "BEV"
+  - "Submodular Optimization"
+  - "Learnability"
+  - "Data Selection"
 date: 2026-05-08
-content_hash: cab51b678a6a5ce4
+content_hash: b940f68def0af390
 ---
+
 # Learnability-Driven Submodular Optimization for Active Roadside 3D Detection
 
 **Conference**: CVPR2026  
@@ -152,10 +159,10 @@ LH3D yields the best results across three different BEV detectors, demonstrating
 ## Related Papers
 
 - [\[CVPR 2026\] LiDAS: Lighting-driven Dynamic Active Sensing for Nighttime Perception](lidas_lighting-driven_dynamic_active_sensing_for_nighttime_perception.md)
+- [\[CVPR 2026\] Probabilistic Discrepancy Learning for Roadside LiDAR Scene Completion](probabilistic_discrepancy_learning_for_roadside_lidar_scene_completion.md)
 - [\[CVPR 2026\] ActiveAD: Planning-Oriented Active Learning for End-to-End Autonomous Driving](activead_planning-oriented_active_learning_for_end-to-end_autonomous_driving.md)
-- [\[CVPR 2026\] GSV2X: Geometry-Aware Uncertainty Modeling and Orthogonal Fusion for Robust Roadside Perception](gsv2x_geometry-aware_uncertainty_modeling_and_orthogonal_fusion_for_robust_roads.md)
-- [\[CVPR 2026\] Lipschitz Optimization for Formal Verification of Homographies](lipschitz_optimization_for_formal_verification_of_homographies.md)
 - [\[ICCV 2025\] Adaptive Dual Uncertainty Optimization: Boosting Monocular 3D Object Detection under Test-Time Shifts](../../ICCV2025/autonomous_driving/adaptive_dual_uncertainty_optimization_boosting_monocular_3d_object_detection_un.md)
+- [\[CVPR 2026\] Lipschitz Optimization for Formal Verification of Homographies](lipschitz_optimization_for_formal_verification_of_homographies.md)
 
 </div>
 

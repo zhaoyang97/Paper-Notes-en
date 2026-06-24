@@ -2,18 +2,13 @@
 title: >-
   [Paper Note] Soft Quality-Diversity Optimization
 description: >-
-  [ICLR 2026][Others][quality diversity] The authors propose Soft QD Score as a new optimization objective for quality-diversity that eliminates the need for behavior space discretization. Based on this, they derive a differentiable algorithm, SQUAD, which exhibits superior scalability in high-dimensional behavior spaces and maintains competitive performance
+  The authors propose Soft QD Score as a new optimization objective for quality-diversity that eliminates the need for behavior space discretization. Based on this, they derive a differentiable algorithm, SQUAD, which exhibits superior scalability in high-dimensional behavior spaces and maintains competitive performance with SOTA on standard benchmarks.
 tags:
-  - ICLR 2026
-  - Others
-  - quality diversity
-  - optimization
-  - differentiable
-  - evolutionary computation
-  - soft objectives
+
 date: 2026-05-08
-content_hash: 139100fd838bdb19
+content_hash: 0c0f63c18c0b2351
 ---
+
 # Soft Quality-Diversity Optimization
 
 ## Meta-Information
@@ -141,8 +136,8 @@ The LP benchmark compares scalability across 4, 8, and 16-dimensional behavior s
 
 - [\[ICLR 2026\] Discount Model Search for Quality Diversity Optimization in High-Dimensional Measure Spaces](discount_model_search_for_quality_diversity_optimization_in_high-dimensional_mea.md)
 - [\[ICML 2025\] Diversity By Design: Leveraging Distribution Matching for Offline Model-Based Optimization](../../ICML2025/others/diversity_by_design_leveraging_distribution_matching_for_offline_model-based_opt.md)
-- [\[ACL 2025\] Evaluating the Evaluation of Diversity in Commonsense Generation](../../ACL2025/others/evaluating_the_evaluation_of_diversity_in_commonsense_generation.md)
 - [\[AAAI 2026\] HyperSHAP: Shapley Values and Interactions for Explaining Hyperparameter Optimization](../../AAAI2026/others/hypershap_shapley_values_and_interactions_for_explaining_hyperparameter_optimiza.md)
+- [\[ACL 2025\] Evaluating the Evaluation of Diversity in Commonsense Generation](../../ACL2025/others/evaluating_the_evaluation_of_diversity_in_commonsense_generation.md)
 - [\[ACL 2025\] A Multi-Persona Framework for Argument Quality Assessment](../../ACL2025/others/a_multi-persona_framework_for_argument_quality_assessment.md)
 
 </div>

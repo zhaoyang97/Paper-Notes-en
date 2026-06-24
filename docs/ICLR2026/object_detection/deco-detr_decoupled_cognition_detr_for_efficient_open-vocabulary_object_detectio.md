@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DeCo-DETR: Decoupled Cognition DETR for efficient Open-Vocabulary Object Detection
 description: >-
-  [ICLR 2026][Object Detection][DETR] DeCo-DETR decouples "online text encoder invocation" and the "competition between localization and alignment" in open-vocabulary detection. It employs an LVLM to offline distill a reusable hierarchical semantic prototype pool as a substitute for the text encoder during inference and utilizes dual-stream gradient isolat
+  [ICLR2026][Object Detection][Open-Vocabulary Detection] DeCo-DETR decouples "online text encoder invocation" and the "competition between localization and alignment" in open-vocabulary detection. It employs an LVLM to offline distill a reusable hierarchical semantic prototype pool as a substitute for the text encoder during inference and utilizes dual-stream gradient isolation to separate localization and semantic alignment training. This approach achieves a gain of 3.1--5.8…
 tags:
-  - ICLR 2026
-  - Object Detection
-  - DETR
-  - Knowledge Distillation
+  - "ICLR2026"
+  - "Object Detection"
+  - "Open-Vocabulary Detection"
+  - "DETR"
+  - "Knowledge Distillation"
+  - "Semantic Prototypes"
+  - "Gradient Decoupling"
 date: 2026-05-08
-content_hash: 81e4270e80968421
+content_hash: ebbcfbb63f91f42a
 ---
+
 # DeCo-DETR: Decoupled Cognition DETR for efficient Open-Vocabulary Object Detection
 
 **Conference**: ICLR2026  
@@ -146,11 +150,11 @@ Incremental component addition (OV-COCO, novel / base / overall $AP_{50}$):
 
 ## Related Papers
 
-- [\[ECCV 2024\] LaMI-DETR: Open-Vocabulary Detection with Language Model Instruction](../../ECCV2024/object_detection/lami-detr_open-vocabulary_detection_with_language_model_instruction.md)
 - [\[ICLR 2026\] DETR-ViP: Detection Transformer with Robust Discriminative Visual Prompts](detr-vip_detection_transformer_with_robust_discriminative_visual_prompts.md)
-- [\[CVPR 2026\] Parameter-Efficient Semantic Augmentation for Enhancing Open-Vocabulary Object Detection](../../CVPR2026/object_detection/parameter-efficient_semantic_augmentation_for_enhancing_open-vocabulary_object_d.md)
+- [\[ECCV 2024\] LaMI-DETR: Open-Vocabulary Detection with Language Model Instruction](../../ECCV2024/object_detection/lami-detr_open-vocabulary_detection_with_language_model_instruction.md)
 - [\[ICLR 2026\] RF-DETR: Neural Architecture Search for Real-Time Detection Transformers](rf-detr_neural_architecture_search_for_real-time_detection_transformers.md)
-- [\[AAAI 2026\] VK-Det: Visual Knowledge Guided Prototype Learning for Open-Vocabulary Aerial Object Detection](../../AAAI2026/object_detection/vk-det_visual_knowledge_guided_prototype_learning_for_open-vocabulary_aerial_obj.md)
+- [\[CVPR 2026\] Parameter-Efficient Semantic Augmentation for Enhancing Open-Vocabulary Object Detection](../../CVPR2026/object_detection/parameter-efficient_semantic_augmentation_for_enhancing_open-vocabulary_object_d.md)
+- [\[ICCV 2025\] Sim-DETR: Unlock DETR for Temporal Sentence Grounding](../../ICCV2025/object_detection/sim-detr_unlock_detr_for_temporal_sentence_grounding.md)
 
 </div>
 

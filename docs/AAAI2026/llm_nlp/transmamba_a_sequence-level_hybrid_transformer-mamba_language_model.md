@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] TransMamba: A Sequence-Level Hybrid Transformer-Mamba Language Model
 description: >-
-  [AAAI 2026][LLM/NLP][Transformer] This paper proposes TransMamba, a sequence-level Transformer-Mamba hybrid architecture that dynamically switches between Attention and SSM computation at different token positions via sh…
+  [AAAI 2026][LLM (Other)][Transformer] This paper proposes TransMamba, a sequence-level Transformer-Mamba hybrid architecture that dynamically switches between Attention and SSM computation at different token positions via shared QKV/CBx parameters and a Memory Converter, achieving efficiency advantages for both short and long sequences.
 tags:
   - "AAAI 2026"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "Transformer"
   - "Mamba"
   - "SSM"
   - "Hybrid Architecture"
   - "Sequence Modeling"
 date: 2026-05-08
-content_hash: 311df0d7d4f64e0f
+content_hash: 283971a147bcf4df
 ---
 
 # TransMamba: A Sequence-Level Hybrid Transformer-Mamba Language Model
@@ -145,8 +145,8 @@ Standard cross-entropy language modeling loss plus a reconstruction loss for the
 - [\[AAAI 2026\] Rectification Reimagined: A Unified Mamba Model for Image Correction and Rectangling with Prompts](rectification_reimagined_a_unified_mamba_model_for_image_cor.md)
 - [\[AAAI 2026\] Uncertainty Under the Curve: A Sequence-Level Entropy Area Metric for Reasoning LLMs](uncertainty_under_the_curve_a_sequence-level_entropy_area_metric_for_reasoning_l.md)
 - [\[ACL 2026\] FastDiSS: Few-step Match Many-step Diffusion Language Model on Sequence-to-Sequence Generation](../../ACL2026/llm_nlp/fastdiss_few-step_match_many-step_diffusion_language_model_on_sequence-to-sequen.md)
+- [\[ACL 2025\] Automated CAD Modeling Sequence Generation from Text Descriptions via Transformer-Based Large Language Models](../../ACL2025/llm_nlp/cadllm_cad_modeling_from_text.md)
 - [\[AAAI 2026\] An Invariant Latent Space Perspective on Language Model Inversion](an_invariant_latent_space_perspective_on_language_model_inve.md)
-- [\[AAAI 2026\] IROTE: Human-like Traits Elicitation of Large Language Model via In-Context Self-Reflective Optimization](irote_human-like_traits_elicitation_of_large_language_model_via_in-context_self-.md)
 
 </div>
 

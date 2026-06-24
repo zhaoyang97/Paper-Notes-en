@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Alignment-Enhanced Integration of Connectivity and Spectral Sparsity in Dynamic Sparse Training of LLM
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] This work for the first time integrates **dynamic connectivity sparsity** (CHTs) and **dynamic low-rank spectral sparsity** into a unified sparse pre-training framework. It discovers that a naive summation of the two branches leads to an output "cancellation" effect and introduces a simple alignment loss to synchronize
+  [ICLR 2026][Model Compression][Dynamic Sparse Training] This work for the first time integrates **dynamic connectivity sparsity** (CHTs) and **dynamic low-rank spectral sparsity** into a unified sparse pre-training framework. It discovers that a naive summation of the two branches leads to an output "cancellation" effect and introduces a simple alignment loss to synchronize them. The resulting CHTsL approaches dense performance on LLaMA-60M/130M while retaining only 10%–30% o…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Dynamic Sparse Training"
+  - "Low-rank Decomposition"
+  - "Connectivity Sparsity"
+  - "Spectral Sparsity"
+  - "Cancellation Effect"
+  - "Alignment Loss"
 date: 2026-05-08
-content_hash: 3b7f190c7b1e9408
+content_hash: 965b4fc0b7a2b50e
 ---
+
 # Alignment-Enhanced Integration of Connectivity and Spectral Sparsity in Dynamic Sparse Training of LLM
 
 **Conference**: ICLR 2026  
@@ -125,9 +132,9 @@ Wilcoxon signed-rank test: $p=0.00049$ for Act+Align vs. Naive and Act, both $<0
 
 - [\[ICLR 2026\] Dr.LLM: Dynamic Layer Routing in LLMs](drllm_dynamic_layer_routing_in_llms.md)
 - [\[ICLR 2026\] ODESteer: A Unified ODE-Based Steering Framework for LLM Alignment](odesteer_a_unified_ode-based_steering_framework_for_llm_alignment.md)
+- [\[ICLR 2026\] SLA: Beyond Sparsity in Diffusion Transformers via Fine-Tunable Sparse–Linear Attention](sla_beyond_sparsity_in_diffusion_transformers_via_fine-tunable_sparselinear_atte.md)
+- [\[ICLR 2026\] Robust Training of Neural Networks at Arbitrary Precision and Sparsity](robust_training_of_neural_networks_at_arbitrary_precision_and_sparsity.md)
 - [\[ICLR 2026\] LeSTD: LLM Compression via Learning-based Sparse Tensor Decomposition](lestd_llm_compression_via_learning-based_sparse_tensor_decomposition.md)
-- [\[ICML 2025\] Sparse Spectral Training and Inference on Euclidean and Hyperbolic Neural Networks](../../ICML2025/model_compression/sparse_spectral_training_and_inference_on_euclidean_and_hyperbolic_neural_networ.md)
-- [\[ICLR 2026\] The Unseen Frontier: Pushing the Limits of LLM Sparsity with Surrogate-Free ADMM](the_unseen_frontier_pushing_the_limits_of_llm_sparsity_with_surrogate-free_admm.md)
 
 </div>
 

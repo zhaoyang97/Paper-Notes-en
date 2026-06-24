@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Knowledge-driven Augmentation and Retrieval for Integrative Temporal Adaptation
 description: >-
-  [ACL 2026][NLP Understanding][Paper Note] KARITA decomposes "temporal drift" into three complementary signals: uncertainty, feature distance, and ontological term rarity. For each target sample hit by these signals, it backtracks and retrieves semantically similar source samples with ground truth. It then employs LLM + domain ontologies (MeSH / EuroVoc / CSO)
+  [ACL 2026][NLP Understanding][Temporal Shift] KARITA decomposes "temporal drift" into three complementary signals: uncertainty, feature distance, and ontological term rarity. For each target sample hit by these signals, it backtracks and retrieves semantically similar source samples with ground truth. It then employs LLM + domain ontologies (MeSH / EuroVoc / CSO) to generate synonym rewrites for data augmentation. This approach migrates the source model to future periods in a…
 tags:
-  - ACL 2026
-  - NLP Understanding
+  - "ACL 2026"
+  - "NLP Understanding"
+  - "Temporal Shift"
+  - "Ontological Knowledge"
+  - "Retrieval Augmentation"
+  - "Synthetic Synonyms"
+  - "Multi-label Classification"
 date: 2026-05-08
-content_hash: 3f8c98e84084d6f0
+content_hash: 7e3c6bea938eb32c
 ---
+
 # Knowledge-driven Augmentation and Retrieval for Integrative Temporal Adaptation
 
 **Conference**: ACL 2026  
@@ -132,14 +138,15 @@ Removing specific KARITA components (Target test ma-F1):
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ACL 2026\] It's High Time: A Survey of Temporal Question Answering](it39s_high_time_a_survey_of_temporal_question_answering.md)
 - [\[ACL 2026\] Beyond Chunking: Discourse-Aware Hierarchical Retrieval for Long Document Question Answering](beyond_chunking_discourse-aware_hierarchical_retrieval_for_long_document_questio.md)
+- [\[ACL 2026\] It's High Time: A Survey of Temporal Question Answering](it39s_high_time_a_survey_of_temporal_question_answering.md)
+- [\[ACL 2026\] Revealing Temporal Framing in News Text](uncovering_temporal_framing_in_the_news.md)
 - [\[ACL 2026\] Creating ConLangs to Probe the Metalinguistic Grammatical Knowledge of LLMs](creating_conlangs_to_probe_the_metalinguistic_grammatical_knowledge_of_llms.md)
-- [\[ACL 2026\] AdapTime: Enabling Adaptive Temporal Reasoning in Large Language Models](adaptime_enabling_adaptive_temporal_reasoning_in_large_language_models.md)
 - [\[ACL 2026\] Filling the Gap: Is Commonsense Knowledge Generation useful for Natural Language Inference?](filling_the_gap_is_commonsense_knowledge_generation_useful_for_natural_language_.md)
 
 </div>

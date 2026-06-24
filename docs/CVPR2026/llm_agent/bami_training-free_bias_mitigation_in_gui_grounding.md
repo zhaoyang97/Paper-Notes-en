@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BAMI: Training-Free Bias Mitigation in GUI Grounding
 description: >-
-  [CVPR 2026][LLM Agent][GUI Grounding] This paper diagnoses GUI grounding errors using the MPD attribution method, identifying two main types of inductive biases: precision bias and ambiguity bias. It proposes BAMI, a training-free inference framework that eliminates precision bias through "coarse-to-fine focusing" and mitigates ambiguity bias via "candidat
+  [CVPR 2026][LLM Agent][GUI Grounding] This paper diagnoses GUI grounding errors using the MPD attribution method, identifying two main types of inductive biases: precision bias and ambiguity bias. It proposes BAMI, a training-free inference framework that eliminates precision bias through "coarse-to-fine focusing" and mitigates ambiguity bias via "candidate selection." BAMI improves the accuracy of TianXi-Action-7B on ScreenSpot-Pro from 51.9% to 57.8%.
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - GUI Grounding
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "GUI Grounding"
+  - "Training-free"
+  - "Inductive Bias"
+  - "Test-time Inference"
+  - "Coarse-to-fine"
 date: 2026-05-08
-content_hash: 3b409a47e4becfd8
+content_hash: 68b5862b024ea32e
 ---
+
 # BAMI: Training-Free Bias Mitigation in GUI Grounding
 
 **Conference**: CVPR 2026  
@@ -149,10 +154,17 @@ Different corrector models (Table 5): GPT-5 (57.8) and Gemini-2.5-Pro (57.2) per
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[CVPR 2026\] Towards GUI Agents: Vision-Language Diffusion Models for GUI Grounding](towards_gui_agents_vision-language_diffusion_models_for_gui_grounding.md)
+- [\[ACL 2026\] ZARA: Training-Free Motion Time-Series Reasoning via Evidence-Grounded LLM Agents](../../ACL2026/llm_agent/zara_training-free_motion_time-series_reasoning_via_evidence-grounded_llm_agents.md)
+- [\[ICLR 2026\] UI-Ins: Enhancing GUI Grounding with Multi-Perspective Instruction-as-Reasoning](../../ICLR2026/llm_agent/ui-ins_enhancing_gui_grounding_with_multi-perspective_instruction_as_reasoning.md)
+- [\[CVPR 2025\] TANGO: Training-free Embodied AI Agents for Open-world Tasks](../../CVPR2025/llm_agent/tango_training-free_embodied_ai_agents_for_open-world_tasks.md)
+- [\[AAAI 2026\] Co-EPG: A Framework for Co-Evolution of Planning and Grounding in Autonomous GUI Agents](../../AAAI2026/llm_agent/co-epg_a_framework_for_co-evolution_of_planning_and_groundin.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Towards GUI Agents: Vision-Language Diffusion Models for GUI Grounding](towards_gui_agents_vision-language_diffusion_models_for_gui_grounding.md)

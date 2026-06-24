@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CorrCLIP: Reconstructing Patch Correlations in CLIP for Open-Vocabulary Semantic Segmentation
 description: >-
-  [ICCV 2025 (Oral)][Segmentation][open-vocabulary segmentation] This paper identifies inter-class patch correlations in CLIP as the fundamental bottleneck for segmentation performance, and proposes CorrCLIP…
+  [ICCV 2025 (Oral)][Segmentation][open-vocabulary segmentation] This paper identifies inter-class patch correlations in CLIP as the fundamental bottleneck for segmentation performance, and proposes CorrCLIP, which addresses this via SAM-constrained patch interaction scope (scope reconstruction), DINO-based similarity value reconstruction (value reconstruction), spatial/semantic feature refinement, and SAM mask post-processing. The method achieves an average mIoU improvement fr…
 tags:
   - "ICCV 2025 (Oral)"
   - "Segmentation"
@@ -13,7 +13,7 @@ tags:
   - "training-free"
   - "inter-class correlation"
 date: 2026-05-08
-content_hash: 7f499784047469e7
+content_hash: 9b716a9ebfe2ed0e
 ---
 
 # CorrCLIP: Reconstructing Patch Correlations in CLIP for Open-Vocabulary Semantic Segmentation
@@ -113,9 +113,9 @@ The method is entirely training-free. Hyperparameters are fixed: temperature $\t
 
 - [\[ICCV 2025\] FLOSS: Free Lunch in Open-vocabulary Semantic Segmentation](floss_free_lunch_in_openvocabulary_semantic_segmentation.md)
 - [\[ICCV 2025\] Training-Free Class Purification for Open-Vocabulary Semantic Segmentation](training-free_class_purification_for_open-vocabulary_semantic_segmentation.md)
+- [\[CVPR 2026\] ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP](../../CVPR2026/segmentation/reattnclip_training-free_open-vocabulary_remote_sensing_image_segmentation_via_r.md)
+- [\[CVPR 2025\] Effective SAM Combination for Open-Vocabulary Semantic Segmentation](../../CVPR2025/segmentation/effective_sam_combination_for_open-vocabulary_semantic_segmentation.md)
 - [\[CVPR 2026\] Looking Beyond the Window: Global-Local Aligned CLIP for Training-free Open-Vocabulary Semantic Segmentation](../../CVPR2026/segmentation/looking_beyond_the_window_global-local_aligned_clip_for_training-free_open-vocab.md)
-- [\[ICCV 2025\] Stepping Out of Similar Semantic Space for Open-Vocabulary Segmentation](stepping_out_of_similar_semantic_space_for_open-vocabulary_segmentation.md)
-- [\[ICCV 2025\] Personalized OVSS: Understanding Personal Concept in Open-Vocabulary Semantic Segmentation](understanding_personal_concept_in_open-vocabulary_semantic_segmentation.md)
 
 </div>
 

@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Bi-Lipschitz Autoencoder With Injectivity Guarantee
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper identifies "encoder non-injectivity" as the root cause of regularized autoencoders falling into poor local optima. It proposes an injectivity regularizer based on the $(\delta,\epsilon)$-separation criterion and replaces the rigid isometric constraint with a Bi-Lipschitz regularizer acting on the decoder's J
+  [ICLR2026][Representation Learning][Autoencoder] This paper identifies "encoder non-injectivity" as the root cause of regularized autoencoders falling into poor local optima. It proposes an injectivity regularizer based on the $(\delta,\epsilon)$-separation criterion and replaces the rigid isometric constraint with a Bi-Lipschitz regularizer acting on the decoder's Jacobian singular values. The resulting BLAE preserves geometric structure with high fidelity on multiple manifo…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Representation Learning"
+  - "Manifold Learning"
+  - "Learning Theory"
+  - "Autoencoder"
+  - "Injectivity"
+  - "Bi-Lipschitz"
+  - "Manifold Structure-Preserving"
+  - "Distribution Shift Robustness"
 date: 2026-05-08
-content_hash: b04e00d307b4ac16
+content_hash: 1f6c8e4399ab9ae7
 ---
+
 # Bi-Lipschitz Autoencoder With Injectivity Guarantee
 
 **Conference**: ICLR2026  

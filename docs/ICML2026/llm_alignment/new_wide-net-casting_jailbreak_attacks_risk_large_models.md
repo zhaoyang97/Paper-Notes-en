@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] New Wide-Net-Casting Jailbreak Attacks Risk Large Models
 description: >-
-  [ICML 2026][Alignment & RLHF][wide-net-casting] This paper defines and systematically analyzes the "wide-net-casting" jailbreak scenario (where an attacker targets a group of large models simultaneously, succeeding if any one model is breached). Based on this, the authors design an "expert-specialized" joint training method for adversarial generators using explorati
+  [ICML 2026][LLM Alignment][wide-net-casting] This paper defines and systematically analyzes the "wide-net-casting" jailbreak scenario (where an attacker targets a group of large models simultaneously, succeeding if any one model is breached). Based on this, the authors design an "expert-specialized" joint training method for adversarial generators using exploration-to-exploitation scheduling. This approach pushes the attack success rate to 100% across multiple LLMs/MLLMs when…
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - wide-net-casting
-  - jailbreak
-  - exploration-to-exploitation
+  - "ICML 2026"
+  - "LLM Alignment"
+  - "wide-net-casting"
+  - "jailbreak"
+  - "model-family specific vulnerabilities"
+  - "exploration-to-exploitation"
+  - "adversarial sample generator"
 date: 2026-05-08
-content_hash: aa1ed5553afc4c1a
+content_hash: 6afc3b199b718e8c
 ---
+
 # New Wide-Net-Casting Jailbreak Attacks Risk Large Models
 
 **Conference**: ICML 2026  
@@ -141,6 +144,7 @@ Similar trends were observed for MLLMs on MM-SafetyBench, where WASR significant
 - **vs Multiple Choice Learning (Guzman-Rivera et al. 2012)**: Shares the goal of allocating task responsibility but improves upon it with a soft-assignment annealing framework rather than winner-takes-all.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

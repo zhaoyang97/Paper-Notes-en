@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Robustify Spiking Neural Networks via Dominant Singular Deflation under Heterogeneous Training Vulnerability
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] The authors identify a **heterogeneous training vulnerability** in Spiking Neural Networks (SNNs) under the mainstream "direct coding + BPTT" paradigm—where a single batch with a slightly different distribution can cause complete network collapse. The root cause is theoretically attributed to the linear growth of the H
+  [ICLR 2026][AI Safety][Spiking Neural Networks] The authors identify a **heterogeneous training vulnerability** in Spiking Neural Networks (SNNs) under the mainstream "direct coding + BPTT" paradigm—where a single batch with a slightly different distribution can cause complete network collapse. The root cause is theoretically attributed to the linear growth of the Hessian spectral radius over time steps. Accordingly, a parameter-free **Dominant Singular Deflation (DSD)** meth…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Spiking Neural Networks"
+  - "Adversarial Robustness"
+  - "Heterogeneous Training"
+  - "Hessian Spectral Radius"
+  - "Gradient Contraction"
 date: 2026-05-08
-content_hash: f689dd28d32c80b7
+content_hash: 872545bf17975e24
 ---
+
 # Robustify Spiking Neural Networks via Dominant Singular Deflation under Heterogeneous Training Vulnerability
 
 **Conference**: ICLR 2026  
@@ -132,8 +138,8 @@ In heterogeneous training (Fig. 5/6), DSD exhibits the smallest performance vari
 - **Value**: ⭐⭐⭐⭐⭐ Practical for SNN deployment due to its parameter-free, zero inference cost, and guaranteed convergence properties.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

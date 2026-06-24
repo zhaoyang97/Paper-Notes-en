@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MATCH: Multi-faceted Adaptive Topo-Consistency for Semi-Supervised Histopathology Segmentation
 description: >-
-  [NeurIPS 2025][Medical Imaging][Semi-supervised segmentation] This paper proposes the MATCH framework, which tightly couples topological reasoning with the perturbation-robustness principle of semi-supervised learning. B…
+  [NeurIPS 2025][Medical Imaging][Semi-supervised segmentation] This paper proposes the MATCH framework, which tightly couples topological reasoning with the perturbation-robustness principle of semi-supervised learning. By exploiting dual-level topological consistency across random perturbations and temporal training snapshots, MATCH adaptively identifies reliable topological structures without requiring manually defined thresholds, substantially reducing topological errors in…
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "histopathology"
   - "MC dropout"
 date: 2026-05-08
-content_hash: c713cc730a643f46
+content_hash: 4d1bdf9f345a368f
 ---
 
 # MATCH: Multi-faceted Adaptive Topo-Consistency for Semi-Supervised Histopathology Segmentation
@@ -155,8 +155,8 @@ where $\mathcal{L}_{\text{sup}}$ is the Dice + cross-entropy loss on labeled dat
 - [\[AAAI 2026\] Graph-Theoretic Consistency for Robust and Topology-Aware Semi-Supervised Histopathology Segmentation](../../AAAI2026/medical_imaging/graph-theoretic_consistency_for_robust_and_topology-aware_semi-supervised_histop.md)
 - [\[NeurIPS 2025\] VQ-Seg: Vector-Quantized Token Perturbation for Semi-Supervised Medical Image Segmentation](vq-seg_vector-quantized_token_perturbation_for_semi-supervised_medical_image_seg.md)
 - [\[NeurIPS 2025\] STARC-9: A Large-scale Dataset for Multi-Class Tissue Classification for CRC Histopathology](starc-9_a_large-scale_dataset_for_multi-class_tissue_classification_for_crc_hist.md)
-- [\[NeurIPS 2025\] Domain-Adaptive Transformer for Data-Efficient Glioma Segmentation in Sub-Saharan MRI](domain-adaptive_transformer_for_data-efficient_glioma_segmentation_in_sub-sahara.md)
-- [\[NeurIPS 2025\] UniMRSeg: Unified Modality-Relax Segmentation via Hierarchical Self-Supervised Compensation](unimrseg_unified_modality-relax_segmentation_via_hierarchical_self-supervised_co.md)
+- [\[CVPR 2025\] SemiTooth: a Generalizable Semi-supervised Framework for Multi-Source Tooth Segmentation](../../CVPR2025/medical_imaging/semitooth_a_generalizable_semi-supervised_framework_for_multi-source_tooth_segme.md)
+- [\[CVPR 2025\] Enhancing SAM with Efficient Prompting and Preference Optimization for Semi-supervised Medical Image Segmentation](../../CVPR2025/medical_imaging/sam_dpo_semi_supervised.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DictPFL: Efficient and Private Federated Learning on Encrypted Gradients
 description: >-
-  [NeurIPS 2025][AI Safety][federated learning] This paper proposes DictPFL, a framework that decomposes model weights into a static dictionary and a trainable lookup table…
+  [NeurIPS 2025][AI Safety][federated learning] This paper proposes DictPFL, a framework that decomposes model weights into a static dictionary and a trainable lookup table, and combines this decomposition with encryption-aware pruning. DictPFL achieves full gradient protection via homomorphic encryption in federated learning while reducing communication overhead by 402–748× and training time by 28–65×, keeping total runtime within 2× of plaintext FL.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "Gradient Pruning"
   - "Dictionary Decomposition"
 date: 2026-05-08
-content_hash: 6bec89e9d057d7bd
+content_hash: b0e4419e28f6ba94
 ---
 
 # DictPFL: Efficient and Private Federated Learning on Encrypted Gradients
@@ -174,11 +174,11 @@ The dictionary decomposition idea generalizes broadly: decomposing a large param
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Differentially Private Bilevel Optimization: Efficient Algorithms with Near-Optimal Rates](differentially_private_bilevel_optimization_efficient_algorithms_with_near-optim.md)
 - [\[NeurIPS 2025\] DESIGN: Encrypted GNN Inference via Server-Side Input Graph Pruning](design_encrypted_gnn_inference_via_server-side_input_graph_pruning.md)
+- [\[ICML 2025\] An Efficient Private GPT Never Autoregressively Decodes](../../ICML2025/ai_safety/an_efficient_private_gpt_never_autoregressively_decodes.md)
+- [\[NeurIPS 2025\] Differentially Private Bilevel Optimization: Efficient Algorithms with Near-Optimal Rates](differentially_private_bilevel_optimization_efficient_algorithms_with_near-optim.md)
 - [\[NeurIPS 2025\] MARS: A Malignity-Aware Backdoor Defense in Federated Learning](mars_a_malignity-aware_backdoor_defense_in_federated_learning.md)
-- [\[CVPR 2026\] SubFLOT: Submodel Extraction for Efficient and Personalized Federated Learning via Optimal Transport](../../CVPR2026/ai_safety/subflot_submodel_extraction_for_efficient_and_personalized_federated_learning_vi.md)
-- [\[NeurIPS 2025\] Mitigating Disparate Impact of Differentially Private Learning through Bounded Adaptive Clipping](mitigating_disparate_impact_of_differentially_private_learning_through_bounded_a.md)
+- [\[ICML 2025\] Clients Collaborate: Flexible Differentially Private Federated Learning with Guaranteed Improvement of Utility-Privacy Trade-off](../../ICML2025/ai_safety/clients_collaborate_flexible_differentially_private_federated_learning_with_guar.md)
 
 </div>
 

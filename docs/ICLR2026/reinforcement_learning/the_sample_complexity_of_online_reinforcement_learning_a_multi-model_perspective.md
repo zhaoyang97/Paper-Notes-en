@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Sample Complexity of Online Reinforcement Learning: A Multi-Model Perspective
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper proposes a set of online reinforcement learning algorithms for nonlinear dynamical systems with continuous state-action spaces. By utilizing multi-model posterior sampling and certainty equivalence policies, the approach achieves online learning of unknown systems and provides non-asymptotic policy regret gu
+  [ICLR 2026][Reinforcement Learning][sample complexity] This paper proposes a set of online reinforcement learning algorithms for nonlinear dynamical systems with continuous state-action spaces. By utilizing multi-model posterior sampling and certainty equivalence policies, the approach achieves online learning of unknown systems and provides non-asymptotic policy regret guarantees ranging from finite model sets to parameterized model families.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "sample complexity"
+  - "online reinforcement learning"
+  - "multi-model adaptive control"
+  - "policy regret"
+  - "nonlinear dynamical systems"
 date: 2026-05-08
-content_hash: 06b797a7b82a1a59
+content_hash: 2553c0cacf23d193
 ---
+
 # The Sample Complexity of Online Reinforcement Learning: A Multi-Model Perspective
 
 **Conference**: ICLR 2026  
@@ -146,15 +152,14 @@ Verification was performed on a linear time-invariant system with 20D state and 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Benefits and Pitfalls of Reinforcement Learning for Language Model Planning: A Theoretical Perspective](benefits_and_pitfalls_of_reinforcement_learning_for_language_model_planning_a_th.md)
 - [\[ICML 2025\] The Sample Complexity of Online Strategic Decision Making with Information Asymmetry and Knowledge Transportability](../../ICML2025/reinforcement_learning/the_sample_complexity_of_online_strategic_decision_making_with_information_asymm.md)
 - [\[ICLR 2026\] On the Generalization of SFT: A Reinforcement Learning Perspective with Reward Rectification](on_the_generalization_of_sft_a_reinforcement_learning_perspective_with_reward_re.md)
 - [\[ICLR 2026\] Stackelberg Coupling of Online Representation Learning and Reinforcement Learning](stackelberg_coupling_of_online_representation_learning_and_reinforcement_learnin.md)
 - [\[ICLR 2026\] Near-Optimal Second-Order Guarantees for Model-Based Adversarial Imitation Learning](near-optimal_second-order_guarantees_for_model-based_adversarial_imitation_learn.md)
-- [\[ICLR 2026\] Exploratory Diffusion Model for Unsupervised Reinforcement Learning](exploratory_diffusion_model_for_unsupervised_reinforcement_learning.md)
 
 </div>
 

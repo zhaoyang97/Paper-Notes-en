@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RAIGen: Rare Attribute Identification in Text-to-Image Generative Models
 description: >-
-  [ICML 2026][Image Generation][Diffusion Model] RAIGen utilizes Matryoshka Sparse Autoencoders (MSAE) to decompose the bottleneck representations of T2I diffusion models into interpretable neurons. By applying a combined score of "activation rarity $\times$ CLIP semantic distinctiveness," it identifies minority neurons that are "internally encoded but rarely appear
+  [ICML 2026][Image Generation][Diffusion models] RAIGen utilizes Matryoshka Sparse Autoencoders (MSAE) to decompose the bottleneck representations of T2I diffusion models into interpretable neurons. By applying a combined score of "activation rarity $\times$ CLIP semantic distinctiveness," it identifies minority neurons that are "internally encoded but rarely appear in generation," extending bias auditing from "predefined categories" and "salient majority patterns" to label-fr…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICML 2026"
+  - "Image Generation"
+  - "Diffusion models"
+  - "Sparse Autoencoders"
+  - "minority attribute discovery"
+  - "bias auditing"
+  - "T2I generation"
 date: 2026-05-08
-content_hash: 59d006181b47fb6c
+content_hash: f9ac611cc34c5572
 ---
+
 # RAIGen: Rare Attribute Identification in Text-to-Image Generative Models
 
 **Conference**: ICML 2026  
@@ -148,8 +153,8 @@ RAIGen attribute occurrences were $< 3/10$ across all occupations, with CEO bein
 - [\[ICML 2026\] Content-Style Identification via Differential Independence](content-style_identification_via_differential_independence.md)
 - [\[ICML 2026\] Alignment-Guided Score Matching for Text-to-Image Alignment in Diffusion Models](alignment-guided_score_matching_for_text-to-image_alignment_in_diffusion_models.md)
 - [\[ICML 2025\] Origin Identification for Text-Guided Image-to-Image Diffusion Models](../../ICML2025/image_generation/origin_identification_for_text-guided_image-to-image_diffusion_models.md)
-- [\[CVPR 2026\] All-in-One Slider for Attribute Manipulation in Diffusion Models](../../CVPR2026/image_generation/all_in_one_slider_attribute_manipulation.md)
 - [\[ICML 2026\] SAEmnesia: Erasing Concepts in Diffusion Models with Supervised Sparse Autoencoders](saemnesia_erasing_concepts_in_diffusion_models_with_supervised_sparse_autoencode.md)
+- [\[ICLR 2026\] AttriCtrl: A Generalizable Framework for Controlling Semantic Attribute Intensity in Diffusion Models](../../ICLR2026/image_generation/attrictrl_a_generalizable_framework_for_controlling_semantic_attribute_intensity.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] DiffusionBlocks: Block-wise Neural Network Training via Diffusion Interpretation
 description: >-
-  [ICLR 2026][Image Restoration][block-wise training] DiffusionBlocks is proposed to interpret the layer-wise updates of residual networks as discretization steps of a continuous-time diffusion process. This allows partitioning the network into blocks that can be trained completely independently, reducing training memory by a factor of $B$ (the number of blocks) while mai
+  [ICLR2026][Image Restoration][block-wise training] DiffusionBlocks is proposed to interpret the layer-wise updates of residual networks as discretization steps of a continuous-time diffusion process. This allows partitioning the network into blocks that can be trained completely independently, reducing training memory by a factor of $B$ (the number of blocks) while maintaining performance competitive with end-to-end training.
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - block-wise training
-  - diffusion models
-  - score matching
-  - memory efficiency
-  - residual networks
+  - "ICLR2026"
+  - "Image Restoration"
+  - "block-wise training"
+  - "diffusion models"
+  - "score matching"
+  - "memory efficiency"
+  - "residual networks"
 date: 2026-05-08
-content_hash: 3317c04da1723c92
+content_hash: e37761afad1c38c0
 ---
+
 # DiffusionBlocks: Block-wise Neural Network Training via Diffusion Interpretation
 
 **Conference**: ICLR2026  
@@ -144,13 +145,14 @@ How the noise interval is partitioned determines the load balance. If partitione
 - Value: ⭐⭐⭐⭐ — Provides a theoretically sound paradigm for addressing memory bottlenecks in large model training.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] SeedVR2: One-Step Video Restoration via Diffusion Adversarial Post-Training](seedvr2_one-step_video_restoration_via_diffusion_adversarial_post-training.md)
 - [\[ICLR 2026\] Denoising Neural Reranker for Recommender Systems](denoising_neural_reranker_for_recommender_systems.md)
 - [\[CVPR 2026\] DiffDecompose: Layer-Wise Decomposition of Alpha-Composited Images via Diffusion Transformers](../../CVPR2026/image_restoration/diffdecompose_layer-wise_decomposition_of_alpha-composited_images_via_diffusion_.md)
-- [\[NeurIPS 2025\] Encoder-Decoder Diffusion Language Models for Efficient Training and Inference](../../NeurIPS2025/image_restoration/encoder-decoder_diffusion_language_models_for_efficient_training_and_inference.md)
 - [\[ICLR 2026\] Analyzing the Training Dynamics of Image Restoration Transformers: A Revisit to Layer Normalization](analyzing_the_training_dynamics_of_image_restoration_transformers_a_revisit_to_l.md)
 - [\[ECCV 2024\] Efficient Diffusion Transformer with Step-wise Dynamic Attention Mediators](../../ECCV2024/image_restoration/efficient_diffusion_transformer_with_step-wise_dynamic_attention_mediators.md)
 

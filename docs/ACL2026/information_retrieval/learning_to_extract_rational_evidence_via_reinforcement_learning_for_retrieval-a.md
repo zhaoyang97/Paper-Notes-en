@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Learning to Extract Rational Evidence via Reinforcement Learning for Retrieval-Augmented Generation
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Reinforcement Learning] This paper proposes EviOmni, which learns to extract rational evidence from retrieved documents via a "reason-then-extract" paradigm. By integrating evidence reasoning and evidence extraction into a unified trajectory, the method utilizes knowledge token masking to avoid information leakage. Optimized via GRPO with ver
+  [ACL 2026 Findings][Information Retrieval & RAG][Retrieval-Augmented Generation] This paper proposes EviOmni, which learns to extract rational evidence from retrieved documents via a "reason-then-extract" paradigm. By integrating evidence reasoning and evidence extraction into a unified trajectory, the method utilizes knowledge token masking to avoid information leakage. Optimized via GRPO with verifiable rewards, the model achieves higher accuracy than full-text retrieval wh…
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - Reinforcement Learning
-  - GRPO
+  - "ACL 2026 Findings"
+  - "Information Retrieval & RAG"
+  - "Retrieval-Augmented Generation"
+  - "Evidence Extraction"
+  - "Reinforcement Learning"
+  - "Reasoning-guided Extraction"
+  - "GRPO"
 date: 2026-05-08
-content_hash: a929592704fe2fde
+content_hash: b85fe97a8b89327d
 ---
+
 # Learning to Extract Rational Evidence via Reinforcement Learning for Retrieval-Augmented Generation
 
 **Conference**: ACL 2026 Findings  

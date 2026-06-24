@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DiffSDA: Unsupervised Diffusion Sequential Disentanglement Across Modalities
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] DiffSDA utilizes a diffusion-based probabilistic framework to unsupervisedly decompose video, audio, and time-series data into "static factors" and "dynamic factors." It achieves disentanglement using only a **single score matching loss** (instead of the usual array of regularization terms in VAE/GANs). It is the first
+  [ICLR2026][Image Generation][Sequential Disentanglement] DiffSDA utilizes a diffusion-based probabilistic framework to unsupervisedly decompose video, audio, and time-series data into "static factors" and "dynamic factors." It achieves disentanglement using only a **single score matching loss** (instead of the usual array of regularization terms in VAE/GANs). It is the first to achieve high-quality swapping, zero-shot transfer, and multi-factor exploration on real high-resolu…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICLR2026"
+  - "Image Generation"
+  - "Sequential Disentanglement"
+  - "Diffusion Models"
+  - "Static/Dynamic Factors"
+  - "Modality-Agnostic"
+  - "Unsupervised Representation Learning"
 date: 2026-05-08
-content_hash: 981dfd2568675a99
+content_hash: 0725bab0cc728188
 ---
+
 # DiffSDA: Unsupervised Diffusion Sequential Disentanglement Across Modalities
 
 **Conference**: ICLR2026  
@@ -150,7 +155,6 @@ On TIMIT, the Dis. Gap is over 11 percentage points higher than DBSE. Time-serie
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

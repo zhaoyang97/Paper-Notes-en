@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Evoking User Memory: Personalizing LLM via Recollection-Familiarity Adaptive Retrieval
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] Inspired by the dual-process theory of cognitive science, this paper proposes the RF-Mem framework. It achieves efficient and scalable LLM personalization through a memory retrieval mechanism that adaptively switches between two paths: Familiarity (fast similarity matching) and Recollection (deep chain reconstruction).
+  [ICLR 2026][Reasoning][LLM Personalization] Inspired by the dual-process theory of cognitive science, this paper proposes the RF-Mem framework. It achieves efficient and scalable LLM personalization through a memory retrieval mechanism that adaptively switches between two paths: Familiarity (fast similarity matching) and Recollection (deep chain reconstruction).
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "LLM Personalization"
+  - "Memory Retrieval"
+  - "Dual-Process Theory"
+  - "Adaptive Retrieval"
+  - "Cognitive Science"
 date: 2026-05-08
-content_hash: 605a2daf154346ab
+content_hash: 333cfde590d6bdfa
 ---
+
 # Evoking User Memory: Personalizing LLM via Recollection-Familiarity Adaptive Retrieval
 
 **Conference**: ICLR 2026  
@@ -137,8 +143,8 @@ Evaluations were conducted on three personalization benchmarks across different 
 - [\[ICLR 2026\] Temperature as a Meta-Policy: Adaptive Temperature in LLM Reinforcement Learning](temperature_as_a_meta-policy_adaptive_temperature_in_llm_reinforcement_learning.md)
 - [\[ICLR 2026\] Retrieval-of-Thought: Efficient Reasoning via Reusing Thoughts](retrieval-of-thought_efficient_reasoning_via_reusing_thoughts.md)
 - [\[ICLR 2026\] Beyond Markovian: Reflective Exploration via Bayes-Adaptive RL for LLM Reasoning](beyond_markovian_reflective_exploration_via_bayes-adaptive_rl_for_llm_reasoning.md)
+- [\[ICML 2026\] Beyond Test-Time Memory: State-Space Optimal Control for LLM Reasoning](../../ICML2026/llm_reasoning/beyond_test-time_memory_state-space_optimal_control_for_llm_reasoning.md)
 - [\[ICLR 2026\] STAT: Skill-Targeted Adaptive Training](stat_skill-targeted_adaptive_training.md)
-- [\[ICLR 2026\] Zero-Overhead Introspection for Adaptive Test-Time Compute](zero-overhead_introspection_for_adaptive_test-time_compute.md)
 
 </div>
 

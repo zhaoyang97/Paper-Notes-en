@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OpenVision 2: A Family of Generative Pretrained Visual Encoders for Multimodal Learning
 description: >-
-  [CVPR 2026][Self-Supervised Learning][caption-only] OpenVision 2 removes the text encoder and contrastive loss from the previous generation (OpenVision), retaining only the "image encoder + text decoder" for pure generative caption-only pretraining. By randomly masking approximately 2/3 of visual tokens, it reduces ViT-L/14 training time by ~1.5× and memory usage by ~1.
+  [CVPR 2026][Self-Supervised Learning][Visual encoder pretraining] OpenVision 2 removes the text encoder and contrastive loss from the previous generation (OpenVision), retaining only the "image encoder + text decoder" for pure generative caption-only pretraining. By randomly masking approximately 2/3 of visual tokens, it reduces ViT-L/14 training time by ~1.5× and memory usage by ~1.8× with almost no performance degradation, while enabling scaling the visual encoder up to 1 b…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - caption-only
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Visual encoder pretraining"
+  - "generative pretraining"
+  - "caption-only"
+  - "token masking"
+  - "multimodal"
 date: 2026-05-08
-content_hash: 3bae93acb0c544af
+content_hash: 457e2b38e0dc8a8d
 ---
+
 # OpenVision 2: A Family of Generative Pretrained Visual Encoders for Multimodal Learning
 
 **Conference**: CVPR 2026  
@@ -129,11 +134,11 @@ Overall, OpenVision 2 matches or slightly exceeds OpenVision, with **notable imp
 
 ## Related Papers
 
-- [\[CVPR 2026\] GM-R²: Generative Matching Learning for Unsupervised Geometric Representation and Registration](gm-r2_generative_matching_learning_for_unsupervised_geometric_representation_and.md)
-- [\[CVPR 2026\] Residual Connections Harm Generative Representation Learning](residual_connections_harm_generative_representation_learning.md)
-- [\[CVPR 2026\] Exploring Visual Pretraining for Learning Language Intelligence](exploring_visual_pretraining_for_learning_language_intelligence.md)
-- [\[CVPR 2026\] Learning to See Through a Baby's Eyes: Early Visual Diets Enable Robust Visual Intelligence in Humans and Machines](learning_to_see_through_a_babys_eyes_early_visual_diets_enable_robust_visual_int.md)
+- [\[ICLR 2026\] Disentanglement of Variations with Multimodal Generative Modeling](../../ICLR2026/self_supervised/disentanglement_of_variations_with_multimodal_generative_modeling.md)
 - [\[CVPR 2026\] Stabilizing Feature Geometry in Noisy Pretrained Models for Robust Downstream Tasks](stabilizing_feature_geometry_in_noisy_pretrained_models_for_robust_downstream_ta.md)
+- [\[CVPR 2026\] Learning to See Through a Baby's Eyes: Early Visual Diets Enable Robust Visual Intelligence in Humans and Machines](learning_to_see_through_a_babys_eyes_early_visual_diets_enable_robust_visual_int.md)
+- [\[CVPR 2026\] Residual Connections Harm Generative Representation Learning](residual_connections_harm_generative_representation_learning.md)
+- [\[CVPR 2026\] Franca: Nested Matryoshka Clustering for Scalable Visual Representation Learning](franca_nested_matryoshka_clustering_for_scalable_visual_representation_learning.md)
 
 </div>
 

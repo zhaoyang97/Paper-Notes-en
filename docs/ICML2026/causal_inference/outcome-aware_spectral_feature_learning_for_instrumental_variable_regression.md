@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Outcome-Aware Spectral Feature Learning for Instrumental Variable Regression
 description: >-
-  [ICML 2026][Causal Inference][Paper Note] Addressing the blind spot in Nonparametric Instrumental Variable (NPIV) regression where SpecIV learns spectral features focusing solely on the $X-Z$ relationship while ignoring the outcome $Y$, this paper proposes Augmented Spectral Feature Learning. By adding a regression loss of $Y$ projected onto $Z$ features to th
+  [ICML 2026][Causal Inference][Instrumental Variable Regression] Addressing the blind spot in Nonparametric Instrumental Variable (NPIV) regression where SpecIV learns spectral features focusing solely on the $X-Z$ relationship while ignoring the outcome $Y$, this paper proposes Augmented Spectral Feature Learning. By adding a regression loss of $Y$ projected onto $Z$ features to the contrastive loss of SpecIV, the method is equivalent to performing a truncated SVD on an "augm…
 tags:
-  - ICML 2026
-  - Causal Inference
+  - "ICML 2026"
+  - "Causal Inference"
+  - "Instrumental Variable Regression"
+  - "Spectral Feature Learning"
+  - "Augmented Operator"
+  - "Contrastive Loss"
+  - "Causal Effect Estimation"
 date: 2026-05-08
-content_hash: 5e2e10754059a974
+content_hash: 782616aa7091d8fc
 ---
+
 # Outcome-Aware Spectral Feature Learning for Instrumental Variable Regression
 
 **Conference**: ICML 2026  
@@ -133,9 +139,9 @@ Qualitative Conclusion: In the most difficult scenarios (poor alignment + fast s
 
 - [\[NeurIPS 2025\] Demystifying Spectral Feature Learning for Instrumental Variable Regression](../../NeurIPS2025/causal_inference/demystifying_spectral_feature_learning_for_instrumental_variable_regression.md)
 - [\[ICML 2026\] ECSEL: Explainable Classification via Signomial Equation Learning](ecsel_explainable_classification_via_signomial_equation_learning.md)
-- [\[ICML 2026\] Evaluating Bivariate Causal Statements Based on Mutual Compatibility](evaluating_bivariate_causal_statements_based_on_mutual_compatibility.md)
-- [\[ICML 2026\] Rank-Learner: Orthogonal Ranking of Treatment Effects](rank-learner_orthogonal_ranking_of_treatment_effects.md)
+- [\[ICML 2026\] Toward Scalable and Valid Conditional Independence Testing with Spectral Representations](toward_scalable_and_valid_conditional_independence_testing_with_spectral_represe.md)
 - [\[ICML 2026\] Unveiling the Structure of Do-Calculus Reasoning via Derivation Graphs](unveiling_the_structure_of_do-calculus_reasoning_via_derivation_graphs.md)
+- [\[ICML 2026\] Evaluating Bivariate Causal Statements Based on Mutual Compatibility](evaluating_bivariate_causal_statements_based_on_mutual_compatibility.md)
 
 </div>
 

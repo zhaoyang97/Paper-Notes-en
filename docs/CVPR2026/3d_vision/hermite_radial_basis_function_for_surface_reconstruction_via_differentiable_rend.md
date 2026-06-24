@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hermite Radial Basis Function for Surface Reconstruction via Differentiable Rendering
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Classical Hermite Radial Basis Functions (HRBF) are integrated into a differentiable rendering framework. A global implicit field $F$ is constructed using a set of local RBF basis functions with derivatives. Weights, positions, and scales are optimized end-to-end via multi-view RGB volume rendering. Leveraging BVH-acce
+  [CVPR 2026][3D Vision][Surface Reconstruction] Classical Hermite Radial Basis Functions (HRBF) are integrated into a differentiable rendering framework. A global implicit field $F$ is constructed using a set of local RBF basis functions with derivatives. Weights, positions, and scales are optimized end-to-end via multi-view RGB volume rendering. Leveraging BVH-accelerated ray intersection, the method achieves superior Chamfer distances compared to PGSR and Fast Dipole Sums on…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Surface Reconstruction"
+  - "HRBF Implicit Field"
+  - "Differentiable Rendering"
+  - "Radial Basis Function"
+  - "BVH Acceleration"
 date: 2026-05-08
-content_hash: 0eb8c16fc6985df6
+content_hash: 1715ca8c177966f6
 ---
+
 # Hermite Radial Basis Function for Surface Reconstruction via Differentiable Rendering
 
 **Conference**: CVPR 2026  
@@ -152,11 +158,11 @@ BlendedMVS (18 scenes, Chamfer ↓, Mean):
 
 ## Related Papers
 
+- [\[CVPR 2026\] MeshSplatting: Differentiable Rendering with Opaque Meshes](meshsplatting_differentiable_rendering_with_opaque_meshes.md)
 - [\[CVPR 2026\] Distilling Unsigned Distance Function for Surface Reconstruction from 3D Gaussian Splatting](distilling_unsigned_distance_function_for_surface_reconstruction_from_3d_gaussia.md)
-- [\[CVPR 2026\] DiffSoup: Direct Differentiable Rasterization of Triangle Soup for Extreme Radiance Field Simplification](diffsoup_direct_differentiable_rasterization_of_triangle_soup_for_extreme_radian.md)
-- [\[CVPR 2026\] CaT-GS: Efficient 3DGS Rendering for Large-Scale Scenes with Inter-frame Caching and Tile Scheduling](cat-gs_efficient_3dgs_rendering_for_large-scale_scenes_with_inter-frame_caching_.md)
-- [\[CVPR 2026\] ART: Articulated Reconstruction Transformer](art_articulated_reconstruction_transformer.md)
-- [\[CVPR 2026\] ExMesh: EXplicit Mesh Reconstruction with Topology Adaptation](exmesh_explicit_mesh_reconstruction_with_topology_adaptation.md)
+- [\[CVPR 2026\] 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction](3d_gaussian_splatting_with_self-constrained_priors_for_high_fidelity_surface_rec.md)
+- [\[CVPR 2026\] Plug-and-Play PDE Optimization for 3D Gaussian Splatting: Toward High-Quality Rendering and Reconstruction](plug-and-play_pde_optimization_for_3d_gaussian_splatting_toward_high-quality_ren.md)
+- [\[NeurIPS 2025\] LinPrim: Linear Primitives for Differentiable Volumetric Rendering](../../NeurIPS2025/3d_vision/linprim_linear_primitives_for_differentiable_volumetric_rendering.md)
 
 </div>
 

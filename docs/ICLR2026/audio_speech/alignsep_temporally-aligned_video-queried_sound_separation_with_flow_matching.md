@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AlignSep: Temporally-Aligned Video-Queried Sound Separation with Flow Matching
 description: >-
-  [ICLR 2026][Audio & Speech][flow matching] AlignSep shifts "Video-Queried Sound Separation (VQSS)" from the mainstream time-frequency masking discriminative paradigm to a flow matching-based generative paradigm. By employing a temporally-aligned vector field estimator implemented with "temporal concatenation + non-cross-attention Transformer," it enforces frame
+  [ICLR2026][Audio & Speech][Video-Queried Sound Separation] AlignSep shifts "Video-Queried Sound Separation (VQSS)" from the mainstream time-frequency masking discriminative paradigm to a flow matching-based generative paradigm. By employing a temporally-aligned vector field estimator implemented with "temporal concatenation + non-cross-attention Transformer," it enforces frame-by-frame synchronization between audio and video. This allows for clean extraction of on-screen targ…
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - flow matching
+  - "ICLR2026"
+  - "Audio & Speech"
+  - "Video-Queried Sound Separation"
+  - "flow matching"
+  - "temporal alignment"
+  - "generative separation"
+  - "audio-visual consistency"
 date: 2026-05-08
-content_hash: 43d5090791ee002e
+content_hash: cd2c42519f1d5668
 ---
+
 # AlignSep: Temporally-Aligned Video-Queried Sound Separation with Flow Matching
 
 **Conference**: ICLR2026  
@@ -147,10 +152,10 @@ The number of denoising steps (ODE steps) represents the core efficiency-quality
 
 ## Related Papers
 
+- [\[ACL 2026\] ZipVoice-Dialog: Non-Autoregressive Spoken Dialogue Generation with Flow Matching](../../ACL2026/audio_speech/zipvoice-dialog_non-autoregressive_spoken_dialogue_generation_with_flow_matching.md)
 - [\[ICLR 2026\] Flow2GAN: Hybrid Flow Matching and GAN with Multi-Resolution Network for Few-step High-Fidelity Audio Generation](flow2gan_hybrid_flow_matching_and_gan_with_multi-resolution_network_for_few-step.md)
 - [\[NeurIPS 2025\] Shallow Flow Matching for Coarse-to-Fine Text-to-Speech Synthesis](../../NeurIPS2025/audio_speech/shallow_flow_matching_for_coarse-to-fine_text-to-speech_synthesis.md)
-- [\[ACL 2026\] ZipVoice-Dialog: Non-Autoregressive Spoken Dialogue Generation with Flow Matching](../../ACL2026/audio_speech/zipvoice-dialog_non-autoregressive_spoken_dialogue_generation_with_flow_matching.md)
-- [\[AAAI 2026\] USE: A Unified Model for Universal Sound Separation and Extraction](../../AAAI2026/audio_speech/use_a_unified_model_for_universal_sound_separation_and_extraction.md)
+- [\[ICLR 2026\] TangoFlux: Super-Fast and Faithful Text-to-Audio Generation with Flow Matching and CLAP-Ranked Preference Optimization](tangoflux_super_fast_and_faithful_text_to_audio_generation_with_flow_matching_an.md)
 - [\[ICML 2026\] A Semantically Consistent Dataset for Data-Efficient Query-Based Universal Sound Separation](../../ICML2026/audio_speech/a_semantically_consistent_dataset_for_data-efficient_query-based_universal_sound.md)
 
 </div>

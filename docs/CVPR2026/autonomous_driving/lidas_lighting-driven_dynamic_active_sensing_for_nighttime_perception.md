@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LiDAS: Lighting-driven Dynamic Active Sensing for Nighttime Perception
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] LiDAS treats High-Definition (HD) headlights as "visual actuators," utilizing a learned lighting policy network to dynamically determine where to project light in a closed loop. This enables day-trained detection/segmentation models to achieve zero-shot nighttime availability—improving performance by +10.4% mAP50 / +6.
+  [CVPR 2026][Autonomous Driving][Active Lighting] LiDAS treats High-Definition (HD) headlights as "visual actuators," utilizing a learned lighting policy network to dynamically determine where to project light in a closed loop. This enables day-trained detection/segmentation models to achieve zero-shot nighttime availability—improving performance by +10.4% mAP50 / +6.8% mIoU in synthetic scenes and +18.7% mAP50 / +5.0% mIoU in real-world closed-loop tests—while saving up to 40…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Active Lighting"
+  - "Nighttime Perception"
+  - "Closed-loop Control"
+  - "Differentiable Relighting"
+  - "HD Headlights"
 date: 2026-05-08
-content_hash: 8a91d7180c01d66d
+content_hash: 5f1761528b2bc85f
 ---
+
 # LiDAS: Lighting-driven Dynamic Active Sensing for Nighttime Perception
 
 **Conference**: CVPR 2026  
@@ -148,9 +154,9 @@ Zero-shot cross-environment (lit urban / rainy):
 ## Related Papers
 
 - [\[CVPR 2026\] Learnability-Driven Submodular Optimization for Active Roadside 3D Detection](learnability-driven_submodular_optimization_for_active_roadside_3d_detection.md)
-- [\[CVPR 2026\] Mind the Hitch: Dynamic Calibration and Articulated Perception for Autonomous Trucks](mind_the_hitch_dynamic_calibration_and_articulated_perception_for_autonomous_tru.md)
 - [\[CVPR 2026\] Perception Characteristics Distance: Measuring Stability and Robustness of Perception System in Dynamic Conditions under a Certain Decision Rule](perception_characteristics_distance_measuring_stability_and_robustness_of_percep.md)
 - [\[CVPR 2026\] ActiveAD: Planning-Oriented Active Learning for End-to-End Autonomous Driving](activead_planning-oriented_active_learning_for_end-to-end_autonomous_driving.md)
+- [\[ICLR 2026\] DriveAgent-R1: Advancing VLM-based Autonomous Driving with Active Perception and Hybrid Thinking](../../ICLR2026/autonomous_driving/driveagent-r1_advancing_vlm-based_autonomous_driving_with_active_perception_and_.md)
 - [\[CVPR 2026\] Beyond Rule-Based Agents: Active Markov Games for Realistic Multi-Agent Interaction in Autonomous Driving](beyond_rule-based_agents_active_markov_games_for_realistic_multi-agent_interacti.md)
 
 </div>

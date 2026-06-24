@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] NaviAgent: Graph-Driven Bilevel Planning for Scalable Tool Orchestration
 description: >-
-  [ICML 2026][LLM Agent][Paper Note] NaviAgent decomposes LLM tool calling into a two-level process: "high-level 4-choice decision + low-level path search on a graph." A Tool World Navigation Model (TWNM) trained with HGT explicitly models structural and behavioral dependencies between tools. On ToolBench, API-Bank, and 50 real-world RapidAPIs, it improve
+  [ICML 2026][LLM Agent][Function calling] NaviAgent decomposes LLM tool calling into a two-level process: "high-level 4-choice decision + low-level path search on a graph." A Tool World Navigation Model (TWNM) trained with HGT explicitly models structural and behavioral dependencies between tools. On ToolBench, API-Bank, and 50 real-world RapidAPIs, it improves the Task Success Rate (TSR) by 4.3–18.2 points over the strongest baselines while significantly reducing the number o…
 tags:
-  - ICML 2026
-  - LLM Agent
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Function calling"
+  - "tool graph"
+  - "bilevel planning"
+  - "Heterogeneous Graph Transformer"
+  - "closed-loop adaptation"
 date: 2026-05-08
-content_hash: a6ccb329c51fbdaa
+content_hash: 009eb049b06563c6
 ---
+
 # NaviAgent: Graph-Driven Bilevel Planning for Scalable Tool Orchestration
 
 **Conference**: ICML 2026  
@@ -145,11 +151,11 @@ Evaluation on 50 real-world RapidAPIs (7 domains, 303 queries):
 
 ## Related Papers
 
+- [\[ICLR 2026\] GTool: Graph Enhanced Tool Planning with Large Language Model](../../ICLR2026/llm_agent/gtool_graph_enhanced_tool_planning_with_large_language_model.md)
 - [\[ACL 2026\] Towards Scalable Lightweight GUI Agents via Multi-role Orchestration](../../ACL2026/llm_agent/towards_scalable_lightweight_gui_agents_via_multi-role_orchestration.md)
-- [\[ICLR 2026\] ToolWeaver: Weaving Collaborative Semantics for Scalable Tool Use in Large Language Models](../../ICLR2026/llm_agent/toolweaver_weaving_collaborative_semantics_for_scalable_tool_use_in_large_langua.md)
-- [\[ICML 2026\] Agent JIT Compilation for Latency-Optimizing Web Agent Planning and Scheduling](agent_jit_compilation_for_latency-optimizing_web_agent_planning_and_scheduling.md)
+- [\[ICLR 2026\] OrchestrationBench: LLM-Driven Agentic Planning and Tool Use in Multi-Domain Scenarios](../../ICLR2026/llm_agent/orchestrationbench_llm-driven_agentic_planning_and_tool_use_in_multi-domain_scen.md)
+- [\[ICLR 2026\] Code Driven Planning with Domain-Adaptive Selector](../../ICLR2026/llm_agent/code_driven_planning_with_domain-adaptive_selector.md)
 - [\[ICML 2026\] Position: Agentic AI Orchestration Should Be Bayes-Consistent](position_agentic_ai_orchestration_should_be_bayes-consistent.md)
-- [\[ACL 2026\] SEARL: Joint Optimization of Policy and Tool Graph Memory for Self-Evolving Agents](../../ACL2026/llm_agent/searl_joint_optimization_of_policy_and_tool_graph_memory_for_self-evolving_agent.md)
 
 </div>
 

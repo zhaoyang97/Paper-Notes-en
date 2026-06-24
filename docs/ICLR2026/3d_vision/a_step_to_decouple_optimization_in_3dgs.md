@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] A Step to Decouple Optimization in 3DGS
 description: >-
-  [ICLR 2026][3D Vision][3DGS] The paper provides an in-depth analysis of overlooked optimization couplings in 3DGS, specifically update step coupling (implicit updates and momentum rescaling under invisible viewpoints) and gradient coupling (regularization and photometric loss coupling within Adam's momentum). By decoupling and reorganizing these c
+  [ICLR 2026][3D Vision][3DGS] The paper provides an in-depth analysis of overlooked optimization couplings in 3DGS, specifically update step coupling (implicit updates and momentum rescaling under invisible viewpoints) and gradient coupling (regularization and photometric loss coupling within Adam's momentum). By decoupling and reorganizing these components, the authors propose the AdamW-GS optimizer, which simultaneously improves reconstruction quality and reduces redundant p…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3DGS
-  - Adam
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3DGS"
+  - "Optimizer"
+  - "Adam"
+  - "Weight Decay"
+  - "Sparse Optimization"
 date: 2026-05-08
-content_hash: 0d849dc0d42b3a62
+content_hash: 14da1e5598038ab5
 ---
+
 # A Step to Decouple Optimization in 3DGS
 
 **Conference**: ICLR 2026  
@@ -140,9 +144,9 @@ The photometric loss ($L_1 + \text{DSSIM}$) remains unchanged, while regularizat
 
 - [\[ICCV 2025\] 3DGS-LM: Faster Gaussian-Splatting Optimization with Levenberg-Marquardt](../../ICCV2025/3d_vision/3dgslm_faster_gaussiansplatting_optimization_with_levenbergm.md)
 - [\[ICLR 2026\] Joint Optimization for 4D Human-Scene Reconstruction in the Wild](joint_optimization_for_4d_human-scene_reconstruction_in_the_wild.md)
-- [\[CVPR 2026\] GAI-GS：用几何代数注意力把光线-物体交互注入 3DGS 的无线信道预测框架](../../CVPR2026/3d_vision/a_geometric_algebra-informed_3dgs_framework_for_wireless_channel_prediction.md)
 - [\[ICLR 2026\] Path Matters: Unveiling Geometric Implicit Bias via Curvature-Aware Sparse View Optimization](path_matters_unveiling_geometric_implicit_bias_via_curvature-aware_sparse_view_o.md)
 - [\[ICLR 2026\] Test-Time Optimization of 3D Point Cloud LLM via Manifold-Aware In-Context Guidance and Refinement](test-time_optimization_of_3d_point_cloud_llm_via_manifold-aware_in-context_guida.md)
+- [\[ICLR 2026\] TINKER: Diffusion's Gift to 3D--Multi-View Consistent Editing From Sparse Inputs without Per-Scene Optimization](tinker_diffusions_gift_to_3d--multi-view_consistent_editing_from_sparse_inputs_w.md)
 
 </div>
 

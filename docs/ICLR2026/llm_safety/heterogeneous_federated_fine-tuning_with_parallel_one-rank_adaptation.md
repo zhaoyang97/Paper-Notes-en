@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Heterogeneous Federated Fine-Tuning with Parallel One-Rank Adaptation
 description: >-
-  [ICLR 2026][LLM Safety][LoRA] The Fed-PLoRA framework is proposed, replacing multi-rank LoRA with multiple Parallel One-Rank Adaptation (PLoRA) modules. Through a Select-N-Fold strategy (selecting N modules for training and folding the rest into frozen weights), it achieves zero initialization noise and minimal aggregation noise in heterogeneous fe
+  [ICLR 2026][LLM Safety][Federated Fine-Tuning] The Fed-PLoRA framework is proposed, replacing multi-rank LoRA with multiple Parallel One-Rank Adaptation (PLoRA) modules. Through a Select-N-Fold strategy (selecting N modules for training and folding the rest into frozen weights), it achieves zero initialization noise and minimal aggregation noise in heterogeneous federated fine-tuning, consistently outperforming existing methods across 6 LLMs and multiple tasks.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - LoRA
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Federated Fine-Tuning"
+  - "LoRA"
+  - "Heterogeneous Rank"
+  - "Initialization Noise"
+  - "Aggregation Noise"
 date: 2026-05-08
-content_hash: 8f48fedabaa3c132
+content_hash: 8d89e7b8185be5ca
 ---
+
 # Heterogeneous Federated Fine-Tuning with Parallel One-Rank Adaptation
 
 **Conference**: ICLR 2026  
@@ -130,9 +135,9 @@ The standard federated fine-tuning pipeline is followed (Server broadcast → Lo
 
 - [\[ICLR 2026\] SHE-LoRA: Selective Homomorphic Encryption for Federated Tuning with Heterogeneous LoRA](she-lora_selective_homomorphic_encryption_for_federated_tuning_with_heterogeneou.md)
 - [\[NeurIPS 2025\] Differentially Private Federated Low Rank Adaptation Beyond Fixed-Matrix](../../NeurIPS2025/llm_safety/differentially_private_federated_low_rank_adaptation_beyond_fixed-matrix.md)
+- [\[ICLR 2026\] Safety at One Shot: Patching Fine-Tuned LLMs with A Single Instance](safety_at_one_shot_patching_fine-tuned_llms_with_a_single_instance.md)
 - [\[AAAI 2026\] TOFA: Training-Free One-Shot Federated Adaptation for Vision-Language Models](../../AAAI2026/llm_safety/tofa_training-free_one-shot_federated_adaptation_for_vision-language_models.md)
 - [\[NeurIPS 2025\] Adaptive LoRA Experts Allocation and Selection for Federated Fine-Tuning](../../NeurIPS2025/llm_safety/adaptive_lora_experts_allocation_and_selection_for_federated_fine-tuning.md)
-- [\[ICLR 2026\] Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models](rethinking_bottlenecks_in_safety_fine-tuning_of_vision_language_models.md)
 
 </div>
 

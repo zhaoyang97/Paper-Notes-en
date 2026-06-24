@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Detect, Decide, Unlearn: A Transfer-Aware Framework for Continual Learning
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] To address the negative transfer issue in continual learning where "remembering outdated knowledge hinders new tasks," this paper proposes the DEDUCE framework. It **detects** negative transfer using transferability bounds or gradient conflict analysis, **decides** whether to trigger unlearning, and finally **selective
+  [ICLR 2026][Self-Supervised Learning][Continual Learning] To address the negative transfer issue in continual learning where "remembering outdated knowledge hinders new tasks," this paper proposes the DEDUCE framework. It **detects** negative transfer using transferability bounds or gradient conflict analysis, **decides** whether to trigger unlearning, and finally **selectively erases interfering old knowledge** using batch-level Local Unlearning (LUM) and network-level Globa…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Continual Learning"
+  - "Negative Transfer"
+  - "Machine Unlearning"
+  - "Gradient Conflict"
+  - "Transferability Bound"
 date: 2026-05-08
-content_hash: 893399de126cf2ab
+content_hash: 7892d8231410b3c3
 ---
+
 # Detect, Decide, Unlearn: A Transfer-Aware Framework for Continual Learning
 
 **Conference**: ICLR 2026  
@@ -155,8 +161,8 @@ Using DER++ as the base, individual components were removed (Table 2):
 
 ## Related Papers
 
-- [\[ICLR 2026\] A Bayesian Nonparametric Framework for Learning Disentangled Representations](a_bayesian_nonparametric_framework_for_learning_disentangled_representations.md)
 - [\[ICLR 2026\] Fly-CL: A Fly-Inspired Framework for Enhancing Efficient Decorrelation and Reduced Training Time in Pre-trained Model-based Continual Representation Learning](fly-cl_a_fly-inspired_framework_for_enhancing_efficient_decorrelation_and_reduce.md)
+- [\[ICLR 2026\] A Bayesian Nonparametric Framework for Learning Disentangled Representations](a_bayesian_nonparametric_framework_for_learning_disentangled_representations.md)
 - [\[ICLR 2026\] Plug-and-Play Compositionality for Boosting Continual Learning with Foundation Models](plug-and-play_compositionality_for_boosting_continual_learning_with_foundation_m.md)
 - [\[ICLR 2026\] SplitLoRA: Balancing Stability and Plasticity in Continual Learning Through Gradient Space Splitting](splitlora_balancing_stability_and_plasticity_in_continual_learning_through_gradi.md)
 - [\[CVPR 2026\] Learning by Analogy: A Causal Framework for Compositional Generalization](../../CVPR2026/self_supervised/learning_by_analogy_a_causal_framework_for_compositional_generalization.md)

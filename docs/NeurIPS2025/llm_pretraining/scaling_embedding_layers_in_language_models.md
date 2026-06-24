@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Scaling Embedding Layers in Language Models
 description: >-
-  [NeurIPS 2025][LLM Pretraining][embedding scaling] This paper proposes Scone, a method that learns contextualized embeddings for high-frequency n-grams using a separate Transformer model…
+  [NeurIPS 2025][LLM Pretraining][embedding scaling] This paper proposes Scone, a method that learns contextualized embeddings for high-frequency n-grams using a separate Transformer model, and offloads these embeddings to main memory/SSD at inference time. This enables a new scaling paradigm in which additional compute is consumed during training without increasing accelerator resource usage at inference. A 1B-parameter Scone model surpasses a 1.9B baseline.
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "offloading"
   - "Scone"
 date: 2026-05-08
-content_hash: d14505a40fc0ce78
+content_hash: 00db25b25d733112
 ---
 
 # Scaling Embedding Layers in Language Models
@@ -116,11 +116,11 @@ Construct a high-frequency n-gram set (f-grams) → Train a separate f-gram Tran
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Scalable Fingerprinting of Large Language Models](scalable_fingerprinting_of_large_language_models.md)
-- [\[NeurIPS 2025\] The Curse of Depth in Large Language Models](the_curse_of_depth_in_large_language_models.md)
+- [\[ICML 2025\] Scaling Inference-Efficient Language Models](../../ICML2025/llm_pretraining/scaling_inference-efficient_language_models.md)
 - [\[ICML 2026\] Inverse Depth Scaling From Most Layers Being Similar](../../ICML2026/llm_pretraining/inverse_depth_scaling_from_most_layers_being_similar.md)
-- [\[NeurIPS 2025\] Next Semantic Scale Prediction via Hierarchical Diffusion Language Models](next_semantic_scale_prediction_via_hierarchical_diffusion_language_models.md)
-- [\[NeurIPS 2025\] Retrospective In-Context Learning for Temporal Credit Assignment with Large Language Models](ricl_temporal_credit.md)
+- [\[NeurIPS 2025\] The Curse of Depth in Large Language Models](the_curse_of_depth_in_large_language_models.md)
+- [\[ICLR 2026\] Scaling Behavior of Discrete Diffusion Language Models](../../ICLR2026/llm_pretraining/scaling_behavior_of_discrete_diffusion_language_models.md)
+- [\[ICLR 2026\] LLM-JEPA: Large Language Models Meet Joint Embedding Predictive Architectures](../../ICLR2026/llm_pretraining/llm-jepa_large_language_models_meet_joint_embedding_predictive_architectures.md)
 
 </div>
 

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Identifying and Analyzing Performance-Critical Tokens in Large Language Models
 description: >-
-  [AAAI 2026][LLM/NLP][In-context learning] Through representation-level and token-level ablation experiments, this paper identifies the "performance-critical tokens" that LLMs directly rely on during ICL as template and s…
+  [AAAI 2026][LLM (Other)][In-context learning] Through representation-level and token-level ablation experiments, this paper identifies the "performance-critical tokens" that LLMs directly rely on during ICL as template and stopword tokens (e.g., "Answer:"), rather than the content tokens that humans would attend to (e.g., actual text). It further reveals that LLMs indirectly exploit content by aggregating content information into the representations of these critical tokens.
 tags:
   - "AAAI 2026"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "In-context learning"
   - "performance-critical tokens"
   - "attention ablation"
   - "template tokens"
   - "information aggregation"
 date: 2026-05-08
-content_hash: a623910ce7d1eeeb
+content_hash: 1b3fd6260431e457
 ---
 
 # Identifying and Analyzing Performance-Critical Tokens in Large Language Models
@@ -135,11 +135,11 @@ Adding a specific token type's representations to Zero-shot:
 
 ## Related Papers
 
+- [\[ACL 2025\] Analyzing and Mitigating Inconsistency in Discrete Speech Tokens for Neural Codec Language Models](../../ACL2025/llm_nlp/analyzing_and_mitigating_inconsistency_in_discrete_speech_tokens_for_neural_code.md)
 - [\[AAAI 2026\] ProFuser: Progressive Fusion of Large Language Models](profuser_progressive_fusion_of_large_language_models.md)
 - [\[ACL 2026\] Identifying the Periodicity of Information in Natural Language](../../ACL2026/llm_nlp/identifying_the_periodicity_of_information_in_natural_language.md)
-- [\[AAAI 2026\] Control Illusion: The Failure of Instruction Hierarchies in Large Language Models](control_illusion_the_failure_of_instruction_hierarchies_in_large_language_models.md)
-- [\[AAAI 2026\] LoKI: Low-damage Knowledge Implanting of Large Language Models](loki_low-damage_knowledge_implanting_of_large_language_models.md)
-- [\[AAAI 2026\] CoEvo: Continual Evolution of Symbolic Solutions Using Large Language Models](coevo_continual_evolution_of_symbolic_solutions_using_large_language_models.md)
+- [\[ACL 2025\] Collaborative Performance Prediction for Large Language Models](../../ACL2025/llm_nlp/collaborative_performance_prediction_for_large_language_models.md)
+- [\[AAAI 2026\] IROTE: Human-like Traits Elicitation of Large Language Model via In-Context Self-Reflective Optimization](irote_human-like_traits_elicitation_of_large_language_model_via_in-context_self-.md)
 
 </div>
 

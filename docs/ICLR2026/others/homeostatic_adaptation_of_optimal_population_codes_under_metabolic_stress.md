@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Homeostatic Adaptation of Optimal Population Codes under Metabolic Stress
 description: >-
-  [ICLR 2026][Others][Paper Note] This paper supplements the classic "Optimal Population Coding" theory with two overlooked biological constraints—firing rate homeostasis and a direct ATP-linked energy budget. It is the first to mathematically predict the "flattening of tuning curves" observed in the mouse visual cortex under metabolic stress while uni
+  [ICLR 2026][Efficient coding] This paper supplements the classic "Optimal Population Coding" theory with two overlooked biological constraints—firing rate homeostasis and a direct ATP-linked energy budget. It is the first to mathematically predict the "flattening of tuning curves" observed in the mouse visual cortex under metabolic stress while unifying previously contradictory models as special cases of its own framework.
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Efficient coding"
+  - "Population coding"
+  - "Fisher information"
+  - "Energy constraints"
+  - "Firing rate homeostasis"
+  - "Biophysical simulation"
 date: 2026-05-08
-content_hash: 0a9523f6180a872c
+content_hash: 98712ce79c3e1146
 ---
+
 # Homeostatic Adaptation of Optimal Population Codes under Metabolic Stress
 
 **Conference**: ICLR 2026  

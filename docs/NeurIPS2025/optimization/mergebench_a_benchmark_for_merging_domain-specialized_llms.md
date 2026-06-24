@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MergeBench: A Benchmark for Merging Domain-Specialized LLMs
 description: >-
-  [NeurIPS 2025][Optimization][model merging] MergeBench is the first comprehensive benchmark suite for evaluating large-scale domain-specialized LLM merging, covering Llama and Gemma families up to 9B parameters…
+  [NeurIPS 2025][Optimization][model merging] MergeBench is the first comprehensive benchmark suite for evaluating large-scale domain-specialized LLM merging, covering Llama and Gemma families up to 9B parameters, five task domains, and eight merging methods, providing systematic evaluation and practical guidelines across three dimensions: multi-task performance, forgetting, and runtime efficiency.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "LLM"
   - "multi-task learning"
 date: 2026-05-08
-content_hash: 192b789ca67e5267
+content_hash: 10604d9fb81a1812
 ---
 
 # MergeBench: A Benchmark for Merging Domain-Specialized LLMs
@@ -162,7 +162,7 @@ Normalized multi-task performance (relative to specialized models; 1.0 indicates
 - [\[NeurIPS 2025\] Train with Perturbation, Infer after Merging: A Two-Stage Framework for Continual Learning](train_with_perturbation_infer_after_merging_a_two-stage_framework_for_continual_.md)
 - [\[CVPR 2026\] BD-Merging: Bias-Aware Dynamic Model Merging with Evidence-Guided Contrastive Learning](../../CVPR2026/optimization/bd-merging_bias-aware_dynamic_model_merging_with_evidence-guided_contrastive_lea.md)
 - [\[CVPR 2026\] ACE-Merging: Data-Free Model Merging with Adaptive Covariance Estimation](../../CVPR2026/optimization/ace-merging_data-free_model_merging_with_adaptive_covariance_estimation.md)
-- [\[NeurIPS 2025\] Evaluating LLMs for Combinatorial Optimization: One-Phase and Two-Phase Heuristics for 2D Bin-Packing](evaluating_llms_for_combinatorial_optimization_one-phase_and_two-phase_heuristic.md)
+- [\[CVPR 2025\] Federated Learning with Domain Shift Eraser](../../CVPR2025/optimization/federated_learning_with_domain_shift_eraser.md)
 - [\[CVPR 2026\] Model Merging in the Essential Subspace](../../CVPR2026/optimization/model_merging_in_the_essential_subspace.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Biologically Plausible Learning via Bidirectional Spike-Based Distillation
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] This paper proposes BSD (Bidirectional Spike-based Distillation), which trains a feedforward spiking network (stimulus → concept for perception) and a feedback spiking network (concept → stimulus for memory recall) by distilling spike features between them. The entire process uses only discrete binary spikes and unsign
+  [ICLR 2026][Model Compression][Spiking Neural Networks] This paper proposes BSD (Bidirectional Spike-based Distillation), which trains a feedforward spiking network (stimulus → concept for perception) and a feedback spiking network (concept → stimulus for memory recall) by distilling spike features between them. The entire process uses only discrete binary spikes and unsigned error signals, achieving accuracy comparable to backpropagation across image classification/generatio…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Spiking Neural Networks"
+  - "Biologically Plausible Learning"
+  - "Bidirectional Distillation"
+  - "Local Learning"
+  - "Contrastive Loss"
 date: 2026-05-08
-content_hash: 21b1bb89163a0a83
+content_hash: 0aaf535319714e26
 ---
+
 # Biologically Plausible Learning via Bidirectional Spike-Based Distillation
 
 **Conference**: ICLR 2026  

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Calibration-Aware Policy Optimization for Reasoning LLMs
 description: >-
-  [ACL 2026][LLM Reasoning][GRPO] The authors first prove that the "reward-only" advantage estimation in GRPO-like algorithms is equivalent to an AUC-inconsistent surrogate ($\phi(t)=-t$, violating scale-invariance), which leads to a continuous degradation of relative calibration (perplexity AUC) even as accuracy increases. Accordingly, they propose CA
+  [ACL 2026][Reasoning][GRPO] The authors first prove that the "reward-only" advantage estimation in GRPO-like algorithms is equivalent to an AUC-inconsistent surrogate ($\phi(t)=-t$, violating scale-invariance), which leads to a continuous degradation of relative calibration (perplexity AUC) even as accuracy increases. Accordingly, they propose CAPO: replacing the advantage with a "pairwise, uncertainty-aware" form based on a logistic AUC consistent surrogate…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - GRPO
-  - AUC consistency
-  - advantage estimation
+  - "ACL 2026"
+  - "Reasoning"
+  - "GRPO"
+  - "Calibration"
+  - "AUC consistency"
+  - "advantage estimation"
+  - "inference-time scaling"
 date: 2026-05-08
-content_hash: f6b976d95174d5ef
+content_hash: 7bf8543679219886
 ---
+
 # Calibration-Aware Policy Optimization for Reasoning LLMs
 
 **Conference**: ACL 2026  
@@ -132,15 +135,16 @@ AUC on AIME25 improved from 0.63 (GRPO) to 0.78 (+15%) on 1.5B, and from 0.54 to
 - Value: ⭐⭐⭐⭐ A drop-in replacement for advantage estimation in GRPO.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICML 2026\] UCPO: Uncertainty-Aware Policy Optimization](../../ICML2026/llm_reasoning/ucpo_uncertainty-aware_policy_optimization.md)
+- [\[ACL 2026\] N-GRPO: Embedding-Level Neighbor Mixing for Enhanced Policy Optimization](n-grpo_embedding-level_neighbor_mixing_for_enhanced_policy_optimization.md)
 - [\[ACL 2026\] Think Outside the Policy: In-Context Steered Policy Optimization](think_outside_the_policy_in-context_steered_policy_optimization.md)
+- [\[ICLR 2026\] Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning](../../ICLR2026/llm_reasoning/reference-guided_policy_optimization_for_molecular_optimization_via_llm_reasonin.md)
 - [\[ACL 2026\] Adapt to Thrive! Adaptive Power-Mean Policy Optimization for Improved LLM Reasoning](adapt_to_thrive_adaptive_power-mean_policy_optimization_for_improved_llm_reasoni.md)
-- [\[ACL 2026\] ChAIRO: Contextual Hierarchical Analogical Induction and Reasoning Optimization for LLMs](chairo_contextual_hierarchical_analogical_induction_and_reasoning_optimization_f.md)
-- [\[ICLR 2026\] FastGRPO: Accelerating Policy Optimization via Concurrency-aware Speculative Decoding and Online Draft Learning](../../ICLR2026/llm_reasoning/fastgrpo_accelerating_policy_optimization_via_concurrency-aware_speculative_deco.md)
-- [\[ICLR 2026\] DRPO: Efficient Reasoning via Decoupled Reward Policy Optimization](../../ICLR2026/llm_reasoning/drpo_efficient_reasoning_via_decoupled_reward_policy_optimization.md)
 
 </div>
 

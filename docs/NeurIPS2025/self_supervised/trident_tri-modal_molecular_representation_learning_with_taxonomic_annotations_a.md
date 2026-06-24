@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TRIDENT: Tri-Modal Molecular Representation Learning with Taxonomic Annotations and Structural Relationships
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][Molecular property prediction] TRIDENT is a tri-modal molecular representation learning framework that introduces Hierarchical Taxonomic Annotations (HTA) as a third modality. It…
+  [NeurIPS 2025][Self-Supervised Learning][Molecular property prediction] TRIDENT is a tri-modal molecular representation learning framework that introduces Hierarchical Taxonomic Annotations (HTA) as a third modality. It combines a volumetric contrastive loss for global tri-modal alignment with a functional group–text local alignment module, dynamically balancing the two objectives via a momentum mechanism. The framework achieves state-of-the-art performance across 18 molecula…
 tags:
   - "NeurIPS 2025"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "volumetric contrastive loss"
   - "local alignment"
 date: 2026-05-08
-content_hash: 9d873c6c706ba848
+content_hash: 4eb77ed508a30fda
 ---
 
 # TRIDENT: Tri-Modal Molecular Representation Learning with Taxonomic Annotations and Structural Relationships
@@ -140,11 +140,11 @@ The model takes tri-modal inputs $\langle\text{SMILES, Text, HTA}\rangle$. SMILE
 
 ## Related Papers
 
+- [\[ECCV 2024\] SCPNet: Unsupervised Cross-modal Homography Estimation via Intra-modal Self-supervised Learning](../../ECCV2024/self_supervised/scpnet_unsupervised_cross-modal_homography_estimation_via_intra-modal_self-super.md)
 - [\[NeurIPS 2025\] Soft Task-Aware Routing of Experts for Equivariant Representation Learning](soft_task-aware_routing_of_experts_for_equivariant_representation_learning.md)
 - [\[NeurIPS 2025\] Adv-SSL: Adversarial Self-Supervised Representation Learning with Theoretical Guarantees](adv-ssl_adversarial_self-supervised_representation_learning_with_theoretical_gua.md)
 - [\[NeurIPS 2025\] Connecting Jensen-Shannon and Kullback-Leibler Divergences: A New Bound for Representation Learning](connecting_jensenshannon_and_kullbackleibler_divergences_a_n.md)
 - [\[NeurIPS 2025\] STaRFormer: Semi-Supervised Task-Informed Representation Learning via Dynamic Attention-Based Regional Masking](starformer_semi-supervised_task-informed_representation_learning_via_dynamic_att.md)
-- [\[ICML 2026\] Beyond Distribution Estimation: Simplex Anchored Structural Inference Towards Universal Semi-Supervised Learning](../../ICML2026/self_supervised/beyond_distribution_estimation_simplex_anchored_structural_inference_towards_uni.md)
 
 </div>
 

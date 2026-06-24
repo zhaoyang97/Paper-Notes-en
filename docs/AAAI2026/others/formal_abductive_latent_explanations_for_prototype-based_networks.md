@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Formal Abductive Latent Explanations for Prototype-Based Networks
 description: >-
-  [AAAI 2026][Prototype Networks] This paper addresses the problem of misleading explanations in prototype-based networks (e.g., ProtoPNet) by proposing Abductive Latent Explanations (ALE)…
+  [AAAI 2026][Prototype Networks] This paper addresses the problem of misleading explanations in prototype-based networks (e.g., ProtoPNet) by proposing Abductive Latent Explanations (ALE), which construct formally guaranteed sufficient-condition explanations directly in latent space—without invoking external solvers—and scale to standard and fine-grained classification tasks across multiple datasets.
 tags:
   - "AAAI 2026"
   - "Prototype Networks"
@@ -11,7 +11,7 @@ tags:
   - "Latent Space"
   - "Case-Based Reasoning"
 date: 2026-05-08
-content_hash: 53272ed9b34ab846
+content_hash: 5e8c04164f4cc69c
 ---
 
 # Formal Abductive Latent Explanations for Prototype-Based Networks
@@ -140,10 +140,10 @@ Average ALE size (lower is better) across three paradigms on 7 datasets:
 ## Related Papers
 
 - [\[ICML 2026\] Guaranteed Optimal Compositional Explanations for Neurons](../../ICML2026/others/guaranteed_optimal_compositional_explanations_for_neurons.md)
+- [\[CVPR 2026\] Prototype-based Causal Intervention for Multi-Label Image Classification](../../CVPR2026/others/prototype-based_causal_intervention_for_multi-label_image_classification.md)
 - [\[ICLR 2026\] Latent Fourier Transform](../../ICLR2026/others/latent_fourier_transform.md)
 - [\[AAAI 2026\] Decomposition and Preprocessing of Ternary Constraint Networks](decomposition_and_preprocessing_of_ternary_constraint_networks.md)
-- [\[ICLR 2026\] Latent Equivariant Operators for Robust Object Recognition: Promises and Challenges](../../ICLR2026/others/latent_equivariant_operators_for_robust_object_recognition_promises_and_challeng.md)
-- [\[ICLR 2026\] Out of the Shadows: Exploring a Latent Space for Neural Network Verification](../../ICLR2026/others/out_of_the_shadows_exploring_a_latent_space_for_neural_network_verification.md)
+- [\[ICCV 2025\] On the Complexity-Faithfulness Trade-off of Gradient-Based Explanations](../../ICCV2025/others/on_the_complexity-faithfulness_trade-off_of_gradient-based_explanations.md)
 
 </div>
 

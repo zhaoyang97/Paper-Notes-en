@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BOAD: Discovering Hierarchical Software Engineering Agents via Bandit Optimization
 description: >-
-  [ICLR 2026][Code Intelligence][SWE-bench] BOAD reformulates the design of a hierarchical multi-agent system for software engineering as a multi-armed bandit (MAB) problem. Each candidate sub-agent is treated as an arm, and the reward is its "helpfulness" within team collaboration. It employs UCB for exploration-exploitation, uses the Chinese Restaurant Process
+  [ICLR2026][Code Intelligence][Software Engineering Agent] BOAD reformulates the design of a hierarchical multi-agent system for software engineering as a multi-armed bandit (MAB) problem. Each candidate sub-agent is treated as an arm, and the reward is its "helpfulness" within team collaboration. It employs UCB for exploration-exploitation, uses the Chinese Restaurant Process (CRP) to dynamically expand the agent archive, and applies hindsight credit assignment to avoid the "…
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - SWE-bench
+  - "ICLR2026"
+  - "Code Intelligence"
+  - "Software Engineering Agent"
+  - "Multi-Armed Bandit"
+  - "Hierarchical Multi-Agent"
+  - "Credit Assignment"
+  - "SWE-bench"
 date: 2026-05-08
-content_hash: 4501d9522b14c807
+content_hash: 8647aaf4d25fa0f0
 ---
+
 # BOAD: Discovering Hierarchical Software Engineering Agents via Bandit Optimization
 
 **Conference**: ICLR2026  
@@ -146,6 +151,7 @@ Task decomposition significantly shortened input context, reducing total tokens 
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

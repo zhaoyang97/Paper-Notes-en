@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rethinking Losses for Diffusion Bridge Samplers
 description: >-
-  [NeurIPS 2025][diffusion bridge samplers] This paper identifies theoretical flaws in the widely used Log Variance (LV) loss for diffusion bridge samplers—namely…
+  [NeurIPS 2025][diffusion bridge samplers] This paper identifies theoretical flaws in the widely used Log Variance (LV) loss for diffusion bridge samplers—namely, that it violates the data processing inequality and its gradients are not equivalent to those of the reverse KL (rKL)—and proposes computing rKL gradients via the log-derivative trick (rKL-LD). The proposed approach consistently outperforms LV loss across multiple benchmarks while exhibiting more stable training and…
 tags:
   - "NeurIPS 2025"
   - "diffusion bridge samplers"
@@ -11,7 +11,7 @@ tags:
   - "Log Variance loss"
   - "learnable diffusion coefficients"
 date: 2026-05-08
-content_hash: 1842a6de83edf087
+content_hash: f15fc7ff65c41e57
 ---
 
 # Rethinking Losses for Diffusion Bridge Samplers
@@ -128,11 +128,11 @@ The training loss is the rKL divergence, with gradients computed via the log-der
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Adjoint Schrödinger Bridge Sampler](adjoint_schrödinger_bridge_sampler.md)
 - [\[NeurIPS 2025\] Rethinking PCA Through Duality](rethinking_pca_through_duality.md)
+- [\[NeurIPS 2025\] Adjoint Schrödinger Bridge Sampler](adjoint_schrödinger_bridge_sampler.md)
+- [\[ICML 2025\] Gradient Aligned Regression via Pairwise Losses](../../ICML2025/others/gradient_aligned_regression_via_pairwise_losses.md)
 - [\[NeurIPS 2025\] Modeling Cell Dynamics and Interactions with Unbalanced Mean Field Schrödinger Bridge](modeling_cell_dynamics_and_interactions_with_unbalanced_mean_field_schrödinger_b.md)
-- [\[ICML 2026\] MetaDNS: Enhancing Exploration in Discrete Neural Samplers via Well-Tempered Metadynamics](../../ICML2026/others/metadns_enhancing_exploration_in_discrete_neural_samplers_via_well-tempered_meta.md)
-- [\[ICCV 2025\] Is Meta-Learning Out? Rethinking Unsupervised Few-Shot Classification with Limited Entropy](../../ICCV2025/others/is_meta-learning_out_rethinking_unsupervised_few-shot_classification_with_limite.md)
+- [\[ICML 2025\] Rethinking Aleatoric and Epistemic Uncertainty](../../ICML2025/others/rethinking_aleatoric_and_epistemic_uncertainty.md)
 
 </div>
 

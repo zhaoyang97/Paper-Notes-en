@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VitalDiagnosis: AI-Driven Ecosystem for 24/7 Vital Monitoring and Chronic Disease Management
 description: >-
-  [AAAI 2026][Medical Imaging][LLM-based medical systems] This paper proposes VitalDiagnosis, an LLM-driven chronic disease management ecosystem that integrates continuous wearable data with multi-scale LLM reasoning…
+  [AAAI 2026][Medical Imaging][LLM-based medical systems] This paper proposes VitalDiagnosis, an LLM-driven chronic disease management ecosystem that integrates continuous wearable data with multi-scale LLM reasoning, establishing a dual-track framework comprising interactive anomaly triage and routine adherence monitoring, thereby enabling a paradigm shift from passive surveillance to active engagement within a collaborative patient–clinician workflow.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "dual-track framework"
   - "personalized medicine"
 date: 2026-05-08
-content_hash: 5d03a521739c0b6f
+content_hash: 6e17fad776c261e0
 ---
 
 # VitalDiagnosis: AI-Driven Ecosystem for 24/7 Vital Monitoring and Chronic Disease Management
@@ -137,7 +137,7 @@ No standard ablation experiments are provided. The paper describes the functiona
 - [\[AAAI 2026\] Rethinking Bias in Generative Data Augmentation for Medical AI: a Frequency Recalibration Approach](rethinking_bias_in_generative_data_augmentation_for_medical_ai_a_frequency_recal.md)
 - [\[AAAI 2026\] A Disease-Aware Dual-Stage Framework for Chest X-ray Report Generation](a_disease-aware_dual-stage_framework_for_chest_x-ray_report_.md)
 - [\[AAAI 2026\] DW-DGAT: Dynamically Weighted Dual Graph Attention Network for Neurodegenerative Disease Diagnosis](dw-dgat_dynamically_weighted_dual_graph_attention_network_for_neurodegenerative_.md)
-- [\[NeurIPS 2025\] Doctor Approved: Generating Medically Accurate Skin Disease Images through AI-Expert Feedback](../../NeurIPS2025/medical_imaging/doctor_approved_generating_medically_accurate_skin_disease_images_through_ai-exp.md)
+- [\[ICML 2026\] DIYHealth Suite: Dataset, Model, and Benchmark for Health Management at Home](../../ICML2026/medical_imaging/diyhealth_suite_dataset_model_and_benchmark_for_health_management_at_home.md)
 
 </div>
 

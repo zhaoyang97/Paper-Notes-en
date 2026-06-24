@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DynaDiff: Generative Adaptation of Dynamics to Environmental Shifts via Weight-space Diffusion
 description: >-
-  [ICML 2026][Image Generation][Paper Note] DynaDiff reformulates the meta-learning problem of "training a predictor for a new environment" into a conditional sampling problem of "directly generating full network weights using a diffusion model." By utilizing a weight graph, functional consistency loss, and a dynamics-aware prompter, it achieves a 10.78% average
+  [ICML 2026][Image Generation][Weight-space Diffusion] DynaDiff reformulates the meta-learning problem of "training a predictor for a new environment" into a conditional sampling problem of "directly generating full network weights using a diffusion model." By utilizing a weight graph, functional consistency loss, and a dynamics-aware prompter, it achieves a 10.78% average RMSE reduction over strong baselines across four PDE systems.
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML 2026"
+  - "Image Generation"
+  - "Weight-space Diffusion"
+  - "Dynamics Prediction"
+  - "Cross-environment Generalization"
+  - "Schrödinger-bridge Alternative"
+  - "Meta-learning"
 date: 2026-05-08
-content_hash: 91c82925cdd74dd3
+content_hash: 04a4a98fdc40b1f3
 ---
+
 # DynaDiff: Generative Adaptation of Dynamics to Environmental Shifts via Weight-space Diffusion
 
 **Conference**: ICML 2026  
@@ -132,10 +138,10 @@ DynaDiff even outperforms "One-per-Env" (training a separate FNO for each enviro
 ## Related Papers
 
 - [\[ICML 2026\] Compression as Adaptation: Implicit Visual Representation with Diffusion Foundation Models](compression_as_adaptation_implicit_visual_representation_with_diffusion_foundati.md)
-- [\[CVPR 2026\] Scale Space Diffusion：把尺度空间塞进扩散过程](../../CVPR2026/image_generation/scale_space_diffusion.md)
+- [\[CVPR 2026\] Scale Space Diffusion: Integrating Scale Space into the Diffusion Process](../../CVPR2026/image_generation/scale_space_diffusion.md)
 - [\[CVPR 2026\] Guiding a Diffusion Transformer with the Internal Dynamics of Itself](../../CVPR2026/image_generation/guiding_a_diffusion_transformer_with_the_internal_dynamics_of_itself.md)
-- [\[NeurIPS 2025\] PID-controlled Langevin Dynamics for Faster Sampling of Generative Models](../../NeurIPS2025/image_generation/pid-controlled_langevin_dynamics_for_faster_sampling_of_generative_models.md)
 - [\[CVPR 2026\] LoFA: Learning to Predict Personalized Prior for Fast Adaptation of Visual Generative Models](../../CVPR2026/image_generation/lofa_learning_to_predict_personalized_prior_for_fast_adaptation_of_visual_genera.md)
+- [\[NeurIPS 2025\] PID-controlled Langevin Dynamics for Faster Sampling of Generative Models](../../NeurIPS2025/image_generation/pid-controlled_langevin_dynamics_for_faster_sampling_of_generative_models.md)
 
 </div>
 

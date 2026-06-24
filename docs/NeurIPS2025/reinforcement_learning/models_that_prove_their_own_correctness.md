@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Models That Prove Their Own Correctness
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][self-proving models] This paper proposes the Self-Proving Models framework, in which a model proves the correctness of its outputs to a verifier algorithm via an interactive proof s…
+  [NeurIPS 2025][Reinforcement Learning][self-proving models] This paper proposes the Self-Proving Models framework, in which a model proves the correctness of its outputs to a verifier algorithm via an interactive proof system. Two learning algorithms are introduced—Transcript Learning (TL) and Reinforcement Learning from Verifier Feedback (RLVF)—and experiments on the GCD computation task demonstrate that Annotated TL achieves 96% Verifiability.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "formal verification"
   - "LLM reliability"
 date: 2026-05-08
-content_hash: 4f2055a5fa214078
+content_hash: d3c7d9da78e00800
 ---
 
 # Models That Prove Their Own Correctness
@@ -128,10 +128,10 @@ The key insight is that the verifier $V$ is **hand-crafted** (not learned), prov
 ## Related Papers
 
 - [\[NeurIPS 2025\] Foundation Models as World Models: A Foundational Study in Text-Based GridWorlds](foundation_models_as_world_models_a_foundational_study_in_text-based_gridworlds.md)
+- [\[ICLR 2026\] Beyond Binary Rewards: Training LMs to Reason About Their Uncertainty](../../ICLR2026/reinforcement_learning/beyond_binary_rewards_training_lms_to_reason_about_their_uncertainty.md)
 - [\[NeurIPS 2025\] Checklists Are Better Than Reward Models For Aligning Language Models](checklists_are_better_than_reward_models_for_aligning_langua.md)
 - [\[NeurIPS 2025\] Training Language Models to Reason Efficiently](training_language_models_to_reason_efficiently.md)
 - [\[NeurIPS 2025\] MMaDA: Multimodal Large Diffusion Language Models](mmada_multimodal_large_diffusion_language_models.md)
-- [\[NeurIPS 2025\] Complexity Scaling Laws for Neural Models using Combinatorial Optimization](complexity_scaling_laws_for_neural_models_using_combinatorial_optimization.md)
 
 </div>
 

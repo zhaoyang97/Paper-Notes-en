@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Epistemic Uncertainty Quantification To Improve Decisions From Black-Box Models
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proposes a set of **bin-free, asymptotically consistent, and sample-efficient** estimators to quantify the epistemic uncertainty remaining beyond black-box model calibration—specifically grouping loss and per-sample excess decision risk. These estimators are used to audit the confidence reliability of 27 ope
+  [ICLR2026][Learning Theory][Epistemic uncertainty] This paper proposes a set of **bin-free, asymptotically consistent, and sample-efficient** estimators to quantify the epistemic uncertainty remaining beyond black-box model calibration—specifically grouping loss and per-sample excess decision risk. These estimators are used to audit the confidence reliability of 27 open-source LLMs and to construct LLM cascades triggered by epistemic risk, achieving higher accuracy at a lower…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Uncertainty Quantification"
+  - "Epistemic uncertainty"
+  - "grouping loss"
+  - "calibration"
+  - "decision risk"
+  - "LLM cascade"
 date: 2026-05-08
-content_hash: 9589eedd2fefdf3a
+content_hash: 1d2d2ab92f6d012d
 ---
+
 # Epistemic Uncertainty Quantification To Improve Decisions From Black-Box Models
 
 **Conference**: ICLR2026  
@@ -158,10 +165,10 @@ The paper does not train new models but evaluates existing black-box confidences
 
 ## Related Papers
 
+- [\[ICLR 2026\] CLEAR: Calibrated Learning for Epistemic and Aleatoric Risk](clear_calibrated_learning_for_epistemic_and_aleatoric_risk.md)
 - [\[NeurIPS 2025\] Diffusion Transformers for Imputation: Statistical Efficiency and Uncertainty Quantification](../../NeurIPS2025/learning_theory/diffusion_transformers_for_imputation_statistical_efficiency_and_uncertainty_qua.md)
 - [\[ICML 2026\] MMD-Balls as Credal Sets: A PAC-Bayesian Framework for Epistemic Uncertainty in Test-Time Adaptation](../../ICML2026/learning_theory/mmd-balls_as_credal_sets_a_pac-bayesian_framework_for_epistemic_uncertainty_in_t.md)
-- [\[ICLR 2026\] Splat Regression Models](splat_regression_models.md)
-- [\[ICLR 2026\] Expressive Power of Implicit Models: Rich Equilibria and Test-Time Scaling](expressive_power_of_implicit_models_rich_equilibria_and_test-time_scaling.md)
+- [\[ICLR 2026\] Navigating the Latent Space Dynamics of Neural Models](navigating_the_latent_space_dynamics_of_neural_models.md)
 - [\[ICLR 2026\] Stop Guessing: Choosing the Optimization-Consistent Uncertainty Measurement for Evidential Deep Learning](stop_guessing_choosing_the_optimization-consistent_uncertainty_measurement_for_e.md)
 
 </div>

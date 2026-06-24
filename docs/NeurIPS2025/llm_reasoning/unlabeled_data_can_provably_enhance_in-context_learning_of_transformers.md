@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Unlabeled Data Can Provably Enhance In-Context Learning of Transformers
 description: >-
-  [NeurIPS 2025][LLM Reasoning][in-context learning] This paper proposes an augmented ICL framework in which the prompt contains both a small set of labeled examples and a large collection of unlabeled examples. It theoret…
+  [NeurIPS 2025][Reasoning][in-context learning] This paper proposes an augmented ICL framework in which the prompt contains both a small set of labeled examples and a large collection of unlabeled examples. It theoretically proves that a multi-layer Transformer, via chain-of-thought (CoT) reasoning, can simulate the EM algorithm to extract information from unlabeled data, improving the classification excess risk from $\mathcal{O}(1/\sqrt{N})$ to $\mathcal{O}(1/\sqrt{N + \text{…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "in-context learning"
   - "unlabeled data"
   - "semi-supervised learning"
@@ -13,7 +13,7 @@ tags:
   - "chain-of-thought"
   - "transformer theory"
 date: 2026-05-08
-content_hash: b8001dcf4c599f49
+content_hash: 7480d7ee5d5d22a9
 ---
 
 # Unlabeled Data Can Provably Enhance In-Context Learning of Transformers
@@ -130,9 +130,9 @@ On a multi-class linear classification setting ($d=20$, $C=$ 3 and 5 classes):
 
 - [\[NeurIPS 2025\] Transformers Provably Learn Chain-of-Thought Reasoning with Length Generalization](transformers_provably_learn_chain-of-thought_reasoning_with_length_generalizatio.md)
 - [\[ICLR 2026\] Is In-Context Learning Learning?](../../ICLR2026/llm_reasoning/is_in-context_learning_learning.md)
-- [\[NeurIPS 2025\] Exact Expressive Power of Transformers with Padding](exact_expressive_power_of_transformers_with_padding.md)
+- [\[ICLR 2026\] A Simple "Motivation" Can Enhance Reinforcement Finetuning of Large Reasoning Models](../../ICLR2026/llm_reasoning/a_simple_motivation_can_enhance_reinforcement_finetuning_of_large_reasoning_mode.md)
 - [\[NeurIPS 2025\] Note 1: Is CoT a Hallucination? A Data Distribution Perspective](is_chain-of-thought_reasoning_of_llms_a_mirage_a_data_distribution_lens.md)
-- [\[NeurIPS 2025\] Let Me Think! A Long Chain-of-Thought Can Be Worth Exponentially Many Short Ones](let_me_think_a_long_chainofthought_can_be_worth_exponentiall.md)
+- [\[NeurIPS 2025\] Exact Expressive Power of Transformers with Padding](exact_expressive_power_of_transformers_with_padding.md)
 
 </div>
 

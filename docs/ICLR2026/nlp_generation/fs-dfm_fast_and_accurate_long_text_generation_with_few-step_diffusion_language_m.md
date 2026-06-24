@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] FS-DFM: Fast and Accurate Long Text Generation with Few-Step Diffusion Language Model
 description: >-
-  [ICLR 2026][Text Generation][flow matching] Proposes FS-DFM (Few-Step Discrete Flow-Matching), which reduces the sampling steps of discrete flow-matching language models from 1024 to 8 via step-aware training and a cumulative scalar update rule, achieving 128x acceleration while maintaining comparable perplexity and generation quality.
+  [ICLR 2026][Text Generation][Discrete Diffusion Models] Proposes FS-DFM (Few-Step Discrete Flow-Matching), which reduces the sampling steps of discrete flow-matching language models from 1024 to 8 via step-aware training and a cumulative scalar update rule, achieving 128x acceleration while maintaining comparable perplexity and generation quality.
 tags:
-  - ICLR 2026
-  - Text Generation
-  - flow matching
+  - "ICLR 2026"
+  - "Text Generation"
+  - "Discrete Diffusion Models"
+  - "Few-step Sampling"
+  - "Flow Matching"
+  - "Cumulative Scalar"
 date: 2026-05-08
-content_hash: 7e0c3ce3dc756030
+content_hash: b40d19b657f40b93
 ---
+
 # FS-DFM: Fast and Accurate Long Text Generation with Few-Step Diffusion Language Model
 
 **Conference**: ICLR 2026  
@@ -149,16 +153,16 @@ FS-DFM represents the first comprehensive application of few-step/single-step di
 - Writing Quality: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Unveiling the Potential of Diffusion Large Language Model in Controllable Generation](unveiling_the_potential_of_diffusion_large_language_model_in_controllable_genera.md)
 - [\[AAAI 2026\] Structured Language Generation Model: Loss Calibration and Formatted Decoding for Efficient Text](../../AAAI2026/nlp_generation/structured_language_generation_model_loss_calibration_and_formatted_decoding_for.md)
+- [\[ICLR 2026\] Planner Aware Path Learning in Diffusion Language Models Training](planner_aware_path_learning_in_diffusion_language_models_training.md)
+- [\[ICLR 2026\] Improving Attributed Long-form Question Answering with Intent Awareness](improving_attributed_long-form_question_answering_with_intent_awareness.md)
 - [\[ICLR 2026\] Rainbow Padding: Mitigating Early Termination in Instruction-Tuned Diffusion LLMs](rainbow_padding_mitigating_early_termination_in_instruction-tuned_diffusion_llms.md)
-- [\[ACL 2026\] Frankentext: Stitching Random Text Fragments into Long-Form Narratives](../../ACL2026/nlp_generation/frankentext_stitching_random_text_fragments_into_long-form_narratives.md)
-- [\[ICLR 2026\] Text Summarization via Global Structure Awareness](text_summarization_via_global_structure_awareness.md)
 
 </div>
 

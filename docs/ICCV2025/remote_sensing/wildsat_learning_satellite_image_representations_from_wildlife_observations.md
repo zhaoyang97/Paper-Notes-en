@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] WildSAT: Learning Satellite Image Representations from Wildlife Observations
 description: >-
-  [ICCV 2025][Remote Sensing][remote sensing representation learning] This paper proposes WildSAT, which leverages millions of geotagged wildlife observations from citizen science platforms to align satellite images…
+  [ICCV 2025][Remote Sensing][remote sensing representation learning] This paper proposes WildSAT, which leverages millions of geotagged wildlife observations from citizen science platforms to align satellite images, species locations, and textual descriptions via contrastive learning, substantially improving remote sensing representation quality and enabling zero-shot text-based retrieval.
 tags:
   - "ICCV 2025"
   - "Remote Sensing"
@@ -12,7 +12,7 @@ tags:
   - "cross-modal"
   - "satellite imagery"
 date: 2026-05-08
-content_hash: c5cd7f27fe550266
+content_hash: ad4593a67ff4651d
 ---
 
 # WildSAT: Learning Satellite Image Representations from Wildlife Observations
@@ -168,11 +168,11 @@ Segmentation results:
 
 ## Related Papers
 
+- [\[ECCV 2024\] Learning Representations of Satellite Images From Metadata Supervision](../../ECCV2024/remote_sensing/learning_representations_of_satellite_images_from_metadata_supervision.md)
 - [\[ICCV 2025\] AstroLoc: Robust Space to Ground Image Localizer](astroloc_robust_space_to_ground_image_localizer.md)
-- [\[ICLR 2026\] TAMMs: Change Understanding and Forecasting in Satellite Image Time Series with Temporal-Aware Multimodal Models](../../ICLR2026/remote_sensing/tamms_change_understanding_and_forecasting_in_satellite_image_time_series_with_t.md)
+- [\[CVPR 2026\] Spectrally Distilled Representations Aligned with Instruction-Augmented LLMs for Satellite Imagery](../../CVPR2026/remote_sensing/spectrally_distilled_representations_aligned_with_instruction-augmented_llms_for.md)
+- [\[ECCV 2024\] Weakly-Supervised Camera Localization by Ground-to-Satellite Image Registration](../../ECCV2024/remote_sensing/weakly-supervised_camera_localization_by_ground-to-satellite_image_registration.md)
 - [\[ICCV 2025\] Pan-Crafter: Learning Modality-Consistent Alignment for Pan-Sharpening](pan-crafter_learning_modality-consistent_alignment_for_pan-sharpening.md)
-- [\[NeurIPS 2025\] Scaling Image Geo-Localization to Continent Level](../../NeurIPS2025/remote_sensing/scaling_image_geo-localization_to_continent_level.md)
-- [\[ICLR 2026\] Measuring the Intrinsic Dimension of Earth Representations](../../ICLR2026/remote_sensing/measuring_the_intrinsic_dimension_of_earth_representations.md)
 
 </div>
 

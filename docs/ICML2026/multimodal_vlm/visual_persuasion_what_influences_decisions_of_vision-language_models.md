@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] 视觉说服力：什么影响了视觉-语言模型的决策？
+  [Paper Note] Visual Persuasion: What Influences the Decisions of Vision-Language Models?
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] This paper systematically uses image editing models to modify visual attributes (maintaining semantic invariance) and discovers significant visual preferences in VLMs. It proposes three visual prompt optimization methods to reveal these preferences, develops an automatic interpretability pipeline to understand the visu
+  [ICML 2026][Multimodal VLM][Visual Persuasion] This paper systematically uses image editing models to modify visual attributes (maintaining semantic invariance) and discovers significant visual preferences in VLMs. It proposes three visual prompt optimization methods to reveal these preferences, develops an automatic interpretability pipeline to understand the visual themes driving decisions, and mitigates risks through visual normalization.
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Visual Persuasion"
+  - "VLM Decision-making"
+  - "Visual Preferences"
+  - "Prompt Optimization"
+  - "Interpretability"
 date: 2026-05-08
-content_hash: 6a516bdd7886a72d
+content_hash: fb6ca8df6c4763df
 ---
+
 # Visual Persuasion: What Influences the Decisions of Vision-Language Models?
 
 **Conference**: ICML 2026  
@@ -130,11 +136,11 @@ Finding "which image the VLM prefers" is insufficient; one must explain which vi
 
 ## Related Papers
 
-- [\[ICML 2026\] VisionPulse：多模态推理中的动态视觉稀疏化](visionpulse_dynamic_visual_sparsity_for_efficient_multimodal_reasoning.md)
-- [\[ICML 2026\] Hyper-ICL: Attention Calibration with Hyperbolic Anchor Distillation for Multimodal ICL](hyper-icl_attention_calibration_with_hyperbolic_anchor_distillation_for_multimod.md)
-- [\[ICML 2026\] Dimension-Free Multimodal Sampling via Preconditioned Annealed Langevin Dynamics](dimension-free_multimodal_sampling_via_preconditioned_annealed_langevin_dynamics.md)
-- [\[ICML 2026\] Immuno-VLM: Immunizing Large Vision-Language Models via Generative Semantic Antibodies for Open-World Trustworthiness](immuno-vlm_immunizing_large_vision-language_models_via_generative_semantic_antib.md)
-- [\[ICML 2026\] Multimodal Continual Learning with MLLMs from Multi-scenario Perspectives](multimodal_continual_learning_with_mllms_from_multi-scenario_perspectives.md)
+- [\[ICML 2026\] Unveiling Visual Counting Bottlenecks in Vision-Language Models](unveiling_the_visual_counting_bottleneck_in_vision-language_models.md)
+- [\[ICML 2026\] Jailbreaking Vision-Language Models Through the Visual Modality](jailbreaking_vision-language_models_through_the_visual_modality.md)
+- [\[ICML 2026\] Contextualized Visual Personalization in Vision-Language Models](contextualized_visual_personalization_in_vision-language_models.md)
+- [\[ICML 2026\] Focusing Where Vision Matters: Selective Training for Large Vision Language Models via Visual Information Gain](focusing_where_vision_matters_selective_training_for_large_vision_language_model.md)
+- [\[CVPR 2025\] What's in the Image? A Deep-Dive into the Vision of Vision Language Models](../../CVPR2025/multimodal_vlm/whats_in_the_image_a_deep-dive_into_the_vision_of_vision_language_models.md)
 
 </div>
 

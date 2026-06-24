@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VIRO: Robust and Efficient Neuro-Symbolic Reasoning with Verification for Referring Expression Comprehension
 description: >-
-  [CVPR 2026][Interpretability][Paper Note] VIRO embeds a lightweight operator-level verification mechanism (CLIP uncertainty verification + spatial logic verification) into a neuro-symbolic REC pipeline. This enables each reasoning step to self-verify and terminate early when no target is present. In zero-shot settings, it significantly outperforms compositiona
+  [CVPR 2026][Interpretability][Referring Expression Comprehension] VIRO embeds a lightweight operator-level verification mechanism (CLIP uncertainty verification + spatial logic verification) into a neuro-symbolic REC pipeline. This enables each reasoning step to self-verify and terminate early when no target is present. In zero-shot settings, it significantly outperforms compositional reasoning baselines with a balanced accuracy of 61.1%, while maintaining a program failure r…
 tags:
-  - CVPR 2026
-  - Interpretability
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Referring Expression Comprehension"
+  - "Neuro-Symbolic Reasoning"
+  - "Operator-level Verification"
+  - "Zero-shot Learning"
+  - "Object-free Detection"
 date: 2026-05-08
-content_hash: ae446d3716cf8ecf
+content_hash: b9f1de5d249ff5f0
 ---
+
 # VIRO: Robust and Efficient Neuro-Symbolic Reasoning with Verification for Referring Expression Comprehension
 
 **Conference**: CVPR 2026  
@@ -143,10 +149,10 @@ Consider the query "the person to the left of the elephant" where no elephant ex
 
 ## Related Papers
 
+- [\[ICLR 2026\] Inferring the Invisible: Neuro-Symbolic Rule Discovery for Missing Value Imputation](../../ICLR2026/interpretability/inferring_the_invisible_neuro-symbolic_rule_discovery_for_missing_value_imputati.md)
+- [\[ICLR 2026\] Interpretable 3D Neural Object Volumes for Robust Conceptual Reasoning](../../ICLR2026/interpretability/interpretable_3d_neural_object_volumes_for_robust_conceptual_reasoning.md)
 - [\[AAAI 2026\] Attention as Binding: A Vector-Symbolic Perspective on Transformer Reasoning](../../AAAI2026/interpretability/attention_as_binding_a_vector-symbolic_perspective_on_transformer_reasoning.md)
 - [\[ICML 2026\] IQA-Spider: Unifying Multi-Granularity Image Quality Assessment with Reasoning, Grounding and Referring](../../ICML2026/interpretability/iqa-spider_unifying_multi-granularity_image_quality_assessment_with_reasoning_gr.md)
-- [\[ICML 2026\] Towards Long-Horizon Interpretability: Efficient and Faithful Multi-Token Attribution for Reasoning LLMs](../../ICML2026/interpretability/towards_long-horizon_interpretability_efficient_and_faithful_multi-token_attribu.md)
-- [\[NeurIPS 2025\] Efficient Vision-Language Reasoning via Adaptive Token Pruning](../../NeurIPS2025/interpretability/efficient_vision-language_reasoning_via_adaptive_token_pruning.md)
 - [\[CVPR 2026\] Beyond Top Activations: Efficient and Reliable Crowdsourced Evaluation of Automated Interpretability](beyond_top_activations_efficient_and_reliable_crowdsourced_evaluation_of_automat.md)
 
 </div>

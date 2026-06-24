@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Improving Forecasts of Suicide Attempts for Patients with Little Data
 description: >-
-  [NeurIPS 2025 (TS4H Workshop)][Gaussian Process] This paper proposes the Latent Similarity Gaussian Process (LSGP), which embeds patients into a continuous latent space to capture heterogeneity…
+  [NeurIPS 2025 (TS4H Workshop)][Gaussian Process] This paper proposes the Latent Similarity Gaussian Process (LSGP), which embeds patients into a continuous latent space to capture heterogeneity, enabling data-scarce patients to "borrow" predictive trends from similar patients, thereby improving suicide attempt prediction based on EMA data.
 tags:
   - "NeurIPS 2025 (TS4H Workshop)"
   - "Gaussian Process"
@@ -12,7 +12,7 @@ tags:
   - "latent variable model"
   - "time series for health"
 date: 2026-05-08
-content_hash: af8ee43fedef52c3
+content_hash: d57064b8e9d2d7fe
 ---
 
 # Improving Forecasts of Suicide Attempts for Patients with Little Data
@@ -160,11 +160,11 @@ Leveraging the product factorization of the kernel, a **patient similarity graph
 
 ## Related Papers
 
+- [\[ACL 2025\] A Little Human Data Goes A Long Way](../../ACL2025/others/a_little_human_data_goes_a_long_way.md)
+- [\[ICML 2025\] Provably Improving Generalization of Few-Shot Models with Synthetic Data](../../ICML2025/others/provably_improving_generalization_of_few-shot_models_with_synthetic_data.md)
+- [\[ICLR 2026\] Frozen Priors, Fluid Forecasts: Prequential Uncertainty for Low-Data Deployment with Pretrained Generative Models](../../ICLR2026/others/frozen_priors_fluid_forecasts_prequential_uncertainty_for_low-data_deployment_wi.md)
 - [\[NeurIPS 2025\] Improving Decision Trees through the Lens of Parameterized Local Search](improving_decision_trees_through_the_lens_of_parameterized_local_search.md)
 - [\[ICCV 2025\] I Am Big, You Are Little; I Am Right, You Are Wrong](../../ICCV2025/others/i_am_big_you_are_little_i_am_right_you_are_wrong.md)
-- [\[ICLR 2026\] Improving Set Function Approximation with Quasi-Arithmetic Neural Networks](../../ICLR2026/others/improving_set_function_approximation_with_quasi-arithmetic_neural_networks.md)
-- [\[NeurIPS 2025\] Radar: Benchmarking Language Models on Imperfect Tabular Data](radar_benchmarking_language_models_on_imperfect_tabular_data.md)
-- [\[NeurIPS 2025\] A Sustainable AI Economy Needs Data Deals That Work for Generators](a_sustainable_ai_economy_needs_data_deals_that_work_for_gene.md)
 
 </div>
 

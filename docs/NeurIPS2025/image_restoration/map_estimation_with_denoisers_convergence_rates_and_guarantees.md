@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MAP Estimation with Denoisers: Convergence Rates and Guarantees
 description: >-
-  [NeurIPS 2025][Image Restoration][MAP estimation] This paper proves that a simple iterative averaging algorithm based on MMSE denoisers—closely related to practical methods such as Cold Diffusion—provably converges to th…
+  [NeurIPS 2025][Image Restoration][MAP estimation] This paper proves that a simple iterative averaging algorithm based on MMSE denoisers—closely related to practical methods such as Cold Diffusion—provably converges to the proximal operator of the negative log-prior under log-concave prior assumptions, achieving a convergence rate of $\tilde{O}(1/k)$. The work provides rigorous theoretical foundations for a class of denoising methods that have demonstrated empirical success bu…
 tags:
   - "NeurIPS 2025"
   - "Image Restoration"
@@ -13,7 +13,7 @@ tags:
   - "inverse problems"
   - "plug-and-play"
 date: 2026-05-08
-content_hash: 825366a858e3ecda
+content_hash: 35667a36a15994ec
 ---
 
 # MAP Estimation with Denoisers: Convergence Rates and Guarantees
@@ -125,8 +125,8 @@ The paper proposes the MMSE Averaging recursion: $x_{k+1} = (1 - \alpha_k)\,\tex
 - [\[NeurIPS 2025\] Learning Cocoercive Conservative Denoisers via Helmholtz Decomposition for Poisson Inverse Problems](learning_cocoercive_conservative_denoisers_via_helmholtz_decomposition_for_poiss.md)
 - [\[NeurIPS 2025\] RGB-to-Polarization Estimation: A New Task and Benchmark Study](rgb-to-polarization_estimation_a_new_task_and_benchmark_study.md)
 - [\[NeurIPS 2025\] MoDEM: A Morton-Order Degradation Estimation Mechanism for Adverse Weather Image Restoration](modem_a_morton-order_degradation_estimation_mechanism_for_adverse_weather_image_.md)
-- [\[ICCV 2025\] Low-Light Image Enhancement using Event-Based Illumination Estimation (RetinEV)](../../ICCV2025/image_restoration/low-light_image_enhancement_using_event-based_illumination_estimation.md)
-- [\[CVPR 2026\] UDAPose: Unsupervised Domain Adaptation for Low-Light Human Pose Estimation](../../CVPR2026/image_restoration/udapose_unsupervised_domain_adaptation_for_low_light_human_pose_estimation.md)
+- [\[ICLR 2026\] Taming Score-Based Denoisers in ADMM: A Convergent Plug-and-Play Framework](../../ICLR2026/image_restoration/taming_score-based_denoisers_in_admm_a_convergent_plug-and-play_framework.md)
+- [\[ICML 2025\] Adaptive Estimation and Learning under Temporal Distribution Shift](../../ICML2025/image_restoration/adaptive_estimation_and_learning_under_temporal_distribution_shift.md)
 
 </div>
 

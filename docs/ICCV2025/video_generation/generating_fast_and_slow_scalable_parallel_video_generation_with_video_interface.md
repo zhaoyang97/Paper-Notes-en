@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generating, Fast and Slow: Scalable Parallel Video Generation with Video Interface Networks
 description: >-
-  [ICCV 2025][Video Generation][diffusion transformer] This paper proposes Video Interface Networks (VINs), an abstraction module analogous to "fast thinking…
+  [ICCV 2025][Video Generation][diffusion transformer] This paper proposes Video Interface Networks (VINs), an abstraction module analogous to "fast thinking," which encodes long videos into fixed-size global tokens at each diffusion step to guide a DiT in generating multiple video chunks in parallel, enabling efficient and temporally consistent long video generation.
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -11,7 +11,7 @@ tags:
   - "temporal consistency"
   - "long video"
 date: 2026-05-08
-content_hash: 0ab937dd07c1add6
+content_hash: bd01905729a838ac
 ---
 
 # Generating, Fast and Slow: Scalable Parallel Video Generation with Video Interface Networks
@@ -140,10 +140,10 @@ At each diffusion timestep: (1) the VIN encodes global semantics from the noisy 
 ## Related Papers
 
 - [\[ICCV 2025\] STiV: Scalable Text and Image Conditioned Video Generation](stiv_scalable_text_and_image_conditioned_video_generation.md)
-- [\[NeurIPS 2025\] MagCache: Fast Video Generation with Magnitude-Aware Cache](../../NeurIPS2025/video_generation/magcache_fast_video_generation_with_magnitudeaware_cache.md)
-- [\[CVPR 2026\] FastLightGen: Fast and Light Video Generation with Fewer Steps and Parameters](../../CVPR2026/video_generation/fastlightgen_fast_and_light_video_generation_with_fewer_steps_and_parameters.md)
-- [\[ICLR 2026\] SIGMark: Scalable In-Generation Watermark with Blind Extraction for Video Diffusion](../../ICLR2026/video_generation/sigmark_scalable_in-generation_watermark_with_blind_extraction_for_video_diffusi.md)
-- [\[CVPR 2026\] OmniLottie: Generating Vector Animations via Parameterized Lottie Tokens](../../CVPR2026/video_generation/omnilottie_generating_vector_animations_via_parameterized_lottie_tokens.md)
+- [\[CVPR 2025\] From Slow Bidirectional to Fast Autoregressive Video Diffusion Models](../../CVPR2025/video_generation/from_slow_bidirectional_to_fast_autoregressive_video_diffusion_models.md)
+- [\[CVPR 2025\] DynamicScaler: Seamless and Scalable Video Generation for Panoramic Scenes](../../CVPR2025/video_generation/dynamicscaler_seamless_and_scalable_video_generation_for_panoramic_scenes.md)
+- [\[ICCV 2025\] MagicMirror: ID-Preserved Video Generation in Video Diffusion Transformers](magicmirror_id-preserved_video_generation_in_video_diffusion_transformers.md)
+- [\[ICCV 2025\] VACE: All-in-One Video Creation and Editing](vace_all-in-one_video_creation_and_editing.md)
 
 </div>
 

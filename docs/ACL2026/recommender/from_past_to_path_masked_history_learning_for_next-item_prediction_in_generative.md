@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Past To Path: Masked History Learning for Next-Item Prediction in Generative Recommendation
 description: >-
-  [ACL 2026][Recommender Systems][Paper Note] Proposes the Masked History Learning (MHL) training framework, which incorporates a masked history reconstruction auxiliary task into the autoregressive training of generative recommendation. Combined with an entropy-guided adaptive masking strategy and a curriculum learning scheduler, it shifts the model from merely p
+  [ACL 2026][Recommender Systems][Generative Recommendation] Proposes the Masked History Learning (MHL) training framework, which incorporates a masked history reconstruction auxiliary task into the autoregressive training of generative recommendation. Combined with an entropy-guided adaptive masking strategy and a curriculum learning scheduler, it shifts the model from merely predicting "what is next" to understanding "why this path was formed…
 tags:
-  - ACL 2026
-  - Recommender Systems
+  - "ACL 2026"
+  - "Recommender Systems"
+  - "Generative Recommendation"
+  - "Masked History Learning"
+  - "Entropy-guided"
+  - "Curriculum Learning"
+  - "Sequential Recommendation"
 date: 2026-05-08
-content_hash: 767260b02d35e550
+content_hash: b7d1cf2dcf580465
 ---
+
 # From Past To Path: Masked History Learning for Next-Item Prediction in Generative Recommendation
 
 **Conference**: ACL 2026  
@@ -144,9 +150,9 @@ Where $\mathcal{L}_{next}$ is the standard cross-entropy loss for the next item'
 
 - [\[ACL 2026\] Learning to Retrieve User History and Generate User Profiles for Personalized Persuasiveness Prediction](learning_to_retrieve_user_history_and_generate_user_profiles_for_personalized_pe.md)
 - [\[AAAI 2026\] Inductive Generative Recommendation via Retrieval-based Speculation](../../AAAI2026/recommender/inductive_generative_recommendation_via_retrieval-based_speculation.md)
-- [\[AAAI 2026\] Align³GR: Unified Multi-Level Alignment for LLM-based Generative Recommendation](../../AAAI2026/recommender/align3gr_unified_multi-level_alignment_for_llm-based_generat.md)
 - [\[AAAI 2026\] FreqRec: Exploiting Inter-Session Information with Frequency-enhanced Dual-Path Networks for Sequential Recommendation](../../AAAI2026/recommender/exploiting_inter-session_information_with_frequency-enhanced_dual-path_networks_.md)
 - [\[AAAI 2026\] Tool4POI: A Tool-Augmented LLM Framework for Next POI Recommendation](../../AAAI2026/recommender/tool4poi_a_tool-augmented_llm_framework_for_next_poi_recommendation.md)
+- [\[AAAI 2026\] Align³GR: Unified Multi-Level Alignment for LLM-based Generative Recommendation](../../AAAI2026/recommender/align3gr_unified_multi-level_alignment_for_llm-based_generat.md)
 
 </div>
 

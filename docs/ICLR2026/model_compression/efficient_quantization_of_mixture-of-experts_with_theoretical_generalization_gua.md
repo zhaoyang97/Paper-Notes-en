@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Efficient Quantization of Mixture-of-Experts with Theoretical Generalization Guarantees
 description: >-
-  [ICLR 2026][Model Compression][Mixture-of-Experts] This paper proposes a **per-expert mixed-precision quantization method with theoretical guarantees**: it assigns bit-widths to each MoE expert based on the "change in router $\ell_2$ norm during training ($\Lambda_s$)." Experts with small norm changes (learning infrequent but critical features) receive high precision,
+  [ICLR2026][Model Compression][Mixture-of-Experts] This paper proposes a **per-expert mixed-precision quantization method with theoretical guarantees**: it assigns bit-widths to each MoE expert based on the "change in router $\ell_2$ norm during training ($\Lambda_s$)." Experts with small norm changes (learning infrequent but critical features) receive high precision, while those with large changes receive low precision. Combined with "Max Intra-neuron Variance (MaxVar)" for l…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Mixture-of-Experts
+  - "ICLR2026"
+  - "Model Compression"
+  - "Mixture-of-Experts"
+  - "Mixed-Precision Quantization"
+  - "Router Norm"
+  - "Generalization Guarantees"
+  - "Post-Training Quantization"
 date: 2026-05-08
-content_hash: 7534660d3f108068
+content_hash: 3379a191d226f030
 ---
+
 # Efficient Quantization of Mixture-of-Experts with Theoretical Generalization Guarantees
 
 **Conference**: ICLR2026  
@@ -140,8 +145,8 @@ Uniform 2-bit quantization fails (58.73), whereas the proposed method maintains 
 - Value: ⭐⭐⭐⭐⭐ High deployment value for compressing large MoE models to ~2 bits with near-zero overhead.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

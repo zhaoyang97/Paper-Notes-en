@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] VL-RouterBench: A Benchmark for Vision-Language Model Routing
 description: >-
-  [CVPR 2026][Multimodal VLM][VLM] This paper introduces VL-RouterBench, the first systematic routing benchmark for Vision-Language Models (VLMs), covering 14 datasets, 17 candidate models, and 519,180 sample-model pairs. It evaluates 10 routing methods and reveals a significant performance gap between the current optimal routers and the ideal Oracle.
+  [CVPR 2026][Multimodal VLM][Model routing] This paper introduces VL-RouterBench, the first systematic routing benchmark for Vision-Language Models (VLMs), covering 14 datasets, 17 candidate models, and 519,180 sample-model pairs. It evaluates 10 routing methods and reveals a significant performance gap between the current optimal routers and the ideal Oracle.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VLM
-  - benchmark
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Model routing"
+  - "VLM"
+  - "benchmark"
+  - "efficiency-quality tradeoff"
+  - "multi-model selection"
 date: 2026-05-08
-content_hash: e817f23b92698eb8
+content_hash: 4448b9efa4e2aa90
 ---
+
 # VL-RouterBench: A Benchmark for Vision-Language Model Routing
 
 **Conference**: CVPR 2026  
@@ -134,15 +138,14 @@ The harmonic mean ensures that poor performance in either metric significantly p
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] VL-Eraser: Vacuum Distillation for Machine Unlearning in Vision-Language Models](vl-eraser_vacuum_distillation_for_machine_unlearning_in_vision-language_models.md)
+- [\[ICLR 2026\] VL-JEPA: Joint Embedding Predictive Architecture for Vision-language](../../ICLR2026/multimodal_vlm/vl-jepa_joint_embedding_predictive_architecture_for_vision-language.md)
 - [\[CVPR 2026\] µVLM: A Vision Language Model for µNPUs](mvlm_a_vision_language_model_for_mnpus.md)
-- [\[CVPR 2026\] Can Vision-Language Models Count? A Synthetic Benchmark and Analysis of Attention-Based Interventions](can_vision-language_models_count_a_synthetic_benchmark_and_analysis_of_attention.md)
-- [\[CVPR 2026\] Mixture of States (MoS): Routing Token-Level Dynamics for Multimodal Generation](mos_mixture_of_states_multimodal_generation.md)
-- [\[CVPR 2026\] Enhancing Video Vision Language Model with Hippocampal Sensing](enhancing_video_vision_language_model_with_hippocampal_sensing.md)
-- [\[CVPR 2026\] AVA-Bench: Atomic Visual Ability Benchmark for Vision Foundation Models](ava-bench_atomic_visual_ability_benchmark_for_vision_foundation_models.md)
+- [\[CVPR 2026\] Medic-AD: Towards Medical Vision-Language Model's Clinical Intelligence](medic-ad_towards_medical_vision-language_models_clinical_intelligence.md)
+- [\[CVPR 2026\] Beyond Single Images: A Comprehensive Benchmark for Album-Level Vision-Language Understanding](beyond_single_images_a_comprehensive_benchmark_for_album-level_vision-language_u.md)
 
 </div>
 

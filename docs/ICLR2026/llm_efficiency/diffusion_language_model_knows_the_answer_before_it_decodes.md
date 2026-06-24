@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Diffusion Language Models Know the Answer Before Decoding
 description: >-
-  [ICLR 2026][LLM Efficiency][Diffusion Language Model] Diffusion Language Models (DLMs) often internally determine the correct answer mid-way through decoding. Based on this, this paper proposes Prophet, a training-free decoding paradigm that uses the "logit gap between the top-2 candidate tokens" to judge answer convergence. Once converged, it fills all remaining position
+  [ICLR 2026][LLM Efficiency][Diffusion Language Models] Diffusion Language Models (DLMs) often internally determine the correct answer mid-way through decoding. Based on this, this paper proposes Prophet, a training-free decoding paradigm that uses the "logit gap between the top-2 candidate tokens" to judge answer convergence. Once converged, it fills all remaining positions in a single step (Early-Submission Decoding), reducing decoding steps by up to 3.4$\times$ on LLaDA-8B…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Diffusion Language Model
-  - Inference Acceleration
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Diffusion Language Models"
+  - "Inference Acceleration"
+  - "Early-Submission Decoding"
+  - "Confidence"
+  - "Training-free"
 date: 2026-05-08
-content_hash: a8d6200249800f44
+content_hash: b7529934375cf855
 ---
+
 # Diffusion Language Models Know the Answer Before Decoding
 
 **Conference**: ICLR 2026  
@@ -141,15 +145,15 @@ Prophet targets the "total number of steps," making it orthogonal to and stackab
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Learning to Parallel: Accelerating Diffusion Large Language Models via Learnable Parallel Decoding](learning_to_parallel_accelerating_diffusion_large_language_models_via_learnable_.md)
 - [\[ICLR 2026\] Hierarchy Decoding: A Training-free Parallel Decoding Strategy for Diffusion Large Language Models](hierarchy_decoding_a_training-free_parallel_decoding_strategy_for_diffusion_larg.md)
+- [\[ICLR 2026\] SparseD: Sparse Attention for Diffusion Language Models](sparsed_sparse_attention_for_diffusion_language_models.md)
+- [\[ICLR 2026\] Accelerating Diffusion Large Language Models with SlowFast Sampling: The Three Golden Principles](accelerating_diffusion_large_language_models_with_slowfast_sampling_the_three_go.md)
+- [\[ICLR 2026\] Learning to Parallel: Accelerating Diffusion Large Language Models via Learnable Parallel Decoding](learning_to_parallel_accelerating_diffusion_large_language_models_via_learnable_.md)
 - [\[ACL 2026\] CreditDecoding: Accelerating Parallel Decoding in Diffusion Large Language Models with Trace Credit](../../ACL2026/llm_efficiency/creditdecoding_accelerating_parallel_decoding_in_diffusion_large_language_models.md)
-- [\[ACL 2026\] Breaking Block Boundaries: Anchor-based History-stable Decoding for Diffusion Large Language Models](../../ACL2026/llm_efficiency/breaking_block_boundaries_anchor-based_history-stable_decoding_for_diffusion_lar.md)
-- [\[ICLR 2026\] UltraLLaDA: Scaling the Context Length to 128K for Diffusion Large Language Models](ultrallada_scaling_the_context_length_to_128k_for_diffusion_large_language_model.md)
 
 </div>
 

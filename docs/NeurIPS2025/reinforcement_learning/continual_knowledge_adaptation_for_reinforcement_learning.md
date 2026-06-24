@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Continual Knowledge Adaptation for Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][continual RL] This paper proposes CKA-RL, which maintains a task-specific knowledge vector for each task and employs softmax-weighted dynamic knowledge adaptation along with an adap…
+  [NeurIPS 2025][Reinforcement Learning][continual RL] This paper proposes CKA-RL, which maintains a task-specific knowledge vector for each task and employs softmax-weighted dynamic knowledge adaptation along with an adaptive knowledge merging mechanism, achieving a 4.20% overall performance gain and 8.02% forward transfer improvement across three continual RL benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "forward transfer"
   - "knowledge merging"
 date: 2026-05-08
-content_hash: f297748cd758bf4e
+content_hash: 14054ba6d31414ad
 ---
 
 # Continual Knowledge Adaptation for Reinforcement Learning
@@ -129,8 +129,8 @@ The framework consists of three components: (1) a base parameter $\theta_{base}$
 - [\[ICLR 2026\] Principled Fast and Meta Knowledge Learners for Continual Reinforcement Learning](../../ICLR2026/reinforcement_learning/principled_fast_and_meta_knowledge_learners_for_continual_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Temporal-Difference Variational Continual Learning](temporal-difference_variational_continual_learning.md)
 - [\[NeurIPS 2025\] Parameter Efficient Fine-tuning via Explained Variance Adaptation](parameter_efficient_fine-tuning_via_explained_variance_adaptation.md)
-- [\[NeurIPS 2025\] Knowledge-based Visual Question Answer with Multimodal Processing, Retrieval and Filtering](knowledge-based_visual_question_answer_with_multimodal_processing_retrieval_and_.md)
-- [\[NeurIPS 2025\] Mixing Expert Knowledge: Bring Human Thoughts Back to the Game of Go](mixing_expert_knowledge_bring_human_thoughts_back_to_the_game_of_go.md)
+- [\[ICML 2025\] Position: Lifetime Tuning is Incompatible with Continual Reinforcement Learning](../../ICML2025/reinforcement_learning/position_lifetime_tuning_is_incompatible_with_continual_reinforcement_learning.md)
+- [\[ICML 2025\] Continual Reinforcement Learning by Planning with Online World Models](../../ICML2025/reinforcement_learning/continual_reinforcement_learning_by_planning_with_online_world_models.md)
 
 </div>
 

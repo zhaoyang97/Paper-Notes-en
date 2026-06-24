@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Regular Games – an Automata-Based General Game Playing Language
 description: >-
-  [AAAI 2026][General Game Playing] This paper introduces Regular Games (RG), a general game playing system centered on nondeterministic finite automata (NFA) for encoding game rules. RG employs a multi-level language arch…
+  [AAAI 2026][General Game Playing] This paper introduces Regular Games (RG), a general game playing system centered on nondeterministic finite automata (NFA) for encoding game rules. RG employs a multi-level language architecture (low-level RG, high-level HRG, and domain-specific frameworks) that covers all finite turn-based games — including those with imperfect information and stochasticity — while generating forward models that consistently outperform the previously fastest…
 tags:
   - "AAAI 2026"
   - "General Game Playing"
@@ -11,7 +11,7 @@ tags:
   - "Forward Model"
   - "Procedural Content Generation"
 date: 2026-05-08
-content_hash: 251b0af2da8a14c1
+content_hash: d5bbb6afef943885
 ---
 
 # Regular Games – an Automata-Based General Game Playing Language
@@ -135,9 +135,9 @@ Efficiency is measured in Monte Carlo random playouts per second across 30+ game
 
 - [\[AAAI 2026\] Deviation Dynamics in Cardinal Hedonic Games](deviation_dynamics_in_cardinal_hedonic_games.md)
 - [\[AAAI 2026\] Designing Incident Reporting Systems for Harms from General-Purpose AI](designing_incident_reporting_systems_for_harms_from_general-purpose_ai.md)
-- [\[NeurIPS 2025\] Evolutionary Prediction Games](../../NeurIPS2025/others/evolutionary_prediction_games.md)
 - [\[AAAI 2026\] SynWeather: Weather Observation Data Synthesis across Multiple Regions and Variables via a General Diffusion Transformer](synweather_weather_observation_data_synthesis_across_multiple_regions_and_variab.md)
-- [\[NeurIPS 2025\] Radar: Benchmarking Language Models on Imperfect Tabular Data](../../NeurIPS2025/others/radar_benchmarking_language_models_on_imperfect_tabular_data.md)
+- [\[NeurIPS 2025\] Evolutionary Prediction Games](../../NeurIPS2025/others/evolutionary_prediction_games.md)
+- [\[ICML 2025\] General Agents Contain World Models](../../ICML2025/others/general_agents_contain_world_models.md)
 
 </div>
 

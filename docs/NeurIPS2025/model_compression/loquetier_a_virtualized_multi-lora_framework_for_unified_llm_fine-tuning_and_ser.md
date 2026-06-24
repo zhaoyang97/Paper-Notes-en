@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Loquetier: A Virtualized Multi-LoRA Framework for Unified LLM Fine-tuning and Serving
 description: >-
-  [NeurIPS 2025][Model Compression][LoRA] Loquetier is a framework that unifies the fine-tuning and inference of multiple LoRA adapters within a single runtime via a Virtualized Module and a Segmented Multi-LoRA Multiplica…
+  [NeurIPS 2025][Model Compression][LoRA] Loquetier is a framework that unifies the fine-tuning and inference of multiple LoRA adapters within a single runtime via a Virtualized Module and a Segmented Multi-LoRA Multiplication (SMLM) kernel, achieving a 3.0× throughput improvement for inference-only tasks and a 46.4× higher SLO attainment rate for unified tasks.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "virtualized module"
   - "kernel optimization"
 date: 2026-05-08
-content_hash: 330231bd7737faf3
+content_hash: e79226c7579d4bd6
 ---
 
 # Loquetier: A Virtualized Multi-LoRA Framework for Unified LLM Fine-tuning and Serving
@@ -226,11 +226,11 @@ Loquetier's latency grows slowly with the number of adapters, whereas convention
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] EMLoC: Emulator-based Memory-efficient Fine-tuning with LoRA Correction](emloc_emulator-based_memory-efficient_fine-tuning_with_lora_correction.md)
+- [\[ICML 2025\] LoRA Fine-Tuning without GPUs: A CPU-Efficient Meta-Generation Framework for LLMs](../../ICML2025/model_compression/lora_fine-tuning_without_gpus_a_cpu-efficient_meta-generation_framework_for_llms.md)
 - [\[NeurIPS 2025\] FALQON: Accelerating LoRA Fine-tuning with Low-Bit Floating-Point Arithmetic](falqon_accelerating_lora_fine-tuning_with_low-bit_floating-point_arithmetic.md)
+- [\[ACL 2025\] DoMIX: An Efficient Framework for Exploiting Domain Knowledge in Fine-Tuning](../../ACL2025/model_compression/domix_an_efficient_framework_for_exploiting.md)
 - [\[NeurIPS 2025\] RefLoRA: Refactored Low-Rank Adaptation for Efficient Fine-Tuning of Large Models](reflora_refactored_low-rank_adaptation_for_efficient_fine-tuning_of_large_models.md)
-- [\[NeurIPS 2025\] Data Efficient Adaptation in Large Language Models via Continuous Low-Rank Fine-Tuning](data_efficient_adaptation_in_large_language_models_via_continuous_low-rank_fine-.md)
-- [\[ICLR 2026\] ODESteer: A Unified ODE-Based Steering Framework for LLM Alignment](../../ICLR2026/model_compression/odesteer_a_unified_ode-based_steering_framework_for_llm_alignment.md)
-- [\[NeurIPS 2025\] Uni-LoRA: One Vector is All You Need](uni-lora_one_vector_is_all_you_need.md)
 
 </div>
 

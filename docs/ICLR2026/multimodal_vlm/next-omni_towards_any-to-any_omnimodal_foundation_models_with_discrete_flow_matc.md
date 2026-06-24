@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] NExT-OMNI: Towards Any-to-Any Omnimodal Foundation Models with Discrete Flow Matching
 description: >-
-  [ICLR 2026][Multimodal VLM][any-to-any] The authors replace Autoregressive (AR) with Discrete Flow Matching (DFM) as a unified modeling paradigm to develop NExT-OMNI, the first fully DFM-based open-source omnimodal foundation model. A single encoder provides unified representations that support understanding, generation, and cross-modal retrieval across text
+  [ICLR 2026][Multimodal VLM][Discrete Flow Matching] The authors replace Autoregressive (AR) with Discrete Flow Matching (DFM) as a unified modeling paradigm to develop NExT-OMNI, the first fully DFM-based open-source omnimodal foundation model. A single encoder provides unified representations that support understanding, generation, and cross-modal retrieval across text, image, video, and audio.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - any-to-any
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Discrete Flow Matching"
+  - "Omnimodal"
+  - "any-to-any"
+  - "Unified Representation"
+  - "Cross-modal Retrieval"
 date: 2026-05-08
-content_hash: 0cfd5c5b8f47a049
+content_hash: 1b84bc847026c498
 ---
+
 # NExT-OMNI: Towards Any-to-Any Omnimodal Foundation Models with Discrete Flow Matching
 
 **Conference**: ICLR 2026  

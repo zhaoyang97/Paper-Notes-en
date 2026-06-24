@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] $\textbf{Re}^{2}$: Unlocking LLM Reasoning via Reinforcement Learning with Re-solving
 description: >-
-  [ICLR 2026][LLM Reasoning][RLVR] This paper proposes the Re² method, which utilizes pure reinforcement learning to train LLMs to actively abandon invalid reasoning chains and restart the solving process. This approach increases the occurrence of rare "redo" behaviors from 0.5% to over 30%, significantly outperforming standard RLVR methods under the sa
+  [ICLR 2026][Reasoning][RLVR] This paper proposes the Re² method, which utilizes pure reinforcement learning to train LLMs to actively abandon invalid reasoning chains and restart the solving process. This approach increases the occurrence of rare "redo" behaviors from 0.5% to over 30%, significantly outperforming standard RLVR methods under the same training computation budget.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - RLVR
+  - "ICLR 2026"
+  - "Reasoning"
+  - "RLVR"
+  - "LLM Reasoning"
+  - "Chain-of-Thought Optimization"
+  - "Re-solving"
+  - "Overthinking"
 date: 2026-05-08
-content_hash: 41399a97af4f47e3
+content_hash: 41be8acf04fd808b
 ---
+
 # $\textbf{Re}^{2}$: Unlocking LLM Reasoning via Reinforcement Learning with Re-solving
 
 **Conference**: ICLR 2026  
@@ -150,10 +155,10 @@ The training set is DAPO-Math-17K (17K math problems with integer answers for ru
 ## Related Papers
 
 - [\[ICLR 2026\] TRAPO: Enhancing LLM Reasoning with Semi-supervised Reinforcement Learning](trapo_a_semi-supervised_reinforcement_learning_framework_for_boosting_llm_reason.md)
-- [\[ICLR 2026\] Random Policy Valuation is Enough for LLM Reasoning with Verifiable Rewards](random_policy_valuation_is_enough_for_llm_reasoning_with_verifiable_rewards.md)
-- [\[ICLR 2026\] Rectifying LLM Thought from Lens of Optimization](rectifying_llm_thought_from_lens_of_optimization.md)
-- [\[ICLR 2026\] Conditional Advantage Estimation for Reinforcement Learning in Large Reasoning Models](conditional_advantage_estimation_for_reinforcement_learning_in_large_reasoning_m.md)
-- [\[ICLR 2026\] Learning What Reinforcement Learning Can't: Interleaved Online Fine-Tuning for Hardest Questions](learning_what_reinforcement_learning_cant_interleaved_online_fine-tuning_for_har.md)
+- [\[ICML 2026\] When to Re-Plan: Subgoal Persistence in Hierarchical Latent Reasoning](../../ICML2026/llm_reasoning/when_to_re-plan_subgoal_persistence_in_hierarchical_latent_reasoning.md)
+- [\[ICLR 2026\] Stabilizing Policy Gradients for Sample-Efficient Reinforcement Learning in LLM Reasoning](stabilizing_policy_gradients_for_sample-efficient_reinforcement_learning_in_llm_.md)
+- [\[ICLR 2026\] Curriculum Reinforcement Learning from Easy to Hard Tasks Improves LLM Reasoning](curriculum_reinforcement_learning_from_easy_to_hard_tasks_improves_llm_reasoning.md)
+- [\[ICLR 2026\] Generative Adversarial Reasoner: Enhancing LLM Reasoning with Adversarial Reinforcement Learning](generative_adversarial_reasoner_enhancing_llm_reasoning_with_adversarial_reinfor.md)
 
 </div>
 

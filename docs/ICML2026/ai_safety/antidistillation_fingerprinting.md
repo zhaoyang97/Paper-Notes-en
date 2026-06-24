@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Antidistillation Fingerprinting
 description: >-
-  [ICML 2026][AI Safety][Paper Note] This paper proposes Antidistillation Fingerprinting (ADFP), which utilizes a proxy student model to estimate which watermark tokens are most easily absorbed during the distillation process. This allows for more reliable detection of whether third-party models have been trained on teacher model outputs, without sacrific
+  [ICML2026][AI Safety][Model Fingerprinting] This paper proposes Antidistillation Fingerprinting (ADFP), which utilizes a proxy student model to estimate which watermark tokens are most easily absorbed during the distillation process. This allows for more reliable detection of whether third-party models have been trained on teacher model outputs, without sacrificing the quality of the teacher's generation.
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML2026"
+  - "AI Safety"
+  - "Model Fingerprinting"
+  - "Antidistillation"
+  - "Text Watermarking"
+  - "Distillation Detection"
+  - "Statistical Hypothesis Testing"
 date: 2026-05-08
-content_hash: 9d96aec4366d150f
+content_hash: 09c341727b7adff0
 ---
+
 # Antidistillation Fingerprinting
 
 **Conference**: ICML2026  
@@ -143,11 +149,11 @@ The appendix provides several key analyses instead of traditional "component rem
 
 ## Related Papers
 
-- [\[ICML 2026\] Beyond Procedure: Substantive Fairness in Conformal Prediction](beyond_procedure_substantive_fairness_in_conformal_prediction.md)
-- [\[ICML 2026\] Position: Retire the "Positive Backdoor" Label -- Secret Alignment Requires Strict and Systematic Evaluation](position_retire_the_positive_backdoor_label_--_secret_alignment_requires_strict_.md)
-- [\[ICML 2026\] Anchored Decoding: Provably Reducing Copyright Risk for Any Language Model](anchored_decoding_provably_reducing_copyright_risk_for_any_language_model.md)
-- [\[ICML 2026\] FedTreeLoRA: Reconciling Statistical and Functional Heterogeneity in Federated LoRA Fine-Tuning](fedtreelora_reconciling_statistical_and_functional_heterogeneity_in_federated_lo.md)
-- [\[ICML 2026\] Watermarking LLM Agent Trajectories (ACTHOOK)](watermarking_llm_agent_trajectories.md)
+- [\[ICLR 2026\] LiteGuard: Efficient Task-Agnostic Model Fingerprinting with Enhanced Generalization](../../ICLR2026/ai_safety/liteguard_efficient_task-agnostic_model_fingerprinting_with_enhanced_generalizat.md)
+- [\[ICLR 2026\] Fingerprinting Deep Neural Networks for Ownership Protection: An Analytical Approach](../../ICLR2026/ai_safety/fingerprinting_deep_neural_networks_for_ownership_protection_an_analytical_appro.md)
+- [\[ICML 2026\] Hiding in Plain Floats: Steganographic Carriers for Indirect Prompt and Content Injection](hiding_in_plain_floats_steganographic_carriers_for_indirect_prompt_and_content_i.md)
+- [\[ICML 2026\] Active Continual Learning with Metaplastic Binary Bayesian Neural Networks](active_continual_learning_with_metaplastic_binary_bayesian_neural_networks.md)
+- [\[ICML 2026\] From Prompts to Responses: Dual-Sided Data Leakage and Defense in Split Large Language Models](from_prompts_to_responses_dual-sided_data_leakage_and_defense_in_split_large_lan.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CDE: Curiosity-Driven Exploration for Efficient Reinforcement Learning in Large Language Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] To address the issues of insufficient exploration, premature convergence, and entropy collapse in RLVR (Reinforcement Learning from Verifiable Rewards) training for LLMs, CDE guides exploration using the model's own "curiosity." It utilizes the perplexity (PPL) of generated responses at the actor side and the variance
+  [ICLR 2026][Reinforcement Learning][RLVR] To address the issues of insufficient exploration, premature convergence, and entropy collapse in RLVR (Reinforcement Learning from Verifiable Rewards) training for LLMs, CDE guides exploration using the model's own "curiosity." It utilizes the perplexity (PPL) of generated responses at the actor side and the variance of value estimates from a multi-head critic at the critic side as exploration rewards. Without training additional rep…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Curiosity-driven exploration"
+  - "Perplexity"
+  - "Multi-head critic"
+  - "Calibration"
 date: 2026-05-08
-content_hash: 077fa3c9adb4eb2f
+content_hash: 051191704bfa3e20
 ---
+
 # CDE: Curiosity-Driven Exploration for Efficient Reinforcement Learning in Large Language Models
 
 **Conference**: ICLR 2026  

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] The Transparent Earth: A Multimodal Foundation Model for the Earth's Subsurface
 description: >-
-  [NeurIPS 2025][Information Retrieval & RAG][Earth science foundation model] This paper proposes Transparent Earth, a Transformer-based multimodal foundation model that fuses 8 heterogeneous geophysical observation modali…
+  [NeurIPS 2025][Multimodal VLM][Earth science foundation model] This paper proposes Transparent Earth, a Transformer-based multimodal foundation model that fuses 8 heterogeneous geophysical observation modalities via positional encoding and text-derived modality embeddings, enabling zero-shot inference and in-context learning for Earth subsurface property prediction.
 tags:
   - "NeurIPS 2025"
-  - "Information Retrieval & RAG"
+  - "Multimodal VLM"
   - "Earth science foundation model"
   - "multimodal fusion"
   - "Transformer"
   - "subsurface property reconstruction"
   - "in-context learning"
 date: 2026-05-08
-content_hash: 0e39bae03c5a4bb8
+content_hash: 8ae305e2bb75cc6b
 ---
 
 # The Transparent Earth: A Multimodal Foundation Model for the Earth's Subsurface
@@ -140,11 +140,11 @@ Multimodal fusion reduces stress angle error by more than a factor of three.
 
 ## Related Papers
 
-- [\[CVPR 2026\] MuCo: Multi-turn Contrastive Learning for Multimodal Embedding Model](../../CVPR2026/information_retrieval/muco_multi-turn_contrastive_learning_for_multimodal_embedding_model.md)
-- [\[NeurIPS 2025\] Generalized Contrastive Learning for Universal Multimodal Retrieval](generalized_contrastive_learning_for_universal_multimodal_re.md)
-- [\[NeurIPS 2025\] MuRating: A High Quality Data Selecting Approach to Multilingual Large Language Model Pretraining](murating_a_high_quality_data_selecting_approach_to_multilingual_large_language_m.md)
-- [\[NeurIPS 2025\] Windsock is Dancing: Adaptive Multimodal Retrieval-Augmented Generation](windsock_is_dancing_adaptive_multimodal_retrieval-augmented_generation.md)
-- [\[NeurIPS 2025\] Benchmarking Retrieval-Augmented Multimodal Generation for Document Question Answering](benchmarking_retrievalaugmented_multimodal_generation_for_do.md)
+- [\[ACL 2026\] MSEarth: A Multimodal Benchmark for Earth Science Phenomenon Discovery with MLLMs](../../ACL2026/multimodal_vlm/msearth_a_multimodal_benchmark_for_earth_science_phenomenon_discovery_with_mllms.md)
+- [\[NeurIPS 2025\] AdaLRS: Loss-Guided Adaptive Learning Rate Search for Efficient Foundation Model Pretraining](adalrs_lossguided_adaptive_learning_rate_search_for_efficien.md)
+- [\[NeurIPS 2025\] In-Context Compositional Learning via Sparse Coding Transformer](in-context_compositional_learning_via_sparse_coding_transformer.md)
+- [\[CVPR 2025\] Revisiting Model Stitching in the Foundation Model Era](../../CVPR2025/multimodal_vlm/revisiting_model_stitching_in_the_foundation_model_era.md)
+- [\[NeurIPS 2025\] Nautilus: A Large Multimodal Model for Underwater Scene Understanding](nautilus_a_large_multimodal_model_for_underwater_scene_understanding.md)
 
 </div>
 

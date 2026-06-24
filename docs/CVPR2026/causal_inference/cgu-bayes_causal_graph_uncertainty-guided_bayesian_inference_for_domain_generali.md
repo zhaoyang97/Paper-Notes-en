@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CGU-Bayes: Causal Graph Uncertainty-Guided Bayesian Inference for Domain Generalization
 description: >-
-  [CVPR 2026][Causal Inference][Paper Note] Addressing the issue that "causal graphs are inaccurately estimated under data scarcity or noise when using Structural Causal Models (SCM) for domain generalization," this paper moves away from point-estimating a single causal graph. Instead, it performs **Bayesian inference on the causal graph posterior**, selects a s
+  [CVPR 2026][Causal Inference][Causal Graph] Addressing the issue that "causal graphs are inaccurately estimated under data scarcity or noise when using Structural Causal Models (SCM) for domain generalization," this paper moves away from point-estimating a single causal graph. Instead, it performs **Bayesian inference on the causal graph posterior**, selects a set of Causal Markov Blanket (CMB) features from each sampled graph to train predictors…
 tags:
-  - CVPR 2026
-  - Causal Inference
+  - "CVPR 2026"
+  - "Causal Inference"
+  - "Causal Graph"
+  - "Bayesian Inference"
+  - "Domain Generalization"
+  - "Uncertainty Quantification"
+  - "Causal Markov Blanket"
 date: 2026-05-08
-content_hash: 0d332c49cde2e39c
+content_hash: ad622163a6b08a5f
 ---
+
 # CGU-Bayes: Causal Graph Uncertainty-Guided Bayesian Inference for Domain Generalization
 
 **Conference**: CVPR 2026  
@@ -157,11 +163,11 @@ Standard Benchmarks (OOD Accuracy%, higher is better):
 
 ## Related Papers
 
-- [\[AAAI 2026\] Causal Inference Under Threshold Manipulation: Bayesian Mixture Modeling and Heterogeneous Treatment Effects](../../AAAI2026/causal_inference/causal_inference_under_threshold_manipulation_bayesian_mixtu.md)
 - [\[ECCV 2024\] Integrating Markov Blanket Discovery into Causal Representation Learning for Domain Generalization](../../ECCV2024/causal_inference/integrating_markov_blanket_discovery_into_causal_representation_learning_for_dom.md)
-- [\[ICML 2026\] Controllable Generative Sandbox for Causal Inference](../../ICML2026/causal_inference/controllable_generative_sandbox_for_causal_inference.md)
-- [\[CVPR 2026\] A Polynomial Chaos Framework for Causal Discovery in Nonlinear Uncertain Systems](a_polynomial_chaos_framework_for_causal_discovery_in_nonlinear_uncertain_systems.md)
-- [\[ACL 2026\] iTAG: Inverse Design for Natural Text Generation with Accurate Causal Graph Annotations](../../ACL2026/causal_inference/itag_inverse_design_for_natural_text_generation_with_accurate_causal_graph_annot.md)
+- [\[AAAI 2026\] Causal Inference Under Threshold Manipulation: Bayesian Mixture Modeling and Heterogeneous Treatment Effects](../../AAAI2026/causal_inference/causal_inference_under_threshold_manipulation_bayesian_mixtu.md)
+- [\[ICLR 2026\] Learning Dynamic Causal Graphs Under Parametric Uncertainty via Polynomial Chaos Expansions](../../ICLR2026/causal_inference/learning_dynamic_causal_graphs_under_parametric_uncertainty_via_polynomial_chaos.md)
+- [\[ICLR 2026\] Frequency-Domain Better than Time-Domain for Causal Structure Recovery in Dynamical Systems on Networks](../../ICLR2026/causal_inference/frequency-domain_better_than_time-domain_for_causal_structure_recovery_in_dynami.md)
+- [\[ICLR 2026\] Query-Specific Causal Graph Pruning under Tiered Knowledge](../../ICLR2026/causal_inference/query-specific_causal_graph_pruning_under_tiered_knowledge.md)
 
 </div>
 

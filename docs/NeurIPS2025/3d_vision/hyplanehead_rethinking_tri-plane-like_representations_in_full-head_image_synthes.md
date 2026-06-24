@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HyPlaneHead: Rethinking Tri-plane-like Representations in Full-Head Image Synthesis
 description: >-
-  [NeurIPS 2025][3D Vision][3D-aware GAN] This paper systematically analyzes three fundamental problems of tri-plane-like representations in 3D-aware head synthesis — mirror artifacts, non-uniform mapping…
+  [NeurIPS 2025][3D Vision][3D-aware GAN] This paper systematically analyzes three fundamental problems of tri-plane-like representations in 3D-aware head synthesis — mirror artifacts, non-uniform mapping, and feature penetration — and proposes a hybrid hy-plane representation (planar + spherical) combined with a unify-split strategy and near-equal-area warping, achieving state-of-the-art performance in full-head image synthesis.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "feature entanglement"
   - "hybrid representation"
 date: 2026-05-08
-content_hash: 62bb5e44915455c1
+content_hash: bd9b73ccacb6b41c
 ---
 
 # HyPlaneHead: Rethinking Tri-plane-like Representations in Full-Head Image Synthesis
@@ -57,8 +57,8 @@ HyPlaneHead is a 3D-aware GAN whose generator outputs a single-channel unified f
     - **Function**: Encodes 3D features using a hybrid of Cartesian planes and spherical planes.
     - **Design Motivation**: Planar representations excel at capturing symmetric features (e.g., bilateral ear symmetry), while spherical representations distinguish directional features (e.g., front face vs. back of the head).
     - **Mechanism**:
-     - **Hy-plane (3+1)**: Three orthogonal Cartesian planes + one spherical plane; features from Cartesian and spherical projections are fused at query time.
-     - **Hy-plane (2+2)**: Two orthogonal planes + two spherical planes with opposing pole orientations; spherical features are fused via a weighted function.
+      - **Hy-plane (3+1)**: Three orthogonal Cartesian planes + one spherical plane; features from Cartesian and spherical projections are fused at query time.
+      - **Hy-plane (2+2)**: Two orthogonal planes + two spherical planes with opposing pole orientations; spherical features are fused via a weighted function.
     - **Novelty**: Unlike PanoHead's tri-grid (which adds more parallel planes), hy-plane fundamentally introduces spherical surfaces to eliminate directional entanglement.
 
 2. **Near-Equal-Area Warping**:
@@ -66,10 +66,10 @@ HyPlaneHead is a 3D-aware GAN whose generator outputs a single-channel unified f
     - **Function**: Maps a square feature map onto the sphere to ensure uniform feature distribution.
     - **Design Motivation**: Direct $(\theta, \phi)$ mapping causes sparse equatorial coverage, dense polar coverage, and numerical discontinuities at $\phi = \pm\pi$.
     - **Mechanism**: A two-step transformation:
-     1. Lambert Azimuthal Equal-Area (LAEA) projection: unfolds the sphere from the south pole onto a circular plane:
-     $$(R, \Theta) = \left(2\cos\frac{1}{2}\phi,\ -\theta\right)$$
-     2. Elliptical grid mapping: transforms the circle into a square:
-     $$u = \frac{1}{2}\sqrt{2+x^2-y^2+2\sqrt{2}x} - \frac{1}{2}\sqrt{2+x^2-y^2-2\sqrt{2}x}$$
+      1. Lambert Azimuthal Equal-Area (LAEA) projection: unfolds the sphere from the south pole onto a circular plane:
+    $(R, \Theta) = \left(2\cos\frac{1}{2}\phi,\ -\theta\right)$
+      2. Elliptical grid mapping: transforms the circle into a square:
+    $u = \frac{1}{2}\sqrt{2+x^2-y^2+2\sqrt{2}x} - \frac{1}{2}\sqrt{2+x^2-y^2-2\sqrt{2}x}$
     - **Novelty**: LAEA consolidates seams and both poles into a single point directed toward the invisible underside of the head, completely eliminating seam artifacts.
 
 3. **Unify-Split Strategy**:
@@ -77,17 +77,17 @@ HyPlaneHead is a 3D-aware GAN whose generator outputs a single-channel unified f
     - **Function**: Replaces the multi-channel scheme (where different channels correspond to different planes) with a single-channel unified feature map that is spatially partitioned.
     - **Design Motivation**: In RGB images, the three channels share the same 2D spatial semantics (differing only in color channel); however, in tri-plane representations, different channels encode features with entirely different spatial orientations. Convolutional kernels compute all channels from the same input at each UV location, making it difficult to produce outputs with fundamentally different spatial meanings.
     - **Mechanism**:
-     - The generator outputs a single large-channel feature map, which is spatially split into individual feature planes.
-     - **Uniform split**: 2×2 equal partition.
-     - **Area-bias split**: Allocates larger area to the spherical plane to enhance directional expressiveness.
+      - The generator outputs a single large-channel feature map, which is spatially split into individual feature planes.
+      - **Uniform split**: 2×2 equal partition.
+      - **Area-bias split**: Allocates larger area to the spherical plane to enhance directional expressiveness.
     - **Novelty**: Completely eliminates inter-channel feature penetration, as each plane is physically separated in 2D space.
 
 4. **Dual-Sphere Fusion (Hy-plane 2+2)**:
 
     - **Function**: Uses two spherical planes with opposing pole orientations to complement each other and resolve pole artifacts.
     - **Mechanism**: Features are fused with weights inversely proportional to the projection radius:
-   $$w_a = (R_a^{\max} - R_a)^2, \quad f_{\text{sph}} = \frac{w_a f_a + w_b f_b}{w_a + w_b}$$
-   - **Core Idea**: Central regions receive the highest weight (flattest in the feature map) while boundary regions receive the lowest (greatest distortion); the two spherical planes mutually compensate for each other's polar regions.
+    $w_a = (R_a^{\max} - R_a)^2, \quad f_{\text{sph}} = \frac{w_a f_a + w_b f_b}{w_a + w_b}$
+    - **Core Idea**: Central regions receive the highest weight (flattest in the feature map) while boundary regions receive the lowest (greatest distortion); the two spherical planes mutually compensate for each other's polar regions.
 
 ### Loss & Training
 
@@ -165,10 +165,10 @@ HyPlaneHead is a 3D-aware GAN whose generator outputs a single-channel unified f
 
 ## Related Papers
 
+- [\[ECCV 2024\] Learning to Generate Conditional Tri-Plane for 3D-Aware Expression Controllable Portrait Animation](../../ECCV2024/3d_vision/learning_to_generate_conditional_tri-plane_for_3d-aware_expression_controllable_.md)
+- [\[CVPR 2025\] 3D Gaussian Head Avatars with Expressive Dynamic Appearances by Compact Tensorial Representations](../../CVPR2025/3d_vision/3d_gaussian_head_avatars_with_expressive_dynamic_appearances_by_compact_tensoria.md)
 - [\[ICCV 2025\] From Image to Video: An Empirical Study of Diffusion Representations](../../ICCV2025/3d_vision/from_image_to_video_an_empirical_study_of_diffusion_representations.md)
 - [\[ICCV 2025\] HumanOLAT: A Large-Scale Dataset for Full-Body Human Relighting and Novel-View Synthesis](../../ICCV2025/3d_vision/humanolat_a_large-scale_dataset_for_full-body_human_relighting_and_novel-view_sy.md)
-- [\[ICCV 2025\] GAS: Generative Avatar Synthesis from a Single Image](../../ICCV2025/3d_vision/gas_generative_avatar_synthesis_from_a_single_image.md)
-- [\[NeurIPS 2025\] OpenLex3D: A Tiered Evaluation Benchmark for Open-Vocabulary 3D Scene Representations](openlex3d_a_tiered_evaluation_benchmark_for_open-vocabulary_3d_scene_representat.md)
 - [\[NeurIPS 2025\] HyRF: Hybrid Radiance Fields for Memory-efficient and High-quality Novel View Synthesis](hyrf_hybrid_radiance_fields_for_memory-efficient_and_high-quality_novel_view_syn.md)
 
 </div>

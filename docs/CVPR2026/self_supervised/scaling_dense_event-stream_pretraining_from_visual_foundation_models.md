@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Scaling Dense Event-Stream Pretraining from Visual Foundation Models
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] ScaleEvent treats Visual Foundation Models (VFM) such as DINOv3 as frozen teachers to perform large-scale cross-modal dense distillation on approximately 500,000 synchronized "image-event" pairs. By using an "Event Activation Mask + Structure-Aware Loss" to correct semantic collapse caused by differences in sparsity an
+  [CVPR 2026][Self-Supervised Learning][Event-stream pretraining] ScaleEvent treats Visual Foundation Models (VFM) such as DINOv3 as frozen teachers to perform large-scale cross-modal dense distillation on approximately 500,000 synchronized "image-event" pairs. By using an "Event Activation Mask + Structure-Aware Loss" to correct semantic collapse caused by differences in sparsity and granularity between images and events, it obtains fine-grained event representations transfera…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Event-stream pretraining"
+  - "Cross-modal knowledge distillation"
+  - "Visual Foundation Models"
+  - "Structure-aware alignment"
+  - "Density perception"
 date: 2026-05-08
-content_hash: c01d31cbdb28ec93
+content_hash: 025e1291432c1799
 ---
+
 # Scaling Dense Event-Stream Pretraining from Visual Foundation Models
 
 **Conference**: CVPR 2026  
@@ -132,10 +138,10 @@ Table 5 shows a step-by-step addition of components (ViT-L/16, segmentation mIoU
 ## Related Papers
 
 - [\[CVPR 2026\] Scaling Parallel Sequence Models to Vision Foundation Models](scaling_parallel_sequence_models_to_vision_foundation_models.md)
-- [\[CVPR 2026\] Exploring Visual Pretraining for Learning Language Intelligence](exploring_visual_pretraining_for_learning_language_intelligence.md)
+- [\[CVPR 2026\] Franca: Nested Matryoshka Clustering for Scalable Visual Representation Learning](franca_nested_matryoshka_clustering_for_scalable_visual_representation_learning.md)
 - [\[CVPR 2026\] Chain-of-Models Pre-Training: Rethinking Training Acceleration of Vision Foundation Models](com_pt_chain_of_models_pretraining.md)
 - [\[CVPR 2026\] Harnessing the Power of Foundation Models for Accurate Material Classification](harnessing_the_power_of_foundation_models_for_accurate_material_classification.md)
-- [\[CVPR 2026\] Franca: Nested Matryoshka Clustering for Scalable Visual Representation Learning](franca_nested_matryoshka_clustering_for_scalable_visual_representation_learning.md)
+- [\[CVPR 2026\] UPLiFT: Efficient Pixel-Dense Feature Upsampling with Local Attenders](uplift_efficient_pixel-dense_feature_upsampling_with_local_attenders.md)
 
 </div>
 

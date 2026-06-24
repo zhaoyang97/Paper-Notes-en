@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] No Pose at All: Self-Supervised Pose-Free 3D Gaussian Splatting from Sparse Views
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes SPFSplat, the first self-supervised 3DGS framework that requires no ground-truth poses at either training or inference time. By sharing a ViT backbone to…
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes SPFSplat, the first self-supervised 3DGS framework that requires no ground-truth poses at either training or inference time. By sharing a ViT backbone to jointly predict Gaussian primitives and camera poses, SPFSplat surpasses pose-dependent state-of-the-art methods under extreme viewpoint changes.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "sparse views"
   - "pose estimation"
 date: 2026-05-08
-content_hash: c58cc11df73e98f8
+content_hash: 2eb024c4094df6d0
 ---
 
 # No Pose at All: Self-Supervised Pose-Free 3D Gaussian Splatting from Sparse Views
@@ -133,9 +133,9 @@ SPFSplat surpasses state-of-the-art methods that rely on geometric priors, witho
 
 - [\[ICCV 2025\] RegGS: Unposed Sparse Views Gaussian Splatting with 3DGS Registration](reggs_unposed_sparse_views_gaussian_splatting_with_3dgs_registration.md)
 - [\[ICCV 2025\] PCR-GS: COLMAP-Free 3D Gaussian Splatting via Pose Co-Regularizations](pcr-gs_colmap-free_3d_gaussian_splatting_via_pose_co-regularizations.md)
+- [\[CVPR 2025\] SelfSplat: Pose-Free and 3D Prior-Free Generalizable 3D Gaussian Splatting](../../CVPR2025/3d_vision/selfsplat_pose-free_and_3d_prior-free_generalizable_3d_gaussian_splatting.md)
 - [\[ICCV 2025\] DeGauss: Dynamic-Static Decomposition with Gaussian Splatting for Distractor-free 3D Reconstruction](degauss_dynamic-static_decomposition_with_gaussian_splatting_for_distractor-free.md)
-- [\[NeurIPS 2025\] OnlineSplatter: Pose-Free Online 3D Reconstruction for Free-Moving Objects](../../NeurIPS2025/3d_vision/onlinesplatter_pose-free_online_3d_reconstruction_for_free-moving_objects.md)
-- [\[ICCV 2025\] Towards More Diverse and Challenging Pre-training for Point Cloud Learning: Self-Supervised Cross Reconstruction with Decoupled Views](towards_more_diverse_and_challenging_pre-training_for_point_cloud_learning_self-.md)
+- [\[CVPR 2025\] IncEventGS: Pose-Free Gaussian Splatting from a Single Event Camera](../../CVPR2025/3d_vision/inceventgs_pose-free_gaussian_splatting_from_a_single_event_camera.md)
 
 </div>
 

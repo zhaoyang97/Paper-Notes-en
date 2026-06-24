@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Data Augmentation of Contrastive Learning is Estimating Positive-incentive Noise
 description: >-
-  [ICML 2026][Self-Supervised Learning][Positive-incentive Noise] The authors prove that "predefined data augmentation (rotation/cropping/flipping)" in contrastive learning is equivalent to a point estimation of Positive-incentive Noise (π-noise). They then upgrade π-noise from "point estimation" to a learnable distribution by training a π-noise generator (PiNDA) to add learnable noi
+  [ICML 2026][Self-Supervised Learning][Positive-incentive Noise] The authors prove that "predefined data augmentation (rotation/cropping/flipping)" in contrastive learning is equivalent to a point estimation of Positive-incentive Noise (π-noise). They then upgrade π-noise from "point estimation" to a learnable distribution by training a π-noise generator (PiNDA) to add learnable noise as augmentation. This leads to consistent gains for SimCLR / BYOL / SimSiam / MoCo / DINO in…
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
-  - Positive-incentive Noise
+  - "ICML 2026"
+  - "Self-Supervised Learning"
+  - "Positive-incentive Noise"
+  - "Data Augmentation"
+  - "Task Entropy"
+  - "Learnable Noise Generator"
+  - "Information Theory"
 date: 2026-05-08
-content_hash: 1623ac3e34885b5b
+content_hash: 4a21b8b475f60988
 ---
+
 # Data Augmentation of Contrastive Learning is Estimating Positive-incentive Noise
 
 **Conference**: ICML 2026  
@@ -141,9 +146,9 @@ PiNDA outperforms SimCL (random noise baseline) and Random Noise on all 4 non-vi
 ## Related Papers
 
 - [\[NeurIPS 2025\] Hybrid Autoencoders for Tabular Data: Leveraging Model-Based Augmentation in Low-Label Settings](../../NeurIPS2025/self_supervised/hybrid_autoencoders_for_tabular_data_leveraging_model-based_augmentation_in_low-.md)
-- [\[ICML 2026\] Statistical Consistency and Generalization of Contrastive Representation Learning](statistical_consistency_and_generalization_of_contrastive_representation_learnin.md)
 - [\[CVPR 2026\] Temporal Imbalance of Positive and Negative Supervision in Class-Incremental Learning](../../CVPR2026/self_supervised/temporal_imbalance_of_positive_and_negative_supervision_in_class-incremental_lea.md)
-- [\[ICML 2026\] Inconsistency-Aware Minimization: Improving Generalization with Unlabeled Data](inconsistency-aware_minimization_improving_generalization_with_unlabeled_data.md)
+- [\[ICML 2026\] Statistical Consistency and Generalization of Contrastive Representation Learning](statistical_consistency_and_generalization_of_contrastive_representation_learnin.md)
+- [\[ICML 2026\] Towards One-for-All Anomaly Detection for Tabular Data](towards_one-for-all_anomaly_detection_for_tabular_data.md)
 - [\[AAAI 2026\] Explanation-Preserving Augmentation for Semi-Supervised Graph Representation Learning](../../AAAI2026/self_supervised/explanation-preserving_augmentation_for_semi-supervised_graph_representation_lea.md)
 
 </div>

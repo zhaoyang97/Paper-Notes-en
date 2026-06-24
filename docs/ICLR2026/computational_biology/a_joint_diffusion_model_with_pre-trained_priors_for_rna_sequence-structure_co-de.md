@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Joint Diffusion Model with Pre-Trained Priors for RNA Sequence-Structure Co-Design
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] This work utilizes the pre-trained biomacromolecular structure prediction model RoseTTAFold2NA directly as a diffusion denoiser within a joint framework of "discrete sequence diffusion + SE(3) equivariant structure diffusion" (RiboDiff). With minimal RNA 3D data, it simultaneously generates RNA sequences and all-atom 3
+  [ICLR2026][Computational Biology][RNA Design] This work utilizes the pre-trained biomacromolecular structure prediction model RoseTTAFold2NA directly as a diffusion denoiser within a joint framework of "discrete sequence diffusion + SE(3) equivariant structure diffusion" (RiboDiff). With minimal RNA 3D data, it simultaneously generates RNA sequences and all-atom 3D conformations. In tasks involving single-stranded RNA, RNA-protein complexes, and protein-conditioned binding…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR2026"
+  - "Computational Biology"
+  - "RNA Design"
+  - "Sequence-Structure Co-generation"
+  - "Pre-trained Priors"
+  - "Discrete Diffusion"
+  - "SE(3) Equivariant Diffusion"
 date: 2026-05-08
-content_hash: 29ee2dcb2c1d7d68
+content_hash: bee9457cc3955b36
 ---
+
 # A Joint Diffusion Model with Pre-Trained Priors for RNA Sequence-Structure Co-Design
 
 **Conference**: ICLR2026  
@@ -148,7 +154,7 @@ SVDD ($M=10$) consistently improved scRMSD, GT-RMSD, and interface ipTM without 
 - [\[ICML 2025\] eccDNAMamba: A Pre-Trained Model for Ultra-Long eccDNA Sequence Analysis](../../ICML2025/computational_biology/eccdnamamba_a_pre-trained_model_for_ultra-long_eccdna_sequence_analysis.md)
 - [\[ICLR 2026\] Constrained Diffusion for Protein Design with Hard Structural Constraints](constrained_diffusion_for_protein_design_with_hard_structural_constraints.md)
 - [\[CVPR 2026\] HINGE: Adapting a Pre-trained Single-Cell Foundation Model to Spatial Gene Expression Generation from Histology Images](../../CVPR2026/computational_biology/adapting_a_pre-trained_single-cell_foundation_model_to_spatial_gene_expression_g.md)
-- [\[ICLR 2026\] Multi-state Protein Sequence Design with DynamicMPNN](multi-state_protein_sequence_design_with_dynamicmpnn.md)
+- [\[ICLR 2026\] Discrete Diffusion Trajectory Alignment via Stepwise Decomposition](discrete_diffusion_trajectory_alignment_via_stepwise_decomposition.md)
 
 </div>
 

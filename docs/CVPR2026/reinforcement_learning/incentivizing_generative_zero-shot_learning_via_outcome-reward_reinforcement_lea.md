@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Incentivizing Generative Zero-Shot Learning via Outcome-Reward Reinforcement Learning with Visual Cues
 description: >-
-  [CVPR 2026][Reinforcement Learning][Paper Note] RLVC treats the feature generator in generative zero-shot learning as an RL policy. It utilizes outcome rewards based on "correct classification" from a frozen classifier to drive generator self-evolution, combined with class-level visual cues for prototype distillation to stabilize training. It achieves new SOTA on CU
+  [CVPR 2026][Reinforcement Learning][Zero-Shot Learning] RLVC treats the feature generator in generative zero-shot learning as an RL policy. It utilizes outcome rewards based on "correct classification" from a frozen classifier to drive generator self-evolution, combined with class-level visual cues for prototype distillation to stabilize training. It achieves new SOTA on CUB, SUN, and AWA2 benchmarks (e.g., 90.1% CZSL accuracy and 81.2% GZSL harmonic mean on CUB).
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "Zero-Shot Learning"
+  - "Outcome-Reward RL"
+  - "Feature Generation"
+  - "Visual Prototype Distillation"
+  - "Cold Start"
 date: 2026-05-08
-content_hash: c487f9978f22ed73
+content_hash: 78a46cad100d6af6
 ---
+
 # Incentivizing Generative Zero-Shot Learning via Outcome-Reward Reinforcement Learning with Visual Cues
 
 **Conference**: CVPR 2026  
@@ -125,15 +131,16 @@ Component ablation (Acc / H):
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] MSRL: Scaling Generative Multimodal Reward Modeling via Multi-Stage Reinforcement Learning](msrl_scaling_generative_multimodal_reward_modeling.md)
+- [\[ICLR 2026\] TD-JEPA: Latent-predictive Representations for Zero-Shot Reinforcement Learning](../../ICLR2026/reinforcement_learning/td-jepa_latent-predictive_representations_for_zero-shot_reinforcement_learning.md)
+- [\[CVPR 2026\] Saliency-Guided Representation with Consistency Policy Learning for Visual Unsupervised Reinforcement Learning](saliency-guided_representation_with_consistency_policy_learning_for_visual_unsup.md)
 - [\[ICML 2026\] Unlocking Zero-Shot Geospatial Reasoning via Indirect Rewards](../../ICML2026/reinforcement_learning/unlocking_zero-shot_geospatial_reasoning_via_indirect_rewards.md)
 - [\[CVPR 2026\] TSTM: Temporal Segmentation for Task-relevant Mask in Visual Reinforcement Learning Generalization](tstm_temporal_segmentation_for_task-relevant_mask_in_visual_reinforcement_learni.md)
-- [\[CVPR 2026\] CCCaption: Dual-Reward Reinforcement Learning for Complete and Correct Image Captioning](cccaption_dual-reward_reinforcement_learning_for_complete_and_correct_image_capt.md)
-- [\[ICLR 2026\] Offline Reinforcement Learning with Generative Trajectory Policies](../../ICLR2026/reinforcement_learning/offline_reinforcement_learning_with_generative_trajectory_policies.md)
 
 </div>
 

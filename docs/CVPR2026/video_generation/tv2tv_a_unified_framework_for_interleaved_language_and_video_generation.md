@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TV2TV: A Unified Framework for Interleaved Language and Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Mixture-of-Transformers] TV2TV utilizes a unified Transfusion-style model to decompose video generation into an interleaved process: first "thinking" about what will happen next in text, then "acting" it out in pixels. This allows the language tower to handle semantic decisions while the video tower manages rendering. It simultaneously surpass
+  [CVPR 2026][Video Generation][Interleaved Generation] TV2TV utilizes a unified Transfusion-style model to decompose video generation into an interleaved process: first "thinking" about what will happen next in text, then "acting" it out in pixels. This allows the language tower to handle semantic decisions while the video tower manages rendering. It simultaneously surpasses baselines such as "direct T2V" and "think-then-act" in both visual quality (91% win rate in human evalu…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Mixture-of-Transformers
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Interleaved Generation"
+  - "Video Flow Matching"
+  - "Mixture-of-Transformers"
+  - "Controllable Video Generation"
+  - "Visual Planning"
 date: 2026-05-08
-content_hash: 169d023141cc0dbc
+content_hash: 233b8d5e29ed02b8
 ---
+
 # TV2TV: A Unified Framework for Interleaved Language and Video Generation
 
 **Conference**: CVPR 2026  
@@ -122,15 +127,16 @@ The advantage is more pronounced in long videos (64s) than short clips (6s), ind
 - Value: ⭐⭐⭐⭐⭐ Provides a scalable recipe for unifying LLM reasoning with controllable video generation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] DreamStyle: A Unified Framework for Video Stylization](dreamstyle_a_unified_framework_for_video_stylization.md)
-- [\[CVPR 2026\] UniTalking: A Unified Audio-Video Framework for Talking Portrait Generation](unitalking_a_unified_audio-video_framework_for_talking_portrait_generation.md)
 - [\[CVPR 2026\] U-Mind: A Unified Framework for Real-Time Multimodal Interaction with Audiovisual Generation](u-mind_a_unified_framework_for_real-time_multimodal_interaction_with_audiovisual.md)
 - [\[CVPR 2026\] VGA-Bench: A Unified Benchmark and Multi-Model Framework for Video Aesthetics and Generation Quality Evaluation](vga-bench_a_unified_benchmark_and_multi-model_framework_for_video_aesthetics_and.md)
-- [\[CVPR 2026\] Unified Camera Positional Encoding for Controlled Video Generation](unified_camera_positional_encoding_for_controlled_video_generation.md)
+- [\[CVPR 2026\] LAMP: Language-Assisted Motion Planning for Controllable Video Generation](lamp_language-assisted_motion_planning_for_controllable_video_generation.md)
+- [\[CVPR 2026\] CI-VID: A Coherent Interleaved Text-Video Dataset](ci-vid_a_coherent_interleaved_text-video_dataset.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rethinking Glyph Spatial Information in Font Generation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Addressing few-shot font generation (FFG), this paper points out that existing methods ignore "glyph spatial information" by destroying control point coordinates with distorted rendering in data pipelines and implicitly coupling "shape" and "position" in model optimization. It proposes a spatial-preserving rendering sc
+  [CVPR 2026][Image Generation][Few-shot Font Generation] Addressing few-shot font generation (FFG), this paper points out that existing methods ignore "glyph spatial information" by destroying control point coordinates with distorted rendering in data pipelines and implicitly coupling "shape" and "position" in model optimization. It proposes a spatial-preserving rendering scheme, SPR (with an OFL Chinese font dataset and normalized metrics), to enable reversible mapping betwee…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Few-shot Font Generation"
+  - "Chinese Fonts"
+  - "Spatial Information"
+  - "Shape-Position Decoupling"
+  - "Vectorization"
 date: 2026-05-08
-content_hash: d451c2f675a9ea23
+content_hash: 9c656234bc78e969
 ---
+
 # Rethinking Glyph Spatial Information in Font Generation
 
 **Conference**: CVPR 2026  
@@ -122,14 +128,20 @@ Ours also led in 8-shot UFUC (RMSE 0.1588 vs. MSD-Font 0.1638). Explicit spatial
 - Value: ⭐⭐⭐⭐⭐ High infrastructure value for the FFG community (OFL dataset + unified benchmark + TTF output).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-- **MSD-Font (2024)**: Diffusion-based FFG without component labels.
-- **MX-Font (2021)**: Multiple-heads for localized style transfer.
-- **RDDM (2023)**: Residual Denoising Diffusion Models utilized in Stage I.
-</div>
-<!-- RELATED:END -->
+## Related Papers
 
+- [\[CVPR 2026\] VecGlypher: Unified Vector Glyph Generation with Language Models](vecglypher_unified_vector_glyph_generation_with_language_models.md)
+- [\[ICLR 2026\] What Matters for Representation Alignment: Global Information or Spatial Structure?](../../ICLR2026/image_generation/what_matters_for_representation_alignment_global_information_or_spatial_structur.md)
+- [\[CVPR 2026\] SpatialReward: Verifiable Spatial Reward Modeling for Fine-Grained Spatial Consistency in Text-to-Image Generation](spatialreward_verifiable_spatial_reward_modeling_for_fine-grained_spatial_consis.md)
+- [\[CVPR 2026\] FaithFusion: Harmonizing Reconstruction and Generation via Pixel-wise Information Gain](faithfusion_harmonizing_reconstruction_and_generation_via_pixel-wise_information.md)
+- [\[CVPR 2026\] Beyond Patches: Global-aware Autoregressive Model for Multimodal Few-Shot Font Generation](beyond_patches_global-aware_autoregressive_model_for_multimodal_few-shot_font_ge.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] VecGlypher: Unified Vector Glyph Generation with Language Models](vecglypher_unified_vector_glyph_generation_with_language_models.md)

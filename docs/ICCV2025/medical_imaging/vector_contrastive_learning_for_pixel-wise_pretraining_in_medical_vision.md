@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Vector Contrastive Learning for Pixel-wise Pretraining in Medical Vision
 description: >-
-  [ICCV 2025][Medical Imaging][Contrastive Learning] This paper proposes Vector Contrastive Learning (Vector CL), which reformulates standard contrastive learning from a binary optimization problem into a vector regression…
+  [ICCV 2025][Medical Imaging][Contrastive Learning] This paper proposes Vector Contrastive Learning (Vector CL), which reformulates standard contrastive learning from a binary optimization problem into a vector regression problem. By modeling feature distances to quantify the degree of dispersion, it addresses the over-dispersion problem in pixel-wise medical vision pretraining, achieving significant improvements over 17 methods across 8 downstream tasks.
 tags:
   - "ICCV 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Displacement Vector Regression"
   - "Over-dispersion Problem"
 date: 2026-05-08
-content_hash: 114a0ab2b6904232
+content_hash: c32242eaaec5f707
 ---
 
 # Vector Contrastive Learning for Pixel-wise Pretraining in Medical Vision
@@ -133,9 +133,9 @@ Hyperparameter ablation: receptive field $N=7\times7$ is optimal (54.8%); VEU co
 
 - [\[ICCV 2025\] GECKO: Gigapixel Vision-Concept Contrastive Pretraining in Histopathology](gecko_gigapixel_vision-concept_contrastive_pretraining_in_histopathology.md)
 - [\[ICCV 2025\] An OpenMind for 3D Medical Vision Self-supervised Learning](an_openmind_for_3d_medical_vision_selfsupervised_learning.md)
-- [\[CVPR 2026\] MedKCO: Medical Vision-Language Pretraining via Knowledge-Driven Cognitive Orchestration](../../CVPR2026/medical_imaging/medkco_medical_vision-language_pretraining_via_knowledge-driven_cognitive_orches.md)
-- [\[ICCV 2025\] Boosting Vision Semantic Density with Anatomy Normality Modeling for Medical Vision-language Pre-training](boosting_vision_semantic_density_with_anatomy_normality_modeling_for_medical_vis.md)
+- [\[CVPR 2026\] From Panel to Pixel: Zoom-In Vision-Language Pretraining from Biomedical Scientific Literature](../../CVPR2026/medical_imaging/from_panel_to_pixel_zoom-in_vision-language_pretraining_from_biomedical_scientif.md)
 - [\[NeurIPS 2025\] Are Pixel-Wise Metrics Reliable for Sparse-View Computed Tomography Reconstruction?](../../NeurIPS2025/medical_imaging/are_pixel-wise_metrics_reliable_for_sparse-view_computed_tomography_reconstructi.md)
+- [\[CVPR 2026\] MedKCO: Medical Vision-Language Pretraining via Knowledge-Driven Cognitive Orchestration](../../CVPR2026/medical_imaging/medkco_medical_vision-language_pretraining_via_knowledge-driven_cognitive_orches.md)
 
 </div>
 

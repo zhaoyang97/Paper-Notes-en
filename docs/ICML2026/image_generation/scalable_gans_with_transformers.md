@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Scalable GANs with Transformers
 description: >-
-  [ICML 2026][Image Generation][Paper Note] This paper proposes GAT (Generative Adversarial Transformers), a scalable GAN framework constructed with pure Transformer generators and discriminators in the VAE latent space. By activating early generator layers through Multi-level Noise-perturbed Guidance (MNG) and stabilizing large-scale training with width-aware l
+  [ICML2026][Image Generation][GAN Scalability] This paper proposes GAT (Generative Adversarial Transformers), a scalable GAN framework constructed with pure Transformer generators and discriminators in the VAE latent space. By activating early generator layers through Multi-level Noise-perturbed Guidance (MNG) and stabilizing large-scale training with width-aware learning rate scaling, GAT-XL/2 achieves a single-step SOTA FID of 2.18 on ImageNet-256 class-conditional generatio…
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML2026"
+  - "Image Generation"
+  - "GAN Scalability"
+  - "Transformer Generator"
+  - "VAE Latent Space"
+  - "Single-step Generation"
+  - "ImageNet Class-conditional Generation"
 date: 2026-05-08
-content_hash: 611210163ebcb658
+content_hash: c6105fdc339bb4ca
 ---
+
 # Scalable GANs with Transformers
 
 **Conference**: ICML2026  
@@ -138,11 +144,11 @@ Decoupled G/D scaling (Fig. 6a): Scaling the discriminator alone yields signific
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Flatten Graphs as Sequences: Transformers are Scalable Graph Generators](../../NeurIPS2025/image_generation/flatten_graphs_as_sequences_transformers_are_scalable_graph_generators.md)
 - [\[ECCV 2024\] Distilling Diffusion Models into Conditional GANs](../../ECCV2024/image_generation/distilling_diffusion_models_into_conditional_gans.md)
 - [\[ICLR 2026\] Condition Matters in Full-head 3D GANs](../../ICLR2026/image_generation/condition_matters_in_full-head_3d_gans.md)
-- [\[NeurIPS 2025\] Flatten Graphs as Sequences: Transformers are Scalable Graph Generators](../../NeurIPS2025/image_generation/flatten_graphs_as_sequences_transformers_are_scalable_graph_generators.md)
-- [\[ICML 2026\] DiScoFormer: Plug-In Density and Score Estimation with Transformers](discoformer_plug-in_density_and_score_estimation_with_transformers.md)
 - [\[ICML 2026\] Krause Synchronization Transformers](krause_synchronization_transformers.md)
+- [\[ICML 2026\] DiScoFormer: Plug-In Density and Score Estimation with Transformers](discoformer_plug-in_density_and_score_estimation_with_transformers.md)
 
 </div>
 

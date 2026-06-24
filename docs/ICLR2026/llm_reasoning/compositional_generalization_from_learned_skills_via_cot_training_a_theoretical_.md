@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Compositional Generalization from Learned Skills via CoT Training: A Theoretical and Structural Analysis for Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] This paper demonstrates through information-theoretic generalization bounds and interpretability analysis that the core mechanism of CoT training is **compositional generalization**: models learn to systematically combine simple learned skills to solve novel complex problems. This is internalized as a two-stage composi
+  [ICLR 2026][Reasoning][Compositional Generalization] This paper demonstrates through information-theoretic generalization bounds and interpretability analysis that the core mechanism of CoT training is **compositional generalization**: models learn to systematically combine simple learned skills to solve novel complex problems. This is internalized as a two-stage compositional reasoning circuit that extracts intermediate results at shallower layers…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Compositional Generalization"
+  - "Chain-of-Thought Training"
+  - "Information-theoretic Generalization Bound"
+  - "Reasoning Circuit"
+  - "OOD Generalization"
 date: 2026-05-08
-content_hash: 31407ef09ffbb3e9
+content_hash: f69c1a76a1e1e4e8
 ---
+
 # Compositional Generalization from Learned Skills via CoT Training: A Theoretical and Structural Analysis for Reasoning
 
 **Conference**: ICLR 2026  
@@ -120,15 +126,13 @@ The primary difference lies in whether to explicitly model the bridge entity $e_
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
-- [\[ICLR 2026\] The CoT Encyclopedia：分析、预测并控制推理模型的思考方式](the_cot_encyclopedia_analyzing_predicting_and_controlling_how_a_reasoning_model_.md)
 - [\[ICLR 2026\] Analytica: Soft Propositional Reasoning for Robust and Scalable LLM-Driven Analysis](analytica_soft_propositional_reasoning_for_robust_and_scalable_llm-driven_analys.md)
 - [\[ICLR 2026\] TumorChain: Interleaved Multimodal Chain-of-Thought Reasoning for Traceable Clinical Tumor Analysis](tumorchain_interleaved_multimodal_chain-of-thought_reasoning_for_traceable_clini.md)
 - [\[ICLR 2026\] STAT: Skill-Targeted Adaptive Training](stat_skill-targeted_adaptive_training.md)
 - [\[ICLR 2026\] RLAD: Training LLMs to Discover Abstractions for Solving Reasoning Problems](rlad_training_llms_to_discover_abstractions_for_solving_reasoning_problems.md)
+- [\[ICLR 2026\] Training Large Reasoning Models Efficiently via Progressive Thought Encoding](training_large_reasoning_models_efficiently_via_progressive_thought_encoding.md)
 
 </div>
 

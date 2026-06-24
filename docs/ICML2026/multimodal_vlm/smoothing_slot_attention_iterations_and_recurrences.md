@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Smoothing Slot Attention Iterations and Recurrences
 description: >-
-  [ICML 2026][Multimodal VLM][Object-Centric Learning] Addressing the long-neglected pain points in Slot Attention for image and video object-centric learning—specifically the "insufficient information in cold-start queries" and the "forced unification of aggregation transformations for first vs. non-first frames"—the authors propose SmoothSA. It utilizes a small self-dist
+  [ICML 2026][Multimodal VLM][Object-Centric Learning] Addressing the long-neglected pain points in Slot Attention for image and video object-centric learning—specifically the "insufficient information in cold-start queries" and the "forced unification of aggregation transformations for first vs. non-first frames"—the authors propose SmoothSA. It utilizes a small self-distilled warm-up module to inject sample information into queries while allowing the first frame to run three…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - Object-Centric Learning
-  - Slot Attention
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Object-Centric Learning"
+  - "Slot Attention"
+  - "Query Warm-up"
+  - "Video OCL"
+  - "Self-distillation"
 date: 2026-05-08
-content_hash: 1854508462613ca2
+content_hash: b5990aed855438cd
 ---
+
 # Smoothing Slot Attention Iterations and Recurrences
 
 **Conference**: ICML 2026  
@@ -131,16 +135,16 @@ The authors integrated SmoothSA into various backbones (DINOSAUR, STEVE, SAVi, R
 - Value: ⭐⭐⭐⭐ High engineering value as it improves most SA-based OCL backbones with nearly zero cost.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICML 2026\] Seeing is Understanding: Unlocking Causal Attention into Modality-Mutual Attention for Multimodal LLMs](seeing_is_understanding_unlocking_causal_attention_into_modality-mutual_attentio.md)
 - [\[ICML 2026\] Certified Robustness under Heterogeneous Perturbations via Hybrid Randomized Smoothing](certified_robustness_under_heterogeneous_perturbations_via_hybrid_randomized_smo.md)
+- [\[ICML 2026\] Seeing is Understanding: Unlocking Causal Attention into Modality-Mutual Attention for Multimodal LLMs](seeing_is_understanding_unlocking_causal_attention_into_modality-mutual_attentio.md)
 - [\[ICML 2026\] Large Vision-Language Models Get Lost in Attention](large_vision-language_models_get_lost_in_attention.md)
-- [\[ICLR 2026\] Directional Embedding Smoothing for Robust Vision Language Models](../../ICLR2026/multimodal_vlm/directional_embedding_smoothing_for_robust_vision_language_models.md)
 - [\[ICML 2026\] Hyper-ICL: Attention Calibration with Hyperbolic Anchor Distillation for Multimodal ICL](hyper-icl_attention_calibration_with_hyperbolic_anchor_distillation_for_multimod.md)
+- [\[CVPR 2026\] Personalized Image Descriptions from Attention Sequences](../../CVPR2026/multimodal_vlm/personalized_image_descriptions_from_attention_sequences.md)
 
 </div>
 

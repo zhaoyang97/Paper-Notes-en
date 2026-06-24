@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OmniCast: A Masked Latent Diffusion Model for Weather Forecasting Across Time Scales
 description: >-
-  [NeurIPS 2025][Time Series][Weather Forecasting] OmniCast is proposed as a weather forecasting method that combines a masked generative framework with a latent diffusion model. By jointly generating future weather sequen…
+  [NeurIPS 2025][Time Series][Weather Forecasting] OmniCast is proposed as a weather forecasting method that combines a masked generative framework with a latent diffusion model. By jointly generating future weather sequences rather than iterating autoregressively, it mitigates error accumulation, achieves state-of-the-art performance at the subseasonal-to-seasonal (S2S) scale, remains competitive for medium-range forecasting, and offers inference speeds 10–20× faster.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "Subseasonal Forecasting"
   - "VAE"
 date: 2026-05-08
-content_hash: 7de08abcff94baf6
+content_hash: 114606a17d486426
 ---
 
 # OmniCast: A Masked Latent Diffusion Model for Weather Forecasting Across Time Scales
@@ -154,10 +154,10 @@ OmniCast achieves inference speeds **10–20× faster** than Gencast, on less po
 ## Related Papers
 
 - [\[NeurIPS 2025\] Rotary Masked Autoencoders are Versatile Learners](rotary_masked_autoencoders_are_versatile_learners.md)
-- [\[ICML 2026\] Latent Laplace Diffusion for Irregular Multivariate Time Series](../../ICML2026/time_series/latent_laplace_diffusion_for_irregular_multivariate_time_series.md)
-- [\[NeurIPS 2025\] Graph-based Neural Space Weather Forecasting](graph-based_neural_space_weather_forecasting.md)
 - [\[NeurIPS 2025\] TiRex: Zero-Shot Forecasting Across Long and Short Horizons with Enhanced In-Context Learning](tirex_zero-shot_forecasting_across_long_and_short_horizons_with_enhanced_in-cont.md)
-- [\[NeurIPS 2025\] Diffusion Transformers as Open-World Spatiotemporal Foundation Models](diffusion_transformers_as_open-world_spatiotemporal_foundation_models.md)
+- [\[ICML 2026\] Latent Laplace Diffusion for Irregular Multivariate Time Series](../../ICML2026/time_series/latent_laplace_diffusion_for_irregular_multivariate_time_series.md)
+- [\[ICLR 2026\] A Study of Posterior Stability in Time-Series Latent Diffusion](../../ICLR2026/time_series/a_study_of_posterior_stability_in_time-series_latent_diffusion.md)
+- [\[NeurIPS 2025\] Graph-based Neural Space Weather Forecasting](graph-based_neural_space_weather_forecasting.md)
 
 </div>
 

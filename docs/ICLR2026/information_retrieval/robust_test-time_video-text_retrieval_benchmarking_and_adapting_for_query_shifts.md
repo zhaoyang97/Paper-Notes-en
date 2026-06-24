@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Robust Test-Time Video-Text Retrieval: Benchmarking and Adapting for Query Shifts
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][hubness] To address the sharp performance collapse of Video-Text Retrieval (VTR) models under real-world query perturbations, this paper establishes the MLVP benchmark containing 12 types of spatio-temporal perturbations across 5 intensity levels. It diagnoses that perturbations amplify "hubness" (where a few gallery videos dom
+  [ICLR 2026][Information Retrieval & RAG][Video-Text Retrieval] To address the sharp performance collapse of Video-Text Retrieval (VTR) models under real-world query perturbations, this paper establishes the MLVP benchmark containing 12 types of spatio-temporal perturbations across 5 intensity levels. It diagnoses that perturbations amplify "hubness" (where a few gallery videos dominate retrieval rankings) as the root cause. Subsequently, the authors propose HAT-VTR…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - hubness
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Video-Text Retrieval"
+  - "Query Shift"
+  - "Hubness"
+  - "Test-Time Adaptation"
+  - "Robustness Benchmark"
 date: 2026-05-08
-content_hash: 7937bddd73b8d4cf
+content_hash: 0bd6254c0f12025f
 ---
+
 # Robust Test-Time Video-Text Retrieval: Benchmarking and Adapting for Query Shifts
 
 **Conference**: ICLR 2026  
@@ -137,7 +142,7 @@ In the more challenging QGS (Query and Gallery Shift) scenario, cross-dataset ad
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Breaking Scale Anchoring: Frequency Representation Learning for Accurate High-Resolution Inference from Low-Resolution Training
 description: >-
-  [ICLR 2026][Image Restoration][scale anchoring] The paper defines "Scale Anchoring" (where low-resolution training anchors error during high-resolution inference) and proposes an architecture-agnostic Frequency Representation Learning (FRL). By using Nyquist-normalized frequency encoding, it ensures that errors decrease as resolution increases, which is validated ac
+  [ICLR 2026][Image Restoration][scale anchoring] The paper defines "Scale Anchoring" (where low-resolution training anchors error during high-resolution inference) and proposes an architecture-agnostic Frequency Representation Learning (FRL). By using Nyquist-normalized frequency encoding, it ensures that errors decrease as resolution increases, which is validated across 8 mainstream architectures.
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - scale anchoring
-  - frequency representation
-  - zero-shot super-resolution
-  - spatiotemporal forecasting
-  - Nyquist frequency
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "scale anchoring"
+  - "frequency representation"
+  - "zero-shot super-resolution"
+  - "spatiotemporal forecasting"
+  - "Nyquist frequency"
 date: 2026-05-08
-content_hash: 51f5487c54955d2c
+content_hash: f6880064468cefff
 ---
+
 # Breaking Scale Anchoring: Frequency Representation Learning for Accurate High-Resolution Inference from Low-Resolution Training
 
 **Conference**: ICLR 2026  
@@ -150,9 +151,9 @@ This explicitly incorporates spectral consistency into the optimization objectiv
 
 - [\[ICLR 2026\] Learning Heterogeneous Degradation Representation for Real-World Super-Resolution](learning_heterogeneous_degradation_representation_for_real-world_super-resolutio.md)
 - [\[CVPR 2026\] HDW-SR: High-Frequency Guided Diffusion Model based on Wavelet Decomposition for Image Super-Resolution](../../CVPR2026/image_restoration/hdw-sr_high-frequency_guided_diffusion_model_based_on_wavelet_decomposition_for_.md)
-- [\[ICLR 2026\] Trust but Verify: Adaptive Conditioning for Reference-Based Diffusion Super-Resolution](trust_but_verify_adaptive_conditioning_for_reference-based_diffusion_super-resol.md)
 - [\[CVPR 2026\] Event-Illumination Collaborative Low-light Image Enhancement with a High-resolution Real-world Dataset](../../CVPR2026/image_restoration/event-illumination_collaborative_low-light_image_enhancement_with_a_high-resolut.md)
-- [\[ICLR 2026\] Texture Vector-Quantization and Reconstruction Aware Prediction for Generative Super-Resolution](texture_vector-quantization_and_reconstruction_aware_prediction_for_generative_s.md)
+- [\[CVPR 2026\] DreamSR: Towards Ultra-High-Resolution Image Super-Resolution via a Receptive-Field Enhanced Diffusion Transformer](../../CVPR2026/image_restoration/dreamsr_towards_ultra-high-resolution_image_super-resolution_via_a_receptive-fie.md)
+- [\[CVPR 2026\] VoDaSuRe: A Large-Scale Dataset Revealing Domain Shift in Volumetric Super-Resolution](../../CVPR2026/image_restoration/vodasure_a_large-scale_dataset_revealing_domain_shift_in_volumetric_super-resolu.md)
 
 </div>
 

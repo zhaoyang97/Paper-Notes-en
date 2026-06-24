@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ReaSon: Reinforced Causal Search with Information Bottleneck for Video Understanding
 description: >-
-  [AAAI 2026][Video Understanding][Key Frame Selection] This paper proposes a Causal Information Bottleneck (CIB) theoretical framework that formalizes keyframe selection as an information-theoretic problem jointly optimiz…
+  [AAAI 2026][Video Understanding][Key Frame Selection] This paper proposes a Causal Information Bottleneck (CIB) theoretical framework that formalizes keyframe selection as an information-theoretic problem jointly optimizing *predictive sufficiency* and *causal necessity*. Built upon CIB, the ReaSon reinforcement learning framework trains a selection policy using three CIB-aligned rewards (answer reward, cycle-consistency reward, and counterfactual reward)…
 tags:
   - "AAAI 2026"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Counterfactual Reasoning"
   - "Video Question Answering"
 date: 2026-05-08
-content_hash: cf6a9b7cf21bf694
+content_hash: 531502e547c3a5be
 ---
 
 # ReaSon: Reinforced Causal Search with Information Bottleneck for Video Understanding
@@ -176,11 +176,11 @@ Training is conducted on the NExT-QA training set; 8-frame experiments use a sin
 
 ## Related Papers
 
-- [\[AAAI 2026\] APVR: Hour-Level Long Video Understanding with Adaptive Pivot Visual Information Retrieval](apvr_hour-level_long_video_understanding_with_adaptive_pivot.md)
 - [\[ICML 2026\] Video-MTR: Reinforced Multi-Turn Reasoning for Long Video Understanding](../../ICML2026/video_understanding/video-mtr_reinforced_multi-turn_reasoning_for_long_video_understanding.md)
+- [\[AAAI 2026\] APVR: Hour-Level Long Video Understanding with Adaptive Pivot Visual Information Retrieval](apvr_hour-level_long_video_understanding_with_adaptive_pivot.md)
 - [\[AAAI 2026\] Causality Matters: How Temporal Information Emerges in Video Language Models](causality_matters_how_temporal_information_emerges_in_video_language_models.md)
+- [\[CVPR 2025\] T*: Re-thinking Temporal Search for Long-Form Video Understanding](../../CVPR2025/video_understanding/re-thinking_temporal_search_for_long-form_video_understanding.md)
 - [\[AAAI 2026\] TSPO: Temporal Sampling Policy Optimization for Long-form Video Language Understanding](tspo_temporal_sampling_policy_optimization_for_long-form_video_language_understa.md)
-- [\[ICLR 2026\] Map the Flow: Revealing Hidden Pathways of Information in VideoLLMs](../../ICLR2026/video_understanding/map_the_flow_revealing_hidden_pathways_of_information_in_videollms.md)
 
 </div>
 

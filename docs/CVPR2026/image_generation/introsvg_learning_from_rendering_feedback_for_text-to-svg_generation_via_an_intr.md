@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] IntroSVG: Learning from Rendering Feedback for Text-to-SVG Generation via an Introspective Generator-Critic Framework
 description: >-
-  [CVPR 2026][Image Generation][Text-to-SVG] IntroSVG treats a unified VLM as both a "Generator" and a "Critic," enabling it to render its own SVG code during inference, evaluate scores based on visual feedback, and refine the output. Combined with a training pipeline involving "constructing training data from failed samples + DPO alignment," it achieves SOTA per
+  [CVPR 2026][Image Generation][Text-to-SVG] IntroSVG treats a unified VLM as both a "Generator" and a "Critic," enabling it to render its own SVG code during inference, evaluate scores based on visual feedback, and refine the output. Combined with a training pipeline involving "constructing training data from failed samples + DPO alignment," it achieves SOTA performance across multiple Text-to-SVG metrics (RSR 99.26%, FID 26.18, Aesthetic 4.89).
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Text-to-SVG
-  - DPO
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Text-to-SVG"
+  - "Visual Feedback"
+  - "Generate-Evaluate-Refine loop"
+  - "DPO"
+  - "Learning from Errors"
 date: 2026-05-08
-content_hash: 435e2463fec8b598
+content_hash: e2d05f28d9310d36
 ---
+
 # IntroSVG: Learning from Rendering Feedback for Text-to-SVG Generation via an Introspective Generator-Critic Framework
 
 **Conference**: CVPR 2026  
@@ -145,6 +149,7 @@ Iterative refinement consistently improves quality (Table 4): FID drops from 29.
 - Value: ⭐⭐⭐⭐ (Practical approach for integrating visual feedback into SVG generation with portable inference strategies)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

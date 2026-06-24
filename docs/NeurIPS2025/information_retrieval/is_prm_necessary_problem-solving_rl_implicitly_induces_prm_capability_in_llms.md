@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Is PRM Necessary? Problem-Solving RL Implicitly Induces PRM Capability in LLMs
 description: >-
-  [NeurIPS 2025][Information Retrieval & RAG][Process Reward Model] This study systematically demonstrates that pure RL training (without explicit PRM supervision) implicitly induces strong process judgment capability…
+  [NeurIPS 2025][Information Retrieval & RAG][Process Reward Model] This study systematically demonstrates that pure RL training (without explicit PRM supervision) implicitly induces strong process judgment capability; existing PRMs are even less effective than simple majority voting on strong reasoning models such as DeepSeek-R1 and QwQ-32B. The paper proposes Self-PRM, which allows a model to rerank its outputs using its own internal reward signal…
 tags:
   - "NeurIPS 2025"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "Reasoning Verification"
   - "Introspective Evaluation"
 date: 2026-05-08
-content_hash: 1ab27a126bc8ac83
+content_hash: 9705e1c447935e1a
 ---
 
 # Is PRM Necessary? Problem-Solving RL Implicitly Induces PRM Capability in LLMs
@@ -143,9 +143,9 @@ Using Qwen2.5-7B-Base + DAPO trained from scratch, PRM F1 on ProcessBench is eva
 
 - [\[ACL 2026\] Retrieval-Augmented Tutoring for Algorithm Tracing and Problem-Solving in AI Education](../../ACL2026/information_retrieval/retrieval-augmented_tutoring_for_algorithm_tracing_and_problem-solving_in_ai_edu.md)
 - [\[NeurIPS 2025\] SymRTLO: Enhancing RTL Code Optimization with LLMs and Neuron-Inspired Symbolic Reasoning](symrtlo_enhancing_rtl_code_optimization_with_llms_and_neuron-inspired_symbolic_r.md)
-- [\[ICLR 2026\] Judge's Verdict: A Comprehensive Analysis of LLM Judge Capability Through Human Agreement](../../ICLR2026/information_retrieval/judges_verdict_a_comprehensive_analysis_of_llm_judge_capability_through_human_ag.md)
-- [\[NeurIPS 2025\] Learning Task-Agnostic Representations through Multi-Teacher Distillation](learning_task-agnostic_representations_through_multi-teacher_distillation.md)
-- [\[NeurIPS 2025\] Generalized Contrastive Learning for Universal Multimodal Retrieval](generalized_contrastive_learning_for_universal_multimodal_re.md)
+- [\[ACL 2025\] Semantic Outlier Removal with Embedding Models and LLMs](../../ACL2025/information_retrieval/semantic_outlier_removal_with_embedding_models_and_llms.md)
+- [\[ICLR 2026\] FrugalRAG: Less is More in RL Finetuning for Multi-hop Question Answering](../../ICLR2026/information_retrieval/frugalrag_less_is_more_in_rl_finetuning_for_multi-hop_question_answering.md)
+- [\[ICLR 2026\] Retro*: Optimizing LLMs for Reasoning-Intensive Document Retrieval](../../ICLR2026/information_retrieval/retro_optimizing_llms_for_reasoning-intensive_document_retrieval.md)
 
 </div>
 

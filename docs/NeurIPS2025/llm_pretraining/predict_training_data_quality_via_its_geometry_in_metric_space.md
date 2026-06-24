@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Predict Training Data Quality via Its Geometry in Metric Space
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Persistent Homology] This paper proposes a training data diversity metric based on Persistent Homology (PH)…
+  [NeurIPS 2025][LLM Pretraining][Persistent Homology] This paper proposes a training data diversity metric based on Persistent Homology (PH), demonstrating that geometric and topological structural features of data can effectively predict model performance, outperforming traditional entropy-based metrics such as Vendi Score.
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "Hill Numbers"
   - "Topological Data Analysis"
 date: 2026-05-08
-content_hash: da7c01cf12fec447
+content_hash: 06eb96f32ba81036
 ---
 
 # Predict Training Data Quality via Its Geometry in Metric Space
@@ -134,11 +134,11 @@ Experiments cover five datasets: Complaints (TC), SUBJectivity (SUBJ), SentEval 
 
 ## Related Papers
 
+- [\[ICML 2026\] Different Layers, Different Manifolds: Module-Wise Weight-Space Geometry in Transformer Optimization](../../ICML2026/llm_pretraining/different_layers_different_manifolds_module-wise_weight-space_geometry_in_transf.md)
 - [\[NeurIPS 2025\] Enhancing Training Data Attribution with Representational Optimization](enhancing_training_data_attribution_with_representational_optimization.md)
+- [\[ICML 2025\] The Double-Ellipsoid Geometry of CLIP](../../ICML2025/llm_pretraining/the_double-ellipsoid_geometry_of_clip.md)
+- [\[ACL 2025\] CritiQ: Mining Data Quality Criteria from Human Preferences](../../ACL2025/llm_pretraining/critiq_mining_data_quality_criteria_from_human_preferences.md)
 - [\[NeurIPS 2025\] Language Model Behavioral Phases are Consistent Across Architecture, Training Data, and Scale](language_model_behavioral_phases_are_consistent_across_archi.md)
-- [\[NeurIPS 2025\] Nemotron-CLIMB: CLustering-based Iterative Data Mixture Bootstrapping for Language Model Pre-training](nemotron-climb_clustering-based_iterative_data_mixture_bootstrapping_for_languag.md)
-- [\[ICML 2026\] On the Expressive Power of Permutation-Equivariant Weight-Space Networks](../../ICML2026/llm_pretraining/on_the_expressive_power_of_permutation-equivariant_weight-space_networks.md)
-- [\[ICML 2026\] InfoLaw: Information Scaling Laws for Large Language Models with Quality-Weighted Mixture Data and Repetition](../../ICML2026/llm_pretraining/infolaw_information_scaling_laws_for_large_language_models_with_quality-weighted.md)
 
 </div>
 

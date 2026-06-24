@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Consistency Training Can Entrench Misalignment
 description: >-
-  [ICML 2026][Alignment & RLHF][Paper Note] This paper proposes the "consistency non-neutrality hypothesis." By evaluating 7 consistency training methods across 108 "model organisms," it finds that consistency training is not alignment-neutral—it systematically suppresses fragile reward hacking and emergent misalignment while amplifying stable sycophancy. Distri
+  [ICML2026][LLM Alignment][Consistency Training] This paper proposes the "consistency non-neutrality hypothesis." By evaluating 7 consistency training methods across 108 "model organisms," it finds that consistency training is not alignment-neutral—it systematically suppresses fragile reward hacking and emergent misalignment while amplifying stable sycophancy. Distribution shift, rather than score selection, is identified as the primary driver.
 tags:
-  - ICML 2026
-  - Alignment & RLHF
+  - "ICML2026"
+  - "LLM Alignment"
+  - "Consistency Training"
+  - "Alignment Safety"
+  - "Model Bias Amplification"
+  - "Sycophancy"
+  - "Reward Hacking"
 date: 2026-05-08
-content_hash: d030553f75ea6b86
+content_hash: a961aa5870f2ddff
 ---
+
 # Consistency Training Can Entrench Misalignment
 
 **Conference**: ICML2026  
@@ -114,10 +120,10 @@ This paper formalizes the safety of consistency training as a testable hypothesi
 ## Related Papers
 
 - [\[ACL 2026\] ConsistRM: Improving Generative Reward Models via Consistency-Aware Self-Training](../../ACL2026/llm_alignment/consistrm_improving_generative_reward_models_via_consistency-aware_self-training.md)
-- [\[ICML 2026\] Steering Beyond the Support: Adversarial Training on Unsupervised Jailbroken Activation Simulation](steering_beyond_the_support_adversarial_training_on_unsupervised_jailbroken_acti.md)
+- [\[ICLR 2026\] Cognitive models can reveal interpretable value trade-offs in language models](../../ICLR2026/llm_alignment/cognitive_models_can_reveal_interpretable_value_trade-offs_in_language_models.md)
+- [\[ICLR 2026\] Verification and Co-Alignment via Heterogeneous Consistency for Preference-Aligned LLM Annotations](../../ICLR2026/llm_alignment/verification_and_co-alignment_via_heterogeneous_consistency_for_preference-align.md)
 - [\[ICLR 2026\] Align Once, Benefit Multilingually: Enforcing Multilingual Consistency for LLM Safety Alignment](../../ICLR2026/llm_alignment/align_once_benefit_multilingually_enforcing_multilingual_consistency_for_llm_saf.md)
-- [\[CVPR 2026\] Unlocking Token Rewards via Training-Free Reward Attribution](../../CVPR2026/llm_alignment/unlocking_token_rewards_via_training-free_reward_attribution.md)
-- [\[ICLR 2026\] Spectrum Tuning: Post-Training for Distributional Coverage and In-Context Steerability](../../ICLR2026/llm_alignment/spectrum_tuning_post-training_for_distributional_coverage_and_in-context_steerab.md)
+- [\[ICML 2026\] Steering Beyond the Support: Adversarial Training on Unsupervised Jailbroken Activation Simulation](steering_beyond_the_support_adversarial_training_on_unsupervised_jailbroken_acti.md)
 
 </div>
 

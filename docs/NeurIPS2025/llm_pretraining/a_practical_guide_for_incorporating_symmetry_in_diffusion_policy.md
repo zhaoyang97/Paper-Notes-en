@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Practical Guide for Incorporating Symmetry in Diffusion Policy
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Diffusion Policy] This paper presents a practical guide for incorporating symmetry into diffusion policies. Through three simple and composable methods — invariant representations (relativ…
+  [NeurIPS 2025][LLM Pretraining][Diffusion Policy] This paper presents a practical guide for incorporating symmetry into diffusion policies. Through three simple and composable methods — invariant representations (relative trajectory actions + eye-in-hand perception), equivariant visual encoders, and Frame Averaging — the proposed approach achieves performance on par with or exceeding fully equivariant diffusion policies across 12 MimicGen tasks…
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "Frame Averaging"
   - "Robot Manipulation"
 date: 2026-05-08
-content_hash: 8021a2e417c3b3d7
+content_hash: a0c5cd1f208ab118
 ---
 
 # A Practical Guide for Incorporating Symmetry in Diffusion Policy
@@ -131,11 +131,11 @@ The input consists of a single RGB image from an eye-in-hand camera and the robo
 
 ## Related Papers
 
+- [\[ACL 2025\] Incorporating Domain Knowledge into Materials Tokenization](../../ACL2025/llm_pretraining/incorporating_domain_knowledge_into_materials_tokenization.md)
 - [\[NeurIPS 2025\] Composition and Alignment of Diffusion Models using Constrained Learning](composition_and_alignment_of_diffusion_models_using_constrai.md)
 - [\[NeurIPS 2025\] Next Semantic Scale Prediction via Hierarchical Diffusion Language Models](next_semantic_scale_prediction_via_hierarchical_diffusion_language_models.md)
-- [\[NeurIPS 2025\] Deep Compositional Phase Diffusion for Long Motion Sequence Generation](deep_compositional_phase_diffusion_for_long_motion_sequence_generation.md)
+- [\[ACL 2025\] An Effective Incorporating Heterogeneous Knowledge Curriculum Learning for Sequence Labeling](../../ACL2025/llm_pretraining/dual_stage_curriculum_learning_sequence_labeling.md)
 - [\[ICLR 2026\] RECON: Robust symmetry discovery via Explicit Canonical Orientation Normalization](../../ICLR2026/llm_pretraining/recon_robust_symmetry_discovery_via_explicit_canonical_orientation_normalization.md)
-- [\[ICCV 2025\] FlowMo: Flow to the Mode — Mode-Seeking Diffusion Autoencoders for State-of-the-Art Image Tokenization](../../ICCV2025/llm_pretraining/flow_to_the_mode_mode-seeking_diffusion_autoencoders_for_state-of-the-art_image_.md)
 
 </div>
 

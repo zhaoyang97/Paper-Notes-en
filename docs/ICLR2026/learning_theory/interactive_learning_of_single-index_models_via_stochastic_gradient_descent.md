@@ -2,16 +2,23 @@
 title: >-
   [Paper Note] Interactive Learning of Single-Index Models via Stochastic Gradient Descent
 description: >-
-  [ICLR 2026][learning_theory][SGD] This paper proves that when learning single-index models in an interactive (bandit) environment, a naive normalized SGD equipped with appropriate learning rate and exploration intensity schedules achieves near-optimal sample complexity and regret bounds in both "burn-in" and "learning" phases, without requiring zero-or
+  [ICLR 2026][Learning Theory][Single-index model] This paper proves that when learning single-index models in an interactive (bandit) environment, a naive normalized SGD equipped with appropriate learning rate and exploration intensity schedules achieves near-optimal sample complexity and regret bounds in both "burn-in" and "learning" phases, without requiring zero-order exploration algorithms customized for specific link functions.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - SGD
-  - ridge bandit
-  - burn-in
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Bandit Theory"
+  - "Single-index model"
+  - "SGD"
+  - "generalized linear bandit"
+  - "ridge bandit"
+  - "feature learning"
+  - "burn-in"
+  - "sample complexity"
+  - "regret bound"
 date: 2026-05-08
-content_hash: 8edf6ae71832ae1b
+content_hash: 941dfb46198106bd
 ---
+
 # Interactive Learning of Single-Index Models via Stochastic Gradient Descent
 
 **Conference**: ICLR 2026  
@@ -119,11 +126,11 @@ This work is primarily theoretical; "experiments" consist of numerical simulatio
 
 ## Related Papers
 
+- [\[ICLR 2026\] Transformers Trained via Gradient Descent Can Provably Learn a Class of Teacher Models](transformers_trained_via_gradient_descent_can_provably_learn_a_class_of_teacher_.md)
 - [\[ICLR 2026\] Continuum Transformers Perform In-Context Learning by Operator Gradient Descent](continuum_transformers_perform_in-context_learning_by_operator_gradient_descent.md)
 - [\[ICLR 2026\] Gradient Descent Dynamics of Rank-One Matrix Denoising](gradient_descent_dynamics_of_rank-one_matrix_denoising.md)
+- [\[ICLR 2026\] Separable Neural Networks: Approximation Theory, NTK Regime, and Preconditioned Gradient Descent](separable_neural_networks_approximation_theory_ntk_regime_and_preconditioned_gra.md)
 - [\[ICLR 2026\] Transformers Learn Latent Mixture Models In-Context via Mirror Descent](transformers_learn_latent_mixture_models_in-context_via_mirror_descent.md)
-- [\[ICLR 2026\] Finite-Time Convergence Analysis of ODE-based Generative Models for Stochastic Interpolants](finite-time_convergence_analysis_of_ode-based_generative_models_for_stochastic_i.md)
-- [\[ICLR 2026\] Improved High-Dimensional Estimation with Langevin Dynamics and Stochastic Weight Averaging](improved_high-dimensional_estimation_with_langevin_dynamics_and_stochastic_weigh.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Model-Behavior Alignment under Flexible Evaluation: When the Best-Fitting Model Isn't the Right One
 description: >-
-  [NeurIPS 2025][Interpretability][Model Recovery] Through large-scale model recovery experiments, this paper demonstrates that even with 4.5 million behavioral data points…
+  [NeurIPS 2025][Interpretability][Model Recovery] Through large-scale model recovery experiments, this paper demonstrates that even with 4.5 million behavioral data points, flexible evaluation methods based on linear probing achieve model recovery accuracy below 80% across 20 visual models. This reveals a fundamental trade-off between predictive accuracy and model identifiability, challenging the prevailing paradigm that the best-fitting model is the most appropriate one.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "Identifiability"
   - "THINGS Dataset"
 date: 2026-05-08
-content_hash: b9cae38fe15f8e48
+content_hash: 8e3d18deaba03105
 ---
 
 # Model-Behavior Alignment under Flexible Evaluation: When the Best-Fitting Model Isn't the Right One
@@ -149,8 +149,8 @@ Regression analysis is used to identify causes of model misidentification:
 - [\[NeurIPS 2025\] Probabilistic Token Alignment for Large Language Model Fusion](probabilistic_token_alignment_for_large_language_model_fusion.md)
 - [\[AAAI 2026\] Flexible Concept Bottleneck Model](../../AAAI2026/interpretability/flexible_concept_bottleneck_model.md)
 - [\[NeurIPS 2025\] Latent Principle Discovery for Language Model Self-Improvement](latent_principle_discovery_for_language_model_self-improvement.md)
+- [\[ICML 2026\] ExPLAIND: Unifying Model, Data, and Training Attribution to Study Model Behavior](../../ICML2026/interpretability/explaind_unifying_model_data_and_training_attribution_to_study_model_behavior.md)
 - [\[NeurIPS 2025\] Curvature Tuning: Provable Training-free Model Steering From a Single Parameter](curvature_tuning_provable_training-free_model_steering_from_a_single_parameter.md)
-- [\[NeurIPS 2025\] Steering Information Utility in Key-Value Memory for Language Model Post-Training](steering_information_utility_in_key-value_memory_for_language_model_post-trainin.md)
 
 </div>
 

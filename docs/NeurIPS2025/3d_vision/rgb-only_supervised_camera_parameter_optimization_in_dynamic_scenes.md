@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] RGB-Only Supervised Camera Parameter Optimization in Dynamic Scenes
 description: >-
-  [NeurIPS 2025][3D Vision][camera parameter estimation] ROS-Cam proposes a camera parameter (focal length + pose) optimization method for dynamic scenes supervised solely by a single RGB video. It achieves state-of-the-ar…
+  [NeurIPS 2025 Spotlight][3D Vision][camera parameter estimation] ROS-Cam proposes a camera parameter (focal length + pose) optimization method for dynamic scenes supervised solely by a single RGB video. It achieves state-of-the-art accuracy and fastest runtime across 5 datasets via three key contributions: a patch-wise tracking filter for sparse, robust correspondences; a Cauchy distribution-based outlier-aware joint optimization that adaptively down-weights moving objects…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "3D Vision"
   - "camera parameter estimation"
   - "dynamic scene"
@@ -12,7 +12,7 @@ tags:
   - "outlier-aware optimization"
   - "visual odometry"
 date: 2026-05-08
-content_hash: d27e2922c6e87fe6
+content_hash: 6c864166026e8372
 ---
 
 # RGB-Only Supervised Camera Parameter Optimization in Dynamic Scenes
@@ -128,11 +128,11 @@ Total loss: $\mathcal{L}_{total} = \mathcal{L}_{cauchy} + R_{depth}$. $\mathcal{
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] D$^2$USt3R: Enhancing 3D Reconstruction for Dynamic Scenes](d2ust3r_enhancing_3d_reconstruction_for_dynamic_scenes.md)
 - [\[CVPR 2026\] Coverage Optimization for Camera View Selection](../../CVPR2026/3d_vision/coverage_optimization_for_camera_view_selection.md)
 - [\[CVPR 2026\] FastEventDGS: Deformable Gaussian Splatting for Fast Dynamic Scenes from a Single Event Camera](../../CVPR2026/3d_vision/fasteventdgs_deformable_gaussian_splatting_for_fast_dynamic_scenes_from_a_single.md)
-- [\[NeurIPS 2025\] D$^2$USt3R: Enhancing 3D Reconstruction for Dynamic Scenes](d2ust3r_enhancing_3d_reconstruction_for_dynamic_scenes.md)
-- [\[NeurIPS 2025\] Galactification: Painting Galaxies onto Dark Matter Only Simulations Using a Transformer-Based Model](galactification_painting_galaxies_onto_dark_matter_only_simulations_using_a_tran.md)
-- [\[NeurIPS 2025\] On Geometry-Enhanced Parameter-Efficient Fine-Tuning for 3D Scene Segmentation](on_geometry-enhanced_parameter-efficient_fine-tuning_for_3d_scene_segmentation.md)
+- [\[CVPR 2025\] Dyn-HaMR: Recovering 4D Interacting Hand Motion from a Dynamic Camera](../../CVPR2025/3d_vision/dyn-hamr_recovering_4d_interacting_hand_motion_from_a_dynamic_camera.md)
+- [\[CVPR 2025\] Joint Optimization of Neural Radiance Fields and Continuous Camera Motion from a Monocular Video](../../CVPR2025/3d_vision/joint_optimization_of_neural_radiance_fields_and_continuous_camera_motion_from_a.md)
 
 </div>
 

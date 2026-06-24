@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CoLC: Communication-Efficient Collaborative Perception with LiDAR Completion
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] CoLC proposes a communication-efficient early collaborative perception framework. It reduces transmission volume through Foreground-Aware Point Sampling (FAPS), restores dense pillar representations on the ego side using VQ-based LiDAR Completion (CEEF), and ensures semantic and geometric consistency via Dense-Guided D
+  [CVPR 2026][Autonomous Driving][Collaborative Perception] CoLC proposes a communication-efficient early collaborative perception framework. It reduces transmission volume through Foreground-Aware Point Sampling (FAPS), restores dense pillar representations on the ego side using VQ-based LiDAR Completion (CEEF), and ensures semantic and geometric consistency via Dense-Guided Double Alignment (DGDA). This maintains or even exceeds early fusion detection performance while signif…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Collaborative Perception"
+  - "Communication Efficiency"
+  - "LiDAR Completion"
+  - "Early Fusion"
+  - "Vector Quantization"
 date: 2026-05-08
-content_hash: 2d44c18601772ebf
+content_hash: 4ba2758052dbf931
 ---
+
 # CoLC: Communication-Efficient Collaborative Perception with LiDAR Completion
 
 **Conference**: CVPR 2026  
@@ -188,9 +194,9 @@ VQ-based completion has lower MSE and higher reconstruction fidelity, leading to
 
 ## Related Papers
 
+- [\[ICLR 2026\] Rate-Distortion Optimized Pragmatic Communication for Collaborative Perception](../../ICLR2026/autonomous_driving/rate-distortion_optimized_pragmatic_communication_for_collaborative_perception.md)
 - [\[CVPR 2026\] Hybrid Robust Collaborative Perception with LiDAR-4D Radar Fusion under Adverse Weather Conditions](hybrid_robust_collaborative_perception_with_lidar-4d_radar_fusion_under_adverse_.md)
 - [\[CVPR 2026\] CATNet: Collaborative Alignment and Transformation Network for Cooperative Perception](catnet_collaborative_alignment_and_transformation_network_for_cooperative_percep.md)
-- [\[AAAI 2026\] LiNeXt: Revisiting LiDAR Completion with Efficient Non-Diffusion Architectures](../../AAAI2026/autonomous_driving/linext_revisiting_lidar_completion_with_efficient_non-diffusion_architectures.md)
 - [\[CVPR 2026\] Learning Mutual View Information Graph for Adaptive Adversarial Collaborative Perception](learning_mutual_view_information_graph_for_adaptive_adversarial_collaborative_pe.md)
 - [\[CVPR 2026\] Probabilistic Discrepancy Learning for Roadside LiDAR Scene Completion](probabilistic_discrepancy_learning_for_roadside_lidar_scene_completion.md)
 

@@ -4,13 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Dialogue Systems][User Language Model] "Flip" the dialogue—instead of training LLMs to be better assistants, specifically post-train a **User Language Model (User LM)** to simulate real human users. This model is used to expose the weaknesses of assistant LMs in realistic multi-turn scenarios (dropping GPT-4o's task success rate from 74.6% to 57.4%).
 tags:
-  - ICLR 2026
-  - Dialogue Systems
-  - User Language Model
-  - WildChat
+  - "ICLR 2026"
+  - "Dialogue Systems"
+  - "User Language Model"
+  - "User Simulator"
+  - "Multi-turn Dialogue"
+  - "Assistant Evaluation"
+  - "WildChat"
 date: 2026-05-08
-content_hash: a2de6127119185d8
+content_hash: 377aa5bdf9fdab3e
 ---
+
 # Flipping the Dialogue: Training and Evaluating User Language Models
 
 **Conference**: ICLR 2026  

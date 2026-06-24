@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SteerX: Creating Any Camera-Free 3D and 4D Scenes with Geometric Steering
 description: >-
-  [ICCV 2025][Video Generation][3D scene generation] SteerX proposes a zero-shot inference-time guidance method that integrates scene reconstruction into the video generation process. By designing geometric reward function…
+  [ICCV 2025][Video Generation][3D scene generation] SteerX proposes a zero-shot inference-time guidance method that integrates scene reconstruction into the video generation process. By designing geometric reward functions using camera-free feed-forward reconstruction models, SteerX steers the generation distribution toward geometrically consistent samples, enabling high-quality camera-free 3D/4D scene generation.
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -11,7 +11,7 @@ tags:
   - "geometric steering"
   - "inference-time guidance"
 date: 2026-05-08
-content_hash: cc4ee3ddeac6119f
+content_hash: dffdf4664461fc18
 ---
 
 # SteerX: Creating Any Camera-Free 3D and 4D Scenes with Geometric Steering
@@ -133,11 +133,11 @@ SteerX achieves significant improvements in both 3D and 4D scene generation and 
 
 ## Related Papers
 
+- [\[CVPR 2026\] ReDirector: Creating Any-Length Video Retakes with Rotary Camera Encoding](../../CVPR2026/video_generation/redirector_creating_any-length_video_retakes_with_rotary_camera_encoding.md)
 - [\[ICCV 2025\] Free-Form Motion Control: Controlling the 6D Poses of Camera and Objects in Video Generation](free-form_motion_control_controlling_the_6d_poses_of_camera_and_objects_in_video.md)
-- [\[CVPR 2026\] VerseCrafter: Dynamic Realistic Video World Model with 4D Geometric Control](../../CVPR2026/video_generation/versecrafter_dynamic_realistic_video_world_model_with_4d_geometric_control.md)
-- [\[ICCV 2025\] DACoN: DINO for Anime Paint Bucket Colorization with Any Number of Reference Images](dacon_dino_for_anime_paint_bucket_colorization_with_any_number_of_reference_imag.md)
-- [\[AAAI 2026\] 3D4D: An Interactive Editable 4D World Model via 3D Video Generation](../../AAAI2026/video_generation/3d4d_an_interactive_editable_4d_world_model_via_3d_video_generation.md)
+- [\[CVPR 2025\] VideoScene: Distilling Video Diffusion Model to Generate 3D Scenes in One Step](../../CVPR2025/video_generation/videoscene_distilling_video_diffusion_model_to_generate_3d_scenes_in_one_step.md)
 - [\[ICCV 2025\] ReCamMaster: Camera-Controlled Generative Rendering from A Single Video](recammaster_camera-controlled_generative_rendering_from_a_single_video.md)
+- [\[ICCV 2025\] DACoN: DINO for Anime Paint Bucket Colorization with Any Number of Reference Images](dacon_dino_for_anime_paint_bucket_colorization_with_any_number_of_reference_imag.md)
 
 </div>
 

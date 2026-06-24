@@ -2,17 +2,21 @@
 title: >-
   [Paper Note] FedMuon: Federated Learning with Bias-corrected LMO-based Optimization
 description: >-
-  [ICLR 2026][Optimization & Theory][Muon] This paper points out that directly using Muon (an optimizer based on the Linear Minimization Oracle, LMO) as a local optimizer for FedAvg fails to converge because LMO is a biased operator. It proposes FedMuon, which utilizes SCAFFOLD-like control variables for bias correction, and provides the first proof that it con
+  [ICLR 2026][Optimization][Federated Learning] This paper points out that directly using Muon (an optimizer based on the Linear Minimization Oracle, LMO) as a local optimizer for FedAvg fails to converge because LMO is a biased operator. It proposes FedMuon, which utilizes SCAFFOLD-like control variables for bias correction, and provides the first proof that it converges for any number of Newton-Schulz iterations, with faster convergence as iterations increase.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Muon
-  - LMO
-  - Newton-Schulz
-  - SCAFFOLD
+  - "ICLR 2026"
+  - "Optimization"
+  - "Federated Learning"
+  - "Muon"
+  - "LMO"
+  - "Bias correction"
+  - "Newton-Schulz"
+  - "SCAFFOLD"
+  - "Convergence analysis"
 date: 2026-05-08
-content_hash: 55b923ac008ce9dc
+content_hash: 8f668b845523061c
 ---
+
 # FedMuon: Federated Learning with Bias-corrected LMO-based Optimization
 
 **Conference**: ICLR 2026  
@@ -118,8 +122,8 @@ FedMuon is trainable even at $T=0$. Increasing $T$ from 0 to 1 leads to a signif
 - [\[ICLR 2026\] Byzantine-Robust Federated Learning with Learnable Aggregation Weights](byzantine-robust_federated_learning_with_learnable_aggregation_weights.md)
 - [\[ICLR 2026\] Incentives in Federated Learning with Heterogeneous Agents](incentives_in_federated_learning_with_heterogeneous_agents.md)
 - [\[ICLR 2026\] DeepAFL: Deep Analytic Federated Learning](deepafl_deep_analytic_federated_learning.md)
+- [\[ICLR 2026\] Riemannian Federated Learning via Averaging Gradient Streams](riemannian_federated_learning_via_averaging_gradient_streams.md)
 - [\[AAAI 2026\] FedPM: Federated Learning Using Second-order Optimization with Preconditioned Mixing of Local Parameters](../../AAAI2026/optimization/fedpm_federated_learning_using_second-order_optimization_with_preconditioned_mix.md)
-- [\[ICLR 2026\] Enhancing Communication Compression via Discrepancy-aware Calibration for Federated Learning](enhancing_communication_compression_via_discrepancy-aware_calibration_for_federa.md)
 
 </div>
 

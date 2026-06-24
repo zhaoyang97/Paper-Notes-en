@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Diffusive Classification Loss for Learning Energy-based Generative Models
 description: >-
-  [ICML 2026][Image Generation][Boltzmann Generator] This paper proposes DiffCLF, which reformulates energy estimation across temporal noise levels as a classification problem. By training jointly with DSM, it learns more reliable energy functions without requiring expensive maximum likelihood sampling, specifically alleviating the "mode blindness" of score matching rega
+  [ICML2026][Image Generation][Diffusive classification loss] This paper proposes DiffCLF, which reformulates energy estimation across temporal noise levels as a classification problem. By training jointly with DSM, it learns more reliable energy functions without requiring expensive maximum likelihood sampling, specifically alleviating the "mode blindness" of score matching regarding multi-modal weights.
 tags:
-  - ICML 2026
-  - Image Generation
-  - Boltzmann Generator
+  - "ICML2026"
+  - "Image Generation"
+  - "Diffusive classification loss"
+  - "energy-based models"
+  - "denoising score matching"
+  - "mode blindness"
+  - "Boltzmann Generator"
 date: 2026-05-08
-content_hash: 527fe492e5db02f9
+content_hash: 5ee365ef1e3effb0
 ---
+
 # A Diffusive Classification Loss for Learning Energy-based Generative Models
 
 **Conference**: ICML2026  
@@ -109,14 +114,17 @@ The paper analyzes alternative objectives and level counts rather than standard 
 
 <div class="related-papers" markdown="1">
 
-- **[Predictability and Scalability of Diffusion Models](https://arxiv.org/abs/2401.00001)**: Discussions on score-based dynamics.
-- **[Score-based Generative Modeling through SDEs](https://arxiv.org/abs/2011.13456)**: Fundamental work on diffusion and scores.
-- **[Boltzmann Generators: Sampling Equilibrium States](https://science.org/doi/10.1126/science.aaw1147)**: Target application for high-quality energy modeling.
+## Related Papers
+
+- [\[ICML 2026\] $f$-Trajectory Balance: A Loss Family for Tuning GFlowNets, Generative Models, and LLMs with Off- and On-Policy Data](f-trajectory_balance_a_loss_family_for_tuning_gflownets_generative_models_and_ll.md)
+- [\[NeurIPS 2025\] Latent Zoning Network: A Unified Principle for Generative Modeling, Representation Learning, and Classification](../../NeurIPS2025/image_generation/latent_zoning_network_a_unified_principle_for_generative_modeling_representation.md)
+- [\[AAAI 2026\] Symmetrical Flow Matching: Unified Image Generation, Segmentation, and Classification with Score-Based Generative Models](../../AAAI2026/image_generation/symmetrical_flow_matching_unified_image_generation_segmentation_and_classificati.md)
+- [\[ICML 2026\] A Kinetic Energy Perspective of Flow Matching](a_kinetic_energy_perspective_of_flow_matching.md)
+- [\[CVPR 2026\] Advancing Image Classification with Discrete Diffusion Classification Modeling](../../CVPR2026/image_generation/advancing_image_classification_with_discrete_diffusion_classification_modeling.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2026\] $f$-Trajectory Balance: A Loss Family for Tuning GFlowNets, Generative Models, and LLMs with Off- and On-Policy Data](f-trajectory_balance_a_loss_family_for_tuning_gflownets_generative_models_and_ll.md)

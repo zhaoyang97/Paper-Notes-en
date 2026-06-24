@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Precise and Interpretable Editing of Code Knowledge in Large Language Models
 description: >-
-  [ICLR 2026][Interpretability][Knowledge Editing] This paper replaces an MLP layer in the Transformer with a sparse, monosemantic TransCoder module. By updating only a few neurons truly activated by the target error (TCPE), the method achieves precise editing while providing neuron-level explanations of "what was changed and why." The authors propose KECode, an editin
+  [ICLR 2026][Interpretability][Knowledge Editing] This paper replaces an MLP layer in the Transformer with a sparse, monosemantic TransCoder module. By updating only a few neurons truly activated by the target error (TCPE), the method achieves precise editing while providing neuron-level explanations of "what was changed and why." The authors propose KECode, an editing benchmark for code translation based on functional equivalence, improving CodeLlama-7b's Java→D translation a…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Knowledge Editing
-  - TransCoder
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Knowledge Editing"
+  - "TransCoder"
+  - "Monosemantic Neurons"
+  - "Code Translation"
+  - "Functional Equivalence"
 date: 2026-05-08
-content_hash: 452c75f3bb12461a
+content_hash: f5d05e13680262ac
 ---
+
 # Precise and Interpretable Editing of Code Knowledge in Large Language Models
 
 **Conference**: ICLR 2026  
@@ -138,6 +142,7 @@ Interpretability comparison (blind review of 50 features):
 - Value: ⭐⭐⭐⭐ (A robust solution for precise code LLM editing)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Self-Predictive Representations for Combinatorial Generalization in Behavioral Cloning
 description: >-
-  [ICLR 2026][Self-Supervised Learning][BYOL] Addressing the combinatorial generalization deficit in Goal-Conditioned Behavioral Cloning (GCBC), which fails to "stitch" novel state-goal pairs, this paper proposes BYOL-$\gamma$: a self-predictive representation learning objective that samples future states using a geometric distribution to approximate the successor
+  [ICLR 2026][Self-Supervised Learning][Successor Representation] Addressing the combinatorial generalization deficit in Goal-Conditioned Behavioral Cloning (GCBC), which fails to "stitch" novel state-goal pairs, this paper proposes BYOL-$\gamma$: a self-predictive representation learning objective that samples future states using a geometric distribution to approximate the successor measure. As an auxiliary loss for BC, it requires neither TD learning nor negative samples…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - BYOL
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Successor Representation"
+  - "Self-Predictive Representation"
+  - "BYOL"
+  - "Combinatorial Generalization"
+  - "Goal-Conditioned Behavioral Cloning"
 date: 2026-05-08
-content_hash: 8b5f775577c615b5
+content_hash: 7ce3d8e915f65e8d
 ---
+
 # Self-Predictive Representations for Combinatorial Generalization in Behavioral Cloning
 
 **Conference**: ICLR 2026  
@@ -149,10 +154,10 @@ BYOL-$\gamma$ ranks first with an average success rate of 35, exceeding TD-SR (3
 
 ## Related Papers
 
+- [\[ICLR 2026\] Symmetric Space Learning for Combinatorial Generalization](symmetric_space_learning_for_combinatorial_generalization.md)
 - [\[ICLR 2026\] Bidirectional Predictive Coding](bidirectional_predictive_coding.md)
 - [\[ICLR 2026\] Regularized Latent Dynamics Prediction is a Strong Baseline for Behavioral Foundation Models](regularized_latent_dynamics_prediction_is_a_strong_baseline_for_behavioral_found.md)
 - [\[ICLR 2026\] MaskCO: Masked Generation Drives Effective Representation Learning and Exploiting for Combinatorial Optimization](maskco_masked_generation_drives_effective_representation_learning_and_exploiting.md)
-- [\[CVPR 2026\] Towards Stable Self-Supervised Object Representations in Unconstrained Egocentric Video](../../CVPR2026/self_supervised/towards_stable_self-supervised_object_representations_in_unconstrained_egocentri.md)
 - [\[ICLR 2026\] OrthoRF: Exploring Orthogonality in Object-Centric Representations](orthorf_exploring_orthogonality_in_object-centric_representations.md)
 
 </div>

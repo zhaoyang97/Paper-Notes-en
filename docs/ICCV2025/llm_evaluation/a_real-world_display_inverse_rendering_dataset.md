@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Real-world Display Inverse Rendering Dataset
 description: >-
-  [ICCV 2025][LLM Evaluation][Inverse Rendering] This paper presents the first real-world inverse rendering dataset built upon an LCD display-camera system…
+  [ICCV 2025][LLM Evaluation][Inverse Rendering] This paper presents the first real-world inverse rendering dataset built upon an LCD display-camera system, comprising stereo polarization images of 16 objects with diverse materials captured under OLAT illumination patterns alongside high-precision geometric ground truth. A simple yet effective display inverse rendering baseline is proposed, outperforming existing inverse rendering methods.
 tags:
   - "ICCV 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "Polarization Imaging"
   - "Photometric Stereo"
 date: 2026-05-08
-content_hash: 6303c90313b44d66
+content_hash: 7cb14cee8f76ed40
 ---
 
 # A Real-world Display Inverse Rendering Dataset
@@ -130,10 +130,10 @@ The work consists of four components: (1) constructing and calibrating an LCD di
 ## Related Papers
 
 - [\[ICCV 2025\] PHATNet: A Physics-guided Haze Transfer Network for Domain-adaptive Real-world Image Dehazing](phatnet_a_physics-guided_haze_transfer_network_for_domain-adaptive_real-world_im.md)
-- [\[ACL 2026\] TaxPraBen: A Scalable Benchmark for Structured Evaluation of LLMs in Chinese Real-World Tax Practice](../../ACL2026/llm_evaluation/taxpraben_a_scalable_benchmark_for_structured_evaluation_of_llms_in_chinese_real.md)
-- [\[ACL 2026\] Beyond Itinerary Planning: A Real-World Benchmark for Multi-Turn and Tool-Using Travel Tasks](../../ACL2026/llm_evaluation/beyond_itinerary_planning-a_real-world_benchmark_for_multi-turn_and_tool-using_t.md)
-- [\[NeurIPS 2025\] CodeAssistBench (CAB): Dataset & Benchmarking for Multi-turn Chat-Based Code Assistance](../../NeurIPS2025/llm_evaluation/codeassistbench_cab_dataset_benchmarking_for_multi-turn_chat-based_code_assistan.md)
-- [\[NeurIPS 2025\] Words That Unite The World: A Unified Framework for Deciphering Central Bank Communications Globally](../../NeurIPS2025/llm_evaluation/words_that_unite_the_world_a_unified_framework_for_deciphering_central_bank_comm.md)
+- [\[ACL 2025\] TripTailor: A Real-World Benchmark for Personalized Travel Planning](../../ACL2025/llm_evaluation/triptailor_a_real-world_benchmark_for_personalized_travel_planning.md)
+- [\[ACL 2025\] RuleArena: A Benchmark for Rule-Guided Reasoning with LLMs in Real-World Scenarios](../../ACL2025/llm_evaluation/rulearena_rule_guided_reasoning.md)
+- [\[ICLR 2026\] Inverse IFEval: Can LLMs Unlearn Stubborn Training Conventions to Follow Real Instructions?](../../ICLR2026/llm_evaluation/inverse_ifeval_can_llms_unlearn_stubborn_training_conventions_to_follow_real_ins.md)
+- [\[ACL 2025\] AntiLeakBench: Preventing Data Contamination by Automatically Constructing Benchmarks with Updated Real-World Knowledge](../../ACL2025/llm_evaluation/antileakbench_preventing_data_contamination_by_automatically_constructing_benchm.md)
 
 </div>
 

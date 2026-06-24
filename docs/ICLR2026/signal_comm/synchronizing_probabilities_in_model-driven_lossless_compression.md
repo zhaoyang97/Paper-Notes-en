@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Synchronizing Probabilities in Model-Driven Lossless Compression
 description: >-
-  [ICLR 2026][Signal & Communications][Paper Note] To address the fatal issue in LLM-driven lossless compression where prediction probabilities must be bit-level identical across encoder and decoder to avoid "cascading collapse," this paper proposes PMATIC—an alternative to arithmetic coding that quantizes bit probabilities into bins and uses low-entropy helper bits to
+  [ICLR 2026][Signal & Communication][Lossless compression] To address the fatal issue in LLM-driven lossless compression where prediction probabilities must be bit-level identical across encoder and decoder to avoid "cascading collapse," this paper proposes PMATIC—an alternative to arithmetic coding that quantizes bit probabilities into bins and uses low-entropy helper bits to synchronize both ends on the same quantized probability. PMATIC tolerates bounded prediction mismatch…
 tags:
-  - ICLR 2026
-  - Signal & Communications
+  - "ICLR 2026"
+  - "Signal & Communication"
+  - "Lossless compression"
+  - "Arithmetic coding"
+  - "Model-driven compression"
+  - "Prediction mismatch"
+  - "Non-determinism"
 date: 2026-05-08
-content_hash: 6747b24b4ac7df6e
+content_hash: cdf93b95d3535c7b
 ---
+
 # Synchronizing Probabilities in Model-Driven Lossless Compression
 
 **Conference**: ICLR 2026  
@@ -138,15 +144,16 @@ The actual frequency of helper=1 is far lower than expected (4–7x lower), beca
 - Value: ⭐⭐⭐⭐⭐ Directly addresses a major hurdle for deploying LLM-based compression.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Hystar: Hypernetwork-driven Style-adaptive Retrieval via Dynamic SVD Modulation](hystar_hypernetwork-driven_style-adaptive_retrieval_via_dynamic_svd_modulation.md)
 - [\[CVPR 2025\] Neural Video Compression with Context Modulation](../../CVPR2025/signal_comm/neural_video_compression_with_context_modulation.md)
 - [\[ICLR 2026\] TS-DDAE: A Novel Temporal-Spectral Denoising Diffusion AutoEncoder for Wireless Signal Recognition Model Pre-training](ts-ddae_a_novel_temporal-spectral_denoising_diffusion_autoencoder_for_wireless_s.md)
 - [\[ICML 2026\] Joint Model and Data Sparsification via the Marginal Likelihood](../../ICML2026/signal_comm/joint_model_and_data_sparsification_via_the_marginal_likelihood.md)
 - [\[ECCV 2024\] RAW-Adapter: Adapting Pre-trained Visual Model to Camera RAW Images](../../ECCV2024/signal_comm/raw-adapter_adapting_pre-trained_visual_model_to_camera_raw_images.md)
-- [\[ICML 2025\] Large Language Model (LLM)-enabled In-context Learning for Wireless Network Optimization](../../ICML2025/signal_comm/large_language_model_llm-enabled_in-context_learning_for_wireless_network_optimi.md)
 
 </div>
 

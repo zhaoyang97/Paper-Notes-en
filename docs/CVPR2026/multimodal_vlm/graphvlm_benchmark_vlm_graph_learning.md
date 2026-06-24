@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GraphVLM: Benchmarking Vision Language Models for Multimodal Graph Learning
 description: >-
-  [CVPR 2026][Multimodal VLM][benchmark] This paper proposes the GraphVLM benchmark to systematically evaluate three roles of VLMs in multimodal graph learning: VLM-as-Encoder (enhancing GNN features), VLM-as-Aligner (bridging modalities for LLM reasoning), and VLM-as-Predictor (acting directly as a graph learning backbone). Experiments across six datasets de
+  [CVPR 2026][Multimodal VLM][Multimodal Graph Learning] This paper proposes the GraphVLM benchmark to systematically evaluate three roles of VLMs in multimodal graph learning: VLM-as-Encoder (enhancing GNN features), VLM-as-Aligner (bridging modalities for LLM reasoning), and VLM-as-Predictor (acting directly as a graph learning backbone). Experiments across six datasets demonstrate that VLM-as-Predictor consistently achieves the best performance…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - benchmark
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Graph Learning"
+  - "VLM Role Analysis"
+  - "Graph Neural Networks"
+  - "benchmark"
+  - "structure-aware reasoning"
 date: 2026-05-08
-content_hash: 598c9b04b132357f
+content_hash: 015006b29b6a6f73
 ---
+
 # GraphVLM: Benchmarking Vision Language Models for Multimodal Graph Learning
 
 **Conference**: CVPR 2026  
@@ -146,8 +151,8 @@ This is the primary paradigm advocated by the authors. Given that VLMs possess s
 ## Related Papers
 
 - [\[CVPR 2026\] Structural Graph Probing of Vision-Language Models](structural_graph_probing_of_vision-language_models.md)
-- [\[CVPR 2026\] SVHalluc: Benchmarking Speech-Vision Hallucination in Audio-Visual Large Language Models](svhalluc_benchmarking_speech-vision_hallucination_in_audio-visual_large_language.md)
 - [\[CVPR 2025\] Mosaic of Modalities: A Comprehensive Benchmark for Multimodal Graph Learning](../../CVPR2025/multimodal_vlm/mosaic_of_modalities_a_comprehensive_benchmark_for_multimodal_graph_learning.md)
+- [\[CVPR 2026\] ORIC: Benchmarking Object Recognition under Contextual Incongruity in Large Vision-Language Models](oric_benchmarking_object_recognition_under_contextual_incongruity_in_large_visio.md)
 - [\[CVPR 2026\] CASPA: Graph-Structured Concept Anchors for Modality-Agnostic Adaptation in Vision-Language Models](caspa_graph-structured_concept_anchors_for_modality-agnostic_adaptation_in_visio.md)
 - [\[CVPR 2026\] CapNav: Benchmarking Vision Language Models on Capability-conditioned Indoor Navigation](capnav_benchmarking_vision_language_models_on_capability-conditioned_indoor_navi.md)
 

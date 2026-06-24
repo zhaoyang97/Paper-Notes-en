@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Optimizing Diversity and Quality through Base-Aligned Model Collaboration
 description: >-
-  [ICML 2026][LLM (Other)][Alignment] The authors propose BACO, an inference-time token-level routing framework. It allows an "unaligned base model" and an "aligned instruct model" to switch token-by-token during a single decoding pass. Decisions are based on logit uncertainty and content signals, achieving base-level diversity and aligned-level quality wi
+  [ICML 2026][LLM (Other)][Diversity-Quality Trade-off] The authors propose BACO, an inference-time token-level routing framework. It allows an "unaligned base model" and an "aligned instruct model" to switch token-by-token during a single decoding pass. Decisions are based on logit uncertainty and content signals, achieving base-level diversity and aligned-level quality without re-training or multiple sampling. The best router achieves a 21.3% joint improvement in diversity an…
 tags:
-  - ICML 2026
-  - LLM (Other)
-  - Alignment
+  - "ICML 2026"
+  - "LLM (Other)"
+  - "Diversity-Quality Trade-off"
+  - "Inference-time Collaboration"
+  - "Token-level Routing"
+  - "Alignment"
+  - "Open-ended Generation"
 date: 2026-05-08
-content_hash: 3a590a35bf7e6a40
+content_hash: 4a4ce29612d1a76c
 ---
+
 # Optimizing Diversity and Quality through Base-Aligned Model Collaboration
 
 **Conference**: ICML 2026  
@@ -141,10 +146,10 @@ Coverage improved by 0.142 (+30% reachable area) compared to the strongest basel
 ## Related Papers
 
 - [\[ICLR 2026\] Optimas: Optimizing Compound AI Systems with Globally Aligned Local Rewards](../../ICLR2026/llm_nlp/optimas_optimizing_compound_ai_systems_with_globally_aligned_local_rewards.md)
+- [\[ICML 2026\] "I've Seen How This Goes": Characterizing LLM vs. Human Writing Diversity using Progressive Conditional Surprisal](ive_seen_how_this_goes_characterizing_diversity_via_progressive_conditional_surp.md)
 - [\[AAAI 2026\] STEM: Efficient Relative Capability Evaluation of LLMs through Structured Transitive Evaluation Model](../../AAAI2026/llm_nlp/stem_efficient_relative_capability_evaluation_of_llms_through_structured_transit.md)
 - [\[ICML 2026\] The Cylindrical Representation Hypothesis for Language Model Steering](the_cylindrical_representation_hypothesis_for_language_model_steering.md)
 - [\[ICML 2026\] A Geometric Relation of the Error Introduced by Sampling a Language Model's Output Distribution to its Internal State](a_geometric_relation_of_the_error_introduced_by_sampling_a_language_models_outpu.md)
-- [\[ICLR 2026\] WebDevJudge: Evaluating (M)LLMs as Critiques for Web Development Quality](../../ICLR2026/llm_nlp/webdevjudge_mllm_web_development.md)
 
 </div>
 

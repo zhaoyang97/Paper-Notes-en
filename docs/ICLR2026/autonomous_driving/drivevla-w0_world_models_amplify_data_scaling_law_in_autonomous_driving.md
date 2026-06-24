@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] DriveVLA-W0: World Models Amplify Data Scaling Law in Autonomous Driving
 description: >-
-  [ICLR 2026][Autonomous Driving][Vision-Language-Action] DriveVLA-W0 adds a "predict future images" world model task to autonomous driving VLA, using dense visual self-supervision signals to fill the "supervision deficit" left by sparse action supervision. This effectively "amplifies" the data scaling law across 70M frames, allowing the model to consistently improve rather t
+  [ICLR 2026][Autonomous Driving][Vision-Language-Action] DriveVLA-W0 adds a "predict future images" world model task to autonomous driving VLA, using dense visual self-supervision signals to fill the "supervision deficit" left by sparse action supervision. This effectively "amplifies" the data scaling law across 70M frames, allowing the model to consistently improve rather than reaching early saturation.
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - Vision-Language-Action
-  - World Models
-  - NAVSIM
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Vision-Language-Action"
+  - "World Models"
+  - "Data Scaling Law"
+  - "Self-supervised"
+  - "NAVSIM"
 date: 2026-05-08
-content_hash: c8d2ba94c75d2c8e
+content_hash: 45fd0060aa3d8210
 ---
+
 # DriveVLA-W0: World Models Amplify Data Scaling Law in Autonomous Driving
 
 **Conference**: ICLR 2026  

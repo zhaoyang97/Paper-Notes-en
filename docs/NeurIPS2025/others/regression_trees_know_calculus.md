@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Regression Trees Know Calculus
 description: >-
-  [NeurIPS 2025][regression trees] This paper reveals gradient information latent in piecewise-constant regression trees — by treating the difference in child-node means as a finite-difference analogue…
+  [NeurIPS 2025][regression trees] This paper reveals gradient information latent in piecewise-constant regression trees — by treating the difference in child-node means as a finite-difference analogue, it efficiently extracts gradient estimates, thereby importing differential tools such as Active Subspaces (AS) and Integrated Gradients (IG) into tree models, broadening both their interpretability and predictive improvement capabilities.
 tags:
   - "NeurIPS 2025"
   - "regression trees"
@@ -11,7 +11,7 @@ tags:
   - "integrated gradients"
   - "interpretability"
 date: 2026-05-08
-content_hash: 578ef03b91e04a36
+content_hash: 909283e835cb0fb0
 ---
 
 # Regression Trees Know Calculus
@@ -152,11 +152,11 @@ Each internal node of a regression tree of depth $K$ is treated as a finite-diff
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Statistical Inference for Gradient Boosting Regression](statistical_inference_for_gradient_boosting_regression.md)
 - [\[NeurIPS 2025\] Improving Decision Trees through the Lens of Parameterized Local Search](improving_decision_trees_through_the_lens_of_parameterized_local_search.md)
+- [\[NeurIPS 2025\] Statistical Inference for Gradient Boosting Regression](statistical_inference_for_gradient_boosting_regression.md)
 - [\[NeurIPS 2025\] Semi-Supervised Regression with Heteroscedastic Pseudo-Labels](semi-supervised_regression_with_heteroscedastic_pseudo-labels.md)
 - [\[NeurIPS 2025\] Information-Computation Tradeoffs for Noiseless Linear Regression with Oblivious Contamination](information-computation_tradeoffs_for_noiseless_linear_regression_with_oblivious.md)
-- [\[NeurIPS 2025\] Neural Collapse in Cumulative Link Models for Ordinal Regression: An Analysis with Unconstrained Feature Model](neural_collapse_in_cumulative_link_models_for_ordinal_regression_an_analysis_wit.md)
+- [\[ICLR 2026\] From Fields to Random Trees](../../ICLR2026/others/from_fields_to_random_trees.md)
 
 </div>
 

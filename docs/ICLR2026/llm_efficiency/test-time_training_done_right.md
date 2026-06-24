@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Test-Time Training Done Right
 description: >-
-  [ICLR 2026][LLM Efficiency][Test-Time Training] This paper points out that existing Test-Time Training (TTT) approaches fail on long sequences because they adhere to tiny online mini-batches (updating fast weights every 16~64 tokens), causing modern GPU utilization to remain below 5%. The authors take the opposite approach and propose **LaCT (Large-Chunk Test-Time T
+  [ICLR 2026][LLM Efficiency][Test-Time Training] This paper points out that existing Test-Time Training (TTT) approaches fail on long sequences because they adhere to tiny online mini-batches (updating fast weights every 16~64 tokens), causing modern GPU utilization to remain below 5%. The authors take the opposite approach and propose **LaCT (Large-Chunk Test-Time Training)**, which expands the update granularity to massive chunks of 2K~1M tokens. Combined with window attenti…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Test-Time Training
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Test-Time Training"
+  - "Large-Chunk Update"
+  - "Fast Weights"
+  - "Long Context"
+  - "Linear Complexity"
 date: 2026-05-08
-content_hash: 383199a625e1534b
+content_hash: d64fa9c81fe140d4
 ---
+
 # Test-Time Training Done Right
 
 **Conference**: ICLR 2026  
@@ -136,11 +141,11 @@ Configuration scales for different tasks:
 
 ## Related Papers
 
-- [\[ICLR 2026\] MesaNet: Sequence Modeling by Locally Optimal Test-Time Training](mesanet_sequence_modeling_by_locally_optimal_test-time_training.md)
+- [\[ICLR 2026\] In-Place Test-Time Training](in-place_test-time_training.md)
 - [\[ICLR 2026\] Let's (not) just put things in Context: Test-time Training for Long-context LLMs](lets_not_just_put_things_in_context_test-time_training_for_long-context_llms.md)
-- [\[ICLR 2026\] RACE Attention: A Strictly Linear-Time Attention Layer for Training on Outrageously Large Contexts](race_attention_a_strictly_linear-time_attention_layer_for_training_on_outrageous.md)
-- [\[ICLR 2026\] Local Linear Attention: An Optimal Interpolation of Linear and Softmax Attention for Test-Time Regression](local_linear_attention_an_optimal_interpolation_of_linear_and_softmax_attention_.md)
-- [\[ICLR 2026\] Scaling Up, Speeding Up: A Benchmark of Speculative Decoding for Efficient LLM Test-Time Scaling](scaling_up_speeding_up_a_benchmark_of_speculative_decoding_for_efficient_llm_tes.md)
+- [\[ICLR 2026\] MesaNet: Sequence Modeling by Locally Optimal Test-Time Training](mesanet_sequence_modeling_by_locally_optimal_test-time_training.md)
+- [\[ICLR 2026\] TrimR: Validator-based, Training-free Thinking Trimming for Efficient Test-time Scaling](trimr_verifier-based_training-free_thinking_trimming_for_efficient_test-time_sca.md)
+- [\[CVPR 2025\] Spatial-TTT: Streaming Visual-based Spatial Intelligence with Test-Time Training](../../CVPR2025/llm_efficiency/spatial-ttt_streaming_visual-based_spatial_intelligence_with_test-time_training.md)
 
 </div>
 

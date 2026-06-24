@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Do Activation Verbalization Methods Convey Privileged Information?
 description: >-
-  [ICML 2026][Interpretability][Patchscopes] This paper systematically demonstrates that the performance of currently popular activation verbalization methods (Patchscopes / LIT / SelfIE), when used as LLM interpretability tools, can be entirely explained by the "verbalizer model's own knowledge" without requiring any internal activations from the target model. T
+  [ICML 2026][Interpretability][Activation Verbalization] This paper systematically demonstrates that the performance of currently popular activation verbalization methods (Patchscopes / LIT / SelfIE), when used as LLM interpretability tools, can be entirely explained by the "verbalizer model's own knowledge" without requiring any internal activations from the target model. This implies that these tools appear effective on existing benchmarks due to flawed benchmark design…
 tags:
-  - ICML 2026
-  - Interpretability
-  - Patchscopes
-  - LIT
+  - "ICML 2026"
+  - "Interpretability"
+  - "Activation Verbalization"
+  - "Patchscopes"
+  - "LIT"
+  - "Faithfulness"
+  - "Privileged Knowledge"
 date: 2026-05-08
-content_hash: d457780ee617092d
+content_hash: 84f7b309a9f4c5e7
 ---
+
 # Do Activation Verbalization Methods Convey Privileged Information?
 
 **Conference**: ICML 2026  
@@ -123,10 +127,17 @@ Activation Inversion (Table 3-4): Using T5-Base to invert activations back to ap
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[NeurIPS 2025\] Do Different Prompting Methods Yield a Common Task Representation?](../../NeurIPS2025/interpretability/do_different_prompting_methods_yield_a_common_task_representation_in_language_mo.md)
+- [\[ICML 2026\] In Defense of Information Leakage in Concept-based Models](in_defense_of_information_leakage_in_concept-based_models.md)
+- [\[ICML 2026\] Steer Like the LLM: Activation Steering that Mimics Prompting](steer_like_the_llm_activation_steering_that_mimics_prompting.md)
+- [\[ICML 2026\] On the Relationship Between Activation Outliers and Feature Death in Sparse Autoencoders](on_the_relationship_between_activation_outliers_and_feature_death_in_sparse_auto.md)
+- [\[ICML 2026\] Closing the Loop: PID Feedback Control for Interpretable Activation Steering in Symbolic Music Generation](closing_the_loop_pid_feedback_control_for_interpretable_activation_steering_in_s.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[NeurIPS 2025\] Do Different Prompting Methods Yield a Common Task Representation?](../../NeurIPS2025/interpretability/do_different_prompting_methods_yield_a_common_task_representation_in_language_mo.md)

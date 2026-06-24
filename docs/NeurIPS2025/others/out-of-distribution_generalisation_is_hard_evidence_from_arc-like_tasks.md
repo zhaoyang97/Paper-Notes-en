@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Out-of-distribution Generalisation is Hard: Evidence from ARC-like Tasks
 description: >-
-  [NeurIPS 2025][OOD generalisation] By constructing ARC-like tasks with well-defined OOD metrics, this paper demonstrates that standard neural networks (MLP/CNN/Transformer) fail to achieve compositional OOD generalisatio…
+  [NeurIPS 2025][OOD generalisation] By constructing ARC-like tasks with well-defined OOD metrics, this paper demonstrates that standard neural networks (MLP/CNN/Transformer) fail to achieve compositional OOD generalisation. Moreover, even architectures designed with correct inductive biases that attain near-perfect OOD performance may still learn incorrect compositional features.
 tags:
   - "NeurIPS 2025"
   - "OOD generalisation"
@@ -11,7 +11,7 @@ tags:
   - "inductive bias"
   - "feature learning"
 date: 2026-05-08
-content_hash: 3d37b42b5a58f219
+content_hash: 5e861d7239221e55
 ---
 
 # Out-of-distribution Generalisation is Hard: Evidence from ARC-like Tasks
@@ -145,11 +145,11 @@ Novel architectures with correct inductive biases:
 
 ## Related Papers
 
+- [\[CVPR 2025\] Open Set Label Shift with Test Time Out-of-Distribution Reference](../../CVPR2025/others/open_set_label_shift_with_test_time_out-of-distribution_reference.md)
 - [\[NeurIPS 2025\] Brain-Like Processing Pathways Form in Models With Heterogeneous Experts](brain-like_processing_pathways_form_in_models_with_heterogeneous_experts.md)
+- [\[ICML 2025\] Softmax is not Enough (for Sharp Size Generalisation)](../../ICML2025/others/softmax_is_not_enough_for_sharp_size_generalisation.md)
 - [\[NeurIPS 2025\] egoEMOTION: Egocentric Vision and Physiological Signals for Emotion and Personality Recognition in Real-World Tasks](egoemotion_egocentric_vision_and_physiological_signals_for_emotion_and_personali.md)
-- [\[ICCV 2025\] Is Meta-Learning Out? Rethinking Unsupervised Few-Shot Classification with Limited Entropy](../../ICCV2025/others/is_meta-learning_out_rethinking_unsupervised_few-shot_classification_with_limite.md)
-- [\[AAAI 2026\] How Hard is it to Explain Preferences Using Few Boolean Attributes?](../../AAAI2026/others/how_hard_is_it_to_explain_preferences_using_few_boolean_attributes.md)
-- [\[ICLR 2026\] Out of the Shadows: Exploring a Latent Space for Neural Network Verification](../../ICLR2026/others/out_of_the_shadows_exploring_a_latent_space_for_neural_network_verification.md)
+- [\[ICML 2025\] Online Sparsification of Bipartite-Like Clusters in Graphs](../../ICML2025/others/online_sparsification_of_bipartite-like_clusters_in_graphs.md)
 
 </div>
 

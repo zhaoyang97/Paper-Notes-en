@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Mapping Post-Training Forgetting in Language Models at Scale
 description: >-
-  [ICLR 2026][LLM Evaluation][post-training] The authors propose a **sample-wise + chance-adjusted** forgetting and backward transfer measurement framework. Large-scale empirical testing on nearly 30 base→post-trained model pairs across approximately 100 sub-benchmarks reveals that real-world post-training forgetting is significantly milder than predicted by cont
+  [ICLR 2026][LLM Evaluation][post-training] The authors propose a **sample-wise + chance-adjusted** forgetting and backward transfer measurement framework. Large-scale empirical testing on nearly 30 base→post-trained model pairs across approximately 100 sub-benchmarks reveals that real-world post-training forgetting is significantly milder than predicted by continual learning literature, while backward transfer in mathematics and logic is prevalent.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - post-training
-  - catastrophic forgetting
-  - backward transfer
-  - sample-wise metrics
-  - chance adjustment
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "post-training"
+  - "catastrophic forgetting"
+  - "backward transfer"
+  - "sample-wise metrics"
+  - "chance adjustment"
 date: 2026-05-08
-content_hash: ec3244a9c06790bc
+content_hash: 677fe42ca6fff369
 ---
+
 # Mapping Post-Training Forgetting in Language Models at Scale
 
 **Conference**: ICLR 2026  
@@ -129,11 +130,11 @@ Testing EMA / LERP / SLERP merging (linear interpolation between two checkpoints
 
 ## Related Papers
 
+- [\[ICLR 2026\] Detecting Data Contamination from Reinforcement Learning Post-training for Large Language Models](detecting_data_contamination_from_reinforcement_learning_post-training_for_large.md)
 - [\[ICLR 2026\] Mapping Overlaps in Benchmarks through Perplexity in the Wild](mapping_overlaps_in_benchmarks_through_perplexity_in_the_wild.md)
-- [\[ACL 2026\] Enhancing Linguistic Competence of Language Models through Pre-training with Language Learning Tasks](../../ACL2026/llm_evaluation/enhancing_linguistic_competence_of_language_models_through_pre-training_with_lan.md)
 - [\[ICLR 2026\] Evaluating Language Models' Evaluations of Games](evaluating_language_models_evaluations_of_games.md)
-- [\[NeurIPS 2025\] ConfTuner: Training Large Language Models to Express Their Confidence Verbally](../../NeurIPS2025/llm_evaluation/conftuner_training_large_language_models_to_express_their_confidence_verbally.md)
 - [\[ICLR 2026\] Truthfulness Despite Weak Supervision: Evaluating and Training LLMs Using Peer Prediction](truthfulness_despite_weak_supervision_evaluating_and_training_llms_using_peer_pr.md)
+- [\[ICLR 2026\] The Open Proof Corpus: A Large-Scale Study of LLM-Generated Mathematical Proofs](the_open_proof_corpus_a_large-scale_study_of_llm-generated_mathematical_proofs.md)
 
 </div>
 

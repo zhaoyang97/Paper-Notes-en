@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Large Multi-modal Models Can Interpret Features in Large Multi-modal Models
 description: >-
-  [Multimodal VLM] This paper proposes the first automated feature interpretation framework for Large Multimodal Models (LMMs). It employs Sparse Autoencoders (SAEs) to decompose LMM internal representations into monoseman…
+  [Multimodal VLM] This paper proposes the first automated feature interpretation framework for Large Multimodal Models (LMMs). It employs Sparse Autoencoders (SAEs) to decompose LMM internal representations into monosemantic features, leverages larger LMMs to automatically interpret these features, and demonstrates that feature steering can correct model hallucinations.
 tags:
   - "Multimodal VLM"
 date: 2026-05-08
-content_hash: 35a04151c143eef9
+content_hash: 3e82527b5ae39b63
 ---
 
 # Large Multi-modal Models Can Interpret Features in Large Multi-modal Models
@@ -163,9 +163,9 @@ Attribution analysis reveals:
 
 ## Related Papers
 
-- [\[ICCV 2025\] R1-VL: Learning to Reason with Multimodal Large Language Models via Step-wise Group Relative Policy Optimization](r1-vl_learning_to_reason_with_multimodal_large_language_models_via_step-wise_gro.md)
-- [\[ICCV 2025\] Physics Context Builders: A Modular Framework for Physical Reasoning in Vision-Language Models](physics_context_builders_a_modular_framework_for_physical_reasoning_in_vision-la.md)
-- [\[AAAI 2026\] Rethinking Visual Token Reduction in LVLMs under Cross-Modal Misalignment](../../AAAI2026/multimodal_vlm/rethinking_visual_token_reduction_in_lvlms_under_cross-modal_misalignment.md)
+- [\[ACL 2025\] Can Multimodal Large Language Models Understand Spatial Relations?](../../ACL2025/multimodal_vlm/spatialmqa_mllm_spatial_relations.md)
+- [\[ACL 2025\] Can Vision Language Models Understand Mimed Actions?](../../ACL2025/multimodal_vlm/can_vision_language_models_understand_mimed_actions.md)
+- [\[CVPR 2025\] Multi-Layer Visual Feature Fusion in Multimodal LLMs: Methods, Analysis, and Best Practices](../../CVPR2025/multimodal_vlm/multi-layer_visual_feature_fusion_in_multimodal_llms_methods_analysis_and_best_p.md)
 - [\[ICCV 2025\] SC-Captioner: Improving Image Captioning with Self-Correction by Reinforcement Learning](sc-captioner_improving_image_captioning_with_self-correction_by_reinforcement_le.md)
 - [\[ICCV 2025\] Hints of Prompt: Enhancing Visual Representation for Multimodal LLMs in Autonomous Driving](hints_of_prompt_enhancing_visual_representation_for_multimodal_llms_in_autonomou.md)
 

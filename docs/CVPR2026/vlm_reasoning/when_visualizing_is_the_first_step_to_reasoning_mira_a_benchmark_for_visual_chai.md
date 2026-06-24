@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] When Visualizing is the First Step to Reasoning: MIRA, a Benchmark for Visual Chain-of-Thought
 description: >-
-  [CVPR 2026][Multimodal VLM][Benchmark] MIRA is a multimodal benchmark specifically designed for problems that "require drawing intermediate diagrams before reasoning": 546 problems across Euclidean Geometry, Physics Reasoning, Abstract Spatial & Logic Puzzles, and Causal Transformation are provided with human-annotated intermediate visual cues. A three-leve
+  [CVPR 2026][VLM Reasoning][Visual Chain-of-Thought] MIRA is a multimodal benchmark specifically designed for problems that "require drawing intermediate diagrams before reasoning": 546 problems across Euclidean Geometry, Physics Reasoning, Abstract Spatial & Logic Puzzles, and Causal Transformation are provided with human-annotated intermediate visual cues. A three-level diagnostic protocol ("Direct / Text-CoT / Visual-CoT") is used to isolate the contribution of visual infor…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Benchmark
-  - MLLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Visual Chain-of-Thought"
+  - "Multimodal Reasoning"
+  - "Benchmark"
+  - "MLLM"
+  - "Intermediate Visual Cues"
 date: 2026-05-08
-content_hash: 3d38ffe29b586308
+content_hash: e1eda57fcd153595
 ---
+
 # When Visualizing is the First Step to Reasoning: MIRA, a Benchmark for Visual Chain-of-Thought
 
 **Conference**: CVPR 2026  
@@ -145,10 +149,10 @@ Even when "aligning" text prompts to the Visual-CoT task structure, the overall 
 ## Related Papers
 
 - [\[CVPR 2026\] Chain-of-Thought Guided Multi-Modal Object Re-Identification](chain-of-thought_guided_multi-modal_object_re-identification.md)
+- [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](reinforcing_structured_chain-of-thought_for_video_understanding.md)
 - [\[CVPR 2026\] EmoThinker: Advancing Visual-Acoustic Emotion Analysis via Structural Token Selection and Chain-of-Thought Reasoning](emothinker_advancing_visual-acoustic_emotion_analysis_via_structural_token_selec.md)
-- [\[CVPR 2026\] UniT: Unified Multimodal Chain-of-Thought Test-time Scaling](unit_unified_multimodal_chain-of-thought_test-time_scaling.md)
-- [\[CVPR 2026\] Fuel Gauge: Estimating Chain-of-Thought Length Ahead of Time in Large Multimodal Models](fuel_gauge_estimating_chain-of-thought_length_ahead_of_time_in_large_multimodal_.md)
-- [\[CVPR 2026\] ReaGEN: Adaptive Generation of Structured Chains-of-Thought for Efficient Multimodal Reasoning](reagen_adaptive_generation_of_structured_chains-of-thought_for_efficient_multimo.md)
+- [\[CVPR 2026\] Grounded Chain-of-Thought for Multimodal Large Language Models](grounded_chain-of-thought_for_multimodal_large_language_models.md)
+- [\[CVPR 2026\] When to Think and When to Look: Uncertainty-Guided Lookback](when_to_think_and_when_to_look_uncertainty-guided_lookback.md)
 
 </div>
 

@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Let's (not) just put things in Context: Test-time Training for Long-context LLMs
 description: >-
-  [ICLR 2026][LLM Efficiency][KV cache] This paper identifies that retrieval failure in long-context LLMs stems from the **score dilution** of static self-attention (distractor tokens dilute the attention quality on the target) and demonstrates that "thinking tokens" cannot fix this issue. It proposes **query-only Test-time Training (qTTT)**—caching KV durin
+  [ICLR 2026][LLM Efficiency][Long Context] This paper identifies that retrieval failure in long-context LLMs stems from the **score dilution** of static self-attention (distractor tokens dilute the attention quality on the target) and demonstrates that "thinking tokens" cannot fix this issue. It proposes **query-only Test-time Training (qTTT)**—caching KV during a single prefill, then performing a few gradient updates solely on the query projection matrix with fixed KV. Under…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - KV cache
-  - score dilution
-  - query-only TTT
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Long Context"
+  - "Test-time Training"
+  - "Inference-time Compute"
+  - "KV cache"
+  - "score dilution"
+  - "query-only TTT"
 date: 2026-05-08
-content_hash: ab62e13f8ded644f
+content_hash: a210574431f4e4a0
 ---
+
 # Let's (not) just put things in Context: Test-time Training for Long-context LLMs
 
 **Conference**: ICLR 2026  
@@ -122,11 +126,11 @@ These analyses link the accuracy gains back to "target attention quality improve
 
 ## Related Papers
 
+- [\[ICLR 2026\] In-Place Test-Time Training](in-place_test-time_training.md)
 - [\[ICLR 2026\] Test-Time Training Done Right](test-time_training_done_right.md)
-- [\[ICLR 2026\] MesaNet: Sequence Modeling by Locally Optimal Test-Time Training](mesanet_sequence_modeling_by_locally_optimal_test-time_training.md)
 - [\[ICLR 2026\] Tactic: Adaptive Sparse Attention with Clustering and Distribution Fitting for Long-Context LLMs](tactic_adaptive_sparse_attention_with_clustering_and_distribution_fitting_for_lo.md)
+- [\[ICLR 2026\] MesaNet: Sequence Modeling by Locally Optimal Test-Time Training](mesanet_sequence_modeling_by_locally_optimal_test-time_training.md)
 - [\[ICML 2026\] Training-Inference Consistent Segmented Execution for Long-Context LLMs](../../ICML2026/llm_efficiency/training-inference_consistent_segmented_execution_for_long-context_llms.md)
-- [\[ICLR 2026\] Cartridges: Lightweight and General-Purpose Long Context Representations via Self-Study](cartridges_lightweight_and_general-purpose_long_context_representations_via_self.md)
 
 </div>
 

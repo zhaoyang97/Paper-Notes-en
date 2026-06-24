@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] This paper systematically compares three transfer paths—text, speech, and ASR cascade—using German-Bavarian intent classification and German-Swiss German topic classification. The study finds that optimal solutions for standard language do not necessarily apply to dialects: while text models excel on standard German, s
+  [ACL2026][Audio & Speech][Dialect Transfer] This paper systematically compares three transfer paths—text, speech, and ASR cascade—using German-Bavarian intent classification and German-Swiss German topic classification. The study finds that optimal solutions for standard language do not necessarily apply to dialects: while text models excel on standard German, speech models are generally more robust on dialectal input.
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL2026"
+  - "Audio & Speech"
+  - "Dialect Transfer"
+  - "Speech Understanding"
+  - "Intent Classification"
+  - "ASR Cascade"
+  - "German Dialects"
 date: 2026-05-08
-content_hash: 447275b12e0556af
+content_hash: 6e9f9b030a6cf41b
 ---
+
 # Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects
 
 **Conference**: ACL2026  
@@ -154,8 +160,8 @@ The paper uses comparative configurations to analyze "modality choice."
 
 - [\[ACL 2025\] Advancing Zero-shot Text-to-Speech Intelligibility across Diverse Domains via Preference Alignment](../../ACL2025/audio_speech/advancing_zero-shot_text-to-speech_intelligibility_across_diverse_domains_via_pr.md)
 - [\[ACL 2026\] FC-TTS: Style and Timbre Control in Zero-Shot Text-to-Speech with Disentangled Speech Representations](fc-tts_style_and_timbre_control_in_zero-shot_text-to-speech_with_disentangled_sp.md)
-- [\[ACL 2026\] Computational Narrative Understanding for Expressive Text-to-Speech](computational_narrative_understanding_for_expressive_text-to-speech.md)
 - [\[AAAI 2026\] A Mind Cannot Be Smeared Across Time](../../AAAI2026/audio_speech/a_mind_cannot_be_smeared_across_time.md)
+- [\[ACL 2026\] Computational Narrative Understanding for Expressive Text-to-Speech](computational_narrative_understanding_for_expressive_text-to-speech.md)
 - [\[ACL 2026\] ImmersiveTTS: Environment-Aware Text-to-Speech with Multimodal Diffusion Transformer and Domain-Specific Representation Alignment](immersivetts_environment-aware_text-to-speech_with_multimodal_diffusion_transfor.md)
 
 </div>

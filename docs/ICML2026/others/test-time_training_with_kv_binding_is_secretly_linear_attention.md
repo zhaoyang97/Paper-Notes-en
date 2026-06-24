@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Test-Time Training with KV Binding Is Secretly Linear Attention
 description: >-
-  [ICML 2026][Others][TTT-KVB] This paper employs four "memory paradox" counterexamples and a set of rigorous expansion theorems to prove that TTT with KV-binding inner loops (such as LaCT and ViTTT) remains a "learned linear attention operator" even when utilizing multi-layer MLPs and momentum. Based on this, the authors simplify and parallelize it
+  [ICML 2026][Test-Time Training] This paper employs four "memory paradox" counterexamples and a set of rigorous expansion theorems to prove that TTT with KV-binding inner loops (such as LaCT and ViTTT) remains a "learned linear attention operator" even when utilizing multi-layer MLPs and momentum. Based on this, the authors simplify and parallelize it into standard linear attention, achieving a $4\times$ throughput increase with almost no performance degradation.
 tags:
-  - ICML 2026
-  - Others
-  - TTT-KVB
+  - "ICML 2026"
+  - "Test-Time Training"
+  - "TTT-KVB"
+  - "Linear Attention"
+  - "Parallelization"
+  - "Architecture Simplification"
 date: 2026-05-08
-content_hash: 4c1cfe3d297725bf
+content_hash: fe24f624f2177296
 ---
+
 # Test-Time Training with KV Binding Is Secretly Linear Attention
 
 **Conference**: ICML 2026  

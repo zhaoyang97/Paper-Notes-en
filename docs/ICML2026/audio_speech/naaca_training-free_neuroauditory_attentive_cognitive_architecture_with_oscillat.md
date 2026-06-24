@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] NAACA: Training-Free NeuroAuditory Attentive Cognitive Architecture with Oscillatory Working Memory for Salience-Driven Attention Gating
 description: >-
-  [ICML 2026][Audio & Speech][Paper Note] This work utilizes a 2D oscillatory wave field (OWM) inspired by cortical oscillations for real-time saliency detection. Serving as a "training-free attention gate" for Audio Language Models (ALMs) on long audio, it feeds only truly salient windows into the ALM. This increases the AP on XD-Violence from 53.5% to 70.6%
+  [ICML 2026][Audio & Speech][Auditory Saliency] This work utilizes a 2D oscillatory wave field (OWM) inspired by cortical oscillations for real-time saliency detection. Serving as a "training-free attention gate" for Audio Language Models (ALMs) on long audio, it feeds only truly salient windows into the ALM. This increases the AP on XD-Violence from 53.5% to 70.6% while reducing approximately 40% of ALM calls.
 tags:
-  - ICML 2026
-  - Audio & Speech
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "Auditory Saliency"
+  - "Oscillatory Working Memory"
+  - "Training-free Gating"
+  - "Long Audio Understanding in ALMs"
 date: 2026-05-08
-content_hash: d581d0ae244942c1
+content_hash: 47f05935ff55c2df
 ---
+
 # NAACA: Training-Free NeuroAuditory Attentive Cognitive Architecture with Oscillatory Working Memory for Salience-Driven Attention Gating
 
 **Conference**: ICML 2026  
@@ -131,11 +136,11 @@ Without training, NAACA outperforms all supervised audio baselines and exceeds t
 
 ## Related Papers
 
+- [\[ICML 2026\] VocSim: A Training-Free Benchmark for Zero-Shot Content Identity Recognition for Single-Source Audio](vocsim_a_training-free_benchmark_for_zero-shot_content_identity_in_single-source.md)
 - [\[ACL 2026\] Temporal Contrastive Decoding: A Training-Free Method for Large Audio-Language Models](../../ACL2026/audio_speech/temporal_contrastive_decoding_a_training-free_method_for_large_audio-language_mo.md)
 - [\[ICML 2026\] Polyphonia: Zero-Shot Timbre Transfer in Polyphonic Music with Acoustic-Informed Attention Calibration](polyphonia_zero-shot_timbre_transfer_in_polyphonic_music_with_acoustic-informed_.md)
 - [\[CVPR 2026\] InfinityHuman: Towards Long-Term Audio-Driven Human Animation](../../CVPR2026/audio_speech/infinityhuman_towards_long-term_audio-driven_human_animation.md)
 - [\[ICML 2026\] Attend to Anything: Foundation Model for Unified Human Attention Modeling](attend_to_anything_foundation_model_for_unified_human_attention_modeling.md)
-- [\[ICLR 2026\] Dynamic Parameter Memory: Temporary LoRA-Enhanced LLM for Long-Sequence Emotion Recognition in Conversation](../../ICLR2026/audio_speech/dynamic_parameter_memory_temporary_lora-enhanced_llm_for_long-sequence_emotion_r.md)
 
 </div>
 

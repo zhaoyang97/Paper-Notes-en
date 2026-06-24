@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Benchmarking Web Agent Safety under E-commerce Deceptive Interfaces
 description: >-
-  [ACL 2026][LLM Agent][dark pattern] The authors developed **WebDecept**—a lightweight, pluggable "deceptive interface injection layer" that can insert seven types of common real-world deceptive patterns (pop-ups, banners, domain redirection, hidden cart additions, price changes, etc.) into the VisualWebArena e-commerce environment at specific trigger tim
+  [ACL2026][LLM Agent][Web agent safety] The authors developed **WebDecept**—a lightweight, pluggable "deceptive interface injection layer" that can insert seven types of common real-world deceptive patterns (pop-ups, banners, domain redirection, hidden cart additions, price changes, etc.) into the VisualWebArena e-commerce environment at specific trigger times to test the safety of multimodal web agents. The results show that advanced agents like GPT-5.1, Claude 4.5…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - dark pattern
+  - "ACL2026"
+  - "LLM Agent"
+  - "Web agent safety"
+  - "deceptive interfaces"
+  - "dark patterns"
+  - "e-commerce shopping"
+  - "multimodal agents"
 date: 2026-05-08
-content_hash: 8b593d725e16e888
+content_hash: de7c547d2e8fbe93
 ---
+
 # Benchmarking Web Agent Safety under E-commerce Deceptive Interfaces
 
 **Conference**: ACL2026  
@@ -133,8 +138,8 @@ Domain redirection and price drift are major disaster areas for almost all model
 - [\[ACL 2026\] Don't Click That: Teaching Web Agents to Resist Deceptive Interfaces](dont_click_that_teaching_web_agents_to_resist_deceptive_interfaces.md)
 - [\[ACL 2026\] Shopping Companion: A Memory-Augmented LLM Agent for Real-World E-Commerce Tasks](shopping_companion_a_memory-augmented_llm_agent_for_real-world_e-commerce_tasks.md)
 - [\[ICLR 2026\] ST-WebAgentBench: A Benchmark for Evaluating Safety and Trustworthiness in Web Agents](../../ICLR2026/llm_agent/st-webagentbench_a_benchmark_for_evaluating_safety_and_trustworthiness_in_web_ag.md)
+- [\[ACL 2026\] WebClipper: Efficient Evolution of Web Agents with Graph-based Trajectory Pruning](webclipper_efficient_evolution_of_web_agents_with_graph-based_trajectory_pruning.md)
 - [\[ICML 2026\] Persona2Web: Benchmarking Personalized Web Agents for Contextual Reasoning with User History](../../ICML2026/llm_agent/persona2web_benchmarking_personalized_web_agents_for_contextual_reasoning_with_u.md)
-- [\[ICML 2026\] Weasel: 通过重要性-多样性数据选择实现 Web Agent 的域外泛化](../../ICML2026/llm_agent/weasel_out-of-domain_generalization_for_web_agents_via_importance-diversity_data.md)
 
 </div>
 

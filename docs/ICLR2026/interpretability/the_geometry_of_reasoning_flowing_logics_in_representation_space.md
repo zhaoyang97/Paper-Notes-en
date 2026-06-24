@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] The Geometry of Reasoning: Flowing Logics in Representation Space
 description: >-
-  [ICLR 2026][Interpretability][Reasoning Geometry] This paper proposes a geometric framework that models the LLM reasoning process as "flows" (embedding trajectories) in representation space. Through controlled experiments decoupling logical structures from semantic content, it demonstrates that LLMs internalize logical invariants beyond surface forms and identifies po
+  [ICLR 2026][Interpretability][Reasoning Geometry] This paper proposes a geometric framework that models the LLM reasoning process as "flows" (embedding trajectories) in representation space. Through controlled experiments decoupling logical structures from semantic content, it demonstrates that LLMs internalize logical invariants beyond surface forms and identifies potentially universal representation laws across model families.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Reasoning Geometry
-  - Representation Flow
-  - Logical Invariants
-  - LLM Interpretability
-  - Concept Space
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Reasoning Geometry"
+  - "Representation Flow"
+  - "Logical Invariants"
+  - "LLM Interpretability"
+  - "Concept Space"
 date: 2026-05-08
-content_hash: 1aaa4857bd353a03
+content_hash: ef88c96094906faa
 ---
+
 # The Geometry of Reasoning: Flowing Logics in Representation Space
 
 **Conference**: ICLR 2026  
@@ -143,8 +144,8 @@ Two major findings: (1) LLM reasoning corresponds to smooth flows in representat
 - [\[ICLR 2026\] Paradigm Shift of GNN Explainer from Label Space to Prototypical Representation Space](paradigm_shift_of_gnn_explainer_from_label_space_to_prototypical_representation_.md)
 - [\[ICLR 2026\] Decomposing Representation Space into Interpretable Subspaces with Unsupervised Learning](decomposing_representation_space_into_interpretable_subspaces_with_unsupervised_.md)
 - [\[ICLR 2026\] The Deleuzian Representation Hypothesis](the_deleuzian_representation_hypothesis.md)
+- [\[ICLR 2026\] Information Shapes Koopman Representation](information_shapes_koopman_representation.md)
 - [\[ICLR 2026\] On The Geometry and Topology of Representations: the Manifolds of Modular Addition](on_the_geometry_and_topology_of_representations_the_manifolds_of_modular_additio.md)
-- [\[ICLR 2026\] Gauge-invariant Representation Holonomy](gauge-invariant_representation_holonomy.md)
 
 </div>
 

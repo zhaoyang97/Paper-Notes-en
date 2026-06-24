@@ -1,0 +1,189 @@
+---
+title: >-
+  [Paper Note] MorphTok: Morphologically Grounded Tokenization for Indian Languages
+description: >-
+  [ICML 2025 (TokShop Workshop)][Segmentation][Tokenization] This paper proposes the MorphTok framework, which addresses the issue of dependent vowels in Indian languages through a morphology-aware pre-tokenization step (lookup table/language model) and a Constrained BPE (CBPE) algorithm. It improves downstream performance in machine translation and language modeling tasks, and introduces a human evaluation metric, EvalTok.
+tags:
+  - "ICML 2025 (TokShop Workshop)"
+  - "Segmentation"
+  - "Tokenization"
+  - "Pre-tokenization"
+  - "Morphology-aware segmentation"
+  - "BPE"
+  - "Constrained BPE"
+  - "Indian languages"
+  - "Sandhi splitting"
+  - "Human evaluation metrics"
+date: 2026-05-08
+content_hash: 29712f81620a3455
+---
+
+# MorphTok: Morphologically Grounded Tokenization for Indian Languages
+
+**Conference**: ICML 2025 (TokShop Workshop)
+
+**arXiv**: [2504.10335](https://arxiv.org/abs/2504.10335)
+
+**Authors**: Maharaj Brahma, N J Karthika, Atul Kumar Singh, Devaraja Adiga, Smruti Bhate, Ganesh Ramakrishnan, Rohit Saluja, Maunendra Sankar Desarkar
+
+**Area**: Segmentation (Subword Segmentation / Text Tokenization)
+
+**Keywords**: Tokenization, Pre-tokenization, Morphology-aware segmentation, BPE, Constrained BPE, Indian languages, Sandhi splitting, Human evaluation metrics
+
+## TL;DR
+
+This paper proposes the MorphTok framework, which addresses the issue of dependent vowels in Indian languages through a morphology-aware pre-tokenization step (lookup table/language model) and a Constrained BPE (CBPE) algorithm. It improves downstream performance in machine translation and language modeling tasks, and introduces a human evaluation metric, EvalTok.
+
+## Background & Motivation
+
+Large language models (LLMs) commonly rely on Byte Pair Encoding (BPE) for subword tokenization. BPE greedily merges high-frequency character bigrams, often resulting in segmentations that do not align with linguistically meaningful units. This issue is particularly severe in **morphologically rich Indian languages** (e.g., Hindi, Marathi), primarily manifested in:
+
+**Sandhi phenomena**: Phonetic changes occur at morpheme boundaries of compound words. Standard BPE fails to identify these morphological boundaries, leading to tokenization results that lack linguistic meaning.
+
+**Dependent Vowels**: Indian languages use the Abugida writing system, where vowel symbols (diacritics) attach to consonants. Standard BPE may split dependent vowels into independent tokens, destroying character cohesion.
+
+**Multilingual tokenization bias**: Existing multilingual models (e.g., IndicTrans2) employ a unified BPE, which leads to high fertility (average number of tokens per word) for Indian languages, increasing computational overhead.
+
+Existing solutions, such as unsupervised morphological segmentation methods like Morfessor, show limited efficacy for Indian languages and lack specialized designs tailored to the characteristics of Abugida scripts.
+
+## Method
+
+### Overall Architecture
+
+MorphTok consists of three core components:
+
+1. **Morphology-Aware Pre-tokenization**: Splits words into morphologically meaningful units prior to BPE.
+2. **Constrained BPE (CBPE)**: Extends the standard BPE algorithm by incorporating script-specific constraints.
+3. **EvalTok Metric**: A tokenization quality metric designed for human evaluation.
+
+### Key Designs
+
+#### Morphology-Aware Pre-tokenization
+
+Two implementation approaches are proposed:
+
+- **Lookup Table approach**: Based on manually annotated morphological segmentation datasets (54k entries for Hindi, 58k entries for Marathi), including Sandhi splitting. It splits compound words into root morphemes, restoring their original forms before phonetic changes.
+- **Language Model (LM) approach**: Automatically performs morphological segmentation using a language model, reducing dependence on human annotation.
+
+Formal description of pre-tokenization: Given a word $w$, the pre-tokenization function $f_{\text{pre}}$ maps it to a sequence of morphemes:
+
+$$f_{\text{pre}}(w) = (m_1, m_2, \ldots, m_k)$$
+
+where each $m_i$ is a linguistically meaningful morphological unit. For Sandhi phenomena, **normalization** is applied so that downstream morphemes match existing vocabulary.
+
+#### Constrained BPE (CBPE)
+
+The merge rule of standard BPE is to select and merge the most frequent character pair $(a, b)$ at each step. CBPE builds upon this by adding script-specific constraints:
+
+$$\text{Merge}(a, b) = \begin{cases} \text{允许合并} & \text{if } (a, b) \text{ 满足约束 } C \\ \text{禁止合并} & \text{otherwise} \end{cases}$$
+
+The core constraint $C$: **Dependent vowels must form cohesive units with their preceding consonants**, meaning dependent vowels (such as ा, ि, ी, etc.) are prohibited from being split into independent tokens. This ensures that the tokens generated by CBPE are orthographically valid.
+
+### Loss & Training
+
+Standard training loss is used for downstream tasks. For **machine translation**, cross-entropy loss is employed:
+
+$$\mathcal{L}_{\text{MT}} = -\sum_{t=1}^{T} \log P(y_t | y_{<t}, X; \theta)$$
+
+For **language modeling**, the perplexity of an autoregressive language model is used as the evaluation metric:
+
+$$\text{PPL} = \exp\left(-\frac{1}{N}\sum_{i=1}^{N} \log P(w_i | w_{<i})\right)$$
+
+### Evaluation Metric: EvalTok
+
+The human evaluation metric, EvalTok, is proposed to assess the morphological and semantic quality of tokenization. Human annotators score the tokenization results of 100 sampled words to measure whether the splits align with meaningful morpheme boundaries, achieving an evaluation closer to human judgment.
+
+## Key Experimental Results
+
+### Main Results: Machine Translation Performance (En↔Hi, En↔Mr)
+
+| Tokenization Method | BLEU (En→Hi) | chrF (En→Hi) | COMET (En→Hi) | BLEU (Hi→En) | chrF (Hi→En) |
+|---------|-------------|-------------|--------------|-------------|-------------|
+| BPE (baseline) | — | — | — | — | — |
+| CBPE | ≈ BPE | ≈ BPE | ≈ BPE | ≈ BPE | ≈ BPE |
+| Lookup + BPE | **↑** | **↑** | **↑** | **↑** | **↑** |
+| Lookup + CBPE | **↑** | **↑** | **↑** | **↑** | **↑** |
+
+**Key Findings**: Lookup + BPE and Lookup + CBPE outperform standard BPE in all translation directions, demonstrating that the gain from morphological pre-tokenization is greater than from the CBPE constraints alone.
+
+### Language Modeling Performance
+
+| Tokenization Method | Perplexity (Hindi) | Loss (Hindi) | Perplexity (Marathi) | Loss (Marathi) |
+|---------|-------------------|-------------|---------------------|---------------|
+| BPE (baseline) | High | High | High | High |
+| CBPE | Medium | Medium | Medium | Medium |
+| Lookup + BPE | **Low** | **Low** | **Low** | **Low** |
+| Lookup + CBPE | **Lowest** | **Lowest** | **Lowest** | **Lowest** |
+
+**Key Findings**: Lookup + CBPE consistently achieves the lowest perplexity and loss in language modeling, validating the improvement in language understanding from morphology-aware tokenization.
+
+### Fertility Analysis
+
+| Tokenization Method | Fertility (Hindi) | Fertility (Marathi) | Reduction vs. BPE |
+|---------|-------------------|--------------------|-----------| 
+| BPE (baseline) | 1.8858 | — | — |
+| CBPE | 1.8174 | — | **-1.68%** |
+| Lookup + BPE | — | — | — |
+| Lookup + CBPE | — | — | — |
+
+**Key Findings**: CBPE reduces fertility by 1.68% (saving approximately 7 tokens per 100 words). Although the improvement is modest, it enhances tokenization efficiency while maintaining downstream performance.
+
+### Human Evaluation (EvalTok)
+
+| Evaluation Dimension | BPE | CBPE | Lookup + BPE | Lookup + CBPE |
+|---------|-----|------|-------------|--------------|
+| Morphological Alignment | Low | Medium | **High** | **Highest** |
+| Semantic Consistency | Low | Medium | **High** | **Highest** |
+
+**Key Findings**: EvalTok human evaluation confirms that morphological pre-tokenization methods (Lookup variants) produce higher-quality tokenization results on both morphological and semantic levels.
+
+## Highlights & Insights
+
+1. **Linguistically Driven Tokenization Optimization**: Distinct from purely statistical approaches, this method utilizes morphological knowledge (Sandhi splitting + morpheme boundaries) to guide tokenization, resulting in clear linguistic meaning.
+2. **Script-Adapted Design of CBPE**: By introducing constraints tailored to the dependent vowel characteristics of Abugida scripts, this approach can be generalized to other languages using similar writing systems (e.g., Thai, Burmese).
+3. **EvalTok Fills the Evaluation Gap**: Existing tokenization evaluations primarily rely on automatic metrics like fertility. EvalTok provides a human-centric perspective, offering a more comprehensive assessment of tokenization quality.
+4. **Dataset Contribution**: Releasing morphological segmentation annotation datasets of 54k entries for Hindi and 58k entries for Marathi serves as a significant resource for Indian NLP.
+
+## Limitations & Future Work
+
+1. **Evaluation Limited to Two Languages**: Experiments are restricted to Hindi and Marathi; effectiveness on other Indian languages (e.g., Tamil, Bengali, Telugu) remains unverified.
+2. **Lookup Table Dependency on Manual Annotation**: The lookup approach requires morphological segmentation annotations from linguistic experts, making it costly to scale to new languages.
+3. **Limited Fertility Improvement**: CBPE reduces fertility by only 1.68% (approximately 7 tokens per 100 words), offering minor practical computational savings.
+4. **Lack of Large-scale LLM Experiments**: Experiments were conducted only on small-to-medium datasets/models; the effectiveness on large-scale LLMs is unknown.
+5. **Predominantly Unidirectional Translation Tasks**: The evaluation lacks directions from English to other Indian languages (a point also raised by reviewers).
+
+## Related Work & Insights
+
+- **BPE (Sennrich et al., 2016)**: Standard subword tokenization method where a greedy merge strategy ignores linguistic structures.
+- **Morfessor**: An unsupervised morphological segmentation method that shows limited performance on morphologically complex languages.
+- **IndicTrans2**: A multilingual translation model for Indian languages, where using a unified BPE results in an excessive number of tokens.
+- **German Compound Splitting**: Work on German compound splitting faces similar phonetic change issues at morpheme boundaries, and methodological ideas can be mutually borrowed.
+
+**Insight**: The paradigm of morphology-aware tokenization can be generalized to all morphologically rich languages. The constraint design pattern of CBPE can be extended into a general "script-aware BPE" framework, automatically selecting constraint rules based on the characteristics of different writing systems.
+
+## Rating
+
+| Dimension | Score (1-5) | Description |
+|------|-----------|------|
+| Novelty | 3 | The combination of pre-tokenization and constrained BPE is intuitive, but morphological tokenization is not a new concept. |
+| Technical Depth | 3 | Workshop paper; the methodology is relatively straightforward and lacks deep theoretical analysis. |
+| Experimental Thoroughness | 3 | Evaluated on only two languages with small-to-medium scale models; lacks large-scale validation. |
+| Writing Quality | 3 | Clearly structured but contains redundancies (reviewers pointed out repetitive descriptions of EvalTok). |
+| Value | 4 | Release of datasets combined with plug-and-play methods that can be directly applied to Indian language systems. |
+| Overall Rating | 3.2 | A utility-oriented workshop effort that addresses real problems but has limited depth. |
+
+<!-- RELATED:START -->
+
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICCV 2025\] VEGGIE: Instructional Editing and Reasoning Video Concepts with Grounded Generation](../../ICCV2025/segmentation/veggie_instructional_editing_and_reasoning_video_concepts_with_grounded_generati.md)
+- [\[NeurIPS 2025\] LangHOPS: Language Grounded Hierarchical Open-Vocabulary Part Segmentation](../../NeurIPS2025/segmentation/langhops_language_grounded_hierarchical_open-vocabulary_part_segmentation.md)
+- [\[ICLR 2026\] RegionReasoner: Region-Grounded Multi-Round Visual Reasoning](../../ICLR2026/segmentation/regionreasoner_region-grounded_multi-round_visual_reasoning.md)
+- [\[ICML 2025\] ActionPiece: Contextually Tokenizing Action Sequences for Generative Recommendation](actionpiece_contextually_tokenizing_action_sequences_generative_recommendation.md)
+- [\[ICML 2025\] Balanced Learning for Domain Adaptive Semantic Segmentation](balanced_learning_for_domain_adaptive_semantic_segmentation.md)
+
+</div>
+
+<!-- RELATED:END -->

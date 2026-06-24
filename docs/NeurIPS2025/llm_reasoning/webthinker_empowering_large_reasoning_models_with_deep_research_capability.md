@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Note 4: WebThinker — Empowering Reasoning Models with Deep Research Capabilities
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Deep Research] WebThinker equips large reasoning models (LRMs) with autonomous web search and navigation capabilities. Through a Think-Search-Draft strategy…
+  [NeurIPS 2025][Reasoning][Deep Research] WebThinker equips large reasoning models (LRMs) with autonomous web search and navigation capabilities. Through a Think-Search-Draft strategy, it seamlessly interleaves reasoning, information gathering, and report generation. After reinforcement learning optimization, it surpasses o1 and Gemini on complex reasoning and scientific report generation tasks.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Deep Research"
   - "Web Navigation"
   - "Interactive Search"
   - "DPO Training"
   - "Multi-step Reasoning"
 date: 2026-05-08
-content_hash: a3c2a504db0f12bc
+content_hash: 057e33b99b42a5a0
 ---
 
 # Note 4: WebThinker — Empowering Reasoning Models with Deep Research Capabilities
@@ -123,7 +123,7 @@ $$\mathcal{L}_{DPO} = -\mathbb{E}[\log\sigma(\beta\log\frac{\pi_\theta(\mathcal{
 - [\[NeurIPS 2025\] Note 8: PolyMath — Evaluating Mathematical Reasoning in a Multilingual Context](self-evaluating_llms_for_multi-step_tasks_stepwise_confidence_estimation_for_fai.md)
 - [\[NeurIPS 2025\] Note 1: Is CoT a Hallucination? A Data Distribution Perspective](is_chain-of-thought_reasoning_of_llms_a_mirage_a_data_distribution_lens.md)
 - [\[NeurIPS 2025\] Note 7: Value-Guided Search - Efficient Chain-of-Thought Reasoning](polymath_evaluating_mathematical_reasoning_in_multilingual_contexts.md)
-- [\[NeurIPS 2025\] CoRe: Benchmarking LLMs' Code Reasoning Capabilities through Static Analysis Tasks](core_benchmarking_llms_code_reasoning_capabilities_through_static_analysis_tasks.md)
+- [\[NeurIPS 2025\] Note 6: Self-Evaluating LLMs - Step-Level Confidence Estimation for Multi-Step Tasks](value-guided_search_for_efficient_chain-of-thought_reasoning.md)
 
 </div>
 

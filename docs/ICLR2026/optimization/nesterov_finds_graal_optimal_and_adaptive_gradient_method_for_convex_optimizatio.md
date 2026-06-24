@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Nesterov Finds GRAAL: Optimal and Adaptive Gradient Method for Convex Optimization
 description: >-
-  [ICLR 2026][Optimization & Theory][GRAAL] This paper "correctly" integrates GRAAL, a parameter-free and line-search-free adaptive gradient method, with Nesterov acceleration for the first time. The resulting Accelerated GRAAL allows the step size to adapt to local curvature at a **geometric (linear) rate**, similar to non-accelerated GRAAL, achieving near-opti
+  [ICLR 2026][Optimization][convex optimization] This paper "correctly" integrates GRAAL, a parameter-free and line-search-free adaptive gradient method, with Nesterov acceleration for the first time. The resulting Accelerated GRAAL allows the step size to adapt to local curvature at a **geometric (linear) rate**, similar to non-accelerated GRAAL, achieving near-optimal iteration complexity of $O(\sqrt{L\|x_0-x^*\|^2/\epsilon})$ under both $L$-smoothness and more general $(L_0…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - GRAAL
-  - (L0
+  - "ICLR 2026"
+  - "Optimization"
+  - "convex optimization"
+  - "adaptive step size"
+  - "Nesterov acceleration"
+  - "GRAAL"
+  - "local curvature estimation"
+  - "$(L_0"
+  - "L_1)$-smoothness"
 date: 2026-05-08
-content_hash: 347b6c9cde67fd78
+content_hash: b72702228707aa54
 ---
+
 # Nesterov Finds GRAAL: Optimal and Adaptive Gradient Method for Convex Optimization
 
 **Conference**: ICLR 2026  
@@ -120,11 +126,11 @@ The proposed method reaches the optimal rate with only an additional logarithmic
 
 ## Related Papers
 
+- [\[ICLR 2026\] Sobolev Gradient Ascent for Optimal Transport: Barycenter Optimization and Convergence Analysis](sobolev_gradient_ascent_for_optimal_transport_barycenter_optimization_and_conver.md)
 - [\[ICLR 2026\] A Schrödinger Eigenfunction Method for Long-Horizon Stochastic Optimal Control](a_schrödinger_eigenfunction_method_for_long-horizon_stochastic_optimal_control.md)
 - [\[ICLR 2026\] Clipped Gradient Methods for Nonsmooth Convex Optimization under Heavy-Tailed Noise: A Refined Analysis](clipped_gradient_methods_for_nonsmooth_convex_optimization_under_heavy-tailed_no.md)
-- [\[ICLR 2026\] Fast Frank–Wolfe Algorithms with Adaptive Bregman Step-Size for Weakly Convex Functions](fast_frankwolfe_algorithms_with_adaptive_bregman_step-size_for_weakly_convex_fun.md)
-- [\[ICLR 2026\] Gradient-Normalized Smoothness for Optimization with Approximate Hessians](gradient-normalized_smoothness_for_optimization_with_approximate_hessians.md)
-- [\[ICLR 2026\] High Probability Bounds for Non-Convex Stochastic Optimization with Momentum](high_probability_bounds_for_non-convex_stochastic_optimization_with_momentum.md)
+- [\[ICLR 2026\] Scalable and Adaptive Trust-Region Learning via Projection Convex Hull](scalable_and_adaptive_trust-region_learning_via_projection_convex_hull.md)
+- [\[ICLR 2026\] Derandomized Online-to-Non-convex Conversion for Stochastic Weakly Convex Optimization](derandomized_online-to-non-convex_conversion_for_stochastic_weakly_convex_optimi.md)
 
 </div>
 

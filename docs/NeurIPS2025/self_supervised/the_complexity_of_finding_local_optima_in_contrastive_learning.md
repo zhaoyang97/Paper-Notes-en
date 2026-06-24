@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Complexity of Finding Local Optima in Contrastive Learning
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][contrastive learning] This paper proves that finding local optima in contrastive learning is computationally hard: the discrete triplet maximization problem is PLS-hard (even when…
+  [NeurIPS 2025][Self-Supervised Learning][contrastive learning] This paper proves that finding local optima in contrastive learning is computationally hard: the discrete triplet maximization problem is PLS-hard (even when $d=1$), and continuous triplet loss minimization is CLS-hard, implying that (under standard assumptions) no polynomial-time algorithm exists for finding local optima.
 tags:
   - "NeurIPS 2025"
   - "Self-Supervised Learning"
@@ -13,7 +13,7 @@ tags:
   - "triplet loss"
   - "computational complexity"
 date: 2026-05-08
-content_hash: 16457dbc7e5e5e7b
+content_hash: 8ca3b66859eb033b
 ---
 
 # The Complexity of Finding Local Optima in Contrastive Learning
@@ -127,8 +127,8 @@ This is a purely theoretical work; no training is involved.
 - [\[NeurIPS 2025\] Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning](self-supervised_contrastive_learning_is_approximately_supervised_contrastive_lea.md)
 - [\[NeurIPS 2025\] Contrastive Representations for Temporal Reasoning](contrastive_representations_for_temporal_reasoning.md)
 - [\[ICML 2026\] Can Local Learning Match Self-Supervised Backpropagation?](../../ICML2026/self_supervised/can_local_learning_match_self-supervised_backpropagation.md)
-- [\[CVPR 2026\] UniGeoCLIP: Unified Geospatial Contrastive Learning](../../CVPR2026/self_supervised/unigeoclip_geospatial_contrastive.md)
-- [\[ICML 2026\] Statistical Consistency and Generalization of Contrastive Representation Learning](../../ICML2026/self_supervised/statistical_consistency_and_generalization_of_contrastive_representation_learnin.md)
+- [\[ICML 2025\] CLARIFY: Contrastive Preference Reinforcement Learning for Untangling Ambiguous Queries](../../ICML2025/self_supervised/clarify_contrastive_preference_reinforcement_learning_for_untangling_ambiguous_q.md)
+- [\[ECCV 2024\] Adaptive Multi-head Contrastive Learning](../../ECCV2024/self_supervised/adaptive_multihead_contrastive_learning.md)
 
 </div>
 

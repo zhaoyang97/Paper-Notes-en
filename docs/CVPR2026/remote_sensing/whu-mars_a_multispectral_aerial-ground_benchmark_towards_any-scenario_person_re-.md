@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] WHU-MARS: A Multispectral Aerial-Ground Benchmark Towards Any-Scenario Person Re-Identification
 description: >-
-  [CVPR 2026][Human Understanding][benchmark] This paper proposes the "Any-Scenario Person Re-Identification" (AS-ReID) task, which requires a single model to perform any-to-any retrieval across heterogenous galleries mixing all modalities and viewpoints. The authors construct WHU-MARS, the largest multispectral aerial-ground dataset to date (2,337 identities, 430
+  [CVPR 2026][Remote Sensing][Person Re-Identification] This paper proposes the "Any-Scenario Person Re-Identification" (AS-ReID) task, which requires a single model to perform any-to-any retrieval across heterogenous galleries mixing all modalities and viewpoints. The authors construct WHU-MARS, the largest multispectral aerial-ground dataset to date (2,337 identities, 430k RGB/NIR/TIR images, ground + UAV). They further introduce the UAD framework…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - benchmark
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Person Re-Identification"
+  - "Multispectral"
+  - "Aerial-Ground Collaboration"
+  - "Unified Representation"
+  - "Benchmark"
 date: 2026-05-08
-content_hash: 3b49a8549c3ee9f4
+content_hash: f9144040f0d9d54c
 ---
+
 # WHU-MARS: A Multispectral Aerial-Ground Benchmark Towards Any-Scenario Person Re-Identification
 
 **Conference**: CVPR 2026  
@@ -149,14 +154,17 @@ AS-ReID protocol on WHU-MARS-1000:
 
 <div class="related-papers" markdown="1">
 
-- **TransReID**: Transformer-based Object Re-Identification (ICCV 2021)
-- **SYSU-MM01**: RGB-Infrared Cross-Modality Person Re-Identification (ICCV 2017)
-- **SeCap**: Aerial-Ground Person Re-Identification via Semantic Coupling (CVPR 2025)
+## Related Papers
+
+- [\[CVPR 2026\] Cross-modal Fuzzy Alignment Network for Text-Aerial Person Retrieval and A Large-scale Benchmark](cross-modal_fuzzy_alignment_network_for_text-aerial_person_retrieval_and_a_large.md)
+- [\[CVPR 2026\] RoadGIE: Towards A Global-Scale Aerial Benchmark for Generalizable Interactive Road Extraction](roadgie_towards_a_global-scale_aerial_benchmark_for_generalizable_interactive_ro.md)
+- [\[CVPR 2026\] Cross-Scale Pansharpening via ScaleFormer and the PanScale Benchmark](cross-scale_pansharpening_via_scaleformer_and_the_panscale_benchmark.md)
+- [\[CVPR 2026\] UniGeoRS: A Unified Benchmark for Tri-view Geo-Localization](unigeors_a_unified_benchmark_for_tri-view_geo-localization.md)
+- [\[CVPR 2026\] YieldSAT: A Multimodal Benchmark Dataset for High-Resolution Crop Yield Prediction](yieldsat_a_multimodal_benchmark_dataset_for_high-resolution_crop_yield_predictio.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] View-Aware Semantic Alignment for Aerial-Ground Person Re-Identification](view-aware_semantic_alignment_for_aerial-ground_person_re-identification.md)

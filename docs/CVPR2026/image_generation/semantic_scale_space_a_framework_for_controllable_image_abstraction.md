@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Semantic Scale Space: A Framework for Controllable Image Abstraction
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] This paper reformulates "image abstraction" as a two-dimensional space spanned by **smoothing intensity** $t$ and **semantic granularity** $g$ (Semantic Scale Space, SSS). By **externalizing** the decision of "which structures to preserve" from the smoothing process via a controllable boundary detector, it introduces a
+  [CVPR 2026][Image Generation][Image Abstraction] This paper reformulates "image abstraction" as a two-dimensional space spanned by **smoothing intensity** $t$ and **semantic granularity** $g$ (Semantic Scale Space, SSS). By **externalizing** the decision of "which structures to preserve" from the smoothing process via a controllable boundary detector, it introduces a specific traversal strategy called AGSS (unidirectional donor-gated diffusion + fine-to-coarse scheduling). Un…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Image Abstraction"
+  - "Controllable Smoothing"
+  - "Semantic Boundaries"
+  - "Anisotropic Diffusion"
+  - "Stylization"
 date: 2026-05-08
-content_hash: 24bdc8609456a6e9
+content_hash: 676d38af365ba7e5
 ---
+
 # Semantic Scale Space: A Framework for Controllable Image Abstraction
 
 **Conference**: CVPR 2026  
@@ -125,10 +131,10 @@ At the Strong level, AGSS achieves a BPF of 0.594 (+10.5% relative to classic ba
 
 ## Related Papers
 
-- [\[CVPR 2026\] Scale Space Diffusion：把尺度空间塞进扩散过程](scale_space_diffusion.md)
+- [\[CVPR 2026\] Scale Space Diffusion: Integrating Scale Space into the Diffusion Process](scale_space_diffusion.md)
 - [\[CVPR 2026\] Unified Latent Space for Understanding and Generation via Semantic Auto-encoder](unified_latent_space_for_understanding_and_generation_via_semantic_auto-encoder.md)
-- [\[CVPR 2026\] PortraitDirector: A Hierarchical Disentanglement Framework for Controllable and Real-time Facial Reenactment](portraitdirector_a_hierarchical_disentanglement_framework_for_controllable_and_r.md)
 - [\[CVPR 2026\] Semantic Derivative Flow: Graph-Guided Diffusion for Controllable Instance Interactions](semantic_derivative_flow_graph-guided_diffusion_for_controllable_instance_intera.md)
+- [\[CVPR 2026\] PortraitDirector: A Hierarchical Disentanglement Framework for Controllable and Real-time Facial Reenactment](portraitdirector_a_hierarchical_disentanglement_framework_for_controllable_and_r.md)
 - [\[CVPR 2026\] RDF-MIG: A Robust Diffusion Framework for Masked Image Generation to Augment Semantic Segmentation and Change Detection](rdf-mig_a_robust_diffusion_framework_for_masked_image_generation_to_augment_sema.md)
 
 </div>

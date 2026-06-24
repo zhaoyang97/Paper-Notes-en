@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Exploring Concreteness Through a Figurative Lens
 description: >-
-  [ACL 2026][NLP Understanding][Paper Note] The authors decompose the internal representation of "concreteness" across four LLMs (Llama-3.1-8B / Qwen3-8B / Gemma2-9B / GPT-OSS-20B) using prompt-based probing, DiffMean, and SVD. They find that early layers already distinguish between literal (high concrete) and figurative (low concrete) noun usage. Mid-to-late la
+  [ACL 2026][NLP Understanding][Concreteness] The authors decompose the internal representation of "concreteness" across four LLMs (Llama-3.1-8B / Qwen3-8B / Gemma2-9B / GPT-OSS-20B) using prompt-based probing, DiffMean, and SVD. They find that early layers already distinguish between literal (high concrete) and figurative (low concrete) noun usage. Mid-to-late layers compress concreteness information into a **single one-dimensional direction**. This axis achieves zero-shot fig…
 tags:
-  - ACL 2026
-  - NLP Understanding
+  - "ACL 2026"
+  - "NLP Understanding"
+  - "Concreteness"
+  - "Figurative Language"
+  - "LLM Internal Representations"
+  - "Geometric Subspaces"
+  - "Representation Intervention"
 date: 2026-05-08
-content_hash: 17b606f4e4e06791
+content_hash: f15289051fafef48
 ---
+
 # Exploring Concreteness Through a Figurative Lens
 
 **Conference**: ACL 2026  
@@ -123,16 +129,16 @@ The work involves no traditional training of the LLMs: (a) Probing MLPs use stan
 - **Value**: ⭐⭐⭐⭐ (Provides a direct tool for controllable generation and interpretability study)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] Agree, Disagree, Explain: Decomposing Human Label Variation in NLI through the Lens of Explanations](agree_disagree_explain_decomposing_human_label_variation_in_nli_through_the_lens.md)
 - [\[ACL 2026\] MetFuse: Figurative Fusion between Metonymy and Metaphor](metfuse_figurative_fusion_between_metonymy_and_metaphor.md)
 - [\[NeurIPS 2025\] Generalization Error Analysis for Selective State-Space Models Through the Lens of Attention](../../NeurIPS2025/nlp_understanding/generalization_error_analysis_for_selective_state-space_models_through_the_lens_.md)
-- [\[ACL 2026\] BoundRL: Efficient Structured Text Segmentation through Reinforced Boundary Generation](boundrl_efficient_structured_text_segmentation_through_reinforced_boundary_gener.md)
 - [\[ACL 2026\] TruthSplit: Operationalizing Conditional Validity in Arguments Through Multi-Perspective Reasoning](truthsplit_operationalizing_conditional_validity_in_arguments_through_multi-pers.md)
+- [\[ACL 2026\] BoundRL: Efficient Structured Text Segmentation through Reinforced Boundary Generation](boundrl_efficient_structured_text_segmentation_through_reinforced_boundary_gener.md)
 
 </div>
 

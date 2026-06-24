@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MEMO: Human-like Crisp Edge Detection Using Masked Edge Prediction
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] Ours proposes the MEMO framework, which employs masked edge training and a progressive inference strategy based on confidence ranking. Using only standard cross-entropy loss, it generates sharp, single-pixel edge maps and significantly outperforms existing methods in crispness-aware evaluation (increasing CEval ODS fro
+  [CVPR 2026][Model Compression][Edge Detection] Ours proposes the MEMO framework, which employs masked edge training and a progressive inference strategy based on confidence ranking. Using only standard cross-entropy loss, it generates sharp, single-pixel edge maps and significantly outperforms existing methods in crispness-aware evaluation (increasing CEval ODS from 0.749 to 0.836 on BSDS).
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Edge Detection"
+  - "Masked Prediction"
+  - "Confidence-ranked Inference"
+  - "Multi-granularity Prediction"
+  - "Synthetic Data Pre-training"
 date: 2026-05-08
-content_hash: ff7d2b095905d50f
+content_hash: 0b1f5f463589e10d
 ---
+
 # MEMO: Human-like Crisp Edge Detection Using Masked Edge Prediction
 
 **Conference**: CVPR 2026  
@@ -174,11 +180,11 @@ A scale $s \ge 1$ allows smooth adjustment from "main contours only" to "fine te
 
 ## Related Papers
 
-- [\[CVPR 2026\] NuWa: Deriving Lightweight Class-Specific Vision Transformers for Edge Devices](nuwa_deriving_lightweight_class-specific_vision_transformers_for_edge_devices.md)
+- [\[CVPR 2026\] Edge-RecViT: Efficient Vision Transformer via Semantic-Refined Dynamic Recursion](edge-recvit_efficient_vision_transformer_via_semantic-refined_dynamic_recursion.md)
 - [\[CVPR 2026\] Critical Patch-Aware Sparse Prompting with Decoupled Training for Continual Learning on the Edge](critical_patch-aware_sparse_prompting_with_decoupled_training_for_continual_lear.md)
 - [\[AAAI 2026\] Lightweight Optimal-Transport Harmonization on Edge Devices](../../AAAI2026/model_compression/lightweight_optimal-transport_harmonization_on_edge_devices.md)
 - [\[CVPR 2026\] Cross-Architecture Adaptation: Cloud-Edge Continual Test-Time Adaptation with Dynamic Sampling and Heterogeneous Distillation](cross-architecture_adaptation_cloud-edge_continual_test-time_adaptation_with_dyn.md)
-- [\[CVPR 2026\] LiDeRe: A Lightweight Readout for Fast and Data-Efficient Dense Prediction](lidere_a_lightweight_readout_for_fast_and_data-efficient_dense_prediction.md)
+- [\[ICLR 2026\] Vulcan: Tailoring Compact Class-Specific Vision Transformers for Edge Intelligence](../../ICLR2026/model_compression/vulcan_crafting_compact_class-specific_vision_transformers_for_edge_intelligence.md)
 
 </div>
 

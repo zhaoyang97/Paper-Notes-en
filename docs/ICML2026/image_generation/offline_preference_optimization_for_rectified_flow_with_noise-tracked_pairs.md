@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Offline Preference Optimization for Rectified Flow with Noise-Tracked Pairs
 description: >-
-  [ICML 2026][Image Generation][Rectified Flow] This paper proposes PNAPO for Rectified Flow (RF) text-to-image models—an offline preference optimization framework that saves the "prior noise used during generation" alongside "winner/loser images" as sextuplets. By leveraging the RF linear trajectory hypothesis for trajectory estimation and dynamic regularization co
+  [ICML 2026][Image Generation][Rectified Flow] This paper proposes PNAPO for Rectified Flow (RF) text-to-image models—an offline preference optimization framework that saves the "prior noise used during generation" alongside "winner/loser images" as sextuplets. By leveraging the RF linear trajectory hypothesis for trajectory estimation and dynamic regularization coefficient scheduling, it achieves higher performance on SD3-M/FLUX while reducing training compute to $1/12$ compa…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Rectified Flow
-  - Diffusion-DPO
+  - "ICML 2026"
+  - "Image Generation"
+  - "Rectified Flow"
+  - "Diffusion-DPO"
+  - "Preference Optimization"
+  - "Prior Noise"
+  - "Dynamic Regularization"
 date: 2026-05-08
-content_hash: 4fd901d8ca0c07ea
+content_hash: 5c9473a6fb5792ff
 ---
+
 # Offline Preference Optimization for Rectified Flow with Noise-Tracked Pairs
 
 **Conference**: ICML 2026  
@@ -144,8 +148,8 @@ User Study (10 participants, 20 image pairs, PNAPO-FLUX vs baselines):
 - [\[ICCV 2025\] Straighten Viscous Rectified Flow via Noise Optimization](../../ICCV2025/image_generation/straighten_viscous_rectified_flow_via_noise_optimization.md)
 - [\[ICML 2026\] E²PO: Embedding-perturbed Exploration Preference Optimization for Flow Models](embedding-perturbed_exploration_preference_optimization_for_flow_models.md)
 - [\[ICML 2026\] Support-Proximity Augmented Diffusion Estimation for Offline Black-Box Optimization](support-proximity_augmented_diffusion_estimation_for_offline_black-box_optimizat.md)
+- [\[ICLR 2026\] ViPO: Visual Preference Optimization at Scale](../../ICLR2026/image_generation/vipo_visual_preference_optimization_at_scale.md)
 - [\[ICLR 2026\] Flow Matching with Injected Noise for Offline-to-Online Reinforcement Learning](../../ICLR2026/image_generation/flow_matching_with_injected_noise_for_offline-to-online_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Diffusion Model as a Noise-Aware Latent Reward Model for Step-Level Preference Optimization](../../NeurIPS2025/image_generation/diffusion_model_as_a_noiseaware_latent_reward_model_for_step.md)
 
 </div>
 

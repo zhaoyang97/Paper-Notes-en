@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Behavioural and Representational Evaluation of Goal-Directedness in Language Model Agents
 description: >-
-  [ICML 2026][Interpretability][LLM Agent] This paper proposes an evaluation framework for LLM Agent goal-directedness that integrates behavioral assessment with internal representation probing. In grid navigation tasks using GPT-OSS-20B, it was discovered that while the agent behaviorally follows goals, and internally encodes coarse-grained spatial maps and sh
+  [ICML 2026][Interpretability][Goal-directedness] This paper proposes an evaluation framework for LLM Agent goal-directedness that integrates behavioral assessment with internal representation probing. In grid navigation tasks using GPT-OSS-20B, it was discovered that while the agent behaviorally follows goals, and internally encodes coarse-grained spatial maps and short-term plans, it can be misled by non-functional goal-like objects.
 tags:
-  - ICML 2026
-  - Interpretability
-  - LLM Agent
+  - "ICML 2026"
+  - "Interpretability"
+  - "Goal-directedness"
+  - "LLM Agent"
+  - "Representational Probing"
+  - "Cognitive Map"
+  - "GridWorld"
 date: 2026-05-08
-content_hash: ea9557b2fef0e9cd
+content_hash: 7673d5d8f5189aab
 ---
+
 # A Behavioural and Representational Evaluation of Goal-Directedness in Language Model Agents
 
 **Conference**: ICML 2026  
@@ -112,15 +117,15 @@ The behavioral component does not involve training the agent; it samples traject
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Prototype Transformer: Towards Language Model Architectures Interpretable by Design](prototype_transformer_towards_language_model_architectures_interpretable_by_desi.md)
 - [\[ICML 2026\] Discovering Implicit Large Language Model Alignment Objectives](discovering_implicit_large_language_model_alignment_objectives.md)
+- [\[ICLR 2026\] Certified Evaluation of Model-Level Explanations for Graph Neural Networks](../../ICLR2026/interpretability/certified_evaluation_of_model-level_explanations_for_graph_neural_networks.md)
+- [\[ICLR 2026\] Representational Alignment Across Model Layers and Brain Regions with Multi-Level Optimal Transport](../../ICLR2026/interpretability/representational_alignment_across_model_layers_and_brain_regions_with_multi-leve.md)
 - [\[ACL 2026\] How Language Models Conflate Logical Validity with Plausibility: A Representational Analysis of Content Effects](../../ACL2026/interpretability/how_language_models_conflate_logical_validity_with_plausibility_a_representation.md)
-- [\[ICLR 2026\] Hidden Breakthroughs in Language Model Training](../../ICLR2026/interpretability/hidden_breakthroughs_in_language_model_training.md)
-- [\[NeurIPS 2025\] Model-Behavior Alignment under Flexible Evaluation: When the Best-Fitting Model Isn't the Right One](../../NeurIPS2025/interpretability/model-behavior_alignment_under_flexible_evaluation_when_the_best-fitting_model_i.md)
 
 </div>
 

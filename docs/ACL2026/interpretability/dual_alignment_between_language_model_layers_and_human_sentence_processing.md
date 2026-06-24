@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Dual Alignment Between Language Model Layers and Human Sentence Processing
 description: >-
-  [ACL 2026][Interpretability][surprisal] The authors use logit-lens to decode "internal surprisal" from each layer of 19 LMs (including GPT-2/Pythia/OPT) and discover a counter-intuitive "dual alignment": on naturalistic reading corpora, **shallow** layer surprisal aligns best with humans; however, on **syntactic challenge sentences** such as garden-path, NPS
+  [ACL 2026][Interpretability][surprisal] The authors use logit-lens to decode "internal surprisal" from each layer of 19 LMs (including GPT-2/Pythia/OPT) and discover a counter-intuitive "dual alignment": on naturalistic reading corpora, **shallow** layer surprisal aligns best with humans; however, on **syntactic challenge sentences** such as garden-path, NPS, NPZ, RC, and Attachment, **deep** layers align better. This corresponds to the human dual-mechanism reading model—"def…
 tags:
-  - ACL 2026
-  - Interpretability
-  - surprisal
-  - Logit-Lens
+  - "ACL 2026"
+  - "Interpretability"
+  - "surprisal"
+  - "Logit-Lens"
+  - "syntactic ambiguity"
+  - "reading time"
+  - "dual alignment"
 date: 2026-05-08
-content_hash: 9c2bfc2b5c3ccbbc
+content_hash: a29b6f76381a0b46
 ---
+
 # Dual Alignment Between Language Model Layers and Human Sentence Processing
 
 **Conference**: ACL 2026  
@@ -138,11 +142,11 @@ LR tests show surprisal+JS is significantly better than surprisal alone on MVR (
 
 ## Related Papers
 
+- [\[ICLR 2026\] Representational Alignment Across Model Layers and Brain Regions with Multi-Level Optimal Transport](../../ICLR2026/interpretability/representational_alignment_across_model_layers_and_brain_regions_with_multi-leve.md)
 - [\[ACL 2026\] A Systematic Comparison between Extractive Self-Explanations and Human Rationales in Text Classification](a_systematic_comparison_between_extractive_self-explanations_and_human_rationale.md)
+- [\[ACL 2026\] Probing Semantic Alignment, Lexical Invariance, and Syntactic Influence in LLM Metaphor Processing](probing_semantic_alignment_lexical_invariance_and_syntactic_influence_in_llm_met.md)
 - [\[ICML 2026\] Discovering Implicit Large Language Model Alignment Objectives](../../ICML2026/interpretability/discovering_implicit_large_language_model_alignment_objectives.md)
 - [\[AAAI 2026\] Can LLMs Truly Embody Human Personality? Analyzing AI and Human Behavior Alignment in Dispute Resolution](../../AAAI2026/interpretability/can_llms_truly_embody_human_personality_analyzing_ai_and_human_behavior_alignmen.md)
-- [\[ACL 2026\] Probing Semantic Alignment, Lexical Invariance, and Syntactic Influence in LLM Metaphor Processing](probing_semantic_alignment_lexical_invariance_and_syntactic_influence_in_llm_met.md)
-- [\[NeurIPS 2025\] Probabilistic Token Alignment for Large Language Model Fusion](../../NeurIPS2025/interpretability/probabilistic_token_alignment_for_large_language_model_fusion.md)
 
 </div>
 

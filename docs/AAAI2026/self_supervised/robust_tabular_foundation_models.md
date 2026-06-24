@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Robust Tabular Foundation Models
 description: >-
-  [AAAI 2026][Self-Supervised Learning][tabular foundation model] This paper proposes RTFM — a model-agnostic adversarial training framework that performs min-max optimization over the parameter space of a synthetic data g…
+  [AAAI 2026][Self-Supervised Learning][tabular foundation model] This paper proposes RTFM — a model-agnostic adversarial training framework that performs min-max optimization over the parameter space of a synthetic data generator, maximizing the "optimality gap" between a tabular foundation model (TFM) and classical tree-based models. Using fewer than 100,000 additional synthetic datasets, RTFM significantly improves TabPFN V2 across multiple tabular benchmarks.
 tags:
   - "AAAI 2026"
   - "Self-Supervised Learning"
@@ -11,7 +11,7 @@ tags:
   - "synthetic data"
   - "distributionally robust optimization"
 date: 2026-05-08
-content_hash: de08c5628a8693af
+content_hash: 4e3d2954d7787cf3
 ---
 
 # Robust Tabular Foundation Models
@@ -154,11 +154,11 @@ RTFM similarly leads across all metrics on TabArena, with Rank-1 wins jumping fr
 
 ## Related Papers
 
-- [\[ICML 2026\] From Zero to Hero: Advancing Zero-Shot Foundation Models for Tabular Outlier Detection](../../ICML2026/self_supervised/from_zero_to_hero_advancing_zero-shot_foundation_models_for_tabular_outlier_dete.md)
+- [\[ICML 2025\] Towards Benchmarking Foundation Models for Tabular Data With Text](../../ICML2025/self_supervised/towards_benchmarking_foundation_models_for_tabular_data_with_text.md)
 - [\[NeurIPS 2025\] TabSTAR: A Tabular Foundation Model for Tabular Data with Text Fields](../../NeurIPS2025/self_supervised/tabstar_a_tabular_foundation_model_for_tabular_data_with_text_fields.md)
+- [\[ICML 2026\] From Zero to Hero: Advancing Zero-Shot Foundation Models for Tabular Outlier Detection](../../ICML2026/self_supervised/from_zero_to_hero_advancing_zero-shot_foundation_models_for_tabular_outlier_dete.md)
 - [\[ICML 2026\] LimiX-2M: Mitigating Low-Rank Collapse and Attention Bottlenecks in Tabular Foundation Models](../../ICML2026/self_supervised/limix-2m_mitigating_low-rank_collapse_and_attention_bottlenecks_in_tabular_found.md)
-- [\[NeurIPS 2025\] Mitra: Mixed Synthetic Priors for Enhancing Tabular Foundation Models](../../NeurIPS2025/self_supervised/mitra_mixed_synthetic_priors_for_enhancing_tabular_foundation_models.md)
-- [\[AAAI 2026\] From Pretrain to Pain: Adversarial Vulnerability of Video Foundation Models without Finetuning](from_pretrain_to_pain_adversarial_vulnerability_of_video_foundation_models_witho.md)
+- [\[ICML 2025\] Test-Time Canonicalization by Foundation Models for Robust Perception](../../ICML2025/self_supervised/test-time_canonicalization_by_foundation_models_for_robust_perception.md)
 
 </div>
 

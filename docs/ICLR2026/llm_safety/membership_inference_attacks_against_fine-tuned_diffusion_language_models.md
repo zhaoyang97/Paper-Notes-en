@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Membership Inference Attacks Against Fine-tuned Diffusion Language Models (SAMA)
 description: >-
-  [ICLR 2026][LLM Safety][Diffusion Language Model] The first systematic study on membership inference attack (MIA) vulnerabilities in Diffusion Language Models (DLM). Proposes the SAMA method: leveraging DLM’s bidirectional mask structure to create exponential probing opportunities, while processing sparse and heavy-tailed membership signals through progressive masking
+  [ICLR 2026][LLM Safety][Membership Inference Attack] The first systematic study on membership inference attack (MIA) vulnerabilities in Diffusion Language Models (DLM). Proposes the SAMA method: leveraging DLM’s bidirectional mask structure to create exponential probing opportunities, while processing sparse and heavy-tailed membership signals through progressive masking + sign voting + adaptive weighting. Achieves an AUC of 0.81 across 9 datasets…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Diffusion Language Model
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Membership Inference Attack"
+  - "Diffusion Language Models"
+  - "Privacy Leakage"
+  - "Robust Subset Aggregation"
+  - "Progressive Masking"
 date: 2026-05-08
-content_hash: db207d52a6879763
+content_hash: d241e0ad859bd024
 ---
+
 # Membership Inference Attacks Against Fine-tuned Diffusion Language Models (SAMA)
 
 **Conference**: ICLR 2026  
@@ -140,15 +145,15 @@ The weights $w_t$ decrease with step $t$ (a normalized form inspired by harmonic
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Tab-MIA: A Benchmark Dataset for Membership Inference Attacks on Tabular Data in LLMs](tab-mia_a_benchmark_dataset_for_membership_inference_attacks_on_tabular_data_in_.md)
 - [\[ICLR 2026\] Watermarking Diffusion Language Models](watermarking_diffusion_language_models.md)
-- [\[ACL 2026\] Membership Inference Attacks on In-Context Learning Recommendation](../../ACL2026/llm_safety/membership_inference_attacks_on_llm-based_recommender_systems.md)
 - [\[ICLR 2026\] Information-Theoretic Membership Inference for Granular Quantification of Memorization](information-theoretic_membership_inference_for_granular_quantification_of_memori.md)
+- [\[ACL 2026\] Membership Inference Attacks on In-Context Learning Recommendation](../../ACL2026/llm_safety/membership_inference_attacks_on_llm-based_recommender_systems.md)
 - [\[ICLR 2026\] wd1: Weighted Policy Optimization for Reasoning in Diffusion Language Models](wd1_weighted_policy_optimization_for_reasoning_in_diffusion_language_models.md)
-- [\[NeurIPS 2025\] Exploring the Limits of Strong Membership Inference Attacks on Large Language Models](../../NeurIPS2025/llm_safety/exploring_the_limits_of_strong_membership_inference_attacks_on_large_language_mo.md)
 
 </div>
 

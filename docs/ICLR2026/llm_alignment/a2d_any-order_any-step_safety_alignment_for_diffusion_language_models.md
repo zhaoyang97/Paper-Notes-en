@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] A2D: Any-Order, Any-Step Safety Alignment for Diffusion Language Models
 description: >-
-  [ICLR 2026][Alignment & RLHF][diffusion language model] The authors propose A2D, a token-level safety alignment method for diffusion language models (dLLMs). By training the model to output the `[EOS]` token at masked positions when encountering harmful content, it achieves safety defense across any decoding order and any decoding step. This reduces the DIJA template attack
+  [ICLR 2026][LLM Alignment][diffusion language model] The authors propose A2D, a token-level safety alignment method for diffusion language models (dLLMs). By training the model to output the `[EOS]` token at masked positions when encountering harmful content, it achieves safety defense across any decoding order and any decoding step. This reduces the DIJA template attack success rate from 80%+ to near zero (1.3%/0.0%) and supports early rejection for 19.3x acceleration.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - diffusion language model
-  - safety alignment
-  - token-level defense
-  - jailbreak
-  - masked diffusion
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "diffusion language model"
+  - "safety alignment"
+  - "token-level defense"
+  - "jailbreak"
+  - "masked diffusion"
 date: 2026-05-08
-content_hash: 7ebe543dfb9f698a
+content_hash: fdf40ad6ae9dfa3e
 ---
+
 # A2D: Any-Order, Any-Step Safety Alignment for Diffusion Language Models
 
 **Conference**: ICLR 2026  
@@ -131,9 +132,9 @@ The method uses the standard cross-entropy loss for all masked positions in mask
 
 - [\[ICLR 2026\] GuardAlign: Test-time Safety Alignment in Multimodal Large Language Models](guardalign_test-time_safety_alignment_in_multimodal_large_language_models.md)
 - [\[CVPR 2026\] DRM: Diffusion-based Reward Model With Step-wise Guidance](../../CVPR2026/llm_alignment/drm_diffusion-based_reward_model_with_step-wise_guidance.md)
-- [\[ICLR 2026\] Keep the Best, Forget the Rest: Reliable Alignment with Order-Aware Preference Optimization](keep_the_best_forget_the_rest_reliable_alignment_with_order-aware_preference_opt.md)
-- [\[ICLR 2026\] JULI: Jailbreak Large Language Models by Self-Introspection](juli_jailbreak_large_language_models_by_self-introspection.md)
-- [\[ICLR 2026\] Mitigating the Safety Alignment Tax with Null-Space Constrained Policy Optimization](mitigating_the_safety_alignment_tax_with_null-space_constrained_policy_optimizat.md)
+- [\[ICLR 2026\] Superficial Safety Alignment Hypothesis](superficial_safety_alignment_hypothesis.md)
+- [\[ICML 2026\] Towards Context-Invariant Safety Alignment for Large Language Models](../../ICML2026/llm_alignment/towards_context-invariant_safety_alignment_for_large_language_models.md)
+- [\[AAAI 2026\] EASE: Practical and Efficient Safety Alignment for Small Language Models](../../AAAI2026/llm_alignment/ease_practical_and_efficient_safety_alignment_for_small_language_models.md)
 
 </div>
 

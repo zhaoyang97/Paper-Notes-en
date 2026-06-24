@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Some Optimizers are More Equal: Understanding the Role of Optimizers in Group Fairness
 description: >-
-  [NeurIPS 2025][Human Understanding][group fairness] This paper presents the first systematic study on how the choice of optimization algorithm affects group fairness in deep learning. Through stochastic differential equa…
+  [NeurIPS 2025][Human Understanding][group fairness] This paper presents the first systematic study on how the choice of optimization algorithm affects group fairness in deep learning. Through stochastic differential equation (SDE) analysis and two novel theorems, it demonstrates that adaptive optimizers (RMSProp/Adam) are more likely to converge to fair minima than SGD, particularly under severe data imbalance.
 tags:
   - "NeurIPS 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "stochastic differential equations"
   - "fairness in deep learning"
 date: 2026-05-08
-content_hash: 6e4d9e3569a4103a
+content_hash: f7a591a088ca2799
 ---
 
 # Some Optimizers are More Equal: Understanding the Role of Optimizers in Group Fairness
@@ -139,10 +139,10 @@ Higher values indicate greater fairness for all metrics.
 ## Related Papers
 
 - [\[NeurIPS 2025\] Part-Aware Bottom-Up Group Reasoning for Fine-Grained Social Interaction Detection](part-aware_bottom-up_group_reasoning_for_fine-grained_social_interaction_detecti.md)
+- [\[CVPR 2025\] SocialGesture: Delving into Multi-Person Gesture Understanding](../../CVPR2025/human_understanding/socialgesture_delving_into_multi-person_gesture_understanding.md)
 - [\[ICCV 2025\] KinMo: Kinematic-Aware Human Motion Understanding and Generation](../../ICCV2025/human_understanding/kinmo_kinematic-aware_human_motion_understanding_and_generation.md)
-- [\[ICML 2026\] MotionGRPO: Overcoming Low Intra-Group Diversity in GRPO-Based Egocentric Motion Recovery](../../ICML2026/human_understanding/motiongrpo_overcoming_low_intra-group_diversity_in_grpo-based_egocentric_motion_.md)
-- [\[NeurIPS 2025\] ConceptScope: Characterizing Dataset Bias via Disentangled Visual Concepts](conceptscope_characterizing_dataset_bias_via_disentangled_visual_concepts.md)
-- [\[NeurIPS 2025\] A Generalized Label Shift Perspective for Cross-Domain Gaze Estimation](a_generalized_label_shift_perspective_for_crossdomain_gaze_e.md)
+- [\[CVPR 2026\] MOFA-VTON: More Fashion Possibilities with Fine-Grained Adaptations in Virtual Try-On](../../CVPR2026/human_understanding/mofa-vton_more_fashion_possibilities_with_fine-grained_adaptations_in_virtual_tr.md)
+- [\[CVPR 2026\] Bridging Facial Understanding and Animation via Language Models](../../CVPR2026/human_understanding/bridging_facial_understanding_and_animation_via_language_models.md)
 
 </div>
 

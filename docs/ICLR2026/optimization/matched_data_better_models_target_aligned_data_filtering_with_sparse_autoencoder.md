@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Matched Data, Better Models: Target Aligned Data Filtering with Sparse Autoencoders
 description: >-
-  [ICLR 2026][Optimization & Theory][CLIP] Sparse Autoencoders (SAEs) are used to decompose CLIP features into "countable" monosemantic concepts. Data filtering is then modeled as a submodular maximization problem (SDM) where the concept distribution of a selected subset is aligned with a target distribution. On DataComp-medium, this approach approaches state-o
+  [ICLR 2026][Optimization][Data selection] Sparse Autoencoders (SAEs) are used to decompose CLIP features into "countable" monosemantic concepts. Data filtering is then modeled as a submodular maximization problem (SDM) where the concept distribution of a selected subset is aligned with a target distribution. On DataComp-medium, this approach approaches state-of-the-art performance with fewer samples and $5\times$ fewer GPU hours.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - CLIP
-  - DataComp
+  - "ICLR 2026"
+  - "Optimization"
+  - "Data selection"
+  - "Sparse Autoencoders"
+  - "Submodular Optimization"
+  - "Distribution Matching"
+  - "CLIP"
+  - "DataComp"
 date: 2026-05-08
-content_hash: 9fc2657a1370c219
+content_hash: 7062990a087cac44
 ---
+
 # Matched Data, Better Models: Target Aligned Data Filtering with Sparse Autoencoders
 
 **Conference**: ICLR 2026  
@@ -139,8 +144,8 @@ Sparse features are critical: reverting to dense CLIP features causes an **~12%*
 
 - [\[NeurIPS 2025\] Projecting Assumptions: The Duality Between Sparse Autoencoders and Concept Geometry](../../NeurIPS2025/optimization/projecting_assumptions_the_duality_between_sparse_autoencoders_and_concept_geome.md)
 - [\[ICLR 2026\] Evaluating Data Influence in Meta Learning](evaluating_data_influence_in_meta_learning.md)
-- [\[ICLR 2026\] Fast Data Mixture Optimization via Gradient Descent](fast_data_mixture_optimization_via_gradient_descent.md)
 - [\[ICLR 2026\] Jacobian Aligned Random Forests](jacobian_aligned_random_forests.md)
+- [\[ICLR 2026\] Fast Data Mixture Optimization via Gradient Descent](fast_data_mixture_optimization_via_gradient_descent.md)
 - [\[ICLR 2026\] Generalization Below the Edge of Stability: The Role of Data Geometry](generalization_below_the_edge_of_stability_the_role_of_data_geometry.md)
 
 </div>

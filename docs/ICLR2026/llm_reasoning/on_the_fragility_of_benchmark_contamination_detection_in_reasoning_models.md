@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] On The Fragility of Benchmark Contamination Detection in Reasoning Models
 description: >-
-  [ICLR 2026][LLM Reasoning][GRPO] Systematic research reveals that benchmark contamination detection in LRMs is extremely fragile: contamination introduced during the SFT stage nearly disappears after GRPO training (PPO-style importance sampling/clipping is the root cause), while directly applying CoT SFT contamination to advanced LRMs leaves almost no
+  [ICLR 2026][Reasoning][Benchmark Contamination] Systematic research reveals that benchmark contamination detection in LRMs is extremely fragile: contamination introduced during the SFT stage nearly disappears after GRPO training (PPO-style importance sampling/clipping is the root cause), while directly applying CoT SFT contamination to advanced LRMs leaves almost no detectable traces. All 10 existing detection methods perform close to random guessing in these scenarios.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Benchmark Contamination"
+  - "Reasoning Models"
+  - "GRPO"
+  - "Detection Fragility"
+  - "Evaluation Integrity"
 date: 2026-05-08
-content_hash: 6b0e3a3e0964ae5a
+content_hash: c7a49d198ed51c07
 ---
+
 # On The Fragility of Benchmark Contamination Detection in Reasoning Models
 
 **Conference**: ICLR 2026  
@@ -132,11 +137,11 @@ Contamination simulation consistently uses CoT distilled from advanced LRMs as S
 
 ## Related Papers
 
+- [\[AAAI 2026\] From Classification to Ranking: Enhancing LLM Reasoning for MBTI Personality Detection](../../AAAI2026/llm_reasoning/from_classification_to_ranking_enhancing_llm_reasoning_capabilities_for_mbti_per.md)
+- [\[ICLR 2026\] The Quest for Efficient Reasoning: A Data-Centric Benchmark to CoT Distillation](the_quest_for_efficient_reasoning_a_data-centric_benchmark_to_cot_distillation.md)
 - [\[ICLR 2026\] Neural Theorem Proving for Verification Conditions: A Real-World Benchmark](neural_theorem_proving_for_verification_conditions_a_real-world_benchmark.md)
 - [\[ICLR 2026\] Conditional Advantage Estimation for Reinforcement Learning in Large Reasoning Models](conditional_advantage_estimation_for_reinforcement_learning_in_large_reasoning_m.md)
-- [\[AAAI 2026\] From Classification to Ranking: Enhancing LLM Reasoning for MBTI Personality Detection](../../AAAI2026/llm_reasoning/from_classification_to_ranking_enhancing_llm_reasoning_capabilities_for_mbti_per.md)
-- [\[ICLR 2026\] Tina: Tiny Reasoning Models via LoRA](tina_tiny_reasoning_models_via_lora.md)
-- [\[ICLR 2026\] FATE: A Formal Benchmark Series for Frontier Algebra of Multiple Difficulty Levels](fate_a_formal_benchmark_series_for_frontier_algebra_of_multiple_difficulty_level.md)
+- [\[ICML 2025\] DyCodeEval: Dynamic Benchmarking of Reasoning Capabilities in Code Large Language Models Under Data Contamination](../../ICML2025/llm_reasoning/dynamic_benchmarking_of_reasoning_capabilities_in_code_large_language_models_und.md)
 
 </div>
 

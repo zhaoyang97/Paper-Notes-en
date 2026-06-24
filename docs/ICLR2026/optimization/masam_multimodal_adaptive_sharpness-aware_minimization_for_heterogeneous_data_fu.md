@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MASAM: Multimodal Adaptive Sharpness-Aware Minimization for Heterogeneous Data Fusion
 description: >-
-  [ICLR 2026][Optimization & Theory][Sharpness-Aware Minimization] The authors adapt SAM, originally used in unimodal learning to find flat minima, into a "modality-adaptive" version. By using an adaptive perturbation score, the method identifies the current dominant modality and applies a decoupled perturbation only to it along the fusion gradient direction. This simultaneously mitig
+  [ICLR 2026][Optimization][Modality Imbalance] The authors adapt SAM, originally used in unimodal learning to find flat minima, into a "modality-adaptive" version. By using an adaptive perturbation score, the method identifies the current dominant modality and applies a decoupled perturbation only to it along the fusion gradient direction. This simultaneously mitigates modality imbalance and pulls each modality's encoder into flat regions during heterogeneous fusion.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Sharpness-Aware Minimization
+  - "ICLR 2026"
+  - "Optimization"
+  - "Modality Imbalance"
+  - "Sharpness-Aware Minimization"
+  - "Loss Surface Flatness"
+  - "Heterogeneous Data Fusion"
+  - "Adaptive Perturbation"
 date: 2026-05-08
-content_hash: df9a0a5a40710ad6
+content_hash: 3316e8de014b3e3f
 ---
+
 # MASAM: Multimodal Adaptive Sharpness-Aware Minimization for Heterogeneous Data Fusion
 
 **Conference**: ICLR 2026  

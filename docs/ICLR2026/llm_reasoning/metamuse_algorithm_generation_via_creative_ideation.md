@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] MetaMuse: Algorithm Generation via Creative Ideation
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] To address the issue of LLMs being trapped by "availability bias" in classical heuristics (e.g., LRU/LFU) when generating system algorithms, MetaMuse proposes three self-reflection principles: measuring diversity in the performance feedback space, guiding via external stimuli rather than internal randomness, and implem
+  [ICLR 2026][Reasoning][Creative Ideation] To address the issue of LLMs being trapped by "availability bias" in classical heuristics (e.g., LRU/LFU) when generating system algorithms, MetaMuse proposes three self-reflection principles: measuring diversity in the performance feedback space, guiding via external stimuli rather than internal randomness, and implementation through waypoint reasoning instead of free-form CoT. This enables LLMs to perform "creative leaps" in discont…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Creative Ideation"
+  - "Availability Bias"
+  - "Self-reflection"
+  - "Waypoint Reasoning"
+  - "Cache Replacement"
+  - "Online Bin Packing"
 date: 2026-05-08
-content_hash: 2840b697747fdb78
+content_hash: 4c593dfb179792e6
 ---
+
 # MetaMuse: Algorithm Generation via Creative Ideation
 
 **Conference**: ICLR 2026  
@@ -111,8 +118,8 @@ MetaMuse yields higher performance gains across almost all percentiles and three
 - **Value**: ⭐⭐⭐⭐ Significant gains over manual heuristics in real-world scenarios at a low cost.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

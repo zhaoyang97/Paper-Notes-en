@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Generalizable Shape Completion with SIM(3) Equivariance
 description: >-
-  [NeurIPS 2025][3D Vision][shape completion] This paper proposes SIMECO, the first SIM(3)-equivariant shape completion network. Through a three-stage modular design — feature canonicalization → similarity-invariant geomet…
+  [NeurIPS 2025][3D Vision][shape completion] This paper proposes SIMECO, the first SIM(3)-equivariant shape completion network. Through a three-stage modular design — feature canonicalization → similarity-invariant geometric reasoning → transformation recovery — SIMECO outperforms all augmentation-based and equivariant baselines under an unbiased evaluation protocol, achieving a 17% MMD reduction on KITTI and a 14% CD-$\ell_1$ reduction on OmniObject3D. Notably…
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "point cloud"
   - "cross-domain generalization"
 date: 2026-05-08
-content_hash: 9b31b49c2e8f5829
+content_hash: c8dbb702383f7226
 ---
 
 # Learning Generalizable Shape Completion with SIM(3) Equivariance
@@ -123,10 +123,10 @@ SIMECO improves over AdaPoinTr + augmentation by 10% in CD-$\ell_1$ and 8% in F1
 ## Related Papers
 
 - [\[CVPR 2026\] Unified Primitive Proxies for Structured Shape Completion](../../CVPR2026/3d_vision/unified_primitive_proxies_for_structured_shape_completion.md)
+- [\[CVPR 2025\] ESCAPE: Equivariant Shape Completion via Anchor Point Encoding](../../CVPR2025/3d_vision/escape_equivariant_shape_completion_via_anchor_point_encoding.md)
 - [\[ICML 2026\] Geometry-Guided Modeling of Foundation Features Enables Generalizable Object Shape Deformation Learning](../../ICML2026/3d_vision/geometry-guided_modeling_of_foundation_features_enables_generalizable_object_sha.md)
-- [\[CVPR 2026\] Learning to Solve PDEs on Neural Shape Representations](../../CVPR2026/3d_vision/learning_to_solve_pdes_on_neural_shape_representations.md)
-- [\[NeurIPS 2025\] CosmoBench: A Multiscale, Multiview, Multitask Cosmology Benchmark for Geometric Deep Learning](cosmobench_a_multiscale_multiview_multitask_cosmology_benchmark_for_geometric_de.md)
-- [\[NeurIPS 2025\] UGM2N: An Unsupervised and Generalizable Mesh Movement Network via M-Uniform Loss](ugm2n_an_unsupervised_and_generalizable_mesh_movement_network_via_m-uniform_loss.md)
+- [\[ECCV 2024\] Transferable 3D Adversarial Shape Completion using Diffusion Models](../../ECCV2024/3d_vision/transferable_3d_adversarial_shape_completion_using_diffusion_models.md)
+- [\[CVPR 2026\] Wave-Former: Through-Occlusion 3D Reconstruction via Wireless Shape Completion](../../CVPR2026/3d_vision/wave-former_through-occlusion_3d_reconstruction_via_wireless_shape_completion.md)
 
 </div>
 

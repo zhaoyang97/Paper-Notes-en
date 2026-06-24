@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Token-Importance Guided Direct Preference Optimization (TI-DPO)
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] This paper proposes TI-DPO, which precisely quantifies the contribution of each token to preferences through a hybrid weighting mechanism (gradient attribution + Gaussian prior), combined with a triplet loss to guide optimization in continuous semantic space. It achieves SOTA with an average score of 62.3 across 6 benc
+  [ICLR 2026 Oral][LLM Alignment][token-level DPO] This paper proposes TI-DPO, which precisely quantifies the contribution of each token to preferences through a hybrid weighting mechanism (gradient attribution + Gaussian prior), combined with a triplet loss to guide optimization in continuous semantic space. It achieves SOTA with an average score of 62.3 across 6 benchmarks and provides interpretable token-level control.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR 2026 Oral"
+  - "LLM Alignment"
+  - "token-level DPO"
+  - "gradient attribution"
+  - "hybrid weights"
+  - "triplet loss"
+  - "fine-grained alignment"
 date: 2026-05-08
-content_hash: ee0d2095f56a0116
+content_hash: 0a16cbc9e841bc70
 ---
+
 # Token-Importance Guided Direct Preference Optimization (TI-DPO)
 
 **Conference**: ICLR 2026 Oral  
@@ -126,7 +132,7 @@ Binary "chosen/rejected" contrast only identifies which is better but lacks fine
 - [\[ICML 2026\] Autoregressive Direct Preference Optimization](../../ICML2026/llm_alignment/autoregressive_direct_preference_optimization.md)
 - [\[ICML 2025\] DPO Meets PPO: Reinforced Token Optimization for RLHF](../../ICML2025/llm_alignment/dpo_meets_ppo_reinforced_token_optimization_for_rlhf.md)
 - [\[ICLR 2026\] ActiveDPO: Active Direct Preference Optimization for Sample-Efficient Alignment](activedpo_active_direct_preference_optimization_for_sample-efficient_alignment.md)
-- [\[ICML 2026\] Boosting Direct Preference Optimization with Penalization](../../ICML2026/llm_alignment/boosting_direct_preference_optimization_with_penalization.md)
+- [\[ICML 2025\] TGDPO: Harnessing Token-Level Reward Guidance for Enhancing Direct Preference Optimization](../../ICML2025/llm_alignment/tgdpo_harnessing_token-level_reward_guidance_for_enhancing_direct_preference_opt.md)
 
 </div>
 

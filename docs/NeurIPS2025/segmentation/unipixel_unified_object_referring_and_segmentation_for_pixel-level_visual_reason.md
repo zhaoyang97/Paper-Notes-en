@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UniPixel: Unified Object Referring and Segmentation for Pixel-Level Visual Reasoning
 description: >-
-  [NeurIPS 2025][Segmentation][Multimodal Large Models] UniPixel proposes the first end-to-end large multimodal model that unifies object referring and segmentation…
+  [NeurIPS 2025][Segmentation][Multimodal Large Models] UniPixel proposes the first end-to-end large multimodal model that unifies object referring and segmentation, leveraging a novel Object Memory Bank design to transform sparse visual prompts into dense object mask features and inject them into the reasoning process. The model achieves state-of-the-art performance on 10 benchmarks and introduces PixelQA, a new task requiring simultaneous referring, segmentation…
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Object Memory Bank"
   - "Video Understanding"
 date: 2026-05-08
-content_hash: 940ac3c58314e759
+content_hash: 4ed6c103eba0eacb
 ---
 
 # UniPixel: Unified Object Referring and Segmentation for Pixel-Level Visual Reasoning
@@ -127,11 +127,11 @@ Three-stage progressive training:
 
 ## Related Papers
 
+- [\[ACL 2025\] Pixel-Level Reasoning Segmentation via Multi-turn Conversations](../../ACL2025/segmentation/pixel-level_reasoning_segmentation_via_multi-turn_conversations.md)
 - [\[ICCV 2025\] Towards Omnimodal Expressions and Reasoning in Referring Audio-Visual Segmentation](../../ICCV2025/segmentation/towards_omnimodal_expressions_and_reasoning_in_referring_audio-visual_segmentati.md)
-- [\[ICCV 2025\] ReferDINO: Referring Video Object Segmentation with Visual Grounding Foundations](../../ICCV2025/segmentation/referdino_referring_video_object_segmentation_with_visual_grounding_foundations.md)
-- [\[NeurIPS 2025\] PARTONOMY: Large Multimodal Models with Part-Level Visual Understanding](partonomy_large_multimodal_models_with_part-level_visual_understanding.md)
+- [\[CVPR 2025\] DINOv2 Meets Text: A Unified Framework for Image- and Pixel-Level Vision-Language Alignment](../../CVPR2025/segmentation/dinov2_meets_text_a_unified_framework_for_image-_and_pixel-level_vision-language.md)
 - [\[NeurIPS 2025\] Robust Egocentric Referring Video Object Segmentation via Dual-Modal Causal Intervention](robust_egocentric_referring_video_object_segmentation_via_dual-modal_causal_inte.md)
-- [\[ICCV 2025\] Object-level Correlation for Few-Shot Segmentation](../../ICCV2025/segmentation/object-level_correlation_for_few-shot_segmentation.md)
+- [\[ICCV 2025\] ReferDINO: Referring Video Object Segmentation with Visual Grounding Foundations](../../ICCV2025/segmentation/referdino_referring_video_object_segmentation_with_visual_grounding_foundations.md)
 
 </div>
 

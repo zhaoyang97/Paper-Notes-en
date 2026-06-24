@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Seeing Through Touch: Tactile-Driven Visual Localization of Material Regions
 description: >-
-  [CVPR 2026][Multimodal VLM][Dataset] This paper proposes the tactile localization task—identifying regions in an image that share the same material properties as a given tactile input. By learning dense cross-modal features through local visual-tactile alignment and a material diversity pairing strategy, the authors construct two new tactile-material segm
+  [CVPR 2026][Multimodal VLM][Tactile localization] This paper proposes the tactile localization task—identifying regions in an image that share the same material properties as a given tactile input. By learning dense cross-modal features through local visual-tactile alignment and a material diversity pairing strategy, the authors construct two new tactile-material segmentation datasets.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Dataset
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Tactile localization"
+  - "Visual-tactile alignment"
+  - "Material segmentation"
+  - "Cross-modal learning"
+  - "Dataset"
 date: 2026-05-08
-content_hash: 17c3fcb6cbdaab8e
+content_hash: 9a36cb3556f13f99
 ---
+
 # Seeing Through Touch: Tactile-Driven Visual Localization of Material Regions
 
 **Conference**: CVPR 2026  
@@ -118,15 +123,15 @@ Symmetric InfoNCE contrastive loss is used (Visual-to-Tactile and Tactile-to-Vis
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[AAAI 2026\] SToLa: Self-Adaptive Touch-Language Framework with Tactile Commonsense Reasoning in Open-Ended Scenarios](../../AAAI2026/multimodal_vlm/stola_self-adaptive_touch-language_framework_with_tactile_commonsense_reasoning_.md)
-- [\[CVPR 2026\] Visual Reasoning through Tool-supervised Reinforcement Learning](visual_reasoning_through_tool-supervised_reinforcement_learning.md)
-- [\[CVPR 2026\] Rethinking VLMs for Image Forgery Detection and Localization](rethinking_vlms_for_image_forgery_detection_and_localization.md)
 - [\[CVPR 2026\] Mechanisms of Object Localization in Vision-Language Models](mechanisms_of_object_localization_in_vision-language_models.md)
 - [\[CVPR 2026\] Concept Regions Matter: Benchmarking CLIP with a New Cluster-Importance Approach](concept_regions_matter_benchmarking_clip_with_a_new_cluster-importance_approach.md)
+- [\[CVPR 2026\] GroundingME: Exposing the Visual Grounding Gap in MLLMs through Multi-Dimensional Evaluation](groundingme_exposing_the_visual_grounding_gap_in_mllms_through_multi-dimensional.md)
+- [\[ICLR 2026\] Seeing Through Deception: Uncovering Misleading Creator Intent in Multimodal News with Vision-Language Models](../../ICLR2026/multimodal_vlm/seeing_through_deception_uncovering_misleading_creator_intent_in_multimodal_news.md)
+- [\[CVPR 2026\] VLM-Loc: Localization in Point Cloud Maps via Vision-Language Models](vlm-loc_localization_in_point_cloud_maps_via_vision-language_models.md)
 
 </div>
 

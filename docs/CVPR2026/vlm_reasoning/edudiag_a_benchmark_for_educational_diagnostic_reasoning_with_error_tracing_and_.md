@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EduDiag: A Benchmark for Educational Diagnostic Reasoning with Error Tracing and Correction on Large Multimodal Models
 description: >-
-  [CVPR 2026][Multimodal VLM][GRPO] EduDiag constructs the first benchmark to evaluate the "educational diagnostic reasoning" capability of Large Multimodal Models (LMMs). Given a problem, an image, a reference solution process, and a wrong answer, the model is required to **reverse reconstruct** the erroneous reasoning chain leading to that wrong answer
+  [CVPR 2026][VLM Reasoning][Large Multimodal Models] EduDiag constructs the first benchmark to evaluate the "educational diagnostic reasoning" capability of Large Multimodal Models (LMMs). Given a problem, an image, a reference solution process, and a wrong answer, the model is required to **reverse reconstruct** the erroneous reasoning chain leading to that wrong answer and generate corrective feedback. Covering 8,345 annotations across common sense, science…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Large Multimodal Models"
+  - "Educational Diagnostic Reasoning"
+  - "Error Tracing"
+  - "Corrective Feedback"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 0ef94429ddab72a5
+content_hash: 2efd68c066735930
 ---
+
 # EduDiag: A Benchmark for Educational Diagnostic Reasoning with Error Tracing and Correction on Large Multimodal Models
 
 **Conference**: CVPR 2026  
@@ -126,15 +131,16 @@ SFT significantly boosts $S_e$ but barely improves $Acc_p$, as it often "forces"
 - Value: ⭐⭐⭐⭐⭐ Identifies error tracing as the bottleneck and provides a viable GRPO-$R_2$ direction.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ACL 2026\] ErrorRadar: Benchmarking Complex Mathematical Reasoning of Multimodal Large Language Models Via Error Detection](../../ACL2026/vlm_reasoning/errorradar_benchmarking_complex_mathematical_reasoning_of_multimodal_large_langu.md)
 - [\[CVPR 2026\] EMO-R3: Reflective Reinforcement Learning for Emotional Reasoning in Multimodal Large Language Models](emo-r3_reflective_reinforcement_learning_for_emotional_reasoning_in_multimodal_l.md)
+- [\[CVPR 2026\] Fuel Gauge: Estimating Chain-of-Thought Length Ahead of Time in Large Multimodal Models](fuel_gauge_estimating_chain-of-thought_length_ahead_of_time_in_large_multimodal_.md)
+- [\[CVPR 2026\] AXG-Reasoner: Error Detection and Explanation in Long Task Videos with Vision-Language Models](axg-reasoner_error_detection_and_explanation_in_long_task_videos_with_vision-lan.md)
 - [\[CVPR 2026\] GGBench: A Geometric Generative Reasoning Benchmark for Unified Multimodal Models](ggbench_a_geometric_generative_reasoning_benchmark_for_unified_multimodal_models.md)
-- [\[CVPR 2025\] ESPIRE: A Diagnostic Benchmark for Embodied Spatial Reasoning of Vision-Language Models](../../CVPR2025/multimodal_vlm/espire_a_diagnostic_benchmark_for_embodied_spatial_reasoning_of_vision-language_.md)
-- [\[ACL 2026\] ErrorRadar: Benchmarking Complex Mathematical Reasoning of Multimodal Large Language Models Via Error Detection](../../ACL2026/multimodal_vlm/errorradar_benchmarking_complex_mathematical_reasoning_of_multimodal_large_langu.md)
-- [\[CVPR 2026\] Circuit Tracing in Vision-Language Models: Understanding the Internal Mechanisms of Multimodal Thinking](circuit_tracing_in_vision-language_models_understanding_the_internal_mechanisms_.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Any Resolution Any Geometry: From Multi-View To Multi-Patch
 description: >-
-  [CVPR 2026][3D Vision][VGGT] A single ultra-high-definition image is decomposed into patches and treated as "virtual multi-views" within a VGGT-style framework for joint processing. Combined with cross-patch attention for global consistency reasoning, the model outputs sharp and globally coherent high-resolution depth maps and surface normals in a
+  [CVPR 2026][3D Vision][High-resolution depth estimation] A single ultra-high-definition image is decomposed into patches and treated as "virtual multi-views" within a VGGT-style framework for joint processing. Combined with cross-patch attention for global consistency reasoning, the model outputs sharp and globally coherent high-resolution depth maps and surface normals in a single forward pass, reducing AbsRel on UnrealStereo4K from 0.0582 to 0.0291.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - VGGT
+  - "CVPR 2026"
+  - "3D Vision"
+  - "High-resolution depth estimation"
+  - "surface normals"
+  - "multi-patch Transformer"
+  - "cross-patch attention"
+  - "VGGT"
 date: 2026-05-08
-content_hash: 29dafbdf1f49e03d
+content_hash: facfa4a9efbc5f9b
 ---
+
 # Any Resolution Any Geometry: From Multi-View To Multi-Patch
 
 **Conference**: CVPR 2026  
@@ -139,11 +144,11 @@ Compared to PatchRefiner, AbsRel drops by over 49% and RMSE by 35%, with a faste
 
 ## Related Papers
 
-- [\[CVPR 2026\] Generalizable Human Gaussian Splatting via Multi-view Semantic Consistency](generalizable_human_gaussian_splatting_via_multi-view_semantic_consistency.md)
 - [\[CVPR 2026\] ClipGStream: Clip-Stream Gaussian Splatting for Any Length and Any Motion Multi-View Dynamic Scene Reconstruction](clipgstream_clip-stream_gaussian_splatting_for_any_length_and_any_motion_multi-v.md)
 - [\[CVPR 2026\] Block-Sparse Global Attention for Efficient Multi-View Geometry Transformers](block-sparse_global_attention_for_efficient_multi-view_geometry_transformers.md)
+- [\[CVPR 2026\] SplatSuRe: Selective Super-Resolution for Multi-view Consistent 3D Gaussian Splatting](splatsure_selective_super-resolution_for_multi-view_consistent_3d_gaussian_splat.md)
 - [\[CVPR 2026\] Confidence-Guided Multi-Scale Aggregation for Sparse-View High-Resolution 3D Gaussian Splatting](confidence-guided_multi-scale_aggregation_for_sparse-view_high-resolution_3d_gau.md)
-- [\[CVPR 2026\] Depth Any Panoramas: A Foundation Model for Panoramic Depth Estimation](depth_any_panoramas_a_foundation_model_for_panoramic_depth_estimation.md)
+- [\[CVPR 2026\] Multi-view Consistent 3D Gaussian Head Avatars 'without' Multi-view Generation](multi-view_consistent_3d_gaussian_head_avatars_without_multi-view_generation.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SpecMER: Fast Protein Generation with K-mer Guided Speculative Decoding
 description: >-
-  [NeurIPS 2025][Computational Biology][Speculative Decoding] SpecMER introduces speculative decoding into protein sequence generation, employing a K-mer-guided batch selection strategy to choose the candidate most consist…
+  [NeurIPS 2025 Spotlight][Computational Biology][Speculative Decoding] SpecMER introduces speculative decoding into protein sequence generation, employing a K-mer-guided batch selection strategy to choose the candidate most consistent with evolutionary conservation from multiple draft model outputs for target model verification. It achieves 24–32% speedup while preserving distributional consistency, and the generated sequences demonstrate significantly improved NLL and pLDDT s…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Computational Biology"
   - "Speculative Decoding"
   - "K-mer Guidance"
@@ -12,7 +12,7 @@ tags:
   - "MSA"
   - "Batch Selection"
 date: 2026-05-08
-content_hash: 7f8cc9a1fa398ca4
+content_hash: 29fb6d500018a5b6
 ---
 
 # SpecMER: Fast Protein Generation with K-mer Guided Speculative Decoding
@@ -128,10 +128,10 @@ Target protein MSA → extract K-mer frequency distributions ($k=1,3,5$) → dra
 ## Related Papers
 
 - [\[NeurIPS 2025\] KLASS: KL-Guided Fast Inference in Masked Diffusion Models](klass_kl-guided_fast_inference_in_masked_diffusion_models.md)
-- [\[NeurIPS 2025\] MEIcoder: Decoding Visual Stimuli from Neural Activity by Leveraging Most Exciting Inputs](meicoder_decoding_visual_stimuli_from_neural_activity_by_leveraging_most_excitin.md)
 - [\[ICLR 2026\] Ultra-Fast Language Generation via Discrete Diffusion Divergence Instruct](../../ICLR2026/computational_biology/ultra-fast_language_generation_via_discrete_diffusion_divergence_instruct.md)
-- [\[NeurIPS 2025\] g-DPO: Scalable Preference Optimization for Protein Language Models](g-dpo_scalable_preference_optimization_for_protein_language_models.md)
-- [\[NeurIPS 2025\] Steering Generative Models with Experimental Data for Protein Fitness Optimization](steering_generative_models_with_experimental_data_for_protein_fitness_optimizati.md)
+- [\[ICLR 2026\] Fast and Interpretable Protein Substructure Alignment via Optimal Transport](../../ICLR2026/computational_biology/fast_and_interpretable_protein_substructure_alignment_via_optimal_transport.md)
+- [\[ACL 2025\] Enhancing Safe and Controllable Protein Generation via Knowledge Preference Optimization](../../ACL2025/computational_biology/kpo_protein_safety.md)
+- [\[NeurIPS 2025\] MEIcoder: Decoding Visual Stimuli from Neural Activity by Leveraging Most Exciting Inputs](meicoder_decoding_visual_stimuli_from_neural_activity_by_leveraging_most_excitin.md)
 
 </div>
 

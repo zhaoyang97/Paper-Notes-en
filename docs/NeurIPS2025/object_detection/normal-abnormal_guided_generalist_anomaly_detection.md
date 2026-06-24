@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Normal-Abnormal Guided Generalist Anomaly Detection
 description: >-
-  [NeurIPS 2025][Object Detection][generalist anomaly detection] NAGL is the first framework to incorporate mixed normal-and-abnormal reference samples into Generalist Anomaly Detection (GAD). Through two attention modules…
+  [NeurIPS 2025][Object Detection][generalist anomaly detection] NAGL is the first framework to incorporate mixed normal-and-abnormal reference samples into Generalist Anomaly Detection (GAD). Through two attention modules—Residual Mining (RM) and Anomaly Feature Learning (AFL)—it learns transferable anomaly patterns in residual space, substantially outperforming normal-reference-only methods in cross-domain scenarios with as few as 1 anomaly reference sample.
 tags:
   - "NeurIPS 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "normal-abnormal reference"
   - "meta-learning"
 date: 2026-05-08
-content_hash: df3bff52d3532981
+content_hash: dab59804fb927bf8
 ---
 
 # Normal-Abnormal Guided Generalist Anomaly Detection
@@ -165,9 +165,9 @@ Efficiency comparison:
 
 - [\[AAAI 2026\] Reimagining Anomalies: What if Anomalies Were Normal?](../../AAAI2026/object_detection/reimagining_anomalies_what_if_anomalies_were_normal.md)
 - [\[NeurIPS 2025\] ADPretrain: Advancing Industrial Anomaly Detection via Anomaly Representation Pretraining](adpretrain_advancing_industrial_anomaly_detection_via_anomaly_representation_pre.md)
+- [\[ICLR 2026\] Complexity- and Statistics-Guided Anomaly Detection in Time Series Foundation Models](../../ICLR2026/object_detection/complexity-_and_statistics-guided_anomaly_detection_in_time_series_foundation_mo.md)
+- [\[ICLR 2026\] PGRF-Net: A Prototype-Guided Relational Fusion Network for Diagnostic Multivariate Time-Series Anomaly Detection](../../ICLR2026/object_detection/pgrf-net_a_prototype-guided_relational_fusion_network_for_diagnostic_multivariat.md)
 - [\[AAAI 2026\] PromptMoE: Generalizable Zero-Shot Anomaly Detection via Visually-Guided Prompt Mixing of Experts](../../AAAI2026/object_detection/promptmoe_generalizable_zero-shot_anomaly_detection_via_visually-guided_prompt_m.md)
-- [\[NeurIPS 2025\] Semi-supervised Graph Anomaly Detection via Robust Homophily Learning](semi-supervised_graph_anomaly_detection_via_robust_homophily_learning.md)
-- [\[NeurIPS 2025\] Scalable, Explainable and Provably Robust Anomaly Detection with One-Step Flow Matching](scalable_explainable_and_provably_robust_anomaly_detection_with_one-step_flow_ma.md)
 
 </div>
 

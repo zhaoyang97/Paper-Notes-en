@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Note 1: Is CoT a Hallucination? A Data Distribution Perspective
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Chain-of-Thought] By constructing a fully controlled abstract environment DataAlchemy, this paper reveals that CoT reasoning is a form of hallucination — its effectiveness is entirely govern…
+  [NeurIPS 2025][Reasoning][Chain-of-Thought] By constructing a fully controlled abstract environment DataAlchemy, this paper reveals that CoT reasoning is a form of hallucination — its effectiveness is entirely governed by training data distribution and proves extremely fragile under out-of-distribution scenarios.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Chain-of-Thought"
   - "Data Distribution"
   - "Distribution Shift"
   - "DataAlchemy"
   - "Reasoning Capability"
 date: 2026-05-08
-content_hash: 4e4c6dbc989b0347
+content_hash: ecba1d05caa1d985
 ---
 
 # Note 1: Is CoT a Hallucination? A Data Distribution Perspective
@@ -45,9 +45,9 @@ The authors introduce **DataAlchemy** — a fully controlled abstract environmen
 
 2. **Three-Dimensional Distribution Analysis Framework**:
 $$\Delta(\mathcal{D}_{train},\mathcal{D}_{test})=\Phi(\Delta_{task},\Delta_{length},\Delta_{format})$$
-   - Task dimension: composition patterns, participating transformations
-   - Length dimension: text length, number of reasoning steps
-   - Format dimension: perturbations (insertion / deletion / modification)
+    - Task dimension: composition patterns, participating transformations
+    - Length dimension: text length, number of reasoning steps
+    - Format dimension: perturbations (insertion / deletion / modification)
 
 3. **Compositional Transformations**: Multi-step reasoning is supported, naturally generating CoT intermediate steps:
 $$f_S(\mathbf{e}): \underbrace{\mathbf{e}\xrightarrow{f_1}\mathbf{e}^{(1)}\xrightarrow{f_2}...\xrightarrow{f_k}}_{\text{reasoning trace}}\hat{\mathbf{e}}$$
@@ -100,11 +100,11 @@ $$f_S(\mathbf{e}): \underbrace{\mathbf{e}\xrightarrow{f_1}\mathbf{e}^{(1)}\xrigh
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Visual Thoughts: A Unified Perspective of Understanding Multimodal Chain-of-Thought](visual_thoughts_a_unified_perspective_of_understanding_multi.md)
 - [\[NeurIPS 2025\] Note 8: PolyMath — Evaluating Mathematical Reasoning in a Multilingual Context](self-evaluating_llms_for_multi-step_tasks_stepwise_confidence_estimation_for_fai.md)
 - [\[NeurIPS 2025\] Note 7: Value-Guided Search - Efficient Chain-of-Thought Reasoning](polymath_evaluating_mathematical_reasoning_in_multilingual_contexts.md)
 - [\[NeurIPS 2025\] Note 4: WebThinker — Empowering Reasoning Models with Deep Research Capabilities](webthinker_empowering_large_reasoning_models_with_deep_research_capability.md)
-- [\[NeurIPS 2025\] Unlabeled Data Can Provably Enhance In-Context Learning of Transformers](unlabeled_data_can_provably_enhance_in-context_learning_of_transformers.md)
+- [\[NeurIPS 2025\] Visual Thoughts: A Unified Perspective of Understanding Multimodal Chain-of-Thought](visual_thoughts_a_unified_perspective_of_understanding_multi.md)
+- [\[ACL 2025\] Towards Safety Reasoning in LLMs: AI-agentic Deliberation for Policy-embedded CoT Data Creation](../../ACL2025/llm_reasoning/towards_safety_reasoning_in_llms_ai-agentic_deliberation_for_policy-embedded_cot.md)
 
 </div>
 

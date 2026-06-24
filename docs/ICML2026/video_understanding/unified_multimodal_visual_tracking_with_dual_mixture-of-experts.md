@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Unified Multimodal Visual Tracking with Dual Mixture-of-Experts
 description: >-
-  [ICML 2026][Video Understanding][RGB+X] OneTrackerV2 unifies five tracking tasks (RGB / RGB+D / RGB+T / RGB+E / RGB+N) into a single network for end-to-end training. It utilizes a Meta Merger for modality fusion and a Dual MoE to explicitly decouple heterogeneous features—"spatial-temporal matching" and "modality fusion"—into T-MoE and M-MoE blocks. A dissim
+  [ICML 2026][Video Understanding][Visual Tracking] OneTrackerV2 unifies five tracking tasks (RGB / RGB+D / RGB+T / RGB+E / RGB+N) into a single network for end-to-end training. It utilizes a Meta Merger for modality fusion and a Dual MoE to explicitly decouple heterogeneous features—"spatial-temporal matching" and "modality fusion"—into T-MoE and M-MoE blocks. A dissimilarity loss and router clustering are employed to prevent these features from collapsing into the same subspa…
 tags:
-  - ICML 2026
-  - Video Understanding
-  - RGB+X
-  - Mixture-of-Experts
+  - "ICML 2026"
+  - "Video Understanding"
+  - "Visual Tracking"
+  - "RGB+X"
+  - "Mixture-of-Experts"
+  - "Feature Decoupling"
+  - "Modality-Missing Robustness"
 date: 2026-05-08
-content_hash: 3930b1df6a9ff149
+content_hash: ff42b9ad77f586d4
 ---
+
 # Unified Multimodal Visual Tracking with Dual Mixture-of-Experts
 
 **Conference**: ICML 2026  
@@ -129,16 +133,16 @@ The total loss is $\mathcal L=\mathcal L_{class}+\lambda_G\mathcal L_{IoU}+\lamb
 - Value: ⭐⭐⭐⭐ A highly practical unified baseline for multimodal tracking; the dual MoE pattern is extensible to other multimodal vision tasks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] RELO: Reinforcement Learning to Localize for Visual Object Tracking](relo_reinforcement_learning_to_localize_for_visual_object_tracking.md)
 - [\[CVPR 2026\] VidPrism: Heterogeneous Mixture of Experts for Image-to-Video Transfer](../../CVPR2026/video_understanding/vidprism_heterogeneous_mixture_of_experts_for_image-to-video_transfer.md)
+- [\[ICLR 2026\] Exposing and Defending the Achilles' Heel of Video Mixture-of-Experts](../../ICLR2026/video_understanding/exposing_and_defending_the_achilles_heel_of_video_mixture-of-experts.md)
 - [\[CVPR 2026\] UTPTrack: Towards Simple and Unified Token Pruning for Visual Tracking](../../CVPR2026/video_understanding/utptrack_towards_simple_and_unified_token_pruning_for_visual_tracking.md)
 - [\[ICML 2026\] AVTrack: Audio-Visual Tracking in Human-centric Complex Scenes](avtrack_audio-visual_tracking_in_human-centric_complex_scenes.md)
-- [\[ECCV 2024\] Occluded Gait Recognition with Mixture of Experts: An Action Detection Perspective](../../ECCV2024/video_understanding/occluded_gait_recognition_with_mixture_of_experts_an_action_detection_perspectiv.md)
 
 </div>
 

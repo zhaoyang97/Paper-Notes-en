@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Semantic Search: Towards Referential Anchoring in Composed Image Retrieval
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] This paper proposes the Object-Anchored Composed Image Retrieval (OACIR) task, the OACIRR large-scale benchmark (160K+ quadruplets), and the AdaFocal framework. AdaFocal adaptively enhances focus on anchored instance regions through a Context-Aware Attention Modulator, significantly outperforming existing methods in in
+  [CVPR 2026][Object Detection][Composed Image Retrieval] This paper proposes the Object-Anchored Composed Image Retrieval (OACIR) task, the OACIRR large-scale benchmark (160K+ quadruplets), and the AdaFocal framework. AdaFocal adaptively enhances focus on anchored instance regions through a Context-Aware Attention Modulator, significantly outperforming existing methods in instance-level retrieval fidelity.
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Composed Image Retrieval"
+  - "Instance-level Consistency"
+  - "Attention Modulation"
+  - "Fine-grained Retrieval"
+  - "Visual Anchoring"
 date: 2026-05-08
-content_hash: 761db2bf4bcff59b
+content_hash: 46728d6c268f502e
 ---
+
 # Beyond Semantic Search: Towards Referential Anchoring in Composed Image Retrieval
 
 **Conference**: CVPR 2026  
@@ -128,10 +134,10 @@ Since standard CIR data lacks instance labels, a four-stage pipeline was designe
 ## Related Papers
 
 - [\[CVPR 2026\] Beyond Caption-Based Queries for Video Moment Retrieval](beyond_caption-based_queries_for_video_moment_retrieval.md)
-- [\[CVPR 2026\] Can a Second-View Image Be a Language? Geometric and Semantic Cross-Modal Reasoning for X-ray Prohibited Item Detection](can_a_second-view_image_be_a_language_geometric_and_semantic_cross-modal_reasoni.md)
 - [\[CVPR 2025\] Search and Detect: Training-Free Long Tail Object Detection via Web-Image Retrieval](../../CVPR2025/object_detection/search_and_detect_training-free_long_tail_object_detection_via_web-image_retriev.md)
 - [\[CVPR 2026\] MRD: Multi-resolution Retrieval-Detection Fusion for High-Resolution Image Understanding](mrd_multi-resolution_retrieval-detection_fusion_for_high-resolution_image_unders.md)
 - [\[CVPR 2026\] Parameter-Efficient Semantic Augmentation for Enhancing Open-Vocabulary Object Detection](parameter-efficient_semantic_augmentation_for_enhancing_open-vocabulary_object_d.md)
+- [\[ICLR 2026\] Unbiased Object Detection Beyond Frequency with Visually Prompted Image Synthesis](../../ICLR2026/object_detection/unbiased_object_detection_beyond_frequency_with_visually_prompted_image_synthesi.md)
 
 </div>
 

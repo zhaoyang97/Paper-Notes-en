@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Investigating Memory in Model-Free RL with POPGym Arcade
 description: >-
-  [ICML 2026][Causal Inference][model-free RL] This paper argues that comparing RL memory models solely by returns is unreliable. The authors construct a GPU-accelerated MDP/POMDP "twin" benchmark, POPGym Arcade, and propose four diagnostic tools: Observability Gap, Memory Bias, pixel saliency, and Recall Density. These tools reveal a "value smearing" pathology: me
+  [ICML2026 Spotlight][Causal Inference][model-free RL] This paper argues that comparing RL memory models solely by returns is unreliable. The authors construct a GPU-accelerated MDP/POMDP "twin" benchmark, POPGym Arcade, and propose four diagnostic tools: Observability Gap, Memory Bias, pixel saliency, and Recall Density. These tools reveal a "value smearing" pathology: memory models incorrectly distribute value credit across irrelevant historical observations…
 tags:
-  - ICML 2026
-  - Causal Inference
-  - model-free RL
-  - POMDP
-  - recurrent state
+  - "ICML2026 Spotlight"
+  - "Causal Inference"
+  - "model-free RL"
+  - "POMDP"
+  - "memory models"
+  - "recurrent state"
+  - "value smearing"
 date: 2026-05-08
-content_hash: 6d09e9a42f3a166a
+content_hash: fa9bd4c5820f1065
 ---
+
 # Investigating Memory in Model-Free RL with POPGym Arcade
 
 **Conference**: ICML2026 Spotlight  
@@ -125,8 +128,21 @@ The primary algorithm is PQN (Gallici et al., 2024), a JAX-based TD($\lambda$) Q
 - Value: ⭐⭐⭐⭐⭐ Rewrites the methodology for evaluating memory models and provides a high-throughput JAX twin benchmark.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[CVPR 2025\] Image Quality Assessment: Investigating Causal Perceptual Effects with Abductive Counterfactual Inference](../../CVPR2025/causal_inference/image_quality_assessment_investigating_causal_perceptual_effects_with_abductive_.md)
+- [\[ICML 2026\] Density-Guided Robust Counterfactual Explanations on Tabular Data under Model Multiplicity](density-guided_robust_counterfactual_explanations_on_tabular_data_under_model_mu.md)
+- [\[ICLR 2026\] Adjusting Prediction Model Through Wasserstein Geodesic for Causal Inference](../../ICLR2026/causal_inference/adjusting_prediction_model_through_wasserstein_geodesic_for_causal_inference.md)
+- [\[ICLR 2026\] Beyond DAGs: A Latent Partial Causal Model for Multimodal Learning](../../ICLR2026/causal_inference/beyond_dags_a_latent_partial_causal_model_for_multimodal_learning.md)
+- [\[AAAI 2026\] Sparse Additive Model Pruning for Order-Based Causal Structure Learning](../../AAAI2026/causal_inference/sparse_additive_model_pruning_for_order-based_causal_structure_learning.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

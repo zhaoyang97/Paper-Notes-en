@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rectified-CFG++ for Flow Based Models
 description: >-
-  [NeurIPS 2025][Image Generation][Classifier-Free Guidance] To address the off-manifold drift caused by standard CFG in Rectified Flow models…
+  [NeurIPS 2025][Image Generation][Classifier-Free Guidance] To address the off-manifold drift caused by standard CFG in Rectified Flow models, this paper proposes Rectified-CFG++—an adaptive predictor-corrector guidance strategy that replaces extrapolative guidance with conditional flow prediction combined with time-scheduled interpolative correction. The method comprehensively outperforms standard CFG on large-scale models including Flux, SD3, SD3.5, and Lumina.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Predictor-Corrector Sampling"
   - "Flow Models"
 date: 2026-05-08
-content_hash: 0ab9facc51ca273a
+content_hash: 9cf185940c220e88
 ---
 
 # Rectified-CFG++ for Flow Based Models
@@ -192,9 +192,9 @@ Under comparable runtime (SD3.5, 512×512), Rectified-CFG++ achieves FID 74.47 w
 
 - [\[NeurIPS 2025\] Efficient Rectified Flow for Image Fusion](efficient_rectified_flow_for_image_fusion.md)
 - [\[NeurIPS 2025\] GuideFlow3D: Optimization-Guided Rectified Flow For Appearance Transfer](guideflow3d_optimization-guided_rectified_flow_for_appearance_transfer.md)
+- [\[ICML 2025\] Taming Rectified Flow for Inversion and Editing](../../ICML2025/image_generation/taming_rectified_flow_for_inversion_and_editing.md)
 - [\[ICCV 2025\] Straighten Viscous Rectified Flow via Noise Optimization](../../ICCV2025/image_generation/straighten_viscous_rectified_flow_via_noise_optimization.md)
 - [\[NeurIPS 2025\] On the Relation between Rectified Flows and Optimal Transport](on_the_relation_between_rectified_flows_and_optimal_transport.md)
-- [\[NeurIPS 2025\] Entropy Rectifying Guidance for Diffusion and Flow Models](entropy_rectifying_guidance_for_diffusion_and_flow_models.md)
 
 </div>
 

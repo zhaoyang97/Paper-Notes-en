@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Uncover Underlying Correspondence for Robust Multi-view Clustering
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] This paper treats cross-view correspondences in noisy multi-view clustering as latent variables and proposes CorreGen. Using an EM framework, it generates soft correspondence distributions in the embedding space while simultaneously handling category-level mismatch, mismatched samples, and unalignable samples through G
+  [ICLR 2026][Self-Supervised Learning][Multi-view clustering] This paper treats cross-view correspondences in noisy multi-view clustering as latent variables and proposes CorreGen. Using an EM framework, it generates soft correspondence distributions in the embedding space while simultaneously handling category-level mismatch, mismatched samples, and unalignable samples through GMM marginal estimation and a virtual sample mechanism, significantly enhancing clustering robustnes…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Multi-view clustering"
+  - "noisy correspondence"
+  - "EM algorithm"
+  - "optimal transport"
+  - "robust representation learning"
 date: 2026-05-08
-content_hash: ce9581116a59df5a
+content_hash: ace5a9bfef7bca0b
 ---
+
 # Uncover Underlying Correspondence for Robust Multi-view Clustering
 
 **Conference**: ICLR 2026  
@@ -179,14 +185,17 @@ Ablation on Scene15 and UMPC-Food101 (MR=0.2, CR=0.2):
 
 <div class="related-papers" markdown="1">
 
-1. **DIVIDE**: Self-Supervised Multi-View Clustering via Dynamic View Integration and Differentiated Enrichment (ICLR 2024)
-2. **CANDY**: Contrastive Multi-view Clustering with Noisy Correspondences (CVPR 2023)
-3. **ROLL**: Robust Multi-view Layered Learning for Noisy Correspondence (NeurIPS 2023)
+## Related Papers
+
+- [\[ICLR 2026\] Relationship Alignment for View-aware Multi-view Clustering](relationship_alignment_for_view-aware_multi-view_clustering.md)
+- [\[ICLR 2026\] Unified and Efficient Multi-view Clustering from Probabilistic Perspective](unified_and_efficient_multi-view_clustering_from_probabilistic_perspective.md)
+- [\[ICLR 2026\] Debiased and Denoised Representation Learning for Incomplete Multi-view Clustering](debiased_and_denoised_representation_learning_for_incomplete_multi-view_clusteri.md)
+- [\[ICLR 2026\] Incomplete Multi-View Multi-Label Classification via Shared Codebook and Fused-Teacher Self-Distillation](incomplete_multi-view_multi-label_classification_via_shared_codebook_and_fused-t.md)
+- [\[ICLR 2026\] PRISM: Progressive Robust Learning for Open-World Continual Category Discovery](prism_progressive_robust_learning_for_open-world_continual_category_discovery.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Relationship Alignment for View-aware Multi-view Clustering](relationship_alignment_for_view-aware_multi-view_clustering.md)

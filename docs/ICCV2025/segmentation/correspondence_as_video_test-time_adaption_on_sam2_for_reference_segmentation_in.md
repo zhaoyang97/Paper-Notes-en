@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Correspondence as Video: Test-Time Adaption on SAM2 for Reference Segmentation in the Wild
 description: >-
-  [ICCV 2025][Segmentation][Reference Segmentation] CAV-SAM represents the correspondence between reference–target image pairs as a pseudo-video sequence…
+  [ICCV 2025][Segmentation][Reference Segmentation] CAV-SAM represents the correspondence between reference–target image pairs as a pseudo-video sequence, bridging semantic gaps via a Diffusion-Based Semantic Transition (DBST) module and aligning geometric variations via a Test-Time Geometric Alignment (TTGA) module. This enables SAM2's video segmentation capability to be adapted to reference segmentation in a training-free manner, surpassing the state of the art by approximate…
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Diffusion-Based Semantic Transition"
   - "Test-Time Adaptation"
 date: 2026-05-08
-content_hash: cf8975f2048128bf
+content_hash: 3573e375958e48b9
 ---
 
 # Correspondence as Video: Test-Time Adaption on SAM2 for Reference Segmentation in the Wild
@@ -144,8 +144,8 @@ The most significant improvement is observed on the challenging Chest X-Ray medi
 - [\[ICCV 2025\] TopoTTA: Topology-Enhanced Test-Time Adaptation for Tubular Structure Segmentation](topotta_topology-enhanced_test-time_adaptation_for_tubular_structure_segmentatio.md)
 - [\[ICCV 2025\] Hybrid-TTA: Continual Test-time Adaptation via Dynamic Domain Shift Detection](hybrid-tta_continual_test-time_adaptation_via_dynamic_domain_shift_detection.md)
 - [\[ICCV 2025\] Online Reasoning Video Segmentation with Just-in-Time Digital Twins](online_reasoning_video_segmentation_with_just-in-time_digital_twins.md)
-- [\[ICCV 2025\] A Plug-and-Play Physical Motion Restoration Approach for In-the-Wild High-Difficulty Motions](a_plugandplay_physical_motion_restoration_approach_for_inthe.md)
-- [\[NeurIPS 2025\] Robust Ego-Exo Correspondence with Long-Term Memory](../../NeurIPS2025/segmentation/robust_ego-exo_correspondence_with_long-term_memory.md)
+- [\[CVPR 2026\] Mixture of Prototypes for Test-time Adaptive Segmentation](../../CVPR2026/segmentation/mixture_of_prototypes_for_test-time_adaptive_segmentation.md)
+- [\[ICML 2025\] IT³: Idempotent Test-Time Training](../../ICML2025/segmentation/it3_idempotent_test-time_training.md)
 
 </div>
 

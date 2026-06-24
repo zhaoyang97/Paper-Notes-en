@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards a Unified Copernicus Foundation Model for Earth Vision
 description: >-
-  [ICCV 2025][Remote Sensing][Earth observation foundation model] This work presents a unified Earth observation foundation model system covering all major Copernicus Sentinel tasks…
+  [ICCV 2025][Remote Sensing][Earth observation foundation model] This work presents a unified Earth observation foundation model system covering all major Copernicus Sentinel tasks, comprising the Copernicus-Pretrain dataset with 18.7 million aligned images, the Copernicus-FM model supporting arbitrary spectral and non-spectral sensors, and the Copernicus-Bench evaluation benchmark spanning 15 hierarchical downstream tasks.
 tags:
   - "ICCV 2025"
   - "Remote Sensing"
@@ -12,7 +12,7 @@ tags:
   - "dynamic hypernetwork"
   - "atmospheric monitoring"
 date: 2026-05-08
-content_hash: 675b473bc2340a80
+content_hash: 86cc26e02c00e7e9
 ---
 
 # Towards a Unified Copernicus Foundation Model for Earth Vision
@@ -157,10 +157,10 @@ Metadata encoding yields the most substantial gains (EuroSAT-S1: 57.5→77.9, +2
 ## Related Papers
 
 - [\[ICCV 2025\] SkySense V2: A Unified Foundation Model for Multi-Modal Remote Sensing](skysense_v2_a_unified_foundation_model_for_multi-modal_remote_sensing.md)
+- [\[ICLR 2026\] TerraFM: A Scalable Foundation Model for Unified Multisensor Earth Observation](../../ICLR2026/remote_sensing/terrafm_a_scalable_foundation_model_for_unified_multisensor_earth_observation.md)
 - [\[NeurIPS 2025\] GeoLink: Empowering Remote Sensing Foundation Model with OpenStreetMap Data](../../NeurIPS2025/remote_sensing/geolink_empowering_remote_sensing_foundation_model_with_openstreetmap_data.md)
 - [\[ICCV 2025\] RS-vHeat: Heat Conduction Guided Efficient Remote Sensing Foundation Model](rs-vheat_heat_conduction_guided_efficient_remote_sensing_foundation_model.md)
-- [\[ICLR 2026\] Earth-Agent: Unlocking the Full Landscape of Earth Observation with Agents](../../ICLR2026/remote_sensing/earth-agent_unlocking_the_full_landscape_of_earth_observation_with_agents.md)
-- [\[ICLR 2026\] Measuring the Intrinsic Dimension of Earth Representations](../../ICLR2026/remote_sensing/measuring_the_intrinsic_dimension_of_earth_representations.md)
+- [\[ICML 2025\] MapEval: A Map-Based Evaluation of Geo-Spatial Reasoning in Foundation Models](../../ICML2025/remote_sensing/mapeval_a_map-based_evaluation_of_geo-spatial_reasoning_in_foundation_models.md)
 
 </div>
 

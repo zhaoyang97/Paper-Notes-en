@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Single-Index Models via Harmonic Decomposition
 description: >-
-  [NeurIPS 2025][Optimization][single-index models] This paper proposes spherical harmonics as a natural basis for single-index models (SIMs) in place of Hermite polynomials…
+  [NeurIPS 2025][Optimization][single-index models] This paper proposes spherical harmonics as a natural basis for single-index models (SIMs) in place of Hermite polynomials, leveraging rotational symmetry to characterize sample and computational complexity for learning SIMs under arbitrary spherically symmetric input distributions. Two families of optimal estimators are constructed (tensor unfolding + online SGD), and a sample–runtime tradeoff is revealed that does not arise i…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -14,7 +14,7 @@ tags:
   - "tensor unfolding"
   - "online SGD"
 date: 2026-05-08
-content_hash: a4b7c0b89e489ace
+content_hash: 68eef27aeab9c075
 ---
 
 # Learning Single-Index Models via Harmonic Decomposition
@@ -165,8 +165,8 @@ This is a purely theoretical paper; all core results are presented as complexity
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning Orthogonal Multi-Index Models: A Fine-Grained Information Exponent Analysis](learning_orthogonal_multi-index_models_a_fine-grained_information_exponent_analy.md)
+- [\[ICML 2026\] Full-Batch Gradient Descent Outperforms One-Pass SGD: Sample Complexity Separation in Single-Index Learning](../../ICML2026/optimization/full-batch_gradient_descent_outperforms_one-pass_sgd_sample_complexity_separatio.md)
 - [\[NeurIPS 2025\] Revisiting Orbital Minimization Method for Neural Operator Decomposition](revisiting_orbital_minimization_method_for_neural_operator_decomposition.md)
-- [\[ICML 2026\] Convex Basins in Single-Index Model Loss Landscapes: Applications to Robust Recovery under Strong Adversarial Corruption](../../ICML2026/optimization/convex_basins_in_single-index_model_loss_landscapes_applications_to_robust_recov.md)
 - [\[NeurIPS 2025\] A Single-Loop First-Order Algorithm for Linearly Constrained Bilevel Optimization](a_single-loop_first-order_algorithm_for_linearly_constrained_bilevel_optimizatio.md)
 - [\[NeurIPS 2025\] Quantitative Convergence of Trained Single Layer Neural Networks to Gaussian Processes](quantitative_convergence_of_trained_single_layer_neural_networks_to_gaussian_pro.md)
 

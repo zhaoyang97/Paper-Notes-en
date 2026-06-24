@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Omni-IML: Towards Unified Interpretable Image Manipulation Localization
 description: >-
-  [ICLR 2026][AIGC Detection][Paper Note] This paper proposes Omni-IML—the first universal model capable of achieving SOTA performance across four major Image Manipulation Localization (IML) tasks (natural images, documents, faces, and scene text) using a **single model**. It addresses the performance degradation in joint training via three sample-adaptive mod
+  [ICLR 2026][AIGC Detection][Image Manipulation Localization] This paper proposes Omni-IML—the first universal model capable of achieving SOTA performance across four major Image Manipulation Localization (IML) tasks (natural images, documents, faces, and scene text) using a **single model**. It addresses the performance degradation in joint training via three sample-adaptive modules: the Modal Gated Encoder, Dynamic Weight Decoder, and Anomaly Enhancement. Additionally…
 tags:
-  - ICLR 2026
-  - AIGC Detection
+  - "ICLR 2026"
+  - "AIGC Detection"
+  - "Image Manipulation Localization"
+  - "Universal Model"
+  - "Modal Gating"
+  - "Dynamic Weights"
+  - "Interpretable Forensics"
 date: 2026-05-08
-content_hash: 6f689f06a0dfb81f
+content_hash: b9ee60432da14013
 ---
+
 # Omni-IML: Towards Unified Interpretable Image Manipulation Localization
 
 **Conference**: ICLR 2026  
@@ -145,9 +151,9 @@ Regarding interpretability (Table 6), adding the proposed visual prompts to vari
 
 - [\[ICLR 2026\] RelayFormer: A Unified Local-Global Attention Framework for Scalable Image and Video Manipulation Localization](relayformer_a_unified_local-global_attention_framework_for_scalable_image_and_vi.md)
 - [\[ICLR 2026\] Unveiling Perceptual Artifacts: A Fine-Grained Benchmark for Interpretable AI-Generated Image Detection](unveiling_perceptual_artifacts_a_fine-grained_benchmark_for_interpretable_ai-gen.md)
+- [\[ICLR 2026\] Attack-Resistant Watermarking for AIGC Image Forensics via Diffusion-based Semantic Deflection](attack-resistant_watermarking_for_aigc_image_forensics_via_diffusion-based_seman.md)
 - [\[ICLR 2026\] FakeXplain: AI-Generated Image Detection via Human-Aligned Grounded Reasoning](fakexplain_ai-generated_image_detection_via_human-aligned_grounded_reasoning.md)
 - [\[ICLR 2026\] HSIC Bottleneck for Cross-Generator and Domain-Incremental Synthetic Image Detection](hsic_bottleneck_for_cross-generator_and_domain-incremental_synthetic_image_detec.md)
-- [\[ICLR 2026\] No Pixel Left Behind: A Detail-Preserving Architecture for Robust High-Resolution AI-Generated Image Detection](no_pixel_left_behind_a_detail-preserving_architecture_for_robust_high-resolution.md)
 
 </div>
 

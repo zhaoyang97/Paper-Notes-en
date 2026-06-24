@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] BAPO: Stabilizing Off-Policy Reinforcement Learning for LLMs via Balanced Policy Optimization with Adaptive Clipping
 description: >-
-  [ICLR 2026][Reinforcement Learning][off-policy RL] BAPO dynamically adjusts the upper and lower clipping boundaries $c_{high}$ and $c_{low}$ of PPO/GRPO during training to maintain the contribution of positive samples to the policy gradient loss at a target value $\rho_0$. This mechanism simultaneously suppresses negative sample dominance and entropy collapse in off-po
+  [ICLR 2026][Reinforcement Learning][off-policy RL] BAPO dynamically adjusts the upper and lower clipping boundaries $c_{high}$ and $c_{low}$ of PPO/GRPO during training to maintain the contribution of positive samples to the policy gradient loss at a target value $\rho_0$. This mechanism simultaneously suppresses negative sample dominance and entropy collapse in off-policy RL, ensuring stable and efficient training for 7B/32B reasoning models.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - off-policy RL
-  - GRPO
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "off-policy RL"
+  - "adaptive clipping"
+  - "entropy collapse"
+  - "GRPO"
+  - "policy gradient balance"
+  - "LLM reasoning"
 date: 2026-05-08
-content_hash: 28ff819884d5a951
+content_hash: 71b6801c8e3fbe87
 ---
+
 # BAPO: Stabilizing Off-Policy Reinforcement Learning for LLMs via Balanced Policy Optimization with Adaptive Clipping
 
 **Conference**: ICLR 2026  
@@ -139,7 +143,7 @@ BAPO consistently outperforms fixed clipping and Clip-Higher across different st
 - [\[ICLR 2026\] TRAPO: Trust-Region Adaptive Policy Optimization](trust-region_adaptive_policy_optimization.md)
 - [\[ICLR 2026\] On-Policy RL Meets Off-Policy Experts: Harmonizing Supervised Fine-Tuning and Reinforcement Learning via Dynamic Weighting](on-policy_rl_meets_off-policy_experts_harmonizing_supervised_fine-tuning_and_rei.md)
 - [\[ICLR 2026\] Single-stream Policy Optimization](single-stream_policy_optimization.md)
-- [\[ICLR 2026\] Off-Policy Safe Reinforcement Learning with Constrained Optimistic Exploration](off-policy_safe_reinforcement_learning_with_cost-constrained_optimistic_explorat.md)
+- [\[ICLR 2026\] Geometric-Mean Policy Optimization](geometric-mean_policy_optimization.md)
 
 </div>
 

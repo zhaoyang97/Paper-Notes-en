@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] TabSwift: An Efficient Tabular Foundation Model with Row-Wise Attention
 description: >-
-  [ICML 2026][Others][register token] The authors demonstrate that the minimalist backbone of TabPFN, which employs "row-wise attention only," is not outdated. By incorporating gated attention to stabilize training, a small set of learnable register tokens to aggregate global information, and a per-sample adaptive early exit head, the model achieves accura
+  [ICML 2026][Tabular Foundation Model] The authors demonstrate that the minimalist backbone of TabPFN, which employs "row-wise attention only," is not outdated. By incorporating gated attention to stabilize training, a small set of learnable register tokens to aggregate global information, and a per-sample adaptive early exit head, the model achieves accuracy comparable to heavier column-aware models like TabPFN v2 and TabICL while significantly accelerating inference.
 tags:
-  - ICML 2026
-  - Others
-  - register token
+  - "ICML 2026"
+  - "Tabular Foundation Model"
+  - "Row-wise Attention"
+  - "Gated Attention"
+  - "Register Token"
+  - "Adaptive Early Exit"
 date: 2026-05-08
-content_hash: b5a62ef1f3aa6228
+content_hash: 4b258066b3f87367
 ---
+
 # TabSwift: An Efficient Tabular Foundation Model with Row-Wise Attention
 
 **Conference**: ICML 2026  
@@ -135,9 +139,9 @@ Early exit was compared against a "per-query entropy stop" baseline and ablated 
 
 - [\[ICML 2026\] GOTabPFN: From Feature Ordering to Compact Tokenization for Tabular Foundation Models on High-Dimensional Data](gotabpfn_from_feature_ordering_to_compact_tokenization_for_tabular_foundation_mo.md)
 - [\[ACL 2025\] HATA: Trainable and Hardware-Efficient Hash-Aware Top-k Attention for Scalable Large Model Inference](../../ACL2025/others/hata_trainable_and_hardware-efficient_hash-aware_top-k_attention_for_scalable_la.md)
-- [\[ICML 2026\] Connecting Independently Trained Modes via Layer-Wise Connectivity](connecting_independently_trained_modes_via_layer-wise_connectivity.md)
+- [\[ICML 2026\] Cascaded Flow Matching for Heterogeneous Tabular Data with Mixed-Type Features](cascaded_flow_matching_for_heterogeneous_tabular_data_with_mixed-type_features.md)
 - [\[ECCV 2024\] AttnZero: Efficient Attention Discovery for Vision Transformers](../../ECCV2024/others/attnzero_efficient_attention_discovery_for_vision_transformers.md)
-- [\[CVPR 2026\] MSPT: Efficient Large-Scale Physical Modeling via Parallelized Multi-Scale Attention](../../CVPR2026/others/mspt_efficient_large-scale_physical_modeling_via_parallelized_multi-scale_attent.md)
+- [\[ICML 2026\] Connecting Independently Trained Modes via Layer-Wise Connectivity](connecting_independently_trained_modes_via_layer-wise_connectivity.md)
 
 </div>
 

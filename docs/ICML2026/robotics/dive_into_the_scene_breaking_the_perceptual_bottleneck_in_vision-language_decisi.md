@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Dive into the Scene: Breaking the Perceptual Bottleneck in Vision-Language Decision Making via Focus Plan Generation
 description: >-
-  [ICML 2026][Robotics & Embodied AI][VLM] SceneDiver mitigates visual hallucinations in both high-level planning and reactive control by filtering task-related objects before feeding them back into the model. It employs a two-stage focus plan—coarse-grained sub-scene decomposition via scene graphs followed by agentic VLM verification—and distills this explicit
+  [ICML 2026][Robotics][VLM] SceneDiver mitigates visual hallucinations in both high-level planning and reactive control by filtering task-related objects before feeding them back into the model. It employs a two-stage focus plan—coarse-grained sub-scene decomposition via scene graphs followed by agentic VLM verification—and distills this explicit reasoning into VLA using a Slot Attention adapter.
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - VLM
-  - VLA
+  - "ICML 2026"
+  - "Robotics"
+  - "VLM"
+  - "VLA"
+  - "Visual Focus Planning"
+  - "Scene Graph"
+  - "Object Hallucination"
 date: 2026-05-08
-content_hash: e2ea0e8bcd5fee8e
+content_hash: 0fe8be8732da63d5
 ---
+
 # Dive into the Scene: Breaking the Perceptual Bottleneck in Vision-Language Decision Making via Focus Plan Generation
 
 **Conference**: ICML 2026  
@@ -163,8 +167,8 @@ On LIBERO-Plus (using OpenVLA-OFT), the SceneDiver adapter increased success rat
 
 - [\[ICML 2026\] PSG-Nav: Probabilistic Scene Graph Navigation via Multiverse Decision Making](psg-nav_probabilistic_scene_graph_navigation_via_multiverse_decision_making.md)
 - [\[ICLR 2026\] MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for Robotic Manipulation](../../ICLR2026/robotics/memoryvla_perceptual-cognitive_memory_in_vision-language-action_models_for_robot.md)
-- [\[ICML 2026\] Spatial Memory for Out-of-Vision Manipulation in Vision-Language-Action](spatial_memory_for_out-of-vision_manipulation_in_vision-language-action.md)
 - [\[CVPR 2025\] Decision SpikeFormer: Spike-Driven Transformer for Decision Making](../../CVPR2025/robotics/decision_spikeformer_spike-driven_transformer_for_decision_making.md)
+- [\[ICML 2026\] Spatial Memory for Out-of-Vision Manipulation in Vision-Language-Action](spatial_memory_for_out-of-vision_manipulation_in_vision-language-action.md)
 - [\[ICML 2026\] StableVLA: Towards Robust Vision-Language-Action Models without Extra Data](stablevla_towards_robust_vision-language-action_models_without_extra_data.md)
 
 </div>

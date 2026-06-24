@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Turning Pre-Trained Vision Transformers into End-to-End Histopathology Whole Slide Image Models for Survival Prediction
 description: >-
-  [CVPR 2026][Medical Imaging][ViT] The authors discovered that the cross-patch interaction priors learned by pre-trained ViTs on pathology images can extrapolate to longer token sequences. Consequently, they proposed E2E-ViT: by only modifying the input arrangement, adding a parameter-free patch merger, and replacing absolute position encodings with ALi
+  [CVPR 2026][Medical Imaging][Whole Slide Images] The authors discovered that the cross-patch interaction priors learned by pre-trained ViTs on pathology images can extrapolate to longer token sequences. Consequently, they proposed E2E-ViT: by only modifying the input arrangement, adding a parameter-free patch merger, and replacing absolute position encodings with ALiBi, **without adding any learnable parameters**, a tile-level ViT is directly transformed into an end-to-end WS…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - ViT
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Whole Slide Images"
+  - "Survival Prediction"
+  - "ViT"
+  - "End-to-End"
+  - "Sequence Extrapolation"
 date: 2026-05-08
-content_hash: bd29047f3d5f5dd3
+content_hash: 1ca95ed2dad6bd83
 ---
+
 # Turning Pre-Trained Vision Transformers into End-to-End Histopathology Whole Slide Image Models for Survival Prediction
 
 **Conference**: CVPR 2026  

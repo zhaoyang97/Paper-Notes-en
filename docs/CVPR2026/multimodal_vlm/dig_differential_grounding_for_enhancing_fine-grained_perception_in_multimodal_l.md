@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DiG: Differential Grounding for Enhancing Fine-Grained Perception in Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper proposes **Differential Grounding (DiG)** as a proxy task—giving the model two highly similar images and requiring it to localize all differences using bounding boxes without knowing the total count. Combined with Blender-automated data generation, GRPO reinforcement learning, and curriculum learning, the fi
+  [CVPR 2026][Multimodal VLM][Fine-grained perception] This paper proposes **Differential Grounding (DiG)** as a proxy task—giving the model two highly similar images and requiring it to localize all differences using bounding boxes without knowing the total count. Combined with Blender-automated data generation, GRPO reinforcement learning, and curriculum learning, the fine-grained visual perception of Qwen3-VL is significantly enhanced and successfully transfers to downstream…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Fine-grained perception"
+  - "differential grounding"
+  - "proxy task"
+  - "reinforcement learning GRPO"
+  - "curriculum learning"
 date: 2026-05-08
-content_hash: c43745776ba535c9
+content_hash: 91dd5dbc4b1d6e1d
 ---
+
 # DiG: Differential Grounding for Enhancing Fine-Grained Perception in Multimodal Large Language Models
 
 **Conference**: CVPR 2026  
@@ -146,17 +152,16 @@ Reward Component Ablation (Tab.4):
 - **Value**: ⭐⭐⭐⭐ (Provides a low-cost, verifiable post-training paradigm for perception)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-...
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] OddGridBench: Exposing the Lack of Fine-Grained Visual Discrepancy Sensitivity in Multimodal Large Language Models](oddgridbench_exposing_the_lack_of_fine-grained_visual_discrepancy_sensitivity_in.md)
-- [\[CVPR 2026\] CropVLM: Learning to Zoom for Fine-Grained Vision-Language Perception](cropvlm_learning_to_zoom_for_fine_grained_vision_language_perception.md)
+- [\[CVPR 2026\] DEVA: Fine-tuning Multimodal Large Language Models for Visual Perception Tasks](deva_fine-tuning_multimodal_large_language_models_for_visual_perception_tasks.md)
+- [\[CVPR 2026\] Language-driven Fine-grained Retrieval](language-driven_fine-grained_retrieval.md)
 - [\[CVPR 2026\] Grounding Everything in Tokens for Multimodal Large Language Models](grounding_everything_in_tokens_for_multimodal_large_language_models.md)
-- [\[CVPR 2026\] Same or Not? Enhancing Visual Perception in Vision-Language Models](same_or_not_enhancing_visual_perception_in_vision-language_models.md)
-- [\[CVPR 2026\] Fine-Grained Post-Training Quantization for Large Vision Language Models with Quantization-Aware Integrated Gradients](fine-grained_post-training_quantization_for_large_vision_language_models_with_qu.md)
+- [\[ICLR 2026\] GranViT: A Fine-Grained Vision Model For Autoregressive Multimodal Large Language Models](../../ICLR2026/multimodal_vlm/granvit_a_fine-grained_vision_model_for_autoregressive_multimodal_large_language.md)
 
 </div>
 

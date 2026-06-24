@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Where Things Are to What They Are For: Benchmarking Spatial–Functional Intelligence in Multimodal LLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] SFI-Bench is proposed—a video benchmark based on 134 egocentric indoor videos and 1,555 expert-annotated four-choice questions. It shifts the evaluation of Multimodal Large Language Models (MLLMs) from "where objects are" (geometric perception) to "what objects are for" (functional cognition). Covering six task categor
+  [CVPR 2026][Multimodal VLM][Spatial cognitive maps] SFI-Bench is proposed—a video benchmark based on 134 egocentric indoor videos and 1,555 expert-annotated four-choice questions. It shifts the evaluation of Multimodal Large Language Models (MLLMs) from "where objects are" (geometric perception) to "what objects are for" (functional cognition). Covering six task categories across spatial cognition and functional reasoning, it reveals that the integration of "spatial memory +…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Spatial cognitive maps"
+  - "functional affordance"
+  - "egocentric video"
+  - "cognitive-level evaluation"
+  - "knowledge-grounded reasoning"
 date: 2026-05-08
-content_hash: e75219c684aeea59
+content_hash: e4053540d99e4561
 ---
+
 # From Where Things Are to What They Are For: Benchmarking Spatial–Functional Intelligence in Multimodal LLMs
 
 **Conference**: CVPR 2026  
@@ -126,6 +132,7 @@ Observations: ① **GCT is the primary bottleneck**—even Gemini-3.1-Pro strugg
 - Value: ⭐⭐⭐⭐⭐ Provides a high-quality diagnostic tool for grounded agents; findings on counting and temporal limits are highly instructive.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

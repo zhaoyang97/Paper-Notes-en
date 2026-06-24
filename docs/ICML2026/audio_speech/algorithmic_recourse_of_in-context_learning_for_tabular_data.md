@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Algorithmic Recourse of In-Context Learning for Tabular Data
 description: >-
-  [ICML 2026][Audio & Speech][Paper Note] This paper presents the first systematic study of the algorithmic recourse problem in tabular in-context learning (ICL). It proves that dynamic decision rules induced by ICL can still yield definable recourse and proposes ASR-ICL, which uses adaptive subspace zero-order optimization to generate low-cost, sparse, and ac
+  [ICML 2026][Audio & Speech][Tabular ICL] This paper presents the first systematic study of the algorithmic recourse problem in tabular in-context learning (ICL). It proves that dynamic decision rules induced by ICL can still yield definable recourse and proposes ASR-ICL, which uses adaptive subspace zero-order optimization to generate low-cost, sparse, and actionable counterfactual modifications for black-box ICL models.
 tags:
-  - ICML 2026
-  - Audio & Speech
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "Tabular ICL"
+  - "Algorithmic Recourse"
+  - "Black-box Optimization"
+  - "Counterfactual Explanations"
+  - "Actionability"
 date: 2026-05-08
-content_hash: 123c2f623417a989
+content_hash: e7f876be6bab7800
 ---
+
 # Algorithmic Recourse of In-Context Learning for Tabular Data
 
 **Conference**: ICML 2026  

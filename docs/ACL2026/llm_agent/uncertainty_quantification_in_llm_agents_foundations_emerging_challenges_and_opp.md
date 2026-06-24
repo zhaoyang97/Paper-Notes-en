@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Uncertainty Quantification in LLM Agents: Foundations, Emerging Challenges, and Opportunities
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] This paper proposes the first formal framework for Agent Uncertainty Quantification (Agent UQ): modeling agent problem-solving trajectories as stochastic processes on Dynamic Bayesian Networks $P(\mathcal{F}_{\leq T}) = P(E_0, O_0) \prod_{i=1}^{T} P_{\pi,\mathcal{T}}(A_i|E_{i-1}, O_{i-1}) P(O_i|A_i, E_i)$. It unifies e
+  [ACL 2026][LLM Agent][Uncertainty Quantification] This paper proposes the first formal framework for Agent Uncertainty Quantification (Agent UQ): modeling agent problem-solving trajectories as stochastic processes on Dynamic Bayesian Networks $P(\mathcal{F}_{\leq T}) = P(E_0, O_0) \prod_{i=1}^{T} P_{\pi,\mathcal{T}}(A_i|E_{i-1}, O_{i-1}) P(O_i|A_i, E_i)$. It unifies existing UQ paradigms (single-step QA, multi-step reasoning) as special cases and identifies four unique techni…
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Uncertainty Quantification"
+  - "Dynamic Bayesian Network"
+  - "Trajectory Uncertainty"
+  - "Interactive Reasoning"
 date: 2026-05-08
-content_hash: 82d06565c297b49e
+content_hash: a0c2a551330e134b
 ---
+
 # Uncertainty Quantification in LLM Agents: Foundations, Emerging Challenges, and Opportunities
 
 **Conference**: ACL 2026  
@@ -128,11 +133,11 @@ Beyond the formalization and challenges, the paper discusses the significance of
 
 ## Related Papers
 
-- [\[ICLR 2026\] Harnessing Uncertainty: Entropy-Modulated Policy Gradients for Long-Horizon LLM Agents](../../ICLR2026/llm_agent/harnessing_uncertainty_entropy-modulated_policy_gradients_for_long-horizon_llm_a.md)
-- [\[ICML 2026\] HawkesLLM: Semantic Uncertainty Propagation in Agentic Text Simulation](../../ICML2026/llm_agent/hawkesllm_semantic_uncertainty_propagation_in_agentic_text_simulation.md)
 - [\[NeurIPS 2025\] SuffixDecoding: Extreme Speculative Decoding for Emerging AI Applications](../../NeurIPS2025/llm_agent/suffixdecoding_extreme_speculative_decoding_for_emerging_ai_applications.md)
+- [\[ICML 2026\] HawkesLLM: Semantic Uncertainty Propagation in Agentic Text Simulation](../../ICML2026/llm_agent/hawkesllm_semantic_uncertainty_propagation_in_agentic_text_simulation.md)
+- [\[ICLR 2026\] DreamPhase: Offline Imagination and Uncertainty-Guided Planning for Large-Language-Model Agents](../../ICLR2026/llm_agent/dreamphase_offline_imagination_and_uncertainty-guided_planning_for_large-languag.md)
 - [\[NeurIPS 2025\] MLRC-Bench: Can Language Agents Solve Machine Learning Research Challenges?](../../NeurIPS2025/llm_agent/mlrc-bench_can_language_agents_solve_machine_learning_research_challenges.md)
-- [\[AAAI 2026\] BayesAgent: Bayesian Agentic Reasoning Under Uncertainty via Verbalized Probabilistic Graphical Modeling](../../AAAI2026/llm_agent/bayesagent_bayesian_agentic_reasoning_under_uncertainty_via_.md)
+- [\[ICLR 2026\] PRISM: Festina Lente Proactivity—Risk-Sensitive, Uncertainty-Aware Deliberation for Proactive Agents](../../ICLR2026/llm_agent/prism_festina_lente_proactivityrisk-sensitive_uncertainty-aware_deliberation_for.md)
 
 </div>
 

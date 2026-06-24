@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DeRVOS: Decoupling Consistent Trajectory Generation and Multimodal Understanding for Referring Video Object Segmentation
 description: >-
-  [CVPR 2026][Segmentation][DVIS++] DeRVOS decouples Referring Video Object Segmentation (RVOS) into two upstream branches: "Consistent Trajectory Generation" and "Multimodal Understanding." Using a frozen DVIS++ and a pre-trained BEiT-3, the model directly produces stable instance trajectories and aligned vision-language features. A TAIS module then con
+  [CVPR 2026][Video Understanding][Referring Video Object Segmentation] DeRVOS decouples Referring Video Object Segmentation (RVOS) into two upstream branches: "Consistent Trajectory Generation" and "Multimodal Understanding." Using a frozen DVIS++ and a pre-trained BEiT-3, the model directly produces stable instance trajectories and aligned vision-language features. A TAIS module then converges the task into "Referring Expression $\leftrightarrow$ Instance Trajectory" matching…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - DVIS++
-  - BEiT-3
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Referring Video Object Segmentation"
+  - "Trajectory Consistency"
+  - "Multimodal Understanding"
+  - "DVIS++"
+  - "BEiT-3"
 date: 2026-05-08
-content_hash: fe5cc4409e6be615
+content_hash: 85edc61e7a9d7018
 ---
+
 # DeRVOS: Decoupling Consistent Trajectory Generation and Multimodal Understanding for Referring Video Object Segmentation
 
 **Conference**: CVPR 2026  
@@ -143,15 +147,15 @@ Evaluated on MeViS valu.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] InterRVOS: Interaction-Aware Referring Video Object Segmentation](interrvos_interaction-aware_referring_video_object_segmentation.md)
 - [\[CVPR 2026\] Long-RVOS: A Comprehensive Benchmark for Long-term Referring Video Object Segmentation](long-rvos_a_comprehensive_benchmark_for_long-term_referring_video_object_segment.md)
-- [\[CVPR 2026\] Weakly-Supervised Referring Video Object Segmentation through Text Supervision](wsrvos_weakly_supervised_rvos.md)
+- [\[CVPR 2026\] Gloria: Consistent Character Video Generation via Content Anchors](gloria_consistent_character_video_generation_via_content_anchors.md)
 - [\[CVPR 2026\] Towards Streaming Referring Video Segmentation via Large Language Model](towards_streaming_referring_video_segmentation_via_large_language_model.md)
-- [\[CVPR 2026\] Learning Cross-View Object Correspondence via Cycle-Consistent Mask Prediction](learning_cross-view_object_correspondence_via_cycle-consistent_mask_prediction.md)
+- [\[CVPR 2026\] FlashMotion: Few-Step Controllable Video Generation with Trajectory Guidance](flashmotion_fewstep_controllable_video_generation.md)
 
 </div>
 

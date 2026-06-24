@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Frequency-domain Manipulation for Face Obfuscation
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] FreM shifts face obfuscation from the spatial domain to the frequency domain: it first decomposes the face into LL, LH, HL, and HH subbands using block DCT, applies specialized "Neutralization / Perturbation / Suppression" modules for differentiated processing of each subband, and then refines parameters image-by-image
+  [CVPR 2026][AI Safety][Face Obfuscation] FreM shifts face obfuscation from the spatial domain to the frequency domain: it first decomposes the face into LL, LH, HL, and HH subbands using block DCT, applies specialized "Neutralization / Perturbation / Suppression" modules for differentiated processing of each subband, and then refines parameters image-by-image via backpropagation. It achieves a balance between being "unrecognizable to humans + recognizable to machines" while d…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Face Obfuscation"
+  - "Frequency-domain Manipulation"
+  - "DCT Subbands"
+  - "Privacy Protection"
+  - "Reconstruction Attack Robustness"
 date: 2026-05-08
-content_hash: fb668282dee87d9f
+content_hash: 5d729d803c1c4911
 ---
+
 # Frequency-domain Manipulation for Face Obfuscation
 
 **Conference**: CVPR 2026  

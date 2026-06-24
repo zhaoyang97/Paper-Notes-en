@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Dynamic Diffusion Schrödinger Bridge in Astrophysical Observational Inversions
 description: >-
-  [NeurIPS 2025][Image Generation][Schrödinger Bridge] This paper proposes Astro-DSB, a Diffusion Schrödinger Bridge-based framework for modeling astrophysical inverse problems. It directly learns a probabilistic mapping f…
+  [NeurIPS 2025][Image Generation][Schrödinger Bridge] This paper proposes Astro-DSB, a Diffusion Schrödinger Bridge-based framework for modeling astrophysical inverse problems. It directly learns a probabilistic mapping from observables to true physical distributions, requires only 25% of the training cost of conditional DDPM, demonstrates significant generalization advantages in out-of-distribution (OOD) evaluation, and is successfully applied to real observational data from…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Probabilistic Generative Models"
   - "Out-of-Distribution Generalization"
 date: 2026-05-08
-content_hash: 9308d5faae214c9a
+content_hash: 2c25c0a08f4099b1
 ---
 
 # Dynamic Diffusion Schrödinger Bridge in Astrophysical Observational Inversions

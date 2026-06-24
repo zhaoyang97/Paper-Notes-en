@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] High-dimensional limit theorems for SGD: Momentum and Adaptive Step-sizes
 description: >-
-  [ICLR 2026][Optimization & Theory][Spiked Tensor PCA] Ours extends the "effective dynamics" high-dimensional scaling limit framework by Ben Arous et al. to SGD with Polyak momentum (SGD-M) and adaptive step-size SGD with scalar preconditioning. It proves that at the critical step-size, SGD-M amplifies high-dimensional fluctuations and differs from online SGD only by a tim
+  [ICLR 2026][Optimization][High-dimensional scaling limits] Ours extends the "effective dynamics" high-dimensional scaling limit framework by Ben Arous et al. to SGD with Polyak momentum (SGD-M) and adaptive step-size SGD with scalar preconditioning. It proves that at the critical step-size, SGD-M amplifies high-dimensional fluctuations and differs from online SGD only by a time rescaling, whereas a simple preconditioner that normalizes the gradient to unit norm (SGD-U) can br…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Spiked Tensor PCA
+  - "ICLR 2026"
+  - "Optimization"
+  - "High-dimensional scaling limits"
+  - "SGD Momentum"
+  - "Adaptive step-sizes"
+  - "Gradient normalization"
+  - "Spiked Tensor PCA"
+  - "Single Index Models"
 date: 2026-05-08
-content_hash: 95600bf35cd16871
+content_hash: e70c6ca88d62056b
 ---
+
 # High-dimensional limit theorems for SGD: Momentum and Adaptive Step-sizes
 
 **Conference**: ICLR 2026  
@@ -118,9 +124,9 @@ The predicted ODEs (dashed lines) closely fit the actual algorithm trajectories 
 
 - [\[ICLR 2026\] SGD with Adaptive Preconditioning: Unified Analysis and Momentum Acceleration](sgd_with_adaptive_preconditioning_unified_analysis_and_momentum_acceleration.md)
 - [\[ICLR 2026\] High-dimensional Mean-Field Games by Particle-based Flow Matching](high-dimensional_mean-field_games_by_particle-based_flow_matching.md)
-- [\[ICLR 2026\] High-Probability Bounds for the Last Iterate of Clipped SGD](high-probability_bounds_for_the_last_iterate_of_clipped_sgd.md)
 - [\[ICLR 2026\] Gradient Descent with Large Step Sizes: Chaos and Fractal Convergence Region](gradient_descent_with_large_step_sizes_chaos_and_fractal_convergence_region.md)
-- [\[ICLR 2026\] From Sorting Algorithms to Scalable Kernels: Bayesian Optimization in High-Dimensional Permutation Spaces](from_sorting_algorithms_to_scalable_kernels_bayesian_optimization_in_high-dimens.md)
+- [\[ICLR 2026\] High-Probability Bounds for the Last Iterate of Clipped SGD](high-probability_bounds_for_the_last_iterate_of_clipped_sgd.md)
+- [\[ICLR 2026\] High Probability Bounds for Non-Convex Stochastic Optimization with Momentum](high_probability_bounds_for_non-convex_stochastic_optimization_with_momentum.md)
 
 </div>
 

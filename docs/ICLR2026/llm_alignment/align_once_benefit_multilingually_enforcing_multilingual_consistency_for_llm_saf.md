@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Align Once, Benefit Multilingually: Enforcing Multilingual Consistency for LLM Safety Alignment
 description: >-
-  [ICLR 2026][Alignment & RLHF][multilingual safety] The authors propose the Multi-Lingual Consistency (MLC) auxiliary loss. By using SVD to manipulate the singular values of the multilingual representation matrix toward rank-1 (i.e., making multilingual representations collinear), safety alignment effects from a single language can be consistently transferred to all lan
+  [ICLR 2026][LLM Alignment][multilingual safety] The authors propose the Multi-Lingual Consistency (MLC) auxiliary loss. By using SVD to manipulate the singular values of the multilingual representation matrix toward rank-1 (i.e., making multilingual representations collinear), safety alignment effects from a single language can be consistently transferred to all languages using only multilingual prompt translations (without needing target language responses).
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - multilingual safety
-  - consistency alignment
-  - singular value decomposition
-  - cross-lingual transfer
-  - DPO
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "multilingual safety"
+  - "consistency alignment"
+  - "singular value decomposition"
+  - "cross-lingual transfer"
+  - "DPO"
 date: 2026-05-08
-content_hash: 4a9efe754a9deac9
+content_hash: 340fed5820e480cb
 ---
+
 # Align Once, Benefit Multilingually: Enforcing Multilingual Consistency for LLM Safety Alignment
 
 **Conference**: ICLR 2026  
@@ -133,10 +134,10 @@ The method requires only English response data and multilingual prompt translati
 ## Related Papers
 
 - [\[ACL 2025\] MPO: Multilingual Safety Alignment via Reward Gap Optimization](../../ACL2025/llm_alignment/mpo_multilingual_safety_alignment.md)
+- [\[ICLR 2026\] Verification and Co-Alignment via Heterogeneous Consistency for Preference-Aligned LLM Annotations](verification_and_co-alignment_via_heterogeneous_consistency_for_preference-align.md)
 - [\[ICLR 2026\] Enforcing Axioms for AI Alignment under Loss-Based Rules](enforcing_axioms_for_ai_alignment_under_loss-based_rules.md)
 - [\[ICLR 2026\] Alignment-Weighted DPO: A Principled Reasoning Approach to Improve Safety Alignment](alignment-weighted_dpo_a_principled_reasoning_approach_to_improve_safety_alignme.md)
-- [\[ICLR 2026\] Beyond Pairwise: Empowering LLM Alignment With Ranked Choice Modeling](beyond_pairwise_empowering_llm_alignment_with_ranked_choice_modeling.md)
-- [\[ICLR 2026\] RE-PO: Robust Enhanced Policy Optimization as a General Framework for LLM Alignment](re-po_robust_enhanced_policy_optimization_as_a_general_framework_for_llm_alignme.md)
+- [\[ICLR 2026\] Superficial Safety Alignment Hypothesis](superficial_safety_alignment_hypothesis.md)
 
 </div>
 

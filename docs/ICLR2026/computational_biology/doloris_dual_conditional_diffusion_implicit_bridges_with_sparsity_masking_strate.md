@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Doloris: Dual Conditional Diffusion Implicit Bridges with Sparsity Masking Strategy for Unpaired Single-Cell Perturbation Estimation
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] Doloris utilizes two conditional diffusion models sharing a Gaussian latent space to model the distributions of "unperturbed cells" and "perturbed cells" respectively. By leveraging Dual Diffusion Implicit Bridges (DDIB), it bypasses the inherent challenge of unpaired single-cell sequencing data—where the same cell can
+  [ICLR2026][Computational Biology][Single-cell perturbation] Doloris utilizes two conditional diffusion models sharing a Gaussian latent space to model the distributions of "unperturbed cells" and "perturbed cells" respectively. By leveraging Dual Diffusion Implicit Bridges (DDIB), it bypasses the inherent challenge of unpaired single-cell sequencing data—where the same cell cannot be measured both before and after perturbation. Coupled with a sparsity masking model that speci…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR2026"
+  - "Computational Biology"
+  - "Single-cell perturbation"
+  - "Dual Diffusion Implicit Bridges"
+  - "Unpaired data"
+  - "Sparsity masking"
+  - "Conditional diffusion"
 date: 2026-05-08
-content_hash: 0afda585ff55529f
+content_hash: 512c08f360672ee6
 ---
+
 # Doloris: Dual Conditional Diffusion Implicit Bridges with Sparsity Masking Strategy for Unpaired Single-Cell Perturbation Estimation
 
 **Conference**: ICLR2026  
@@ -129,6 +135,7 @@ Baselines (GEARS, scGPT, BioLord, etc.) often rely on forced pairing: regression
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Uni-NTFM: A Unified Foundation Model for EEG Signal Representation Learning
 description: >-
-  [ICLR 2026][Time Series][EEG] Starting from neuroscience first principles, Uni-NTFM designs Heterogeneous Feature Projection (HFPM) to decouple time-frequency encoding, Hierarchical Topological Embedding (TE) to unify heterogeneous electrode configurations, and MoE Transformer to achieve functional modularity and sparse coding. Pretrained on 28,000
+  [ICLR 2026][Time Series][EEG] Starting from neuroscience first principles, Uni-NTFM designs Heterogeneous Feature Projection (HFPM) to decouple time-frequency encoding, Hierarchical Topological Embedding (TE) to unify heterogeneous electrode configurations, and MoE Transformer to achieve functional modularity and sparse coding. Pretrained on 28,000 hours of EEG data with 1.9B parameters, it achieves SOTA in linear probing and fine-tuning across 9 downstream tasks.
 tags:
-  - ICLR 2026
-  - Time Series
-  - EEG
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Time Series"
+  - "EEG"
+  - "Foundation Model"
+  - "Neural Topology"
+  - "Mixture of Experts"
+  - "Self-Supervised Learning"
+  - "Brain-Computer Interface"
 date: 2026-05-08
-content_hash: 259826ee8e0bca32
+content_hash: cf3bcb7abb35ba68
 ---
+
 # Uni-NTFM: A Unified Foundation Model for EEG Signal Representation Learning
 
 **Conference**: ICLR 2026  
@@ -151,10 +156,10 @@ Evaluation of components using Uni-NTFM$_\text{tiny}$:
 ## Related Papers
 
 - [\[ICLR 2026\] GTM: A General Time-series Model for Enhanced Representation Learning](gtm_a_general_time-series_model_for_enhanced_representation_learning_of_time-series.md)
+- [\[ICLR 2026\] UniCA: Unified Covariate Adaptation for Time Series Foundation Model](unica_unified_covariate_adaptation_for_time_series_foundation_model.md)
 - [\[AAAI 2026\] A Unified Shape-Aware Foundation Model for Time Series Classification](../../AAAI2026/time_series/a_unified_shape-aware_foundation_model_for_time_series_class.md)
 - [\[ICLR 2026\] Repurposing Foundation Model for Generalizable Medical Time Series Classification](repurposing_foundation_model_for_generalizable_medical_time_series_classificatio.md)
 - [\[ICLR 2026\] Brain-Semantoks: Learning Semantic Tokens of Brain Dynamics with a Self-Distilled Foundation Model](brain-semantoks_learning_semantic_tokens_of_brain_dynamics_with_a_self-distilled.md)
-- [\[ICLR 2026\] TRIDENT: Cross-Domain Trajectory Spatio-Temporal Representation via Distance-Preserving Triplet Learning](trident_cross-domain_trajectory_spatio-temporal_representation_via_distance-pres.md)
 
 </div>
 

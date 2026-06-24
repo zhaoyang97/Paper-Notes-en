@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] AMiD: Knowledge Distillation for LLMs with $\alpha$-mixture Assistant Distribution
 description: >-
-  [ICLR 2026][Model Compression][Knowledge Distillation] This paper unifies various previously proposed "assistant distributions" (teacher-student intermediate distributions) in knowledge distillation into an **α-mixture assistant distribution family** with a newly designed variable $\alpha$ using the "generalized $f_\alpha$-mean" from information geometry. Based on this, th
+  [ICLR 2026][Model Compression][Knowledge Distillation] This paper unifies various previously proposed "assistant distributions" (teacher-student intermediate distributions) in knowledge distillation into an **α-mixture assistant distribution family** with a newly designed variable $\alpha$ using the "generalized $f_\alpha$-mean" from information geometry. Based on this, the unified distillation framework AMiD is proposed, which theoretically demonstrates optimality…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Knowledge Distillation
-  - α-mixture
-  - mode-covering/mode-seeking
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "LLM Compression"
+  - "Assistant Distribution"
+  - "Information Geometry"
+  - "α-mixture"
+  - "mode-covering/mode-seeking"
 date: 2026-05-08
 content_hash: b0145caba10f816b
 ---
+
 # AMiD: Knowledge Distillation for LLMs with $\alpha$-mixture Assistant Distribution
 
 **Conference**: ICLR 2026  
@@ -120,10 +124,10 @@ New $\alpha$ values (non-endpoint values other than ±1) consistently outperform
 ## Related Papers
 
 - [\[ICLR 2026\] Exploring Knowledge Purification in Multi-Teacher Knowledge Distillation for LLMs](exploring_knowledge_purification_in_multi-teacher_knowledge_distillation_for_llm.md)
-- [\[ICLR 2026\] In Good GRACES: Principled Teacher Selection for Knowledge Distillation](in_good_graces_principled_teacher_selection_for_knowledge_distillation.md)
-- [\[ICLR 2026\] SGD-Based Knowledge Distillation with Bayesian Teachers: Theory and Guidelines](sgd-based_knowledge_distillation_with_bayesian_teachers_theory_and_guidelines.md)
 - [\[ICLR 2026\] Pedagogically-Inspired Data Synthesis for Language Model Knowledge Distillation](pedagogically-inspired_data_synthesis_for_language_model_knowledge_distillation.md)
 - [\[ICLR 2026\] Knowledge Distillation for Large Language Models through Residual Learning](knowledge_distillation_for_large_language_models_through_residual_learning.md)
+- [\[ICLR 2026\] MoBE: Mixture-of-Basis-Experts for Compressing MoE-based LLMs](mobe_mixture-of-basis-experts_for_compressing_moe-based_llms.md)
+- [\[NeurIPS 2025\] Few-Shot Knowledge Distillation of LLMs With Counterfactual Explanations](../../NeurIPS2025/model_compression/few-shot_knowledge_distillation_of_llms_with_counterfactual_explanations.md)
 
 </div>
 

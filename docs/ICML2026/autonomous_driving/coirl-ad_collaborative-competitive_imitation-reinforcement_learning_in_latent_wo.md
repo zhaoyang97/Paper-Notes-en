@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CoIRL-AD: Collaborative-Competitive Imitation-Reinforcement Learning in Latent World Models for Autonomous Driving
 description: >-
-  [ICML 2026][Autonomous Driving][Paper Note] CoIRL-AD utilizes two independent actors to handle Imitation Learning (IL) and Reinforcement Learning (RL) respectively, relying on a latent world model to "imagine" future trajectories for calculating long-range rewards for RL. A "leader-follower" competitive mechanism allows both actors to transfer beneficial behavio
+  [ICML2026][Autonomous Driving][End-to-End Driving] CoIRL-AD utilizes two independent actors to handle Imitation Learning (IL) and Reinforcement Learning (RL) respectively, relying on a latent world model to "imagine" future trajectories for calculating long-range rewards for RL. A "leader-follower" competitive mechanism allows both actors to transfer beneficial behaviors to each other. This approach successfully integrates RL into end-to-end driving using **offline real-world…
 tags:
-  - ICML 2026
-  - Autonomous Driving
+  - "ICML2026"
+  - "Autonomous Driving"
+  - "End-to-End Driving"
+  - "Offline RL"
+  - "Imitation Learning"
+  - "Latent World Model"
+  - "Dual-Policy Competition"
 date: 2026-05-08
-content_hash: ffce529fc5605377
+content_hash: 9e824e8bb6c28709
 ---
+
 # CoIRL-AD: Collaborative-Competitive Imitation-Reinforcement Learning in Latent World Models for Autonomous Driving
 
 **Conference**: ICML2026  
@@ -139,15 +145,15 @@ The value of RL is even more evident in **cross-city generalization** (trained i
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[AAAI 2026\] WorldRFT: Latent World Model Planning with Reinforcement Fine-Tuning for Autonomous Driving](../../AAAI2026/autonomous_driving/worldrft_latent_world_model_planning_with_reinforcement_fine-tuning_for_autonomo.md)
 - [\[NeurIPS 2025\] RAW2Drive: Reinforcement Learning with Aligned World Models for End-to-End Autonomous Driving](../../NeurIPS2025/autonomous_driving/raw2drive_reinforcement_learning_with_aligned_world_models_for_end-to-end_autono.md)
-- [\[CVPR 2026\] DLWM: Dual Latent World Models enable Holistic Gaussian-centric Pre-training in Autonomous Driving](../../CVPR2026/autonomous_driving/dlwm_dual_latent_world_models_enable_holistic_gaussian-centric_pre-training_in_a.md)
 - [\[ICML 2026\] DeepSight: Long-Horizon World Modeling via Latent States Prediction for End-to-End Autonomous Driving](deepsight_long-horizon_world_modeling_via_latent_states_prediction_for_end-to-en.md)
-- [\[ICML 2026\] Constrained Multi-Objective Reinforcement Learning with Max-Min Criterion](constrained_multi-objective_reinforcement_learning_with_max-min_criterion.md)
+- [\[CVPR 2026\] DLWM: Dual Latent World Models enable Holistic Gaussian-centric Pre-training in Autonomous Driving](../../CVPR2026/autonomous_driving/dlwm_dual_latent_world_models_enable_holistic_gaussian-centric_pre-training_in_a.md)
+- [\[ECCV 2024\] Risk-Aware Self-Consistent Imitation Learning for Trajectory Planning in Autonomous Driving](../../ECCV2024/autonomous_driving/risk-aware_self-consistent_imitation_learning_for_trajectory_planning_in_autonom.md)
 
 </div>
 

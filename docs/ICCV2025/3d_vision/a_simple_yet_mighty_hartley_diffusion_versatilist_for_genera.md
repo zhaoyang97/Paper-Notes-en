@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Simple yet Mighty Hartley Diffusion Versatilist for Generalizable Dense Vision Tasks
 description: >-
-  [ICCV 2025][3D Vision][Diffusion Models] This paper proposes HarDiff — a frequency-domain learning strategy based on the Discrete Hartley Transform (DHT) — that enhances the cross-domain generalization capability of diff…
+  [ICCV 2025][3D Vision][Diffusion Models] This paper proposes HarDiff — a frequency-domain learning strategy based on the Discrete Hartley Transform (DHT) — that enhances the cross-domain generalization capability of diffusion models on dense vision tasks through low-frequency training (extracting structural priors from the source domain) and high-frequency sampling (leveraging target-domain detail guidance). HarDiff achieves state-of-the-art results across 12 benchmarks spann…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "Depth Estimation"
   - "Dehazing"
 date: 2026-05-08
-content_hash: 08ae39230cf936a0
+content_hash: a09f6f341cad97d4
 ---
 
 # A Simple yet Mighty Hartley Diffusion Versatilist for Generalizable Dense Vision Tasks
@@ -124,9 +124,9 @@ The paper evaluates on 12 public benchmarks across three task categories: semant
 
 - [\[ICCV 2025\] Easy3D: A Simple Yet Effective Method for 3D Interactive Segmentation](easy3d_a_simple_yet_effective_method_for_3d_interactive_segmentation.md)
 - [\[ICCV 2025\] LLaVA-3D: A Simple yet Effective Pathway to Empowering LMMs with 3D Capabilities](llava-3d_a_simple_yet_effective_pathway_to_empowering_lmms_with_3d_capabilities.md)
-- [\[ICCV 2025\] DAViD: Data-efficient and Accurate Vision Models from Synthetic Data](david_data-efficient_and_accurate_vision_models_from_synthetic_data.md)
-- [\[ICCV 2025\] ViT-Split: Unleashing the Power of Vision Foundation Models via Efficient Splitting Heads](vit-split_unleashing_the_power_of_vision_foundation_models_via_efficient_splitti.md)
-- [\[ICCV 2025\] From Image to Video: An Empirical Study of Diffusion Representations](from_image_to_video_an_empirical_study_of_diffusion_representations.md)
+- [\[CVPR 2025\] Scaling Properties of Diffusion Models for Perceptual Tasks](../../CVPR2025/3d_vision/scaling_properties_of_diffusion_models_for_perceptual_tasks.md)
+- [\[CVPR 2025\] Olympus: A Universal Task Router for Computer Vision Tasks](../../CVPR2025/3d_vision/olympus_a_universal_task_router_for_computer_vision_tasks.md)
+- [\[CVPR 2025\] A Unified Image-Dense Annotation Generation Model for Underwater Scenes](../../CVPR2025/3d_vision/a_unified_image-dense_annotation_generation_model_for_underwater_scenes.md)
 
 </div>
 

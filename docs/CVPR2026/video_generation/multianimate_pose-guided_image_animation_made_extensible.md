@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MultiAnimate: Pose-Guided Image Animation Made Extensible
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] MultiAnimate introduces a pair of modules, "Identifier Assigner + Identifier Adapter," into the Wan2.1 DiT video generation framework. By encoding tracking masks of each person into structured labels injected into the DiT and employing a training strategy of "randomly sampling identities from a learnable label bank," t
+  [CVPR 2026][Video Generation][Pose-Guided Image Animation] MultiAnimate introduces a pair of modules, "Identifier Assigner + Identifier Adapter," into the Wan2.1 DiT video generation framework. By encoding tracking masks of each person into structured labels injected into the DiT and employing a training strategy of "randomly sampling identities from a learnable label bank," the model—trained only on dual-person data—consistently generates dance animations for 3 to 7 people w…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Pose-Guided Image Animation"
+  - "Multi-Person Animation"
+  - "Identity Consistency"
+  - "Diffusion Transformer"
+  - "Scalable Training"
 date: 2026-05-08
-content_hash: e55155aa9b4db407
+content_hash: d63f452a8e899f6d
 ---
+
 # MultiAnimate: Pose-Guided Image Animation Made Extensible
 
 **Conference**: CVPR 2026  
@@ -153,8 +159,8 @@ Single-person compatibility (TikTok dataset, zero-shot):
 - [\[CVPR 2026\] One-to-All Animation: Alignment-Free Character Animation and Image Pose Transfer](one-to-all_animation_alignment-free_character_animation_and_image_pose_transfer.md)
 - [\[CVPR 2026\] PoseAnything: General Pose-guided Video Generation with Part-aware Temporal Coherence](poseanything_general_pose-guided_video_generation_with_part-aware_temporal_coher.md)
 - [\[CVPR 2026\] PersonaLive! Expressive Portrait Image Animation for Live Streaming](personalive_expressive_portrait_image_animation_for_live_streaming.md)
-- [\[CVPR 2026\] Identity-Preserving Image-to-Video Generation via Reward-Guided Optimization](identity-preserving_image-to-video_generation_via_reward-guided_optimization.md)
 - [\[CVPR 2026\] Vanast: Virtual Try-On with Human Image Animation via Synthetic Triplet Supervision](vanast_virtual_try-on_with_human_image_animation_via_synthetic_triplet_supervisi.md)
+- [\[CVPR 2026\] ConsID-Gen: View-Consistent and Identity-Preserving Image-to-Video Generation](consid-gen_view-consistent_and_identity-preserving_image-to-video_generation.md)
 
 </div>
 

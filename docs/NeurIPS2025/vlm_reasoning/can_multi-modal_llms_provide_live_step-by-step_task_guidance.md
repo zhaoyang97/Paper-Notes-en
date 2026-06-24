@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Can Multi-Modal LLMs Provide Live Step-by-Step Task Guidance?
 description: >-
-  [NeurIPS 2025][Multimodal VLM][streaming video understanding] This paper introduces the Qualcomm Interactive Cooking benchmark and the LiveMamba model…
+  [NeurIPS 2025][VLM Reasoning][streaming video understanding] This paper introduces the Qualcomm Interactive Cooking benchmark and the LiveMamba model, presenting the first systematic evaluation of multimodal LLMs for providing real-time, step-by-step task guidance in streaming video — encompassing instruction delivery, completion detection, and error feedback.
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "streaming video understanding"
   - "interactive guidance"
   - "error detection"
   - "Mamba"
   - "step-by-step guidance"
 date: 2026-05-08
-content_hash: 61da81d3c3cf0d41
+content_hash: 857cc57e875e5b3e
 ---
 
 # Can Multi-Modal LLMs Provide Live Step-by-Step Task Guidance?
@@ -150,11 +150,11 @@ The model is trained with a standard autoregressive language modeling loss. Duri
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Training-free Online Video Step Grounding](training-free_online_video_step_grounding.md)
-- [\[ICCV 2025\] LLaVA-CoT: Let Vision Language Models Reason Step-by-Step](../../ICCV2025/multimodal_vlm/llava-cot_let_vision_language_models_reason_step-by-step.md)
-- [\[ICCV 2025\] Large Multi-modal Models Can Interpret Features in Large Multi-modal Models](../../ICCV2025/multimodal_vlm/large_multi-modal_models_can_interpret_features_in_large_multi-modal_models.md)
+- [\[ICCV 2025\] LLaVA-CoT: Let Vision Language Models Reason Step-by-Step](../../ICCV2025/vlm_reasoning/llava-cot_let_vision_language_models_reason_step-by-step.md)
+- [\[ICCV 2025\] ToolVQA: A Dataset for Multi-step Reasoning VQA with External Tools](../../ICCV2025/vlm_reasoning/toolvqa_a_dataset_for_multistep_reasoning_vqa_with_external.md)
 - [\[NeurIPS 2025\] Unveiling Chain of Step Reasoning for Vision-Language Models with Fine-grained Rewards](unveiling_chain_of_step_reasoning_for_visionlanguage_models.md)
-- [\[ICCV 2025\] ToolVQA: A Dataset for Multi-step Reasoning VQA with External Tools](../../ICCV2025/multimodal_vlm/toolvqa_a_dataset_for_multistep_reasoning_vqa_with_external.md)
+- [\[ICML 2025\] Overcoming Multi-step Complexity in Multimodal Theory-of-Mind Reasoning: A Scalable Bayesian Planner](../../ICML2025/vlm_reasoning/overcoming_multi-step_complexity_in_multimodal_theory-of-mind_reasoning_a_scalab.md)
+- [\[NeurIPS 2025\] Can LLMs Reason Over Non-Text Modalities in a Training-Free Manner? A Case Study with In-Context Representation Learning](can_llms_reason_over_non-text_modalities_in_a_training-free_manner_a_case_study_.md)
 
 </div>
 

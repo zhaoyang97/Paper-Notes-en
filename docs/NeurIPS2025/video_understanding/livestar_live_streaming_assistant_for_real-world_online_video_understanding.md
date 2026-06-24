@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LiveStar: Live Streaming Assistant for Real-World Online Video Understanding
 description: >-
-  [NeurIPS 2025][Video Understanding][online video understanding] This paper proposes LiveStar, an always-on live streaming video understanding assistant that achieves adaptive response timing via a Streaming Causal Attent…
+  [NeurIPS 2025][Video Understanding][online video understanding] This paper proposes LiveStar, an always-on live streaming video understanding assistant that achieves adaptive response timing via a Streaming Causal Attention Masks (SCAM) training strategy and a Streaming Verification Decoding (SVeD) inference framework, improving semantic correctness by 19.5% and reducing temporal deviation by 18.1% on the OmniStar benchmark.
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "live streaming"
   - "response timing"
 date: 2026-05-08
-content_hash: f43ad32290a6823f
+content_hash: 054213a9346c72e7
 ---
 
 # LiveStar: Live Streaming Assistant for Real-World Online Video Understanding
@@ -148,11 +148,11 @@ A semi-automatic, temporally dense annotation pipeline is adopted, with captions
 
 ## Related Papers
 
+- [\[CVPR 2025\] OVO-Bench: How Far is Your Video-LLMs from Real-World Online Video Understanding?](../../CVPR2025/video_understanding/ovo-bench_how_far_is_your_video-llms_from_real-world_online_video_understanding.md)
 - [\[NeurIPS 2025\] Lattice Boltzmann Model for Learning Real-World Pixel Dynamicity](lattice_boltzmann_model_for_learning_real-world_pixel_dynamicity.md)
-- [\[ICCV 2025\] Online Dense Point Tracking with Streaming Memory](../../ICCV2025/video_understanding/online_dense_point_tracking_with_streaming_memory.md)
 - [\[NeurIPS 2025\] InfiniPot-V: Memory-Constrained KV Cache Compression for Streaming Video Understanding](infinipot-v_memory-constrained_kv_cache_compression_for_streaming_video_understa.md)
-- [\[CVPR 2026\] Real-World Point Tracking with Verifier-Guided Pseudo-Labeling](../../CVPR2026/video_understanding/realworld_point_tracking_with_verifierguided_pseud.md)
-- [\[NeurIPS 2025\] MoniTor: Exploiting Large Language Models with Instruction for Online Video Anomaly Detection](monitor_exploiting_large_language_models_with_instruction_for_online_video_anoma.md)
+- [\[CVPR 2025\] LION-FS: Fast & Slow Video-Language Thinker as Online Video Assistant](../../CVPR2025/video_understanding/lion-fs_fast_slow_video-language_thinker_as_online_video_assistant.md)
+- [\[ICCV 2025\] Online Dense Point Tracking with Streaming Memory](../../ICCV2025/video_understanding/online_dense_point_tracking_with_streaming_memory.md)
 
 </div>
 

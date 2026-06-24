@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CPiRi: Channel Permutation-Invariant Relational Interaction for Multivariate Time Series Forecasting
 description: >-
-  [ICLR 2026][Time Series][Paper Note] The CPiRi framework is proposed, which achieves Channel Permutation Invariance (CPI) without sacrificing cross-channel modeling capabilities by combining a frozen pre-trained temporal encoder, a trainable permutation-equivariant spatial module, and a channel-shuffled training strategy. It achieves SOTA performance on s
+  [ICLR 2026][Time Series][Multivariate Time Series Forecasting] The CPiRi framework is proposed, which achieves Channel Permutation Invariance (CPI) without sacrificing cross-channel modeling capabilities by combining a frozen pre-trained temporal encoder, a trainable permutation-equivariant spatial module, and a channel-shuffled training strategy. It achieves SOTA performance on several traffic benchmarks.
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Multivariate Time Series Forecasting"
+  - "Channel Permutation Invariance"
+  - "Spatio-Temporal Decoupling"
+  - "Foundation Models"
+  - "Channel Interaction"
 date: 2026-05-08
-content_hash: 871d5a03e7009069
+content_hash: 2a5a9a1ebeba93c4
 ---
+
 # CPiRi: Channel Permutation-Invariant Relational Interaction for Multivariate Time Series Forecasting
 
 **Conference**: ICLR 2026  
@@ -124,8 +130,8 @@ Comparing with CI and CD models across 5 traffic datasets, CPiRi achieves SOTA o
 - [\[ICLR 2026\] Relational Transformer: Toward Zero-Shot Foundation Models for Relational Data](relational_transformer_toward_zero-shot_foundation_models_for_relational_data.md)
 - [\[ICLR 2026\] GARLIC: Graph Attention-based Relational Learning of Multivariate Time Series in Intensive Care](garlic_graph_attention-based_relational_learning_of_multivariate_time_series_in_.md)
 - [\[ICLR 2026\] T1: One-to-One Channel-Head Binding for Multivariate Time-Series Imputation](t1_one-to-one_channel-head_binding_for_multivariate_time-series_imputation.md)
+- [\[ICLR 2026\] PHAT: Modeling Period Heterogeneity for Multivariate Time Series Forecasting](phat_modeling_period_heterogeneity_for_multivariate_time_series_forecasting.md)
 - [\[ICML 2025\] Channel Normalization for Time Series Channel Identification](../../ICML2025/time_series/channel_normalization_for_time_series_channel_identification.md)
-- [\[ICLR 2026\] Towards Generalizable PDE Dynamics Forecasting via Physics-Guided Invariant Learning](towards_generalizable_pde_dynamics_forecasting_via_physics-guided_invariant_lear.md)
 
 </div>
 

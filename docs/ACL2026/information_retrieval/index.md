@@ -83,7 +83,7 @@ item_total: 73
 
 **💬 ACL2026** · **73** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (9)](../../CVPR2026/information_retrieval/index.md) · [🔬 ICLR2026 (81)](../../ICLR2026/information_retrieval/index.md) · [🧪 ICML2026 (26)](../../ICML2026/information_retrieval/index.md) · [🤖 AAAI2026 (21)](../../AAAI2026/information_retrieval/index.md) · [🧠 NeurIPS2025 (24)](../../NeurIPS2025/information_retrieval/index.md) · [📹 ICCV2025 (5)](../../ICCV2025/information_retrieval/index.md)
+📌 **Same area in other venues:** [🔬 ICLR2026 (81)](../../ICLR2026/information_retrieval/index.md) · [🧪 ICML2026 (26)](../../ICML2026/information_retrieval/index.md) · [🤖 AAAI2026 (21)](../../AAAI2026/information_retrieval/index.md) · [🧠 NeurIPS2025 (25)](../../NeurIPS2025/information_retrieval/index.md) · [📹 ICCV2025 (5)](../../ICCV2025/information_retrieval/index.md) · [🧪 ICML2025 (6)](../../ICML2025/information_retrieval/index.md)
 
 🔥 **Top topics:** RAG ×25 · Question Answering ×8 · Reasoning ×7 · LLM ×7 · Dialogue ×5
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Lower Complexity Bounds for Nonconvex-Strongly-Convex Bilevel Optimization with First-Order Oracles
 description: >-
-  [ICML 2026][Optimization & Theory][zero-chain] This paper provides the first complexity lower bounds for smooth "nonconvex-strongly-convex" bilevel optimization under standard (deterministic/stochastic) first-order oracles that are strongly related to the condition number $\kappa$. The established bounds are $\Omega(\kappa^{3/2}\epsilon^{-2})$ for the deterministic
+  [ICML2026][Optimization][Bilevel optimization] This paper provides the first complexity lower bounds for smooth "nonconvex-strongly-convex" bilevel optimization under standard (deterministic/stochastic) first-order oracles that are strongly related to the condition number $\kappa$. The established bounds are $\Omega(\kappa^{3/2}\epsilon^{-2})$ for the deterministic case and $\Omega(\kappa^{5/2}\epsilon^{-4})$ for the stochastic case. These results demonstrate that bilevel pro…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - zero-chain
+  - "ICML2026"
+  - "Optimization"
+  - "Bilevel optimization"
+  - "First-order oracles"
+  - "Lower complexity bounds"
+  - "zero-chain"
+  - "Condition number"
 date: 2026-05-08
-content_hash: 1fa15aa00e729d7e
+content_hash: e04bc83fc8bac56f
 ---
+
 # Lower Complexity Bounds for Nonconvex-Strongly-Convex Bilevel Optimization with First-Order Oracles
 
 **Conference**: ICML2026  
@@ -116,15 +121,14 @@ This paper contains no numerical experiments; the results are theoretical lower 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] A Fully First-Order Layer for Differentiable Optimization](a_fully_first-order_layer_for_differentiable_optimization.md)
 - [\[NeurIPS 2025\] A Single-Loop First-Order Algorithm for Linearly Constrained Bilevel Optimization](../../NeurIPS2025/optimization/a_single-loop_first-order_algorithm_for_linearly_constrained_bilevel_optimizatio.md)
 - [\[ICLR 2026\] Bilevel Optimization with Lower-Level Uniform Convexity: Theory and Algorithm](../../ICLR2026/optimization/bilevel_optimization_with_lower-level_uniform_convexity_theory_and_algorithm.md)
+- [\[ICLR 2026\] Strongly Convex Sets in Riemannian Manifolds](../../ICLR2026/optimization/strongly_convex_sets_in_riemannian_manifolds.md)
 - [\[ICML 2025\] Improved Sample Complexity for Private Nonsmooth Nonconvex Optimization](../../ICML2025/optimization/improved_sample_complexity_for_private_nonsmooth_nonconvex_optimization.md)
-- [\[ICLR 2026\] High Probability Bounds for Non-Convex Stochastic Optimization with Momentum](../../ICLR2026/optimization/high_probability_bounds_for_non-convex_stochastic_optimization_with_momentum.md)
 
 </div>
 

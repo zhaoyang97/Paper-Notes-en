@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Generative Diffusion Prior Distillation for Long-Context Knowledge Transfer
 description: >-
-  [ICLR 2026][Model Compression][Knowledge Distillation] This work reformulates the "full-sequence teacher $\rightarrow$ partial-sequence student" distillation as an **inverse problem**. It treats the student's short-context features as "degraded observations" of the target long-context features. By using a diffusion model as a generative prior for the teacher's features to
+  [ICLR 2026][Model Compression][Knowledge Distillation] This work reformulates the "full-sequence teacher $\rightarrow$ partial-sequence student" distillation as an **inverse problem**. It treats the student's short-context features as "degraded observations" of the target long-context features. By using a diffusion model as a generative prior for the teacher's features to perform posterior sampling, the method provides each student feature with a set of "dynamic, diverse…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Diffusion Prior"
+  - "Posterior Sampling"
+  - "Early Time Series Classification"
+  - "full-to-partial distillation"
 date: 2026-05-08
-content_hash: 527c02da69105c5d
+content_hash: 3b70e4344a19c57e
 ---
+
 # Generative Diffusion Prior Distillation for Long-Context Knowledge Transfer
 
 **Conference**: ICLR 2026  
@@ -120,10 +125,10 @@ Against RKD, Attention, DKD, DT2W, VID, PKT, TeKAP, TTM, Base-KD, and Fits, GDPD
 ## Related Papers
 
 - [\[ICLR 2026\] TiTok: Transfer Token-level Knowledge via Contrastive Excess to Transplant LoRA](titok_transfer_token-level_knowledge_via_contrastive_excess_to_transplant_lora.md)
+- [\[ICLR 2026\] Diffusion Models as Dataset Distillation Priors](diffusion_models_as_dataset_distillation_priors.md)
 - [\[ICLR 2026\] In Good GRACES: Principled Teacher Selection for Knowledge Distillation](in_good_graces_principled_teacher_selection_for_knowledge_distillation.md)
 - [\[ICLR 2026\] SGD-Based Knowledge Distillation with Bayesian Teachers: Theory and Guidelines](sgd-based_knowledge_distillation_with_bayesian_teachers_theory_and_guidelines.md)
 - [\[ICLR 2026\] Pedagogically-Inspired Data Synthesis for Language Model Knowledge Distillation](pedagogically-inspired_data_synthesis_for_language_model_knowledge_distillation.md)
-- [\[ICLR 2026\] Channel-Aware Mixed-Precision Quantization for Efficient Long-Context Inference](channel-aware_mixed-precision_quantization_for_efficient_long-context_inference.md)
 
 </div>
 

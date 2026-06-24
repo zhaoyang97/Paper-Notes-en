@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TiRex: Zero-Shot Forecasting Across Long and Short Horizons with Enhanced In-Context Learning
 description: >-
-  [NeurIPS 2025][Time Series][Time series forecasting] This paper proposes TiRex, a pretrained time series forecasting model based on xLSTM. By introducing a Contiguous Patch Masking (CPM) strategy and data augmentation te…
+  [NeurIPS 2025][Time Series][Time series forecasting] This paper proposes TiRex, a pretrained time series forecasting model based on xLSTM. By introducing a Contiguous Patch Masking (CPM) strategy and data augmentation techniques, TiRex with only 35M parameters comprehensively outperforms larger models such as Chronos Bolt (200M) and TimesFM (500M) on the GiftEval and Chronos-ZS benchmarks, achieving state-of-the-art performance in both short- and long-horizon zero-shot foreca…
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -13,7 +13,7 @@ tags:
   - "data augmentation"
   - "pretrained models"
 date: 2026-05-08
-content_hash: bf7d2ac50b0dbeb4
+content_hash: a5d4e7a651247857
 ---
 
 # TiRex: Zero-Shot Forecasting Across Long and Short Horizons with Enhanced In-Context Learning
@@ -163,11 +163,11 @@ Key conclusions:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Zero-shot Forecasting by Simulation Alone](../../ICLR2026/time_series/zero-shot_forecasting_by_simulation_alone.md)
 - [\[NeurIPS 2025\] In-Context Learning of Stochastic Differential Equations with Foundation Inference Models](in-context_learning_of_stochastic_differential_equations_with_foundation_inferen.md)
-- [\[ICLR 2026\] Relational Transformer: Toward Zero-Shot Foundation Models for Relational Data](../../ICLR2026/time_series/relational_transformer_toward_zero-shot_foundation_models_for_relational_data.md)
+- [\[ICML 2025\] VisionTS: Visual Masked Autoencoders Are Free-Lunch Zero-Shot Time Series Forecasters](../../ICML2025/time_series/visionts_visual_masked_autoencoders_are_free-lunch_zero-shot_time_series_forecas.md)
 - [\[NeurIPS 2025\] OmniCast: A Masked Latent Diffusion Model for Weather Forecasting Across Time Scales](omnicast_a_masked_latent_diffusion_model_for_weather_forecasting_across_time_sca.md)
-- [\[NeurIPS 2025\] Selective Learning for Deep Time Series Forecasting](selective_learning_for_deep_time_series_forecasting.md)
-- [\[NeurIPS 2025\] WaLRUS: Wavelets for Long-range Representation Using SSMs](walrus_wavelets_for_long-range_representation_using_ssms.md)
+- [\[ACL 2025\] Revisiting LLMs as Zero-Shot Time-Series Forecasters: Small Noise Can Break Large Models](../../ACL2025/time_series/revisiting_llms_as_zero-shot_time_series_forecasters_small_noise_can_break_large.md)
 
 </div>
 

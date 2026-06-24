@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Geometry-aware 4D Video Generation for Robot Manipulation
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] This paper proposes a geometry-aware 4D video generation framework that trains video diffusion models via cross-view pointmap alignment supervision. By jointly predicting RGB and pointmaps, the model achieves spatio-temporally consistent multi-view RGB-D videos. It generates consistent videos from new perspectives with
+  [ICLR 2026][Video Generation][4D video generation] This paper proposes a geometry-aware 4D video generation framework that trains video diffusion models via cross-view pointmap alignment supervision. By jointly predicting RGB and pointmaps, the model achieves spatio-temporally consistent multi-view RGB-D videos. It generates consistent videos from new perspectives without requiring camera pose input and recovers robot end-effector trajectories using off-the-shelf 6DoF pose tr…
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "4D video generation"
+  - "robot manipulation"
+  - "cross-view consistency"
+  - "pointmap alignment"
+  - "pose estimation"
 date: 2026-05-08
-content_hash: 6bda442cb6a47425
+content_hash: 63d4c82a99cb038d
 ---
+
 # Geometry-aware 4D Video Generation for Robot Manipulation
 
 **Conference**: ICLR 2026  
@@ -136,11 +142,11 @@ Training utilizes dual-view pairs requiring camera poses for ground truth calcul
 
 ## Related Papers
 
-- [\[ICLR 2026\] Learning Video Generation for Robotic Manipulation with Collaborative Trajectory Control](learning_video_generation_for_robotic_manipulation_with_collaborative_trajectory.md)
 - [\[CVPR 2026\] WorldReel: 4D Video Generation with Consistent Geometry and Motion Modeling](../../CVPR2026/video_generation/worldreel_4d_video_generation_with_consistent_geometry_and_motion_modeling.md)
 - [\[CVPR 2026\] StereoWorld: Geometry-Aware Monocular-to-Stereo Video Generation](../../CVPR2026/video_generation/stereoworld_geometry-aware_monocular-to-stereo_video_generation.md)
+- [\[ICLR 2026\] Learning Video Generation for Robotic Manipulation with Collaborative Trajectory Control](learning_video_generation_for_robotic_manipulation_with_collaborative_trajectory.md)
 - [\[ICLR 2026\] MIMIC: Mask-Injected Manipulation Video Generation with Interaction Control](mimic_mask-injected_manipulation_video_generation_with_interaction_control.md)
-- [\[CVPR 2026\] SeeU: Seeing the Unseen World via 4D Dynamics-aware Generation](../../CVPR2026/video_generation/seeu_seeing_the_unseen_world_via_4d_dynamics-aware_generation.md)
+- [\[ICLR 2026\] Light-X: Generative 4D Video Rendering with Camera and Illumination Control](light-x_generative_4d_video_rendering_with_camera_and_illumination_control.md)
 
 </div>
 

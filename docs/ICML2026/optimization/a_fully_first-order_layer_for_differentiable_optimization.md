@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Fully First-Order Layer for Differentiable Optimization
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] Mainstream differentiable optimization layers rely on implicit differentiation of KKT conditions, which requires computing Hessians and solving large KKT linear systems, making them difficult to scale to large problems. This paper rewrites differentiable optimization as a **bi-level optimization**, constructing a "ghos
+  [ICML2026][Optimization][Differentiable Optimization] Mainstream differentiable optimization layers rely on implicit differentiation of KKT conditions, which requires computing Hessians and solving large KKT linear systems, making them difficult to scale to large problems. This paper rewrites differentiable optimization as a **bi-level optimization**, constructing a "ghost proxy" problem with a fixed active set and linearized active constraints to simplify inequality constrai…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML2026"
+  - "Optimization"
+  - "Differentiable Optimization"
+  - "Bi-level Optimization"
+  - "First-order Methods"
+  - "Hypergradient"
+  - "Solver-agnostic"
 date: 2026-05-08
-content_hash: c04937865c2a844e
+content_hash: 313109b6c4df0128
 ---
+
 # A Fully First-Order Layer for Differentiable Optimization
 
 **Conference**: ICML2026  
@@ -150,15 +156,17 @@ Scalability ablation as lower-level decision variable dimension $d_y$ increases 
 
 <div class="related-papers" markdown="1">
 
-- **[CvxpyLayer]** Agrawal et al., NeurIPS 2019. (Foundational KKT-based layer)
-- **[OptNet]** Amoos et al., ICML 2017. (Differentiable QP layer)
-- **[LPGD]** Shen et al., ICML 2023. (Solver-agnostic first-order baseline)
-- **[BPQP]** Tang et al., ICML 2024. (Approximate KKT-based method)
+## Related Papers
+
+- [\[ICML 2026\] Lower Complexity Bounds for Nonconvex-Strongly-Convex Bilevel Optimization with First-Order Oracles](lower_complexity_bounds_for_nonconvex-strongly-convex_bilevel_optimization_with_.md)
+- [\[NeurIPS 2025\] A Single-Loop First-Order Algorithm for Linearly Constrained Bilevel Optimization](../../NeurIPS2025/optimization/a_single-loop_first-order_algorithm_for_linearly_constrained_bilevel_optimizatio.md)
+- [\[ICLR 2026\] Gradient-Based Diversity Optimization with Differentiable Top-$k$ Objective](../../ICLR2026/optimization/gradient-based_diversity_optimization_with_differentiable_top-k_objective.md)
+- [\[ICML 2026\] Neural QAOA$^2$: Differentiable Joint Graph Partitioning and Parameter Initialization for Quantum Combinatorial Optimization](neural_qaoa2_differentiable_joint_graph_partitioning_and_parameter_initializatio.md)
+- [\[ICML 2026\] Learning Dynamics of Zeroth-Order Optimization: A Kernel Perspective](learning_dynamics_of_zeroth-order_optimization_a_kernel_perspective.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2026\] Lower Complexity Bounds for Nonconvex-Strongly-Convex Bilevel Optimization with First-Order Oracles](lower_complexity_bounds_for_nonconvex-strongly-convex_bilevel_optimization_with_.md)

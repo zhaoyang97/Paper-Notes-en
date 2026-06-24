@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] BiasBusters: Uncovering and Mitigating Tool Selection Bias in Large Language Models
 description: >-
-  [ICLR 2026][LLM Safety][tool selection bias] This paper presents the first systematic study of tool selection bias in LLMs. When faced with multiple functionally equivalent APIs, LLMs systematically prefer certain tools due to semantic alignment, position effects, and pre-training exposure. The authors propose a bias metric based on total variation, an evaluation
+  [ICLR 2026][LLM Safety][tool selection bias] This paper presents the first systematic study of tool selection bias in LLMs. When faced with multiple functionally equivalent APIs, LLMs systematically prefer certain tools due to semantic alignment, position effects, and pre-training exposure. The authors propose a bias metric based on total variation, an evaluation benchmark with 10 tool categories, and a lightweight "filter-then-uniform-sampling" mitigation strategy.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - tool selection bias
-  - LLM agent
-  - fairness
-  - API marketplace
-  - debiasing
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "tool selection bias"
+  - "LLM agent"
+  - "fairness"
+  - "API marketplace"
+  - "debiasing"
 date: 2026-05-08
-content_hash: 5ea48b9c866a1dbc
+content_hash: 624dae287f516fa2
 ---
+
 # BiasBusters: Uncovering and Mitigating Tool Selection Bias in Large Language Models
 
 **Conference**: ICLR 2026  
@@ -148,15 +149,14 @@ The root of the bias is that models conflate "which tools are usable" with "whic
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Bi-directional Bias Attribution: Debiasing Large Language Models without Modifying Prompts](bi-directional_bias_attribution_debiasing_large_language_models_without_modifyin.md)
 - [\[AAAI 2026\] Gender Bias in Emotion Recognition by Large Language Models](../../AAAI2026/llm_safety/gender_bias_in_emotion_recognition_by_large_language_models.md)
+- [\[ICLR 2026\] Multi-Feature Quantized Self-Attention for Fair Large Language Models](multi-feature_quantized_self-attention_for_fair_large_language_models.md)
 - [\[ICLR 2026\] In-Context Watermarks for Large Language Models](in-context_watermarks_for_large_language_models.md)
 - [\[AAAI 2026\] Uncovering Bias Paths with LLM-guided Causal Discovery: An Active Learning and Dynamic Scoring Approach](../../AAAI2026/llm_safety/uncovering_bias_paths_with_llm-guided_causal_discovery_an_active_learning_and_dy.md)
-- [\[ICLR 2026\] MCP-SafetyBench: A Benchmark for Safety Evaluation of Large Language Models with Real-World MCP Servers](mcp-safetybench_a_benchmark_for_safety_evaluation_of_large_language_models_with_.md)
-- [\[ACL 2026\] Understanding and Mitigating Bias Inheritance in LLM-based Data Augmentation on Downstream Tasks](../../ACL2026/llm_safety/understanding_and_mitigating_bias_inheritance_in_llm-based_data_augmentation_on_.md)
 
 </div>
 

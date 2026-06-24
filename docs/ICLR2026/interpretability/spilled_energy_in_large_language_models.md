@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Spilled Energy in Large Language Models
 description: >-
-  [ICLR 2026][Interpretability][softmax] Ours reinterprets the final softmax classifier of LLMs as an Energy-Based Model (EBM) and identifies a difference between two energy paths—termed "spilled energy"—that theoretically should be equal according to the probability chain rule but are instead read out at adjacent decoding steps. Ours proves that this **compl
+  [ICLR 2026 (Poster)][Interpretability][Energy-Based Model (EBM)] Ours reinterprets the final softmax classifier of LLMs as an Energy-Based Model (EBM) and identifies a difference between two energy paths—termed "spilled energy"—that theoretically should be equal according to the probability chain rule but are instead read out at adjacent decoding steps. Ours proves that this **completely training-free difference, read directly from logits**, is strongly correlated with model…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - softmax
-  - Autoregressive
+  - "ICLR 2026 (Poster)"
+  - "Interpretability"
+  - "Energy-Based Model (EBM)"
+  - "Hallucination Detection"
+  - "Training-free"
+  - "Softmax"
+  - "Autoregressive"
 date: 2026-05-08
-content_hash: e5039262320358e9
+content_hash: 54a8326ea627da49
 ---
+
 # Spilled Energy in Large Language Models
 
 **Conference**: ICLR 2026 (Poster)  

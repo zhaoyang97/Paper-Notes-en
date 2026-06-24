@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PATRA: Pattern-Aware Alignment and Balanced Reasoning for Time Series Question Answering
 description: >-
-  [ICML 2026][Time Series][GRPO] For Time Series Question Answering (TSQA), PATRA explicitly decomposes sequences into full / trend / season patterns at the representation level and performs deep cross-modal alignment via three sets of learnable alignment tokens. At the training stage, it utilizes a two-phase RL approach (SFT + GRPO), mapping rewards
+  [ICML 2026][Time Series][Time Series Question Answering] For Time Series Question Answering (TSQA), PATRA explicitly decomposes sequences into full / trend / season patterns at the representation level and performs deep cross-modal alignment via three sets of learnable alignment tokens. At the training stage, it utilizes a two-phase RL approach (SFT + GRPO), mapping rewards from discriminative and generative tasks into a unified $[0,2]$ range to resolve difficulty imbalance…
 tags:
-  - ICML 2026
-  - Time Series
-  - GRPO
+  - "ICML 2026"
+  - "Time Series"
+  - "Time Series Question Answering"
+  - "Pattern-Aware Alignment"
+  - "GRPO"
+  - "Balanced Rewards"
+  - "Cross-Modal Reasoning"
 date: 2026-05-08
-content_hash: 74436f5af5d62e9b
+content_hash: 274783da719d9139
 ---
+
 # PATRA: Pattern-Aware Alignment and Balanced Reasoning for Time Series Question Answering
 
 **Conference**: ICML 2026  
@@ -152,8 +157,8 @@ PATRA achieves SOTA among open-source models across all 4 tasks for both Accurac
 
 ## Related Papers
 
-- [\[ACL 2026\] ODTQA-FoRe: An Open-Domain Tabular Question Answering Dataset for Future Data Forecasting and Reasoning](../../ACL2026/time_series/odtqa-fore_an_open-domain_tabular_question_answering_dataset_for_future_data_for.md)
 - [\[ACL 2026\] TSAQA: Time Series Analysis Question And Answering Benchmark](../../ACL2026/time_series/tsaqa_time_series_analysis_question_and_answering_benchmark.md)
+- [\[ACL 2026\] ODTQA-FoRe: An Open-Domain Tabular Question Answering Dataset for Future Data Forecasting and Reasoning](../../ACL2026/time_series/odtqa-fore_an_open-domain_tabular_question_answering_dataset_for_future_data_for.md)
 - [\[ICML 2026\] Adaptive Time Series Reasoning via Segment Selection](adaptive_time_series_reasoning_via_segment_selection.md)
 - [\[ICML 2026\] Interpretability in Deep Time Series Models Demands Semantic Alignment](interpretability_in_deep_time_series_models_demands_semantic_alignment.md)
 - [\[ACL 2025\] Time-MQA: Time Series Multi-Task Question Answering with Context Enhancement](../../ACL2025/time_series/time-mqa_time_series_multi-task_question_answering_with_context_enhancement.md)

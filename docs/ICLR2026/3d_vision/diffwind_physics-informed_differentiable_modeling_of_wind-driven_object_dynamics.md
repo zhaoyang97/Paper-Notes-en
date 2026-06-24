@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] DiffWind: Physics-Informed Differentiable Modeling of Wind-Driven Object Dynamics
 description: >-
-  [ICLR 2026][3D Vision][physics-informed] Ours proposes DiffWind, a physics-constrained differentiable framework that jointly reconstructs wind fields and object motion from videos by modeling wind as a grid-based physics field, representing objects as 3D Gaussian Splatting (3DGS) particle systems, and utilizing the Material Point Method (MPM) for wind-object
+  [ICLR 2026][3D Vision][physics-informed] Ours proposes DiffWind, a physics-constrained differentiable framework that jointly reconstructs wind fields and object motion from videos by modeling wind as a grid-based physics field, representing objects as 3D Gaussian Splatting (3DGS) particle systems, and utilizing the Material Point Method (MPM) for wind-object interaction. By incorporating the Lattice Boltzmann Method (LBM) as a physical constraint…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - physics-informed
-  - differentiable simulation
-  - wind modeling
-  - 3D Gaussian Splatting
-  - Material Point Method
+  - "ICLR 2026"
+  - "3D Vision"
+  - "physics-informed"
+  - "differentiable simulation"
+  - "wind modeling"
+  - "3D Gaussian Splatting"
+  - "Material Point Method"
 date: 2026-05-08
-content_hash: d33010973bd83636
+content_hash: 53bea080fec1647b
 ---
+
 # DiffWind: Physics-Informed Differentiable Modeling of Wind-Driven Object Dynamics
 
 **Conference**: ICLR 2026  
@@ -135,14 +136,20 @@ Training consists of two stages. The **Static Stage** optimizes 3DGS on static f
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-- **PhysGaussian**: [PhysGaussian: Seamless Physics-integrated 3D Gaussians for Generative Dynamics](https://arxiv.org/abs/2311.12137)
-- **Dynamic 3DGS**: [Dynamic 3D Gaussians: Tracking by Persistent Dynamic View Synthesis](https://arxiv.org/abs/2308.09713)
+## Related Papers
+
+- [\[ICLR 2026\] Learning Physics-Grounded 4D Dynamics with Neural Gaussian Force Fields](learning_physics-grounded_4d_dynamics_with_neural_gaussian_force_fields.md)
+- [\[ICLR 2026\] PAINET: A Principled Efficient Transformer for 3D Dynamics Modeling](painet_a_principled_efficient_transformer_for_3d_dynamics_modeling.md)
+- [\[AAAI 2026\] Physics-Informed Deformable Gaussian Splatting: Towards Unified Constitutive Laws for Time-Evolving Material Field](../../AAAI2026/3d_vision/physics-informed_deformable_gaussian_splatting_towards_unified_constitutive_laws.md)
+- [\[CVPR 2026\] D-Prism: Differentiable Primitives for Structured Dynamic Modeling](../../CVPR2026/3d_vision/d-prism_differentiable_primitives_for_structured_dynamic_modeling.md)
+- [\[CVPR 2026\] Dynamic Black-hole Emission Tomography with Physics-informed Neural Fields](../../CVPR2026/3d_vision/dynamic_black-hole_emission_tomography_with_physics-informed_neural_fields.md)
 
 </div>
-<!-- RELATED:END -->
 
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Learning Physics-Grounded 4D Dynamics with Neural Gaussian Force Fields](learning_physics-grounded_4d_dynamics_with_neural_gaussian_force_fields.md)

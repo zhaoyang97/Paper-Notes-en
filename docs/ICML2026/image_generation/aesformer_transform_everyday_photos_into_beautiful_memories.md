@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] AesFormer: Transform Everyday Photos into Beautiful Memories
 description: >-
-  [ICML 2026][Image Generation][Image Editing] AesFormer defines aesthetic photo enhancement as Aesthetic Photo Reconstruction (APR). It introduces a two-stage framework that first generates a photography action plan and then executes structural editing, transforming errors in composition, perspective, and pose into executable edits. It significantly outperforms op
+  [ICML 2026][Image Generation][Aesthetic Photo Reconstruction] AesFormer defines aesthetic photo enhancement as Aesthetic Photo Reconstruction (APR). It introduces a two-stage framework that first generates a photography action plan and then executes structural editing, transforming errors in composition, perspective, and pose into executable edits. It significantly outperforms open-source editors on AesRecon and approaches the performance of Nano Banana Pro.
 tags:
-  - ICML 2026
-  - Image Generation
-  - Image Editing
-  - GRPO-A
-  - AesRecon
+  - "ICML 2026"
+  - "Image Generation"
+  - "Aesthetic Photo Reconstruction"
+  - "Image Editing"
+  - "Structural Reconstruction"
+  - "GRPO-A"
+  - "AesRecon"
 date: 2026-05-08
-content_hash: 396cd504153e0d73
+content_hash: 675611f2917a9156
 ---
+
 # AesFormer: Transform Everyday Photos into Beautiful Memories
 
 **Conference**: ICML 2026  
@@ -137,7 +140,7 @@ Stage 1(a) uses standard autoregressive SFT to maximize the conditional probabil
 - [\[CVPR 2025\] h-Edit: Effective and Flexible Diffusion-Based Editing via Doob's h-Transform](../../CVPR2025/image_generation/h-edit_effective_and_flexible_diffusion-based_editing_via_doobs_h-transform.md)
 - [\[AAAI 2026\] Beautiful Images, Toxic Words: Understanding and Addressing Offensive Text in Generated Images](../../AAAI2026/image_generation/beautiful_images_toxic_words_understanding_and_addressing_offensive_text_in_gene.md)
 - [\[ICML 2026\] SpatialReward: Bridging the Perception Gap in Online RL for Image Editing via Explicit Spatial Reasoning](spatialreward_bridging_the_perception_gap_in_online_rl_for_image_editing_via_exp.md)
-- [\[ICML 2026\] 统一不同生成顺序的掩码扩散模型](unifying_masked_diffusion_models_with_various_generation_orders_and_beyond.md)
+- [\[ICML 2026\] Unified Masked Diffusion Models with Diverse Generation Orders](unifying_masked_diffusion_models_with_various_generation_orders_and_beyond.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Persistence of Neural Collapse Despite Low-Rank Bias
 description: >-
-  [NeurIPS 2025][Neural Collapse] This paper theoretically demonstrates that Deep Neural Collapse (DNC) is globally suboptimal in deep unconstrained feature models due to the low-rank bias induced by L2 regularization…
+  [NeurIPS 2025][Neural Collapse] This paper theoretically demonstrates that Deep Neural Collapse (DNC) is globally suboptimal in deep unconstrained feature models due to the low-rank bias induced by L2 regularization, while providing the first theoretical explanation for the persistent empirical occurrence of DNC — its solution-space dimensionality grows faster with network width than that of low-rank solutions.
 tags:
   - "NeurIPS 2025"
   - "Neural Collapse"
@@ -11,7 +11,7 @@ tags:
   - "Loss Landscape"
   - "Schatten Quasi-Norm"
 date: 2026-05-08
-content_hash: 0d63244bf89c7f2b
+content_hash: 318545d36d39482f
 ---
 
 # The Persistence of Neural Collapse Despite Low-Rank Bias
@@ -125,10 +125,10 @@ This paper advances several important theoretical frontiers in the NC research l
 ## Related Papers
 
 - [\[NeurIPS 2025\] Neural Collapse in Cumulative Link Models for Ordinal Regression: An Analysis with Unconstrained Feature Model](neural_collapse_in_cumulative_link_models_for_ordinal_regression_an_analysis_wit.md)
-- [\[ICLR 2026\] Consistent Low-Rank Approximation](../../ICLR2026/others/consistent_low-rank_approximation.md)
 - [\[NeurIPS 2025\] Reliable Active Learning from Unreliable Labels via Neural Collapse Geometry](reliable_active_learning_from_unreliable_labels_via_neural_collapse_geometry.md)
-- [\[NeurIPS 2025\] Training the Untrainable: Introducing Inductive Bias via Representational Alignment](training_the_untrainable_introducing_inductive_bias_via_representational_alignme.md)
-- [\[NeurIPS 2025\] MaxSup: Overcoming Representation Collapse in Label Smoothing](maxsup_overcoming_representation_collapse_in_label_smoothing.md)
+- [\[ICLR 2026\] Consistent Low-Rank Approximation](../../ICLR2026/others/consistent_low-rank_approximation.md)
+- [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](../../CVPR2026/others/neural_collapse_in_test-time_adaptation.md)
+- [\[ACL 2025\] Adaptive Feature-based Low Rank Plus Sparse Decomposition for Subspace Clustering](../../ACL2025/others/adaptive_feature-based_low_rank_plus_sparse_decomposition_for_subspace_clusterin.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] MIND: Multi-Rationale Integrated Discriminative Reasoning Framework for Multi-Modal Fake News
 description: >-
-  [ICML 2026][Social Computing][Paper Note] MIND provides an explainable and robust discriminative framework for fake news detection through **multi-view rationale generation + cross-rationale discriminative reasoning**. By simultaneously leveraging three types of LLM-generated rationales—fact-checking, modal consistency, and semantic plausibility—it achieves a
+  [ICML 2026][Social Computing][Multi-view Reasoning] MIND provides an explainable and robust discriminative framework for fake news detection through **multi-view rationale generation + cross-rationale discriminative reasoning**. By simultaneously leveraging three types of LLM-generated rationales—fact-checking, modal consistency, and semantic plausibility—it achieves a 4-8% F1 improvement over SOTA on Weibo, Twitter, and Fakeddit.
 tags:
-  - ICML 2026
-  - Social Computing
+  - "ICML 2026"
+  - "Social Computing"
+  - "Multi-view Reasoning"
+  - "Fake News Detection"
+  - "Explainable Reasoning"
+  - "LLM Integration"
 date: 2026-05-08
-content_hash: 01db6cd711bcd664
+content_hash: 075300c7fd57f508
 ---
+
 # MIND: Multi-Rationale Integrated Discriminative Reasoning Framework for Multi-Modal Fake News
 
 **Conference**: ICML 2026  

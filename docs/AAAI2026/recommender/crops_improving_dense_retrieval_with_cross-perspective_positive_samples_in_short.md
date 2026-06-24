@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] CroPS: Improving Dense Retrieval with Cross-Perspective Positive Samples in Short-Video Search
 description: >-
-  [Recommender Systems] This paper proposes CroPS, a data engine that enriches positive sample sets from three complementary perspectives—query reformulation behavior, recommender system interactions…
+  [Recommender Systems] This paper proposes CroPS, a data engine that enriches positive sample sets from three complementary perspectives—query reformulation behavior, recommender system interactions, and LLM world knowledge—combined with Hierarchical Label Assignment (HLA) and the H-InfoNCE loss function, to break the filter bubble effect in industrial-scale dense retrieval systems. CroPS has been fully deployed in Kuaishou Search.
 tags:
   - "Recommender Systems"
 date: 2026-05-08
-content_hash: 7a69d5e8551abf2a
+content_hash: eabfebfe5f8b95c7
 ---
 
 # CroPS: Improving Dense Retrieval with Cross-Perspective Positive Samples in Short-Video Search
@@ -163,8 +163,8 @@ A solid industrial systems paper. The problem is precisely identified, the metho
 ## Related Papers
 
 - [\[AAAI 2026\] Semi-Supervised Synthetic Data Generation with Fine-Grained Relevance Control for Short Video Search Relevance Modeling](semi-supervised_synthetic_data_generation_with_fine-grained_relevance_control_fo.md)
-- [\[AAAI 2026\] Tokenize Once, Recommend Anywhere: Unified Item Tokenization for Multi-domain LLM-based Recommendation](tokenize_once_recommend_anywhere_unified_item_tokenization_for_multi-domain_llm-.md)
 - [\[ICLR 2026\] Search Arena: Analyzing Search-Augmented LLMs](../../ICLR2026/recommender/search_arena_analyzing_search-augmented_llms.md)
+- [\[AAAI 2026\] Tokenize Once, Recommend Anywhere: Unified Item Tokenization for Multi-domain LLM-based Recommendation](tokenize_once_recommend_anywhere_unified_item_tokenization_for_multi-domain_llm-.md)
 - [\[AAAI 2026\] Inductive Generative Recommendation via Retrieval-based Speculation](inductive_generative_recommendation_via_retrieval-based_speculation.md)
 - [\[AAAI 2026\] Length-Adaptive Interest Network for Balancing Long and Short Sequence Modeling in CTR Prediction](length-adaptive_interest_network_for_balancing_long_and_short_sequence_modeling_.md)
 

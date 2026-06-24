@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] DiffusionHarmonizer: Bridging Neural Reconstruction and Photorealistic Simulation with Online Diffusion Enhancer
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] The authors transform a pre-trained multi-step image diffusion model into a "single-step, deterministic, temporally-conditioned" enhancer. Combined with a five-way data pipeline specializing in "artifact-ridden rendering ↔ realistic photo" pairs, it enhances simulation frames reconstructed via NeRF/3DGS (characterized
+  [CVPR 2026][3D Vision][Neural Reconstruction] The authors transform a pre-trained multi-step image diffusion model into a "single-step, deterministic, temporally-conditioned" enhancer. Combined with a five-way data pipeline specializing in "artifact-ridden rendering ↔ realistic photo" pairs, it enhances simulation frames reconstructed via NeRF/3DGS (characterized by artifacts and lighting mismatches) into temporally coherent, high-realism visuals in real-time. In user studies…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Neural Reconstruction"
+  - "Online Simulation"
+  - "One-step Diffusion"
+  - "Temporal Consistency"
+  - "Shadow Synthesis"
+  - "Data Synthesis Pipeline"
 date: 2026-05-08
-content_hash: 763aea22b37e1749
+content_hash: 317d5f20b0e9135b
 ---
+
 # DiffusionHarmonizer: Bridging Neural Reconstruction and Photorealistic Simulation with Online Diffusion Enhancer
 
 **Conference**: CVPR 2026  
@@ -151,11 +158,11 @@ User preference rate over SDEdit/IP2P/WAN V2V was **84.28% / 90.10% / 90.11%** r
 
 ## Related Papers
 
-- [\[CVPR 2026\] HumanNOVA: Photorealistic, Universal and Rapid 3D Human Avatar Modeling from a Single Image](humannova_photorealistic_universal_and_rapid_3d_human_avatar_modeling_from_a_sin.md)
-- [\[CVPR 2026\] GenSplat: Bridging the Generalization Gap in 3DGS Language Comprehension](gensplat_bridging_the_generalization_gap_in_3dgs_language_comprehension.md)
-- [\[CVPR 2026\] HAD: Hallucination-Aware Diffusion Priors for 3D Reconstruction](had_hallucination-aware_diffusion_priors_for_3d_reconstruction.md)
-- [\[CVPR 2026\] GeoDiff4D: Geometry-Aware Diffusion for 4D Head Avatar Reconstruction](geodiff4d_geometry-aware_diffusion_for_4d_head_avatar_reconstruction.md)
-- [\[CVPR 2026\] AnyLift: Scaling Motion Reconstruction from Internet Videos via 2D Diffusion](anylift_scaling_motion_reconstruction_from_internet_videos_via_2d_diffusion.md)
+- [\[CVPR 2026\] Sparse-View Localization via Online Neural 3D Regression](sparse-view_localization_via_online_neural_3d_regression.md)
+- [\[CVPR 2026\] FluidGaussian: Propagating Simulation-Based Uncertainty Toward Functionally-Intelligent 3D Reconstruction](fluidgaussian_propagating_simulation-based_uncertainty_toward_functionally-intel.md)
+- [\[CVPR 2026\] WorldStereo: Bridging Camera-Guided Video Generation and Scene Reconstruction via 3D Geometric Memories](worldstereo_bridging_camera-guided_video_generation_and_scene_reconstruction_via.md)
+- [\[CVPR 2026\] Online3R: Online Learning for Consistent Sequential Reconstruction Based on Geometry Foundation Model](online3r_online_learning_for_consistent_sequential_reconstruction_based_on_geome.md)
+- [\[CVPR 2026\] ReWeaver: Towards Simulation-Ready and Topology-Accurate Garment Reconstruction](reweaver_towards_simulation-ready_and_topology-accurate_garment_reconstruction.md)
 
 </div>
 

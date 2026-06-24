@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Helix: Evolutionary Reinforcement Learning for Open-Ended Scientific Problem Solving
 description: >-
-  [ICLR 2026][Reinforcement Learning][GRPO] The authors propose HELIX, a framework that combines Reinforcement Learning (GRPO) with Evolutionary Algorithms (NSGA-II) for open-ended scientific problem solving. RL iteratively optimizes the policy, evolutionary mechanisms balance solution quality and diversity, and in-context learning utilizes historical solutions
+  [ICLR 2026][Reinforcement Learning][Evolutionary Algorithms] The authors propose HELIX, a framework that combines Reinforcement Learning (GRPO) with Evolutionary Algorithms (NSGA-II) for open-ended scientific problem solving. RL iteratively optimizes the policy, evolutionary mechanisms balance solution quality and diversity, and in-context learning utilizes historical solutions to guide exploration. Using only a 14B model, it outperforms GPT-4o pipelines across 20 tasks…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GRPO
-  - NSGA-II
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Evolutionary Algorithms"
+  - "GRPO"
+  - "Scientific Optimization"
+  - "NSGA-II"
+  - "In-context Learning"
 date: 2026-05-08
-content_hash: 52d76bdb462d2a41
+content_hash: b4f77d04eec8c80f
 ---
+
 # Helix: Evolutionary Reinforcement Learning for Open-Ended Scientific Problem Solving
 
 **Conference**: ICLR 2026  
@@ -145,7 +149,7 @@ HELIX with a 14B model outperforms GPT-4o pipelines in ML tasks, with an average
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

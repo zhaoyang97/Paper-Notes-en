@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Cultivating Forensic Reasoning for Generalizable Multimodal Manipulation Detection
 description: >-
-  [ACL 2026][Robotics & Embodied AI][GRPO] This paper proposes REFORM, shifting multimodal forgery detection from "direct label fitting" to "learning a verifiable forensic reasoning process." Through the ROM reasoning-annotated dataset, dual decoders, and GRPO training, REFORM achieves superior cross-domain generalization and interpretable detection results on
+  [ACL2026][Robotics][Multimodal Forgery Detection] This paper proposes REFORM, shifting multimodal forgery detection from "direct label fitting" to "learning a verifiable forensic reasoning process." Through the ROM reasoning-annotated dataset, dual decoders, and GRPO training, REFORM achieves superior cross-domain generalization and interpretable detection results on ROM, DGM4, and MMFakeBench.
 tags:
-  - ACL 2026
-  - Robotics & Embodied AI
-  - GRPO
+  - "ACL2026"
+  - "Robotics"
+  - "Multimodal Forgery Detection"
+  - "Forensic Reasoning"
+  - "GRPO"
+  - "Forgery Localization"
+  - "ROM Dataset"
 date: 2026-05-08
-content_hash: 2daf493a2f2db908
+content_hash: aa14db8c54c1721d
 ---
+
 # Cultivating Forensic Reasoning for Generalizable Multimodal Manipulation Detection
 
 **Conference**: ACL2026  
@@ -139,9 +144,9 @@ The focus is not on a classification head but on integrating the reasoning chain
 
 - [\[CVPR 2026\] Probabilistic Concept Graph Reasoning for Multimodal Misinformation Detection](../../CVPR2026/robotics/probabilistic_concept_graph_reasoning_for_multimodal_misinformation_detection.md)
 - [\[ACL 2026\] GoViG: Goal-Conditioned Visual Navigation Instruction Generation via Multimodal Reasoning](govig_goal-conditioned_visual_navigation_instruction_generation_via_multimodal_r.md)
+- [\[ICLR 2026\] Self-Refining Vision Language Model for Robotic Failure Detection and Reasoning](../../ICLR2026/robotics/self-refining_vision_language_model_for_robotic_failure_detection_and_reasoning.md)
 - [\[CVPR 2026\] FantasyVLN: Unified Multimodal Chain-of-Thought Reasoning for Vision-and-Language Navigation](../../CVPR2026/robotics/fantasyvln_unified_multimodal_chain-of-thought_reasoning_for_vision-and-language.md)
 - [\[CVPR 2026\] AdaDexTrack: Dynamic Modulation for Adaptive and Generalizable Dexterous Manipulation Tracking](../../CVPR2026/robotics/adadextrack_dynamic_modulation_for_adaptive_and_generalizable_dexterous_manipula.md)
-- [\[CVPR 2026\] Hoi! - A Multimodal Dataset for Force-Grounded, Cross-View Articulated Manipulation](../../CVPR2026/robotics/hoi_-_a_multimodal_dataset_for_force-grounded_cross-view_articulated_manipulatio.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] WearVox: An Egocentric Multichannel Voice Assistant Benchmark for Wearables
 description: >-
-  [ICLR 2026][Audio & Speech][Paper Note] WearVox utilizes AI glasses to collect 3,842 segments of egocentric, multichannel audio from real-world wearable scenarios, covering five task categories: Search QA, Closed-book QA, Side-speech Rejection, Tool Use, and Speech Translation. Systematic evaluation of mainstream Speech Large Language Models (SLLMs) reveals
+  [ICLR 2026][Audio & Speech][Wearable voice assistant] WearVox utilizes AI glasses to collect 3,842 segments of egocentric, multichannel audio from real-world wearable scenarios, covering five task categories: Search QA, Closed-book QA, Side-speech Rejection, Tool Use, and Speech Translation. Systematic evaluation of mainstream Speech Large Language Models (SLLMs) reveals that real-time model accuracy ranges only from 29% to 59% and degrades severely under outdoor noise. A mul…
 tags:
-  - ICLR 2026
-  - Audio & Speech
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Wearable voice assistant"
+  - "egocentric audio"
+  - "multichannel audio"
+  - "Speech LLM"
+  - "benchmark"
 date: 2026-05-08
-content_hash: b07f98e42fd744ea
+content_hash: 7c631e898b3893bc
 ---
+
 # WearVox: An Egocentric Multichannel Voice Assistant Benchmark for Wearables
 
 **Conference**: ICLR 2026  
@@ -120,6 +126,7 @@ Multichannel audio provides significant boosts in Tool Use (+5.4%) and Side-spee
 - Value: ⭐⭐⭐⭐⭐ (Opens source tools to address core deployment pain points for wearable AI).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

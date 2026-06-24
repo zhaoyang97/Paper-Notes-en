@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] How Few-Shot Examples Add Up: A Causal Decomposition of Function Vectors in In-Context Learning
 description: >-
-  [ICML 2026][Interpretability][function vector] This paper performs a prompt-granularity causal analysis of the formation mechanism of the function vector (FV) for n-shot prompts. It demonstrates that the FV can be linearly superimposed as a weighted sum of sub-FVs from individual examples, where the weights are determined by FV-head attention. Through 2×2 QK/V caus
+  [ICML 2026][Interpretability][function vector] This paper performs a prompt-granularity causal analysis of the formation mechanism of the function vector (FV) for n-shot prompts. It demonstrates that the FV can be linearly superimposed as a weighted sum of sub-FVs from individual examples, where the weights are determined by FV-head attention. Through 2×2 QK/V causal intervention, the study shows that contextualization primarily improves FV quality via the QK path (rather tha…
 tags:
-  - ICML 2026
-  - Interpretability
-  - function vector
-  - in-context learning
+  - "ICML 2026"
+  - "Interpretability"
+  - "function vector"
+  - "in-context learning"
+  - "linear superposition"
+  - "attention reweighting"
+  - "QK/V causal decomposition"
 date: 2026-05-08
-content_hash: 3209f5aa7496a063
+content_hash: 86468589a41b5b0e
 ---
+
 # How Few-Shot Examples Add Up: A Causal Decomposition of Function Vectors in In-Context Learning
 
 **Conference**: ICML 2026  
@@ -116,11 +120,11 @@ No models are trained; all analyses use causal intervention on frozen pretrained
 
 ## Related Papers
 
-- [\[ACL 2026\] Letting Tutor Personas Speak Up for LLMs: Learning Steering Vectors from Dialogue via Preference Optimization](../../ACL2026/interpretability/letting_tutor_personas_speak_up_for_llms_learning_steering_vectors_from_dialogue.md)
-- [\[ICML 2026\] Optimal Attention Temperature Improves the Robustness of In-Context Learning under Distribution Shift in High Dimensions](optimal_attention_temperature_improves_the_robustness_of_in-context_learning_und.md)
+- [\[ICLR 2026\] Causality ≠ Invariance: Function and Concept Vectors in LLMs](../../ICLR2026/interpretability/causality_invariance_function_and_concept_vectors_in_llms.md)
+- [\[ICLR 2026\] Understanding Task Vectors in In-Context Learning: Emergence, Functionality, and Limitations](../../ICLR2026/interpretability/understanding_task_vectors_in_in-context_learning_emergence_functionality_and_li.md)
+- [\[ICML 2026\] Where Computation Lives Inside TabPFN: Causal Localisation of Attention Head Function](where_computation_lives_inside_tabpfn_causal_localisation_of_attention_head_func.md)
+- [\[ICLR 2026\] How Transformers Learn Causal Structures In-Context: Explainable Mechanism Meets Theoretical Guarantee](../../ICLR2026/interpretability/how_transformers_learn_causal_structures_in-context_explainable_mechanism_meets_.md)
 - [\[ICLR 2026\] Adaptive Concept Discovery for Interpretable Few-Shot Text Classification](../../ICLR2026/interpretability/adaptive_concept_discovery_for_interpretable_few-shot_text_classification.md)
-- [\[ICLR 2026\] Causal Interpretation of Neural Network Computations with Contribution Decomposition](../../ICLR2026/interpretability/causal_interpretation_of_neural_network_computations_with_contribution_decomposi.md)
-- [\[ICML 2026\] Singular Vectors of Attention Heads Align with Features](singular_vectors_of_attention_heads_align_with_features.md)
 
 </div>
 

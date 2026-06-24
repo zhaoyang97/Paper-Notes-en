@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Tracking Equivalent Mechanistic Interpretations Across Neural Networks
 description: >-
-  [ICLR 2026][Interpretability][Transformer circuits] This paper formalizes "whether two neural networks implement the same mechanistic interpretation" as an equivalence problem between interpretation implementation sets. It proposes a method that generates co-interpretive implementations via intervention and estimates Congruity using representation similarity. Experiment
+  [ICLR2026][Interpretability][Mechanistic interpretability] This paper formalizes "whether two neural networks implement the same mechanistic interpretation" as an equivalence problem between interpretation implementation sets. It proposes a method that generates co-interpretive implementations via intervention and estimates Congruity using representation similarity. Experiments on synthetic Transformers, IOI circuits, and POS/next-token tasks demonstrate its ability to track…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Transformer circuits
+  - "ICLR2026"
+  - "Interpretability"
+  - "Mechanistic interpretability"
+  - "interpretive equivalence"
+  - "representation similarity"
+  - "causal abstraction"
+  - "Transformer circuits"
 date: 2026-05-08
-content_hash: 463fab89773c0b38
+content_hash: 211ec783462b9e48
 ---
+
 # Tracking Equivalent Mechanistic Interpretations Across Neural Networks
 
 **Conference**: ICLR2026  
@@ -158,10 +163,10 @@ The paper validates key components through control analysis rather than traditio
 
 ## Related Papers
 
+- [\[ICML 2025\] Validating Mechanistic Interpretations: An Axiomatic Approach](../../ICML2025/interpretability/validating_mechanistic_interpretations_an_axiomatic_approach.md)
+- [\[ICLR 2026\] Addressing Divergent Representations from Causal Interventions on Neural Networks](addressing_divergent_representations_causal.md)
 - [\[ICLR 2026\] Certified Evaluation of Model-Level Explanations for Graph Neural Networks](certified_evaluation_of_model-level_explanations_for_graph_neural_networks.md)
 - [\[ICLR 2026\] Bayesian Neural Networks for Functional ANOVA Model](bayesian_neural_networks_for_functional_anova_model.md)
-- [\[ICLR 2026\] Addressing Divergent Representations from Causal Interventions on Neural Networks](addressing_divergent_representations_causal.md)
-- [\[ICML 2025\] Validating Mechanistic Interpretations: An Axiomatic Approach](../../ICML2025/interpretability/validating_mechanistic_interpretations_an_axiomatic_approach.md)
 - [\[ICLR 2026\] FAME: Formal Abstract Minimal Explanation for Neural Networks](fame_formal_abstract_minimal_explanation_for_neural_networks.md)
 
 </div>

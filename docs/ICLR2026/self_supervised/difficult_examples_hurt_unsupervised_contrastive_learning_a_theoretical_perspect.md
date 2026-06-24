@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Difficult Examples Hurt Unsupervised Contrastive Learning: A Theoretical Perspective
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] This work rigorously proves through similarity graph model theory that "difficult examples" (cross-class high-similarity sample pairs) damage unsupervised contrastive learning performance. It shows that difficult examples strictly deteriorate the generalization error bound and proposes three theory-guided mitigation st
+  [ICLR 2026 Oral][Self-Supervised Learning][Contrastive Learning] This work rigorously proves through similarity graph model theory that "difficult examples" (cross-class high-similarity sample pairs) damage unsupervised contrastive learning performance. It shows that difficult examples strictly deteriorate the generalization error bound and proposes three theory-guided mitigation strategies: deleting difficult examples, adjusting margin, and temperature scaling…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026 Oral"
+  - "Self-Supervised Learning"
+  - "Contrastive Learning"
+  - "Difficult Examples"
+  - "Similarity Graph Model"
+  - "Temperature Scaling"
+  - "Theoretical Bounds"
 date: 2026-05-08
-content_hash: be9901dd1f5f1a45
+content_hash: 07f3681dd87c05bb
 ---
+
 # Difficult Examples Hurt Unsupervised Contrastive Learning: A Theoretical Perspective
 
 **Conference**: ICLR 2026 Oral  
@@ -125,7 +131,7 @@ To implement these strategies, difficult pairs must be identified without labels
 - [\[ICLR 2026\] Maximizing Incremental Information Entropy for Contrastive Learning](maximizing_incremental_information_entropy_for_contrastive_learning.md)
 - [\[ICLR 2026\] On the Alignment Between Supervised and Self-Supervised Contrastive Learning](on_the_alignment_between_supervised_and_self-supervised_contrastive_learning.md)
 - [\[AAAI 2026\] Improving Sustainability of Adversarial Examples in Class-Incremental Learning](../../AAAI2026/self_supervised/improving_sustainability_of_adversarial_examples_in_class-incremental_learning.md)
-- [\[ICLR 2026\] Part-level Semantic-guided Contrastive Learning for Fine-grained Visual Classification](part-level_semantic-guided_contrastive_learning_for_fine-grained_visual_classifi.md)
+- [\[ICLR 2026\] Unified and Efficient Multi-view Clustering from Probabilistic Perspective](unified_and_efficient_multi-view_clustering_from_probabilistic_perspective.md)
 
 </div>
 

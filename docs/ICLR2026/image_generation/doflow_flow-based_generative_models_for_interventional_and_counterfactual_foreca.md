@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DoFlow: Flow-based Generative Models for Interventional and Counterfactual Forecasting
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] Ours proposes DoFlow, a causal generative model based on Continuous Normalizing Flows (CNF) that unifiedly implements observational, interventional, and counterfactual time series forecasting on a causal DAG. It also enables anomaly detection through explicit likelihood and demonstrates effectiveness on synthetic and r
+  [ICLR 2026][Image Generation][Causal Inference] Ours proposes DoFlow, a causal generative model based on Continuous Normalizing Flows (CNF) that unifiedly implements observational, interventional, and counterfactual time series forecasting on a causal DAG. It also enables anomaly detection through explicit likelihood and demonstrates effectiveness on synthetic and real-world medical data.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Causal Inference"
+  - "Continuous Normalizing Flows"
+  - "Time Series Forecasting"
+  - "Counterfactual Reasoning"
+  - "Anomaly Detection"
 date: 2026-05-08
-content_hash: b8000c7ea94ad572
+content_hash: 18e39c37665b1b57
 ---
+
 # DoFlow: Flow-based Generative Models for Interventional and Counterfactual Forecasting
 
 **Conference**: ICLR 2026  

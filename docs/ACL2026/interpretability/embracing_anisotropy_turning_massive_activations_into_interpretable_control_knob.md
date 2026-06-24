@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Embracing Anisotropy: Turning Massive Activations into Interpretable Control Knobs for Large Language Models
 description: >-
-  [ACL 2026][Interpretability][anisotropy] This paper reinterprets "massive activations," often regarded as outliers in LLMs, as interpretable domain-critical dimensions. It identifies these dimensions using a training-free activation magnitude criterion and performs activation steering exclusively on these dimensions, proving more effective than full-dimension
+  [ACL2026][Interpretability][anisotropy] This paper reinterprets "massive activations," often regarded as outliers in LLMs, as interpretable domain-critical dimensions. It identifies these dimensions using a training-free activation magnitude criterion and performs activation steering exclusively on these dimensions, proving more effective than full-dimension steering in domain adaptation and jailbreaking scenarios.
 tags:
-  - ACL 2026
-  - Interpretability
-  - anisotropy
-  - massive activations
-  - domain-critical dimensions
-  - activation steering
-  - jailbreaking
+  - "ACL2026"
+  - "Interpretability"
+  - "anisotropy"
+  - "massive activations"
+  - "domain-critical dimensions"
+  - "activation steering"
+  - "jailbreaking"
 date: 2026-05-08
-content_hash: b9827e2754d75002
+content_hash: 15c3dc138533005b
 ---
+
 # Embracing Anisotropy: Turning Massive Activations into Interpretable Control Knobs for Large Language Models
 
 **Conference**: ACL2026  
@@ -131,16 +132,16 @@ Confirms identifying criteria: functional sparsity and domain discriminativeness
 - Value: ⭐⭐⭐⭐☆ (Insightful for interpretability, steering, and security assessment).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] Preference Heads in Large Language Models: A Mechanistic Framework for Interpretable Personalization](preference_heads_in_large_language_models_a_mechanistic_framework_for_interpreta.md)
+- [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](knowledge_vector_of_logical_reasoning_in_large_language_models.md)
+- [\[ICLR 2026\] Precise and Interpretable Editing of Code Knowledge in Large Language Models](../../ICLR2026/interpretability/precise_and_interpretable_editing_of_code_knowledge_in_large_language_models.md)
 - [\[ACL 2026\] Sparse Feature Coactivation Reveals Causal Semantic Modules in Large Language Models](sparse_feature_coactivation_reveals_causal_semantic_modules_in_large_language_mo.md)
 - [\[ICML 2026\] Towards Atoms of Large Language Models](../../ICML2026/interpretability/towards_atoms_of_large_language_models.md)
-- [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](knowledge_vector_of_logical_reasoning_in_large_language_models.md)
-- [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](compositional_steering_of_large_language_models_with_steering_tokens.md)
 
 </div>
 

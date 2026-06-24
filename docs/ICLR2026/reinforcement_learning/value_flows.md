@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Value Flows
 description: >-
-  [ICLR 2026][Reinforcement Learning][distributional RL] Value Flows introduces flow matching to distributional RL for the first time by learning a vector field where the generated probability density paths automatically satisfy the distributional Bellman equation. By efficiently estimating return variance via a flow derivative ODE, it enables confidence-weighted prioritized
+  [ICLR 2026][Reinforcement Learning][distributional RL] Value Flows introduces flow matching to distributional RL for the first time by learning a vector field where the generated probability density paths automatically satisfy the distributional Bellman equation. By efficiently estimating return variance via a flow derivative ODE, it enables confidence-weighted prioritized learning, achieving a 1.3× average success rate improvement on 62 OGBench tasks and over 3× better retur…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - distributional RL
-  - flow matching
-  - return distribution
-  - uncertainty quantification
-  - OGBench
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "distributional RL"
+  - "flow matching"
+  - "return distribution"
+  - "uncertainty quantification"
+  - "OGBench"
 date: 2026-05-08
-content_hash: cb01ae0f360eb98f
+content_hash: e8b1fe32e03dd5c5
 ---
+
 # Value Flows
 
 **Conference**: ICLR 2026  
@@ -164,10 +165,10 @@ Value Flows' distribution estimation is 4.5× more accurate than C51 and 3× mor
 ## Related Papers
 
 - [\[ICLR 2026\] ReFORM: Reflected Flows for On-support Offline RL via Noise Manipulation](reform_reflected_flows_for_on-support_offline_rl_via_noise_manipulation.md)
+- [\[ICLR 2026\] transitive rl value learning via divide and conquer](transitive_rl_value_learning_via_divide_and_conquer.md)
 - [\[ICLR 2026\] From Ticks to Flows: Dynamics of Neural Reinforcement Learning in Continuous Environments](from_ticks_to_flows_dynamics_of_neural_reinforcement_learning_in_continuous_envi.md)
 - [\[ICLR 2026\] Relative Value Learning](relative_value_learning.md)
 - [\[ICLR 2026\] Universal Value-Function Uncertainties](universal_value-function_uncertainties.md)
-- [\[ICLR 2026\] Offline Preference-based Value Optimization](offline_preference-based_value_optimization.md)
 
 </div>
 

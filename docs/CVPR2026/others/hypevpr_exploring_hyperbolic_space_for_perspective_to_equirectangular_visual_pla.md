@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] HypeVPR: Exploring Hyperbolic Space for Perspective to Equirectangular Visual Place Recognition
 description: >-
-  [CVPR 2026][Others][Paper Note] This paper proposes HypeVPR, a visual place recognition framework based on hierarchical embeddings in hyperbolic space. It specifically addresses the cross-field-of-view matching problem between perspective images (queries) and equirectangular images (database). By constructing multi-level descriptors from local to glo
+  [CVPR 2026][Visual Place Recognition] This paper proposes HypeVPR, a visual place recognition framework based on hierarchical embeddings in hyperbolic space. It specifically addresses the cross-field-of-view matching problem between perspective images (queries) and equirectangular images (database). By constructing multi-level descriptors from local to global in the Poincaré ball, it achieves a flexible balance between accuracy, efficiency, and storage…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Visual Place Recognition"
+  - "Hyperbolic Space"
+  - "Panoramic Images"
+  - "Hierarchical Embedding"
+  - "Perspective-to-Equirectangular Matching"
 date: 2026-05-08
-content_hash: cee14277dd4fe203
+content_hash: 3964b8f86fd7f591
 ---
+
 # HypeVPR: Exploring Hyperbolic Space for Perspective to Equirectangular Visual Place Recognition
 
 **Conference**: CVPR 2026  
@@ -143,10 +148,10 @@ The framework is optimized end-to-end using a triplet structure, centered on a *
 ## Related Papers
 
 - [\[ICCV 2025\] Learning Visual Hierarchies in Hyperbolic Space for Image Retrieval](../../ICCV2025/others/learning_visual_hierarchies_in_hyperbolic_space_for_image_retrieval.md)
-- [\[CVPR 2026\] Hyperbolic Defect Feature Synthesis for Few-Shot Defect Classification](hyperbolic_defect_feature_synthesis_for_few-shot_defect_classification.md)
 - [\[ICCV 2025\] A Hyperdimensional One Place Signature to Represent Them All: Stackable Descriptors For Visual Place Recognition](../../ICCV2025/others/a_hyperdimensional_one_place_signature_to_represent_them_all_stackable_descripto.md)
-- [\[CVPR 2026\] Affine Perspective-Three-Point Problem](affine_perspective-three-point_problem.md)
-- [\[ICLR 2026\] Out of the Shadows: Exploring a Latent Space for Neural Network Verification](../../ICLR2026/others/out_of_the_shadows_exploring_a_latent_space_for_neural_network_verification.md)
+- [\[CVPR 2026\] Hyperbolic Defect Feature Synthesis for Few-Shot Defect Classification](hyperbolic_defect_feature_synthesis_for_few-shot_defect_classification.md)
+- [\[CVPR 2026\] Modeling the Visual Ambiguity of Human Sketches](modeling_the_visual_ambiguity_of_human_sketches.md)
+- [\[ICLR 2026\] Exploring State-Space Models for Data-Specific Neural Representations](../../ICLR2026/others/exploring_state-space_models_for_data-specific_neural_representations.md)
 
 </div>
 

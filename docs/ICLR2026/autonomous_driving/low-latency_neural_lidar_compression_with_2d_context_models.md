@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Low-Latency Neural LiDAR Compression with 2D Context Models
 description: >-
-  [ICLR 2026][Autonomous Driving][range image] RangeCM transitions LiDAR point cloud compression from expensive 3D contexts (voxel/octree) entirely to the 2D range image domain. It uses CNNs in 2D to aggregate spatial, temporal, and camera contexts simultaneously, utilizing a unified hybrid context to predict both geometry and intensity. While achieving better BD-R
+  [ICLR 2026][Autonomous Driving][LiDAR Point Cloud Compression] RangeCM transitions LiDAR point cloud compression from expensive 3D contexts (voxel/octree) entirely to the 2D range image domain. It uses CNNs in 2D to aggregate spatial, temporal, and camera contexts simultaneously, utilizing a unified hybrid context to predict both geometry and intensity. While achieving better BD-Rate than SOTA, it reduces codec latency to approximately 0.1 seconds and accelerates intensity co…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - range image
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "LiDAR Point Cloud Compression"
+  - "2D Context Models"
+  - "range image"
+  - "spatio-temporal-cross-modal context"
+  - "joint geometry-intensity compression"
 date: 2026-05-08
-content_hash: de003ef170bd56d9
+content_hash: 338e076207382753
 ---
+
 # Low-Latency Neural LiDAR Compression with 2D Context Models
 
 **Conference**: ICLR 2026  
@@ -133,7 +138,6 @@ Datasets: Waymo Open Dataset (WOD, with raw range maps, 5-view cameras, precise 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

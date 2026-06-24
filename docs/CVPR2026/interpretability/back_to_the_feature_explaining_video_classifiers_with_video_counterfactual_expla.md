@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Back to the Feature: Explaining Video Classifiers with Video Counterfactual Explanations
 description: >-
-  [CVPR 2026][Causal Inference][Paper Note] This paper proposes BTTF, a pure optimization framework that uses Image-to-Video diffusion models to generate Counterfactual Explanations (CFE) for **video classifiers**. By optimizing the initial noise latent variable solely based on the gradients of the target classifier—first anchoring the search via "inversion" nea
+  [CVPR 2026][Interpretability][Counterfactual Explanation] This paper proposes BTTF, a pure optimization framework that uses Image-to-Video diffusion models to generate Counterfactual Explanations (CFE) for **video classifiers**. By optimizing the initial noise latent variable solely based on the gradients of the target classifier—first anchoring the search via "inversion" near the original video and then optimizing toward the target category—it generates a "parallel video" th…
 tags:
-  - CVPR 2026
-  - Causal Inference
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Counterfactual Explanation"
+  - "Video Classifier"
+  - "I2V Diffusion Model"
+  - "Spatiotemporal Feature Editing"
+  - "Model Auditing"
 date: 2026-05-08
-content_hash: 051ed26b4a23f741
+content_hash: 3309c51926365328
 ---
+
 # Back to the Feature: Explaining Video Classifiers with Video Counterfactual Explanations
 
 **Conference**: CVPR 2026  
@@ -141,10 +147,20 @@ Qualitative ablation results (Fig. 6, "Salute→Cheer"):
 - Value: ⭐⭐⭐⭐ High utility for model auditing, though compute requirements limit widespread adoption.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Joint Distribution–Informed Shapley Values for Sparse Counterfactual Explanations](../../ICLR2026/interpretability/joint_distributioninformed_shapley_values_for_sparse_counterfactual_explanations.md)
+- [\[CVPR 2026\] H-Sets: Hessian-Guided Discovery of Set-Level Feature Interactions in Image Classifiers](h-sets_hessian-guided_discovery_of_set-level_feature_interactions_in_image_class.md)
+- [\[ACL 2026\] Flattery in Motion: Benchmarking and Analyzing Sycophancy in Video-LLMs](../../ACL2026/interpretability/flattery_in_motion_benchmarking_and_analyzing_sycophancy_in_video-llms.md)
+- [\[ICLR 2026\] Dynamic Reflections: Probing Video Representations with Text Alignment](../../ICLR2026/interpretability/dynamic_reflections_probing_video_representations_with_text_alignment.md)
+- [\[ICCV 2025\] Minerva: Evaluating Complex Video Reasoning](../../ICCV2025/interpretability/minerva_evaluating_complex_video_reasoning.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Action-Guided Attention for Video Action Anticipation](../../ICLR2026/causal_inference/action-guided_attention_for_video_action_anticipation.md)

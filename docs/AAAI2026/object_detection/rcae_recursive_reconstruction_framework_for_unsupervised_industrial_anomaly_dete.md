@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RcAE: Recursive Reconstruction Framework for Unsupervised Industrial Anomaly Detection
 description: >-
-  [AAAI 2026][Object Detection][anomaly detection] This paper proposes a Recursive Convolutional Autoencoder (RcAE) that progressively suppresses anomalies while preserving normal details through multi-step iterative recon…
+  [AAAI 2026][Object Detection][anomaly detection] This paper proposes a Recursive Convolutional Autoencoder (RcAE) that progressively suppresses anomalies while preserving normal details through multi-step iterative reconstruction with shared parameters. Combined with a Cross-Recursive Detection module (CRD) that exploits multi-step reconstruction dynamics for robust anomaly localization, the method achieves performance comparable to state-of-the-art approaches using only 10%…
 tags:
   - "AAAI 2026"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "industrial defect detection"
   - "unsupervised learning"
 date: 2026-05-08
-content_hash: 88e39b784a417e67
+content_hash: 9acc21c5899fc566
 ---
 
 # RcAE: Recursive Reconstruction Framework for Unsupervised Industrial Anomaly Detection
@@ -186,8 +186,8 @@ Key finding: RcAE achieves the best pixel-level P-AUROC of 98.7% across all meth
 - [\[AAAI 2026\] Towards Multiple Missing Values-Resistant Unsupervised Graph Anomaly Detection](towards_multiple_missing_values-resistant_unsupervised_graph_anomaly_detection.md)
 - [\[AAAI 2026\] FDP: A Frequency-Decomposition Preprocessing Pipeline for Unsupervised Anomaly Detection in Brain MRI](fdp_a_frequency-decomposition_preprocessing_pipeline_for_unsupervised_anomaly_de.md)
 - [\[CVPR 2026\] InvAD: Inversion-based Reconstruction-Free Anomaly Detection with Diffusion Models](../../CVPR2026/object_detection/invad_inversion-based_reconstruction-free_anomaly_detection_with_diffusion_model.md)
-- [\[NeurIPS 2025\] ADPretrain: Advancing Industrial Anomaly Detection via Anomaly Representation Pretraining](../../NeurIPS2025/object_detection/adpretrain_advancing_industrial_anomaly_detection_via_anomaly_representation_pre.md)
-- [\[AAAI 2026\] TubeRMC: Tube-conditioned Reconstruction with Mutual Constraints for Weakly-supervised Spatio-Temporal Video Grounding](tubermc_tube-conditioned_reconstruction_with_mutual_constraints_for_weakly-super.md)
+- [\[CVPR 2026\] GPFlow: Gaussian Prototype Probability Flow for Unsupervised Multi-Modal Anomaly Detection](../../CVPR2026/object_detection/gpflow_gaussian_prototype_probability_flow_for_unsupervised_multi-modal_anomaly_.md)
+- [\[CVPR 2026\] FastRef: Fast Prototype Refinement for Few-shot Industrial Anomaly Detection](../../CVPR2026/object_detection/fastref_fast_prototype_refinement_for_few-shot_industrial_anomaly_detection.md)
 
 </div>
 

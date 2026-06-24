@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Domain Generalizable Portrait Style Transfer
 description: >-
-  [ICCV 2025][Image Generation][Portrait Style Transfer] DGPST proposes a diffusion-based portrait style transfer framework that establishes cross-domain dense semantic correspondences via a semantic adapter to warp the re…
+  [ICCV 2025][Image Generation][Portrait Style Transfer] DGPST proposes a diffusion-based portrait style transfer framework that establishes cross-domain dense semantic correspondences via a semantic adapter to warp the reference image, employs AdaIN-Wavelet Transform for latent space initialization to balance stylization and content preservation, and generates final results through a dual-conditional diffusion model combining ControlNet (high-frequency structural guidance) and…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Diffusion Model"
   - "Cross-Domain Generalization"
 date: 2026-05-08
-content_hash: 385dc56442ddd7a1
+content_hash: 629a2360f6b83b52
 ---
 
 # Domain Generalizable Portrait Style Transfer
@@ -150,11 +150,11 @@ Two-stage training:
 
 ## Related Papers
 
+- [\[CVPR 2025\] HSI: A Holistic Style Injector for Arbitrary Style Transfer](../../CVPR2025/image_generation/hsi_a_holistic_style_injector_for_arbitrary_style_transfer.md)
 - [\[ICCV 2025\] SA-LUT: Spatial Adaptive 4D Look-Up Table for Photorealistic Style Transfer](sa-lut_spatial_adaptive_4d_look-up_table_for_photorealistic_style_transfer.md)
+- [\[CVPR 2025\] StyleStudio: Text-Driven Style Transfer with Selective Control of Style Elements](../../CVPR2025/image_generation/stylestudio_text-driven_style_transfer_with_selective_control_of_style_elements.md)
+- [\[CVPR 2025\] SaMam: Style-aware State Space Model for Arbitrary Image Style Transfer](../../CVPR2025/image_generation/samam_style-aware_state_space_model_for_arbitrary_image_style_transfer.md)
 - [\[ICCV 2025\] Balanced Image Stylization with Style Matching Score](balanced_image_stylization_with_style_matching_score.md)
-- [\[ICCV 2025\] StyleMotif: Multi-Modal Motion Stylization using Style-Content Cross Fusion](stylemotif_multi-modal_motion_stylization_using_style-content_cross_fusion.md)
-- [\[CVPR 2026\] FG-Portrait: 3D Flow Guided Editable Portrait Animation](../../CVPR2026/image_generation/fg-portrait_3d_flow_guided_editable_portrait_animation.md)
-- [\[ICCV 2025\] Structure-Guided Diffusion Models for High-Fidelity Portrait Shadow Removal](structure-guided_diffusion_models_for_high-fidelity_portrait_shadow_removal.md)
 
 </div>
 

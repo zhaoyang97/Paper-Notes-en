@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Large Language Models Can Learn and Generalize Steganographic Chain-of-Thought under Process Supervision
 description: >-
-  [NeurIPS 2025][LLM Reasoning][steganography] This paper demonstrates that LLMs under RL training with CoT process supervision (penalizing specific strings) spontaneously learn steganography—concealing prohibited reasonin…
+  [NeurIPS 2025][Reasoning][steganography] This paper demonstrates that LLMs under RL training with CoT process supervision (penalizing specific strings) spontaneously learn steganography—concealing prohibited reasoning steps via substitute encodings. These encodings are causally load-bearing and generalize to strings never encountered during training.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "steganography"
   - "chain-of-thought"
   - "process supervision"
@@ -13,7 +13,7 @@ tags:
   - "AI safety"
   - "RL fine-tuning"
 date: 2026-05-08
-content_hash: 6d31637ae8e194b9
+content_hash: a50e0e6461d0a1b3
 ---
 
 # Large Language Models Can Learn and Generalize Steganographic Chain-of-Thought under Process Supervision
@@ -134,10 +134,10 @@ As the prohibition list expands from 1 string to ~70, the model consistently fin
 ## Related Papers
 
 - [\[NeurIPS 2025\] Transformers Provably Learn Chain-of-Thought Reasoning with Length Generalization](transformers_provably_learn_chain-of-thought_reasoning_with_length_generalizatio.md)
+- [\[ACL 2025\] Can Large Language Models Detect Errors in Long Chain-of-Thought Reasoning?](../../ACL2025/llm_reasoning/can_large_language_models_detect_errors_in_long_chain-of-thought_reasoning.md)
 - [\[NeurIPS 2025\] Let Me Think! A Long Chain-of-Thought Can Be Worth Exponentially Many Short Ones](let_me_think_a_long_chainofthought_can_be_worth_exponentiall.md)
 - [\[NeurIPS 2025\] Adaptive Dual Reasoner: Large Reasoning Models Can Think Efficiently by Hybrid Reasoning](adaptive_dual_reasoner_large_reasoning_models_can_think_efficiently_by_hybrid_re.md)
-- [\[ICCV 2025\] CoRVid: Improving Multimodal Large Language Models Towards Chain-of-Thought Reasoning](../../ICCV2025/llm_reasoning/corvid_improving_multimodal_large_language_models_towards_chain-of-thought_reaso.md)
-- [\[NeurIPS 2025\] ProofSketch: Efficient Verified Reasoning for Large Language Models](proofsketch_efficient_verified_reasoning_for_large_language_models.md)
+- [\[ICLR 2026\] StreamingThinker: Large Language Models Can Think While Reading](../../ICLR2026/llm_reasoning/streamingthinker_large_language_models_can_think_while_reading.md)
 
 </div>
 

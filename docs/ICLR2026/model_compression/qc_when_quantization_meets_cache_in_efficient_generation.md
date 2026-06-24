@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Q&C: When Quantization Meets Cache in Efficient Generation
 description: >-
-  [ICLR 2026][Model Compression][Diffusion Model] This paper presents the first systematic study of the joint effects of "quantization + cache" acceleration mechanisms. It identifies that the superposition of these two techniques compromises the sample effectiveness of PTQ calibration sets and amplifies exposure bias in the sampling distribution. It proposes Temperatu
+  [ICLR 2026][Model Compression][Post-Training Quantization] This paper presents the first systematic study of the joint effects of "quantization + cache" acceleration mechanisms. It identifies that the superposition of these two techniques compromises the sample effectiveness of PTQ calibration sets and amplifies exposure bias in the sampling distribution. It proposes Temperature-Aware Parallel Clustering (TAP) to re-select calibration samples and training-free Variance Compen…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Post-Training Quantization"
+  - "Feature Cache"
+  - "Diffusion Models"
+  - "Calibration Dataset"
+  - "Exposure Bias"
 date: 2026-05-08
-content_hash: 9900e1cf1950bf3b
+content_hash: 2f8cf9bc027fe691
 ---
+
 # Q&C: When Quantization Meets Cache in Efficient Generation
 
 **Conference**: ICLR 2026  
@@ -124,6 +129,7 @@ ImageNet 256×256, W8A8, 50 steps, baseline = PTQ4DiT + Learn-to-Cache:
 - Value: ⭐⭐⭐⭐⭐ Provides a reusable diagnostic and governance paradigm for stacking multiple acceleration mechanisms.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -131,8 +137,8 @@ ImageNet 256×256, W8A8, 50 steps, baseline = PTQ4DiT + Learn-to-Cache:
 - [\[ICLR 2026\] PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models](ptq4arvg_post-training_quantization_for_autoregressive_visual_generation_models.md)
 - [\[ICLR 2026\] LookaheadKV: Fast and Accurate KV Cache Eviction by Glimpsing into the Future without Generation](lookaheadkv_fast_and_accurate_kv_cache_eviction_by_glimpsing_into_the_future_wit.md)
 - [\[ICLR 2026\] LightMem: Lightweight and Efficient Memory-Augmented Generation](lightmem_lightweight_and_efficient_memory-augmented_generation.md)
+- [\[ICLR 2026\] SSDi8: Accurate and Efficient 8-bit Quantization for State Space Duality](ssdi8_accurate_and_efficient_8-bit_quantization_for_state_space_duality.md)
 - [\[ICLR 2026\] ParoQuant: Pairwise Rotation Quantization for Efficient Reasoning LLM Inference](paroquant_pairwise_rotation_quantization_for_efficient_reasoning_llm_inference.md)
-- [\[ICLR 2026\] PM-KVQ: Progressive Mixed-Precision KV Cache Quantization for Long-CoT LLMs](pm-kvq_progressive_mixed-precision_kv_cache_quantization_for_long-cot_llms.md)
 
 </div>
 

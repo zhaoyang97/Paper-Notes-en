@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Efficient Hyperparameter Optimization for LLM Reinforcement Learning
 description: >-
-  [ACL 2026][Reinforcement Learning][Bayesian Optimization] This paper proposes JF-HPO, which integrates small intra-family proxy models, training step fidelity, training dynamic early stopping, and checkpoint reuse into a Bayesian HPO framework. This approach finds more stable hyperparameters for LLM reinforcement learning at a lower cost and outperforms VeRL Recipe, Random Se
+  [ACL2026][Reinforcement Learning][LLM Reinforcement Learning] This paper proposes JF-HPO, which integrates small intra-family proxy models, training step fidelity, training dynamic early stopping, and checkpoint reuse into a Bayesian HPO framework. This approach finds more stable hyperparameters for LLM reinforcement learning at a lower cost and outperforms VeRL Recipe, Random Search, and BOHB across multiple reasoning tasks.
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Bayesian Optimization
-  - GRPO
+  - "ACL2026"
+  - "Reinforcement Learning"
+  - "LLM Reinforcement Learning"
+  - "Hyperparameter Optimization"
+  - "Bayesian Optimization"
+  - "Multi-fidelity Search"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 8f1c64ff6ff7dfc2
+content_hash: a4dd464f30976401
 ---
+
 # Efficient Hyperparameter Optimization for LLM Reinforcement Learning
 
 **Conference**: ACL2026  
@@ -145,10 +149,10 @@ Ablations on GSM8K with Qwen-2.5 7B show all three components are effective, wit
 ## Related Papers
 
 - [\[ACL 2026\] DPEPO: Diverse Parallel Exploration Policy Optimization for LLM-based Agents](dpepo_diverse_parallel_exploration_policy_optimization_for_llm-based_agents.md)
+- [\[ICLR 2026\] Parameter-Efficient Reinforcement Learning using Prefix Optimization](../../ICLR2026/reinforcement_learning/parameter-efficient_reinforcement_learning_using_prefix_optimization.md)
+- [\[ICLR 2026\] Prompt Curriculum Learning for Efficient LLM Post-Training](../../ICLR2026/reinforcement_learning/prompt_curriculum_learning_for_efficient_llm_post-training.md)
 - [\[ACL 2026\] LearnAlign: Data Selection for LLM Reinforcement Learning with Improved Gradient Alignment](learnalign_data_selection_for_llm_reinforcement_learning_with_improved_gradient_.md)
-- [\[ICML 2026\] Revisiting Regularized Policy Optimization for Stable and Efficient Reinforcement Learning in Two-Player Games](../../ICML2026/reinforcement_learning/revisiting_regularized_policy_optimization_for_stable_and_efficient_reinforcemen.md)
-- [\[ICLR 2026\] FAPO: Flawed-Aware Policy Optimization for Efficient and Reliable Reasoning](../../ICLR2026/reinforcement_learning/fapo_flawed-aware_policy_optimization_for_efficient_and_reliable_reasoning.md)
-- [\[ICLR 2026\] QuRL: Efficient Reinforcement Learning with Quantized Rollout](../../ICLR2026/reinforcement_learning/qurl_efficient_reinforcement_learning_with_quantized_rollout.md)
+- [\[ACL 2026\] Visually-Guided Policy Optimization for Multimodal Reasoning](visually-guided_policy_optimization_for_multimodal_reasoning.md)
 
 </div>
 

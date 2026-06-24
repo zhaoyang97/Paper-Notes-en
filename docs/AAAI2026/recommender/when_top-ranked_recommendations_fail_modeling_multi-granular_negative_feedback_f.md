@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] When Top-ranked Recommendations Fail: Modeling Multi-Granular Negative Feedback for Explainable and Robust Video Recommendation
 description: >-
-  [AAAI 2026][Recommender Systems][Negative feedback modeling] This paper proposes ENF (Explainable Negative Feedback), a framework comprising three collaborative MLLM Agents (Profile Agent, Video Agent…
+  [AAAI 2026][Recommender Systems][Negative feedback modeling] This paper proposes ENF (Explainable Negative Feedback), a framework comprising three collaborative MLLM Agents (Profile Agent, Video Agent, and Reason Agent) and a progressive S-GRPO reinforcement learning training strategy. ENF is the first approach to achieve explainable prediction and root-cause analysis of implicit negative feedback in video recommendation systems. Deployed on Tencent's news platform…
 tags:
   - "AAAI 2026"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "MLLM Agent"
   - "reinforcement learning"
 date: 2026-05-08
-content_hash: f28167e498fd38ea
+content_hash: 8a8c6dd4b35e4d5a
 ---
 
 # When Top-ranked Recommendations Fail: Modeling Multi-Granular Negative Feedback for Explainable and Robust Video Recommendation
@@ -213,10 +213,10 @@ Implicit feedback prediction is substantially harder than explicit feedback (pea
 
 ## Related Papers
 
-- [\[AAAI 2026\] Behavior Tokens Speak Louder: Disentangled Explainable Recommendation with Behavior Vocabulary](behavior_tokens_speak_louder_disentangled_explainable_recommendation_with_behavi.md)
 - [\[AAAI 2026\] Semi-Supervised Synthetic Data Generation with Fine-Grained Relevance Control for Short Video Search Relevance Modeling](semi-supervised_synthetic_data_generation_with_fine-grained_relevance_control_fo.md)
 - [\[AAAI 2026\] Tokenize Once, Recommend Anywhere: Unified Item Tokenization for Multi-domain LLM-based Recommendation](tokenize_once_recommend_anywhere_unified_item_tokenization_for_multi-domain_llm-.md)
-- [\[AAAI 2026\] Align³GR: Unified Multi-Level Alignment for LLM-based Generative Recommendation](align3gr_unified_multi-level_alignment_for_llm-based_generat.md)
+- [\[AAAI 2026\] Behavior Tokens Speak Louder: Disentangled Explainable Recommendation with Behavior Vocabulary](behavior_tokens_speak_louder_disentangled_explainable_recommendation_with_behavi.md)
+- [\[ACL 2025\] GRAM: Generative Recommendation via Semantic-aware Multi-granular Late Fusion](../../ACL2025/recommender/gram_generative_recommendation.md)
 - [\[AAAI 2026\] Length-Adaptive Interest Network for Balancing Long and Short Sequence Modeling in CTR Prediction](length-adaptive_interest_network_for_balancing_long_and_short_sequence_modeling_.md)
 
 </div>

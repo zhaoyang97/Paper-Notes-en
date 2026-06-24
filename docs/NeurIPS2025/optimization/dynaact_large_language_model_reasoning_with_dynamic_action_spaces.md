@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DynaAct: Large Language Model Reasoning with Dynamic Action Spaces
 description: >-
-  [NeurIPS 2025][Optimization][Dynamic Action Space] DynaAct frames action space construction in LLM reasoning as a subset selection problem…
+  [NeurIPS 2025][Optimization][Dynamic Action Space] DynaAct frames action space construction in LLM reasoning as a subset selection problem, dynamically assembling a compact action space at each step via a submodular function that balances utility and diversity. It outperforms rStar, RAP, and other baselines on 6 benchmarks, surpassing rStar by 6.8% on MATH-500.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "LLM Reasoning"
   - "Subset Selection"
 date: 2026-05-08
-content_hash: b53dada985f3cbcb
+content_hash: c149933376e3bb88
 ---
 
 # DynaAct: Large Language Model Reasoning with Dynamic Action Spaces

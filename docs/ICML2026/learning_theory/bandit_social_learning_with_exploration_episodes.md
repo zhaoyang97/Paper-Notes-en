@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bandit Social Learning with Exploration Episodes
 description: >-
-  [ICML 2026][learning_theory][Paper Note] This paper investigates the social learning dynamics of bandits where "each selfish agent controls a short sequence of decisions (episode)." It proves that even if agents spontaneously explore within their own episodes, **exploration at the aggregate level still fails**. For any episode length $m \geq 2$ and any aggreg
+  [ICML2026][Learning Theory][Greedy Algorithm] This paper investigates the social learning dynamics of bandits where "each selfish agent controls a short sequence of decisions (episode)." It proves that even if agents spontaneously explore within their own episodes, **exploration at the aggregate level still fails**. For any episode length $m \geq 2$ and any aggregate utility function $f$ (such as sum, max, or min), learning failure occurs with positive probability…
 tags:
-  - ICML 2026
-  - learning_theory
+  - "ICML2026"
+  - "Learning Theory"
+  - "Multi-armed Bandits"
+  - "Social Learning"
+  - "Greedy Algorithm"
+  - "Exploration Failure"
+  - "Bayesian Regret"
 date: 2026-05-08
-content_hash: f91f65687f886cca
+content_hash: 1137bad696b0f4f4
 ---
+
 # Bandit Social Learning with Exploration Episodes
 
 **Conference**: ICML2026  
@@ -132,10 +138,10 @@ This is a theoretical paper without numerical experiments. The "results" are a s
 ## Related Papers
 
 - [\[ICLR 2026\] Bandit Learning in Matching Markets Robust to Adversarial Corruptions](../../ICLR2026/learning_theory/bandit_learning_in_matching_markets_robust_to_adversarial_corruptions.md)
+- [\[ICLR 2026\] Laplacian Kernelized Bandit](../../ICLR2026/learning_theory/laplacian_kernelized_bandit.md)
+- [\[ICML 2026\] Cutting LLM Evaluation Costs with SySRs: A Bandit Algorithm that Provably Exploits Model Similarity](cutting_llm_evaluation_costs_with_sysrs_a_bandit_algorithm_that_provably_exploit.md)
 - [\[NeurIPS 2025\] Infrequent Exploration in Linear Bandits](../../NeurIPS2025/learning_theory/infrequent_exploration_in_linear_bandits.md)
 - [\[ICML 2025\] Learning-Augmented Algorithms for MTS with Bandit Access to Multiple Predictors](../../ICML2025/learning_theory/learning-augmented_algorithms_for_mts_with_bandit_access_to_multiple_predictors.md)
-- [\[ICML 2026\] Cutting LLM Evaluation Costs with SySRs: A Bandit Algorithm that Provably Exploits Model Similarity](cutting_llm_evaluation_costs_with_sysrs_a_bandit_algorithm_that_provably_exploit.md)
-- [\[ICML 2026\] Performative Learning Theory](performative_learning_theory.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Accelerating Inference for Multilayer Neural Networks with Quantum Computers
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] This paper presents the **first fully-coherent** quantum implementation of multilayer neural networks—transferring ResNet-style multi-filter 2D convolutions, non-linear activations, skip connections, and layer normalization entirely onto quantum circuits without intermediate measurements. Under three quantum data acces
+  [ICLR2026][Physics & Scientific Computing][Quantum computing] This paper presents the **first fully-coherent** quantum implementation of multilayer neural networks—transferring ResNet-style multi-filter 2D convolutions, non-linear activations, skip connections, and layer normalization entirely onto quantum circuits without intermediate measurements. Under three quantum data access assumptions, it proves end-to-end inference complexities ranging from quadratic and quartic spee…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR2026"
+  - "Physics & Scientific Computing"
+  - "Quantum computing"
+  - "Neural network inference"
+  - "Block encoding"
+  - "Residual networks"
+  - "Complexity proof"
 date: 2026-05-08
-content_hash: 6f7582e71fc13481
+content_hash: a43681b3b01c93e5
 ---
+
 # Accelerating Inference for Multilayer Neural Networks with Quantum Computers
 
 **Conference**: ICLR2026  

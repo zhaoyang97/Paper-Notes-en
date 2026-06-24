@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] End-to-End Multi-Modal Diffusion Mamba
 description: >-
-  [ICCV 2025][Image Generation][Multimodal Models] This paper proposes Multi-Modal Diffusion Mamba (MDM), an end-to-end multimodal model based on the Mamba architecture. By employing a unified VAE encoder-decoder and a mul…
+  [ICCV 2025][Image Generation][Multimodal Models] This paper proposes Multi-Modal Diffusion Mamba (MDM), an end-to-end multimodal model based on the Mamba architecture. By employing a unified VAE encoder-decoder and a multi-step selective diffusion model, MDM enables simultaneous generation of images and text with computational complexity $\mathcal{O}(MLN^2)$, surpassing existing end-to-end models on tasks including image generation, image captioning, and VQA.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "End-to-End Generation"
   - "State Space Models"
 date: 2026-05-08
-content_hash: c16a191133148493
+content_hash: f2dbe42211e47258
 ---
 
 # End-to-End Multi-Modal Diffusion Mamba
@@ -185,7 +185,7 @@ Computational Complexity Comparison:
 - [\[ICCV 2025\] REPA-E: Unlocking VAE for End-to-End Tuning with Latent Diffusion Transformers](repa-e_unlocking_vae_for_end-to-end_tuning_of_latent_diffusion_transformers.md)
 - [\[CVPR 2026\] DeCo: Frequency-Decoupled Pixel Diffusion for End-to-End Image Generation](../../CVPR2026/image_generation/deco_frequency-decoupled_pixel_diffusion_for_end-to-end_image_generation.md)
 - [\[NeurIPS 2025\] LinEAS: End-to-end Learning of Activation Steering with a Distributional Loss](../../NeurIPS2025/image_generation/lineas_end-to-end_learning_of_activation_steering_with_a_distributional_loss.md)
-- [\[ICCV 2025\] MamTiff-CAD: Multi-Scale Latent Diffusion with Mamba+ for Complex Parametric Sequence](mamtiff-cad_multi-scale_latent_diffusion_with_mamba_for_complex_parametric_seque.md)
+- [\[CVPR 2026\] SpeeDiff: Scalable Pixel-Anchored End-to-End Latent Diffusion Model](../../CVPR2026/image_generation/speediff_scalable_pixel-anchored_end-to-end_latent_diffusion_model.md)
 - [\[ICML 2026\] End-to-End Autoregressive Image Generation with 1D Semantic Tokenizer](../../ICML2026/image_generation/end-to-end_autoregressive_image_generation_with_1d_semantic_tokenizer.md)
 
 </div>

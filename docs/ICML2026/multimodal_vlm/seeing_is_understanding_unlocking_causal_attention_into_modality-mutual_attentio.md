@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Seeing is Understanding: Unlocking Causal Attention into Modality-Mutual Attention for Multimodal LLMs
 description: >-
-  [ICML 2026][Multimodal VLM][MLLM] The authors modify the causal attention mask in decoder-only MLLMs by "digging a hole" that allows preceding image tokens to retrospectively attend to subsequent text question tokens. This single-line mask modification requires no extra parameters or training data changes, achieving an average improvement of 6.2 points
+  [ICML 2026][Multimodal VLM][MLLM] The authors modify the causal attention mask in decoder-only MLLMs by "digging a hole" that allows preceding image tokens to retrospectively attend to subsequent text question tokens. This single-line mask modification requires no extra parameters or training data changes, achieving an average improvement of 6.2 points across 3 LLM backbones and 12 multimodal benchmarks.
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - MLLM
-  - Attention
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "MLLM"
+  - "Attention Mechanism"
+  - "Cross-modality Alignment"
+  - "Hallucination Mitigation"
+  - "Causal Mask"
 date: 2026-05-08
-content_hash: dae9ca5c980fa441
+content_hash: b1b9df87dd394153
 ---
+
 # Seeing is Understanding: Unlocking Causal Attention into Modality-Mutual Attention for Multimodal LLMs
 
 **Conference**: ICML 2026  
@@ -110,15 +114,14 @@ The gain is most significant in vision-centric (CV-Bench, RealWorldQA) and hallu
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] RAR: Reversing Visual Attention Re-Sinking for Unlocking Potential in Multimodal Large Language Models](../../ICLR2026/multimodal_vlm/rar_reversing_visual_attention_re-sinking_for_unlocking_potential_in_multimodal_.md)
+- [\[ICLR 2026\] Rethinking Causal Mask Attention for Vision-Language Inference](../../ICLR2026/multimodal_vlm/rethinking_causal_mask_attention_for_vision-language_inference.md)
 - [\[ICML 2026\] Smoothing Slot Attention Iterations and Recurrences](smoothing_slot_attention_iterations_and_recurrences.md)
-- [\[ICML 2026\] Large Vision-Language Models Get Lost in Attention](large_vision-language_models_get_lost_in_attention.md)
-- [\[ICML 2025\] MODA: MOdular Duplex Attention for Multimodal Perception, Cognition, and Emotion Understanding](../../ICML2025/multimodal_vlm/moda_modular_duplex_attention_for_multimodal_perception_cognition_and_emotion_un.md)
 - [\[ICML 2026\] Hyper-ICL: Attention Calibration with Hyperbolic Anchor Distillation for Multimodal ICL](hyper-icl_attention_calibration_with_hyperbolic_anchor_distillation_for_multimod.md)
-- [\[ICLR 2026\] Constructive Distortion: Improving MLLMs with Attention-Guided Image Warping](../../ICLR2026/multimodal_vlm/constructive_distortion_improving_mllms_with_attention-guided_image_warping.md)
+- [\[ICML 2026\] Large Vision-Language Models Get Lost in Attention](large_vision-language_models_get_lost_in_attention.md)
 
 </div>
 

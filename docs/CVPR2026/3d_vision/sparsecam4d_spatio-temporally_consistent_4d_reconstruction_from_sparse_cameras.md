@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SparseCam4D: Spatio-Temporally Consistent 4D Reconstruction from Sparse Cameras
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] SparseCam4D is proposed as the first method to achieve 4D reconstruction from sparse cameras (2-3) on standard multi-camera dynamic scene benchmarks. The core innovation is the Spatio-Temporal Distortion Field (STDF), which explicitly models spatio-temporal inconsistencies in generative observations and decouples them
+  [CVPR 2026][3D Vision][Sparse camera 4D reconstruction] SparseCam4D is proposed as the first method to achieve 4D reconstruction from sparse cameras (2-3) on standard multi-camera dynamic scene benchmarks. The core innovation is the Spatio-Temporal Distortion Field (STDF), which explicitly models spatio-temporal inconsistencies in generative observations and decouples them from the canonical 4D Gaussian representation, achieving high-fidelity and spatio-temporally consistent…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Sparse camera 4D reconstruction"
+  - "spatio-temporal distortion field"
+  - "4D Gaussian Splatting"
+  - "video diffusion models"
+  - "dynamic scenes"
 date: 2026-05-08
-content_hash: ea4b248ce08a74e8
+content_hash: d72d61268641117c
 ---
+
 # SparseCam4D: Spatio-Temporally Consistent 4D Reconstruction from Sparse Cameras
 
 **Conference**: CVPR 2026  
@@ -161,11 +167,11 @@ Removing pose optimization: LPIPS increased from 0.264 to 0.336 (Train) and 0.17
 
 ## Related Papers
 
-- [\[CVPR 2026\] 4D Reconstruction from Sparse Dynamic Cameras](4d_reconstruction_from_sparse_dynamic_cameras.md)
 - [\[CVPR 2026\] Mark4D: Temporally-Consistent Watermarking for 4D Gaussian Splatting](mark4d_temporally-consistent_watermarking_for_4d_gaussian_splatting.md)
+- [\[CVPR 2026\] ST4R-Splat: Spatio-Temporal Referring Segmentation in 4D Gaussian Splatting](st4r-splat_spatio-temporal_referring_segmentation_in_4d_gaussian_splatting.md)
+- [\[CVPR 2026\] DetAny4D: Detect Anything 4D Temporally in a Streaming RGB Video](detany4d_detect_anything_4d_temporally_in_a_streaming_rgb_video.md)
 - [\[CVPR 2026\] 4D Primitive-Mâché: Glueing Primitives for Persistent 4D Scene Reconstruction](4d_primitive-mache_glueing_primitives_for_persistent_4d_scene_reconstruction.md)
 - [\[CVPR 2026\] Complet4R: Geometric Complete 4D Reconstruction](complet4r_geometric_complete_4d_reconstruction.md)
-- [\[CVPR 2026\] BulletGen: Improving 4D Reconstruction with Bullet-Time Generation](bulletgen_improving_4d_reconstruction_with_bullet-time_generation.md)
 
 </div>
 

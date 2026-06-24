@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] LIMOPro: Reasoning Refinement for Efficient and Effective Test-time Scaling
 description: >-
-  [NeurIPS 2025][LLM Reasoning][reasoning refinement] This paper proposes PIR (Perplexity-based Importance Refinement), a framework that categorizes reasoning chains distilled from LRMs into "progressive reasoning" and "fu…
+  [NeurIPS 2025][Reasoning][reasoning refinement] This paper proposes PIR (Perplexity-based Importance Refinement), a framework that categorizes reasoning chains distilled from LRMs into "progressive reasoning" and "functional steps" (verification / multi-method validation / error correction), and prunes only functional steps with low PIR scores while preserving the progressive reasoning backbone intact. Fine-tuning on the refined data improves accuracy by 0.9%–6.6% on AIME/AMC…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "reasoning refinement"
   - "chain-of-thought"
   - "perplexity-based pruning"
@@ -13,7 +13,7 @@ tags:
   - "efficient reasoning"
   - "PIR"
 date: 2026-05-08
-content_hash: 5843fb3192eb594f
+content_hash: e354423b185764fd
 ---
 
 # LIMOPro: Reasoning Refinement for Efficient and Effective Test-time Scaling
@@ -103,10 +103,10 @@ The PIR framework consists of a four-stage pipeline:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Rethinking Optimal Verification Granularity for Compute-Efficient Test-Time Scaling](rethinking_optimal_verification_granularity_for_compute-efficient_test-time_scal.md)
-- [\[NeurIPS 2025\] Sampling-Efficient Test-Time Scaling: Self-Estimating the Best-of-N Sampling in Early Decoding](sampling-efficient_test-time_scaling_self-estimating_the_best-of-n_sampling_in_e.md)
 - [\[ICLR 2026\] Plan and Budget: Effective and Efficient Test-Time Scaling on Reasoning LLMs](../../ICLR2026/llm_reasoning/plan_and_budget_effective_and_efficient_test-time_scaling_on_reasoning_large_lan.md)
 - [\[NeurIPS 2025\] Atom of Thoughts for Markov LLM Test-Time Scaling](atom_of_thoughts_for_markov_llm_testtime_scaling.md)
 - [\[NeurIPS 2025\] Towards Thinking-Optimal Scaling of Test-Time Compute for LLM Reasoning](towards_thinking-optimal_scaling_of_test-time_compute_for_llm_reasoning.md)
+- [\[NeurIPS 2025\] Does Thinking More Always Help? Mirage of Test-Time Scaling in Reasoning Models](does_thinking_more_always_help_mirage_of_test-time_scaling_in_reasoning_models.md)
 
 </div>
 

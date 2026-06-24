@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Constrained Particle Seeking: Solving Diffusion Inverse Problems with Just Forward Passes
 description: >-
-  [AAAI 2026][Image Generation][Diffusion Models] This paper proposes Constrained Particle Seeking (CPS), a gradient-free method for solving diffusion model inverse problems. CPS constructs a locally linear surrogate of th…
+  [AAAI 2026][Image Generation][Diffusion Models] This paper proposes Constrained Particle Seeking (CPS), a gradient-free method for solving diffusion model inverse problems. CPS constructs a locally linear surrogate of the forward process using all candidate particles, then seeks the optimal particle under a hyperspherical constraint within the high-density region of the transition kernel, achieving performance competitive with gradient-based methods.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Particle Optimization"
   - "Constrained Optimization"
 date: 2026-05-08
-content_hash: b8bce44a978abf75
+content_hash: bff444b372fbf263
 ---
 
 # Constrained Particle Seeking: Solving Diffusion Inverse Problems with Just Forward Passes
@@ -178,11 +178,11 @@ CPS also demonstrates significant advantages on scientific inverse problems (bla
 
 ## Related Papers
 
+- [\[ICML 2025\] Integrating Intermediate Layer Optimization and Projected Gradient Descent for Solving Inverse Problems with Diffusion Models](../../ICML2025/image_generation/integrating_intermediate_layer_optimization_and_projected_gradient_descent_for_s.md)
+- [\[ICLR 2026\] Contrastive Diffusion Guidance for Spatial Inverse Problems](../../ICLR2026/image_generation/contrastive_diffusion_guidance_for_spatial_inverse_problems.md)
 - [\[NeurIPS 2025\] A Gradient Flow Approach to Solving Inverse Problems with Latent Diffusion Models](../../NeurIPS2025/image_generation/a_gradient_flow_approach_to_solving_inverse_problems_with_latent_diffusion_model.md)
 - [\[ICML 2026\] Saving Foundation Flow-Matching Priors for Inverse Problems](../../ICML2026/image_generation/saving_foundation_flow-matching_priors_for_inverse_problems.md)
-- [\[ICCV 2025\] Unsupervised Imaging Inverse Problems with Diffusion Distribution Matching](../../ICCV2025/image_generation/unsupervised_imaging_inverse_problems_with_diffusion_distribution_matching.md)
-- [\[ICML 2026\] Zeroth-Order Non-Log-Concave Sampling with Variance Reduction and Applications to Inverse Problems](../../ICML2026/image_generation/zeroth-order_non-log-concave_sampling_with_variance_reduction_and_applications_t.md)
-- [\[ICCV 2025\] FlowDPS: Flow-Driven Posterior Sampling for Inverse Problems](../../ICCV2025/image_generation/flowdps_flow-driven_posterior_sampling_for_inverse_problems.md)
+- [\[CVPR 2025\] Improving Diffusion Inverse Problem Solving with Decoupled Noise Annealing](../../CVPR2025/image_generation/improving_diffusion_inverse_problem_solving_with_decoupled_noise_annealing.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Representation-Based Exploration for Language Models: From Test-Time to Post-Training
 description: >-
-  [ICLR 2026][Reinforcement Learning][pass@k] Ours proposes RepExp: an "elliptical diversity bonus" constructed from a pretrained language model's own hidden states to explicitly incentivize exploration. It is first validated on a clean "test-time selection" testbed, then integrated into GRPO post-training. Results demonstrate a 50%+ improvement in verifier effici
+  [ICLR 2026][Reinforcement Learning][Exploration] Ours proposes RepExp: an "elliptical diversity bonus" constructed from a pretrained language model's own hidden states to explicitly incentivize exploration. It is first validated on a clean "test-time selection" testbed, then integrated into GRPO post-training. Results demonstrate a 50%+ improvement in verifier efficiency at test-time and the complete elimination of the common RL phenomenon where "pass@k collapses at large k"…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - pass@k
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Exploration"
+  - "Elliptical Bonus"
+  - "Diversity"
+  - "pass@k"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 9dc911f277ed2600
+content_hash: 73ec1eed3baa466c
 ---
+
 # Representation-Based Exploration for Language Models: From Test-Time to Post-Training
 
 **Conference**: ICLR 2026  
@@ -161,10 +165,10 @@ Post-training pass@k (Figure 2, Sample efficiency relative to base model):
 ## Related Papers
 
 - [\[ICLR 2026\] Post-training Large Language Models for Diverse High-Quality Responses](post-training_large_language_models_for_diverse_high-quality_responses.md)
+- [\[ICLR 2026\] Risk-Sensitive Reinforcement Learning for Alleviating Exploration Dilemmas in Large Language Models](risk-sensitive_reinforcement_learning_for_alleviating_exploration_dilemmas_in_la.md)
 - [\[ICLR 2026\] Spectral Bellman Method: Unifying Representation and Exploration in RL](spectral_bellman_method_unifying_representation_and_exploration_in_rl.md)
 - [\[ICLR 2026\] Prompt Curriculum Learning for Efficient LLM Post-Training](prompt_curriculum_learning_for_efficient_llm_post-training.md)
 - [\[ICLR 2026\] Thinking on the Fly: Test-Time Reasoning Enhancement via Latent Thought Policy Optimization](thinking_on_the_fly_test-time_reasoning_enhancement_via_latent_thought_policy_op.md)
-- [\[ICLR 2026\] Using Reinforcement Learning to Train Large Language Models to Explain Human Decisions](using_reinforcement_learning_to_train_large_language_models_to_explain_human_dec.md)
 
 </div>
 

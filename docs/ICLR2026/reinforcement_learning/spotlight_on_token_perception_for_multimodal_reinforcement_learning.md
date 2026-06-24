@@ -4,12 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Reinforcement Learning][RLVR] This paper proposes Visually-Perceptive Policy Optimization (VPPO), which quantifies the vision dependency of each token to refine learning signals at both the trajectory and token levels, significantly enhancing the multimodal reasoning capabilities of Large Vision-Language Models.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Multimodal Reasoning"
+  - "Token Perception"
+  - "Vision Dependency"
+  - "Policy Optimization"
 date: 2026-05-08
-content_hash: 5080fd462e9cafef
+content_hash: ff2a55aa58b1500d
 ---
+
 # Spotlight on Token Perception for Multimodal Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -143,11 +148,11 @@ The authors further provide a variance reduction theorem $\text{Var}(\mathbf{g}_
 
 ## Related Papers
 
-- [\[ICLR 2026\] Masked Skill Token Training for Hierarchical Off-Dynamics Transfer](masked_skill_token_training_for_hierarchical_off-dynamics_transfer.md)
+- [\[ICLR 2026\] LaSeR: Reinforcement Learning with Last-Token Self-Rewarding](laser_reinforcement_learning_with_last-token_self-rewarding.md)
+- [\[ICLR 2026\] Token Hidden Reward: Steering Exploration-Exploitation in Group Relative Deep Reinforcement Learning](token_hidden_reward_steering_exploration-exploitation_in_group_relative_deep_rei.md)
 - [\[ICLR 2026\] Sparse but Critical: A Token-Level Analysis of Distributional Shifts in RLVR Fine-Tuning of LLMs](sparse_but_critical_a_token-level_analysis_of_distributional_shifts_in_rlvr_fine.md)
 - [\[ICLR 2026\] R1-Reward: Training Multimodal Reward Model Through Stable Reinforcement Learning](r1-reward_training_multimodal_reward_model_through_stable_reinforcement_learning.md)
-- [\[ICLR 2026\] ResT: Reshaping Token-Level Policy Gradients for Tool-Use Large Language Models](rest_reshaping_token-level_policy_gradients_for_tool-use_large_language_models.md)
-- [\[ICLR 2026\] From Narrow to Panoramic Vision: Attention-Guided Cold-Start Reshapes Multimodal Reasoning](from_narrow_to_panoramic_vision_attention-guided_cold-start_reshapes_multimodal_.md)
+- [\[ICLR 2026\] Masked Skill Token Training for Hierarchical Off-Dynamics Transfer](masked_skill_token_training_for_hierarchical_off-dynamics_transfer.md)
 
 </div>
 

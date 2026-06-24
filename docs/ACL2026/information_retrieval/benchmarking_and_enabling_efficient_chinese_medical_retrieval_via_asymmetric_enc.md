@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Benchmarking and Enabling Efficient Chinese Medical Retrieval via Asymmetric Encoders
 description: >-
-  [ACL 2026][Information Retrieval & RAG][RAG] This paper proposes CMedTEB (Chinese Medical Text Embedding Benchmark) and CARE (Asymmetric Retrieval Framework). The former establishes a high-quality Chinese medical retrieval/reranking/STS benchmark through multi-LLM voting and expert validation. The latter utilizes an asymmetric architecture with a lightweight BERT
+  [ACL 2026][Information Retrieval & RAG][Medical Text Retrieval] This paper proposes CMedTEB (Chinese Medical Text Embedding Benchmark) and CARE (Asymmetric Retrieval Framework). The former establishes a high-quality Chinese medical retrieval/reranking/STS benchmark through multi-LLM voting and expert validation. The latter utilizes an asymmetric architecture with a lightweight BERT for query encoding and a large LLM for document encoding, achieving LLM-level retrieval precisi…
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - RAG
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Medical Text Retrieval"
+  - "Asymmetric Encoders"
+  - "Chinese Medical Benchmark"
+  - "Embedding Model"
+  - "RAG"
 date: 2026-05-08
-content_hash: 3861895fcde8a00c
+content_hash: f282f5c50fb2f1d2
 ---
+
 # Benchmarking and Enabling Efficient Chinese Medical Retrieval via Asymmetric Encoders
 
 **Conference**: ACL 2026  
@@ -133,8 +138,8 @@ Direct joint training of two heterogeneous encoders of vastly different sizes ca
 - [\[ACL 2026\] ChunQiuTR: Time-Keyed Temporal Retrieval in Classical Chinese Annals](chunqiutr_time-keyed_temporal_retrieval_in_classical_chinese_annals.md)
 - [\[ACL 2026\] AuthorityBench: Benchmarking LLM Authority Perception for Reliable Retrieval-Augmented Generation](authoritybench_benchmarking_llm_authority_perception_for_reliable_retrieval-augm.md)
 - [\[AAAI 2026\] ComLQ: Benchmarking Complex Logical Queries in Information Retrieval](../../AAAI2026/information_retrieval/comlq_benchmarking_complex_logical_queries_in_information_retrieval.md)
-- [\[ICLR 2026\] Beyond RAG vs. Long-Context: Learning Distraction-Aware Retrieval for Efficient Knowledge Grounding](../../ICLR2026/information_retrieval/beyond_rag_vs_long-context_learning_distraction-aware_retrieval_for_efficient_kn.md)
-- [\[ICML 2026\] LazyAttention: Efficient Retrieval-Augmented Generation with Deferred Positional Encoding](../../ICML2026/information_retrieval/lazyattention_efficient_retrieval-augmented_generation_with_deferred_positional_.md)
+- [\[ICLR 2026\] BTZSC: A Benchmark for Zero-Shot Text Classification Across Cross-Encoders, Embedding Models, Rerankers and LLMs](../../ICLR2026/information_retrieval/btzsc_a_benchmark_for_zero-shot_text_classification_across_cross-encoders_embedd.md)
+- [\[ICLR 2026\] Robust Test-Time Video-Text Retrieval: Benchmarking and Adapting for Query Shifts](../../ICLR2026/information_retrieval/robust_test-time_video-text_retrieval_benchmarking_and_adapting_for_query_shifts.md)
 
 </div>
 

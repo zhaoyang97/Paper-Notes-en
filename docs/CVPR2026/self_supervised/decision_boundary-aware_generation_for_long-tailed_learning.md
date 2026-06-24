@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Decision Boundary-aware Generation for Long-tailed Learning
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Aiming at the problem where using "diffusion models + head-to-tail feature transfer" to supplement long-tail data implicitly leaks head-class features into tail-classes and blurs decision boundaries, this paper first quantifies "boundary ambiguity" using three metrics. It then proposes DBG: using adversarial de-classif
+  [CVPR 2026][Self-Supervised Learning][Long-tailed Recognition] Aiming at the problem where using "diffusion models + head-to-tail feature transfer" to supplement long-tail data implicitly leaks head-class features into tail-classes and blurs decision boundaries, this paper first quantifies "boundary ambiguity" using three metrics. It then proposes DBG: using adversarial de-classification noise to push samples near the decision boundary and relabeling them with the $k$ most co…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Long-tailed Recognition"
+  - "Decision Boundary"
+  - "Diffusion Generative Augmentation"
+  - "Adversarial Examples"
+  - "Data Cleaning"
 date: 2026-05-08
-content_hash: 30f7e098051fc992
+content_hash: 92352b4c6154851b
 ---
+
 # Decision Boundary-aware Generation for Long-tailed Learning
 
 **Conference**: CVPR 2026  
@@ -129,15 +135,15 @@ On CIFAR100-LT, imbalance ratio 100, ResNet-32, retraining the classifier from s
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] CORAL: Disentangling Latent Representations in Long-Tailed Diffusion](../../NeurIPS2025/image_generation/coral_disentangling_latent_representations_in_longtailed_dif.md)
-- [\[CVPR 2026\] Verify Claimed Text-to-Image Models via Boundary-Aware Prompt Optimization](verify_claimed_text-to-image_models_via_boundary-aware_prompt_optimization.md)
-- [\[CVPR 2026\] Attention, May I Have Your Decision? Localizing Generative Choices in Diffusion Models](attention_may_i_have_your_decision_localizing_generative_choices_in_diffusion_mo.md)
-- [\[CVPR 2026\] FabricGen: Microstructure-Aware Woven Fabric Generation](fabricgen_microstructure-aware_woven_fabric_generation.md)
-- [\[CVPR 2026\] Frequency-Aware Flow Matching for High-Quality Image Generation](freqflow_frequency_aware_flow_matching.md)
+- [\[CVPR 2026\] Trust-calibrated Collaborative Learning for Long-Tailed Visual Recognition](trust-calibrated_collaborative_learning_for_long-tailed_visual_recognition.md)
+- [\[CVPR 2026\] CUE: Concept-Aware Multi-Label Expansion to Mitigate Concept Confusion in Long-Tailed Learning](cue_concept-aware_multi-label_expansion_to_mitigate_concept_confusion_in_long-ta.md)
+- [\[CVPR 2026\] Reframing Long-Tailed Learning via Loss Landscape Geometry](reframing_long-tailed_learning_via_loss_landscape_geometry.md)
+- [\[ICLR 2026\] SCAD: Super-Class-Aware Debiasing for Long-Tailed Semi-Supervised Learning](../../ICLR2026/self_supervised/scad_super-class-aware_debiasing_for_long-tailed_semi-supervised_learning.md)
+- [\[CVPR 2026\] AdaPrior: Bayesian-Inspired Adaptive Prior Correction for Long-Tailed Continual Learning](adaprior_bayesian-inspired_adaptive_prior_correction_for_long-tailed_continual_l.md)
 
 </div>
 

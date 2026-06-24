@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] REVISOR: Beyond Textual Reflection, Towards Multimodal Introspective Reasoning in Long-Form Video Understanding
 description: >-
-  [CVPR 2026][Multimodal VLM][Reinforcement Learning] REVISOR upgrades "textual reflection" to "visual reflection"—enabling multimodal large models to propose a specific video segment for re-watching after an initial reasoning pass, call tools to densely resample that segment, and conduct a second-stage reasoning with the new visual evidence; combined with DADR (Dual Attr
+  [CVPR 2026][VLM Reasoning][Long Video Understanding] REVISOR upgrades "textual reflection" to "visual reflection"—enabling multimodal large models to propose a specific video segment for re-watching after an initial reasoning pass, call tools to densely resample that segment, and conduct a second-stage reasoning with the new visual evidence; combined with DADR (Dual Attribution Decoupled Reward) to ensure correct segment selection, it achieves an average improvement of ~2% fo…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Long Video Understanding"
+  - "Multimodal Reflection"
+  - "Tool-augmented Reasoning"
+  - "Reinforcement Learning"
+  - "Video Temporal Grounding"
 date: 2026-05-08
-content_hash: cbed137945dcd535
+content_hash: 124e4719dbdd15e4
 ---
+
 # REVISOR: Beyond Textual Reflection, Towards Multimodal Introspective Reasoning in Long-Form Video Understanding
 
 **Conference**: CVPR 2026  
@@ -141,11 +146,11 @@ Ablation on DADR reward weights (Tab. 3, grey row is base):
 
 ## Related Papers
 
-- [\[CVPR 2026\] MSJoE: Jointly Evolving MLLM and Sampler for Efficient Long-Form Video Understanding](msjoe_jointly_evolving_mllm_and_sampler_for_efficient_long-form_video_understand.md)
-- [\[CVPR 2026\] ReMoRa: Multimodal Large Language Model based on Refined Motion Representation for Long-Video Understanding](remora_multimodal_large_language_model_based_on_refined_motion_representation_fo.md)
-- [\[CVPR 2026\] TimeViper: A Hybrid Mamba-Transformer Vision-Language Model for Efficient Long Video Understanding](timeviper_a_hybrid_mamba-transformer_vision-language_model_for_efficient_long_vi.md)
-- [\[CVPR 2026\] CURVE: A Benchmark for Cultural and Multilingual Long Video Reasoning](curve_a_benchmark_for_cultural_and_multilingual_long_video_reasoning.md)
-- [\[CVPR 2026\] Scaling the Long Video Understanding of Multimodal Large Language Models via Visual Memory Mechanism](scaling_the_long_video_understanding_of_multimodal_large_language_models_via_vis.md)
+- [\[CVPR 2026\] VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding](videoarm_agentic_reasoning_over_hierarchical_memory_for_long-form_video_understa.md)
+- [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
+- [\[ICLR 2026\] TimeSearch-R: Adaptive Temporal Search for Long-Form Video Understanding via Self-Verification Reinforcement Learning](../../ICLR2026/vlm_reasoning/timesearch-r_adaptive_temporal_search_for_long-form_video_understanding_via_self.md)
+- [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](reinforcing_structured_chain-of-thought_for_video_understanding.md)
+- [\[CVPR 2026\] Agentic Video Summarization via Self-Reflecting Multimodal Understanding](agentic_video_summarization_via_self-reflecting_multimodal_understanding.md)
 
 </div>
 

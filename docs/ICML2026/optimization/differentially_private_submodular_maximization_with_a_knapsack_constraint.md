@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Differentially Private Submodular Maximization with a Knapsack Constraint
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] This paper introduces differentially private algorithms for submodular maximization with a knapsack constraint (SMK). For monotone objectives, it achieves the optimal $(1-1/e)$ approximation while improving the additive error from polynomial dependency on $n$ to polylogarithmic dependency and reducing query complexity
+  [ICML 2026][Optimization][Submodular Maximization] This paper introduces differentially private algorithms for submodular maximization with a knapsack constraint (SMK). For monotone objectives, it achieves the optimal $(1-1/e)$ approximation while improving the additive error from polynomial dependency on $n$ to polylogarithmic dependency and reducing query complexity from exponential to polynomial. Additionally, it provides the first DP algorithm with provable guarantees ($1…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML 2026"
+  - "Optimization"
+  - "Submodular Maximization"
+  - "Knapsack Constraint"
+  - "Differential Privacy"
+  - "Approximation Algorithms"
+  - "Combinatorial Optimization"
 date: 2026-05-08
-content_hash: 4d755ee968789a76
+content_hash: 821c3f38cf0a8700
 ---
+
 # Differentially Private Submodular Maximization with a Knapsack Constraint
 
 **Conference**: ICML 2026  
@@ -107,9 +113,9 @@ This is a theoretical work; there is no training. Privacy analysis is built on s
 
 - [\[ICML 2026\] A General Framework for Dynamic Consistent Submodular Maximization](a_general_framework_for_dynamic_consistent_submodular_maximization.md)
 - [\[ICML 2026\] Budget-Feasible Mechanisms for Submodular Welfare Maximization in Procurement Auctions](budget-feasible_mechanisms_for_submodular_welfare_maximization_in_procurement_au.md)
-- [\[NeurIPS 2025\] Online Two-Stage Submodular Maximization](../../NeurIPS2025/optimization/online_two-stage_submodular_maximization.md)
 - [\[NeurIPS 2025\] A Unified Approach to Submodular Maximization Under Noise](../../NeurIPS2025/optimization/a_unified_approach_to_submodular_maximization_under_noise.md)
-- [\[ICLR 2026\] Submodular Function Minimization with Dueling Oracle](../../ICLR2026/optimization/submodular_function_minimization_with_dueling_oracle.md)
+- [\[ICLR 2026\] Efficient Submodular Maximization for Sums of Concave over Modular Functions](../../ICLR2026/optimization/efficient_submodular_maximization_for_sums_of_concave_over_modular_functions.md)
+- [\[NeurIPS 2025\] Online Two-Stage Submodular Maximization](../../NeurIPS2025/optimization/online_two-stage_submodular_maximization.md)
 
 </div>
 

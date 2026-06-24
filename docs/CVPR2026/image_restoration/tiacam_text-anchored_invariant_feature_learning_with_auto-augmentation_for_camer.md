@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] TIACam: Text-Anchored Invariant Feature Learning with Auto-Augmentation for Camera-Robust Zero-Watermarking
 description: >-
-  [CVPR 2026][AI Safety][CLIP] Ours proposes the TIACam framework, which achieves a camera-robust zero-watermarking scheme without modifying image pixels. By employing a learnable auto-augmentor to simulate camera distortions, text-anchored cross-modal adversarial training to learn invariant features, and a zero-watermarking head to bind messages in
+  [CVPR2026][Image Restoration][Zero-watermarking] Ours proposes the TIACam framework, which achieves a camera-robust zero-watermarking scheme without modifying image pixels. By employing a learnable auto-augmentor to simulate camera distortions, text-anchored cross-modal adversarial training to learn invariant features, and a zero-watermarking head to bind messages in the feature space, the method achieves SOTA extraction accuracy in three real-world scenarios: screen re-shoot…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - CLIP
+  - "CVPR2026"
+  - "Image Restoration"
+  - "Zero-watermarking"
+  - "cross-modal alignment"
+  - "learnable data augmentation"
+  - "camera robustness"
+  - "CLIP"
+  - "adversarial training"
+  - "invariant feature learning"
 date: 2026-05-08
-content_hash: cd19f4bd8a588cf1
+content_hash: 921b851dc97e10ad
 ---
+
 # TIACam: Text-Anchored Invariant Feature Learning with Auto-Augmentation for Camera-Robust Zero-Watermarking
 
 **Conference**: CVPR2026  
@@ -157,11 +164,11 @@ For 200 pairs of distinct images generated with the same caption: only the regis
 
 ## Related Papers
 
-- [\[CVPR 2026\] Meta-FC: Meta-Learning with Feature Consistency for Robust and Generalizable Watermarking](meta-fc_meta-learning_with_feature_consistency_for_robust_and_generalizable_wate.md)
-- [\[CVPR 2026\] AdvMark: Decoupling Defense Strategies for Robust Image Watermarking](decoupling_defense_strategies_for_robust_image_watermarking.md)
-- [\[CVPR 2026\] FeatureFool: Zero-Query Fooling of Video Models via Feature Map](featurefool_zero-query_fooling_of_video_models_via_feature_map.md)
-- [\[CVPR 2026\] Hierarchically Robust Zero-shot Vision-language Models](hierarchically_robust_zero-shot_vision-language_models.md)
-- [\[CVPR 2025\] A Simple Data Augmentation for Feature Distribution Skewed Federated Learning](../../CVPR2025/ai_safety/a_simple_data_augmentation_for_feature_distribution_skewed_federated_learning.md)
+- [\[AAAI 2026\] Blur-Robust Detection via Feature Restoration: An End-to-End Framework for Prior-Guided Infrared UAV Target Detection](../../AAAI2026/image_restoration/blur-robust_detection_via_feature_restoration_an_end-to-end_framework_for_prior-.md)
+- [\[CVPR 2026\] DeSpike: Defocus Deblurring and Image Reconstruction for Spike Camera](seeing_through_blur_tackling_defocus_in_spike-based_imaging.md)
+- [\[CVPR 2026\] Edge-Focused Super-Resolution for Omnidirectional Images with Spherical Geometric Augmentation](edge-focused_super-resolution_for_omnidirectional_images_with_spherical_geometri.md)
+- [\[CVPR 2026\] Restore Text First, Enhance Image Later: Two-Stage Scene Text Image Super-Resolution with Glyph Structure Guidance](restore_text_first_enhance_image_later_two-stage_scene_text_image_super-resoluti.md)
+- [\[CVPR 2025\] Classic Video Denoising in a Machine Learning World: Robust, Fast, and Controllable](../../CVPR2025/image_restoration/classic_video_denoising_in_a_machine_learning_world_robust_fast_and_controllable.md)
 
 </div>
 

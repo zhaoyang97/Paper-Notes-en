@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Breaking the Compression Ceiling: Data-Free Pipeline for Ultra-Efficient Delta Compression
 description: >-
-  [NeurIPS 2025][Multimodal VLM][delta compression] This paper proposes UltraDelta — the first data-free delta weight compression pipeline — which achieves compression ratios up to 224× across LLM/NLP/vision/multimodal mod…
+  [NeurIPS 2025][Multimodal VLM][delta compression] This paper proposes UltraDelta — the first data-free delta weight compression pipeline — which achieves compression ratios up to 224× across LLM/NLP/vision/multimodal models without performance degradation and even surpasses fine-tuned models, via three components: variance-guided mixed sparsity allocation, distribution-aware compression, and trace-norm-guided rescaling.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "data-free compression"
   - "multi-task deployment"
 date: 2026-05-08
-content_hash: a19444eac2ea4ae6
+content_hash: d9e706c314adfde1
 ---
 
 # Breaking the Compression Ceiling: Data-Free Pipeline for Ultra-Efficient Delta Compression
@@ -139,11 +139,11 @@ DAC doubles the compression ratio while maintaining performance; MSA and TNGR ea
 
 ## Related Papers
 
-- [\[CVPR 2026\] ApET: Approximation-Error Guided Token Compression for Efficient VLMs](../../CVPR2026/multimodal_vlm/apet_approximation-error_guided_token_compression_for_efficient_vlms.md)
-- [\[ICCV 2025\] AirCache: Activating Inter-modal Relevancy KV Cache Compression for Efficient Large Vision-Language Model Inference](../../ICCV2025/multimodal_vlm/aircache_activating_inter_modal_relevancy_kv_cache_compression_for_efficient_large_vision_language_model.md)
-- [\[ICCV 2025\] Dynamic-VLM: Simple Dynamic Visual Token Compression for VideoLLM](../../ICCV2025/multimodal_vlm/dynamic-vlm_simple_dynamic_visual_token_compression_for_videollm.md)
-- [\[NeurIPS 2025\] CoIDO: Efficient Data Selection for Visual Instruction Tuning via Coupled Importance-Diversity Optimization](coido_efficient_data_selection_for_visual_instruction_tuning_via_coupled_importa.md)
 - [\[AAAI 2026\] LLMC+: Benchmarking Vision-Language Model Compression with a Plug-and-play Toolkit](../../AAAI2026/multimodal_vlm/llmc_benchmarking_vision-language_model_compression_with_a_plug-and-play_toolkit.md)
+- [\[ICLR 2026\] VideoChat-Flash: Hierarchical Compression for Long-Context Video Modeling](../../ICLR2026/multimodal_vlm/videochat-flash_hierarchical_compression_for_long-context_video_modeling.md)
+- [\[ICLR 2026\] When MLLMs Meet Compression Distortion: A Coding Paradigm Tailored to MLLMs](../../ICLR2026/multimodal_vlm/when_mllms_meet_compression_distortion_a_coding_paradigm_tailored_to_mllms.md)
+- [\[ICML 2026\] DCER: Robust Multimodal Fusion via Dual-Stage Compression and Energy-Based Reconstruction](../../ICML2026/multimodal_vlm/dcer_dual-stage_compression_and_energy-based_reconstruction.md)
+- [\[NeurIPS 2025\] CoIDO: Efficient Data Selection for Visual Instruction Tuning via Coupled Importance-Diversity Optimization](coido_efficient_data_selection_for_visual_instruction_tuning_via_coupled_importa.md)
 
 </div>
 

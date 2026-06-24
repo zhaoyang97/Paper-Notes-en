@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Compositional-ARC: Assessing Systematic Generalization in Abstract Spatial Reasoning
 description: >-
-  [ICLR 2026][LLM (Other)][systematic generalization] The authors propose the Compositional-ARC dataset to evaluate the systematic generalization capabilities of models in abstract spatial reasoning—specifically, generalizing from known basic geometric transformations (e.g., translation, rotation) to unseen combinations of these transformations. An MLC-trained encoder-dec
+  [ICLR 2026][LLM (Other)][systematic generalization] The authors propose the Compositional-ARC dataset to evaluate the systematic generalization capabilities of models in abstract spatial reasoning—specifically, generalizing from known basic geometric transformations (e.g., translation, rotation) to unseen combinations of these transformations. An MLC-trained encoder-decoder model with only 5.7M parameters reaches 78.26% on systematic tasks, matching the performance of the ARC…
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - systematic generalization
-  - meta-learning for compositionality
-  - ARC
-  - abstract reasoning
-  - few-shot learning
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "systematic generalization"
+  - "meta-learning for compositionality"
+  - "ARC"
+  - "abstract reasoning"
+  - "few-shot learning"
 date: 2026-05-08
-content_hash: da1fbc52ad218727
+content_hash: dc6fa3e97cb5688a
 ---
+
 # Compositional-ARC: Assessing Systematic Generalization in Abstract Spatial Reasoning
 
 **Conference**: ICLR 2026  
@@ -143,8 +144,8 @@ Exact Match Accuracy on the Systematicity task:
 
 ## Related Papers
 
-- [\[ACL 2025\] A Systematic Study of Compositional Syntactic Transformer Language Models](../../ACL2025/llm_nlp/a_systematic_study_of_compositional_syntactic_transformer_language_models.md)
 - [\[ACL 2025\] Systematic Generalization in Language Models Scales with Information Entropy](../../ACL2025/llm_nlp/systematic_generalization_in_language_models_scales_with_information_entropy.md)
+- [\[ACL 2025\] A Systematic Study of Compositional Syntactic Transformer Language Models](../../ACL2025/llm_nlp/a_systematic_study_of_compositional_syntactic_transformer_language_models.md)
 - [\[ICLR 2026\] Attend to the Active: Structure-Aware Dynamic Attention in LLMs for Compositional Instruction Following](attend_to_the_active_structure-aware_dynamic_attention_in_llms_for_compositional.md)
 - [\[ICLR 2026\] Is the Reversal Curse a Binding Problem? Uncovering Limitations of Transformers from a Basic Generalization Failure](is_the_reversal_curse_a_binding_problem_uncovering_limitations_of_transformers_f.md)
 - [\[ACL 2025\] Revisiting Compositional Generalization Capability of Large Language Models Considering Instruction Following Ability](../../ACL2025/llm_nlp/compositional_generalization_instruction.md)

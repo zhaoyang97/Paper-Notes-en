@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TableVista: Benchmarking Multimodal Table Reasoning under Visual and Structural Complexity
 description: >-
-  [ACL 2026][vlm_reasoning][Vision-only] TableVista constructs a multimodal table benchmark with 3,000 high-quality reasoning questions expanded into 30,000 visual samples. Systematic evaluation of 29 foundation models reveals that while models are relatively stable across style changes, they suffer significant degradation under complex structures, multi-tabl
+  [ACL 2026 Findings][VLM Reasoning][Multimodal Table Reasoning] TableVista constructs a multimodal table benchmark with 3,000 high-quality reasoning questions expanded into 30,000 visual samples. Systematic evaluation of 29 foundation models reveals that while models are relatively stable across style changes, they suffer significant degradation under complex structures, multi-table reasoning, visual fragmentation, and vision-only inputs.
 tags:
-  - ACL 2026
-  - vlm_reasoning
-  - Vision-only
-  - CoT
+  - "ACL 2026 Findings"
+  - "VLM Reasoning"
+  - "Multimodal Table Reasoning"
+  - "Visual Robustness"
+  - "Structural Complexity"
+  - "Vision-only"
+  - "CoT"
 date: 2026-05-08
-content_hash: 28a2903be542ca58
+content_hash: 57f996ac16e673d9
 ---
+
 # TableVista: Benchmarking Multimodal Table Reasoning under Visual and Structural Complexity
 
 **Conference**: ACL 2026 Findings  
@@ -139,10 +143,10 @@ The paper analyzes visual conditions and prompting methods. The following table 
 ## Related Papers
 
 - [\[CVPR 2026\] InfiniBench: Infinite Benchmarking for Visual Spatial Reasoning with Customizable Scene Complexity](../../CVPR2026/vlm_reasoning/infinibench_infinite_benchmarking_for_visual_spatial_reasoning_with_customizable.md)
-- [\[ACL 2026\] ErrorRadar: Benchmarking Complex Mathematical Reasoning of Multimodal Large Language Models Via Error Detection](errorradar_benchmarking_complex_mathematical_reasoning_of_multimodal_large_langu.md)
 - [\[CVPR 2026\] TableMix: Enhancing Multimodal Table Reasoning in MLLMs from a Data-Centric Perspective](../../CVPR2026/vlm_reasoning/tablemix_enhancing_multimodal_table_reasoning_in_mllms_from_a_data-centric_persp.md)
+- [\[ACL 2026\] ErrorRadar: Benchmarking Complex Mathematical Reasoning of Multimodal Large Language Models Via Error Detection](errorradar_benchmarking_complex_mathematical_reasoning_of_multimodal_large_langu.md)
 - [\[ACL 2026\] OMHBench: Benchmarking Balanced and Grounded Omni-Modal Multi-Hop Reasoning](omhbench_benchmarking_balanced_and_grounded_omni-modal_multi-hop_reasoning.md)
-- [\[ICML 2026\] LIMSSR: LLM-Driven Sequence-to-Score Reasoning under Training-Time Incomplete Multimodal Observations](../../ICML2026/vlm_reasoning/limssr_llm-driven_sequence-to-score_reasoning_under_training-time_incomplete_mul.md)
+- [\[CVPR 2026\] EmoThinker: Advancing Visual-Acoustic Emotion Analysis via Structural Token Selection and Chain-of-Thought Reasoning](../../CVPR2026/vlm_reasoning/emothinker_advancing_visual-acoustic_emotion_analysis_via_structural_token_selec.md)
 
 </div>
 

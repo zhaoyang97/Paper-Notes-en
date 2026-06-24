@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] HUME: Measuring the Human-Model Performance Gap in Text Embedding Tasks
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][text embedding] Ours proposes the HUME human evaluation framework to systematically measure human performance across 16 datasets in MTEB (Reranking/Classification/Clustering/STS). Findings show humans rank 4th overall (77.6 vs. best model 80.1), revealing that "superhuman" model performance often occurs in tasks with the lowest human
+  [ICLR 2026][Information Retrieval & RAG][text embedding] Ours proposes the HUME human evaluation framework to systematically measure human performance across 16 datasets in MTEB (Reranking/Classification/Clustering/STS). Findings show humans rank 4th overall (77.6 vs. best model 80.1), revealing that "superhuman" model performance often occurs in tasks with the lowest human agreement. Additionally, the study assesses the feasibility of using 9 LLMs as annotation proxies.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - text embedding
-  - human baseline
-  - MTEB
-  - evaluation framework
-  - multilingual
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "text embedding"
+  - "human baseline"
+  - "MTEB"
+  - "evaluation framework"
+  - "multilingual"
 date: 2026-05-08
-content_hash: 6a1f9a7092a23901
+content_hash: 8d7b7dd98f015143
 ---
+
 # HUME: Measuring the Human-Model Performance Gap in Text Embedding Tasks
 
 **Conference**: ICLR 2026  
@@ -143,11 +144,11 @@ Human and LLM difficulty rankings show a moderate positive correlation ($\rho = 
 
 ## Related Papers
 
+- [\[ICLR 2026\] KaLM-Embedding-V2: Superior Training Techniques and Data Inspire A Versatile Embedding Model](kalm-embedding-v2_superior_training_techniques_and_data_inspire_a_versatile_embe.md)
 - [\[ACL 2026\] SkMTEB: Slovak Massive Text Embedding Benchmark and Model Adaptation](../../ACL2026/information_retrieval/skmteb_slovak_massive_text_embedding_benchmark_and_model_adaptation.md)
 - [\[ACL 2026\] PL-MTEB: Polish Massive Text Embedding Benchmark](../../ACL2026/information_retrieval/pl-mteb_polish_massive_text_embedding_benchmark.md)
 - [\[ICLR 2026\] Let LLMs Speak Embedding Languages: Generative Text Embeddings via Iterative Contrastive Refinement](let_llms_speak_embedding_languages_generative_text_embeddings_via_iterative_cont.md)
 - [\[ACL 2026\] FLARE: Task-Agnostic Embedding Model Evaluation via Normalizing Flows](../../ACL2026/information_retrieval/flare_task-agnostic_embedding_model_evaluation_through_a_normalization_process.md)
-- [\[ICLR 2026\] On the Theoretical Limitations of Embedding-Based Retrieval](on_the_theoretical_limitations_of_embedding-based_retrieval.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MultiDx: A Multi-Source Knowledge Integration Framework towards Diagnostic Reasoning
 description: >-
-  [ACL 2026][Medical NLP][RAG] MultiDx integrates web retrieval, SOAP structured cases, similar case libraries, and fine-grained reasoning trace retrieval into a two-stage diagnostic reasoning framework. By first generating candidate diseases from multi-path evidence and then performing disease matching, voting, and differential diagnosis reranking,
+  [ACL 2026 Findings][Medical LLM][Multi-source knowledge integration] MultiDx integrates web retrieval, SOAP structured cases, similar case libraries, and fine-grained reasoning trace retrieval into a two-stage diagnostic reasoning framework. By first generating candidate diseases from multi-path evidence and then performing disease matching, voting, and differential diagnosis reranking, it simultaneously improves diagnostic accuracy and reasoning recall on both MedCaseReasoni…
 tags:
-  - ACL 2026
-  - Medical NLP
-  - RAG
-  - Agent
+  - "ACL 2026 Findings"
+  - "Medical LLM"
+  - "Multi-source knowledge integration"
+  - "differential diagnosis"
+  - "medical reasoning"
+  - "RAG"
+  - "Agent"
 date: 2026-05-08
-content_hash: acd2be042faba4b5
+content_hash: 2b4851f8c58eafb8
 ---
+
 # MultiDx: A Multi-Source Knowledge Integration Framework towards Diagnostic Reasoning
 
 **Conference**: ACL 2026 Findings  
@@ -147,13 +151,20 @@ Ablation experiments used DeepSeek-R1 as the base model, adding one knowledge en
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- OpenAI-DR: Diagnostic Reasoning with Large Language Models (2025)
-- MedAgents: Large Language Models as Collaborators for Medical Reasoning (2024)
-- SOAP: Structuring Clinical Notes for Better Medical Reasoning (2024)
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2026\] SEMA-RAG: A Self-Evolving Multi-Agent Retrieval-Augmented Generation Framework for Medical Reasoning](sema-rag_a_self-evolving_multi-agent_retrieval-augmented_generation_framework_fo.md)
+- [\[ACL 2026\] Dr. Assistant: Enhancing Clinical Diagnostic Inquiry via Structured Diagnostic Reasoning Data and Reinforcement Learning](dr_assistant_enhancing_clinical_diagnostic_inquiry_via_structured_diagnostic_rea.md)
+- [\[ACL 2026\] Eliciting Medical Reasoning with Knowledge-enhanced Data Synthesis: A Semi-Supervised Reinforcement Learning Approach](eliciting_medical_reasoning_with_knowledge-enhanced_data_synthesis_a_semi-superv.md)
+- [\[ICLR 2026\] KnowGuard: Knowledge-Driven Abstention for Multi-Round Clinical Reasoning](../../ICLR2026/medical_nlp/knowguard_knowledge-driven_abstention_for_multi-round_clinical_reasoning.md)
+- [\[ACL 2026\] Beyond the Individual: Virtualizing Multi-Disciplinary Reasoning for Clinical Intake via Collaborative Agents](beyond_the_individual_virtualizing_multi-disciplinary_reasoning_for_clinical_int.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] SEMA-RAG: A Self-Evolving Multi-Agent Retrieval-Augmented Generation Framework for Medical Reasoning](sema-rag_a_self-evolving_multi-agent_retrieval-augmented_generation_framework_fo.md)

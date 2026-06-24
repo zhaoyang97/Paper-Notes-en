@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Everything is a Video: Unifying Modalities through Next-Frame Prediction
 description: >-
-  [ICCV 2025][Audio & Speech][multimodal unification] This paper reformulates multimodal learning tasks involving text, images, audio, and video as a unified next-frame prediction problem—rendering all inputs and outputs a…
+  [ICCV 2025][Audio & Speech][multimodal unification] This paper reformulates multimodal learning tasks involving text, images, audio, and video as a unified next-frame prediction problem—rendering all inputs and outputs as sequences of 64×64 video frames—and demonstrates that a single Transformer model without any modality-specific encoders can handle cross-modal tasks, validating the radical yet feasible "everything is a video" unified representation paradigm.
 tags:
   - "ICCV 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "video generation"
   - "unified modality representation"
 date: 2026-05-08
-content_hash: ac2742e616144d63
+content_hash: 50889831c4707e25
 ---
 
 # Everything is a Video: Unifying Modalities through Next-Frame Prediction
@@ -135,11 +135,11 @@ The model is trained with Multi-Scale Structural Similarity (MS-SSIM) loss, usin
 
 ## Related Papers
 
+- [\[ICML 2025\] NTPP: Generative Speech Language Modeling for Dual-Channel Spoken Dialogue via Next-Token-Pair Prediction](../../ICML2025/audio_speech/ntpp_generative_speech_language_modeling_for_dual-channel_spoken_dialogue_via_ne.md)
 - [\[ICML 2026\] Group Cognition Learning: Making Everything Better Through Governed Two-Stage Agents Collaboration](../../ICML2026/audio_speech/group_cognition_learning_making_everything_better_through_governed_two-stage_age.md)
-- [\[ICCV 2025\] MUG: Pseudo Labeling Augmented Audio-Visual Mamba Network for Audio-Visual Video Parsing](mug_pseudo_labeling_augmented_audio-visual_mamba_network_for_audio-visual_video_.md)
-- [\[NeurIPS 2025\] Unifying Symbolic Music Arrangement: Track-Aware Reconstruction and Structured Tokenization](../../NeurIPS2025/audio_speech/unifying_symbolic_music_arrangement_track-aware_reconstruction_and_structured_to.md)
-- [\[NeurIPS 2025\] AudSemThinker: Enhancing Audio-Language Models through Reasoning over Semantics of Sound](../../NeurIPS2025/audio_speech/audsemthinker_enhancing_audio-language_models_through_reasoning_over_semantics_o.md)
-- [\[CVPR 2026\] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval](../../CVPR2026/audio_speech/save_speech-aware_video_representation_learning_for_video-text_retrieval.md)
+- [\[ICML 2025\] FLAM: Frame-Wise Language-Audio Modeling](../../ICML2025/audio_speech/flam_frame-wise_language-audio_modeling.md)
+- [\[ICML 2025\] Teaching Physical Awareness to LLMs through Sounds](../../ICML2025/audio_speech/teaching_physical_awareness_to_llms_through_sounds.md)
+- [\[ACL 2025\] CLaMP 3: Universal Music Information Retrieval Across Unaligned Modalities and Unseen Languages](../../ACL2025/audio_speech/clamp_3_universal_music_information_retrieval_across_unaligned_modalities_and_un.md)
 
 </div>
 

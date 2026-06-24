@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OSAQ: Outlier Self-Absorption for Accurate Low-bit LLM Quantization
 description: >-
-  [ICML 2026][Model Compression][Paper Note] OSAQ leverages the consistent low-rank null space of the Hessian across different inputs in LLM layers to construct an additive weight perturbation $\Delta W$ from a linear combination of null space vectors. This "self-absorbs" outlier weights without altering the second-order task loss, reducing the perplexity of 2-bi
+  [ICML 2026][Model Compression][Weight-only quantization] OSAQ leverages the consistent low-rank null space of the Hessian across different inputs in LLM layers to construct an additive weight perturbation $\Delta W$ from a linear combination of null space vectors. This "self-absorbs" outlier weights without altering the second-order task loss, reducing the perplexity of 2-bit weight-only quantization by over 40% compared to vanilla GPTQ.
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Weight-only quantization"
+  - "Outlier suppression"
+  - "Hessian null space"
+  - "Additive transformation"
+  - "Closed-form solution"
 date: 2026-05-08
-content_hash: 4355d4fb0dce97f4
+content_hash: b61fdbbd7aacba4b
 ---
+
 # OSAQ: Outlier Self-Absorption for Accurate Low-bit LLM Quantization
 
 **Conference**: ICML 2026  
@@ -128,10 +134,10 @@ Results combined with AWQ are similar: on LLaMA3-8B, OSAQ+AWQ reduces WikiText2 
 ## Related Papers
 
 - [\[ICML 2026\] NeUQI: Near-Optimal Uniform Quantization Parameter Initialization for Low-Bit LLMs](neuqi_near-optimal_uniform_quantization_parameter_initialization_for_low-bit_llm.md)
+- [\[ICML 2026\] TWLA: Achieving Ternary Weights and Low-Bit Activations for LLMs via Post-Training Quantization](twla_achieving_ternary_weights_and_low-bit_activations_for_llms_via_post-trainin.md)
 - [\[ACL 2025\] Accurate KV Cache Quantization with Outlier Tokens Tracing](../../ACL2025/model_compression/accurate_kv_cache_quantization_with_outlier_tokens_tracing.md)
 - [\[ICML 2026\] LFQ: Logit-aware Final-block Quantization for Boosting the Generation Quality of Low-Bit Quantized LLMs](lfq_logit-aware_final-block_quantization_for_boosting_the_generation_quality_of_.md)
-- [\[ICML 2026\] NanoQuant: Efficient Sub-1-Bit Quantization of Large Language Models](nanoquant_efficient_sub-1-bit_quantization_of_large_language_models.md)
-- [\[ICML 2026\] WUSH: Near-Optimal Adaptive Transforms for LLM Quantization](wush_near-optimal_adaptive_transforms_for_llm_quantization.md)
+- [\[ICLR 2026\] SSDi8: Accurate and Efficient 8-bit Quantization for State Space Duality](../../ICLR2026/model_compression/ssdi8_accurate_and_efficient_8-bit_quantization_for_state_space_duality.md)
 
 </div>
 

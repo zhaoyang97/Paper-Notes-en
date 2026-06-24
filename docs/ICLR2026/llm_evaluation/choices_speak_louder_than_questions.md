@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Choices Speak Louder than Questions
 description: >-
-  [ICLR 2026][LLM Evaluation][NPSQ] This paper points out that in Multiple-Choice Question Answering (MCQA) evaluation, large language models (LLMs) often "look at the choices instead of the question"—meaning their decisions are dominated by surface features of the answer options rather than a genuine understanding of the question. It proposes a new scor
+  [ICLR2026][LLM Evaluation][MCQA Evaluation] This paper points out that in Multiple-Choice Question Answering (MCQA) evaluation, large language models (LLMs) often "look at the choices instead of the question"—meaning their decisions are dominated by surface features of the answer options rather than a genuine understanding of the question. It proposes a new scoring method called NPSQ, which disentangles the "question contribution" from the "choice contribution…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - NPSQ
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "MCQA Evaluation"
+  - "Choice Sensitivity"
+  - "Log-Likelihood Scoring"
+  - "Evaluation Bias"
+  - "NPSQ"
 date: 2026-05-08
-content_hash: af440d49056fbbfd
+content_hash: 128481586031cb78
 ---
+
 # Choices Speak Louder than Questions
 
 **Conference**: ICLR2026  
@@ -134,10 +139,10 @@ The authors designed four types of "adversarial choices"—replacing an original
 ## Related Papers
 
 - [\[ICLR 2026\] Can LLMs Refuse Questions They Do Not Know? Measuring Knowledge-Aware Refusal in Factual Tasks](can_llms_refuse_questions_they_do_not_know_measuring_knowledge-aware_refusal_in_.md)
+- [\[ICLR 2026\] Preference Leakage: A Contamination Problem in LLM-as-a-judge](preference_leakage_a_contamination_problem_in_llm-as-a-judge.md)
 - [\[ICLR 2026\] CLASH: Evaluating Language Models on Judging High-Stakes Dilemmas from Multiple Perspectives](clash_evaluating_language_models_on_judging_high-stakes_dilemmas_from_multiple_p.md)
 - [\[ICLR 2026\] DeepTRACE: Auditing Deep Research AI Systems for Tracking Reliability Across Citations and Evidence](deeptrace_auditing_deep_research_ai_systems_for_tracking_reliability_across_cita.md)
 - [\[ICLR 2026\] Cost-of-Pass: An Economic Framework for Evaluating Language Models](cost-of-pass_an_economic_framework_for_evaluating_language_models.md)
-- [\[ICLR 2026\] Detecting Data Contamination in LLMs via In-Context Learning](detecting_data_contamination_in_llms_via_in-context_learning.md)
 
 </div>
 

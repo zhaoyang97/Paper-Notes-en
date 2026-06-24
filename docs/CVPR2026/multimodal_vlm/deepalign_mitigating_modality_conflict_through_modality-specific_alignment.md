@@ -2,13 +2,15 @@
 title: >-
   [Paper Note] DeepAlign: Mitigating Modality Conflict through Modality-Specific Alignment
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Addressing the "modality conflict" in MLLMs—where visual integration degrades linguistic performance and fails to capture fine-grained details—DeepAlign introduces a plug-and-play post-training framework. It uses classifier gradients to identify and push "modality-specific components" of visual representations toward t
+  [CVPR 2026][Multimodal VLM][Modality Conflict / Representation Intervention / Structure-Induced Distillation / MLLM Post-training / DINOv2] Addressing the "modality conflict" in MLLMs—where visual integration degrades linguistic performance and fails to capture fine-grained details—DeepAlign introduces a plug-and-play post-training framework. It uses classifier gradients to identify and push "modality-specific components" of visual representations toward the LLM's text embedd…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Modality Conflict / Representation Intervention / Structure-Induced Distillation / MLLM Post-training / DINOv2"
 date: 2026-05-08
-content_hash: 8e756ab4c8ded99d
+content_hash: b85effd3e1519f7f
 ---
+
 # DeepAlign: Mitigating Modality Conflict through Modality-Specific Alignment
 
 **Conference**: CVPR 2026  
@@ -142,15 +144,15 @@ Consistent improvements were found on stronger bases: Qwen2.5-VL-7B gained +1.0 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Towards Dynamic Modality Alignment in Multimodal Continual Learning](towards_dynamic_modality_alignment_in_multimodal_continual_learning.md)
 - [\[CVPR 2026\] Bridging the Modality Gap in Compositional Zero-Shot Learning via Sparse Alignment and Unimodal Memory Bank](bridging_the_modality_gap_in_compositional_zero-shot_learning_via_sparse_alignme.md)
-- [\[CVPR 2026\] LVLM-Aided Alignment of Task-Specific Vision Models](lvlm-aided_alignment_of_task-specific_vision_models.md)
 - [\[CVPR 2026\] Is the Modality Gap a Bug or a Feature? A Robustness Perspective](is_the_modality_gap_a_bug_or_a_feature_a_robustness_perspective.md)
-- [\[CVPR 2026\] Efficient and High-Fidelity Omni Modality Retrieval](efficient_and_high-fidelity_omni_modality_retrieval.md)
+- [\[CVPR 2026\] Beyond Layer-Wise Merging: Chain-of-Merging for Vision-Language Models](beyond_layer-wise_merging_chain-of-merging_for_vision-language_models.md)
+- [\[CVPR 2026\] LVLM-Aided Alignment of Task-Specific Vision Models](lvlm-aided_alignment_of_task-specific_vision_models.md)
 
 </div>
 

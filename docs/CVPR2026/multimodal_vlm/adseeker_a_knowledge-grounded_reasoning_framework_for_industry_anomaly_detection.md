@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ADSeeker: A Knowledge-Grounded Reasoning Framework for Industry Anomaly Detection and Reasoning
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] ADSeeker is a large-scale pre-training-free, plug-and-play industrial anomaly detection (IAD) assistant. It injects domain-specific knowledge into a general MLLM using the first visual document knowledge base SEEK-M&V and a multimodal retrieval framework Q2K RAG. Combined with an AD Expert that fuses defect localizatio
+  [CVPR 2026][Multimodal VLM][Industrial Anomaly Detection] ADSeeker is a large-scale pre-training-free, plug-and-play industrial anomaly detection (IAD) assistant. It injects domain-specific knowledge into a general MLLM using the first visual document knowledge base SEEK-M&V and a multimodal retrieval framework Q2K RAG. Combined with an AD Expert that fuses defect localization/discrimination information into visual tokens and a Hierarchical Sparse Prompt (HSP) to extract type…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Industrial Anomaly Detection"
+  - "Multimodal RAG"
+  - "Zero-shot Anomaly Detection"
+  - "Anomaly Reasoning"
+  - "Visual Document Knowledge Base"
 date: 2026-05-08
-content_hash: 4fdff925627e8dcf
+content_hash: 633b11cf725bbeb7
 ---
+
 # ADSeeker: A Knowledge-Grounded Reasoning Framework for Industry Anomaly Detection and Reasoning
 
 **Conference**: CVPR 2026  
@@ -162,11 +168,11 @@ The base MLLM and CLIP are frozen; only external modules like AD Expert and HSP 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Reasoning-Driven Anomaly Detection and Localization with Image-Level Supervision](reasoning-driven_anomaly_detection_and_localization_with_image-level_supervision.md)
-- [\[ICLR 2026\] Traceable Evidence Enhanced Visual Grounded Reasoning: Evaluation and Method](../../ICLR2026/object_detection/traceable_evidence_enhanced_visual_grounded_reasoning_evaluation_and_methodology.md)
-- [\[CVPR 2025\] Towards Zero-Shot Anomaly Detection and Reasoning with Multimodal Large Language Models](../../CVPR2025/object_detection/towards_zero-shot_anomaly_detection_and_reasoning_with_multimodal_large_language.md)
-- [\[CVPR 2026\] Heuristic-inspired Reasoning Priors Facilitate Data-Efficient Referring Object Detection](heuristic-inspired_reasoning_priors_facilitate_data-efficient_referring_object_d.md)
-- [\[CVPR 2026\] HeROD: Heuristic-inspired Reasoning Priors Facilitate Data-Efficient Referring Object Detection](herod_heuristic_inspired_reasoning_data_efficient_rod.md)
+- [\[CVPR 2026\] Geometrically-Constrained Agent for Spatial Reasoning](geometrically-constrained_agent_for_spatial_reasoning.md)
+- [\[CVPR 2026\] From Attraction to Equilibrium: Physics-Inspired Semantic Gravitons for Zero-Shot Anomaly Detection](from_attraction_to_equilibrium_physics-inspired_semantic_gravitons_for_zero-shot.md)
+- [\[CVPR 2026\] Towards Reasoning-Preserving Unlearning in Multimodal Large Language Models](towards_reasoning-preserving_unlearning_in_multimodal_large_language_models.md)
+- [\[CVPR 2026\] Hierarchical Attacks for Multi-Modal Multi-Agent Reasoning](hierarchical_attacks_for_multi-modal_multi-agent_reasoning.md)
+- [\[CVPR 2026\] LASAR: Towards Spatio-temporal Reasoning with Latent Cognitive Map](lasar_towards_spatio-temporal_reasoning_with_latent_cognitive_map.md)
 
 </div>
 

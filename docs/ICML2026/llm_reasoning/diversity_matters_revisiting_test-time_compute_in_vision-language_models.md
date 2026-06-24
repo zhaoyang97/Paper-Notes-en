@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Diversity Matters: Revisiting Test-Time Compute in Vision-Language Models
 description: >-
-  [ICML 2026][LLM Reasoning][Test-Time Compute] This paper systematically investigates the effectiveness of test-time compute (TTC) strategies on Vision-Language Models (VLMs). It theoretically demonstrates that the gains of majority voting are limited by prediction diversity and proposes ETTC, which selects the most confident model based on prediction entropy. This
+  [ICML2026][Reasoning][Test-time compute] This paper systematically investigates the effectiveness of test-time compute (TTC) strategies on Vision-Language Models (VLMs). It theoretically demonstrates that the gains of majority voting are limited by prediction diversity and proposes ETTC, which selects the most confident model based on prediction entropy. This approach allows smaller models to enhance larger ones, achieving an average improvement of +2.8% over 7 VLMs across 6…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - Test-Time Compute
+  - "ICML2026"
+  - "Reasoning"
+  - "Test-time compute"
+  - "majority voting"
+  - "entropy selection"
+  - "VLM ensemble"
+  - "prediction diversity"
 date: 2026-05-08
-content_hash: 03bc22775b5ac266
+content_hash: 0d952398377be33d
 ---
+
 # Diversity Matters: Revisiting Test-Time Compute in Vision-Language Models
 
 **Conference**: ICML2026  
@@ -133,11 +138,11 @@ Highlights: In the same-family Qwen series, voting (68.84) performed worse than 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](../../ICLR2026/llm_reasoning/efficient_test-time_scaling_for_small_vision-language_models.md)
 - [\[NeurIPS 2025\] Provable Scaling Laws for the Test-Time Compute of Large Language Models](../../NeurIPS2025/llm_reasoning/provable_scaling_laws_for_the_testtime_compute_of_large_lang.md)
 - [\[ACL 2026\] Scaling Test-Time Compute to Achieve IOI Gold Medal with Open-Weight Models](../../ACL2026/llm_reasoning/scaling_test-time_compute_to_achieve_ioi_gold_medal_with_open-weight_models.md)
-- [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](../../ICLR2026/llm_reasoning/efficient_test-time_scaling_for_small_vision-language_models.md)
-- [\[ICML 2026\] Stabilizing Recurrent Dynamics for Test-Time Scalable Latent Reasoning in Looped Language Models](stabilizing_recurrent_dynamics_for_test-time_scalable_latent_reasoning_in_looped.md)
-- [\[NeurIPS 2025\] Towards Thinking-Optimal Scaling of Test-Time Compute for LLM Reasoning](../../NeurIPS2025/llm_reasoning/towards_thinking-optimal_scaling_of_test-time_compute_for_llm_reasoning.md)
+- [\[ICLR 2026\] T1: Tool-Integrated Verification for Test-Time Compute Scaling in Small Language Models](../../ICLR2026/llm_reasoning/t1_tool-integrated_verification_for_test-time_compute_scaling_in_small_language_.md)
+- [\[ICLR 2026\] Strategic Scaling of Test-Time Compute: A Bandit Learning Approach](../../ICLR2026/llm_reasoning/strategic_scaling_of_test-time_compute_a_bandit_learning_approach.md)
 
 </div>
 

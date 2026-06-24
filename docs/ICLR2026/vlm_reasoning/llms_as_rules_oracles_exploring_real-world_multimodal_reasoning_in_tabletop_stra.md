@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] LLMs as Rules Oracles: Exploring Real-World Multimodal Reasoning in Tabletop Strategy Game Environments
 description: >-
-  [ICLR 2026][vlm_reasoning][LudoBench] This paper introduces **LudoBench**—a multimodal game comprehension benchmark that pairs "real tabletop game photos + complete rulebooks + situated questions." It finds that leading vision-language models fail significantly on the most basic task of "understanding a new tabletop game" for novice players (Perception 63%
+  [ICLR 2026][VLM Reasoning][LudoBench] This paper introduces **LudoBench**—a multimodal game comprehension benchmark that pairs "real tabletop game photos + complete rulebooks + situated questions." It finds that leading vision-language models fail significantly on the most basic task of "understanding a new tabletop game" for novice players (Perception 63%, Rule Integration 36%, Short-term Optimization only 8%), exposing fundamental defects in cross-modal rule grounding and l…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - LudoBench
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "LudoBench"
+  - "Tabletop game reasoning"
+  - "situated game comprehension"
+  - "multimodal rulebooks"
+  - "visual grounding"
+  - "short-term optimization"
 date: 2026-05-08
-content_hash: 2daca61b62714f7c
+content_hash: a588d9333d201a23
 ---
+
 # LLMs as Rules Oracles: Exploring Real-World Multimodal Reasoning in Tabletop Strategy Game Environments
 
 **Conference**: ICLR 2026  
@@ -120,11 +126,11 @@ flowchart LR
 
 ## Related Papers
 
+- [\[ICLR 2026\] SpaCE-Eval: A Benchmark for Real-World Multi-Modal Reasoning](space-eval_a_benchmark_for_real-world_multi-modal_reasoning.md)
 - [\[ICLR 2026\] Game-RL: Synthesizing Multimodal Verifiable Game Data to Boost VLMs' General Reasoning](game-rl_synthesizing_multimodal_verifiable_game_data_to_boost_vlms_general_reaso.md)
 - [\[ICLR 2026\] Reasoning in Space via Grounding in the World](reasoning_in_space_via_grounding_in_the_world.md)
-- [\[ICLR 2026\] MMR-Life: Piecing Together Real-life Scenes for Multimodal Multi-image Reasoning](mmr-life_piecing_together_real-life_scenes_for_multimodal_multi-image_reasoning.md)
+- [\[ICLR 2026\] Ref-Adv: Exploring MLLM Visual Reasoning in Referring Expression Tasks](ref-adv_exploring_mllm_visual_reasoning_in_referring_expression_tasks.md)
 - [\[ICLR 2026\] Play to Generalize: Learning to Reason Through Game Play](play_to_generalize_learning_to_reason_through_game_play.md)
-- [\[ICLR 2026\] IV-Bench: A Benchmark for Image-Grounded Video Perception and Reasoning in Multimodal LLMs](iv-bench_a_benchmark_for_image-grounded_video_perception_and_reasoning_in_multim.md)
 
 </div>
 

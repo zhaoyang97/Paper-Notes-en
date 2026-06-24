@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RelaCtrl: Relevance-Guided Efficient Control for Diffusion Transformers
 description: >-
-  [AAAI 2026][Image Generation][Controllable Generation] This paper proposes the RelaCtrl framework, which quantifies the sensitivity of each DiT layer to control information via a ControlNet Relevance Score…
+  [AAAI 2026][Image Generation][Controllable Generation] This paper proposes the RelaCtrl framework, which quantifies the sensitivity of each DiT layer to control information via a ControlNet Relevance Score, and uses this analysis to guide the placement and modeling capacity of control blocks. A Two-Dimensional Shuffle Mixer (TDSM) is introduced to replace self-attention and FFN, achieving controllable generation quality superior to PixArt-δ with only 15% of its parameters and…
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Parameter Efficiency"
   - "Channel-Token Shuffling"
 date: 2026-05-08
-content_hash: 7ec85f95debab5d3
+content_hash: 9ed05497a92897bf
 ---
 
 # RelaCtrl: Relevance-Guided Efficient Control for Diffusion Transformers
@@ -212,10 +212,10 @@ Effect of RGLC and Prior 2:
 ## Related Papers
 
 - [\[AAAI 2026\] Laytrol: Preserving Pretrained Knowledge in Layout Control for Multimodal Diffusion Transformers](laytrol_preserving_pretrained_knowledge_in_layout_control_fo.md)
+- [\[CVPR 2026\] DDiT: Dynamic Patch Scheduling for Efficient Diffusion Transformers](../../CVPR2026/image_generation/ddit_dynamic_patch_scheduling_for_efficient_diffusion_transformers.md)
+- [\[ICLR 2026\] SPRINT: Sparse-Dense Residual Fusion for Efficient Diffusion Transformers](../../ICLR2026/image_generation/sprint_sparse-dense_residual_fusion_for_efficient_diffusion_transformers.md)
 - [\[AAAI 2026\] DogFit: Domain-guided Fine-tuning for Efficient Transfer Learning of Diffusion Models](dogfit_domain-guided_fine-tuning_for_efficient_transfer_learning_of_diffusion_mo.md)
-- [\[ICML 2026\] Spectral Guidance for Flexible and Efficient Control of Diffusion Models](../../ICML2026/image_generation/spectral_guidance_for_flexible_and_efficient_control_of_diffusion_models.md)
-- [\[ICCV 2025\] EDiT: Efficient Diffusion Transformers with Linear Compressed Attention](../../ICCV2025/image_generation/edit_efficient_diffusion_transformers_with_linear_compressed_attention.md)
-- [\[CVPR 2026\] Memory-Efficient Fine-Tuning Diffusion Transformers via Dynamic Patch Sampling and Block Skipping](../../CVPR2026/image_generation/memory-efficient_fine-tuning_diffusion_transformers_via_dynamic_patch_sampling_a.md)
+- [\[CVPR 2026\] Layer-wise Instance Binding for Regional and Occlusion Control in Text-to-Image Diffusion Transformers](../../CVPR2026/image_generation/layer-wise_instance_binding_for_regional_and_occlusion_control_in_text-to-image_.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TabFlash: Efficient Table Understanding with Progressive Question Conditioning and Token Focusing
 description: >-
-  [AAAI 2026][Multimodal VLM][table understanding] TabFlash introduces two core techniques — Progressive Question Conditioning and Token Focusing — to inject question information into the ViT for generating question-aware…
+  [AAAI 2026][Multimodal VLM][table understanding] TabFlash introduces two core techniques — Progressive Question Conditioning and Token Focusing — to inject question information into the ViT for generating question-aware visual features, prune background tokens via L2 norm, and concentrate critical information into retained tokens through contrastive training. On 7 table understanding benchmarks, TabFlash surpasses GPT-4o and Gemini 2.5 Pro while reducing FLOPs by 27% and GPU…
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "question conditioning"
   - "computational efficiency"
 date: 2026-05-08
-content_hash: 1eb1135ea75b059c
+content_hash: c31ffcaefbea0157
 ---
 
 # TabFlash: Efficient Table Understanding with Progressive Question Conditioning and Token Focusing
@@ -158,10 +158,10 @@ TabFlash builds on the standard MLLM architecture (ViT + projector + LM). During
 ## Related Papers
 
 - [\[ICLR 2026\] TableDART: Dynamic Adaptive Multi-Modal Routing for Table Understanding](../../ICLR2026/multimodal_vlm/tabledart_dynamic_adaptive_multi-modal_routing_for_table_understanding.md)
-- [\[ICLR 2026\] Index-Preserving Lightweight Token Pruning for Efficient Document Understanding](../../ICLR2026/multimodal_vlm/index-preserving_lightweight_token_pruning_for_efficient_document_understanding_.md)
-- [\[AAAI 2026\] URaG: Unified Retrieval and Generation in Multimodal LLMs for Efficient Long Document Understanding](urag_unified_retrieval_and_generation_in_multimodal_llms_for.md)
-- [\[AAAI 2026\] TinyChemVL: Advancing Chemical Vision-Language Models via Efficient Visual Token Reduction and Complex Reaction Tasks](tinychemvl_advancing_chemical_vision-language_models_via_efficient_visual_token_.md)
-- [\[AAAI 2026\] Bridging Modalities via Progressive Re-alignment for Multimodal Test-Time Adaptation (BriMPR)](bridging_modalities_via_progressive_re-alignment_for_multimo.md)
+- [\[ICLR 2026\] TABLET: A Large-Scale Dataset for Robust Visual Table Understanding](../../ICLR2026/multimodal_vlm/tablet_a_large-scale_dataset_for_robust_visual_table_understanding.md)
+- [\[NeurIPS 2025\] Efficient Multi-modal Large Language Models via Progressive Consistency Distillation](../../NeurIPS2025/multimodal_vlm/efficient_multi-modal_large_language_models_via_progressive_consistency_distilla.md)
+- [\[ICLR 2026\] Enhancing Multi-Image Understanding through Delimiter Token Scaling](../../ICLR2026/multimodal_vlm/enhancing_multi-image_understanding_through_delimiter_token_scaling.md)
+- [\[ACL 2025\] Table Understanding and (Multimodal) LLMs: A Cross-Domain Case Study on Scientific Tables](../../ACL2025/multimodal_vlm/table_understanding_and_multimodal_llms_a_cross-domain_case_study_on_scientific_.md)
 
 </div>
 

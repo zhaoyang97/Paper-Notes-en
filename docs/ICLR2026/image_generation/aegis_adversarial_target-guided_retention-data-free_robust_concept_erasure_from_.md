@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] AEGIS: Adversarial Target-Guided Retention-Data-Free Robust Concept Erasure from Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][Concept Erasure] AEGIS transforms the "erasure target" from manually selected fixed safety words to an Adversarial Erasure Target (AET) that iteratively approaches the semantic center of the concept. It further employs Gradient Rectification with Projection (GRP) to maintain generation quality without requiring retention data, effectiv
+  [ICLR 2026][Image Generation][Concept erasure] AEGIS transforms the "erasure target" from manually selected fixed safety words to an Adversarial Erasure Target (AET) that iteratively approaches the semantic center of the concept. It further employs Gradient Rectification with Projection (GRP) to maintain generation quality without requiring retention data, effectively minimizing adversarial prompt attack success rates with negligible performance loss.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Concept Erasure
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Concept erasure"
+  - "Diffusion models"
+  - "Adversarial prompt attack"
+  - "Robustness-retention trade-off"
+  - "Gradient projection"
 date: 2026-05-08
-content_hash: c0b7470859bac68d
+content_hash: c71ff20f4639b80a
 ---
+
 # AEGIS: Adversarial Target-Guided Retention-Data-Free Robust Concept Erasure from Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -126,10 +130,17 @@ AEGIS achieves the lowest ASR across all attacks. FID is improved by 16.09 compa
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[AAAI 2026\] Mass Concept Erasure in Diffusion Models with Concept Hierarchy](../../AAAI2026/image_generation/mass_concept_erasure_in_diffusion_models_with_concept_hierarchy.md)
+- [\[ICLR 2026\] SPEED: Scalable, Precise, and Efficient Concept Erasure for Diffusion Models](speed_scalable_precise_and_efficient_concept_erasure_for_diffusion_models.md)
+- [\[CVPR 2026\] Prototype-Guided Concept Erasure in Diffusion Models](../../CVPR2026/image_generation/prototype-guided_concept_erasure_in_diffusion_models.md)
+- [\[CVPR 2026\] GrOCE: Graph-Guided Online Concept Erasure for Text-to-Image Diffusion Models](../../CVPR2026/image_generation/groce_graph-guided_online_concept_erasure_for_text-to-image_diffusion_models.md)
+- [\[ICLR 2026\] SDErasure: Concept-Specific Trajectory Shifting for Concept Erasure via Adaptive Diffusion Classifier](sderasure_concept-specific_trajectory_shifting_for_concept_erasure_via_adaptive_.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[AAAI 2026\] Mass Concept Erasure in Diffusion Models with Concept Hierarchy](../../AAAI2026/image_generation/mass_concept_erasure_in_diffusion_models_with_concept_hierarchy.md)

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] The Curious Case of Analogies: Investigating Analogical Reasoning in Large Language Models
 description: >-
-  [AAAI 2026][LLM Reasoning][Analogical Reasoning] Using mechanistic interpretability tools including Patchscopes, attention knockout, and linear probes…
+  [AAAI 2026][Reasoning][Analogical Reasoning] Using mechanistic interpretability tools including Patchscopes, attention knockout, and linear probes, this paper systematically reveals the internal mechanisms of analogical reasoning in LLMs: models can effectively encode relational information in middle-to-upper layers, but **applying** relational information to new entities is a greater bottleneck than **extracting** it; successful analogical reasoning correlates with strong st…
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Analogical Reasoning"
   - "Mechanistic Interpretability"
   - "Relational Information Encoding"
   - "Structural Alignment"
   - "Attention Intervention"
 date: 2026-05-08
-content_hash: bbdee7b5a501c434
+content_hash: a725d9521dc264e3
 ---
 
 # The Curious Case of Analogies: Investigating Analogical Reasoning in Large Language Models

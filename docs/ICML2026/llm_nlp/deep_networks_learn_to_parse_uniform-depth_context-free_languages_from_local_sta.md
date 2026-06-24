@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Deep Networks Learn to Parse Uniform-Depth Context-Free Languages from Local Statistics
 description: >-
-  [ICML 2026][LLM (Other)][PCFG] The authors propose a "Varying-tree RHM" Probabilistic Context-Free Grammar (PCFG) with controllable ambiguity. They prove that using only low-order moments (root-to-pair and root-to-triple) combined with layer-wise clustering is sufficient to recover grammar rules and perform CYK-style parsing. The sample complexity i
+  [ICML 2026][LLM (Other)][PCFG] The authors propose a "Varying-tree RHM" Probabilistic Context-Free Grammar (PCFG) with controllable ambiguity. They prove that using only low-order moments (root-to-pair and root-to-triple) combined with layer-wise clustering is sufficient to recover grammar rules and perform CYK-style parsing. The sample complexity is derived as $P^\star \asymp v\, m_3\, m_2^{L-1} (p_2^2/2)^{1-L}$, and experiments on CNNs and Transformers strictly follow this…
 tags:
-  - ICML 2026
-  - LLM (Other)
-  - PCFG
+  - "ICML 2026"
+  - "LLM (Other)"
+  - "PCFG"
+  - "Syntactic Parsing"
+  - "Sample Complexity"
+  - "Hierarchical Representation"
+  - "Local Statistics"
 date: 2026-05-08
-content_hash: 952b3357d534c8ba
+content_hash: 23d622bb11c85487
 ---
+
 # Deep Networks Learn to Parse Uniform-Depth Context-Free Languages from Local Statistics
 
 **Conference**: ICML 2026  
@@ -135,10 +140,10 @@ NNs are trained using standard cross-entropy and SGD. The algorithm side only re
 
 ## Related Papers
 
+- [\[ICLR 2026\] Constrained Decoding of Diffusion LLMs with Context-Free Grammars](../../ICLR2026/llm_nlp/constrained_decoding_of_diffusion_llms_with_context-free_grammars.md)
 - [\[NeurIPS 2025\] SubSpec: Speculate Deep and Accurate — Lossless and Training-Free Acceleration for Offloaded LLMs](../../NeurIPS2025/llm_nlp/speculate_deep_and_accurate_lossless_and_training-free_acceleration_for_offloade.md)
 - [\[NeurIPS 2025\] In-Context Learning of Linear Dynamical Systems with Transformers: Approximation Bounds and Depth-Separation](../../NeurIPS2025/llm_nlp/in-context_learning_of_linear_dynamical_systems_with_transformers_approximation_.md)
 - [\[ICML 2026\] Compute as Teacher: Turning Inference Compute Into Reference-Free Supervision](compute_as_teacher_turning_inference_compute_into_reference-free_supervision.md)
-- [\[ICML 2026\] In-Context Routing (ICR): 一次训练、处处可用的 attention-level 隐式 ICL](train_once_reuse_everywhere_generalizable_implicit_in-context_learning_by_routin.md)
 - [\[ACL 2026\] Characterizing the Expressivity of Local Attention in Transformers](../../ACL2026/llm_nlp/characterizing_the_expressivity_of_local_attention_in_transformers.md)
 
 </div>

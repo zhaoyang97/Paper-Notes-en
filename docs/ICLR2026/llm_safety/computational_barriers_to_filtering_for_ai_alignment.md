@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Computational Barriers to Filtering for AI Alignment
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper provides a cryptographic proof that when a safety filter's computational power is strictly weaker than the supervised LLM, there exist adversarial prompts that are "provably indistinguishable to efficient filters yet reliably induce harmful behavior in the LLM." Consequently, **purely external (black-box) fi
+  [ICLR2026][LLM Safety][Safety Filters] This paper provides a cryptographic proof that when a safety filter's computational power is strictly weaker than the supervised LLM, there exist adversarial prompts that are "provably indistinguishable to efficient filters yet reliably induce harmful behavior in the LLM." Consequently, **purely external (black-box) filtering cannot guarantee alignment**; oversight must access the internal model weights.
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR2026"
+  - "LLM Safety"
+  - "Safety Filters"
+  - "Jailbreak Attacks"
+  - "Time-Lock Puzzles"
+  - "Computational Indistinguishability"
+  - "Impossibility Results"
 date: 2026-05-08
-content_hash: 577e86988855b762
+content_hash: 5885e0c919d3aec0
 ---
+
 # Computational Barriers to Filtering for AI Alignment
 
 **Conference**: ICLR2026  

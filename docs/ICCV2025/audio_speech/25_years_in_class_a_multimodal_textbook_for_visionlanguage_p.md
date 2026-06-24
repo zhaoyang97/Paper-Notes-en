@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 2.5 Years in Class: A Multimodal Textbook for Vision-Language Pretraining
 description: >-
-  [ICCV 2025][Audio & Speech][multimodal textbook] This work collects 2.5 years (22,000 hours) of instructional videos from YouTube and constructs a high-quality interleaved image-text "multimodal textbook" corpus (6.5M ke…
+  [ICCV 2025][Audio & Speech][multimodal textbook] This work collects 2.5 years (22,000 hours) of instructional videos from YouTube and constructs a high-quality interleaved image-text "multimodal textbook" corpus (6.5M keyframes + 0.75B text tokens) via an LLM-driven multi-level extraction and filtering pipeline. The resulting dataset significantly improves VLM pretraining on knowledge-intensive and reasoning tasks, yielding substantial gains on ScienceQA and MathVista in part…
 tags:
   - "ICCV 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "VLM pretraining"
   - "in-context learning"
 date: 2026-05-08
-content_hash: 008f0ce09cacc1b8
+content_hash: 1e38f433e4d629c7
 ---
 
 # 2.5 Years in Class: A Multimodal Textbook for Vision-Language Pretraining
@@ -205,10 +205,10 @@ The following additional insights are noteworthy:
 ## Related Papers
 
 - [\[CVPR 2026\] BabyVLM-V2: Toward Developmentally Grounded Pretraining and Benchmarking of Vision Foundation Models](../../CVPR2026/audio_speech/babyvlm-v2_toward_developmentally_grounded_pretraining_and_benchmarking_of_visio.md)
+- [\[ACL 2025\] Investigating and Enhancing Vision-Audio Capability in Omnimodal Large Language Models](../../ACL2025/audio_speech/investigating_and_enhancing_vision-audio_capability_in_omnimodal_large_language_.md)
+- [\[ICLR 2026\] Data-Centric Lessons To Improve Speech-Language Pretraining](../../ICLR2026/audio_speech/data-centric_lessons_to_improve_speech-language_pretraining.md)
 - [\[ICCV 2025\] How Would It Sound? Material-Controlled Multimodal Acoustic Profile Generation for Objects](how_would_it_sound_material-controlled_multimodal_acoustic_profile_generation_fo.md)
 - [\[AAAI 2026\] End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering](../../AAAI2026/audio_speech/end-to-end_contrastive_language-speech_pretraining_model_for_long-form_spoken_qu.md)
-- [\[NeurIPS 2025\] ThinkSound: Chain-of-Thought Reasoning in Multimodal Large Language Models for Audio Generation and Editing](../../NeurIPS2025/audio_speech/thinksound_chain-of-thought_reasoning_in_multimodal_large_language_models_for_au.md)
-- [\[NeurIPS 2025\] VITA-1.5: Towards GPT-4o Level Real-Time Vision and Speech Interaction](../../NeurIPS2025/audio_speech/vita-15_towards_gpt-4o_level_real-time_vision_and_speech_interaction.md)
 
 </div>
 

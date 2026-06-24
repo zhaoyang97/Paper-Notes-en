@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Diffusion Transformers with Representation Autoencoders
 description: >-
-  [ICLR 2026][Image Generation][DINOv2] The long-used VAE in latent diffusion is replaced with a "frozen pretrained representation encoder (DINOv2 / SigLIP2 / MAE) + a trained lightweight ViT decoder." By implementing three specific modifications for high-dimensional latents, the Diffusion Transformer is successfully adapted, achieving an unconditional FID o
+  [ICLR2026][Image Generation][Representation Autoencoder] The long-used VAE in latent diffusion is replaced with a "frozen pretrained representation encoder (DINOv2 / SigLIP2 / MAE) + a trained lightweight ViT decoder." By implementing three specific modifications for high-dimensional latents, the Diffusion Transformer is successfully adapted, achieving an unconditional FID of 1.51 and a guided FID of 1.13 on ImageNet 256×256. The convergence speed is 47× faster than SiT and 1…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - DINOv2
+  - "ICLR2026"
+  - "Image Generation"
+  - "Representation Autoencoder"
+  - "Diffusion Transformer"
+  - "Latent Diffusion"
+  - "DINOv2"
+  - "High-dimensional latent"
 date: 2026-05-08
-content_hash: 4ea79998f776ba92
+content_hash: 97c8bd4c685be3ca
 ---
+
 # Diffusion Transformers with Representation Autoencoders
 
 **Conference**: ICLR2026  
@@ -140,9 +145,9 @@ Contribution of each modification:
 
 - [\[CVPR 2026\] MeanFlow Transformers with Representation Autoencoders](../../CVPR2026/image_generation/meanflow_transformers_with_representation_autoencoders.md)
 - [\[ICLR 2026\] DiffSparse: Accelerating Diffusion Transformers with Learned Token Sparsity](diffsparse_accelerating_diffusion_transformers_with_learned_token_sparsity.md)
+- [\[ICLR 2026\] SPRINT: Sparse-Dense Residual Fusion for Efficient Diffusion Transformers](sprint_sparse-dense_residual_fusion_for_efficient_diffusion_transformers.md)
 - [\[ICLR 2026\] Aligning Visual Foundation Encoders to Tokenizers for Diffusion Models](aligning_visual_foundation_encoders_to_tokenizers_for_diffusion_models.md)
 - [\[ICLR 2026\] Scaling Laws for Diffusion Transformers](scaling_laws_for_diffusion_transformers.md)
-- [\[ICLR 2026\] Rethinking Global Text Conditioning in Diffusion Transformers](rethinking_global_text_conditioning_in_diffusion_transformers.md)
 
 </div>
 

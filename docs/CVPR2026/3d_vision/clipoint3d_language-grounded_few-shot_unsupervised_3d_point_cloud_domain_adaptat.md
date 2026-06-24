@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] CLIPoint3D: Language-Grounded Few-Shot Unsupervised 3D Point Cloud Domain Adaptation
 description: >-
-  [CVPR 2026][3D Vision][CLIP] The first CLIP-based few-shot unsupervised 3D point cloud domain adaptation framework. By utilizing knowledge-driven prompt tuning, parameter-efficient fine-tuning, entropy-guided view selection, and uncertainty-aware alignment loss, it achieves consistent accuracy improvements of 3-16% on PointDA-10 and GraspNetPC-10
+  [CVPR2026][3D Vision][3D Point Cloud Domain Adaptation] The first CLIP-based few-shot unsupervised 3D point cloud domain adaptation framework. By utilizing knowledge-driven prompt tuning, parameter-efficient fine-tuning, entropy-guided view selection, and uncertainty-aware alignment loss, it achieves consistent accuracy improvements of 3-16% on PointDA-10 and GraspNetPC-10 with only ~11M trainable parameters.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - CLIP
+  - "CVPR2026"
+  - "3D Vision"
+  - "3D Point Cloud Domain Adaptation"
+  - "CLIP"
+  - "Vision-Language Models"
+  - "Few-Shot Learning"
+  - "Unsupervised Domain Adaptation"
+  - "Optimal Transport"
+  - "Parameter-Efficient Fine-Tuning"
 date: 2026-05-08
-content_hash: 95a1f558bced772a
+content_hash: e518c265f863de03
 ---
+
 # CLIPoint3D: Language-Grounded Few-Shot Unsupervised 3D Point Cloud Domain Adaptation
 
 **Conference**: CVPR2026  
@@ -159,11 +166,11 @@ Average accuracy of 92.2%, exceeding the best baseline by **16.4%** and leading 
 
 ## Related Papers
 
-- [\[CVPR 2026\] GeoFree-CoSeg: Unsupervised Point Cloud-Image Cross-Modal Co-Segmentation Without Geometric Alignment](geofree-coseg_unsupervised_point_cloud-image_cross-modal_co-segmentation_without.md)
-- [\[CVPR 2026\] Ghosts in the Point Clouds: De-glaring LiDAR in the Transient Domain](ghosts_in_the_point_clouds_de-glaring_lidar_in_the_transient_domain.md)
-- [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](deformation-based_in-context_learning_for_point_cloud_understanding.md)
-- [\[CVPR 2026\] Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning](adapting_point_cloud_analysis_via_multimodal_bayesian_distribution_learning.md)
-- [\[CVPR 2026\] CMHANet: A Cross-Modal Hybrid Attention Network for Point Cloud Registration](cmhanet_a_cross-modal_hybrid_attention_network_for_point_cloud_registration.md)
+- [\[AAAI 2026\] Multi-Modal Assistance for Unsupervised Domain Adaptation on Point Cloud 3D Object Detection](../../AAAI2026/3d_vision/multi-modal_assistance_for_unsupervised_domain_adaptation_on_point_cloud_3d_obje.md)
+- [\[CVPR 2026\] QD-PCQA: Quality-Aware Domain Adaptation for Point Cloud Quality Assessment](qd-pcqa_quality-aware_domain_adaptation_for_point_cloud_quality_assessment.md)
+- [\[ECCV 2024\] Progressive Classifier and Feature Extractor Adaptation for Unsupervised Domain Adaptation on Point Clouds](../../ECCV2024/3d_vision/progressive_classifier_and_feature_extractor_adaptation_for_unsupervised_domain_.md)
+- [\[AAAI 2026\] EPSegFZ: Efficient Point Cloud Semantic Segmentation for Few- and Zero-Shot Scenarios](../../AAAI2026/3d_vision/epsegfz_efficient_point_cloud_semantic_segmentation_for_few-_and_zero-shot_scena.md)
+- [\[CVPR 2026\] Few-Shot Incremental 3D Object Detection in Dynamic Indoor Environments](few-shot_incremental_3d_object_detection_in_dynamic_indoor_environments.md)
 
 </div>
 

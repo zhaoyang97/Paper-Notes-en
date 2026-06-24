@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VisionTrim: Unified Vision Token Compression for Training-Free MLLM Acceleration
 description: >-
-  [ICLR 2026][vlm_efficiency][Paper Note] VisionTrim is a training-free acceleration framework for Multi-modal Large Language Models (MLLMs). It employs two plug-and-play modules: DVTS (selecting dominant vision tokens by balancing global semantics and local spatial continuity) and TGVC (re-clustering discarded tokens into supplementary tokens via text guidanc
+  [ICLR 2026][Multimodal Efficiency][Vision Token Compression] VisionTrim is a training-free acceleration framework for Multi-modal Large Language Models (MLLMs). It employs two plug-and-play modules: DVTS (selecting dominant vision tokens by balancing global semantics and local spatial continuity) and TGVC (re-clustering discarded tokens into supplementary tokens via text guidance). By compressing vision tokens during both vision encoding and LLM decoding stages…
 tags:
-  - ICLR 2026
-  - vlm_efficiency
+  - "ICLR 2026"
+  - "Multimodal Efficiency"
+  - "Vision Token Compression"
+  - "Training-free Acceleration"
+  - "Text-guided Pruning"
+  - "Local Spatial Continuity"
+  - "Multi-stage Pruning"
 date: 2026-05-08
-content_hash: 78d14a9d948cebd9
+content_hash: 85b2ec9f3877ccf1
 ---
+
 # VisionTrim: Unified Vision Token Compression for Training-Free MLLM Acceleration
 
 **Conference**: ICLR 2026  
@@ -154,11 +160,11 @@ Adaptive variance weighting is critical: using [CLS] tokens alone yields a POPE 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Enhancing Visual Token Representations for Video Large Language Models via Training-free Spatial-Temporal Pooling and Gridding](enhancing_visual_token_representations_for_video_large_language_models_via_train.md)
+- [\[AAAI 2026\] Filter, Correlate, Compress: Training-Free Token Reduction for MLLM Acceleration](../../AAAI2026/vlm_efficiency/filter_correlate_compress_training-free_token_reduction_for_.md)
 - [\[ICLR 2026\] Prune Redundancy, Preserve Essence: Vision Token Compression in VLMs via Synergistic Importance-Diversity](prune_redundancy_preserve_essence_vision_token_compression_in_vlms_via_synergist.md)
-- [\[ICLR 2026\] SP-VLA: A Joint Model Scheduling and Token Pruning Approach for VLA Model Acceleration](sp-vla_a_joint_model_scheduling_and_token_pruning_approach_for_vla_model_acceler.md)
-- [\[ICLR 2026\] IVC-Prune: Revealing the Implicit Visual Coordinates in LVLMs for Vision Token Pruning](ivc-prune_revealing_the_implicit_visual_coordinates_in_lvlms_for_vision_token_pr.md)
-- [\[ICLR 2026\] Nüwa: Mending the Spatial Integrity Torn by VLM Token Pruning](nüwa_mending_the_spatial_integrity_torn_by_vlm_token_pruning.md)
+- [\[CVPR 2026\] UniCompress: Token Compression for Unified Vision-Language Understanding and Generation](../../CVPR2026/vlm_efficiency/unicompress_token_compression_for_unified_vision-language_understanding_and_gene.md)
+- [\[ICLR 2026\] HiDrop: Hierarchical Vision Token Reduction in MLLMs via Late Injection, Concave Pyramid Pruning, and Early Exit](hidrop_hierarchical_vision_token_reduction_in_mllms_via_late_injection_concave_p.md)
+- [\[ICLR 2026\] Enhancing Visual Token Representations for Video Large Language Models via Training-free Spatial-Temporal Pooling and Gridding](enhancing_visual_token_representations_for_video_large_language_models_via_train.md)
 
 </div>
 

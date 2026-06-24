@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Breaking the Total Variance Barrier: Sharp Sample Complexity for Linear Heteroscedastic Bandits with Fixed Action Set
 description: >-
-  [ICLR 2026][learning_theory][G-optimal design] This paper investigates heteroscedastic stochastic linear bandits with a fixed action set, demonstrating that the traditional total variance $\Lambda=\sum_{t=1}^T \sigma_t^2$ fails to characterize information gain from low-noise rounds. It introduces two variance-adaptive exploration algorithms, VAEE and VAGD, providin
+  [ICLR2026][Learning Theory][Heteroscedastic linear bandits] This paper investigates heteroscedastic stochastic linear bandits with a fixed action set, demonstrating that the traditional total variance $\Lambda=\sum_{t=1}^T \sigma_t^2$ fails to characterize information gain from low-noise rounds. It introduces two variance-adaptive exploration algorithms, VAEE and VAGD, providing sharp simple regret upper and lower bounds that depend on the harmonic mean variance.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - G-optimal design
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Bandit Theory"
+  - "Heteroscedastic linear bandits"
+  - "fixed action set"
+  - "simple regret"
+  - "harmonic mean variance"
+  - "G-optimal design"
 date: 2026-05-08
-content_hash: 974011a13328e2b1
+content_hash: a806785db2e8a2d6
 ---
+
 # Breaking the Total Variance Barrier: Sharp Sample Complexity for Linear Heteroscedastic Bandits with Fixed Action Set
 
 **Conference**: ICLR2026  
@@ -149,10 +155,20 @@ The paper analyzes performance across different noise sequences.
 - Value: ⭐⭐⭐⭐⭐ Provides a sharp answer to sample complexity in heteroscedastic bandits and offers a transferable perspective for variance-aware RL.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Variance-Dependent Regret Lower Bounds for Contextual Bandits](variance-dependent_regret_lower_bounds_for_contextual_bandits.md)
+- [\[ICLR 2026\] Towards a Sharp Analysis of Offline Policy Learning for f-Divergence-Regularized Contextual Bandits](towards_a_sharp_analysis_of_offline_policy_learning_for_f-divergence-regularized.md)
+- [\[ICLR 2026\] Sample Complexity and Representation Ability of Test-time Scaling Paradigms](sample_complexity_and_representation_ability_of_test-time_scaling_paradigms.md)
+- [\[ICLR 2026\] How hard is learning to cut? Trade-offs and sample complexity](how_hard_is_learning_to_cut_trade-offs_and_sample_complexity.md)
+- [\[ICLR 2026\] Mitigating the Curse of Detail: Scaling Arguments for Feature Learning and Sample Complexity](mitigating_the_curse_of_detail_scaling_arguments_for_feature_learning_and_sample.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Variance-Dependent Regret Lower Bounds for Contextual Bandits](variance-dependent_regret_lower_bounds_for_contextual_bandits.md)

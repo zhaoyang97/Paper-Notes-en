@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Tequila: Trapping-free Ternary Quantization for Large Language Models
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] Addressing the issue in ternary quantization (compressing weights to $\{-1, 0, +1\}$) where many weights become "trapped" at the deadzone boundary and fail to receive effective gradients, this paper proposes Tequila. This method reactivates these "dead weights" as differentiable **dynamic biases**, allowing them to con
+  [ICLR 2026][Model Compression][Ternary Quantization] Addressing the issue in ternary quantization (compressing weights to $\{-1, 0, +1\}$) where many weights become "trapped" at the deadzone boundary and fail to receive effective gradients, this paper proposes Tequila. This method reactivates these "dead weights" as differentiable **dynamic biases**, allowing them to contribute signals in the forward pass and receive direct gradients in the backward pass. This improves accura…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Ternary Quantization"
+  - "Deadzone Trapping"
+  - "Dynamic Bias"
+  - "Quantization-Aware Training (QAT)"
+  - "Edge Deployment"
 date: 2026-05-08
-content_hash: f2f263132706e0a0
+content_hash: 52cf1fa08f0216eb
 ---
+
 # Tequila: Trapping-free Ternary Quantization for Large Language Models
 
 **Conference**: ICLR 2026  

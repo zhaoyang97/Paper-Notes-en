@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Distilling Causal Signals for One-Shot Directed Evolution of Antibodies
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] AFFINITYENHANCER proposes antibody affinity maturation in an extreme "one-shot" setting: "given only a single lead antibody sequence, no antigen information, no fine-tuning, and no antigen-antibody complex structures." By constructing "same-antigen, low-affinity → high-affinity" neighbor pairs within cross-antigen data
+  [ICLR2026][Computational Biology][Antibody affinity maturation] AFFINITYENHANCER proposes antibody affinity maturation in an extreme "one-shot" setting: "given only a single lead antibody sequence, no antigen information, no fine-tuning, and no antigen-antibody complex structures." By constructing "same-antigen, low-affinity → high-affinity" neighbor pairs within cross-antigen datasets, a residual Graph Transformer learns a mapping in a frozen sequence-structure embedding spa…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR2026"
+  - "Computational Biology"
+  - "Antibody affinity maturation"
+  - "one-shot directed evolution"
+  - "causal signal distillation"
+  - "paired data matching"
+  - "Graph Transformer"
 date: 2026-05-08
-content_hash: e8652e0b453f901a
+content_hash: 8f1a713820a06e90
 ---
+
 # Distilling Causal Signals for One-Shot Directed Evolution of Antibodies
 
 **Conference**: ICLR2026  
@@ -164,9 +170,9 @@ Averaged across 5000 samples for 4 seeds:
 
 - [\[ICLR 2026\] One Protein Is All You Need](one_protein_is_all_you_need.md)
 - [\[ICLR 2026\] Discovering heterogeneous synaptic plasticity rules via large-scale neural evolution](discovering_heterogeneous_synaptic_plasticity_rules_via_large-scale_neural_evolu.md)
+- [\[ICML 2026\] TD3B: Transition-Directed Discrete Diffusion for Allosteric Binder Generation](../../ICML2026/computational_biology/td3b_transition-directed_discrete_diffusion_for_allosteric_binder_generation.md)
+- [\[ICML 2026\] Towards A Generative Protein Evolution Machine with DPLM-Evo](../../ICML2026/computational_biology/towards_a_generative_protein_evolution_machine_with_dplm-evo.md)
 - [\[ICLR 2026\] Extending Sequence Length is Not All You Need: Effective Integration of Multimodal Signals for Gene Expression Prediction](extending_sequence_length_is_not_all_you_need_effective_integration_of_multimoda.md)
-- [\[ICLR 2026\] CryoNet.Refine: A One-step Diffusion Model for Rapid Refinement of Structural Models with Cryo-EM Density Map Restraints](cryonetrefine_a_one-step_diffusion_model_for_rapid_refinement_of_structural_mode.md)
-- [\[ICLR 2026\] A Cross-Species Neural Foundation Model for End-to-End Speech Decoding](a_cross-species_neural_foundation_model_for_end-to-end_speech_decoding.md)
 
 </div>
 

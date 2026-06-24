@@ -2,18 +2,13 @@
 title: >-
   [Paper Note] No Calibration, No Depth, No Problem: Cross-Sensor View Synthesis with 3D Consistency
 description: >-
-  [CVPR 2026][3D Vision][Cross-Sensor View Synthesis] The first calibration-free and depth-free cross-sensor view synthesis framework is proposed. Through a match-densify-consolidate pipeline, sparse cross-modal keypoints are expanded into dense, RGB-aligned X-modal images (thermal/NIR/SAR). The synthesis quality is enhanced via confidence-aware fusion and self-matching f
+  [3D Vision] The first calibration-free and depth-free cross-sensor view synthesis framework is proposed. Through a match-densify-consolidate pipeline, sparse cross-modal keypoints are expanded into dense, RGB-aligned X-modal images (thermal/NIR/SAR). The synthesis quality is enhanced via confidence-aware fusion and self-matching filtering.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Cross-Sensor View Synthesis
-  - RGB-X Alignment
-  - 3D Gaussian Splatting
-  - Image Matching
-  - Confidence-Aware Densification
+  - "3D Vision"
 date: 2026-05-08
-content_hash: c0f1ac103b247f42
+content_hash: ac7b19b69f353244
 ---
+
 # No Calibration, No Depth, No Problem: Cross-Sensor View Synthesis with 3D Consistency
 
 ## Basic Information
@@ -155,11 +150,11 @@ $$\mathcal{L}_{\text{sim}}(A) = -\frac{\operatorname{Tr}(A)}{\|A\|_F} + \lambda 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Cross-View Splatter: Feed-Forward View Synthesis with Georeferenced Images](cross-view_splatter_feed-forward_view_synthesis_with_georeferenced_images.md)
-- [\[CVPR 2026\] ForgeDreamer: Industrial Text-to-3D Generation with Multi-Expert LoRA and Cross-View Hypergraph](forgedreamer_industrial_text-to-3d_generation_with_multi-expert_lora_and_cross-v.md)
-- [\[ICCV 2025\] No Pose at All: Self-Supervised Pose-Free 3D Gaussian Splatting from Sparse Views](../../ICCV2025/3d_vision/no_pose_at_all_self-supervised_pose-free_3d_gaussian_splatting_from_sparse_views.md)
-- [\[CVPR 2026\] Cross-Instance Gaussian Splatting Registration via Geometry-Aware Feature-Guided Alignment](cross-instance_gaussian_splatting_registration_via_geometry-aware_feature-guided.md)
-- [\[CVPR 2026\] AffordGrasp: Cross-Modal Diffusion for Affordance-Aware Grasp Synthesis](affordgrasp_cross-modal_diffusion_for_affordance-aware_grasp_synthesis.md)
+- [\[ICCV 2025\] Depth AnyEvent: A Cross-Modal Distillation Paradigm for Event-Based Monocular Depth Estimation](../../ICCV2025/3d_vision/depth_anyevent_a_cross-modal_distillation_paradigm_for_event-based_monocular_dep.md)
+- [\[CVPR 2026\] TeHOR: Text-Guided 3D Human and Object Reconstruction with Textures](tehor_text-guided_3d_human_and_object_reconstruction_with_textures.md)
+- [\[CVPR 2025\] Multi-view Reconstruction via SfM-guided Monocular Depth Estimation](../../CVPR2025/3d_vision/multi-view_reconstruction_via_sfm-guided_monocular_depth_estimation.md)
+- [\[ICCV 2025\] Self-Ensembling Gaussian Splatting for Few-Shot Novel View Synthesis](../../ICCV2025/3d_vision/self-ensembling_gaussian_splatting_for_few-shot_novel_view_synthesis.md)
+- [\[ICCV 2025\] JointDiT: Enhancing RGB-Depth Joint Modeling with Diffusion Transformers](../../ICCV2025/3d_vision/jointdit_enhancing_rgb-depth_joint_modeling_with_diffusion_transformers.md)
 
 </div>
 

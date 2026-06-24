@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DcMatch: Unsupervised Multi-Shape Matching with Dual-Level Consistency
 description: >-
-  [AAAI 2026][multi-shape matching] This paper proposes DcMatch, an unsupervised multi-shape matching framework that employs a shape graph attention network to capture the underlying manifold structure of a shape collectio…
+  [AAAI 2026][multi-shape matching] This paper proposes DcMatch, an unsupervised multi-shape matching framework that employs a shape graph attention network to capture the underlying manifold structure of a shape collection for constructing a more expressive shared universe space, while enforcing dual-level cycle consistency constraints in both the spatial and spectral domains, achieving comprehensive state-of-the-art performance across multiple benchmark datasets.
 tags:
   - "AAAI 2026"
   - "multi-shape matching"
@@ -11,7 +11,7 @@ tags:
   - "graph attention network"
   - "unsupervised learning"
 date: 2026-05-08
-content_hash: f91ee06f666916d6
+content_hash: c0cee1a88e4d74a2
 ---
 
 # DcMatch: Unsupervised Multi-Shape Matching with Dual-Level Consistency
@@ -194,11 +194,11 @@ Training: Adam optimizer, learning rate 0.001, $\lambda_{bij}=\lambda_{orth}=\la
 
 ## Related Papers
 
+- [\[CVPR 2026\] DF²-VB: Dual-level Fuzzy Fusion with View-specific Boosting for Multi-view Multi-label Classification](../../CVPR2026/others/df2-vb_dual-level_fuzzy_fusion_with_view-specific_boosting_for_multi-view_multi-.md)
+- [\[ICLR 2026\] Consistency-Driven Calibration and Matching for Few-Shot Class Incremental Learning](../../ICLR2026/others/consistency-driven_calibration_and_matching_for_few-shot_class_incremental_learn.md)
+- [\[AAAI 2026\] Radar-APLANC: Unsupervised Radar-based Heartbeat Sensing via Augmented Pseudo-Label and Noise Contrast](radar-aplanc_unsupervised_radar-based_heartbeat_sensing_via_augmented_pseudo-lab.md)
 - [\[ICLR 2026\] Distributionally Robust Classification for Multi-Source Unsupervised Domain Adaptation](../../ICLR2026/others/distributionally_robust_classification_for_multi-source_unsupervised_domain_adap.md)
 - [\[ICCV 2025\] EDFFDNet: Towards Accurate and Efficient Unsupervised Multi-Grid Image Registration](../../ICCV2025/others/edffdnet_towards_accurate_and_efficient_unsupervised_multi-grid_image_registrati.md)
-- [\[AAAI 2026\] Radar-APLANC: Unsupervised Radar-based Heartbeat Sensing via Augmented Pseudo-Label and Noise Contrast](radar-aplanc_unsupervised_radar-based_heartbeat_sensing_via_augmented_pseudo-lab.md)
-- [\[AAAI 2026\] Neural Graph Navigation for Intelligent Subgraph Matching](neural_graph_navigation_for_intelligent_subgraph_matching.md)
-- [\[ICML 2026\] Multi-Level Strategic Classification: Incentivizing Improvement Through Promotion and Relegation Dynamics](../../ICML2026/others/multi-level_strategic_classification_incentivizing_improvement_through_promotion.md)
 
 </div>
 

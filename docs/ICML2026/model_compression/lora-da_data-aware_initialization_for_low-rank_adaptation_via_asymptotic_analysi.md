@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LoRA-DA: Data-Aware Initialization for Low-Rank Adaptation via Asymptotic Analysis
 description: >-
-  [ICML 2026][Model Compression][Paper Note] LoRA-DA reformulates the problem of "how to initialize LoRA matrices $A$ and $B$" as an optimization problem aimed at **minimizing the expected gap between the fine-tuned model and target model parameters**. Through asymptotic analysis, the objective is decomposed into **variance and bias terms**. Using Fisher Informat
+  [ICML 2026][Model Compression][LoRA Initialization] LoRA-DA reformulates the problem of "how to initialize LoRA matrices $A$ and $B$" as an optimization problem aimed at **minimizing the expected gap between the fine-tuned model and target model parameters**. Through asymptotic analysis, the objective is decomposed into **variance and bias terms**. Using Fisher Information to characterize sampling randomness while preserving the anisotropy of the parameter space…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "LoRA Initialization"
+  - "Asymptotic Analysis"
+  - "Fisher Information"
+  - "Data-Aware"
+  - "Anisotropy"
 date: 2026-05-08
-content_hash: 035a85a19d0ee544
+content_hash: 3012b1e529972f8a
 ---
+
 # LoRA-DA: Data-Aware Initialization for Low-Rank Adaptation via Asymptotic Analysis
 
 **Conference**: ICML 2026  
@@ -131,11 +137,11 @@ Evaluated on LLaMA 2-7B / 13B. Baselines include vanilla LoRA, data-independent 
 
 ## Related Papers
 
-- [\[ACL 2026\] TLoRA: Task-aware Low Rank Adaptation of Large Language Models](../../ACL2026/model_compression/tlora_task-aware_low_rank_adaptation_of_large_language_models.md)
 - [\[ICML 2026\] Energy-Structured Low-Rank Adaptation for Continual Learning](energy-structured_low-rank_adaptation_for_continual_learning.md)
-- [\[ACL 2026\] TalkLoRA: Communication-Aware Mixture of Low-Rank Adaptation for Large Language Models](../../ACL2026/model_compression/talklora_communication-aware_mixture_of_low-rank_adaptation_for_large_language_m.md)
 - [\[ICML 2026\] ScaLoRA: Optimally Scaled Low-Rank Adaptation for Efficient High-Rank Fine-Tuning](scalora_optimally_scaled_low-rank_adaptation_for_efficient_high-rank_fine-tuning.md)
-- [\[ACL 2026\] Not All Directions Matter: Towards Structured and Task-Aware Low-Rank Model Adaptation](../../ACL2026/model_compression/not_all_directions_matter_towards_structured_and_task-aware_low-rank_model_adapt.md)
+- [\[ICLR 2026\] Stable-LoRA: Stabilizing Feature Learning of Low-Rank Adaptation](../../ICLR2026/model_compression/stable-lora_stabilizing_feature_learning_of_low-rank_adaptation.md)
+- [\[ACL 2026\] TLoRA: Task-aware Low Rank Adaptation of Large Language Models](../../ACL2026/model_compression/tlora_task-aware_low_rank_adaptation_of_large_language_models.md)
+- [\[ICLR 2026\] E²LoRA: Efficient and Effective Low-Rank Adaptation with Entropy-Guided Adaptive Sharing](../../ICLR2026/model_compression/e²lora_efficient_and_effective_low-rank_adaptation_with_entropy-guided_adaptive_.md)
 
 </div>
 

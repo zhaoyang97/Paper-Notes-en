@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Foundation VAEs for 3D CT Reconstruction, Augmentation, and Generation
 description: >-
-  [ICML 2026][Medical Imaging][Paper Note] This paper demonstrates a counter-intuitive yet practical finding: Foundation VAEs pre-trained on natural images/videos can serve as a unified interface for CT reconstruction, augmentation, and generation without any medical fine-tuning. The reconstruction acts as a boundary-preserving denoiser (improving pancreatic/lu
+  [ICML 2026][Medical Imaging][Foundation VAE] This paper demonstrates a counter-intuitive yet practical finding: Foundation VAEs pre-trained on natural images/videos can serve as a unified interface for CT reconstruction, augmentation, and generation without any medical fine-tuning. The reconstruction acts as a boundary-preserving denoiser (improving pancreatic/lung tumor NSD by +3.9%), while its latent space supports conditional CT diffusion generation (FVD −3.9%…
 tags:
-  - ICML 2026
-  - Medical Imaging
+  - "ICML 2026"
+  - "Medical Imaging"
+  - "Foundation VAE"
+  - "CT Reconstruction"
+  - "CT Data Augmentation"
+  - "Conditional Latent Diffusion"
+  - "Zero-shot Medical Transfer"
 date: 2026-05-08
-content_hash: 990aaa9621f4ec04
+content_hash: e00f37a2a2f36cba
 ---
+
 # Foundation VAEs for 3D CT Reconstruction, Augmentation, and Generation
 
 **Conference**: ICML 2026  
@@ -139,15 +145,13 @@ Achieved FVD −3.9% (vs. MAISI), CT-CLIP +36.2%, and +2.76 AUC in multi-disease
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
+- [\[ICLR 2026\] Pixel-Level Residual Diffusion Transformer: Scalable 3D CT Volume Generation](../../ICLR2026/medical_imaging/pixel-level_residual_diffusion_transformer_scalable_3d_ct_volume_generation.md)
+- [\[ICLR 2026\] NAB: Neural Adaptive Binning for Sparse-View CT Reconstruction](../../ICLR2026/medical_imaging/nab_neural_adaptive_binning_for_sparse-view_ct_reconstruction.md)
 - [\[AAAI 2026\] GuideGen: A Text-Guided Framework for Paired Full-Torso Anatomy and CT Volume Generation](../../AAAI2026/medical_imaging/guidegen_a_text-guided_framework_for_paired_full-torso_anatomy_and_ct_volume_gen.md)
+- [\[ICLR 2026\] UltraGauss: Ultrafast Gaussian Reconstruction of 3D Ultrasound Volumes](../../ICLR2026/medical_imaging/ultragauss_ultrafast_gaussian_reconstruction_of_3d_ultrasound_volumes.md)
 - [\[NeurIPS 2025\] Toward a Vision-Language Foundation Model for Medical Data: Multimodal Dataset and Benchmarks for Vietnamese PET/CT Report Generation](../../NeurIPS2025/medical_imaging/toward_a_vision-language_foundation_model_for_medical_data_multimodal_dataset_an.md)
-- [\[CVPR 2026\] SPECTRE：面向体积 CT Transformer 的自监督与跨模态预训练](../../CVPR2026/medical_imaging/scaling_self-supervised_and_cross-modal_pretraining_for_volumetric_ct_transforme.md)
-- [\[NeurIPS 2025\] Surf2CT: Cascaded 3D Flow Matching Models for Torso 3D CT Synthesis from Skin Surface](../../NeurIPS2025/medical_imaging/surf2ct_cascaded_3d_flow_matching_models_for_torso_3d_ct_synthesis_from_skin_sur.md)
-- [\[CVPR 2026\] VesMamba: 3D Pulmonary Vessel Segmentation from CT images via Mamba with Structural Perception and Scale-aware Filtering](../../CVPR2026/medical_imaging/vesmamba_3d_pulmonary_vessel_segmentation_from_ct_images_via_mamba_with_structur.md)
 
 </div>
 

@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] You Can Learn Tokenization End-to-End with Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][score function estimator] This paper models the decision of "where to draw token boundaries" in byte-level LLMs as a discrete stochastic process. By using a score function estimator equipped with early-exit relative rewards, time discounting, and batch-relative advantage, it achieves end-to-end learning of tokenization. The method outperforms s
+  [ICML2026][Reinforcement Learning][End-to-end tokenization] This paper models the decision of "where to draw token boundaries" in byte-level LLMs as a discrete stochastic process. By using a score function estimator equipped with early-exit relative rewards, time discounting, and batch-relative advantage, it achieves end-to-end learning of tokenization. The method outperforms straight-through estimators on a 147M natural language model and a 90M code model…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - score function estimator
-  - REINFORCE
-  - autoregressive U-Net
-  - byte-level LLM
+  - "ICML2026"
+  - "Reinforcement Learning"
+  - "End-to-end tokenization"
+  - "score function estimator"
+  - "REINFORCE"
+  - "autoregressive U-Net"
+  - "byte-level LLM"
 date: 2026-05-08
-content_hash: 2f9b32d6c7ae0961
+content_hash: 65ad4cbe2e1d2165
 ---
+
 # You Can Learn Tokenization End-to-End with Reinforcement Learning
 
 **Conference**: ICML2026  
@@ -138,15 +140,14 @@ Ablations focused on boundary window size, BPE-guidance comparison, target rate,
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] EVA: Efficient Reinforcement Learning for End-to-End Video Agent](../../CVPR2026/reinforcement_learning/eva_efficient_reinforcement_learning_for_end-to-end_video_agent.md)
+- [\[ICLR 2026\] ComputerRL: Scaling End-to-End Online Reinforcement Learning for Computer Use Agents](../../ICLR2026/reinforcement_learning/computerrl_scaling_end-to-end_online_reinforcement_learning_for_computer_use_age.md)
+- [\[ICLR 2026\] Use the Online Network If You Can: Towards Fast and Stable Reinforcement Learning](../../ICLR2026/reinforcement_learning/use_the_online_network_if_you_can_towards_fast_and_stable_reinforcement_learning.md)
 - [\[ICML 2026\] Can Large Language Models Generalize Procedures Across Representations?](can_large_language_models_generalize_procedures_across_representations.md)
-- [\[ICML 2026\] Learning to Search and Searching to Learn for Generalization in Planning](learning_to_search_and_searching_to_learn_for_generalization_in_planning.md)
-- [\[NeurIPS 2025\] Shift Before You Learn: Enabling Low-Rank Representations in Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/shift_before_you_learn_enabling_low-rank_representations_in_reinforcement_learni.md)
-- [\[ICML 2026\] Offline Reinforcement Learning with Generative Trajectory Policies](offline_reinforcement_learning_with_generative_trajectory_policies.md)
+- [\[ICML 2026\] What Does Reinforcement Learning for Visual Tool Use Really Learn?](what_does_vision_tool-use_reinforcement_learning_really_learn_disentangling_tool.md)
 
 </div>
 

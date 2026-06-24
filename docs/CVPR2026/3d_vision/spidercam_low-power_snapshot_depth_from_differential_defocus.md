@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SpiderCam: Low-Power Snapshot Depth from Differential Defocus
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] SpiderCam utilizes a beam-splitting prism and two low-power image sensors to capture a pair of differential defocus images. It executes an optimized Differential Depth from Defocus (DfDD) algorithm in a streaming fashion on a low-power FPGA—one too small to store even a single pair of full frames. This represents the f
+  [CVPR 2026][3D Vision][Depth from Defocus] SpiderCam utilizes a beam-splitting prism and two low-power image sensors to capture a pair of differential defocus images. It executes an optimized Differential Depth from Defocus (DfDD) algorithm in a streaming fashion on a low-power FPGA—one too small to store even a single pair of full frames. This represents the first passive 3D camera in literature with a total power consumption under 1 Watt (624 mW @ 32.5 FPS) and an operating…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Depth from Defocus"
+  - "Differential Depth from Defocus (DfDD)"
+  - "Low-power FPGA"
+  - "Snapshot Imaging"
+  - "Streaming Hardware"
 date: 2026-05-08
-content_hash: ffd81d215538560d
+content_hash: 96a4bf40787b9c64
 ---
+
 # SpiderCam: Low-Power Snapshot Depth from Differential Defocus
 
 **Conference**: CVPR 2026  
@@ -136,14 +142,14 @@ Total system power is 624 mW @ 32.5 FPS, which is 1/3.3 to 1/5 of the lowest pre
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] Spectrum from Defocus: Fast Spectral Imaging with Chromatic Focal Stack](spectrum_from_defocus_fast_spectral_imaging_with_chromatic_focal_stack.md)
 - [\[CVPR 2026\] $L^{2}DGS$: Low-Light Dynamic Gaussian Splatting](l2dgs_low-light_dynamic_gaussian_splatting.md)
 - [\[CVPR 2026\] GeoSAM2: Unleashing the Power of SAM2 for 3D Part Segmentation](geosam2_unleashing_the_power_of_sam2_for_3d_part_segmentation.md)
-- [\[CVPR 2026\] Revisiting 3D Reconstruction Kernels as Low-Pass Filters](revisiting_3d_reconstruction_kernels_as_low-pass_filters.md)
 - [\[CVPR 2026\] Unlocking the Power of Critical Factors for 3D Visual Geometry Estimation](unlocking_the_power_of_critical_factors_for_3d_visual_geometry_estimation.md)
 - [\[CVPR 2026\] Unleashing the Power of Chain-of-Prediction for Monocular 3D Object Detection](unleashing_the_power_of_chain-of-prediction_for_monocular_3d_object_detection.md)
 

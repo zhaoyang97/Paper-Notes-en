@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MoETTA: Test-Time Adaptation Under Mixed Distribution Shifts with MoE-LayerNorm
 description: >-
-  [AAAI 2026][LLM Efficiency][test-time adaptation] This paper proposes MoETTA, a test-time adaptation framework that reparameterizes LayerNorm into multiple structurally decoupled expert branches. A routing mechanism assi…
+  [AAAI 2026][LLM Efficiency][test-time adaptation] This paper proposes MoETTA, a test-time adaptation framework that reparameterizes LayerNorm into multiple structurally decoupled expert branches. A routing mechanism assigns samples from different domains to different experts, enabling multi-directional parameter updates and overcoming the limitations of a single adaptation path under mixed distribution shifts. The paper also introduces two more realistic evaluation benchmarks…
 tags:
   - "AAAI 2026"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "LayerNorm"
   - "Vision Transformer"
 date: 2026-05-08
-content_hash: 555427eec4319b40
+content_hash: 3735ad3a79188f0b
 ---
 
 # MoETTA: Test-Time Adaptation Under Mixed Distribution Shifts with MoE-LayerNorm
@@ -144,11 +144,11 @@ This paper introduces the MoE paradigm into the TTA domain, offering a contrast 
 
 ## Related Papers
 
-- [\[AAAI 2026\] HN-MVTS: HyperNetwork-based Multivariate Time Series Forecasting](hn-mvts_hypernetwork-based_multivariate_time_series_forecasting.md)
-- [\[ICML 2026\] RepetitionCurse: Measuring and Understanding Router Imbalance in Mixture-of-Experts LLMs under DoS Stress](../../ICML2026/llm_efficiency/repetitioncurse_measuring_and_understanding_router_imbalance_in_mixture-of-exper.md)
-- [\[NeurIPS 2025\] The Emergence of Sparse Attention: Impact of Data Distribution and Benefits of Repetition](../../NeurIPS2025/llm_efficiency/the_emergence_of_sparse_attention_impact_of_data_distribution_and_benefits_of_re.md)
-- [\[ICLR 2026\] xLSTM Scaling Laws: Competitive Performance with Linear Time-Complexity](../../ICLR2026/llm_efficiency/xlstm_scaling_laws_competitive_performance_with_linear_time-complexity.md)
-- [\[ICLR 2026\] RACE Attention: A Strictly Linear-Time Attention for Long-Sequence Training](../../ICLR2026/llm_efficiency/race_attention_a_strictly_linear-time_attention_for_long-sequence_training.md)
+- [\[ICLR 2026\] In-Place Test-Time Training](../../ICLR2026/llm_efficiency/in-place_test-time_training.md)
+- [\[ICLR 2026\] Test-Time Training Done Right](../../ICLR2026/llm_efficiency/test-time_training_done_right.md)
+- [\[ICLR 2026\] Guided Speculative Inference for Efficient Test-Time Alignment of LLMs](../../ICLR2026/llm_efficiency/guided_speculative_inference_for_efficient_test-time_alignment_of_llms.md)
+- [\[ICLR 2026\] MesaNet: Sequence Modeling by Locally Optimal Test-Time Training](../../ICLR2026/llm_efficiency/mesanet_sequence_modeling_by_locally_optimal_test-time_training.md)
+- [\[CVPR 2026\] Gated KalmaNet: A Fading Memory Layer Through Test-Time Ridge Regression](../../CVPR2026/llm_efficiency/gated_kalmanet_a_fading_memory_layer_through_test-time_ridge_regression.md)
 
 </div>
 

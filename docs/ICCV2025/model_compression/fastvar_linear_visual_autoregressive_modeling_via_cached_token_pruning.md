@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FastVAR: Linear Visual Autoregressive Modeling via Cached Token Pruning
 description: >-
-  [ICCV 2025][Model Compression][Visual Autoregressive] FastVAR proposes a training-free post-hoc acceleration method for VAR models. Grounded in the observation that large-scale steps primarily model high-frequency textur…
+  [ICCV 2025][Model Compression][Visual Autoregressive] FastVAR proposes a training-free post-hoc acceleration method for VAR models. Grounded in the observation that large-scale steps primarily model high-frequency textures and are robust to pruning, it selects pivotal tokens via frequency-guided scoring (PTS) to retain only high-frequency tokens during the forward pass, and restores pruned positions using cached token maps from earlier scales (CTR). Built on top of FlashAtten…
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -13,7 +13,7 @@ tags:
   - "training-free acceleration"
   - "cached token restoration"
 date: 2026-05-08
-content_hash: b56a5aba2f353e90
+content_hash: 1c5e0f1e0faa827f
 ---
 
 # FastVAR: Linear Visual Autoregressive Modeling via Cached Token Pruning
@@ -179,11 +179,11 @@ FastVAR maintains superior FID and GenEval scores at higher speedup ratios, demo
 
 ## Related Papers
 
+- [\[CVPR 2026\] Progressive Supernet Training for Efficient Visual Autoregressive Modeling](../../CVPR2026/model_compression/progressive_supernet_training_for_efficient_visual_autoregressive_modeling.md)
 - [\[ICCV 2025\] Bridging Continuous and Discrete Tokens for Autoregressive Visual Generation](bridging_continuous_and_discrete_tokens_for_autoregressive_visual_generation.md)
-- [\[NeurIPS 2025\] Linear Attention for Efficient Bidirectional Sequence Modeling](../../NeurIPS2025/model_compression/linear_attention_for_efficient_bidirectional_sequence_modeling.md)
-- [\[ICLR 2026\] AgilePruner: An Empirical Study of Attention and Diversity for Adaptive Visual Token Pruning in LVLMs](../../ICLR2026/model_compression/agilepruner_an_empirical_study_of_attention_and_diversity_for_adaptive_visual_to.md)
 - [\[ICCV 2025\] Representation Shift: Unifying Token Compression with FlashAttention](representation_shift_unifying_token_compression_with_flashattention.md)
-- [\[ICLR 2026\] PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models](../../ICLR2026/model_compression/ptq4arvg_post-training_quantization_for_autoregressive_visual_generation_models.md)
+- [\[NeurIPS 2025\] Linear Attention for Efficient Bidirectional Sequence Modeling](../../NeurIPS2025/model_compression/linear_attention_for_efficient_bidirectional_sequence_modeling.md)
+- [\[CVPR 2025\] LALIC: Linear Attention Modeling for Learned Image Compression](../../CVPR2025/model_compression/linear_attention_modeling_for_learned_image_compression.md)
 
 </div>
 

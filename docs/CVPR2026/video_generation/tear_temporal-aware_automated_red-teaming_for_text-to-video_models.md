@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TEAR: Temporal-aware Automated Red-teaming for Text-to-Video Models
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] The study proposes TEAR, the first automated red-teaming framework targeting temporal-dimensional vulnerabilities in T2V models. By utilizing a two-stage optimized temporal-aware test generator and an iterative refinement model, it generates prompts that are textually harmless but trigger harmful videos through tempora
+  [CVPR 2026][Video Generation][Text-to-Video Safety] The study proposes TEAR, the first automated red-teaming framework targeting temporal-dimensional vulnerabilities in T2V models. By utilizing a two-stage optimized temporal-aware test generator and an iterative refinement model, it generates prompts that are textually harmless but trigger harmful videos through temporal dynamics, achieving 80%+ attack success rates on both open-source and commercial T2V models.
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Text-to-Video Safety"
+  - "Automated Red-teaming"
+  - "Temporal-aware"
+  - "Adversarial Prompt Generation"
+  - "AI Safety"
 date: 2026-05-08
-content_hash: d7df91c8fbd816f4
+content_hash: debd16bff0bf3a4d
 ---
+
 # TEAR: Temporal-aware Automated Red-teaming for Text-to-Video Models
 
 **Conference**: CVPR 2026  
@@ -162,8 +168,8 @@ The prompts output by the generator are often incomplete. An iterative refiner b
 - [\[CVPR 2026\] TempoControl: Temporal Attention Guidance for Text-to-Video Models](tempocontrol_temporal_attention_guidance_for_text-to-video_models.md)
 - [\[CVPR 2026\] PoseAnything: General Pose-guided Video Generation with Part-aware Temporal Coherence](poseanything_general_pose-guided_video_generation_with_part-aware_temporal_coher.md)
 - [\[ICCV 2025\] EfficientMT: Efficient Temporal Adaptation for Motion Transfer in Text-to-Video Diffusion Models](../../ICCV2025/video_generation/efficientmt_efficient_temporal_adaptation_for_motion_transfer_in_text-to-video_d.md)
-- [\[CVPR 2026\] VideoCoF: Unified Video Editing with Temporal Reasoner](videocof_unified_video_editing_with_temporal_reasoner.md)
 - [\[CVPR 2026\] Ref4D-VideoBench: Four-Dimensional Reference-Based Evaluation of Text-to-Video Generative Models](ref4d-videobench_four-dimensional_reference-based_evaluation_of_text-to-video_ge.md)
+- [\[ICLR 2026\] Target-Aware Video Diffusion Models](../../ICLR2026/video_generation/target-aware_video_diffusion_models.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rethinking Policy Diversity in Ensemble Policy Gradient in Large-Scale Reinforcement Learning
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] This paper theoretically analyzes the impact of inter-policy diversity on learning efficiency in ensemble policy gradient methods and proposes Coupled Policy Optimization (CPO). By regulating diversity through KL divergence constraints, CPO achieves efficient and stable exploration in large-scale parallel environments.
+  [ICLR 2026][Robotics][Policy Ensemble] This paper theoretically analyzes the impact of inter-policy diversity on learning efficiency in ensemble policy gradient methods and proposes Coupled Policy Optimization (CPO). By regulating diversity through KL divergence constraints, CPO achieves efficient and stable exploration in large-scale parallel environments.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Policy Ensemble"
+  - "Large-scale Parallel RL"
+  - "Policy Diversity"
+  - "KL Constraint"
+  - "Dexterous Manipulation"
 date: 2026-05-08
-content_hash: 70d4d842a7198e84
+content_hash: 80b82ea1c5b9edc9
 ---
+
 # Rethinking Policy Diversity in Ensemble Policy Gradient in Large-Scale Reinforcement Learning
 
 **Conference**: ICLR 2026  

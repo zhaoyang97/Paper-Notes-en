@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Continual Low-Rank Adapters for LLM-based Generative Recommender Systems
 description: >-
-  [ICLR 2026][Recommender Systems][LoRA] PESO transforms continual learning for LLM-based generative recommendations from "stacking multiple frozen adapters" into "a single evolving LoRA + a proximal regularization term." By gently anchoring each update to the previous stage's state, the model automatically balances retaining long-term preferences and absorbi
+  [ICLR2026][Recommender Systems][Continual Learning] PESO transforms continual learning for LLM-based generative recommendations from "stacking multiple frozen adapters" into "a single evolving LoRA + a proximal regularization term." By gently anchoring each update to the previous stage's state, the model automatically balances retaining long-term preferences and absorbing new ones, consistently outperforming cumulative LoRA and simple evolving LoRA across three real-world dat…
 tags:
-  - ICLR 2026
-  - Recommender Systems
-  - LoRA
+  - "ICLR2026"
+  - "Recommender Systems"
+  - "Continual Learning"
+  - "LoRA"
+  - "Proximal Regularization"
+  - "Generative Recommendation"
+  - "Stability-Plasticity"
 date: 2026-05-08
-content_hash: cd06168bc18dc434
+content_hash: 06549674697d72ef
 ---
+
 # Continual Low-Rank Adapters for LLM-based Generative Recommender Systems
 
 **Conference**: ICLR2026  
@@ -151,9 +156,9 @@ Stability-Plasticity by user group (Instruments, NDCG@5):
 
 - [\[ICLR 2026\] Rank-GRPO: Training LLM-based Conversational Recommender Systems with Reinforcement Learning](rank-grpo_training_llm-based_conversational_recommender_systems_with_reinforceme.md)
 - [\[ICLR 2026\] Token-Efficient Item Representation via Images for LLM Recommender Systems](token-efficient_item_representation_via_images_for_llm_recommender_systems.md)
-- [\[ICLR 2026\] Low-pass Personalized Subgraph Federated Recommendation](low-pass_personalized_subgraph_federated_recommendation.md)
 - [\[ACL 2026\] GraphLoRA: Structure-Aware Low-Rank Adaptation for Large Language Model Recommendation](../../ACL2026/recommender/graphlora_structure-aware_low-rank_adaptation_for_large_language_model_recommend.md)
-- [\[ICLR 2026\] Massive Memorization with Hundreds of Trillions of Parameters for Sequential Transducer Generative Recommenders](massive_memorization_with_hundreds_of_trillions_of_parameters_for_sequential_tra.md)
+- [\[AAAI 2026\] RecToM: A Benchmark for Evaluating Machine Theory of Mind in LLM-based Conversational Recommender Systems](../../AAAI2026/recommender/rectom_a_benchmark_for_evaluating_machine_theory_of_mind_in_llm-based_conversati.md)
+- [\[AAAI 2026\] Align³GR: Unified Multi-Level Alignment for LLM-based Generative Recommendation](../../AAAI2026/recommender/align3gr_unified_multi-level_alignment_for_llm-based_generat.md)
 
 </div>
 

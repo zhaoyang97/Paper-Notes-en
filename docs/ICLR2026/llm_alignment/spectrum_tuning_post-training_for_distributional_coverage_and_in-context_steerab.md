@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Spectrum Tuning: Post-Training for Distributional Coverage and In-Context Steerability
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] The authors propose Spectrum Tuning, a post-training method that improves in-context steerability, output space coverage, and distributional alignment by training on a distribution-fitting dataset across 90+ tasks. The work reveals that current instruction tuning impairs the in-context steerability of language models.
+  [ICLR 2026][LLM Alignment][Post-training] The authors propose Spectrum Tuning, a post-training method that improves in-context steerability, output space coverage, and distributional alignment by training on a distribution-fitting dataset across 90+ tasks. The work reveals that current instruction tuning impairs the in-context steerability of language models.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Post-training"
+  - "Distributional Coverage"
+  - "In-context Steerability"
+  - "Meta-learning"
+  - "Language Models"
 date: 2026-05-08
-content_hash: 7747e05edc779b24
+content_hash: 36e91955c8b97955
 ---
+
 # Spectrum Tuning: Post-Training for Distributional Coverage and In-Context Steerability
 
 **Conference**: ICLR 2026  
@@ -142,8 +148,8 @@ Spectrum Tuning improves steerability while maintaining capability elicitation:
 - [\[ICLR 2026\] Fluent Alignment with Disfluent Judges: Post-training for Lower-Resource Languages](fluent_alignment_with_disfluent_judges_post-training_for_lower-resource_language.md)
 - [\[ICLR 2026\] Chasing the Tail: Effective Rubric-based Reward Modeling for Large Language Model Post-Training](chasing_the_tail_effective_rubric-based_reward_modeling_for_large_language_model.md)
 - [\[ICLR 2026\] Quagmires in SFT-RL Post-Training: When High SFT Scores Mislead and What to Use Instead](quagmires_in_sft-rl_post-training_when_high_sft_scores_mislead_and_what_to_use_i.md)
+- [\[ICLR 2026\] TS²: Sparsemax+ for Training and Softmax for Testing for Accurate and Diverse LLM Fine-tuning](ts2_training_with_sparsemax_testing_with_softmax_for_accurate_and_diverse_llm_fi.md)
 - [\[NeurIPS 2025\] GVPO: Group Variance Policy Optimization for Large Language Model Post-Training](../../NeurIPS2025/llm_alignment/gvpo_group_variance_policy_optimization_for_large_language_model_post-training.md)
-- [\[ACL 2026\] What Makes Good Instruction-Tuning Data? An In-Context Learning Perspective](../../ACL2026/llm_alignment/what_makes_good_instruction-tuning_data_an_in-context_learning_perspective.md)
 
 </div>
 

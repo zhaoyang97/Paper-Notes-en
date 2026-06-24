@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SCALE: Self-uncertainty Conditioned Adaptive Looking and Execution for Vision-Language-Action Models
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Paper Note] SCALE enables autoregressive VLAs to utilize a "self-uncertainty" score, calculated solely from output logits during inference, to simultaneously modulate **action sampling temperature** and **visual attention temperature**. By exploring broadly when uncertain and focusing greedily when certain, SCALE significantly imp
+  [ICML 2026][Robotics][Test-Time Scaling] SCALE enables autoregressive VLAs to utilize a "self-uncertainty" score, calculated solely from output logits during inference, to simultaneously modulate **action sampling temperature** and **visual attention temperature**. By exploring broadly when uncertain and focusing greedily when certain, SCALE significantly improves the success rates of multiple SOTA VLAs with zero additional training, no external verifiers…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
+  - "ICML 2026"
+  - "Robotics"
+  - "Test-Time Scaling"
+  - "Self-uncertainty"
+  - "Adaptive Inference"
+  - "Visual Attention Modulation"
+  - "Active Inference"
 date: 2026-05-08
-content_hash: dbdee72de50c14dd
+content_hash: 08a6f1593e65e93c
 ---
+
 # SCALE: Self-uncertainty Conditioned Adaptive Looking and Execution for Vision-Language-Action Models
 
 **Conference**: ICML 2026  
@@ -142,15 +148,13 @@ All results reported as SR(%) on OpenVLA / LIBERO-Long.
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[ICML 2026\] SpecPrune-VLA: Accelerating Vision-Language-Action Models via Action-Aware Self-Speculative Pruning](specprune-vla_accelerating_vision-language-action_models_via_action-aware_self-s.md)
 - [\[CVPR 2026\] Adaptive Action Chunking at Inference-time for Vision-Language-Action Models](../../CVPR2026/robotics/adaptive_action_chunking_at_inference-time_for_vision-language-action_models.md)
-- [\[CVPR 2026\] SRPO: Self-Referential Policy Optimization for Vision-Language-Action Models](../../CVPR2026/robotics/srpo_self-referential_policy_optimization_for_vision-language-action_models.md)
 - [\[CVPR 2026\] QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models](../../CVPR2026/robotics/quantvla_scale-calibrated_post-training_quantization_for_vision-language-action_.md)
-- [\[CVPR 2026\] AT-VLA: Adaptive Tactile Injection for Enhanced Feedback Reaction in Vision-Language-Action Models](../../CVPR2026/robotics/at-vla_adaptive_tactile_injection_for_enhanced_feedback_reaction_in_vision-langu.md)
+- [\[ICML 2026\] Scaling by Diversified Experience for Vision-Language-Action Models](scaling_by_diversified_experience_for_vision-language-action_models.md)
+- [\[ICML 2026\] Contrastive Representation Regularization for Vision-Language-Action Models](contrastive_representation_regularization_for_vision-language-action_models.md)
 
 </div>
 

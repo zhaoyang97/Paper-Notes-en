@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Fair Graph Machine Learning under Adversarial Missingness Processes
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper reveals an overlooked attack surface—**adversarial sensitive attribute missingness processes**—which can deceive fair GNNs by making imputation models "look fair." It proposes BFtS: a framework that uses a three-player adversarial game to impute missing sensitive values based on "worst-case fairness."
+  [ICLR 2026][AI Safety][Graph Neural Networks] This paper reveals an overlooked attack surface—**adversarial sensitive attribute missingness processes**—which can deceive fair GNNs by making imputation models "look fair." It proposes BFtS: a framework that uses a three-player adversarial game to impute missing sensitive values based on "worst-case fairness."
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Graph Neural Networks"
+  - "Group Fairness"
+  - "Missing Sensitive Attributes"
+  - "Adversarial Missingness"
+  - "Three-player Adversarial Learning"
+  - "Worst-case Imputation"
 date: 2026-05-08
-content_hash: f17a2d7502a682f4
+content_hash: a8d0d1f22d47d342
 ---
+
 # Fair Graph Machine Learning under Adversarial Missingness Processes
 
 **Conference**: ICLR 2026  

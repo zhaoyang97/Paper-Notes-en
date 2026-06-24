@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beautiful Images, Toxic Words: Understanding and Addressing Offensive Text in Generated Images
 description: >-
-  [AAAI2026][Image Generation][Diffusion Models] This paper identifies a novel threat of NSFW text embedded in diffusion-model-generated images…
+  [AAAI2026][Image Generation][Diffusion Models] This paper identifies a novel threat of NSFW text embedded in diffusion-model-generated images, proposes NSFW-Intervention — a targeted LoRA fine-tuning method applied to text-rendering layers — and releases the ToxicBench benchmark.
 tags:
   - "AAAI2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Safety Fine-tuning"
   - "benchmark"
 date: 2026-05-08
-content_hash: 8185587695c1c71f
+content_hash: acc011d9156f482c
 ---
 
 # Beautiful Images, Toxic Words: Understanding and Addressing Offensive Text in Generated Images
@@ -134,9 +134,9 @@ $$\mathcal{L} = \|w(t) \cdot (f_\theta(I_{\text{NSFW}}(t), t, \phi(x_{\text{NSFW
 
 - [\[AAAI 2026\] CausalCLIP: Causally-Informed Feature Disentanglement and Filtering for Generalizable Detection of Generated Images](causalclip_causally-informed_feature_disentanglement_and_filtering_for_generaliz.md)
 - [\[NeurIPS 2025\] Detecting Generated Images by Fitting Natural Image Distributions](../../NeurIPS2025/image_generation/detecting_generated_images_by_fitting_natural_image_distributions.md)
-- [\[CVPR 2026\] SimLBR: Learning to Detect Fake Images by Learning to Detect Real Images](../../CVPR2026/image_generation/simlbr_learning_to_detect_fake_images_by_learning_to_detect_real_images.md)
-- [\[CVPR 2026\] RewardFlow: Generate Images by Optimizing What You Reward](../../CVPR2026/image_generation/rewardflow_generate_images_by_optimizing_what_you_reward.md)
-- [\[AAAI 2026\] Virtual Multiplex Staining for Histological Images Using a Marker-wise Conditioned Diffusion Model](virtual_multiplex_staining_for_histological_images_using_a_marker-wise_condition.md)
+- [\[ECCV 2024\] Zero-Shot Detection of AI-Generated Images](../../ECCV2024/image_generation/zero-shot_detection_of_ai-generated_images.md)
+- [\[CVPR 2026\] The Consistency Critic: Correcting Inconsistencies in Generated Images via Reference-Guided Attentive Alignment](../../CVPR2026/image_generation/the_consistency_critic_correcting_inconsistencies_in_generated_images_via_refere.md)
+- [\[CVPR 2025\] OpenSDI: Spotting Diffusion-Generated Images in the Open World](../../CVPR2025/image_generation/opensdi_spotting_diffusion-generated_images_in_the_open_world.md)
 
 </div>
 

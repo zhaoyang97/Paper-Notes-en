@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Prefix Parsing is Just Parsing
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] This paper proposes **prefix grammar transformation**, an efficient method that reduces prefix parsing to ordinary parsing. Given a grammar, it constructs a new grammar that generates exactly the set of all prefix strings of the original grammar, allowing any existing ordinary parsing algorithm to be reused without mod
+  [ACL 2026][LLM (Other)][Prefix Parsing] This paper proposes **prefix grammar transformation**, an efficient method that reduces prefix parsing to ordinary parsing. Given a grammar, it constructs a new grammar that generates exactly the set of all prefix strings of the original grammar, allowing any existing ordinary parsing algorithm to be reused without modification.
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "Prefix Parsing"
+  - "Grammar Transformation"
+  - "Context-Free Language Models"
+  - "Prefix Probability"
+  - "Constrained Generation"
 date: 2026-05-08
-content_hash: 1ec164219497b85d
+content_hash: b6f817321c8fc8c8
 ---
+
 # Prefix Parsing is Just Parsing
 
 **Conference**: ACL 2026  
@@ -126,9 +132,9 @@ Incremental scenarios like constrained generation require the prefix weight vect
 
 - [\[ACL 2025\] Dolphin: Document Image Parsing via Heterogeneous Anchor Prompting](../../ACL2025/llm_nlp/dolphin_document_image_parsing_via_heterogeneous_anchor_prompting.md)
 - [\[ACL 2025\] STEM-PoM: Evaluating Language Models Math-Symbol Reasoning in Document Parsing](../../ACL2025/llm_nlp/stem-pom_evaluating_language_models_math-symbol_reasoning_in_document_parsing.md)
-- [\[ACL 2026\] 等等，还有出路：一个对话脱轨预测的决策机制](wait_theres_a_way_out_a_decision_mechanism_for_forecasting_conversational_derail.md)
+- [\[ACL 2026\] LinkNav: Surfacing Interconnected Information in Scientific Articles](linknav_surfacing_interconnected_information_in_scientific_articles.md)
+- [\[ACL 2026\] Wait, There’s a Way Out: A Decision Mechanism for Dialogue Derailment Prediction](wait_theres_a_way_out_a_decision_mechanism_for_forecasting_conversational_derail.md)
 - [\[ACL 2025\] Is It JUST Semantics? A Case Study of Discourse Particle Understanding in LLMs](../../ACL2025/llm_nlp/is_it_just_semantics_a_case_study_of_discourse_particle_understanding_in_llms.md)
-- [\[ACL 2026\] Can AI Be a Good Peer Reviewer? A Survey of Peer Review Process, Evaluation, and the Future](can_ai_be_a_good_peer_reviewer_a_survey_of_peer_review_process_evaluation_and_th.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Efficient Reasoning with Hidden Thinking
 description: >-
-  [ICML 2026][vlm_reasoning][Heima] Heima distills each stage (summary / caption / reasoning) of lengthy Multimodal LLM (MLLM) Chains-of-Thought (CoT) into **a single special thinking token**. This allows the model to "think" in latent space, reducing the token count from the 100-200 range to 13-16 while achieving zero-shot accuracy more stable than LLaV
+  [ICML 2026][VLM Reasoning][Heima] Heima distills each stage (summary / caption / reasoning) of lengthy Multimodal LLM (MLLM) Chains-of-Thought (CoT) into **a single special thinking token**. This allows the model to "think" in latent space, reducing the token count from the 100-200 range to 13-16 while achieving zero-shot accuracy more stable than LLaVA-CoT. An accompanying LLM "interpreter" is trained to reconstruct the textual reasoning chain from the thinking token's hidde…
 tags:
-  - ICML 2026
-  - vlm_reasoning
-  - Heima
-  - thinking tokens
-  - progressive distillation
-  - information-theoretic bound
-  - interpreter
+  - "ICML 2026"
+  - "VLM Reasoning"
+  - "Heima"
+  - "thinking tokens"
+  - "progressive distillation"
+  - "information-theoretic bound"
+  - "interpreter"
 date: 2026-05-08
-content_hash: 18d627e41296118a
+content_hash: 377f17f4e269137f
 ---
+
 # Efficient Reasoning with Hidden Thinking
 
 **Conference**: ICML 2026  
@@ -146,8 +147,8 @@ Interpreter reconstruction quality (4300 samples) evaluated via BLEU-4 / METEOR 
 - [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](../../CVPR2026/vlm_reasoning/thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
 - [\[ICML 2026\] Thinking in Structures: Evaluating Spatial Intelligence in Constraint-Governed Spaces](thinking_in_structures_evaluating_spatial_intelligence_in_constraint-governed_sp.md)
 - [\[ICML 2026\] From Seeing to Thinking: Decoupling Perception and Reasoning Improves Post-Training of Vision-Language Models](from_seeing_to_thinking_decoupling_perception_and_reasoning_improves_post-traini.md)
-- [\[ICML 2026\] Bad Seeing or Bad Thinking? Rewarding Perception for Vision-Language Reasoning](bad_seeing_or_bad_thinking_rewarding_perception_for_vision-language_reasoning.md)
-- [\[ACL 2026\] DRIFT: Transferring Reasoning Priors for Efficient MLLM Fine-Tuning](../../ACL2026/vlm_reasoning/drift_transferring_reasoning_priors_for_efficient_mllm_fine-tuning.md)
+- [\[CVPR 2026\] Thinking with Programming Vision: Towards a Unified View for Thinking with Images](../../CVPR2026/vlm_reasoning/thinking_with_programming_vision_towards_a_unified_view_for_thinking_with_images.md)
+- [\[ICLR 2026\] Efficient Multimodal Spatial Reasoning via Dynamic and Asymmetric Routing](../../ICLR2026/vlm_reasoning/efficient_multimodal_spatial_reasoning_via_dynamic_and_asymmetric_routing.md)
 
 </div>
 

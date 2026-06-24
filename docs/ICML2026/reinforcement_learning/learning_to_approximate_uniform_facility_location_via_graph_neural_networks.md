@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Learning to Approximate Uniform Facility Location via Graph Neural Networks
 description: >-
-  [ICML 2026][Reinforcement Learning][Uniform Facility Location] This paper designs an MPNN that neuralizes the classic approximation algorithm SimpleUniformFL for Uniform Facility Location. **The model can be trained end-to-end using an unsupervised expected cost loss and possesses provable approximation bounds of $\mathcal{O}(\log n)$ (reducible to $\mathcal{O}(1)$ with the recurs
+  [ICML 2026][Reinforcement Learning][Uniform Facility Location] This paper designs an MPNN that neuralizes the classic approximation algorithm SimpleUniformFL for Uniform Facility Location. **The model can be trained end-to-end using an unsupervised expected cost loss and possesses provable approximation bounds of $\mathcal{O}(\log n)$ (reducible to $\mathcal{O}(1)$ with the recursive version).** Empirically, it outperforms the classic SimpleUniformFL algorithm and approaches…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - Uniform Facility Location
-  - MPNN
-  - approximation guarantee
-  - unsupervised
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Uniform Facility Location"
+  - "MPNN"
+  - "approximation guarantee"
+  - "unsupervised"
+  - "JL-style analysis"
 date: 2026-05-08
-content_hash: ae775eb4ed185bb4
+content_hash: 7ffac3749dea4aa1
 ---
+
 # Learning to Approximate Uniform Facility Location via Graph Neural Networks
 
 **Conference**: ICML 2026  
@@ -136,11 +138,11 @@ Consistent advantages are observed across 2/5/10 dimensions and both sparse/dens
 
 ## Related Papers
 
+- [\[ICLR 2026\] CaRe-BN: Precise Moving Statistics for Stabilizing Spiking Neural Networks in Reinforcement Learning](../../ICLR2026/reinforcement_learning/care-bn_precise_moving_statistics_for_stabilizing_spiking_neural_networks_in_rei.md)
 - [\[ICML 2026\] Convergence of Steepest Descent and Adam under Non-Uniform Smoothness](convergence_of_steepest_descent_and_adam_under_non-uniform_smoothness.md)
-- [\[ICML 2026\] ASAP: Exploiting the Satisficing Generalization Edge in Neural Combinatorial Optimization](asap_exploiting_the_satisficing_generalization_edge_in_neural_combinatorial_opti.md)
 - [\[ICML 2026\] RL4RLA: Teaching ML to Discover Randomized Linear Algebra Algorithms Through Curriculum Design and Graph-Based Search](rl4rla_teaching_ml_to_discover_randomized_linear_algebra_algorithms_through_curr.md)
-- [\[NeurIPS 2025\] Distribution Learning Meets Graph Structure Sampling](../../NeurIPS2025/reinforcement_learning/distribution_learning_meets_graph_structure_sampling.md)
-- [\[NeurIPS 2025\] A Theory of Multi-Agent Generative Flow Networks](../../NeurIPS2025/reinforcement_learning/a_theory_of_multi-agent_generative_flow_networks.md)
+- [\[ICML 2026\] ASAP: Exploiting the Satisficing Generalization Edge in Neural Combinatorial Optimization](asap_exploiting_the_satisficing_generalization_edge_in_neural_combinatorial_opti.md)
+- [\[ICLR 2026\] Analysis of Approximate Linear Programming Solution to Markov Decision Problem with Log Barrier Function](../../ICLR2026/reinforcement_learning/analysis_of_approximate_linear_programming_solution_to_markov_decision_problem_w.md)
 
 </div>
 

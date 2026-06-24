@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Score-based Greedy Search for Structure Identification of Partially Observed Causal Models
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] This paper proposes LGES, the first score-based greedy search method for causal models with latent variables that provides identifiability guarantees. It establishes an "algebraic equivalence" criterion using likelihood score and minimum dimensionality, then tightens this equivalence to the Markov Equivalence Class (ME
+  [ICLR 2026][Causal Inference][Causal Discovery] This paper proposes LGES, the first score-based greedy search method for causal models with latent variables that provides identifiability guarantees. It establishes an "algebraic equivalence" criterion using likelihood score and minimum dimensionality, then tightens this equivalence to the Markov Equivalence Class (MEC) using a weak structural assumption called the Generalized N Factor Model (GNFM). Finally…
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Causal Discovery"
+  - "Latent Variables"
+  - "Score-based Greedy Search"
+  - "Markov Equivalence Class"
+  - "N Factor Model"
 date: 2026-05-08
-content_hash: ad6a74bec180b62b
+content_hash: 3dd235b8300eb90d
 ---
+
 # Score-based Greedy Search for Structure Identification of Partially Observed Causal Models
 
 **Conference**: ICLR 2026  
@@ -130,15 +136,15 @@ LGES achieved optimal F1/SHD across all sample sizes. Its **advantage in small s
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[AAAI 2026\] CaDyT: Causal Structure Learning for Dynamical Systems with Theoretical Score Analysis](../../AAAI2026/causal_inference/causal_structure_learning_for_dynamical_systems_with_theoretical_score_analysis.md)
 - [\[ICLR 2026\] Causal Score Conditioning for Multi-Resolution Latent Systems](causal_score_conditioning_for_multi-resolution_latent_systems.md)
 - [\[ICLR 2026\] Conditional Independent Component Analysis for Estimating Causal Structure with Latent Variables](conditional_independent_component_analysis_for_estimating_causal_structure_with_.md)
-- [\[ICLR 2026\] CARL: Preserving Causal Structure in Representation Learning](carl_preserving_causal_structure_in_representation_learning.md)
-- [\[ICML 2026\] Towards a Holistic Understanding of Selection Bias for Causal Effect Identification](../../ICML2026/causal_inference/towards_a_holistic_understanding_of_selection_bias_for_causal_effect_identificat.md)
+- [\[ICLR 2026\] Distributional Equivalence in Linear Non-Gaussian Latent-Variable Cyclic Causal Models](distributional_equivalence_in_linear_non-gaussian_latent-variable_cyclic_causal_.md)
+- [\[ICLR 2026\] Causal Structure Learning in Hawkes Processes with Complex Latent Confounder Networks](causal_structure_learning_in_hawkes_processes_with_complex_latent_confounder_net.md)
 
 </div>
 

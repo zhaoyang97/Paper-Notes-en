@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Self-Robust LLMs: Intrinsic Prompt Noise Resistance via CoIPO
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] This paper proposes CoIPO (Contrastive Learning + Inverse DPO) to ensure LLMs produce outputs consistent with clean prompts when facing noisy prompts (typos, word substitutions, syntactic perturbations). Without relying on external pre-processing tools, it embeds intrinsic robustness into the model during training, out
+  [ICLR 2026][LLM Alignment][Prompt Noise Robustness] This paper proposes CoIPO (Contrastive Learning + Inverse DPO) to ensure LLMs produce outputs consistent with clean prompts when facing noisy prompts (typos, word substitutions, syntactic perturbations). Without relying on external pre-processing tools, it embeds intrinsic robustness into the model during training, outperforming the current SOTA (CoIN) by an average accuracy of 3.64% on the self-constructed NoisyPromptBench.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Prompt Noise Robustness"
+  - "Inverse DPO"
+  - "Contrastive Learning"
+  - "Preference Optimization"
+  - "Mutual Information"
 date: 2026-05-08
-content_hash: 720ece8a11b4860b
+content_hash: f81fbcdf38ca5229
 ---
+
 # Towards Self-Robust LLMs: Intrinsic Prompt Noise Resistance via CoIPO
 
 **Conference**: ICLR 2026  

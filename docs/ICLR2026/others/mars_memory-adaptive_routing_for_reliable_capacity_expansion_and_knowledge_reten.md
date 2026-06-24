@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] MaRS: Memory-Adaptive Routing for Reliable Capacity Expansion and Knowledge Retention
 description: >-
-  [ICLR 2026][Others][continual learning] MARS attaches a slot memory router to a frozen large-scale backbone, employing statistical hypothesis testing (SGSE) to decide "when to expand" and a two-stage contrastive-distillation process (DCDA) to determine "how to merge." It balances plasticity and stability without replaying original data, offering formalized g
+  [ICLR 2026][continual learning] MARS attaches a slot memory router to a frozen large-scale backbone, employing statistical hypothesis testing (SGSE) to decide "when to expand" and a two-stage contrastive-distillation process (DCDA) to determine "how to merge." It balances plasticity and stability without replaying original data, offering formalized guarantees for both expansion and forgetting.
 tags:
-  - ICLR 2026
-  - Others
-  - continual learning
-  - frozen pre-trained models
-  - slot routing
-  - statistical expansion
-  - knowledge distillation
+  - "ICLR 2026"
+  - "continual learning"
+  - "frozen pre-trained models"
+  - "slot routing"
+  - "statistical expansion"
+  - "knowledge distillation"
 date: 2026-05-08
-content_hash: 966fd45164f1623b
+content_hash: 03ae391d9cf3cf94
 ---
+
 # MaRS: Memory-Adaptive Routing for Reliable Capacity Expansion and Knowledge Retention
 
 **Conference**: ICLR 2026  
@@ -124,9 +124,9 @@ Hyperparameter sensitivity: $S_0=32$ is optimal; $\beta=0.9$ is the most stable 
 ## Related Papers
 
 - [\[CVPR 2026\] DREAM: Document Recognition with Explicit Adaptive Memory](../../CVPR2026/others/dream_document_recognition_with_explicit_adaptive_memory.md)
+- [\[ICLR 2026\] Forget Forgetting: Continual Learning in a World of Abundant Memory](forget_forgetting_continual_learning_in_a_world_of_abundant_memory.md)
 - [\[ICLR 2026\] Adaptive Conformal Guidance for Learning under Uncertainty](adaptive_conformal_guidance_for_learning_under_uncertainty.md)
 - [\[ICLR 2026\] Hippoformer: Integrating Hippocampus-inspired Spatial Memory with Transformers](hippoformer_integrating_hippocampus-inspired_spatial_memory_with_transformers.md)
-- [\[ICLR 2026\] Forget Forgetting: Continual Learning in a World of Abundant Memory](forget_forgetting_continual_learning_in_a_world_of_abundant_memory.md)
 - [\[ACL 2025\] Adaptive Retrieval without Self-Knowledge? Bringing Uncertainty Back Home](../../ACL2025/others/adaptive_retrieval_without_self-knowledge_bringing_uncertainty_back_home.md)
 
 </div>

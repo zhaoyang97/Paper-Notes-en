@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Loss-Guided Auxiliary Agents for Overcoming Mode Collapse in GFlowNets
 description: >-
-  [AAAI 2026][LLM Agent][GFlowNet] This paper proposes LGGFN (Loss-Guided GFlowNets), in which the exploration of an auxiliary GFlowNet is directly driven by the training loss of the primary GFlowNet. The auxiliary agent's…
+  [AAAI 2026][LLM Agent][GFlowNet] This paper proposes LGGFN (Loss-Guided GFlowNets), in which the exploration of an auxiliary GFlowNet is directly driven by the training loss of the primary GFlowNet. The auxiliary agent's reward is defined as $R_{aux}(x) = R(x) + \lambda \cdot L_{main}(x)$, prioritizing regions where the primary model is least well-understood. On grid, sequence generation, and Bayesian structure learning tasks, LGGFN discovers 40× more unique modes and reduces…
 tags:
   - "AAAI 2026"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "loss-guided"
   - "diversity sampling"
 date: 2026-05-08
-content_hash: a158ecdae2c7c74f
+content_hash: 89f67ad4a0848b42
 ---
 
 # Loss-Guided Auxiliary Agents for Overcoming Mode Collapse in GFlowNets
@@ -132,8 +132,8 @@ A dual-GFlowNet architecture consisting of a primary agent (learning the target 
 - [\[ICCV 2025\] GTR: Guided Thought Reinforcement Prevents Thought Collapse in RL-based VLM Agent Training](../../ICCV2025/llm_agent/gtr_guided_thought_reinforcement_prevents_thought_collapse_i.md)
 - [\[AAAI 2026\] AgentSwift: Efficient LLM Agent Design via Value-guided Hierarchical Search](agentswift_efficient_llm_agent_design_via_value-guided_hierarchical_search.md)
 - [\[AAAI 2026\] Verification-Guided Context Optimization for Tool Calling via Hierarchical LLMs-as-editors](verification-guided_context_optimization_for_tool_calling_via_hierarchical_llms-.md)
+- [\[ICLR 2026\] Expanding the Capability Frontier of LLM Agents with ZPD-Guided Data Synthesis](../../ICLR2026/llm_agent/expanding_the_capability_frontier_of_llm_agents_with_zpd-guided_data_synthesis.md)
 - [\[ICLR 2026\] WebArbiter: A Principle-Guided Reasoning Process Reward Model for Web Agents](../../ICLR2026/llm_agent/webarbiter_a_principle-guided_reasoning_process_reward_model_for_web_agents.md)
-- [\[ACL 2026\] HiGMem: A Hierarchical and LLM-Guided Memory System for Long-Term Conversational Agents](../../ACL2026/llm_agent/higmem_a_hierarchical_and_llm-guided_memory_system_for_long-term_conversational_.md)
 
 </div>
 

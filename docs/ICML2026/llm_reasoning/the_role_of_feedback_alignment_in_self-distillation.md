@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] The Role of Feedback Alignment in Self-Distillation
 description: >-
-  [ICML 2026][LLM Reasoning][GRPO] This paper systematically investigates the design of context in "self-distillation." By comparing three feedback forms within a solver–critic framework, it is found that corrective feedback **step-aligned** with the solver's own reasoning trajectory (StepAlignFB) significantly outperforms binary rewards (GRPO, +16.11 p
+  [ICML2026][Reasoning][Self-distillation] This paper systematically investigates the design of context in "self-distillation." By comparing three feedback forms within a solver–critic framework, it is found that corrective feedback **step-aligned** with the solver's own reasoning trajectory (StepAlignFB) significantly outperforms binary rewards (GRPO, +16.11 points) and reference solutions (RefSol, +5.27 points Avg@12). This is because it concentrates distillation signals on t…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - GRPO
+  - "ICML2026"
+  - "Reasoning"
+  - "Self-distillation"
+  - "Feedback Alignment"
+  - "Process Supervision"
+  - "GRPO"
+  - "Mathematical Reasoning"
 date: 2026-05-08
-content_hash: 1e20278e6f939701
+content_hash: f7292a59a80c4fc7
 ---
+
 # The Role of Feedback Alignment in Self-Distillation
 
 **Conference**: ICML2026  
@@ -135,11 +140,11 @@ $s$ indicates the training step where the best metric was achieved. For each (me
 
 ## Related Papers
 
-- [\[AAAI 2026\] In-Token Rationality Optimization: Towards Accurate and Concise LLM Reasoning via Self-Feedback](../../AAAI2026/llm_reasoning/in-token_rationality_optimization_towards_accurate_and_concise_llm_reasoning_via.md)
-- [\[ICML 2026\] Prompt Injection as Role Confusion](prompt_injection_as_role_confusion.md)
-- [\[ICML 2026\] Reward Modeling from Natural Language Human Feedback](reward_modeling_from_natural_language_human_feedback.md)
+- [\[ICLR 2026\] SkillFactory: Self-Distillation for Learning Cognitive Behaviors](../../ICLR2026/llm_reasoning/skillfactory_self-distillation_for_learning_cognitive_behaviors.md)
 - [\[ICML 2026\] Critique-GRPO: Advancing LLM Reasoning with Natural Language and Numerical Feedback](critique-grpo_advancing_llm_reasoning_with_natural_language_and_numerical_feedba.md)
-- [\[ACL 2025\] Revisiting Self-Consistency from Dynamic Distributional Alignment Perspective on Answer Aggregation](../../ACL2025/llm_reasoning/revisiting_self-consistency_from_dynamic_distributional_alignment_perspective_on.md)
+- [\[AAAI 2026\] In-Token Rationality Optimization: Towards Accurate and Concise LLM Reasoning via Self-Feedback](../../AAAI2026/llm_reasoning/in-token_rationality_optimization_towards_accurate_and_concise_llm_reasoning_via.md)
+- [\[ICML 2026\] Reward Modeling from Natural Language Human Feedback](reward_modeling_from_natural_language_human_feedback.md)
+- [\[ICML 2026\] Prompt Injection as Role Confusion](prompt_injection_as_role_confusion.md)
 
 </div>
 

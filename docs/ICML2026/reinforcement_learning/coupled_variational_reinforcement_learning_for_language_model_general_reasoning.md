@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Coupled Variational Reinforcement Learning for Language Model General Reasoning
 description: >-
-  [ICML 2026][Reinforcement Learning][GRPO] CoVRL reformulates verifier-free RL, which uses answer probabilities as rewards, as a variational inference problem. It constructs a composite distribution—"prior (question only) + posterior (question with answer)"—and optimizes both simultaneously via hybrid sampling and importance weighting. This approach improves Qw
+  [ICML 2026][Reinforcement Learning][Variational RL] CoVRL reformulates verifier-free RL, which uses answer probabilities as rewards, as a variational inference problem. It constructs a composite distribution—"prior (question only) + posterior (question with answer)"—and optimizes both simultaneously via hybrid sampling and importance weighting. This approach improves Qwen2.5-7B by an average of 12.4% across 9 general and mathematical reasoning benchmarks compared to the base…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Variational RL"
+  - "Prior/Posterior Coupling"
+  - "Hybrid Sampling"
+  - "GRPO"
+  - "Verifier-free Reward"
 date: 2026-05-08
-content_hash: 77df607c8fda4633
+content_hash: a9facfdb36aec007
 ---
+
 # Coupled Variational Reinforcement Learning for Language Model General Reasoning
 
 **Conference**: ICML 2026  
@@ -137,15 +142,17 @@ CoVRL shows an average improvement of 12.4% over the base model and 2.3% over th
 
 <div class="related-papers" markdown="1">
 
-- **RLVR**: *DeepSeek-Math: Pushing the Limits of Mathematical Reasoning in Open Language Models*, 2024.
-- **VeriFree**: *Verifier-free Reinforcement Learning for Mathematical Reasoning*, 2024.
-- **LaTRO**: *Latent Reasoning Optimization for Large Language Models*, 2024.
-- **Schulman KL**: *Approximating KL Divergence*, 2020.
+## Related Papers
+
+- [\[ICLR 2026\] Buffer Matters: Unleashing the Power of Off-Policy Reinforcement Learning in Large Language Model Reasoning](../../ICLR2026/reinforcement_learning/buffer_matters_unleashing_the_power_of_off-policy_reinforcement_learning_in_larg.md)
+- [\[ICML 2026\] Break the Block: Dynamic-size Reasoning Blocks for Diffusion Large Language Models via Monotonic Entropy Descent with Reinforcement Learning](break_the_block_dynamic-size_reasoning_blocks_for_diffusion_large_language_model.md)
+- [\[ICML 2026\] d2: Improving Reasoning in Diffusion Language Models via Trajectory Likelihood Estimation](d2_improving_reasoning_in_diffusion_language_models_via_trajectory_likelihood_es.md)
+- [\[AAAI 2026\] Vision-Language Reasoning for Geolocalization: A Reinforcement Learning Approach](../../AAAI2026/reinforcement_learning/vision-language_reasoning_for_geolocalization_a_reinforcement_learning_approach.md)
+- [\[ICML 2026\] The Shape of Reasoning: Topological Analysis of Reasoning Traces in Large Language Models](the_shape_of_reasoning_topological_analysis_of_reasoning_traces_in_large_languag.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2026\] Break the Block: Dynamic-size Reasoning Blocks for Diffusion Large Language Models via Monotonic Entropy Descent with Reinforcement Learning](break_the_block_dynamic-size_reasoning_blocks_for_diffusion_large_language_model.md)

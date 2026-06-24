@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] FARTrack: Fast Autoregressive Visual Tracking with High Performance
 description: >-
-  [ICLR 2026][Video Understanding][Autoregressive] FARTrack "slims down" the autoregressive generative tracking framework of the ARTrack series. It utilizes **Task-Specific Self-Distillation** to compress model depth layer-by-layer and **Inter-frame Autoregressive Sparsification** to prune redundant background tokens in templates. Achieving 70.6% AO on GOT-10k while re
+  [ICLR 2026][Video Understanding][Visual Tracking] FARTrack "slims down" the autoregressive generative tracking framework of the ARTrack series. It utilizes **Task-Specific Self-Distillation** to compress model depth layer-by-layer and **Inter-frame Autoregressive Sparsification** to prune redundant background tokens in templates. Achieving 70.6% AO on GOT-10k while reaching speeds of 343 FPS on GPU and 121 FPS on CPU, it balances high performance with real-time efficiency.
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - Autoregressive
-  - ViT
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Visual Tracking"
+  - "Autoregressive"
+  - "Self-distillation"
+  - "Token Sparsification"
+  - "Real-time Tracking"
+  - "ViT"
 date: 2026-05-08
-content_hash: 939a834ecc91d2e9
+content_hash: c59910773204a5b4
 ---
+
 # FARTrack: Fast Autoregressive Visual Tracking with High Performance
 
 **Conference**: ICLR 2026  
@@ -141,9 +146,9 @@ Token retention rate sensitivity (GOT-10k):
 
 - [\[CVPR 2026\] Adaptive Capacity Autoregressive Visual Tracking](../../CVPR2026/video_understanding/adaptive_capacity_autoregressive_visual_tracking.md)
 - [\[CVPR 2026\] SpikeTrack: High-performance and Energy-efficient Event-Based Object Tracking with Spiking Neural Network](../../CVPR2026/video_understanding/spiketrack_high-performance_and_energy-efficient_event-based_object_tracking_wit.md)
+- [\[CVPR 2026\] EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation](../../CVPR2026/video_understanding/evatok_adaptive_length_video_tokenization_for_eff.md)
 - [\[CVPR 2026\] Drift-Resilient Temporal Priors for Visual Tracking](../../CVPR2026/video_understanding/drift-resilient_temporal_priors_for_visual_tracking.md)
 - [\[ICML 2026\] Unified Multimodal Visual Tracking with Dual Mixture-of-Experts](../../ICML2026/video_understanding/unified_multimodal_visual_tracking_with_dual_mixture-of-experts.md)
-- [\[ICML 2026\] RELO: Reinforcement Learning to Localize for Visual Object Tracking](../../ICML2026/video_understanding/relo_reinforcement_learning_to_localize_for_visual_object_tracking.md)
 
 </div>
 

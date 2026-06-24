@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] An Improved Model-free Decision-estimation Coefficient with Applications in Adversarial MDPs
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proposes Dig-DEC—a model-free Decision-Estimation Coefficient driven purely by information gain without optimism. It is consistently no larger than the existing optimistic DEC, enabling the first model-free learning for mixed MDPs (stochastic transitions + adversarial rewards) under bandit feedback, while ti
+  [ICLR 2026][Learning Theory][Decision-Estimation Coefficient (DEC)] This paper proposes Dig-DEC—a model-free Decision-Estimation Coefficient driven purely by information gain without optimism. It is consistently no larger than the existing optimistic DEC, enabling the first model-free learning for mixed MDPs (stochastic transitions + adversarial rewards) under bandit feedback, while tightening regret rates for online function estimation from $T^{3/4}/T^{5/6}/T^{2/3}$ to $T^{2…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Reinforcement Learning Theory"
+  - "Decision-Estimation Coefficient (DEC)"
+  - "Model-free Learning"
+  - "Adversarial MDPs"
+  - "Information Gain"
+  - "Regret Bound"
 date: 2026-05-08
-content_hash: 1d1214bab8b399ae
+content_hash: fbf2673debb65a41
 ---
+
 # An Improved Model-free Decision-estimation Coefficient with Applications in Adversarial MDPs
 
 **Conference**: ICLR 2026  
@@ -139,8 +146,8 @@ The $\sqrt T$ result under Bellman complete MDPs marks the **first time DEC-base
 
 ## Related Papers
 
-- [\[ICLR 2026\] Decision-Theoretic Approaches for Improved Learning-Augmented Algorithms](decision-theoretic_approaches_for_improved_learning-augmented_algorithms.md)
 - [\[ICLR 2026\] Dimension-Free Decision Calibration for Nonlinear Loss Functions](dimension-free_decision_calibration_for_nonlinear_loss_functions.md)
+- [\[ICLR 2026\] Decision-Theoretic Approaches for Improved Learning-Augmented Algorithms](decision-theoretic_approaches_for_improved_learning-augmented_algorithms.md)
 - [\[ICLR 2026\] Improved High-Dimensional Estimation with Langevin Dynamics and Stochastic Weight Averaging](improved_high-dimensional_estimation_with_langevin_dynamics_and_stochastic_weigh.md)
 - [\[ICLR 2026\] Near-Optimal Sample Complexity Bounds for Constrained Average-Reward MDPs](near-optimal_sample_complexity_bounds_for_constrained_average-reward_mdps.md)
 - [\[ICLR 2026\] Online Decision-Focused Learning](online_decision-focused_learning.md)

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] HCF: Hierarchical Cascade Framework for Distributed Multi-Stage Image Compression
 description: >-
-  [AAAI 2026][Model Compression][Image Compression] This paper proposes the HCF framework, which performs cross-node transformation directly in the latent space (avoiding pixel-domain recompression) and introduces policy-d…
+  [AAAI 2026 Oral][Model Compression][Image Compression] This paper proposes the HCF framework, which performs cross-node transformation directly in the latent space (avoiding pixel-domain recompression) and introduces policy-driven quantization control to achieve up to 12.64% BD-Rate PSNR improvement in distributed multi-stage image compression, while reducing FLOPs by up to 97.8% and GPU memory by up to 96.5%.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Model Compression"
   - "Image Compression"
   - "Distributed Multi-Stage Compression"
@@ -12,7 +12,7 @@ tags:
   - "Quantization Strategy"
   - "Rate-Distortion Optimization"
 date: 2026-05-08
-content_hash: 38828c1fb09b03f6
+content_hash: de74f90d7243fb92
 ---
 
 # HCF: Hierarchical Cascade Framework for Distributed Multi-Stage Image Compression
@@ -214,7 +214,7 @@ The framework is initialized from pretrained single-stage compression models, wi
 - [\[AAAI 2026\] Error Correction in Radiology Reports: A Knowledge Distillation-Based Multi-Stage Framework](error_correction_in_radiology_reports_a_knowledge_distillation-based_multi-stage.md)
 - [\[ICML 2026\] Hierarchical Image Tokenization for Multi-Scale Image Super Resolution](../../ICML2026/model_compression/hierarchical_image_tokenization_for_multi-scale_image_super_resolution.md)
 - [\[CVPR 2026\] Parallax to Align Them All: An OmniParallax Attention Mechanism for Distributed Multi-View Image Compression](../../CVPR2026/model_compression/parallax_to_align_them_all_an_omniparallax_attention_mechanism_for_distributed_m.md)
-- [\[AAAI 2026\] DynaQuant: Dynamic Mixed-Precision Quantization for Learned Image Compression](dynaquant_dynamic_mixed-precision_quantization_for_learned_i.md)
+- [\[CVPR 2026\] Distributed Image Compression with Multimodal Side Information at Extremely Low Bitrates](../../CVPR2026/model_compression/distributed_image_compression_with_multimodal_side_information_at_extremely_low_.md)
 - [\[ICCV 2025\] Learned Image Compression with Hierarchical Progressive Context Modeling](../../ICCV2025/model_compression/learned_image_compression_with_hierarchical_progressive_context_modeling.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Random Controlled Differential Equations
 description: >-
-  [ICLR 2026][Time Series][Paper Note] By utilizing a large collection of Controlled Differential Equations (CDEs) / Rough Differential Equations (RDEs) with **random parameters** as a continuous-time reservoir and training only a final linear readout layer, a fast, scalable time-series classifier is obtained. It strictly converges to the "signature kernel"
+  [ICLR 2026][Time Series][Time Series Classification] By utilizing a large collection of Controlled Differential Equations (CDEs) / Rough Differential Equations (RDEs) with **random parameters** as a continuous-time reservoir and training only a final linear readout layer, a fast, scalable time-series classifier is obtained. It strictly converges to the "signature kernel" in the infinite-width limit, preserving the inductive bias of path signature methods while eliminating the…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Time Series Classification"
+  - "Controlled Differential Equations"
+  - "Reservoir Computing"
+  - "Signature Kernels"
+  - "Random Features"
 date: 2026-05-08
-content_hash: b0e6101179d4d3a6
+content_hash: f0f00a93c35fc872
 ---
+
 # Random Controlled Differential Equations
 
 **Conference**: ICLR 2026  
@@ -155,8 +161,8 @@ V2 involves per-sample normalization, forcing the model to rely solely on geomet
 - [\[ICML 2026\] Learning Manifold and Itô Dynamics with Branched Neural Rough Differential Equations](../../ICML2026/time_series/learning_manifold_and_itô_dynamics_with_branched_neural_rough_differential_equat.md)
 - [\[AAAI 2026\] AirDDE: Multifactor Neural Delay Differential Equations for Air Quality Forecasting](../../AAAI2026/time_series/airdde_multifactor_neural_delay_differential_equations_for_air_quality_forecasti.md)
 - [\[NeurIPS 2025\] In-Context Learning of Stochastic Differential Equations with Foundation Inference Models](../../NeurIPS2025/time_series/in-context_learning_of_stochastic_differential_equations_with_foundation_inferen.md)
-- [\[ICLR 2026\] Delta-XAI: A Unified Framework for Explaining Prediction Changes in Online Time Series Monitoring](delta-xai_a_unified_framework_for_explaining_prediction_changes_in_online_time_s.md)
-- [\[ICLR 2026\] pyrregular: A Unified Framework for Irregular Time Series, with Classification Benchmarks](pyrregular_a_unified_framework_for_irregular_time_series_with_classification_ben.md)
+- [\[ICLR 2026\] MambaSL: Exploring Single-Layer Mamba for Time Series Classification](mambasl_exploring_single-layer_mamba_for_time_series_classification.md)
+- [\[ICLR 2026\] ResCP: Reservoir Conformal Prediction for Time Series Forecasting](rescp_reservoir_conformal_prediction_for_time_series_forecasting.md)
 
 </div>
 

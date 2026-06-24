@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] KineST: A Kinematics-guided Spatiotemporal State Space Model for Human Motion Tracking from Sparse Signals
 description: >-
-  [AAAI 2026][Human Understanding][Whole-body motion tracking] This paper proposes KineST, a kinematics-guided state space model that reconstructs whole-body motion from sparse HMD signals via a kinematic tree bidirectiona…
+  [AAAI 2026][Human Understanding][Whole-body motion tracking] This paper proposes KineST, a kinematics-guided state space model that reconstructs whole-body motion from sparse HMD signals via a kinematic tree bidirectional scanning strategy and hybrid spatiotemporal representation learning, surpassing state-of-the-art methods in both accuracy and temporal consistency.
 tags:
   - "AAAI 2026"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "AR/VR"
   - "sparse signals"
 date: 2026-05-08
-content_hash: 7751e5341fe98998
+content_hash: 592eef5c74514c44
 ---
 
 # KineST: A Kinematics-guided Spatiotemporal State Space Model for Human Motion Tracking from Sparse Signals
@@ -203,9 +203,9 @@ KineST also achieves state-of-the-art results on real-device captured data (Prot
 
 - [\[ICCV 2025\] High-Resolution Spatiotemporal Modeling with Global-Local State Space Models for Video-Based Human Pose Estimation](../../ICCV2025/human_understanding/high-resolution_spatiotemporal_modeling_with_global-local_state_space_models_for.md)
 - [\[AAAI 2026\] Improving Sparse IMU-based Motion Capture with Motion Label Smoothing](improving_sparse_imu-based_motion_capture_with_motion_label_smoothing.md)
-- [\[AAAI 2026\] Spatiotemporal-Untrammelled Mixture of Experts for Multi-Person Motion Prediction](spatiotemporal-untrammelled_mixture_of_experts_for_multi-person_motion_predictio.md)
 - [\[AAAI 2026\] ReAlign: Text-to-Motion Generation via Step-Aware Reward-Guided Alignment](realign_text-to-motion_generation_via_step-aware_reward-guided_alignment.md)
-- [\[ICLR 2026\] QuaMo: Quaternion Motions for Vision-based 3D Human Kinematics Capture](../../ICLR2026/human_understanding/quamo_quaternion_motion_kinematics.md)
+- [\[AAAI 2026\] Spatiotemporal-Untrammelled Mixture of Experts for Multi-Person Motion Prediction](spatiotemporal-untrammelled_mixture_of_experts_for_multi-person_motion_predictio.md)
+- [\[CVPR 2026\] E-3DPSM: A State Machine for Event-Based Egocentric 3D Human Pose Estimation](../../CVPR2026/human_understanding/e-3dpsm_a_state_machine_for_event-based_egocentric_3d_human_pose_estimation.md)
 
 </div>
 

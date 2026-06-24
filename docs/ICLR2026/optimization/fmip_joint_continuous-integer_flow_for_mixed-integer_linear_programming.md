@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FMIP: Joint Continuous-Integer Flow for Mixed-Integer Linear Programming
 description: >-
-  [ICLR 2026][Optimization & Theory][Flow Matching] Addressing the limitation that existing generative MILP heuristics only model integer variables and ignore integer-continuous coupling, FMIP utilizes flow matching to jointly model the solution distribution on the "integer + continuous" mixed solution space. Utilizing this complete solution candidate, it designs a holi
+  [ICLR 2026][Optimization][Mixed-Integer Linear Programming] Addressing the limitation that existing generative MILP heuristics only model integer variables and ignore integer-continuous coupling, FMIP utilizes flow matching to jointly model the solution distribution on the "integer + continuous" mixed solution space. Utilizing this complete solution candidate, it designs a holistic guidance mechanism to push the generation trajectory toward "better and more feasible" solution…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Flow Matching
+  - "ICLR 2026"
+  - "Optimization"
+  - "Mixed-Integer Linear Programming"
+  - "Flow Matching"
+  - "Joint Distribution Modeling"
+  - "Guided Sampling"
+  - "Learned Heuristics"
 date: 2026-05-08
-content_hash: 4e2504cf461244d9
+content_hash: b6a5092974e0a756
 ---
+
 # FMIP: Joint Continuous-Integer Flow for Mixed-Integer Linear Programming
 
 **Conference**: ICLR 2026  
@@ -140,10 +145,20 @@ Ablation on four variants using the IP dataset:
 - Value: ⭐⭐⭐⭐⭐ Universal, plug-and-play, minimal overhead, significant primal gap reduction.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Constraint Matters: Multi-Modal Representation for Reducing Mixed-Integer Linear programming](constraint_matters_multi-modal_representation_for_reducing_mixed-integer_linear_.md)
+- [\[ICML 2026\] Provably Data-Driven Lagrangian Relaxation for Mixed Integer Linear Programming](../../ICML2026/optimization/provably_data-driven_lagrangian_relaxation_for_mixed_integer_linear_programming.md)
+- [\[ICLR 2026\] High-dimensional Mean-Field Games by Particle-based Flow Matching](high-dimensional_mean-field_games_by_particle-based_flow_matching.md)
+- [\[ICML 2025\] Integer Programming for Generalized Causal Bootstrap Designs](../../ICML2025/optimization/integer_programming_for_generalized_causal_bootstrap_designs.md)
+- [\[ICLR 2026\] Never Saddle for Reparameterized Steepest Descent as Mirror Flow](never_saddle_for_reparameterized_steepest_descent_as_mirror_flow.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Constraint Matters: Multi-Modal Representation for Reducing Mixed-Integer Linear programming](constraint_matters_multi-modal_representation_for_reducing_mixed-integer_linear_.md)

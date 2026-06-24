@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Underappreciated Power of Vision Models for Graph Structural Understanding
 description: >-
-  [NeurIPS 2025][Graph Learning][vision models] This paper reveals the severely underappreciated capability of vision models (ResNet/ViT/Swin…
+  [NeurIPS 2025][Graph Learning][vision models] This paper reveals the severely underappreciated capability of vision models (ResNet/ViT/Swin, etc.) for graph structural understanding. By rendering graphs as images and processing them with visual encoders, these models significantly outperform GNNs in global topology perception and cross-scale generalization. The paper also introduces the GraphAbstract benchmark to systematically evaluate this finding.
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "benchmark"
   - "scale invariance"
 date: 2026-05-08
-content_hash: d044a5418cf375e0
+content_hash: 3a5282dd6cc4ac76
 ---
 
 # The Underappreciated Power of Vision Models for Graph Structural Understanding
@@ -157,10 +157,10 @@ The core finding is thought-provoking: the power of vision models for graph stru
 ## Related Papers
 
 - [\[NeurIPS 2025\] Graph Neural Networks for Efficient AC Power Flow Prediction in Power Grids](graph_neural_networks_for_efficient_ac_power_flow_prediction_in_power_grids.md)
+- [\[ICLR 2026\] <SOG$_k$>: One LLM Token for Explicit Graph Structural Understanding](../../ICLR2026/graph_learning/sog_k_one_llm_token_for_explicit_graph_structural_understanding.md)
 - [\[NeurIPS 2025\] S'MoRE: Structural Mixture of Residual Experts for Parameter-Efficient LLM Fine-tuning](smore_structural_mixture_of_residual_experts_for_parameter-efficient_llm_fine-tu.md)
 - [\[NeurIPS 2025\] Dynamic Bundling with Large Language Models for Zero-Shot Inference on Text-Attributed Graphs](dynamic_bundling_with_large_language_models_for_zero-shot_inference_on_text-attr.md)
-- [\[NeurIPS 2025\] Reasoning Meets Representation: Envisioning Neuro-Symbolic Wireless Foundation Models](reasoning_meets_representation_envisioning_neuro-symbolic_wireless_foundation_mo.md)
-- [\[NeurIPS 2025\] Deliberation on Priors: Trustworthy Reasoning of Large Language Models on Knowledge Graphs](deliberation_on_priors_trustworthy_reasoning_of_large_language_models_on_knowled.md)
+- [\[CVPR 2025\] DVHGNN: Multi-Scale Dilated Vision HGNN for Efficient Vision Recognition](../../CVPR2025/graph_learning/dvhgnn_multi-scale_dilated_vision_hgnn_for_efficient_vision_recognition.md)
 
 </div>
 

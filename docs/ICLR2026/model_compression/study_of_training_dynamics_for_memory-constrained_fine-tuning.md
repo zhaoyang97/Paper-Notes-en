@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Study of Training Dynamics for Memory-Constrained Fine-Tuning (TraDy)
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] Addressing the issue where edge devices are extremely memory-constrained and cannot perform full backpropagation, this paper utilizes three observations regarding fine-tuning training dynamics (heavy-tailed gradients, architecture-driven layer importance, and task-dependent channel importance) to decompose "where to up
+  [ICLR 2026][Model Compression][Memory-Constrained Fine-Tuning] Addressing the issue where edge devices are extremely memory-constrained and cannot perform full backpropagation, this paper utilizes three observations regarding fine-tuning training dynamics (heavy-tailed gradients, architecture-driven layer importance, and task-dependent channel importance) to decompose "where to update" into two steps: offline layer selection and online dynamic channel selection. The proposed…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Memory-Constrained Fine-Tuning"
+  - "Gradient Pruning"
+  - "Dynamic Channel Selection"
+  - "Heavy-Tailed Gradients"
+  - "On-Device Learning"
 date: 2026-05-08
-content_hash: ccabb6891d171b9b
+content_hash: a37309d7dffe1e8f
 ---
+
 # Study of Training Dynamics for Memory-Constrained Fine-Tuning (TraDy)
 
 **Conference**: ICLR 2026  
@@ -133,9 +139,9 @@ The key comparison involves the intersection of "Static vs. Dynamic" and "Full N
 
 - [\[ICLR 2026\] Sculpting Subspaces: Constrained Full Fine-Tuning in LLMs for Continual Learning](sculpting_subspaces_constrained_full_fine-tuning_in_llms_for_continual_learning.md)
 - [\[ICLR 2026\] Training Dynamics Impact Post-Training Quantization Robustness](training_dynamics_impact_post-training_quantization_robustness.md)
+- [\[ICLR 2026\] Gradient Intrinsic Dimensionality Alignment：Narrowing The Gap Between Low-Rank Adaptation and Full Fine-Tuning](gradient_intrinsic_dimensionalityalignmentnarrowing_the_gap_between_low-rank_ad.md)
 - [\[ICLR 2026\] Efficient Orthogonal Fine-Tuning with Principal Subspace Adaptation](efficient_orthogonal_fine-tuning_with_principal_subspace_adaptation.md)
-- [\[ICLR 2026\] Memba: Membrane-driven Parameter-Efficient Fine-Tuning for Mamba](memba_membrane-driven_parameter-efficient_fine-tuning_for_mamba.md)
-- [\[ICLR 2026\] PiCa: Parameter-Efficient Fine-Tuning with Column Space Projection](pica_parameter-efficient_fine-tuning_with_column_space_projection.md)
+- [\[ICLR 2026\] Towards Lossless Memory-efficient Training of Spiking Neural Networks via Gradient Checkpointing and Spike Compression](towards_lossless_memory-efficient_training_of_spiking_neural_networks_via_gradie.md)
 
 </div>
 

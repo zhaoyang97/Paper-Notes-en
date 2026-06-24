@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TIP-I2V: A Million-Scale Real Text and Image Prompt Dataset for Image-to-Video Generation
 description: >-
-  [ICCV 2025][Video Generation][Image-to-video] This paper constructs TIP-I2V, the first million-scale real-user text and image prompt dataset for image-to-video (I2V) generation (1,701,935 unique prompt pairs)…
+  [ICCV 2025][Video Generation][Image-to-video] This paper constructs TIP-I2V, the first million-scale real-user text and image prompt dataset for image-to-video (I2V) generation (1,701,935 unique prompt pairs), accompanied by generated videos from five state-of-the-art I2V models. Built upon this dataset, the paper introduces TIP-Eval, a large-scale evaluation benchmark, alongside studies on user preference analysis and AI-generated video detection.
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "video generation evaluation"
   - "deepfake video detection"
 date: 2026-05-08
-content_hash: 603edc50992a2468
+content_hash: 65c1e3b14fa5128d
 ---
 
 # TIP-I2V: A Million-Scale Real Text and Image Prompt Dataset for Image-to-Video Generation
@@ -146,8 +146,8 @@ Existing fake-image detection methods fail entirely to generalize to I2V video d
 - [\[ICCV 2025\] RealCam-I2V: Real-World Image-to-Video Generation with Interactive Complex Camera Control](realcam-i2v_real-world_image-to-video_generation_with_interactive_complex_camera.md)
 - [\[ICCV 2025\] DH-FaceVid-1K: A Large-Scale High-Quality Dataset for Face Video Generation](dh-facevid-1k_a_large-scale_high-quality_dataset_for_face_video_generation.md)
 - [\[ICCV 2025\] STiV: Scalable Text and Image Conditioned Video Generation](stiv_scalable_text_and_image_conditioned_video_generation.md)
-- [\[ICCV 2025\] Versatile Transition Generation with Image-to-Video Diffusion](versatile_transition_generation_with_image-to-video_diffusion.md)
 - [\[ICCV 2025\] VPO: Aligning Text-to-Video Generation Models with Prompt Optimization](vpo_aligning_text-to-video_generation_models_with_prompt_optimization.md)
+- [\[ICCV 2025\] Versatile Transition Generation with Image-to-Video Diffusion](versatile_transition_generation_with_image-to-video_diffusion.md)
 
 </div>
 

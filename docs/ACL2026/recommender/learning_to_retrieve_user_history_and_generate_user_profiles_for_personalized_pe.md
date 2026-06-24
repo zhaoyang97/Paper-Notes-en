@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning to Retrieve User History and Generate User Profiles for Personalized Persuasiveness Prediction
 description: >-
-  [ACL 2026][Recommender Systems][Paper Note] This paper proposes the ReCAP framework, which significantly improves personalized persuasiveness prediction by utilizing a trainable query generator and user profiler to retrieve persuasion-relevant information from user history and construct context-aware user profiles.
+  [ACL 2026 Findings][Recommender Systems][Persuasiveness Prediction] This paper proposes the ReCAP framework, which significantly improves personalized persuasiveness prediction by utilizing a trainable query generator and user profiler to retrieve persuasion-relevant information from user history and construct context-aware user profiles.
 tags:
-  - ACL 2026
-  - Recommender Systems
+  - "ACL 2026 Findings"
+  - "Recommender Systems"
+  - "Persuasiveness Prediction"
+  - "User Profile"
+  - "Retrieval-Augmented"
+  - "DPO Training"
+  - "Personalization"
 date: 2026-05-08
-content_hash: ead1faa0e28b8152
+content_hash: a00382c9bfda0189
 ---
+
 # Learning to Retrieve User History and Generate User Profiles for Personalized Persuasiveness Prediction
 
 **Conference**: ACL 2026 Findings  
@@ -129,8 +135,8 @@ Both the profiler and query generator are trained using DPO with Llama-3.1-8B-In
 
 - [\[ACL 2026\] From Past To Path: Masked History Learning for Next-Item Prediction in Generative Recommendation](from_past_to_path_masked_history_learning_for_next-item_prediction_in_generative.md)
 - [\[ACL 2026\] HORIZON: A Benchmark for in-the-wild User Behaviour Modeling](horizon_a_benchmark_for_in-the-wild_user_behaviour_modeling.md)
-- [\[ACL 2026\] Mirroring Users: Towards Building Preference-aligned User Simulator with User Feedback in Recommendation](mirroring_users_towards_building_preference-aligned_user_simulator_with_user_fee.md)
 - [\[ICLR 2026\] ProPerSim: Developing Proactive and Personalized AI Assistants through User-Assistant Simulation](../../ICLR2026/recommender/propersim_developing_proactive_and_personalized_ai_assistants_through_user-assis.md)
+- [\[ACL 2026\] Mirroring Users: Towards Building Preference-aligned User Simulator with User Feedback in Recommendation](mirroring_users_towards_building_preference-aligned_user_simulator_with_user_fee.md)
 - [\[ACL 2026\] HARPO: Hierarchical Agentic Reasoning for User-Aligned Conversational Recommendation](harpo_hierarchical_agentic_reasoning_for_user-aligned_conversational_recommendat.md)
 
 </div>

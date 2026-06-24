@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Position: Generative Engine Optimization Creates Underexamined Risks, Governance Must Target Concentration, Disclosure, and Academic Blind Spots
 description: >-
-  [ICML 2026][AI Safety][Paper Note] This position paper argues that as users transition from "viewing ranked lists" to "viewing LLM-synthesized answers," Search Engine Optimization (SEO) evolves into **Generative Engine Optimization (GEO)**, exerting influence within the evidence pool and generation stages of RAG-based answer engines. The authors formali
+  [ICML2026][AI Safety][Generative Engine Optimization] This position paper argues that as users transition from "viewing ranked lists" to "viewing LLM-synthesized answers," Search Engine Optimization (SEO) evolves into **Generative Engine Optimization (GEO)**, exerting influence within the evidence pool and generation stages of RAG-based answer engines. The authors formalize a universal GEO pipeline, identify three overlooked risks (concentration of influence…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML2026"
+  - "AI Safety"
+  - "Generative Engine Optimization"
+  - "Answer-level Governance"
+  - "Implicit Commercial Influence"
+  - "Black-box Auditing"
+  - "RAG Manipulation"
 date: 2026-05-08
-content_hash: aa4212f182fc9e96
+content_hash: f3a18de4f9585c31
 ---
+
 # Position: Generative Engine Optimization Creates Underexamined Risks, Governance Must Target Concentration, Disclosure, and Academic Blind Spots
 
 **Conference**: ICML2026  
@@ -121,13 +127,20 @@ The authors suggest actions based on the Mökander framework. **Reducing Influen
 - Value: ⭐⭐⭐⭐⭐ Answer-level governance is an urgent issue as LLM engines become search portals.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- **Aggarwal et al. (2024)**: GEO: Generative Engine Optimization.
-- **Kumar & Lakkaraju (2024)**: PoisonedRAG: Knowledge Poisoning Attacks on Retrieval-Augmented Generation.
-- **Mökander et al. (2023)**: Auditing Large Language Models: A Three-Layered Approach.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] Position: AI Researchers Must Help Lead Arms Control to Mitigate Military AI Risks](ai_researchers_must_help_lead_arms_control_to_mitigate_military_ai_risks.md)
+- [\[ICML 2026\] Two Blind Spots in Machine Unlearning: Over-Unlearning and Prototype Re-learning Attacks](unlearnings_blind_spots_over-unlearning_and_prototypical_relearning_attack.md)
+- [\[AAAI 2026\] Rethinking Target Label Conditioning in Adversarial Attacks: A 2D Tensor-Guided Generative Approach](../../AAAI2026/ai_safety/rethinking_target_label_conditioning_in_adversarial_attacks_a_2d_tensor-guided_g.md)
+- [\[ICML 2026\] Alignment Risks from Capability-Seeking RL Training](alignment_risks_from_capability-seeking_rl_training.md)
+- [\[ICML 2026\] Position: Machine Learning for Heart Transplant Allocation Policy Optimization Should Account for Incentives](position_machine_learning_for_heart_transplant_allocation_policy_optimization_sh.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Position: AI Researchers Must Help Lead Arms Control to Mitigate Military AI Risks](ai_researchers_must_help_lead_arms_control_to_mitigate_military_ai_risks.md)

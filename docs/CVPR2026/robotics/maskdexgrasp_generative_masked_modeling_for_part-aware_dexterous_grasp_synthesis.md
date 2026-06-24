@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MaskDexGrasp: Generative Masked Modeling for Part-Aware Dexterous Grasp Synthesis
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VQ-VAE] MaskDexGrasp decomposes dexterous hand grasping into six components (palm + five fingers) based on hand anatomy, quantizes them into discrete tokens using VQ-VAE, and iteratively samples these tokens via a bidirectional masked Transformer conditioned on object point clouds and task text. This approach generates high-qu
+  [CVPR 2026][Robotics][Dexterous Grasping] MaskDexGrasp decomposes dexterous hand grasping into six components (palm + five fingers) based on hand anatomy, quantizes them into discrete tokens using VQ-VAE, and iteratively samples these tokens via a bidirectional masked Transformer conditioned on object point clouds and task text. This approach generates high-quality, semantically aligned, and per-finger editable grasps, achieving SOTA on the self-built TDG dataset (65k grasps…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VQ-VAE
+  - "CVPR 2026"
+  - "Robotics"
+  - "Dexterous Grasping"
+  - "Part-Aware"
+  - "VQ-VAE"
+  - "Masked Modeling"
+  - "Controllable Editing"
 date: 2026-05-08
-content_hash: 04ee98cab0fc081c
+content_hash: fd9b33fda66ddac6
 ---
+
 # MaskDexGrasp: Generative Masked Modeling for Part-Aware Dexterous Grasp Synthesis
 
 **Conference**: CVPR 2026  
@@ -145,9 +150,9 @@ Inference speed is dominant: 0.033s, approximately 130x faster than the stronges
 ## Related Papers
 
 - [\[CVPR 2026\] DextER: Language-driven Dexterous Grasp Generation with Embodied Reasoning](dexter_language-driven_dexterous_grasp_generation_with_embodied_reasoning.md)
+- [\[ICLR 2026\] Masked Generative Policy for Robotic Control](../../ICLR2026/robotics/masked_generative_policy_for_robotic_control.md)
 - [\[CVPR 2026\] GeoDexGrasp: Geometry-aware Generation for Data-efficient and Physics-plausible Dexterous Grasping](geodexgrasp_geometry-aware_generation_for_data-efficient_and_physics-plausible_d.md)
-- [\[ICCV 2025\] DexVLG: Dexterous Vision-Language-Grasp Model at Scale](../../ICCV2025/robotics/dexvlg_dexterous_vision-language-grasp_model_at_scale.md)
-- [\[AAAI 2026\] Towards Affordance-Aware Robotic Dexterous Grasping with Human-like Priors](../../AAAI2026/robotics/towards_affordance-aware_robotic_dexterous_grasping_with_human-like_priors.md)
+- [\[ICLR 2026\] PA3FF: Part-Aware Dense 3D Feature Fields for Generalizable Articulated Object Manipulation](../../ICLR2026/robotics/pa3fflearning_part-aware_dense_3d_feature_field_for_generalizable_articulated_ob.md)
 - [\[CVPR 2026\] Iterative Closed-Loop Motion Synthesis for Scaling the Capabilities of Humanoid Control](iterative_closed-loop_motion_synthesis_for_scaling_the_capabilities_of_humanoid_.md)
 
 </div>

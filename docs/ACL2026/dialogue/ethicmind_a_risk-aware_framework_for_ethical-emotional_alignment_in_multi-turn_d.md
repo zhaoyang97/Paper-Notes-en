@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ETHICMIND: A Risk-Aware Framework for Ethical-Emotional Alignment in Multi-Turn Dialogue
 description: >-
-  [ACL 2026][Dialogue Systems][Paper Note] ETHICMIND proposes an inference-time risk-aware alignment framework that jointly analyzes ethical risks and user emotions in each turn of a multi-turn dialogue. It plans high-level response strategies to generate replies that balance ethical guidance and emotional resonance, achieving consistent alignment in high-risk
+  [ACL 2026][Dialogue Systems][Ethical-Emotional Alignment] ETHICMIND proposes an inference-time risk-aware alignment framework that jointly analyzes ethical risks and user emotions in each turn of a multi-turn dialogue. It plans high-level response strategies to generate replies that balance ethical guidance and emotional resonance, achieving consistent alignment in high-risk and morally ambiguous scenarios without additional training.
 tags:
-  - ACL 2026
-  - Dialogue Systems
+  - "ACL 2026"
+  - "Dialogue Systems"
+  - "Ethical-Emotional Alignment"
+  - "Multi-turn Dialogue"
+  - "Risk-Awareness"
+  - "Strategy Planning"
+  - "Inference-time Alignment"
 date: 2026-05-08
-content_hash: 5bcce9674ce7f76c
+content_hash: 293e1d09cbec8dfd
 ---
+
 # ETHICMIND: A Risk-Aware Framework for Ethical-Emotional Alignment in Multi-Turn Dialogue
 
 **Conference**: ACL 2026  
@@ -139,10 +145,10 @@ ETHICMIND is a pure inference-time method and requires no training. All componen
 
 ## Related Papers
 
+- [\[ICML 2026\] Context-Driven Incremental Compression for Multi-Turn Dialogue Generation](../../ICML2026/dialogue/context-driven_incremental_compression_for_multi-turn_dialogue_generation.md)
 - [\[ACL 2026\] CoDial: Interpretable Task-Oriented Dialogue Systems Through Dialogue Flow Alignment](codial_interpretable_task-oriented_dialogue_systems_through_dialogue_flow_alignm.md)
 - [\[ACL 2026\] SPASM: Stable Persona-driven Agent Simulation for Multi-turn Dialogue Generation](spasm_stable_persona-driven_agent_simulation_for_multi-turn_dialogue_generation.md)
 - [\[ICML 2026\] Not All Prefills Are Equal: PPD Disaggregation for Multi-turn LLM Serving](../../ICML2026/dialogue/not_all_prefills_are_equal_ppd_disaggregation_for_multi-turn_llm_serving.md)
-- [\[ICML 2026\] Context-Driven Incremental Compression for Multi-Turn Dialogue Generation](../../ICML2026/dialogue/context-driven_incremental_compression_for_multi-turn_dialogue_generation.md)
 - [\[ACL 2026\] STRIDE-ED: A Strategy-Grounded Stepwise Reasoning Framework for Empathetic Dialogue Systems](stride-ed_a_strategy-grounded_stepwise_reasoning_framework_for_empathetic_dialog.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Autonomous Knowledge Graph Exploration with Adaptive Breadth-Depth Retrieval
 description: >-
-  [ACL 2026][Graph Learning][Paper Note] This paper proposes ARK: a training-free Knowledge Graph (KG) retrieval agent that exposes only two minimal tools—"global lexical search" and "single-hop neighbor expansion"—allowing the LLM to autonomously switch between breadth and depth without seed nodes or fixed hop counts. It pushes the average Hit@1 on three STa
+  [ACL 2026][Graph Learning][Knowledge Graph] This paper proposes ARK: a training-free Knowledge Graph (KG) retrieval agent that exposes only two minimal tools—"global lexical search" and "single-hop neighbor expansion"—allowing the LLM to autonomously switch between breadth and depth without seed nodes or fixed hop counts. It pushes the average Hit@1 on three STaRK graphs to 59.1%, achieving up to a 31.4% improvement over training-free baselines…
 tags:
-  - ACL 2026
-  - Graph Learning
+  - "ACL 2026"
+  - "Graph Learning"
+  - "Knowledge Graph"
+  - "Adaptive Retrieval"
+  - "Breadth-Depth Trade-off"
+  - "Tool Use"
+  - "Trajectory Distillation"
 date: 2026-05-08
-content_hash: 01e74a6f2c025654
+content_hash: 6647c350861598ef
 ---
+
 # Autonomous Knowledge Graph Exploration with Adaptive Breadth-Depth Retrieval
 
 **Conference**: ACL 2026  
@@ -137,11 +143,11 @@ Aggregation comparison: Voting achieves 73.40 Hit@1 on MAG vs. 71.24 for Orderin
 
 ## Related Papers
 
-- [\[ICLR 2026\] Explore-on-Graph: Incentivizing Autonomous Exploration of LLMs on Knowledge Graphs](../../ICLR2026/graph_learning/explore-on-graph_incentivizing_autonomous_exploration_of_large_language_models_o.md)
 - [\[ACL 2026\] MegaRAG: Multimodal Knowledge Graph-Based Retrieval Augmented Generation](megarag_multimodal_knowledge_graph-based_retrieval_augmented_generation.md)
 - [\[ACL 2026\] LogosKG: Hardware-Optimized Scalable and Interpretable Knowledge Graph Retrieval](logoskg_hardware-optimized_scalable_and_interpretable_knowledge_graph_retrieval.md)
 - [\[AAAI 2026\] Beyond Fixed Depth: Adaptive Graph Neural Networks for Node Classification Under Varying Homophily](../../AAAI2026/graph_learning/beyond_fixed_depth_adaptive_graph_neural_networks_for_node_classification_under_.md)
 - [\[ACL 2026\] TagRAG: Tag-guided Hierarchical Knowledge Graph Retrieval-Augmented Generation](tagrag_tag-guided_hierarchical_knowledge_graph_retrieval-augmented_generation.md)
+- [\[ACL 2025\] Knowledge Graph Retrieval-Augmented Generation for LLM-based Recommendation (K-RagRec)](../../ACL2025/graph_learning/kg_rag_recommendation.md)
 
 </div>
 

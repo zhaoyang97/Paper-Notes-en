@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SnaPhArd Contrast Learning
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] Starting from optimality conditions, this paper theoretically proves that "easy samples" in contrastive learning act as fixation points for the optimal solution and induce representation collapse. It proposes SPACL: using dynamic anchors + farthest point iteration to select hard positives, adversarial generators to cre
+  [ICLR 2026][Self-Supervised Learning][Contrastive learning] Starting from optimality conditions, this paper theoretically proves that "easy samples" in contrastive learning act as fixation points for the optimal solution and induce representation collapse. It proposes SPACL: using dynamic anchors + farthest point iteration to select hard positives, adversarial generators to create hard negatives, and relative thresholds to filter trivial negatives. It consistently outperforms…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Contrastive learning"
+  - "hard samples"
+  - "optimality analysis"
+  - "collapse prevention"
+  - "adversarial negative samples"
 date: 2026-05-08
-content_hash: 075e52ba4ce6d96b
+content_hash: 38439b19ebc8a3ff
 ---
+
 # SnaPhArd Contrast Learning
 
 **Conference**: ICLR 2026  

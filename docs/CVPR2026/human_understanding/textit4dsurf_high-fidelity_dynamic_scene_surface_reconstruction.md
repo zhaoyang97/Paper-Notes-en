@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] 4DSurf: High-Fidelity Dynamic Scene Surface Reconstruction
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] This paper proposes 4DSurf, a general dynamic scene surface reconstruction framework based on 2D Gaussian Splatting. By introducing Gaussian motion-induced SDF flow regularization to constrain the temporally consistent evolution of the surface and employing an overlapping segment strategy to handle large deformations,
+  [CVPR 2026][Human Understanding][Dynamic Surface Reconstruction] This paper proposes 4DSurf, a general dynamic scene surface reconstruction framework based on 2D Gaussian Splatting. By introducing Gaussian motion-induced SDF flow regularization to constrain the temporally consistent evolution of the surface and employing an overlapping segment strategy to handle large deformations, it surpasses existing SOTA methods with Chamfer distance improvements of 49% and 19% on the Hi4…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Dynamic Surface Reconstruction"
+  - "Gaussian Splatting"
+  - "SDF Flow Regularization"
+  - "Temporal Consistency"
+  - "Large Deformation Handling"
 date: 2026-05-08
-content_hash: 93b4ce276aaf9bc0
+content_hash: a6766c84e4e4cfdb
 ---
+
 # 4DSurf: High-Fidelity Dynamic Scene Surface Reconstruction
 
 **Conference**: CVPR 2026  
@@ -154,10 +160,10 @@ Chamfer Distance (mm) on the CMU Panoptic dataset:
 ## Related Papers
 
 - [\[CVPR 2026\] Mobile-VTON: High-Fidelity On-Device Virtual Try-On](mobile_vton_ondevice_virtual_tryon.md)
+- [\[CVPR 2026\] InterPhys: Physics-aware Human Motion Synthesis in a Dynamic Scene](interphys_physics-aware_human_motion_synthesis_in_a_dynamic_scene.md)
 - [\[ICCV 2025\] Avat3r: Large Animatable Gaussian Reconstruction Model for High-fidelity 3D Head Avatars](../../ICCV2025/human_understanding/avat3r_large_animatable_gaussian_reconstruction_model_for_hi.md)
-- [\[CVPR 2026\] SyncMos: Scalable Motion Synchronisation for Multi-Agent Scene Interaction](syncmos_scalable_motion_synchronisation_for_multi-agent_scene_interaction.md)
-- [\[CVPR 2026\] MetricHMSR: Metric Human Mesh and Scene Recovery from Monocular Images](metrichmsr_metric_human_mesh_and_scene_recovery_from_monocular_images.md)
-- [\[CVPR 2026\] SceMoS: Scene-Aware 3D Human Motion Synthesis by Planning with Geometry-Grounded Tokens](scemos_scene-aware_3d_human_motion_synthesis_by_planning_with_geometry-grounded_.md)
+- [\[ICLR 2026\] Text2Interact: High-Fidelity and Diverse Text-to-Two-Person Interaction Generation](../../ICLR2026/human_understanding/text2interact_high-fidelity_and_diverse_text-to-two-person_interaction_generatio.md)
+- [\[CVPR 2025\] VTON 360: High-Fidelity Virtual Try-On from Any Viewing Direction](../../CVPR2025/human_understanding/vton_360_high-fidelity_virtual_try-on_from_any_viewing_direction.md)
 
 </div>
 

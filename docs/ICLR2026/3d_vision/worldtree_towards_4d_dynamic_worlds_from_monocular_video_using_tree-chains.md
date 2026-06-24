@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] WorldTree: Towards 4D Dynamic Worlds from Monocular Video Using Tree-Chains
 description: >-
-  [ICLR 2026][3D Vision][3D Gaussian Splatting] WorldTree utilizes a "Temporal Partition Tree" to recursively bifurcate monocular videos into coarse-to-fine sub-intervals for layer-wise optimization. It combines this with "Spatial Ancestral Chains" to link each child node with its ancestors for spatial complementarity and motion representation specialization. This a
+  [ICLR 2026][3D Vision][Monocular Dynamic Reconstruction] WorldTree utilizes a "Temporal Partition Tree" to recursively bifurcate monocular videos into coarse-to-fine sub-intervals for layer-wise optimization. It combines this with "Spatial Ancestral Chains" to link each child node with its ancestors for spatial complementarity and motion representation specialization. This approach simultaneously addresses the issues of "global temporal optimization" and "hierarchical spatial…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Monocular Dynamic Reconstruction"
+  - "4D Reconstruction"
+  - "3D Gaussian Splatting"
+  - "Temporal Hierarchy"
+  - "Tree Structure"
 date: 2026-05-08
-content_hash: 22b28d39890dd4e6
+content_hash: bdb3a7f7a8a92e57
 ---
+
 # WorldTree: Towards 4D Dynamic Worlds from Monocular Video Using Tree-Chains
 
 **Conference**: ICLR 2026  
@@ -136,10 +141,10 @@ Individual components BA, SW, TPT, and SAC were toggled (NVIDIA-LS):
 ## Related Papers
 
 - [\[ICLR 2026\] Uncertainty Matters in Dynamic Gaussian Splatting for Monocular 4D Reconstruction](uncertainty_matters_in_dynamic_gaussian_splatting_for_monocular_4d_reconstructio.md)
-- [\[ICLR 2026\] Mono4DGS-HDR: High Dynamic Range 4D Gaussian Splatting from Alternating-exposure Monocular Videos](mono4dgs-hdr_high_dynamic_range_4d_gaussian_splatting_from_alternating-exposure_.md)
 - [\[CVPR 2026\] 4DEquine: Disentangling Motion and Appearance for 4D Equine Reconstruction from Monocular Video](../../CVPR2026/3d_vision/4dequine_disentangling_motion_and_appearance_for_4d_equine_reconstruction_from_m.md)
-- [\[CVPR 2026\] Mesh4D: 4D Mesh Reconstruction and Tracking from Monocular Video](../../CVPR2026/3d_vision/mesh4d_4d_mesh_reconstruction_and_tracking_from_monocular_video.md)
-- [\[AAAI 2026\] MoBGS: Motion Deblurring Dynamic 3D Gaussian Splatting for Blurry Monocular Video](../../AAAI2026/3d_vision/mobgs_motion_deblurring_dynamic_3d_gaussian_splatting_for_blurry_monocular_video.md)
+- [\[ICLR 2026\] StreamSplat: Towards Online Dynamic 3D Reconstruction from Uncalibrated Video Streams](streamsplat_towards_online_dynamic_3d_reconstruction_from_uncalibrated_video_str.md)
+- [\[ICCV 2025\] Vivid4D: Improving 4D Reconstruction from Monocular Video by Video Inpainting](../../ICCV2025/3d_vision/vivid4d_improving_4d_reconstruction_from_monocular_video_by_video_inpainting.md)
+- [\[ICLR 2026\] Mono4DGS-HDR: High Dynamic Range 4D Gaussian Splatting from Alternating-exposure Monocular Videos](mono4dgs-hdr_high_dynamic_range_4d_gaussian_splatting_from_alternating-exposure_.md)
 
 </div>
 

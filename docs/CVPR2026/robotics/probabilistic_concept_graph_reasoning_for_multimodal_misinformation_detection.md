@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Probabilistic Concept Graph Reasoning for Multimodal Misinformation Detection
 description: >-
-  [CVPR 2026][Social Computing][Paper Note] This paper reformulates multimodal misinformation detection (MMD) as a structured probabilistic reasoning problem based on a concept graph. It proposes the PCGR framework, which utilizes MLLMs to automatically discover and verify human-understandable concept nodes, constructing a hierarchical probabilistic concept grap
+  [CVPR 2026][Robotics][Multimodal misinformation detection] This paper reformulates multimodal misinformation detection (MMD) as a structured probabilistic reasoning problem based on a concept graph. It proposes the PCGR framework, which utilizes MLLMs to automatically discover and verify human-understandable concept nodes, constructing a hierarchical probabilistic concept graph. This achieves interpretable misinformation detection and comprehensively outperforms 13 baselines…
 tags:
-  - CVPR 2026
-  - Social Computing
+  - "CVPR 2026"
+  - "Robotics"
+  - "Multimodal misinformation detection"
+  - "concept graph reasoning"
+  - "probabilistic inference"
+  - "explainable AI"
+  - "automatic concept growth"
 date: 2026-05-08
-content_hash: 08dabefce5fd46e1
+content_hash: 2541908fd3b7ba91
 ---
+
 # Probabilistic Concept Graph Reasoning for Multimodal Misinformation Detection
 
 **Conference**: CVPR 2026  
@@ -140,11 +146,11 @@ The total loss is a weighted sum of the detection objective and concept structur
 
 ## Related Papers
 
-- [\[AAAI 2026\] Reasoning About the Unsaid: Misinformation Detection with Omission-Aware Graph Inference](../../AAAI2026/social_computing/reasoning_about_the_unsaid_misinformation_detection_with_omission-aware_graph_in.md)
-- [\[AAAI 2026\] T2Agent: A Tool-augmented Multimodal Misinformation Detection Agent with Monte Carlo Tree Search](../../AAAI2026/social_computing/t2agent_a_tool-augmented_multimodal_misinformation_detection_agent_with_monte_ca.md)
-- [\[CVPR 2026\] Bridging Pixels and Words: Mask-Aware Local Semantic Fusion for Multimodal Media Verification](bridging_pixels_and_words_mask-aware_local_semantic_fusion_for_multimodal_media_.md)
-- [\[ACL 2026\] Probing Multimodal Large Language Models on Cognitive Biases in Chinese Short-Video Misinformation](../../ACL2026/social_computing/probing_multimodal_large_language_models_on_cognitive_biases_in_chinese_short-vi.md)
-- [\[ICML 2026\] IDO: Incongruity-Aware Distribution Optimization for Multimodal Fake News Detection](../../ICML2026/social_computing/ido_incongruity-aware_distribution_optimization_for_multimodal_fake_news_detecti.md)
+- [\[ACL 2026\] Cultivating Forensic Reasoning for Generalizable Multimodal Manipulation Detection](../../ACL2026/robotics/cultivating_forensic_reasoning_for_generalizable_multimodal_manipulation_detecti.md)
+- [\[CVPR 2026\] FantasyVLN: Unified Multimodal Chain-of-Thought Reasoning for Vision-and-Language Navigation](fantasyvln_unified_multimodal_chain-of-thought_reasoning_for_vision-and-language.md)
+- [\[ICML 2026\] PSG-Nav: Probabilistic Scene Graph Navigation via Multiverse Decision Making](../../ICML2026/robotics/psg-nav_probabilistic_scene_graph_navigation_via_multiverse_decision_making.md)
+- [\[CVPR 2026\] RoboTAG: End-to-end Robot Pose Estimation via Topological Alignment Graph](robotag_end-to-end_robot_pose_estimation_via_topological_alignment_graph.md)
+- [\[CVPR 2026\] MM-ACT: Learn from Multimodal Parallel Generation to Act](mm-act_learn_from_multimodal_parallel_generation_to_act.md)
 
 </div>
 

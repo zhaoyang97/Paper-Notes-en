@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LookaheadKV: Fast and Accurate KV Cache Eviction by Glimpsing into the Future without Generation
 description: >-
-  [ICLR 2026][Model Compression][LoRA] Proposes LookaheadKV, which utilizes learnable lookahead tokens and selectively activated LoRA modules to predict the attention importance scores of actual responses. This achieves fast and accurate KV cache eviction without draft generation, outperforming existing methods on multiple long-context benchmarks while redu
+  [ICLR 2026][Model Compression][KV cache compression] Proposes LookaheadKV, which utilizes learnable lookahead tokens and selectively activated LoRA modules to predict the attention importance scores of actual responses. This achieves fast and accurate KV cache eviction without draft generation, outperforming existing methods on multiple long-context benchmarks while reducing eviction overhead by up to 14.5x.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - LoRA
+  - "ICLR 2026"
+  - "Model Compression"
+  - "KV cache compression"
+  - "attention importance prediction"
+  - "LoRA"
+  - "lookahead tokens"
+  - "long-context inference"
 date: 2026-05-08
-content_hash: e73a0608141e027f
+content_hash: 35419ba4e99db005
 ---
+
 # LookaheadKV: Fast and Accurate KV Cache Eviction by Glimpsing into the Future without Generation
 
 **Conference**: ICLR 2026  
@@ -132,10 +137,10 @@ where $L$ and $H$ are the number of layers and heads. Using KL divergence instea
 ## Related Papers
 
 - [\[ICLR 2026\] Q&C: When Quantization Meets Cache in Efficient Generation](qc_when_quantization_meets_cache_in_efficient_generation.md)
+- [\[ACL 2026\] The Pitfalls of KV Cache Compression](../../ACL2026/model_compression/the_pitfalls_of_kv_cache_compression.md)
 - [\[NeurIPS 2025\] Ada-KV: Optimizing KV Cache Eviction by Adaptive Budget Allocation for Efficient LLM Inference](../../NeurIPS2025/model_compression/ada-kv_optimizing_kv_cache_eviction_by_adaptive_budget_allocation_for_efficient_.md)
 - [\[ACL 2025\] Accurate KV Cache Quantization with Outlier Tokens Tracing](../../ACL2025/model_compression/accurate_kv_cache_quantization_with_outlier_tokens_tracing.md)
-- [\[ICLR 2026\] PM-KVQ: Progressive Mixed-Precision KV Cache Quantization for Long-CoT LLMs](pm-kvq_progressive_mixed-precision_kv_cache_quantization_for_long-cot_llms.md)
-- [\[ACL 2026\] DASH-KV: Accelerating Long-Context LLM Inference via Asymmetric KV Cache Hashing](../../ACL2026/model_compression/dash-kv_accelerating_long-context_llm_inference_via_asymmetric_kv_cache_hashing.md)
+- [\[NeurIPS 2025\] KeyDiff: Key Similarity-Based KV Cache Eviction for Long-Context LLM Inference in Resource-Constrained Environments](../../NeurIPS2025/model_compression/keydiff_key_similarity-based_kv_cache_eviction_for_long-context_llm_inference_in.md)
 
 </div>
 

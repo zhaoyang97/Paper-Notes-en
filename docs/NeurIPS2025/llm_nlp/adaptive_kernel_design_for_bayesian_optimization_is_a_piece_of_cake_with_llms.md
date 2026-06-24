@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Adaptive Kernel Design for Bayesian Optimization Is a Piece of CAKE with LLMs
 description: >-
-  [NeurIPS 2025][LLM/NLP][Bayesian Optimization] This paper proposes CAKE (Context-Aware Kernel Evolution), which leverages LLMs as crossover and mutation operators within a genetic algorithm framework to adaptively genera…
+  [NeurIPS 2025][LLM (Other)][Bayesian Optimization] This paper proposes CAKE (Context-Aware Kernel Evolution), which leverages LLMs as crossover and mutation operators within a genetic algorithm framework to adaptively generate and evolve GP kernel expressions during Bayesian optimization. Combined with the BAKER ranking mechanism that balances model fit (BIC) and expected improvement (EI), CAKE consistently outperforms both fixed-kernel and adaptive-kernel baselines on tasks…
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "Bayesian Optimization"
   - "Gaussian Process"
   - "Kernel Design"
   - "LLM"
   - "Genetic Algorithm"
 date: 2026-05-08
-content_hash: 6fbf66c7f80efc81
+content_hash: 6b7cf321aefae3a4
 ---
 
 # Adaptive Kernel Design for Bayesian Optimization Is a Piece of CAKE with LLMs
@@ -129,9 +129,9 @@ A population of kernel functions $\mathbb{K}$ is maintained. At each BO iteratio
 
 - [\[NeurIPS 2025\] PRESTO: Preimage-Informed Instruction Optimization for Prompting Black-Box LLMs](presto_preimage-informed_instruction_optimization_for_prompting_black-box_llms.md)
 - [\[NeurIPS 2025\] AutoDiscovery: Open-ended Scientific Discovery via Bayesian Surprise](autodiscovery_open-ended_scientific_discovery_via_bayesian_surprise.md)
-- [\[NeurIPS 2025\] System Prompt Optimization with Meta-Learning](system_prompt_optimization_with_meta-learning.md)
-- [\[ICLR 2026\] Rethinking Code Similarity for Automated Algorithm Design with LLMs](../../ICLR2026/llm_nlp/rethinking_code_similarity_for_automated_algorithm_design_with_llms.md)
-- [\[ICLR 2026\] d²Cache: Accelerating Diffusion-Based LLMs via Dual Adaptive Caching](../../ICLR2026/llm_nlp/d2cache_accelerating_diffusion-based_llms_via_dual_adaptive_caching.md)
+- [\[ACL 2025\] Enough Coin Flips Can Make LLMs Act Bayesian](../../ACL2025/llm_nlp/coin_flips_bayesian.md)
+- [\[ACL 2025\] Gradient-Adaptive Policy Optimization: Towards Multi-Objective Alignment of Large Language Models](../../ACL2025/llm_nlp/gapo_multi_objective_alignment.md)
+- [\[ACL 2025\] AutoExp: Automatic Experiment Design and Execution by LLMs](../../ACL2025/llm_nlp/autoexp_automatic_experiment_design_and_execution_by_llms.md)
 
 </div>
 

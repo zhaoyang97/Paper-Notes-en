@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Enabling Arbitrary Inference in Spatio-Temporal Dynamic Systems: A Physics-Inspired Perspective
 description: >-
-  [ICLR 2026][Time Series][Paper Note] PhySTA integrates continuous neural operators with discrete graph neural networks. It employs the Graph-Temporal Fourier Neural Operator (GT-FNO) based on the Magnetic Laplacian to learn continuous dynamics, supplemented by the Adaptive Multi-scale Interaction (AMI) module using node-edge coupled convolutions to correc
+  [ICLR 2026][Time Series][Neural Operators] PhySTA integrates continuous neural operators with discrete graph neural networks. It employs the Graph-Temporal Fourier Neural Operator (GT-FNO) based on the Magnetic Laplacian to learn continuous dynamics, supplemented by the Adaptive Multi-scale Interaction (AMI) module using node-edge coupled convolutions to correct discrete interaction errors. This enables efficient and generalizable inference for **unobserved regions and arbitr…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Neural Operators"
+  - "Graph Fourier Transform"
+  - "Spatio-Temporal Prediction"
+  - "Arbitrary Inference"
+  - "Multi-scale Graph Convolution"
+  - "Magnetic Laplacian"
 date: 2026-05-08
-content_hash: a685d3c9e4c7c9c7
+content_hash: 66092c67e7f7bab5
 ---
+
 # Enabling Arbitrary Inference in Spatio-Temporal Dynamic Systems: A Physics-Inspired Perspective
 
 **Conference**: ICLR 2026  
@@ -121,14 +128,14 @@ PhySTA reduces FLOPs by up to 74.6% compared to baselines while maintaining high
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Learning Long Range Spatio-Temporal Representations over Continuous Time Dynamic Graphs with State Space Models](../../ICML2026/time_series/learning_long_range_spatio-temporal_representations_over_continuous_time_dynamic.md)
-- [\[ICLR 2026\] Towards Generalizable PDE Dynamics Forecasting via Physics-Guided Invariant Learning](towards_generalizable_pde_dynamics_forecasting_via_physics-guided_invariant_lear.md)
-- [\[ICML 2026\] Nested Spatio-Temporal Time Series Forecasting](../../ICML2026/time_series/nested_spatio-temporal_time_series_forecasting.md)
+- [\[ICLR 2026\] STORM: Synergistic Cross-Scale Spatio-Temporal Modeling for Weather Forecasting](storm_synergistic_cross-scale_spatio-temporal_modeling_for_weather_forecasting.md)
 - [\[ICLR 2026\] ST-HHOL: Spatio-Temporal Hierarchical Hypergraph Online Learning for Crime Prediction](st-hhol_spatio-temporal_hierarchical_hypergraph_online_learning_for_crime_predic.md)
+- [\[ICLR 2026\] TEN-DM: Topology-Enhanced Diffusion Model for Spatio-Temporal Event Prediction](ten-dm_topology-enhanced_diffusion_model_for_spatio-temporal_event_prediction.md)
 - [\[ICLR 2026\] TRIDENT: Cross-Domain Trajectory Spatio-Temporal Representation via Distance-Preserving Triplet Learning](trident_cross-domain_trajectory_spatio-temporal_representation_via_distance-pres.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Harmonic Canvas: Inversion-Free Editing for Visually-Guided Music Style Transfer
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] This paper treats "image atmosphere" as a third conditioning modality for music style, proposing a multimodal music style transfer framework based on inversion-free flow editing. Visual and textual cues are injected into an audio DiT backbone via a CLIP+ViT dual encoder with cross-adapters. A differentiable normalized
+  [CVPR 2026][Image Generation][Music Style Transfer] This paper treats "image atmosphere" as a third conditioning modality for music style, proposing a multimodal music style transfer framework based on inversion-free flow editing. Visual and textual cues are injected into an audio DiT backbone via a CLIP+ViT dual encoder with cross-adapters. A differentiable normalized chroma constraint is used to "pull back" the pitch structure along the flow trajectory…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Music Style Transfer"
+  - "Visual Guidance"
+  - "Inversion-Free Flow Editing"
+  - "Cross-modal Fusion"
+  - "Chroma Melody Constraint"
 date: 2026-05-08
-content_hash: 99ca4a46a9332a8d
+content_hash: c10b4c2b615dd6f0
 ---
+
 # Harmonic Canvas: Inversion-Free Editing for Visually-Guided Music Style Transfer
 
 **Conference**: CVPR 2026  
@@ -131,15 +137,15 @@ Ours ranks first across all metrics. Compared to generative methods (MusicGen/TA
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Style-GRPO: Semantic-Aware Preference Optimization for Image Style Transfer Guided by Reward Modeling](style-grpo_semantic-aware_preference_optimization_for_image_style_transfer_guide.md)
 - [\[CVPR 2026\] StyleGallery: Training-free and Semantic-aware Personalized Style Transfer from Arbitrary Image References](stylegallery_training-free_and_semantic-aware_personalized_style_transfer_from_a.md)
+- [\[CVPR 2026\] RegionRoute: Regional Style Transfer with Diffusion Model](regionroute_regional_style_transfer_with_diffusion_model.md)
 - [\[AAAI 2026\] Melodia: Training-Free Music Editing Guided by Attention Probing in Diffusion Models](../../AAAI2026/image_generation/melodia_training-free_music_editing_guided_by_attention_probing_in_diffusion_mod.md)
-- [\[CVPR 2026\] HAM: A Training-Free Style Transfer Approach via Heterogeneous Attention Modulation for Diffusion Models](ham_a_training-free_style_transfer_approach_via_heterogeneous_attention_modulati.md)
 - [\[CVPR 2026\] A Training-Free Style-Personalization via SVD-Based Feature Decomposition](a_training-free_style-personalization_via_svd-based_feature_decomposition.md)
 
 </div>

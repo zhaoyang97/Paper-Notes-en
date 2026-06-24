@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OccDriver: Future Occupancy Guided Dual-branch Trajectory Planner in Autonomous Driving
 description: >-
-  [ICLR 2026][Autonomous Driving][World Models] OccDriver adopts a dual-branch coarse-to-fine framework: a vectorized branch generates coarse trajectories, a rasterized branch acts as an occupancy flow world model to predict future scene evolution conditioned on each trajectory, and the vectorized branch سپس refines the trajectories accordingly. Combined with cross-
+  [ICLR 2026][Autonomous Driving][Trajectory Planning] OccDriver adopts a dual-branch coarse-to-fine framework: a vectorized branch generates coarse trajectories, a rasterized branch acts as an occupancy flow world model to predict future scene evolution conditioned on each trajectory, and the vectorized branch سپس refines the trajectories accordingly. Combined with cross-branch losses and a contingency planning strategy, it achieves SOTA performance on the nuPlan closed-loop b…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - World Models
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Trajectory Planning"
+  - "Occupancy Prediction"
+  - "World Model"
+  - "Dual-branch"
+  - "Contingency Planning"
 date: 2026-05-08
-content_hash: b831d11191d1155f
+content_hash: 7b76521c70736615
 ---
+
 # OccDriver: Future Occupancy Guided Dual-branch Trajectory Planner in Autonomous Driving
 
 **Conference**: ICLR 2026  
@@ -142,11 +147,11 @@ Cumulative improvements on Val14 (MP=Marginal Prediction, CP=Contingency Plannin
 
 ## Related Papers
 
-- [\[AAAI 2026\] Dual-branch Spatial-Temporal Self-supervised Representation for Enhanced Road Network Learning](../../AAAI2026/autonomous_driving/dual-branch_spatial-temporal_self-supervised_representation_for_enhanced_road_ne.md)
-- [\[CVPR 2026\] DLWM: Dual Latent World Models enable Holistic Gaussian-centric Pre-training in Autonomous Driving](../../CVPR2026/autonomous_driving/dlwm_dual_latent_world_models_enable_holistic_gaussian-centric_pre-training_in_a.md)
-- [\[ICLR 2026\] BridgeDrive: Diffusion Bridge Policy for Closed-Loop Trajectory Planning in Autonomous Driving](bridgedrive_diffusion_bridge_policy_for_closed-loop_trajectory_planning_in_auton.md)
+- [\[NeurIPS 2025\] Future-Aware End-to-End Driving: Bidirectional Modeling of Trajectory Planning and Scene Evolution](../../NeurIPS2025/autonomous_driving/future-aware_end-to-end_driving_bidirectional_modeling_of_trajectory_planning_an.md)
 - [\[CVPR 2026\] Dr.Occ: Depth- and Region-Guided 3D Occupancy from Surround-View Cameras for Autonomous Driving](../../CVPR2026/autonomous_driving/drocc_depth_region_guided_3d_occupancy.md)
-- [\[ECCV 2024\] OccWorld: Learning a 3D Occupancy World Model for Autonomous Driving](../../ECCV2024/autonomous_driving/occworld_learning_a_3d_occupancy_world_model_for_autonomous_driving.md)
+- [\[AAAI 2026\] Dual-branch Spatial-Temporal Self-supervised Representation for Enhanced Road Network Learning](../../AAAI2026/autonomous_driving/dual-branch_spatial-temporal_self-supervised_representation_for_enhanced_road_ne.md)
+- [\[ICLR 2026\] BridgeDrive: Diffusion Bridge Policy for Closed-Loop Trajectory Planning in Autonomous Driving](bridgedrive_diffusion_bridge_policy_for_closed-loop_trajectory_planning_in_auton.md)
+- [\[CVPR 2026\] KnowVal: A Knowledge-Augmented and Value-Guided Autonomous Driving System](../../CVPR2026/autonomous_driving/knowval_a_knowledge-augmented_and_value-guided_autonomous_driving_system.md)
 
 </div>
 

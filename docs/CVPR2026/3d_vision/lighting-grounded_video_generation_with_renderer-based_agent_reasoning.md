@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Lighting-grounded Video Generation with Renderer-based Agent Reasoning
 description: >-
-  [CVPR 2026][Video Generation][Diffusion Model] LiVER proposes a lighting-driven video generation framework that utilizes a renderer agent to convert text descriptions into explicit 3D scene proxies (including layout, lighting, and camera trajectories). By employing physical rendering to generate diffuse/glossy/rough GGX scene proxies and injecting them into a video
+  [CVPR 2026][3D Vision][Lighting controllable video generation] LiVER proposes a lighting-driven video generation framework that utilizes a renderer agent to convert text descriptions into explicit 3D scene proxies (including layout, lighting, and camera trajectories). By employing physical rendering to generate diffuse/glossy/rough GGX scene proxies and injecting them into a video diffusion model, the approach achieves physically accurate lighting effects and precise scene co…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Lighting controllable video generation"
+  - "3D scene proxy"
+  - "physical rendering"
+  - "diffusion model"
+  - "scene agent"
 date: 2026-05-08
-content_hash: 3b77755c63f5279a
+content_hash: a264d2b3ae9ed02b
 ---
+
 # Lighting-grounded Video Generation with Renderer-based Agent Reasoning
 
 **Conference**: CVPR 2026  
@@ -151,11 +156,11 @@ In a 16-frame comparison against CameraCtrl/MotionCtrl, LiVER achieves FVD=32.45
 
 ## Related Papers
 
-- [\[CVPR 2026\] VISTA: A Test-Time Self-Improving Video Generation Agent](vista_a_test-time_self-improving_video_generation_agent.md)
-- [\[CVPR 2026\] Thinking with Video: Video Generation as a Promising Multimodal Reasoning Paradigm](thinking_with_video_video_generation_as_a_promising_multimodal_reasoning_paradig.md)
-- [\[CVPR 2026\] TGT: Text-Grounded Trajectories for Locally Controlled Video Generation](tgt_text-grounded_trajectories_for_locally_controlled_video_generation.md)
-- [\[CVPR 2026\] Reasoning Diffusion for Unpaired Test Time Out-of-distribution Text-Image to Video Generation](reasoning_diffusion_for_unpaired_test_time_out-of-distribution_text-image_to_vid.md)
-- [\[ICML 2026\] MotiMotion: Motion-Controlled Video Generation with Visual Reasoning](../../ICML2026/video_generation/motimotion_motion-controlled_video_generation_with_visual_reasoning.md)
+- [\[CVPR 2026\] Lighting in Motion: Spatiotemporal HDR Lighting Estimation](lighting_in_motion_spatiotemporal_hdr_lighting_estimation.md)
+- [\[CVPR 2026\] OnlineHMR: Video-based Online World-Grounded Human Mesh Recovery](onlinehmr_video-based_online_world-grounded_human_mesh_recovery.md)
+- [\[CVPR 2026\] NeAR: Coupled Neural Asset–Renderer Stack](near_coupled_neural_asset-renderer_stack.md)
+- [\[CVPR 2026\] Grounded Latents for Entity-Centric 4D Scene Generation](grounded_latents_for_entity-centric_4d_scene_generation.md)
+- [\[CVPR 2026\] UniLight: A Unified Representation for Lighting](unilight_a_unified_representation_for_lighting.md)
 
 </div>
 

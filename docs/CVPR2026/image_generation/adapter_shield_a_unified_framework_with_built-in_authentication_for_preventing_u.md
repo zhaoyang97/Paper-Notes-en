@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adapter Shield: A Unified Framework with Built-in Authentication for Preventing Unauthorized Zero-Shot Image-to-Image Generation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Aiming at zero-shot image-to-image generation methods like IP-Adapter and InstantID that "clone faces or styles with a single image," this paper proposes Adapter Shield. It utilizes a pair of trainable "encryptor/decryptor" modules to map image encoder embeddings into garbled code based on a password. Multi-objective a
+  [CVPR 2026][Image Generation][Zero-shot Image Generation] Aiming at zero-shot image-to-image generation methods like IP-Adapter and InstantID that "clone faces or styles with a single image," this paper proposes Adapter Shield. It utilizes a pair of trainable "encryptor/decryptor" modules to map image encoder embeddings into garbled code based on a password. Multi-objective adversarial perturbations are then used to "anchor" the original image to these garbled embeddings. Thi…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Zero-shot Image Generation"
+  - "Adversarial Perturbation"
+  - "Identity Protection"
+  - "Style Anti-plagiarism"
+  - "Authenticatable Encryption"
 date: 2026-05-08
-content_hash: 233616965b1d07b7
+content_hash: 9904f717cb6e5c20
 ---
+
 # Adapter Shield: A Unified Framework with Built-in Authentication for Preventing Unauthorized Zero-Shot Image-to-Image Generation
 
 **Conference**: CVPR 2026  
@@ -124,15 +130,15 @@ Anti-fine-tuning methods fail significantly in zero-shot scenarios (ISM/ESM 0.7~
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Uni-DAD: Unified Distillation and Adaptation of Diffusion Models for Few-step Few-shot Image Generation](uni-dad_unified_distillation_and_adaptation_of_diffusion_models_for_few-step_few.md)
 - [\[CVPR 2026\] Taming Video Models for 3D and 4D Generation via Zero-Shot Camera Control](taming_video_models_for_3d_and_4d_generation_via_zero-shot_camera_control.md)
 - [\[CVPR 2025\] UNIC-Adapter: Unified Image-Instruction Adapter with Multi-modal Transformer for Image Generation](../../CVPR2025/image_generation/unic-adapter_unified_image-instruction_adapter_with_multi-modal_transformer_for_.md)
+- [\[CVPR 2026\] UniGenDet: A Unified Generative-Discriminative Framework for Co-evolutionary Generation and Detection](unigendet_a_unified_generative-discriminative_framework_for_co-evolutionary_imag.md)
 - [\[ECCV 2024\] MultiGen: Zero-Shot Image Generation from Multi-modal Prompts](../../ECCV2024/image_generation/multigen_zero-shot_image_generation_from_multi-modal_prompts.md)
-- [\[CVPR 2026\] WISER: Wider Search, Deeper Thinking, and Adaptive Fusion for Training-Free Zero-Shot Composed Image Retrieval](wiser_wider_search_deeper_thinking_and_adaptive_fusion_for_training-free_zero-sh.md)
 
 </div>
 

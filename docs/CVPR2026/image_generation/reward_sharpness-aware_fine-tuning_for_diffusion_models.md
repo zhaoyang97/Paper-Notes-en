@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Reward Sharpness-Aware Fine-Tuning for Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][Sharpness-Aware] This paper diagnoses "reward hacking" (where reward scores increase while visual quality degrades) in Reward-Directed Reinforcement Learning (RDRL) for diffusion models as a form of "adversarial attack." The core issue is that reward models lack robustness in directions where their loss surfaces are steep. To address t
+  [CVPR 2026][Image Generation][Reward hacking] This paper diagnoses "reward hacking" (where reward scores increase while visual quality degrades) in Reward-Directed Reinforcement Learning (RDRL) for diffusion models as a form of "adversarial attack." The core issue is that reward models lack robustness in directions where their loss surfaces are steep. To address this, RSA-FT is proposed. Instead of retraining the reward model, it utilizes the gradient of a "smoothed" reward m…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Sharpness-Aware
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Reward hacking"
+  - "Diffusion model fine-tuning"
+  - "Sharpness-Aware"
+  - "Adversarial robustness"
+  - "Plug-and-play"
 date: 2026-05-08
-content_hash: 4100b4dbbdbe9c05
+content_hash: 64b8324e7435a345
 ---
+
 # Reward Sharpness-Aware Fine-Tuning for Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -126,8 +131,8 @@ Note: Detailed ablation values are provided in Appendix E / Table 6 of the origi
 - [\[CVPR 2026\] Do Less, Achieve More: Do We Need Every-Step Optimization for RL Fine-tuning of Diffusion Models?](do_less_achieve_more_do_we_need_every-step_optimization_for_rl_fine-tuning_of_di.md)
 - [\[CVPR 2026\] CRAFT: Aligning Diffusion Models with Fine-Tuning Is Easier Than You Think](craft_aligning_diffusion_models_with_finetuning_is_easier_than_you_think.md)
 - [\[CVPR 2026\] Towards Fine-Grained Attribution: Instance-Aware Preference Optimization for Aligning Diffusion Models](towards_fine-grained_attribution_instance-aware_preference_optimization_for_alig.md)
+- [\[CVPR 2026\] GDRO: Group-level Reward Post-training Suitable for Diffusion Models](gdro_group-level_reward_post-training_suitable_for_diffusion_models.md)
 - [\[CVPR 2025\] Personalized Preference Fine-tuning of Diffusion Models](../../CVPR2025/image_generation/personalized_preference_fine-tuning_of_diffusion_models.md)
-- [\[CVPR 2026\] Memory-Efficient Fine-Tuning Diffusion Transformers via Dynamic Patch Sampling and Block Skipping](memory-efficient_fine-tuning_diffusion_transformers_via_dynamic_patch_sampling_a.md)
 
 </div>
 

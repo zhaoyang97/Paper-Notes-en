@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Federated Prompt-Tuning with Heterogeneous and Incomplete Multimodal Client Data
 description: >-
-  [ICCV 2025][Optimization][Federated Learning] This paper proposes FED-PRIME, a federated prompt-tuning framework for multimodal settings with missing modalities. It maintains two sets of learnable prompts — inter-client…
+  [ICCV 2025][Optimization][Federated Learning] This paper proposes FED-PRIME, a federated prompt-tuning framework for multimodal settings with missing modalities. It maintains two sets of learnable prompts — inter-client and intra-client — to capture cross-client alignable missing patterns and client-specific missing patterns, respectively, and employs a clustering-alignment mechanism for server-side aggregation. FED-PRIME substantially outperforms existing baselines across di…
 tags:
   - "ICCV 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Missing Modality"
   - "Heterogeneous Data"
 date: 2026-05-08
-content_hash: b6f9ddc3bdfd13d8
+content_hash: c62a7e2154f2d520
 ---
 
 # Federated Prompt-Tuning with Heterogeneous and Incomplete Multimodal Client Data
@@ -181,9 +181,9 @@ Robustness (Miss Both, Food-101, varying missing rate η):
 
 - [\[NeurIPS 2025\] Learning Reconfigurable Representations for Multimodal Federated Learning with Missing Data](../../NeurIPS2025/optimization/learning_reconfigurable_representations_for_multimodal_federated_learning_with_m.md)
 - [\[ICCV 2025\] Federated Continual Instruction Tuning](federated_continual_instruction_tuning.md)
+- [\[ICLR 2026\] MASAM: Multimodal Adaptive Sharpness-Aware Minimization for Heterogeneous Data Fusion](../../ICLR2026/optimization/masam_multimodal_adaptive_sharpness-aware_minimization_for_heterogeneous_data_fu.md)
+- [\[ICML 2025\] FedSWA: Improving Generalization in Federated Learning with Highly Heterogeneous Data via Momentum-Based Stochastic Controlled Weight Averaging](../../ICML2025/optimization/fedswa_improving_generalization_in_federated_learning_with_highly_heterogeneous_.md)
 - [\[NeurIPS 2025\] Exact and Linear Convergence for Federated Learning under Arbitrary Client Participation is Attainable](../../NeurIPS2025/optimization/exact_and_linear_convergence_for_federated_learning_under_arbitrary_client_parti.md)
-- [\[NeurIPS 2025\] Streaming Federated Learning with Markovian Data](../../NeurIPS2025/optimization/streaming_federated_learning_with_markovian_data.md)
-- [\[ICLR 2026\] Incentives in Federated Learning with Heterogeneous Agents](../../ICLR2026/optimization/incentives_in_federated_learning_with_heterogeneous_agents.md)
 
 </div>
 

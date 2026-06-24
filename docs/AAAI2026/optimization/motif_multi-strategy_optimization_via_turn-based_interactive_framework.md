@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] MOTIF: Multi-strategy Optimization via Turn-based Interactive Framework
 description: >-
-  [AAAI 2026][Optimization][Automatic Heuristic Design] This paper proposes MOTIF, a framework that models solver design as a multi-strategy optimization problem. Through a turn-based competitive mechanism involving two LL…
+  [AAAI 2026 Oral][Optimization][Automatic Heuristic Design] This paper proposes MOTIF, a framework that models solver design as a multi-strategy optimization problem. Through a turn-based competitive mechanism involving two LLM agents guided by Monte Carlo Tree Search (MCTS), MOTIF jointly optimizes multiple interdependent algorithmic components within combinatorial optimization solvers, consistently outperforming existing methods across TSP, CVRP, BPP…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Optimization"
   - "Automatic Heuristic Design"
   - "LLM"
@@ -12,7 +12,7 @@ tags:
   - "Monte Carlo Tree Search"
   - "Multi-strategy Optimization"
 date: 2026-05-08
-content_hash: 08a60d4da846f480
+content_hash: 81389c2c5f98c732
 ---
 
 # MOTIF: Multi-strategy Optimization via Turn-based Interactive Framework
@@ -219,11 +219,11 @@ Innovation achieves the highest novelty but the lowest consistency; Learning yie
 
 ## Related Papers
 
-- [\[AAAI 2026\] Pareto-Grid-Guided Large Language Models for Fast and High-Quality Heuristics Design in Multi-Objective Combinatorial Optimization](pareto-grid-guided_large_language_models_for_fast_and_high-quality_heuristics_de.md)
-- [\[ICML 2026\] Multi-Objective Bayesian Optimization via Adaptive $\varepsilon$-Constraints Decomposition](../../ICML2026/optimization/multi-objective_bayesian_optimization_via_adaptive_varepsilon-constraints_decomp.md)
+- [\[ICLR 2026\] Hierarchical Multi-Stage Recovery Framework for Kronecker Compressed Sensing](../../ICLR2026/optimization/hierarchical_multi-stage_recovery_framework_for_kronecker_compressed_sensing.md)
+- [\[ICLR 2026\] In-Context Multi-Objective Optimization](../../ICLR2026/optimization/in-context_multi-objective_optimization.md)
+- [\[ICLR 2026\] Conformal Robustness Control: A New Strategy for Robust Decision](../../ICLR2026/optimization/conformal_robustness_control_a_new_strategy_for_robust_decision.md)
 - [\[AAAI 2026\] Parametrized Multi-Agent Routing via Deep Attention Models](parametrized_multi-agent_routing_via_deep_attention_models.md)
-- [\[NeurIPS 2025\] AutoOpt: A Dataset and a Unified Framework for Automating Optimization Problem Solving](../../NeurIPS2025/optimization/autoopt_a_dataset_and_a_unified_framework_for_automating_optimization_problem_so.md)
-- [\[ICML 2026\] Accelerated Multiple Wasserstein Gradient Flows for Multi-objective Distributional Optimization](../../ICML2026/optimization/accelerated_multiple_wasserstein_gradient_flows_for_multi-objective_distribution.md)
+- [\[AAAI 2026\] Pareto-Grid-Guided Large Language Models for Fast and High-Quality Heuristics Design in Multi-Objective Combinatorial Optimization](pareto-grid-guided_large_language_models_for_fast_and_high-quality_heuristics_de.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] From Manuals to Actions: A Unified VLA Model for Chain-of-Thought Manual Generation and Robotic Manipulation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLA] ManualVLA employs a unified Mixture-of-Transformers framework that enables a VLA model to first "imagine" intermediate manuals (comprising sub-goal images, pixel coordinates, and text instructions) from a "goal state." It then translates these manuals into precise actions through explicit and implicit Manual Chain-of-T
+  [CVPR 2026][Robotics][VLA] ManualVLA employs a unified Mixture-of-Transformers framework that enables a VLA model to first "imagine" intermediate manuals (comprising sub-goal images, pixel coordinates, and text instructions) from a "goal state." It then translates these manuals into precise actions through explicit and implicit Manual Chain-of-Thought paths. On long-horizon tasks such as LEGO assembly and object rearrangement, the average success rate is 32% higher than previ…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
-  - Manual CoT
-  - Mixture-of-Transformers
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA"
+  - "Manual CoT"
+  - "Mixture-of-Transformers"
+  - "Long-horizon manipulation"
+  - "3DGS Digital Twin"
 date: 2026-05-08
-content_hash: a1b23012cbf1eb30
+content_hash: e0e69b5e9e68aff1
 ---
+
 # From Manuals to Actions: A Unified VLA Model for Chain-of-Thought Manual Generation and Robotic Manipulation
 
 **Conference**: CVPR 2026  
@@ -166,8 +169,8 @@ Conducted on the 2D LEGO task; reporting long-horizon success rates:
 
 - [\[CVPR 2026\] ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](acot-vla_action_chain-of-thought_for_vision-language-action_models.md)
 - [\[CVPR 2026\] Unifying Perception and Action: A Hybrid-Modality Pipeline with Implicit Visual Chain-of-Thought for Robotic Action Generation (VITA)](unifying_perception_and_action_a_hybrid-modality_pipeline_with_implicit_visual_c.md)
-- [\[CVPR 2026\] FantasyVLN: Unified Multimodal Chain-of-Thought Reasoning for Vision-and-Language Navigation](fantasyvln_unified_multimodal_chain-of-thought_reasoning_for_vision-and-language.md)
 - [\[CVPR 2026\] TRM-VLA: Temporal-Aware Chain-of-Thought Reasoning and Memorization for Vision-Language-Action Models](trm-vla_temporal-aware_chain-of-thought_reasoning_and_memorization_for_vision-la.md)
+- [\[CVPR 2026\] FantasyVLN: Unified Multimodal Chain-of-Thought Reasoning for Vision-and-Language Navigation](fantasyvln_unified_multimodal_chain-of-thought_reasoning_for_vision-and-language.md)
 - [\[CVPR 2026\] Motus: A Unified Latent Action World Model](motus_a_unified_latent_action_world_model.md)
 
 </div>

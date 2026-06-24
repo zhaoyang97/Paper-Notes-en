@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Turning Adaptation into Assets: Cross-Domain Bridging for Online Vision-Language Navigation
 description: >-
-  [ICML 2026][Robotics & Embodied AI][VLN] To address the continuous environment distribution drift in online vision-language navigation, this paper proposes the IDEA framework. It encapsulates soft prompts learned during each test-time adaptation, along with domain coordinates and uncertainty, into reusable "assets." By utilizing Wasserstein convex hull projec
+  [ICML 2026][Robotics][VLN] To address the continuous environment distribution drift in online vision-language navigation, this paper proposes the IDEA framework. It encapsulates soft prompts learned during each test-time adaptation, along with domain coordinates and uncertainty, into reusable "assets." By utilizing Wasserstein convex hull projection to map the target domain onto a combination of historical assets, a training-free cross-domain bridge is achieved…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - VLN
-  - Test-Time Adaptation
+  - "ICML 2026"
+  - "Robotics"
+  - "VLN"
+  - "Test-Time Adaptation"
+  - "Soft Prompt"
+  - "Fisher Information"
+  - "Convex Hull Projection"
 date: 2026-05-08
-content_hash: 39a60527bf482e7d
+content_hash: 0cc4acb9a3404617
 ---
+
 # Turning Adaptation into Assets: Cross-Domain Bridging for Online Vision-Language Navigation
 
 **Conference**: ICML 2026  
@@ -136,10 +140,10 @@ The method maintains consistent advantages across four backbones (HAMT, DUET, et
 ## Related Papers
 
 - [\[ICML 2026\] Online Self-Training for Co-Adaptation in Hierarchical Diffusion Policies](online_self-training_for_co-adaptation_in_hierarchical_diffusion_policies.md)
-- [\[ICLR 2026\] All-day Multi-scenes Lifelong Vision-and-Language Navigation with Tucker Adaptation](../../ICLR2026/robotics/all-day_multi-scenes_lifelong_vision-and-language_navigation_with_tucker_adaptat.md)
 - [\[ICCV 2025\] Bridging Domain Generalization to Multimodal Domain Generalization via Unified Representations](../../ICCV2025/robotics/bridging_domain_generalization_to_multimodal_domain_generalization_via_unified_r.md)
+- [\[ICLR 2026\] All-day Multi-scenes Lifelong Vision-and-Language Navigation with Tucker Adaptation](../../ICLR2026/robotics/all-day_multi-scenes_lifelong_vision-and-language_navigation_with_tucker_adaptat.md)
 - [\[CVPR 2026\] Bridging the 2D-3D Gap: A Hierarchical Semantic-Geometric Map for Vision Language Navigation](../../CVPR2026/robotics/bridging_the_2d-3d_gap_a_hierarchical_semantic-geometric_map_for_vision_language.md)
-- [\[CVPR 2026\] Cross from Left to Right Brain: Adaptive Text Dreamer for Vision-and-Language Navigation](../../CVPR2026/robotics/cross_from_left_to_right_brain_adaptive_text_dreamer_for_vision-and-language_nav.md)
+- [\[CVPR 2026\] Cross-Domain Demo-to-Code via Neurosymbolic Counterfactual Reasoning](../../CVPR2026/robotics/cross-domain_demo-to-code_via_neurosymbolic_counterfactual_reasoning.md)
 
 </div>
 

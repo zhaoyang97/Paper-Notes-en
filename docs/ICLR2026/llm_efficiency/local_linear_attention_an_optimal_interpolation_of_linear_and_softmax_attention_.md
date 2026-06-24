@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Local Linear Attention: An Optimal Interpolation of Linear and Softmax Attention for Test-Time Regression
 description: >-
-  [ICLR 2026][LLM Efficiency][FlashLLA] Viewing attention as a "test-time regression solver," the authors upgrade Softmax attention using **local linear regression** from statistics to derive Local Linear Attention (LLA). LLA combines the asymptotic convergence of linear attention with the strength of Softmax. Additionally, a hardware-efficient FlashLLA tili
+  [ICLR 2026][LLM Efficiency][Local Linear Attention] Viewing attention as a "test-time regression solver," the authors upgrade Softmax attention using **local linear regression** from statistics to derive Local Linear Attention (LLA). LLA combines the asymptotic convergence of linear attention with the strength of Softmax. Additionally, a hardware-efficient FlashLLA tiling algorithm is designed to reduce the memory complexity of a naive implementation from quadratic back to li…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - FlashLLA
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Local Linear Attention"
+  - "Test-Time Regression"
+  - "Non-parametric Statistics"
+  - "Bias-Variance Tradeoff"
+  - "FlashLLA"
+  - "Associative Memory"
 date: 2026-05-08
-content_hash: e3ac33ea34856736
+content_hash: 8aabdbff3827d073
 ---
+
 # Local Linear Attention: An Optimal Interpolation of Linear and Softmax Attention for Test-Time Regression
 
 **Conference**: ICLR 2026  
@@ -109,6 +115,7 @@ Experiments focus on synthetic tasks to isolate test-time adaptation capabilitie
 - **Value**: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

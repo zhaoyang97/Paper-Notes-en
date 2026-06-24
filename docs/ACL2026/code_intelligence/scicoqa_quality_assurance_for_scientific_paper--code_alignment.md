@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SciCoQA: Quality Assurance for Scientific Paper–Code Alignment
 description: >-
-  [ACL 2026][Code Intelligence][Paper Note] Ours introduces SciCoQA, the first benchmark dataset for detecting discrepancies between scientific papers and their code implementations. It contains 635 discrepancy instances (92 real + 543 synthetic). Evaluation of 22 LLMs reveals that the strongest model only detects 46.7% of real discrepancies, highlighting a crit
+  [ACL 2026][Code Intelligence][Paper-code discrepancy detection] Ours introduces SciCoQA, the first benchmark dataset for detecting discrepancies between scientific papers and their code implementations. It contains 635 discrepancy instances (92 real + 543 synthetic). Evaluation of 22 LLMs reveals that the strongest model only detects 46.7% of real discrepancies, highlighting a critical capability gap in automated scientific quality assurance.
 tags:
-  - ACL 2026
-  - Code Intelligence
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Paper-code discrepancy detection"
+  - "scientific reproducibility"
+  - "cross-modal verification"
+  - "LLM evaluation"
+  - "quality assurance"
 date: 2026-05-08
-content_hash: 5de2328d21fb9b14
+content_hash: 31440c73ca5ed6d6
 ---
+
 # SciCoQA: Quality Assurance for Scientific Paper–Code Alignment
 
 **Conference**: ACL 2026  
@@ -144,10 +150,10 @@ To address sparsity and domain bias (mostly CS/AI), 204 repos linked to arXiv we
 ## Related Papers
 
 - [\[ACL 2026\] CodeRL+: Improving Code Generation via Reinforcement with Execution Semantics Alignment](coderl_improving_code_generation_via_reinforcement_with_execution_semantics_alig.md)
-- [\[ACL 2026\] QAQ: Bidirectional Semantic Coherence for Selecting High-Quality Synthetic Code Instructions](qaq_bidirectional_semantic_coherence_for_selecting_high-quality_synthetic_code_i.md)
 - [\[ACL 2026\] CodeDistiller: Automatically Generating Code Libraries for Scientific Coding Agents](codedistiller_automatically_generating_code_libraries_for_scientific_coding_agen.md)
 - [\[ICLR 2026\] Paper2Code: Automating Code Generation from Scientific Papers in Machine Learning](../../ICLR2026/code_intelligence/paper2code_automating_code_generation_from_scientific_papers_in_machine_learning.md)
 - [\[NeurIPS 2025\] Embedding Alignment in Code Generation for Audio](../../NeurIPS2025/code_intelligence/embedding_alignment_in_code_generation_for_audio.md)
+- [\[ACL 2026\] QAQ: Bidirectional Semantic Coherence for Selecting High-Quality Synthetic Code Instructions](qaq_bidirectional_semantic_coherence_for_selecting_high-quality_synthetic_code_i.md)
 
 </div>
 

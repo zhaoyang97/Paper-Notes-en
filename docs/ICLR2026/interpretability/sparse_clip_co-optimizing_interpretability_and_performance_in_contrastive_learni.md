@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Sparse CLIP: Co-optimizing Interpretability and Performance in Contrastive Learning
 description: >-
-  [ICLR 2026][Interpretability][CLIP] This paper integrates "sparsity" directly into CLIP's contrastive pre-training (adding ReLU non-negative constraints to the final projection layer + significant dimensional expansion). This trains sparse CLIP representations that are interpretable, maintain accuracy, and naturally preserve cross-modal capabilities, the
+  [ICLR 2026][Interpretability][CLIP] This paper integrates "sparsity" directly into CLIP's contrastive pre-training (adding ReLU non-negative constraints to the final projection layer + significant dimensional expansion). This trains sparse CLIP representations that are interpretable, maintain accuracy, and naturally preserve cross-modal capabilities, thereby overthowing the common assumption that "interpretability must sacrifice precision."
 tags:
-  - ICLR 2026
-  - Interpretability
-  - CLIP
+  - "ICLR 2026"
+  - "Interpretability"
+  - "CLIP"
+  - "Sparse Representation"
+  - "Multimodal"
+  - "Visual steering"
 date: 2026-05-08
-content_hash: d501df35a5b628ba
+content_hash: ebc57e579e9db857
 ---
+
 # Sparse CLIP: Co-optimizing Interpretability and Performance in Contrastive Learning
 
 **Conference**: ICLR 2026  

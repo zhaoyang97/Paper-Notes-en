@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Uncertainty-driven Embedding Convolution
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Paper Note] UEC converts multiple pre-trained text embedding models into Gaussian probabilistic embeddings **post-hoc**. It then adaptively fuses them using weights estimated from each model's uncertainty for the current query and scores them using a variance-embedded similarity function. It consistently outperforms baselines such
+  [ICLR 2026][Information Retrieval & RAG][Embedding Ensemble] UEC converts multiple pre-trained text embedding models into Gaussian probabilistic embeddings **post-hoc**. It then adaptively fuses them using weights estimated from each model's uncertainty for the current query and scores them using a variance-embedded similarity function. It consistently outperforms baselines such as uniform/weighted ensembles and model merging in retrieval, classification, and STS tasks.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Embedding Ensemble"
+  - "Probabilistic Embeddings"
+  - "Laplace Approximation"
+  - "Uncertainty-aware"
+  - "Retrieval"
 date: 2026-05-08
-content_hash: 2104b5cf7eee1745
+content_hash: 414fe0372ac052fd
 ---
+
 # Uncertainty-driven Embedding Convolution
 
 **Conference**: ICLR 2026  

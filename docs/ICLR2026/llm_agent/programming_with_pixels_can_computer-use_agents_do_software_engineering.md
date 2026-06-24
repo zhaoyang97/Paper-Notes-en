@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Programming with Pixels: Can Computer-Use Agents do Software Engineering?
 description: >-
-  [ICLR 2026][LLM Agent][Benchmark] The authors constructed PwP (Programming with Pixels), the first "computer-use" environment for software engineering where agents operate VSCode via keyboard/mouse by viewing the screen like humans, and the accompanying 15-task benchmark, PwP-Bench. Systematic evaluation reveals that general Computer-Use Agents (CUA) u
+  [ICLR 2026][LLM Agent][Computer-Use Agents] The authors constructed PwP (Programming with Pixels), the first "computer-use" environment for software engineering where agents operate VSCode via keyboard/mouse by viewing the screen like humans, and the accompanying 15-task benchmark, PwP-Bench. Systematic evaluation reveals that general Computer-Use Agents (CUA) using pure vision achieve only 22.9% accuracy, significantly underperforming specialized SWE agents; however…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Benchmark
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Computer-Use Agents"
+  - "IDE environments"
+  - "software engineering"
+  - "visual grounding"
+  - "benchmark"
 date: 2026-05-08
-content_hash: 8193fa07895c5af0
+content_hash: 37353ac464755237
 ---
+
 # Programming with Pixels: Can Computer-Use Agents do Software Engineering?
 
 **Conference**: ICLR 2026  
@@ -137,11 +142,11 @@ Core Conclusion: Pure vision CUA peaks at only 22.9%, far below the specialized 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Grounding Computer Use Agents on Human Demonstrations](grounding_computer_use_agents_on_human_demonstrations.md)
-- [\[ICLR 2026\] ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data](scalecua_scaling_open-source_computer_use_agents_with_cross-platform_data.md)
-- [\[ICLR 2026\] Efficient Agent Training for Computer Use](efficient_agent_training_for_computer_use.md)
+- [\[ICLR 2026\] Just Do It!? Computer-Use Agents Exhibit Blind Goal-Directedness](just_do_it_computer-use_agents_exhibit_blind_goal-directedness.md)
 - [\[ICLR 2026\] SCUBA: Salesforce Computer Use Benchmark](scuba_salesforce_computer_use_benchmark.md)
-- [\[ICLR 2026\] VideoAgentTrek: Computer Use Pretraining from Unlabeled Videos](videoagenttrek_computer-use_pretraining_from_unlabeled_videos.md)
+- [\[ICLR 2026\] AgentSynth: Scalable Task Generation for Generalist Computer-Use Agents](agentsynth_scalable_task_generation_for_generalist_computer-use_agents.md)
+- [\[ICLR 2026\] OSWorld-MCP: Benchmarking MCP Tool Invocation in Computer-Use Agents](osworld-mcp_benchmarking_mcp_tool_invocation_in_computer-use_agents.md)
+- [\[ICLR 2026\] Grounding Computer Use Agents on Human Demonstrations](grounding_computer_use_agents_on_human_demonstrations.md)
 
 </div>
 

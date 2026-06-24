@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Seeing as Experts Do: A Knowledge-Augmented Agent for Open-Set Fine-Grained Visual Understanding
 description: >-
-  [CVPR 2026][LLM Agent][FGExpertBench] This paper redefines fine-grained visual understanding from "assigning a label" to "reasoning with evidence like an expert," proposing KFRA, a three-stage closed-loop Agent. It first retrieves candidate hypotheses, then grounds the retrieved textual knowledge to discriminative image regions, and finally enables the Lar
+  [CVPR 2026][LLM Agent][Fine-grained visual understanding] This paper redefines fine-grained visual understanding from "assigning a label" to "reasoning with evidence like an expert," proposing KFRA, a three-stage closed-loop Agent. It first retrieves candidate hypotheses, then grounds the retrieved textual knowledge to discriminative image regions, and finally enables the Large Multimodal Model (LMM) to reason and self-correct based on multimodal evidence. On the self-constru…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - FGExpertBench
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Fine-grained visual understanding"
+  - "Knowledge-augmented Agent"
+  - "Retrieval-grounding coupling"
+  - "Open-set reasoning"
+  - "FGExpertBench"
 date: 2026-05-08
-content_hash: 0e919ca4f6c9e922
+content_hash: 41d1bb34b2d06984
 ---
+
 # Seeing as Experts Do: A Knowledge-Augmented Agent for Open-Set Fine-Grained Visual Understanding
 
 **Conference**: CVPR 2026  
@@ -142,11 +147,11 @@ Ablation by incremental tool addition. Abbreviations: KR=Knowledge Reference (Wi
 
 ## Related Papers
 
-- [\[CVPR 2026\] SceneAssistant: A Visual Feedback Agent for Open-Vocabulary 3D Scene Generation](sceneassistant_a_visual_feedback_agent_for_openvoc.md)
-- [\[ACL 2026\] MOOSE-Copilot: A Web-Based Interactive Assistant for Unified Exploratory and Fine-Grained Scientific Hypothesis Discovery](../../ACL2026/llm_agent/moose-copilot_a_web-based_interactive_assistant_for_unified_exploratory_and_fine.md)
-- [\[ECCV 2024\] VideoAgent: A Memory-augmented Multimodal Agent for Video Understanding](../../ECCV2024/llm_agent/videoagent_a_memory-augmented_multimodal_agent_for_video_understanding.md)
+- [\[ICLR 2026\] Repurposing Synthetic Data for Fine-grained Search Agent Supervision](../../ICLR2026/llm_agent/repurposing_synthetic_data_for_fine-grained_search_agent_supervision.md)
 - [\[CVPR 2026\] Simple Agents Outperform Experts in Biomedical Imaging Workflow Optimization](simple_agents_outperform_experts_in_biomedical_imaging_workflow_optimization.md)
-- [\[CVPR 2026\] CGL: Advancing Continual GUI Learning via Reinforcement Fine-Tuning](cgl_advancing_continual_gui_learning_via_reinforcement_fine-tuning.md)
+- [\[CVPR 2026\] Symphony: A Cognitively-Inspired Multi-Agent System for Long-Video Understanding](symphony_a_cognitively-inspired_multi-agent_system_for_long-video_understanding.md)
+- [\[ECCV 2024\] VideoAgent: A Memory-augmented Multimodal Agent for Video Understanding](../../ECCV2024/llm_agent/videoagent_a_memory-augmented_multimodal_agent_for_video_understanding.md)
+- [\[CVPR 2026\] SciEducator: Scientific Video Understanding and Educating via Deming-Cycle Multi-Agent System](scieducator_scientific_video_understanding_and_educating_via_deming-cycle_multi-.md)
 
 </div>
 

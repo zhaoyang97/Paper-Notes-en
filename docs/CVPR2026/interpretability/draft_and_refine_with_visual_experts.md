@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Draft and Refine with Visual Experts
 description: >-
-  [CVPR 2026][Interpretability][Paper Note] Proposes DnR (Draft and Refine), an agent framework based on a query-conditional Visual Utilization metric. This framework quantifies an LVLM's actual reliance on visual evidence and iteratively improves visual grounding to reduce hallucinations through rendering feedback from external visual experts (detection/segment
+  [CVPR 2026][Interpretability][Visual Utilization Quantification] Proposes DnR (Draft and Refine), an agent framework based on a query-conditional Visual Utilization metric. This framework quantifies an LVLM's actual reliance on visual evidence and iteratively improves visual grounding to reduce hallucinations through rendering feedback from external visual experts (detection/segmentation/OCR, etc.).
 tags:
-  - CVPR 2026
-  - Interpretability
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Visual Utilization Quantification"
+  - "Agent Framework"
+  - "Hallucination Mitigation"
+  - "Visual Expert Collaboration"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 66b6cf9a84f935b1
+content_hash: 93bd754fab0a591d
 ---
+
 # Draft and Refine with Visual Experts
 
 **Conference**: CVPR 2026  
@@ -133,8 +139,8 @@ The main framework is entirely training-free. The only optional component is a l
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -142,7 +148,7 @@ The main framework is entirely training-free. The only optional component is a l
 - [\[AAAI 2026\] DR.Experts: Differential Refinement of Distortion-Aware Experts for Blind Image Quality Assessment](../../AAAI2026/interpretability/drexperts_differential_refinement_of_distortion-aware_experts_for_blind_image_qu.md)
 - [\[CVPR 2026\] Pixel2Phys: Distilling Governing Laws from Visual Dynamics](pixel2phys_distilling_governing_laws_from_visual_dynamics.md)
 - [\[CVPR 2026\] Language Models Can Explain Visual Features via Steering](language_models_can_explain_visual_features_via_steering.md)
-- [\[CVPR 2026\] Learning complete and explainable visual representations from itemized text supervision](learning_complete_and_explainable_visual_representations_from_itemized_text_supe.md)
+- [\[CVPR 2025\] Learning on Model Weights using Tree Experts](../../CVPR2025/interpretability/learning_on_model_weights_using_tree_experts.md)
 
 </div>
 

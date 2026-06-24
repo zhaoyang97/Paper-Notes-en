@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] XtraGPT: Context-Aware and Controllable Academic Paper Revision via Human-AI Collaboration
 description: >-
-  [ACL 2026][Text Generation][Paper Note] This paper presents XtraGPT—the first open-source LLM suite (1.5B–14B) specifically for academic paper revision. By fine-tuning on 7,000 top-tier conference papers and 140,000 standard-guided instruction-revision pairs, it achieves context-aware paragraph-level controllable revisions. The 7B version matches GPT-4o-mini
+  [ACL 2026][Text Generation][Paper Revision] This paper presents XtraGPT—the first open-source LLM suite (1.5B–14B) specifically for academic paper revision. By fine-tuning on 7,000 top-tier conference papers and 140,000 standard-guided instruction-revision pairs, it achieves context-aware paragraph-level controllable revisions. The 7B version matches GPT-4o-mini, while the 14B version outperforms GPT-4o-mini. Human evaluations show an average increase of 0.65 points in predic…
 tags:
-  - ACL 2026
-  - Text Generation
+  - "ACL 2026"
+  - "Text Generation"
+  - "Paper Revision"
+  - "Human-AI Collaboration"
+  - "Context-Awareness"
+  - "Controllable Generation"
+  - "Academic Writing"
 date: 2026-05-08
-content_hash: 639fbf33329f02b7
+content_hash: 092b746cf2ca3017
 ---
+
 # XtraGPT: Context-Aware and Controllable Academic Paper Revision via Human-AI Collaboration
 
 **Conference**: ACL 2026  

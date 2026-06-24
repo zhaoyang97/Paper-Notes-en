@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Revisiting Tree-Sliced Wasserstein Distance through the Lens of the Fermat–Weber Problem
 description: >-
-  [ICLR 2026][learning_theory][Tree-Sliced Wasserstein] This paper identifies that the true advantage of Tree-Sliced Wasserstein (TSW) over Sliced Wasserstein (SW) lies in its sampling encoding "positional" information, which existing TSW variants (centering Gaussian on data mean) fail to exploit. Leveraging the classic Fermat–Weber problem, the authors use the **geometric
+  [ICLR 2026][Learning Theory][Tree-Sliced Wasserstein] This paper identifies that the true advantage of Tree-Sliced Wasserstein (TSW) over Sliced Wasserstein (SW) lies in its sampling encoding "positional" information, which existing TSW variants (centering Gaussian on data mean) fail to exploit. Leveraging the classic Fermat–Weber problem, the authors use the **geometric median** as the sampling center for the tree system's intersection, proposing FW-TSW / FW-TSW\*. This appr…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Tree-Sliced Wasserstein
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Optimal Transport"
+  - "Tree-Sliced Wasserstein"
+  - "Fermat–Weber Problem"
+  - "Geometric Median"
+  - "Sampling Strategies"
 date: 2026-05-08
-content_hash: 76aebcd17645f97c
+content_hash: ccd6ef80e22ca271
 ---
+
 # Revisiting Tree-Sliced Wasserstein Distance through the Lens of the Fermat–Weber Problem
 
 **Conference**: ICLR 2026  
@@ -154,15 +159,15 @@ Ours reduces FID by up to 0.215 compared to Prev. SOTA (Db-TSW-DD⊥) with nearl
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Tree-sliced Sobolev IPM](tree-sliced_sobolev_ipm.md)
 - [\[ICLR 2026\] Slicing Wasserstein over Wasserstein via Functional Optimal Transport](slicing_wasserstein_over_wasserstein_via_functional_optimal_transport.md)
 - [\[ICLR 2026\] Best-of-N through the Smoothing Lens: KL Divergence and Regret Analysis](best-of-n_through_the_smoothing_lens_kl_divergence_and_regret_analysis.md)
+- [\[ICLR 2026\] On the Wasserstein Geodesic Principal Component Analysis of probability measures](on_the_wasserstein_geodesic_principal_component_analysis_of_probability_measures.md)
 - [\[ICLR 2026\] On Coreset for LASSO Regression Problem with Sensitivity Sampling](on_coreset_for_lasso_regression_problem_with_sensitivity_sampling.md)
-- [\[ICLR 2026\] Revisiting Active Sequential Prediction-Powered Mean Estimation](revisiting_active_sequential_prediction-powered_mean_estimation.md)
-- [\[ICLR 2026\] Better Bounds for the Distributed Experts Problem](better_bounds_for_the_distributed_experts_problem.md)
 
 </div>
 

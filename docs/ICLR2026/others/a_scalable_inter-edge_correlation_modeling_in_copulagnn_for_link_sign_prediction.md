@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] A Scalable Inter-edge Correlation Modeling in CopulaGNN for Link Sign Prediction
 description: >-
-  [ICLR 2026][Others][Paper Note] CopulaGNN is extended from the node level to the edge level by constructing the correlation matrix as a Gramian matrix of edge embeddings and utilizing the Woodbury identity to reconstruct conditional probability distributions. This approach achieves scalable modeling of statistical dependencies between edges for link
+  [ICLR 2026][Signed graphs] CopulaGNN is extended from the node level to the edge level by constructing the correlation matrix as a Gramian matrix of edge embeddings and utilizing the Woodbury identity to reconstruct conditional probability distributions. This approach achieves scalable modeling of statistical dependencies between edges for link sign prediction tasks in signed graphs.
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Signed graphs"
+  - "Link sign prediction"
+  - "Gaussian Copula"
+  - "Inter-edge correlation"
+  - "Gramian matrix"
 date: 2026-05-08
-content_hash: 0a2d5535be5e5d8b
+content_hash: e0adef78d4ee02d7
 ---
+
 # A Scalable Inter-edge Correlation Modeling in CopulaGNN for Link Sign Prediction
 
 **Conference**: ICLR 2026  

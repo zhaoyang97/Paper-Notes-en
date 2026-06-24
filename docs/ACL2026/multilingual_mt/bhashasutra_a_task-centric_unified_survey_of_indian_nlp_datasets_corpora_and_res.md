@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BhashaSutra: A Task-Centric Unified Survey of Indian NLP Datasets, Corpora, and Resources
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] The first unified survey specifically targeting Indic NLP resources, covering 200+ datasets, 50+ benchmarks, and 100+ models/tools. Organized by 17 task categories (from core language processing to socio-cultural tasks), it systematically analyzes persistent challenges such as uneven linguistic coverage, fragmented ann
+  [ACL 2026][Multilingual & Machine Translation][Indic NLP] The first unified survey specifically targeting Indic NLP resources, covering 200+ datasets, 50+ benchmarks, and 100+ models/tools. Organized by 17 task categories (from core language processing to socio-cultural tasks), it systematically analyzes persistent challenges such as uneven linguistic coverage, fragmented annotation, and inconsistent evaluation.
 tags:
-  - ACL 2026
-  - Multilingual & Translation
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Indic NLP"
+  - "Dataset Survey"
+  - "Multilingual Resources"
+  - "Low-resource Languages"
+  - "Cultural NLP"
 date: 2026-05-08
-content_hash: d75694b189bd85e1
+content_hash: 232ad43d7acd4826
 ---
+
 # BhashaSutra: A Task-Centric Unified Survey of Indian NLP Datasets, Corpora, and Resources
 
 **Conference**: ACL 2026  
@@ -126,7 +132,7 @@ Language Coverage Analysis:
 - [\[ACL 2026\] Why Low-Resource NLP Needs More Than Cross-Lingual Transfer: Lessons Learned from Luxembourgish](why_low-resource_nlp_needs_more_than_cross-lingual_transfer_lessons_learned_from.md)
 - [\[ACL 2026\] Lingo_Research_Group at SemEval-2026 Task 9: Evaluating Prompt Variants for Polarization Detection](lingo_research_group_at_semeval-2026_task_9_evaluating_prompt_variants_for_polar.md)
 - [\[ACL 2026\] DFKI-MLT at SemEval-2026 TASK 7: Steering Multilingual Models Towards Cultural Knowledge](dfki-mlt_at_semeval-2026_task_7_steering_multilingual_models_towards_cultural_kn.md)
-- [\[ACL 2026\] Efficient Low-Resource Language Adaptation via Multi-Source Dynamic Logit Fusion](efficient_low-resource_language_adaptation_via_multi-source_dynamic_logit_fusion.md)
+- [\[ACL 2025\] Building Better: Avoiding Pitfalls in Developing Language Resources when Data is Scarce](../../ACL2025/multilingual_mt/building_better_avoiding_pitfalls_in_developing_language_resources_when_data_is_.md)
 
 </div>
 

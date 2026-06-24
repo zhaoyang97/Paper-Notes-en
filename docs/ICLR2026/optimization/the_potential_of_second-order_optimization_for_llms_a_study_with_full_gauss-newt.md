@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] The Potential of Second-Order Optimization for LLMs: A Study with Full Gauss-Newton
 description: >-
-  [ICLR 2026][Optimization & Theory][Gauss-Newton] Instead of designing a new optimizer, this paper utilizes Jacobian-vector products to perform **actual full Gauss-Newton (GN) preconditioning** on 45M/150M LLaMA models. Treating this as a "performance upper bound" for second-order optimization, the study investigates the gap left by existing methods like SOAP/Muon/Sha
+  [ICLR 2026][Optimization][Second-order optimization] Instead of designing a new optimizer, this paper utilizes Jacobian-vector products to perform **actual full Gauss-Newton (GN) preconditioning** on 45M/150M LLaMA models. Treating this as a "performance upper bound" for second-order optimization, the study investigates the gap left by existing methods like SOAP/Muon/Shampoo that use approximate Hessians. Results demonstrate that full GN reduces the iterations required to rea…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Gauss-Newton
+  - "ICLR 2026"
+  - "Optimization"
+  - "Second-order optimization"
+  - "Gauss-Newton"
+  - "Preconditioning"
+  - "Critical batch size"
+  - "Iteration complexity"
 date: 2026-05-08
-content_hash: 41c4b39775dace08
+content_hash: 2dd2050304682ff8
 ---
+
 # The Potential of Second-Order Optimization for LLMs: A Study with Full Gauss-Newton
 
 **Conference**: ICLR 2026  
@@ -149,7 +154,7 @@ GN progresses extremely rapidly in the first 10 steps, reaching a loss below 3.7
 - [\[AAAI 2026\] FedPM: Federated Learning Using Second-order Optimization with Preconditioned Mixing of Local Parameters](../../AAAI2026/optimization/fedpm_federated_learning_using_second-order_optimization_with_preconditioned_mix.md)
 - [\[ICML 2025\] Sassha: Sharpness-aware Adaptive Second-order Optimization with Stable Hessian Approximation](../../ICML2025/optimization/sassha_sharpness-aware_adaptive_second-order_optimization_with_stable_hessian_ap.md)
 - [\[ICLR 2026\] Convergence of Regret Matching in Potential Games and Constrained Optimization](convergence_of_regret_matching_in_potential_games_and_constrained_optimization.md)
-- [\[NeurIPS 2025\] Second-Order Optimization Under Heavy-Tailed Noise: Hessian Clipping and Sample Complexity](../../NeurIPS2025/optimization/second-order_optimization_under_heavy-tailed_noise_hessian_clipping_and_sample_c.md)
+- [\[ICLR 2026\] Hinge Regression Tree: A Newton Method for Oblique Regression Tree Splitting](hinge_regression_tree_a_newton_method_for_oblique_regression_tree_splitting.md)
 
 </div>
 

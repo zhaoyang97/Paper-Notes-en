@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Completing Missing Annotation: Multi-Agent Debate for Accurate and Scalable Relevance Assessment
 description: >-
-  [ICLR 2026][Multi-Agent][Paper Note] Ours proposes DREAM—a multi-agent multi-round debate framework based on opposing stance initialization for IR relevance annotation: automated labeling upon agreement, and escalation to humans (assisted by debate history) upon disagreement. It achieves 95.2% balanced accuracy with only 3.5% human intervention. Using thi
+  [ICLR 2026][Multi-Agent][Information Retrieval Evaluation] Ours proposes DREAM—a multi-agent multi-round debate framework based on opposing stance initialization for IR relevance annotation: automated labeling upon agreement, and escalation to humans (assisted by debate history) upon disagreement. It achieves 95.2% balanced accuracy with only 3.5% human intervention. Using this, the BRIDGE benchmark was constructed, identifying 29,824 missing relevance annotations (428% of th…
 tags:
-  - ICLR 2026
-  - Multi-Agent
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "Information Retrieval Evaluation"
+  - "Multi-Agent Debate"
+  - "Relevance Annotation"
+  - "Human-AI Collaboration"
+  - "BRIDGE Benchmark"
 date: 2026-05-08
-content_hash: e942d988b56c4e39
+content_hash: caf1eb256b3fefc6
 ---
+
 # Completing Missing Annotation: Multi-Agent Debate for Accurate and Scalable Relevance Assessment
 
 **Conference**: ICLR 2026  
@@ -149,15 +155,14 @@ After correcting for holes, the retrieval-generation alignment (RAGAlign) improv
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[AAAI 2026\] Scalable and Accurate Graph Reasoning with LLM-Based Multi-Agents](../../AAAI2026/multi_agent/scalable_and_accurate_graph_reasoning_with_llm-based_multi-agents.md)
 - [\[AAAI 2026\] iMAD: Intelligent Multi-Agent Debate for Efficient and Accurate LLM Inference](../../AAAI2026/multi_agent/imad_intelligent_multi-agent_debate_for_efficient_and_accura.md)
-- [\[NeurIPS 2025\] 3D-Agent: Tri-Modal Multi-Agent Collaboration for Scalable 3D Object Annotation](../../NeurIPS2025/multi_agent/3d-agenttri-modal_multi-agent_collaboration_for_scalable_3d_object_annotation.md)
+- [\[AAAI 2026\] Scalable and Accurate Graph Reasoning with LLM-Based Multi-Agents](../../AAAI2026/multi_agent/scalable_and_accurate_graph_reasoning_with_llm-based_multi-agents.md)
 - [\[ICLR 2026\] Multi-Agent Debate with Memory Masking (MAD-M²)](multi-agent_debate_with_memory_masking.md)
 - [\[ICLR 2026\] MAD-Logic: Multi-Agent Debate Enhances Symbolic Translation and Reasoning](mad-logic_multi-agent_debate_enhances_symbolic_translation_and_reasoning.md)
+- [\[NeurIPS 2025\] 3D-Agent: Tri-Modal Multi-Agent Collaboration for Scalable 3D Object Annotation](../../NeurIPS2025/multi_agent/3d-agenttri-modal_multi-agent_collaboration_for_scalable_3d_object_annotation.md)
 
 </div>
 

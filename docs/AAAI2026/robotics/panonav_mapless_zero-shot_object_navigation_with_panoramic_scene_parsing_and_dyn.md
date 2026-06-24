@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PanoNav: Mapless Zero-Shot Object Navigation with Panoramic Scene Parsing and Dynamic Memory
 description: >-
-  [AAAI 2026][Robotics][Zero-shot object navigation] This paper proposes PanoNav, a mapless zero-shot object navigation framework that uses only RGB images. It unlocks the spatial reasoning capability of MLLMs through Pano…
+  [AAAI 2026][Robotics][Zero-shot object navigation] This paper proposes PanoNav, a mapless zero-shot object navigation framework that uses only RGB images. It unlocks the spatial reasoning capability of MLLMs through Panoramic Scene Parsing and introduces a Dynamic Bounded Memory Queue to prevent local deadlock.
 tags:
   - "AAAI 2026"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "mapless navigation"
   - "MLLM"
 date: 2026-05-08
-content_hash: a48fe511648efadc
+content_hash: 64c904982fd1428e
 ---
 
 # PanoNav: Mapless Zero-Shot Object Navigation with Panoramic Scene Parsing and Dynamic Memory
@@ -167,11 +167,11 @@ The memory-guided approach achieves a 4× improvement in success rate, with the 
 
 ## Related Papers
 
-- [\[CVPR 2026\] FineCog-Nav: Integrating Fine-grained Cognitive Modules for Zero-shot Multimodal UAV Navigation](../../CVPR2026/robotics/finecog_nav_fine_grained_cognitive_modules_for_zero_shot_uav_navigation.md)
+- [\[CVPR 2026\] TrajRAG: Retrieving Geometric-Semantic Experience for Zero-Shot Object Navigation](../../CVPR2026/robotics/trajrag_retrieving_geometric-semantic_experience_for_zero-shot_object_navigation.md)
+- [\[CVPR 2026\] Memory-Augmented Scene Understanding and Exploration for Open-World Aerial Object-Goal Navigation](../../CVPR2026/robotics/memory-augmented_scene_understanding_and_exploration_for_open-world_aerial_objec.md)
+- [\[ECCV 2024\] Prioritized Semantic Learning for Zero-shot Instance Navigation](../../ECCV2024/robotics/prioritized_semantic_learning_for_zero-shot_instance_navigation.md)
 - [\[AAAI 2026\] ManiLong-Shot: Interaction-Aware One-Shot Imitation Learning for Long-Horizon Manipulation](manilong-shot_interaction-aware_one-shot_imitation_learning_for_long-horizon_man.md)
-- [\[AAAI 2026\] Object-Centric Latent Action Learning](object-centric_latent_action_learning.md)
-- [\[NeurIPS 2025\] Zero-Shot Context Generalization in Reinforcement Learning from Few Training Contexts](../../NeurIPS2025/robotics/zero-shot_context_generalization_in_reinforcement_learning_from_few_training_con.md)
-- [\[ICML 2026\] PSG-Nav: Probabilistic Scene Graph Navigation via Multiverse Decision Making](../../ICML2026/robotics/psg-nav_probabilistic_scene_graph_navigation_via_multiverse_decision_making.md)
+- [\[CVPR 2026\] Humanoid Generative Pre-Training for Zero-Shot Motion Tracking](../../CVPR2026/robotics/humanoid_generative_pre-training_for_zero-shot_motion_tracking.md)
 
 </div>
 

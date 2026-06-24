@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Deep Research Brings Deeper Harm
 description: >-
-  [NeurIPS 2025][Information Retrieval & RAG][deep research agent] This paper reveals critical safety vulnerabilities in Deep Research (DR) agents — even when the underlying LLM correctly refuses harmful queries…
+  [NeurIPS 2025][Information Retrieval & RAG][deep research agent] This paper reveals critical safety vulnerabilities in Deep Research (DR) agents — even when the underlying LLM correctly refuses harmful queries, deploying it as a DR agent can still produce detailed, professional, and dangerous reports. Two targeted jailbreak methods, Plan Injection and Intent Hijack, are proposed alongside the DeepREJECT evaluation metric. Experiments on 6 LLMs demonstrate that DR agents syste…
 tags:
   - "NeurIPS 2025"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "biosecurity"
   - "plan injection"
 date: 2026-05-08
-content_hash: 44a205e67db9d5c2
+content_hash: 0e7626bde39d5e6c
 ---
 
 # Deep Research Brings Deeper Harm
@@ -124,11 +124,11 @@ Two jailbreak strategies targeting DR agents, plus one new evaluation metric: (1
 
 ## Related Papers
 
-- [\[ICLR 2026\] Digging Deeper: Learning Multi-Level Concept Hierarchies](../../ICLR2026/information_retrieval/digging_deeper_learning_multi-level_concept_hierarchies.md)
+- [\[CVPR 2025\] Retrieving Semantics from the Deep: an RAG Solution for Gesture Synthesis](../../CVPR2025/information_retrieval/retrieving_semantics_from_the_deep_an_rag_solution_for_gesture_synthesis.md)
+- [\[ACL 2025\] HASH-RAG: Bridging Deep Hashing with Retriever for Efficient, Fine Retrieval and Augmented Generation](../../ACL2025/information_retrieval/hash-rag_bridging_deep_hashing_with_retriever_for_efficient_fine_retrieval_and_a.md)
 - [\[ICLR 2026\] Hybrid Deep Searcher: Scalable Parallel and Sequential Search Reasoning](../../ICLR2026/information_retrieval/hybrid_deep_searcher_scalable_parallel_and_sequential_search_reasoning.md)
-- [\[ACL 2026\] Rerank Before You Reason: Analyzing Reranking Tradeoffs through Effective Token Cost in Deep Search Agents](../../ACL2026/information_retrieval/rerank_before_you_reason_analyzing_reranking_tradeoffs_through_effective_token_c.md)
-- [\[NeurIPS 2025\] Generalized Contrastive Learning for Universal Multimodal Retrieval](generalized_contrastive_learning_for_universal_multimodal_re.md)
-- [\[NeurIPS 2025\] Scaling Language-Centric Omnimodal Representation Learning](scaling_language-centric_omnimodal_representation_learning.md)
+- [\[ICLR 2026\] Deep Global-sense Hard-negative Discriminative Generation Hashing for Cross-modal Retrieval](../../ICLR2026/information_retrieval/deep_global-sense_hard-negative_discriminative_generation_hashing_for_cross-moda.md)
+- [\[ICLR 2026\] Demystifying Deep Search: A Holistic Evaluation with Hint-free Multi-Hop Questions and Factorised Metrics](../../ICLR2026/information_retrieval/demystifying_deep_search_a_holistic_evaluation_with_hint-free_multi-hop_question.md)
 
 </div>
 

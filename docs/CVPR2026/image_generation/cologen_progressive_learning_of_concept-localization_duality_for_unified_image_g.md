@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CoLoGen: Progressive Learning of Concept-Localization Duality for Unified Image Generation
 description: >-
-  [CVPR 2026][Image Generation][FLUX] Ours proposes CoLoGen, a unified image generation framework based on "Concept-Localization Duality." By employing progressive multi-stage training and a Progressive Representation Weaving (PRW) dynamic expert routing architecture, it simultaneously reaches or exceeds the performance of specialized models across instruc
+  [CVPR 2026][Image Generation][Unified Generation Framework] Ours proposes CoLoGen, a unified image generation framework based on "Concept-Localization Duality." By employing progressive multi-stage training and a Progressive Representation Weaving (PRW) dynamic expert routing architecture, it simultaneously reaches or exceeds the performance of specialized models across instruction editing, controllable generation, and personalized generation.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - FLUX
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Unified Generation Framework"
+  - "Concept-Localization Duality"
+  - "Progressive Training"
+  - "Expert Routing"
+  - "FLUX"
 date: 2026-05-08
-content_hash: 0c6ca29ef8fce940
+content_hash: 12b0d13314ce5abe
 ---
+
 # CoLoGen: Progressive Learning of Concept-Localization Duality for Unified Image Generation
 
 **Conference**: CVPR 2026  
@@ -149,11 +154,11 @@ Setting $\rho = 0.8$ allows the new expert to handle 80% of tokens while forcing
 
 ## Related Papers
 
+- [\[CVPR 2026\] DCoAR: Deep Concept Injection into Unified Autoregressive Models for Personalized Text-to-Image Generation](dcoar_deep_concept_injection_into_unified_autoregressive_models_for_personalized.md)
 - [\[CVPR 2026\] PureCC: Pure Learning for Text-to-Image Concept Customization](purecc_pure_learning_for_text-to-image_concept_customization.md)
 - [\[CVPR 2026\] NAMI: Efficient Image Generation via Bridged Progressive Rectified Flow Transformers](nami_efficient_image_generation_via_bridged_progressive_rectified_flow_transform.md)
 - [\[CVPR 2026\] UniVerse: A Unified Modulation Framework for Segmentation-Free, Disentangled Multi-Concept Personalization](universe_a_unified_modulation_framework_for_segmentation-free_disentangled_multi.md)
 - [\[CVPR 2026\] iMontage: Unified, Versatile, Highly Dynamic Many-to-many Image Generation](imontage_unified_versatile_highly_dynamic_many-to-many_image_generation.md)
-- [\[AAAI 2026\] EchoGen: Cycle-Consistent Learning for Unified Layout-Image Generation and Understanding](../../AAAI2026/image_generation/echogen_cycle-consistent_learning_for_unified_layout-image_generation_and_unders.md)
 
 </div>
 

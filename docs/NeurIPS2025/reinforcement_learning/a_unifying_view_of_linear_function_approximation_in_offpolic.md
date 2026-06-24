@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Unifying View of Linear Function Approximation in Off-Policy RL Through Matrix Splitting and Preconditioning
 description: >-
-  [NeurIPS 2025 (Spotlight, top 3%)][Reinforcement Learning][temporal difference learning] This work is the first to introduce matrix splitting theory, unifying TD, FQI…
+  [NeurIPS 2025 (Spotlight, top 3%)][Reinforcement Learning][temporal difference learning] This work is the first to introduce matrix splitting theory, unifying TD, FQI, and PFQI under linear function approximation as iterative methods for solving the same target linear system $(\Sigma_{cov} - \gamma\Sigma_{cr})\theta = \theta_{\phi,r}$, differing only in their preconditioners. It establishes necessary and sufficient conditions for the convergence of each algorithm…
 tags:
   - "NeurIPS 2025 (Spotlight, top 3%)"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "preconditioning"
   - "convergence analysis"
 date: 2026-05-08
-content_hash: 53b4ef93379919f7
+content_hash: 07bb8dfaa8180307
 ---
 
 # A Unifying View of Linear Function Approximation in Off-Policy RL Through Matrix Splitting and Preconditioning
@@ -115,10 +115,10 @@ This is a purely theoretical work with no training procedure. The central contri
 ## Related Papers
 
 - [\[ICLR 2026\] A Unifying View of Coverage in Linear Off-Policy Evaluation](../../ICLR2026/reinforcement_learning/a_unifying_view_of_coverage_in_linear_off-policy_evaluation.md)
-- [\[NeurIPS 2025\] Bootstrap Off-policy with World Model (BOOM)](bootstrap_off-policy_with_world_model.md)
+- [\[ICLR 2026\] Replicable Reinforcement Learning with Linear Function Approximation](../../ICLR2026/reinforcement_learning/replicable_reinforcement_learning_with_linear_function_approximation.md)
 - [\[ICLR 2026\] Is Pure Exploitation Sufficient in Exogenous MDPs with Linear Function Approximation?](../../ICLR2026/reinforcement_learning/is_pure_exploitation_sufficient_in_exogenous_mdps_with_linear_function_approxima.md)
+- [\[NeurIPS 2025\] Bootstrap Off-policy with World Model (BOOM)](bootstrap_off-policy_with_world_model.md)
 - [\[NeurIPS 2025\] Scalable Policy-Based RL Algorithms for POMDPs](scalable_policy-based_rl_algorithms_for_pomdps.md)
-- [\[NeurIPS 2025\] Succeed or Learn Slowly: Sample Efficient Off-Policy Reinforcement Learning for Mobile App Control](succeed_or_learn_slowly_sample_efficient_off-policy_reinforcement_learning_for_m.md)
 
 </div>
 

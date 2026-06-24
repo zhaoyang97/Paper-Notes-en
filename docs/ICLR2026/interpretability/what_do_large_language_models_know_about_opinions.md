@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] What Do Large Language Models Know About Opinions?
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] Instead of observing LLM outputs, this paper examines internal activations and discovers that the "internal knowledge" of LLMs regarding group opinions far exceeds what they express (reducing KL divergence by 52–66%, achieving performance close to fine-tuning but ~300× cheaper). It identifies that this knowledge forms
+  [ICLR 2026][Interpretability][Probing] Instead of observing LLM outputs, this paper examines internal activations and discovers that the "internal knowledge" of LLMs regarding group opinions far exceeds what they express (reducing KL divergence by 52–66%, achieving performance close to fine-tuning but ~300× cheaper). It identifies that this knowledge forms rapidly in middle layers and is "bottlenecked" by the final unembedding layer. Finally…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Probing"
+  - "Sparse Autoencoders (SAE)"
+  - "Opinion Alignment"
+  - "Activation Steering"
+  - "KL Divergence"
 date: 2026-05-08
-content_hash: 5a5bf25730a7d94e
+content_hash: 2d9f977a4b525d67
 ---
+
 # What Do Large Language Models Know About Opinions?
 
 **Conference**: ICLR 2026  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Position: Reliable AI Needs to Externalize Implicit Knowledge: A Human-AI Collaboration Perspective
 description: >-
-  [ICML 2026][Information Retrieval & RAG][Knowledge Objects] This ICML position paper argues that current AI reliability methods (RAG / Self-consistency / RLHF / Agent Memory) only verify explicit knowledge, whereas AI's true power stems from "implicit knowledge"—the $80-95\%$ of information in training data not formally recorded by humans. The authors propose Knowledge Objects
+  [ICML 2026 (Position Paper)][Information Retrieval & RAG][Implicit Knowledge] This ICML position paper argues that current AI reliability methods (RAG / Self-consistency / RLHF / Agent Memory) only verify explicit knowledge, whereas AI's true power stems from "implicit knowledge"—the $80-95\%$ of information in training data not formally recorded by humans. The authors propose Knowledge Objects (KOs) as an infrastructure to externalize AI's implicit reasoning into structured…
 tags:
-  - ICML 2026
-  - Information Retrieval & RAG
-  - Knowledge Objects
+  - "ICML 2026 (Position Paper)"
+  - "Information Retrieval & RAG"
+  - "Implicit Knowledge"
+  - "Knowledge Objects"
+  - "Human-in-the-Loop"
+  - "Verification Economics"
+  - "RLHF Alternative"
 date: 2026-05-08
-content_hash: f87ba61fb043f6d3
+content_hash: 2e1744ff135f4c00
 ---
+
 # Position: Reliable AI Needs to Externalize Implicit Knowledge: A Human-AI Collaboration Perspective
 
 **Conference**: ICML 2026 (Position Paper)  
@@ -127,6 +132,7 @@ This is an ICML position paper with no empirical experiments; the following orga
 *   **Value**: ⭐⭐⭐⭐ Provides a new vocabulary (KO) and organizational framework for the community; potential to catalyze new infrastructure, though implementation remains a significant task.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

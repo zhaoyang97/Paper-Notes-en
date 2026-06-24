@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] To View Transform or Not to View Transform: NeRF-based Pre-training Perspective
 description: >-
-  [ICLR 2026][Autonomous Driving][Paper Note] NeRP3D argues that hard-linking NeRF pre-training to discrete BEV/voxel view transformation backbones compromises the advantages of continuous radiance fields. Thus, it directly utilizes NeRF-like continuous point queries to unify reconstruction pre-training and autonomous driving 3D perception. It outperforms existing
+  [ICLR2026][Autonomous Driving][NeRF Pre-training] NeRP3D argues that hard-linking NeRF pre-training to discrete BEV/voxel view transformation backbones compromises the advantages of continuous radiance fields. Thus, it directly utilizes NeRF-like continuous point queries to unify reconstruction pre-training and autonomous driving 3D perception. It outperforms existing NeRF pre-training methods in reconstruction, detection, occupancy prediction…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
+  - "ICLR2026"
+  - "Autonomous Driving"
+  - "NeRF Pre-training"
+  - "View Transformation"
+  - "3D Object Detection"
+  - "Occupancy Prediction"
+  - "Continuous Point Representation"
 date: 2026-05-08
-content_hash: 40a5268fea7443b5
+content_hash: 7d1085df363f9ce9
 ---
+
 # To View Transform or Not to View Transform: NeRF-based Pre-training Perspective
 
 **Conference**: ICLR2026  
@@ -158,10 +164,10 @@ Ablation numbers are mainly located in the appendix, while cached text retains k
 ## Related Papers
 
 - [\[CVPR 2026\] CycleBEV: Regularizing View Transformation Networks via View Cycle Consistency for Bird's-Eye-View Semantic Segmentation](../../CVPR2026/autonomous_driving/cyclebev_regularizing_view_transformation_networks_via_view_cycle_consistency_fo.md)
+- [\[CVPR 2026\] DLWM: Dual Latent World Models enable Holistic Gaussian-centric Pre-training in Autonomous Driving](../../CVPR2026/autonomous_driving/dlwm_dual_latent_world_models_enable_holistic_gaussian-centric_pre-training_in_a.md)
 - [\[CVPR 2025\] VisionPAD: A Vision-Centric Pre-training Paradigm for Autonomous Driving](../../CVPR2025/autonomous_driving/visionpad_a_vision-centric_pre-training_paradigm_for_autonomous_driving.md)
 - [\[ICLR 2026\] ARINBEV: Bird's-Eye View Layout Estimation with Conditional Autoregressive Model](arinbev_birds-eye_view_layout_estimation_with_conditional_autoregressive_model.md)
-- [\[CVPR 2026\] DLWM: Dual Latent World Models enable Holistic Gaussian-centric Pre-training in Autonomous Driving](../../CVPR2026/autonomous_driving/dlwm_dual_latent_world_models_enable_holistic_gaussian-centric_pre-training_in_a.md)
-- [\[ICLR 2026\] Bird's-eye-view Informed Reasoning Driver (BIRDriver)](birds-eye-view_informed_reasoning_driver.md)
+- [\[CVPR 2026\] Dr.Occ: Depth- and Region-Guided 3D Occupancy from Surround-View Cameras for Autonomous Driving](../../CVPR2026/autonomous_driving/drocc_depth_region_guided_3d_occupancy.md)
 
 </div>
 

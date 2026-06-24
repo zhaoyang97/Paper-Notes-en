@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Teach2Eval: An Interaction-Driven LLMs Evaluation Method via Teaching Effectiveness
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] Teach2Eval redefines "evaluating an LLM" as "tasking it to teach weaker student models." Instead of answering questions directly, the candidate model provides feedback, error correction, and multi-turn guidance without seeing the options or correct answers. The score is determined by the improvement in the students' ac
+  [ICLR 2026][LLM Evaluation][Model Evaluation] Teach2Eval redefines "evaluating an LLM" as "tasking it to teach weaker student models." Instead of answering questions directly, the candidate model provides feedback, error correction, and multi-turn guidance without seeing the options or correct answers. The score is determined by the improvement in the students' accuracy. Tested across 33 models and 60 datasets, it achieves a Spearman correlation of 0.94–0.975 with Chatbot Are…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Model Evaluation"
+  - "Teaching Effectiveness"
+  - "Interactive Evaluation"
+  - "Data Contamination Robustness"
+  - "Capability Decomposition"
 date: 2026-05-08
-content_hash: c3fe1a0e2be96fc0
+content_hash: 004640ba00f4a32f
 ---
+
 # Teach2Eval: An Interaction-Driven LLMs Evaluation Method via Teaching Effectiveness
 
 **Conference**: ICLR 2026  

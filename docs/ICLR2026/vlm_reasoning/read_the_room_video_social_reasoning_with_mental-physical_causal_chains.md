@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Read the Room: Video Social Reasoning with Mental-Physical Causal Chains
 description: >-
-  [ICLR 2026][vlm_reasoning][Paper Note] This paper introduces the R3-Bench benchmark and the R3-FDT large-scale training set to systematically evaluate the video social reasoning capabilities of LVLMs through a "Mental-Physical Causal Chain" structure. The study reveals a significant gap between current state-of-the-art models and human performance and demon
+  [ICLR 2026][VLM Reasoning][Video Social Reasoning] This paper introduces the R3-Bench benchmark and the R3-FDT large-scale training set to systematically evaluate the video social reasoning capabilities of LVLMs through a "Mental-Physical Causal Chain" structure. The study reveals a significant gap between current state-of-the-art models and human performance and demonstrates that fine-tuning on R3-FDT significantly improves social reasoning across multiple benchmarks.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Video Social Reasoning"
+  - "Mental-Physical Causal Chains"
+  - "Theory of Mind"
+  - "VLM Evaluation"
+  - "Social Cognition Benchmark"
 date: 2026-05-08
-content_hash: daa017dc96625450
+content_hash: 83a9fd5ea1db19ec
 ---
+
 # Read the Room: Video Social Reasoning with Mental-Physical Causal Chains
 
 **Conference**: ICLR 2026  
@@ -124,11 +130,11 @@ This work is directly related to Theory of Mind (ToM) modeling (MMToM-QA), emoti
 
 ## Related Papers
 
+- [\[ACL 2026\] GeoRC: A Benchmark for Geolocation Reasoning Chains](../../ACL2026/vlm_reasoning/georc_a_benchmark_for_geolocation_reasoning_chains.md)
 - [\[CVPR 2026\] Streaming Video Crime Anticipation with Spatio-Temporal Causal Reasoning](../../CVPR2026/vlm_reasoning/streaming_video_crime_anticipation_with_spatio-temporal_causal_reasoning.md)
+- [\[CVPR 2026\] CaST-Bench: Benchmarking Causal Chain-Grounded Spatio-Temporal Reasoning for Video Question Answering](../../CVPR2026/vlm_reasoning/cast-bench_benchmarking_causal_chain-grounded_spatio-temporal_reasoning_for_vide.md)
 - [\[ICLR 2026\] MindCube: Spatial Mental Modeling from Limited Views](mindcube_spatial_mental_modeling_from_limited_views.md)
 - [\[CVPR 2026\] Beyond Perceptual Shortcuts: Causal-Inspired Debiasing Optimization for Generalizable Video Reasoning in Lightweight MLLMs](../../CVPR2026/vlm_reasoning/beyond_perceptual_shortcuts_causal-inspired_debiasing_optimization_for_generaliz.md)
-- [\[CVPR 2026\] CaST-Bench: Benchmarking Causal Chain-Grounded Spatio-Temporal Reasoning for Video Question Answering](../../CVPR2026/vlm_reasoning/cast-bench_benchmarking_causal_chain-grounded_spatio-temporal_reasoning_for_vide.md)
-- [\[ACL 2026\] GeoRC: A Benchmark for Geolocation Reasoning Chains](../../ACL2026/vlm_reasoning/georc_a_benchmark_for_geolocation_reasoning_chains.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] What's in a Latent? Leveraging Diffusion Latent Space for Domain Generalization
 description: >-
-  [ICCV 2025][Image Generation][Domain Generalization] This paper systematically analyzes the domain separation capacity of latent spaces from six pretrained models (CLIP, DiT, SD, MAE, DINOv2…
+  [ICCV 2025][Image Generation][Domain Generalization] This paper systematically analyzes the domain separation capacity of latent spaces from six pretrained models (CLIP, DiT, SD, MAE, DINOv2, ResNet) and demonstrates that diffusion model features are most effective at separating domain information in an unsupervised setting. Building on this insight, the authors propose GUIDE — a framework that leverages diffusion features to discover pseudo-domain representations and augment…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Latent Space Analysis"
   - "Label-Free Domain"
 date: 2026-05-08
-content_hash: f6e1c3d5fd22c290
+content_hash: 42a0ed464a765be5
 ---
 
 # What's in a Latent? Leveraging Diffusion Latent Space for Domain Generalization
@@ -176,11 +176,11 @@ GUIDE operates in two stages: (1) extract features from a frozen diffusion model
 
 ## Related Papers
 
+- [\[CVPR 2025\] Latent Space Imaging](../../CVPR2025/image_generation/latent_space_imaging.md)
 - [\[ICCV 2025\] MotionStreamer: Streaming Motion Generation via Diffusion-based Autoregressive Model in Causal Latent Space](motionstreamer_streaming_motion_generation_via_diffusion-based_autoregressive_mo.md)
+- [\[ICML 2025\] Hessian Geometry of Latent Space in Generative Models](../../ICML2025/image_generation/hessian_geometry_of_latent_space_in_generative_models.md)
 - [\[ICCV 2025\] Latent Diffusion Models with Masked AutoEncoders](latent_diffusion_models_with_masked_autoencoders.md)
-- [\[NeurIPS 2025\] Vicinity-Guided Discriminative Latent Diffusion for Privacy-Preserving Domain Adaptation](../../NeurIPS2025/image_generation/vicinity-guided_discriminative_latent_diffusion_for_privacy-preserving_domain_ad.md)
-- [\[NeurIPS 2025\] PixPerfect: Seamless Latent Diffusion Local Editing with Discriminative Pixel-Space Refinement](../../NeurIPS2025/image_generation/pixperfect_seamless_latent_diffusion_local_editing_with_discriminative_pixel-spa.md)
-- [\[ICCV 2025\] Multimodal Latent Diffusion Model for Complex Sewing Pattern Generation](multimodal_latent_diffusion_model_for_complex_sewing_pattern_generation.md)
+- [\[CVPR 2026\] Latent Diffusion Inversion Requires Understanding the Latent Space](../../CVPR2026/image_generation/latent_diffusion_inversion_requires_understanding_the_latent_space.md)
 
 </div>
 

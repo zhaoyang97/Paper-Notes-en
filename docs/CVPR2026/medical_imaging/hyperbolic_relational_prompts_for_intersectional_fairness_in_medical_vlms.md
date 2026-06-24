@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hyperbolic Relational Prompts for Intersectional Fairness in Medical VLMs
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] FRP transforms "prompt generation" in medical VLMs from isolated sample processing into **dynamic relational reasoning**: it employs a sample relational graph to capture fine-grained dependencies and utilizes **hyperbolic graph layers** to explicitly model the hierarchical structure of intersectional identities (e.g.,
+  [CVPR 2026][Medical Imaging][Medical VLM] FRP transforms "prompt generation" in medical VLMs from isolated sample processing into **dynamic relational reasoning**: it employs a sample relational graph to capture fine-grained dependencies and utilizes **hyperbolic graph layers** to explicitly model the hierarchical structure of intersectional identities (e.g., race × gender). This mitigates "intersectional blindness" while achieving SOTA diagnostic AUC (FairVLMed 77.50%…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Medical VLM"
+  - "Intersectional Fairness"
+  - "Hyperbolic Geometry"
+  - "Relational Graph"
+  - "Prompt Learning"
 date: 2026-05-08
-content_hash: 680ef61c655539f5
+content_hash: e5870c76201df1be
 ---
+
 # Hyperbolic Relational Prompts for Intersectional Fairness in Medical VLMs
 
 **Conference**: CVPR 2026  
@@ -147,11 +153,11 @@ Component ablation on FairVLMed ($G_{hyp}$ Hyperbolic GNN, $A_{fair}$ Fair Modul
 
 ## Related Papers
 
+- [\[CVPR 2026\] LATA: Laplacian-Assisted Transductive Adaptation for Conformal Uncertainty in Medical VLMs](lata_laplacian-assisted_transductive_adaptation_for_conformal_uncertainty_in_med.md)
 - [\[CVPR 2026\] H2-Surv: Hierarchical Hyperbolic Multimodal Representation Learning for Survival Prediction](h2-surv_hierarchical_hyperbolic_multimodal_representation_learning_for_survival_.md)
+- [\[CVPR 2026\] Simple-ViLMedSAM: Simple Text Prompts Meet Vision-Language Models for Medical Image Segmentation](simple-vilmedsam_simple_text_prompts_meet_vision-language_models_for_medical_ima.md)
 - [\[CVPR 2026\] TRCoRSurg: Temporal-Relational Co-Reasoning for Surgical Video Triplet Recognition](trcorsurg_temporal-relational_co-reasoning_for_surgical_video_triplet_recognitio.md)
 - [\[ICLR 2026\] HEEGNet: Hyperbolic Embeddings for EEG](../../ICLR2026/medical_imaging/heegnet_hyperbolic_embeddings_for_eeg.md)
-- [\[CVPR 2026\] IVAAN: Instance-level Vision-Language Alignment via Attribute-Guided Text Prompts Generation for Nuclei Analysis](ivaan_instance-level_vision-language_alignment_via_attribute-guided_text_prompts.md)
-- [\[ICML 2026\] EEG-Based Multimodal Learning via Hyperbolic Mixture-of-Curvature Experts](../../ICML2026/medical_imaging/eeg-based_multimodal_learning_via_hyperbolic_mixture-of-curvature_experts.md)
 
 </div>
 

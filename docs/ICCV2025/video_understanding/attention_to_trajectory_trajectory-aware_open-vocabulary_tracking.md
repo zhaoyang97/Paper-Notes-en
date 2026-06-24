@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Attention to Trajectory: Trajectory-Aware Open-Vocabulary Tracking
 description: >-
-  [ICCV 2025][Video Understanding][Open-Vocabulary MOT] This paper proposes TRACT, a method that leverages trajectory-level information to enhance open-vocabulary multi-object tracking (OV-MOT). It improves association via…
+  [ICCV 2025][Video Understanding][Open-Vocabulary MOT] This paper proposes TRACT, a method that leverages trajectory-level information to enhance open-vocabulary multi-object tracking (OV-MOT). It improves association via Trajectory Consistency Reinforcement (TCR) and improves classification via Trajectory Feature Aggregation (TFA) and Trajectory Semantic Enrichment (TSE). TRACT achieves significant performance gains on the OV-TAO benchmark, particularly in classification accu…
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Association"
   - "Classification"
 date: 2026-05-08
-content_hash: 3a47b5b08fd48dc7
+content_hash: 6eabb97a18ba9cba
 ---
 
 # Attention to Trajectory: Trajectory-Aware Open-Vocabulary Tracking
@@ -128,8 +128,8 @@ The TCR module requires no training. TraCLIP is initialized from CLIP ViT-L/14 w
 - [\[ICCV 2025\] Trokens: Semantic-Aware Relational Trajectory Tokens for Few-Shot Action Recognition](trokens_semantic-aware_relational_trajectory_tokens_for_few-shot_action_recognit.md)
 - [\[ICCV 2025\] EMoTive: Event-Guided Trajectory Modeling for 3D Motion Estimation](emotive_event-guided_trajectory_modeling_for_3d_motion_estimation.md)
 - [\[ICCV 2025\] Learning to Generalize Without Bias for Open-Vocabulary Action Recognition](learning_to_generalize_without_bias_for_open-vocabulary_action_recognition.md)
-- [\[ICCV 2025\] Q-Frame: Query-aware Frame Selection and Multi-Resolution Adaptation for Video-LLMs](q-frame_query-aware_frame_selection_and_multi-resolution_adaptation_for_video-ll.md)
-- [\[CVPR 2026\] TrajTok: Learning Trajectory Tokens Enhances Video Understanding](../../CVPR2026/video_understanding/trajtok_learning_trajectory_tokens_enables_better_video_understanding.md)
+- [\[ECCV 2024\] SLAck: Semantic, Location, and Appearance Aware Open-Vocabulary Tracking](../../ECCV2024/video_understanding/slack_semantic_location_and_appearance_aware_open-vocabulary_tracking.md)
+- [\[CVPR 2025\] Anomize: Better Open Vocabulary Video Anomaly Detection](../../CVPR2025/video_understanding/anomize_better_open_vocabulary_video_anomaly_detection.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Surf2CT: Cascaded 3D Flow Matching Models for Torso 3D CT Synthesis from Skin Surface
 description: >-
-  [NeurIPS 2025][Medical Imaging][Flow Matching] This paper proposes Surf2CT, a cascaded 3D Flow Matching framework that, for the first time…
+  [NeurIPS 2025][Medical Imaging][Flow Matching] This paper proposes Surf2CT, a cascaded 3D Flow Matching framework that, for the first time, synthesizes complete high-resolution 3D CT volumes solely from external body surface scans and demographic data (age, sex, height, weight), without requiring any internal imaging input.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "3D Generation"
   - "Non-Invasive Imaging"
 date: 2026-05-08
-content_hash: cc5fd0e03edd15ad
+content_hash: 5d36e01e748801fb
 ---
 
 # Surf2CT: Cascaded 3D Flow Matching Models for Torso 3D CT Synthesis from Skin Surface
@@ -157,9 +157,9 @@ Demographic attributes (age, sex, height, weight) are concatenated with the part
 
 - [\[NeurIPS 2025\] Riemannian Flow Matching for Brain Connectivity Matrices via Pullback Geometry](riemannian_flow_matching_for_brain_connectivity_matrices_via_pullback_geometry.md)
 - [\[NeurIPS 2025\] 3D-RAD: A Comprehensive 3D Radiology Med-VQA Dataset with Multi-Temporal Analysis and Diverse Diagnostic Tasks](3drad_a_comprehensive_3d_radiology_medvqa_dataset_with_multi.md)
-- [\[NeurIPS 2025\] PolyPose: Deformable 2D/3D Registration via Polyrigid Transformations](polypose_deformable_2d3d_registration_via_polyrigid_transformations.md)
-- [\[ICML 2026\] Foundation VAEs for 3D CT Reconstruction, Augmentation, and Generation](../../ICML2026/medical_imaging/foundation_vaes_for_3d_ct_reconstruction_augmentation_and_generation.md)
 - [\[NeurIPS 2025\] Semantic and Visual Crop-Guided Diffusion Models for Heterogeneous Tissue Synthesis in Histopathology](semantic_and_visual_crop-guided_diffusion_models_for_heterogeneous_tissue_synthe.md)
+- [\[NeurIPS 2025\] PolyPose: Deformable 2D/3D Registration via Polyrigid Transformations](polypose_deformable_2d3d_registration_via_polyrigid_transformations.md)
+- [\[CVPR 2026\] MicroFM: Physics-guided Flow Matching for Isotropic Microscopy Reconstruction](../../CVPR2026/medical_imaging/microfm_physics-guided_flow_matching_for_isotropic_microscopy_reconstruction.md)
 
 </div>
 

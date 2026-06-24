@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AnoStyler: Text-Driven Localized Anomaly Generation via Lightweight Style Transfer
 description: >-
-  [AAAI 2026][Object Detection][Anomaly Generation] This work formulates zero-shot anomaly generation as a text-guided localized style transfer problem. A lightweight U-Net trained with CLIP-based losses stylizes masked re…
+  [AAAI 2026][Object Detection][Anomaly Generation] This work formulates zero-shot anomaly generation as a text-guided localized style transfer problem. A lightweight U-Net trained with CLIP-based losses stylizes masked regions of normal images into semantically aligned anomalous images. With only 263M total parameters (0.61M trainable), AnoStyler surpasses diffusion-based baselines on MVTec-AD and VisA while significantly improving downstream anomaly detection performance.
 tags:
   - "AAAI 2026"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "CLIP"
   - "Industrial Defect Detection"
 date: 2026-05-08
-content_hash: 35380a696fa20425
+content_hash: c6c308c4ed486ecb
 ---
 
 # AnoStyler: Text-Driven Localized Anomaly Generation via Lightweight Style Transfer
@@ -128,9 +128,9 @@ The style transfer approach to data augmentation can generalize to other data-sc
 
 - [\[ICCV 2025\] YOLO-Count: Differentiable Object Counting for Text-to-Image Generation](../../ICCV2025/object_detection/yolo-count_differentiable_object_counting_for_text-to-image_generation.md)
 - [\[AAAI 2026\] AquaSentinel: Next-Generation AI System Integrating Sensor Networks for Urban Underground Water Pipeline Anomaly Detection via Collaborative MoE-LLM Agent Architecture](aquasentinel_next-generation_ai_system_integrating_sensor_ne.md)
+- [\[CVPR 2025\] Unseen Visual Anomaly Generation](../../CVPR2025/object_detection/unseen_visual_anomaly_generation.md)
 - [\[CVPR 2026\] Reasoning-Driven Anomaly Detection and Localization with Image-Level Supervision](../../CVPR2026/object_detection/reasoning-driven_anomaly_detection_and_localization_with_image-level_supervision.md)
 - [\[AAAI 2026\] RcAE: Recursive Reconstruction Framework for Unsupervised Industrial Anomaly Detection](rcae_recursive_reconstruction_framework_for_unsupervised_industrial_anomaly_dete.md)
-- [\[AAAI 2026\] PromptMoE: Generalizable Zero-Shot Anomaly Detection via Visually-Guided Prompt Mixing of Experts](promptmoe_generalizable_zero-shot_anomaly_detection_via_visually-guided_prompt_m.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Stop Guessing: Choosing the Optimization-Consistent Uncertainty Measurement for Evidential Deep Learning
 description: >-
-  [ICLR 2026][learning_theory][Evidential Deep Learning] This paper revisits Evidential Deep Learning (EDL) from an optimization perspective, proving that training EDL with UCE loss is equivalent to implicitly maximizing inter-class margins (isomorphic to the Crammer–Singer multiclass SVM). Based on this, it proposes the "Optimization Consistency Principle" as a criterion fo
+  [ICLR 2026][Learning Theory][Uncertainty Measurement] This paper revisits Evidential Deep Learning (EDL) from an optimization perspective, proving that training EDL with UCE loss is equivalent to implicitly maximizing inter-class margins (isomorphic to the Crammer–Singer multiclass SVM). Based on this, it proposes the "Optimization Consistency Principle" as a criterion for selecting uncertainty measurements and designs a simple, interpretable new metric…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Evidential Deep Learning
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Uncertainty Estimation"
+  - "Evidential Deep Learning"
+  - "Uncertainty Measurement"
+  - "Large Margin SVM"
+  - "Optimization Consistency"
+  - "OOD Detection"
 date: 2026-05-08
-content_hash: ef795c2e4c142e32
+content_hash: 4096f3791b10e87b
 ---
+
 # Stop Guessing: Choosing the Optimization-Consistent Uncertainty Measurement for Evidential Deep Learning
 
 **Conference**: ICLR 2026  
@@ -143,8 +149,8 @@ Cross-scenario validation on CIFAR-100 and Video Open-Set Recognition (UCF-101�
 
 - [\[ICLR 2026\] Variational Deep Learning via Implicit Regularization](variational_deep_learning_via_implicit_regularization.md)
 - [\[ICLR 2026\] Non-Asymptotic Analysis of (Sticky) Track-and-Stop](non-asymptotic_analysis_of_sticky_track-and-stop.md)
+- [\[ICML 2026\] Learning Credal Ensembles via Distributionally Robust Optimization](../../ICML2026/learning_theory/learning_credal_ensembles_via_distributionally_robust_optimization.md)
 - [\[ICLR 2026\] Deep Learning with Learnable Product-Structured Activations](deep_learning_with_learnable_product-structured_activations.md)
-- [\[ICLR 2026\] On Universality of Deep Equivariant Networks](on_universality_of_deep_equivariant_networks.md)
 - [\[ICLR 2026\] Online Inventory Optimization in Non-Stationary Environment](online_inventory_optimization_in_non-stationary_environment.md)
 
 </div>

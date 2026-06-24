@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SIGMA: A Physics-Based Benchmark for Gas Chimney Understanding in Seismic Images
 description: >-
-  [CVPR 2026][Earth Science][Paper Note] This work proposes SIGMA, the first physics-based synthetic seismic image dataset with ground truth labels. By combining wave equation forward modeling and Reverse Time Migration (RTM), velocity models containing gas chimneys are converted into seismic images. The dataset provides pixel-level gas chimney masks (for det
+  [CVPR 2026][Earth Science][Seismic Image Understanding] This work proposes SIGMA, the first physics-based synthetic seismic image dataset with ground truth labels. By combining wave equation forward modeling and Reverse Time Migration (RTM), velocity models containing gas chimneys are converted into seismic images. The dataset provides pixel-level gas chimney masks (for detection) and paired "degraded-clean" images (for enhancement). Benchmarking multiple baselines reveals th…
 tags:
-  - CVPR 2026
-  - Earth Science
+  - "CVPR 2026"
+  - "Earth Science"
+  - "Seismic Image Understanding"
+  - "Gas Chimney Detection"
+  - "Physics-based Synthetic Dataset"
+  - "Reverse Time Migration"
+  - "Image Enhancement"
 date: 2026-05-08
-content_hash: b784d4865e09cc0e
+content_hash: 503134b053dd8a2a
 ---
+
 # SIGMA: A Physics-Based Benchmark for Gas Chimney Understanding in Seismic Images
 
 **Conference**: CVPR 2026  
@@ -125,16 +131,16 @@ A perceptual user study was conducted with 80 AI researchers and geologists. Eac
 - Value: ⭐⭐⭐⭐ Fills the gap of missing GT in seismic understanding and highlights an open challenge.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] PhyOceanCast: Global Ocean Forecasting with Physics-Informed Diffusion](phyoceancast_global_ocean_forecasting_with_physics-informed_diffusion.md)
+- [\[ICLR 2026\] The Seismic Wavefield Common Task Framework](../../ICLR2026/earth_science/the_seismic_wavefield_common_task_framework.md)
 - [\[NeurIPS 2025\] Reasoning With a Star: A Heliophysics Dataset and Benchmark for Agentic Scientific Reasoning](../../NeurIPS2025/earth_science/reasoning_with_a_star_a_heliophysics_dataset_and_benchmark_for_agentic_scientifi.md)
-- [\[CVPR 2026\] MeteorPred: A Meteorological Multimodal Large Model and Dataset for Severe Weather Event Prediction](meteorpred_a_meteorological_multimodal_large_model_and_dataset_for_severe_weathe.md)
-- [\[CVPR 2026\] GeoChemAD: Benchmarking Unsupervised Geochemical Anomaly Detection for Mineral Exploration](geochemad_benchmarking_unsupervised_geochemical_anomaly_detection_for_mineral_ex.md)
-- [\[AAAI 2026\] MdaIF: Robust One-Stop Multi-Degradation-Aware Image Fusion with Language-Driven Semantics](../../AAAI2026/earth_science/mdaif_robust_one-stop_multi-degradation-aware_image_fusion_with_language-driven_.md)
-- [\[ICML 2026\] (Sparse) Attention to the Details: Preserving Spectral Fidelity in ML-based Weather Forecasting Models](../../ICML2026/earth_science/sparse_attention_to_the_details_preserving_spectral_fidelity_in_ml-based_weather.md)
+- [\[ICML 2026\] Scaling Laws of Global Weather Models](../../ICML2026/earth_science/scaling_laws_of_global_weather_models.md)
+- [\[ICLR 2026\] TianQuan-S2S: Constructing Subseasonal-to-Seasonal Global Weather Forecasting Models by Incorporating Climatology](../../ICLR2026/earth_science/tianquan-s2s_a_subseasonal-to-seasonal_global_weather_model_via_incorporate_clim.md)
 
 </div>
 

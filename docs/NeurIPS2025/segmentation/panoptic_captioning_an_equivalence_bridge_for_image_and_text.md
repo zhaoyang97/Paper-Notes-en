@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Panoptic Captioning: An Equivalence Bridge for Image and Text
 description: >-
-  [NeurIPS 2025][Segmentation][panoptic captioning] This paper proposes the novel task of Panoptic Captioning, which pursues a *minimum text equivalence* of images—defining a comprehensive structured description along five…
+  [NeurIPS 2025][Segmentation][panoptic captioning] This paper proposes the novel task of Panoptic Captioning, which pursues a *minimum text equivalence* of images—defining a comprehensive structured description along five dimensions (entity semantic tags, locations via bounding boxes, attributes, relations, and global state)—and introduces the PancapEngine data engine and PancapChain decoupled multi-stage method. A 13B model trained under this framework surpasses InternVL-2.5-…
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "PancapChain"
   - "grounding"
 date: 2026-05-08
-content_hash: 6abeed277a537b71
+content_hash: 7eadabd5898ff31c
 ---
 
 # Panoptic Captioning: An Equivalence Bridge for Image and Text
@@ -128,11 +128,11 @@ The 13B model surpasses the 78B open-source model and commercial large models ac
 
 ## Related Papers
 
+- [\[CVPR 2025\] FineCaption: Compositional Image Captioning Focusing on Wherever You Want at Any Granularity](../../CVPR2025/segmentation/finecaption_compositional_image_captioning_focusing_on_wherever_you_want_at_any_.md)
 - [\[NeurIPS 2025\] SRSR: Enhancing Semantic Accuracy in Real-World Image Super-Resolution with Spatially Re-Focused Text-Conditioning](srsr_enhancing_semantic_accuracy_in_real-world_image_super-resolution_with_spati.md)
+- [\[CVPR 2026\] Mitigating Objectness Bias and Region-to-Text Misalignment for Open-Vocabulary Panoptic Segmentation](../../CVPR2026/segmentation/mitigating_objectness_bias_and_region-to-text_misalignment_for_open-vocabulary_p.md)
 - [\[ICLR 2026\] VIRTUE: Visual-Interactive Text-Image Universal Embedder](../../ICLR2026/segmentation/virtue_visual-interactive_text-image_universal_embedder.md)
-- [\[NeurIPS 2025\] Seg-VAR: Image Segmentation with Visual Autoregressive Modeling](seg-var_image_segmentation_with_visual_autoregressive_modeling.md)
-- [\[NeurIPS 2025\] Towards Unsupervised Domain Bridging via Image Degradation in Semantic Segmentation](towards_unsupervised_domain_bridging_via_image_degradation_in_semantic_segmentat.md)
-- [\[NeurIPS 2025\] SaFiRe: Saccade-Fixation Reiteration with Mamba for Referring Image Segmentation](safire_saccade-fixation_reiteration_with_mamba_for_referring_image_segmentation.md)
+- [\[CVPR 2025\] Fine-Grained Image-Text Correspondence with Cost Aggregation for Open-Vocabulary Part Segmentation](../../CVPR2025/segmentation/fine-grained_image-text_correspondence_with_cost_aggregation_for_open-vocabulary.md)
 
 </div>
 

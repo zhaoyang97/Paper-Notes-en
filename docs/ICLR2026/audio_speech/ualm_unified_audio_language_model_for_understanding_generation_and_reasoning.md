@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UALM: Unified Audio Language Model for Understanding, Generation and Reasoning
 description: >-
-  [ICLR 2026][Audio & Speech][Paper Note] UALM utilizes a single autoregressive language model to unify audio understanding, text-to-audio generation, and multimodal reasoning. It first demonstrates that a pure LM directly predicting audio tokens can match the generation quality of diffusion models (UALM-Gen), then integrates all three capabilities into one mo
+  [ICLR 2026][Audio & Speech][Unified Audio Language Model] UALM utilizes a single autoregressive language model to unify audio understanding, text-to-audio generation, and multimodal reasoning. It first demonstrates that a pure LM directly predicting audio tokens can match the generation quality of diffusion models (UALM-Gen), then integrates all three capabilities into one model via data mixing and modal alignment (UALM), and finally empowers the model with generative multimo…
 tags:
-  - ICLR 2026
-  - Audio & Speech
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Unified Audio Language Model"
+  - "Text-to-Audio Generation"
+  - "Multimodal Reasoning"
+  - "Audio tokens"
+  - "Self-reflection"
 date: 2026-05-08
-content_hash: be7687712daa6d3c
+content_hash: 5ec06e5ef99599bf
 ---
+
 # UALM: Unified Audio Language Model for Understanding, Generation and Reasoning
 
 **Conference**: ICLR 2026  
@@ -147,14 +153,17 @@ UALM's audio understanding (MMAU 74.1) exceeds specialized models like AF3, whil
 
 <div class="related-papers" markdown="1">
 
-[1] **Stable Audio Open: Settling the Score on Audio Generation** (2024), arXiv:240X.XXXXX.  
-[2] **Audio Flamingo: A Novel Audio-Language Model** (2024), arXiv:2402.01831.  
-[3] **Chameleon: Mixed-modal Early-fusion Foundation Models** (2024), arXiv:2405.09818.
+## Related Papers
+
+- [\[ICLR 2026\] MMSU: A Massive Multi-task Spoken Language Understanding and Reasoning Benchmark](mmsu_a_massive_multi-task_spoken_language_understanding_and_reasoning_benchmark.md)
+- [\[ICLR 2026\] SmartDJ: Declarative Audio Editing with Audio Language Model](smartdj_declarative_audio_editing_with_audio_language_model.md)
+- [\[ICLR 2026\] OWL: Geometry-Aware Spatial Reasoning for Audio Large Language Models](owl_geometry-aware_spatial_reasoning_for_audio_large_language_models.md)
+- [\[ICLR 2026\] Human Behavior Atlas: Benchmarking Unified Psychological and Social Behavior Understanding](human_behavior_atlas_benchmarking_unified_psychological_and_social_behavior_unde.md)
+- [\[ICLR 2026\] Music Flamingo: Scaling Music Understanding in Audio Language Models](music_flamingo_scaling_music_understanding_in_audio_language_models.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] MMSU: A Massive Multi-task Spoken Language Understanding and Reasoning Benchmark](mmsu_a_massive_multi-task_spoken_language_understanding_and_reasoning_benchmark.md)

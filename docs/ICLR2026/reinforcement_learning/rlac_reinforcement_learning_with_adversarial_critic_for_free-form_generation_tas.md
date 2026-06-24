@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RLAC: Reinforcement Learning with Adversarial Critic for Free-Form Generation Tasks
 description: >-
-  [ICLR 2026][Reinforcement Learning][DPO] RLAC reformulates free-form generation post-training, which requires satisfying numerous implicit rubrics, as a minimax game between a generator and a learnable Critic. Instead of enumerating all rubrics, the Critic selects the single most likely-to-fail rubric for external verification. This approach outperforms both
+  [ICLR 2026][Reinforcement Learning][Free-form generation] RLAC reformulates free-form generation post-training, which requires satisfying numerous implicit rubrics, as a minimax game between a generator and a learnable Critic. Instead of enumerating all rubrics, the Critic selects the single most likely-to-fail rubric for external verification. This approach outperforms both exhaustive verification and reward models in biographical factuality and code generation…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - DPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Free-form generation"
+  - "Adversarial Critic"
+  - "Dynamic rubric verification"
+  - "DPO"
+  - "Reward hacking"
 date: 2026-05-08
-content_hash: b52267e2aa04904f
+content_hash: 992e0f03852994c5
 ---
+
 # RLAC: Reinforcement Learning with Adversarial Critic for Free-Form Generation Tasks
 
 **Conference**: ICLR 2026  
@@ -156,8 +161,8 @@ RLAC achieves the highest average score using only 9% of the data. While AceCode
 
 - [\[ACL 2026\] UniCreative: Unifying Long-form Logic and Short-form Sparkle via Reference-Free Reinforcement Learning](../../ACL2026/reinforcement_learning/unicreative_unifying_long-form_logic_and_short-form_sparkle_via_reference-free_r.md)
 - [\[ICLR 2026\] Safe Continuous-time Multi-Agent Reinforcement Learning via Epigraph Form](safe_continuous-time_multi-agent_reinforcement_learning_via_epigraph_form.md)
-- [\[ICLR 2026\] Flow Actor-Critic for Offline Reinforcement Learning (FAC)](flow_actor-critic_for_offline_reinforcement_learning.md)
 - [\[ICLR 2026\] Minimax Optimal Adversarial Reinforcement Learning](minimax_optimal_adversarial_reinforcement_learning.md)
+- [\[ICLR 2026\] Flow Actor-Critic for Offline Reinforcement Learning (FAC)](flow_actor-critic_for_offline_reinforcement_learning.md)
 - [\[ICLR 2026\] Learning to Generate Unit Test via Adversarial Reinforcement Learning](learning_to_generate_unit_test_via_adversarial_reinforcement_learning.md)
 
 </div>

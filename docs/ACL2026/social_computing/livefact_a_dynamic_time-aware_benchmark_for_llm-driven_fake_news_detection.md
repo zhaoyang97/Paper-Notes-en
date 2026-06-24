@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LiveFact: A Dynamic, Time-Aware Benchmark for LLM-Driven Fake News Detection
 description: >-
-  [ACL 2026][Social Computing][Fog of War] LiveFact upgrades "fake news detection" from static binary classification to a dynamic reasoning benchmark updated monthly with time-sliced evidence. It evaluates both factual judgment and cognitive humility ("knowing when to say I don't know") via a dual Classification + Inference mode, while explicitly monitoring ben
+  [ACL 2026][Social Computing][Dynamic benchmark] LiveFact upgrades "fake news detection" from static binary classification to a dynamic reasoning benchmark updated monthly with time-sliced evidence. It evaluates both factual judgment and cognitive humility ("knowing when to say I don't know") via a dual Classification + Inference mode, while explicitly monitoring benchmark contamination through SSA entity substitution.
 tags:
-  - ACL 2026
-  - Social Computing
-  - Fog of War
+  - "ACL 2026"
+  - "Social Computing"
+  - "Dynamic benchmark"
+  - "Time-aware"
+  - "benchmark contamination"
+  - "cognitive humility"
+  - "Fog of War"
 date: 2026-05-08
-content_hash: 0f4dafff60a4ce25
+content_hash: 967e9b8551e3e0fe
 ---
+
 # LiveFact: A Dynamic, Time-Aware Benchmark for LLM-Driven Fake News Detection
 
 **Conference**: ACL 2026  
@@ -147,7 +152,7 @@ Notable discovery: The open-source MoE flagship Qwen3-235B-A22B outperformed clo
 - [\[ACL 2026\] VeriTaS: The First Dynamic Benchmark for Multimodal Automated Fact-Checking](veritas_the_first_dynamic_benchmark_for_multimodal_automated_fact-checking.md)
 - [\[AAAI 2026\] FactGuard: Event-Centric and Commonsense-Guided Fake News Detection](../../AAAI2026/social_computing/factguard_event-centric_and_commonsense-guided_fake_news_detection.md)
 - [\[ACL 2025\] Detection of Human and Machine-Authored Fake News in Urdu](../../ACL2025/social_computing/detection_of_human_and_machine-authored_fake_news_in_urdu.md)
-- [\[ACL 2026\] Confident, Calibrated, or Complicit: Safety Alignment and Ideological Bias in LLM Hate Speech Detection](confident_calibrated_or_complicit_safety_alignment_and_ideological_bias_in_llm_h.md)
+- [\[ACL 2026\] Diagnosing LLM Arbitration Behavior over Pre-evidence Epistemic States in RAG-based Fact-Checking](diagnosing_llm_arbitration_behavior_over_pre-evidence_epistemic_states_in_rag-ba.md)
 
 </div>
 

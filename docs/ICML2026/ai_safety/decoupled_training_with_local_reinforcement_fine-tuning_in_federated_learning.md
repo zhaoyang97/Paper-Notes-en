@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Decoupled Training with Local Reinforcement Fine-Tuning in Federated Learning
 description: >-
-  [ICML 2026][AI Safety][CLIP] FedDTL retains the CLIP image encoder on the client while moving the text encoder to the server as a "global semantic anchor." It employs a two-stage local fine-tuning approach (SFT warm-up followed by GRPO-style RL) to simultaneously mitigate inter-client optimization inconsistency and intra-client overfitting in hete
+  [ICML 2026][AI Safety][Federated Learning] FedDTL retains the CLIP image encoder on the client while moving the text encoder to the server as a "global semantic anchor." It employs a two-stage local fine-tuning approach (SFT warm-up followed by GRPO-style RL) to simultaneously mitigate inter-client optimization inconsistency and intra-client overfitting in heterogeneous and full-data federated scenarios.
 tags:
-  - ICML 2026
-  - AI Safety
-  - CLIP
-  - LoRA
-  - GRPO
+  - "ICML 2026"
+  - "AI Safety"
+  - "Federated Learning"
+  - "CLIP"
+  - "LoRA"
+  - "GRPO"
+  - "Decoupled Training"
 date: 2026-05-08
-content_hash: 34c4347d5bc66f97
+content_hash: 63733edced03983c
 ---
+
 # Decoupled Training with Local Reinforcement Fine-Tuning in Federated Learning
 
 **Conference**: ICML 2026  
@@ -151,10 +154,10 @@ Mean results across 7 datasets (Base / Novel / Harmonic Mean (HM)):
 ## Related Papers
 
 - [\[ICML 2026\] FedTreeLoRA: Reconciling Statistical and Functional Heterogeneity in Federated LoRA Fine-Tuning](fedtreelora_reconciling_statistical_and_functional_heterogeneity_in_federated_lo.md)
-- [\[ICML 2026\] Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models](towards_fine-grained_robustness_attention-guided_test-time_prompt_tuning_for_vis.md)
-- [\[ICML 2026\] PFT: Phonon Fine-tuning for Machine Learned Interatomic Potentials](pft_phonon_fine-tuning_for_machine_learned_interatomic_potentials.md)
 - [\[ICCV 2025\] LoRA-FAIR: Federated LoRA Fine-Tuning with Aggregation and Initialization Refinement](../../ICCV2025/ai_safety/lora-fair_federated_lora_fine-tuning_with_aggregation_and_initialization_refinem.md)
-- [\[ICML 2026\] TCAP: Tri-Component Attention Profiling for Unsupervised Backdoor Detection in MLLM Fine-Tuning](tcap_tri-component_attention_profiling_for_unsupervised_backdoor_detection_in_ml.md)
+- [\[ICML 2026\] Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models](towards_fine-grained_robustness_attention-guided_test-time_prompt_tuning_for_vis.md)
+- [\[ICLR 2026\] Federated Learning of Quantile Inference under Local Differential Privacy](../../ICLR2026/ai_safety/federated_learning_of_quantile_inference_under_local_differential_privacy.md)
+- [\[ICML 2026\] PFT: Phonon Fine-tuning for Machine Learned Interatomic Potentials](pft_phonon_fine-tuning_for_machine_learned_interatomic_potentials.md)
 
 </div>
 

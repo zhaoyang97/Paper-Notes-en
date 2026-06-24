@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] QGShap: Quantum Acceleration for Faithful GNN Explanations
 description: >-
-  [AAAI 2026 (QC+AI Workshop)][Computational Biology][GNN explanation] This paper proposes QGShap, a GNN explainability framework that leverages quantum amplitude amplification to accelerate exact Shapley value computation…
+  [AAAI 2026 (QC+AI Workshop)][Computational Biology][GNN explanation] This paper proposes QGShap, a GNN explainability framework that leverages quantum amplitude amplification to accelerate exact Shapley value computation, achieving a quadratic speedup over classical Monte Carlo methods while maintaining exact (non-approximate) computation.
 tags:
   - "AAAI 2026 (QC+AI Workshop)"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "exact attribution"
   - "graph explainability"
 date: 2026-05-08
-content_hash: cbe32e1c78a2eef9
+content_hash: ece3d22f4801e449
 ---
 
 # QGShap: Quantum Acceleration for Faithful GNN Explanations

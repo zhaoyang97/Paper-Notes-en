@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] STABLE: Shift-Tolerant Allocation via Black–Litterman Using Conditional Diffusion Estimates
 description: >-
-  [ICLR 2026][Time Series][Black–Litterman] STABLE utilizes conditional diffusion models to generate "regime-aware" individual stock return distributions, which are then injected as investor views into Black–Litterman mean-variance optimization. This approach improves the Sharpe ratio by up to 122.9% across four regional equity markets while simultaneously reduc
+  [ICLR 2026][Time Series][Portfolio Allocation] STABLE utilizes conditional diffusion models to generate "regime-aware" individual stock return distributions, which are then injected as investor views into Black–Litterman mean-variance optimization. This approach improves the Sharpe ratio by up to 122.9% across four regional equity markets while simultaneously reducing drawdowns and volatility.
 tags:
-  - ICLR 2026
-  - Time Series
-  - Black–Litterman
+  - "ICLR 2026"
+  - "Time Series"
+  - "Portfolio Allocation"
+  - "Conditional Diffusion"
+  - "Black–Litterman"
+  - "Market Regime"
+  - "Risk Diversification"
 date: 2026-05-08
-content_hash: 5e606f7533414d96
+content_hash: 46ce9e60f5e61633
 ---
+
 # STABLE: Shift-Tolerant Allocation via Black–Litterman Using Conditional Diffusion Estimates
 
 **Conference**: ICLR 2026  
@@ -137,11 +142,11 @@ STABLE achieved the lowest MSE and DTW in all four markets, with MSE reductions 
 
 ## Related Papers
 
+- [\[ICLR 2026\] DeNOTS: Stable Deep Neural ODEs for Time Series](denots_stable_deep_neural_odes_for_time_series.md)
+- [\[ICLR 2026\] The Forecast After the Forecast: A Post-Processing Shift in Time Series](the_forecast_after_the_forecast_a_post-processing_shift_in_time_series.md)
 - [\[ICLR 2026\] Relational Feature Caching for Accelerating Diffusion Transformers](relational_feature_caching_for_accelerating_diffusion_transformers.md)
+- [\[ICLR 2026\] TEDM: Elucidated Diffusion Models for Time Series Forecasting](tedm_time_series_forecasting_with_elucidated_diffusion_models.md)
 - [\[ICLR 2026\] A Study of Posterior Stability in Time-Series Latent Diffusion](a_study_of_posterior_stability_in_time-series_latent_diffusion.md)
-- [\[ICLR 2026\] ICDiffAD: Implicit Conditioning Diffusion Model for Time Series Anomaly Detection](icdiffad_implicit_conditioning_diffusion_model_for_time_series_anomaly_detection.md)
-- [\[ICLR 2026\] Latent-to-Data Cascaded Diffusion Models for Unconditional Time Series Generation](latent-to-data_cascaded_diffusion_models_for_unconditional_time_series_generatio.md)
-- [\[CVPR 2026\] Stable Spike: Dual Consistency Optimization via Bitwise AND Operations for Spiking Neural Networks](../../CVPR2026/time_series/stable_spike_dual_consistency_optimization_via_bitwise_and_operations_for_spikin.md)
 
 </div>
 

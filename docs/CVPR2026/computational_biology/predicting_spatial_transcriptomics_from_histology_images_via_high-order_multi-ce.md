@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Predicting Spatial Transcriptomics from Histology Images via High-Order Multi-Cell Interaction Modeling
 description: >-
-  [CVPR 2026][Computational Biology][Flow Matching] Addressing the limitation that existing methods for predicting spatial gene expression from H&E images only model single spots or pairwise neighbors—failing to capture many-to-many synergistic/antagonistic effects among multiple cells—MCToGene proposes **many-body attention** to explicitly model high-order cross-cell i
+  [CVPR 2026][Computational Biology][Spatial Transcriptomics] Addressing the limitation that existing methods for predicting spatial gene expression from H&E images only model single spots or pairwise neighbors—failing to capture many-to-many synergistic/antagonistic effects among multiple cells—MCToGene proposes **many-body attention** to explicitly model high-order cross-cell interactions. By utilizing a **hierarchical coupling module** to link pairwise and many-body attentio…
 tags:
-  - CVPR 2026
-  - Computational Biology
-  - Flow Matching
+  - "CVPR 2026"
+  - "Computational Biology"
+  - "Spatial Transcriptomics"
+  - "Multi-cell Interaction"
+  - "Many-body Attention"
+  - "Flow Matching"
+  - "Gene Expression Prediction"
 date: 2026-05-08
-content_hash: 6d32b5d4c2b44aa3
+content_hash: da3c757c87a417ac
 ---
+
 # Predicting Spatial Transcriptomics from Histology Images via High-Order Multi-Cell Interaction Modeling
 
 **Conference**: CVPR 2026  
@@ -143,11 +148,11 @@ Regarding overhead: MCToGene (Pair only) uses ~6166 MB VRAM and 1.21 s/epoch, co
 
 ## Related Papers
 
-- [\[CVPR 2026\] HINGE: Adapting a Pre-trained Single-Cell Foundation Model to Spatial Gene Expression Generation from Histology Images](adapting_a_pre-trained_single-cell_foundation_model_to_spatial_gene_expression_g.md)
 - [\[CVPR 2026\] From Spots to Pixels: Dense Spatial Gene Expression Prediction from Histology Images](from_spots_to_pixels_dense_spatial_gene_expression_prediction_from_histology_ima.md)
-- [\[CVPR 2026\] FEAST: Fully Connected Expressive Attention for Spatial Transcriptomics](feast_fully_connected_expressive_attention_for_spatial_transcriptomics.md)
-- [\[CVPR 2026\] Cross-Slice Knowledge Transfer via Masked Multi-Modal Heterogeneous Graph Contrastive Learning for Spatial Gene Expression Inference](cross-slice_knowledge_transfer_via_masked_multi-modal_heterogeneous_graph_contra.md)
+- [\[CVPR 2026\] HINGE: Adapting a Pre-trained Single-Cell Foundation Model to Spatial Gene Expression Generation from Histology Images](adapting_a_pre-trained_single-cell_foundation_model_to_spatial_gene_expression_g.md)
+- [\[CVPR 2026\] Multi-View Hierarchical Alignment Learning for Spatial Transcriptomics](multi-view_hierarchical_alignment_learning_for_spatial_transcriptomics.md)
 - [\[CVPR 2026\] HyperST: Hierarchical Hyperbolic Learning for Spatial Transcriptomics Prediction](hyperst_hierarchical_hyperbolic_learning_for_spatial_transcriptomics_prediction.md)
+- [\[CVPR 2026\] FEAST: Fully Connected Expressive Attention for Spatial Transcriptomics](feast_fully_connected_expressive_attention_for_spatial_transcriptomics.md)
 
 </div>
 

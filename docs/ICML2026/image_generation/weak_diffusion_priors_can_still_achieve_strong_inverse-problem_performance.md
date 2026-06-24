@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Weak Diffusion Priors Can Still Achieve Strong Inverse-Problem Performance
 description: >-
-  [ICML 2026][Image Generation][Paper Note] The paper discovers that diffusion model priors with low fidelity or domain mismatch can still achieve robust performance in information-rich inverse problems. This seemingly contradictory phenomenon is explained through Bayesian consistency theory and local correlation analysis, providing explicit conditions for when
+  [ICML 2026 Spotlight][Image Generation][Diffusion Priors] The paper discovers that diffusion model priors with low fidelity or domain mismatch can still achieve robust performance in information-rich inverse problems. This seemingly contradictory phenomenon is explained through Bayesian consistency theory and local correlation analysis, providing explicit conditions for when weak priors remain effective.
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML 2026 Spotlight"
+  - "Image Generation"
+  - "Diffusion Priors"
+  - "Inverse Problems"
+  - "Weak Priors"
+  - "Bayesian Inference"
+  - "Latent Noise Optimization"
 date: 2026-05-08
-content_hash: 0c9ea675a78ab723
+content_hash: d7de6c54790a2a69
 ---
+
 # Weak Diffusion Priors Can Still Achieve Strong Inverse-Problem Performance
 
 **Conference**: ICML 2026 Spotlight  
@@ -114,11 +120,11 @@ Regardless of generation steps or training domain, spatial autocorrelation decay
 
 ## Related Papers
 
-- [\[CVPR 2026\] Improving Diffusion Generalization with Weak-to-Strong Segmented Guidance](../../CVPR2026/image_generation/improving_diffusion_generalization_with_weak-to-strong_segmented_guidance.md)
+- [\[ICLR 2026\] Weak-to-Strong Diffusion with Reflection](../../ICLR2026/image_generation/weak-to-strong_diffusion_with_reflection.md)
 - [\[ICML 2026\] Saving Foundation Flow-Matching Priors for Inverse Problems](saving_foundation_flow-matching_priors_for_inverse_problems.md)
+- [\[CVPR 2026\] Improving Diffusion Generalization with Weak-to-Strong Segmented Guidance](../../CVPR2026/image_generation/improving_diffusion_generalization_with_weak-to-strong_segmented_guidance.md)
 - [\[CVPR 2025\] Improving Diffusion Inverse Problem Solving with Decoupled Noise Annealing](../../CVPR2025/image_generation/improving_diffusion_inverse_problem_solving_with_decoupled_noise_annealing.md)
 - [\[ICML 2026\] Zeroth-Order Non-Log-Concave Sampling with Variance Reduction and Applications to Inverse Problems](zeroth-order_non-log-concave_sampling_with_variance_reduction_and_applications_t.md)
-- [\[ICML 2026\] Bayesian Tensor Decomposition with Diffusion Model Prior](bayesian_tensor_decomposition_with_diffusion_model_prior.md)
 
 </div>
 

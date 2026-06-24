@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Gauge Flow Matching: Efficient Constrained Generative Modeling over General Convex Set and Beyond
 description: >-
-  [ICLR 2026][Image Generation][Flow Matching] This paper proposes Gauge Flow Matching (GFM), which uses an explicit bijective gauge mapping to equivalently transform constrained generation problems on arbitrary compact convex sets to a unit ball. This allows for low-complexity reflection/projection within the ball to strictly guarantee feasibility before mapping b
+  [ICLR 2026][Image Generation][Constrained generative modeling] This paper proposes Gauge Flow Matching (GFM), which uses an explicit bijective gauge mapping to equivalently transform constrained generation problems on arbitrary compact convex sets to a unit ball. This allows for low-complexity reflection/projection within the ball to strictly guarantee feasibility before mapping back to the original space. GFM achieves "100% constraint satisfaction + high quality + high speed…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
-  - gauge mapping
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Constrained generative modeling"
+  - "flow matching"
+  - "gauge mapping"
+  - "reflective sampling"
+  - "feasibility assurance"
 date: 2026-05-08
-content_hash: 394e93cadd9e88d1
+content_hash: 521e5b723952b30b
 ---
+
 # Gauge Flow Matching: Efficient Constrained Generative Modeling over General Convex Set and Beyond
 
 **Conference**: ICLR 2026  
@@ -138,7 +142,7 @@ High-dimensional Combinatorial Optimization Relaxation ($n=10,000$, PSD Cone + L
 - [\[ICLR 2026\] Mirror Flow Matching with Heavy-Tailed Priors for Generative Modeling on Convex Domains](mirror_flow_matching_with_heavy-tailed_priors_for_generative_modeling_on_convex_.md)
 - [\[ICLR 2026\] LapFlow: Laplacian Multi-scale Flow Matching for Generative Modeling](lapflow_laplacian_multi-scale_flow_matching_for_generative_modeling.md)
 - [\[ICLR 2026\] Flow Along the $K$-Amplitude for Generative Modeling](flow_along_the_k-amplitude_for_generative_modeling.md)
-- [\[ICLR 2026\] FastFlow: Accelerating The Generative Flow Matching Models with Bandit Inference](fastflow_accelerating_the_generative_flow_matching_models_with_bandit_inference.md)
+- [\[ICLR 2026\] Strictly Constrained Generative Modeling via Split Augmented Langevin Sampling](strictly_constrained_generative_modeling_via_split_augmented_langevin_sampling.md)
 - [\[ICLR 2026\] Delay Flow Matching](delay_flow_matching.md)
 
 </div>

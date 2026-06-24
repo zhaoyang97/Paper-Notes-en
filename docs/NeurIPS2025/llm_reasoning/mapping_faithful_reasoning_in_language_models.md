@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Mapping Faithful Reasoning in Language Models
 description: >-
-  [NeurIPS 2025][LLM Reasoning][CoT faithfulness] This paper proposes the Concept Walk framework, which tracks the evolution of internal concept representations across reasoning steps by projecting residual stream activati…
+  [NeurIPS 2025][Reasoning][CoT faithfulness] This paper proposes the Concept Walk framework, which tracks the evolution of internal concept representations across reasoning steps by projecting residual stream activations at each step onto concept directions learned from contrastive data, thereby distinguishing whether a CoT chain genuinely participates in computation or merely serves as post-hoc decorative output.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "CoT faithfulness"
   - "mechanistic interpretability"
   - "reasoning models"
   - "safety vectors"
   - "activation analysis"
 date: 2026-05-08
-content_hash: 95c7a0f34b51c584
+content_hash: e4a55af9e8c92f29
 ---
 
 # Mapping Faithful Reasoning in Language Models
@@ -143,8 +143,8 @@ A three-stage methodology: (1) **Filtering**—samples are categorized as "hard"
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] ProofSketch: Efficient Verified Reasoning for Large Language Models](proofsketch_efficient_verified_reasoning_for_large_language_models.md)
 - [\[ACL 2026\] RSAT: Structured Attribution Makes Small Language Models Faithful Table Reasoners](../../ACL2026/llm_reasoning/rsat_structured_attribution_makes_small_language_models_faithful_table_reasoners.md)
+- [\[NeurIPS 2025\] ProofSketch: Efficient Verified Reasoning for Large Language Models](proofsketch_efficient_verified_reasoning_for_large_language_models.md)
 - [\[NeurIPS 2025\] ChartMuseum: Testing Chart Visual Reasoning in Large Vision-Language Models](chartmuseum_testing_visual_reasoning_capabilities_of_large_v.md)
 - [\[NeurIPS 2025\] I-RAVEN-X: Benchmarking Generalization and Robustness of Analogical and Mathematical Reasoning in Large Language and Reasoning Models](i-raven-x_benchmarking_generalization_and_robustness_of_analogical_and_mathemati.md)
 - [\[NeurIPS 2025\] Scalable Best-of-N Selection for Large Language Models via Self-Certainty](scalable_best-of-n_selection_for_large_language_models_via_self-certainty.md)

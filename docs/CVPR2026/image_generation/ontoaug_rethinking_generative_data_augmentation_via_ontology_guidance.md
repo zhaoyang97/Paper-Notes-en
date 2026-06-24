@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OntoAug: Rethinking Generative Data Augmentation via Ontology Guidance
 description: >-
-  [CVPR 2026][Others][Diffusion Model] OntoAug explicitly decomposes an image into the "ontology part" (foreground subject) and the "incidental part" (background). It uses the foreground mask as a hard constraint for diffusion inpainting to modify only the background while keeping the subject unchanged. Combined with geometric layout transformations and a b
+  [CVPR 2026][Image Generation][Generative Data Augmentation] OntoAug explicitly decomposes an image into the "ontology part" (foreground subject) and the "incidental part" (background). It uses the foreground mask as a hard constraint for diffusion inpainting to modify only the background while keeping the subject unchanged. Combined with geometric layout transformations and a background vocabulary expanded by LVLM/LLMs, it simultaneously achieves "subject stability…
 tags:
-  - CVPR 2026
-  - Others
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Generative Data Augmentation"
+  - "Ontology Guidance"
+  - "Diffusion Models"
+  - "Foreground-Background Decoupling"
+  - "Fine-grained Classification"
 date: 2026-05-08
-content_hash: 927892c0d6b8eff1
+content_hash: fe4bb6de90ab93d3
 ---
+
 # OntoAug: Rethinking Generative Data Augmentation via Ontology Guidance
 
 **Conference**: CVPR 2026  
@@ -161,11 +166,11 @@ Overall coordination strategy ablation (ResNet-50/CUB): Original 65.50 → (Plac
 
 ## Related Papers
 
+- [\[CVPR 2026\] Transition Models: Rethinking the Generative Learning Objective](transition_models_rethinking_the_generative_learning_objective.md)
+- [\[NeurIPS 2025\] UtilGen: Utility-Centric Generative Data Augmentation with Dual-Level Task Adaptation](../../NeurIPS2025/image_generation/utilgen_utility-centric_generative_data_augmentation_with_dual-level_task_adapta.md)
+- [\[ICLR 2026\] Do We Need All the Synthetic Data? Targeted Image Augmentation via Diffusion Models](../../ICLR2026/image_generation/do_we_need_all_the_synthetic_data_targeted_image_augmentation_via_diffusion_mode.md)
 - [\[CVPR 2026\] Accelerating Diffusion via Hybrid Data-Pipeline Parallelism Based on Conditional Guidance Scheduling](accelerating_diffusion_via_hybrid_data-pipeline_parallelism_based_on_conditional.md)
-- [\[CVPR 2026\] Adaptive Data Augmentation with Multi-armed Bandit: Sample-Efficient Embedding Calibration for Implicit Pattern Recognition](adaptive_data_augmentation_with_multi-armed_bandit_sample-efficient_embedding_ca.md)
-- [\[ICML 2025\] Curvature Enhanced Data Augmentation for Regression](../../ICML2025/others/curvature_enhanced_data_augmentation_for_regression.md)
-- [\[CVPR 2026\] AVGGT: Rethinking Global Attention for Accelerating VGGT](avggt_rethinking_global_attention_for_accelerating_vggt.md)
-- [\[ACL 2025\] Is Linguistically-Motivated Data Augmentation Worth It?](../../ACL2025/others/is_linguistically-motivated_data_augmentation_worth_it.md)
+- [\[CVPR 2026\] CTCal: Rethinking Text-to-Image Diffusion Models via Cross-Timestep Self-Calibration](ctcal_rethinking_text-to-image_diffusion_models_via_cross-timestep_self-calibrat.md)
 
 </div>
 

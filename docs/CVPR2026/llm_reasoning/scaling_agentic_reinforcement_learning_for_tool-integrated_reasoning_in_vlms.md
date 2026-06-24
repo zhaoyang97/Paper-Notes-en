@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Scaling Agentic Reinforcement Learning for Tool-Integrated Reasoning in VLMs
 description: >-
-  [CVPR 2026][LLM Reasoning][Reinforcement Learning] This work proposes VISTA-Gym, a scalable training environment for visual tool agents (comprising 7 task categories, 13 datasets, and 26 standardized visual tools). Within this environment, the authors train VISTA-R1 using a "Behavioral Cloning (BC) warm-up + multi-round online GRPO" paradigm. This enables 8B-scale VLMs
+  [CVPR 2026][Reasoning][Tool-integrated reasoning] This work proposes VISTA-Gym, a scalable training environment for visual tool agents (comprising 7 task categories, 13 datasets, and 26 standardized visual tools). Within this environment, the authors train VISTA-R1 using a "Behavioral Cloning (BC) warm-up + multi-round online GRPO" paradigm. This enables 8B-scale VLMs to dynamically select, invoke, and coordinate visual tools during reasoning…
 tags:
-  - CVPR 2026
-  - LLM Reasoning
-  - Reinforcement Learning
-  - GRPO
+  - "CVPR 2026"
+  - "Reasoning"
+  - "Tool-integrated reasoning"
+  - "Visual agent"
+  - "Reinforcement learning"
+  - "GRPO"
+  - "Training environment"
 date: 2026-05-08
-content_hash: 00baa95ab813e2be
+content_hash: 5bb9d66ff7865e84
 ---
+
 # Scaling Agentic Reinforcement Learning for Tool-Integrated Reasoning in VLMs
 
 **Conference**: CVPR 2026  
@@ -132,16 +136,16 @@ Overall Avg. ACC (%) for VISTA-R1 (Qwen2.5-VL-7B):
 - Value: ⭐⭐⭐⭐⭐ Infrastructure for tool-integrated VLM RL is highly valuable for the community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] SimpleTIR: End-to-End Reinforcement Learning for Multi-Turn Tool-Integrated Reasoning](../../ICLR2026/llm_reasoning/simpletir_end-to-end_reinforcement_learning_for_multi-turn_tool-integrated_reaso.md)
+- [\[ICLR 2026\] Toward Effective Tool-Integrated Reasoning via Self-Evolved Preference Learning](../../ICLR2026/llm_reasoning/toward_effective_tool-integrated_reasoning_via_self-evolved_preference_learning.md)
 - [\[ICLR 2026\] THOR: Tool-Integrated Hierarchical Optimization via RL for Mathematical Reasoning](../../ICLR2026/llm_reasoning/thor_tool-integrated_hierarchical_optimization_via_rl_for_mathematical_reasoning.md)
+- [\[ICLR 2026\] Agentic Reinforcement Learning with Implicit Step Rewards](../../ICLR2026/llm_reasoning/agentic_reinforcement_learning_with_implicit_step_rewards.md)
 - [\[ICML 2026\] MOSAIC: Learning When to Act or Refuse — Guarding Agentic Reasoning Models for Safe Multi-step Tool Use](../../ICML2026/llm_reasoning/learning_when_to_act_or_refuse_guarding_agentic_reasoning_models_for_safe_multi-.md)
-- [\[ACL 2026\] Evo-Attacker: Memory-Augmented Reinforcement Learning for Long-Horizon Tool Attacks on LLM-MAS](../../ACL2026/llm_reasoning/evo-attacker_memory-augmented_reinforcement_learning_for_long-horizon_tool_attac.md)
-- [\[ACL 2026\] TemplateRL: Structured Template-Guided Reinforcement Learning for LLM Reasoning](../../ACL2026/llm_reasoning/templaterl_structured_template-guided_reinforcement_learning_for_llm_reasoning.md)
-- [\[ACL 2026\] HISR: Hindsight Information Modulated Segmental Process Rewards for Multi-turn Agentic Reinforcement Learning](../../ACL2026/llm_reasoning/hisr_hindsight_information_modulated_segmental_process_rewards_for_multi-turn_ag.md)
 
 </div>
 

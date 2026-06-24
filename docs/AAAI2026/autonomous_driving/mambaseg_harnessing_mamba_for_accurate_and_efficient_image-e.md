@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MambaSeg: Harnessing Mamba for Accurate and Efficient Image-Event Semantic Segmentation
 description: >-
-  [AAAI 2026][Autonomous Driving][Event Camera] MambaSeg is proposed, employing a dual-branch parallel Mamba encoder to process RGB images and event streams respectively…
+  [AAAI 2026][Autonomous Driving][Event Camera] MambaSeg is proposed, employing a dual-branch parallel Mamba encoder to process RGB images and event streams respectively, with a Dual-Dimension Interaction Module (DDIM) for fine-grained cross-modal fusion along both spatial and temporal dimensions. It achieves state-of-the-art performance of 77.56%/75.10% mIoU on DDD17 and DSEC with only 25.44M parameters, offering substantially better efficiency than Transformer-based approache…
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Semantic Segmentation"
   - "Spatiotemporal Interaction"
 date: 2026-05-08
-content_hash: 5aff73593f2ca0dd
+content_hash: 99908aec1e229aed
 ---
 
 # MambaSeg: Harnessing Mamba for Accurate and Efficient Image-Event Semantic Segmentation
@@ -128,10 +128,10 @@ The effectiveness of Mamba in RGB-Event fusion validated here suggests potential
 ## Related Papers
 
 - [\[CVPR 2026\] FlashCap: Millisecond-Accurate Human Motion Capture via Flashing LEDs and Event-Based Vision](../../CVPR2026/autonomous_driving/flashcap_millisecond-accurate_human_motion_capture_via_flashing_leds_and_event-b.md)
+- [\[CVPR 2025\] Trajectory Mamba: Efficient Attention-Mamba Forecasting Model Based on Selective SSM](../../CVPR2025/autonomous_driving/trajectory_mamba_efficient_attention-mamba_forecasting_model_based_on_selective_.md)
 - [\[AAAI 2026\] Hierarchical Prompt Learning for Image- and Text-Based Person Re-Identification](hierarchical_prompt_learning_for_image-_and_text-based_person_re-identification.md)
-- [\[NeurIPS 2025\] StreamForest: Efficient Online Video Understanding with Persistent Event Memory](../../NeurIPS2025/autonomous_driving/streamforest_efficient_online_video_understanding_with_persistent_event_memory.md)
-- [\[ICLR 2026\] Adaptive Augmentation-Aware Latent Learning for Robust LiDAR Semantic Segmentation](../../ICLR2026/autonomous_driving/adaptive_augmentation-aware_latent_learning_for_robust_lidar_semantic_segmentati.md)
-- [\[NeurIPS 2025\] Leveraging Depth and Language for Open-Vocabulary Domain-Generalized Semantic Segmentation](../../NeurIPS2025/autonomous_driving/leveraging_depth_and_language_for_open-vocabulary_domain-generalized_semantic_se.md)
+- [\[ECCV 2024\] Reliability in Semantic Segmentation: Can We Use Synthetic Data?](../../ECCV2024/autonomous_driving/reliability_in_semantic_segmentation_can_we_use_synthetic_data.md)
+- [\[CVPR 2025\] CAWM-Mamba: A Unified Model for Infrared-Visible Image Fusion and Compound Adverse Weather Restoration](../../CVPR2025/autonomous_driving/cawm-mamba_a_unified_model_for_infrared-visible_image_fusion_and_compound_advers.md)
 
 </div>
 

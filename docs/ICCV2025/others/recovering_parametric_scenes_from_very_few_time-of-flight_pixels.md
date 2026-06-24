@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Recovering Parametric Scenes from Very Few Time-of-Flight Pixels
 description: >-
-  [ICCV 2025][Time-of-Flight sensor] This paper investigates the feasibility of recovering 3D parametric scene geometry using an extremely small number (as few as 15 pixels) of low-cost wide-field-of-view ToF sensors. An a…
+  [ICCV 2025][Time-of-Flight sensor] This paper investigates the feasibility of recovering 3D parametric scene geometry using an extremely small number (as few as 15 pixels) of low-cost wide-field-of-view ToF sensors. An analysis-by-synthesis framework combining feedforward prediction and differentiable rendering is proposed, demonstrating surprisingly strong performance on tasks such as 6D object pose estimation.
 tags:
   - "ICCV 2025"
   - "Time-of-Flight sensor"
@@ -11,7 +11,7 @@ tags:
   - "SPAD"
   - "parametric scene recovery"
 date: 2026-05-08
-content_hash: 79081d489d4133b3
+content_hash: f66b986b8e84a6c9
 ---
 
 # Recovering Parametric Scenes from Very Few Time-of-Flight Pixels
@@ -139,9 +139,9 @@ With only 15 ToF pixels, the proposed method approaches the performance of RGB-D
 
 - [\[ICCV 2025\] AdaptiveAE: An Adaptive Exposure Strategy for HDR Capturing in Dynamic Scenes](adaptiveae_an_adaptive_exposure_strategy_for_hdr_capturing_i.md)
 - [\[ICCV 2025\] Doodle Your Keypoints: Sketch-Based Few-Shot Keypoint Detection](doodle_your_keypoints_sketch-based_few-shot_keypoint_detection.md)
-- [\[ICCV 2025\] Is Meta-Learning Out? Rethinking Unsupervised Few-Shot Classification with Limited Entropy](is_meta-learning_out_rethinking_unsupervised_few-shot_classification_with_limite.md)
 - [\[NeurIPS 2025\] TrackingWorld: World-centric Monocular 3D Tracking of Almost All Pixels](../../NeurIPS2025/others/trackingworld_world-centric_monocular_3d_tracking_of_almost_all_pixels.md)
-- [\[NeurIPS 2025\] Test-Time Adaptation by Causal Trimming](../../NeurIPS2025/others/test-time_adaptation_by_causal_trimming.md)
+- [\[CVPR 2026\] Basis-Oriented Low-rank Transfer for Few-Shot and Test-Time Adaptation](../../CVPR2026/others/basis-oriented_low-rank_transfer_for_few-shot_and_test-time_adaptation.md)
+- [\[ICCV 2025\] Is Meta-Learning Out? Rethinking Unsupervised Few-Shot Classification with Limited Entropy](is_meta-learning_out_rethinking_unsupervised_few-shot_classification_with_limite.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Where Computation Lives Inside TabPFN: Causal Localisation of Attention Head Function
 description: >-
-  [ICML 2026][Interpretability][TabPFN] This paper presents the first causal mechanistic analysis of the tabular foundation model TabPFN-2.5 using activation patching, ablation, and attention entropy. The study reveals that one of the three feature attention heads (Head 2) possesses a causal necessity $2\text{--}5\times$ greater at its peak layer than other
+  [ICML 2026][Interpretability][TabPFN] This paper presents the first causal mechanistic analysis of the tabular foundation model TabPFN-2.5 using activation patching, ablation, and attention entropy. The study reveals that one of the three feature attention heads (Head 2) possesses a causal necessity $2\text{--}5\times$ greater at its peak layer than other heads, with the peak layer shifting based on task complexity. In contrast, other heads exhibit symmetric late-layer patter…
 tags:
-  - ICML 2026
-  - Interpretability
-  - TabPFN
+  - "ICML 2026"
+  - "Interpretability"
+  - "TabPFN"
+  - "Activation Patching"
+  - "Attention Head Ablation"
+  - "Attention Entropy"
+  - "In-Context Learning (ICL)"
 date: 2026-05-08
-content_hash: f1f22f3a27d90991
+content_hash: e80621263a1a1bc4
 ---
+
 # Where Computation Lives Inside TabPFN: Causal Localisation of Attention Head Function
 
 **Conference**: ICML 2026  
@@ -124,11 +129,20 @@ Key activation patching recovery data:
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-...
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] How Few-Shot Examples Add Up: A Causal Decomposition of Function Vectors in In-Context Learning](how_few-shot_examples_add_up_a_causal_decomposition_of_function_vectors_in_in-co.md)
+- [\[NeurIPS 2025\] Causal Head Gating: A Framework for Interpreting Roles of Attention Heads in Transformers](../../NeurIPS2025/interpretability/causal_head_gating_a_framework_for_interpreting_roles_of_attention_heads_in_tran.md)
+- [\[ICML 2026\] Where's the Plan? Locating Latent Planning in Language Models with Lightweight Mechanistic Interventions](wheres_the_plan_locating_latent_planning_in_language_models_with_lightweight_mec.md)
+- [\[AAAI 2026\] Attention Gathers, MLPs Compose: A Causal Analysis of an Action-Outcome Circuit in VideoViT](../../AAAI2026/interpretability/attention_gathers_mlps_compose_a_causal_analysis_of_an_action-outcome_circuit_in.md)
+- [\[ICLR 2026\] Localizing Task Recognition and Task Learning in In-Context Learning via Attention Head Analysis](../../ICLR2026/interpretability/localizing_task_recognition_and_task_learning_in_in-context_learning_via_attenti.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[NeurIPS 2025\] Causal Head Gating: A Framework for Interpreting Roles of Attention Heads in Transformers](../../NeurIPS2025/interpretability/causal_head_gating_a_framework_for_interpreting_roles_of_attention_heads_in_tran.md)

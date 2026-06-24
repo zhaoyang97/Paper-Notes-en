@@ -1,14 +1,19 @@
 ---
 title: >-
-  [Paper Note] UDM-GRPO: 统一离散扩散模型的稳定高效 GRPO
+  [Paper Note] UDM-GRPO: Stable and Efficient GRPO for Unified Discrete Diffusion Models
 description: >-
-  [ICML 2026][Alignment & RLHF][Paper Note] The first successful integration of GRPO into discrete diffusion models (UDM) is achieved by defining the final clean sample as the action and reconstructing trajectories via the forward process, addressing training instability and reaching SOTA on benchmarks like GenEval.
+  [ICML 2026 Spotlight][LLM Alignment][Discrete Diffusion Models] The first successful integration of GRPO into discrete diffusion models (UDM) is achieved by defining the final clean sample as the action and reconstructing trajectories via the forward process, addressing training instability and reaching SOTA on benchmarks like GenEval.
 tags:
-  - ICML 2026
-  - Alignment & RLHF
+  - "ICML 2026 Spotlight"
+  - "LLM Alignment"
+  - "Discrete Diffusion Models"
+  - "Policy Optimization"
+  - "Text-to-Image"
+  - "Training Stability"
 date: 2026-05-08
-content_hash: 71a71ff868c82bc0
+content_hash: 4a5a92f035a3f29b
 ---
+
 # UDM-GRPO: Stable and Efficient GRPO for Unified Discrete Diffusion Models
 
 **Conference**: ICML 2026 Spotlight  
@@ -123,8 +128,8 @@ Standard Diffusion-RL methods often optimize both conditional and unconditional 
 - [\[ICML 2026\] F-TIS: Harnessing Diverse Models in Collaborative GRPO](f-tis_harnessing_diverse_models_in_collaborative_grpo.md)
 - [\[AAAI 2026\] LaF-GRPO: In-Situ Navigation Instruction Generation for the Visually Impaired via GRPO with LLM-as-Follower Reward](../../AAAI2026/llm_alignment/laf-grpo_in-situ_navigation_instruction_generation_for_the_visually_impaired_via.md)
 - [\[ACL 2026\] Mitigating Selection Bias in Large Language Models via Permutation-Aware GRPO](../../ACL2026/llm_alignment/mitigating_selection_bias_in_large_language_models_via_permutation-aware_grpo.md)
+- [\[ICML 2026\] Toward Stable Value Alignment: Introducing Independent Modules for Consistent Value Guidance](toward_stable_value_alignment_introducing_independent_modules_for_consistent_val.md)
 - [\[ICLR 2026\] Group-Relative REINFORCE Is Secretly an Off-Policy Algorithm: Demystifying Some Myths About GRPO and Its Friends](../../ICLR2026/llm_alignment/group-relative_reinforce_is_secretly_an_off-policy_algorithm_demystifying_some_m.md)
-- [\[ACL 2026\] Taming Extreme Tokens: Covariance-Aware GRPO with Gaussian-Kernel Advantage Reweighting](../../ACL2026/llm_alignment/taming_extreme_tokens_covariance-aware_grpo_with_gaussian-kernel_advantage_rewei.md)
 
 </div>
 

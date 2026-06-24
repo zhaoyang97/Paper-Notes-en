@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Retaining Suboptimal Actions to Follow Shifting Optima in Multi-Agent RL
 description: >-
-  [ICLR 2026][Reinforcement Learning][S2Q] Ours proposes S2Q (Successive Sub-value Q-learning), which explicitly retains suboptimal joint actions by progressively learning $K$ sub-value functions. Combined with a Softmax behavior policy for prioritized sampling among candidates, it addresses the fundamental issue in cooperative MARL where value decomposition me
+  [ICLR 2026][Reinforcement Learning][Multi-Agent RL] Ours proposes S2Q (Successive Sub-value Q-learning), which explicitly retains suboptimal joint actions by progressively learning $K$ sub-value functions. Combined with a Softmax behavior policy for prioritized sampling among candidates, it addresses the fundamental issue in cooperative MARL where value decomposition methods converge to suboptimal policies due to dynamic shifts in the optimal point.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - S2Q
-  - CTDE
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Multi-Agent RL"
+  - "Value Decomposition"
+  - "Suboptimal Action Retention"
+  - "Softmax Behavior Policy"
+  - "S2Q"
+  - "CTDE"
 date: 2026-05-08
-content_hash: 2143223f21d33ce5
+content_hash: 10bc102dbcfe6bca
 ---
+
 # Retaining Suboptimal Actions to Follow Shifting Optima in Multi-Agent RL
 
 **Conference**: ICLR 2026  
@@ -137,10 +142,10 @@ Trajectory behavior analysis in 6h_vs_8z observed:
 ## Related Papers
 
 - [\[ICLR 2026\] Potentially Optimal Joint Actions Recognition for Cooperative Multi-Agent Reinforcement Learning](potentially_optimal_joint_actions_recognition_for_cooperative_multi-agent_reinfo.md)
+- [\[ICLR 2026\] Inter-Agent Relative Representations for Multi-Agent Option Discovery](inter-agent_relative_representations_for_multi-agent_option_discovery.md)
 - [\[ICLR 2026\] Multi-Agent Guided Policy Optimization](multi-agent_guided_policy_optimization.md)
 - [\[ICLR 2026\] MARL2Grid-TR: A Multi-Agent RL Benchmark in Power Grid Operations](marl2grid-tr_a_multi-agent_rl_benchmark_in_power_grid_operations.md)
-- [\[ICLR 2026\] Inter-Agent Relative Representations for Multi-Agent Option Discovery](inter-agent_relative_representations_for_multi-agent_option_discovery.md)
-- [\[ICLR 2026\] When Is Diversity Rewarded in Cooperative Multi-Agent Learning?](when_is_diversity_rewarded_in_cooperative_multi-agent_learning.md)
+- [\[ICLR 2026\] Distributionally Robust Cooperative Multi-agent Reinforcement Learning with Value Factorization](distributionally_robust_cooperative_multi-agent_reinforcement_learning_with_valu.md)
 
 </div>
 

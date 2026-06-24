@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LangHOPS: Language Grounded Hierarchical Open-Vocabulary Part Segmentation
 description: >-
-  [NeurIPS 2025][Segmentation][Open-vocabulary part segmentation] LangHOPS is the first open-vocabulary object-part instance segmentation framework based on a multimodal large language model (MLLM). It establishes object-p…
+  [NeurIPS 2025][Segmentation][Open-vocabulary part segmentation] LangHOPS is the first open-vocabulary object-part instance segmentation framework based on a multimodal large language model (MLLM). It establishes object-part hierarchical relationships in language space and leverages the knowledge and reasoning capabilities of MLLMs to bridge multi-granularity concepts. It achieves 56.9% AP on PartImageNet, surpassing the previous SOTA by 5.5%, and outperforms by 4.8% in cross-…
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "language-space hierarchical modeling"
   - "instance segmentation"
 date: 2026-05-08
-content_hash: 7dd5a36e0582e6cb
+content_hash: 13d3c10fb88a288d
 ---
 
 # LangHOPS: Language Grounded Hierarchical Open-Vocabulary Part Segmentation
@@ -173,11 +173,11 @@ LangHOPS achieves the best hIoU on PPS-116 and PartImageNet, and matches PartCAT
 
 ## Related Papers
 
+- [\[CVPR 2026\] HOPS: Hierarchical Open-vocabulary Part Segmentation with Attention-Aware Filtering and Affinity-Guided Enhancement](../../CVPR2026/segmentation/hops_hierarchical_open-vocabulary_part_segmentation_with_attention-aware_filteri.md)
 - [\[NeurIPS 2025\] PartNeXt: A Next-Generation Dataset for Fine-Grained and Hierarchical 3D Part Understanding](partnext_a_next-generation_dataset_for_fine-grained_and_hierarchical_3d_part_und.md)
 - [\[NeurIPS 2025\] COS3D: Collaborative Open-Vocabulary 3D Segmentation](cos3d_collaborative_open-vocabulary_3d_segmentation.md)
+- [\[CVPR 2025\] Fine-Grained Image-Text Correspondence with Cost Aggregation for Open-Vocabulary Part Segmentation](../../CVPR2025/segmentation/fine-grained_image-text_correspondence_with_cost_aggregation_for_open-vocabulary.md)
 - [\[CVPR 2026\] GeoGuide: Hierarchical Geometric Guidance for Open-Vocabulary 3D Semantic Segmentation](../../CVPR2026/segmentation/geoguide_hierarchical_geometric_guidance_for_open-vocabulary_3d_semantic_segment.md)
-- [\[CVPR 2026\] PCA-Seg: Revisiting Cost Aggregation for Open-Vocabulary Semantic and Part Segmentation](../../CVPR2026/segmentation/pca-seg_revisiting_cost_aggregation_for_openvocabulary_semantic_and_part_segmentat.md)
-- [\[ACL 2026\] AnchorSeg: Language Grounded Query Banks for Reasoning Segmentation](../../ACL2026/segmentation/anchorseg_language_grounded_query_banks_for_reasoning_segmentation.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Free-MoRef: Instantly Multiplexing Context Perception Capabilities of Video-MLLMs within Single Inference
 description: >-
-  [ICCV 2025][Multimodal VLM][Long Video Understanding] This paper proposes Free-MoRef, a training-free method inspired by Mixture-of-Experts (MoE) that partitions long video tokens into multiple short sequences as multi-r…
+  [ICCV 2025][Multimodal VLM][Long Video Understanding] This paper proposes Free-MoRef, a training-free method inspired by Mixture-of-Experts (MoE) that partitions long video tokens into multiple short sequences as multi-references, queries them in parallel via the MoRef attention mechanism, and fuses unified activation values. The approach enables efficient and comprehensive understanding of 2× to 8× longer frame inputs on a single A100 GPU, surpassing dedicated long-video mod…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "MoE-Inspired"
   - "Attention Mechanism"
 date: 2026-05-08
-content_hash: fb8640d23c0748f3
+content_hash: 5b960278ed6b52c8
 ---
 
 # Free-MoRef: Instantly Multiplexing Context Perception Capabilities of Video-MLLMs within Single Inference
@@ -168,10 +168,10 @@ $N=2$ yields the best performance while reducing FLOPs to only 27.6% of the base
 ## Related Papers
 
 - [\[ICCV 2025\] MC-Bench: A Benchmark for Multi-Context Visual Grounding in the Era of MLLMs](mc-bench_a_benchmark_for_multi-context_visual_grounding_in_the_era_of_mllms.md)
-- [\[NeurIPS 2025\] Video-R1: Reinforcing Video Reasoning in MLLMs](../../NeurIPS2025/multimodal_vlm/video-r1_reinforcing_video_reasoning_in_mllms.md)
-- [\[AAAI 2026\] AbductiveMLLM: Boosting Visual Abductive Reasoning Within MLLMs](../../AAAI2026/multimodal_vlm/abductivemllm_boosting_visual_abductive_reasoning_within_mll.md)
+- [\[ACL 2025\] Activating Distributed Visual Region within LLMs for Efficient and Effective Vision-Language Training and Inference](../../ACL2025/multimodal_vlm/activating_distributed_visual_region_within_llms_for_efficient_and_effective_vis.md)
+- [\[ACL 2025\] Inference Compute-Optimal Video Vision Language Models](../../ACL2025/multimodal_vlm/inference_compute_optimal_video_vlm.md)
+- [\[CVPR 2026\] Benchmarking Single-Factor Physical Video-to-Audio Generation](../../CVPR2026/multimodal_vlm/benchmarking_single-factor_physical_video-to-audio_generation.md)
 - [\[NeurIPS 2025\] Training-free Online Video Step Grounding](../../NeurIPS2025/multimodal_vlm/training-free_online_video_step_grounding.md)
-- [\[NeurIPS 2025\] MME-VideoOCR: Evaluating OCR-Based Capabilities of Multimodal LLMs in Video Scenarios](../../NeurIPS2025/multimodal_vlm/mme-videoocr_evaluating_ocr-based_capabilities_of_multimodal_llms_in_video_scena.md)
 
 </div>
 

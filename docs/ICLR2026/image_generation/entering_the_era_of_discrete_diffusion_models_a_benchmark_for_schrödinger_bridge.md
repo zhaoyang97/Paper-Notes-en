@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Entering the Era of Discrete Diffusion Models: A Benchmark for Schrödinger Bridges and Entropic Optimal Transport
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] The first evaluation benchmark for Schrödinger Bridge (SB) / Entropic Optimal Transport (EOT) in discrete space: it utilizes CP decomposition to construct distribution pairs with analytically known optimal solutions and simultaneously proposes three new algorithms: DLightSB, DLightSB-M, and α-CSBM.
+  [ICLR 2026][Image Generation][Discrete Schrödinger Bridge] The first evaluation benchmark for Schrödinger Bridge (SB) / Entropic Optimal Transport (EOT) in discrete space: it utilizes CP decomposition to construct distribution pairs with analytically known optimal solutions and simultaneously proposes three new algorithms: DLightSB, DLightSB-M, and α-CSBM.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Discrete Schrödinger Bridge"
+  - "Entropic Optimal Transport"
+  - "Discrete Diffusion Models"
+  - "Benchmarking"
+  - "CP Tensor Decomposition"
 date: 2026-05-08
-content_hash: 66bbcec421a4250c
+content_hash: f5e014cb69336d92
 ---
+
 # Entering the Era of Discrete Diffusion Models: A Benchmark for Schrödinger Bridges and Entropic Optimal Transport
 
 **Conference**: ICLR 2026  
@@ -152,8 +158,8 @@ High-dimensional Gaussian Mixture Model (GMM) benchmark ($D \in \{2, 16, 64\}$, 
 - [\[ICLR 2026\] Diffusion & Adversarial Schrödinger Bridges via Iterative Proportional Markovian Fitting](diffusion_adversarial_schrödinger_bridges_via_iterative_proportional_markovian_f.md)
 - [\[ICLR 2026\] Branched Schrödinger Bridge Matching](branched_schrödinger_bridge_matching.md)
 - [\[ICML 2026\] Geometry-based Schrödinger Bridges for Trustworthy Multimodal Fusion](../../ICML2026/image_generation/geometry-based_schrödinger_bridges_for_trustworthy_multimodal_fusion.md)
+- [\[ICLR 2026\] Inference-Time Scaling of Discrete Diffusion Models via Importance Weighting and Optimal Proposal Design](inference-time_scaling_of_discrete_diffusion_models_via_importance_weighting_and.md)
 - [\[ICLR 2026\] AlignFlow: Improving Flow-based Generative Models with Semi-Discrete Optimal Transport](alignflow_improving_flow-based_generative_models_with_semi-discrete_optimal_tran.md)
-- [\[NeurIPS 2025\] Grasp2Grasp: Vision-Based Dexterous Grasp Translation via Schrödinger Bridges](../../NeurIPS2025/image_generation/grasp2grasp_vision-based_dexterous_grasp_translation_via_schrödinger_bridges.md)
 
 </div>
 

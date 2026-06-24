@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TRACE: Learning 3D Gaussian Physical Dynamics from Multi-view Videos
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] TRACE is a framework that treats each 3D Gaussian kernel as a rigid particle and learns an independent translational-rotational dynamical system for it—comprising a complete…
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] TRACE is a framework that treats each 3D Gaussian kernel as a rigid particle and learns an independent translational-rotational dynamical system for it—comprising a complete set of physical parameters including velocity, acceleration, angular velocity, and angular acceleration. Without any manual annotation, TRACE learns the physical motion laws of 3D scenes from multi-view dynamic videos and accurately extrapolates future frames.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "translational-rotational dynamical systems"
   - "dynamic scene reconstruction"
 date: 2026-05-08
-content_hash: dcfb4d7265566c04
+content_hash: 3c0c6a6aa5d51a33
 ---
 
 # TRACE: Learning 3D Gaussian Physical Dynamics from Multi-view Videos
@@ -165,10 +165,10 @@ Clustering the learned physical parameters naturally segments objects or parts w
 ## Related Papers
 
 - [\[ICCV 2025\] LocalDyGS: Multi-view Global Dynamic Scene Modeling via Adaptive Local Implicit Feature Decoupling](localdygs_multi-view_global_dynamic_scene_modeling_via_adaptive_local_implicit_f.md)
-- [\[CVPR 2026\] Learning a Particle Dynamics Model with Real-world Videos](../../CVPR2026/3d_vision/learning_a_particle_dynamics_model_with_real-world_videos.md)
-- [\[ICCV 2025\] Multi-View 3D Point Tracking](multi-view_3d_point_tracking.md)
+- [\[CVPR 2026\] ParticleGS: Learning Neural Gaussian Particle Dynamics from Videos for Prior-free Physical Motion Extrapolation](../../CVPR2026/3d_vision/particlegs_learning_neural_gaussian_particle_dynamics_from_videos_for_prior-free.md)
+- [\[ICCV 2025\] DeGauss: Dynamic-Static Decomposition with Gaussian Splatting for Distractor-free 3D Reconstruction](degauss_dynamic-static_decomposition_with_gaussian_splatting_for_distractor-free.md)
+- [\[ICCV 2025\] RobustSplat: Decoupling Densification and Dynamics for Transient-Free 3DGS](robustsplat_decoupling_densification_and_dynamics_for_transient-free_3dgs.md)
 - [\[NeurIPS 2025\] MPMAvatar: Learning 3D Gaussian Avatars with Accurate and Robust Physics-Based Dynamics](../../NeurIPS2025/3d_vision/mpmavatar_learning_3d_gaussian_avatars_with_accurate_and_robust_physics-based_dy.md)
-- [\[ICCV 2025\] From Gallery to Wrist: Realistic 3D Bracelet Insertion in Videos](from_gallery_to_wrist_realistic_3d_bracelet_insertion_in_videos.md)
 
 </div>
 

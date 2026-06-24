@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Privacy-Protected Causal Survival Analysis Under Distribution Shift
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] To address the challenge where "multi-center survival data cannot be pooled due to privacy constraints and distributions across sites are inconsistent," this paper utilizes influence function theory to construct a local estimator for each external source site anchored to the target site. It then adaptively weights sour
+  [ICLR 2026][Causal Inference][Causal Survival Analysis] To address the challenge where "multi-center survival data cannot be pooled due to privacy constraints and distributions across sites are inconsistent," this paper utilizes influence function theory to construct a local estimator for each external source site anchored to the target site. It then adaptively weights source sites using convex optimization with an $\ell_1$ penalty (weighting aligned sources and zeroing out b…
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Causal Survival Analysis"
+  - "Data Fusion"
+  - "Federated Learning"
+  - "Distribution Shift"
+  - "Semiparametric Efficiency"
+  - "Doubly Robust"
 date: 2026-05-08
-content_hash: f3daa1a36a04a130
+content_hash: 5d95dfa395be3c3e
 ---
+
 # Privacy-Protected Causal Survival Analysis Under Distribution Shift
 
 **Conference**: ICLR 2026  
@@ -144,10 +151,10 @@ FED and TGT maintain CP% near 95%, validating the EIF-based variance estimation;
 
 ## Related Papers
 
-- [\[ICLR 2026\] Conformalized Survival Counterfactuals Prediction for General Right-Censored Data](conformalized_survival_counterfactuals_prediction_for_general_right-censored_dat.md)
 - [\[NeurIPS 2025\] Cyclic Counterfactuals under Shift–Scale Interventions](../../NeurIPS2025/causal_inference/cyclic_counterfactuals_under_shift-scale_interventions.md)
 - [\[ICLR 2026\] SelfReflect: Can LLMs Communicate Their Internal Answer Distribution?](selfreflect_can_llms_communicate_their_internal_answer_distribution.md)
 - [\[ICLR 2026\] Efficient and Sharp Off-Policy Learning under Unobserved Confounding](efficient_and_sharp_off-policy_learning_under_unobserved_confounding.md)
+- [\[ICLR 2026\] Conformalized Survival Counterfactuals Prediction for General Right-Censored Data](conformalized_survival_counterfactuals_prediction_for_general_right-censored_dat.md)
 - [\[ICML 2025\] Doubly Protected Estimation for Survival Outcomes Utilizing External Controls for Randomized Clinical Trials](../../ICML2025/causal_inference/doubly_protected_estimation_for_survival_outcomes_utilizing_external_controls_fo.md)
 
 </div>

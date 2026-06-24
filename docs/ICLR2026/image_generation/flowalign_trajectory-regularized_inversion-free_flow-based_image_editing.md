@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] FlowAlign: Trajectory-Regularized, Inversion-Free Flow-based Image Editing
 description: >-
-  [ICLR 2026][Image Generation][Image Editing] To address the issues of unsmooth trajectories and poor source consistency in inversion-free flow editing (FlowEdit), FlowAlign employs an optimal control framework with a source similarity regularization at the terminal point. This decouples the editing velocity field into "semantic guidance" and "source consistency"
+  [ICLR 2026][Image Generation][Image Editing] To address the issues of unsmooth trajectories and poor source consistency in inversion-free flow editing (FlowEdit), FlowAlign employs an optimal control framework with a source similarity regularization at the terminal point. This decouples the editing velocity field into "semantic guidance" and "source consistency" terms, significantly improving source structure preservation with only 1 additional NFE and naturally supporting re…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Image Editing
-  - Flow Matching
-  - Rectified Flow
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Image Editing"
+  - "Flow Matching"
+  - "Rectified Flow"
+  - "Inversion-free"
+  - "Optimal Control"
+  - "Trajectory Regularization"
+  - "Stable Diffusion 3"
 date: 2026-05-08
-content_hash: 40cb894a460e717a
+content_hash: 7f59d4e7e8f28787
 ---
+
 # FlowAlign: Trajectory-Regularized, Inversion-Free Flow-based Image Editing
 
 **Conference**: ICLR 2026  
@@ -123,7 +128,7 @@ Reconstructing the source image by solving the ODE backward from the edited imag
 - [\[ICLR 2026\] UniEdit-Flow: Unleashing Inversion and Editing in the Era of Flow Models](uniedit-flow_unleashing_inversion_and_editing_in_the_era_of_flow_models.md)
 - [\[ICLR 2026\] Training-Free Reward-Guided Image Editing via Trajectory Optimal Control](training-free_reward-guided_image_editing_via_trajectory_optimal_control.md)
 - [\[ICCV 2025\] FlowEdit: Inversion-Free Text-Based Editing Using Pre-Trained Flow Models](../../ICCV2025/image_generation/flowedit_inversion-free_text-based_editing_using_pre-trained_flow_models.md)
-- [\[ICML 2025\] Taming Rectified Flow for Inversion and Editing](../../ICML2025/image_generation/taming_rectified_flow_for_inversion_and_editing.md)
+- [\[NeurIPS 2025\] SplitFlow: Flow Decomposition for Inversion-Free Text-to-Image Editing](../../NeurIPS2025/image_generation/splitflow_flow_decomposition_for_inversion-free_text-to-image_editing.md)
 
 </div>
 

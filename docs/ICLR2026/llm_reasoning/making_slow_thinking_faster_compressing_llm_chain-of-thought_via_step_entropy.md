@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Making Slow Thinking Faster: Compressing LLM Chain-of-Thought via Step Entropy
 description: >-
-  [ICLR 2026][LLM Reasoning][GRPO] This paper proposes using "step entropy" to quantify the information contribution of each reasoning step in CoT. It discovers that pruning 80% of the lowest-entropy steps results in almost no accuracy loss. A two-stage SFT+GRPO training pipeline is designed to enable models to autonomously insert [SKIP] tokens during i
+  [ICLR 2026][Reasoning][Chain-of-Thought Compression] This paper proposes using "step entropy" to quantify the information contribution of each reasoning step in CoT. It discovers that pruning 80% of the lowest-entropy steps results in almost no accuracy loss. A two-stage SFT+GRPO training pipeline is designed to enable models to autonomously insert [SKIP] tokens during inference, reducing token counts by 16–57% while maintaining or even improving accuracy.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - GRPO
-  - [SKIP] token
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Chain-of-Thought Compression"
+  - "Step Entropy"
+  - "Overthinking"
+  - "GRPO"
+  - "SKIP] token"
 date: 2026-05-08
-content_hash: aebe20c805b2652f
+content_hash: cd27420d86759e5e
 ---
+
 # Making Slow Thinking Faster: Compressing LLM Chain-of-Thought via Step Entropy
 
 **Conference**: ICLR 2026  
@@ -119,10 +123,10 @@ The method is consistently effective across both DeepSeek-R1 and Qwen3 architect
 ## Related Papers
 
 - [\[ICLR 2026\] Slow-Fast Policy Optimization: Reposition-Before-Update for LLM Reasoning](slow-fast_policy_optimization_reposition-before-update_for_llm_reasoning.md)
+- [\[ACL 2026\] CRISP: Compressing Redundancy in Chain-of-Thought via Intrinsic Saliency Pruning](../../ACL2026/llm_reasoning/crisp_compressing_redundancy_in_chain-of-thought_via_intrinsic_saliency_pruning.md)
+- [\[ACL 2026\] ETR: Entropy Trend Reward for Efficient Chain-of-Thought Reasoning](../../ACL2026/llm_reasoning/etr_entropy_trend_reward_for_efficient_chain-of-thought_reasoning.md)
 - [\[ICLR 2026\] PEAR: Phase Entropy Aware Reward for Efficient Reasoning](pear_phase_entropy_aware_reward_for_efficient_reasoning.md)
 - [\[ICLR 2026\] Making, Not Taking, the Best of N](making_not_taking_the_best_of_n.md)
-- [\[ICLR 2026\] Rectifying LLM Thought from Lens of Optimization](rectifying_llm_thought_from_lens_of_optimization.md)
-- [\[ACL 2026\] CRISP: Compressing Redundancy in Chain-of-Thought via Intrinsic Saliency Pruning](../../ACL2026/llm_reasoning/crisp_compressing_redundancy_in_chain-of-thought_via_intrinsic_saliency_pruning.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] High-Fidelity Diffusion Face Swapping with ID-Constrained Facial Conditioning
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] Proposes an ID-constrained attribute tuning framework for diffusion-based face swapping: the approach first constrains the identity solution space, then injects attribute conditions, and finally performs end-to-end refinement using identity and adversarial losses. Combined with a decoupled condition injection design, i
+  [CVPR 2026][Image Generation][Face Swapping] Proposes an ID-constrained attribute tuning framework for diffusion-based face swapping: the approach first constrains the identity solution space, then injects attribute conditions, and finally performs end-to-end refinement using identity and adversarial losses. Combined with a decoupled condition injection design, it achieves SOTA FID (3.61) and identity retrieval accuracy (97.9% Top-1) on FFHQ.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Face Swapping"
+  - "Diffusion Models"
+  - "Identity Constraint"
+  - "Condition Decoupling"
+  - "Multi-stage Training"
 date: 2026-05-08
-content_hash: e9a9ebaa7ddbc9bc
+content_hash: e72fae3bad1018ce
 ---
+
 # High-Fidelity Diffusion Face Swapping with ID-Constrained Facial Conditioning
 
 **Conference**: CVPR 2026  
@@ -162,9 +167,9 @@ The FID significantly leads (3.61 vs. the second-best 4.26), and identity retrie
 
 - [\[CVPR 2026\] Preserving Source Video Realism: High-Fidelity Face Swapping for Cinematic Quality](preserving_source_video_realism_high-fidelity_face_swapping_for_cinematic_qualit.md)
 - [\[CVPR 2026\] Attribute-Preserving Pseudo-Labeling for Diffusion-Based Face Swapping](attribute-preserving_pseudo-labeling_for_diffusion-based_face_swapping.md)
-- [\[CVPR 2026\] APPLE: Attribute-Preserving Pseudo-Labeling for Diffusion-Based Face Swapping](apple_attribute-preserving_pseudo-labeling_for_diffusion-based_face_swapping.md)
 - [\[CVPR 2026\] MMFace-DiT: A Dual-Stream Diffusion Transformer for High-Fidelity Multimodal Face Generation](mmface-dit_a_dual-stream_diffusion_transformer_for_high-fidelity_multimodal_face.md)
-- [\[CVPR 2026\] High-Fidelity Virtual Try-On beyond Paired Data Scarcity via Diffusion-based Cycle-Consistent Learning](high-fidelity_virtual_try-on_beyond_paired_data_scarcity_via_diffusion-based_cyc.md)
+- [\[AAAI 2026\] Realistic Face Reconstruction from Facial Embeddings via Diffusion Models](../../AAAI2026/image_generation/realistic_face_reconstruction_from_facial_embeddings_via_diffusion_models.md)
+- [\[CVPR 2026\] Diffusion-Based Makeup Transfer with Facial Region-Aware Makeup Features](diffusion-based_makeup_transfer_with_facial_region-aware_makeup_features.md)
 
 </div>
 

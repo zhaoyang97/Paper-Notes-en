@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Convergence of Steepest Descent and Adam under Non-Uniform Smoothness
 description: >-
-  [ICML 2026][Reinforcement Learning][Adam] This paper proposes $(H_0,H_1)$-NS, a broader non-uniform smoothness than $(L_0,L_1)$-NS by Zhang et al. Under this assumption and the (non-uniform) Łojasiewicz condition, it provides the first unified convergence rates for deterministic diagonal RMSProp / Adam and general Normalized Steepest Descent (Sign GD, Norm.GD,
+  [ICML 2026][Reinforcement Learning][Non-uniform smoothness] This paper proposes $(H_0,H_1)$-NS, a broader non-uniform smoothness than $(L_0,L_1)$-NS by Zhang et al. Under this assumption and the (non-uniform) Łojasiewicz condition, it provides the first unified convergence rates for deterministic diagonal RMSProp / Adam and general Normalized Steepest Descent (Sign GD, Norm.GD, Sign CD-GS). It proves they are strictly faster than GD / AdaGrad / heavy-ball for logistic regress…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - Adam
-  - RMSProp
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Non-uniform smoothness"
+  - "Steepest Descent"
+  - "Adam"
+  - "RMSProp"
+  - "Łojasiewicz condition"
 date: 2026-05-08
-content_hash: 3b2e3f84c2dd32bb
+content_hash: 642ab5f650d33cd1
 ---
+
 # Convergence of Steepest Descent and Adam under Non-Uniform Smoothness
 
 **Conference**: ICML 2026  
@@ -116,8 +120,8 @@ The paper does not involve empirical training but provides convergence rates and
 - [\[ICLR 2026\] On the $O(1/T)$ Convergence of Alternating Gradient Descent-Ascent in Bilinear Games](../../ICLR2026/reinforcement_learning/on_the_o1t_convergence_of_alternating_gradient_descent-ascent_in_bilinear_games.md)
 - [\[ICML 2026\] Learning to Approximate Uniform Facility Location via Graph Neural Networks](learning_to_approximate_uniform_facility_location_via_graph_neural_networks.md)
 - [\[ICML 2026\] Convergence of Two-Timescale Markovian Stochastic Approximations with Applications in Reinforcement Learning](convergence_of_two-timescale_markovian_stochastic_approximations_with_applicatio.md)
-- [\[ICML 2026\] Safety Generalization Under Distribution Shift in Safe Reinforcement Learning: A Diabetes Testbed](safety_generalization_under_distribution_shift_in_safe_reinforcement_learning_a_.md)
 - [\[ICML 2026\] Break the Block: Dynamic-size Reasoning Blocks for Diffusion Large Language Models via Monotonic Entropy Descent with Reinforcement Learning](break_the_block_dynamic-size_reasoning_blocks_for_diffusion_large_language_model.md)
+- [\[ICML 2026\] Tracking Drift: Variation-Aware Entropy Scheduling for Non-Stationary Reinforcement Learning](tracking_drift_variation-aware_entropy_scheduling_for_non-stationary_reinforceme.md)
 
 </div>
 

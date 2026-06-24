@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ConstStyle: Robust Domain Generalization with Unified Style Transformation
 description: >-
-  [ICCV 2025][LLM Pretraining][domain generalization] This paper proposes ConstStyle, a framework that constructs a theoretically grounded **Unified Domain** to which all training samples are style-aligned during training…
+  [ICCV 2025][LLM Pretraining][domain generalization] This paper proposes ConstStyle, a framework that constructs a theoretically grounded **Unified Domain** to which all training samples are style-aligned during training, while test samples from unseen domains are partially projected toward this unified domain at inference time, effectively reducing the domain gap and improving generalization performance.
 tags:
   - "ICCV 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "distribution alignment"
   - "robustness"
 date: 2026-05-08
-content_hash: 56730ba87a69603d
+content_hash: a7ca9fe9f3567b35
 ---
 
 # ConstStyle: Robust Domain Generalization with Unified Style Transformation
@@ -119,11 +119,11 @@ ConstStyle achieves the most significant improvements in scenarios with the larg
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Learning the Wrong Lessons: Syntactic-Domain Spurious Correlations in Language Models](../../NeurIPS2025/llm_pretraining/learning_the_wrong_lessons_syntactic-domain_spurious_correlations_in_language_mo.md)
-- [\[NeurIPS 2025\] Vocabulary Customization for Efficient Domain-Specific LLM Deployment](../../NeurIPS2025/llm_pretraining/vocabulary_customization_for_efficient_domain-specific_llm_deployment.md)
+- [\[ICML 2025\] On the Clean Generalization and Robust Overfitting in Adversarial Training from Two Theoretical Views: Representation Complexity and Training Dynamics](../../ICML2025/llm_pretraining/on_the_clean_generalization_and_robust_overfitting_in_adversarial_training_from_.md)
+- [\[CVPR 2025\] A Unified Framework for Heterogeneous Semi-supervised Learning](../../CVPR2025/llm_pretraining/a_unified_framework_for_heterogeneous_semi-supervised_learning.md)
+- [\[ICML 2025\] Towards Robust Influence Functions with Flat Validation Minima](../../ICML2025/llm_pretraining/towards_robust_influence_functions_with_flat_validation_minima.md)
+- [\[CVPR 2025\] Robust Message Embedding via Attention Flow-Based Steganography](../../CVPR2025/llm_pretraining/robust_message_embedding_via_attention_flow-based_steganography.md)
 - [\[ICCV 2025\] ACE-G: Improving Generalization of Scene Coordinate Regression Through Query Pre-Training](aceg_improving_generalization_of_scene_coordinate_regression.md)
-- [\[ICLR 2026\] RECON: Robust symmetry discovery via Explicit Canonical Orientation Normalization](../../ICLR2026/llm_pretraining/recon_robust_symmetry_discovery_via_explicit_canonical_orientation_normalization.md)
-- [\[ICLR 2026\] SemHiTok: A Unified Image Tokenizer via Semantic-Guided Hierarchical Codebook](../../ICLR2026/llm_pretraining/semhitok_a_unified_image_tokenizer_via_semantic-guided_hierarchical_codebook_for.md)
 
 </div>
 

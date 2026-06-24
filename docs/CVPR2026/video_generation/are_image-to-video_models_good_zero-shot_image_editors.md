@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Are Image-to-Video Models Good Zero-Shot Image Editors?
 description: >-
-  [CVPR 2026][Video Generation][Image Editing] This paper proposes IF-Edit, a **training-free** framework that directly utilizes pre-trained Image-to-Video (I2V) diffusion models as zero-shot image editors. By rewriting static editing instructions into "evolution over time" descriptions using Chain-of-Thought (CoT) prompting, employing Temporal Latent Dropout (TLD)
+  [CVPR 2026][Video Generation][Image Editing] This paper proposes IF-Edit, a **training-free** framework that directly utilizes pre-trained Image-to-Video (I2V) diffusion models as zero-shot image editors. By rewriting static editing instructions into "evolution over time" descriptions using Chain-of-Thought (CoT) prompting, employing Temporal Latent Dropout (TLD) to prune redundant frames for denoising acceleration, and using Self-Consistent Post-Refinement (SCPR) to select a…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Image Editing
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Image Editing"
+  - "Image-to-Video Diffusion"
+  - "Training-free"
+  - "Temporal Priors"
+  - "Chain-of-Thought Prompting"
 date: 2026-05-08
-content_hash: c518f6e66d10f7ee
+content_hash: e2531eaee27482da
 ---
+
 # Are Image-to-Video Models Good Zero-Shot Image Editors?
 
 **Conference**: CVPR 2026  
@@ -142,14 +147,14 @@ Ours achieves the highest overall accuracy (11.1) among **open-source** models, 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] Scaling Zero-Shot Reference-to-Video Generation](scaling_zero-shot_reference-to-video_generation.md)
 - [\[CVPR 2025\] Zero-1-to-A: Zero-Shot One Image to Animatable Head Avatars Using Video Diffusion](../../CVPR2025/video_generation/zero-1-to-a_zero-shot_one_image_to_animatable_head_avatars_using_video_diffusion.md)
 - [\[CVPR 2026\] Improving Motion in Image-to-Video Models via Adaptive Low-Pass Guidance](improving_motion_in_image-to-video_models_via_adaptive_low-pass_guidance.md)
 - [\[CVPR 2026\] StoryTailor: A Zero-Shot Pipeline for Action-Rich Multi-Subject Visual Narratives](storytailora_zero-shot_pipeline_for_action-rich_multi-subject_visual_narratives.md)
-- [\[CVPR 2026\] VidPrism: Heterogeneous Mixture of Experts for Image-to-Video Transfer](vidprism_heterogeneous_mixture_of_experts_for_image-to-video_transfer.md)
 - [\[CVPR 2026\] MultiAnimate: Pose-Guided Image Animation Made Extensible](multianimate_pose-guided_image_animation_made_extensible.md)
 
 </div>

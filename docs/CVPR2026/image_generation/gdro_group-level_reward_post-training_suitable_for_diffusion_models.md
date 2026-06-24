@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] GDRO: Group-level Reward Post-training Suitable for Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][reward hacking] GDRO adapts the Group Relative Policy Optimization (GRPO) alignment strategy from LLMs to rectified flow diffusion models. By utilizing a DPO-style "implicit reward function" to calculate rewards directly at arbitrary noise timesteps, it achieves **fully offline training** (eliminating the need for iterative online sam
+  [CVPR 2026][Image Generation][Diffusion Model Post-training] GDRO adapts the Group Relative Policy Optimization (GRPO) alignment strategy from LLMs to rectified flow diffusion models. By utilizing a DPO-style "implicit reward function" to calculate rewards directly at arbitrary noise timesteps, it achieves **fully offline training** (eliminating the need for iterative online sampling) and remains **sampler-agnostic** (avoiding ODE-to-SDE approximations). GDRO approaches or ex…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - reward hacking
-  - rectified flow
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Model Post-training"
+  - "Group Reward"
+  - "Offline Alignment"
+  - "reward hacking"
+  - "rectified flow"
 date: 2026-05-08
-content_hash: 28295df0cfd8a6b1
+content_hash: 0def3e71fd7a0e8c
 ---
+
 # GDRO: Group-level Reward Post-training Suitable for Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -146,15 +150,15 @@ Humans often vote for ties in text accuracy (actual readability is similar), but
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">...</div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] Reward Sharpness-Aware Fine-Tuning for Diffusion Models](reward_sharpness-aware_fine-tuning_for_diffusion_models.md)
 - [\[CVPR 2026\] HP-Edit: A Human-Preference Post-Training Framework for Image Editing](hp-edit_a_human-preference_post-training_framework_for_image_editing.md)
 - [\[CVPR 2026\] LeapAlign: Post-Training Flow Matching Models at Any Generation Step by Building Two-Step Trajectories](leapalign_post_training_flow_matching_models_at_any_generation_step.md)
-- [\[CVPR 2026\] Reward Sharpness-Aware Fine-Tuning for Diffusion Models](reward_sharpness-aware_fine-tuning_for_diffusion_models.md)
-- [\[ICML 2026\] GUDA: Counterfactual Group-wise Training Data Attribution for Diffusion Models via Unlearning](../../ICML2026/image_generation/guda_counterfactual_group-wise_training_data_attribution_for_diffusion_models_vi.md)
-- [\[ICCV 2025\] DMQ: Dissecting Outliers of Diffusion Models for Post-Training Quantization](../../ICCV2025/image_generation/dmq_dissecting_outliers_of_diffusion_models_for_post-training_quantization.md)
+- [\[CVPR 2026\] The Image as Its Own Reward: Reinforcement Learning with Adversarial Reward for Image Generation](the_image_as_its_own_reward_reinforcement_learning_with_adversarial_reward_for_i.md)
+- [\[ICLR 2026\] TreeGRPO: Tree-Advantage GRPO for Online RL Post-Training of Diffusion Models](../../ICLR2026/image_generation/treegrpo_tree-advantage_grpo_for_online_rl_post-training_of_diffusion_models.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TimeSliver: Symbolic-Linear Decomposition for Explainable Time Series Classification
 description: >-
-  [ICLR 2026][Time Series][Paper Note] The authors propose TimeSliver, an interpretability-driven deep learning framework that jointly utilizes raw time series data and symbolic abstractions (binning) to construct representations aligned with the original temporal structure. Each element linearly encodes the contribution of the corresponding time interval t
+  [ICLR 2026][Time Series][Temporal Attribution] The authors propose TimeSliver, an interpretability-driven deep learning framework that jointly utilizes raw time series data and symbolic abstractions (binning) to construct representations aligned with the original temporal structure. Each element linearly encodes the contribution of the corresponding time interval to the final prediction, enabling the derivation of positive/negative attribution scores for each time point. The…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Temporal Attribution"
+  - "Symbolic Abstraction"
+  - "Linear Combination"
+  - "Explainable Classification"
+  - "Positive/Negative Attribution"
 date: 2026-05-08
-content_hash: ae404f4f2f58e8f7
+content_hash: f359c3b1aa7fe43a
 ---
+
 # TimeSliver: Symbolic-Linear Decomposition for Explainable Time Series Classification
 
 **Conference**: ICLR 2026  
@@ -129,15 +135,13 @@ On 26 multivariate UEA tasks, TimeSliver's accuracy falls within 2% of SOTA mode
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[AAAI 2026\] Counterfactual Explainable AI (XAI) Method for Deep Learning-Based Multivariate Time Series Classification](../../AAAI2026/time_series/counterfactual_explainable_ai_xai_method_for_deep_learning-based_multivariate_ti.md)
+- [\[ICLR 2026\] Characteristic Root Analysis and Regularization for Linear Time Series Forecasting](characteristic_root_analysis_and_regularization_for_linear_time_series_forecasti.md)
 - [\[ICLR 2026\] Routing Channel-Patch Dependencies in Time Series Forecasting with Graph Spectral Decomposition](routing_channel-patch_dependencies_in_time_series_forecasting_with_graph_spectra.md)
 - [\[ICLR 2026\] pyrregular: A Unified Framework for Irregular Time Series, with Classification Benchmarks](pyrregular_a_unified_framework_for_irregular_time_series_with_classification_ben.md)
 - [\[ICLR 2026\] MambaSL: Exploring Single-Layer Mamba for Time Series Classification](mambasl_exploring_single-layer_mamba_for_time_series_classification.md)
-- [\[ICLR 2026\] Repurposing Foundation Model for Generalizable Medical Time Series Classification](repurposing_foundation_model_for_generalizable_medical_time_series_classificatio.md)
 
 </div>
 

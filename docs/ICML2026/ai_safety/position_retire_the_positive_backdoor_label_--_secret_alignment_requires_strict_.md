@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Position: Retire the "Positive Backdoor" Label -- Secret Alignment Requires Strict and Systematic Evaluation
 description: >-
-  [ICML 2026][AI Safety][Secret Alignment] This position paper advocates for the retirement of the misleading label "positive backdoor," proposing to rename trigger-activated hidden behaviors as "Secret Alignment." Through a systematic evaluation of three representative schemes (SudoLM, Instructional Fingerprinting, SafeTrigger) across six standardized attribut
+  [ICML2026][AI Safety][Secret Alignment] This position paper advocates for the retirement of the misleading label "positive backdoor," proposing to rename trigger-activated hidden behaviors as "Secret Alignment." Through a systematic evaluation of three representative schemes (SudoLM, Instructional Fingerprinting, SafeTrigger) across six standardized attributes (Effectiveness, Harmlessness, Persistence, Efficiency, Robustness, Reliability), the authors reveal the vulnerability…
 tags:
-  - ICML 2026
-  - AI Safety
-  - Secret Alignment
+  - "ICML2026"
+  - "AI Safety"
+  - "Secret Alignment"
+  - "Backdoor Defense"
+  - "Private LLM"
+  - "CIA Evaluation"
+  - "Behavior Density"
 date: 2026-05-08
-content_hash: 914654878cabe726
+content_hash: e0bbcbe91b003729
 ---
+
 # Position: Retire the "Positive Backdoor" Label -- Secret Alignment Requires Strict and Systematic Evaluation
 
 **Conference**: ICML2026  
@@ -118,9 +123,9 @@ To explain why IF is persistent but prone to false triggers, or why SudoLM loses
 
 - [\[ICML 2026\] Position: Embodied AI Requires a Privacy-Utility Trade-off](position_embodied_ai_requires_a_privacy-utility_trade-off.md)
 - [\[ICML 2026\] Position: 'AI Alignment' Encompasses Competing Technical Priorities](ai_alignment_encompasses_competing_technical_priorities.md)
-- [\[ICML 2026\] BioAgent Bench: An AI Agent Evaluation Suite for Bioinformatics](bioagent_bench_an_ai_agent_evaluation_suite_for_bioinformatics.md)
 - [\[ICML 2026\] FuseFSS: Efficient Secure LLM Inference with Function Secret Sharing](fusefss_efficient_secure_llm_inference_with_function_secret_sharing.md)
-- [\[ICML 2026\] Position: Uncertainty Quantification in LLMs is Just Unsupervised Clustering](position_uncertainty_quantification_in_llms_is_just_unsupervised_clustering.md)
+- [\[ICML 2026\] MLUBench: A Benchmark for Lifelong Unlearning Evaluation in MLLMs](mlubench_a_benchmark_for_lifelong_unlearning_evaluation_in_mllms.md)
+- [\[ICML 2026\] Alignment Risks from Capability-Seeking RL Training](alignment_risks_from_capability-seeking_rl_training.md)
 
 </div>
 

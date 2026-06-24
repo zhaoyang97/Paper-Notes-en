@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] On the Convergence of Two-Layer Kolmogorov-Arnold Networks with First-Layer Training
 description: >-
-  [ICLR 2026][learning_theory][lazy training] This paper proves that under the overparameterized setting with training restricted to the first-layer coefficients, two-layer KANs using gradient descent converge to the global optimum (zero training error). It provides a fine-grained convergence rate determined by the "projection of labels onto the eigenstructure of
+  [ICLR 2026][Learning Theory][Kolmogorov-Arnold Networks] This paper proves that under the overparameterized setting with training restricted to the first-layer coefficients, two-layer KANs using gradient descent converge to the global optimum (zero training error). It provides a fine-grained convergence rate determined by the "projection of labels onto the eigenstructure of the KAN Tangent Kernel" and demonstrates that KANs require only $m=O(n^2)$ hidden layer width to guaran…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - lazy training
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Optimization Convergence"
+  - "Kolmogorov-Arnold Networks"
+  - "Neural Tangent Kernel (NTK)"
+  - "Overparameterization"
+  - "Global Convergence"
+  - "lazy training"
 date: 2026-05-08
-content_hash: 57c4842966689236
+content_hash: b33cf7745c9eb4c8
 ---
+
 # On the Convergence of Two-Layer Kolmogorov-Arnold Networks with First-Layer Training
 
 **Conference**: ICLR 2026  
@@ -126,7 +132,7 @@ Experiments use a FastKAN-based two-layer RBF-KAN with first-layer training and 
 - [\[ICML 2026\] Two-Layer Linear Auto-Regressive Models Estimate Latent States](../../ICML2026/learning_theory/two-layer_linear_auto-regressive_models_estimate_latent_states.md)
 - [\[ICLR 2026\] High-Dimensional Analysis of Single-Layer Attention for Sparse-Token Classification](high-dimensional_analysis_of_single-layer_attention_for_sparse-token_classificat.md)
 - [\[ICLR 2026\] Tractability via Low Dimensionality: The Parameterized Complexity of Training Quantized Neural Networks](tractability_via_low_dimensionality_the_parameterized_complexity_of_training_qua.md)
-- [\[ICLR 2026\] Convergence Analysis of Tsetlin Machines under Noise-Free and Noisy Training Conditions: From 2 Bits to k Bits](convergence_analysis_of_tsetlin_machines_under_noise-free_and_noisy_training_con.md)
+- [\[ICLR 2026\] Saddle-To-Saddle Dynamics in Deep ReLU Networks: Low-Rank Bias in the First Saddle Escape](saddle-to-saddle_dynamics_in_deep_relu_networks_low-rank_bias_in_the_first_saddl.md)
 
 </div>
 

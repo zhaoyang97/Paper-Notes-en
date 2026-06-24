@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ST-HHOL: Spatio-Temporal Hierarchical Hypergraph Online Learning for Crime Prediction
 description: >-
-  [ICLR 2026][Time Series][Paper Note] ST-HHOL utilizes "Heterogeneous Hypergraph Modeling for Crime Patterns + Homogeneous Hypergraph Modeling for Co-occurrence Relations" to characterize high-order contextual factors behind sparse crime data. Combined with an online learning strategy featuring "frequent fine-tuning for short-term fluctuations + periodic r
+  [ICLR 2026][Time Series][Crime Prediction] ST-HHOL utilizes "Heterogeneous Hypergraph Modeling for Crime Patterns + Homogeneous Hypergraph Modeling for Co-occurrence Relations" to characterize high-order contextual factors behind sparse crime data. Combined with an online learning strategy featuring "frequent fine-tuning for short-term fluctuations + periodic retraining for long-term drift" and a partially frozen GPT-2, it consistently outperforms all offline and online basel…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Crime Prediction"
+  - "Hierarchical Hypergraph"
+  - "Concept Drift"
+  - "Online Learning"
+  - "Partially Frozen LLM"
 date: 2026-05-08
-content_hash: d2292c1d05202500
+content_hash: e57a00f2951aa833
 ---
+
 # ST-HHOL: Spatio-Temporal Hierarchical Hypergraph Online Learning for Crime Prediction
 
 **Conference**: ICLR 2026  
@@ -145,10 +151,10 @@ PF-LLM Variants: **PF-FFN (freezing only FFN) achieved the best trade-off**, out
 ## Related Papers
 
 - [\[ICLR 2026\] Online Time Series Prediction Using Feature Adjustment](online_time_series_prediction_using_feature_adjustment.md)
+- [\[ICLR 2026\] TEN-DM: Topology-Enhanced Diffusion Model for Spatio-Temporal Event Prediction](ten-dm_topology-enhanced_diffusion_model_for_spatio-temporal_event_prediction.md)
 - [\[ICLR 2026\] Delta-XAI: A Unified Framework for Explaining Prediction Changes in Online Time Series Monitoring](delta-xai_a_unified_framework_for_explaining_prediction_changes_in_online_time_s.md)
 - [\[ICLR 2026\] TRIDENT: Cross-Domain Trajectory Spatio-Temporal Representation via Distance-Preserving Triplet Learning](trident_cross-domain_trajectory_spatio-temporal_representation_via_distance-pres.md)
 - [\[ICLR 2026\] Improving Extreme Wind Prediction with Frequency-Informed Learning](improving_extreme_wind_prediction_with_frequency-informed_learning.md)
-- [\[ICLR 2026\] Enabling Arbitrary Inference in Spatio-Temporal Dynamic Systems: A Physics-Inspired Perspective](enabling_arbitrary_inference_in_spatio-temporal_dynamic_systems_a_physics-inspir.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Understanding Counting Mechanisms in Large Language and Vision-Language Models
 description: >-
-  [CVPR 2026][Interpretability][Paper Note] Authors utilize a set of controlled "repetitive object counting" experiments and a self-developed causal probing tool, CountScope, to dissect LLMs and LVLMs layer-by-layer and token-by-token. They find that counting is not a one-time summation but a hierarchical process emerging across layers, driven by "internal count
+  [CVPR 2026][Multimodal VLM][Mechanistic Interpretability] Authors utilize a set of controlled "repetitive object counting" experiments and a self-developed causal probing tool, CountScope, to dissect LLMs and LVLMs layer-by-layer and token-by-token. They find that counting is not a one-time summation but a hierarchical process emerging across layers, driven by "internal counters" that update incrementally and rely heavily on structural shortcuts like delimiters.
 tags:
-  - CVPR 2026
-  - Interpretability
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Mechanistic Interpretability"
+  - "Counting"
+  - "Activation Patching"
+  - "Causal Mediation Analysis"
+  - "Internal Counters"
 date: 2026-05-08
-content_hash: 37597f339c81970a
+content_hash: 1c95fb920fa5a797
 ---
+
 # Understanding Counting Mechanisms in Large Language and Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -158,11 +164,11 @@ The paper validates experimental hypotheses using CI scores (higher = stronger s
 
 ## Related Papers
 
-- [\[ICML 2026\] Dual Mechanisms of Value Expression: Intrinsic vs. Prompted Values in Large Language Models](../../ICML2026/interpretability/dual_mechanisms_of_value_expression_intrinsic_vs_prompted_values_in_large_langua.md)
-- [\[ICML 2026\] Towards Atoms of Large Language Models](../../ICML2026/interpretability/towards_atoms_of_large_language_models.md)
-- [\[ACL 2026\] Fine-Grained Analysis of Shared Syntactic Mechanisms in Language Models](../../ACL2026/interpretability/fine-grained_analysis_of_shared_syntactic_mechanisms_in_language_models.md)
-- [\[ACL 2026\] Preference Heads in Large Language Models: A Mechanistic Framework for Interpretable Personalization](../../ACL2026/interpretability/preference_heads_in_large_language_models_a_mechanistic_framework_for_interpreta.md)
-- [\[ACL 2026\] Mechanistic Interpretability of Large-Scale Counting in LLMs through a System-2 Strategy](../../ACL2026/interpretability/mechanistic_interpretability_of_large-scale_counting_in_llms_through_a_system-2_.md)
+- [\[CVPR 2026\] Mechanisms of Object Localization in Vision-Language Models](mechanisms_of_object_localization_in_vision-language_models.md)
+- [\[ICLR 2026\] Visual Symbolic Mechanisms: Emergent Symbol Processing in Vision Language Models](../../ICLR2026/multimodal_vlm/visual_symbolic_mechanisms_vlm.md)
+- [\[CVPR 2026\] Language-guided Frequency Modulation for Large Vision-Language Models](language-guided_frequency_modulation_for_large_vision-language_models.md)
+- [\[ICML 2026\] Unveiling Visual Counting Bottlenecks in Vision-Language Models](../../ICML2026/multimodal_vlm/unveiling_the_visual_counting_bottleneck_in_vision-language_models.md)
+- [\[CVPR 2026\] Lenses: Toward Polysemous Vision-Language Understanding](lenses_toward_polysemous_vision-language_understanding.md)
 
 </div>
 

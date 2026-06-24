@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Deeper Thought, Weaker Aim: Understanding and Mitigating Perceptual Impairment during Reasoning in Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper discovers that Multimodal Large Language Models (MLLMs) experience **spatial dispersion** of visual attention in "Chain-of-Thought" (CoT) reasoning modes, drifting away from task-relevant regions (the longer they think, the more they miss). Consequently, the authors propose the training-free VRGA framework:
+  [CVPR 2026][VLM Reasoning][MLLM reasoning] This paper discovers that Multimodal Large Language Models (MLLMs) experience **spatial dispersion** of visual attention in "Chain-of-Thought" (CoT) reasoning modes, drifting away from task-relevant regions (the longer they think, the more they miss). Consequently, the authors propose the training-free VRGA framework: it uses an "Entropy-Focus" criterion to automatically identify attention heads that actually process visual informati…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "MLLM reasoning"
+  - "attention dispersion"
+  - "visual grounding"
+  - "attention head selection"
+  - "training-free"
 date: 2026-05-08
-content_hash: ef60374f2183d9a8
+content_hash: c00eefa949a9e64a
 ---
+
 # Deeper Thought, Weaker Aim: Understanding and Mitigating Perceptual Impairment during Reasoning in Multimodal Large Language Models
 
 **Conference**: CVPR 2026  
@@ -141,15 +147,16 @@ The accuracy collapse under EFR-guided masking (87.64 to 24.31 on 3B) is far mor
 - Value: ⭐⭐⭐⭐⭐ Training-free, plug-and-play, and interpretable—highly valuable for any MLLM running CoT.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Perceptual-Evidence Anchored Reinforced Learning for Multimodal Reasoning](perceptual-evidence_anchored_reinforced_learning_for_multimodal_reasoning.md)
-- [\[ICML 2026\] Mitigating Perceptual Judgment Bias in Multimodal LLM-as-a-Judge via Perceptual Perturbation and Reward Modeling](../../ICML2026/multimodal_vlm/mitigating_perceptual_judgment_bias_in_multimodal_llm-as-a-judge_via_perceptual_.md)
+- [\[CVPR 2026\] Grounded Chain-of-Thought for Multimodal Large Language Models](grounded_chain-of-thought_for_multimodal_large_language_models.md)
+- [\[CVPR 2026\] Breaking the Regional Perception Bottleneck of Multimodal Large Language Models via External Reasoning Framework](breaking_the_regional_perception_bottleneck_of_multimodal_large_language_models_.md)
 - [\[CVPR 2026\] Fuel Gauge: Estimating Chain-of-Thought Length Ahead of Time in Large Multimodal Models](fuel_gauge_estimating_chain-of-thought_length_ahead_of_time_in_large_multimodal_.md)
-- [\[CVPR 2026\] ReaGEN: Adaptive Generation of Structured Chains-of-Thought for Efficient Multimodal Reasoning](reagen_adaptive_generation_of_structured_chains-of-thought_for_efficient_multimo.md)
-- [\[CVPR 2026\] See Less, See Right: Bi-directional Perceptual Shaping For Multimodal Reasoning](see_less_see_right_bi-directional_perceptual_shaping_for_multimodal_reasoning.md)
+- [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](reinforcing_structured_chain-of-thought_for_video_understanding.md)
+- [\[CVPR 2026\] Perceptual-Evidence Anchored Reinforced Learning for Multimodal Reasoning](perceptual-evidence_anchored_reinforced_learning_for_multimodal_reasoning.md)
 
 </div>
 

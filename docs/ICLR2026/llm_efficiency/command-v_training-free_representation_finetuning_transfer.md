@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Command-V: Training-Free Representation Finetuning Transfer
 description: >-
-  [ICLR 2026][LLM Efficiency][ReFT] Command-V (⌘V) transfers a Representation Finetuning (ReFT) adapter trained on one model to another model with a different architecture through a pair of linear "translators" without any backpropagation or original training data. This allows the recipient to "freely" acquire new behaviors from the donor (e.g., refusal
+  [ICLR2026][LLM Efficiency][Training-Free Transfer] Command-V (⌘V) transfers a Representation Finetuning (ReFT) adapter trained on one model to another model with a different architecture through a pair of linear "translators" without any backpropagation or original training data. This allows the recipient to "freely" acquire new behaviors from the donor (e.g., refusal enhancement, jailbreaking, auto-CoT) with performance close to direct fine-tuning while reducing computationa…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - ReFT
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "Training-Free Transfer"
+  - "ReFT"
+  - "Representation Finetuning"
+  - "Activation Profiling"
+  - "Model Editing"
 date: 2026-05-08
-content_hash: 4bbafc42e5870f55
+content_hash: 3f99c905001e6554
 ---
+
 # Command-V: Training-Free Representation Finetuning Transfer
 
 **Conference**: ICLR2026  
@@ -136,8 +141,8 @@ Notably: the 3B adapter moved to 8B (20.40%) actually **outperforms** direct tra
 - [\[ICLR 2026\] Beyond Fixed: Training-Free Variable-Length Denoising for Diffusion Large Language Models](beyond_fixed_training-free_variable-length_denoising_for_diffusion_large_languag.md)
 - [\[ICLR 2026\] Dynamic-dLLM: Dynamic Cache-Budget and Adaptive Parallel Decoding for Training-Free Acceleration of Diffusion LLM](dynamic-dllm_dynamic_cache-budget_and_adaptive_parallel_decoding_for_training-fr.md)
 - [\[ICML 2026\] Hyperparameter Transfer with Mixture-of-Experts Layers](../../ICML2026/llm_efficiency/hyperparameter_transfer_with_mixture-of-expert_layers.md)
+- [\[ICLR 2026\] TrimR: Validator-based, Training-free Thinking Trimming for Efficient Test-time Scaling](trimr_verifier-based_training-free_thinking_trimming_for_efficient_test-time_sca.md)
 - [\[ICLR 2026\] Hierarchy Decoding: A Training-free Parallel Decoding Strategy for Diffusion Large Language Models](hierarchy_decoding_a_training-free_parallel_decoding_strategy_for_diffusion_larg.md)
-- [\[ICLR 2026\] Training-Free Loosely Speculative Decoding: Accepting Semantically Correct Drafts Beyond Exact Match](training-free_loosely_speculative_decoding_accepting_semantically_correct_drafts.md)
 
 </div>
 

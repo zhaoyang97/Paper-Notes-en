@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Decomposed Trust: Privacy, Adversarial Robustness, Ethics, and Fairness in Low-Rank LLMs
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This study provides the first systematic evaluation of the impact of **low-rank decomposition (SVD/FWSVD/BASEL)** on LLM trustworthiness. It identifies an asymmetric trade-off: "training data privacy ↑, adversarial robustness ↑, PII protection ↓, ethics alignment ↓, fairness ↓." Using gradient attribution, the study lo
+  [ACL 2026 (Findings)][LLM Safety][Low-rank decomposition] This study provides the first systematic evaluation of the impact of **low-rank decomposition (SVD/FWSVD/BASEL)** on LLM trustworthiness. It identifies an asymmetric trade-off: "training data privacy ↑, adversarial robustness ↑, PII protection ↓, ethics alignment ↓, fairness ↓." Using gradient attribution, the study localizes adversarial vulnerability to the `embed_tokens` and `down_proj` sub-layers.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026 (Findings)"
+  - "LLM Safety"
+  - "Low-rank decomposition"
+  - "PII leakage"
+  - "Adversarial robustness"
+  - "Ethics alignment"
+  - "Fairness"
+  - "Layer attribution"
 date: 2026-05-08
-content_hash: 238d6cd9c7387dac
+content_hash: 3f11501dc020fcbf
 ---
+
 # Decomposed Trust: Privacy, Adversarial Robustness, Ethics, and Fairness in Low-Rank LLMs
 
 **Conference**: ACL 2026 (Findings)  
@@ -145,15 +152,16 @@ Jailbreak FPR (Impact of fine-tuning):
 - Value: ⭐⭐⭐⭐ Critical risk warning for industrial deployment and guide for future trustworthy compression.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] On the Robustness of Verbal Confidence of LLMs in Adversarial Attacks](../../NeurIPS2025/llm_safety/on_the_robustness_of_verbal_confidence_of_llms_in_adversarial_attacks.md)
-- [\[ACL 2026\] Can Persona-Prompted LLMs Emulate Subgroup Values? An Empirical Analysis of Generalisability and Fairness in Cultural Alignment](can_persona-prompted_llms_emulate_subgroup_values_an_empirical_analysis_of_gener.md)
-- [\[ACL 2026\] Evaluating Answer Leakage Robustness of LLM Tutors against Adversarial Student Attacks](evaluating_answer_leakage_robustness_of_llm_tutors_against_adversarial_student_a.md)
+- [\[ICLR 2026\] Understanding Sensitivity of Differential Attention through the Lens of Adversarial Robustness](../../ICLR2026/llm_safety/understanding_sensitivity_of_differential_attention_through_the_lens_of_adversar.md)
 - [\[NeurIPS 2025\] Demystifying Language Model Forgetting with Low-Rank Example Associations](../../NeurIPS2025/llm_safety/demystifying_language_model_forgetting_with_low-rank_example_associations.md)
-- [\[NeurIPS 2025\] Differentially Private Federated Low Rank Adaptation Beyond Fixed-Matrix](../../NeurIPS2025/llm_safety/differentially_private_federated_low_rank_adaptation_beyond_fixed-matrix.md)
+- [\[ACL 2026\] Evaluating Answer Leakage Robustness of LLM Tutors against Adversarial Student Attacks](evaluating_answer_leakage_robustness_of_llm_tutors_against_adversarial_student_a.md)
+- [\[ACL 2026\] Can Persona-Prompted LLMs Emulate Subgroup Values? An Empirical Analysis of Generalisability and Fairness in Cultural Alignment](can_persona-prompted_llms_emulate_subgroup_values_an_empirical_analysis_of_gener.md)
 
 </div>
 

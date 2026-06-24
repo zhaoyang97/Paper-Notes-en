@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Generative Diffusion Priors for 3D Mapping of the Dark Universe
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper transforms the highly ill-posed cosmological inverse problem of "reconstructing the 3D dark matter distribution from weak gravitational lensing observations" into a diffusion model posterior sampling task. It utilizes N-body simulations to construct the Conicus3D light-cone dataset and trains a redshift-cond
+  [CVPR 2026][3D Vision][Dark matter mass mapping] This paper transforms the highly ill-posed cosmological inverse problem of "reconstructing the 3D dark matter distribution from weak gravitational lensing observations" into a diffusion model posterior sampling task. It utilizes N-body simulations to construct the Conicus3D light-cone dataset and trains a redshift-conditioned 2D diffusion prior. By coupling this data-driven prior with a differentiable weak lensing forward model…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Dark matter mass mapping"
+  - "Weak gravitational lensing"
+  - "Diffusion priors"
+  - "Posterior sampling"
+  - "Cosmology"
 date: 2026-05-08
-content_hash: 2e42f8c2592cddfd
+content_hash: b9eeaadc1234bcce
 ---
+
 # Generative Diffusion Priors for 3D Mapping of the Dark Universe
 
 **Conference**: CVPR 2026  
@@ -133,11 +139,11 @@ The paper analyzes the framework through **power spectrum fidelity**, **cosmolog
 
 ## Related Papers
 
+- [\[CVPR 2026\] Scene Reconstruction as Mapping Priors for 3D Detection](scene_reconstruction_as_mapping_priors_for_3d_detection.md)
 - [\[CVPR 2026\] HAD: Hallucination-Aware Diffusion Priors for 3D Reconstruction](had_hallucination-aware_diffusion_priors_for_3d_reconstruction.md)
-- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
-- [\[CVPR 2026\] MAGICIAN: Efficient Long-Term Planning with Imagined Gaussians for Active Mapping](magician_efficient_long-term_planning_with_imagined_gaussians_for_active_mapping.md)
-- [\[CVPR 2026\] BrickNet: Graph-Backed Generative Brick Assembly](bricknet_graph-backed_generative_brick_assembly.md)
-- [\[CVPR 2026\] GenMatter: Perceiving Physical Objects with Generative Matter Models](genmatter_perceiving_physical_objects_with_generative_matter_models.md)
+- [\[CVPR 2026\] Unsupervised Monocular 3D Keypoint Discovery from Multi-View Diffusion Priors](unsupervised_monocular_3d_keypoint_discovery_from_multi-view_diffusion_priors.md)
+- [\[CVPR 2026\] Paparazzo: Active Mapping of Moving 3D Objects](paparazzo_active_mapping_of_moving_3d_objects.md)
+- [\[CVPR 2026\] Gaussian Mapping for Evolving Scenes](gaussian_mapping_for_evolving_scenes.md)
 
 </div>
 

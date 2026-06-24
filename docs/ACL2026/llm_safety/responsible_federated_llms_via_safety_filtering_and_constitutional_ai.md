@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Responsible Federated LLMs via Safety Filtering and Constitutional AI
 description: >-
-  [ACL 2026][LLM Safety][Federated LLM] This paper integrates safety filters and Constitutional AI (CAI) into the FedLLM workflow. It demonstrates that harmful client data significantly compromises global model safety, while client-side filtering combined with low-cost server-side CAI fine-tuning can restore AdvBench safety scores from approximately 72% to o
+  [ACL2026][LLM Safety][Federated LLM] This paper integrates safety filters and Constitutional AI (CAI) into the FedLLM workflow. It demonstrates that harmful client data significantly compromises global model safety, while client-side filtering combined with low-cost server-side CAI fine-tuning can restore AdvBench safety scores from approximately 72% to over 96%.
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Federated LLM
-  - Constitutional AI
-  - LoRA
+  - "ACL2026"
+  - "LLM Safety"
+  - "Federated LLM"
+  - "Safety Filtering"
+  - "Constitutional AI"
+  - "LoRA"
+  - "Responsible AI"
 date: 2026-05-08
-content_hash: 8dfaef85e7ced886
+content_hash: 3fb93dd5fb34bf4b
 ---
+
 # Responsible Federated LLMs via Safety Filtering and Constitutional AI
 
 **Conference**: ACL2026  
@@ -127,15 +130,15 @@ The base LLM is Llama3.1-8B-Instruct, fine-tuned via LoRA. The experimental setu
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Computational Barriers to Filtering for AI Alignment](../../ICLR2026/llm_safety/computational_barriers_to_filtering_for_ai_alignment.md)
 - [\[ACL 2026\] SHAPE: Unifying Safety, Helpfulness and Pedagogy for Educational LLMs](shape_unifying_safety_helpfulness_and_pedagogy_for_educational_llms.md)
-- [\[AAAI 2026\] FedP²EFT: Federated Learning to Personalize PEFT for Multilingual LLMs](../../AAAI2026/llm_safety/fedp2eft_federated_learning_to_personalize_peft_for_multilingual_llms.md)
-- [\[ICLR 2026\] Breaking Agent Backbones: Evaluating the Security of Backbone LLMs in AI Agents](../../ICLR2026/llm_safety/breaking_agent_backbones_evaluating_the_security_of_backbone_llms_in_ai_agents.md)
+- [\[ICLR 2026\] Strategic Dishonesty Can Undermine AI Safety Evaluations of Frontier LLMs](../../ICLR2026/llm_safety/strategic_dishonesty_can_undermine_ai_safety_evaluations_of_frontier_llms.md)
 - [\[ACL 2026\] Robust Multimodal Safety via Conditional Decoding](robust_multimodal_safety_via_conditional_decoding.md)
-- [\[ACL 2026\] XOXO: Stealthy Cross-Origin Context Poisoning Attacks against AI Coding Assistants](xoxo_stealthy_cross-origin_context_poisoning_attacks_against_ai_coding_assistant.md)
+- [\[ICLR 2026\] Learning to Lie: Adversarial Attacks on Human-AI Teams and LLMs](../../ICLR2026/llm_safety/learning_to_lie_adversarial_attacks_on_human-ai_teams_and_llms.md)
 
 </div>
 

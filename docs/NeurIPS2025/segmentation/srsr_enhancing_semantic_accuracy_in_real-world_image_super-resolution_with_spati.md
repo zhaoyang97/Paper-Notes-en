@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SRSR: Enhancing Semantic Accuracy in Real-World Image Super-Resolution with Spatially Re-Focused Text-Conditioning
 description: >-
-  [NeurIPS 2025][Segmentation][Super-Resolution] SRSR proposes a training-free plug-and-play framework that addresses semantic hallucination caused by text guidance in diffusion-based super-resolution methods. It introduce…
+  [NeurIPS 2025][Segmentation][Super-Resolution] SRSR proposes a training-free plug-and-play framework that addresses semantic hallucination caused by text guidance in diffusion-based super-resolution methods. It introduces two inference-time modules—Spatially Re-focused Cross-Attention (SRCA) and Spatially Targeted CFG (STCFG)—and comprehensively outperforms 7 SOTA baselines in both fidelity and perceptual quality.
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Classifier-Free Guidance"
   - "Plug-and-Play"
 date: 2026-05-08
-content_hash: a56be15901d729ac
+content_hash: 2d5f79a9fcb325fd
 ---
 
 # SRSR: Enhancing Semantic Accuracy in Real-World Image Super-Resolution with Spatially Re-Focused Text-Conditioning
@@ -125,11 +125,11 @@ SRSR requires no training and operates entirely at inference time. It uses the o
 
 ## Related Papers
 
+- [\[CVPR 2025\] The Power of Context: How Multimodality Improves Image Super-Resolution](../../CVPR2025/segmentation/the_power_of_context_how_multimodality_improves_image_super-resolution.md)
 - [\[NeurIPS 2025\] Panoptic Captioning: An Equivalence Bridge for Image and Text](panoptic_captioning_an_equivalence_bridge_for_image_and_text.md)
 - [\[NeurIPS 2025\] Re-coding for Uncertainties: Edge-awareness Semantic Concordance for Resilient Event-RGB Segmentation](re-coding_for_uncertainties_edge-awareness_semantic_concordance_for_resilient_ev.md)
-- [\[CVPR 2026\] XSeg: A Large-scale X-ray Contraband Segmentation Benchmark for Real-World Security Screening](../../CVPR2026/segmentation/xseg_a_large-scale_x-ray_contraband_segmentation_benchmark_for_real-world_securi.md)
 - [\[NeurIPS 2025\] Towards Unsupervised Domain Bridging via Image Degradation in Semantic Segmentation](towards_unsupervised_domain_bridging_via_image_degradation_in_semantic_segmentat.md)
-- [\[CVPR 2026\] RealVLG-R1: A Large-Scale Real-World Visual-Language Grounding Benchmark for Robotic Perception and Manipulation](../../CVPR2026/segmentation/realvlg-r1_a_large-scale_real-world_visual-language_grounding_benchmark_for_robo.md)
+- [\[CVPR 2026\] CLP: A Real-World Dataset of Contaminated Lens Protectors for Robust Semantic Segmentation](../../CVPR2026/segmentation/clp_a_real-world_dataset_of_contaminated_lens_protectors_for_robust_semantic_seg.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Asymptotic Optimality of the High-Dimensional Gaussian Mechanism and Improved Low-Dimensional Mechanisms for Differential Privacy
 description: >-
-  [ICML 2026][learning_theory][Paper Note] This theoretical paper answers two long-standing open questions: whether the Gaussian mechanism is the optimal choice for additive noise differential privacy in high dimensions (Ans: as the dimension $T\to\infty$, no additive noise can asymptotically outperform the Gaussian at a fixed mean squared error), and whether t
+  [ICML2026][Learning Theory][Gaussian Mechanism] This theoretical paper answers two long-standing open questions: whether the Gaussian mechanism is the optimal choice for additive noise differential privacy in high dimensions (Ans: as the dimension $T\to\infty$, no additive noise can asymptotically outperform the Gaussian at a fixed mean squared error), and whether there exist mechanisms superior to both Gaussian and $\ell_2$ mechanisms in low dimensions (Ans: yes—the authors…
 tags:
-  - ICML 2026
-  - learning_theory
+  - "ICML2026"
+  - "Learning Theory"
+  - "Differential Privacy"
+  - "Gaussian Mechanism"
+  - "Additive Noise"
+  - "Spherical Symmetry"
+  - "Tight Composition"
 date: 2026-05-08
-content_hash: 4bf6a80593a427ae
+content_hash: b645dc6f52e491f5
 ---
+
 # Asymptotic Optimality of the High-Dimensional Gaussian Mechanism and Improved Low-Dimensional Mechanisms for Differential Privacy
 
 **Conference**: ICML2026  
@@ -124,11 +130,11 @@ The SGG family recovers classic mechanisms and identifies superior members:
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Transfer Learning for Benign Overfitting in High-Dimensional Linear Regression](../../NeurIPS2025/learning_theory/transfer_learning_for_benign_overfitting_in_high-dimensional_linear_regression.md)
-- [\[NeurIPS 2025\] A High-Dimensional Statistical Method for Optimizing Transfer Quantities in Multi-Source Transfer Learning](../../NeurIPS2025/learning_theory/a_highdimensional_statistical_method_for_optimizing_transfer.md)
-- [\[ICLR 2026\] A Generalized Geometric Theoretical Framework of Centroid Discriminant Analysis for Linear Classification of Multi-dimensional Data](../../ICLR2026/learning_theory/a_generalized_geometric_theoretical_framework_of_centroid_discriminant_analysis_.md)
-- [\[ICML 2026\] Active Learning with Low-Rank Structure for Data Selection](active_learning_with_low-rank_structure_for_data_selection.md)
-- [\[ICML 2026\] Catastrophic Forgetting is Low-Rank: A Function-Space Theory for Continual Adaptation](catastrophic_forgetting_is_low-rank_a_function-space_theory_for_continual_adapta.md)
+- [\[ICLR 2026\] Improved High-Dimensional Estimation with Langevin Dynamics and Stochastic Weight Averaging](../../ICLR2026/learning_theory/improved_high-dimensional_estimation_with_langevin_dynamics_and_stochastic_weigh.md)
+- [\[ICLR 2026\] High-dimensional Analysis of Synthetic Data Selection](../../ICLR2026/learning_theory/high-dimensional_analysis_of_synthetic_data_selection.md)
+- [\[ICLR 2026\] Learning under Quantization for High-Dimensional Linear Regression](../../ICLR2026/learning_theory/learning_under_quantization_for_high-dimensional_linear_regression.md)
+- [\[ICLR 2026\] Prediction with Expert Advice under Local Differential Privacy](../../ICLR2026/learning_theory/prediction_with_expert_advice_under_local_differential_privacy.md)
+- [\[ICLR 2026\] High-Dimensional Analysis of Single-Layer Attention for Sparse-Token Classification](../../ICLR2026/learning_theory/high-dimensional_analysis_of_single-layer_attention_for_sparse-token_classificat.md)
 
 </div>
 

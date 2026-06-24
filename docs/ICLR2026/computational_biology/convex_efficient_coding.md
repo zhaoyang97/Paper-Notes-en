@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Convex Efficient Coding
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] This paper reformulates a broad class of "neural representation optimization" problems (efficient coding, semi-non-negative matrix factorization, non-negative sparse coding, etc.) as **convex optimization** over the **representation similarity matrix $Q$** (the matrix of pairwise dot products of neural responses). This
+  [ICLR 2026][Computational Biology][Efficient Coding] This paper reformulates a broad class of "neural representation optimization" problems (efficient coding, semi-non-negative matrix factorization, non-negative sparse coding, etc.) as **convex optimization** over the **representation similarity matrix $Q$** (the matrix of pairwise dot products of neural responses). This approach maintains the flexibility of deep networks while regaining the analyzability of linear models. It…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Efficient Coding"
+  - "Representational Similarity Matrix"
+  - "Convex Optimization"
+  - "Identifiability"
+  - "Semi-Non-negative Matrix Factorization"
 date: 2026-05-08
-content_hash: 1739943a9d985448
+content_hash: 16677dfee7ea5446
 ---
+
 # Convex Efficient Coding
 
 **Conference**: ICLR 2026  
@@ -130,10 +136,10 @@ The numerical firing rates follow the sparsity: at low sparsity, the population 
 ## Related Papers
 
 - [\[ICLR 2026\] DCFold: Efficient Protein Structure Generation with Single Forward Pass](dcfold_efficient_protein_structure_generation_with_single_forward_pass.md)
+- [\[ICLR 2026\] Efficient Prediction of Large Protein Complexes via Subunit-Guided Hierarchical Refinement](efficient_prediction_of_large_protein_complexes_via_subunit-guided_hierarchical_.md)
 - [\[ICLR 2026\] GAGA: Gaussianity-Aware Gaussian Approximation for Efficient 3D Molecular Generation](gaga_gaussianity-aware_gaussian_approximation_for_efficient_3d_molecular_generat.md)
 - [\[ICLR 2026\] FragFM: Hierarchical Framework for Efficient Molecule Generation via Fragment-Level Discrete Flow Matching](fragfm_hierarchical_framework_for_efficient_molecule_generation_via_fragment-lev.md)
 - [\[AAAI 2026\] Efficient Chromosome Parallelization for Precision Medicine Genomic Workflows](../../AAAI2026/computational_biology/efficient_chromosome_parallelization_for_precision_medicine_genomic_workflows.md)
-- [\[AAAI 2026\] TrinityDNA: A Bio-Inspired Foundational Model for Efficient Long-Sequence DNA Modeling](../../AAAI2026/computational_biology/trinitydna_a_bio-inspired_foundational_model_for_efficient_long-sequence_dna_mod.md)
 
 </div>
 

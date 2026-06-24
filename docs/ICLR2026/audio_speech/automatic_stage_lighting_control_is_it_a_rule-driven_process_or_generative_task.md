@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Automatic Stage Lighting Control: Is it a Rule-Driven Process or Generative Task?
 description: >-
-  [ICLR 2026][Audio & Speech][BART] This paper redefines "Automatic Stage Lighting Control (ASLC)" from the long-standing paradigm of "music classification → table lookup" to a **generative task**. It proposes Skip-BART, an end-to-end model that takes music audio as input and autoregressively generates hue and value for lighting frame-by-frame. A novel s
+  [ICLR2026][Audio & Speech][Stage Lighting Control] This paper redefines "Automatic Stage Lighting Control (ASLC)" from the long-standing paradigm of "music classification → table lookup" to a **generative task**. It proposes Skip-BART, an end-to-end model that takes music audio as input and autoregressively generates hue and value for lighting frame-by-frame. A novel skip connection explicitly aligns music and lighting frames. Supported by a self-built dataset, pre-training…
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - BART
+  - "ICLR2026"
+  - "Audio & Speech"
+  - "Stage Lighting Control"
+  - "Music-to-Light Generation"
+  - "BART"
+  - "Skip Connection"
+  - "Transfer Learning"
 date: 2026-05-08
-content_hash: 18587b53b8c71c5f
+content_hash: b310694e7000201f
 ---
+
 # Automatic Stage Lighting Control: Is it a Rule-Driven Process or Generative Task?
 
 **Conference**: ICLR2026  
@@ -152,7 +157,7 @@ Skip-BART closely trails GT. All learning methods significantly outperform the r
 - [\[ICLR 2026\] SpeechOp: Inference-Time Task Composition for Generative Speech Processing](speechop_inference-time_task_composition_for_generative_speech_processing.md)
 - [\[ACL 2026\] Pseudo2Real: Task Arithmetic for Pseudo-Label Correction in Automatic Speech Recognition](../../ACL2026/audio_speech/pseudo2real_task_arithmetic_for_pseudo-label_correction_in_automatic_speech_reco.md)
 - [\[ICLR 2026\] Discovering and Steering Interpretable Concepts in Large Generative Music Models](discovering_and_steering_interpretable_concepts_in_large_generative_music_models.md)
-- [\[ICLR 2026\] Improving Black-Box Generative Attacks via Generator Semantic Consistency](improving_black-box_generative_attacks_via_generator_semantic_consistency.md)
+- [\[ICLR 2026\] Incentivizing Consistent, Effective and Scalable Reasoning Capability in Audio LLMs via Reasoning Process Rewards](incentivizing_consistent_effective_and_scalable_reasoning_capability_in_audio_ll.md)
 
 </div>
 

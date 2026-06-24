@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Benchmarking Empirical Privacy Protection for Adaptations of Large Language Models
 description: >-
-  [ICLR 2026][LLM Safety][LoRA] The authors systematically challenge a prevailing tenet—that "applying Differential Privacy (DP) to LLM adaptation ensures security"—finding that empirical privacy risk is primarily driven by the **distribution distance between adaptation data and pre-training data**: the closer to the pre-training distribution, the hi
+  [ICLR 2026][LLM Safety][Differential Privacy] The authors systematically challenge a prevailing tenet—that "applying Differential Privacy (DP) to LLM adaptation ensures security"—finding that empirical privacy risk is primarily driven by the **distribution distance between adaptation data and pre-training data**: the closer to the pre-training distribution, the higher the risk (even without direct overlap). LoRA provides the strongest empirical protection for OOD data under t…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - LoRA
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Differential Privacy"
+  - "DP Fine-tuning"
+  - "Membership Inference Attack (RMIA)"
+  - "Data Extraction"
+  - "Distribution Shift"
+  - "LoRA"
+  - "Privacy Auditing"
 date: 2026-05-08
-content_hash: 1201a1594a392ce7
+content_hash: f0f5d0bd737ffe00
 ---
+
 # Benchmarking Empirical Privacy Protection for Adaptations of Large Language Models
 
 **Conference**: ICLR 2026  
@@ -124,11 +131,11 @@ The authors propose a four-stage auditing process: (1) Audit Pre-training, (2) A
 
 ## Related Papers
 
+- [\[ICLR 2026\] Disrupting Hierarchical Reasoning: Adversarial Protection for Geographic Privacy in Multimodal Reasoning Models](disrupting_hierarchical_reasoning_adversarial_protection_for_geographic_privacy_.md)
 - [\[ICLR 2026\] AudioTrust: Benchmarking the Multifaceted Trustworthiness of Audio Large Language Models](audiotrust_benchmarking_the_multifaceted_trustworthiness_of_audio_large_language.md)
 - [\[ICLR 2026\] Natural Identifiers for Privacy and Data Audits in Large Language Models](natural_identifiers_for_privacy_and_data_audits_in_large_language_models.md)
 - [\[ICML 2025\] Empirical Privacy Variance](../../ICML2025/llm_safety/empirical_privacy_variance.md)
 - [\[ICLR 2026\] Measuring Physical-World Privacy Awareness of Large Language Models: An Evaluation Benchmark](measuring_physical-world_privacy_awareness_of_large_language_models_an_evaluatio.md)
-- [\[ICLR 2026\] SecP-Tuning: Efficient Privacy-Preserving Prompt Tuning for Large Language Models via MPC](secp-tuning_efficient_privacy-preserving_prompt_tuning_for_large_language_mode.md)
 
 </div>
 

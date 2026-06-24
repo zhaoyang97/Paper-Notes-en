@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Harnessing the Power of Foundation Models for Accurate Material Classification
 description: >-
-  [CVPR 2026][Self-Supervised Learning][DINOv2] To address the scarcity of material classification labels, this paper constructs a balanced synthetic dataset of 21 categories using "diffusion model generation + semantic grounding auto-labeling." It then employs a two-stream fusion of "frozen DINOv2 vision stream + GPT-4v/CLIP language stream" for classification. It
+  [CVPR 2026][Self-Supervised Learning][Material Classification] To address the scarcity of material classification labels, this paper constructs a balanced synthetic dataset of 21 categories using "diffusion model generation + semantic grounding auto-labeling." It then employs a two-stream fusion of "frozen DINOv2 vision stream + GPT-4v/CLIP language stream" for classification. It achieves 89% accuracy on FMD, outperforming the dedicated SOTA (MatSim) by 33%.
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - DINOv2
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Material Classification"
+  - "Vision Foundation Models"
+  - "Synthetic Data"
+  - "Two-stream Fusion"
+  - "DINOv2"
 date: 2026-05-08
-content_hash: e06dfca25e465226
+content_hash: ca10a3c86b21526c
 ---
+
 # Harnessing the Power of Foundation Models for Accurate Material Classification
 
 **Conference**: CVPR 2026  
@@ -143,16 +148,16 @@ Vision backbone comparison (FMD, mIoU|mAcc):
 - Value: ⭐⭐⭐⭐ Provides a reusable paradigm for fine-grained recognition using synthetic data and foundation models.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Chain-of-Models Pre-Training: Rethinking Training Acceleration of Vision Foundation Models](com_pt_chain_of_models_pretraining.md)
-- [\[CVPR 2026\] Robustness of Vision Foundation Models to Common Perturbations](robustness_of_vision_foundation_models_to_common_perturbations.md)
 - [\[CVPR 2026\] Scaling Parallel Sequence Models to Vision Foundation Models](scaling_parallel_sequence_models_to_vision_foundation_models.md)
-- [\[CVPR 2026\] Scaling Dense Event-Stream Pretraining from Visual Foundation Models](scaling_dense_event-stream_pretraining_from_visual_foundation_models.md)
+- [\[AAAI 2026\] Robust Tabular Foundation Models](../../AAAI2026/self_supervised/robust_tabular_foundation_models.md)
 - [\[CVPR 2026\] How Much 3D Do Video Foundation Models Encode?](how_much_3d_do_video_foundation_models_encode.md)
+- [\[CVPR 2026\] Scaling Dense Event-Stream Pretraining from Visual Foundation Models](scaling_dense_event-stream_pretraining_from_visual_foundation_models.md)
 
 </div>
 

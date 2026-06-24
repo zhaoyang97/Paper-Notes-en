@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PhysGS: Bayesian-Inferred Gaussian Splatting for Physical Property Estimation
 description: >-
-  [CVPR 2026][3D Vision][Vision-Language Model] PhysGS is proposed to embed Bayesian inference into the 3D Gaussian Splatting pipeline, utilizing Vision-Language Model (VLM) priors and multi-view confidence-weighted updates to achieve point-wise probabilistic estimation and uncertainty quantification of physical properties (friction, hardness, density, stiffness). I
+  [CVPR 2026][3D Vision][Physical property estimation] PhysGS is proposed to embed Bayesian inference into the 3D Gaussian Splatting pipeline, utilizing Vision-Language Model (VLM) priors and multi-view confidence-weighted updates to achieve point-wise probabilistic estimation and uncertainty quantification of physical properties (friction, hardness, density, stiffness). It achieves a 22.8% improvement in Absolute Percentage Error (APE) for mass estimation and a 61.2% reduction…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Physical property estimation"
+  - "Bayesian inference"
+  - "3D Gaussian Splatting"
+  - "Uncertainty quantification"
+  - "Vision-language models"
 date: 2026-05-08
-content_hash: f69a4baa81f31ffb
+content_hash: ef94ac9471aff7bb
 ---
+
 # PhysGS: Bayesian-Inferred Gaussian Splatting for Physical Property Estimation
 
 **Conference**: CVPR 2026  
@@ -145,11 +150,11 @@ The previous steps perform inference in the "material-property" semantic space; 
 
 ## Related Papers
 
+- [\[CVPR 2026\] BA-GS: Bayesian Adaptive Gaussian Splatting for SFM-Free 3D Reconstruction](ba-gs_bayesian_adaptive_gaussian_splatting_for_sfm-free_3d_reconstruction.md)
 - [\[CVPR 2026\] Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning](adapting_point_cloud_analysis_via_multimodal_bayesian_distribution_learning.md)
 - [\[CVPR 2026\] P2GS: Physical Prior-guided Gaussian Splatting for Photometrically Consistent Urban Reconstruction](p2gs_physical_prior-guided_gaussian_splatting_for_photometrically_consistent_urb.md)
-- [\[CVPR 2026\] IDESplat: Iterative Depth Probability Estimation for Generalizable 3D Gaussian Splatting](idesplat_iterative_depth_probability_estimation_for_generalizable_3d_gaussian_sp.md)
-- [\[CVPR 2026\] PhysGM: Large Physical Gaussian Model for Feed-Forward 4D Synthesis](physgm_large_physical_gaussian_4d_synthesis.md)
-- [\[CVPR 2026\] PRIMU: Uncertainty Estimation for Novel Views in Gaussian Splatting from Primitive-Based Representations of Error and Coverage](primu_uncertainty_estimation_for_novel_views_in_gaussian_splatting_from_primitiv.md)
+- [\[CVPR 2026\] PoseGaussian: 6D Pose Estimation for Unseen Objects via Sparse-View Object-Level 3D Gaussian Splatting](posegaussian_6d_pose_estimation_for_unseen_objects_via_sparse-view_object-level_.md)
+- [\[CVPR 2026\] Uncertainty-driven 3D Gaussian Splatting Active Mapping via Anisotropic Visibility Field](uncertainty-driven_3d_gaussian_splatting_active_mapping_via_anisotropic_visibili.md)
 
 </div>
 

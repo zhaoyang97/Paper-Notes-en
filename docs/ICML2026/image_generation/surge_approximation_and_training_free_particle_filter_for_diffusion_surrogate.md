@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SURGE: Approximation and Training Free Particle Filter for Diffusion Surrogate
 description: >-
-  [ICML 2026][Image Generation][Sequential Monte Carlo] SURGE treats the guided sampling of diffusion surrogate models as a biased distribution on path measures. It utilizes the Girsanov formula to calculate importance weights for SMC resampling, thereby obtaining an approximation-free data assimilation filter for diffusion surrogates without retraining or approximating the
+  [ICML 2026][Image Generation][Data Assimilation] SURGE treats the guided sampling of diffusion surrogate models as a biased distribution on path measures. It utilizes the Girsanov formula to calculate importance weights for SMC resampling, thereby obtaining an approximation-free data assimilation filter for diffusion surrogates without retraining or approximating the Doob $h$-transform. It consistently outperforms BPF/EnKF/SDA/FlowDAS on Lorenz, Navier-Stokes…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Sequential Monte Carlo
+  - "ICML 2026"
+  - "Image Generation"
+  - "Data Assimilation"
+  - "Particle Filter"
+  - "Diffusion Surrogate Model"
+  - "Girsanov Measure Transformation"
+  - "Sequential Monte Carlo"
 date: 2026-05-08
-content_hash: 2f54af1f968255e1
+content_hash: 643fa909302fc1c5
 ---
+
 # SURGE: Approximation and Training Free Particle Filter for Diffusion Surrogate
 
 **Conference**: ICML 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Infinity-RoPE: Action-Controllable Infinite Video Generation Emerges From Autoregressive Self-Rollout
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] ∞-RoPE is proposed as a training-free inference-time framework. Through three components—Block-Relativistic RoPE, KV Flush, and RoPE Cut—it extends an autoregressive video diffusion model trained only on 5-second videos into a system capable of infinite-duration generation, fine-grained action control, and cinematic sc
+  [CVPR 2026][Video Generation][Autoregressive Video Generation] ∞-RoPE is proposed as a training-free inference-time framework. Through three components—Block-Relativistic RoPE, KV Flush, and RoPE Cut—it extends an autoregressive video diffusion model trained only on 5-second videos into a system capable of infinite-duration generation, fine-grained action control, and cinematic scene transitions.
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Autoregressive Video Generation"
+  - "Rotary Positional Embedding"
+  - "Infinite Video"
+  - "Action Control"
+  - "Inference-time Method"
 date: 2026-05-08
-content_hash: f7b2d2dc6a7a212b
+content_hash: fce2dab427fd7bac
 ---
+
 # Infinity-RoPE: Action-Controllable Infinite Video Generation Emerges From Autoregressive Self-Rollout
 
 **Conference**: CVPR 2026  
@@ -147,11 +153,11 @@ Ultra-long video (240s data):
 
 ## Related Papers
 
+- [\[ICLR 2026\] Stable Video Infinity: Achieving Infinite-Length Video Generation via "Error Recycling"](../../ICLR2026/video_generation/stable_video_infinity_infinite-length_video_generation_with_error_recycling.md)
 - [\[CVPR 2026\] FlashPortrait: 6× Faster Infinite Portrait Animation with Adaptive Latent Prediction](flashportrait_6x_faster_infinite_portrait_animation_with_adaptive_latent_predict.md)
 - [\[CVPR 2026\] HandWorld: Hand-Centric Unified Video Action Generation](handworld_hand-centric_unified_video_action_generation.md)
-- [\[CVPR 2026\] PerpetualWonder: Long-horizon Action-conditioned 4D Scene Generation](perpetualwonder_long-horizon_action-conditioned_4d_scene_generation.md)
 - [\[CVPR 2026\] VISTA: A Test-Time Self-Improving Video Generation Agent](vista_a_test-time_self-improving_video_generation_agent.md)
-- [\[NeurIPS 2025\] Self Forcing: Bridging the Train-Test Gap in Autoregressive Video Diffusion](../../NeurIPS2025/video_generation/self_forcing_bridging_the_train-test_gap_in_autoregressive_video_diffusion.md)
+- [\[CVPR 2026\] LottieGPT: Tokenizing Vector Animation for Autoregressive Generation](lottiegpt_vector_animation_generation.md)
 
 </div>
 

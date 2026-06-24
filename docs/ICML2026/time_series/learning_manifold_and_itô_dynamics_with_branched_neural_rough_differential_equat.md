@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Manifold and Itô Dynamics with Branched Neural Rough Differential Equations
 description: >-
-  [ICML 2026][Time Series][Paper Note] Neural Rough Differential Equations (NRDE) can only handle Stratonovich dynamics due to their reliance on shuffle algebra. This paper replaces the log-ODE step of NRDE with **geometric numerical integration on Hopf algebras**: using Grossman–Larson rooted tree algebra for Euclidean Itô, Munthe–Kaas–Wright planar rooted
+  [ICML2026][Time Series][Neural Rough Differential Equations] Neural Rough Differential Equations (NRDE) can only handle Stratonovich dynamics due to their reliance on shuffle algebra. This paper replaces the log-ODE step of NRDE with **geometric numerical integration on Hopf algebras**: using Grossman–Larson rooted tree algebra for Euclidean Itô, Munthe–Kaas–Wright planar rooted tree algebra for ordered covariant derivatives on manifolds, and reserving shuffle algebra for cla…
 tags:
-  - ICML 2026
-  - Time Series
+  - "ICML2026"
+  - "Time Series"
+  - "Neural Rough Differential Equations"
+  - "Branched Rough Paths"
+  - "Itô Calculus"
+  - "Manifold Dynamics"
+  - "Signature Kernels"
 date: 2026-05-08
-content_hash: 8bf4488270597d73
+content_hash: 547894ea56ffd8d4
 ---
+
 # Learning Manifold and Itô Dynamics with Branched Neural Rough Differential Equations
 
 **Conference**: ICML2026  

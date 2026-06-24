@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hyperbolic Fine-Tuning for Large Language Models
 description: >-
-  [NeurIPS 2025][LLM Evaluation][hyperbolic geometry] This work identifies that LLM token embeddings follow power-law distributions and exhibit tree-like hyperbolic structure…
+  [NeurIPS 2025][LLM Evaluation][hyperbolic geometry] This work identifies that LLM token embeddings follow power-law distributions and exhibit tree-like hyperbolic structure, and proposes HypLoRA — performing low-rank adaptation directly on the Lorentz hyperbolic manifold (bypassing the cancellation effect of tangent space mappings) — achieving significant gains over standard LoRA on arithmetic and commonsense reasoning tasks (e.g., M.AVG +7.5% on Qwen2.5-7B).
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "Lorentz model"
   - "LLM reasoning"
 date: 2026-05-08
-content_hash: c9ec9d1ffa41fe50
+content_hash: afb385a181f3940a
 ---
 
 # Hyperbolic Fine-Tuning for Large Language Models
@@ -135,8 +135,8 @@ The pretrained LLM weights $W$ are frozen, and a HypLoRA adapter is added to eac
 - [\[ICCV 2025\] On the Robustness Tradeoff in Fine-Tuning](../../ICCV2025/llm_evaluation/on_the_robustness_tradeoff_in_fine-tuning.md)
 - [\[NeurIPS 2025\] Can Large Language Models Master Complex Card Games?](can_large_language_models_master_complex_card_games.md)
 - [\[NeurIPS 2025\] LTD-Bench: Evaluating Large Language Models by Letting Them Draw](ltd-bench_evaluating_large_language_models_by_letting_them_draw.md)
+- [\[NeurIPS 2025\] ConfTuner: Training Large Language Models to Express Their Confidence Verbally](conftuner_training_large_language_models_to_express_their_confidence_verbally.md)
 - [\[NeurIPS 2025\] Creativity or Brute Force? Using Brainteasers as a Window into the Problem-Solving Abilities of Large Language Models](creativity_or_brute_force_using_brainteasers_as_a_window_into_the_problem-solvin.md)
-- [\[NeurIPS 2025\] Benchmarking Large Language Models for Zero-Shot and Few-Shot Phishing URL Detection](benchmarking_large_language_models_for_zero-shot_and_few-shot_phishing_url_detec.md)
 
 </div>
 

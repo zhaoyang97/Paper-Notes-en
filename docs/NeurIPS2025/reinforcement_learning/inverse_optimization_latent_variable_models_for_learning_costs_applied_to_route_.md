@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Inverse Optimization Latent Variable Models for Learning Costs Applied to Route Problems
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][inverse optimization] This paper proposes IO-LVM (Inverse Optimization Latent Variable Model), which employs a VAE-style encoder to map observed COP solutions into a latent cost spa…
+  [NeurIPS 2025][Reinforcement Learning][inverse optimization] This paper proposes IO-LVM (Inverse Optimization Latent Variable Model), which employs a VAE-style encoder to map observed COP solutions into a latent cost space. A Fenchel-Young loss combined with black-box solvers (Dijkstra/TSP solver) ensures feasibility at the decoding stage. The model learns the distribution of cost functions from route data without agent labels, and successfully separates navigation preference…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -13,7 +13,7 @@ tags:
   - "TSP"
   - "VAE"
 date: 2026-05-08
-content_hash: e083ad36c8d725ad
+content_hash: ebd9e56c6b36d31d
 ---
 
 # Inverse Optimization Latent Variable Models for Learning Costs Applied to Route Problems
@@ -122,10 +122,10 @@ Observed route $\mathbf{x}_i$ (+ problem instance $\mathbf{p}_i$, e.g., start/en
 ## Related Papers
 
 - [\[NeurIPS 2025\] Complexity Scaling Laws for Neural Models using Combinatorial Optimization](complexity_scaling_laws_for_neural_models_using_combinatorial_optimization.md)
-- [\[NeurIPS 2025\] Hybrid Latent Reasoning via Reinforcement Learning](hybrid_latent_reasoning_via_reinforcement_learning.md)
-- [\[ICML 2026\] Learning to Route Languages for Multilingual Policy Optimization](../../ICML2026/reinforcement_learning/learning_to_route_languages_for_multilingual_policy_optimization.md)
+- [\[ICML 2025\] Preference Optimization for Combinatorial Optimization Problems](../../ICML2025/reinforcement_learning/preference_optimization_for_combinatorial_optimization_problems.md)
 - [\[NeurIPS 2025\] Strategic Costs of Perceived Bias in Fair Selection](strategic_costs_of_perceived_bias_in_fair_selection.md)
-- [\[NeurIPS 2025\] Dynamics-Aligned Latent Imagination in Contextual World Models for Zero-Shot Generalization](dynamics-aligned_latent_imagination_in_contextual_world_models_for_zero-shot_gen.md)
+- [\[ICML 2026\] Learning to Route Languages for Multilingual Policy Optimization](../../ICML2026/reinforcement_learning/learning_to_route_languages_for_multilingual_policy_optimization.md)
+- [\[NeurIPS 2025\] Hybrid Latent Reasoning via Reinforcement Learning](hybrid_latent_reasoning_via_reinforcement_learning.md)
 
 </div>
 

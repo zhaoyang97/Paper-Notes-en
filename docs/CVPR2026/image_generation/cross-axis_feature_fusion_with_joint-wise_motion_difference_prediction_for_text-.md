@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Cross-Axis Feature Fusion with Joint-Wise Motion Difference Prediction for Text-Based 3D Human Motion Editing
 description: >-
-  [CVPR 2026][Image Generation][Soft-DTW] Addressing text-driven 3D human motion editing, this paper utilizes "joint-anchored" and "time-anchored" Transformers to model the joint and time axes separately, integrating them via cross-axis fusion blocks. It incorporates an auxiliary task of regressing the Soft-DTW distance of source/target rotation trajectories,
+  [CVPR 2026][Image Generation][Text-driven motion editing] Addressing text-driven 3D human motion editing, this paper utilizes "joint-anchored" and "time-anchored" Transformers to model the joint and time axes separately, integrating them via cross-axis fusion blocks. It incorporates an auxiliary task of regressing the Soft-DTW distance of source/target rotation trajectories, enabling the model to learn not only "when" to edit but also "which joints" to edit…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Soft-DTW
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Text-driven motion editing"
+  - "Axis-anchored Transformer"
+  - "Cross-axis fusion"
+  - "Soft-DTW"
+  - "Joint-level supervision"
 date: 2026-05-08
-content_hash: 1c7d06434fa2d4e9
+content_hash: 4f98bef07d8bd28e
 ---
+
 # Cross-Axis Feature Fusion with Joint-Wise Motion Difference Prediction for Text-Based 3D Human Motion Editing
 
 **Conference**: CVPR 2026  
@@ -135,11 +140,11 @@ Ablations compare "Frame-wise Similarity (Motion Sim.)" and "Joint-wise Distance
 
 ## Related Papers
 
-- [\[CVPR 2026\] InterEdit: Navigating Text-Guided Multi-Human 3D Motion Editing](interedit_navigating_textguided_multihuman_3d_moti.md)
+- [\[CVPR 2026\] Stability-Driven Motion Generation for Object-Guided Human-Human Co-Manipulation](stability-driven_motion_generation_for_object-guided_human-human_co-manipulation.md)
 - [\[CVPR 2025\] Nonisotropic Gaussian Diffusion for Realistic 3D Human Motion Prediction](../../CVPR2025/image_generation/nonisotropic_gaussian_diffusion_for_realistic_3d_human_motion_prediction.md)
-- [\[CVPR 2026\] Causal Motion Diffusion Models for Autoregressive Motion Generation](causal_motion_diffusion_models_for_autoregressive_motion_generation.md)
-- [\[CVPR 2026\] OneHOI: Unifying Human-Object Interaction Generation and Editing](onehoi_unifying_human-object_interaction_generation_and_editing.md)
-- [\[ECCV 2024\] Realistic Human Motion Generation with Cross-Diffusion Models](../../ECCV2024/image_generation/realistic_human_motion_generation_with_cross-diffusion_models.md)
+- [\[CVPR 2026\] MotionEdit: Benchmarking and Learning Motion-Centric Image Editing](motionedit_benchmarking_and_learning_motion-centric_image_editing.md)
+- [\[CVPR 2025\] InterEdit: Navigating Text-Guided Multi-Human 3D Motion Editing](../../CVPR2025/image_generation/interedit_navigating_text-guided_multi-human_3d_motion_editing.md)
+- [\[CVPR 2026\] Vinedresser3D: Agentic Text-guided 3D Editing](vinedresser3d_agentic_text-guided_3d_editing.md)
 
 </div>
 

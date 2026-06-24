@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Disentangling Direction and Magnitude in Transformer Representations: A Double Dissociation Through L2-Matched Perturbation Analysis
 description: >-
-  [ICML 2026][Interpretability][LayerNorm] This paper employs an L2-matched perturbation protocol to demonstrate that in the Pythia series, angular (direction) perturbations are 42.9 times more destructive to language modeling loss than magnitude perturbations of equal displacement. Conversely, magnitude perturbations damage syntax (subject-verb agreement) sign
+  [ICML 2026][Interpretability][Linear Representation Hypothesis] This paper employs an L2-matched perturbation protocol to demonstrate that in the Pythia series, angular (direction) perturbations are 42.9 times more destructive to language modeling loss than magnitude perturbations of equal displacement. Conversely, magnitude perturbations damage syntax (subject-verb agreement) significantly more than angular ones. This constitutes a "double dissociation" in the cognitive neur…
 tags:
-  - ICML 2026
-  - Interpretability
-  - LayerNorm
+  - "ICML 2026"
+  - "Interpretability"
+  - "Linear Representation Hypothesis"
+  - "Direction vs Magnitude"
+  - "L2-Matched Perturbation"
+  - "LayerNorm"
+  - "Attention Pathways"
 date: 2026-05-08
-content_hash: 223a21981592ffbf
+content_hash: 9fb43b3e12e2f3a3
 ---
+
 # Disentangling Direction and Magnitude in Transformer Representations: A Double Dissociation Through L2-Matched Perturbation Analysis
 
 **Conference**: ICML 2026  
@@ -130,15 +135,15 @@ Angular perturbations are amplified 24.8×, while magnitude ones only 7.8×. Lay
 - Value: ⭐⭐⭐⭐ Critical for refining LRH and guiding representation engineering practices.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Why Low-Precision Transformer Training Fails: An Analysis on Flash Attention](../../ICLR2026/interpretability/why_low-precision_transformer_training_fails_an_analysis_on_flash_attention.md)
 - [\[ACL 2026\] Similarity-Distance-Magnitude Activations](../../ACL2026/interpretability/similarity-distance-magnitude_activations.md)
 - [\[AAAI 2026\] Probing Preference Representations: A Multi-Dimensional Evaluation and Analysis Method for Reward Models](../../AAAI2026/interpretability/probing_preference_representations_a_multi-dimensional_evaluation_and_analysis_m.md)
 - [\[ICML 2026\] Prototype Transformer: Towards Language Model Architectures Interpretable by Design](prototype_transformer_towards_language_model_architectures_interpretable_by_desi.md)
-- [\[ACL 2026\] Crosscoding Through Time: Tracking Emergence & Consolidation Of Linguistic Representations Throughout LLM Pretraining](../../ACL2026/interpretability/crosscoding_through_time_tracking_emergence_consolidation_of_linguistic_represen.md)
 - [\[ICML 2026\] Learning Coherent Representations: A Topological Approach to Interpretability](learning_coherent_representations_a_topological_approach_to_interpretability.md)
 
 </div>

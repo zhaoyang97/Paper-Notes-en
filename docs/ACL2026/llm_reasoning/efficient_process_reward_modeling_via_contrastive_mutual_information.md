@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Efficient Process Reward Modeling via Contrastive Mutual Information
 description: >-
-  [ACL 2026][LLM Reasoning][Paper Note] This paper proposes CPMI (Contrastive Pointwise Mutual Information), an efficient automated step-level reward annotation method. It estimates the step-level contribution by contrasting the change in conditional probabilities of correct and incorrect answers. Compared to Monte Carlo estimation, CPMI reduces construction
+  [ACL 2024][Reasoning][Process Reward Model] This paper proposes CPMI (Contrastive Pointwise Mutual Information), an efficient automated step-level reward annotation method. It estimates the step-level contribution by contrasting the change in conditional probabilities of correct and incorrect answers. Compared to Monte Carlo estimation, CPMI reduces construction time by 84% and token generation by 98%, while achieving higher accuracy on process-level evaluation and mathematic…
 tags:
-  - ACL 2026
-  - LLM Reasoning
+  - "ACL 2024"
+  - "Reasoning"
+  - "Process Reward Model"
+  - "Step-level Supervision"
+  - "Mutual Information"
+  - "Contrastive Learning"
+  - "Mathematical Reasoning"
 date: 2026-05-08
-content_hash: bc58f42fe149a5d2
+content_hash: b3a32700827d2984
 ---
+
 # Efficient Process Reward Modeling via Contrastive Mutual Information
 
 **Conference**: ACL 2024  
@@ -133,11 +139,11 @@ Qwen3-4B-Base is used as the PRM backbone with a two-layer linear reward head. T
 
 ## Related Papers
 
-- [\[ACL 2026\] C2: Scalable Rubric-Augmented Reward Modeling from Binary Preferences](c2_scalable_rubric-augmented_reward_modeling_from_binary_preferences.md)
-- [\[ACL 2026\] Process Reward Models Meet Planning: Generating Precise and Scalable Datasets for Step-Level Rewards](process_reward_models_meet_planning_generating_precise_and_scalable_datasets_for.md)
+- [\[ICLR 2026\] Linking Process to Outcome: Conditional Reward Modeling for LLM Reasoning](../../ICLR2026/llm_reasoning/linking_process_to_outcome_conditional_reward_modeling_for_llm_reasoning.md)
 - [\[ACL 2025\] Dynamic and Generalizable Process Reward Modeling (DG-PRM)](../../ACL2025/llm_reasoning/dgprm_dynamic_process_reward.md)
+- [\[ICLR 2026\] OR-PRM: A Process Reward Model for Algorithmic Problem in Operations Research](../../ICLR2026/llm_reasoning/or-prm_a_process_reward_model_for_algorithmic_problem_in_operations_research.md)
 - [\[ICML 2026\] GRPO is Secretly a Process Reward Model](../../ICML2026/llm_reasoning/grpo_is_secretly_a_process_reward_model.md)
-- [\[ACL 2026\] HISR: Hindsight Information Modulated Segmental Process Rewards for Multi-turn Agentic Reinforcement Learning](hisr_hindsight_information_modulated_segmental_process_rewards_for_multi-turn_ag.md)
+- [\[ACL 2026\] C2: Scalable Rubric-Augmented Reward Modeling from Binary Preferences](c2_scalable_rubric-augmented_reward_modeling_from_binary_preferences.md)
 
 </div>
 

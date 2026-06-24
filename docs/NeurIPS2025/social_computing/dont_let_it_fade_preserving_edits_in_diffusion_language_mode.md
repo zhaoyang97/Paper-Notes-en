@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Don't Let It Fade: Preserving Edits in Diffusion Language Models via Token Timestep Allocation
 description: >-
-  [Social Computing] This paper proposes Token Timestep Allocation (TTA-Diffusion), which assigns independent denoising timesteps to each token to address the *update-forgetting* problem caused by classifier guidance in di…
+  [Social Computing] This paper proposes Token Timestep Allocation (TTA-Diffusion), which assigns independent denoising timesteps to each token to address the *update-forgetting* problem caused by classifier guidance in diffusion language models, achieving substantial improvements in both stability and efficiency for controllable text generation.
 tags:
   - "Social Computing"
 date: 2026-05-08
-content_hash: d46099bc753f3c03
+content_hash: 8d2b7e6de64de589
 ---
 
 # Don't Let It Fade: Preserving Edits in Diffusion Language Models via Token Timestep Allocation
@@ -123,11 +123,11 @@ The connection to SANA-Sprint/DiCo is notable: both focus on inference efficienc
 
 ## Related Papers
 
+- [\[CVPR 2025\] Let Samples Speak: Mitigating Spurious Correlation by Exploiting the Clusterness of Samples](../../CVPR2025/social_computing/let_samples_speak_mitigating_spurious_correlation_by_exploiting_the_clusterness_.md)
+- [\[ICLR 2026\] Tracing and Reversing Edits in LLMs](../../ICLR2026/social_computing/tracing_and_reversing_edits_in_llms.md)
 - [\[NeurIPS 2025\] Active Slice Discovery in Large Language Models](active_slice_discovery_in_large_language_models.md)
 - [\[NeurIPS 2025\] Uncovering Strategic Egoism Behaviors in Large Language Models](uncovering_strategic_egoism_behaviors_in_large_language_models.md)
-- [\[NeurIPS 2025\] Redefining Experts: Interpretable Decomposition of Language Models for Toxicity Mitigation](redefining_experts_interpretable_decomposition_of_language_models_for_toxicity_m.md)
-- [\[NeurIPS 2025\] DATE-LM: Benchmarking Data Attribution Evaluation for Large Language Models](date-lm_benchmarking_data_attribution_evaluation_for_large_language_models.md)
-- [\[ICLR 2026\] Tracing and Reversing Edits in LLMs](../../ICLR2026/social_computing/tracing_and_reversing_edits_in_llms.md)
+- [\[NeurIPS 2025\] Position Paper: If Innovation in AI Systematically Violates Fundamental Rights, Is It Innovation at All?](position_paper_if_innovation_in_ai_systematically_violates_fundamental_rights_is.md)
 
 </div>
 

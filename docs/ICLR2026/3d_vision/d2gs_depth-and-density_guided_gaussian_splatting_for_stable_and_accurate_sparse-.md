@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] D²GS: Depth-and-Density Guided Gaussian Splatting for Stable and Accurate Sparse-View Reconstruction
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] D²GS addresses two failure modes of 3DGS under sparse views—"near-field overfitting and far-field underfitting"—by using "Depth-and-Density Guided Dropout" to suppress redundant near-field Gaussians and "Distance-Aware Fidelity Enhancement" to reinforce far-field supervision. It also proposes an Inter-Model Robustness
+  [ICLR2026][3D Vision][Sparse-view reconstruction] D²GS addresses two failure modes of 3DGS under sparse views—"near-field overfitting and far-field underfitting"—by using "Depth-and-Density Guided Dropout" to suppress redundant near-field Gaussians and "Distance-Aware Fidelity Enhancement" to reinforce far-field supervision. It also proposes an Inter-Model Robustness (IMR) metric based on Optimal Transport to quantify reconstruction stability…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR2026"
+  - "3D Vision"
+  - "Sparse-view reconstruction"
+  - "3D Gaussian Splatting"
+  - "Depth priors"
+  - "Adaptive Dropout"
+  - "Robustness metric"
 date: 2026-05-08
-content_hash: a5588742ac2816f6
+content_hash: 678d161f13d0eae1
 ---
+
 # D²GS: Depth-and-Density Guided Gaussian Splatting for Stable and Accurate Sparse-View Reconstruction
 
 **Conference**: ICLR2026  
@@ -159,11 +165,11 @@ Incremental component addition (LLFF, PSNR/LPIPS/IMR):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Confidence-Guided Multi-Scale Aggregation for Sparse-View High-Resolution 3D Gaussian Splatting](../../CVPR2026/3d_vision/confidence-guided_multi-scale_aggregation_for_sparse-view_high-resolution_3d_gau.md)
-- [\[CVPR 2026\] SV-GS: Sparse View 4D Reconstruction with Skeleton-Driven Gaussian Splatting](../../CVPR2026/3d_vision/sv-gs_sparse_view_4d_reconstruction_with_skeleton-driven_gaussian_splatting.md)
-- [\[ICLR 2026\] CLoD-GS: Continuous Level-of-Detail via 3D Gaussian Splatting](clod-gs_continuous_level-of-detail_via_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] FSFSplatter: Geometrically Accurate Reconstruction with Free Sparse-view Images within 2 minutes](../../CVPR2026/3d_vision/fsfsplatter_geometrically_accurate_reconstruction_with_free_sparse-view_images_w.md)
+- [\[CVPR 2026\] Confidence-Guided Multi-Scale Aggregation for Sparse-View High-Resolution 3D Gaussian Splatting](../../CVPR2026/3d_vision/confidence-guided_multi-scale_aggregation_for_sparse-view_high-resolution_3d_gau.md)
 - [\[CVPR 2026\] Exact-GS: Mathematically Rigorous and Accurate 3D Gaussian Splatting for 3D X-ray Reconstruction](../../CVPR2026/3d_vision/exact-gs_mathematically_rigorous_and_accurate_3d_gaussian_splatting_for_3d_x-ray.md)
+- [\[CVPR 2026\] DropAnSH-GS: Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting](../../CVPR2026/3d_vision/dropping_anchor_and_spherical_harmonics_for_sparse-view_gaussian_splatting.md)
+- [\[CVPR 2026\] SV-GS: Sparse View 4D Reconstruction with Skeleton-Driven Gaussian Splatting](../../CVPR2026/3d_vision/sv-gs_sparse_view_4d_reconstruction_with_skeleton-driven_gaussian_splatting.md)
 
 </div>
 

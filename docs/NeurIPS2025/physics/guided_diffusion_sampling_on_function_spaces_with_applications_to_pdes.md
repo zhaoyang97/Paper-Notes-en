@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Guided Diffusion Sampling on Function Spaces with Applications to PDEs
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][function-space diffusion models] This paper proposes **FunDPS (Function-space Diffusion Posterior Sampling)**…
+  [NeurIPS 2025][Physics & Scientific Computing][function-space diffusion models] This paper proposes **FunDPS (Function-space Diffusion Posterior Sampling)**, which trains an unconditional diffusion model in function space and performs plug-and-play posterior sampling for PDE inverse problems via gradient guidance at inference time. Theoretically, it extends the Tweedie formula to infinite-dimensional Banach spaces. Empirically, across 5 PDE tasks with only 3% observations…
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -13,7 +13,7 @@ tags:
   - "neural operators"
   - "resolution invariance"
 date: 2026-05-08
-content_hash: 5ca96608985b6b6d
+content_hash: af6029fb77bbbf03
 ---
 
 # Guided Diffusion Sampling on Function Spaces with Applications to PDEs
@@ -242,7 +242,7 @@ ReNoise with 80% of steps at low resolution matches the accuracy of full-resolut
 - [\[NeurIPS 2025\] Physics-Constrained Flow Matching: Sampling Generative Models with Hard Constraints](physics-constrained_flow_matching_sampling_generative_models_with_hard_constrain.md)
 - [\[NeurIPS 2025\] Integration Matters for Learning PDEs with Backward SDEs](integration_matters_for_learning_pdes_with_backward_sdes.md)
 - [\[NeurIPS 2025\] One-Shot Transfer Learning for Nonlinear PDEs with Perturbative PINNs](oneshot_transfer_learning_nonlinear_pdes_perturbative_pinns.md)
-- [\[NeurIPS 2025\] Neural Emulator Superiority: When Machine Learning for PDEs Surpasses its Training Data](neural_emulator_superiority_when_machine_learning_for_pdes_surpasses_its_trainin.md)
+- [\[NeurIPS 2025\] Physics-Guided Machine Learning for Uncertainty Quantification in Turbulence Models](physics-guided_machine_learning_for_uncertainty_quantification_in_turbulence_mod.md)
 
 </div>
 

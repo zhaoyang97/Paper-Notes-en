@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] How Learning Rate Decay Wastes Your Best Data in Curriculum-Based LLM Pretraining
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] The authors identify a natural conflict between "ascending quality data curriculum" and "learning rate (LR) decay." High-quality data is intentionally placed at the end of training but coincides with the stage where the LR is decayed to its minimum, resulting in minimal update steps and wasted data. By utilizing "gentl
+  [ICLR 2026][LLM Pretraining][Data Curriculum] The authors identify a natural conflict between "ascending quality data curriculum" and "learning rate (LR) decay." High-quality data is intentionally placed at the end of training but coincides with the stage where the LR is decayed to its minimum, resulting in minimal update steps and wasted data. By utilizing "gentle decay + replacing decay with model averaging," the study improves average benchmark scores by 1.64% relative to…
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Data Curriculum"
+  - "Learning Rate Decay"
+  - "Model Averaging"
+  - "Pretraining"
+  - "High-Quality Data"
 date: 2026-05-08
-content_hash: 23f1b549eeccd93b
+content_hash: f51df1d5834b541e
 ---
+
 # How Learning Rate Decay Wastes Your Best Data in Curriculum-Based LLM Pretraining
 
 **Conference**: ICLR 2026  
@@ -136,11 +142,11 @@ In mid-training settings, CMA gains are more significant: EMA+A-T improves avera
 
 ## Related Papers
 
-- [\[ICLR 2026\] LLM Pretraining with Continuous Concepts](llm_pretraining_with_continuous_concepts.md)
-- [\[ICLR 2026\] Distilled Pretraining: A modern lens of Data, In-Context Learning and Test-Time Scaling](distilled_pretraining_a_modern_lens_of_data_in-context_learning_and_test-time_sc.md)
-- [\[ICLR 2026\] Beyond Length: Quantifying Long-Range Information for Long-Context LLM Pretraining Data](beyond_length_quantifying_long-range_information_for_long-context_llm_pretrainin.md)
-- [\[ICLR 2026\] Reformulation for Pretraining Data Augmentation](reformulation_for_pretraining_data_augmentation.md)
 - [\[ICLR 2026\] Pre-training LLM without Learning Rate Decay Enhances Supervised Fine-Tuning](pre-training_llm_without_learning_rate_decay_enhances_supervised_fine-tuning.md)
+- [\[ICLR 2026\] LLM Pretraining with Continuous Concepts](llm_pretraining_with_continuous_concepts.md)
+- [\[ICLR 2026\] How to Train Data-Efficient LLMs](how_to_train_data-efficient_llms.md)
+- [\[ICLR 2026\] Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](scaling_laws_revisited_modeling_the_role_of_data_quality_in_language_model_pretr.md)
+- [\[ICLR 2026\] Reformulation for Pretraining Data Augmentation](reformulation_for_pretraining_data_augmentation.md)
 
 </div>
 

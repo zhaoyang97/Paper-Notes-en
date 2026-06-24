@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Continuous Audio Language Models
 description: >-
-  [ICLR 2026][Audio & Speech][VAE] The authors propose CALM (Continuous Audio Language Models), enabling autoregressive Transformers to directly predict audio frame-by-frame in the continuous latent space of a VAE. By replacing the diffusion head with a "consistency model sampling head" for single-step generation, the model bypasses the hard trade-off b
+  [ICLR2026][Audio & Speech][Continuous Audio Language Models] The authors propose CALM (Continuous Audio Language Models), enabling autoregressive Transformers to directly predict audio frame-by-frame in the continuous latent space of a VAE. By replacing the diffusion head with a "consistency model sampling head" for single-step generation, the model bypasses the hard trade-off between audio quality and computational cost inherent in discrete RVQ tokens. It achieves higher fid…
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - VAE
+  - "ICLR2026"
+  - "Audio & Speech"
+  - "Continuous Audio Language Models"
+  - "Consistency Models"
+  - "VAE"
+  - "Autoregressive Generation"
+  - "Speech Synthesis"
 date: 2026-05-08
-content_hash: 0370eec4c0d142ed
+content_hash: 13a15d5e7930c8dd
 ---
+
 # Continuous Audio Language Models
 
 **Conference**: ICLR2026  

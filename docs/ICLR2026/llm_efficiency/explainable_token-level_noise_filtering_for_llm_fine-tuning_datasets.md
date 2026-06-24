@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Explainable Token-level Noise Filtering for LLM Fine-tuning Datasets
 description: >-
-  [ICLR 2026][LLM Efficiency][Interpretability] Addressing the mismatch where "fine-tuning data is sentence-level, but LLM optimization is token-level," this paper proposes XTF. It decomposes the contribution of each token into three explainable attributes: Reasoning Importance (RI), Knowledge Novelty (KN), and Task Relevance (TR). Tokens lacking any of these attrib
+  [ICLR 2026][LLM Efficiency][Fine-tuning data optimization] Addressing the mismatch where "fine-tuning data is sentence-level, but LLM optimization is token-level," this paper proposes XTF. It decomposes the contribution of each token into three explainable attributes: Reasoning Importance (RI), Knowledge Novelty (KN), and Task Relevance (TR). Tokens lacking any of these attributes are identified as noise and masked during training. This approach improves fine-tuning accuracy…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Interpretability
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Fine-tuning data optimization"
+  - "token-level noise"
+  - "gradient masking"
+  - "explainability"
+  - "attention scoring"
 date: 2026-05-08
-content_hash: 347ac6cbac322589
+content_hash: 6eda7f2c88dd4769
 ---
+
 # Explainable Token-level Noise Filtering for LLM Fine-tuning Datasets
 
 **Conference**: ICLR 2026  

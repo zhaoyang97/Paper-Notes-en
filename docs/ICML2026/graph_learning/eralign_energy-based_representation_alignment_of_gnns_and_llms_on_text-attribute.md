@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ERAlign: Energy-based Representation Alignment of GNNs and LLMs on Text-attributed Graphs
 description: >-
-  [ICML 2026][Graph Learning][Energy Discrepancy] Addressing the difficulty of aligning GNN and LLM representations on Text-Attributed Graphs (TAGs), this paper proposes a **set energy-based model (set EBM)**. It projects both representations into a shared latent space, measures distribution misalignment using Cramér distance for layer-wise alignment, and employs a sa
+  [ICML2026][Graph Learning][Text-attributed Graphs] Addressing the difficulty of aligning GNN and LLM representations on Text-Attributed Graphs (TAGs), this paper proposes a **set energy-based model (set EBM)**. It projects both representations into a shared latent space, measures distribution misalignment using Cramér distance for layer-wise alignment, and employs a sampling-free **Energy Discrepancy (ED)** training objective to minimize energy. The method achieves state-of-t…
 tags:
-  - ICML 2026
-  - Graph Learning
-  - Energy Discrepancy
+  - "ICML2026"
+  - "Graph Learning"
+  - "Text-attributed Graphs"
+  - "GNN-LLM Alignment"
+  - "Energy-based Model"
+  - "Energy Discrepancy"
+  - "Cramér Distance"
 date: 2026-05-08
-content_hash: 08a2b63c6e87a2c7
+content_hash: 624529ce064ab95b
 ---
+
 # ERAlign: Energy-based Representation Alignment of GNNs and LLMs on Text-attributed Graphs
 
 **Conference**: ICML2026  
@@ -143,9 +148,9 @@ Zero-shot cross-task transfer (Classification → Link Prediction, AUC%): ERAlig
 
 - [\[NeurIPS 2025\] Unifying Text Semantics and Graph Structures for Temporal Text-attributed Graphs with LLMs](../../NeurIPS2025/graph_learning/unifying_text_semantics_and_graph_structures_for_temporal_text-attributed_graphs.md)
 - [\[AAAI 2026\] GCL-OT: Graph Contrastive Learning with Optimal Transport for Heterophilic Text-Attributed Graphs](../../AAAI2026/graph_learning/gcl-ot_graph_contrastive_learning_with_optimal_transport_for_heterophilic_text-a.md)
-- [\[ICML 2026\] Generative Representation Learning on Hyper-relational Knowledge Graphs via Masked Discrete Diffusion](generative_representation_learning_on_hyper-relational_knowledge_graphs_via_mask.md)
 - [\[NeurIPS 2025\] SSTAG: Structure-Aware Self-Supervised Learning Method for Text-Attributed Graphs](../../NeurIPS2025/graph_learning/sstag_structure-aware_self-supervised_learning_method_for_text-attributed_graphs.md)
 - [\[NeurIPS 2025\] Dynamic Bundling with Large Language Models for Zero-Shot Inference on Text-Attributed Graphs](../../NeurIPS2025/graph_learning/dynamic_bundling_with_large_language_models_for_zero-shot_inference_on_text-attr.md)
+- [\[ICLR 2026\] Global-Recent Semantic Reasoning on Dynamic Text-Attributed Graphs with Large Language Models](../../ICLR2026/graph_learning/global-recent_semantic_reasoning_on_dynamic_text-attributed_graphs_with_large_la.md)
 
 </div>
 

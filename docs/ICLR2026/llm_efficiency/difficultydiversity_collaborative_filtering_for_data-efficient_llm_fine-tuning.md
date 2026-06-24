@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Difficulty–Diversity Collaborative Filtering for Data-Efficient LLM Fine-Tuning
 description: >-
-  [ICLR 2026][LLM Efficiency][Less-is-More] This paper treats the interaction matrix of "model-question" correctness as a recommendation system rating matrix. It employs collaborative filtering to learn **personalized question difficulty for each target model**, then performs combinatorial optimization with semantic diversity. By selecting the 1000 most valuable
+  [ICLR 2026][LLM Efficiency][Data Selection] This paper treats the interaction matrix of "model-question" correctness as a recommendation system rating matrix. It employs collaborative filtering to learn **personalized question difficulty for each target model**, then performs combinatorial optimization with semantic diversity. By selecting the 1000 most valuable samples from large-scale unlabeled corpora, it reduces annotation costs by 100–200x while achieving downstream perf…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Less-is-More
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Data Selection"
+  - "Collaborative Filtering"
+  - "Difficulty–Diversity Trade-off"
+  - "Less-is-More"
+  - "Supervised Fine-Tuning"
+  - "Matrix Factorization"
 date: 2026-05-08
-content_hash: 072b72334dab5711
+content_hash: f4b11af94803d136
 ---
+
 # Difficulty–Diversity Collaborative Filtering for Data-Efficient LLM Fine-Tuning
 
 **Conference**: ICLR 2026  
@@ -121,7 +127,7 @@ As $\lambda$ increases from 0 (pure diversity) to 0.2, competition-level AMC23 p
 - [\[ICLR 2026\] CPQS-Tuning: A Model Self-Perception-Based Data Filtering Algorithm for Efficient Instruction Fine-Tuning](cpqs-tuning_a_model_self-perception-based_data_filtering_algorithm_for_efficient.md)
 - [\[ICLR 2026\] Explainable Token-level Noise Filtering for LLM Fine-tuning Datasets](explainable_token-level_noise_filtering_for_llm_fine-tuning_datasets.md)
 - [\[ICLR 2026\] Neuron-Aware Data Selection in Instruction Tuning for Large Language Models](neuron-aware_data_selection_in_instruction_tuning_for_large_language_models.md)
-- [\[ICLR 2026\] On-the-Fly Adaptation to Quantization: Configuration-Aware LoRA for Efficient Fine-Tuning of Quantized LLMs](on-the-fly_adaptation_to_quantization_configuration-aware_lora_for_efficient_fin.md)
+- [\[ICLR 2026\] Mitigating Non-IID Drift in Zeroth-Order Federated LLM Fine-Tuning with Transferable Sparsity](mitigating_non-iid_drift_in_zeroth-order_federated_llm_fine-tuning_with_transfer.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Diffusion Mental Averages
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] Proposes Diffusion Mental Averages (DMA), which extracts "mental average" prototype images of concepts from pre-trained diffusion models by aligning multiple denoising trajectories in the semantic space—achieving consistent and realistic visualization of conceptual averages for the first time.
+  [CVPR 2026][Image Generation][Diffusion Models] Proposes Diffusion Mental Averages (DMA), which extracts "mental average" prototype images of concepts from pre-trained diffusion models by aligning multiple denoising trajectories in the semantic space—achieving consistent and realistic visualization of conceptual averages for the first time.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Conceptual Prototypes"
+  - "Trajectory Alignment"
+  - "Semantic Averaging"
+  - "Model Bias Analysis"
 date: 2026-05-08
-content_hash: 03b0b82948513220
+content_hash: 317b8040ecd19183
 ---
+
 # Diffusion Mental Averages
 
 **Conference**: CVPR 2026  
@@ -163,7 +168,7 @@ Evaluated across 12 concepts (animals, people, objects, abstracts), 1000 samples
 - [\[CVPR 2026\] Reviving ConvNeXt for Efficient Convolutional Diffusion Models](reviving_convnext_for_efficient_convolutional_diffusion_models.md)
 - [\[CVPR 2026\] Visual Diffusion Models are Geometric Solvers](visual_diffusion_models_are_geometric_solvers.md)
 - [\[CVPR 2026\] Learnability-Guided Diffusion for Dataset Distillation](learnability-guided_diffusion_for_dataset_distillation.md)
-- [\[CVPR 2026\] Elucidating the SNR-t Bias of Diffusion Probabilistic Models](dcw_snr_t_bias_diffusion.md)
+- [\[CVPR 2026\] Ultra Diffusion Poser: Diffusion-Based Human Motion Tracking From Sparse Inertial Sensors and Ranging-Based Between-Sensor Distances](ultra_diffusion_poser_diffusion-based_human_motion_tracking_from_sparse_inertial.md)
 
 </div>
 

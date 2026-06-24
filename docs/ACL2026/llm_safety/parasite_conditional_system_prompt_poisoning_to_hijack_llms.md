@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PARASITE: Conditional System Prompt Poisoning to Hijack LLMs
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] PARASITE formalizes the threat where system prompts downloaded from public marketplaces may contain conditional trigger backdoors as a new supply chain risk. It utilizes global semantic search combined with word-level greedy perturbation to generate highly stealthy system prompts under black-box conditions that hijack
+  [ACL2026][LLM Safety][Conditional Prompt Poisoning] PARASITE formalizes the threat where system prompts downloaded from public marketplaces may contain conditional trigger backdoors as a new supply chain risk. It utilizes global semantic search combined with word-level greedy perturbation to generate highly stealthy system prompts under black-box conditions that hijack responses only for target queries.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL2026"
+  - "LLM Safety"
+  - "Conditional Prompt Poisoning"
+  - "System Prompt Security"
+  - "Black-box Attack"
+  - "Discrete Prompt Optimization"
+  - "Defense Evaluation"
 date: 2026-05-08
-content_hash: 8c4380fd30886ae1
+content_hash: 18911a94ae8bb0e6
 ---
+
 # PARASITE: Conditional System Prompt Poisoning to Hijack LLMs
 
 **Conference**: ACL2026  

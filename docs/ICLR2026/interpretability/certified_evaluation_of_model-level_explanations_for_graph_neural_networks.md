@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Certified Evaluation of Model-Level Explanations for Graph Neural Networks
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper formalizes the long-standing problem of evaluating "whether model-level explanations for GNNs are good enough"—previously reliant on class scores and visual inspection—into a regression loss called **sufficiency risk**. By deriving distribution-free certified upper bounds, the authors introduce three computa
+  [ICLR2026][Interpretability][Model-level explanation] This paper formalizes the long-standing problem of evaluating "whether model-level explanations for GNNs are good enough"—previously reliant on class scores and visual inspection—into a regression loss called **sufficiency risk**. By deriving distribution-free certified upper bounds, the authors introduce three computable metrics: Coverage, GGA, and Overlap (with finite-sample confidence intervals)…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR2026"
+  - "Interpretability"
+  - "Model-level explanation"
+  - "GNN explainability"
+  - "Sufficiency risk"
+  - "Certified evaluation"
+  - "Coverage"
 date: 2026-05-08
-content_hash: 9c0245e83ce57406
+content_hash: 209a27f58465737b
 ---
+
 # Certified Evaluation of Model-Level Explanations for Graph Neural Networks
 
 **Conference**: ICLR2026  
@@ -145,15 +151,14 @@ Key observations: On MUTAG, XGNN (with valence constraints) and PAGE (discovery-
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Bayesian Neural Networks for Functional ANOVA Model](bayesian_neural_networks_for_functional_anova_model.md)
+- [\[ICLR 2026\] Tracking Equivalent Mechanistic Interpretations Across Neural Networks](tracking_equivalent_mechanistic_interpretations_across_neural_networks.md)
 - [\[ICLR 2026\] Addressing Divergent Representations from Causal Interventions on Neural Networks](addressing_divergent_representations_causal.md)
 - [\[ICLR 2026\] Explainable K-means Neural Networks for Multi-view Clustering](explainable_k_-means_neural_networks_for_multi-view_clustering.md)
 - [\[ICLR 2026\] FAME: Formal Abstract Minimal Explanation for Neural Networks](fame_formal_abstract_minimal_explanation_for_neural_networks.md)
-- [\[ICLR 2026\] Discovering Alternative Solutions Beyond the Simplicity Bias in Recurrent Neural Networks](discovering_alternative_solutions_beyond_the_simplicity_bias_in_recurrent_neural.md)
 
 </div>
 

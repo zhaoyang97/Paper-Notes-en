@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Few-Shot Synthetic Accented Speech for ASR Fine-Tuning: What Helps and When?
 description: >-
-  [ICML 2026][Audio & Speech][few-shot TTS] Fine-tuning ASR with accented speech synthesized via few-shot TTS, the authors decompose the question of "why it works." They find that the gains primarily stem from **phoneme-level perturbation augmentation**—random phoneme replacement captures most of the benefits, while LLM-generated "target accent phoneme editing"
+  [ICML2026][Audio & Speech][Accented ASR] Fine-tuning ASR with accented speech synthesized via few-shot TTS, the authors decompose the question of "why it works." They find that the gains primarily stem from **phoneme-level perturbation augmentation**—random phoneme replacement captures most of the benefits, while LLM-generated "target accent phoneme editing" or even oracle ground-truth phonemes/prosody offer only marginal improvements. Furthermore…
 tags:
-  - ICML 2026
-  - Audio & Speech
-  - few-shot TTS
+  - "ICML2026"
+  - "Audio & Speech"
+  - "Accented ASR"
+  - "Synthetic Speech"
+  - "Phoneme Perturbation"
+  - "few-shot TTS"
+  - "Real-Synthetic Mix"
 date: 2026-05-08
-content_hash: 545640f05a4311f4
+content_hash: 52f2284e90e94c9c
 ---
+
 # Few-Shot Synthetic Accented Speech for ASR Fine-Tuning: What Helps and When?
 
 **Conference**: ICML2026  
@@ -142,15 +147,16 @@ Acoustically, adaptation drives the AccSim increase. Random replacement is acous
 - Value: ⭐⭐⭐⭐ (Practical insights on variance reduction and the "perturbation" effect)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] TAPE: Task-Adaptive Prototype Evolution in Audio-Language Models for Fully Few-shot Class-incremental Audio Classification](../../CVPR2026/audio_speech/tape_task-adaptive_prototype_evolution_in_audio-language_models_for_fully_few-sh.md)
-- [\[ICLR 2026\] Knowing When to Quit: Probabilistic Early Exits for Speech Separation](../../ICLR2026/audio_speech/knowing_when_to_quit_probabilistic_early_exits_for_speech_separation.md)
+- [\[ICLR 2026\] AVEX: What Matters for Animal Vocalization Encoding](../../ICLR2026/audio_speech/avex_what_matters_for_animal_vocalization_encoding.md)
+- [\[ACL 2026\] UniSRM: A Unified Speech Reward Model for Fine-Grained Speech Evaluation](../../ACL2026/audio_speech/unisrm_a_unified_speech_reward_model_for_reasoning-based_fine-grained_assessment.md)
 - [\[ACL 2026\] Mind the Pause: Disfluency-Aware Objective Tuning for Multilingual Speech Correction with LLMs](../../ACL2026/audio_speech/mind_the_pause_disfluency-aware_objective_tuning_for_multilingual_speech_correct.md)
-- [\[AAAI 2026\] MF-Speech: Achieving Fine-Grained and Compositional Control in Speech Generation via Factor Disentanglement](../../AAAI2026/audio_speech/mf-speech_achieving_fine-grained_and_compositional_control_in_speech_generation_.md)
-- [\[ACL 2026\] Towards Fine-Grained and Multi-Granular Contrastive Language-Speech Pre-training](../../ACL2026/audio_speech/towards_fine-grained_and_multi-granular_contrastive_language-speech_pre-training.md)
+- [\[ICLR 2026\] Knowing When to Quit: Probabilistic Early Exits for Speech Separation Networks](../../ICLR2026/audio_speech/knowing_when_to_quit_probabilistic_early_exits_for_speech_separation_networks.md)
 
 </div>
 

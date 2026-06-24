@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SyncTrack: Rhythmic Stability and Synchronization in Multi-Track Music Generation
 description: >-
-  [ICLR 2026][Audio & Speech][Diffusion Model] SyncTrack is proposed with a unified architecture featuring track-shared modules (dual cross-track attention to ensure rhythmic synchronization) and track-specific modules (learnable instrument priors to preserve timbre differences). Together with three new rhythmic consistency evaluation metrics (IRS/CBS/CBD), it sign
+  [ICLR 2026][Audio & Speech][Multi-track music generation] SyncTrack is proposed with a unified architecture featuring track-shared modules (dual cross-track attention to ensure rhythmic synchronization) and track-specific modules (learnable instrument priors to preserve timbre differences). Together with three new rhythmic consistency evaluation metrics (IRS/CBS/CBD), it significantly improves multi-track music generation quality (FAD from 6.55 → 1.26…
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Multi-track music generation"
+  - "rhythmic synchronization"
+  - "diffusion models"
+  - "cross-track attention"
+  - "evaluation metrics"
 date: 2026-05-08
-content_hash: 1fb8c5f8c5111920
+content_hash: b22ce8d9b62190f8
 ---
+
 # SyncTrack: Rhythmic Stability and Synchronization in Multi-Track Music Generation
 
 **Conference**: ICLR 2026  

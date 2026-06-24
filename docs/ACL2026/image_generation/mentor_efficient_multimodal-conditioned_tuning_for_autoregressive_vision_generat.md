@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MENTOR: Efficient Autoregressive Image Generation with Balanced Multimodal Control
 description: >-
-  [ACL 2026][Image Generation][DreamBench++] MENTOR utilizes a unified autoregressive decoder and two-stage multimodal training to align reference images and text instructions into the same generation prefix. With only 3M training data and a budget of approximately 1.5 days on 8 A100 GPUs, it achieves a superior balance between concept preservation and prompt fol
+  [ACL2026 Findings][Image Generation][Autoregressive Image Generation] MENTOR utilizes a unified autoregressive decoder and two-stage multimodal training to align reference images and text instructions into the same generation prefix. With only 3M training data and a budget of approximately 1.5 days on 8 A100 GPUs, it achieves a superior balance between concept preservation and prompt following.
 tags:
-  - ACL 2026
-  - Image Generation
-  - DreamBench++
+  - "ACL2026 Findings"
+  - "Image Generation"
+  - "Autoregressive Image Generation"
+  - "Multimodal Control"
+  - "Two-stage Training"
+  - "DreamBench++"
+  - "Generation Efficiency"
 date: 2026-05-08
-content_hash: 181e76da1061a7b7
+content_hash: 55b1288b4ddc7cc0
 ---
+
 # MENTOR: Efficient Autoregressive Image Generation with Balanced Multimodal Control
 
 **Conference**: ACL2026 Findings  

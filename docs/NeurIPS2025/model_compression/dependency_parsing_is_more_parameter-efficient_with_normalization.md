@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Dependency Parsing is More Parameter-Efficient with Normalization
 description: >-
-  [NeurIPS 2025][Model Compression][dependency parsing] This paper identifies that the lack of normalization in biaffine scoring for dependency and semantic parsing leads to systematic overparameterization…
+  [NeurIPS 2025][Model Compression][dependency parsing] This paper identifies that the lack of normalization in biaffine scoring for dependency and semantic parsing leads to systematic overparameterization, and demonstrates that a simple $1/\sqrt{d}$ scaling can reduce BiLSTM parameters by up to 85% while matching or surpassing original performance.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "parameter efficiency"
   - "overparameterization"
 date: 2026-05-08
-content_hash: 0996b5bd23522db4
+content_hash: 1e58f9705055844b
 ---
 
 # Dependency Parsing is More Parameter-Efficient with Normalization
@@ -127,11 +127,11 @@ Normalization with 3 layers consistently outperforms the baseline across all 6 d
 
 ## Related Papers
 
+- [\[CVPR 2025\] Less is More: Efficient Model Merging with Binary Task Switch](../../CVPR2025/model_compression/less_is_more_efficient_model_merging_with_binary_task_switch.md)
 - [\[NeurIPS 2025\] Less is More but Where: Dynamic Token Compression via LLM-Guided Keyframe Prior](less_is_more_but_where_dynamic_token_compression_via_llm-guided_keyframe_prior.md)
-- [\[NeurIPS 2025\] Weight Weaving: Parameter Pooling for Data-Free Model Merging](weight_weaving_parameter_pooling_for_data-free_model_merging.md)
-- [\[ICCV 2025\] Generalized Tensor-based Parameter-Efficient Fine-Tuning via Lie Group Transformations](../../ICCV2025/model_compression/generalized_tensor-based_parameter-efficient_fine-tuning_via_lie_group_transform.md)
-- [\[ICCV 2025\] TR-PTS: Task-Relevant Parameter and Token Selection for Efficient Tuning](../../ICCV2025/model_compression/tr-pts_task-relevant_parameter_and_token_selection_for_efficient_tuning.md)
 - [\[ICLR 2026\] SeeDNorm: Self-Rescaled Dynamic Normalization](../../ICLR2026/model_compression/seednorm_self-rescaled_dynamic_normalization.md)
+- [\[ICML 2025\] MoRAgent: Parameter Efficient Agent Tuning with Mixture-of-Roles](../../ICML2025/model_compression/moragent_parameter_efficient_agent_tuning_with_mixture-of-roles.md)
+- [\[ACL 2025\] C3A: Parameter-Efficient Fine-Tuning via Circular Convolution](../../ACL2025/model_compression/parameter-efficient_fine-tuning_via_circular_convolution.md)
 
 </div>
 

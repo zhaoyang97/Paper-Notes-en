@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] When Does Divide and Conquer Work for Long Context LLM? A Noise Decomposition Framework
 description: >-
-  [ICLR 2026][LLM Efficiency][long context] This paper proposes a theoretical framework that decomposes long-context task failures into three types of noise (task, model, and aggregator noise). It proves that when model noise grows super-linearly, a weak model combined with chunking can outperform a strong model using single-pass processing. Furthermore, it intr
+  [ICLR 2026][LLM Efficiency][long context] This paper proposes a theoretical framework that decomposes long-context task failures into three types of noise (task, model, and aggregator noise). It proves that when model noise grows super-linearly, a weak model combined with chunking can outperform a strong model using single-pass processing. Furthermore, it introduces a method to quickly estimate the optimal chunk size using only 3-5 samples.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - long context
-  - divide and conquer
-  - noise decomposition
-  - chunk size
-  - task decomposition
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "long context"
+  - "divide and conquer"
+  - "noise decomposition"
+  - "chunk size"
+  - "task decomposition"
 date: 2026-05-08
-content_hash: b43851ac45818ef3
+content_hash: 47d68c8240b8ba9a
 ---
+
 # When Does Divide and Conquer Work for Long Context LLM? A Noise Decomposition Framework
 
 **Conference**: ICLR 2026  
@@ -127,11 +128,11 @@ To avoid the high cost of sweeping all candidate chunk sizes $c$ across a full d
 
 ## Related Papers
 
-- [\[ICLR 2026\] Explainable Token-level Noise Filtering for LLM Fine-tuning Datasets](explainable_token-level_noise_filtering_for_llm_fine-tuning_datasets.md)
-- [\[ICML 2026\] A Risk Decomposition Framework for Pre-Hoc Fine-Tuning Prediction](../../ICML2026/llm_efficiency/a_risk_decomposition_framework_for_pre-hoc_fine-tuning_prediction.md)
 - [\[ICLR 2026\] Smooth Reading: Bridging the Gap of Recurrent LLM to Self-Attention LLM on Long-Context Understanding](smooth_reading_bridging_the_gap_of_recurrent_llm_to_self-attention_llm_on_long-c.md)
+- [\[ICLR 2026\] Explainable Token-level Noise Filtering for LLM Fine-tuning Datasets](explainable_token-level_noise_filtering_for_llm_fine-tuning_datasets.md)
+- [\[ICLR 2026\] MemAgent: Reshaping Long-Context LLM with Multi-Conv RL-based Memory Agent](memagent_reshaping_long-context_llm_with_multi-conv_rl-based_memory_agent.md)
+- [\[ICML 2026\] A Risk Decomposition Framework for Pre-Hoc Fine-Tuning Prediction](../../ICML2026/llm_efficiency/a_risk_decomposition_framework_for_pre-hoc_fine-tuning_prediction.md)
 - [\[ICLR 2026\] AutoSP: Unlocking Long-Context LLM Training Via Compiler-Based Sequence Parallelism](autosp_unlocking_long-context_llm_training_via_compiler-based_sequence_paralleli.md)
-- [\[ICLR 2026\] LycheeDecode: Accelerating Long-Context LLM Inference via Hybrid-Head Sparse Decoding](lycheedecode_accelerating_long-context_llm_inference_via_hybrid-head_sparse_deco.md)
 
 </div>
 

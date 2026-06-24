@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bridging RGB and Hematoxylin Components: An Interleaved Guidance and Fusion Framework for Point Supervised Nuclei Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] DFGNet treats the RGB image of H&E pathological slides and its extracted Hematoxylin component as a pair of complementary representations. By jointly modeling them with a triplet of Reciprocal Cross-scale Dynamic Fusion (RCDF), Interleaved point-Guided Attention (IGA), and Entropy Confidence Aggregation Unit (ECAU), it
+  [CVPR 2026][Medical Imaging][Weakly supervised segmentation] DFGNet treats the RGB image of H&E pathological slides and its extracted Hematoxylin component as a pair of complementary representations. By jointly modeling them with a triplet of Reciprocal Cross-scale Dynamic Fusion (RCDF), Interleaved point-Guided Attention (IGA), and Entropy Confidence Aggregation Unit (ECAU), it achieves SOTA performance on three public nuclei segmentation datasets under the weakly supervised…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Weakly supervised segmentation"
+  - "Point supervision"
+  - "Nuclei instance segmentation"
+  - "Dual-representation fusion"
+  - "Pathological images"
 date: 2026-05-08
-content_hash: 03fcde9bc69da740
+content_hash: 8142efe0a208b036
 ---
+
 # Bridging RGB and Hematoxylin Components: An Interleaved Guidance and Fusion Framework for Point Supervised Nuclei Segmentation
 
 **Conference**: CVPR 2026  
@@ -146,10 +152,10 @@ DFGNet achieves SOTA in point supervision across all metrics on MO and CPM17. On
 
 ## Related Papers
 
+- [\[CVPR 2026\] CROWn: A Unified 3D Medical Segmentation Framework Integrating Anti-Aliased Downsampling and Phase-Calibrated Fusion](crown_a_unified_framework_for_anti-aliased_downsampling_and_phase-calibrated_fus.md)
 - [\[CVPR 2026\] Bridging Brain and Semantics: A Hierarchical Framework for Semantically Enhanced fMRI-to-Video Reconstruction](bridging_brain_and_semantics_a_hierarchical_framework_for_semantically_enhanced_.md)
-- [\[CVPR 2026\] A Semi-Supervised Framework for Breast Ultrasound Segmentation with Training-Free Pseudo-Label Generation and Label Refinement](a_semi-supervised_framework_for_breast_ultrasound_segmentation_with_training-fre.md)
-- [\[AAAI 2026\] Bridging Vision and Language for Robust Context-Aware Surgical Point Tracking: The VL-SurgPT Dataset and Benchmark](../../AAAI2026/medical_imaging/bridging_vision_and_language_for_robust_context-aware_surgical_point_tracking_th.md)
 - [\[CVPR 2026\] IVAAN: Instance-level Vision-Language Alignment via Attribute-Guided Text Prompts Generation for Nuclei Analysis](ivaan_instance-level_vision-language_alignment_via_attribute-guided_text_prompts.md)
+- [\[AAAI 2026\] Bridging Vision and Language for Robust Context-Aware Surgical Point Tracking: The VL-SurgPT Dataset and Benchmark](../../AAAI2026/medical_imaging/bridging_vision_and_language_for_robust_context-aware_surgical_point_tracking_th.md)
 - [\[CVPR 2026\] MambaLiteUNet: Cross-Gated Adaptive Feature Fusion for Robust Skin Lesion Segmentation](mambaliteunet_cross-gated_adaptive_feature_fusion_for_robust_skin_lesion_segment.md)
 
 </div>

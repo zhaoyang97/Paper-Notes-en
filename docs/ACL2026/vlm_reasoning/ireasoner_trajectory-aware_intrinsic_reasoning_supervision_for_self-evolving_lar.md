@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] iReasoner: Trajectory-Aware Intrinsic Reasoning Supervision for Self-Evolving Large Multimodal Models
 description: >-
-  [ACL 2026][vlm_reasoning][Chain-of-Thought] iReasoner enables LMMs to perform self-questioning and answering on unlabeled images, extending final answer consistency into an intrinsic reward for intermediate CoT steps. This leads to a multimodal reasoning improvement of up to +2.13 points on Qwen2.5-VL-7B.
+  [ACL2026 Findings][VLM Reasoning][Multimodal Reasoning] iReasoner enables LMMs to perform self-questioning and answering on unlabeled images, extending final answer consistency into an intrinsic reward for intermediate CoT steps. This leads to a multimodal reasoning improvement of up to +2.13 points on Qwen2.5-VL-7B.
 tags:
-  - ACL 2026
-  - vlm_reasoning
-  - Chain-of-Thought
+  - "ACL2026 Findings"
+  - "VLM Reasoning"
+  - "Multimodal Reasoning"
+  - "Self-evolving Training"
+  - "Chain-of-Thought"
+  - "Intrinsic Reward"
+  - "Trajectory Consistency"
 date: 2026-05-08
-content_hash: 2df2acee949a3bb8
+content_hash: 511d7eb32ab816cd
 ---
+
 # iReasoner: Trajectory-Aware Intrinsic Reasoning Supervision for Self-Evolving Large Multimodal Models
 
 **Conference**: ACL2026 Findings  
@@ -136,15 +141,15 @@ Training is performed starting from Qwen2.5-VL-7B-Instruct using LoRA. The train
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] Self-Consistency for LLM-Based Motion Trajectory Generation and Verification](../../CVPR2026/vlm_reasoning/self-consistency_for_llm-based_motion_trajectory_generation_and_verification.md)
+- [\[CVPR 2026\] Evolving Contextual Safety in Multi-Modal Large Language Models via Inference-Time Self-Reflective Memory](../../CVPR2026/vlm_reasoning/evolving_contextual_safety_in_multi-modal_large_language_models_via_inference-ti.md)
 - [\[ICML 2026\] Breaking Dual Bottlenecks: Evolving Unified Multimodal Models into Self-Adaptive Interleaved Visual Reasoners](../../ICML2026/vlm_reasoning/breaking_dual_bottlenecks_evolving_unified_multimodal_models_into_self-adaptive_.md)
 - [\[ICML 2026\] Learn to Think: Improving Multimodal Reasoning through Vision-Aware Self-Improvement Training](../../ICML2026/vlm_reasoning/learn_to_think_improving_multimodal_reasoning_through_vision-aware_self-improvem.md)
-- [\[CVPR 2026\] Evolving Contextual Safety in Multi-Modal Large Language Models via Inference-Time Self-Reflective Memory](../../CVPR2026/vlm_reasoning/evolving_contextual_safety_in_multi-modal_large_language_models_via_inference-ti.md)
-- [\[CVPR 2026\] Self-Consistency for LLM-Based Motion Trajectory Generation and Verification](../../CVPR2026/vlm_reasoning/self-consistency_for_llm-based_motion_trajectory_generation_and_verification.md)
-- [\[ACL 2026\] Position: Multimodal Large Language Models Can Significantly Advance Scientific Reasoning](position_multimodal_large_language_models_can_significantly_advance_scientific_r.md)
+- [\[ICLR 2026\] Perception-Aware Policy Optimization for Multimodal Reasoning](../../ICLR2026/vlm_reasoning/perception-aware_policy_optimization_for_multimodal_reasoning.md)
 
 </div>
 

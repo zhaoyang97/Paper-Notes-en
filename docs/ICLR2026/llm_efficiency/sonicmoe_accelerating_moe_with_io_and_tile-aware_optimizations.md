@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SonicMoE: Accelerating MoE with IO and Tile-aware Optimizations
 description: >-
-  [ICLR 2026][LLM Efficiency][Grouped GEMM] Addressing the increasing memory-bound issues of "fine-grained + high-sparsity" MoE on modern hardware, SonicMoE employs three strategies: rewriting the backward computational graph to minimize activation buffering, utilizing fused kernels that overlap IO with computation, and implementing token rounding routing that a
+  [ICLR 2026][LLM Efficiency][MoE Training Acceleration] Addressing the increasing memory-bound issues of "fine-grained + high-sparsity" MoE on modern hardware, SonicMoE employs three strategies: rewriting the backward computational graph to minimize activation buffering, utilizing fused kernels that overlap IO with computation, and implementing token rounding routing that aligns tokens per expert with hardware tiles. On Hopper, it increases operator throughput for 7B fine-grai…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Grouped GEMM
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "MoE Training Acceleration"
+  - "GPU Operators"
+  - "Activation Memory"
+  - "Grouped GEMM"
+  - "Tile Quantization"
 date: 2026-05-08
-content_hash: 9bccb30a39a439c9
+content_hash: 651fe8773064e4a6
 ---
+
 # SonicMoE: Accelerating MoE with IO and Tile-aware Optimizations
 
 **Conference**: ICLR 2026  
@@ -137,10 +142,10 @@ Quality and efficiency of Token Rounding (0.5B–1.8B models, 40B–100B tokens)
 ## Related Papers
 
 - [\[ICML 2026\] STAR: Rethinking MoE Routing as Structure-Aware Subspace Learning](../../ICML2026/llm_efficiency/star_rethinking_moe_routing_as_structure-aware_subspace_learning.md)
-- [\[ACL 2025\] Accelerating Speculative Decoding via Efficient Context-Aware Draft Generation](../../ACL2025/llm_efficiency/accelerating_speculative_decoding_via_efficient_context-aware_draft_generation.md)
-- [\[NeurIPS 2025\] MoESD: Unveil Speculative Decoding's Potential for Accelerating Sparse MoE](../../NeurIPS2025/llm_efficiency/moesd_unveil_speculative_decodings_potential_for_accelerating_sparse_moe.md)
 - [\[ICLR 2026\] OPPO: Accelerating PPO-based RLHF via Pipeline Overlap](oppo_accelerating_ppo-based_rlhf_via_pipeline_overlap.md)
+- [\[ACL 2025\] Accelerating Speculative Decoding via Efficient Context-Aware Draft Generation](../../ACL2025/llm_efficiency/accelerating_speculative_decoding_via_efficient_context-aware_draft_generation.md)
 - [\[ACL 2026\] Alloc-MoE: Budget-Aware Expert Activation Allocation for Efficient Mixture-of-Experts Inference](../../ACL2026/llm_efficiency/alloc-moe_budget-aware_expert_activation_allocation_for_efficient_mixture-of-exp.md)
+- [\[ICLR 2026\] Expert Divergence Learning for MoE-based Language Models](expert_divergence_learning_for_moe-based_language_models.md)
 
 </div>
 

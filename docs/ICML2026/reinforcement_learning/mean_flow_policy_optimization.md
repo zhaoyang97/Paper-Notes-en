@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Auto temperature
 description: >-
-  [ICML 2026][Reinforcement Learning][MeanFlow] MFPO employs MeanFlow models (learning average velocity instead of instantaneous velocity) as an RL policy to reduce diffusion policy sampling steps from 20+ to 2 steps. By using an average divergence network to solve action likelihood calculation and ESS-weighted SNIS to combine Gaussian + policy proposals for soft po
+  [ICML 2026][Reinforcement Learning][MeanFlow] MFPO employs MeanFlow models (learning average velocity instead of instantaneous velocity) as an RL policy to reduce diffusion policy sampling steps from 20+ to 2 steps. By using an average divergence network to solve action likelihood calculation and ESS-weighted SNIS to combine Gaussian + policy proposals for soft policy improvement, it achieves performance $\geq$ diffusion baselines on MuJoCo/DMC/HumanoidBench while reducing tr…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - MeanFlow
-  - MaxEnt RL
-  - soft policy iteration
-  - importance sampling
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "MeanFlow"
+  - "MaxEnt RL"
+  - "soft policy iteration"
+  - "average divergence network"
+  - "importance sampling"
 date: 2026-05-08
-content_hash: 6ad57fa06302471d
+content_hash: 5dafad179e33f0fd
 ---
+
 # MFPO: Accelerating MaxEnt RL to Gaussian Policy Speeds with Few-step MeanFlow Policy
 
 **Conference**: ICML 2026  
@@ -174,10 +176,10 @@ MFPO with 2-step sampling achieves an inference time of 0.46ms, which is 2–3.5
 ## Related Papers
 
 - [\[AAAI 2026\] One-Step Generative Policies with Q-Learning: A Reformulation of MeanFlow](../../AAAI2026/reinforcement_learning/one-step_generative_policies_with_q-learning_a_reformulation_of_meanflow.md)
+- [\[ICLR 2026\] One-Step Flow Q-Learning: Addressing the Diffusion Policy Bottleneck in Offline RL](../../ICLR2026/reinforcement_learning/one-step_flow_q-learning_addressing_the_diffusion_policy_bottleneck_in_offline_r.md)
+- [\[ICLR 2026\] Improving and Accelerating Offline RL in Large Discrete Action Spaces with Structured Policy Initialization](../../ICLR2026/reinforcement_learning/improving_and_accelerating_offline_rl_in_large_discrete_action_spaces_with_struc.md)
+- [\[ICML 2026\] MoMa QL: Accelerating Diffusion/Flow Matching Policies for Offline and Offline-to-Online RL via Moment Matching](moment_matching_q-learning.md)
 - [\[ICML 2026\] Learning to Route Languages for Multilingual Policy Optimization](learning_to_route_languages_for_multilingual_policy_optimization.md)
-- [\[ICML 2026\] EAPO: Enhancing Policy Optimization with On-Demand Expert Assistance](eapo_enhancing_policy_optimization_with_on-demand_expert_assistance.md)
-- [\[ICML 2026\] Metis: Learning to Jailbreak LLMs via Self-Evolving Metacognitive Policy Optimization](metis_learning_to_jailbreak_llms_via_self-evolving_metacognitive_policy_optimiza.md)
-- [\[ACL 2026\] Bridging SFT and RL: Dynamic Policy Optimization for Robust Reasoning](../../ACL2026/reinforcement_learning/bridging_sft_and_rl_dynamic_policy_optimization_for_robust_reasoning.md)
 
 </div>
 

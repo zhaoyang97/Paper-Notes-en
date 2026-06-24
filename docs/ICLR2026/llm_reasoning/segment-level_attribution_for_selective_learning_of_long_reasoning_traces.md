@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Segment-Level Attribution for Selective Learning of Long Reasoning Traces
 description: >-
-  [ICLR 2026][LLM Reasoning][reasoning trace] Integrated Gradients are used to calculate the attribution strength and directional consistency of each segment within long reasoning chains to identify important segments for selective SFT. This approach improves accuracy by up to 4.7% while shortening output by 18% compared to full CoT training.
+  [ICLR2026][Reasoning][reasoning trace] Integrated Gradients are used to calculate the attribution strength and directional consistency of each segment within long reasoning chains to identify important segments for selective SFT. This approach improves accuracy by up to 4.7% while shortening output by 18% compared to full CoT training.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - reasoning trace
-  - integrated gradients
-  - selective SFT
-  - segment attribution
-  - CoT compression
+  - "ICLR2026"
+  - "Reasoning"
+  - "reasoning trace"
+  - "integrated gradients"
+  - "selective SFT"
+  - "segment attribution"
+  - "CoT compression"
 date: 2026-05-08
-content_hash: b0eefcf8ea5b040f
+content_hash: 30aac952127d0b93
 ---
+
 # Segment-Level Attribution for Selective Learning of Long Reasoning Traces
 
 **Conference**: ICLR2026  
@@ -138,11 +139,11 @@ This acts as an implicit regularization: the model can still read the entire con
 
 ## Related Papers
 
-- [\[ICLR 2026\] Tracing the Traces: Latent Temporal Signals for Efficient and Accurate Reasoning](tracing_the_traces_latent_temporal_signals_for_efficient_and_accurate_reasoning.md)
 - [\[NeurIPS 2025\] Segment Policy Optimization: Effective Segment-Level Credit Assignment in RL for Large Language Models](../../NeurIPS2025/llm_reasoning/segment_policy_optimization_effective_segment-level_credit_assignment_in_rl_for_.md)
+- [\[ACL 2026\] SPPO: Sequence-Level PPO for Long-Horizon Reasoning Tasks](../../ACL2026/llm_reasoning/sppo_sequence-level_ppo_for_long-horizon_reasoning_tasks.md)
+- [\[ICLR 2026\] Tracing the Traces: Latent Temporal Signals for Efficient and Accurate Reasoning](tracing_the_traces_latent_temporal_signals_for_efficient_and_accurate_reasoning.md)
 - [\[ICLR 2026\] PERK: Long-Context Reasoning as Parameter-Efficient Test-Time Learning](perk_long-context_reasoning_as_parameter-efficient_test-time_learning.md)
 - [\[ICLR 2026\] Is In-Context Learning Learning?](is_in-context_learning_learning.md)
-- [\[ACL 2026\] SPPO: Sequence-Level PPO for Long-Horizon Reasoning Tasks](../../ACL2026/llm_reasoning/sppo_sequence-level_ppo_for_long-horizon_reasoning_tasks.md)
 
 </div>
 

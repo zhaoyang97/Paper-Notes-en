@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] NewtonGen: Physics-consistent and Controllable Text-to-Video Generation via Neural Newtonian Dynamics
 description: >-
-  [ICLR 2026][Video Generation][Neural ODE] NewtonGen integrates a learnable "Neural Newtonian Dynamics (NND)" module into the text-to-video pipeline. It first utilizes a Neural ODE to learn the latent dynamics of various Newtonian motions from a minimal amount of physics-clean data, then converts predicted future physical states into structured optical flow to
+  [ICLR 2026][Video Generation][Text-to-Video Generation] NewtonGen integrates a learnable "Neural Newtonian Dynamics (NND)" module into the text-to-video pipeline. It first utilizes a Neural ODE to learn the latent dynamics of various Newtonian motions from a minimal amount of physics-clean data, then converts predicted future physical states into structured optical flow to guide video generators, achieving physics-consistent and parameter-controllable video generation.
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Neural ODE
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Text-to-Video Generation"
+  - "Physics Consistency"
+  - "Neural ODE"
+  - "Newtonian Dynamics"
+  - "Motion Controllable Generation"
 date: 2026-05-08
-content_hash: 7305e1be8cef2479
+content_hash: a5853edca8e3bb6c
 ---
+
 # NewtonGen: Physics-consistent and Controllable Text-to-Video Generation via Neural Newtonian Dynamics
 
 **Conference**: ICLR 2026  
@@ -131,7 +136,7 @@ Ablations focused on the residual MLP and data scale, measuring Normalized Absol
 - [\[ICLR 2026\] 3D Scene Prompting for Scene-Consistent Camera-Controllable Video Generation](3d_scene_prompting_for_scene-consistent_camera-controllable_video_generation.md)
 - [\[NeurIPS 2025\] PhysCtrl: Generative Physics for Controllable and Physics-Grounded Video Generation](../../NeurIPS2025/video_generation/physctrl_generative_physics_for_controllable_and_physicsgrou.md)
 - [\[CVPR 2026\] Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics](../../CVPR2026/video_generation/phantom_physics-infused_video_generation_via_joint_modeling_of_visual_and_latent.md)
-- [\[ICLR 2026\] Real-Time Motion-Controllable Autoregressive Video Diffusion](real-time_motion-controllable_autoregressive_video_diffusion.md)
+- [\[ICLR 2026\] Syncphony: Audio-to-Video Generation with Synchronized Visual Dynamics using Diffusion Transformers](syncphony_synchronized_audio-to-video_generation_with_diffusion_transformers.md)
 - [\[ICLR 2026\] NeRV-Diffusion: Diffuse Implicit Neural Representation for Video Synthesis](nerv-diffusion_diffuse_implicit_neural_representation_for_video_synthesis.md)
 
 </div>

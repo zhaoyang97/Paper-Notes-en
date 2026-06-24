@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] d-TreeRPO: Towards More Reliable Policy Optimization for Diffusion Language Models
 description: >-
-  [ACL 2026][Reinforcement Learning][dLLM] To address two major reliability bottlenecks in RL for Diffusion Language Models (dLLM)—sparse rewards and probability estimation bias—the authors propose d-TreeRPO. It organizes rollouts into a tree structure, calculating step-wise advantages bottom-up using verifiable rewards from leaf nodes. Simultaneously, it provi
+  [ACL 2026][Reinforcement Learning][dLLM] To address two major reliability bottlenecks in RL for Diffusion Language Models (dLLM)—sparse rewards and probability estimation bias—the authors propose d-TreeRPO. It organizes rollouts into a tree structure, calculating step-wise advantages bottom-up using verifiable rewards from leaf nodes. Simultaneously, it provides a theoretical proof that "higher model confidence leads to more accurate single-step forward probability estimation…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - dLLM
-  - GRPO
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "dLLM"
+  - "GRPO"
+  - "Tree-structured Rollout"
+  - "Step-wise Advantage"
+  - "Self-distillation"
 date: 2026-05-08
-content_hash: 4c7059d016d97903
+content_hash: c66f07af29289ad8
 ---
+
 # d-TreeRPO: Towards More Reliable Policy Optimization for Diffusion Language Models
 
 **Conference**: ACL 2026  
@@ -139,11 +143,11 @@ Probability estimation error ($\log(p_{\text{true}}/\hat{p})$, lower is better, 
 
 ## Related Papers
 
-- [\[ICLR 2026\] FAPO: Flawed-Aware Policy Optimization for Efficient and Reliable Reasoning](../../ICLR2026/reinforcement_learning/fapo_flawed-aware_policy_optimization_for_efficient_and_reliable_reasoning.md)
+- [\[ACL 2026\] Beyond Fully Random Masking: Attention-Guided Denoising and Optimization for Diffusion Language Models](beyond_fully_random_masking_attention-guided_denoising_and_optimization_for_diff.md)
+- [\[ICLR 2026\] SPG: Sandwiched Policy Gradient for Masked Diffusion Language Models](../../ICLR2026/reinforcement_learning/spg_sandwiched_policy_gradient_for_masked_diffusion_language_models.md)
 - [\[ICML 2026\] Learning Unmasking Policies for Diffusion Language Models](../../ICML2026/reinforcement_learning/learning_unmasking_policies_for_diffusion_language_models.md)
+- [\[ICLR 2026\] FAPO: Flawed-Aware Policy Optimization for Efficient and Reliable Reasoning](../../ICLR2026/reinforcement_learning/fapo_flawed-aware_policy_optimization_for_efficient_and_reliable_reasoning.md)
 - [\[ACL 2026\] Beyond Majority Voting: Towards Fine-grained and More Reliable Reward Signal for Test-Time Reinforcement Learning](beyond_majority_voting_towards_fine-grained_and_more_reliable_reward_signal_for_.md)
-- [\[NeurIPS 2025\] Reinforcing the Diffusion Chain of Lateral Thought with Diffusion Language Models](../../NeurIPS2025/reinforcement_learning/reinforcing_the_diffusion_chain_of_lateral_thought_with_diffusion_language_model.md)
-- [\[ACL 2026\] DPEPO: Diverse Parallel Exploration Policy Optimization for LLM-based Agents](dpepo_diverse_parallel_exploration_policy_optimization_for_llm-based_agents.md)
 
 </div>
 

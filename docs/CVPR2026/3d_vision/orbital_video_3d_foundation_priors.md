@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Realistic and Consistent Orbital Video Generation via 3D Foundation Priors
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] The authors propose leveraging the latent features of a 3D foundation generative model (Hunyuan3D) as shape priors. These are injected into a base video diffusion model through multi-scale 3D adapters to achieve geometrically realistic and view-consistent orbital video generation from a single image.
+  [CVPR 2026][3D Vision][Orbital Video Generation] The authors propose leveraging the latent features of a 3D foundation generative model (Hunyuan3D) as shape priors. These are injected into a base video diffusion model through multi-scale 3D adapters to achieve geometrically realistic and view-consistent orbital video generation from a single image.
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Orbital Video Generation"
+  - "3D Priors"
+  - "Video Diffusion"
+  - "Multi-view Consistency"
+  - "Shape Realism"
 date: 2026-05-08
-content_hash: a1e966eb6a67307f
+content_hash: be489ab8e78b2aa1
 ---
+
 # Towards Realistic and Consistent Orbital Video Generation via 3D Foundation Priors
 
 **Conference**: CVPR 2026  
@@ -133,11 +139,11 @@ Standard denoising objective: $\mathcal{L} = \mathbb{E}[w(t) \| \mathcal{V}_\sig
 
 ## Related Papers
 
-- [\[CVPR 2026\] Geometry-as-context: Modulating Explicit 3D in Scene-consistent Video Generation to Geometry Context](geometry-as-context_modulating_explicit_3d_in_scene-consistent_video_generation_.md)
-- [\[CVPR 2026\] ConsID-Gen: View-Consistent and Identity-Preserving Image-to-Video Generation](consid-gen_view-consistent_and_identity-preserving_image-to-video_generation.md)
-- [\[CVPR 2026\] EgoControl: Controllable Egocentric Video Generation via 3D Full-Body Poses](egocontrol_controllable_egocentric_video_generation_via_3d_full-body_poses.md)
-- [\[CVPR 2025\] Learning Temporally Consistent Video Depth from Video Diffusion Priors](../../CVPR2025/video_generation/learning_temporally_consistent_video_depth_from_video_diffusion_priors.md)
-- [\[ICCV 2025\] NormalCrafter: Learning Temporally Consistent Normals from Video Diffusion Priors](../../ICCV2025/video_generation/normalcrafter_learning_temporally_consistent_normals_from_video_diffusion_priors.md)
+- [\[CVPR 2026\] Tracking-Guided 4D Generation: Foundation-Tracker Motion Priors for 3D Model Animation](tracking-guided_4d_generation_foundation-tracker_motion_priors_for_3d_model_anim.md)
+- [\[CVPR 2026\] AniMimic: Imitating 3D Animation from Video Priors](animimic_imitating_3d_animation_from_video_priors.md)
+- [\[CVPR 2026\] Think-Then-Generate: Structural Chain-of-Thought Reasoning for Consistent 3D Generation](think-then-generate_structural_chain-of-thought_reasoning_for_consistent_3d_gene.md)
+- [\[CVPR 2026\] Multi-view Consistent 3D Gaussian Head Avatars 'without' Multi-view Generation](multi-view_consistent_3d_gaussian_head_avatars_without_multi-view_generation.md)
+- [\[CVPR 2026\] Online3R: Online Learning for Consistent Sequential Reconstruction Based on Geometry Foundation Model](online3r_online_learning_for_consistent_sequential_reconstruction_based_on_geome.md)
 
 </div>
 

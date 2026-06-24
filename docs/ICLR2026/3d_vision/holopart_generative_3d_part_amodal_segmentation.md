@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] HoloPart: Generative 3D Part Amodal Segmentation
 description: >-
-  [ICLR 2026][3D Vision][3D part amodal segmentation] HoloPart introduces the concept of "amodal segmentation" from 2D to 3D, proposing the new task of "3D Part Amodal Segmentation"—decomposing a global mesh into **geometrically complete** semantic parts (rather than fragmented surface patches) using a diffusion model that incorporates local attention and global shape con
+  [ICLR 2026][3D Vision][3D part amodal segmentation] HoloPart introduces the concept of "amodal segmentation" from 2D to 3D, proposing the new task of "3D Part Amodal Segmentation"—decomposing a global mesh into **geometrically complete** semantic parts (rather than fragmented surface patches) using a diffusion model that incorporates local attention and global shape context for part completion.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D part amodal segmentation
-  - shape completion
-  - diffusion model
-  - context-aware attention
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D part amodal segmentation"
+  - "shape completion"
+  - "diffusion model"
+  - "3D generative prior"
+  - "context-aware attention"
 date: 2026-05-08
-content_hash: 39a0a91d108cae65
+content_hash: 03fd41d0a5be2ca5
 ---
+
 # HoloPart: Generative 3D Part Amodal Segmentation
 
 **Conference**: ICLR 2026  
@@ -120,16 +122,16 @@ The full model significantly outperforms the strongest baseline, DiffComplete (I
 - **Value**: ⭐⭐⭐⭐⭐ (Strong practical utility for 3D content creation).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] PartSAM: A Scalable Promptable Part Segmentation Model Trained on Native 3D Data](partsam_a_scalable_promptable_part_segmentation_model_trained_on_native_3d_data.md)
-- [\[ECCV 2024\] 3×2: 3D Object Part Segmentation by 2D Semantic Correspondences](../../ECCV2024/3d_vision/3x2_3d_object_part_segmentation_by_2d_semantic_correspondenc.md)
 - [\[ICLR 2026\] Part-X-MLLM: Part-aware 3D Multimodal Large Language Model](part-x-mllm_part-aware_3d_multimodal_large_language_model.md)
 - [\[CVPR 2026\] GeoSAM2: Unleashing the Power of SAM2 for 3D Part Segmentation](../../CVPR2026/3d_vision/geosam2_unleashing_the_power_of_sam2_for_3d_part_segmentation.md)
 - [\[ICLR 2026\] NOVA3R: Non-pixel-aligned Visual Transformer for Amodal 3D Reconstruction](nova3r_non-pixel-aligned_visual_transformer_for_amodal_3d_reconstruction.md)
+- [\[CVPR 2026\] S2AM3D: Scale-controllable Part Segmentation of 3D Point Clouds](../../CVPR2026/3d_vision/s2am3d_scale-controllable_part_segmentation_of_3d_point_cloud.md)
 
 </div>
 

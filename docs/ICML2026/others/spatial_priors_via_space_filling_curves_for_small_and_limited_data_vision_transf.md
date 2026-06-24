@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Spatial Priors via Space Filling Curves for Small and Limited Data Vision Transformers
 description: >-
-  [ICML 2026][Others][Vision Transformer] To address the performance gap of ViTs in small-model and limited-data scenarios due to the lack of spatial priors caused by permutation equivariance, this paper constructs a set of attenuation masks using Space Filling Curves (SFCs) such as Snake, Zig-zag, Peano, and Hilbert. By averaging these masks and multiplying t
+  [ICML2026][Vision Transformer] To address the performance gap of ViTs in small-model and limited-data scenarios due to the lack of spatial priors caused by permutation equivariance, this paper constructs a set of attenuation masks using Space Filling Curves (SFCs) such as Snake, Zig-zag, Peano, and Hilbert. By averaging these masks and multiplying them into the attention matrix, the method improves performance on spatial-sensitive tasks in VTAB-1K by up to 8.7%…
 tags:
-  - ICML 2026
-  - Others
-  - Vision Transformer
+  - "ICML2026"
+  - "Vision Transformer"
+  - "Space Filling Curves"
+  - "Attenuation Mask"
+  - "Small Data"
+  - "Inductive Bias"
 date: 2026-05-08
-content_hash: 1a396d666f8c9cc4
+content_hash: 10bf41bf2cc73272
 ---
+
 # Spatial Priors via Space Filling Curves for Small and Limited Data Vision Transformers
 
 **Conference**: ICML2026  
@@ -126,10 +130,10 @@ Gains are most significant for spatial-sensitive Structured tasks and small-to-m
 ## Related Papers
 
 - [\[ECCV 2024\] SpatialFormer: Towards Generalizable Vision Transformers with Explicit Spatial Understanding](../../ECCV2024/others/spatialformer_towards_generalizable_vision_transformers_with_explicit_spatial_un.md)
-- [\[ICML 2026\] Vision Transformer 微调中的非光滑分量优势](vision_transformer_finetuning_benefits_from_non-smooth_components.md)
-- [\[ICLR 2026\] Predicting Kernel Regression Learning Curves from Only Raw Data Statistics](../../ICLR2026/others/predicting_kernel_regression_learning_curves_from_only_raw_data_statistics.md)
+- [\[ICLR 2026\] From atom to space: SpatialRead, a Regionalized Readout Function for Spatial Properties of Materials](../../ICLR2026/others/from_atom_to_space_a_region-based_readout_function_for_spatial_properties_of_mat.md)
 - [\[ECCV 2024\] AttnZero: Efficient Attention Discovery for Vision Transformers](../../ECCV2024/others/attnzero_efficient_attention_discovery_for_vision_transformers.md)
-- [\[CVPR 2026\] Inter-Photon-Limited Videography](../../CVPR2026/others/inter-photon-limited_videography.md)
+- [\[ICLR 2026\] Hippoformer: Integrating Hippocampus-inspired Spatial Memory with Transformers](../../ICLR2026/others/hippoformer_integrating_hippocampus-inspired_spatial_memory_with_transformers.md)
+- [\[ICLR 2026\] Predicting Kernel Regression Learning Curves from Only Raw Data Statistics](../../ICLR2026/others/predicting_kernel_regression_learning_curves_from_only_raw_data_statistics.md)
 
 </div>
 

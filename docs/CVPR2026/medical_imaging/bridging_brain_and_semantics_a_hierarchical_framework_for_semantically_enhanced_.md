@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Bridging Brain and Semantics: A Hierarchical Framework for Semantically Enhanced fMRI-to-Video Reconstruction
 description: >-
-  [CVPR 2026][Medical Imaging][Diffusion Model] CineNeuron adopts the dual-pathway mechanism of the brain—"bottom-up perception + top-down memory." It first uses multi-task alignment to map noisy fMRI signals into a semantic space that simultaneously encodes images, text, actions, and categories. Then, it utilizes the Mixture-of-Memories (MoM) module to retrieve and
+  [CVPR 2026][Medical Imaging][fMRI-to-video reconstruction] CineNeuron adopts the dual-pathway mechanism of the brain—"bottom-up perception + top-down memory." It first uses multi-task alignment to map noisy fMRI signals into a semantic space that simultaneously encodes images, text, actions, and categories. Then, it utilizes the Mixture-of-Memories (MoM) module to retrieve and fuse multimodal "memories" from historical samples to complete details…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "fMRI-to-video reconstruction"
+  - "Brain decoding"
+  - "Semantic enrichment"
+  - "Memory mixture"
+  - "Diffusion models"
 date: 2026-05-08
-content_hash: 1b7c618a588f3fa5
+content_hash: 6027ef2248fca917
 ---
+
 # Bridging Brain and Semantics: A Hierarchical Framework for Semantically Enhanced fMRI-to-Video Reconstruction
 
 **Conference**: CVPR 2026  
@@ -130,10 +135,10 @@ On CineBrain, removing **hippocampal fMRI input** significantly decreased semant
 ## Related Papers
 
 - [\[CVPR 2026\] IEBGL:An Interpretability-Enhanced Brain Graph Learning Framework with LLM-Instructed Topology and Literature-Augmented Semantics](iebglan_interpretability-enhanced_brain_graph_learning_framework_with_llm-instru.md)
-- [\[ICLR 2026\] Brain-IT: Image Reconstruction from fMRI via Brain-Interaction Transformer](../../ICLR2026/medical_imaging/brain-it_image_reconstruction_from_fmri_via_brain-interaction_transformer.md)
 - [\[CVPR 2026\] Focus-to-Perceive Representation Learning: A Cognition-Inspired Hierarchical Framework for Endoscopic Video Analysis](focus-to-perceive_representation_learning_a_cognition-inspired_hierarchical_fram.md)
-- [\[CVPR 2026\] Bridging RGB and Hematoxylin Components: An Interleaved Guidance and Fusion Framework for Point Supervised Nuclei Segmentation](bridging_rgb_and_hematoxylin_components_an_interleaved_guidance_and_fusion_frame.md)
+- [\[ICLR 2026\] Brain-IT: Image Reconstruction from fMRI via Brain-Interaction Transformer](../../ICLR2026/medical_imaging/brain-it_image_reconstruction_from_fmri_via_brain-interaction_transformer.md)
 - [\[CVPR 2026\] GaussianPile: A Unified Sparse Gaussian Splatting Framework for Slice-based Volumetric Reconstruction](gaussianpile_a_unified_sparse_gaussian_splatting_framework_for_slice-based_volum.md)
+- [\[CVPR 2026\] Bridging RGB and Hematoxylin Components: An Interleaved Guidance and Fusion Framework for Point Supervised Nuclei Segmentation](bridging_rgb_and_hematoxylin_components_an_interleaved_guidance_and_fusion_frame.md)
 
 </div>
 

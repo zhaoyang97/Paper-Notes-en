@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DriveMoE: Mixture-of-Experts for Vision-Language-Action Model in End-to-End Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][Mixture-of-Experts] DriveMoE integrates Mixture-of-Experts (MoE) into both the perception and decision-making components of a VLA autonomous driving model. The perception side utilizes a Vision MoE to dynamically select critical camera views to save tokens, while the decision-making side employs an Action MoE to allocate dedicated experts
+  [CVPR 2026][Autonomous Driving][End-to-End Autonomous Driving] DriveMoE integrates Mixture-of-Experts (MoE) into both the perception and decision-making components of a VLA autonomous driving model. The perception side utilizes a Vision MoE to dynamically select critical camera views to save tokens, while the decision-making side employs an Action MoE to allocate dedicated experts for different driving skills. On the Bench2Drive closed-loop benchmark…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Mixture-of-Experts
-  - Vision-Language-Action
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "End-to-End Autonomous Driving"
+  - "Mixture-of-Experts"
+  - "Vision-Language-Action"
+  - "Multi-view Perception"
+  - "Closed-loop Evaluation"
 date: 2026-05-08
-content_hash: 1653e2afb31ce661
+content_hash: b69c0282f7cba188
 ---
+
 # DriveMoE: Mixture-of-Experts for Vision-Language-Action Model in End-to-End Autonomous Driving
 
 **Conference**: CVPR 2026  
@@ -164,10 +168,18 @@ Module Ablation (Table 7) and Expert Count Ablation (Table 6):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-...
-</div>
-<!-- RELATED:END -->
 
+## Related Papers
+
+- [\[CVPR 2026\] E3AD: An Emotion-Aware Vision-Language-Action Model for Human-Centric End-to-End Autonomous Driving](e3ad_an_emotion-aware_vision-language-action_model_for_human-centric_end-to-end_.md)
+- [\[CVPR 2026\] EE-RL: Vision Language Guided Reinforcement Learning with Explorer and Expert model for End-to-End Autonomous Driving](ee-rl_vision_language_guided_reinforcement_learning_with_explorer_and_expert_mod.md)
+- [\[CVPR 2026\] Percept-WAM: Perception-Enhanced World-Awareness-Action Model for Robust End-to-End Autonomous Driving](percept-wam_perception-enhanced_world-awareness-action_model_for_robust_end-to-e.md)
+- [\[CVPR 2026\] ActiveAD: Planning-Oriented Active Learning for End-to-End Autonomous Driving](activead_planning-oriented_active_learning_for_end-to-end_autonomous_driving.md)
+- [\[CVPR 2026\] Scaling-Aware Data Selection for End-to-End Autonomous Driving Systems](scaling-aware_data_selection_for_end-to-end_autonomous_driving_systems.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Learning Vision-Language-Action World Models for Autonomous Driving](vla_world_learning_vision_language_action_world_models_for_autonomous_driving.md)

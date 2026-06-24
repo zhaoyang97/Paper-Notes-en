@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Constrained Multi-Objective Reinforcement Learning with Max-Min Criterion
 description: >-
-  [ICML 2026][Autonomous Driving][Paper Note] This paper unifies "max-min multi-objective fairness" and "hard constraint satisfaction" into a single MORL framework. By reformulating the problem as a convex program via occupancy measures, the authors derive a dual convex optimization problem over weights $(u,w)$. This allows a projected gradient descent algorithm t
+  [ICML 2026][Autonomous Driving][max-min fairness] This paper unifies "max-min multi-objective fairness" and "hard constraint satisfaction" into a single MORL framework. By reformulating the problem as a convex program via occupancy measures, the authors derive a dual convex optimization problem over weights $(u,w)$. This allows a projected gradient descent algorithm to simultaneously achieve fairness and constraint feasibility with theoretical guarantees of geometric converge…
 tags:
-  - ICML 2026
-  - Autonomous Driving
+  - "ICML 2026"
+  - "Autonomous Driving"
+  - "max-min fairness"
+  - "constrained MORL"
+  - "occupancy measure"
+  - "dual convex optimization"
+  - "projected gradient descent"
 date: 2026-05-08
-content_hash: 7ae5bee1f77af158
+content_hash: 7470a9a61b659dbc
 ---
+
 # Constrained Multi-Objective Reinforcement Learning with Max-Min Criterion
 
 **Conference**: ICML 2026  
@@ -151,7 +157,7 @@ Only the proposed method and the "max-average + Lagrangian" baseline strictly sa
 - [\[CVPR 2026\] ReMoT: Reinforcement Learning with Motion Contrast Triplets](../../CVPR2026/autonomous_driving/remot_reinforcement_learning_with_motion_contrast_triplets.md)
 - [\[NeurIPS 2025\] BayesG: Bayesian Ego-Graph Inference for Networked Multi-Agent Reinforcement Learning](../../NeurIPS2025/autonomous_driving/bayesian_ego-graph_inference_for_networked_multi-agent_reinforcement_learning.md)
 - [\[CVPR 2026\] W2W: Language-Model-Based Trajectory Prediction with Reinforcement Learning](../../CVPR2026/autonomous_driving/w2w_language-model-based_trajectory_prediction_with_reinforcement_learning.md)
-- [\[ICML 2025\] R3DM: Enabling Role Discovery and Diversity Through Dynamics Models in Multi-agent Reinforcement Learning](../../ICML2025/autonomous_driving/r3dm_enabling_role_discovery_and_diversity_through_dynamics_models_in_multi-agen.md)
+- [\[ICML 2026\] CoIRL-AD: Collaborative-Competitive Imitation-Reinforcement Learning in Latent World Models for Autonomous Driving](coirl-ad_collaborative-competitive_imitation-reinforcement_learning_in_latent_wo.md)
 
 </div>
 

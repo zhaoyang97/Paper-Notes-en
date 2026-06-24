@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] UniPR: Unified Object-level Real-to-Sim Perception and Reconstruction from a Single Stereo Pair
 description: >-
-  [CVPR 2026][3D Vision][real-to-sim] UniPR uses a single stereo image pair and a single forward pass to simultaneously detect and reconstruct all objects in a scene with true physical scale. It eliminates scale ambiguity via stereo geometric constraints and abandons "per-category pre-defined canonical spaces" through Pose-Aware Shape Representation (PASR)
+  [CVPR 2026][3D Vision][Stereo Vision] UniPR uses a single stereo image pair and a single forward pass to simultaneously detect and reconstruct all objects in a scene with true physical scale. It eliminates scale ambiguity via stereo geometric constraints and abandons "per-category pre-defined canonical spaces" through Pose-Aware Shape Representation (PASR), achieving 100× faster scene reconstruction and approximately 3× higher shape proportion accuracy compared to image-to-3D…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - real-to-sim
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Stereo Vision"
+  - "real-to-sim"
+  - "End-to-end Reconstruction"
+  - "Pose-Aware Shape Representation"
+  - "Robotic Grasping"
 date: 2026-05-08
-content_hash: a649d2befafed460
+content_hash: 8afd949ce5b0a90b
 ---
+
 # UniPR: Unified Object-level Real-to-Sim Perception and Reconstruction from a Single Stereo Pair
 
 **Conference**: CVPR 2026  
@@ -141,15 +146,16 @@ Injecting PASR into Coders (Hard ACD drops from 10.146 to 1.816) proves the gain
 - Value: ⭐⭐⭐⭐⭐ Addresses real-world robotic pain points (scale + efficiency). 100× speedup + 3× accuracy + real-world validation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] SPARK: Sim-ready Part-level Articulated Reconstruction with VLM Knowledge](spark_sim-ready_part-level_articulated_reconstruction_with_vlm_knowledge.md)
 - [\[CVPR 2026\] H²A²: Homogeneity-Aware and Heterogeneity-Aware Feature Perception for Unified Indoor 3D Object Detection](h2a2_homogeneity-aware_and_heterogeneity-aware_feature_perception_for_unified_in.md)
+- [\[CVPR 2026\] 3D-Object Perception Transformer (3PT)](3d-object_perception_transformer_3pt.md)
+- [\[CVPR 2026\] PAM: A Pose-Appearance-Motion Engine for Sim-to-Real HOI Video Generation](pam_a_pose-appearance-motion_engine_for_sim-to-real_hoi_video_generation.md)
 - [\[CVPR 2026\] Generalizable Structure-Aware Keypoint Correspondence for Category-Unified 3D Single Object Tracking](generalizable_structure-aware_keypoint_correspondence_for_category-unified_3d_si.md)
-- [\[CVPR 2026\] SE(3)-Equivariance with Geometric and Topological Guidance for Category-Level Object Pose Estimation](se3-equivariance_with_geometric_and_topological_guidance_for_category-level_obje.md)
-- [\[CVPR 2026\] PE3R: Perception-Efficient 3D Reconstruction](pe3r_perception-efficient_3d_reconstruction.md)
 
 </div>
 

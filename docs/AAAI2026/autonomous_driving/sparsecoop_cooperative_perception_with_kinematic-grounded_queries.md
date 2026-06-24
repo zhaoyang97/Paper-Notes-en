@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SparseCoop: Cooperative Perception with Kinematic-Grounded Queries
 description: >-
-  [AAAI 2026][Autonomous Driving][Cooperative Perception] This paper proposes SparseCoop—the first fully sparse cooperative perception framework—which abandons dense BEV representations entirely through kinematic-grounded…
+  [AAAI 2026][Autonomous Driving][Cooperative Perception] This paper proposes SparseCoop—the first fully sparse cooperative perception framework—which abandons dense BEV representations entirely through kinematic-grounded queries (KGQ), a coarse-to-fine aggregation module, and a cooperative instance denoising strategy. SparseCoop achieves state-of-the-art performance on V2X-Seq and Griffin datasets with minimal communication overhead and maximum computational efficiency (AP 0.5…
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "V2X Communication"
   - "Vehicle-Road Cooperation"
 date: 2026-05-08
-content_hash: 25ac56e744e815c7
+content_hash: 764b45d231276e17
 ---
 
 # SparseCoop: Cooperative Perception with Kinematic-Grounded Queries
@@ -206,11 +206,11 @@ Coarse fusion and denoising have the largest impact on tracking performance (AMO
 
 ## Related Papers
 
+- [\[CVPR 2026\] CATNet: Collaborative Alignment and Transformation Network for Cooperative Perception](../../CVPR2026/autonomous_driving/catnet_collaborative_alignment_and_transformation_network_for_cooperative_percep.md)
+- [\[CVPR 2026\] Unsupervised Multi-agent and Single-agent Perception from Cooperative Views](../../CVPR2026/autonomous_driving/unsupervised_multi-agent_and_single-agent_perception_from_cooperative_views.md)
 - [\[ICCV 2025\] CoopTrack: Exploring End-to-End Learning for Efficient Cooperative Sequential Perception](../../ICCV2025/autonomous_driving/cooptrack_exploring_end-to-end_learning_for_efficient_cooperative_sequential_per.md)
 - [\[NeurIPS 2025\] V2X-Radar: A Multi-Modal Dataset with 4D Radar for Cooperative Perception](../../NeurIPS2025/autonomous_driving/v2x-radar_a_multi-modal_dataset_with_4d_radar_for_cooperative_perception.md)
-- [\[NeurIPS 2025\] UrbanIng-V2X: A Large-Scale Multi-Vehicle Multi-Infrastructure Dataset Across Multiple Intersections for Cooperative Perception](../../NeurIPS2025/autonomous_driving/urbaning-v2x_a_large-scale_multi-vehicle_multi-infrastructure_dataset_across_mul.md)
-- [\[AAAI 2026\] RadarMP: Motion Perception for 4D mmWave Radar in Autonomous Driving](radarmp_motion_perception_for_4d_mmwave_radar_in_autonomous_driving.md)
-- [\[AAAI 2026\] AdaptiveAD: Decoupling Scene Perception and Ego Status for End-to-End Autonomous Driving](decoupling_scene_perception_and_ego_status_a_multi-context_fusion_approach_for_e.md)
+- [\[CVPR 2026\] V2U4Real: A Real-world Large-scale Dataset for Vehicle-to-UAV Cooperative Perception](../../CVPR2026/autonomous_driving/v2u4real_a_real-world_large-scale_dataset_for_vehicle-to-uav_cooperative_percept.md)
 
 </div>
 

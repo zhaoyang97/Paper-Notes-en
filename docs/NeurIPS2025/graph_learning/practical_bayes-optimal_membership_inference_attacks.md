@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Practical Bayes-Optimal Membership Inference Attacks
 description: >-
-  [NeurIPS 2025][Graph Learning][Membership Inference Attack] This paper proposes BASE and G-BASE, two practical Bayes-optimal membership inference attack methods targeting i.i.d. data and graph-structured data…
+  [NeurIPS 2025][Graph Learning][Membership Inference Attack] This paper proposes BASE and G-BASE, two practical Bayes-optimal membership inference attack methods targeting i.i.d. data and graph-structured data, respectively, achieving theoretical optimality while substantially reducing computational cost.
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Privacy"
   - "MIA"
 date: 2026-05-08
-content_hash: 3a83ff2bd12d6d55
+content_hash: d4462fb764791322
 ---
 
 # Practical Bayes-Optimal Membership Inference Attacks
@@ -142,10 +142,10 @@ Effect of the number of reference models on BASE performance (CIFAR-100, TPR@1%F
 ## Related Papers
 
 - [\[NeurIPS 2025\] Dynamic Bundling with Large Language Models for Zero-Shot Inference on Text-Attributed Graphs](dynamic_bundling_with_large_language_models_for_zero-shot_inference_on_text-attr.md)
+- [\[ICLR 2026\] EvA: Evolutionary Attacks on Graphs](../../ICLR2026/graph_learning/eva_evolutionary_attacks_on_graphs.md)
 - [\[NeurIPS 2025\] GraphFaaS: Serverless GNN Inference for Burst-Resilient, Real-Time Intrusion Detection](graphfaas_serverless_gnn_inference_for_burst-resilient_real-time_intrusion_detec.md)
+- [\[ICML 2025\] HGOT: Self-supervised Heterogeneous Graph Neural Network with Optimal Transport](../../ICML2025/graph_learning/hgot_self-supervised_heterogeneous_graph_neural_network_with_optimal_transport.md)
 - [\[AAAI 2026\] Sheaf Graph Neural Networks via PAC-Bayes Spectral Optimization](../../AAAI2026/graph_learning/sheaf_graph_neural_networks_via_pac-bayes_spectral_optimization.md)
-- [\[AAAI 2026\] GCL-OT: Graph Contrastive Learning with Optimal Transport for Heterophilic Text-Attributed Graphs](../../AAAI2026/graph_learning/gcl-ot_graph_contrastive_learning_with_optimal_transport_for_heterophilic_text-a.md)
-- [\[ICML 2026\] MedCoG: Maximizing LLM Inference Density in Medical Reasoning via Meta-Cognitive Regulation](../../ICML2026/graph_learning/medcog_maximizing_llm_inference_density_in_medical_reasoning_via_meta-cognitive_.md)
 
 </div>
 

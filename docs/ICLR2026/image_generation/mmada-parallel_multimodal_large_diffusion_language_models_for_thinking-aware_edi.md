@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] MMaDA-Parallel: Multimodal Large Diffusion Language Models for Thinking-Aware Editing and Generation
 description: >-
-  [ICLR 2026][Image Generation][thinking-aware generation] Addressing the issue where serial thinking-aware paradigms ("reasoning before drawing") degrade image quality due to reasoning error propagation, this paper proposes MMaDA-Parallel, a pure discrete diffusion parallel multimodal framework. It allows text and images to interact bidirectionally and generate synchronously
+  [ICLR 2026][Image Generation][thinking-aware generation] Addressing the issue where serial thinking-aware paradigms ("reasoning before drawing") degrade image quality due to reasoning error propagation, this paper proposes MMaDA-Parallel, a pure discrete diffusion parallel multimodal framework. It allows text and images to interact bidirectionally and generate synchronously across the entire denoising trajectory. By employing Parallel RL (ParaRL) to provide semantic rewards a…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - thinking-aware generation
-  - Reinforcement Learning
-  - ParaRL
+  - "ICLR 2026"
+  - "Image Generation"
+  - "thinking-aware generation"
+  - "discrete diffusion"
+  - "parallel denoising"
+  - "cross-modal alignment"
+  - "reinforcement learning"
+  - "ParaRL"
 date: 2026-05-08
-content_hash: bcebe8ea36d8b5ae
+content_hash: ed2311c24bc712bb
 ---
+
 # MMaDA-Parallel: Multimodal Large Diffusion Language Models for Thinking-Aware Editing and Generation
 
 **Conference**: ICLR 2026  
@@ -121,10 +125,17 @@ This approach **obviates the need for training a PRM or value function**; in the
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ACL 2026\] Multimodal Large Language Models for Multi-Subject In-Context Image Generation](../../ACL2026/image_generation/multimodal_large_language_models_for_multi-subject_in-context_image_generation.md)
+- [\[ICLR 2026\] Consolidating Reinforcement Learning for Multimodal Discrete Diffusion Models](consolidating_reinforcement_learning_for_multimodal_discrete_diffusion_models.md)
+- [\[ICLR 2026\] Locality-aware Parallel Decoding for Efficient Autoregressive Image Generation](locality-aware_parallel_decoding_for_efficient_autoregressive_image_generation.md)
+- [\[ICLR 2026\] Autoregressive Image Generation with Randomized Parallel Decoding](autoregressive_image_generation_with_randomized_parallel_decoding.md)
+- [\[ICLR 2026\] RegionE: Adaptive Region-Aware Generation for Efficient Image Editing](regione_adaptive_region-aware_generation_for_efficient_image_editing.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] Multimodal Large Language Models for Multi-Subject In-Context Image Generation](../../ACL2026/image_generation/multimodal_large_language_models_for_multi-subject_in-context_image_generation.md)

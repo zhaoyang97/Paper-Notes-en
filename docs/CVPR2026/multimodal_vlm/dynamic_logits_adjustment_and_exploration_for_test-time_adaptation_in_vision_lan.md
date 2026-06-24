@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Dynamic Logits Adjustment and Exploration for Test-Time Adaptation in Vision Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][CLIP] Addressing the issue where Test-Time Adaptation (TTA) for VLMs tends to select only high-confidence samples, leading to "inherited model category bias + insufficient exploration," this paper proposes DLAE. It utilizes Dynamic Logits Adjustment (DLA) to de-bias logits by multiplying them with a balancing factor based on
+  [CVPR 2026][Multimodal VLM][Test-Time Adaptation] Addressing the issue where Test-Time Adaptation (TTA) for VLMs tends to select only high-confidence samples, leading to "inherited model category bias + insufficient exploration," this paper proposes DLAE. It utilizes Dynamic Logits Adjustment (DLA) to de-bias logits by multiplying them with a balancing factor based on online prediction statistics. Furthermore, it introduces Consistency-Guided Exploration Caching (CGEC) to spe…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - CLIP
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Test-Time Adaptation"
+  - "CLIP"
+  - "Logit Calibration"
+  - "Category Bias"
+  - "Caching Mechanism"
 date: 2026-05-08
-content_hash: 90f1c0bcaf430496
+content_hash: 64f05fd60ad982d8
 ---
+
 # Dynamic Logits Adjustment and Exploration for Test-Time Adaptation in Vision Language Models
 
 **Conference**: CVPR 2026  
@@ -161,10 +166,10 @@ Component Ablation (ViT-B/16, step-by-step):
 ## Related Papers
 
 - [\[CVPR 2026\] STAR: Test-Time Adaptation Can Enhance Universal Prompt Learning for Vision-Language Models](star_test-time_adaptation_can_enhance_universal_prompt_learning_for_vision-langu.md)
-- [\[CVPR 2026\] Ramen: Robust Test-Time Adaptation of Vision-Language Models with Active Sample Selection](ramen_robust_test-time_adaptation_of_vision-language_models_with_active_sample_s.md)
+- [\[CVPR 2026\] TTL: Test-time Textual Learning for OOD Detection with Pretrained Vision-Language Models](ttl_test-time_textual_learning_for_ood_detection_with_pretrained_vision-language.md)
+- [\[ICLR 2026\] Flatness-Guided Test-Time Adaptation for Vision-Language Models](../../ICLR2026/multimodal_vlm/flatness_guided_test-time_adaptation_for_vision-language_models.md)
+- [\[ICLR 2026\] Bilateral Information-aware Test-time Adaptation for Vision-Language Models](../../ICLR2026/multimodal_vlm/bilateral_information-aware_test-time_adaptation_for_vision-language_models.md)
 - [\[CVPR 2026\] Condensed Test-Time Adaptation of VLMs for Action Recognition](condensed_test-time_adaptation_of_vlms_for_action_recognition.md)
-- [\[CVPR 2026\] Controllable Federated Prompt Learning at Test Time](controllable_federated_prompt_learning_at_test_time.md)
-- [\[NeurIPS 2025\] DOTA: DistributiOnal Test-time Adaptation of Vision-Language Models](../../NeurIPS2025/multimodal_vlm/dota_distributional_testtime_adaptation_of_visionlanguage_mo.md)
 
 </div>
 

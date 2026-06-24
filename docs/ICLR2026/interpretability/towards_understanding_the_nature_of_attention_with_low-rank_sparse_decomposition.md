@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Understanding the Nature of Attention with Low-Rank Sparse Decomposition
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper proposes Low-Rank Sparse Attention (Lorsa), which approximates the output of original Multi-Head Self-Attention (MHSA) using thousands of sparsely activated, single-dimensional output attention heads. This approach disentangles atomic attention units from "attention superposition," allowing for the independe
+  [ICLR 2026][Interpretability][Attention Superposition] This paper proposes Low-Rank Sparse Attention (Lorsa), which approximates the output of original Multi-Head Self-Attention (MHSA) using thousands of sparsely activated, single-dimensional output attention heads. This approach disentangles atomic attention units from "attention superposition," allowing for the independent and clean identification of induction heads, successor heads, attention sinks…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Attention Superposition"
+  - "Sparse Dictionary Learning"
+  - "Low-rank OV Circuit"
+  - "Induction Head"
+  - "Surrogate Model"
 date: 2026-05-08
-content_hash: 03807eaaaf7efe16
+content_hash: 572bd46e0d0ba16e
 ---
+
 # Towards Understanding the Nature of Attention with Low-Rank Sparse Decomposition
 
 **Conference**: ICLR 2026  
@@ -123,15 +129,15 @@ The results show that while Lorsa is slightly less efficient at pure reconstruct
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Sequences of Logits Reveal the Low Rank Structure of Language Models](sequences_of_logits_reveal_the_low_rank_structure_of_language_models.md)
+- [\[ICLR 2026\] Why Low-Precision Transformer Training Fails: An Analysis on Flash Attention](why_low-precision_transformer_training_fails_an_analysis_on_flash_attention.md)
 - [\[ICLR 2026\] Escaping Low-Rank Traps: Interpretable Visual Concept Learning via Implicit Vector Quantization](escaping_low-rank_traps_interpretable_visual_concept_learning_via_implicit_vecto.md)
 - [\[ICLR 2026\] Temporal Sparse Autoencoders: Leveraging the Sequential Nature of Language for Interpretability](temporal_sparse_autoencoders_leveraging_the_sequential_nature_of_language_for_in.md)
 - [\[CVPR 2026\] Improving Sparse Autoencoder with Dynamic Attention](../../CVPR2026/interpretability/improving_sparse_autoencoder_with_dynamic_attention.md)
-- [\[ICLR 2026\] Low-Pass Filtering Improves Behavioral Alignment of Vision Models](low-pass_filtering_improves_behavioral_alignment_of_vision_models.md)
 
 </div>
 

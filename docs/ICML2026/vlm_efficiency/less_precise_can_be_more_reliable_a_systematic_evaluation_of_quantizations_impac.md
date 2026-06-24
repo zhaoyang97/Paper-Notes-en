@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Less Precise Can Be More Reliable: A Systematic Evaluation of Quantization's Impact on VLMs Beyond Accuracy
 description: >-
-  [ICML 2026][vlm_efficiency][CLIP] This study evaluates 16 quantization methods across 10 VLMs and multiple reliability metrics through 700,000 experiments. It finds that quantization is not a simple disruptor—it improves calibration, OOD detection, and noise robustness by suppressing high-rank low-variance spectral components, while simultaneously ampl
+  [ICML 2026][Multimodal Efficiency][CLIP] This study evaluates 16 quantization methods across 10 VLMs and multiple reliability metrics through 700,000 experiments. It finds that quantization is not a simple disruptor—it improves calibration, OOD detection, and noise robustness by suppressing high-rank low-variance spectral components, while simultaneously amplifying reliance on covariate shifts and spurious correlations.
 tags:
-  - ICML 2026
-  - vlm_efficiency
-  - CLIP
-  - W8A8
-  - OOD
+  - "ICML 2026"
+  - "Multimodal Efficiency"
+  - "CLIP"
+  - "W8A8"
+  - "Calibration"
+  - "OOD"
+  - "Spectral Filtering"
 date: 2026-05-08
-content_hash: d48ac6eea5168d5d
+content_hash: ed8e92e58769c0a9
 ---
+
 # Less Precise Can Be More Reliable: A Systematic Evaluation of Quantization's Impact on VLMs Beyond Accuracy
 
 **Conference**: ICML 2026  
@@ -119,8 +122,8 @@ QAT utilizes LSQ (Esser et al. 2020) with two distillation mechanisms (contrasti
 - [\[ICML 2026\] Gated Relational Alignment via Confidence-based Distillation for Efficient VLMs](gated_relational_alignment_via_confidence-based_distillation_for_efficient_vlms.md)
 - [\[CVPR 2026\] Vision-Oriented Lightweight Neural Architecture Search with Budget-Adaptive Evaluation](../../CVPR2026/vlm_efficiency/vision-oriented_lightweight_neural_architecture_search_with_budget-adaptive_eval.md)
 - [\[CVPR 2026\] ApET: Approximation-Error Guided Token Compression for Efficient VLMs](../../CVPR2026/vlm_efficiency/apet_approximation-error_guided_token_compression_for_efficient_vlms.md)
-- [\[NeurIPS 2025\] Balanced Token Pruning: Accelerating Vision Language Models Beyond Local Optimization](../../NeurIPS2025/vlm_efficiency/balanced_token_pruning_accelerating_vision_language_models_b.md)
-- [\[NeurIPS 2025\] Beyond Greedy Exits: Improved Early Exit Decisions for Risk Control and Reliability](../../NeurIPS2025/vlm_efficiency/beyond_greedy_exits_improved_early_exit_decisions_for_risk_control_and_reliabili.md)
+- [\[ICLR 2026\] SURGE: Surprise-Guided Token Reduction for Efficient Video Understanding with VLMs](../../ICLR2026/vlm_efficiency/surge_surprise-guided_token_reduction_for_efficient_video_understanding_with_vlm.md)
+- [\[CVPR 2026\] Fine-Grained Post-Training Quantization for Large Vision Language Models with Quantization-Aware Integrated Gradients](../../CVPR2026/vlm_efficiency/fine-grained_post-training_quantization_for_large_vision_language_models_with_qu.md)
 
 </div>
 

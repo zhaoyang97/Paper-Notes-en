@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Interpreting Fedspeak with Confidence: A LLM-Based Uncertainty-Aware Framework Guided by Monetary Policy Transmission Paths
 description: >-
-  [AAAI2026][Time Series][Fedspeak] This paper proposes an LLM-based uncertainty-aware framework for interpreting Fedspeak (Federal Reserve language). The framework enhances inputs through domain reasoning along monetary p…
+  [AAAI2026 Oral][Time Series][Fedspeak] This paper proposes an LLM-based uncertainty-aware framework for interpreting Fedspeak (Federal Reserve language). The framework enhances inputs through domain reasoning along monetary policy transmission paths, and introduces a dynamic uncertainty decoding module to quantify prediction confidence (Perceptual Uncertainty = Environmental Ambiguity × Cognitive Risk), achieving SOTA performance on FOMC monetary policy stance analysis.
 tags:
-  - "AAAI2026"
+  - "AAAI2026 Oral"
   - "Time Series"
   - "Fedspeak"
   - "monetary policy stance"
@@ -12,7 +12,7 @@ tags:
   - "uncertainty quantification"
   - "financial sentiment analysis"
 date: 2026-05-08
-content_hash: fd7116b758d97dd3
+content_hash: 9de70883433ad850
 ---
 
 # Interpreting Fedspeak with Confidence: A LLM-Based Uncertainty-Aware Framework Guided by Monetary Policy Transmission Paths
@@ -124,10 +124,10 @@ The transmission path contributes most (−7.9% when removed), followed by entit
 ## Related Papers
 
 - [\[ICLR 2026\] HiVid: LLM-Guided Video Saliency For Content-Aware VOD And Live Streaming](../../ICLR2026/time_series/hivid_llm-guided_video_saliency_for_content-aware_vod_and_live_streaming.md)
+- [\[ICML 2025\] Event-Aware Sentiment Factors from LLM-Augmented Financial Tweets: A Transparent Framework for Interpretable Quant Trading](../../ICML2025/time_series/event-aware_sentiment_factors_from_llm-augmented_financial_tweets_a_transparent_.md)
 - [\[AAAI 2026\] ProbFM: Probabilistic Time Series Foundation Model with Uncertainty Decomposition](probfm_probabilistic_time_series_foundation_model_with_uncertainty_decomposition.md)
-- [\[ICML 2026\] Dynamic-TMoE: A Drift-Aware Dynamic Mixture of Experts Framework for Non-Stationary Time Series](../../ICML2026/time_series/dynamic_tmoe_a_drift-aware_dynamic_mixture_of_experts_framework_for_non-stationa.md)
-- [\[AAAI 2026\] Task-Aware Retrieval Augmentation for Dynamic Recommendation](task-aware_retrieval_augmentation_for_dynamic_recommendation.md)
-- [\[AAAI 2026\] CometNet: Contextual Motif-guided Long-term Time Series Forecasting](cometnet_contextual_motif-guided_long-term_time_series_forecasting.md)
+- [\[ICLR 2026\] EVEREST: A Transformer for Probabilistic Rare-Event Anomaly Detection with Evidential and Tail-Aware Uncertainty](../../ICLR2026/time_series/everest_a_transformer_for_probabilistic_rare-event_anomaly_detection_with_eviden.md)
+- [\[CVPR 2026\] Towards Uncertainty-aware Unsupervised Domain Adaptation for Videos and Time-Series with Causal Optimal Transport](../../CVPR2026/time_series/towards_uncertainty-aware_unsupervised_domain_adaptation_for_videos_and_time-ser.md)
 
 </div>
 

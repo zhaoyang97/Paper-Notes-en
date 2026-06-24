@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond Monotonicity: Revisiting Factorization Principles in Multi-Agent Q-Learning
 description: >-
-  [AAAI 2026 (Oral)][Reinforcement Learning][Multi-agent reinforcement learning] Through dynamical systems analysis, this paper proves that under approximate greedy exploration policies…
+  [AAAI 2026 (Oral)][Reinforcement Learning][Multi-agent reinforcement learning] Through dynamical systems analysis, this paper proves that under approximate greedy exploration policies, all zero-loss solutions violating IGM consistency in non-monotonic value factorization Q-learning are unstable saddle points, while IGM-consistent solutions are stable attractors — enabling reliable convergence to optimal solutions without monotonicity constraints.
 tags:
   - "AAAI 2026 (Oral)"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "non-monotonic mixing network"
   - "dynamical systems analysis"
 date: 2026-05-08
-content_hash: 10017f5b47e8b85c
+content_hash: 8838d36143e8fba4
 ---
 
 # Beyond Monotonicity: Revisiting Factorization Principles in Multi-Agent Q-Learning
@@ -172,11 +172,11 @@ The key distinction from VDN/QMIX/QTRAN/QPLEX lies in the **shift from constrain
 
 ## Related Papers
 
+- [\[ICLR 2026\] Distributionally Robust Cooperative Multi-agent Reinforcement Learning with Value Factorization](../../ICLR2026/reinforcement_learning/distributionally_robust_cooperative_multi-agent_reinforcement_learning_with_valu.md)
 - [\[AAAI 2026\] Explaining Decentralized Multi-Agent Reinforcement Learning Policies](explaining_decentralized_multi-agent_reinforcement_learning_policies.md)
-- [\[ICML 2026\] Vulnerable Agent Identification in Large-Scale Multi-Agent Reinforcement Learning](../../ICML2026/reinforcement_learning/vulnerable_agent_identification_in_large-scale_multi-agent_reinforcement_learnin.md)
+- [\[CVPR 2026\] TaskForce: Cooperative Multi-agent Reinforcement Learning for Multi-task Optimization](../../CVPR2026/reinforcement_learning/taskforce_cooperative_multi-agent_reinforcement_learning_for_multi-task_optimiza.md)
 - [\[AAAI 2026\] MARS: A Meta-Adaptive Reinforcement Learning Framework for Risk-Aware Multi-Agent Portfolio Management](mars_a_meta-adaptive_reinforcement_learning_framework_for_risk-aware_multi-agent.md)
 - [\[AAAI 2026\] Think, Speak, Decide: Language-Augmented Multi-Agent Reinforcement Learning for Economic Decision-Making](think_speak_decide_language-augmented_multi-agent_reinforcement_learning_for_eco.md)
-- [\[AAAI 2026\] HCPO: Hierarchical Conductor-Based Policy Optimization in Multi-Agent Reinforcement Learning](hcpo_hierarchical_conductor-based_policy_optimization_in_multi-agent_reinforceme.md)
 
 </div>
 

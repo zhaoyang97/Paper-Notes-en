@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] VGGT-Segmentor: Geometry-Enhanced Cross-View Segmentation
 description: >-
-  [CVPR 2026][Segmentation][ego-exo] VGGT-Segmentor (VGGT-S) utilizes the multi-view geometry foundation model VGGT as a frozen backbone, appending a three-stage "Union Segmentation Head." It translates VGGT's reliable object-level feature alignment into pixel-level masks and eliminates the need for paired annotations through single-image self-supervised
+  [CVPR 2026][Segmentation][Cross-view segmentation] VGGT-Segmentor (VGGT-S) utilizes the multi-view geometry foundation model VGGT as a frozen backbone, appending a three-stage "Union Segmentation Head." It translates VGGT's reliable object-level feature alignment into pixel-level masks and eliminates the need for paired annotations through single-image self-supervised training. It achieves an average IoU of 67.7%/68.0% on Ego–Exo4D cross-view segmentation…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - ego-exo
-  - VGGT
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Cross-view segmentation"
+  - "ego-exo"
+  - "VGGT"
+  - "geometry prior"
+  - "self-supervised"
 date: 2026-05-08
-content_hash: 9e24f84366786bd2
+content_hash: d0ae35a8a14b5325
 ---
+
 # VGGT-Segmentor: Geometry-Enhanced Cross-View Segmentation
 
 **Conference**: CVPR 2026  
@@ -136,6 +140,7 @@ Progressive addition of components (Table 3, IoU% / Latency ms):
 - Value: ⭐⭐⭐⭐⭐ Significant SOTA improvement on Ego–Exo4D and strong zero-shot results provide high utility for embodied AI.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -144,7 +149,7 @@ Progressive addition of components (Table 3, IoU% / Latency ms):
 - [\[CVPR 2026\] Cross-Domain Few-Shot Segmentation via Multi-view Progressive Adaptation](cross-domain_few-shot_segmentation_via_multi-view_progressive_adaptation.md)
 - [\[CVPR 2026\] Learning Cross-View Object Correspondence via Cycle-Consistent Mask Prediction](learning_cross-view_object_correspondence_via_cycle-consistent_mask_prediction.md)
 - [\[CVPR 2026\] GeoMotion: Rethinking Motion Segmentation via Latent 4D Geometry](geomotion_rethinking_motion_segmentation_via_latent_4d_geometry.md)
-- [\[CVPR 2026\] GeCo: Geometry-Consistent Regularization for Domain Generalized Semantic Segmentation](geco_geometry-consistent_regularization_for_domain_generalized_semantic_segmenta.md)
+- [\[CVPR 2026\] PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation](pearl_geometry_aligns_semantics_for_training-free_open-vocabulary_semantic_segme.md)
 
 </div>
 

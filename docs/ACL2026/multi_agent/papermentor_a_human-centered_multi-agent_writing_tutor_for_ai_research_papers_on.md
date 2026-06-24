@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] PaperMentor: A Human-Centered Multi-Agent Writing Tutor for AI Research Papers on Overleaf
 description: >-
-  [ACL 2026][Multi-Agent][Overleaf] PaperMentor codifies the writing experience of senior researchers into an "Expert Skill Library" and employs 12 agents with distinct divisions of labor to review LaTeX papers in parallel. It provides **actionable revision suggestions** via Overleaf's native inline annotations without ghostwriting for the user. In user
+  [ACL 2026][Multi-Agent][Writing Tutoring] PaperMentor codifies the writing experience of senior researchers into an "Expert Skill Library" and employs 12 agents with distinct divisions of labor to review LaTeX papers in parallel. It provides **actionable revision suggestions** via Overleaf's native inline annotations without ghostwriting for the user. In user studies, 90.6% of comments were judged as "actionable," with both validity and actionability significantly exceeding t…
 tags:
-  - ACL 2026
-  - Multi-Agent
-  - Overleaf
+  - "ACL 2026"
+  - "Multi-Agent"
+  - "Writing Tutoring"
+  - "Expert Skill Library"
+  - "Overleaf"
+  - "Inline Comments"
 date: 2026-05-08
-content_hash: 9f6ecf9abe1fa982
+content_hash: 183ec35f67e60bfc
 ---
+
 # PaperMentor: A Human-Centered Multi-Agent Writing Tutor for AI Research Papers on Overleaf
 
 **Conference**: ACL 2026  
@@ -121,9 +125,9 @@ PaperMentor significantly outperformed the baseline in Validity and Actionabilit
 
 - [\[ICML 2026\] Searching for Synergy in Shared Workspace Human-AI Collaboration](../../ICML2026/multi_agent/searching_for_synergy_in_shared_workspace_human-ai_collaboration.md)
 - [\[ICML 2025\] ResearchTown: Simulator of Human Research Community](../../ICML2025/multi_agent/researchtown_simulator_of_human_research_community.md)
-- [\[ACL 2026\] LLM-Based Human-Agent Collaboration and Interaction Systems: A Survey](llm-based_human-agent_collaboration_and_interaction_systems_a_survey.md)
 - [\[ACL 2026\] AutoReproduce: Automatic AI Experiment Reproduction with Paper Lineage](autoreproduce_automatic_ai_experiment_reproduction_with_paper_lineage.md)
-- [\[ACL 2026\] RoadMapper: A Multi-Agent System for Roadmap Generation of Solving Complex Research Problems](roadmapper_a_multi-agent_system_for_roadmap_generation_of_solving_complex_resear.md)
+- [\[ACL 2026\] LLM-Based Human-Agent Collaboration and Interaction Systems: A Survey](llm-based_human-agent_collaboration_and_interaction_systems_a_survey.md)
+- [\[ACL 2026\] Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs](topology_matters_measuring_memory_leakage_in_multi-agent_llms.md)
 
 </div>
 

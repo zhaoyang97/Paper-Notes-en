@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Seeing Clearly, Reasoning Confidently: Plug-and-Play Remedies for Vision Language Model Blindness
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Proposes an efficient plug-and-play module to enhance the recognition and reasoning capabilities of VLMs for rare objects by learning multi-modal class embeddings: a cross-attention adapter refines visual tokens on the vision side, and object detection prompts are injected on the text side, achieving a significant impr
+  [CVPR 2026][VLM Reasoning][Rare object recognition] Proposes an efficient plug-and-play module to enhance the recognition and reasoning capabilities of VLMs for rare objects by learning multi-modal class embeddings: a cross-attention adapter refines visual tokens on the vision side, and object detection prompts are injected on the text side, achieving a significant improvement from 72.8 to 75.4 on CODA-LM without fine-tuning the VLM.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Rare object recognition"
+  - "visual token enhancement"
+  - "multi-modal class embedding"
+  - "plug-and-play"
+  - "VLM robustness"
 date: 2026-05-08
-content_hash: a5ffce54fc363905
+content_hash: aa59656043c58d61
 ---
+
 # Seeing Clearly, Reasoning Confidently: Plug-and-Play Remedies for Vision Language Model Blindness
 
 **Conference**: CVPR 2026  
@@ -138,11 +144,11 @@ Modifying visual tokens is supplemented by an explicit textual hint. The class e
 
 ## Related Papers
 
-- [\[CVPR 2026\] Prune2Drive: A Plug-and-Play Framework for Accelerating Vision-Language Models in Autonomous Driving](prune2drive_a_plug-and-play_framework_for_accelerating_vision-language_models_in.md)
-- [\[AAAI 2026\] LLMC+: Benchmarking Vision-Language Model Compression with a Plug-and-play Toolkit](../../AAAI2026/multimodal_vlm/llmc_benchmarking_vision-language_model_compression_with_a_plug-and-play_toolkit.md)
-- [\[AAAI 2026\] Seeing Justice Clearly: Handwritten Legal Document Translation with OCR and Vision-Language Models](../../AAAI2026/multimodal_vlm/seeing_justice_clearly_handwritten_legal_document_translation_with_ocr_and_visio.md)
-- [\[AAAI 2026\] Plug-and-Play Clarifier: A Zero-Shot Multimodal Framework for Egocentric Intent Disambiguation](../../AAAI2026/multimodal_vlm/plug-and-play_clarifier_a_zero-shot_multimodal_framework_for_egocentric_intent_d.md)
-- [\[CVPR 2026\] Visual Funnel: Resolving Contextual Blindness in Multimodal Large Language Models](visual_funnel_resolving_contextual_blindness_in_multimodal_large_language_models.md)
+- [\[CVPR 2026\] G$^2$VLM: Geometry Grounded Vision Language Model with Unified 3D Reconstruction and Spatial Reasoning](g2vlm_geometry_grounded_vision_language_model_with_unified_3d_reconstruction_and.md)
+- [\[ICLR 2026\] Play to Generalize: Learning to Reason Through Game Play](../../ICLR2026/vlm_reasoning/play_to_generalize_learning_to_reason_through_game_play.md)
+- [\[ICML 2026\] Bad Seeing or Bad Thinking? Rewarding Perception for Vision-Language Reasoning](../../ICML2026/vlm_reasoning/bad_seeing_or_bad_thinking_rewarding_perception_for_vision-language_reasoning.md)
+- [\[CVPR 2026\] PointThinker: Point-Incentivized Parallel Thinking for Multimodal Large Language Model](pointthinker_point-incentivized_parallel_thinking_for_multimodal_large_language_.md)
+- [\[ICLR 2026\] Seeing Across Views: Benchmarking Spatial Reasoning of Vision-Language Models in Robotic Scenes](../../ICLR2026/vlm_reasoning/seeing_across_views_benchmarking_spatial_reasoning_of_vision-language_models_in_.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SPATIA: Multimodal Generation and Prediction of Spatial Cell Phenotypes
 description: >-
-  [ICML 2026][Computational Biology][Flow Matching] Academic paper note for SPATIA: Multimodal Generation and Prediction of Spatial Cell Phenotypes.
+  [ICML2026][Computational Biology][Spatial Transcriptomics] Addressing the spatial transcriptomics challenge of joint modeling for "cell morphology + gene expression + spatial location," SPATIA utilizes a hierarchical attention mechanism (cell→niche→组织) for unified representation and a **spatial-conditioned morphology generation module** (weak pairing + confidence-aware Optimal Transport reweighting + morphology-profile alignment flow matching). It sets new SOTA across 25.9M c…
 tags:
-  - ICML 2026
-  - Computational Biology
-  - Flow Matching
+  - "ICML2026"
+  - "Computational Biology"
+  - "Spatial Transcriptomics"
+  - "Cell Phenotype"
+  - "Flow Matching"
+  - "Optimal Transport"
+  - "Multi-scale Representation"
 date: 2026-05-08
-content_hash: becb72bd62c53bc1
+content_hash: 52757b1823b0f335
 ---
+
 # SPATIA: Multimodal Generation and Prediction of Spatial Cell Phenotypes
 
 **Conference**: ICML2026  
@@ -135,15 +140,16 @@ SPATIA leads in most metrics for frozen embedding clustering on Xenium and CosMx
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] What Makes a Representation Good for Single-Cell Perturbation Prediction?](what_makes_a_representation_good_for_single-cell_perturbation_prediction.md)
+- [\[CVPR 2026\] Predicting Spatial Transcriptomics from Histology Images via High-Order Multi-Cell Interaction Modeling](../../CVPR2026/computational_biology/predicting_spatial_transcriptomics_from_histology_images_via_high-order_multi-ce.md)
 - [\[CVPR 2026\] HyperST: Hierarchical Hyperbolic Learning for Spatial Transcriptomics Prediction](../../CVPR2026/computational_biology/hyperst_hierarchical_hyperbolic_learning_for_spatial_transcriptomics_prediction.md)
 - [\[CVPR 2026\] HINGE: Adapting a Pre-trained Single-Cell Foundation Model to Spatial Gene Expression Generation from Histology Images](../../CVPR2026/computational_biology/adapting_a_pre-trained_single-cell_foundation_model_to_spatial_gene_expression_g.md)
 - [\[AAAI 2026\] SpaCRD: Multimodal Deep Fusion of Histology and Spatial Transcriptomics for Cancer Region Detection](../../AAAI2026/computational_biology/spacrd_multimodal_deep_fusion_of_histology_and_spatial_transcriptomics_for_cance.md)
-- [\[ICML 2026\] Scalable Single-Cell Gene Expression Generation with Latent Diffusion Models](scalable_single-cell_gene_expression_generation_with_latent_diffusion_models.md)
 
 </div>
 

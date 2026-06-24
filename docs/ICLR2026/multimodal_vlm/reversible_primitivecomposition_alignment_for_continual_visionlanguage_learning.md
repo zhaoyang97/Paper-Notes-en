@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Reversible Primitive–Composition Alignment for Continual Vision–Language Learning
 description: >-
-  [ICLR 2026][Multimodal VLM][Vision-Language Model] Addressing the overlooked phenomenon in VLM sequential adaptation where "primitive recognition remains while compositional ability degrades," this paper proposes COMPO-REALIGN—a lightweight alignment head. It utilizes a Cayley orthogonal reversible composer to synthesize composition embeddings from primitive embeddings
+  [ICLR 2026][Multimodal VLM][Continual Learning] Addressing the overlooked phenomenon in VLM sequential adaptation where "primitive recognition remains while compositional ability degrades," this paper proposes COMPO-REALIGN—a lightweight alignment head. It utilizes a Cayley orthogonal reversible composer to synthesize composition embeddings from primitive embeddings, treats text and synthetic compositions as dual positive samples for images via a multi-positive InfoNCE…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Continual Learning"
+  - "Vision-Language Models"
+  - "Compositional Generalization"
+  - "Reversible Mapping"
+  - "Spectral Stability"
 date: 2026-05-08
-content_hash: 672fd18374c2341f
+content_hash: 1b1b483f73effd4a
 ---
+
 # Reversible Primitive–Composition Alignment for Continual Vision–Language Learning
 
 **Conference**: ICLR 2026  
@@ -148,10 +153,10 @@ Single-factor ablation (disabling one component at a time, averaged over Retriev
 
 ## Related Papers
 
+- [\[ICLR 2026\] KeepLoRA: Continual Learning with Residual Gradient Adaptation](keeplora_continual_learning_with_residual_gradient_adaptation.md)
 - [\[ICLR 2026\] Enhanced Continual Learning of Vision-Language Models with Model Fusion](enhanced_continual_learning_of_vision-language_models_with_model_fusion.md)
 - [\[ICLR 2026\] Decoupling Primitive with Experts: Dynamic Feature Alignment for Compositional Zero-Shot Learning](decoupling_primitive_with_experts_dynamic_feature_alignment_for_compositional_ze.md)
 - [\[ICLR 2026\] Fed-Duet: Dual Expert-Orchestrated Framework for Continual Federated Vision-Language Learning](fed-duet_dual_expert-orchestrated_framework_for_continual_federated_vision-langu.md)
-- [\[ICLR 2026\] KeepLoRA: Continual Learning with Residual Gradient Adaptation](keeplora_continual_learning_with_residual_gradient_adaptation.md)
 - [\[ICLR 2026\] Memory-Free Continual Learning with Null Space Adaptation for Zero-Shot Vision-Language Models](memory-free_continual_learning_with_null_space_adaptation_for_zero-shot_vision-l.md)
 
 </div>

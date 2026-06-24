@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Partially Shared Concept Bottleneck Models
 description: >-
-  [AAAI 2026][Interpretability][Concept Bottleneck Models] This paper proposes PS-CBM, a framework that integrates multimodal concept generation (combining LLM semantics with visual cues from exemplar images)…
+  [AAAI 2026][Interpretability][Concept Bottleneck Models] This paper proposes PS-CBM, a framework that integrates multimodal concept generation (combining LLM semantics with visual cues from exemplar images), a partially shared concept strategy (merging concepts based on activation patterns), and a Concept-Efficient Accuracy (CEA) evaluation metric. PS-CBM achieves higher classification accuracy and interpretability with fewer concepts across 11 datasets.
 tags:
   - "AAAI 2026"
   - "Interpretability"
@@ -11,7 +11,7 @@ tags:
   - "Concept Efficiency"
   - "Image Classification"
 date: 2026-05-08
-content_hash: b8cb558911833a0d
+content_hash: 056a7a544b89881d
 ---
 
 # Partially Shared Concept Bottleneck Models
@@ -213,7 +213,7 @@ Analysis of the number of exclusive concepts $K$: ACC increases sharply from $K=
 - [\[AAAI 2026\] Concepts from Representations: Post-hoc Concept Bottleneck Models via Sparse Decomposition of Visual Representations](concepts_from_representations_post-hoc_concept_bottleneck_models_via_sparse_deco.md)
 - [\[ICLR 2026\] There Was Never a Bottleneck in Concept Bottleneck Models](../../ICLR2026/interpretability/there_was_never_a_bottleneck_in_concept_bottleneck_models.md)
 - [\[AAAI 2026\] Flexible Concept Bottleneck Model](flexible_concept_bottleneck_model.md)
-- [\[CVPR 2026\] Towards Faithful Multimodal Concept Bottleneck Models](../../CVPR2026/interpretability/towards_faithful_multimodal_concept_bottleneck_models.md)
+- [\[ICLR 2026\] Debugging Concept Bottleneck Models through Removal and Retraining](../../ICLR2026/interpretability/debugging_concept_bottleneck_models_through_removal_and_retraining.md)
 
 </div>
 

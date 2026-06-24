@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] THUNDER: Tile-level Histopathology image UNDERstanding benchmark
 description: >-
-  [NeurIPS 2025 Datasets and Benchmarks Track (Spotlight)][Medical Imaging][digital pathology] This paper presents THUNDER, a comprehensive tile-level benchmark for digital pathology foundation models…
+  [NeurIPS 2025 Datasets and Benchmarks Track (Spotlight)][Medical Imaging][digital pathology] This paper presents THUNDER, a comprehensive tile-level benchmark for digital pathology foundation models, enabling efficient comparison of 23 foundation models across 16 datasets, covering downstream task performance, feature space analysis, robustness, and uncertainty estimation.
 tags:
   - "NeurIPS 2025 Datasets and Benchmarks Track (Spotlight)"
   - "Medical Imaging"
@@ -13,7 +13,7 @@ tags:
   - "uncertainty"
   - "tile-level analysis"
 date: 2026-05-08
-content_hash: 74b5e143a85fff31
+content_hash: dce612b88a6b43eb
 ---
 
 # THUNDER: Tile-level Histopathology image UNDERstanding benchmark
@@ -172,11 +172,11 @@ Comparison of evaluation protocols:
 
 ## Related Papers
 
-- [\[ICML 2026\] Seizure-Semiology-Suite (S³): A Clinically Multimodal Dataset, Benchmark, and Models for Seizure Semiology Understanding](../../ICML2026/medical_imaging/seizure-semiology-suite_s3_a_clinically_multimodal_dataset_benchmark_and_models_.md)
-- [\[NeurIPS 2025\] Revisiting End-to-End Learning with Slide-level Supervision in Computational Pathology](revisiting_end-to-end_learning_with_slide-level_supervision_in_computational_pat.md)
+- [\[ICLR 2026\] M3CoTBench: Benchmark Chain-of-Thought of MLLMs in Medical Image Understanding](../../ICLR2026/medical_imaging/m3cotbench_benchmark_chain-of-thought_of_mllms_in_medical_image_understanding.md)
+- [\[ICML 2025\] MedXpertQA: Benchmarking Expert-Level Medical Reasoning and Understanding](../../ICML2025/medical_imaging/medxpertqa_benchmarking_expert-level_medical_reasoning_and_understanding.md)
 - [\[NeurIPS 2025\] CXReasonBench: A Benchmark for Evaluating Structured Diagnostic Reasoning in Chest X-rays](cxreasonbench_a_benchmark_for_evaluating_structured_diagnostic_reasoning_in_ches.md)
-- [\[AAAI 2026\] PanFoMa: A Lightweight Foundation Model and Benchmark for Pan-Cancer Pathology Image Analysis](../../AAAI2026/medical_imaging/panfoma_a_lightweight_foundation_model_and_benchmark_for_pan-cancer.md)
-- [\[NeurIPS 2025\] Semantic and Visual Crop-Guided Diffusion Models for Heterogeneous Tissue Synthesis in Histopathology](semantic_and_visual_crop-guided_diffusion_models_for_heterogeneous_tissue_synthe.md)
+- [\[ECCV 2024\] OphNet: A Large-Scale Video Benchmark for Ophthalmic Surgical Workflow Understanding](../../ECCV2024/medical_imaging/ophnet_a_large-scale_video_benchmark_for_ophthalmic_surgical_workflow_understand.md)
+- [\[CVPR 2025\] TopoCellGen: Generating Histopathology Cell Topology with a Diffusion Model](../../CVPR2025/medical_imaging/topocellgen_generating_histopathology_cell_topology_with_a_diffusion_model.md)
 
 </div>
 

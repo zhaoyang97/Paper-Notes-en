@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rule2DRC: Benchmarking LLM Agents for DRC Script Synthesis with Execution-Guided Test Generation
 description: >-
-  [ICML 2026][LLM Agent][KLayout] The authors construct Rule2DRC, a large-scale EDA benchmark containing 1,000 natural language design rules and 13,921 evaluation layouts. Performance is measured via execution-level scoring using the KLayout engine rather than code similarity. They propose SplitTester: a method that clusters $N$ candidate DRC scripts b
+  [ICML 2026][LLM Agent][DRC Script Synthesis] The authors construct Rule2DRC, a large-scale EDA benchmark containing 1,000 natural language design rules and 13,921 evaluation layouts. Performance is measured via execution-level scoring using the KLayout engine rather than code similarity. They propose SplitTester: a method that clusters $N$ candidate DRC scripts based on execution consistency, iteratively generates new layouts to split the most "dangerous" cluster (defined by…
 tags:
-  - ICML 2026
-  - LLM Agent
-  - KLayout
+  - "ICML 2026"
+  - "LLM Agent"
+  - "DRC Script Synthesis"
+  - "KLayout"
+  - "Best-of-N Selection"
+  - "Test-Driven Clustering"
+  - "Electronic Design Automation"
 date: 2026-05-08
-content_hash: cf8e7063439bfc70
+content_hash: 251a3f3d01a46672
 ---
+
 # Rule2DRC: Benchmarking LLM Agents for DRC Script Synthesis with Execution-Guided Test Generation
 
 **Conference**: ICML 2026  
@@ -134,15 +139,15 @@ Evaluation conducted on the full 1,000 tasks of Rule2DRC. Results are averaged o
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Expanding the Capability Frontier of LLM Agents with ZPD-Guided Data Synthesis](../../ICLR2026/llm_agent/expanding_the_capability_frontier_of_llm_agents_with_zpd-guided_data_synthesis.md)
 - [\[ICML 2026\] Recovering Policy-Induced Errors: Benchmarking and Trajectory Synthesis for Robust GUI Agents](recovering_policy-induced_errors_benchmarking_and_trajectory_synthesis_for_robus.md)
-- [\[ICLR 2026\] The Tool Decathlon: Benchmarking Language Agents for Diverse, Realistic, and Long-Horizon Task Execution](../../ICLR2026/llm_agent/the_tool_decathlon_benchmarking_language_agents_for_diverse_realistic_and_long-h.md)
+- [\[ICML 2026\] AdaMEM: Test-Time Adaptive Memory for Language Agents](adamem_test-time_adaptive_memory_for_language_agents.md)
 - [\[ICML 2026\] Towards Feedback-to-Plan Decisions for Self-Evolving LLM Agents in CUDA Kernel Generation](towards_feedback-to-plan_decisions_for_self-evolving_llm_agents_in_cuda_kernel_g.md)
-- [\[ACL 2025\] METAL: A Multi-Agent Framework for Chart Generation with Test-Time Scaling](../../ACL2025/llm_agent/metal_a_multi-agent_framework_for_chart_generation_with_test-time_scaling.md)
-- [\[ICML 2026\] AutoRPA: Efficient GUI Automation through LLM-Driven Code Synthesis from Interactions](autorpa_efficient_gui_automation_through_llm-driven_code_synthesis_from_interact.md)
+- [\[ICLR 2026\] The Tool Decathlon: Benchmarking Language Agents for Diverse, Realistic, and Long-Horizon Task Execution](../../ICLR2026/llm_agent/the_tool_decathlon_benchmarking_language_agents_for_diverse_realistic_and_long-h.md)
 
 </div>
 

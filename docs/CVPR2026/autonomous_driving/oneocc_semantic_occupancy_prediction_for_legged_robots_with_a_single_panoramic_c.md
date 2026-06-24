@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OneOcc: Semantic Occupancy Prediction for Legged Robots with a Single Panoramic Camera
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] OneOcc is a vision-only panoramic semantic occupancy prediction framework designed for legged/humanoid robots. By integrating dual-projection fusion, dual-grid voxelization, gait displacement compensation, and a hierarchical mixture-of-experts decoder, it achieves 360° semantic scene completion using only a single pano
+  [CVPR 2026][Autonomous Driving][Semantic Scene Completion] OneOcc is a vision-only panoramic semantic occupancy prediction framework designed for legged/humanoid robots. By integrating dual-projection fusion, dual-grid voxelization, gait displacement compensation, and a hierarchical mixture-of-experts decoder, it achieves 360° semantic scene completion using only a single panoramic camera, outperforming LiDAR baselines on real-world quadruped and simulated humanoid datasets.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Semantic Scene Completion"
+  - "Panoramic Camera"
+  - "Legged Robots"
+  - "Voxel Occupancy Prediction"
+  - "Gait Compensation"
 date: 2026-05-08
-content_hash: 0f6129b2c5cbd09b
+content_hash: dc840984c8f078d6
 ---
+
 # OneOcc: Semantic Occupancy Prediction for Legged Robots with a Single Panoramic Camera
 
 **Conference**: CVPR 2026  
@@ -183,11 +189,11 @@ The total loss follows the MonoScene framework: $\mathcal{L}_{total} = \mathcal{
 
 ## Related Papers
 
-- [\[CVPR 2026\] Panoramic Multimodal Semantic Occupancy Prediction for Quadruped Robots](panoramic_multimodal_semantic_occupancy_prediction.md)
-- [\[CVPR 2026\] M²-Occ: Resilient 3D Semantic Occupancy Prediction for Autonomous Driving with Incomplete Camera Inputs](m2-occ_resilient_3d_semantic_occupancy_prediction_for_autonomous_driving_with_in.md)
+- [\[CVPR 2025\] Panoramic Multimodal Semantic Occupancy Prediction for Quadruped Robots](../../CVPR2025/autonomous_driving/panoramic_multimodal_semantic_occupancy_prediction_for_quadruped_robots.md)
 - [\[CVPR 2026\] Sparsity-Aware Voxel Attention and Foreground Modulation for 3D Semantic Scene Completion](sparsity-aware_voxel_attention_and_foreground_modulation_for_3d_semantic_scene_c.md)
-- [\[CVPR 2026\] O3N: Omnidirectional Open-Vocabulary Occupancy Prediction](o3n_omnidirectional_open-vocabulary_occupancy_prediction.md)
-- [\[CVPR 2026\] EditSSC: Toward Editable Semantic Occupancy Scenes with Unconditional Diffusion Models](editssc_toward_editable_semantic_occupancy_scenes_with_unconditional_diffusion_m.md)
+- [\[CVPR 2026\] QueryOcc: Query-based Self-Supervision for 3D Semantic Occupancy](queryocc_query-based_self-supervision_for_3d_semantic_occupancy.md)
+- [\[CVPR 2026\] Monocular Open Vocabulary Occupancy Prediction for Indoor Scenes (LegoOcc)](monocular_open_vocabulary_occupancy_prediction_for_indoor_scenes.md)
+- [\[CVPR 2026\] An Instance-Centric Panoptic Occupancy Prediction Benchmark for Autonomous Driving](an_instance-centric_panoptic_occupancy_prediction_benchmark_for_autonomous_drivi.md)
 
 </div>
 

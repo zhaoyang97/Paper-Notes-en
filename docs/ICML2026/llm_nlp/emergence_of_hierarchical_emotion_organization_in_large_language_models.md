@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Emergence of Hierarchical Emotion Organization in Large Language Models
 description: >-
-  [ICML 2026][LLM (Other)][Paper Note] The paper utilizes a tree-building algorithm that relies solely on LLM output logits without any annotations to "excavate" a hierarchical emotion tree from the model's next-token distribution of emotion words. It finds that as the model scale increases, these trees increasingly resemble the human psychological "emotion
+  [ICML2026][LLM (Other)][Emotion Hierarchy] The paper utilizes a tree-building algorithm that relies solely on LLM output logits without any annotations to "excavate" a hierarchical emotion tree from the model's next-token distribution of emotion words. It finds that as the model scale increases, these trees increasingly resemble the human psychological "emotion wheel." Furthermore, it demonstrates that LLMs under different demographic personas reproduce systematic emotion rec…
 tags:
-  - ICML 2026
-  - LLM (Other)
+  - "ICML2026"
+  - "LLM (Other)"
+  - "Emotion Hierarchy"
+  - "Representation Engineering"
+  - "Scale Emergence"
+  - "Demographic Bias"
+  - "Cognitive Evaluation"
 date: 2026-05-08
-content_hash: 9c4df02c6e40411a
+content_hash: a8fa08ba0f2f8084
 ---
+
 # Emergence of Hierarchical Emotion Organization in Large Language Models
 
 **Conference**: ICML2026  
@@ -131,9 +137,9 @@ This work is analytical and does not involve training new models. Situational se
 
 - [\[ICML 2026\] ANCHOR: Abductive Network Construction with Hierarchical Orchestration for Reliable Probability Inference in Large Language Models](anchor_abductive_network_construction_with_hierarchical_orchestration_for_reliab.md)
 - [\[ACL 2025\] Quantifying Semantic Emergence in Language Models](../../ACL2025/llm_nlp/quantifying_semantic_emergence_in_language_models.md)
-- [\[ICML 2026\] Rare Event Analysis of Large Language Models](rare_event_analysis_of_large_language_models.md)
 - [\[ICML 2026\] Creative Collision: Directorial Persona Steering and Competition in Large Language Models](creative_collision_directorial_persona_steering_and_competition_in_large_languag.md)
-- [\[ICML 2026\] Resting Neurons, Active Insights: Robustify Activation Sparsity for Large Language Models](resting_neurons_active_insights_robustify_activation_sparsity_for_large_language.md)
+- [\[ICML 2026\] Rare Event Analysis of Large Language Models](rare_event_analysis_of_large_language_models.md)
+- [\[ICML 2026\] Masks Can Be Distracting: On Context Comprehension in Diffusion Language Models](masks_can_be_distracting_on_context_comprehension_in_diffusion_language_models.md)
 
 </div>
 

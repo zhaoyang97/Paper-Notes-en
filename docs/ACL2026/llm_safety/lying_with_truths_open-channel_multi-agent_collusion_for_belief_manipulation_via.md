@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Lying with Truths: Open-Channel Multi-Agent Collusion for Belief Manipulation via Generative Montage
 description: >-
-  [ACL 2026][LLM Safety][Multi-Agent] This paper identifies the security threat of cognitive collusion: multiple agents can publicly release only truthful but narratively orchestrated evidence fragments to induce false causal beliefs in a victim LLM agent, which then continues to propagate through downstream verification layers.
+  [ACL2026 Oral][LLM Safety][Cognitive collusion] This paper identifies the security threat of cognitive collusion: multiple agents can publicly release only truthful but narratively orchestrated evidence fragments to induce false causal beliefs in a victim LLM agent, which then continues to propagate through downstream verification layers.
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Multi-Agent
+  - "ACL2026 Oral"
+  - "LLM Safety"
+  - "Cognitive collusion"
+  - "truth fragments"
+  - "narrative over-fitting"
+  - "multi-agent"
+  - "false belief propagation"
 date: 2026-05-08
-content_hash: ec00f57bf9b39dd0
+content_hash: 455dc3d088dfcac0
 ---
+
 # Lying with Truths: Open-Channel Multi-Agent Collusion for Belief Manipulation via Generative Montage
 
 **Conference**: ACL2026 Oral  

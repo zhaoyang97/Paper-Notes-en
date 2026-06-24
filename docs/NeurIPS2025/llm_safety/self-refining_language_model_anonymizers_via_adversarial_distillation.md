@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Self-Refining Language Model Anonymizers via Adversarial Distillation
 description: >-
-  [NeurIPS 2025][LLM Safety][Privacy Protection] This paper proposes SEAL, a framework that distills GPT-4-level text anonymization capabilities into an 8B model via adversarial distillation…
+  [NeurIPS 2025][LLM Safety][Privacy Protection] This paper proposes SEAL, a framework that distills GPT-4-level text anonymization capabilities into an 8B model via adversarial distillation, combining SFT + DPO training with a self-refinement mechanism. The resulting small model achieves privacy–utility trade-offs on par with or superior to GPT-4-based anonymizers while enabling fully local deployment.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Adversarial Learning"
   - "Self-Refinement"
 date: 2026-05-08
-content_hash: ed854974e214658b
+content_hash: 1ff0351eccb181cd
 ---
 
 # Self-Refining Language Model Anonymizers via Adversarial Distillation
@@ -156,8 +156,8 @@ Each component contributes incrementally: DPO > multi-task > adversarial feedbac
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Distillation Robustifies Unlearning](distillation_robustifies_unlearning.md)
 - [\[NeurIPS 2025\] AgentStealth: Reinforcing Large Language Model for Anonymizing User-generated Text](agentstealth_reinforcing_large_language_model_for_anonymizing_user-generated_tex.md)
+- [\[NeurIPS 2025\] Distillation Robustifies Unlearning](distillation_robustifies_unlearning.md)
 - [\[ICLR 2026\] Self-Destructive Language Model](../../ICLR2026/llm_safety/self-destructive_language_model.md)
 - [\[NeurIPS 2025\] Demystifying Language Model Forgetting with Low-Rank Example Associations](demystifying_language_model_forgetting_with_low-rank_example_associations.md)
 - [\[NeurIPS 2025\] Attention! Your Vision Language Model Could Be Maliciously Manipulated](attention_your_vision_language_model_could_be_maliciously_manipulated.md)

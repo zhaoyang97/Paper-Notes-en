@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UniF2ace: A Unified Fine-grained Face Understanding and Generation Model
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] UniF2ace is the first Unified Multimodal Model (UMM) to unify facial "understanding" (VQA / description) and "generation" (text-to-face) within a single framework. It enhances fine-grained generation fidelity through a D3Diff loss that unifies masked generation with discrete score matching. To combat "attribute forgett
+  [ICLR 2026][Multimodal VLM][Unified Multimodal Model] UniF2ace is the first Unified Multimodal Model (UMM) to unify facial "understanding" (VQA / description) and "generation" (text-to-face) within a single framework. It enhances fine-grained generation fidelity through a D3Diff loss that unifies masked generation with discrete score matching. To combat "attribute forgetting," it employs a grouped token-level + sequence-level MoE architecture to reinject semantic and identity…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Unified Multimodal Model"
+  - "Discrete Diffusion"
+  - "Score Matching"
+  - "Mixture-of-Experts"
+  - "Fine-grained Faces"
 date: 2026-05-08
-content_hash: 95f066b6859e4ce6
+content_hash: acdccfc45ac5231d
 ---
+
 # UniF2ace: A Unified Fine-grained Face Understanding and Generation Model
 
 **Conference**: ICLR 2026  
@@ -133,15 +139,15 @@ Face Understanding (UniF2aceD-1M score by GPT-4o / DeepSeek): SOTA across all me
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Thinking with Camera: A Unified Multimodal Model for Camera-Centric Understanding and Generation](thinking_with_camera_a_unified_multimodal_model_for_camera-centric_understanding.md)
 - [\[ICLR 2026\] Omni-Weather: A Unified Multimodal Model for Weather Radar Understanding and Generation](omni-weather_a_unified_multimodal_model_for_weather_radar_understanding_and_gene.md)
+- [\[ICLR 2026\] P2P: Automated Paper-to-Poster Generation and Fine-Grained Benchmark](p2p_automated_paper-to-poster_generation_and_fine-grained_benchmark.md)
 - [\[ICLR 2026\] MotionSight: Boosting Fine-Grained Motion Understanding in Multimodal LLMs](motionsight_boosting_fine-grained_motion_understanding_in_multimodal_llms.md)
 - [\[ICLR 2026\] ORION: Decoupling and Alignment for Unified Autoregressive Understanding and Generation](orion_decoupling_and_alignment_for_unified_autoregressive_understanding_and_gene.md)
-- [\[ICLR 2026\] GranViT: A Fine-Grained Vision Model For Autoregressive Multimodal Large Language Models](granvit_a_fine-grained_vision_model_for_autoregressive_multimodal_large_language.md)
 
 </div>
 

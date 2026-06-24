@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] <SOG$_k$>: One LLM Token for Explicit Graph Structural Understanding
 description: >-
-  [ICLR 2026][Graph Learning][GraphLLM] This paper compresses the topology of an entire graph or target node into a single discrete structural token `<SOG$_k$>` that coexists with the native vocabulary of the LLM. By aligning this token with text tokens through structural QA, the method significantly enhances the graph structural understanding of LLMs in mol
+  [ICLR2026][Graph Learning][structural token] This paper compresses the topology of an entire graph or target node into a single discrete structural token `<SOG$_k$>` that coexists with the native vocabulary of the LLM. By aligning this token with text tokens through structural QA, the method significantly enhances the graph structural understanding of LLMs in molecular graph and node classification tasks with minimal token overhead.
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - GraphLLM
+  - "ICLR2026"
+  - "Graph Learning"
+  - "structural token"
+  - "graph structure understanding"
+  - "GraphLLM"
+  - "discrete topology encoding"
+  - "structural hallucination"
 date: 2026-05-08
-content_hash: 024c0eb2083e2b5c
+content_hash: b5a2074eaa0d8970
 ---
+
 # <SOG$_k$>: One LLM Token for Explicit Graph Structural Understanding
 
 **Conference**: ICLR2026  
@@ -146,13 +151,20 @@ Ablations confirm that correctly mapped structural tokens are essential compared
 - **Value**: ⭐⭐⭐⭐⭐ (Provides a robust path for graph-language integration.)
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- **GraphText**: A previous SOTA using natural language for graph representation.
-- **LLaGA**: A representative of Graph-to-Embedding projector-based methods.
-- **VQGraph**: Explores discrete quantization within the graph domain.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Entropy-Guided Dynamic Tokens for Graph-LLM Alignment in Molecular Understanding](entropy-guided_dynamic_tokens_for_graph-llm_alignment_in_molecular_understanding.md)
+- [\[NeurIPS 2025\] The Underappreciated Power of Vision Models for Graph Structural Understanding](../../NeurIPS2025/graph_learning/the_underappreciated_power_of_vision_models_for_graph_structural_understanding.md)
+- [\[ICLR 2026\] Towards Improved Sentence Representations using Token Graphs](towards_improved_sentence_representations_using_token_graphs.md)
+- [\[ICLR 2026\] One for Two: A Unified Framework for Imbalanced Graph Classification via Dynamic Balanced Prototype](one_for_two_a_unified_framework_for_imbalanced_graph_classification_via_dynamic_.md)
+- [\[ICLR 2026\] SAGA: Structural Aggregation Guided Alignment with Dynamic View and Neighborhood Order Selection for Multiview Graph Domain Adaptation](saga_structural_aggregation_guided_alignment_with_dynamic_view_and_neighborhood_.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[NeurIPS 2025\] The Underappreciated Power of Vision Models for Graph Structural Understanding](../../NeurIPS2025/graph_learning/the_underappreciated_power_of_vision_models_for_graph_structural_understanding.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hephaestus: Mixture Generative Modeling with Energy Guidance for Large-scale QoS Degradation
 description: >-
-  [NeurIPS 2025][Image Generation][QoS Degradation] This paper proposes Hephaestus, a three-stage generative framework (Forge-Morph-Refine) that combines a Predicted Path Pressurization (PPS) algorithm…
+  [NeurIPS 2025][Image Generation][QoS Degradation] This paper proposes Hephaestus, a three-stage generative framework (Forge-Morph-Refine) that combines a Predicted Path Pressurization (PPS) algorithm, an energy-guided mixture CVAE, and latent-space reinforcement learning optimization to address large-scale network QoS degradation problems.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Reinforcement Learning"
   - "Network Optimization"
 date: 2026-05-08
-content_hash: 078f0e2a210f24d0
+content_hash: 8569b1768bbd6b2b
 ---
 
 # Hephaestus: Mixture Generative Modeling with Energy Guidance for Large-scale QoS Degradation
@@ -169,7 +169,7 @@ UMAP visualizations of the latent space show clear clustering under different th
 - [\[NeurIPS 2025\] ICEdit: Enabling Instructional Image Editing with In-Context Generation in Large Scale Diffusion Transformer](in-context_edit_enabling_instructional_image_editing_with_in-context_generation_.md)
 - [\[NeurIPS 2025\] UltraHR-100K: Enhancing UHR Image Synthesis with A Large-Scale High-Quality Dataset](ultrahr-100k_enhancing_uhr_image_synthesis_with_a_large-scale_high-quality_datas.md)
 - [\[NeurIPS 2025\] Coupling Generative Modeling and an Autoencoder with the Causal Bridge](coupling_generative_modeling_and_an_autoencoder_with_the_causal_bridge.md)
-- [\[ICLR 2026\] Laplacian Multi-scale Flow Matching for Generative Modeling](../../ICLR2026/image_generation/laplacian_multi-scale_flow_matching_for_generative_modeling.md)
+- [\[ICLR 2026\] LapFlow: Laplacian Multi-scale Flow Matching for Generative Modeling](../../ICLR2026/image_generation/lapflow_laplacian_multi-scale_flow_matching_for_generative_modeling.md)
 
 </div>
 

@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Enabling Fine-Tuning of Direct Feedback Alignment via Feedback-Weight Matching
 description: >-
-  [ICLR 2026][learning_theory][Direct Feedback Alignment] This paper proposes feedback-weight matching: reconstructing DFA feedback matrices from backpropagation (BP) pre-trained weights and then re-initializing the weights using these matrices. This ensures DFA begins fine-tuning in a "strong weight alignment" state, enabling reliable fine-tuning of FCNs and Transformers for
+  [ICLR 2026][Learning Theory][Direct Feedback Alignment] This paper proposes feedback-weight matching: reconstructing DFA feedback matrices from backpropagation (BP) pre-trained weights and then re-initializing the weights using these matrices. This ensures DFA begins fine-tuning in a "strong weight alignment" state, enabling reliable fine-tuning of FCNs and Transformers for the first time (improving image classification by 7.97% over standard DFA and increasing NLP correlatio…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Direct Feedback Alignment
-  - Fine-tuning
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Biologically Plausible Training"
+  - "Backpropagation-free Training"
+  - "Direct Feedback Alignment"
+  - "Fine-tuning"
+  - "Weight Alignment"
+  - "Gradient Alignment"
+  - "Backpropagation Alternative"
 date: 2026-05-08
-content_hash: 19c5652b558d0411
+content_hash: 26dd62ce5666ff68
 ---
+
 # Enabling Fine-Tuning of Direct Feedback Alignment via Feedback-Weight Matching
 
 **Conference**: ICLR 2026  

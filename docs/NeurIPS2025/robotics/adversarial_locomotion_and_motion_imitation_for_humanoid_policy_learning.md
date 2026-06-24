@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning
 description: >-
-  [NeurIPS 2025][Robotics][Humanoid Robot] ALMI proposes an upper-lower body adversarial training framework: the lower-body policy learns robust locomotion under upper-body motion perturbations…
+  [NeurIPS 2025][Robotics][Humanoid Robot] ALMI proposes an upper-lower body adversarial training framework: the lower-body policy learns robust locomotion under upper-body motion perturbations, while the upper-body policy learns precise motion imitation under lower-body locomotion perturbations. Through iterative adversarial training converging to a Nash equilibrium, the framework enables stable whole-body coordinated control on the Unitree H1-2 real robot.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Whole-Body Control"
   - "Sim-to-Real"
 date: 2026-05-08
-content_hash: 5c932862442cdadf
+content_hash: 1de1313d43ab3115
 ---
 
 # Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning
@@ -113,10 +113,10 @@ The model is trained end-to-end with an objective that jointly optimizes task lo
 ## Related Papers
 
 - [\[AAAI 2026\] Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy](../../AAAI2026/robotics/coordinated_humanoid_robot_locomotion_with_symmetry_equivariant_reinforcement_le.md)
+- [\[ICLR 2026\] From Language to Locomotion: Retargeting-free Humanoid Control via Motion Latent Guidance](../../ICLR2026/robotics/from_language_to_locomotion_retargeting-free_humanoid_control_via_motion_latent_.md)
 - [\[NeurIPS 2025\] The Impact of Scaling Training Data on Adversarial Robustness](the_impact_of_scaling_training_data_on_adversarial_robustness.md)
-- [\[NeurIPS 2025\] Generalizable Domain Adaptation for Sim-and-Real Policy Co-Training](generalizable_domain_adaptation_for_sim-and-real_policy_co-training.md)
+- [\[ICLR 2026\] HWC-Loco: A Hierarchical Whole-Body Control Approach to Robust Humanoid Locomotion](../../ICLR2026/robotics/hwc-loco_a_hierarchical_whole-body_control_approach_to_robust_humanoid_locomotio.md)
 - [\[NeurIPS 2025\] VolleyBots: A Testbed for Multi-Drone Volleyball Game Combining Motion Control and Strategic Play](volleybots_a_testbed_for_multi-drone_volleyball_game_combining_motion_control_an.md)
-- [\[NeurIPS 2025\] Policy Compatible Skill Incremental Learning via Lazy Learning Interface](policy_compatible_skill_incremental_learning_via_lazy_learning_interface.md)
 
 </div>
 

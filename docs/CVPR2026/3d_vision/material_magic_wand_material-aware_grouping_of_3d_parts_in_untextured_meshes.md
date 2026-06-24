@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Material Magic Wand: Material-Aware Grouping of 3D Parts in Untextured Meshes
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Addressing the challenge where "repetitive but geometrically distinct components should share the same material" in untextured meshes, this work proposes Material Magic Wand. By utilizing a part encoder that learns material-aware embeddings, each 3D part is encoded into a vector. Clicking a single part allows for autom
+  [CVPR 2026][3D Vision][Material-aware grouping] Addressing the challenge where "repetitive but geometrically distinct components should share the same material" in untextured meshes, this work proposes Material Magic Wand. By utilizing a part encoder that learns material-aware embeddings, each 3D part is encoded into a vector. Clicking a single part allows for automatic selection of all parts with the same material via nearest neighbor retrieval. On a self-constructed benchma…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Material-aware grouping"
+  - "3D part retrieval"
+  - "Contrastive learning"
+  - "Untextured meshes"
+  - "Interactive modeling"
 date: 2026-05-08
-content_hash: 31924d057ee3ee8c
+content_hash: b0470970c48851fe
 ---
+
 # Material Magic Wand: Material-Aware Grouping of 3D Parts in Untextured Meshes
 
 **Conference**: CVPR 2026  
@@ -135,11 +141,11 @@ Compared to the strongest baseline DINO-v3 small, retrieval AUC increases by +8.
 
 ## Related Papers
 
+- [\[CVPR 2026\] MatMart: Material Reconstruction of 3D Objects via Diffusion](matmart_material_reconstruction_of_3d_objects_via_diffusion.md)
 - [\[CVPR 2026\] MatSpray: Fusing 2D Material World Knowledge on 3D Geometry](matspray_fusing_2d_material_world_knowledge_on_3d_geometry.md)
 - [\[CVPR 2026\] Intrinsic Image Fusion for Multi-View 3D Material Reconstruction](intrinsic_image_fusion_for_multi-view_3d_material_reconstruction.md)
 - [\[CVPR 2026\] MatE: Material Extraction from Single-Image via Geometric Prior](mate_material_extraction_from_single-image_via_geometric_prior.md)
-- [\[CVPR 2026\] H²A²: Homogeneity-Aware and Heterogeneity-Aware Feature Perception for Unified Indoor 3D Object Detection](h2a2_homogeneity-aware_and_heterogeneity-aware_feature_perception_for_unified_in.md)
-- [\[CVPR 2026\] HAD: Hallucination-Aware Diffusion Priors for 3D Reconstruction](had_hallucination-aware_diffusion_priors_for_3d_reconstruction.md)
+- [\[CVPR 2026\] MatLat: Material Latent Space for PBR Texture Generation](matlat_material_latent_space_for_pbr_texture_generation.md)
 
 </div>
 

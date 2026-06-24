@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Prospective Dynamic 3D MRI Reconstruction via Latent-Space Motion Tracking from Single Measurement
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] PDMR learns a low-dimensional non-linear manifold of dynamic 3D MRI motion (Deformation Vector Field, DVF) offline. During online inference, it optimizes only a 12-dimensional latent vector using a single instantaneous k-space measurement. This enables real-time reconstruction of high-fidelity 3D images under ultra-spa
+  [CVPR 2026][Medical Imaging][Prospective Reconstruction] PDMR learns a low-dimensional non-linear manifold of dynamic 3D MRI motion (Deformation Vector Field, DVF) offline. During online inference, it optimizes only a 12-dimensional latent vector using a single instantaneous k-space measurement. This enables real-time reconstruction of high-fidelity 3D images under ultra-sparse sampling for prospective applications such as MR-guided radiotherapy.
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Prospective Reconstruction"
+  - "Dynamic MRI"
+  - "Manifold Learning"
+  - "Deformation Vector Field"
+  - "MR-guided Radiotherapy"
 date: 2026-05-08
-content_hash: 8aee04756094a8ab
+content_hash: fcf08f79e4360f52
 ---
+
 # Prospective Dynamic 3D MRI Reconstruction via Latent-Space Motion Tracking from Single Measurement
 
 **Conference**: CVPR 2026  
@@ -128,15 +134,16 @@ The main paper does not provide an independent ablation table but uses qualitati
 - Value: ⭐⭐⭐⭐ High potential for clinical scenarios like MR-guided radiotherapy.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[AAAI 2026\] Unsupervised Motion-Compensated Decomposition for Cardiac MRI Reconstruction via Neural Representation](../../AAAI2026/medical_imaging/unsupervised_motion-compensated_decomposition_for_cardiac_mri_reconstruction_via.md)
 - [\[CVPR 2026\] Diffusion MRI Transformer with a Diffusion Space Rotary Positional Embedding (D-RoPE)](diffusion_mri_transformer_with_a_diffusion_space_rotary_positional_embedding_d-r.md)
-- [\[CVPR 2026\] Breaking the Continuum: Discrete Distribution Learning for Structural MRI Reconstruction](breaking_the_continuum_discrete_distribution_learning_for_structural_mri_reconst.md)
 - [\[CVPR 2026\] SIMSPINE: A Biomechanics-Aware Simulation Framework for 3D Spine Motion Annotation and Benchmarking](simspine_a_biomechanics-aware_simulation_framework_for_3d_spine_motion_annotatio.md)
-- [\[CVPR 2026\] EchoPOSE: 6D Pose Estimation of Sparse Echocardiograms for Left-Ventricular 3D Shape Reconstruction](echopose_6d_pose_estimation_of_sparse_echocardiograms_for_left-ventricular_3d_sh.md)
+- [\[CVPR 2026\] Breaking the Continuum: Discrete Distribution Learning for Structural MRI Reconstruction](breaking_the_continuum_discrete_distribution_learning_for_structural_mri_reconst.md)
+- [\[CVPR 2026\] Decoding 3D Perception via BrainSSD: Synergistic Fusion of EEG Representations from Static and Dynamic Visual Streams](decoding_3d_perception_via_brainssd_synergistic_fusion_of_eeg_representations_fr.md)
 
 </div>
 

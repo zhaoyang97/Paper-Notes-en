@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UIS-Digger: Towards Comprehensive Research Agent Systems for Real-world Unindexed Information Seeking
 description: >-
-  [ICLR 2026][Multi-Agent][Paper Note] Identifies and formalizes the "Unindexed Information Seeking" (UIS) problem—targeting dynamic web pages, embedded files, and interactive content that search engines cannot directly index. Proposes the first UIS benchmark, UIS-QA (110 questions), and a multi-agent framework UIS-Digger. A ~30B parameter model trained wit
+  [ICLR 2026][Multi-Agent][Unindexed Information Seeking] Identifies and formalizes the "Unindexed Information Seeking" (UIS) problem—targeting dynamic web pages, embedded files, and interactive content that search engines cannot directly index. Proposes the first UIS benchmark, UIS-QA (110 questions), and a multi-agent framework UIS-Digger. A ~30B parameter model trained with SFT+RFT achieves 27.27% accuracy, outperforming systems integrated with O3/GPT-4.1.
 tags:
-  - ICLR 2026
-  - Multi-Agent
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "Unindexed Information Seeking"
+  - "Multi-Agent Framework"
+  - "Dual-mode Browser"
+  - "SFT+RFT Training"
+  - "Information Retrieval Benchmark"
 date: 2026-05-08
-content_hash: 2911559da2e353c0
+content_hash: 19449992674852b3
 ---
+
 # UIS-Digger: Towards Comprehensive Research Agent Systems for Real-world Unindexed Information Seeking
 
 **Conference**: ICLR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Creating ConLangs to Probe the Metalinguistic Grammatical Knowledge of LLMs
 description: >-
-  [ACL 2026][NLP Understanding][Paper Note] This paper introduces IASC (Interactive Agentic System for ConLangs), a modular constructed language generation system. By requiring LLMs to execute morphosyntactic transformations based on linguistic specifications, the study probes their metalinguistic knowledge. Findings reveal that LLMs handle common linguistic typ
+  [ACL 2026][NLP Understanding][Constructed Languages (ConLangs)] This paper introduces IASC (Interactive Agentic System for ConLangs), a modular constructed language generation system. By requiring LLMs to execute morphosyntactic transformations based on linguistic specifications, the study probes their metalinguistic knowledge. Findings reveal that LLMs handle common linguistic typological patterns significantly better than rare ones, and performance varies drastically across…
 tags:
-  - ACL 2026
-  - NLP Understanding
+  - "ACL 2026"
+  - "NLP Understanding"
+  - "Constructed Languages (ConLangs)"
+  - "Metalinguistic Knowledge"
+  - "Morphosyntactic Transformation"
+  - "LLM Probing"
+  - "Linguistic Typology"
 date: 2026-05-08
-content_hash: 2ccc12367bb93060
+content_hash: 1ad0c047c30209a7
 ---
+
 # Creating ConLangs to Probe the Metalinguistic Grammatical Knowledge of LLMs
 
 **Conference**: ACL 2026  

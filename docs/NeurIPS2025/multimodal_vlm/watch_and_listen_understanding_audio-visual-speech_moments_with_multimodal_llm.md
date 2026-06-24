@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Watch and Listen: Understanding Audio-Visual-Speech Moments with Multimodal LLM
 description: >-
-  [NeurIPS 2025][Multimodal VLM][audio-visual understanding] This paper proposes TriSense — a tri-modal (visual + audio + speech) large language model that adaptively modulates per-modality weights via a Query-Based Connec…
+  [NeurIPS 2025][Multimodal VLM][audio-visual understanding] This paper proposes TriSense — a tri-modal (visual + audio + speech) large language model that adaptively modulates per-modality weights via a Query-Based Connector for robust video temporal understanding, supported by the TriSense-2M dataset containing 2 million annotated samples.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "modality adaptation"
   - "video moment retrieval"
 date: 2026-05-08
-content_hash: 9fdbd2a61d6b671b
+content_hash: 388b79f6bdfcc916
 ---
 
 # Watch and Listen: Understanding Audio-Visual-Speech Moments with Multimodal LLM
@@ -142,11 +142,11 @@ Training proceeds in two stages: Stage 1 performs modality alignment (without te
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] UniTok: A Unified Tokenizer for Visual Generation and Understanding](unitok_a_unified_tokenizer_for_visual_generation_and_understanding.md)
-- [\[ICLR 2026\] Reasoning-Driven Multimodal LLM for Domain Generalization](../../ICLR2026/multimodal_vlm/reasoning-driven_multimodal_llm_for_domain_generalization.md)
+- [\[CVPR 2026\] EgoAVU: Egocentric Audio-Visual Understanding](../../CVPR2026/multimodal_vlm/egoavu_egocentric_audio-visual_understanding.md)
+- [\[ICLR 2026\] WAVE: Learning Unified & Versatile Audio-Visual Embeddings with Multimodal LLM](../../ICLR2026/multimodal_vlm/wave_learning_unified_versatile_audio-visual_embeddings_with_multimodal_llm.md)
+- [\[ICLR 2026\] OmniVideoBench: Towards Audio-Visual Understanding Evaluation for Omni MLLMs](../../ICLR2026/multimodal_vlm/omnivideobench_towards_audio-visual_understanding_evaluation_for_omni_mllms.md)
+- [\[ACL 2025\] TheoremExplainAgent: Towards Video-based Multimodal Explanations for LLM Theorem Understanding](../../ACL2025/multimodal_vlm/theorem_explain_agent.md)
 - [\[NeurIPS 2025\] Nautilus: A Large Multimodal Model for Underwater Scene Understanding](nautilus_a_large_multimodal_model_for_underwater_scene_understanding.md)
-- [\[NeurIPS 2025\] HermesFlow: Seamlessly Closing the Gap in Multimodal Understanding and Generation](hermesflow_seamlessly_closing_the_gap_in_multimodal_understanding_and_generation.md)
-- [\[ICCV 2025\] Harmonizing Visual Representations for Unified Multimodal Understanding and Generation](../../ICCV2025/multimodal_vlm/harmonizing_visual_representations_for_unified_multimodal_un.md)
 
 </div>
 

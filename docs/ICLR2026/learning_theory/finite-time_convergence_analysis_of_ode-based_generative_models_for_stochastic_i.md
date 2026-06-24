@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Finite-Time Convergence Analysis of ODE-based Generative Models for Stochastic Interpolants
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper presents the first finite-time convergence analysis for numerical ODE solvers within the stochastic interpolant framework. It establishes discrete-time TV error bounds and iteration complexities ($O(\varepsilon^{-1}d^2)$ and $O(\varepsilon^{-1/2}d^{3/2})$) for first-order forward Euler and second-order Heun
+  [ICLR 2026][Learning Theory][Stochastic interpolants] This paper presents the first finite-time convergence analysis for numerical ODE solvers within the stochastic interpolant framework. It establishes discrete-time TV error bounds and iteration complexities ($O(\varepsilon^{-1}d^2)$ and $O(\varepsilon^{-1/2}d^{3/2})$) for first-order forward Euler and second-order Heun methods. When reduced to diffusion models, the results surpass existing literature in terms of smoothness…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Convergence Analysis of Generative Sampling"
+  - "Stochastic interpolants"
+  - "ODE sampling"
+  - "finite-time convergence"
+  - "iteration complexity"
+  - "Heun method"
+  - "diffusion model theory"
 date: 2026-05-08
-content_hash: 3bdd97ad8238c7fa
+content_hash: 94d8b2dd9226137f
 ---
+
 # Finite-Time Convergence Analysis of ODE-based Generative Models for Stochastic Interpolants
 
 **Conference**: ICLR 2026  
@@ -107,9 +115,9 @@ flowchart TD
 
 - [\[ICLR 2026\] Polynomial Convergence of Riemannian Diffusion Models](polynomial_convergence_of_riemannian_diffusion_models.md)
 - [\[NeurIPS 2025\] Finite-Time Analysis of Stochastic Nonconvex Nonsmooth Optimization on the Riemannian Manifolds](../../NeurIPS2025/learning_theory/finite-time_analysis_of_stochastic_nonconvex_nonsmooth_optimization_on_the_riema.md)
+- [\[ICLR 2026\] DAK-UCB: Diversity-Aware Prompt Routing for LLMs and Generative Models](dak-ucb_diversity-aware_prompt_routing_for_llms_and_generative_models.md)
 - [\[ICLR 2026\] A Sharp KL Convergence Analysis for Diffusion Models under Minimal Assumptions](a_sharp_kl_convergence_analysis_for_diffusion_models_under_minimal_assumptions.md)
-- [\[ICLR 2026\] Interactive Learning of Single-Index Models via Stochastic Gradient Descent](interactive_learning_of_single-index_models_via_stochastic_gradient_descent.md)
-- [\[ICLR 2026\] Robustness of Probabilistic Models to Low-Quality Data: A Multi-Perspective Analysis](robustness_of_probabilistic_models_to_low-quality_data_a_multi-perspective_analy.md)
+- [\[ICLR 2026\] Learning-Augmented Moment Estimation on Time-Decay Models](learning-augmented_moment_estimation_on_time-decay_models.md)
 
 </div>
 

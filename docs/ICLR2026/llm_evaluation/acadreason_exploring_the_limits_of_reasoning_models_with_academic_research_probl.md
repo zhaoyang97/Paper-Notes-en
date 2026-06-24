@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ACADREASON: Exploring the Limits of Reasoning Models with Academic Research Problems
 description: >-
-  [ICLR 2026][LLM Evaluation][LLM-as-Judge] AcadReason utilizes 50 research questions from top-tier journal papers across 5 high-reasoning disciplines (Computer Science, Economics, Law, Mathematics, Philosophy) to specifically test whether LLMs and Agents can acquire and reason through academic knowledge "like a researcher." The results show that most LLMs score
+  [ICLR2026][LLM Evaluation][Academic Reasoning] AcadReason utilizes 50 research questions from top-tier journal papers across 5 high-reasoning disciplines (Computer Science, Economics, Law, Mathematics, Philosophy) to specifically test whether LLMs and Agents can acquire and reason through academic knowledge "like a researcher." The results show that most LLMs score below 20, with even GPT-5 only reaching 16 points and the strongest Agent, OAgents, peaking at 34 points…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - LLM-as-Judge
-  - Agent
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "Academic Reasoning"
+  - "Research-level Evaluation"
+  - "LLM-as-Judge"
+  - "Agent"
+  - "Checklist Scoring"
 date: 2026-05-08
-content_hash: e2063f8405fc4e4c
+content_hash: f1411ef0b96e3f24
 ---
+
 # ACADREASON: Exploring the Limits of Reasoning Models with Academic Research Problems
 
 **Conference**: ICLR2026  

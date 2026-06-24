@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bayesian Active Learning with Gaussian Processes Guided by LLM Relevance Scoring
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] BAGEL is proposed as a Bayesian active learning framework based on Gaussian Processes (GP). By using an exploration-exploitation balance strategy to propagate sparse LLM relevance signals across the global embedding space under a limited LLM budget, it achieves passage retrieval that significantly outperforms tradition
+  [ACL 2026 Findings][Information Retrieval & RAG][Passage Retrieval] BAGEL is proposed as a Bayesian active learning framework based on Gaussian Processes (GP). By using an exploration-exploitation balance strategy to propagate sparse LLM relevance signals across the global embedding space under a limited LLM budget, it achieves passage retrieval that significantly outperforms traditional LLM reranking methods.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL 2026 Findings"
+  - "Information Retrieval & RAG"
+  - "Passage Retrieval"
+  - "Gaussian Process"
+  - "Active Learning"
+  - "LLM Reranking"
+  - "Bayesian Optimization"
 date: 2026-05-08
-content_hash: 1297a9d9cad47fab
+content_hash: 4f556e1e10bac8d7
 ---
+
 # Bayesian Active Learning with Gaussian Processes Guided by LLM Relevance Scoring
 
 **Conference**: ACL 2026 Findings  
@@ -135,7 +141,7 @@ Training-free. GP hyperparameters (kernel lengthscale $\ell$, noise $\alpha$) ar
 ## Related Papers
 
 - [\[ACL 2026\] An Iterative Utility Judgment Framework Inspired by Philosophical Relevance via LLMs](an_iterative_utility_judgment_framework_inspired_by_philosophical_relevance_via_.md)
-- [\[ICLR 2026\] Fine-tuning with RAG for Improving LLM Learning of New Skills](../../ICLR2026/information_retrieval/fine-tuning_with_rag_for_improving_llm_learning_of_new_skills.md)
+- [\[ICLR 2026\] Supervised Fine-Tuning or Contrastive Learning? Towards Better Multimodal LLM Reranking](../../ICLR2026/information_retrieval/supervised_fine-tuning_or_contrastive_learning_towards_better_multimodal_llm_rer.md)
 - [\[ACL 2026\] End-to-End Optimization of LLM-Driven Multi-Agent Search Systems via Heterogeneous-Group-Based Reinforcement Learning](end-to-end_optimization_of_llm-driven_multi-agent_search_systems_via_heterogeneo.md)
 - [\[ACL 2026\] Learning to Extract Rational Evidence via Reinforcement Learning for Retrieval-Augmented Generation](learning_to_extract_rational_evidence_via_reinforcement_learning_for_retrieval-a.md)
 - [\[ACL 2026\] From Relevance to Authority: Authority-aware Generative Retrieval in Web Search Engines](from_relevance_to_authority_authority-aware_generative_retrieval_in_web_search_e.md)

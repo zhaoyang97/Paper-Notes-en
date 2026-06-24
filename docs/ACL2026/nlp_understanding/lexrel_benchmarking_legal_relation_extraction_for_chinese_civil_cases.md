@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LexRel: Benchmarking Legal Relation Extraction for Chinese Civil Cases
 description: >-
-  [ACL 2026][NLP Understanding][Paper Note] Constructed the first structured classification system for Chinese civil legal relations (9 domains, 265 relation types) and proposed the LexRel benchmark (1,140 expert-annotated samples). Evaluated the capabilities of mainstream LLMs in legal relation extraction, identifying significant limitations in current models w
+  [ACL 2026][NLP Understanding][Legal relation extraction] Constructed the first structured classification system for Chinese civil legal relations (9 domains, 265 relation types) and proposed the LexRel benchmark (1,140 expert-annotated samples). Evaluated the capabilities of mainstream LLMs in legal relation extraction, identifying significant limitations in current models while demonstrating the performance gains legal relation information provides to downstream legal AI tas…
 tags:
-  - ACL 2026
-  - NLP Understanding
+  - "ACL 2026"
+  - "NLP Understanding"
+  - "Legal relation extraction"
+  - "Chinese civil cases"
+  - "legal knowledge graph"
+  - "benchmark"
+  - "relation taxonomy"
 date: 2026-05-08
-content_hash: c8fc58113cb66d6b
+content_hash: f538fea67af72845
 ---
+
 # LexRel: Benchmarking Legal Relation Extraction for Chinese Civil Cases
 
 **Conference**: ACL 2026  
@@ -134,7 +140,7 @@ Evaluation includes: **Zero-shot Baselines** for direct extraction; and **Relati
 - [\[ACL 2025\] Towards a More Generalized Approach in Open Relation Extraction](../../ACL2025/nlp_understanding/generalized_open_relation_extract.md)
 - [\[ACL 2025\] A Variational Approach for Mitigating Entity Bias in Relation Extraction](../../ACL2025/nlp_understanding/a_variational_approach_for_mitigating_entity_bias_in_relation_extraction.md)
 - [\[ACL 2025\] Generating Diverse Training Samples for Relation Extraction with Large Language Models](../../ACL2025/nlp_understanding/generating_diverse_training_samples_for_relation_extraction_with_large_language_.md)
-- [\[ACL 2026\] DiZiNER: Disagreement-guided Instruction Refinement via Pilot Annotation Simulation for Zero-shot Named Entity Recognition](diziner_disagreement-guided_instruction_refinement_via_pilot_annotation_simulati.md)
+- [\[ACL 2026\] Beyond Chunking: Discourse-Aware Hierarchical Retrieval for Long Document Question Answering](beyond_chunking_discourse-aware_hierarchical_retrieval_for_long_document_questio.md)
 
 </div>
 

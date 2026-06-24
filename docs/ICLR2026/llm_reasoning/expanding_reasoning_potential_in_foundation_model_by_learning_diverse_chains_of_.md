@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Expanding Reasoning Potential in Foundation Model by Learning Diverse Chains of Thought Patterns
 description: >-
-  [ICLR 2026][LLM Reasoning][Chain-of-Thought] This paper formalizes the "reasoning potential" of foundation models as "the reciprocal of the expected number of independent attempts required to solve a problem." It proposes the CoTP framework, which abstracts atomic reasoning patterns from CoT sequences and utilizes a dual-granularity weighted DTW distance (Reasoni
+  [ICLR 2026][Reasoning][Chain-of-Thought] This paper formalizes the "reasoning potential" of foundation models as "the reciprocal of the expected number of independent attempts required to solve a problem." It proposes the CoTP framework, which abstracts atomic reasoning patterns from CoT sequences and utilizes a dual-granularity weighted DTW distance (Reasoning Pattern Chain + Token Entropy Chain) to select long CoT data aligned with a high-value core set from massive data po…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Chain-of-Thought
-  - Dynamic Time Warping
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Chain-of-Thought"
+  - "Reasoning Potential"
+  - "Mid-training"
+  - "Data Selection"
+  - "Reasoning Patterns"
+  - "Dynamic Time Warping"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: b3ebe1938cc6259e
+content_hash: 5bb0f2f098690766
 ---
+
 # Expanding Reasoning Potential in Foundation Model by Learning Diverse Chains of Thought Patterns
 
 **Conference**: ICLR 2026  
@@ -128,15 +134,13 @@ The RL ceiling for CoTP is **7.81%** higher than LongCoTPool and 42.04% higher t
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[ICLR 2026\] MathFimer: Enhancing Mathematical Reasoning by Expanding Reasoning Steps through Fill-in-the-Middle Task](mathfimer_enhancing_mathematical_reasoning_by_expanding_reasoning_steps_through_.md)
-- [\[ICLR 2026\] String Seed of Thought: Prompting LLMs for Distribution-Faithful and Diverse Generation](string_seed_of_thought_prompting_llms_for_distribution-faithful_and_diverse_gene.md)
-- [\[ICLR 2026\] GPG: A Simple and Strong Reinforcement Learning Baseline for Model Reasoning](gpg_a_simple_and_strong_reinforcement_learning_baseline_for_model_reasoning.md)
-- [\[ICLR 2026\] Learning to Reason over Continuous Tokens with Reinforcement Learning (HyRea)](learning_to_reason_over_continuous_tokens_with_reinforcement_learning.md)
 - [\[ACL 2025\] Fine-Tuning on Diverse Reasoning Chains Drives Within-Inference CoT Refinement in LLMs](../../ACL2025/llm_reasoning/dcot_diverse_cot_refinement.md)
+- [\[ICLR 2026\] String Seed of Thought: Prompting LLMs for Distribution-Faithful and Diverse Generation](string_seed_of_thought_prompting_llms_for_distribution-faithful_and_diverse_gene.md)
+- [\[ICLR 2026\] Theory-Grounded Evaluation of Human-Like Fallacy Patterns in LLM Reasoning](theory-grounded_evaluation_of_human-like_fallacy_patterns_in_llm_reasoning.md)
+- [\[ICLR 2026\] GPG: A Simple and Strong Reinforcement Learning Baseline for Model Reasoning](gpg_a_simple_and_strong_reinforcement_learning_baseline_for_model_reasoning.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Systematic Evaluation of Preference Aggregation in Federated RLHF for Pluralistic Alignment of LLMs
 description: >-
-  [NEURIPS2025][LLM Safety][federated learning] This paper proposes an Adaptive Alpha aggregation strategy that dynamically adjusts reward weights based on each user group's historical alignment performance within a federa…
+  [NEURIPS2025][LLM Safety][federated learning] This paper proposes an Adaptive Alpha aggregation strategy that dynamically adjusts reward weights based on each user group's historical alignment performance within a federated RLHF framework, simultaneously achieving high fairness and strong alignment performance for pluralistic preference alignment.
 tags:
   - "NEURIPS2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Preference Aggregation"
   - "Fairness"
 date: 2026-05-08
-content_hash: 3dc21b1aa1d3c3c6
+content_hash: 3594a35cc520c0ae
 ---
 
 # A Systematic Evaluation of Preference Aggregation in Federated RLHF for Pluralistic Alignment of LLMs
@@ -152,9 +152,9 @@ Standard PPO loss is used for policy updates, with the key reward signal $r_{fin
 ## Related Papers
 
 - [\[NeurIPS 2025\] Position: The Complexity of Perfect AI Alignment -- Formalizing the RLHF Trilemma](position_the_complexity_of_perfect_ai_alignment_--_formalizing_the_rlhf_trilemma.md)
-- [\[ICML 2026\] Position: Retire the "Positive Backdoor" Label -- Secret Alignment Requires Strict and Systematic Evaluation](../../ICML2026/llm_safety/position_retire_the_positive_backdoor_label_--_secret_alignment_requires_strict_.md)
+- [\[ICML 2025\] Reward-Augmented Data Enhances Direct Preference Alignment of LLMs](../../ICML2025/llm_safety/reward-augmented_data_enhances_direct_preference_alignment_of_llms.md)
+- [\[ICML 2025\] POPri: Private Federated Learning using Preference-Optimized Synthetic Data](../../ICML2025/llm_safety/popri_private_federated_learning_using_preference-optimized_synthetic_data.md)
 - [\[NeurIPS 2025\] Evaluation of Vision-LLMs in Surveillance Video](evaluation_of_vision-llms_in_surveillance_video.md)
-- [\[ICML 2026\] Federated Variational Preference Alignment with Gumbel-Softmax Prior for Personalized User Preferences](../../ICML2026/llm_safety/federated_variational_preference_alignment_with_gumbel-softmax_prior_for_persona.md)
 - [\[NeurIPS 2025\] FedSVD: Adaptive Orthogonalization for Private Federated Learning with LoRA](fedsvd_adaptive_orthogonalization_for_private_federated_learning_with_lora.md)
 
 </div>

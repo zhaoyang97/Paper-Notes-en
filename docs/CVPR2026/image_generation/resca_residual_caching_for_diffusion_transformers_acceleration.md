@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ResCa: Residual Caching for Diffusion Transformers Acceleration
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Transformer] ResCa is a training-free acceleration framework for Diffusion Transformers. It performs actual denoising on only a single "proxy token" within each trajectory cluster and uses its multi-order residuals to "simulate" the denoising direction of other tokens in the same cluster. This achieves a 5.5× GFLOPs speedup on FLUX
+  [CVPR 2026][Image Generation][Diffusion Transformer] ResCa is a training-free acceleration framework for Diffusion Transformers. It performs actual denoising on only a single "proxy token" within each trajectory cluster and uses its multi-order residuals to "simulate" the denoising direction of other tokens in the same cluster. This achieves a 5.5× GFLOPs speedup on FLUX with almost no loss in image quality.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Transformer
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "Feature Caching"
+  - "Token Reuse"
+  - "Multi-order Residuals"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 050da07d79deb6b8
+content_hash: 251e60e8c3872339
 ---
+
 # ResCa: Residual Caching for Diffusion Transformers Acceleration
 
 **Conference**: CVPR 2026  
@@ -160,10 +165,10 @@ Ablation on clustering (visual comparison at $N=8$ to amplify residual reuse eff
 ## Related Papers
 
 - [\[CVPR 2026\] Forecast the Principal, Stabilize the Residual: Subspace-Aware Feature Caching for Diffusion Transformers](forecast_the_principal_stabilize_the_residual_subspace-aware_feature_caching_for.md)
-- [\[AAAI 2026\] ProCache: Constraint-Aware Feature Caching with Selective Computation for Diffusion Transformer Acceleration](../../AAAI2026/image_generation/procache_constraint-aware_feature_caching_with_selective_computation_for_diffusi.md)
 - [\[CVPR 2026\] Just-in-Time: Training-Free Spatial Acceleration for Diffusion Transformers](just-in-time_training-free_spatial_acceleration_for_diffusion_transformers.md)
 - [\[CVPR 2026\] Adaptive Spectral Feature Forecasting for Diffusion Sampling Acceleration](adaptive_spectral_feature_forecasting_for_diffusion_sampling_acceleration.md)
-- [\[CVPR 2026\] TC-Padé: Trajectory-Consistent Padé Approximation for Diffusion Acceleration](tc-padé_trajectory-consistent_padé_approximation_for_diffusion_acceleration.md)
+- [\[CVPR 2026\] Region-Adaptive Sampling for Diffusion Transformers](region-adaptive_sampling_for_diffusion_transformers.md)
+- [\[CVPR 2026\] Denoising as Path Planning: Training-Free Acceleration of Diffusion Models with DPCache](dpcache_denoising_path_planning_diffusion_accel.md)
 
 </div>
 

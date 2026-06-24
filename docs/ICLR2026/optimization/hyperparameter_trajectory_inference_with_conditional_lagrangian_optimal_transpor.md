@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Hyperparameter Trajectory Inference with Conditional Lagrangian Optimal Transport
 description: >-
-  [ICLR 2026][Optimization & Theory][Lagrangian dynamics] This paper proposes Hyperparameter Trajectory Inference (HTI): treating continuous hyperparameters as "time," it uses conditional Lagrangian optimal transport to learn the trajectory of neural network output distributions across varying hyperparameters. This allows for approximating outputs under unobserved hyperparame
+  [ICLR 2026][Optimization][Hyperparameter trajectory inference] This paper proposes Hyperparameter Trajectory Inference (HTI): treating continuous hyperparameters as "time," it uses conditional Lagrangian optimal transport to learn the trajectory of neural network output distributions across varying hyperparameters. This allows for approximating outputs under unobserved hyperparameter settings at inference time without retraining the original model.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Lagrangian dynamics
+  - "ICLR 2026"
+  - "Optimization"
+  - "Hyperparameter trajectory inference"
+  - "conditional optimal transport"
+  - "Lagrangian dynamics"
+  - "neural optimal transport"
+  - "inference-time adaptation"
 date: 2026-05-08
-content_hash: 6755a91fdfa81449
+content_hash: a0d61785da2d6d32
 ---
+
 # Hyperparameter Trajectory Inference with Conditional Lagrangian Optimal Transport
 
 **Conference**: ICLR 2026  
@@ -211,11 +216,11 @@ The synthetic semi-circle experiment clearly disentangles the two inductive bias
 
 ## Related Papers
 
-- [\[ICLR 2026\] A Scalable Constant-Factor Approximation Algorithm for $W_p$ Optimal Transport](a_scalable_constant-factor_approximation_algorithm_for_w_p_optimal_transport.md)
+- [\[ICLR 2026\] Neural Optimal Transport Meets Multivariate Conformal Prediction](neural_optimal_transport_meets_multivariate_conformal_prediction.md)
+- [\[ICLR 2026\] HOTA: Hamiltonian Framework for Optimal Transport Advection](hota_hamiltonian_framework_for_optimal_transport_advection.md)
 - [\[ICLR 2026\] Elastic Optimal Transport: Theory, Application, and Empirical Evaluation](elastic_optimal_transport_theory_application_and_empirical_evaluation.md)
 - [\[ICLR 2026\] Neural Hamilton–Jacobi Characteristic Flows for Optimal Transport](neural_hamilton--jacobi_characteristic_flows_for_optimal_transport.md)
-- [\[ICLR 2026\] Neural Optimal Transport Meets Multivariate Conformal Prediction](neural_optimal_transport_meets_multivariate_conformal_prediction.md)
-- [\[ICLR 2026\] A Memory-Efficient Hierarchical Algorithm for Large-scale Optimal Transport Problems](a_memory-efficient_hierarchical_algorithm_for_large-scale_optimal_transport_prob.md)
+- [\[ICLR 2026\] Sobolev Gradient Ascent for Optimal Transport: Barycenter Optimization and Convergence Analysis](sobolev_gradient_ascent_for_optimal_transport_barycenter_optimization_and_conver.md)
 
 </div>
 

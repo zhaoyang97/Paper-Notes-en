@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Exploring Structural Degradation in Dense Representations for Self-supervised Learning
 description: >-
-  [NeurIPS 2025][Segmentation][Self-supervised Learning] This paper identifies and systematically investigates the *Self-supervised Dense Degradation* (SDD) phenomenon — where longer training improves classification yet hu…
+  [NeurIPS 2025][Segmentation][Self-supervised Learning] This paper identifies and systematically investigates the *Self-supervised Dense Degradation* (SDD) phenomenon — where longer training improves classification yet hurts dense task performance — and proposes the DSE metric along with DSE-guided model selection and regularization strategies, achieving an average mIoU improvement of 3.0%.
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Model Selection"
   - "Regularization"
 date: 2026-05-08
-content_hash: d34bf5096e30d4a4
+content_hash: 1956576c70f96513
 ---
 
 # Exploring Structural Degradation in Dense Representations for Self-supervised Learning
@@ -166,11 +166,11 @@ where $\lambda = 1$, $\beta = 0.001$, with training resumed from the checkpoint 
 
 ## Related Papers
 
+- [\[CVPR 2025\] Exploring CLIP's Dense Knowledge for Weakly Supervised Semantic Segmentation](../../CVPR2025/segmentation/exploring_clips_dense_knowledge_for_weakly_supervised_semantic_segmentation.md)
 - [\[NeurIPS 2025\] Self-supervised Synthetic Pretraining for Inference of Stellar Mass Embedded in Dense Gas](self-supervised_synthetic_pretraining_for_inference_of_stellar_mass_embedded_in_.md)
-- [\[ICCV 2025\] Joint Self-Supervised Video Alignment and Action Segmentation](../../ICCV2025/segmentation/joint_self-supervised_video_alignment_and_action_segmentation.md)
 - [\[NeurIPS 2025\] Towards Unsupervised Domain Bridging via Image Degradation in Semantic Segmentation](towards_unsupervised_domain_bridging_via_image_degradation_in_semantic_segmentat.md)
-- [\[NeurIPS 2025\] Vision Transformers with Self-Distilled Registers](vision_transformers_with_self-distilled_registers.md)
-- [\[CVPR 2026\] Follow the Saliency: Supervised Saliency for Retrieval-augmented Dense Video Captioning](../../CVPR2026/segmentation/follow_the_saliency_supervised_saliency_for_retrieval-augmented_dense_video_capt.md)
+- [\[ICCV 2025\] Joint Self-Supervised Video Alignment and Action Segmentation](../../ICCV2025/segmentation/joint_self-supervised_video_alignment_and_action_segmentation.md)
+- [\[CVPR 2025\] Soft Self-Labeling and Potts Relaxations for Weakly-Supervised Segmentation](../../CVPR2025/segmentation/soft_self-labeling_and_potts_relaxations_for_weakly-supervised_segmentation.md)
 
 </div>
 

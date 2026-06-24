@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rectified Decoupled Dataset Distillation: A Closer Look for Fair and Comprehensive Evaluation
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] Ours proposes RD3 (Rectified Decoupled Dataset Distillation), systematically revealing that performance gaps in existing decoupled dataset distillation methods stem primarily from inconsistent post-evaluation settings rather than distillation quality. It establishes a unified fair evaluation framework, correcting the r
+  [ICLR 2026][Model Compression][Dataset Distillation] Ours proposes RD3 (Rectified Decoupled Dataset Distillation), systematically revealing that performance gaps in existing decoupled dataset distillation methods stem primarily from inconsistent post-evaluation settings rather than distillation quality. It establishes a unified fair evaluation framework, correcting the reported 27.3% performance gap to 6.7%.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "Decoupled Distillation"
+  - "Fair Evaluation"
+  - "Post-evaluation Protocol"
+  - "Synthetic Data"
 date: 2026-05-08
-content_hash: 303c6a88ad327010
+content_hash: 348641fc49d90763
 ---
+
 # Rectified Decoupled Dataset Distillation: A Closer Look for Fair and Comprehensive Evaluation
 
 **Conference**: ICLR 2026  
@@ -131,10 +137,10 @@ Under the unified protocol, EDC (Optimization-based) generally performs best, bu
 ## Related Papers
 
 - [\[AAAI 2026\] A Closer Look at Knowledge Distillation in Spiking Neural Network Training](../../AAAI2026/model_compression/a_closer_look_at_knowledge_distillation_in_spiking_neural_ne.md)
-- [\[ICLR 2026\] Dataset Distillation as Pushforward Optimal Quantization](dataset_distillation_as_pushforward_optimal_quantization.md)
+- [\[ICLR 2026\] Diffusion Models as Dataset Distillation Priors](diffusion_models_as_dataset_distillation_priors.md)
 - [\[ICLR 2026\] Understanding Dataset Distillation via Spectral Filtering](understanding_dataset_distillation_via_spectral_filtering.md)
 - [\[ICLR 2026\] Grounding and Enhancing Informativeness and Utility in Dataset Distillation](grounding_and_enhancing_informativeness_and_utility_in_dataset_distillation.md)
-- [\[AAAI 2026\] TGDD: Trajectory Guided Dataset Distillation with Balanced Distribution](../../AAAI2026/model_compression/tgdd_trajectory_guided_dataset_distillation_with_balanced_distribution.md)
+- [\[ICLR 2026\] Asymmetric Synthetic Data Update for Domain Incremental Dataset Distillation](asymmetric_synthetic_data_update_for_domain_incremental_dataset_distillation.md)
 
 </div>
 

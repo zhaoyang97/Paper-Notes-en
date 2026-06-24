@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] MOSS: Efficient and Accurate FP8 LLM Training with Microscaling and Automatic Scaling
 description: >-
-  [ICLR 2026][Model Compression][MXFP8] MOSS employs "two-level microscaling" to quantize sensitive activations and "automatic scaling" to predict weight scaling factors. This allows FP8 training of 7B models to match BF16 accuracy while increasing throughput to 1.34×.
+  [ICLR 2026][Model Compression][FP8 Training] MOSS employs "two-level microscaling" to quantize sensitive activations and "automatic scaling" to predict weight scaling factors. This allows FP8 training of 7B models to match BF16 accuracy while increasing throughput to 1.34×.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - MXFP8
-  - Quantization
+  - "ICLR 2026"
+  - "Model Compression"
+  - "FP8 Training"
+  - "Microscaling"
+  - "MXFP8"
+  - "Automatic Scaling"
+  - "Quantization"
+  - "LLM Pre-training"
 date: 2026-05-08
-content_hash: ea3e9d02f05e2123
+content_hash: ed89c16c1179fc04
 ---
+
 # MOSS: Efficient and Accurate FP8 LLM Training with Microscaling and Automatic Scaling
 
 **Conference**: ICLR 2026  
@@ -131,8 +136,8 @@ MOSS is 3.0–3.4 dB higher than per-group and 9.2–9.4 dB higher than per-tens
 - [\[ICLR 2026\] HiFo-Prompt: Prompting with Hindsight and Foresight for LLM-based Automatic Heuristic Design](hifo-prompt_prompting_with_hindsight_and_foresight_for_llm-based_automatic_heuri.md)
 - [\[ICLR 2026\] SliderQuant: Accurate Post-Training Quantization for LLMs](sliderquant_accurate_post-training_quantization_for_llms.md)
 - [\[ICLR 2026\] MicroMix: Efficient Mixed-Precision Quantization with Microscaling Formats for Large Language Models](micromix_efficient_mixed-precision_quantization_with_microscaling_formats_for_la.md)
+- [\[CVPR 2026\] TWEO: Transformers Without Extreme Outliers Enables FP8 Training And Quantization For Dummies](../../CVPR2026/model_compression/tweo_transformers_without_extreme_outliers_enables_fp8_training_and_quantization.md)
 - [\[ICML 2026\] RaBiT: Residual-Aware Binarization Training for Accurate and Efficient LLMs](../../ICML2026/model_compression/rabit_residual-aware_binarization_training_for_accurate_and_efficient_llms.md)
-- [\[ACL 2026\] WISCA: A Lightweight Model Transition Method to Improve LLM Training via Weight Scaling](../../ACL2026/model_compression/wisca_a_lightweight_model_transition_method_to_improve_llm_training_via_weight_s.md)
 
 </div>
 

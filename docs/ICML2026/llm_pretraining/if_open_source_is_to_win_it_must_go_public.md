@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] If open source is to win, it must go public
 description: >-
-  [ICML 2026][Pretraining][Paper Note] This ICML 2026 position paper argues that "open-source AI" in its current form cannot truly democratize AI access or provide public goods in the same way Linux or PyTorch did. It posits that open source can only succeed if embedded within "Public AI"—infrastructure for compute, inference, post-training, and data provid
+  [ICML 2026 Spotlight][LLM Pretraining][Open-source AI] This ICML 2026 position paper argues that "open-source AI" in its current form cannot truly democratize AI access or provide public goods in the same way Linux or PyTorch did. It posits that open source can only succeed if embedded within "Public AI"—infrastructure for compute, inference, post-training, and data provided by governments, national labs, universities, and non-profit institutions.
 tags:
-  - ICML 2026
-  - Pretraining
+  - "ICML 2026 Spotlight"
+  - "LLM Pretraining"
+  - "Open-source AI"
+  - "Public AI"
+  - "Infrastructure"
+  - "Governance"
+  - "Digital Public Goods"
 date: 2026-05-08
-content_hash: 44cc24c36e5bebf6
+content_hash: 6a48c29d026b9174
 ---
+
 # If open source is to win, it must go public
 
 **Conference**: ICML 2026 Spotlight  
@@ -132,7 +138,7 @@ As a position paper, no experiments were conducted, but key data were cited to s
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -140,7 +146,7 @@ As a position paper, no experiments were conducted, but key data were cited to s
 - [\[ICML 2026\] Names Don't Matter: Symbol-Invariant Transformer for Open-Vocabulary Learning](names_dont_matter_symbol-invariant_transformer_for_open-vocabulary_learning.md)
 - [\[CVPR 2026\] Reconstructing CLIP for Open-Vocabulary Dense Perception](../../CVPR2026/llm_pretraining/reconstructing_clip_for_open-vocabulary_dense_perception.md)
 - [\[ECCV 2024\] I Can't Believe It's Not Scene Flow!](../../ECCV2024/llm_pretraining/i_canapost_believe_itaposs_not_scene_flow.md)
-- [\[ICML 2026\] Incremental BPE Tokenization](incremental_bpe_tokenization.md)
+- [\[ICLR 2026\] Seq vs Seq: An Open Suite of Paired Encoders and Decoders](../../ICLR2026/llm_pretraining/seq_vs_seq_an_open_suite_of_paired_encoders_and_decoders.md)
 
 </div>
 

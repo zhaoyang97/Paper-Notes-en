@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Residual Decoder Adapter: ID-Preserving Tokenizer Adaption for Autoregressive Text Rendering
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] To address the issues of blurred strokes and distorted glyphs in autoregressive (AR) image generation during text rendering, this paper identifies the root cause as the insufficient reconstruction capability of the visual tokenizer. It proposes the **Residual Decoder Adapter (RDA)**: freezing the original tokenizer and
+  [CVPR 2026][Image Generation][Visual tokenizer] To address the issues of blurred strokes and distorted glyphs in autoregressive (AR) image generation during text rendering, this paper identifies the root cause as the insufficient reconstruction capability of the visual tokenizer. It proposes the **Residual Decoder Adapter (RDA)**: freezing the original tokenizer and AR model, while attaching a Shared-ID Hint codebook and a pixel-level residual decoding branch. This restores t…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Visual tokenizer"
+  - "Autoregressive image generation"
+  - "Text rendering"
+  - "Residual decoding"
+  - "Plug-and-play"
 date: 2026-05-08
-content_hash: 1f7b2c1f46174ce3
+content_hash: e557a69a85f52912
 ---
+
 # Residual Decoder Adapter: ID-Preserving Tokenizer Adaption for Autoregressive Text Rendering
 
 **Conference**: CVPR 2026  
@@ -141,8 +147,21 @@ General models gain ~1.2 points, while text-tuned models gain +33.74 points. **K
 - Value: ⭐⭐⭐⭐⭐ Extremely practical for immediate integration into VQ-based AR models.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[ICLR 2026\] Towards Sequence Modeling Alignment Between Tokenizer and Autoregressive Model](../../ICLR2026/image_generation/towards_sequence_modeling_alignment_between_tokenizer_and_autoregressive_model.md)
+- [\[ICML 2026\] End-to-End Autoregressive Image Generation with 1D Semantic Tokenizer](../../ICML2026/image_generation/end-to-end_autoregressive_image_generation_with_1d_semantic_tokenizer.md)
+- [\[CVPR 2026\] TextPecker: Rewarding Structural Anomaly Quantification for Enhancing Visual Text Rendering](textpecker_rewarding_structural_anomaly_quantification_for_enhancing_visual_text.md)
+- [\[CVPR 2026\] GlyphPrinter: Region-Grouped Direct Preference Optimization for Glyph-Accurate Visual Text Rendering](glyphprinter_region-grouped_direct_preference_optimization_for_glyph-accurate_vi.md)
+- [\[CVPR 2026\] IntroSVG: Learning from Rendering Feedback for Text-to-SVG Generation via an Introspective Generator-Critic Framework](introsvg_learning_from_rendering_feedback_for_text-to-svg_generation_via_an_intr.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

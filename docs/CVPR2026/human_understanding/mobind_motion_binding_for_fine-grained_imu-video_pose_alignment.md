@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] MoBind: Motion Binding for Fine-Grained IMU-Video Pose Alignment
 description: >-
-  [CVPR 2026][Human Understanding][IMU] MoBind utilizes hierarchical contrastive learning to align wearable IMU signals with 2D skeleton motion extracted from video. By aligning IMUs with "skeleton motion" instead of raw pixels to filter out irrelevant backgrounds, decomposing the body into parts for specific IMU pairing, and employing a three-level (token/l
+  [CVPR 2026][Human Understanding][IMU] MoBind utilizes hierarchical contrastive learning to align wearable IMU signals with 2D skeleton motion extracted from video. By aligning IMUs with "skeleton motion" instead of raw pixels to filter out irrelevant backgrounds, decomposing the body into parts for specific IMU pairing, and employing a three-level (token/local/global) contrastive strategy with a masked token prediction task, MoBind significantly outperforms strong baselines i…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - IMU
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "IMU"
+  - "Skeleton Motion"
+  - "Hierarchical Contrastive Learning"
+  - "Temporal Synchronization"
+  - "Cross-modal Retrieval"
+  - "Human Action Recognition"
 date: 2026-05-08
-content_hash: 15cc771d40c114ec
+content_hash: 383dca3bd53967c2
 ---
+
 # MoBind: Motion Binding for Fine-Grained IMU-Video Pose Alignment
 
 **Conference**: CVPR 2026  
@@ -144,6 +150,7 @@ Person Localization (EgoHumans): MoBind achieved an Acc of 0.9812 and F1 of 0.98
 - Value: ⭐⭐⭐⭐ useful for calibration-free sync and localization; source code available.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

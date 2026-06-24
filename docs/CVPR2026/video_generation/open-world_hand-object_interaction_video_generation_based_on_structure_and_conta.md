@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Open-world Hand-Object Interaction Video Generation Based on Structure and Contact-aware Representation
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] SCAR proposes a "structure + contact-aware" 2D HOI representation (contact-enhanced hand-object contours + depth maps) and utilizes a "joint generation" paradigm. This approach allows a Diffusion Transformer to simultaneously denoise RGB videos and this representation, learning physically constrained hand-object intera
+  [CVPR 2026][Video Generation][Hand-Object Interaction] SCAR proposes a "structure + contact-aware" 2D HOI representation (contact-enhanced hand-object contours + depth maps) and utilizes a "joint generation" paradigm. This approach allows a Diffusion Transformer to simultaneously denoise RGB videos and this representation, learning physically constrained hand-object interactions without relying on 3D annotations, while generalizing to open-world scenarios.
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Hand-Object Interaction"
+  - "Contact-aware Representation"
+  - "Joint Generation"
+  - "Diffusion Transformer"
 date: 2026-05-08
-content_hash: f9b82006eaebd682
+content_hash: 34aa67ac6fcba141
 ---
+
 # Open-world Hand-Object Interaction Video Generation Based on Structure and Contact-aware Representation
 
 **Conference**: CVPR 2026  
@@ -126,15 +131,15 @@ Using SCAR$_C$ on Taco as the full model, compared against variants replacing or
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] GenHOI: Towards Object-Consistent Hand-Object Interaction with Temporally Balanced and Spatially Selective Object Injection](genhoi_towards_object-consistent_hand-object_interaction_with_temporally_balance.md)
 - [\[CVPR 2026\] HVG-3D: Bridging Real and Simulation Domains for 3D-Conditional Hand-Object Interaction Video Synthesis](hvg-3d_bridging_real_and_simulation_domains_for_3d-conditional_hand-object_inter.md)
-- [\[CVPR 2026\] HandWorld: Hand-Centric Unified Video Action Generation](handworld_hand-centric_unified_video_action_generation.md)
 - [\[CVPR 2026\] UnityVideo: Unified Multi-Modal Multi-Task Learning for Enhancing World-Aware Video Generation](unityvideo_unified_multi-modal_multi-task_learning_for_enhancing_world-aware_vid.md)
+- [\[CVPR 2026\] HandWorld: Hand-Centric Unified Video Action Generation](handworld_hand-centric_unified_video_action_generation.md)
 - [\[CVPR 2026\] Physical Object Understanding with a Physically Controllable World Model](physical_object_understanding_with_a_physically_controllable_world_model.md)
-- [\[CVPR 2026\] SeeU: Seeing the Unseen World via 4D Dynamics-aware Generation](seeu_seeing_the_unseen_world_via_4d_dynamics-aware_generation.md)
 
 </div>
 

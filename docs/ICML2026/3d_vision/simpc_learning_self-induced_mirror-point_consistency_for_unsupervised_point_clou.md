@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SIMPC: Learning Self-Induced Mirror-Point Consistency for Unsupervised Point Cloud Denoising
 description: >-
-  [ICML 2026][3D Vision][Paper Note] SIMPC proposes performing a "symmetric extension" along the denoising vector of the **same noisy point** to obtain a mirror point on the opposite side of the surface. A Mirror-Point Consistency Loss is then used to force the denoising targets of both points to coincide. This shifts unsupervised point cloud denoising fr
+  [ICML 2026][3D Vision][Point Cloud Denoising] SIMPC proposes performing a "symmetric extension" along the denoising vector of the **same noisy point** to obtain a mirror point on the opposite side of the surface. A Mirror-Point Consistency Loss is then used to force the denoising targets of both points to coincide. This shifts unsupervised point cloud denoising from "finding statistical correspondences across multiple noise variants" to "finding deterministic geometric corres…
 tags:
-  - ICML 2026
-  - 3D Vision
+  - "ICML 2026"
+  - "3D Vision"
+  - "Point Cloud Denoising"
+  - "Unsupervised Learning"
+  - "Mirror-Point Consistency"
+  - "Geometric Prior"
+  - "Deterministic Correspondence"
 date: 2026-05-08
-content_hash: 45d414a6d0635c48
+content_hash: 4b695621ac07cd3e
 ---
+
 # SIMPC: Learning Self-Induced Mirror-Point Consistency for Unsupervised Point Cloud Denoising
 
 **Conference**: ICML 2026  
@@ -157,7 +163,7 @@ PCNet Gaussian + Kinect Real Scans:
 - [\[ICCV 2025\] Noise2Score3D: Tweedie's Approach for Unsupervised Point Cloud Denoising](../../ICCV2025/3d_vision/noise2score3d_tweedies_approach_for_unsupervised_point_cloud_denoising.md)
 - [\[CVPR 2026\] Routing on Demand: DSNet for Efficient Progressive Point Cloud Denoising](../../CVPR2026/3d_vision/routing_on_demand_dsnet_for_efficient_progressive_point_cloud_denoising.md)
 - [\[CVPR 2026\] Topology-aware Feature Propagation for Unsupervised Non-rigid Point Cloud Correspondence](../../CVPR2026/3d_vision/topology-aware_feature_propagation_for_unsupervised_non-rigid_point_cloud_corres.md)
-- [\[ECCV 2024\] P2P-Bridge: Diffusion Bridges for 3D Point Cloud Denoising](../../ECCV2024/3d_vision/p2p-bridge_diffusion_bridges_for_3d_point_cloud_denoising.md)
+- [\[ICML 2026\] 4DPC$^2$hat: Towards Dynamic Point Cloud Understanding with Failure-Aware Bootstrapping](4dpc2hat_towards_dynamic_point_cloud_understanding_with_failure-aware_bootstrapp.md)
 
 </div>
 

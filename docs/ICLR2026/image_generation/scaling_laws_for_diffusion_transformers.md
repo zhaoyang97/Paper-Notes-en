@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scaling Laws for Diffusion Transformers
 description: >-
-  [ICLR 2026][Image Generation][isoFLOP] This paper systematically trains Diffusion Transformers (DiT) within a compute budget range of 1e17 to 6e18 FLOPs, fitting the first explicit scaling laws for DiT—where pre-training loss follows a power law relationship with compute. This enables precise prediction of optimal model size, data volume, and final generati
+  [ICLR 2026][Image Generation][Diffusion Transformer] This paper systematically trains Diffusion Transformers (DiT) within a compute budget range of 1e17 to 6e18 FLOPs, fitting the first explicit scaling laws for DiT—where pre-training loss follows a power law relationship with compute. This enables precise prediction of optimal model size, data volume, and final generation quality (FID) for a given compute budget, and demonstrates that these power laws can extrapolate to 1.5e…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - isoFLOP
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "Scaling Law"
+  - "Compute-optimal"
+  - "isoFLOP"
+  - "FID Prediction"
 date: 2026-05-08
-content_hash: 5fa33e121a8f6a7a
+content_hash: d8791a3286dfd9b1
 ---
+
 # Scaling Laws for Diffusion Transformers
 
 **Conference**: ICLR 2026  
@@ -141,8 +146,8 @@ The Cross-Attention variant has a larger absolute loss exponent (faster decline)
 - [\[ICLR 2026\] Routing Matters in MoE: Scaling Diffusion Transformers with Explicit Routing Guidance](routing_matters_in_moe_scaling_diffusion_transformers_with_explicit_routing_guid.md)
 - [\[NeurIPS 2025\] Scaling Diffusion Transformers Efficiently via μP](../../NeurIPS2025/image_generation/scaling_diffusion_transformers_efficiently_via_μp.md)
 - [\[ICLR 2026\] Rethinking Global Text Conditioning in Diffusion Transformers](rethinking_global_text_conditioning_in_diffusion_transformers.md)
+- [\[ICLR 2026\] Dual-Path Condition Alignment for Diffusion Transformers](dual-path_condition_alignment_for_diffusion_transformers.md)
 - [\[ICLR 2026\] A Hidden Semantic Bottleneck in Conditional Embeddings of Diffusion Transformers](a_hidden_semantic_bottleneck_in_conditional_embeddings_of_diffusion_transformers.md)
-- [\[ICLR 2026\] MADFormer: Mixed Autoregressive and Diffusion Transformers for Continuous Image Generation](textitmadformer_mixed_autoregressive_and_diffusion_transformers_for_continuous_i.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Very Efficient Listwise Multimodal Reranking for Long Documents
 description: >-
-  [ICML 2026][Multimodal VLM][listwise reranking] ZipRerank simultaneously eliminates the two major bottlenecks of listwise reranking in VLMs—"excessive visual token sequence length" and "sequential token-by-token ranking output in autoregressive decoding." By utilizing query-aware token pruning and single-logit ranking, it reduces LLM inference latency on MMDocIR by
+  [ICML 2026][Multimodal VLM][listwise reranking] ZipRerank simultaneously eliminates the two major bottlenecks of listwise reranking in VLMs—"excessive visual token sequence length" and "sequential token-by-token ranking output in autoregressive decoding." By utilizing query-aware token pruning and single-logit ranking, it reduces LLM inference latency on MMDocIR by an order of magnitude while matching or exceeding the current SOTA, MM-R5.
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - listwise reranking
-  - VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "listwise reranking"
+  - "VLM"
+  - "visual token pruning"
+  - "single-step decoding"
+  - "teacher distillation"
 date: 2026-05-08
-content_hash: 5cf64e736fb185fb
+content_hash: 1fa32c31112c6c74
 ---
+
 # Very Efficient Listwise Multimodal Reranking for Long Documents
 
 **Conference**: ICML 2026  
@@ -137,9 +141,9 @@ ZipRerank outperforms MM-R5 across the board while reducing latency from 3.82s t
 
 - [\[AAAI 2026\] URaG: Unified Retrieval and Generation in Multimodal LLMs for Efficient Long Document Understanding](../../AAAI2026/multimodal_vlm/urag_unified_retrieval_and_generation_in_multimodal_llms_for.md)
 - [\[CVPR 2025\] Multimodal OCR: Parse Anything from Documents](../../CVPR2025/multimodal_vlm/multimodal_ocr_parse_anything_from_documents.md)
-- [\[CVPR 2026\] MSJoE: Jointly Evolving MLLM and Sampler for Efficient Long-Form Video Understanding](../../CVPR2026/multimodal_vlm/msjoe_jointly_evolving_mllm_and_sampler_for_efficient_long-form_video_understand.md)
 - [\[AAAI 2026\] OIDA-QA: A Multimodal Benchmark for Analyzing the Opioid Industry Documents Archive](../../AAAI2026/multimodal_vlm/oida-qa_a_multimodal_benchmark_for_analyzing_the_opioid_industry_documents_archi.md)
 - [\[ICML 2026\] FlowNar: Scalable Streaming Narration for Long-Form Videos](flownar_scalable_streaming_narration_for_long-form_videos.md)
+- [\[CVPR 2026\] MSJoE: Jointly Evolving MLLM and Sampler for Efficient Long-Form Video Understanding](../../CVPR2026/multimodal_vlm/msjoe_jointly_evolving_mllm_and_sampler_for_efficient_long-form_video_understand.md)
 
 </div>
 

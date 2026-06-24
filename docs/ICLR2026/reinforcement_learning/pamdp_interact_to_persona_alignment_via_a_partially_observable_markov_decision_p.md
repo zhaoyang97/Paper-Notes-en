@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PAMDP: Interact to Persona Alignment via a Partially Observable Markov Decision Process
 description: >-
-  [ICLR 2026][Reinforcement Learning][POMDP] This paper models "gradual alignment to user persona during multi-turn interaction" as a Partially Observable Markov Decision Process (PAMDP) where user profiles are unobservable. It utilizes a lightweight Actor with continuous latent space actions and a "partial state + full state" dual Critic for unbiased advantage e
+  [ICLR 2026][Reinforcement Learning][Persona Alignment] This paper models "gradual alignment to user persona during multi-turn interaction" as a Partially Observable Markov Decision Process (PAMDP) where user profiles are unobservable. It utilizes a lightweight Actor with continuous latent space actions and a "partial state + full state" dual Critic for unbiased advantage estimation, achieving higher alignment win rates and cumulative rewards on both offline datasets and onlin…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - POMDP
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Persona Alignment"
+  - "POMDP"
+  - "Dual Critic"
+  - "Continuous Latent Action"
+  - "Multi-turn Dialogue"
 date: 2026-05-08
-content_hash: 0349fdb157dda967
+content_hash: 106052d98f0e7d46
 ---
+
 # PAMDP: Interact to Persona Alignment via a Partially Observable Markov Decision Process
 
 **Conference**: ICLR 2026  

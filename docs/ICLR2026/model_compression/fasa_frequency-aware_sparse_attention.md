@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FASA: Frequency-Aware Sparse Attention
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] This paper discovers functional sparsity at the Frequency Chunk (FC) level in RoPE—where a small number of "dominant FCs" can effectively predict token importance. Based on this, it proposes the FASA framework, which achieves training-free KV cache compression through a two-stage process: predicting token importance vi
+  [ICLR 2026][Model Compression][KV cache compression] This paper discovers functional sparsity at the Frequency Chunk (FC) level in RoPE—where a small number of "dominant FCs" can effectively predict token importance. Based on this, it proposes the FASA framework, which achieves training-free KV cache compression through a two-stage process: predicting token importance via dominant FCs and focusing attention computation. On LongBench, it achieves nearly 100% full-KV performanc…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "KV cache compression"
+  - "sparse attention"
+  - "RoPE frequency analysis"
+  - "token pruning"
+  - "long-context inference"
 date: 2026-05-08
-content_hash: f9e78bee41609716
+content_hash: 285bd22b58df65a1
 ---
+
 # FASA: Frequency-Aware Sparse Attention
 
 **Conference**: ICLR 2026  
@@ -121,11 +127,11 @@ Cross-model validation: Consistently effective across Llama-3.1-8B, Mistral-7B, 
 
 ## Related Papers
 
-- [\[ICLR 2026\] TurboBoA: Faster and Exact Attention-aware Quantization without Backpropagation](turboboa_faster_and_exact_attention-aware_quantization_without_backpropagation.md)
+- [\[ICLR 2026\] SLA: Beyond Sparsity in Diffusion Transformers via Fine-Tunable Sparse–Linear Attention](sla_beyond_sparsity_in_diffusion_transformers_via_fine-tunable_sparselinear_atte.md)
+- [\[ICLR 2026\] FreqKV: Key-Value Compression in Frequency Domain for Context Window Extension](freqkv_key-value_compression_in_frequency_domain_for_context_window_extension.md)
 - [\[NeurIPS 2025\] SpecAttn: Speculating Sparse Attention](../../NeurIPS2025/model_compression/specattn_speculating_sparse_attention.md)
 - [\[ICLR 2026\] Ensembling Pruned Attention Heads for Uncertainty-Aware Efficient Transformers](ensembling_pruned_attention_heads_for_uncertainty-aware_efficient_transformers.md)
-- [\[ICLR 2026\] Token Distillation: Attention-Aware Input Embeddings for New Tokens](token_distillation_attention-aware_input_embeddings_for_new_tokens.md)
-- [\[CVPR 2026\] Trainable Log-linear Sparse Attention for Efficient Diffusion Transformers](../../CVPR2026/model_compression/trainable_log-linear_sparse_attention_for_efficient_diffusion_transformers.md)
+- [\[ICLR 2026\] TurboBoA: Faster and Exact Attention-aware Quantization without Backpropagation](turboboa_faster_and_exact_attention-aware_quantization_without_backpropagation.md)
 
 </div>
 

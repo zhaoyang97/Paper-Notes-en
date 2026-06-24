@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Seeing the Arrow of Time in Large Multimodal Models
 description: >-
-  [NeurIPS 2025][Video Understanding][Arrow of Time] This paper reveals that current large multimodal models (LMMs) are surprisingly insensitive to the temporal directionality of video (i.e.…
+  [NeurIPS 2025][Video Understanding][Arrow of Time] This paper reveals that current large multimodal models (LMMs) are surprisingly insensitive to the temporal directionality of video (i.e., the Arrow of Time)—producing nearly identical answers for forward and reversed playback. The authors propose ArrowRL, a GRPO-based training strategy that introduces a reverse video reward to elicit temporal direction awareness, and construct AoTBench for evaluation. The approach achieves s…
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Video Understanding Benchmark"
   - "GRPO"
 date: 2026-05-08
-content_hash: 59e3911071bd3104
+content_hash: 17756394c5924fe4
 ---
 
 # Seeing the Arrow of Time in Large Multimodal Models
@@ -144,7 +144,7 @@ The standard GRPO objective is adopted with group size $G=8$, reverse reward wei
 ## Related Papers
 
 - [\[ICCV 2025\] DisTime: Distribution-based Time Representation for Video Large Language Models](../../ICCV2025/video_understanding/distime_distribution-based_time_representation_for_video_large_language_models.md)
-- [\[ACL 2026\] ArrowGEV: Grounding Events in Video via Learning the Arrow of Time](../../ACL2026/video_understanding/arrowgev_grounding_events_in_video_via_learning_the_arrow_of_time.md)
+- [\[CVPR 2025\] DivPrune: Diversity-Based Visual Token Pruning for Large Multimodal Models](../../CVPR2025/video_understanding/divprune_diversity-based_visual_token_pruning_for_large_multimodal_models.md)
 - [\[NeurIPS 2025\] SAMA: Towards Multi-Turn Referential Grounded Video Chat with Large Language Models](sama_towards_multi-turn_referential_grounded_video_chat_with_large_language_mode.md)
 - [\[NeurIPS 2025\] MoniTor: Exploiting Large Language Models with Instruction for Online Video Anomaly Detection](monitor_exploiting_large_language_models_with_instruction_for_online_video_anoma.md)
 - [\[NeurIPS 2025\] Self-alignment of Large Video Language Models with Refined Regularized Preference Optimization](self-alignment_of_large_video_language_models_with_refined_regularized_preferenc.md)

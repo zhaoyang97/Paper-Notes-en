@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] StyleMotif: Multi-Modal Motion Stylization using Style-Content Cross Fusion
 description: >-
-  [ICCV 2025][Image Generation][motion stylization] This paper proposes StyleMotif, a single-branch motion latent diffusion framework that unifies content generation and multi-modal style injection (text/image/video/audio/…
+  [ICCV 2025][Image Generation][motion stylization] This paper proposes StyleMotif, a single-branch motion latent diffusion framework that unifies content generation and multi-modal style injection (text/image/video/audio/motion) via a style-content cross normalization mechanism. Compared to SMooDi's dual-branch design, StyleMotif reduces trainable parameters by 43.9% and improves inference speed by 22.5%, while achieving a 5.23% gain in Style Recognition Accuracy (SRA).
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "style-content fusion"
   - "motion generation"
 date: 2026-05-08
-content_hash: 691a881493a0d7fe
+content_hash: e1d0260ee3d3a019
 ---
 
 # StyleMotif: Multi-Modal Motion Stylization using Style-Content Cross Fusion
@@ -174,9 +174,9 @@ The single-branch design philosophy is clear, and the cross normalization strate
 
 - [\[ICCV 2025\] Balanced Image Stylization with Style Matching Score](balanced_image_stylization_with_style_matching_score.md)
 - [\[ICCV 2025\] Rethinking Cross-Modal Interaction in Multimodal Diffusion Transformers](rethinking_cross-modal_interaction_in_multimodal_diffusion_transformers.md)
+- [\[ICCV 2025\] Bitrate-Controlled Diffusion for Disentangling Motion and Content in Video](bitrate-controlled_diffusion_for_disentangling_motion_and_content_in_video.md)
 - [\[ICCV 2025\] CSD-VAR: Content-Style Decomposition in Visual Autoregressive Models](csd-var_content-style_decomposition_in_visual_autoregressive_models.md)
 - [\[ICCV 2025\] AIComposer: Any Style and Content Image Composition via Feature Integration](aicomposer_any_style_and_content_image_composition_via_feature_integration.md)
-- [\[ICCV 2025\] Bitrate-Controlled Diffusion for Disentangling Motion and Content in Video](bitrate-controlled_diffusion_for_disentangling_motion_and_content_in_video.md)
 
 </div>
 

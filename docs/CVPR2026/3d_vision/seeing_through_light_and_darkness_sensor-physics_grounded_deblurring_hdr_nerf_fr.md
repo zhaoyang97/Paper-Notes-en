@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Seeing through Light and Darkness: Sensor-Physics Grounded Deblurring HDR NeRF from Single-Exposure Images and Events
 description: >-
-  [CVPR 2026][3D Vision][NeRF] To address the mismatch between sensor output and physical radiance when reconstructing clear High Dynamic Range (HDR) 3D representations from "single-exposure blurry Low Dynamic Range (LDR) images + event streams," this paper proposes See-NeRF. It directly represents the scene's true HDR radiance using NeRF and explic
+  [CVPR 2026][3D Vision][NeRF] To address the mismatch between sensor output and physical radiance when reconstructing clear High Dynamic Range (HDR) 3D representations from "single-exposure blurry Low Dynamic Range (LDR) images + event streams," this paper proposes See-NeRF. It directly represents the scene's true HDR radiance using NeRF and explicitly models the "physical radiance → sensor measurement" process through a pixel-level RGB CRF model and a latency-aware…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - NeRF
+  - "CVPR 2026"
+  - "3D Vision"
+  - "NeRF"
+  - "High Dynamic Range"
+  - "Deblurring New View Synthesis"
+  - "Event Camera"
+  - "Camera Response Function"
 date: 2026-05-08
-content_hash: 0834f011a5c640e4
+content_hash: fe3c1b326a12cb5f
 ---
+
 # Seeing through Light and Darkness: Sensor-Physics Grounded Deblurring HDR NeRF from Single-Exposure Images and Events
 
 **Conference**: CVPR 2026  
@@ -140,7 +145,7 @@ It also achieves the best results on the public Real-World-Challenge deblurring 
 - [\[CVPR 2026\] Seeing through boxes: Non-Line-of-Sight 3D Reconstruction from Radar Signals](seeing_through_boxes_non-line-of-sight_3d_reconstruction_from_radar_signals.md)
 - [\[CVPR 2026\] Seeing Depth Through Frequency and Motion: A Progressive Training Paradigm for Monocular Depth Estimation](seeing_depth_through_frequency_and_motion_a_progressive_training_paradigm_for_mo.md)
 - [\[CVPR 2026\] AERGS-SLAM: Auto-Exposure-Robust Stereo 3D Gaussian Splatting SLAM](aergs-slam_auto-exposure-robust_stereo_3d_gaussian_splatting_slam.md)
-- [\[CVPR 2026\] eRetinexGS: Retinex Modeling for Low-Light Scene Enhancement via Event Streams and 3D Gaussian Splatting](eretinexgs_retinex_modeling_for_low-light_scene_enhancement_via_event_streams_an.md)
+- [\[CVPR 2026\] Nerfify: A Multi-Agent Framework for Turning NeRF Papers into Code](nerfify_multiagent_nerf_paper_to_code.md)
 
 </div>
 

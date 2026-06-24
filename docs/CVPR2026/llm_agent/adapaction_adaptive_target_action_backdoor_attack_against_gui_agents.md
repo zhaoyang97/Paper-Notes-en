@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AdapAction: Adaptive Target Action Backdoor Attack against GUI Agents
 description: >-
-  [CVPR 2026][LLM Agent][GUI Agent] For MLLM-driven GUI agents, this work replaces traditional "trigger $\rightarrow$ fixed action" backdoors with "trigger $\rightarrow$ context-adaptive malicious action." An adversarial teacher LLM generates structured malicious reasoning trajectories, which are distilled into the target agent via SFT. This enables the
+  [CVPR 2026][LLM Agent][GUI Agent] For MLLM-driven GUI agents, this work replaces traditional "trigger $\rightarrow$ fixed action" backdoors with "trigger $\rightarrow$ context-adaptive malicious action." An adversarial teacher LLM generates structured malicious reasoning trajectories, which are distilled into the target agent via SFT. This enables the agent, when triggered, to autonomously select a malicious operation that appears perfectly reasonable given the current interf…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - GUI Agent
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "Backdoor Attack"
+  - "Context-Aware"
+  - "Policy Distillation"
+  - "MLLM Security"
 date: 2026-05-08
-content_hash: 81ce506fdac6d793
+content_hash: 2f6e7d1a4d45a90a
 ---
+
 # AdapAction: Adaptive Target Action Backdoor Attack against GUI Agents
 
 **Conference**: CVPR 2026  
@@ -155,11 +160,11 @@ Fixed backdoors are almost always caught (DR@1 ≥94%) due to context mismatch. 
 
 ## Related Papers
 
+- [\[CVPR 2026\] iSHIFT: Lightweight Slow-Fast GUI Agent with Adaptive Perception](ishift_lightweight_slow-fast_gui_agent_with_adaptive_perception.md)
 - [\[CVPR 2026\] GUI-CEval: A Hierarchical and Comprehensive Chinese Benchmark for Mobile GUI Agents](gui-ceval_a_hierarchical_and_comprehensive_chinese_benchmark_for_mobile_gui_agen.md)
 - [\[CVPR 2026\] MMBench-GUI: A Unified Hierarchical Evaluation Framework for Multi-Platform GUI Agents](mmbench-gui_a_unified_hierarchical_evaluation_framework_for_multi-platform_gui_a.md)
 - [\[ACL 2025\] OS-Kairos: Adaptive Interaction for MLLM-Powered GUI Agents](../../ACL2025/llm_agent/os-kairos_adaptive_interaction_for_mllm-powered_gui_agents.md)
 - [\[CVPR 2026\] HATS: Hardness-Aware Trajectory Synthesis for GUI Agents](hats_hardness-aware_trajectory_synthesis_for_gui_agents.md)
-- [\[CVPR 2026\] Towards GUI Agents: Vision-Language Diffusion Models for GUI Grounding](towards_gui_agents_vision-language_diffusion_models_for_gui_grounding.md)
 
 </div>
 

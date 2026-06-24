@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Functional Correctness of Code Models with Selective Generation
 description: >-
-  [ICML 2026][Code Intelligence][Paper Note] This work utilizes fuzzing to automatically generate a large volume of unit tests to determine the functional correctness of generated code. Based on this, it trains a selective code generator capable of "active abstention," providing PAC-style guarantees to keep the code hallucination rate (FDR-CE) below a user-specif
+  [ICML 2026][Code Intelligence][Selective Generation] This work utilizes fuzzing to automatically generate a large volume of unit tests to determine the functional correctness of generated code. Based on this, it trains a selective code generator capable of "active abstention," providing PAC-style guarantees to keep the code hallucination rate (FDR-CE) below a user-specified threshold for non-abstaining responses.
 tags:
-  - ICML 2026
-  - Code Intelligence
+  - "ICML 2026"
+  - "Code Intelligence"
+  - "Selective Generation"
+  - "Code Hallucination"
+  - "FDR Control"
+  - "Fuzzing"
+  - "Automated Unit Test Generation"
 date: 2026-05-08
-content_hash: d73ae086be5fc7e0
+content_hash: 47bba1a96b16d5e6
 ---
+
 # Towards Functional Correctness of Code Models with Selective Generation
 
 **Conference**: ICML 2026  
@@ -141,15 +147,15 @@ All baselines (including reranking and debugging-enhanced methods) originally ha
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Bridging Functional Correctness and Runtime Efficiency Gaps in LLM-Based Code Translation](bridging_functional_correctness_and_runtime_efficiency_gaps_in_llm-based_code_tr.md)
 - [\[ICML 2026\] Poison with Style: A Practical Poisoning Attack on Code Large Language Models](poison_with_style_a_practical_poisoning_attack_on_code_large_language_models.md)
 - [\[ICML 2026\] Locally Coherent Parallel Decoding in Diffusion Language Models](locally_coherent_parallel_decoding_in_diffusion_language_models.md)
-- [\[ACL 2026\] Ro-SLM: Onboard Small Language Models for Robot Task Planning and Operation Code Generation](../../ACL2026/code_intelligence/ro-slm_onboard_small_language_models_for_robot_task_planning_and_operation_code_.md)
 - [\[ICML 2026\] AlgoVeri: An Aligned Benchmark for Verified Code Generation on Classical Algorithms](algoveri_an_aligned_benchmark_for_verified_code_generation_on_classical_algorith.md)
+- [\[ICML 2026\] BoostAPR: Boosting Automated Program Repair via Execution-Grounded Reinforcement Learning with Dual Reward Models](boostapr_boosting_automated_program_repair_via_execution-grounded_reinforcement_.md)
 
 </div>
 

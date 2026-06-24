@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] FOLDER: Accelerating Multi-modal Large Language Models with Enhanced Performance
 description: >-
-  [ICCV 2025][Multimodal VLM][Visual Token Compression] This paper proposes FOLDER — a plug-and-play visual token compression module that systematically analyzes three key factors of information loss (reduction impact…
+  [ICCV 2025][Multimodal Efficiency][Visual Token Compression] This paper proposes FOLDER — a plug-and-play visual token compression module that systematically analyzes three key factors of information loss (reduction impact, propagation effect, and aggregation method), performs aggressive token merging in the last few layers of the visual encoder, and achieves up to 70% token reduction while maintaining or even improving model performance.
 tags:
   - "ICCV 2025"
-  - "Multimodal VLM"
+  - "Multimodal Efficiency"
   - "Visual Token Compression"
   - "MLLM Acceleration"
   - "Plug-and-Play"
   - "Token Merging"
   - "Inference Acceleration"
 date: 2026-05-08
-content_hash: 9dc4df7464366623
+content_hash: 1589aeccfa65fcdb
 ---
 
 # FOLDER: Accelerating Multi-modal Large Language Models with Enhanced Performance
@@ -56,12 +56,12 @@ FOLDER is integrated as a plug-and-play module into the last few blocks of the v
 
 1. **Reduction Impact Analysis**:  
    SVD decomposition is used to estimate the minimum number of tokens required to preserve a given energy threshold. For a token sequence $\mathbf{X} \in \mathbb{R}^{n \times d}$, singular values $\sigma_i$ are obtained via SVD, and the energy retention ratio is defined as:
-   $$E(k) = \frac{\sum_{i=1}^{k} \sigma_i}{\sum_{i=1}^{n} \sigma_i}$$
+    $E(k) = \frac{\sum_{i=1}^{k} \sigma_i}{\sum_{i=1}^{n} \sigma_i}$
    Experiments reveal that **later blocks require far fewer tokens than earlier blocks**, indicating high redundancy in the deeper layers.
 
 2. **Propagation Effect Analysis**:  
    Due to the sequential nature of the Transformer, token compression errors introduced at early blocks accumulate and amplify across layers (a butterfly effect). Earth Mover's Distance (EMD) is used to measure the impact of compressing tokens at different blocks on the final output distribution:
-   $$\text{EMD}(P_Y, P_{\tilde{Y}_b}) = \min_{\gamma} \langle \gamma, \mathbf{M} \rangle_F$$
+    $\text{EMD}(P_Y, P_{\tilde{Y}_b}) = \min_{\gamma} \langle \gamma, \mathbf{M} \rangle_F$
    Experiments demonstrate that **compression at early blocks induces a far larger EMD than at later blocks**. Even at a 75% compression ratio, the EMD remains extremely low when compression is applied in the final layers. Combining these two analyses leads to the conclusion: **token compression should be concentrated at the end of the network**.
 
 3. **Aggregation Method Analysis**:  
@@ -69,11 +69,11 @@ FOLDER is integrated as a plug-and-play module into the last few blocks of the v
 
 4. **FOLDER Algorithm**:  
    Based on the above analysis, bipartite graph matching-based token merging is performed in the final blocks. To overcome the 1/2 compression ceiling of standard bipartite matching, an **iterative FOLD operation** is designed:
-   - Tokens are divided into two equal sets $\mathbb{A}$ and $\mathbb{B}$
-   - For each token in $\mathbb{A}$, the most similar token in $\mathbb{B}$ is identified via a matching function $S$
-   - Matches are ranked by score, and the top-$r_{\text{fold}}$ pairs are merged
-   - When the required number of reductions exceeds $\lfloor n/2 \rfloor$ (reduction overflow), multiple FOLD iterations are automatically applied
-   - Each FOLD halves the token count until the remaining reduction fits within a single FOLD pass
+    - Tokens are divided into two equal sets $\mathbb{A}$ and $\mathbb{B}$
+    - For each token in $\mathbb{A}$, the most similar token in $\mathbb{B}$ is identified via a matching function $S$
+    - Matches are ranked by score, and the top-$r_{\text{fold}}$ pairs are merged
+    - When the required number of reductions exceeds $\lfloor n/2 \rfloor$ (reduction overflow), multiple FOLD iterations are automatically applied
+    - Each FOLD halves the token count until the remaining reduction fits within a single FOLD pass
 
 ### Loss & Training
 
@@ -146,11 +146,11 @@ FOLDER supports two usage modes:
 
 ## Related Papers
 
-- [\[ICCV 2025\] Large Multi-modal Models Can Interpret Features in Large Multi-modal Models](large_multi-modal_models_can_interpret_features_in_large_multi-modal_models.md)
-- [\[ICCV 2025\] Bidirectional Likelihood Estimation with Multi-Modal Large Language Models for Text-Video Retrieval](bidirectional_likelihood_estimation_with_multi-modal_large_language_models_for_t.md)
-- [\[ICCV 2025\] Multi-Cache Enhanced Prototype Learning for Test-Time Generalization of Vision-Language Models](multi-cache_enhanced_prototype_learning_for_test-time_generalization_of_vision-l.md)
-- [\[NeurIPS 2025\] Efficient Multi-modal Large Language Models via Progressive Consistency Distillation](../../NeurIPS2025/multimodal_vlm/efficient_multi-modal_large_language_models_via_progressive_consistency_distilla.md)
-- [\[ICCV 2025\] Causal Disentanglement and Cross-Modal Alignment for Enhanced Few-Shot Learning](causal_disentanglement_and_cross-modal_alignment_for_enhanced_few-shot_learning.md)
+- [\[ICCV 2025\] AirCache: Activating Inter-Modal Relevancy KV Cache Compression for Efficient Large Vision-Language Model Inference](aircache_activating_inter-modal_relevancy_kv_cache_compression_for_efficient_lar.md)
+- [\[ICCV 2025\] METEOR: Multi-Encoder Collaborative Token Pruning for Efficient Vision Language Models](meteor_multi-encoder_collaborative_token_pruning_for_efficient_vision_language_m.md)
+- [\[CVPR 2026\] OmniZip: Learning a Unified and Lightweight Lossless Compressor for Multi-Modal Data](../../CVPR2026/vlm_efficiency/omnizip_learning_a_unified_and_lightweight_lossless_compressor_for_multi-modal_d.md)
+- [\[ICCV 2025\] ShortV: Efficient Multimodal Large Language Models by Freezing Visual Tokens in Ineffective Layers](shortv_efficient_multimodal_large_language_models_by_freezing_visual_tokens_in_i.md)
+- [\[CVPR 2026\] Accelerating Streaming Video Large Language Models via Hierarchical Token Compression](../../CVPR2026/vlm_efficiency/accelerating_streaming_video_large_language_models_via_hierarchical_token_compre.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Test-Time Scaling in Diffusion LLMs via Hidden Semi-Autoregressive Experts
 description: >-
-  [ICLR 2026][LLM Reasoning][Diffusion Language Model] This paper discovers that Diffusion Language Models (dLLMs) implicitly learn a set of "semi-autoregressive experts" during training, where different block decoding orders activate different experts. Based on this, it proposes HEX, a training-free inference method that runs multiple generation paths via various block sc
+  [ICLR 2026][Reasoning][Diffusion Language Models] This paper discovers that Diffusion Language Models (dLLMs) implicitly learn a set of "semi-autoregressive experts" during training, where different block decoding orders activate different experts. Based on this, it proposes HEX, a training-free inference method that runs multiple generation paths via various block schedules and applies majority voting. It improves GSM8K accuracy from 24.72% to 88.10%…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Diffusion Language Model
-  - Semi-autoregressive Decoding
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Diffusion Language Models"
+  - "Test-Time Scaling"
+  - "Semi-autoregressive Decoding"
+  - "Hidden Mixture-of-Experts"
+  - "Majority Voting"
 date: 2026-05-08
-content_hash: 4304eb2d6d9d4063
+content_hash: b0b699b61ed7f526
 ---
+
 # Test-Time Scaling in Diffusion LLMs via Hidden Semi-Autoregressive Experts
 
 **Conference**: ICLR 2026  
@@ -141,10 +145,10 @@ The highlight: HEX **requires zero training** yet comprehensively outperforms d1
 ## Related Papers
 
 - [\[ICLR 2026\] Plan and Budget: Effective and Efficient Test-Time Scaling on Reasoning LLMs](plan_and_budget_effective_and_efficient_test-time_scaling_on_reasoning_large_lan.md)
-- [\[ICLR 2026\] Optimal Aggregation of LLM and PRM Signals for Efficient Test-Time Scaling](optimal_aggregation_of_llm_and_prm_signals_for_efficient_test-time_scaling.md)
-- [\[ICLR 2026\] ROC-n-Reroll: How Verifier Imperfection Affects Test-Time Scaling](roc-n-reroll_how_verifier_imperfection_affects_test-time_scaling.md)
-- [\[ICLR 2026\] Mode-conditioning unlocks superior test-time compute scaling](mode-conditioning_unlocks_superior_test-time_compute_scaling.md)
-- [\[ICLR 2026\] CaTS: Calibrated Test-Time Scaling for Efficient LLM Reasoning](cats_calibrated_test-time_scaling_for_efficient_llm_reasoning.md)
+- [\[ICLR 2026\] Test-Time Scaling with Reflective Generative Model](test-time_scaling_with_reflective_generative_model.md)
+- [\[ICML 2026\] Lookahead Sample Reward Guidance for Test-Time Scaling of Diffusion Models](../../ICML2026/llm_reasoning/lookahead_sample_reward_guidance_for_test-time_scaling_of_diffusion_models.md)
+- [\[ICLR 2026\] ATTS: Asynchronous Test-Time Scaling via Conformal Prediction](atts_asynchronous_test-time_scaling_via_conformal_prediction.md)
+- [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](efficient_test-time_scaling_for_small_vision-language_models.md)
 
 </div>
 

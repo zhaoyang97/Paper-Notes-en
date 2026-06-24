@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Causal Structure Learning in Hawkes Processes with Complex Latent Confounder Networks
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] When a multivariate Hawkes process contains an unknown number of latent subprocesses at unknown locations, this paper first proves that the Hawkes process is equivalent to a discrete-time linear autoregressive causal model after discretizing continuous-time event sequences using minimal windows. It then utilizes the **
+  [ICLR 2026][Causal Inference][Hawkes processes] When a multivariate Hawkes process contains an unknown number of latent subprocesses at unknown locations, this paper first proves that the Hawkes process is equivalent to a discrete-time linear autoregressive causal model after discretizing continuous-time event sequences using minimal windows. It then utilizes the **rank constraints of the cross-covariance matrix** of observed counts to provide necessary and sufficient conditi…
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Hawkes processes"
+  - "causal structure learning"
+  - "latent confounding"
+  - "rank constraints"
+  - "identifiability"
 date: 2026-05-08
 content_hash: 9a5e8cbd181edfb0
 ---
+
 # Causal Structure Learning in Hawkes Processes with Complex Latent Confounder Networks
 
 **Conference**: ICLR 2026  
@@ -136,9 +142,9 @@ Public cellular network alarm dataset (with expert-verified ground truth): 18 al
 
 - [\[ICLR 2026\] Conditional Independent Component Analysis for Estimating Causal Structure with Latent Variables](conditional_independent_component_analysis_for_estimating_causal_structure_with_.md)
 - [\[ICLR 2026\] CARL: Preserving Causal Structure in Representation Learning](carl_preserving_causal_structure_in_representation_learning.md)
+- [\[ICLR 2026\] Frequency-Domain Better than Time-Domain for Causal Structure Recovery in Dynamical Systems on Networks](frequency-domain_better_than_time-domain_for_causal_structure_recovery_in_dynami.md)
+- [\[ICLR 2026\] Beyond DAGs: A Latent Partial Causal Model for Multimodal Learning](beyond_dags_a_latent_partial_causal_model_for_multimodal_learning.md)
 - [\[ICLR 2026\] An Orthogonal Learner for Individualized Outcomes in Markov Decision Processes](an_orthogonal_learner_for_individualized_outcomes_in_markov_decision_processes.md)
-- [\[ICLR 2026\] Distributional Equivalence in Linear Non-Gaussian Latent-Variable Cyclic Causal Models](distributional_equivalence_in_linear_non-gaussian_latent-variable_cyclic_causal_.md)
-- [\[ICLR 2026\] Score-based Greedy Search for Structure Identification of Partially Observed Causal Models](score-based_greedy_search_for_structure_identification_of_partially_observed_cau.md)
 
 </div>
 

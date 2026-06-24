@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] MILPnet: A Multi-Scale Architecture with Geometric Feature Sequence Representations for Advancing MILP Problems
 description: >-
-  [ICLR 2026][Optimization & Theory][MILP] The authors reformulate MILP instances from "bipartite graphs" into "geometric feature sequences." By employing multi-scale hybrid attention modeling, the approach fundamentally bypasses the expressiveness bottleneck of GNNs restricted by the Weisfeiler-Lehman (WL) test—which fails to distinguish **Foldable MILPs**—whi
+  [ICLR 2026][Optimization][Mixed Integer Linear Programming] The authors reformulate MILP instances from "bipartite graphs" into "geometric feature sequences." By employing multi-scale hybrid attention modeling, the approach fundamentally bypasses the expressiveness bottleneck of GNNs restricted by the Weisfeiler-Lehman (WL) test—which fails to distinguish **Foldable MILPs**—while providing theoretical guarantees for approximating feasibility, optimal solutions…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - MILP
-  - Foldable MILP
-  - WL-test
+  - "ICLR 2026"
+  - "Optimization"
+  - "Mixed Integer Linear Programming"
+  - "MILP"
+  - "Geometric Sequence Representation"
+  - "Multi-scale Attention"
+  - "Foldable MILP"
+  - "WL-test"
+  - "Feasibility Prediction"
 date: 2026-05-08
-content_hash: 0de1ee61c76fc05c
+content_hash: 84d456fe99d840bd
 ---
+
 # MILPnet: A Multi-Scale Architecture with Geometric Feature Sequence Representations for Advancing MILP Problems
 
 **Conference**: ICLR 2026  
@@ -124,10 +129,20 @@ Efficiency of maximum window size $\eta_{\max}$: Performance was best at $\eta_{
 - **Value**: ⭐⭐⭐⭐ Provides a viable graph-alternative representation for "learning to optimize MILP" that is smaller, faster, and theoretically grounded.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] A Memory-Efficient Hierarchical Algorithm for Large-scale Optimal Transport Problems](a_memory-efficient_hierarchical_algorithm_for_large-scale_optimal_transport_prob.md)
+- [\[ICLR 2026\] Neural Multi-Objective Combinatorial Optimization for Flexible Job Shop Scheduling Problems](neural_multi-objective_combinatorial_optimization_for_flexible_job_shop_scheduli.md)
+- [\[ICLR 2026\] Taming Curvature: Architecture Warm-up for Stable Transformer Training](taming_curvature_architecture_warm-up_for_stable_transformer_training.md)
+- [\[ICLR 2026\] Learning to Segment for Vehicle Routing Problems](learning_to_segment_for_vehicle_routing_problems.md)
+- [\[ICLR 2026\] LMask: Learn to Solve Constrained Routing Problems with Lazy Masking](lmask_learn_to_solve_constrained_routing_problems_with_lazy_masking.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] A Memory-Efficient Hierarchical Algorithm for Large-scale Optimal Transport Problems](a_memory-efficient_hierarchical_algorithm_for_large-scale_optimal_transport_prob.md)

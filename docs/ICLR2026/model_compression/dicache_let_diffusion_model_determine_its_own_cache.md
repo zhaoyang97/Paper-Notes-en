@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DiCache: Let Diffusion Model Determine Its Own Cache
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] DiCache proposes a training-free adaptive caching strategy for diffusion models. It allows DiT to use shallow online probes during inference to determine when to reuse cache and how to combine historical caches. It improves speed while maintaining higher fidelity relative to the original model across WAN 2.1, HunyuanVi
+  [ICLR 2026][Model Compression][Diffusion Model Caching] DiCache proposes a training-free adaptive caching strategy for diffusion models. It allows DiT to use shallow online probes during inference to determine when to reuse cache and how to combine historical caches. It improves speed while maintaining higher fidelity relative to the original model across WAN 2.1, HunyuanVideo, and Flux.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Diffusion Model Caching"
+  - "DiT Inference Acceleration"
+  - "Training-free Acceleration"
+  - "Online Probe"
+  - "Feature Reuse"
 date: 2026-05-08
-content_hash: bb90df6b522dd42d
+content_hash: be0e17e413f10bec
 ---
+
 # DiCache: Let Diffusion Model Determine Its Own Cache
 
 **Conference**: ICLR 2026  
@@ -154,8 +160,8 @@ DiCache consistently outperforms TeaCache-fast and EasyCache in both speed and f
 - [\[NeurIPS 2025\] Graph Your Own Prompt](../../NeurIPS2025/model_compression/graph_your_own_prompt.md)
 - [\[ICLR 2026\] Q&C: When Quantization Meets Cache in Efficient Generation](qc_when_quantization_meets_cache_in_efficient_generation.md)
 - [\[ICLR 2026\] Diffusion Models as Dataset Distillation Priors](diffusion_models_as_dataset_distillation_priors.md)
+- [\[ICLR 2026\] WINA: Weight Informed Neuron Activation for Accelerating Large Language Model Inference](wina_weight_informed_neuron_activation_for_accelerating_large_language_model_inf.md)
 - [\[ICLR 2026\] LookaheadKV: Fast and Accurate KV Cache Eviction by Glimpsing into the Future without Generation](lookaheadkv_fast_and_accurate_kv_cache_eviction_by_glimpsing_into_the_future_wit.md)
-- [\[ICLR 2026\] ERTACache: Error Rectification and Timesteps Adjustment for Efficient Diffusion](ertacache_error_rectification_and_timesteps_adjustment_for_efficient_diffusion.md)
 
 </div>
 

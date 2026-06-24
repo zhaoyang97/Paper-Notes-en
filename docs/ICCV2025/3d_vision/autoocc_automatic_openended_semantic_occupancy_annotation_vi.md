@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AutoOcc: Automatic Open-Ended Semantic Occupancy Annotation via Vision-Language Guided Gaussian Splatting
 description: >-
-  [ICCV 2025 (Highlight)][3D Vision][Semantic occupancy annotation] This paper proposes AutoOcc, a fully automatic vision-centric pipeline for open-ended semantic occupancy annotation. By leveraging vision-language model (…
+  [ICCV 2025 (Highlight)][3D Vision][Semantic occupancy annotation] This paper proposes AutoOcc, a fully automatic vision-centric pipeline for open-ended semantic occupancy annotation. By leveraging vision-language model (VLM)-guided differentiable Gaussian splatting (VL-GS), AutoOcc generates 3D semantic occupancy without any human labels, achieving IoU 83.01 / mIoU 20.92 on Occ3D-nuScenes with camera-only input, substantially outperforming existing automatic annotation method…
 tags:
   - "ICCV 2025 (Highlight)"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "open-vocabulary"
   - "automatic annotation"
 date: 2026-05-08
-content_hash: ee3cb7a281a16f4f
+content_hash: 3ee9ec35c5a7201e
 ---
 
 # AutoOcc: Automatic Open-Ended Semantic Occupancy Annotation via Vision-Language Guided Gaussian Splatting

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Preserve and Sculpt: Manifold-Aligned Fine-tuning of Vision-Language Models for Few-Shot Learning
 description: >-
-  [ICLR 2026][Multimodal VLM][CLIP] This paper treats the CLIP feature space as a "semantic manifold." During few-shot fine-tuning, it constrains the intrinsic geometry of the manifold using Gram matrix alignment to prevent destruction (Preserve) while simultaneously enhancing separability by pulling intra-class samples closer and pushing inter-class sam
+  [ICLR 2026][Multimodal VLM][CLIP] This paper treats the CLIP feature space as a "semantic manifold." During few-shot fine-tuning, it constrains the intrinsic geometry of the manifold using Gram matrix alignment to prevent destruction (Preserve) while simultaneously enhancing separability by pulling intra-class samples closer and pushing inter-class samples apart via multimodal query-support matching (Sculpt). This approach improves the few-shot classification SOTA by approxim…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - CLIP
-  - Gromov-Wasserstein
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "CLIP"
+  - "Few-shot Fine-tuning"
+  - "Semantic Manifold"
+  - "Gromov-Wasserstein"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: 2cc7f637fb487100
+content_hash: f03e3cc4c206aac8
 ---
+
 # Preserve and Sculpt: Manifold-Aligned Fine-tuning of Vision-Language Models for Few-Shot Learning
 
 **Conference**: ICLR 2026  
@@ -177,8 +181,8 @@ Internal ablation of MAR (16-shot Avg11): None 86.20 → Global only 86.57 → L
 - [\[ICLR 2026\] Exploring Cross-Modal Flows for Few-Shot Learning](exploring_cross-modal_flows_for_few-shot_learning.md)
 - [\[ICLR 2026\] pFedMMA: Personalized Federated Fine-Tuning with Multi-Modal Adapter for Vision-Language Models](pfedmma_personalized_federated_fine-tuning_with_multi-modal_adapter_for_vision-l.md)
 - [\[ICLR 2026\] Memory-Free Continual Learning with Null Space Adaptation for Zero-Shot Vision-Language Models](memory-free_continual_learning_with_null_space_adaptation_for_zero-shot_vision-l.md)
+- [\[ICLR 2026\] MergeTune: Continued Fine-Tuning of Vision-Language Models](mergetune_continued_fine-tuning_of_vision-language_models.md)
 - [\[ICCV 2025\] Interpretable Zero-Shot Learning with Locally-Aligned Vision-Language Model](../../ICCV2025/multimodal_vlm/interpretable_zero-shot_learning_with_locally-aligned_vision-language_model.md)
-- [\[ICLR 2026\] Enhanced Continual Learning of Vision-Language Models with Model Fusion](enhanced_continual_learning_of_vision-language_models_with_model_fusion.md)
 
 </div>
 

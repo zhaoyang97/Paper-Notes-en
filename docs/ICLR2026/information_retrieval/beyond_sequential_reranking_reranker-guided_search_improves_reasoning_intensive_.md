@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Beyond Sequential Reranking: Reranker-Guided Search Improves Reasoning Intensive Retrieval
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][reranker] This paper replaces the rigid "top-k sequential scan" in the "retrieve-and-rerank" pipeline with a greedy search on a document similarity proximity graph (Reranker-Guided-Search, RGS). By prioritizing documents whose neighbors have already received high scores, RGS improves NDCG@10 by 3.5, 2.9, and 5.1 points on BRIGHT
+  [ICLR2026][Information Retrieval & RAG][reranker] This paper replaces the rigid "top-k sequential scan" in the "retrieve-and-rerank" pipeline with a greedy search on a document similarity proximity graph (Reranker-Guided-Search, RGS). By prioritizing documents whose neighbors have already received high scores, RGS improves NDCG@10 by 3.5, 2.9, and 5.1 points on BRIGHT, FollowIR, and M-BEIR benchmarks respectively, under a strict budget of 100 reranker calls per query.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - reranker
-  - bi-metric
+  - "ICLR2026"
+  - "Information Retrieval & RAG"
+  - "reranker"
+  - "proximity graph search"
+  - "bi-metric"
+  - "reasoning-intensive retrieval"
+  - "reranker budget"
 date: 2026-05-08
-content_hash: 90decc02cd1a8f3b
+content_hash: 0aac9c883efa99fa
 ---
+
 # Beyond Sequential Reranking: Reranker-Guided Search Improves Reasoning Intensive Retrieval
 
 **Conference**: ICLR2026  
@@ -134,8 +138,8 @@ Key finding: When **only the query** embedding is perturbed to be uninformative 
 - [\[ICLR 2026\] Frustratingly Simple Retrieval Improves Challenging, Reasoning-Intensive Benchmarks](frustratingly_simple_retrieval_improves_challenging_reasoning-intensive_benchmar.md)
 - [\[ICLR 2026\] Hybrid Deep Searcher: Scalable Parallel and Sequential Search Reasoning](hybrid_deep_searcher_scalable_parallel_and_sequential_search_reasoning.md)
 - [\[ICLR 2026\] RefTool: Reference-Guided Tool Creation for Knowledge-Intensive Reasoning](reftool_reference-guided_tool_creation_for_knowledge-intensive_reasoning.md)
-- [\[ACL 2026\] A Survey of Reasoning-Intensive Retrieval: Progress and Challenges](../../ACL2026/information_retrieval/a_survey_of_reasoning-intensive_retrieval_progress_and_challenges.md)
 - [\[ICLR 2026\] Retro*: Optimizing LLMs for Reasoning-Intensive Document Retrieval](retro_optimizing_llms_for_reasoning-intensive_document_retrieval.md)
+- [\[ACL 2026\] A Survey of Reasoning-Intensive Retrieval: Progress and Challenges](../../ACL2026/information_retrieval/a_survey_of_reasoning-intensive_retrieval_progress_and_challenges.md)
 
 </div>
 

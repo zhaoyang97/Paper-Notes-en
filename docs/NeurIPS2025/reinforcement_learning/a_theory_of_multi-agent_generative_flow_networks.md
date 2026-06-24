@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Theory of Multi-Agent Generative Flow Networks
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][GFlowNet] This paper proposes a theoretical framework for Multi-Agent Generative Flow Networks (MA-GFlowNets) and establishes a "local-global principle" — the joint flow function ca…
+  [NeurIPS 2025][Reinforcement Learning][GFlowNet] This paper proposes a theoretical framework for Multi-Agent Generative Flow Networks (MA-GFlowNets) and establishes a "local-global principle" — the joint flow function can be decomposed into a product of individual agents' local flows. Four algorithms are designed (CFN/IFN/JFN/CJFN), among which JFN and CJFN realize Centralized Training with Decentralized Execution (CTDE). The proposed methods outperform RL and MCMC baselines…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "CTDE"
   - "cooperative decision-making"
 date: 2026-05-08
-content_hash: 84503cec4bae65d7
+content_hash: 9d3ae560a8d9ff88
 ---
 
 # A Theory of Multi-Agent Generative Flow Networks
@@ -145,7 +145,7 @@ MA-GFlowNet is a tuple $((F^{(i)})_{i \in I}, F)$, consisting of local GFlowNets
 - [\[NeurIPS 2025\] Sequential Multi-Agent Dynamic Algorithm Configuration](sequential_multi-agent_dynamic_algorithm_configuration.md)
 - [\[NeurIPS 2025\] Extending NGU to Multi-Agent RL: A Preliminary Study](extending_ngu_to_multi-agent_rl_a_preliminary_study.md)
 - [\[NeurIPS 2025\] Robust and Diverse Multi-Agent Learning via Rational Policy Gradient](robust_and_diverse_multi-agent_learning_via_rational_policy_gradient.md)
-- [\[NeurIPS 2025\] Mean-Field Sampling for Cooperative Multi-Agent Reinforcement Learning](mean-field_sampling_for_cooperative_multi-agent_reinforcement_learning.md)
+- [\[NeurIPS 2025\] Improving Retrieval-Augmented Generation through Multi-Agent Reinforcement Learning](improving_retrieval-augmented_generation_through_multi-agent_reinforcement_learn.md)
 
 </div>
 

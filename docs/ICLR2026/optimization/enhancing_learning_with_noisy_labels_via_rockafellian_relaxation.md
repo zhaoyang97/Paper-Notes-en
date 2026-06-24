@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Enhancing Learning with Noisy Labels via Rockafellian Relaxation
 description: >-
-  [ICLR 2026][Optimization & Theory][Rockafellian Relaxation] This paper proposes the Rockafellian Relaxation Method (RRM), which wraps any supervised training loss into a reweightable min-min optimization problem. By automatically downweighting suspicious high-loss samples, it enhances the robustness of classification models in real-world noise, synthetic noise, and partial adve
+  [ICLR2026][Optimization][Noisy Labels] This paper proposes the Rockafellian Relaxation Method (RRM), which wraps any supervised training loss into a reweightable min-min optimization problem. By automatically downweighting suspicious high-loss samples, it enhances the robustness of classification models in real-world noise, synthetic noise, and partial adversarial perturbation scenarios.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Rockafellian Relaxation
+  - "ICLR2026"
+  - "Optimization"
+  - "Noisy Labels"
+  - "Loss Reweighting"
+  - "Rockafellian Relaxation"
+  - "Distributionally Robust Optimization"
+  - "Adversarial Training"
 date: 2026-05-08
-content_hash: e749d97051227481
+content_hash: cfeb01fb56b49c4f
 ---
+
 # Enhancing Learning with Noisy Labels via Rockafellian Relaxation
 
 **Conference**: ICLR2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FLAG: Foundation Model Representation with Latent Diffusion Alignment via Graph for Spatial Gene Expression Prediction
 description: >-
-  [ICML 2026][Self-Supervised Learning][Paper Note] FLAG reformulates the prediction of spatial gene expression from H&E pathology images as a structured distribution generation problem. It employs a fixed spatial graph encoder to compress tissue topology into conditional vectors, uses a DiT for denoising in the gene dimension, and injects gene-gene regulatory priors th
+  [ICML 2026][Self-Supervised Learning][Spatial Transcriptomics] FLAG reformulates the prediction of spatial gene expression from H&E pathology images as a structured distribution generation problem. It employs a fixed spatial graph encoder to compress tissue topology into conditional vectors, uses a DiT for denoising in the gene dimension, and injects gene-gene regulatory priors through intermediate layer alignment with Gene Foundation Models (GFMs). This approach elevates Gen…
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
+  - "ICML 2026"
+  - "Self-Supervised Learning"
+  - "Spatial Transcriptomics"
+  - "Pathological H&E"
+  - "Latent Diffusion"
+  - "Graph Encoder"
+  - "Gene Foundation Model Alignment"
 date: 2026-05-08
-content_hash: 5bb65f34af974a81
+content_hash: d208e4d01710e4f9
 ---
+
 # FLAG: Foundation Model Representation with Latent Diffusion Alignment via Graph for Spatial Gene Expression Prediction
 
 **Conference**: ICML 2026  
@@ -139,10 +145,20 @@ Decomposing components on HER2ST:
 - **Value**: ⭐⭐⭐⭐⭐ Advances both methods and evaluation standards; has the potential to reshape the computational pathology community.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] Learning Graph Foundation Models on Riemannian Graph-of-Graphs](learning_graph_foundation_models_on_riemannian_graph-of-graphs.md)
+- [\[ICLR 2026\] Representation Alignment for Diffusion Transformers without External Components](../../ICLR2026/self_supervised/representation_alignment_for_diffusion_transformers_without_external_components.md)
+- [\[ICLR 2026\] Regularized Latent Dynamics Prediction is a Strong Baseline for Behavioral Foundation Models](../../ICLR2026/self_supervised/regularized_latent_dynamics_prediction_is_a_strong_baseline_for_behavioral_found.md)
+- [\[ICML 2026\] NumLeak: Public Numeric Benchmarks as Latent Labels in Foundation Models](numleak_public_numeric_benchmarks_as_latent_labels_in_foundation_models.md)
+- [\[ICML 2026\] How 'Neural' is a Neural Foundation Model?](how_neural_is_a_neural_foundation_model.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Learning Graph Foundation Models on Riemannian Graph-of-Graphs](learning_graph_foundation_models_on_riemannian_graph-of-graphs.md)

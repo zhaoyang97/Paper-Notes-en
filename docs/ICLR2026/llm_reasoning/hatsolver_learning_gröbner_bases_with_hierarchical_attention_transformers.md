@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HATSolver: Learning Gröbner Bases with Hierarchical Attention Transformers
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] The authors replace the expensive flat self-attention in a Transformer encoder with hierarchical attention consisting of "bottom-up local attention + top-down cross-layer attention." By leveraging the natural tree structure of polynomial systems, the $O(L^2)$ sequence cost is reduced to approximately $O(L^{1+1/n})$. Th
+  [ICLR 2026][Reasoning][Gröbner Bases] The authors replace the expensive flat self-attention in a Transformer encoder with hierarchical attention consisting of "bottom-up local attention + top-down cross-layer attention." By leveraging the natural tree structure of polynomial systems, the $O(L^2)$ sequence cost is reduced to approximately $O(L^{1+1/n})$. This scales neural Gröbner base prediction from 5 variables to 13 variables with 100% density…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Gröbner Bases"
+  - "Hierarchical Attention"
+  - "Polynomial System Solving"
+  - "Curriculum Learning"
+  - "Computational Algebra"
 date: 2026-05-08
-content_hash: 5d6d12af32ddafb3
+content_hash: 1b664e9285967f0a
 ---
+
 # HATSolver: Learning Gröbner Bases with Hierarchical Attention Transformers
 
 **Conference**: ICLR 2026  
@@ -131,6 +137,7 @@ To decouple the contributions of the architecture and curriculum learning, HATSo
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

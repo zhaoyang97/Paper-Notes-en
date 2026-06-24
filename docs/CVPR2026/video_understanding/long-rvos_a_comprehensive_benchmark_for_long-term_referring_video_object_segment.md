@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Long-RVOS: A Comprehensive Benchmark for Long-term Referring Video Object Segmentation
 description: >-
-  [CVPR 2026][Segmentation][SAM2] To address the issues in existing Referring Video Object Segmentation (RVOS) datasets, which contain only short clips of a few seconds and where targets are visible throughout, the authors construct Long-RVOS. This is the first minute-level long video benchmark, featuring 2,193 videos with an average duration of 60 sec
+  [CVPR 2026][Video Understanding][Referring Video Object Segmentation] To address the issues in existing Referring Video Object Segmentation (RVOS) datasets, which contain only short clips of a few seconds and where targets are visible throughout, the authors construct Long-RVOS. This is the first minute-level long video benchmark, featuring 2,193 videos with an average duration of 60 seconds, frequent occlusions, target disappearance/reappearance…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - SAM2
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Referring Video Object Segmentation"
+  - "Long-term Video Benchmark"
+  - "Temporal Consistency"
+  - "Motion Information"
+  - "SAM2"
 date: 2026-05-08
-content_hash: e390a2636abc50fb
+content_hash: 66cf2f8bb0854ffe
 ---
+
 # Long-RVOS: A Comprehensive Benchmark for Long-term Referring Video Object Segmentation
 
 **Conference**: CVPR 2026  
@@ -152,10 +157,10 @@ ReferMo leads across all metrics while maintaining high FPS (52.5). Notably, SAM
 ## Related Papers
 
 - [\[CVPR 2026\] InterRVOS: Interaction-Aware Referring Video Object Segmentation](interrvos_interaction-aware_referring_video_object_segmentation.md)
-- [\[NeurIPS 2025\] Robust Ego-Exo Correspondence with Long-Term Memory](../../NeurIPS2025/segmentation/robust_ego-exo_correspondence_with_long-term_memory.md)
 - [\[CVPR 2026\] DeRVOS: Decoupling Consistent Trajectory Generation and Multimodal Understanding for Referring Video Object Segmentation](dervos_decoupling_consistent_trajectory_generation_and_multimodal_understanding_.md)
+- [\[CVPR 2026\] Robust Promptable Video Object Segmentation](robust_promptable_video_object_segmentation.md)
 - [\[CVPR 2026\] Towards Streaming Referring Video Segmentation via Large Language Model](towards_streaming_referring_video_segmentation_via_large_language_model.md)
-- [\[CVPR 2025\] Fractal Calibration for Long-Tailed Object Detection](../../CVPR2025/segmentation/fractal_calibration_for_long-tailed_object_detection.md)
+- [\[CVPR 2026\] Progressive Cross-Modal Causal Intervention for Long-Term Action Recognition](progressive_cross-modal_causal_intervention_for_long-term_action_recognition.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Teaching Language Models to Check Grounded Claim Factuality with Human Test-Taking Strategies
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This work reformulates grounded claim factuality checking as a True/False reading comprehension task. By incorporating structured prompts based on human test-taking strategies, LLMs can efficiently and accurately verify claims with minimal reasoning steps. Furthermore, Small Language Models (SLMs) are trained via Super
+  [ACL2026][LLM Evaluation][Fact-checking] This work reformulates grounded claim factuality checking as a True/False reading comprehension task. By incorporating structured prompts based on human test-taking strategies, LLMs can efficiently and accurately verify claims with minimal reasoning steps. Furthermore, Small Language Models (SLMs) are trained via Supervised Fine-Tuning (SFT) and Direct Preference Optimization (DPO) to replace Large Language Models…
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL2026"
+  - "LLM Evaluation"
+  - "Fact-checking"
+  - "Grounded fact-checking"
+  - "LLM hallucination detection"
+  - "Reading comprehension strategies"
+  - "Small language model distillation"
 date: 2026-05-08
-content_hash: cb2946425ab25ad0
+content_hash: 0233c0e30cb8e610
 ---
+
 # Teaching Language Models to Check Grounded Claim Factuality with Human Test-Taking Strategies
 
 **Conference**: ACL2026  
@@ -153,10 +159,10 @@ Ours (Qwen3-30B-Instruct) achieves a **new SOTA** (78.0) on FacTax-Benchmark and
 ## Related Papers
 
 - [\[ACL 2026\] Teaching Language Models to Forecast Research Success Through Comparative Idea Evaluation](teaching_language_models_to_forecast_research_success_through_comparative_idea_e.md)
+- [\[ICLR 2026\] SimBench: Benchmarking the Ability of Large Language Models to Simulate Human Behaviors](../../ICLR2026/llm_evaluation/simbench_benchmarking_the_ability_of_large_language_models_to_simulate_human_beh.md)
+- [\[ICLR 2026\] Train-before-Test Harmonizes Language Model Rankings](../../ICLR2026/llm_evaluation/train-before-test_harmonizes_language_model_rankings.md)
 - [\[ACL 2026\] Revisiting the Reliability of Language Models in Instruction-Following](revisiting_the_reliability_of_language_models_in_instruction-following.md)
 - [\[ACL 2026\] NovBench: Evaluating Large Language Models on Academic Paper Novelty Assessment](novbench_evaluating_large_language_models_on_academic_paper_novelty_assessment.md)
-- [\[ACL 2026\] Zero-shot Large Language Models for Automatic Readability Assessment](zero-shot_large_language_models_for_automatic_readability_assessment.md)
-- [\[ACL 2026\] Question Difficulty Estimation for Large Language Models via Answer Plausibility Scoring](question_difficulty_estimation_for_large_language_models_via_answer_plausibility.md)
 
 </div>
 

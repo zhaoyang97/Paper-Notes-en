@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] A3: Towards Advertising Aesthetic Assessment
 description: >-
-  [CVPR 2026][Multimodal VLM][Chain-of-Thought] The authors propose the A3 framework, which includes a theory-driven three-stage advertising aesthetic assessment paradigm A3-Law (Perceptive Attention → Formal Interest → Desire Impact), a dataset of 120,000 annotated samples (A3-Dataset), a model aligned via SFT and GRPO (A3-Align), and an evaluation benchmark (A3-Be
+  [CVPR 2026][Multimodal VLM][Advertising Aesthetic Assessment] The authors propose the A3 framework, which includes a theory-driven three-stage advertising aesthetic assessment paradigm A3-Law (Perceptive Attention → Formal Interest → Desire Impact), a dataset of 120,000 annotated samples (A3-Dataset), a model aligned via SFT and GRPO (A3-Align), and an evaluation benchmark (A3-Bench). It outperforms existing MLLMs in automated advertising aesthetic assessment.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Chain-of-Thought
-  - GRPO
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Advertising Aesthetic Assessment"
+  - "Multimodal Large Language Models"
+  - "AIDA Model"
+  - "Chain-of-Thought"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 56233c3c2d7bc3e0
+content_hash: 8b45c4f1f82d49c7
 ---
+
 # A3: Towards Advertising Aesthetic Assessment
 
 **Conference**: CVPR 2026  
@@ -140,10 +144,10 @@ Normalized weighted total reward: $R_{total} = \frac{\sum_{i \in \mathcal{A}} \a
 ## Related Papers
 
 - [\[CVPR 2026\] Venus: Benchmarking and Empowering Multimodal Large Language Models for Aesthetic Guidance and Cropping](venus_benchmarking_and_empowering_multimodal_large_language_models_for_aesthetic.md)
+- [\[CVPR 2026\] ArtiMuse: Fine-Grained Image Aesthetics Assessment with Joint Scoring and Expert-Level Understanding](artimuse_fine-grained_image_aesthetics_assessment_with_joint_scoring_and_expert-.md)
 - [\[CVPR 2026\] FluoCLIP: Stain-Aware Focus Quality Assessment in Fluorescence Microscopy](fluoclip_stain-aware_focus_quality_assessment_in_fluorescence_microscopy.md)
 - [\[CVPR 2026\] Probabilistic Prompt Adaptation for Unified Image Aesthetics and Quality Assessment](probabilistic_prompt_adaptation_for_unified_image_aesthetics_and_quality_assessm.md)
 - [\[CVPR 2026\] UARE: A Unified Vision-Language Model for Image Quality Assessment, Restoration, and Enhancement](uare_a_unified_vision-language_model_for_image_quality_assessment_restoration_an.md)
-- [\[CVPR 2026\] VITAL: Vision-Encoder-centered Pre-training for LMMs in Visual Quality Assessment](vital_vision-encoder-centered_pre-training_for_lmms_in_visual_quality_assessment.md)
 
 </div>
 

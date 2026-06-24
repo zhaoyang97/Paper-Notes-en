@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rethinking Direct Preference Optimization in Diffusion Models
 description: >-
-  [AAAI 2026 (Oral)][Image Generation][DPO] Two orthogonal and plug-and-play improvement strategies are proposed to enhance preference optimization in diffusion models: stable reference model updating (relaxing the frozen…
+  [AAAI 2026 (Oral)][Image Generation][DPO] Two orthogonal and plug-and-play improvement strategies are proposed to enhance preference optimization in diffusion models: stable reference model updating (relaxing the frozen constraint with a regularization anchor) and timestep-aware training (adaptive weighting to balance reward scales across timesteps). Both strategies can be embedded into various preference optimization algorithms such as DPO and IPO…
 tags:
   - "AAAI 2026 (Oral)"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "timestep-awareness"
   - "T2I preference alignment"
 date: 2026-05-08
-content_hash: 43c5b7dd957fa0a8
+content_hash: be1d3fe88d2e4f99
 ---
 
 # Rethinking Direct Preference Optimization in Diffusion Models
@@ -132,11 +132,11 @@ The total loss is $\mathcal{L} = w(t) \cdot \mathcal{L}_{\text{pref}} + \lambda 
 
 ## Related Papers
 
+- [\[CVPR 2025\] Curriculum Direct Preference Optimization for Diffusion and Consistency Models](../../CVPR2025/image_generation/curriculum_direct_preference_optimization_for_diffusion_and_consistency_models.md)
 - [\[AAAI 2026\] Margin-aware Preference Optimization for Aligning Diffusion Models without Reference](margin-aware_preference_optimization_for_aligning_diffusion_models_without_refer.md)
+- [\[ICLR 2026\] Reinforcing Diffusion Models by Direct Group Preference Optimization](../../ICLR2026/image_generation/reinforcing_diffusion_models_by_direct_group_preference_optimization.md)
 - [\[CVPR 2026\] GlyphPrinter: Region-Grouped Direct Preference Optimization for Glyph-Accurate Visual Text Rendering](../../CVPR2026/image_generation/glyphprinter_region-grouped_direct_preference_optimization_for_glyph-accurate_vi.md)
-- [\[AAAI 2026\] Multi-Metric Preference Alignment for Generative Speech Restoration](multi-metric_preference_alignment_for_generative_speech_restoration.md)
-- [\[AAAI 2026\] TSGDiff: Rethinking Synthetic Time Series Generation from a Pure Graph Perspective](tsgdiff_rethinking_synthetic_time_series_generation_from_a_pure_graph_perspectiv.md)
-- [\[AAAI 2026\] Rethinking Flow and Diffusion Bridge Models for Speech Enhancement](rethinking_flow_and_diffusion_bridge_models_for_speech_enhancement.md)
+- [\[CVPR 2026\] Towards Fine-Grained Attribution: Instance-Aware Preference Optimization for Aligning Diffusion Models](../../CVPR2026/image_generation/towards_fine-grained_attribution_instance-aware_preference_optimization_for_alig.md)
 
 </div>
 

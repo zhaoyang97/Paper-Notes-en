@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] CodeBrain: Bridging Decoupled Tokenizer and Multi-Scale Architecture for EEG Foundation Model
 description: >-
-  [ICLR 2026][Medical Imaging][EEG foundation model] CodeBrain develops an EEG foundation model using a "time-frequency dual-codebook decoupled tokenizer + multi-scale architecture with parallel global structural convolutional SSM and sliding window attention." After pre-training on the largest public EEG corpus, it consistently outperforms existing EEG foundation models
+  [ICLR 2026][Medical Imaging][EEG foundation model] CodeBrain develops an EEG foundation model using a "time-frequency dual-codebook decoupled tokenizer + multi-scale architecture with parallel global structural convolutional SSM and sliding window attention." After pre-training on the largest public EEG corpus, it consistently outperforms existing EEG foundation models across 10 datasets in 8 task categories and provides codebook-level interpretability.
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - EEG foundation model
-  - State Space Model
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "EEG foundation model"
+  - "decoupled tokenizer"
+  - "time-frequency discretization"
+  - "state space model"
+  - "small-world topology"
+  - "self-supervised pre-training"
 date: 2026-05-08
-content_hash: cdf46d577d90842b
+content_hash: 5ec7159813acfb49
 ---
+
 # CodeBrain: Bridging Decoupled Tokenizer and Multi-Scale Architecture for EEG Foundation Model
 
 **Conference**: ICLR 2026  
@@ -125,9 +130,9 @@ Based on Cohen's Kappa for FACED (9-class):
 
 - [\[ICLR 2026\] Bridging Radiology and Pathology Foundation Models via Concept-Based Multimodal Co-Adaptation](bridging_radiology_and_pathology_foundation_models_via_concept-based_multimodal_.md)
 - [\[ICLR 2026\] BioX-Bridge: Model Bridging for Unsupervised Cross-Modal Knowledge Transfer across Biosignals](biox-bridge_model_bridging_for_unsupervised_cross-modal_knowledge_transfer_acros.md)
+- [\[NeurIPS 2025\] NeurIPT: Foundation Model for Neural Interfaces](../../NeurIPS2025/medical_imaging/neuript_foundation_model_for_neural_interfaces.md)
 - [\[NeurIPS 2025\] BrainOmni: A Brain Foundation Model for Unified EEG and MEG Signals](../../NeurIPS2025/medical_imaging/brainomni_a_brain_foundation_model_for_unified_eeg_and_meg_signals.md)
-- [\[ICLR 2026\] A Cognitive Process-Inspired Architecture for Subject-Agnostic Brain Visual Decoding](a_cognitive_process-inspired_architecture_for_subject-agnostic_brain_visual_deco.md)
-- [\[ICLR 2026\] Joint Adaptation of Uni-modal Foundation Models for Multi-modal Alzheimer's Disease Diagnosis](joint_adaptation_of_uni-modal_foundation_models_for_multi-modal_alzheimers_disea.md)
+- [\[ICLR 2026\] MindMix: A Multimodal Foundation Model for Auditory Perception Decoding via Deep Neural-Acoustic Alignment](mindmix_a_multimodal_foundation_model_for_auditory_perception_decoding_via_deep_.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Myopic Alignment: Lookahead Optimization for Online Class-Incremental Learning
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] Addressing the issue of forgetting caused by "conflict between current task gradients and replay gradients" in online class-incremental learning, this paper theoretically reveals that hypergradient methods essentially align task gradients to a shared meta-objective but are "myopic" as they only consider the current ste
+  [CVPR 2026][Self-Supervised Learning][Online Class-Incremental Learning] Addressing the issue of forgetting caused by "conflict between current task gradients and replay gradients" in online class-incremental learning, this paper theoretically reveals that hypergradient methods essentially align task gradients to a shared meta-objective but are "myopic" as they only consider the current step. Consequently, it proposes LOR: before updating, it explores multiple future model st…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Online Class-Incremental Learning"
+  - "Experience Replay"
+  - "Gradient Conflict"
+  - "Lookahead Optimization"
+  - "Min-max Robust Optimization"
 date: 2026-05-08
-content_hash: a24d686c8517629a
+content_hash: e2984d56f1a3c67b
 ---
+
 # Beyond Myopic Alignment: Lookahead Optimization for Online Class-Incremental Learning
 
 **Conference**: CVPR 2026  
@@ -147,9 +153,9 @@ Final **Acc** (average accuracy across all tasks after learning the full sequenc
 
 - [\[CVPR 2026\] An Optimal Transport-driven Approach for Cultivating Latent Space in Online Incremental Learning](an_optimal_transport_driven_approach_for_cultivating_latent_space_in_online_incr.md)
 - [\[CVPR 2026\] Exemplar-Free Class Incremental Learning via Preserving Class-Discriminative Structure](exemplar-free_class_incremental_learning_via_preserving_class-discriminative_str.md)
+- [\[CVPR 2026\] Representation-Steered Incremental Adapter-Tuning for Class-Incremental Learning with Pre-Trained Models](representation-steered_incremental_adapter-tuning_for_class-incremental_learning.md)
 - [\[CVPR 2026\] Geometry-driven OOD Detectors Are Class-Incremental Learners](geometry-driven_ood_detectors_are_class-incremental_learners.md)
 - [\[CVPR 2026\] Semantic-Guided Global-Local Collaborative Prompt Learning for Few-Shot Class Incremental Learning](semantic-guided_global-local_collaborative_prompt_learning_for_few-shot_class_in.md)
-- [\[CVPR 2026\] Temporal Imbalance of Positive and Negative Supervision in Class-Incremental Learning](temporal_imbalance_of_positive_and_negative_supervision_in_class-incremental_lea.md)
 
 </div>
 

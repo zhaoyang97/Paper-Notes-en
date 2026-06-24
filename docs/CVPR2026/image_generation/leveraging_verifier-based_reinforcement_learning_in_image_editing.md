@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Leveraging Verifier-Based Reinforcement Learning in Image Editing
 description: >-
-  [CVPR 2026][Image Generation][Image Editing] Edit-R1 proposes a "verifier-style reasoning reward model" (RRM) to replace coarse global scoring in image editing. It decomposes editing instructions into verifiable principles (Keep/Follow/Quality), uses Chain-of-Thought (CoT) for point-by-point verification, and aggregates them into fine-grained scores. A new RL alg
+  [CVPR 2026][Image Generation][Image Editing] Edit-R1 proposes a "verifier-style reasoning reward model" (RRM) to replace coarse global scoring in image editing. It decomposes editing instructions into verifiable principles (Keep/Follow/Quality), uses Chain-of-Thought (CoT) for point-by-point verification, and aggregates them into fine-grained scores. A new RL algorithm, GCPO, is introduced to optimize "point-wise reasoning rewards" using paired preference data…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Image Editing
-  - Reinforcement Learning
-  - GRPO
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Image Editing"
+  - "Reward Model"
+  - "Reinforcement Learning"
+  - "Chain-of-Thought Verifier"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 98eaf97385bf8c43
+content_hash: 7923c5c1402ae0e9
 ---
+
 # Leveraging Verifier-Based Reinforcement Learning in Image Editing
 
 **Conference**: CVPR 2026  
@@ -153,11 +156,11 @@ Optimizing FLUX.Kontext increased the overall score O from 5.77 to 6.24. On the 
 
 ## Related Papers
 
-- [\[CVPR 2025\] Trust Your Critic: Robust Reward Modeling and Reinforcement Learning for Faithful Image Editing and Generation](../../CVPR2025/image_generation/trust_your_critic_robust_reward_modeling_and_reinforcement_learning_for_faithful.md)
+- [\[CVPR 2026\] The Image as Its Own Reward: Reinforcement Learning with Adversarial Reward for Image Generation](the_image_as_its_own_reward_reinforcement_learning_with_adversarial_reward_for_i.md)
 - [\[CVPR 2026\] Ar2Can: An Architect and an Artist Leveraging a Canvas for Multi-Human Generation](ar2can_an_architect_and_an_artist_leveraging_a_canvas_for_multi-human_generation.md)
+- [\[CVPR 2025\] Trust Your Critic: Robust Reward Modeling and Reinforcement Learning for Faithful Image Editing and Generation](../../CVPR2025/image_generation/trust_your_critic_robust_reward_modeling_and_reinforcement_learning_for_faithful.md)
 - [\[CVPR 2026\] HiCoGen: Hierarchical Compositional Text-to-Image Generation in Diffusion Models via Reinforcement Learning](hicogen_hierarchical_compositional_text-to-image_generation_in_diffusion_models_.md)
-- [\[ICML 2026\] CoCoEdit: Content-Consistent Image Editing via Region Regularized Reinforcement Learning](../../ICML2026/image_generation/cocoedit_content-consistent_image_editing_via_region_regularized_reinforcement_l.md)
-- [\[CVPR 2026\] Spatial-SSRL: Enhancing Spatial Understanding via Self-Supervised Reinforcement Learning](spatial-ssrl_enhancing_spatial_understanding_via_self-supervised_reinforcement_l.md)
+- [\[CVPR 2026\] PaCo-RL: Advancing Reinforcement Learning for Consistent Image Generation with Pairwise Reward Modeling](paco-rl_advancing_reinforcement_learning_for_consistent_image_generation_with_pa.md)
 
 </div>
 

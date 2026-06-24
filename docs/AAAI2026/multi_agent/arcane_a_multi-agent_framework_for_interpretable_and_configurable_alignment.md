@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment
 description: >-
-  [AAAI 2026][Multi-Agent][interpretable alignment] This paper proposes ARCANE, a framework that formulates alignment as a multi-agent collaboration problem. A manager agent learns to generate natural-language rubrics (wei…
+  [AAAI 2026][Multi-Agent][interpretable alignment] This paper proposes ARCANE, a framework that formulates alignment as a multi-agent collaboration problem. A manager agent learns to generate natural-language rubrics (weighted verifiable criterion sets) through dialogue with stakeholders, which serve as interpretable proxy reward functions for a worker agent. Via two-stage SFT+GSPO training, the framework enables test-time configurable alignment…
 tags:
   - "AAAI 2026"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "GSPO"
   - "test-time alignment"
 date: 2026-05-08
-content_hash: 4ee45fb84b447e80
+content_hash: 89d00b3f69caf6ff
 ---
 
 # ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment
@@ -134,11 +134,11 @@ GDPVal benchmark, 219 tasks (175 train + 44 evaluation), covering multi-step rea
 
 ## Related Papers
 
-- [\[AAAI 2026\] LieCraft: A Multi-Agent Framework for Evaluating Deceptive Capabilities in Language Models](liecraft_a_multi-agent_framework_for_evaluating_deceptive_capabilities_in_langua.md)
+- [\[ICLR 2026\] Learning Efficient and Interpretable Multi-Agent Communication](../../ICLR2026/multi_agent/learning_efficient_and_interpretable_multi-agent_communication.md)
 - [\[AAAI 2026\] Learning to Generate and Extract: A Multi-Agent Collaboration Framework for Zero-shot Document-level Event Arguments Extraction](learning_to_generate_and_extract_a_multi-agent_collaboration_framework_for_zero-.md)
 - [\[AAAI 2026\] KDR-Agent: A Multi-Agent LLM Framework for Multi-Domain Low-Resource In-Context NER via Knowledge Retrieval](a_multi-agent_llm_framework_for_multi-domain_low-resource_in-context_ner_via_kno.md)
+- [\[AAAI 2026\] LieCraft: A Multi-Agent Framework for Evaluating Deceptive Capabilities in Language Models](liecraft_a_multi-agent_framework_for_evaluating_deceptive_capabilities_in_langua.md)
 - [\[AAAI 2026\] EcoAgent: An Efficient Device-Cloud Collaborative Multi-Agent Framework for Mobile Automation](ecoagent_an_efficient_device-cloud_collaborative_multi-agent.md)
-- [\[AAAI 2026\] Hierarchical Pedagogical Oversight: A Multi-Agent Adversarial Framework for Reliable AI Tutoring](hierarchical_pedagogical_oversight_a_multi-agent_adversarial_framework_for_relia.md)
 
 </div>
 

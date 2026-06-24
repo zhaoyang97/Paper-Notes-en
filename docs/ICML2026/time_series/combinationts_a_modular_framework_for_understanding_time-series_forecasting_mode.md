@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CombinationTS: A Modular Framework for Understanding Time-Series Forecasting Models
 description: >-
-  [ICML 2026][Time Series][Identity Paradox] CombinationTS decouples time-series forecasting models into five orthogonal modules: Input Transformation, Embedding, Encoder, Decoder, and Output Transformation. By performing paired Monte Carlo sampling on a shared "Evaluation Condition Space," it replaces fragile single-point MSE with marginal performance $\mu$ and
+  [ICML 2026][Time Series][Modular Attribution] CombinationTS decouples time-series forecasting models into five orthogonal modules: Input Transformation, Embedding, Encoder, Decoder, and Output Transformation. By performing paired Monte Carlo sampling on a shared "Evaluation Condition Space," it replaces fragile single-point MSE with marginal performance $\mu$ and stability $\sigma$. The primary conclusion is that with a well-designed data view (Embedding)…
 tags:
-  - ICML 2026
-  - Time Series
-  - Identity Paradox
-  - Evaluatology
+  - "ICML 2026"
+  - "Time Series"
+  - "Modular Attribution"
+  - "Probabilistic Evaluation"
+  - "Identity Paradox"
+  - "Data Views"
+  - "Evaluatology"
 date: 2026-05-08
-content_hash: c453fc82b0bce481
+content_hash: 10c2a32e2be0f7d2
 ---
+
 # CombinationTS: A Modular Framework for Understanding Time-Series Forecasting Models
 
 **Conference**: ICML 2026  
@@ -188,9 +192,9 @@ The spectral model SimpleTM outperforms the time-domain iTransformer in $\mu$, b
 
 - [\[ICML 2026\] TimeOmni-VL: Unified Models for Time Series Understanding and Generation](timeomni-vl_unified_models_for_time_series_understanding_and_generation.md)
 - [\[ICML 2026\] Parametric Prior Mapping Framework for Non-stationary Probabilistic Time Series Forecasting](parametric_prior_mapping_framework_for_non-stationary_probabilistic_time_series_.md)
+- [\[ICLR 2026\] Understanding the Implicit Biases of Design Choices for Time Series Foundation Models](../../ICLR2026/time_series/understanding_the_implicit_biases_of_design_choices_for_time_series_foundation_m.md)
+- [\[ICLR 2026\] Understanding Transformers in Time Series Forecasting: A Case Study on MOIRAI](../../ICLR2026/time_series/understanding_transformers_for_time_series_forecasting_a_case_study_on_moirai.md)
 - [\[ICLR 2026\] SciTS: Scientific Time Series Understanding and Generation with LLMs](../../ICLR2026/time_series/scits_scientific_time_series_understanding_and_generation_with_llms.md)
-- [\[ICML 2026\] Interpretability in Deep Time Series Models Demands Semantic Alignment](interpretability_in_deep_time_series_models_demands_semantic_alignment.md)
-- [\[ICML 2026\] Dynamic-TMoE: A Drift-Aware Dynamic Mixture of Experts Framework for Non-Stationary Time Series](dynamic_tmoe_a_drift-aware_dynamic_mixture_of_experts_framework_for_non-stationa.md)
 
 </div>
 

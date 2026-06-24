@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Suppressing Non-Semantic Noise in Masked Image Modeling Representations
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] This paper reveals that representations learned by Masked Image Modeling (MIM) retain a significant amount of non-semantic information (low-level features such as texture and color). It proposes a training-free post-processing method, SOAP (Semantically Orthogonal Artifact Projection), which identifies and removes non-
+  [CVPR 2026][Self-Supervised Learning][Masked Image Modeling] This paper reveals that representations learned by Masked Image Modeling (MIM) retain a significant amount of non-semantic information (low-level features such as texture and color). It proposes a training-free post-processing method, SOAP (Semantically Orthogonal Artifact Projection), which identifies and removes non-semantic components via PCA, consistently improving zero-shot performance across multiple MIM model…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Masked Image Modeling"
+  - "Non-semantic noise"
+  - "Principal Component Analysis"
+  - "Representation purification"
+  - "Zero-shot classification"
 date: 2026-05-08
-content_hash: bdb6e83b1ca35805
+content_hash: e7f17fae60cd196f
 ---
+
 # Suppressing Non-Semantic Noise in Masked Image Modeling Representations
 
 **Conference**: CVPR 2026  
@@ -147,11 +153,11 @@ SOAP consistently improves zero-shot performance across all tested MIM models. T
 
 ## Related Papers
 
-- [\[CVPR 2026\] MuM: Multi-View Masked Image Modeling for 3D Vision](mum_multi-view_masked_image_modeling_for_3d_vision.md)
 - [\[CVPR 2025\] From Prototypes to General Distributions: An Efficient Curriculum for Masked Image Modeling](../../CVPR2025/self_supervised/from_prototypes_to_general_distributions_an_efficient_curriculum_for_masked_imag.md)
+- [\[CVPR 2026\] Recurrent Video Masked Autoencoders](recurrent_video_masked_autoencoders.md)
+- [\[CVPR 2026\] Beyond Binary Contrast: Modeling Continuous Skeleton Action Spaces with Transitional Anchors](beyond_binary_contrast_modeling_continuous_skeleton_action_spaces_with_transitio.md)
 - [\[CVPR 2026\] Towards Stable Self-Supervised Object Representations in Unconstrained Egocentric Video](towards_stable_self-supervised_object_representations_in_unconstrained_egocentri.md)
-- [\[CVPR 2026\] Reading Your Actions: Learning Generalizable Action Representations via Pre-training AEMG](reading_your_actions_learning_generalizable_action_representations_via_pre-train.md)
-- [\[CVPR 2026\] Global-Graph Guided and Local-Graph Weighted Contrastive Learning for Unified Clustering on Incomplete and Noise Multi-View Data](global-graph_guided_and_local-graph_weighted_contrastive_learning_for_unified_cl.md)
+- [\[CVPR 2025\] CheXWorld: Image World Modeling for Radiograph Representation Learning](../../CVPR2025/self_supervised/chexworld_exploring_image_world_modeling_for_radiograph_representation_learning.md)
 
 </div>
 

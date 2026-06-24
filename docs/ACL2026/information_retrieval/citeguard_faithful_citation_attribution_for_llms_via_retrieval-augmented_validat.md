@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CiteGuard: Faithful Citation Attribution for LLMs via Retrieval-Augmented Validation
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Agent] CiteGuard proposes a retrieval-augmented agent framework that provides a more faithful foundation for scientific citation attribution via expanded retrieval actions (including full-text search and contextual retrieval), achieving 68.1% accuracy on the CiteME benchmark—a 10 percentage point improvement over baselines an
+  [ACL 2026][Information Retrieval & RAG][Citation Attribution] CiteGuard proposes a retrieval-augmented agent framework that provides a more faithful foundation for scientific citation attribution via expanded retrieval actions (including full-text search and contextual retrieval), achieving 68.1% accuracy on the CiteME benchmark—a 10 percentage point improvement over baselines and close to human performance (69.2%).
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - Agent
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Citation Attribution"
+  - "Retrieval-Augmented Validation"
+  - "Scientific Writing"
+  - "Hallucination Mitigation"
+  - "Agent"
 date: 2026-05-08
-content_hash: 3a545296aad60eaa
+content_hash: 83d00f616bd65f8c
 ---
+
 # CiteGuard: Faithful Citation Attribution for LLMs via Retrieval-Augmented Validation
 
 **Conference**: ACL 2026  
@@ -127,10 +132,10 @@ CiteGuard does not involve model training; it is implemented entirely through pr
 ## Related Papers
 
 - [\[ACL 2026\] Beyond Black-Box Interventions: Latent Probing for Faithful Retrieval-Augmented Generation](beyond_black-box_interventions_latent_probing_for_faithful_retrieval-augmented_g.md)
+- [\[ICLR 2026\] Automated Formalization via Conceptual Retrieval-Augmented LLMs](../../ICLR2026/information_retrieval/automated_formalization_via_conceptual_retrieval-augmented_llms.md)
 - [\[ACL 2025\] VISA: Retrieval Augmented Generation with Visual Source Attribution](../../ACL2025/information_retrieval/visa_retrieval_augmented_generation_with_visual_source_attribution.md)
-- [\[ACL 2026\] Context Attribution with Multi-Armed Bandit Optimization](context_attribution_with_multi-armed_bandit_optimization.md)
 - [\[ICLR 2026\] Attribution-Guided Decoding](../../ICLR2026/information_retrieval/attribution-guided_decoding.md)
-- [\[ICLR 2026\] Attributing Response to Context: A Jensen-Shannon Divergence Driven Mechanistic Study of Context Attribution in Retrieval-Augmented Generation](../../ICLR2026/information_retrieval/attributing_response_to_context_a_jensen-shannon_divergence_driven_mechanistic_s.md)
+- [\[ACL 2026\] Context Attribution with Multi-Armed Bandit Optimization](context_attribution_with_multi-armed_bandit_optimization.md)
 
 </div>
 

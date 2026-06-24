@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RESA: Bringing Back What Sparse Attention Ignores with Residual Estimation
 description: >-
-  [ICLR 2026][LLM Efficiency][KV cache] Addressing the blind spot of Sparse Attention (SA)—which "only computes selected KV pairs and treats others as zero contribution"—RESA leverages the inherent low-rank property of attention logit matrices. It utilizes a rank-1 prior to estimate the contributions of ignored KVs and merges them online with an overhead of
+  [ICLR 2026][LLM Efficiency][Sparse Attention] Addressing the blind spot of Sparse Attention (SA)—which "only computes selected KV pairs and treats others as zero contribution"—RESA leverages the inherent low-rank property of attention logit matrices. It utilizes a rank-1 prior to estimate the contributions of ignored KVs and merges them online with an overhead of the same order as SA. This improves model quality by up to 26% under the same KV budget…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - KV cache
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Sparse Attention"
+  - "KV cache"
+  - "Low-rank"
+  - "Residual Estimation"
+  - "Long-context Inference"
 date: 2026-05-08
-content_hash: 16afb55ffee485d3
+content_hash: 69ae60ea32ea081a
 ---
+
 # RESA: Bringing Back What Sparse Attention Ignores with Residual Estimation
 
 **Conference**: ICLR 2026  
@@ -143,9 +148,9 @@ Max improvements per model reached 16%/26%/22%/20% (RULER) and 5.65%/1.95%/8.22%
 
 - [\[ICLR 2026\] vAttention: Verified Sparse Attention via Sampling](vattention_verified_sparse_attention_via_sampling.md)
 - [\[ICLR 2026\] Sparse Attention Adaptation for Long Reasoning](sparse_attention_adaptation_for_long_reasoning.md)
-- [\[ICLR 2026\] Tactic: Adaptive Sparse Attention with Clustering and Distribution Fitting for Long-Context LLMs](tactic_adaptive_sparse_attention_with_clustering_and_distribution_fitting_for_lo.md)
 - [\[ICLR 2026\] One-Prompt Strikes Back: Sparse Mixture of Experts for Prompt-based Continual Learning](one-prompt_strikes_back_sparse_mixture_of_experts_for_prompt-based_continual_lea.md)
-- [\[ICLR 2026\] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models](understanding_and_improving_length_generalization_in_hierarchical_sparse_attenti.md)
+- [\[ICLR 2026\] Tactic: Adaptive Sparse Attention with Clustering and Distribution Fitting for Long-Context LLMs](tactic_adaptive_sparse_attention_with_clustering_and_distribution_fitting_for_lo.md)
+- [\[ICLR 2026\] ProxyAttn: Guided Sparse Attention via Representative Heads](proxyattn_guided_sparse_attention_via_representative_heads.md)
 
 </div>
 

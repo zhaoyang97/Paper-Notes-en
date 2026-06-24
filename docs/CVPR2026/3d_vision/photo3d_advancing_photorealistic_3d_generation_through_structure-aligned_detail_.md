@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Photo3D: Advancing Photorealistic 3D Generation through Structure-Aligned Detail Enhancement
 description: >-
-  [CVPR 2026][3D Vision][3D Generation] Photo3D utilizes GPT-4o-Image to enhance 3D renderings into "structure-aligned, photorealistic" multi-views, constructing the Photo3D-MV dataset paired with 3D geometry. By employing a "relaxed detail enhancement loss" that combines CLIP-aware perceptual adaptation with DINOv3 semantic structure matching, it injects ph
+  [CVPR 2026][3D Vision][3D Generation] Photo3D utilizes GPT-4o-Image to enhance 3D renderings into "structure-aligned, photorealistic" multi-views, constructing the Photo3D-MV dataset paired with 3D geometry. By employing a "relaxed detail enhancement loss" that combines CLIP-aware perceptual adaptation with DINOv3 semantic structure matching, it injects photorealistic appearance into three mainstream 3D-native generation paradigms without compromising geometric integrity…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Generation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Generation"
+  - "Photorealism"
+  - "Multi-view Dataset"
+  - "Detail Enhancement"
+  - "Structural Alignment"
 date: 2026-05-08
-content_hash: f9df90b02abd0f5e
+content_hash: adfa8612dd7b567b
 ---
+
 # Photo3D: Advancing Photorealistic 3D Generation through Structure-Aligned Detail Enhancement
 
 **Conference**: CVPR 2026  
@@ -115,10 +120,20 @@ Analysis of supervision components (based on Trellis on ImageNet):
 - Value: ⭐⭐⭐⭐ (Solves the "geometrically correct but visually synthetic" bottleneck in 3D-native generation).
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Realiz3D: 3D Generation Made Photorealistic via Domain-Aware Learning](realiz3d_3d_generation_made_photorealistic_via_domain-aware_learning.md)
+- [\[CVPR 2026\] mmWaveFlow: Unified Enhancement and Generation of mmWave Human Point Clouds](mmwaveflow_unified_enhancement_and_generation_of_mmwave_human_point_clouds.md)
+- [\[CVPR 2026\] PointNSP: Autoregressive 3D Point Cloud Generation with Next-Scale Level-of-Detail Prediction](pointnsp_autoregressive_3d_point_cloud_generation_with_next-scale_level-of-detai.md)
+- [\[ICLR 2026\] Quartet of Diffusions: Structure-Aware Point Cloud Generation through Part and Symmetry Guidance](../../ICLR2026/3d_vision/quartet_of_diffusions_structure-aware_point_cloud_generation_through_part_and_sy.md)
+- [\[CVPR 2026\] REVIVE 3D: Refinement via Encoded Voluminous Inflated prior for Volume Enhancement](revive_3d_refinement_via_encoded_voluminous_inflated_prior_for_volume_enhancemen.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Realiz3D: 3D Generation Made Photorealistic via Domain-Aware Learning](realiz3d_3d_generation_made_photorealistic_via_domain-aware_learning.md)

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EchoMotion: Unified Human Video and Motion Generation via Dual-Modality Diffusion Transformer
 description: >-
-  [ICLR 2026][Video Generation][MVS-RoPE] EchoMotion moves beyond treating human video generation as a pure pixel regression problem by employing a dual-branch DiT to explicitly model the joint distribution $p(x, m \mid y)$ of "video appearance + SMPL parametric motion." Combined with temporally synchronized MVS-RoPE and a two-stage training strategy, it signi
+  [ICLR 2026][Video Generation][Human Video Generation] EchoMotion moves beyond treating human video generation as a pure pixel regression problem by employing a dual-branch DiT to explicitly model the joint distribution $p(x, m \mid y)$ of "video appearance + SMPL parametric motion." Combined with temporally synchronized MVS-RoPE and a two-stage training strategy, it significantly improves anatomical plausibility and motion coherence in complex human videos…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - MVS-RoPE
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Human Video Generation"
+  - "SMPL Motion Parameters"
+  - "Dual-Modality Diffusion Transformer"
+  - "MVS-RoPE"
+  - "Joint Distribution Modeling"
 date: 2026-05-08
-content_hash: 9cb80915adc300ca
+content_hash: 9f21ba4de9c77fcc
 ---
+
 # EchoMotion: Unified Human Video and Motion Generation via Dual-Modality Diffusion Transformer
 
 **Conference**: ICLR 2026  
@@ -126,15 +131,16 @@ Based on VBench/VBench-2.0 and human evaluation (higher is better):
 - **Value**: ⭐⭐⭐⭐ Provides the HuMoVi dataset and a viable path for "kinematic-aware" human video generation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Neodragon: Mobile Video Generation Using Diffusion Transformer](neodragon_mobile_video_generation_using_diffusion_transformer.md)
-- [\[ICLR 2026\] Dual-IPO: Dual-Iterative Preference Optimization for Text-to-Video Generation](dual-ipo_dual-iterative_preference_optimization_for_text-to-video_generation.md)
-- [\[ICLR 2026\] Syncphony: 用扩散 Transformer 实现音画同步的音频到视频生成](syncphony_synchronized_audio-to-video_generation_with_diffusion_transformers.md)
 - [\[ICLR 2026\] MoSA: Motion-Coherent Human Video Generation via Structure-Appearance Decoupling](mosa_motion-coherent_human_video_generation_via_structure-appearance_decoupling.md)
-- [\[ICLR 2026\] QuantSparse: Comprehensively Compressing Video Diffusion Transformer with Model Quantization and Attention Sparsification](quantsparse_comprehensively_compressing_video_diffusion_transformer_with_model_q.md)
+- [\[ICLR 2026\] Dual-IPO: Dual-Iterative Preference Optimization for Text-to-Video Generation](dual-ipo_dual-iterative_preference_optimization_for_text-to-video_generation.md)
+- [\[ICLR 2026\] Neodragon: Mobile Video Generation Using Diffusion Transformer](neodragon_mobile_video_generation_using_diffusion_transformer.md)
+- [\[ICLR 2026\] SANA-Video: Efficient Video Generation with Block Linear Diffusion Transformer](sana-video_efficient_video_generation_with_block_linear_diffusion_transformer.md)
+- [\[AAAI 2026\] MotionCharacter: Fine-Grained Motion Controllable Human Video Generation](../../AAAI2026/video_generation/motioncharacter_fine-grained_motion_controllable_human_video_generation.md)
 
 </div>
 

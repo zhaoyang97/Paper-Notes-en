@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rethinking Pareto Frontier: On the Optimal Trade-offs in Fair Classification
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper reformulates the optimal fairness-accuracy trade-off achievable under a given model architecture (model-specific Pareto frontier) as a convex optimization problem over confusion vectors. It proves that existing post-processing frontiers are suboptimal and proposes a last-layer retraining framework with group
+  [ICLR 2026][AI Safety][Fair Classification] This paper reformulates the optimal fairness-accuracy trade-off achievable under a given model architecture (model-specific Pareto frontier) as a convex optimization problem over confusion vectors. It proves that existing post-processing frontiers are suboptimal and proposes a last-layer retraining framework with group-dependent biases, theoretically demonstrating its strict superiority over post-processing baselines such as randomi…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Fair Classification"
+  - "Pareto Frontier"
+  - "Fairness-Accuracy Trade-off"
+  - "Convex Optimization"
+  - "Last-layer Retraining"
 date: 2026-05-08
-content_hash: f6985dba77928e6e
+content_hash: a8ca336a8d0fc0ef
 ---
+
 # Rethinking Pareto Frontier: On the Optimal Trade-offs in Fair Classification
 
 **Conference**: ICLR 2026  

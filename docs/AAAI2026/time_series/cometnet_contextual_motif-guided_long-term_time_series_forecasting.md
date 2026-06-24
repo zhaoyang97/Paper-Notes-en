@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CometNet: Contextual Motif-guided Long-term Time Series Forecasting
 description: >-
-  [AAAI 2026][Time Series][Long-term time series forecasting] This paper proposes CometNet, which extracts recurrently occurring "contextual motifs" from the full historical sequence to construct a motif library…
+  [AAAI 2026][Time Series][Long-term time series forecasting] This paper proposes CometNet, which extracts recurrently occurring "contextual motifs" from the full historical sequence to construct a motif library, and employs a motif-guided MoE architecture to dynamically associate the current window with relevant motifs for prediction. This approach breaks the receptive field bottleneck imposed by limited look-back windows and achieves significant improvements over state-of-the…
 tags:
   - "AAAI 2026"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "receptive field bottleneck"
   - "frequency-domain analysis"
 date: 2026-05-08
-content_hash: 2cb8ccca40883734
+content_hash: b7ab25e67fa02f2b
 ---
 
 # CometNet: Contextual Motif-guided Long-term Time Series Forecasting
@@ -127,11 +127,11 @@ On ETTh1 with look-back 96 and prediction horizon 720: MSE 0.391 (vs. TimeMixer+
 
 ## Related Papers
 
+- [\[ICLR 2026\] PMDformer: Patch-Mean Decoupling Information Transformer for Long-term Forecasting](../../ICLR2026/time_series/pmdformer_patch-mean_decoupling_information_transformer_for_long-term_forecastin.md)
+- [\[ICML 2025\] TimePro: Efficient Multivariate Long-term Time Series Forecasting with Variable- and Time-Aware Hyper-state](../../ICML2025/time_series/timepro_efficient_multivariate_long-term_time_series_forecasting_with_variable-_.md)
 - [\[AAAI 2026\] iTimER: Reconstruction Error-Guided Irregularly Sampled Time Series Representation Learning](beyond_observations_reconstruction_error-guided_irregularly_sampled_time_series_.md)
-- [\[ICLR 2026\] Towards Generalizable PDE Dynamics Forecasting via Physics-Guided Invariant Learning](../../ICLR2026/time_series/towards_generalizable_pde_dynamics_forecasting_via_physics-guided_invariant_lear.md)
+- [\[ICLR 2026\] Inferring brain plasticity rule under long-term stimulation with structured recurrent dynamics](../../ICLR2026/time_series/inferring_brain_plasticity_rule_under_long-term_stimulation_with_structured_recu.md)
 - [\[AAAI 2026\] FreqCycle: A Multi-Scale Time-Frequency Analysis Method for Time Series Forecasting](freqcycle_a_multi-scale_time-frequency_analysis_method_for_time_series_forecasti.md)
-- [\[AAAI 2026\] Towards Non-Stationary Time Series Forecasting with Temporal Stabilization and Frequency Differencing](towards_non-stationary_time_series_forecasting_with_temporal_stabilization_and_f.md)
-- [\[AAAI 2026\] Harmonic Dataset Distillation for Time Series Forecasting](harmonic_dataset_distillation_for_time_series_forecasting.md)
 
 </div>
 

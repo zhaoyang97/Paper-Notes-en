@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bayesian Parameter Shift Rules in Variational Quantum Eigensolvers
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] The Parameter Shift Rule (PSR) used for gradient estimation in Variational Quantum Eigensolvers (VQE) is reformulated into a Bayesian version—utilizing a derivative Gaussian Process with a VQE kernel to estimate gradients. This allows for the reuse of historical observations at arbitrary positions and provides posterio
+  [ICLR 2026][Optimization][Variational Quantum Eigensolver] The Parameter Shift Rule (PSR) used for gradient estimation in Variational Quantum Eigensolvers (VQE) is reformulated into a Bayesian version—utilizing a derivative Gaussian Process with a VQE kernel to estimate gradients. This allows for the reuse of historical observations at arbitrary positions and provides posterior uncertainty of the gradients. Based on this, "Gradient Confidence Region (GradCoRe)" is proposed to…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Variational Quantum Eigensolver"
+  - "Parameter Shift Rule"
+  - "Gaussian Process"
+  - "Gradient Confidence Region"
+  - "Quantum Optimization"
 date: 2026-05-08
-content_hash: 603d8e883b7f6b12
+content_hash: 03de4615482b5745
 ---
+
 # Bayesian Parameter Shift Rules in Variational Quantum Eigensolvers
 
 **Conference**: ICLR 2026  
@@ -129,10 +135,10 @@ Figure 3 compares SGD / Bayes-SGD (with $N_{\text{shots}}=128/256/512/1024$) and
 ## Related Papers
 
 - [\[ICML 2026\] Neural QAOA$^2$: Differentiable Joint Graph Partitioning and Parameter Initialization for Quantum Combinatorial Optimization](../../ICML2026/optimization/neural_qaoa2_differentiable_joint_graph_partitioning_and_parameter_initializatio.md)
-- [\[ICLR 2026\] Symmetry-Aware Bayesian Optimization via Max Kernels](symmetry-aware_bayesian_optimization_via_max_kernels.md)
 - [\[ICLR 2026\] Local Entropy Search over Descent Sequences for Bayesian Optimization](local_entropy_search_over_descent_sequences_for_bayesian_optimization.md)
-- [\[ICLR 2026\] Generative Bayesian Optimization: Generative Models as Acquisition Functions](generative_bayesian_optimization_generative_models_as_acquisition_functions.md)
-- [\[ICLR 2026\] Bayesian Evidence-Driven Prototype Evolution for Federated Domain Adaptation](bayesian_evidence-driven_prototype_evolution_for_federated_domain_adaptation.md)
+- [\[ICLR 2026\] Incorporating Expert Priors into Bayesian Optimization via Dynamic Mean Decay](incorporating_expert_priors_into_bayesian_optimization_via_dynamic_mean_decay.md)
+- [\[ICLR 2026\] Sign-SGD via Parameter-Free Optimization](sign-sgd_via_parameter-free_optimization.md)
+- [\[ICLR 2026\] From Sorting Algorithms to Scalable Kernels: Bayesian Optimization in High-Dimensional Permutation Spaces](from_sorting_algorithms_to_scalable_kernels_bayesian_optimization_in_high-dimens.md)
 
 </div>
 

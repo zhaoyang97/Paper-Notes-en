@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] LLM-Assisted Emergency Triage Benchmark: Bridging Hospital-Rich and MCI-Like Field Simulation
 description: >-
-  [Medical NLP] This work constructs an open, LLM-assisted emergency triage benchmark based on MIMIC-IV-ED, defining two evaluation scenarios—hospital-rich and mass casualty incident (MCI)-like field simulation—and providi…
+  [Medical LLM] This work constructs an open, LLM-assisted emergency triage benchmark based on MIMIC-IV-ED, defining two evaluation scenarios—hospital-rich and mass casualty incident (MCI)-like field simulation—and providing baseline models along with SHAP-based interpretability analysis to promote reproducibility and accessibility in triage prediction research.
 tags:
-  - "Medical NLP"
+  - "Medical LLM"
 date: 2026-05-08
-content_hash: 652955fb49a3b6b0
+content_hash: d0fa546e5f03cd69
 ---
 
 # LLM-Assisted Emergency Triage Benchmark: Bridging Hospital-Rich and MCI-Like Field Simulation
@@ -133,9 +133,9 @@ Random Forest achieves the best performance under the MCI scenario (AUROC $= 0.7
 
 - [\[NeurIPS 2025\] Position: Thematic Analysis of Unstructured Clinical Transcripts with Large Language Models](position_thematic_analysis_of_unstructured_clinical_transcripts_with_large_langu.md)
 - [\[NeurIPS 2025\] RAxSS: Retrieval-Augmented Sparse Sampling for Explainable Variable-Length Medical Time Series Classification](raxss_retrieval-augmented_sparse_sampling_for_explainable_variable-length_medica.md)
+- [\[ACL 2025\] MedBioRAG: Semantic Search and Retrieval-Augmented Generation with Large Language Models for Medical and Biological QA](../../ACL2025/medical_nlp/medbiorag_semantic_search_and_retrieval-augmented_generation_for_biomedical_lite.md)
 - [\[AAAI 2026\] GEM: Generative Entropy-Guided Preference Modeling for Few-shot Alignment of LLMs](../../AAAI2026/medical_nlp/gem_generative_entropy-guided_preference_modeling_for_few-shot_alignment_of_llms.md)
 - [\[NeurIPS 2025\] Time-IMM: A Dataset and Benchmark for Irregular Multimodal Multivariate Time Series](time-imm_a_dataset_and_benchmark_for_irregular_multimodal_multivariate_time_seri.md)
-- [\[NeurIPS 2025\] Large Language Models as Medical Codes Selectors: A Benchmark Using the International Classification of Primary Care](large_language_models_as_medical_codes_selectors_a_benchmark_using_the_internati.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Pharos-ESG: A Framework for Multimodal Parsing, Contextual Narration, and Hierarchical Labeling of ESG Reports
 description: >-
-  [AAAI 2026][Multimodal VLM][ESG report parsing] This paper proposes Pharos-ESG, a unified framework for structured parsing of ESG reports via four core modules: layout-flow-based reading order modeling…
+  [AAAI 2026][Multimodal VLM][ESG report parsing] This paper proposes Pharos-ESG, a unified framework for structured parsing of ESG reports via four core modules: layout-flow-based reading order modeling, table-of-contents (ToC) anchor-guided hierarchical reconstruction, context-aware multimodal image-to-text conversion, and multi-level financial label prediction. The framework achieves an F1 of 93.59, ROKT of 0.92, and TBTA of 92.46% in comprehensive evaluation…
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "hierarchical structure reconstruction"
   - "multi-level label prediction"
 date: 2026-05-08
-content_hash: 261b851412ba2ae6
+content_hash: 8fd92d5adeac61c9
 ---
 
 # Pharos-ESG: A Framework for Multimodal Parsing, Contextual Narration, and Hierarchical Labeling of ESG Reports
@@ -168,11 +168,11 @@ Pharos-ESG comprises four core modules: (a) layout-flow-based reading order mode
 
 ## Related Papers
 
+- [\[AAAI 2026\] Multimodal DeepResearcher: Generating Text-Chart Interleaved Reports From Scratch with Agentic Framework](multimodal_deepresearcher_generating_text-chart_interleaved_.md)
 - [\[ACL 2026\] SlideAgent: Hierarchical Agentic Framework for Multi-Page Visual Document Understanding](../../ACL2026/multimodal_vlm/slideagent_hierarchical_agentic_framework_for_multi-page_visual_document_underst.md)
-- [\[ICML 2026\] Hierarchical Synthetic Tabular Data Generation: A Hybrid Top-Down and Bottom-Up Framework](../../ICML2026/multimodal_vlm/hierarchical_synthetic_tabular_data_generation_a_hybrid_top-down_and_bottom-up_f.md)
-- [\[ICLR 2026\] Grasp Any Region: Towards Precise, Contextual Pixel Understanding for Multimodal LLMs](../../ICLR2026/multimodal_vlm/grasp_any_region_towards_precise_contextual_pixel_understanding_for_multimodal_l.md)
-- [\[ICML 2026\] Referring Multiple Regions with Large Multimodal Models via Contextual Latent Steering](../../ICML2026/multimodal_vlm/referring_multiple_regions_with_large_multimodal_models_via_contextual_latent_st.md)
-- [\[ACL 2026\] DraDDP: A Multimodal Multi-Party Dialogue Discourse Parsing Dataset](../../ACL2026/multimodal_vlm/draddp_a_multimodal_multi-party_dialogue_discourse_parsing_dataset.md)
+- [\[AAAI 2026\] Plug-and-Play Clarifier: A Zero-Shot Multimodal Framework for Egocentric Intent Disambiguation](plug-and-play_clarifier_a_zero-shot_multimodal_framework_for_egocentric_intent_d.md)
+- [\[ICML 2026\] FlowNar: Scalable Streaming Narration for Long-Form Videos](../../ICML2026/multimodal_vlm/flownar_scalable_streaming_narration_for_long-form_videos.md)
+- [\[AAAI 2026\] PlantTraitNet: An Uncertainty-Aware Multimodal Framework for Global-Scale Plant Trait Inference from Citizen Science Data](planttraitnet_an_uncertainty-aware_multimodal_framework_for_global-scale_plant_t.md)
 
 </div>
 

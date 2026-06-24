@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Traditional Taggers to LLMs: A Comparative Study of POS Tagging for Medieval Romance Languages
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] The authors perform a systematic comparison of traditional taggers (UDPipe/COLaF) and open-source LLMs (Gemma3-12B/Phi4-14B) for POS tagging across three Medieval Romance languages (Old Occitan NAF, Old Catalan CAT, Old French Chauliac). Evaluating five settings—zero-shot, few-shot, monolingual fine-tuning, bilingual C
+  [ACL 2026][Multilingual & Machine Translation][Medieval Romance] The authors perform a systematic comparison of traditional taggers (UDPipe/COLaF) and open-source LLMs (Gemma3-12B/Phi4-14B) for POS tagging across three Medieval Romance languages (Old Occitan NAF, Old Catalan CAT, Old French Chauliac). Evaluating five settings—zero-shot, few-shot, monolingual fine-tuning, bilingual CLTF, and trilingual CLTF—they find that LLMs consistently outperform traditional methods. Catal…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Medieval Romance"
+  - "POS Tagging"
+  - "LLM Fine-tuning"
+  - "Cross-lingual Transfer"
+  - "Digital Humanities"
 date: 2026-05-08
-content_hash: 147157abc650c9d1
+content_hash: 90233983664bbed9
 ---
+
 # From Traditional Taggers to LLMs: A Comparative Study of POS Tagging for Medieval Romance Languages
 
 **Conference**: ACL 2026  
@@ -131,9 +137,9 @@ Key observations: ① Average accuracy rises monotonically from Traditional (71.
 
 - [\[ACL 2025\] A Case Study of Cross-Lingual Zero-Shot Generalization for Classical Languages in LLMs](../../ACL2025/multilingual_mt/a_case_study_of_cross-lingual_zero-shot_generalization_for_classical_languages_i.md)
 - [\[ACL 2025\] Understanding In-Context Machine Translation for Low-Resource Languages: A Case Study on Manchu](../../ACL2025/multilingual_mt/understanding_in-context_machine_translation_for_low-resource_languages_a_case_s.md)
+- [\[ACL 2025\] Comparative Analysis of Multilingual Hate Speech Detection](../../ACL2025/multilingual_mt/comparative_analysis_of_multilingual_hate_speech_detection.md)
 - [\[ICML 2026\] Toward Robust Multilingual Adaptation of LLMs for Low-Resource Languages](../../ICML2026/multilingual_mt/toward_robust_multilingual_adaptation_of_llms_for_low-resource_languages.md)
 - [\[ACL 2025\] MiLiC-Eval: Benchmarking Multilingual LLMs for China's Minority Languages](../../ACL2025/multilingual_mt/milic-eval_benchmarking_multilingual_llms_for_chinas_minority_languages.md)
-- [\[ACL 2026\] NiuTrans.LMT: Toward Inclusive and Scalable Multilingual Machine Translation with LLMs](niutranslmt_toward_inclusive_and_scalable_multilingual_machine_translation_with_.md)
 
 </div>
 

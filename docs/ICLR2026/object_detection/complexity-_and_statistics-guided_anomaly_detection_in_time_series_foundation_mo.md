@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Complexity- and Statistics-Guided Anomaly Detection in Time Series Foundation Models
 description: >-
-  [ICLR 2026][Object Detection][Paper Note] When Time Series Foundation Models (TFMs, such as MOMENT) are applied to reconstruction-based anomaly detection, they fail due to "overgeneralization" (reconstructing anomalies too well) and "over-stationarization" (Instance Normalization removing mean and variance). This paper introduces a complexity metric $\alpha$ d
+  [ICLR 2026][Object Detection][Time Series Foundation Models] When Time Series Foundation Models (TFMs, such as MOMENT) are applied to reconstruction-based anomaly detection, they fail due to "overgeneralization" (reconstructing anomalies too well) and "over-stationarization" (Instance Normalization removing mean and variance). This paper introduces a complexity metric $\alpha$ derived from the difference between reconstruction and imputation errors to adaptively ensemble TFMs…
 tags:
-  - ICLR 2026
-  - Object Detection
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Time Series Foundation Models"
+  - "Anomaly Detection"
+  - "Reconstruction Error"
+  - "Complexity Metric"
+  - "Adaptive Ensemble"
 date: 2026-05-08
-content_hash: e18a7627865e6456
+content_hash: bbd80f71248aa4b5
 ---
+
 # Complexity- and Statistics-Guided Anomaly Detection in Time Series Foundation Models
 
 **Conference**: ICLR 2026  
@@ -152,10 +158,10 @@ CAE lifts nearly all statistical backbones into the top three. Sub-PCA under CAE
 
 ## Related Papers
 
-- [\[AAAI 2026\] Harnessing Vision-Language Models for Time Series Anomaly Detection](../../AAAI2026/object_detection/harnessing_vision-language_models_for_time_series_anomaly_detection.md)
+- [\[ICLR 2026\] PGRF-Net: A Prototype-Guided Relational Fusion Network for Diagnostic Multivariate Time-Series Anomaly Detection](pgrf-net_a_prototype-guided_relational_fusion_network_for_diagnostic_multivariat.md)
 - [\[ICLR 2026\] Contextual and Seasonal LSTMs for Time Series Anomaly Detection](contextual_and_seasonal_lstms_for_time_series_anomaly_detection.md)
 - [\[ICLR 2026\] PAANO: Patch-Based Representation Learning for Time-Series Anomaly Detection](paano_patch-based_representation_learning_for_time-series_anomaly_detection.md)
-- [\[CVPR 2026\] AnomalyVFM -- Transforming Vision Foundation Models into Zero-Shot Anomaly Detectors](../../CVPR2026/object_detection/anomalyvfm_--_transforming_vision_foundation_models_into_zero-shot_anomaly_detec.md)
+- [\[AAAI 2026\] Harnessing Vision-Language Models for Time Series Anomaly Detection](../../AAAI2026/object_detection/harnessing_vision-language_models_for_time_series_anomaly_detection.md)
 - [\[ICLR 2026\] FSOD-VFM: Few-Shot Object Detection with Vision Foundation Models and Graph Diffusion](fsod-vfm_few-shot_object_detection_with_vision_foundation_models_and_graph_diffu.md)
 
 </div>

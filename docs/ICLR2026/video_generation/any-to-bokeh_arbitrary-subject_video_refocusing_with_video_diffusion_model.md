@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Any-to-Bokeh: Arbitrary-Subject Video Refocusing with Video Diffusion Model
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] Any-to-Bokeh models video refocusing/bokeh rendering as a **single-step** video diffusion process guided by a focal-plane adaptive MPI geometric prior. It allows users to freely specify the focal plane and blur intensity for any input video, addressing temporal flickering via three-stage progressive training and weight
+  [ICLR2026][Video Generation][Video Refocusing] Any-to-Bokeh models video refocusing/bokeh rendering as a **single-step** video diffusion process guided by a focal-plane adaptive MPI geometric prior. It allows users to freely specify the focal plane and blur intensity for any input video, addressing temporal flickering via three-stage progressive training and weighted overlapping inference, outperforming previous image/MPI bokeh methods on both synthetic and real-world data.
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR2026"
+  - "Video Generation"
+  - "Video Refocusing"
+  - "Multi-Plane Image (MPI)"
+  - "Single-step Diffusion"
+  - "Focal Plane Control"
+  - "Temporal Consistency"
 date: 2026-05-08
-content_hash: 4c01d4a08e4afc58
+content_hash: 51bc301dd0fc24a4
 ---
+
 # Any-to-Bokeh: Arbitrary-Subject Video Refocusing with Video Diffusion Model
 
 **Conference**: ICLR2026  
@@ -138,6 +144,7 @@ Analysis of MPI, Single-step (OS), WOIS, and Temporal Refinement (TR):
 - **Value**: ⭐⭐⭐⭐⭐ High utility for content creation and mobile post-processing.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

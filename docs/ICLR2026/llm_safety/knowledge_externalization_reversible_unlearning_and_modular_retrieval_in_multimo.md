@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Knowledge Externalization: Reversible Unlearning and Modular Retrieval in Multimodal Large Language Models
 description: >-
-  [ICLR 2026][LLM Safety][Knowledge Editing] This paper proposes **Knowledge Externalization**—moving sensitive knowledge from the internal parameters of MLLMs to external memory tokens. This shifts unlearning from "permanent destruction" to a "reversible, auditable, and composable" modular operation. The base model "forgets" the concept, but high-fidelity restor
+  [ICLR 2026][LLM Safety][Reversible Unlearning] This paper proposes **Knowledge Externalization**—moving sensitive knowledge from the internal parameters of MLLMs to external memory tokens. This shifts unlearning from "permanent destruction" to a "reversible, auditable, and composable" modular operation. The base model "forgets" the concept, but high-fidelity restoration is achieved using corresponding memory tokens. Furthermore, tokens can be individually edited or concatenat…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Knowledge Editing
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Reversible Unlearning"
+  - "Knowledge Externalization"
+  - "memory tokens"
+  - "Multimodal Large Language Models"
+  - "Knowledge Editing"
+  - "Privacy Compliance"
 date: 2026-05-08
-content_hash: 36161e0314ddae63
+content_hash: efd3d74b43aacbe9
 ---
+
 # Knowledge Externalization: Reversible Unlearning and Modular Retrieval in Multimodal Large Language Models
 
 **Conference**: ICLR 2026  
@@ -121,11 +127,11 @@ Adding SOW boosted LLaVA-7B GEN from 34.0 to 97.0; for InternVL3 on the Trump & 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Reasoning or Retrieval? A Study of Answer Attribution on Large Reasoning Models](reasoning_or_retrieval_a_study_of_answer_attribution_on_large_reasoning_models.md)
 - [\[ACL 2025\] MMUnlearner: Reformulating Multimodal Machine Unlearning in the Era of Multimodal Large Language Models](../../ACL2025/llm_safety/mmunlearner_reformulating_multimodal_machine_unlearning_in_the_era_of_multimodal.md)
-- [\[ICLR 2026\] Fine-Grained Privacy Extraction from Retrieval-Augmented Generation Systems by Exploiting Knowledge Asymmetry](fine-grained_privacy_extraction_from_retrieval-augmented_generation_systems_by_e.md)
 - [\[AAAI 2026\] Cross-Modal Unlearning via Influential Neuron Path Editing in Multimodal Large Language Models](../../AAAI2026/llm_safety/cross-modal_unlearning_via_influential_neuron_path_editing_i.md)
-- [\[ICLR 2026\] In-Context Watermarks for Large Language Models](in-context_watermarks_for_large_language_models.md)
+- [\[ICLR 2026\] Reasoning or Retrieval? A Study of Answer Attribution on Large Reasoning Models](reasoning_or_retrieval_a_study_of_answer_attribution_on_large_reasoning_models.md)
+- [\[ICLR 2026\] Safeguarding Multimodal Knowledge Copyright in the RAG-as-a-Service Environment](safeguarding_multimodal_knowledge_copyright_in_the_rag-as-a-service_environment.md)
+- [\[ICLR 2026\] Fine-Grained Privacy Extraction from Retrieval-Augmented Generation Systems by Exploiting Knowledge Asymmetry](fine-grained_privacy_extraction_from_retrieval-augmented_generation_systems_by_e.md)
 
 </div>
 

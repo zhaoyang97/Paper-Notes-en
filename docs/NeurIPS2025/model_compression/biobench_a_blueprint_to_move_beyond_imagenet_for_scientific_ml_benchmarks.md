@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BioBench: A Blueprint to Move Beyond ImageNet for Scientific ML Benchmarks
 description: >-
-  [NeurIPS 2025][Model Compression][Ecological Imagery] BioBench is proposed as a unified benchmark spanning 9 ecological vision tasks, 4 taxonomic kingdoms, 6 image modalities…
+  [NeurIPS 2025][Model Compression][Ecological Imagery] BioBench is proposed as a unified benchmark spanning 9 ecological vision tasks, 4 taxonomic kingdoms, 6 image modalities, and 3.1 million images. It demonstrates that ImageNet top-1 accuracy explains only 34% of the variance across ecological tasks, and that approximately 30% of model rankings are incorrect among frontier models exceeding 75% accuracy.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Transfer Learning"
   - "AI for Science"
 date: 2026-05-08
-content_hash: 5b44600e58f797f8
+content_hash: a99bcebef5f48152
 ---
 
 # BioBench: A Blueprint to Move Beyond ImageNet for Scientific ML Benchmarks
@@ -141,11 +141,11 @@ BioBench is proposed as a unified benchmark spanning 9 ecological vision tasks, 
 
 ## Related Papers
 
+- [\[ACL 2025\] Sci-LoRA: Mixture of Scientific LoRAs for Cross-Domain Lay Paraphrasing](../../ACL2025/model_compression/sci-lora_mixture_of_scientific_loras_for_cross-domain_lay_paraphrasing.md)
 - [\[NeurIPS 2025\] Beyond Random: Automatic Inner-Loop Optimization in Dataset Distillation](beyond_random_automatic_inner-loop_optimization_in_dataset_distillation.md)
 - [\[NeurIPS 2025\] Binary Quadratic Quantization: Beyond First-Order Quantization for Real-Valued Matrix Compression](binary_quadratic_quantization_beyond_first-order_quantization_for_real-valued_ma.md)
 - [\[NeurIPS 2025\] Beyond Higher Rank: Token-wise Input-Output Projections for Efficient Low-Rank Adaptation](beyond_higher_rank_token-wise_input-output_projections_for_efficient_low-rank_ad.md)
 - [\[ACL 2026\] When Reviews Disagree: Fine-Grained Contradiction Analysis in Scientific Peer Reviews](../../ACL2026/model_compression/when_reviews_disagree_fine-grained_contradiction_analysis_in_scientific_peer_rev.md)
-- [\[ICML 2026\] Beyond Temperature: Hyperfitting as a Late-Stage Geometric Expansion](../../ICML2026/model_compression/beyond_temperature_hyperfitting_as_a_late-stage_geometric_expansion.md)
 
 </div>
 

@@ -2,18 +2,21 @@
 title: >-
   [Paper Note] Towards Optimal Robustness in Learning-Augmented Paging
 description: >-
-  [ICML 2026][learning_theory][learning-augmented paging] This paper proposes a unified "Relative Prediction Budget" (RPB) perspective for randomized online paging with predictions. Based on OnlineMin, the RPB-OnOPT framework is designed, pushing the provable robust competitive ratio from the existing $2H_k+O(1)$ to $H_k+O(1)$, which is close to the information-theoretic lowe
+  [ICML 2026][Online Algorithms][learning-augmented paging] This paper proposes a unified "Relative Prediction Budget" (RPB) perspective for randomized online paging with predictions. Based on OnlineMin, the RPB-OnOPT framework is designed, pushing the provable robust competitive ratio from the existing $2H_k+O(1)$ to $H_k+O(1)$, which is close to the information-theoretic lower bound, while maintaining 1-consistency.
 tags:
-  - ICML 2026
-  - learning_theory
-  - learning-augmented paging
-  - competitive ratio
-  - OnlineMin
-  - relative prediction budget
-  - robustness
+  - "ICML 2026"
+  - "Online Algorithms"
+  - "Learning-Augmented Algorithms"
+  - "Caching"
+  - "learning-augmented paging"
+  - "competitive ratio"
+  - "OnlineMin"
+  - "relative prediction budget"
+  - "robustness"
 date: 2026-05-08
-content_hash: 1b248c9f31056338
+content_hash: 120db2f97a6657fc
 ---
+
 # Towards Optimal Robustness in Learning-Augmented Paging
 
 **Conference**: ICML 2026  
@@ -141,8 +144,8 @@ The authors compared major learning-augmented paging algorithms on LIRS and SPC1
 - [\[ICML 2025\] Near-Optimal Consistency-Robustness Trade-Offs for Learning-Augmented Online Knapsack Problems](../../ICML2025/learning_theory/near-optimal_consistency-robustness_trade-offs_for_learning-augmented_online_kna.md)
 - [\[ICML 2026\] Parsimonious Learning-Augmented Online Metric Matching](parsimonious_learning-augmented_online_metric_matching.md)
 - [\[ICML 2026\] Robustness of Mixtures of Experts to Feature Noise](robustness_of_mixtures_of_experts_to_feature_noise.md)
-- [\[ICML 2026\] Multi-task Linear Regression without Eigenvalue Lower Bounds: Adaptivity, Robustness and Safety](multi-task_linear_regression_without_eigenvalue_lower_bounds_adaptivity_robustne.md)
-- [\[ICML 2026\] On the Robustness of Langevin Dynamics to Score Function Error](on_the_robustness_of_langevin_dynamics_to_score_function_error.md)
+- [\[ICLR 2026\] Decision-Theoretic Approaches for Improved Learning-Augmented Algorithms](../../ICLR2026/learning_theory/decision-theoretic_approaches_for_improved_learning-augmented_algorithms.md)
+- [\[ICLR 2026\] Online Rounding and Learning Augmented Algorithms for Facility Location](../../ICLR2026/learning_theory/online_rounding_and_learning_augmented_algorithms_for_facility_location.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CreBench: Human-Aligned Creativity Evaluation from Idea to Process to Product
 description: >-
-  [AAAI 2026][Multimodal VLM][creativity evaluation] This paper constructs the CreBench creativity evaluation benchmark and the CreMIT multimodal instruction tuning dataset (2.2K samples, 79.2K human feedback annotations…
+  [AAAI 2026][Multimodal VLM][creativity evaluation] This paper constructs the CreBench creativity evaluation benchmark and the CreMIT multimodal instruction tuning dataset (2.2K samples, 79.2K human feedback annotations, 4.7M instructions), evaluating MLLM creativity alignment across three dimensions—creative idea → process → product—with 12 metrics. The resulting fine-tuned model, CreExpert, substantially outperforms GPT-4V.
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "instruction tuning"
   - "benchmark"
 date: 2026-05-08
-content_hash: 45e65e560bbcdf3d
+content_hash: b9cb2c9d31f68f18
 ---
 
 # CreBench: Human-Aligned Creativity Evaluation from Idea to Process to Product
@@ -286,10 +286,10 @@ Training strategy: the visual encoder is frozen; only the projection module and 
 
 ## Related Papers
 
+- [\[CVPR 2026\] VLIC: Vision-Language Models As Perceptual Judges for Human-Aligned Image Compression](../../CVPR2026/multimodal_vlm/vlic_vision-language_models_as_perceptual_judges_for_human-aligned_image_compres.md)
+- [\[ICLR 2026\] Human-MME: A Holistic Evaluation Benchmark for Human-Centric Multimodal Large Language Models](../../ICLR2026/multimodal_vlm/human-mme_a_holistic_evaluation_benchmark_for_human-centric_multimodal_large_lan.md)
 - [\[AAAI 2026\] ClearAIR: A Human-Visual-Perception-Inspired All-in-One Image Restoration](clearair_a_human-visual-perception-inspired_all-in-one_image_restoration.md)
-- [\[CVPR 2026\] Do Vision Language Models Need to Process Image Tokens?](../../CVPR2026/multimodal_vlm/do_vision_language_models_need_to_process_image_tokens.md)
 - [\[AAAI 2026\] SDEval: Safety Dynamic Evaluation for Multimodal Large Language Models](sdeval_safety_dynamic_evaluation_for_multimodal_large_language_models.md)
-- [\[CVPR 2026\] Dictionary-Aligned Concept Control for Safeguarding Multimodal LLMs](../../CVPR2026/multimodal_vlm/dictionary_aligned_concept_control_for_safeguarding_multimodal_llms.md)
 - [\[AAAI 2026\] Towards Human-AI Accessibility Mapping in India: VLM-Guided Annotations and POI-Centric Analysis in Chandigarh](towards_human-ai_accessibility_mapping_in_india_vlm-guided_annotations_and_poi-c.md)
 
 </div>

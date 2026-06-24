@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Widget2Code: From Visual Widgets to UI Code via Multimodal LLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper formally defines the Widget-to-Code task for the first time, constructs the first image-only widget dataset and a multi-dimensional evaluation system, and proposes a modular baseline based on Perception Agents and WidgetFactory infrastructure. It achieves high-fidelity widget reconstruction through component
+  [CVPR 2026][Multimodal VLM][UI code generation] This paper formally defines the Widget-to-Code task for the first time, constructs the first image-only widget dataset and a multi-dimensional evaluation system, and proposes a modular baseline based on Perception Agents and WidgetFactory infrastructure. It achieves high-fidelity widget reconstruction through component decomposition, icon retrieval, reusable visual templates, and adaptive rendering.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "UI code generation"
+  - "Widget reconstruction"
+  - "Multimodal Large Language Models"
+  - "Domain-Specific Language"
+  - "Visual perception"
 date: 2026-05-08
-content_hash: f73741e3b1043ca7
+content_hash: 9358436f796bd662
 ---
+
 # Widget2Code: From Visual Widgets to UI Code via Multimodal LLMs
 
 **Conference**: CVPR 2026  
@@ -139,11 +145,11 @@ Based on Apple Human Interface Guidelines, a five-dimensional fine-grained evalu
 
 ## Related Papers
 
-- [\[CVPR 2026\] CodePercept: Code-Grounded Visual STEM Perception for MLLMs](codepercept_code-grounded_visual_stem_perception_for_mllms.md)
-- [\[CVPR 2026\] Customized Visual Storytelling with Unified Multimodal LLMs](customized_visual_storytelling_with_unified_multimodal_llms.md)
-- [\[CVPR 2026\] FocusUI: Efficient UI Grounding via Position-Preserving Visual Token Selection](focusui_efficient_ui_grounding_via_position-preserving_visual_token_selection.md)
 - [\[CVPR 2026\] UI-Lens: Assessing General MLLMs' Potential to Automate UI Display Quality Assurance](ui-lens_assessing_general_mllms_potential_to_automate_ui_display_quality_assuran.md)
-- [\[CVPR 2026\] CodeV: Code with Images for Faithful Visual Reasoning via Tool-Aware Policy Optimization](codev_code_with_images_for_faithful_visual_reasoning_via_tool-aware_policy_optim.md)
+- [\[CVPR 2026\] CodePercept: Code-Grounded Visual STEM Perception for MLLMs](codepercept_code-grounded_visual_stem_perception_for_mllms.md)
+- [\[CVPR 2026\] GeoTikzBridge: Advancing Multimodal Code Generation for Geometric Perception and Reasoning](geotikzbridge_advancing_multimodal_code_generation_for_geometric_perception_and_.md)
+- [\[CVPR 2026\] FAVE: A Structured Benchmark for Fine-Grained Audio-Visual Temporal Evaluation in Multimodal LLMs](fave_a_structured_benchmark_for_fine-grained_audio-visual_temporal_evaluation_in.md)
+- [\[CVPR 2026\] PersonaVLM: Long-Term Personalized Multimodal LLMs](personavlm_long_term_personalized_multimodal_llms.md)
 
 </div>
 

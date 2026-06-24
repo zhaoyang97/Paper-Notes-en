@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Provably Accelerated Imaging with Restarted Inertia and Score-based Image Priors
 description: >-
-  [ICLR 2026][Optimization & Theory][RED] To address the slow convergence of RED-like imaging reconstruction algorithms, this paper proposes RISP, which adds "inertial steps + restart mechanism" to iterations. Without requiring convexity of the prior, it provably improves the convergence rate from $O(n^{-1/2})$ to $O(n^{-4/7})$, achieving up to 24× speedup in
+  [ICLR 2026][Optimization][Imaging Inverse Problems] To address the slow convergence of RED-like imaging reconstruction algorithms, this paper proposes RISP, which adds "inertial steps + restart mechanism" to iterations. Without requiring convexity of the prior, it provably improves the convergence rate from $O(n^{-1/2})$ to $O(n^{-4/7})$, achieving up to 24× speedup in large-scale imaging while maintaining reconstruction quality.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - RED
+  - "ICLR 2026"
+  - "Optimization"
+  - "Imaging Inverse Problems"
+  - "RED"
+  - "Inertial Acceleration"
+  - "Restart Mechanism"
+  - "Score-based Priors"
 date: 2026-05-08
-content_hash: b390fe9181e216fe
+content_hash: b91e8f335a72776a
 ---
+
 # Provably Accelerated Imaging with Restarted Inertia and Score-based Image Priors
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] IAP: Invisible Adversarial Patch Attack through Perceptibility-Aware Localization
 description: >-
-  [ICCV 2025][AI Safety][Adversarial patch] This paper proposes the IAP framework, which achieves — for the first time in targeted attack settings — truly invisible adversarial patches via **perceptibility-aware patch loca…
+  [ICCV 2025][AI Safety][Adversarial patch] This paper proposes the IAP framework, which achieves — for the first time in targeted attack settings — truly invisible adversarial patches via **perceptibility-aware patch localization** and **color-preserving gradient updates**, while simultaneously bypassing multiple SOTA patch defenses.
 tags:
   - "ICCV 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "targeted attack"
   - "patch defense"
 date: 2026-05-08
-content_hash: 5e60ba64b50e8232
+content_hash: 35e0c1d1a88ededb
 ---
 
 # IAP: Invisible Adversarial Patch Attack through Perceptibility-Aware Localization
@@ -147,11 +147,11 @@ This design is grounded in the psychophysical observation that the human eye is 
 
 ## Related Papers
 
+- [\[CVPR 2025\] INACTIVE: Invisible Backdoor Attack against Self-supervised Learning](../../CVPR2025/ai_safety/invisible_backdoor_attack_against_self-supervised_learning.md)
 - [\[ICCV 2025\] SpecGuard: Spectral Projection-based Advanced Invisible Watermarking](specguard_spectral_projection-based_advanced_invisible_watermarking.md)
-- [\[AAAI 2026\] HealSplit: Towards Self-Healing through Adversarial Distillation in Split Federated Learning](../../AAAI2026/ai_safety/healsplit_towards_self-healing_through_adversarial_distillation_in_split_federat.md)
-- [\[CVPR 2026\] When Robots Obey the Patch: Universal Transferable Patch Attacks on Vision-Language-Action Models](../../CVPR2026/ai_safety/when_robots_obey_the_patch_universal_transferable_patch_attacks_on_vision-langua.md)
-- [\[ICCV 2025\] Find a Scapegoat: Poisoning Membership Inference Attack and Defense to Federated Learning](find_a_scapegoat_poisoning_membership_inference_attack_and_defense_to_federated_.md)
-- [\[ICLR 2026\] Hide and Find: A Distributed Adversarial Attack on Federated Graph Learning](../../ICLR2026/ai_safety/hide_and_find_a_distributed_adversarial_attack_on_federated_graph_learning.md)
+- [\[CVPR 2025\] MOS-Attack: A Scalable Multi-Objective Adversarial Attack Framework](../../CVPR2025/ai_safety/mos-attack_a_scalable_multi-objective_adversarial_attack_framework.md)
+- [\[ICLR 2026\] TriQDef: Disrupting Semantic and Gradient Alignment to Block Adversarial Patch Transfer in Quantized Networks](../../ICLR2026/ai_safety/triqdef_disrupting_semantic_and_gradient_alignment_to_prevent_adversarial_patch_.md)
+- [\[ICML 2025\] Understanding Model Ensemble in Transferable Adversarial Attack](../../ICML2025/ai_safety/understanding_model_ensemble_in_transferable_adversarial_attack.md)
 
 </div>
 

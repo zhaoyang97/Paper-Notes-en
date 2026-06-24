@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ODE-GS: Latent ODEs for Dynamic Scene Extrapolation with 3D Gaussian Splatting
 description: >-
-  [ICLR 2026][3D Vision][Latent ODE] ODE-GS decouples "reconstruction" and "future prediction" for dynamic 3D Gaussian Splatting: it first trains a temporal deformation model to generate Gaussian parameter trajectories within the observation window, then utilizes a Transformer + Neural ODE to extrapolate past trajectories into future timestamps in a conti
+  [ICLR 2026][3D Vision][3D Gaussian Splatting] ODE-GS decouples "reconstruction" and "future prediction" for dynamic 3D Gaussian Splatting: it first trains a temporal deformation model to generate Gaussian parameter trajectories within the observation window, then utilizes a Transformer + Neural ODE to extrapolate past trajectories into future timestamps in a continuous latent space. This approach avoids out-of-distribution (OOD) failures caused by "timestamp conditioning…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Latent ODE
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Dynamic Scene Extrapolation"
+  - "Neural ODE"
+  - "Latent ODE"
+  - "Sequence Prediction"
 date: 2026-05-08
-content_hash: 18c5bd26f05af8a2
+content_hash: b7f1e4738a223e6d
 ---
+
 # ODE-GS: Latent ODEs for Dynamic Scene Extrapolation with 3D Gaussian Splatting
 
 **Conference**: ICLR 2026  
@@ -155,8 +160,8 @@ Average results on the NVFi dataset:
 - [\[ICLR 2026\] MoE-GS: Mixture of Experts for Dynamic Gaussian Splatting](moe-gs_mixture_of_experts_for_dynamic_gaussian_splatting.md)
 - [\[ICLR 2026\] Fracture-GS: Dynamic Fracture Simulation with Physics-Integrated Gaussian Splatting](fracture-gs_dynamic_fracture_simulation_with_physics-integrated_gaussian_splatti.md)
 - [\[ICLR 2026\] SSD-GS: Scattering and Shadow Decomposition for Relightable 3D Gaussian Splatting](ssd-gs_scattering_and_shadow_decomposition_for_relightable_3d_gaussian_splatting.md)
-- [\[ICLR 2026\] CLoD-GS: Continuous Level-of-Detail via 3D Gaussian Splatting](clod-gs_continuous_level-of-detail_via_3d_gaussian_splatting.md)
-- [\[CVPR 2026\] VAD-GS: Visibility-Aware Densification for 3D Gaussian Splatting in Dynamic Urban Scenes](../../CVPR2026/3d_vision/vad-gs_visibility-aware_densification_for_3d_gaussian_splatting_in_dynamic_urban.md)
+- [\[ICLR 2026\] Mobile-GS: Real-time Gaussian Splatting for Mobile Devices](mobile-gs_real-time_gaussian_splatting_for_mobile_devices.md)
+- [\[NeurIPS 2025\] HAIF-GS: Hierarchical and Induced Flow-Guided Gaussian Splatting for Dynamic Scene](../../NeurIPS2025/3d_vision/haif-gs_hierarchical_and_induced_flow-guided_gaussian_splatting_for_dynamic_scen.md)
 
 </div>
 

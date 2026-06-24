@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Learn from A Rationalist: Distilling Intermediate Interpretable Rationales
 description: >-
-  [ICML 2026][Interpretability][Knowledge Distillation] This paper proposes REKD, which introduces knowledge distillation into the "select-predict" rationale extraction framework. It enables a small student model to simultaneously mimic a teacher's feature selection distribution and final prediction distribution. By tying the distillation temperature to the Gumbel-Softmax a
+  [ICML 2026][Interpretability][Rationale Extraction] This paper proposes REKD, which introduces knowledge distillation into the "select-predict" rationale extraction framework. It enables a small student model to simultaneously mimic a teacher's feature selection distribution and final prediction distribution. By tying the distillation temperature to the Gumbel-Softmax annealing schedule, an implicit "soft-to-hard selection" curriculum is formed…
 tags:
-  - ICML 2026
-  - Interpretability
-  - Knowledge Distillation
-  - Gumbel-Softmax
+  - "ICML 2026"
+  - "Interpretability"
+  - "Rationale Extraction"
+  - "Knowledge Distillation"
+  - "Gumbel-Softmax"
+  - "Temperature Annealing"
+  - "Curriculum Learning"
 date: 2026-05-08
-content_hash: 3cb4f17349648bd0
+content_hash: 6556ebdccfee44cf
 ---
+
 # Learn from A Rationalist: Distilling Intermediate Interpretable Rationales
 
 **Conference**: ICML 2026  
@@ -136,11 +140,11 @@ The ViT-Base teacher achieved 0.964 on CIFAR-10; the ViT-Small student reached 0
 
 ## Related Papers
 
-- [\[CVPR 2026\] Pixel2Phys: Distilling Governing Laws from Visual Dynamics](../../CVPR2026/interpretability/pixel2phys_distilling_governing_laws_from_visual_dynamics.md)
 - [\[ICML 2026\] Position: Stop Anthropomorphizing Intermediate Tokens as Reasoning/Thinking Traces!](position_stop_anthropomorphizing_intermediate_tokens_as_reasoningthinking_traces.md)
+- [\[CVPR 2026\] Pixel2Phys: Distilling Governing Laws from Visual Dynamics](../../CVPR2026/interpretability/pixel2phys_distilling_governing_laws_from_visual_dynamics.md)
+- [\[ICLR 2026\] I Predict Therefore I Am: Is Next Token Prediction Enough to Learn Human-Interpretable Concepts from Data?](../../ICLR2026/interpretability/i_predict_therefore_i_am_is_next_token_prediction_enough_to_learn_human-interpre.md)
 - [\[ACL 2026\] A Systematic Comparison between Extractive Self-Explanations and Human Rationales in Text Classification](../../ACL2026/interpretability/a_systematic_comparison_between_extractive_self-explanations_and_human_rationale.md)
-- [\[NeurIPS 2025\] How Do Transformers Learn Implicit Reasoning?](../../NeurIPS2025/interpretability/how_do_transformers_learn_implicit_reasoning.md)
-- [\[ICML 2026\] Prototype Transformer: Towards Language Model Architectures Interpretable by Design](prototype_transformer_towards_language_model_architectures_interpretable_by_desi.md)
+- [\[ICML 2026\] LatentLens: Revealing Highly Interpretable Visual Tokens in LLMs](latentlens_revealing_highly_interpretable_visual_tokens_in_llms.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BrickNet: Graph-Backed Generative Brick Assembly
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper treats LEGO brick assembly sequences as "programs" for autoregressive generation via LLMs. The key innovation is moving away from direct regression of 6-DoF coordinates for each brick, instead using a graph-backed parametrization (spanning trees) where "connectivity" is treated as a first-class citizen. Comb
+  [CVPR 2026][3D Vision][LEGO Brick Assembly] This paper treats LEGO brick assembly sequences as "programs" for autoregressive generation via LLMs. The key innovation is moving away from direct regression of 6-DoF coordinates for each brick, instead using a graph-backed parametrization (spanning trees) where "connectivity" is treated as a first-class citizen. Combined with the newly constructed BrickNet dataset—comprising 320,000 large-scale human-designed LDraw samples—the mod…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "LEGO Brick Assembly"
+  - "Graph Parametrization"
+  - "Autoregressive Generation"
+  - "LDraw Dataset"
+  - "Connector Semantics"
 date: 2026-05-08
-content_hash: 7caa32bf78073d24
+content_hash: dfe2e60e83f3816d
 ---
+
 # BrickNet: Graph-Backed Generative Brick Assembly
 
 **Conference**: CVPR 2026  
@@ -151,10 +157,10 @@ Data Scaling Ablation (Tab. 4b, 14b, Perplexity): Performance improved monotonic
 ## Related Papers
 
 - [\[CVPR 2026\] AssemblyBench: Physics-Aware Assembly of Complex Industrial Objects](assemblybench_physics-aware_assembly_of_complex_industrial_objects.md)
-- [\[CVPR 2026\] Generative Diffusion Priors for 3D Mapping of the Dark Universe](generative_diffusion_priors_for_3d_mapping_of_the_dark_universe.md)
-- [\[CVPR 2026\] GenMatter: Perceiving Physical Objects with Generative Matter Models](genmatter_perceiving_physical_objects_with_generative_matter_models.md)
-- [\[CVPR 2026\] CraftMesh: High-Fidelity Generative Mesh Manipulation via Poisson Seamless Fusion](craftmesh_high-fidelity_generative_mesh_manipulation_via_poisson_seamless_fusion.md)
-- [\[CVPR 2026\] MHopReg: Efficient Hierarchical Multi-Hop Graph Search for Point Cloud Registration](mhopreg_efficient_hierarchical_multi-hop_graph_search_for_point_cloud_registrati.md)
+- [\[CVPR 2026\] MeshMosaic: Scaling Artist Mesh Generation via Local-to-Global Assembly](meshmosaic_scaling_artist_mesh_generation_via_local-to-global_assembly.md)
+- [\[CVPR 2026\] SAMosaic3D: Modular Scene Assembly for Real-Time 3D Segment Anything](samosaic3d_modular_scene_assembly_for_real-time_3d_segment_anything.md)
+- [\[CVPR 2026\] Variational Graph-based Normal Integration](variational_graph-based_normal_integration.md)
+- [\[CVPR 2026\] Repurposing 3D Generative Model for Autoregressive Layout Generation](repurposing_3d_generative_model_for_autoregressive_layout_generation.md)
 
 </div>
 

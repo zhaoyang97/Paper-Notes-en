@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RoSAMDepth: Robust Self-supervised Depth Estimation Leveraging Segment Anything Model
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] RoSAMDepth utilizes object-level masks generated offline by SAM as priors, injecting them into a self-supervised monocular depth framework from three perspectives: "representation space contrast," "region-level outlier suppression + Gaussian likelihood smoothing," and "object-level reliability weighting." This allows t
+  [CVPR 2026][3D Vision][Self-supervised depth estimation] RoSAMDepth utilizes object-level masks generated offline by SAM as priors, injecting them into a self-supervised monocular depth framework from three perspectives: "representation space contrast," "region-level outlier suppression + Gaussian likelihood smoothing," and "object-level reliability weighting." This allows the model to predict depth with sharper boundaries and better intra-object consistency under adverse con…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Self-supervised depth estimation"
+  - "SAM object-level prior"
+  - "Robust depth"
+  - "Contrastive representation learning"
+  - "Pseudo-label reliability"
 date: 2026-05-08
-content_hash: 97e28a5f258d2b23
+content_hash: cdf86e5d38da9051
 ---
+
 # RoSAMDepth: Robust Self-supervised Depth Estimation Leveraging Segment Anything Model
 
 **Conference**: CVPR 2026  
@@ -140,9 +146,9 @@ Specific Ablations: Smoothness Loss (Tab. 4, Night AbsRel) — Image-edge-aware 
 
 - [\[CVPR 2026\] Depth Any Panoramas: A Foundation Model for Panoramic Depth Estimation](depth_any_panoramas_a_foundation_model_for_panoramic_depth_estimation.md)
 - [\[NeurIPS 2025\] Jasmine: Harnessing Diffusion Prior for Self-Supervised Depth Estimation](../../NeurIPS2025/3d_vision/jasmine_harnessing_diffusion_prior_for_self-supervised_depth_estimation.md)
+- [\[CVPR 2026\] SAMosaic3D: Modular Scene Assembly for Real-Time 3D Segment Anything](samosaic3d_modular_scene_assembly_for_real-time_3d_segment_anything.md)
 - [\[CVPR 2026\] SCAPO: Self-Supervised Category-Level Articulated Pose Estimation from a Single 3D Observation](scapo_self-supervised_category-level_articulated_pose_estimation_from_a_single_3.md)
 - [\[CVPR 2026\] SeeGroup: Multi-Layer Depth Estimation of Transparent Surfaces via Self-Determined Grouping](seegroup_multi-layer_depth_estimation_of_transparent_surfaces_via_self-determine.md)
-- [\[ECCV 2024\] High-Precision Self-Supervised Monocular Depth Estimation with Rich-Resource Prior](../../ECCV2024/3d_vision/high-precision_self-supervised_monocular_depth_estimation_with_rich-resource_pri.md)
 
 </div>
 

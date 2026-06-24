@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Guiding Diffusion-Based Articulated Object Generation by Partial Point Cloud Alignment and Physical Plausibility Constraints
 description: >-
-  [ICCV 2025][3D Vision][Articulated object generation] This paper proposes PhysNAP, which guides the reverse diffusion process of the pretrained diffusion model NAP via point cloud alignment loss and SDF-based physical pl…
+  [ICCV 2025][3D Vision][Articulated object generation] This paper proposes PhysNAP, which guides the reverse diffusion process of the pretrained diffusion model NAP via point cloud alignment loss and SDF-based physical plausibility constraints (part penetration and joint mobility), enabling category-aware articulated object generation with significant improvements in alignment accuracy and physical plausibility over the unguided baseline.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "physical constraints"
   - "SDF"
 date: 2026-05-08
-content_hash: b1c96c4724122eef
+content_hash: 719852837ee31f4f
 ---
 
 # Guiding Diffusion-Based Articulated Object Generation by Partial Point Cloud Alignment and Physical Plausibility Constraints
@@ -159,11 +159,11 @@ Articulation states are randomly sampled within the predicted joint limits. Rela
 
 ## Related Papers
 
-- [\[ICCV 2025\] Blended Point Cloud Diffusion for Localized Text-guided Shape Editing](blended_point_cloud_diffusion_for_localized_textguided_shape.md)
-- [\[ICCV 2025\] Efficient Spiking Point Mamba for Point Cloud Analysis](efficient_spiking_point_mamba_for_point_cloud_analysis.md)
+- [\[CVPR 2025\] Guiding Human-Object Interactions with Rich Geometry and Relations](../../CVPR2025/3d_vision/guiding_human-object_interactions_with_rich_geometry_and_relations.md)
 - [\[ICCV 2025\] Learning 3D Object Spatial Relationships from Pre-trained 2D Diffusion Models](learning_3d_object_spatial_relationships_from_pre-trained_2d_diffusion_models.md)
-- [\[ICCV 2025\] UPP: Unified Point-Level Prompting for Robust Point Cloud Analysis](upp_unified_point-level_prompting_for_robust_point_cloud_analysis.md)
-- [\[ICCV 2025\] REPARO: Compositional 3D Assets Generation with Differentiable 3D Layout Alignment](reparo_compositional_3d_assets_generation_with_differentiable_3d_layout_alignmen.md)
+- [\[ICCV 2025\] Efficient Spiking Point Mamba for Point Cloud Analysis](efficient_spiking_point_mamba_for_point_cloud_analysis.md)
+- [\[ICCV 2025\] AR-1-to-3: Single Image to Consistent 3D Object Generation via Next-View Prediction](ar1to3_single_image_to_consistent_3d_object_via_nextview_pre.md)
+- [\[CVPR 2026\] Copy-Transform-Paste: Zero-Shot Object-Object Alignment Guided by Vision-Language and Geometric Constraints](../../CVPR2026/3d_vision/copy-transform-paste_zero-shot_object-object_alignment_guided_by_vision-language.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SAM2Long: Enhancing SAM 2 for Long Video Segmentation with a Training-Free Memory Tree
 description: >-
-  [ICCV 2025][Segmentation][SAM 2] To address the error accumulation caused by SAM 2's greedy selection strategy in long videos, this paper proposes a training-free constrained tree search memory strategy that maintains mu…
+  [ICCV 2025][Segmentation][SAM 2] To address the error accumulation caused by SAM 2's greedy selection strategy in long videos, this paper proposes a training-free constrained tree search memory strategy that maintains multiple segmentation paths and selects the optimal result at the video level, achieving an average improvement of 3.7 J&F across 9 VOS and 3 VOT benchmarks, with up to 5.3 gains on long-video scenarios.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -13,7 +13,7 @@ tags:
   - "occlusion recovery"
   - "training-free"
 date: 2026-05-08
-content_hash: 5f6ba6422696ad95
+content_hash: 1d5858df9afda60b
 ---
 
 # SAM2Long: Enhancing SAM 2 for Long Video Segmentation with a Training-Free Memory Tree
@@ -112,8 +112,8 @@ Entirely training-free; no parameters are modified. Hyperparameters: $P=3$, $\de
 - [\[ICCV 2025\] E-SAM: Training-Free Segment Every Entity Model](e-sam_training-free_segment_every_entity_model.md)
 - [\[ICCV 2025\] Training-Free Class Purification for Open-Vocabulary Semantic Segmentation](training-free_class_purification_for_open-vocabulary_semantic_segmentation.md)
 - [\[NeurIPS 2025\] Robust Ego-Exo Correspondence with Long-Term Memory](../../NeurIPS2025/segmentation/robust_ego-exo_correspondence_with_long-term_memory.md)
+- [\[ICLR 2026\] Decomposed Attention Fusion in MLLMs for Training-free Video Reasoning Segmentation](../../ICLR2026/segmentation/decomposed_attention_fusion_in_mllms_for_training-free_video_reasoning_segmentat.md)
 - [\[ICCV 2025\] FLOSS: Free Lunch in Open-vocabulary Semantic Segmentation](floss_free_lunch_in_openvocabulary_semantic_segmentation.md)
-- [\[CVPR 2026\] INSID3: Training-Free In-Context Segmentation with DINOv3](../../CVPR2026/segmentation/insid3_training-free_in-context_segmentation_with_dinov3.md)
 
 </div>
 

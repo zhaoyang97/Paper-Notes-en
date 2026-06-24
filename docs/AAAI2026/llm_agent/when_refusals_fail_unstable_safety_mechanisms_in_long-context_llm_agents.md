@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] When Refusals Fail: Unstable Safety Mechanisms in Long-Context LLM Agents
 description: >-
-  [AAAI 2026][LLM Agent][LLM Safety] This paper systematically investigates how long-context padding affects the safety behavior of LLM agents. Models claiming support for 1M–2M token windows exhibit performance collapse e…
+  [AAAI 2026][LLM Agent][LLM Safety] This paper systematically investigates how long-context padding affects the safety behavior of LLM agents. Models claiming support for 1M–2M token windows exhibit performance collapse exceeding 50% at 100K tokens. Refusal rates fluctuate in unpredictable directions (GPT-4.1-nano rises from 5% to 40%; Grok 4 Fast drops from 80% to 10%), revealing critical safety vulnerabilities in long-context agent systems.
 tags:
   - "AAAI 2026"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "Refusal Mechanism"
   - "AgentHarm"
 date: 2026-05-08
-content_hash: 01367c45215ec803
+content_hash: 4e2dffcbbd2b4c03
 ---
 
 # When Refusals Fail: Unstable Safety Mechanisms in Long-Context LLM Agents
@@ -135,10 +135,10 @@ GPT-4.1-nano (1M), GPT-5 (400K), DeepSeek-V3.1 (128K), Grok 4 Fast (2M).
 ## Related Papers
 
 - [\[ICML 2026\] ACON: Optimizing Context Compression for Long-horizon LLM Agents](../../ICML2026/llm_agent/acon_optimizing_context_compression_for_long-horizon_llm_agents.md)
-- [\[ACL 2026\] OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory](../../ACL2026/llm_agent/ocr-memory_optical_context_retrieval_for_long-horizon_agent_memory.md)
 - [\[ACL 2026\] Why LLM Web Agents Fail: A Hierarchical Planning Perspective](../../ACL2026/llm_agent/why_do_llm-based_web_agents_fail_a_hierarchical_planning_perspective.md)
-- [\[ACL 2026\] From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms](../../ACL2026/llm_agent/from_storage_to_experience_a_survey_on_the_evolution_of_llm_agent_memory_mechani.md)
-- [\[AAAI 2026\] Verification-Guided Context Optimization for Tool Calling via Hierarchical LLMs-as-editors](verification-guided_context_optimization_for_tool_calling_via_hierarchical_llms-.md)
+- [\[ICLR 2026\] Look Back to Reason Forward: Revisitable Memory for Long-Context LLM Agents](../../ICLR2026/llm_agent/look_back_to_reason_forward_revisitable_memory_for_long-context_llm_agents.md)
+- [\[ACL 2026\] OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory](../../ACL2026/llm_agent/ocr-memory_optical_context_retrieval_for_long-horizon_agent_memory.md)
+- [\[ICLR 2026\] AgentFold: Long-Horizon Web Agents with Proactive Context Folding](../../ICLR2026/llm_agent/agentfold_long-horizon_web_agents_with_proactive_context_folding.md)
 
 </div>
 

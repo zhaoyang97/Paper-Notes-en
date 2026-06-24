@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Dual Hierarchical Dialogue Policy Learning for Legal Inquisitive Conversational Agents
 description: >-
-  [ACL 2026][Dialogue Systems][Inquisitive Conversational Agent] The authors define "Inquisitive Dialogue"—where an AI actively questions an uncooperative interlocutor, exemplified by U.S. Supreme Court justices questioning attorneys—and propose a Dual Hierarchical RL framework. This framework consists of an Appraisal Agent that scores attorney responses in real-time across 9 apprai
+  [ACL 2026 Findings][Dialogue Systems][Inquisitive Conversational Agent] The authors define "Inquisitive Dialogue"—where an AI actively questions an uncooperative interlocutor, exemplified by U.S. Supreme Court justices questioning attorneys—and propose a Dual Hierarchical RL framework. This framework consists of an Appraisal Agent that scores attorney responses in real-time across 9 appraisal categories, and a Hierarchical Dialogue Agent that performs DDQN in a three-layer (a…
 tags:
-  - ACL 2026
-  - Dialogue Systems
-  - Inquisitive Conversational Agent
-  - Dual Hierarchical RL
-  - Appraisal Agent
-  - Offline DDQN
+  - "ACL 2026 Findings"
+  - "Dialogue Systems"
+  - "Inquisitive Conversational Agent"
+  - "Dual Hierarchical RL"
+  - "Appraisal Agent"
+  - "Poincaré Embedding"
+  - "Offline DDQN"
 date: 2026-05-08
-content_hash: 2b6098dd1db2ebc6
+content_hash: d487438dc7297d7d
 ---
+
 # Dual Hierarchical Dialogue Policy Learning for Legal Inquisitive Conversational Agents
 
 **Conference**: ACL 2026 Findings  
@@ -142,11 +144,20 @@ Ablation analysis (Full Model: 4.34) in Tab.2:
 - Value: ⭐⭐⭐⭐ Pushes the boundaries for proactive Conversational AI with direct relevance to specialized domains like law and medicine.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Paper links go here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2026\] Template-assisted Contrastive Learning of Task-oriented Dialogue Sentence Embeddings](template-assisted_contrastive_learning_of_task-oriented_dialogue_sentence_embedd.md)
+- [\[ICLR 2026\] DRIFT: Learning from Abundant User Dissatisfaction in Real-World Preference Learning](../../ICLR2026/dialogue/drift_learning_from_abundant_user_dissatisfaction_in_real-world_preference_learn.md)
+- [\[ACL 2026\] Preference Learning Unlocks LLMs' Psycho-Counseling Skills](preference_learning_unlocks_llms_psycho-counseling_skills.md)
+- [\[ACL 2026\] Cognitive Policy-Driven LLM for Diagnosis and Intervention of Cognitive Distortions in Emotional Support Conversation](cognitive_policy-driven_llm_for_diagnosis_and_intervention_of_cognitive_distorti.md)
+- [\[ACL 2025\] Single- vs. Dual-Prompt Dialogue Generation with LLMs for Job Interviews in Human Resources](../../ACL2025/dialogue/single-_vs_dual-prompt_dialogue_generation_with_llms_for_job_interviews_in_human.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] Template-assisted Contrastive Learning of Task-oriented Dialogue Sentence Embeddings](template-assisted_contrastive_learning_of_task-oriented_dialogue_sentence_embedd.md)

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Object-Centric World Models from Few-Shot Annotations for Sample-Efficient Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][World Models] OC-STORM utilizes frozen video segmentation foundation models (Cutie/SAM2) to extract compact vector features of decision-critical objects from minimal annotations (6–12 frames). By feeding these into a world model, it focuses modeling capacity on small but crucial objects, significantly outperforming the STORM baselin
+  [ICLR 2026][Reinforcement Learning][Object-centric representation] OC-STORM utilizes frozen video segmentation foundation models (Cutie/SAM2) to extract compact vector features of decision-critical objects from minimal annotations (6–12 frames). By feeding these into a world model, it focuses modeling capacity on small but crucial objects, significantly outperforming the STORM baseline on Atari 100k and visually complex *Hollow Knight* boss fights…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - World Models
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Object-centric representation"
+  - "world models"
+  - "model-based RL"
+  - "few-shot annotation"
+  - "video segmentation"
 date: 2026-05-08
-content_hash: c02a12893065eec0
+content_hash: 42c536a87c69a2d7
 ---
+
 # Object-Centric World Models from Few-Shot Annotations for Sample-Efficient Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -133,10 +138,10 @@ The 26 Atari games were grouped by whether critical objects could be reliably id
 ## Related Papers
 
 - [\[AAAI 2026\] Object-Centric World Models for Causality-Aware Reinforcement Learning](../../AAAI2026/reinforcement_learning/object-centric_world_models_for_causality-aware_reinforcement_learning.md)
+- [\[ICLR 2026\] Efficient Reinforcement Learning by Guiding World Models with Non-Curated Data](efficient_reinforcement_learning_by_guiding_world_models_with_non-curated_data.md)
 - [\[ICLR 2026\] WIMLE: Uncertainty-Aware World Models with IMLE for Sample-Efficient Continuous Control](wimle_uncertainty-aware_world_models_with_imle_for_sample-efficient_continuous_c.md)
 - [\[ICLR 2026\] From Observations to Events: Event-Aware World Models for Reinforcement Learning](from_observations_to_events_event-aware_world_models_for_reinforcement_learning.md)
 - [\[ICLR 2026\] Mixture-of-World Models: Scaling Multi-Task Reinforcement Learning with Modular Latent Dynamics](mixture-of-world_models_scaling_multi-task_reinforcement_learning_with_modular_l.md)
-- [\[ICLR 2026\] DVLA-RL: Dual-Level Vision-Language Alignment with Reinforcement Learning Gating for Few-Shot Learning](dvla-rl_dual-level_vision-language_alignment_with_reinforcement_learning_gating_.md)
 
 </div>
 

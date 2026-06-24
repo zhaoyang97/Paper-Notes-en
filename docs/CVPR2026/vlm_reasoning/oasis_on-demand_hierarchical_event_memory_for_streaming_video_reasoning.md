@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OASIS: On-Demand Hierarchical Event Memory for Streaming Video Reasoning
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] OASIS redefines streaming video reasoning as a "temporal routing" problem. It employs an online-maintained hierarchical event forest as long-term memory, coupled with a two-stage strategy of "coarse reasoning on short context, followed by refined retrieval based on semantic intent when uncertain." Without altering the
+  [CVPR 2026][VLM Reasoning][Streaming Video Reasoning] OASIS redefines streaming video reasoning as a "temporal routing" problem. It employs an online-maintained hierarchical event forest as long-term memory, coupled with a two-stage strategy of "coarse reasoning on short context, followed by refined retrieval based on semantic intent when uncertain." Without altering the MLLM or requiring training, it significantly enhances long-range accuracy and compositional reasoning for…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Streaming Video Reasoning"
+  - "Hierarchical Event Memory"
+  - "On-Demand Retrieval"
+  - "Two-Stage Reasoning"
+  - "Training-Free"
 date: 2026-05-08
-content_hash: c25bc3e669f5465c
+content_hash: fdefe29aae572e5d
 ---
+
 # OASIS: On-Demand Hierarchical Event Memory for Streaming Video Reasoning
 
 **Conference**: CVPR 2026  
@@ -134,16 +140,16 @@ Unlike **VideoTree**, which requires reprocessing full sequences as they grow, O
 - Value: ⭐⭐⭐⭐⭐ High potential for deployment due to training-free nature and constant token costs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] FluxMem: Adaptive Hierarchical Memory for Streaming Video Understanding](fluxmem_adaptive_hierarchical_memory_for_streaming_video_understanding.md)
 - [\[CVPR 2026\] VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding](videoarm_agentic_reasoning_over_hierarchical_memory_for_long-form_video_understa.md)
-- [\[ACL 2026\] HERMES: KV Cache as Hierarchical Memory for Efficient Streaming Video Understanding](../../ACL2026/video_understanding/hermes_kv_cache_as_hierarchical_memory_for_efficient_streaming_video_understandi.md)
 - [\[CVPR 2026\] Streaming Video Crime Anticipation with Spatio-Temporal Causal Reasoning](streaming_video_crime_anticipation_with_spatio-temporal_causal_reasoning.md)
-- [\[ICCV 2025\] Hierarchical Event Memory for Accurate and Low-latency Online Video Temporal Grounding](../../ICCV2025/video_understanding/hierarchical_event_memory_for_accurate_and_low-latency_online_video_temporal_gro.md)
+- [\[ICLR 2026\] Fostering Video Reasoning via Next-Event Prediction](../../ICLR2026/vlm_reasoning/fostering_video_reasoning_via_next-event_prediction.md)
+- [\[CVPR 2026\] Hierarchical Process Reward Models are Symbolic Vision Learners](hierarchical_process_reward_models_are_symbolic_vision_learners.md)
+- [\[CVPR 2026\] Evolving Contextual Safety in Multi-Modal Large Language Models via Inference-Time Self-Reflective Memory](evolving_contextual_safety_in_multi-modal_large_language_models_via_inference-ti.md)
 
 </div>
 

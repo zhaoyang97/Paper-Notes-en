@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] On the Bayes Inconsistency of Disagreement Discrepancy Surrogates
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proves that existing surrogate losses used for "disagreement discrepancy" are **not Bayes consistent** in multiclass ($K>2$) settings—optimizing the surrogate does not necessarily optimize the true objective. Accordingly, it designs a new disagreement loss $-\log(1-\sigma(s)_y)$, which, combined with cross-e
+  [ICLR 2026][Learning Theory][Disagreement discrepancy] This paper proves that existing surrogate losses used for "disagreement discrepancy" are **not Bayes consistent** in multiclass ($K>2$) settings—optimizing the surrogate does not necessarily optimize the true objective. Accordingly, it designs a new disagreement loss $-\log(1-\sigma(s)_y)$, which, combined with cross-entropy, yields the **first provably Bayes consistent** surrogate. This surrogate is more reliable for dow…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Distribution Shift Generalization"
+  - "Disagreement discrepancy"
+  - "surrogate loss"
+  - "Bayes consistency"
+  - "distribution shift"
+  - "error bounds"
 date: 2026-05-08
-content_hash: e93bcd548c92d27b
+content_hash: b855dc9cd41ab61f
 ---
+
 # On the Bayes Inconsistency of Disagreement Discrepancy Surrogates
 
 **Conference**: ICLR 2026  
@@ -142,8 +149,8 @@ Non-overlapping 95% confidence intervals demonstrate that theoretical consistenc
 ## Related Papers
 
 - [\[ICLR 2026\] PAC-Bayes Bounds for Cumulative Loss in Continual Learning](pac-bayes_bounds_for_cumulative_loss_in_continual_learning.md)
-- [\[ICLR 2026\] SEINT: An Efficient SE(p)-Invariant Transport Metric Driven by Polar Transport Discrepancy-based Representation](an_efficient_sep-invariant_transport_metric_driven_by_polar_transport_discrepanc.md)
 - [\[ICML 2026\] Realizable Bayes-Consistency for General Metric Losses](../../ICML2026/learning_theory/realizable_bayes-consistency_for_general_metric_losses.md)
+- [\[ICLR 2026\] SEINT: An Efficient SE(p)-Invariant Transport Metric Driven by Polar Transport Discrepancy-based Representation](an_efficient_sep-invariant_transport_metric_driven_by_polar_transport_discrepanc.md)
 - [\[ICLR 2026\] Why Ask One When You Can Ask k? Learning-to-Defer to the Top-k Experts](why_ask_one_when_you_can_ask_k_learning-to-defer_to_the_top-k_experts.md)
 - [\[ICLR 2026\] Towards a Theoretical Understanding of In-Context Learning: Stability and Non-i.i.d. Generalisation](towards_a_theoretical_understanding_of_in-context_learning_stability_and_non-iid.md)
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LLM-XTM: Enhancing Cross-Lingual Topic Models with Large Language Models
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] A two-stage enhancement module consisting of "LLM Refinement + Self-consistency Voting + MMD Word Distribution Alignment + QA-style Document Semantic Alignment" is wrapped around pre-trained cross-lingual topic models. Acting as a plug-in for various backbones like NMTM, InfoCTM, and XTRA, it improves CNPMI by 9%–51% a
+  [ACL 2026][Multilingual & Machine Translation][Cross-Lingual Topic Modeling] A two-stage enhancement module consisting of "LLM Refinement + Self-consistency Voting + MMD Word Distribution Alignment + QA-style Document Semantic Alignment" is wrapped around pre-trained cross-lingual topic models. Acting as a plug-in for various backbones like NMTM, InfoCTM, and XTRA, it improves CNPMI by 9%–51% and TQ by 6%–44% across three bilingual corpora (EC News, Amazon Review…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Cross-Lingual Topic Modeling"
+  - "LLM Refinement"
+  - "Self-consistency"
+  - "MMD Alignment"
+  - "QA-style Document Alignment"
 date: 2026-05-08
-content_hash: 4926b15902904552
+content_hash: a371d1ffee12f9a2
 ---
+
 # LLM-XTM: Enhancing Cross-Lingual Topic Models with Large Language Models
 
 **Conference**: ACL 2026  
@@ -137,15 +143,16 @@ Analysis using NMTM backbone on Rakuten Amazon (50 topics):
 - Value: ⭐⭐⭐⭐ Provides a "plug-and-play" module that yields consistent 10–50% CNPMI improvements for the CLTM community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ACL 2026\] LaoBench: A Large-Scale Multidimensional Lao Benchmark for Large Language Models](laobench_a_large-scale_multidimensional_lao_benchmark_for_large_language_models.md)
 - [\[ACL 2026\] Efficient Training for Cross-lingual Speech Language Models](efficient_training_for_cross-lingual_speech_language_models.md)
+- [\[ACL 2026\] LaoBench: A Large-Scale Multidimensional Lao Benchmark for Large Language Models](laobench_a_large-scale_multidimensional_lao_benchmark_for_large_language_models.md)
 - [\[ACL 2026\] Evaluating Robustness of Large Language Models Against Multilingual Typographical Errors](evaluating_robustness_of_large_language_models_against_multilingual_typographica.md)
+- [\[ACL 2026\] Multilingual Refusal Alignment for Safer Large Language Models](multilingual_refusal_alignment_for_safer_large_language_models.md)
 - [\[ACL 2025\] Cross-Lingual Optimization for Language Transfer in Large Language Models](../../ACL2025/multilingual_mt/cross-lingual_optimization_for_language_transfer_in_large_language_models.md)
-- [\[ACL 2026\] Language Models Entangle Language and Culture](language_models_entangle_language_and_culture.md)
 
 </div>
 

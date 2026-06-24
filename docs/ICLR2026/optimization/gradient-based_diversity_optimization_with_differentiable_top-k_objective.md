@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Gradient-Based Diversity Optimization with Differentiable Top-$k$ Objective
 description: >-
-  [ICLR 2026][Optimization & Theory][MGDA] This work relaxes the inherently non-differentiable "top-$k$ set diversity" objective into a differentiable loss using soft-rank, enabling its integration into gradient-based training. By employing Multiple Gradient Descent Algorithm (MGDA) to adaptively balance the conflicting gradients of "relevance vs. diversity," t
+  [ICLR 2026][Optimization][Differentiable Ranking] This work relaxes the inherently non-differentiable "top-$k$ set diversity" objective into a differentiable loss using soft-rank, enabling its integration into gradient-based training. By employing Multiple Gradient Descent Algorithm (MGDA) to adaptively balance the conflicting gradients of "relevance vs. diversity," the framework optimizes both objectives simultaneously without altering model architectures or requiring post-p…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - MGDA
+  - "ICLR 2026"
+  - "Optimization"
+  - "Differentiable Ranking"
+  - "Top-k Diversity"
+  - "Multi-objective Optimization"
+  - "MGDA"
+  - "Recommender Systems"
 date: 2026-05-08
-content_hash: 2bd602adca8fdb87
+content_hash: 314579a7fd865edd
 ---
+
 # Gradient-Based Diversity Optimization with Differentiable Top-$k$ Objective
 
 **Conference**: ICLR 2026  
@@ -137,15 +142,16 @@ DDT achieves the best or second-best results across almost all metrics, signific
 - Value: ⭐⭐⭐⭐ Provides a reusable paradigm for optimizing top-$k$ set metrics.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Diversity-Driven Offline Multi-Objective Optimization via Nested Pareto Set Learning](../../ICML2026/optimization/diversity-driven_offline_multi-objective_optimization_via_nested_pareto_set_lear.md)
+- [\[ICLR 2026\] In-Context Multi-Objective Optimization](in-context_multi-objective_optimization.md)
 - [\[ICLR 2026\] Neural Multi-Objective Combinatorial Optimization for Flexible Job Shop Scheduling Problems](neural_multi-objective_combinatorial_optimization_for_flexible_job_shop_scheduli.md)
 - [\[ICML 2026\] Accelerated Multiple Wasserstein Gradient Flows for Multi-objective Distributional Optimization](../../ICML2026/optimization/accelerated_multiple_wasserstein_gradient_flows_for_multi-objective_distribution.md)
 - [\[ICML 2026\] A Fully First-Order Layer for Differentiable Optimization](../../ICML2026/optimization/a_fully_first-order_layer_for_differentiable_optimization.md)
-- [\[ICLR 2026\] Gradient-Normalized Smoothness for Optimization with Approximate Hessians](gradient-normalized_smoothness_for_optimization_with_approximate_hessians.md)
 
 </div>
 

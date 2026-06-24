@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PRIME: Planning and Retrieval-Integrated Memory for Enhanced Reasoning
 description: >-
-  [AAAI 2026][Information Retrieval & RAG][Dual-system reasoning] Inspired by dual-process cognitive theory, PRIME is a multi-agent reasoning framework in which a Quick Thinking Agent (System 1) rapidly generates intuitive…
+  [AAAI 2026][Information Retrieval & RAG][Dual-system reasoning] Inspired by dual-process cognitive theory, PRIME is a multi-agent reasoning framework in which a Quick Thinking Agent (System 1) rapidly generates intuitive answers, a Reflection Agent evaluates their confidence, and—when uncertainty is detected—six specialized System 2 agents (Planning / Search / Reading / Hypothesis / Integration / Decision) are triggered for deep knowledge-retrieval reasoning. The framework en…
 tags:
   - "AAAI 2026"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "multi-agent"
   - "planning"
 date: 2026-05-08
-content_hash: 7d3480fb3e6274c6
+content_hash: 11d3772b01ac8ff5
 ---
 
 # PRIME: Planning and Retrieval-Integrated Memory for Enhanced Reasoning
@@ -142,10 +142,10 @@ Input question → Quick Thinking Agent (decompose sub-questions, answer sequent
 ## Related Papers
 
 - [\[AAAI 2026\] OPERA: A Reinforcement Learning--Enhanced Orchestrated Planner-Executor Architecture for Reasoning-Oriented Multi-Hop Retrieval](opera_a_reinforcement_learning--enhanced_orchestrated_planner-executor_architect.md)
+- [\[ACL 2025\] Towards Adaptive Memory-Based Optimization for Enhanced Retrieval-Augmented Generation](../../ACL2025/information_retrieval/towards_adaptive_memory-based_optimization_for_enhanced_retrieval-augmented_gene.md)
 - [\[ACL 2026\] ReasonEmbed: Enhanced Text Embeddings for Reasoning-Intensive Document Retrieval](../../ACL2026/information_retrieval/reasonembed_enhanced_text_embeddings_for_reasoning-intensive_document_retrieval.md)
 - [\[AAAI 2026\] REAP: Enhancing RAG with Recursive Evaluation and Adaptive Planning for Multi-Hop Question Answering](reap_enhancing_rag_with_recursive_evaluation_and_adaptive_planning_for_multi-hop.md)
 - [\[AAAI 2026\] ComoRAG: A Cognitive-Inspired Memory-Organized RAG for Stateful Long Narrative Reasoning](comorag_a_cognitive-inspired_memory-organized_rag_for_stateful_long_narrative_re.md)
-- [\[AAAI 2026\] Towards Inference-Time Scaling for Continuous Space Reasoning](towards_inference-time_scaling_for_continuous_space_reasoning.md)
 
 </div>
 

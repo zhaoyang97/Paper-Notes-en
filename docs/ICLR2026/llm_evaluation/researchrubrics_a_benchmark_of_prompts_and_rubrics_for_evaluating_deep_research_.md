@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ResearchRubrics: A Benchmark of Prompts and Rubrics For Evaluating Deep Research Agents
 description: >-
-  [ICLR 2026][LLM Evaluation][LLM-as-Judge] ResearchRubrics utilizes 2800+ hours of human effort to pair 101 real-world open-ended research prompts with 2593 expert-written, weighted, fine-grained rubrics. Using LLM-as-Judge to score agents based on these rubrics, the study evaluates mainstream Deep Research (DR) systems and finds that even the strongest agents,
+  [ICLR 2026][LLM Evaluation][Deep Research Agents] ResearchRubrics utilizes 2800+ hours of human effort to pair 101 real-world open-ended research prompts with 2593 expert-written, weighted, fine-grained rubrics. Using LLM-as-Judge to score agents based on these rubrics, the study evaluates mainstream Deep Research (DR) systems and finds that even the strongest agents, such as Gemini DR and OpenAI DR, fail to reach an average rubric adherence rate of 68%. Theoretical bottlenec…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - LLM-as-Judge
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Deep Research Agents"
+  - "Human Rubrics"
+  - "LLM-as-Judge"
+  - "Task Complexity"
+  - "Open-ended Evaluation"
 date: 2026-05-08
-content_hash: 13d7956982c65d00
+content_hash: effb69c559dbe564
 ---
+
 # ResearchRubrics: A Benchmark of Prompts and Rubrics For Evaluating Deep Research Agents
 
 **Conference**: ICLR 2026  

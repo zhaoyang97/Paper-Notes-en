@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FiRA: Can We Achieve Full-Rank Training of LLMs Under Low-Rank Constraint?
 description: >-
-  [NeurIPS 2025][Model Compression][low-rank training] This paper proposes Fira, the first LLM training framework that achieves full-rank training (full-rank gradients + full-rank weights) under low-rank constraints. By ob…
+  [NeurIPS 2025][Model Compression][low-rank training] This paper proposes Fira, the first LLM training framework that achieves full-rank training (full-rank gradients + full-rank weights) under low-rank constraints. By observing that the optimizer scaling factors in low-rank and full-rank training are highly similar, Fira approximates the correction of out-of-subspace gradients using low-rank scaling factors, and employs a norm-growth limiter to prevent loss spikes. Fira outpe…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Adam optimizer"
   - "gradient projection"
 date: 2026-05-08
-content_hash: 4a9026915543ff2a
+content_hash: ecb4b3e1fdd7e9b7
 ---
 
 # FiRA: Can We Achieve Full-Rank Training of LLMs Under Low-Rank Constraint?
@@ -202,10 +202,10 @@ Fira approaches full-rank performance even at extremely low ranks, whereas GaLor
 ## Related Papers
 
 - [\[NeurIPS 2025\] Perturbation Bounds for Low-Rank Inverse Approximations under Noise](perturbation_bounds_for_low-rank_inverse_approximations_under_noise.md)
+- [\[ACL 2025\] BeamLoRA: Beam-Constraint Low-Rank Adaptation](../../ACL2025/model_compression/beamlora_beam_constraint_lora.md)
 - [\[NeurIPS 2025\] Beyond Higher Rank: Token-wise Input-Output Projections for Efficient Low-Rank Adaptation](beyond_higher_rank_token-wise_input-output_projections_for_efficient_low-rank_ad.md)
 - [\[NeurIPS 2025\] GoRA: Gradient-Driven Adaptive Low Rank Adaptation](gora_gradient-driven_adaptive_low_rank_adaptation.md)
 - [\[NeurIPS 2025\] Accurate and Efficient Low-Rank Model Merging in Core Space](accurate_and_efficient_low-rank_model_merging_in_core_space.md)
-- [\[NeurIPS 2025\] RefLoRA: Refactored Low-Rank Adaptation for Efficient Fine-Tuning of Large Models](reflora_refactored_low-rank_adaptation_for_efficient_fine-tuning_of_large_models.md)
 
 </div>
 

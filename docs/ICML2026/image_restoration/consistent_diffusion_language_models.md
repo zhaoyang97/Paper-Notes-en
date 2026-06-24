@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Consistent Diffusion Language Models
 description: >-
-  [ICML 2026][Image Restoration][Masked Diffusion] This paper points out that discrete diffusion lacks a counterpart to the continuous-domain probability-flow ODE, making it impossible to directly construct consistency models. The authors propose using the **exact closed-form posterior bridge** as a "stochastic PF-ODE surrogate" in the discrete domain to construct the
+  [ICML 2026][Image Restoration][Masked Diffusion] This paper points out that discrete diffusion lacks a counterpart to the continuous-domain probability-flow ODE, making it impossible to directly construct consistency models. The authors propose using the **exact closed-form posterior bridge** as a "stochastic PF-ODE surrogate" in the discrete domain to construct the Multi-Path Discrete Consistency (MPDC) training objective. This requires the denoiser's predictions across mult…
 tags:
-  - ICML 2026
-  - Image Restoration
-  - Masked Diffusion
-  - Multi-Path Discrete Consistency
-  - posterior bridge
-  - teacher-free distillation
-  - CDLM
+  - "ICML 2026"
+  - "Image Restoration"
+  - "Masked Diffusion"
+  - "Multi-Path Discrete Consistency"
+  - "posterior bridge"
+  - "teacher-free distillation"
+  - "CDLM"
 date: 2026-05-08
-content_hash: d27f1095c4a14a0b
+content_hash: ddb6518a4b9edcd5
 ---
+
 # Consistent Diffusion Language Models
 
 **Conference**: ICML 2026  
@@ -125,9 +126,9 @@ The training objective is the MPDC consistency loss, requiring $f_\theta(x_t, t)
 ## Related Papers
 
 - [\[ICML 2026\] Plan for Speed: Dilated Scheduling for Masked Diffusion Language Models](plan_for_speed_dilated_scheduling_for_masked_diffusion_language_models.md)
-- [\[ICLR 2026\] Activation Steering for Masked Diffusion Language Models](../../ICLR2026/image_restoration/activation_steering_for_masked_diffusion_language_models.md)
-- [\[ICML 2026\] Coevolutionary Continuous Discrete Diffusion: Make Your Diffusion Language Model a Latent Reasoner](coevolutionary_continuous_discrete_diffusion_make_your_diffusion_language_model_.md)
 - [\[ICML 2026\] Early Decisions Matter: Proximity Bias and Initial Trajectory Shaping in Non-Autoregressive Diffusion Language Models](early_decisions_matter_proximity_bias_and_initial_trajectory_shaping_in_non-auto.md)
+- [\[ICML 2026\] Coevolutionary Continuous Discrete Diffusion: Make Your Diffusion Language Model a Latent Reasoner](coevolutionary_continuous_discrete_diffusion_make_your_diffusion_language_model_.md)
+- [\[ICML 2026\] Measurement-Consistent Langevin Corrector for Stabilizing Latent Diffusion Inverse Problem Solvers](measurement-consistent_langevin_corrector_for_stabilizing_latent_diffusion_inver.md)
 - [\[NeurIPS 2025\] Encoder-Decoder Diffusion Language Models for Efficient Training and Inference](../../NeurIPS2025/image_restoration/encoder-decoder_diffusion_language_models_for_efficient_training_and_inference.md)
 
 </div>

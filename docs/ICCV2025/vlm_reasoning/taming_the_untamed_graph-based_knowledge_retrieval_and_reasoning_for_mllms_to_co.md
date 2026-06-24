@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Taming the Untamed: Graph-Based Knowledge Retrieval and Reasoning for MLLMs to Conquer the Unknown
 description: >-
-  [ICCV 2025][Multimodal VLM][Multimodal Knowledge Graph] Using *Monster Hunter: World* as a testbed, this paper constructs a multimodal knowledge graph (MH-MMKG) containing text, images, video…
+  [ICCV 2025][VLM Reasoning][Multimodal Knowledge Graph] Using *Monster Hunter: World* as a testbed, this paper constructs a multimodal knowledge graph (MH-MMKG) containing text, images, video, and complex entity relations, designs 238 complex queries along with a multi-agent knowledge retrieval method, and reveals the inadequacy of current MLLMs in domain-specific knowledge retrieval and reasoning tasks.
 tags:
   - "ICCV 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "Multimodal Knowledge Graph"
   - "Multi-Agent Retrieval"
   - "MLLM"
   - "Knowledge-Augmented Reasoning"
   - "Game Cognition"
 date: 2026-05-08
-content_hash: 0ac1dca44814a634
+content_hash: c0324146561ede94
 ---
 
 # Taming the Untamed: Graph-Based Knowledge Retrieval and Reasoning for MLLMs to Conquer the Unknown
@@ -166,11 +166,11 @@ Three task variants are defined: Knowledgeable (perfect knowledge + perfect perc
 
 ## Related Papers
 
+- [\[ICCV 2025\] Training-Free Personalization via Retrieval and Reasoning on Fingerprints](training-free_personalization_via_retrieval_and_reasoning_on_fingerprints.md)
+- [\[CVPR 2026\] Graph-to-Frame RAG: Visual-Space Knowledge Fusion for Training-Free and Auditable Video Reasoning](../../CVPR2026/vlm_reasoning/graph-to-frame_rag_visual-space_knowledge_fusion_for_training-free_and_auditable.md)
 - [\[ICCV 2025\] ReasonVQA: A Multi-hop Reasoning Benchmark with Structural Knowledge for Visual Question Answering](reasonvqa_a_multi-hop_reasoning_benchmark_with_structural_knowledge_for_visual_q.md)
 - [\[ICCV 2025\] ChartPoint: Guiding MLLMs with Grounding Reflection for Chart Reasoning](chartpoint_guiding_mllms_with_grounding_reflection_for_chart_reasoning.md)
-- [\[ICCV 2025\] GRAB: A Challenging GRaph Analysis Benchmark for Large Multimodal Models](grab_a_challenging_graph_analysis_benchmark_for_large_multimodal_models.md)
-- [\[ICCV 2025\] Dynamic Group Detection using VLM-augmented Temporal Groupness Graph](dynamic_group_detection_using_vlm-augmented_temporal_groupness_graph.md)
-- [\[ICCV 2025\] AutoComPose: Automatic Generation of Pose Transition Descriptions for Composed Pose Retrieval Using Multimodal LLMs](autocompose_automatic_generation_of_pose_transition_descriptions_for_composed_po.md)
+- [\[ACL 2025\] Progressive Multimodal Reasoning via Active Retrieval](../../ACL2025/vlm_reasoning/progressive_multimodal_reasoning_via_active_retrieval.md)
 
 </div>
 

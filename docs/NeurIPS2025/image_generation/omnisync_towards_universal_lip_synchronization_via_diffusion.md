@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OmniSync: Towards Universal Lip Synchronization via Diffusion Transformers
 description: >-
-  [NeurIPS 2025 (Spotlight)][Image Generation][Lip Synchronization] OmniSync proposes a universal lip synchronization framework based on Diffusion Transformers…
+  [NeurIPS 2025 (Spotlight)][Image Generation][Lip Synchronization] OmniSync proposes a universal lip synchronization framework based on Diffusion Transformers, introducing three key innovations—a mask-free training paradigm, Flow Matching-based progressive noise initialization, and dynamic spatiotemporal CFG—to substantially outperform prior methods on both real and AI-generated videos, achieving an 87.78% success rate on stylized character lip sync (vs. 67.78% for the previou…
 tags:
   - "NeurIPS 2025 (Spotlight)"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Classifier-Free Guidance"
   - "AIGC Video"
 date: 2026-05-08
-content_hash: dd76daa7dd40e3ca
+content_hash: 4ef9c808f8e3d4cb
 ---
 
 # OmniSync: Towards Universal Lip Synchronization via Diffusion Transformers
@@ -152,9 +152,9 @@ User study (5-point scale, 39 participants): OmniSync leads across all five dime
 
 - [\[ICML 2026\] Krause Synchronization Transformers](../../ICML2026/image_generation/krause_synchronization_transformers.md)
 - [\[NeurIPS 2025\] Scaling Diffusion Transformers Efficiently via μP](scaling_diffusion_transformers_efficiently_via_μp.md)
+- [\[CVPR 2025\] SyncSDE: A Probabilistic Framework for Diffusion Synchronization](../../CVPR2025/image_generation/syncsde_a_probabilistic_framework_for_diffusion_synchronization.md)
 - [\[NeurIPS 2025\] Unleashing Diffusion Transformers for Visual Correspondence by Modulating Massive Activations](unleashing_diffusion_transformers_for_visual_correspondence_by_modulating_massiv.md)
 - [\[ICCV 2025\] OminiControl: Minimal and Universal Control for Diffusion Transformer](../../ICCV2025/image_generation/ominicontrol_minimal_and_universal_control_for_diffusion_transformer.md)
-- [\[NeurIPS 2025\] Entropy Rectifying Guidance for Diffusion and Flow Models](entropy_rectifying_guidance_for_diffusion_and_flow_models.md)
 
 </div>
 

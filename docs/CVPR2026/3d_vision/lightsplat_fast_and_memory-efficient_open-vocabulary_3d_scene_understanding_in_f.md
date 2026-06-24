@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LightSplat: Fast and Memory-Efficient Open-Vocabulary 3D Scene Understanding in Five Seconds
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] LightSplat proposes a fast and memory-efficient training-free framework that achieves open-vocabulary 3D scene understanding with a 50-400x speedup and 64x reduced memory compared to existing SOTA. It achieves this by assigning compact 2-byte semantic indices to 3D Gaussians (instead of high-dimensional CLIP features),
+  [CVPR 2026][3D Vision][Open-Vocabulary 3D Scene Understanding] LightSplat proposes a fast and memory-efficient training-free framework that achieves open-vocabulary 3D scene understanding with a 50-400x speedup and 64x reduced memory compared to existing SOTA. It achieves this by assigning compact 2-byte semantic indices to 3D Gaussians (instead of high-dimensional CLIP features), coupled with a lightweight index-feature mapping and single-step 3D clustering.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Open-Vocabulary 3D Scene Understanding"
+  - "3D Gaussian Splatting"
+  - "Semantic Index Injection"
+  - "Training-free Framework"
+  - "Clustering Inference"
 date: 2026-05-08
-content_hash: 4f17f1fed593d2eb
+content_hash: 2c5fe1c0d168e632
 ---
+
 # LightSplat: Fast and Memory-Efficient Open-Vocabulary 3D Scene Understanding in Five Seconds
 
 **Conference**: CVPR 2026  
@@ -151,10 +157,10 @@ Ours is a training-free method requiring no optimization. All steps (index injec
 ## Related Papers
 
 - [\[CVPR 2026\] EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding](embodiedsplat_online_feed-forward_semantic_3dgs_for_open-vocabulary_3d_scene_und.md)
-- [\[CVPR 2026\] JOPP-3D: Joint Open Vocabulary Semantic Segmentation on Point Clouds and Panoramas](jopp3d_joint_open_vocabulary_semantic_segmentation.md)
-- [\[CVPR 2026\] Consistent Instance Field for Dynamic Scene Understanding](consistent_instance_field_for_dynamic_scene_understanding.md)
-- [\[CVPR 2026\] Curvature-Aware Captioning: Leveraging Geodesic Attention for 3D Scene Understanding](curvature-aware_captioning_leveraging_geodesic_attention_for_3d_scene_understand.md)
-- [\[CVPR 2026\] 3D-Aware Multi-Task Learning with Cross-View Correlations for Dense Scene Understanding](3d-aware_multi-task_learning_with_cross-view_correlations_for_dense_scene_unders.md)
+- [\[CVPR 2026\] ExtrinSplat: Decoupling Geometry and Semantics for Open-Vocabulary Understanding in 3D Gaussian Splatting](extrinsplat_decoupling_geometry_and_semantics_for_open-vocabulary_understanding_.md)
+- [\[CVPR 2026\] OpenVoxel: Training-Free Grouping and Captioning Voxels for Open-Vocabulary 3D Scene Understanding](openvoxel_training-free_grouping_and_captioning_voxels_for_open-vocabulary_3d_sc.md)
+- [\[CVPR 2026\] OnlinePG: Online Open-Vocabulary Panoptic Mapping with 3D Gaussian Splatting](onlinepg_online_open-vocabulary_panoptic_mapping_with_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] Fast SceneScript: Fast and Accurate Language-Based 3D Scene Understanding via Multi-Token Prediction](fast_scenescript_fast_and_accurate_language-based_3d_scene_understanding_via_mul.md)
 
 </div>
 

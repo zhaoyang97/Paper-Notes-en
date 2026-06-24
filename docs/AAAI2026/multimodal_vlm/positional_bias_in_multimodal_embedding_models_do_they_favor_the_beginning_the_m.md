@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Positional Bias in Multimodal Embedding Models: Do They Favor the Beginning, the Middle, or the End?
 description: >-
-  [AAAI 2026][Information Retrieval & RAG][Positional Bias] This paper presents the first systematic study of positional bias in multimodal representation models…
+  [AAAI 2026][Multimodal VLM][Positional Bias] This paper presents the first systematic study of positional bias in multimodal representation models, finding that text encoders tend to favor the beginning of the input while image encoders exhibit preference for both the beginning and the end. Through extensive controlled experiments, the study reveals that this bias arises from the joint influence of positional encoding schemes, training objectives, context importance…
 tags:
   - "AAAI 2026"
-  - "Information Retrieval & RAG"
+  - "Multimodal VLM"
   - "Positional Bias"
   - "CLIP"
   - "Multimodal Representation Learning"
   - "Image-Text Retrieval"
   - "Attention Mechanism"
 date: 2026-05-08
-content_hash: d5067148d9609142
+content_hash: 27acf70f3ba5757a
 ---
 
 # Positional Bias in Multimodal Embedding Models: Do They Favor the Beginning, the Middle, or the End?
@@ -159,11 +159,11 @@ The study proceeds at three levels: (1) context importance analysis—identifyin
 
 ## Related Papers
 
-- [\[AAAI 2026\] Do Retrieval Augmented Language Models Know When They Don't Know?](do_retrieval_augmented_language_models_know_when_they_dont_know.md)
-- [\[AAAI 2026\] "As Eastern Powers, I Will Veto." : An Investigation of Nation-Level Bias of Large Language Models in International Relations](as_eastern_powers_i_will_veto_an_investigation_of_nation-level_bias_of_large_lan.md)
-- [\[ICML 2026\] How can embedding models bind concepts?](../../ICML2026/information_retrieval/how_can_embedding_models_bind_concepts.md)
-- [\[AAAI 2026\] PRECISE: Reducing the Bias of LLM Evaluations Using Prediction-Powered Ranking Estimation](precise_reducing_the_bias_of_llm_evaluations_using_prediction-powered_ranking_es.md)
-- [\[ICML 2026\] Graph-R1: Towards Agentic GraphRAG Framework via End-to-end Reinforcement Learning](../../ICML2026/information_retrieval/graph-r1_towards_agentic_graphrag_framework_via_end-to-end_reinforcement_learnin.md)
+- [\[AAAI 2026\] SpeakerLM: End-to-End Versatile Speaker Diarization and Recognition with Multimodal Large Language Models](speakerlm_end-to-end_versatile_speaker_diarization_and_recognition_with_multimod.md)
+- [\[AAAI 2026\] SAGE: Spuriousness-Aware Guided Prompt Exploration for Mitigating Multimodal Bias](sage_spuriousness-aware_guided_prompt_exploration_for_mitigating_multimodal_bias.md)
+- [\[ICML 2026\] Circle-RoPE: Cone-like Decoupled Rotary Positional Embedding for Vision-Language Models](../../ICML2026/multimodal_vlm/circle-rope_cone-like_decoupled_rotary_positional_embedding_for_large_vision-lan.md)
+- [\[CVPR 2026\] MarkushGrapher-2: End-to-end Multimodal Recognition of Chemical Structures](../../CVPR2026/multimodal_vlm/markushgrapher-2_end-to-end_multimodal_recognition_of_chemical_structures.md)
+- [\[ICLR 2026\] WebDS: An End-to-End Benchmark for Web-based Data Science](../../ICLR2026/multimodal_vlm/webds_an_end-to-end_benchmark_for_web-based_data_science.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Position: Deployed Reinforcement Learning should be Continual
 description: >-
-  [ICML 2026][Reinforcement Learning][train-then-fix] This is a position paper: the authors argue that any RL system that still obtains evaluative reward signals after deployment and whose environmental complexity exceeds the agent's representation/computational capacity is essentially a Continual Reinforcement Learning (CRL) problem. It advocates for abandoning the "trai
+  [ICML 2026][Reinforcement Learning][Continual RL] This is a position paper: the authors argue that any RL system that still obtains evaluative reward signals after deployment and whose environmental complexity exceeds the agent's representation/computational capacity is essentially a Continual Reinforcement Learning (CRL) problem. It advocates for abandoning the "train-then-fix" paradigm in favor of allowing agents to continuously update policies during deployment.
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - train-then-fix
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Continual RL"
+  - "Measurable Deployment"
+  - "History Process"
+  - "Non-stationarity"
+  - "Train-then-fix"
 date: 2026-05-08
-content_hash: b45228e6b5e88ca4
+content_hash: 2ddb702945f06866
 ---
+
 # Position: Deployed Reinforcement Learning should be Continual
 
 **Conference**: ICML 2026  
@@ -112,8 +117,8 @@ The paper uses a table to align three real-world deployment systems with the fou
 
 - [\[ICML 2025\] Position: Lifetime Tuning is Incompatible with Continual Reinforcement Learning](../../ICML2025/reinforcement_learning/position_lifetime_tuning_is_incompatible_with_continual_reinforcement_learning.md)
 - [\[ICML 2026\] Shapley Neuron Values for Continual Learning: Which Neurons Matter Most?](shapley_neuron_values_for_continual_learning_which_neurons_matter_most.md)
-- [\[ICML 2025\] Continual Reinforcement Learning by Planning with Online World Models](../../ICML2025/reinforcement_learning/continual_reinforcement_learning_by_planning_with_online_world_models.md)
 - [\[ICLR 2026\] Principled Fast and Meta Knowledge Learners for Continual Reinforcement Learning](../../ICLR2026/reinforcement_learning/principled_fast_and_meta_knowledge_learners_for_continual_reinforcement_learning.md)
+- [\[NeurIPS 2025\] Continual Knowledge Adaptation for Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/continual_knowledge_adaptation_for_reinforcement_learning.md)
 - [\[CVPR 2026\] Resolving the Stability-Plasticity Dilemma in Reinforcement Learning via Complementary Continual Critics](../../CVPR2026/reinforcement_learning/resolving_the_stability-plasticity_dilemma_in_reinforcement_learning_via_complem.md)
 
 </div>

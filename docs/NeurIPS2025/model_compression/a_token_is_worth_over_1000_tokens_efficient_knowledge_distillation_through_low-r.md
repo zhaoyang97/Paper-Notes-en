@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] A Token is Worth over 1,000 Tokens: Efficient Knowledge Distillation through Low-Rank Clone
 description: >-
-  [NeurIPS 2025][Model Compression][knowledge distillation] This paper proposes Low-Rank Clone (LRC), which compresses teacher weights into student weights via learnable low-rank projection matrices (soft pruning)…
+  [NeurIPS 2025 Spotlight][Model Compression][knowledge distillation] This paper proposes Low-Rank Clone (LRC), which compresses teacher weights into student weights via learnable low-rank projection matrices (soft pruning), while aligning intermediate activations of both attention and FFN modules (activation cloning). A 1.7B model trained on only 20B tokens surpasses Qwen3-1.7B trained on 36T tokens (64.98 vs. 63.17), achieving a **1,000× improvement in training efficiency**.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Model Compression"
   - "knowledge distillation"
   - "low-rank projection"
@@ -12,7 +12,7 @@ tags:
   - "activation cloning"
   - "efficient pretraining"
 date: 2026-05-08
-content_hash: 8dddb0c57ded80d1
+content_hash: 320676a24c075fb4
 ---
 
 # A Token is Worth over 1,000 Tokens: Efficient Knowledge Distillation through Low-Rank Clone
@@ -128,10 +128,10 @@ Given a teacher model (e.g., Qwen2.5-3B-Instruct), LRC trains a set of low-rank 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Beyond Higher Rank: Token-wise Input-Output Projections for Efficient Low-Rank Adaptation](beyond_higher_rank_token-wise_input-output_projections_for_efficient_low-rank_ad.md)
+- [\[CVPR 2026\] SelecTKD: Selective Token-Weighted Knowledge Distillation for LLMs](../../CVPR2026/model_compression/selectkd_selective_token-weighted_knowledge_distillation_for_llms.md)
 - [\[NeurIPS 2025\] Accurate and Efficient Low-Rank Model Merging in Core Space](accurate_and_efficient_low-rank_model_merging_in_core_space.md)
-- [\[NeurIPS 2025\] RefLoRA: Refactored Low-Rank Adaptation for Efficient Fine-Tuning of Large Models](reflora_refactored_low-rank_adaptation_for_efficient_fine-tuning_of_large_models.md)
 - [\[ICLR 2026\] Token Distillation: Attention-Aware Input Embeddings for New Tokens](../../ICLR2026/model_compression/token_distillation_attention-aware_input_embeddings_for_new_tokens.md)
-- [\[NeurIPS 2025\] Few-Shot Knowledge Distillation of LLMs With Counterfactual Explanations](few-shot_knowledge_distillation_of_llms_with_counterfactual_explanations.md)
+- [\[ACL 2025\] Data Laundering: Artificially Boosting Benchmark Results through Knowledge Distillation](../../ACL2025/model_compression/data_laundering_artificially_boosting_benchmark_results_through_knowledge_distil.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] CMT: Mid-Training for Efficient Learning of Consistency, Mean Flow, and Flow Map Models
 description: >-
-  [ICLR 2026][Image Generation][flow map] Consistency Mid-Training (CMT) is proposed, which inserts a lightweight intermediate training stage between pre-trained diffusion models and flow map post-training. By having the model learn to map arbitrary points on ODE trajectories back to clean samples, it achieves a trajectory-aligned initialization. This signific
+  [ICLR 2026][Image Generation][flow map] Consistency Mid-Training (CMT) is proposed, which inserts a lightweight intermediate training stage between pre-trained diffusion models and flow map post-training. By having the model learn to map arbitrary points on ODE trajectories back to clean samples, it achieves a trajectory-aligned initialization. This significantly reduces training costs (by up to 98%) while reaching SOTA two-step generation quality.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - flow map
-  - consistency model
-  - mid-training
-  - few-step generation
-  - diffusion distillation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "flow map"
+  - "consistency model"
+  - "mid-training"
+  - "few-step generation"
+  - "diffusion distillation"
 date: 2026-05-08
-content_hash: 4f93cc9745163dfb
+content_hash: 3cdb4ca38f91bb08
 ---
+
 # CMT: Mid-Training for Efficient Learning of Consistency, Mean Flow, and Flow Map Models
 
 **Conference**: ICLR 2026  
@@ -154,8 +155,8 @@ When $t_j = 0$, it reduces exactly to CMT-CM, making CMT-MF a more general form 
 - [\[ICLR 2026\] Flow Map Learning via Non-Gradient Vector Flow](flow_map_learning_via_non-gradient_vector_flow.md)
 - [\[ICLR 2026\] FACM: Flow-Anchored Consistency Models](facm_flow-anchored_consistency_models.md)
 - [\[ICLR 2026\] RMFlow: Refined Mean Flow by a Noise-Injection Step for Multimodal Generation](rmflow_refined_mean_flow_by_a_noise-injection_step_for_multimodal_generation.md)
+- [\[ICLR 2026\] Generalised Flow Maps for Few-Step Generative Modelling on Riemannian Manifolds](generalised_flow_maps_for_few-step_generative_modelling_on_riemannian_manifolds.md)
 - [\[ICLR 2026\] SSCP: Flow-Based Single-Step Completion for Efficient and Expressive Policy Learning](flow-based_single-step_completion_for_efficient_and_expressive_policy_learning.md)
-- [\[ICLR 2026\] UniEdit-Flow: Unleashing Inversion and Editing in the Era of Flow Models](uniedit-flow_unleashing_inversion_and_editing_in_the_era_of_flow_models.md)
 
 </div>
 

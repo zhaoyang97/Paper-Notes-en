@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Video Unlearning via Low-Rank Refusal Vector
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This work proposes the first training-free, closed-form weight update framework for concept erasure in video diffusion models. By using only 5 pairs of safe/unsafe prompts to estimate a "refusal vector" and applying contrastive low-rank decomposition to decouple target concepts from unrelated semantics, the authors ana
+  [ICLR 2026][AI Safety][Video Unlearning] This work proposes the first training-free, closed-form weight update framework for concept erasure in video diffusion models. By using only 5 pairs of safe/unsafe prompts to estimate a "refusal vector" and applying contrastive low-rank decomposition to decouple target concepts from unrelated semantics, the authors analytically incorporate corrections into model weights. This approach reduces unsafe generation rates in OPEN-SORA and ZE…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Video Unlearning"
+  - "Refusal Vector"
+  - "Contrastive Low-Rank Decomposition"
+  - "Closed-form Weight Update"
+  - "Safe Generation"
 date: 2026-05-08
-content_hash: 8c3ac2c005949559
+content_hash: 8d1e5f3d663123e5
 ---
+
 # Video Unlearning via Low-Rank Refusal Vector
 
 **Conference**: ICLR 2026  

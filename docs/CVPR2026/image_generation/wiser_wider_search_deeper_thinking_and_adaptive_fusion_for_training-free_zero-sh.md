@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] WISER: Wider Search, Deeper Thinking, and Adaptive Fusion for Training-Free Zero-Shot Composed Image Retrieval
 description: >-
-  [CVPR 2026][Image Generation][CLIP] Ours proposes WISER, a training-free Zero-Shot Composed Image Retrieval (ZS-CIR) framework. It unifies T2I and I2I dual-path retrieval through a "Retrieval–Verification–Refinement" iterative loop. By utilizing a VLM verifier to explicitly model intent-awareness and uncertainty-awareness, WISER achieves adaptive fusion
+  [CVPR 2026][Image Generation][Composed Image Retrieval] Ours proposes WISER, a training-free Zero-Shot Composed Image Retrieval (ZS-CIR) framework. It unifies T2I and I2I dual-path retrieval through a "Retrieval–Verification–Refinement" iterative loop. By utilizing a VLM verifier to explicitly model intent-awareness and uncertainty-awareness, WISER achieves adaptive fusion and structured self-reflective refinement. It delivers relative improvements of 45% in CIRCO mAP@5 and 5…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - CLIP
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Composed Image Retrieval"
+  - "Zero-Shot"
+  - "T2I+I2I Fusion"
+  - "Self-Reflective Refinement"
+  - "VLM Verifier"
+  - "CLIP"
 date: 2026-05-08
-content_hash: d49cdd615a01deaa
+content_hash: 50b52d9e5977ed6a
 ---
+
 # WISER: Wider Search, Deeper Thinking, and Adaptive Fusion for Training-Free Zero-Shot Composed Image Retrieval
 
 **Conference**: CVPR 2026  

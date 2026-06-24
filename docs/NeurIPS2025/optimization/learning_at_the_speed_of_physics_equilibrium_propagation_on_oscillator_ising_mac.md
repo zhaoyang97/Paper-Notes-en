@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning at the Speed of Physics: Equilibrium Propagation on Oscillator Ising Machines
 description: >-
-  [NeurIPS 2025][Optimization][equilibrium propagation] This work presents the first complete mapping of Equilibrium Propagation (EP) onto Oscillator Ising Machine (OIM) hardware…
+  [NeurIPS 2025][Optimization][equilibrium propagation] This work presents the first complete mapping of Equilibrium Propagation (EP) onto Oscillator Ising Machine (OIM) hardware, leveraging GHz-scale physical dynamics to enable backpropagation-free local learning. The approach achieves 97.2%/88.0% accuracy on MNIST/Fashion-MNIST and demonstrates robustness under parameter quantization and noise.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "energy-based model"
   - "local learning rule"
 date: 2026-05-08
-content_hash: dc0d58282e63a362
+content_hash: 453339c6cfca77ae
 ---
 
 # Learning at the Speed of Physics: Equilibrium Propagation on Oscillator Ising Machines
@@ -155,9 +155,9 @@ The paradigm of "physical dynamics as ML optimization" is broadly applicable to 
 
 - [\[NeurIPS 2025\] Multiplayer Federated Learning: Reaching Equilibrium with Less Communication](multiplayer_federated_learning_reaching_equilibrium_with_less_communication.md)
 - [\[ICML 2026\] Interpretability and Generalization Bounds for Learning Spatial Physics](../../ICML2026/optimization/interpretability_and_generalization_bounds_for_learning_spatial_physics.md)
+- [\[ICML 2025\] SDP-CROWN: Efficient Bound Propagation for Neural Network Verification with Tightness of Semidefinite Programming](../../ICML2025/optimization/sdp-crown_efficient_bound_propagation_for_neural_network_verification_with_tight.md)
 - [\[NeurIPS 2025\] Learning Reconfigurable Representations for Multimodal Federated Learning with Missing Data](learning_reconfigurable_representations_for_multimodal_federated_learning_with_m.md)
 - [\[NeurIPS 2025\] Wasserstein Transfer Learning](wasserstein_transfer_learning.md)
-- [\[NeurIPS 2025\] Learning from Interval Targets](learning_from_interval_targets.md)
 
 </div>
 

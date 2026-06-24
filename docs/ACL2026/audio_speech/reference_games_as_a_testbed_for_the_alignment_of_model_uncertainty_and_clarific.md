@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Reference Games as a Testbed for the Alignment of Model Uncertainty and Clarification Requests
 description: >-
-  [ACL 2026][Audio & Speech][reference game] This paper utilizes color-grid reference games to examine whether VLMs can translate internal uncertainty into appropriate clarification requests, finding that even in controlled tasks, Qwen2.5-VL and GPT-5-mini still exhibit interaction gaps such as overconfidence, unstable clarification behavior, and low-quality clar
+  [ACL2026][Audio & Speech][reference game] This paper utilizes color-grid reference games to examine whether VLMs can translate internal uncertainty into appropriate clarification requests, finding that even in controlled tasks, Qwen2.5-VL and GPT-5-mini still exhibit interaction gaps such as overconfidence, unstable clarification behavior, and low-quality clarification questions.
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - reference game
-  - clarification request
-  - pragmatic competence
-  - uncertainty alignment
+  - "ACL2026"
+  - "Audio & Speech"
+  - "reference game"
+  - "clarification request"
+  - "VLM calibration"
+  - "pragmatic competence"
+  - "uncertainty alignment"
 date: 2026-05-08
-content_hash: bf08e035f882cc2f
+content_hash: d1c3b7c284303a42
 ---
+
 # Reference Games as a Testbed for the Alignment of Model Uncertainty and Clarification Requests
 
 **Conference**: ACL2026  
@@ -132,9 +134,9 @@ This work does not train models and is an evaluation study. The key "strategy" i
 
 ## Related Papers
 
+- [\[ACL 2026\] RespiraMFM: A Multimodal Foundation Model for Respiratory Disease Recognition via Contrastive Audio-Language Alignment](respiramfm_a_multimodal_foundation_model_with_contrastive_audio-language_alignme.md)
 - [\[AAAI 2026\] A Text-Routed Sparse Mixture-of-Experts Model with Explanation and Temporal Alignment for Multi-Modal Sentiment Analysis](../../AAAI2026/audio_speech/text-routed_sparse_mixture-of-experts_model_with_explanation_and_temporal_alignm.md)
 - [\[ICLR 2026\] AC-Foley: Reference-Audio-Guided Video-to-Audio Synthesis with Acoustic Transfer](../../ICLR2026/audio_speech/ac-foley_reference-audio-guided_video-to-audio_synthesis_with_acoustic_transfer.md)
-- [\[NeurIPS 2025\] MGAudio: Model-Guided Dual-Role Alignment for High-Fidelity Open-Domain Video-to-Audio Generation](../../NeurIPS2025/audio_speech/model-guided_dual-role_alignment_for_high-fidelity_open-domain_video-to-audio_ge.md)
 - [\[CVPR 2025\] UWAV: Uncertainty-Weighted Weakly-Supervised Audio-Visual Video Parsing](../../CVPR2025/audio_speech/uwav_uncertainty-weighted_weakly-supervised_audio-visual_video_parsing.md)
 - [\[ACL 2026\] ImmersiveTTS: Environment-Aware Text-to-Speech with Multimodal Diffusion Transformer and Domain-Specific Representation Alignment](immersivetts_environment-aware_text-to-speech_with_multimodal_diffusion_transfor.md)
 

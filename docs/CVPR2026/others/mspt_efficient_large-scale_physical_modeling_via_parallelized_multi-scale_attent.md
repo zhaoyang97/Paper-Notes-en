@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] MSPT: Efficient Large-Scale Physical Modeling via Parallelized Multi-Scale Attention
 description: >-
-  [CVPR 2026][Others][Paper Note] MSPT partitions million-scale point clouds into ball tree patches, performing local self-attention within each patch while pooling each patch into a small number of "supernodes" for cross-patch global communication. Both operations are integrated into the **same** attention operator for parallel computation, enabling s
+  [CVPR 2026][Neural Operator] MSPT partitions million-scale point clouds into ball tree patches, performing local self-attention within each patch while pooling each patch into a small number of "supernodes" for cross-patch global communication. Both operations are integrated into the **same** attention operator for parallel computation, enabling solvers for industrial-grade PDE/aerodynamics problems on a single GPU with near-linear complexity…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Neural Operator"
+  - "Multi-Scale Attention"
+  - "Ball Tree Patching"
+  - "Supernode Pooling"
+  - "CFD Surrogate Model"
 date: 2026-05-08
-content_hash: 8d36c78c8a0d1960
+content_hash: 318014fd043e0dee
 ---
+
 # MSPT: Efficient Large-Scale Physical Modeling via Parallelized Multi-Scale Attention
 
 **Conference**: CVPR 2026  
@@ -136,11 +141,11 @@ Impact of patch count $K$ on ShapeNet-Car test loss ($\times10^{-2}$):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Efficient Unrolled Networks for Large-Scale 3D Inverse Problems](efficient_unrolled_networks_for_large-scale_3d_inverse_problems.md)
 - [\[CVPR 2026\] Large-scale Robust Enhanced Ensemble Clustering via Outlier Decoupling](large-scale_robust_enhanced_ensemble_clustering_via_outlier_decoupling.md)
+- [\[CVPR 2026\] ImmerIris: A Large-Scale Dataset and Benchmark for Off-Axis and Unconstrained Iris Recognition in Immersive Applications](immeriris_a_large-scale_dataset_and_benchmark_for_off-axis_and_unconstrained_iri.md)
 - [\[ICML 2026\] AMDP: Asynchronous Multi-Directional Pipeline Parallelism for Large-Scale Models Training](../../ICML2026/others/amdp_asynchronous_multi-directional_pipeline_parallelism_for_large-scale_models_.md)
 - [\[ICML 2026\] Torus Graphs for Large-Scale Neural Phase Analysis](../../ICML2026/others/torus_graphs_for_large_scale_neural_phase_analysis.md)
-- [\[ACL 2025\] Code-Switching and Syntax: A Large-Scale Experiment](../../ACL2025/others/code-switching_and_syntax_a_large-scale_experiment.md)
+- [\[ICLR 2026\] SmellNet: A Large-scale Dataset for Real-world Smell Recognition](../../ICLR2026/others/smellnet_a_large-scale_dataset_for_real-world_smell_recognition.md)
 
 </div>
 

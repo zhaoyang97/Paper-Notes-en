@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Tokenisation over Bounded Alphabets is Hard
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] While finding an "optimal tokeniser" was previously proven to be NP-complete, those proofs assumed an infinite alphabet (unrealistic). This paper restricts tokenisation to **finite, even binary or unary alphabets**, proving it remains NP-complete and APX-hard (precluding polynomial-time approximation schemes unless P=N
+  [ICLR 2026][Learning Theory][Tokenisation] While finding an "optimal tokeniser" was previously proven to be NP-complete, those proofs assumed an infinite alphabet (unrealistic). This paper restricts tokenisation to **finite, even binary or unary alphabets**, proving it remains NP-complete and APX-hard (precluding polynomial-time approximation schemes unless P=NP). This establishes the theoretical necessity of heuristic algorithms like BPE and UnigramLM.
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Computational Complexity"
+  - "Tokenisation"
+  - "NP-complete"
+  - "APX-hard"
+  - "Inapproximability"
 date: 2026-05-08
-content_hash: c25a4a5ee55c6798
+content_hash: 3b5e6c1e5e135128
 ---
+
 # Tokenisation over Bounded Alphabets is Hard
 
 **Conference**: ICLR 2026  
@@ -123,13 +129,13 @@ While the standard unary bottom-up version remains an open problem, the authors 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] How hard is learning to cut? Trade-offs and sample complexity](how_hard_is_learning_to_cut_trade-offs_and_sample_complexity.md)
-- [\[ICLR 2026\] Learning the Inverse Temperature of Ising Models under Hard Constraints using One Sample](learning_the_inverse_temperature_of_ising_models_under_hard_constraints_using_on.md)
 - [\[ICLR 2026\] Learning Shrinks the Hard Tail: Training-Dependent Inference Scaling in a Solvable Linear Model](learning_shrinks_the_hard_tail_trainingdependent_inference_scaling_in_a_solvable.md)
+- [\[ICLR 2026\] Learning the Inverse Temperature of Ising Models under Hard Constraints using One Sample](learning_the_inverse_temperature_of_ising_models_under_hard_constraints_using_on.md)
 - [\[ICLR 2026\] Quantum Machine Learning Advantages Beyond Hardness of Evaluation](quantum_machine_learning_advantages_beyond_hardness_of_evaluation.md)
 - [\[ICLR 2026\] Poly-attention: a general scheme for higher-order self-attention](poly-attention_a_general_scheme_for_higher-order_self-attention.md)
 

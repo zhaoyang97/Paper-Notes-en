@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RECODE-H: A Benchmark for Research Code Development with Interactive Human Feedback
 description: >-
-  [ICLR 2026][Code Intelligence][LLM Agent] RECODE-H transforms "research code generation" from a one-shot task into multi-turn human-computer collaboration: it features 102 repository-level tasks from real top-tier conference papers and official repositories, equipped with unit tests and a five-level feedback hierarchy. Using ReCodeAgent (multi-turn ReAct + mem
+  [ICLR 2026][Code Intelligence][Research code generation] RECODE-H transforms "research code generation" from a one-shot task into multi-turn human-computer collaboration: it features 102 repository-level tasks from real top-tier conference papers and official repositories, equipped with unit tests and a five-level feedback hierarchy. Using ReCodeAgent (multi-turn ReAct + memory compression) as a strong baseline, the study systematically quantifies how "finer feedback leads to…
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - LLM Agent
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Research code generation"
+  - "interactive human feedback"
+  - "multi-turn code refinement"
+  - "differential testing"
+  - "LLM Agent"
 date: 2026-05-08
-content_hash: 1f36585053b1870f
+content_hash: 072f5e478a197091
 ---
+
 # RECODE-H: A Benchmark for Research Code Development with Interactive Human Feedback
 
 **Conference**: ICLR 2026  
@@ -135,10 +140,10 @@ Failures are primarily **dominated by high-level semantic issues (Type 2 + Type 
 ## Related Papers
 
 - [\[ICLR 2026\] WebGen-Agent: Enhancing Interactive Website Generation with Multi-Level Feedback and Step-Level Reinforcement Learning](webgen-agent_enhancing_interactive_website_generation_with_multi-level_feedback_.md)
+- [\[ICLR 2026\] Code Aesthetics with Agentic Reward Feedback](code_aesthetics_with_agentic_reward_feedback.md)
 - [\[ICLR 2026\] Ambig-SWE: Interactive Agents to Overcome Underspecificity in Software Engineering](ambig-swe_interactive_agents_to_overcome_underspecificity_in_software_engineerin.md)
-- [\[ICLR 2026\] SWE-RM: Execution-Free Feedback for Software Engineering Agents](swe-rm_execution-free_feedback_for_software_engineering_agents.md)
 - [\[ICLR 2026\] From Assistant to Independent Developer — Are GPTs Ready for Software Development?](from_assistant_to_independent_developer_are_gpts_ready_for_software_development.md)
-- [\[ACL 2026\] ReCode: Reinforcing Code Generation with Reasoning-Process Rewards](../../ACL2026/code_intelligence/recode_reinforcing_code_generation_with_reasoning-process_rewards.md)
+- [\[ICLR 2026\] SWE-RM: Execution-Free Feedback for Software Engineering Agents](swe-rm_execution-free_feedback_for_software_engineering_agents.md)
 
 </div>
 

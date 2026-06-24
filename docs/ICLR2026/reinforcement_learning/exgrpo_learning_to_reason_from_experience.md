@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ExGRPO: Learning to Reason from Experience
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] This paper presents the first systematic study on what types of reasoning experiences are most valuable for RLVR. It identifies that medium-difficulty problems combined with low-entropy trajectories are most effective. Based on this, the ExGRPO framework for experience management and hybrid policy optimization is propo
+  [ICLR 2026][Reinforcement Learning][Experience Replay] This paper presents the first systematic study on what types of reasoning experiences are most valuable for RLVR. It identifies that medium-difficulty problems combined with low-entropy trajectories are most effective. Based on this, the ExGRPO framework for experience management and hybrid policy optimization is proposed, achieving an average gain of +3.5 points in mathematical reasoning and +7.6 points in general reason…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Experience Replay"
+  - "RLVR"
+  - "Reasoning RL"
+  - "Experience Management"
+  - "GRPO"
 date: 2026-05-08
-content_hash: e302df524f62b173
+content_hash: a92eb7c63dce17a2
 ---
+
 # ExGRPO: Learning to Reason from Experience
 
 **Conference**: ICLR 2026  

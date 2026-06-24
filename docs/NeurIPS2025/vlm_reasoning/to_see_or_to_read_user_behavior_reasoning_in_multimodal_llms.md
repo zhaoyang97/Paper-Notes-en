@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] To See or To Read: User Behavior Reasoning in Multimodal LLMs
 description: >-
-  [NeurIPS 2025][Multimodal VLM][User behavior reasoning] This paper proposes BehaviorLens, a benchmarking framework that systematically compares three representations of user behavior history — text sequences…
+  [NeurIPS 2025][VLM Reasoning][User behavior reasoning] This paper proposes BehaviorLens, a benchmarking framework that systematically compares three representations of user behavior history — text sequences, scatter plots, and flowcharts — for next-purchase prediction with MLLMs. Visual representations are shown to improve prediction accuracy by up to 87.5% over equivalent text representations without incurring additional computational overhead.
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "User behavior reasoning"
   - "modality trade-off"
   - "sequential recommendation"
   - "visual representation"
   - "BehaviorLens"
 date: 2026-05-08
-content_hash: 30f00d61cfac44da
+content_hash: e8c25388e408d1b4
 ---
 
 # To See or To Read: User Behavior Reasoning in Multimodal LLMs
@@ -127,9 +127,9 @@ This paper involves no model training and constitutes a pure evaluation study. S
 
 - [\[NeurIPS 2025\] READ: Enhancing Compositional Reasoning in CLIP via Reconstruction and Alignment of Text Descriptions](enhancing_compositional_reasoning_in_clip_via_reconstruction.md)
 - [\[NeurIPS 2025\] SpatialThinker: Reinforcing 3D Reasoning in Multimodal LLMs via Spatial Rewards](spatialthinker_reinforcing_3d_reasoning_in_multimodal_llms_via_spatial_rewards.md)
-- [\[NeurIPS 2025\] See&Trek: Training-Free Spatial Prompting for Multimodal Large Language Model](seetrek_training-free_spatial_prompting_for_multimodal_large_language_model.md)
-- [\[NeurIPS 2025\] Vision Function Layer in Multimodal LLMs](vision_function_layer_in_multimodal_llms.md)
-- [\[ACL 2026\] Do MLLMs Capture How Interfaces Guide User Behavior? A Benchmark for Multimodal UI/UX Design Understanding](../../ACL2026/multimodal_vlm/do_mllms_capture_how_interfaces_guide_user_behavior_a_benchmark_for_multimodal_u.md)
+- [\[CVPR 2026\] See Less, See Right: Bi-directional Perceptual Shaping For Multimodal Reasoning](../../CVPR2026/vlm_reasoning/see_less_see_right_bi-directional_perceptual_shaping_for_multimodal_reasoning.md)
+- [\[NeurIPS 2025\] Can Multi-Modal LLMs Provide Live Step-by-Step Task Guidance?](can_multi-modal_llms_provide_live_step-by-step_task_guidance.md)
+- [\[CVPR 2025\] Thinking in Space: How Multimodal Large Language Models See, Remember, and Recall Spaces](../../CVPR2025/vlm_reasoning/thinking_in_space_how_multimodal_large_language_models_see_remember_and_recall_s.md)
 
 </div>
 

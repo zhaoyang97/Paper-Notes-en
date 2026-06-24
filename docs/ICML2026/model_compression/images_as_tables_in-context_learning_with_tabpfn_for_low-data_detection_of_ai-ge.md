@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Images as Tables: In-Context Learning with TabPFN for Low-Data Detection of AI-Generated Images
 description: >-
-  [ICML 2026][Model Compression][TabPFN] The authors reformulate AI-generated image detection into a three-stage pipeline: first, a frozen DINOv3 compresses each image into a 768-dimensional CLS vector; next, PCA reduces this to 500 dimensions to serve as a single row in a table; finally, TabPFN performs in-context inference. This approach transforms the need
+  [ICML 2026][Model Compression][AIGC Detection] The authors reformulate AI-generated image detection into a three-stage pipeline: first, a frozen DINOv3 compresses each image into a 768-dimensional CLS vector; next, PCA reduces this to 500 dimensions to serve as a single row in a table; finally, TabPFN performs in-context inference. This approach transforms the need to "retrain classification heads for new generators" into simply "replacing context samples in TabPFN." In low-d…
 tags:
-  - ICML 2026
-  - Model Compression
-  - TabPFN
-  - DINOv3
+  - "ICML 2026"
+  - "Model Compression"
+  - "AIGC Detection"
+  - "TabPFN"
+  - "DINOv3"
+  - "In-Context Learning"
+  - "Cross-Generator Transfer"
 date: 2026-05-08
-content_hash: 3917f8b1f2ccaae2
+content_hash: 9fb02941ea26e848
 ---
+
 # Images as Tables: In-Context Learning with TabPFN for Low-Data Detection of AI-Generated Images
 
 **Conference**: ICML 2026  
@@ -122,7 +126,7 @@ The benchmark is GenImage (ImageNet real images + eight generators including ADM
 - [\[NeurIPS 2025\] AI-Generated Video Detection via Perceptual Straightening](../../NeurIPS2025/model_compression/ai-generated_video_detection_via_perceptual_straightening.md)
 - [\[ICML 2026\] Easier to Judge Than to Find: Predicting In-Context Learning Success for Demonstration Selection](easier_to_judge_than_to_find_predicting_in-context_learning_success_for_demonstr.md)
 - [\[ICML 2026\] Energy-Structured Low-Rank Adaptation for Continual Learning](energy-structured_low-rank_adaptation_for_continual_learning.md)
-- [\[ECCV 2024\] SpaceJAM: a Lightweight and Regularization-free Method for Fast Joint Alignment of Images](../../ECCV2024/model_compression/spacejam_a_lightweight_and_regularization-free_method_for_fast_joint_alignment_o.md)
+- [\[ICML 2026\] LoRA-DA: Data-Aware Initialization for Low-Rank Adaptation via Asymptotic Analysis](lora-da_data-aware_initialization_for_low-rank_adaptation_via_asymptotic_analysi.md)
 
 </div>
 

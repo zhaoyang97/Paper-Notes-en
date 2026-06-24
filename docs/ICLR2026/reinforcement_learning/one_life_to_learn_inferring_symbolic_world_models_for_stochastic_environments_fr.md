@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] One Life to Learn: Inferring Symbolic World Models for Stochastic Environments from Unguided Exploration
 description: >-
-  [ICLR 2026][Reinforcement Learning][Crafter] This paper proposes ONELIFE, which enables an agent to run a single unguided episode in a complex, dangerous, and stochastic open world and infer the environment's transition dynamics $p(s_{t+1}\mid s_t,a_t)$ as a set of executable probabilistic "law" programs from observations alone. By utilizing a "precondition-effec
+  [ICLR 2026][Reinforcement Learning][Symbolic World Models] This paper proposes ONELIFE, which enables an agent to run a single unguided episode in a complex, dangerous, and stochastic open world and infer the environment's transition dynamics $p(s_{t+1}\mid s_t,a_t)$ as a set of executable probabilistic "law" programs from observations alone. By utilizing a "precondition-effect" structure to construct on-demand dynamic computation graphs, the method backpropagates gradients o…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Crafter
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Symbolic World Models"
+  - "Probabilistic Programs"
+  - "Single-episode Exploration"
+  - "Credit Assignment"
+  - "Crafter"
 date: 2026-05-08
-content_hash: b986ef7b8942cef9
+content_hash: 6ac37195755aff61
 ---
+
 # One Life to Learn: Inferring Symbolic World Models for Stochastic Environments from Unguided Exploration
 
 **Conference**: ICLR 2026  
@@ -136,8 +141,8 @@ Removing parameter inference drops Rank@1 by 5.7 percentage points, proving that
 - [\[ICLR 2026\] Distributional value gradients for stochastic environments](distributional_value_gradients_for_stochastic_environments.md)
 - [\[ICLR 2026\] One Model for All Tasks: Leveraging Efficient World Models in Multi-Task Planning](one_model_for_all_tasks_leveraging_efficient_world_models_in_multi-task_planning.md)
 - [\[ICLR 2026\] EGG-SR: Embedding Symbolic Equivalence into Symbolic Regression via Equality Graph](egg-sr_embedding_symbolic_equivalence_into_symbolic_regression_via_equality_grap.md)
-- [\[CVPR 2026\] DreamSAC: Learning Hamiltonian World Models via Symmetry Exploration](../../CVPR2026/reinforcement_learning/dreamsac_learning_hamiltonian_world_models_via_symmetry_exploration.md)
 - [\[ICML 2026\] Flow-Equivariant World Models: Memory for Partially Observed Dynamic Environments](../../ICML2026/reinforcement_learning/flow_equivariant_world_models_memory_for_partially_observed_dynamic_environments.md)
+- [\[CVPR 2026\] DreamSAC: Learning Hamiltonian World Models via Symmetry Exploration](../../CVPR2026/reinforcement_learning/dreamsac_learning_hamiltonian_world_models_via_symmetry_exploration.md)
 
 </div>
 

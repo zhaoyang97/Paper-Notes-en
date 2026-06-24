@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Learning What Reinforcement Learning Can't: Interleaved Online Fine-Tuning for Hardest Questions
 description: >-
-  [ICLR 2026][LLM Reasoning][RLVR] By analyzing the training dynamics of RL and SFT across different difficulty levels, this work discovers that RL excels at "getting known problems right" but fails to learn "out-of-syllabus" questions. The authors propose ReLIFT, which dynamically identifies the hardest questions where the model fails all attempts duri
+  [ICLR 2026][Reasoning][RLVR] By analyzing the training dynamics of RL and SFT across different difficulty levels, this work discovers that RL excels at "getting known problems right" but fails to learn "out-of-syllabus" questions. The authors propose ReLIFT, which dynamically identifies the hardest questions where the model fails all attempts during RL training, collects high-quality CoT solutions online, and interleaves sparse SFT steps. Using significantly less demonstratio…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - RLVR
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "RLVR"
+  - "GRPO"
+  - "Supervised Fine-Tuning"
+  - "Online Fine-Tuning"
+  - "Mathematical Reasoning"
+  - "Hard Problem Learning"
 date: 2026-05-08
-content_hash: ed4f67b8f6f0ddca
+content_hash: dd255c33b8e6172d
 ---
+
 # Learning What Reinforcement Learning Can't: Interleaved Online Fine-Tuning for Hardest Questions
 
 **Conference**: ICLR 2026  
@@ -124,15 +129,15 @@ Entropy coefficient $\alpha$ ablation: Out of $\alpha=0, 1e-5, 1e-4, 1e-3$, **$\
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] NFT: Bridging Supervised Learning and Reinforcement Learning in Math Reasoning](nft_bridging_supervised_learning_and_reinforcement_learning_in_math_reasoning.md)
+- [\[ICML 2026\] Blending Supervised and Reinforcement Fine-Tuning with Prefix Sampling](../../ICML2026/llm_reasoning/blending_supervised_and_reinforcement_fine-tuning_with_prefix_sampling.md)
 - [\[ICLR 2026\] Temperature as a Meta-Policy: Adaptive Temperature in LLM Reinforcement Learning](temperature_as_a_meta-policy_adaptive_temperature_in_llm_reinforcement_learning.md)
 - [\[ICLR 2026\] Learning to Reason over Continuous Tokens with Reinforcement Learning (HyRea)](learning_to_reason_over_continuous_tokens_with_reinforcement_learning.md)
 - [\[ICLR 2026\] Generative Adversarial Reasoner: Enhancing LLM Reasoning with Adversarial Reinforcement Learning](generative_adversarial_reasoner_enhancing_llm_reasoning_with_adversarial_reinfor.md)
-- [\[ICLR 2026\] Conditional Advantage Estimation for Reinforcement Learning in Large Reasoning Models](conditional_advantage_estimation_for_reinforcement_learning_in_large_reasoning_m.md)
 
 </div>
 

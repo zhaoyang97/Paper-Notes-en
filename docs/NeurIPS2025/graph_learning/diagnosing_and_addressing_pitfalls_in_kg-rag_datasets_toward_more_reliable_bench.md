@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Diagnosing and Addressing Pitfalls in KG-RAG Datasets: Toward More Reliable Benchmarking
 description: >-
-  [NeurIPS 2025][Graph Learning][KG-RAG] A systematic audit of 16 KGQA datasets reveals an average factual correctness of only 57% (WebQSP: 52%, MetaQA: 20%). The paper proposes KGQAGen…
+  [NeurIPS 2025][Graph Learning][KG-RAG] A systematic audit of 16 KGQA datasets reveals an average factual correctness of only 57% (WebQSP: 52%, MetaQA: 20%). The paper proposes KGQAGen, a framework that constructs high-quality multi-hop QA datasets via LLM-guided subgraph expansion and automatic SPARQL validation, yielding KGQAGen-10k with 96.3% accuracy. The study further demonstrates that the primary bottleneck in KG-RAG lies in retrieval rather than reasoning.
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "SPARQL Validation"
   - "Multi-hop Reasoning"
 date: 2026-05-08
-content_hash: daaf427ae85a189e
+content_hash: 1cfba3b02125dfbe
 ---
 
 # Diagnosing and Addressing Pitfalls in KG-RAG Datasets: Toward More Reliable Benchmarking
@@ -129,11 +129,11 @@ Three categories of question quality issues are identified: ambiguous wording (e
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] MedMKG: Benchmarking Medical Knowledge Exploitation with Multimodal Knowledge Graph](medmkg_benchmarking_medical_knowledge_exploitation_with_multimodal_knowledge_gra.md)
-- [\[NeurIPS 2025\] S'MoRE: Structural Mixture of Residual Experts for Parameter-Efficient LLM Fine-tuning](smore_structural_mixture_of_residual_experts_for_parameter-efficient_llm_fine-tu.md)
 - [\[NeurIPS 2025\] GFM-RAG: Graph Foundation Model for Retrieval Augmented Generation](gfm-rag_graph_foundation_model_for_retrieval_augmented_generation.md)
+- [\[NeurIPS 2025\] MedMKG: Benchmarking Medical Knowledge Exploitation with Multimodal Knowledge Graph](medmkg_benchmarking_medical_knowledge_exploitation_with_multimodal_knowledge_gra.md)
 - [\[NeurIPS 2025\] When No Paths Lead to Rome: Benchmarking Systematic Neural Relational Reasoning](when_no_paths_lead_to_rome_benchmarking_systematic_neural_relational_reasoning.md)
-- [\[NeurIPS 2025\] ReMindRAG: Low-Cost LLM-Guided Knowledge Graph Traversal for Efficient RAG](remindrag_low-cost_llm-guided_knowledge_graph_traversal_for_efficient_rag.md)
+- [\[CVPR 2025\] Hypergraph Vision Transformers: Images are More than Nodes, More than Edges](../../CVPR2025/graph_learning/hypergraph_vision_transformers_images_are_more_than_nodes_more_than_edges.md)
+- [\[NeurIPS 2025\] S'MoRE: Structural Mixture of Residual Experts for Parameter-Efficient LLM Fine-tuning](smore_structural_mixture_of_residual_experts_for_parameter-efficient_llm_fine-tu.md)
 
 </div>
 

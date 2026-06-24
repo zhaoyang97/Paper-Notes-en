@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Elastic Optimal Transport: Theory, Application, and Empirical Evaluation
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper proposes Elastic Optimal Transport (ELOT), which replaces the equality constraints of classical OT with "marginal inequality constraints + mixed-sign cost matrices." This allows the transport mass to be adaptively determined by the geometric structure of the problem itself, significantly outperforming POT/UO
+  [ICLR 2026][Optimization][Elastic Optimal Transport] This paper proposes Elastic Optimal Transport (ELOT), which replaces the equality constraints of classical OT with "marginal inequality constraints + mixed-sign cost matrices." This allows the transport mass to be adaptively determined by the geometric structure of the problem itself, significantly outperforming POT/UOT series methods on unsupervised domain adaptation and partial domain adaptation benchmarks.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Elastic Optimal Transport"
+  - "Adaptive Mass Transport"
+  - "Mixed-sign Cost Matrix"
+  - "Unsupervised Domain Adaptation"
+  - "Partial Domain Adaptation"
 date: 2026-05-08
-content_hash: 8dfe4189aff38258
+content_hash: 1aba53001c0b0461
 ---
+
 # Elastic Optimal Transport: Theory, Application, and Empirical Evaluation
 
 **Conference**: ICLR 2026  
@@ -152,10 +158,10 @@ Compared to JUMBOT (UOT) and m-POT (POT), ELOT maintains a similar cost structur
 ## Related Papers
 
 - [\[ICLR 2026\] HOTA: Hamiltonian Framework for Optimal Transport Advection](hota_hamiltonian_framework_for_optimal_transport_advection.md)
+- [\[ICLR 2026\] The Polar Express: Optimal Matrix Sign Methods and their Application to the Muon Algorithm](the_polar_express_optimal_matrix_sign_methods_and_their_application_to_the_muon_.md)
+- [\[ICLR 2026\] Hyperparameter Trajectory Inference with Conditional Lagrangian Optimal Transport](hyperparameter_trajectory_inference_with_conditional_lagrangian_optimal_transpor.md)
 - [\[ICLR 2026\] Neural Optimal Transport Meets Multivariate Conformal Prediction](neural_optimal_transport_meets_multivariate_conformal_prediction.md)
 - [\[ICLR 2026\] Neural Hamilton–Jacobi Characteristic Flows for Optimal Transport](neural_hamilton--jacobi_characteristic_flows_for_optimal_transport.md)
-- [\[ICLR 2026\] A Memory-Efficient Hierarchical Algorithm for Large-scale Optimal Transport Problems](a_memory-efficient_hierarchical_algorithm_for_large-scale_optimal_transport_prob.md)
-- [\[ICLR 2026\] A Scalable Constant-Factor Approximation Algorithm for $W_p$ Optimal Transport](a_scalable_constant-factor_approximation_algorithm_for_w_p_optimal_transport.md)
 
 </div>
 

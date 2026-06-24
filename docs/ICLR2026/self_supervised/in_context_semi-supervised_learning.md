@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] In Context Semi-Supervised Learning
 description: >-
-  [ICLR 2026][Self-Supervised Learning][in-context learning] This paper introduces the In-Context Semi-Supervised Learning (IC-SSL) problem and constructs a two-stage Transformer. It first learns geometric spectral representations from a large number of unlabeled samples within the same context, then executes categorical ICL with a few labels during forward propagation, signific
+  [ICLR2026][Self-Supervised Learning][Semi-supervised learning] This paper introduces the In-Context Semi-Supervised Learning (IC-SSL) problem and constructs a two-stage Transformer. It first learns geometric spectral representations from a large number of unlabeled samples within the same context, then executes categorical ICL with a few labels during forward propagation, significantly improving classification accuracy and cross-geometric generalization in low-label scenarios…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - in-context learning
-  - Transformer
-  - Laplacian Eigenmaps
+  - "ICLR2026"
+  - "Self-Supervised Learning"
+  - "Semi-supervised learning"
+  - "in-context learning"
+  - "Transformer"
+  - "Laplacian Eigenmaps"
+  - "spectral representation learning"
 date: 2026-05-08
-content_hash: 114bc4187b74dfdd
+content_hash: f54c77ce475aa81f
 ---
+
 # In Context Semi-Supervised Learning
 
 **Conference**: ICLR2026  
@@ -141,12 +144,13 @@ Ablations on the Laplacian predictor and PE refinement (5-factor product manifol
 - Value: ⭐⭐⭐⭐⭐ (Provides a reusable modeling approach for few-label episode classification).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] FedOpenMatch: Towards Semi-Supervised Federated Learning in Open-Set Environments](fedopenmatch_towards_semi-supervised_federated_learning_in_open-set_environments.md)
 - [\[ICLR 2026\] CoLA: Co-Calibrated Logit Adjustment for Long-Tailed Semi-Supervised Learning](cola_co-calibrated_logit_adjustment_for_long-tailed_semi-supervised_learning.md)
+- [\[ICLR 2026\] FedOpenMatch: Towards Semi-Supervised Federated Learning in Open-Set Environments](fedopenmatch_towards_semi-supervised_federated_learning_in_open-set_environments.md)
 - [\[AAAI 2026\] Explanation-Preserving Augmentation for Semi-Supervised Graph Representation Learning](../../AAAI2026/self_supervised/explanation-preserving_augmentation_for_semi-supervised_graph_representation_lea.md)
 - [\[ICLR 2026\] Learning Dynamics of Logits Debiasing for Long-Tailed Semi-Supervised Learning](learning_dynamics_of_logits_debiasing_for_long-tailed_semi-supervised_learning.md)
 - [\[ICLR 2026\] SCAD: Super-Class-Aware Debiasing for Long-Tailed Semi-Supervised Learning](scad_super-class-aware_debiasing_for_long-tailed_semi-supervised_learning.md)

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Score2Instruct: Scaling Up Video Quality-Centric Instructions via Automated Dimension Scoring
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Score2Instruct proposes SIG, an automated video quality instruction generation pipeline that requires no human annotation or closed-source APIs. By automatically evaluating 14 quality dimensions and aggregating them into comprehensive quality reasoning text via hierarchical CoT, the authors construct the S2I dataset co
+  [CVPR 2026][Image Generation][Video Quality Assessment] Score2Instruct proposes SIG, an automated video quality instruction generation pipeline that requires no human annotation or closed-source APIs. By automatically evaluating 14 quality dimensions and aggregating them into comprehensive quality reasoning text via hierarchical CoT, the authors construct the S2I dataset containing 320K+ instructions. Coupled with a two-stage progressive fine-tuning strategy…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Video Quality Assessment"
+  - "Instruction Tuning"
+  - "Automated Scoring"
+  - "Quality Reasoning"
+  - "Large Multimodal Models"
 date: 2026-05-08
-content_hash: c648ba38fcfb46b6
+content_hash: 9d40142bc0d6ac44
 ---
+
 # Score2Instruct: Scaling Up Video Quality-Centric Instructions via Automated Dimension Scoring
 
 **Conference**: CVPR 2026  
@@ -121,15 +127,15 @@ Two-stage progressive fine-tuning is employed: **Stage I Pre-training**—freezi
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] CREval: An Automated Interpretable Evaluation for Creative Image Manipulation under Complex Instructions](creval_an_automated_interpretable_evaluation_for_creative_image_manipulation_und.md)
 - [\[CVPR 2026\] Preserving Source Video Realism: High-Fidelity Face Swapping for Cinematic Quality](preserving_source_video_realism_high-fidelity_face_swapping_for_cinematic_qualit.md)
 - [\[CVPR 2026\] EffectErase: Joint Video Object Removal and Insertion for High-Quality Effect Erasing](effecterase_joint_video_object_removal_and_insertion_for_high-quality_effect_era.md)
-- [\[ICCV 2025\] Video Color Grading via Look-Up Table Generation](../../ICCV2025/image_generation/video_color_grading_via_look-up_table_generation.md)
-- [\[CVPR 2026\] PSDesigner: Automated Graphic Design with a Human-Like Creative Workflow](psdesigner_automated_graphic_design_with_a_human-like_creative_workflow.md)
+- [\[CVPR 2026\] STCDiT: Spatio-Temporally Consistent Diffusion Transformer for High-Quality Video Super-Resolution](stcdit_spatio-temporally_consistent_diffusion_transformer_for_high-quality_video.md)
+- [\[ICLR 2026\] Scaling Group Inference for Diverse and High-Quality Generation](../../ICLR2026/image_generation/scaling_group_inference_for_diverse_and_high-quality_generation.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Trajectory-Level Attribution: Graph-Based Credit Assignment for Agentic Reinforcement Learning
 description: >-
-  [ICML 2026][LLM Evaluation][Paper Note] Ours proposes GraphGPO, which aggregates all rollout trajectories into a unified state transition graph. By leveraging global shortest path information on the graph to calculate distance-based advantages for each step, it achieves finer-grained credit assignment than trajectory-level attribution, significantly outperfo
+  [ICML 2026][LLM Evaluation][Credit Assignment] Ours proposes GraphGPO, which aggregates all rollout trajectories into a unified state transition graph. By leveraging global shortest path information on the graph to calculate distance-based advantages for each step, it achieves finer-grained credit assignment than trajectory-level attribution, significantly outperforming GRPO and GiGPO on ALFWorld, WebShop, and Sokoban.
 tags:
-  - ICML 2026
-  - LLM Evaluation
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "Credit Assignment"
+  - "Graph-Structured Policy Optimization"
+  - "Multi-turn Agent Tasks"
+  - "State Transition Graph"
+  - "Critic-free RL"
 date: 2026-05-08
-content_hash: cb094168f9e348cb
+content_hash: bfd996d2bb772afc
 ---
+
 # Beyond Trajectory-Level Attribution: Graph-Based Credit Assignment for Agentic Reinforcement Learning
 
 **Conference**: ICML 2026  

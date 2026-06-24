@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] iTAG: Inverse Design for Natural Text Generation with Accurate Causal Graph Annotations
 description: >-
-  [ACL 2026][Causal Inference][Paper Note] The iTAG framework is proposed, which utilizes a three-stage inverse design pipeline (parameterized causal graph construction → CoT-based concept assignment → structure-preserving text generation) to generate data with both extremely high causal graph annotation accuracy and text naturalness. This serves as a practical
+  [ACL 2026][Causal Inference][Causal graph annotation] The iTAG framework is proposed, which utilizes a three-stage inverse design pipeline (parameterized causal graph construction → CoT-based concept assignment → structure-preserving text generation) to generate data with both extremely high causal graph annotation accuracy and text naturalness. This serves as a practical substitute for real annotated data in benchmarking text causal discovery algorithms.
 tags:
-  - ACL 2026
-  - Causal Inference
+  - "ACL 2026"
+  - "Causal Inference"
+  - "Causal graph annotation"
+  - "inverse design"
+  - "text generation"
+  - "benchmark data"
+  - "CoT reasoning"
 date: 2026-05-08
-content_hash: 89419e3569154cc2
+content_hash: fa140839f64ae354
 ---
+
 # iTAG: Inverse Design for Natural Text Generation with Accurate Causal Graph Annotations
 
 **Conference**: ACL 2026  
@@ -126,9 +132,9 @@ Annotation Accuracy (Experiment 1, n=3-10):
 
 - [\[ICML 2025\] Isolated Causal Effects of Natural Language](../../ICML2025/causal_inference/isolated_causal_effects_of_natural_language.md)
 - [\[ACL 2026\] Parallel Universes, Parallel Languages: A Comprehensive Study on LLM-based Multilingual Counterfactual Example Generation](parallel_universes_parallel_languages_a_comprehensive_study_on_llm-based_multili.md)
+- [\[ICLR 2026\] Query-Specific Causal Graph Pruning under Tiered Knowledge](../../ICLR2026/causal_inference/query-specific_causal_graph_pruning_under_tiered_knowledge.md)
 - [\[CVPR 2026\] CGU-Bayes: Causal Graph Uncertainty-Guided Bayesian Inference for Domain Generalization](../../CVPR2026/causal_inference/cgu-bayes_causal_graph_uncertainty-guided_bayesian_inference_for_domain_generali.md)
 - [\[ACL 2025\] Causal Graph based Event Reasoning using Semantic Relation Experts](../../ACL2025/causal_inference/causal_graph_based_event_reasoning_using_semantic_relation_experts.md)
-- [\[ACL 2025\] CausalRAG: Integrating Causal Graphs into Retrieval-Augmented Generation](../../ACL2025/causal_inference/causalrag_integrating_causal_graphs_into_retrieval-augmented_generation.md)
 
 </div>
 

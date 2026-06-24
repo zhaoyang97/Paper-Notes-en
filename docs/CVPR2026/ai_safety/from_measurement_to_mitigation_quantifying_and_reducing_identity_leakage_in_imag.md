@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Measurement to Mitigation: Quantifying and Reducing Identity Leakage in Image Representation Encoders with Linear Subspace Removal
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] This work systematically quantifies identity leakage in frozen vision encoders like CLIP / DINOv2/v3 / SSCD on facial data from an attacker's perspective (open-set low-FAR verification + template inversion + face-background attribution). It proposes ISP, a one-time closed-form projection that linearly removes the ident
+  [CVPR 2026][AI Safety][Identity Leakage] This work systematically quantifies identity leakage in frozen vision encoders like CLIP / DINOv2/v3 / SSCD on facial data from an attacker's perspective (open-set low-FAR verification + template inversion + face-background attribution). It proposes ISP, a one-time closed-form projection that linearly removes the identity subspace from embeddings, reducing linear probes to near-random performance with almost no loss in retrieval or cla…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Identity Leakage"
+  - "Face Privacy"
+  - "Representation Encoder"
+  - "Subspace Removal"
+  - "Open-Set Verification"
 date: 2026-05-08
-content_hash: 22ea4ed30fd25176
+content_hash: eba295ede2162e84
 ---
+
 # From Measurement to Mitigation: Quantifying and Reducing Identity Leakage in Image Representation Encoders with Linear Subspace Removal
 
 **Conference**: CVPR 2026  
@@ -146,9 +152,9 @@ ImageNet utility (normalized, 100 = Original baseline Top-1).
 
 - [\[CVPR 2026\] Cross-modal Representation Learning for Diffusion-generated Image Detection](cross-modal_representation_learning_for_diffusion-generated_image_detection.md)
 - [\[NeurIPS 2025\] Preserving Task-Relevant Information Under Linear Concept Removal](../../NeurIPS2025/ai_safety/preserving_task-relevant_information_under_linear_concept_removal.md)
-- [\[CVPR 2026\] No Way To Steal My Face: Proactive Defense Against Identity-Preserving Personalized Generation](no_way_to_steal_my_face_proactive_defense_against_identity-preserving_personaliz.md)
-- [\[CVPR 2026\] DSO: Direct Steering Optimization for Bias Mitigation](dso_direct_steering_optimization_for_bias_mitigation.md)
 - [\[CVPR 2026\] Bridging Privacy and Provenance: Traceable Virtual Identity Generation](bridging_privacy_and_provenance_traceable_virtual_identity_generation.md)
+- [\[CVPR 2026\] DSO: Direct Steering Optimization for Bias Mitigation](dso_direct_steering_optimization_for_bias_mitigation.md)
+- [\[CVPR 2026\] Reinforcement-Guided Synthetic Data Generation for Privacy-Sensitive Identity Recognition](reinforcement-guided_synthetic_data_generation_for_privacy-sensitive_identity_re.md)
 
 </div>
 

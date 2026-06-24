@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Private Learning with Public Feature Conditioning
 description: >-
-  [ICML 2026][AI Safety][DP-SGD] Addressing the differential privacy (DP) regression problem with public (non-sensitive) features, this paper proposes Cond-DP. It utilizes a conditioning matrix $\bm{C}=\bm{V}\Sigma^{-1}\bm{V}^T$ constructed from the public feature matrix to reshape the geometry of the embedding parameter space before DP-SGD. This ampl
+  [ICML 2026][AI Safety][Differential Privacy] Addressing the differential privacy (DP) regression problem with public (non-sensitive) features, this paper proposes Cond-DP. It utilizes a conditioning matrix $\bm{C}=\bm{V}\Sigma^{-1}\bm{V}^T$ constructed from the public feature matrix to reshape the geometry of the embedding parameter space before DP-SGD. This amplifies the signal-to-noise ratio in low-spectrum directions without additional privacy overhead…
 tags:
-  - ICML 2026
-  - AI Safety
-  - DP-SGD
+  - "ICML 2026"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "DP-SGD"
+  - "Public Features"
+  - "Conditioning"
+  - "Label DP"
+  - "Regression"
 date: 2026-05-08
-content_hash: 25e22072ae017b0f
+content_hash: 73ee11f577469c57
 ---
+
 # Private Learning with Public Feature Conditioning
 
 **Conference**: ICML 2026  
@@ -130,11 +136,11 @@ The core quantitative theoretical conclusion is Lemma 4.13: under label DP and z
 
 ## Related Papers
 
-- [\[CVPR 2026\] Domain-Skewed Federated Learning with Feature Decoupling and Calibration](../../CVPR2026/ai_safety/domain-skewed_federated_learning_with_feature_decoupling_and_calibration.md)
 - [\[ICML 2026\] LAPRAS: Learning-Augmented PRivate Answering for Linear Query Streams](lapras_learning-augmented_private_answering_for_linear_query_streams.md)
-- [\[CVPR 2026\] Meta-FC: Meta-Learning with Feature Consistency for Robust and Generalizable Watermarking](../../CVPR2026/ai_safety/meta-fc_meta-learning_with_feature_consistency_for_robust_and_generalizable_wate.md)
-- [\[CVPR 2025\] A Simple Data Augmentation for Feature Distribution Skewed Federated Learning](../../CVPR2025/ai_safety/a_simple_data_augmentation_for_feature_distribution_skewed_federated_learning.md)
-- [\[AAAI 2026\] Rethinking Target Label Conditioning in Adversarial Attacks: A 2D Tensor-Guided Generative Approach](../../AAAI2026/ai_safety/rethinking_target_label_conditioning_in_adversarial_attacks_a_2d_tensor-guided_g.md)
+- [\[CVPR 2026\] Domain-Skewed Federated Learning with Feature Decoupling and Calibration](../../CVPR2026/ai_safety/domain-skewed_federated_learning_with_feature_decoupling_and_calibration.md)
+- [\[ICLR 2026\] PE-SGD: Differentially Private Deep Learning via Evolution of Gradient Subspace for Text](../../ICLR2026/ai_safety/pe-sgd_differentially_private_deep_learning_via_evolution_of_gradient_subspace_f.md)
+- [\[ICLR 2026\] On Optimal Hyperparameters for Differentially Private Deep Transfer Learning](../../ICLR2026/ai_safety/on_optimal_hyperparameters_for_differentially_private_deep_transfer_learning.md)
+- [\[ICLR 2026\] Private Rate-Constrained Optimization with Applications to Fair Learning](../../ICLR2026/ai_safety/private_rate-constrained_optimization_with_applications_to_fair_learning.md)
 
 </div>
 

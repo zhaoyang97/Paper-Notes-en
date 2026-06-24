@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] EqGINO: Equivariant Geometry-Informed Fourier Neural Operators for 3D PDEs
 description: >-
-  [ICML 2026][Physics & Scientific Computing][Fourier Neural Operator] EqGINO transforms GINO's GNO encoder, FNO backbone, and GNO decoder into SE(3) equivariant modules: GNO adopts relative distances as rotation-invariant kernels, and FNO utilizes "orbit-based weight sharing" to enforce isotropy ($W(R\mathbf k)=W(\mathbf k)$) in the frequency domain. This maintains the global receptive f
+  [ICML 2026][Physics & Scientific Computing][Fourier Neural Operator] EqGINO transforms GINO's GNO encoder, FNO backbone, and GNO decoder into SE(3) equivariant modules: GNO adopts relative distances as rotation-invariant kernels, and FNO utilizes "orbit-based weight sharing" to enforce isotropy ($W(R\mathbf k)=W(\mathbf k)$) in the frequency domain. This maintains the global receptive field of FNO while ensuring robustness to arbitrary rigid transformations in 3D PDE surrogat…
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
-  - Fourier Neural Operator
-  - SE(3) Equivariance
-  - Spectral Convolution
-  - Orbit-based Weight Sharing
-  - 3D PDE Surrogate
+  - "ICML 2026"
+  - "Physics & Scientific Computing"
+  - "Fourier Neural Operator"
+  - "SE(3) Equivariance"
+  - "Spectral Convolution"
+  - "Orbit-based Weight Sharing"
+  - "3D PDE Surrogate"
 date: 2026-05-08
-content_hash: a2e3d9636a2cab83
+content_hash: b8117895a2f94cb6
 ---
+
 # EqGINO: Equivariant Geometry-Informed Fourier Neural Operators for 3D PDEs
 
 **Conference**: ICML 2026  
@@ -133,11 +134,11 @@ Key Observation: Non-equivariant baselines see errors magnified by 3-20x on rota
 
 ## Related Papers
 
-- [\[ICML 2026\] Generative Neural Operators Through Diffusion Last Layer](generative_neural_operators_through_diffusion_last_layer.md)
+- [\[ICLR 2026\] Extending Fourier Neural Operators for Modeling Parameterized and Coupled PDEs](../../ICLR2026/physics/extending_fourier_neural_operators_for_modeling_parameterized_and_coupled_pdes.md)
 - [\[AAAI 2026\] Phys-Liquid: A Physics-Informed Dataset for Estimating 3D Geometry and Volume of Transparent Deformable Liquids](../../AAAI2026/physics/phys-liquid_a_physics-informed_dataset_for_estimating_3d_geometry_and_volume_of_.md)
-- [\[NeurIPS 2025\] Physics-Informed Neural Networks with Fourier Features and Attention-Driven Decoding](../../NeurIPS2025/physics/physics-informed_neural_networks_with_fourier_features_and_attention-driven_deco.md)
-- [\[ICML 2025\] Maximal Update Parametrization and Zero-Shot Hyperparameter Transfer for Fourier Neural Operators](../../ICML2025/physics/maximal_update_parametrization_and_zero-shot_hyperparameter_transfer_for_fourier.md)
-- [\[ICML 2026\] Topology-Preserving Neural Operator Learning via Hodge Decomposition](topology-preserving_neural_operator_learning_via_hodge_decomposition.md)
+- [\[ICML 2026\] Interpretable Equivariant Marks for Contrastive Cosmological Inference](interpretable_neural_marked_statistics_for_cosmological_inference.md)
+- [\[ICML 2026\] Generative Neural Operators Through Diffusion Last Layer](generative_neural_operators_through_diffusion_last_layer.md)
+- [\[ICLR 2026\] From Cheap Geometry to Expensive Physics: A Physics-agnostic Pretraining Framework for Neural Operators](../../ICLR2026/physics/from_cheap_geometry_to_expensive_physics_a_physics-agnostic_pretraining_framewor.md)
 
 </div>
 

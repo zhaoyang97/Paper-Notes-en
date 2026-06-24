@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EgoXtreme: A Dataset for Robust Object Pose Estimation in Egocentric Views under Extreme Conditions
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] Ours proposes EgoXtreme, the first large-scale 6D object pose estimation benchmark for egocentric views under extreme conditions. It covers three real-world challenges—severe motion blur, dynamic lighting, and smoke occlusion—revealing significant failures of current SOTA pose estimators in these environments.
+  [CVPR 2026][Video Understanding][Egocentric View] Ours proposes EgoXtreme, the first large-scale 6D object pose estimation benchmark for egocentric views under extreme conditions. It covers three real-world challenges—severe motion blur, dynamic lighting, and smoke occlusion—revealing significant failures of current SOTA pose estimators in these environments.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Egocentric View"
+  - "6D Pose Estimation"
+  - "Extreme Conditions"
+  - "Smart Glasses"
+  - "Benchmark Dataset"
 date: 2026-05-08
-content_hash: 33d7a5fe4e23f51b
+content_hash: e1d7f18ca5c38d5b
 ---
+
 # EgoXtreme: A Dataset for Robust Object Pose Estimation in Egocentric Views under Extreme Conditions
 
 **Conference**: CVPR 2026  
@@ -144,11 +150,11 @@ Impact of tracking strategies on the Sport scenario (GigaPose):
 
 ## Related Papers
 
+- [\[CVPR 2026\] DarkShake-DVS: Event-based Human Action Recognition under Low-light and Shaking Camera Conditions](darkshake-dvs_event-based_human_action_recognition_under_low-light_and_shaking_c.md)
 - [\[CVPR 2026\] Robust Promptable Video Object Segmentation](robust_promptable_video_object_segmentation.md)
 - [\[CVPR 2026\] Event6D: Event-based Novel Object 6D Pose Tracking](event6d_event-based_novel_object_6d_pose_tracking.md)
-- [\[CVPR 2026\] DarkShake-DVS: Event-based Human Action Recognition under Low-light and Shaking Camera Conditions](darkshake-dvs_event-based_human_action_recognition_under_low-light_and_shaking_c.md)
 - [\[ECCV 2024\] EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent Observations Everywhere](../../ECCV2024/video_understanding/egoposer_robust_real-time_egocentric_pose_estimation_from_sparse_and_intermitten.md)
-- [\[CVPR 2026\] Occlusion-Aware SORT: Observing Occlusion for Robust Multi-Object Tracking](occlusion-aware_sort_observing_occlusion_for_robust_multi-object_tracking.md)
+- [\[CVPR 2026\] Beyond Static Frames: Temporal Aggregate-and-Restore Vision Transformer for Human Pose Estimation](beyond_static_frames_temporal_aggregate-and-restore_vision_transformer_for_human.md)
 
 </div>
 

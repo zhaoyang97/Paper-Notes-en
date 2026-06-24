@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Data Whitening Improves Sparse Autoencoder Learning
 description: >-
-  [AAAI 2026][Interpretability][Sparse Autoencoder] This paper introduces PCA whitening — a standard preprocessing step from classical sparse coding — into modern sparse autoencoder (SAE) training. Through theoretical anal…
+  [AAAI 2026][Interpretability][Sparse Autoencoder] This paper introduces PCA whitening — a standard preprocessing step from classical sparse coding — into modern sparse autoencoder (SAE) training. Through theoretical analysis and simulation, it demonstrates that whitening renders the optimization landscape more convex and isotropic. Experiments on SAEBench show that whitening substantially improves interpretability metrics (Sparse Probing +7.3%, SCR +54%, TPP +372%)…
 tags:
   - "AAAI 2026"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "Feature Disentanglement"
   - "SAEBench"
 date: 2026-05-08
-content_hash: 636037b0885d027c
+content_hash: 532ce9ae6c8d171b
 ---
 
 # Data Whitening Improves Sparse Autoencoder Learning
@@ -142,10 +142,10 @@ Four theoretical effects of whitening: (1) equalizing the feature spectrum stabi
 ## Related Papers
 
 - [\[AAAI 2026\] SparseRM: A Lightweight Preference Modeling with Sparse Autoencoder](sparserm_a_lightweight_preference_modeling_with_sparse_autoencoder.md)
-- [\[ICLR 2026\] SALVE: Sparse Autoencoder-Latent Vector Editing for Mechanistic Control of Neural Networks](../../ICLR2026/interpretability/salve_sparse_autoencoder-latent_vector_editing_for_mechanistic_control_of_neural.md)
+- [\[ICML 2026\] Rational Sparse Autoencoder](../../ICML2026/interpretability/rational_sparse_autoencoder.md)
+- [\[CVPR 2026\] Improving Sparse Autoencoder with Dynamic Attention](../../CVPR2026/interpretability/improving_sparse_autoencoder_with_dynamic_attention.md)
 - [\[ICML 2026\] CorrSteer: Generation-Time LLM Steering via Correlated Sparse Autoencoder Features](../../ICML2026/interpretability/corrsteer_generation-time_llm_steering_via_correlated_sparse_autoencoder_feature.md)
-- [\[ICLR 2026\] Behavior Learning (BL): Learning Hierarchical Optimization Structures from Data](../../ICLR2026/interpretability/behavior_learning_bl_learning_hierarchical_optimization_structures_from_data.md)
-- [\[AAAI 2026\] ShapBPT: Image Feature Attributions Using Data-Aware Binary Partition Trees](shapbpt_image_feature_attributions_using_data-aware_binary_partition_trees.md)
+- [\[AAAI 2026\] Finding the Translation Switch: Discovering and Exploiting the Task-Initiation Features in LLMs](finding_the_translation_switch_discovering_and_exploiting_the_task-initiation_fe.md)
 
 </div>
 

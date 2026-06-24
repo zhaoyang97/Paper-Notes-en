@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DeNAS-ViT: Data Efficient NAS-Optimized Vision Transformer for Ultrasound Image Segmentation
 description: >-
-  [AAAI 2026][Medical Imaging][Neural Architecture Search] DeNAS-ViT is proposed as the first method to apply NAS at the token level within ViT for optimizing multi-scale feature extraction in ultrasound image segmentation…
+  [AAAI 2026][Medical Imaging][Neural Architecture Search] DeNAS-ViT is proposed as the first method to apply NAS at the token level within ViT for optimizing multi-scale feature extraction in ultrasound image segmentation. A NAS-constrained semi-supervised learning framework is designed incorporating network independence loss, hierarchical contrastive loss, and staged optimization, achieving state-of-the-art performance under limited annotation.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Semi-Supervised Learning"
   - "Token-Level Search"
 date: 2026-05-08
-content_hash: 6746cc8b6ab7b581
+content_hash: c2498f4238606423
 ---
 
 # DeNAS-ViT: Data Efficient NAS-Optimized Vision Transformer for Ultrasound Image Segmentation
@@ -127,8 +127,8 @@ $\mathcal{L} = \mathcal{L}_{sup} + \mathcal{L}_{uns} + \mathcal{L}_{ind} + \math
 - [\[AAAI 2026\] ProPL: Universal Semi-Supervised Ultrasound Image Segmentation via Prompt-Guided Pseudo-Labeling](propl_universal_semi-supervised_ultrasound_image_segmentation_via_prompt-guided_.md)
 - [\[CVPR 2026\] MedCLIPSeg: Probabilistic Vision-Language Adaptation for Data-Efficient and Generalizable Medical Image Segmentation](../../CVPR2026/medical_imaging/medclipseg_probabilistic_vision-language_adaptation_for_data-efficient_and_gener.md)
 - [\[NeurIPS 2025\] Domain-Adaptive Transformer for Data-Efficient Glioma Segmentation in Sub-Saharan MRI](../../NeurIPS2025/medical_imaging/domain-adaptive_transformer_for_data-efficient_glioma_segmentation_in_sub-sahara.md)
+- [\[ECCV 2024\] A Rotation-Invariant Texture ViT for Fine-Grained Recognition of Esophageal Cancer Endoscopic Ultrasound Images](../../ECCV2024/medical_imaging/a_rotation-invariant_texture_vit_for_fine-grained_recognition_of_esophageal_canc.md)
 - [\[AAAI 2026\] G2L: From Giga-Scale to Cancer-Specific Large-Scale Pathology Foundation Models via Efficient Fine-Tuning](g2lfrom_giga-scale_to_cancer-specific_large-scale_pathology_foundation_models_vi.md)
-- [\[CVPR 2026\] Ultrasound-CLIP: Semantic-Aware Contrastive Pre-training for Ultrasound Image-Text Understanding](../../CVPR2026/medical_imaging/ultrasound-clip_semantic-aware_contrastive_pre-training_for_ultrasound_image-tex.md)
 
 </div>
 

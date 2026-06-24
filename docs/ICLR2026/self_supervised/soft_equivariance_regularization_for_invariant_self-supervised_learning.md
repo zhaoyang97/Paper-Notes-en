@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Soft Equivariance Regularization for Invariant Self-Supervised Learning
 description: >-
-  [ICLR 2026][Self-Supervised Learning][invariance] Proposes SER (Soft Equivariance Regularization), a layer-decoupling design that applies soft equivariance regularization to intermediate layers of ViT while maintaining the invariance objective at the final layer. It consistently improves classification accuracy and robustness for invariant SSL methods (MoCo-v3, DINO,
+  [ICLR 2026][Self-Supervised Learning][equivariance] Proposes SER (Soft Equivariance Regularization), a layer-decoupling design that applies soft equivariance regularization to intermediate layers of ViT while maintaining the invariance objective at the final layer. It consistently improves classification accuracy and robustness for invariant SSL methods (MoCo-v3, DINO, Barlow Twins) without introducing additional modules.
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - invariance
-  - ViT
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "equivariance"
+  - "invariance"
+  - "ViT"
+  - "regularization"
 date: 2026-05-08
-content_hash: 53d09b3cc59421cb
+content_hash: 796d723cd7e597ed
 ---
+
 # Soft Equivariance Regularization for Invariant Self-Supervised Learning
 
 **Conference**: ICLR 2026  
@@ -139,10 +142,20 @@ Under strictly matched 2-view settings, SER is the only equivariance add-on that
 - Value: ⭐⭐⭐⭐ (Layer decoupling is a broadly applicable design principle)
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Tunable Soft Equivariance with Guarantees](../../CVPR2026/self_supervised/tunable_soft_equivariance_with_guarantees.md)
+- [\[NeurIPS 2025\] T-REGS: Minimum Spanning Tree Regularization for Self-Supervised Learning](../../NeurIPS2025/self_supervised/t-regs_minimum_spanning_tree_regularization_for_self-supervised_learning.md)
+- [\[ICLR 2026\] On the Alignment Between Supervised and Self-Supervised Contrastive Learning](on_the_alignment_between_supervised_and_self-supervised_contrastive_learning.md)
+- [\[ICLR 2026\] Unsupervised Representation Learning - An Invariant Risk Minimization Perspective](unsupervised_representation_learning_-_an_invariant_risk_minimization_perspectiv.md)
+- [\[ICLR 2026\] Understanding the Learning Phases in Self-Supervised Learning via Critical Periods](understanding_the_learning_phases_in_self-supervised_learning_via_critical_perio.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Tunable Soft Equivariance with Guarantees](../../CVPR2026/self_supervised/tunable_soft_equivariance_with_guarantees.md)

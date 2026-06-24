@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AI Progress Should Be Measured by Capability-Per-Resource, Not Scale Alone: A Framework for Gradient-Guided Resource Allocation in LLMs
 description: >-
-  [NEURIPS2025][LLM Pretraining][capability-per-resource] This position paper challenges "scaling fundamentalism" by proposing **Capability-Per-Resource (CPR)** as a replacement for raw scale as the primary measure of AI p…
+  [NEURIPS2025][LLM Pretraining][capability-per-resource] This position paper challenges "scaling fundamentalism" by proposing **Capability-Per-Resource (CPR)** as a replacement for raw scale as the primary measure of AI progress. The paper presents a gradient-guided resource allocation framework in which foundation model developers publish "gradient blueprint" metadata, enabling downstream adapters to fine-tune only a high-influence parameter subset while substantially reducin…
 tags:
   - "NEURIPS2025"
   - "LLM Pretraining"
@@ -13,7 +13,7 @@ tags:
   - "scaling law"
   - "sustainable AI"
 date: 2026-05-08
-content_hash: feaefa187c1f650e
+content_hash: db8312c6b7de78c3
 ---
 
 # AI Progress Should Be Measured by Capability-Per-Resource, Not Scale Alone: A Framework for Gradient-Guided Resource Allocation in LLMs
@@ -149,11 +149,11 @@ As a position paper, this work introduces no new loss function. The core optimiz
 
 ## Related Papers
 
+- [\[ICLR 2026\] GneissWeb: Preparing High Quality Data for LLMs at Scale](../../ICLR2026/llm_pretraining/gneissweb_preparing_high_quality_data_for_llms_at_scale.md)
 - [\[NeurIPS 2025\] Memory Mosaics at Scale](memory_mosaics_at_scale.md)
 - [\[NeurIPS 2025\] Flatness is Necessary, Neural Collapse is Not: Rethinking Generalization via Grokking](flatness_is_necessary_neural_collapse_is_not_rethinking_generalization_via_grokk.md)
 - [\[NeurIPS 2025\] Breaking the Gradient Barrier: Unveiling Large Language Models for Strategic Classification](breaking_the_gradient_barrier_unveiling_large_language_models_for_strategic_clas.md)
-- [\[NeurIPS 2025\] Next Semantic Scale Prediction via Hierarchical Diffusion Language Models](next_semantic_scale_prediction_via_hierarchical_diffusion_language_models.md)
-- [\[NeurIPS 2025\] Mouse-Guided Gaze: Semi-Supervised Learning of Intention-Aware Representations for Reading Detection](mouse-guided_gaze_semi-supervised_learning_of_intention-aware_representations_fo.md)
+- [\[ICLR 2026\] Joint Selection for Large-Scale Pre-Training Data via Policy Gradient-based Mask Learning](../../ICLR2026/llm_pretraining/joint_selection_for_large-scale_pre-training_data_via_policy_gradient-based_mask.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Wavelet Canonical Coherence for Nonstationary Signals
 description: >-
-  [NeurIPS 2025][Time Series][Wavelet Analysis] This paper proposes WaveCanCoh, a framework that extends classical canonical coherence analysis to the wavelet domain. Built upon the multivariate locally stationary wavelet…
+  [NeurIPS 2025 Spotlight][Time Series][Wavelet Analysis] This paper proposes WaveCanCoh, a framework that extends classical canonical coherence analysis to the wavelet domain. Built upon the multivariate locally stationary wavelet (MvLSW) model, it enables estimation of time-varying, scale-specific canonical coherence between two groups of nonstationary multivariate time series.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Time Series"
   - "Wavelet Analysis"
   - "Canonical Coherence"
@@ -12,7 +12,7 @@ tags:
   - "Multivariate Time Series"
   - "Neuroscience"
 date: 2026-05-08
-content_hash: 8660b5baba6acffb
+content_hash: 082fdf52df9544f9
 ---
 
 # Wavelet Canonical Coherence for Nonstationary Signals
@@ -161,7 +161,7 @@ By contrast, the LSP (Fourier-based) method yields no significant differences un
 - [\[ICLR 2026\] Decentralized Attention Fails Centralized Signals: Rethinking Transformers for Medical Time Series](../../ICLR2026/time_series/decentralized_attention_fails_centralized_signals_rethinking_transformers_for_me.md)
 - [\[NeurIPS 2025\] Structured Sparse Transition Matrices to Enable State Tracking in State-Space Models](structured_sparse_transition_matrices_to_enable_state_tracking_in_state-space_mo.md)
 - [\[NeurIPS 2025\] Channel Matters: Estimating Channel Influence for Multivariate Time Series](channel_matters_estimating_channel_influence_for_multivariate_time_series.md)
-- [\[NeurIPS 2025\] Time-O1: Time-Series Forecasting Needs Transformed Label Alignment](time-o1_time-series_forecasting_needs_transformed_label_alignment.md)
+- [\[NeurIPS 2025\] MAESTRO: Adaptive Sparse Attention and Robust Learning for Multimodal Dynamic Time Series](maestro_adaptive_sparse_attention_and_robust_learning_for_multimodal_dynamic_tim.md)
 
 </div>
 

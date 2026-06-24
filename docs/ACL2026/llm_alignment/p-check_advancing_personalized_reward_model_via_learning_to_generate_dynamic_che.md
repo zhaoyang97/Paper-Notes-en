@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] P-Check: Advancing Personalized Reward Model via Learning to Generate Dynamic Checklist
 description: >-
-  [ACL 2026][Alignment & RLHF][LLM-as-a-Judge] P-Check transforms personalized reward modeling from "cramming user history into the judge" to "first generating a weighted dynamic evaluation checklist for the current user and current query, then using it to guide reward scoring." It significantly outperforms persona, memory retrieval, and fine-tuned reward model bas
+  [ACL2026][LLM Alignment][Personalized Reward Model] P-Check transforms personalized reward modeling from "cramming user history into the judge" to "first generating a weighted dynamic evaluation checklist for the current user and current query, then using it to guide reward scoring." It significantly outperforms persona, memory retrieval, and fine-tuned reward model baselines on personalized preference prediction and downstream generation tasks in PRISM, Arena, and BESPOKE.
 tags:
-  - ACL 2026
-  - Alignment & RLHF
-  - LLM-as-a-Judge
+  - "ACL2026"
+  - "LLM Alignment"
+  - "Personalized Reward Model"
+  - "Dynamic Checklist"
+  - "LLM-as-a-Judge"
+  - "Preference Contrastive Learning"
+  - "Interpretable Alignment"
 date: 2026-05-08
-content_hash: fd95d573c88c6f3d
+content_hash: ce8d4d7b2aa6d8ba
 ---
+
 # P-Check: Advancing Personalized Reward Model via Learning to Generate Dynamic Checklist
 
 **Conference**: ACL2026  
@@ -168,11 +173,11 @@ Downstream personalized generation was evaluated on BESPOKE using P-Check as the
 
 ## Related Papers
 
+- [\[ICLR 2026\] RewardBench 2: Advancing Reward Model Evaluation](../../ICLR2026/llm_alignment/rewardbench_2_advancing_reward_model_evaluation.md)
 - [\[ACL 2026\] PERSA: Reinforcement Learning for Professor-Style Personalized Feedback with LLMs](persa_reinforcement_learning_for_professor-style_personalized_feedback_with_llms.md)
-- [\[ICLR 2026\] Swap-guided Preference Learning for Personalized RLHF (SPL)](../../ICLR2026/llm_alignment/swap-guided_preference_learning_for_personalized_reinforcement_learning_from_hum.md)
+- [\[ICLR 2026\] Learning to Summarize User Information for Personalized RLHF (PLUS)](../../ICLR2026/llm_alignment/learning_to_summarize_user_information_for_personalized_reinforcement_learning_f.md)
+- [\[ICLR 2026\] Inverse Reinforcement Learning with Dynamic Reward Scaling for LLM Alignment](../../ICLR2026/llm_alignment/inverse_reinforcement_learning_with_dynamic_reward_scaling_for_llm_alignment.md)
 - [\[ACL 2025\] Dynamic Scaling of Unit Tests for Code Reward Modeling](../../ACL2025/llm_alignment/dynamic_scaling_of_unit_tests_for_code_reward_modeling.md)
-- [\[ACL 2025\] SynthesizeMe! Inducing Persona-Guided Prompts for Personalized Reward Models in LLMs](../../ACL2025/llm_alignment/synthesizeme_persona_prompts.md)
-- [\[ICLR 2026\] Learning More with Less: A Dynamic Dual-Level Down-Sampling Framework for Efficient Policy Optimization](../../ICLR2026/llm_alignment/learning_more_with_less_a_dynamic_dual-level_down-sampling_framework_for_efficie.md)
 
 </div>
 

@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] SealQA: Raising the Bar for Reasoning in Search-Augmented Language Models
 description: >-
-  [ICLR 2026][LLM Reasoning][benchmark] Ours proposes the SealQA challenge benchmark (comprising Seal-0/Seal-Hard/LongSeal variants), where each question is carefully designed by NLP researchers to trigger ambiguity, conflict, or noisy search results. GPT-5 achieves a maximum accuracy of only 43.2%, revealing that test-time scaling fails to produce reliable
+  [ICLR 2026][Reasoning][benchmark] Ours proposes the SealQA challenge benchmark (comprising Seal-0/Seal-Hard/LongSeal variants), where each question is carefully designed by NLP researchers to trigger ambiguity, conflict, or noisy search results. GPT-5 achieves a maximum accuracy of only 43.2%, revealing that test-time scaling fails to produce reliable gains under noisy retrieval.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - benchmark
-  - search-augmented LLM
-  - RAG
-  - noisy retrieval
-  - test-time scaling
-  - knowledge conflict
+  - "ICLR 2026"
+  - "Reasoning"
+  - "benchmark"
+  - "search-augmented LLM"
+  - "RAG"
+  - "noisy retrieval"
+  - "test-time scaling"
+  - "knowledge conflict"
 date: 2026-05-08
-content_hash: c46946c047562132
+content_hash: 1127408d903d6c0e
 ---
+
 # SealQA: Raising the Bar for Reasoning in Search-Augmented Language Models
 
 **Conference**: ICLR 2026  
@@ -151,10 +152,10 @@ Increasing test-time computation does not produce reliable gains; performance of
 ## Related Papers
 
 - [\[ICLR 2026\] AgentMath: Empowering Mathematical Reasoning for Large Language Models via Tool-Augmented Agent](agentmath_empowering_mathematical_reasoning_for_large_language_models_via_tool-a.md)
+- [\[ICLR 2026\] SLM-MUX: Orchestrating Small Language Models for Reasoning](slm-mux_orchestrating_small_language_models_for_reasoning.md)
 - [\[ICLR 2026\] Variational Reasoning for Language Models](variational_reasoning_for_language_models.md)
-- [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](efficient_test-time_scaling_for_small_vision-language_models.md)
-- [\[ICLR 2026\] Log-Augmented Generation: Scaling Test-Time Reasoning with Reusable Computation](log-augmented_generation_scaling_test-time_reasoning_with_reusable_computation.md)
-- [\[ICLR 2026\] On the Thinking-Language Modeling Gap in Large Language Models](on_the_thinking-language_modeling_gap_in_large_language_models.md)
+- [\[ICML 2026\] Prism: Efficient Test-Time Scaling via Hierarchical Search and Self-Verification for Discrete Diffusion Language Models](../../ICML2026/llm_reasoning/prism_efficient_test-time_scaling_via_hierarchical_search_and_self-verification_.md)
+- [\[ICLR 2026\] Variation in Verification: Understanding Verification Dynamics in Large Language Models](variation_in_verification_understanding_verification_dynamics_in_large_language_.md)
 
 </div>
 

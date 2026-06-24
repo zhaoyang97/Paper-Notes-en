@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Know "No" Better: A Data-Driven Approach for Enhancing Negation Awareness in CLIP
 description: >-
-  [ICCV 2025][Segmentation][CLIP] By analyzing the scarcity and misalignment of negation expressions in CLIP's pre-training data…
+  [ICCV 2025][Segmentation][CLIP] By analyzing the scarcity and misalignment of negation expressions in CLIP's pre-training data, this work designs two LLM/MLLM-based negation data generation pipelines to fine-tune the CLIP text encoder, producing NegationCLIP — a model that enhances negation understanding while preserving general performance. A new benchmark, NegRefCOCOg, is proposed for comprehensive negation evaluation.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Vision-Language Models"
   - "Referring Image Segmentation"
 date: 2026-05-08
-content_hash: c4f8aef974c5b682
+content_hash: 3ee7f8ce4c5f1aba
 ---
 
 # Know "No" Better: A Data-Driven Approach for Enhancing Negation Awareness in CLIP
@@ -146,10 +146,10 @@ Rand-P1 consistently underperforms P1, validating the importance of plausible ob
 ## Related Papers
 
 - [\[ICCV 2025\] Enhancing Transformers Through Conditioned Embedded Tokens](enhancing_transformers_through_conditioned_embedded_tokens.md)
+- [\[ICCV 2025\] Know Your Attention Maps: Class-specific Token Masking for Weakly Supervised Semantic Segmentation](know_your_attention_maps_class-specific_token_masking_for_weakly_supervised_sema.md)
 - [\[ICCV 2025\] A Plug-and-Play Physical Motion Restoration Approach for In-the-Wild High-Difficulty Motions](a_plugandplay_physical_motion_restoration_approach_for_inthe.md)
 - [\[ICCV 2025\] DDB: Diffusion Driven Balancing to Address Spurious Correlations](ddb_diffusion_driven_balancing_to_address_spurious_correlations.md)
-- [\[ICCV 2025\] Know Your Attention Maps: Class-specific Token Masking for Weakly Supervised Semantic Segmentation](know_your_attention_maps_class-specific_token_masking_for_weakly_supervised_sema.md)
-- [\[ICCV 2025\] Exploiting Domain Properties in Language-Driven Domain Generalization for Semantic Segmentation](exploiting_domain_properties_in_language-driven_domain_generalization_for_semant.md)
+- [\[CVPR 2026\] DeBias-CLIP: CLIP Is Shortsighted — Paying Attention Beyond the First Sentence](../../CVPR2026/segmentation/clip_shortsighted_beyond_first_sentence.md)
 
 </div>
 

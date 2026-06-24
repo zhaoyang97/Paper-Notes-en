@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EgoAgent: A Joint Predictive Agent Model in Egocentric Worlds
 description: >-
-  [ICCV 2025][Human Understanding][egocentric vision] This paper proposes EgoAgent, a unified predictive agent model that simultaneously learns to represent egocentric visual observations, predict future world states…
+  [ICCV 2025][Human Understanding][egocentric vision] This paper proposes EgoAgent, a unified predictive agent model that simultaneously learns to represent egocentric visual observations, predict future world states, and generate 3D human motions within a single Transformer.
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "3D human motion prediction"
   - "joint embedding predictive architecture"
 date: 2026-05-08
-content_hash: 79e01a1d50dff1fe
+content_hash: 2b6e11962ed31c2c
 ---
 
 # EgoAgent: A Joint Predictive Agent Model in Egocentric Worlds

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RefLoRA: Refactored Low-Rank Adaptation for Efficient Fine-Tuning of Large Models
 description: >-
-  [NeurIPS 2025][Model Compression][LoRA] RefLoRA selects the optimal low-rank factorization form at each iteration by minimizing an upper bound on the loss…
+  [NeurIPS 2025][Model Compression][LoRA] RefLoRA selects the optimal low-rank factorization form at each iteration by minimizing an upper bound on the loss, thereby addressing the weight update inconsistency and imbalance caused by the non-uniqueness of the LoRA decomposition. It accelerates convergence and improves fine-tuning performance with negligible additional computational overhead.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "matrix refactorization"
   - "large language models"
 date: 2026-05-08
-content_hash: 3751c9f397dd6cc6
+content_hash: fb9f7f8504b0ffa4
 ---
 
 # RefLoRA: Refactored Low-Rank Adaptation for Efficient Fine-Tuning of Large Models

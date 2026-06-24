@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FOCUS: Efficient Keyframe Selection for Long Video Understanding
 description: >-
-  [ICLR 2026][Video Understanding][Paper Note] FOCUS reformulates the task of "selecting the most query-relevant video frames under a strict token budget" as a Combinatorial Pure Exploration (CPE) problem in multi-armed bandits. By treating short video segments as arms and adaptively allocating the scoring budget using empirical means and Bernstein confidence radii
+  [ICLR 2026][Video Understanding][Keyframe Selection] FOCUS reformulates the task of "selecting the most query-relevant video frames under a strict token budget" as a Combinatorial Pure Exploration (CPE) problem in multi-armed bandits. By treating short video segments as arms and adaptively allocating the scoring budget using empirical means and Bernstein confidence radii, it significantly improves long video QA accuracy while viewing less than 2% of total frames.
 tags:
-  - ICLR 2026
-  - Video Understanding
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Keyframe Selection"
+  - "Long Video Understanding"
+  - "Multi-Armed Bandits"
+  - "Pure Exploration"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 6372a361b4c4e2b4
+content_hash: 7697bfdbda8551c0
 ---
+
 # FOCUS: Efficient Keyframe Selection for Long Video Understanding
 
 **Conference**: ICLR 2026  
@@ -126,9 +132,9 @@ FOCUS aligns with the "visual token compression" trajectory for long-video MLLMs
 
 - [\[CVPR 2026\] Efficient Frame Selection for Long Video Understanding via Reinforcement Learning](../../CVPR2026/video_understanding/efficient_frame_selection_for_long_video_understanding_via_reinforcement_learnin.md)
 - [\[ICLR 2026\] FLoC: Facility Location-Based Efficient Visual Token Compression for Long Video Understanding](floc_facility_location-based_efficient_visual_token_compression_for_long_video_u.md)
-- [\[ICLR 2026\] ScaleLong: A Multi-Timescale Benchmark for Long Video Understanding](scalelong_a_multi-timescale_benchmark_for_long_video_understanding.md)
 - [\[CVPR 2026\] Wavelet-based Frame Selection by Detecting Semantic Boundary for Long Video Understanding](../../CVPR2026/video_understanding/wavelet-based_frame_selection_by_detecting_semantic_boundary_for_long_video_unde.md)
-- [\[CVPR 2026\] Video Panels for Long Video Understanding](../../CVPR2026/video_understanding/video_panels_for_long_video_understanding.md)
+- [\[CVPR 2026\] GIFT: Global Irreplaceability Frame Targeting for Efficient Video Understanding](../../CVPR2026/video_understanding/gift_global_irreplaceability_frame_targeting_for_efficient_video_understanding.md)
+- [\[ICLR 2026\] ScaleLong: A Multi-Timescale Benchmark for Long Video Understanding](scalelong_a_multi-timescale_benchmark_for_long_video_understanding.md)
 
 </div>
 

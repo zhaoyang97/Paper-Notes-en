@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] Refine Now, Query Fast: A Decoupled Refinement Paradigm for Implicit Neural Fields
 description: >-
-  [ICLR 2026][Others][Implicit Neural Representation] This paper proposes the Decoupled Representation Refinement (DRR) paradigm, which refines embedding structures and caches the results using a deep refiner network during an offline stage. This allows the inference stage to require only fast interpolation and a lightweight decoder, achieving SOTA reconstruction accuracy
+  [ICLR 2026][Implicit Neural Representation] This paper proposes the Decoupled Representation Refinement (DRR) paradigm, which refines embedding structures and caches the results using a deep refiner network during an offline stage. This allows the inference stage to require only fast interpolation and a lightweight decoder, achieving SOTA reconstruction accuracy on ensemble simulation surrogate modeling tasks with less than 1/27 of the inference cost.
 tags:
-  - ICLR 2026
-  - Others
-  - Implicit Neural Representation
-  - Decoupled Refinement
-  - Ensemble Surrogate
-  - Variational Pairs
-  - Feature Grid
+  - "ICLR 2026"
+  - "Implicit Neural Representation"
+  - "Decoupled Refinement"
+  - "Ensemble Surrogate"
+  - "Variational Pairs"
+  - "Feature Grid"
 date: 2026-05-08
-content_hash: 2dac6efac3d83f3a
+content_hash: bf036119753eb158
 ---
+
 # Refine Now, Query Fast: A Decoupled Refinement Paradigm for Implicit Neural Fields
 
 **Conference**: ICLR 2026  
@@ -164,9 +164,9 @@ Key finding: VC is harmful to DRR-Net, while VP-S is the most robust augmentatio
 
 - [\[ICLR 2026\] Beyond Uniformity: Regularizing Implicit Neural Representations through a Lipschitz Lens](beyond_uniformity_regularizing_implicit_neural_representations_through_a_lipschi.md)
 - [\[ICLR 2026\] From Fields to Random Trees](from_fields_to_random_trees.md)
-- [\[ICLR 2026\] QUEST: A Robust Attention Formulation Using Query-Modulated Spherical Attention](quest_a_robust_attention_formulation_using_query-modulated_spherical_attention.md)
+- [\[ICLR 2026\] Robust Equation Structure Learning with Adaptive Refinement (RESTART)](robust_equation_structure_learning_with_adaptive_refinement.md)
 - [\[CVPR 2025\] EVOS: Efficient Implicit Neural Training via EVOlutionary Selector](../../CVPR2025/others/evos_efficient_implicit_neural_training_via_evolutionary_selector.md)
-- [\[ICLR 2026\] Fast and Stable Riemannian Metrics on SPD Manifolds via Cholesky Product Geometry](fast_and_stable_riemannian_metrics_on_spd_manifolds_via_cholesky_product_geometr.md)
+- [\[ECCV 2024\] Superpixel-Informed Implicit Neural Representation for Multi-Dimensional Data](../../ECCV2024/others/superpixel-informed_implicit_neural_representation_for_multi-dimensional_data.md)
 
 </div>
 

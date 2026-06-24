@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] NexusFlow: Unifying Disparate Tasks under Partial Supervision via Invertible Flow Networks
 description: >-
-  [CVPR 2026][Others][Paper Note] NexusFlow utilizes a set of "surrogate networks" with invertible affine coupling layers to map intermediate features of structurally disparate tasks (e.g., sparse object tracking vs. dense map reconstruction) into a unified standard latent space with aligned distributions. In extreme partial supervision scenarios where
+  [CVPR 2026][Partially Supervised Multi-task Learning] NexusFlow utilizes a set of "surrogate networks" with invertible affine coupling layers to map intermediate features of structurally disparate tasks (e.g., sparse object tracking vs. dense map reconstruction) into a unified standard latent space with aligned distributions. In extreme partial supervision scenarios where labels are partitioned by geographic domain (e.g., tasks labeled only in different cities)…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Partially Supervised Multi-task Learning"
+  - "Invertible Flow Networks"
+  - "Affine Coupling Layer"
+  - "Latent Space Alignment"
+  - "Autonomous Driving Perception"
 date: 2026-05-08
-content_hash: 91c724c719c081b1
+content_hash: 93d708fdc9c71f45
 ---
+
 # NexusFlow: Unifying Disparate Tasks under Partial Supervision via Invertible Flow Networks
 
 **Conference**: CVPR 2026  
@@ -150,9 +155,9 @@ Observations: NexusFlow's AMOTA is +7.4% higher than MTPSL and +4.0% higher than
 
 - [\[CVPR 2026\] Revisiting Sparsity Constraint Under High-Rank Property in Partial Multi-Label Learning](revisiting_sparsity_constraint_under_high-rank_property_in_partial_multi-label_l.md)
 - [\[CVPR 2026\] Drainage: A Unifying Framework for Addressing Class Uncertainty](drainage_a_unifying_framework_for_addressing_class_uncertainty.md)
-- [\[CVPR 2026\] Bidirectional Normalizing Flow: From Data to Noise and Back](bidirectional_normalizing_flow_from_data_to_noise_and_back.md)
 - [\[CVPR 2026\] Evidential Deep Partial Label Learning to Quantify Disambiguation Uncertainty](evidential_deep_partial_label_learning_to_quantify_disambiguation_uncertainty.md)
 - [\[CVPR 2026\] Learning What Helps: Task-Aligned Context Selection for Vision Tasks](learning_what_helps_task-aligned_context_selection_for_vision_tasks.md)
+- [\[CVPR 2026\] Mitigating Instance Entanglement in Instance-Dependent Partial Label Learning](mitigating_instance_entanglement_in_instance-dependent_partial_label_learning.md)
 
 </div>
 

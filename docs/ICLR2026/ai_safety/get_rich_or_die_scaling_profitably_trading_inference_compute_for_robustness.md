@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Get RICH or Die Scaling: Profitably Trading Inference Compute for Robustness
 description: >-
-  [ICLR 2026][AI Safety][Vision-Language Model] This paper proposes the **RICH Hypothesis** (Robustness from Inference Compute Hypothesis) — that test-time compute can only be traded for robustness when "the components of the attacked data have been covered by the training data." Based on this, it demonstrates that applying lightweight adversarial fine-tuning to a V
+  [ICLR 2026][AI Safety][Adversarial Robustness] This paper proposes the **RICH Hypothesis** (Robustness from Inference Compute Hypothesis) — that test-time compute can only be traded for robustness when "the components of the attacked data have been covered by the training data." Based on this, it demonstrates that applying lightweight adversarial fine-tuning to a VLM's vision encoder can transform extended reasoning (CoT / budget forcing) from "nearly ineffective" into "signi…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Vision-Language Model
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Adversarial Robustness"
+  - "Test-time Compute"
+  - "Vision-Language Models"
+  - "Security Specifications"
+  - "Compositional Generalization"
+  - "Adversarial Training"
 date: 2026-05-08
-content_hash: 4f4e003f05c029a5
+content_hash: 99816c65826c7b21
 ---
+
 # Get RICH or Die Scaling: Profitably Trading Inference Compute for Robustness
 
 **Conference**: ICLR 2026  
@@ -108,10 +114,17 @@ flowchart LR
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[AAAI 2026\] SecMoE: Communication-Efficient Secure MoE Inference via Select-Then-Compute](../../AAAI2026/ai_safety/secmoe_communication-efficient_secure_moe_inference_via_select-then-compute.md)
+- [\[ICLR 2026\] Robust Federated Inference](robust_federated_inference.md)
+- [\[ICLR 2026\] On the Interaction of Compressibility and Adversarial Robustness](on_the_interaction_of_compressibility_and_adversarial_robustness.md)
+- [\[ICLR 2026\] Nasty Adversarial Training: A Probability Sparsity Perspective for Robustness Enhancement](nasty_adversarial_training_a_probability_sparsity_perspective_for_robustness_enh.md)
+- [\[ICLR 2026\] Tug-of-War No More: Harmonizing Accuracy and Robustness in Vision-Language Models via Stability-Aware Task Vector Merging](tug-of-war_no_more_harmonizing_accuracy_and_robustness_in_vision-language_models.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[AAAI 2026\] SecMoE: Communication-Efficient Secure MoE Inference via Select-Then-Compute](../../AAAI2026/ai_safety/secmoe_communication-efficient_secure_moe_inference_via_select-then-compute.md)

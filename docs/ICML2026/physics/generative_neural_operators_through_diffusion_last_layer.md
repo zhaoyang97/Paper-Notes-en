@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Generative Neural Operators Through Diffusion Last Layer
 description: >-
-  [ICML 2026][Physics & Scientific Computing][Neural Operator] A "Diffusion Last Layer" (DLL) is appended to any neural operator backbone (FNO/DeepONet). An input-dependent basis $\Phi_a$ is used to compress the target field into an $r$-dimensional coefficient vector, followed by a small MLP velocity field that performs conditional flow matching in the coefficient space. This upgr
+  [ICML 2026][Physics & Scientific Computing][Neural Operator] A "Diffusion Last Layer" (DLL) is appended to any neural operator backbone (FNO/DeepONet). An input-dependent basis $\Phi_a$ is used to compress the target field into an $r$-dimensional coefficient vector, followed by a small MLP velocity field that performs conditional flow matching in the coefficient space. This upgrades deterministic operators into generative ones capable of sampling stochastic solutions and prov…
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
-  - Neural Operator
-  - Diffusion Model
-  - Karhunen–Loève
-  - Flow Matching
-  - Probabilistic Surrogate
+  - "ICML 2026"
+  - "Physics & Scientific Computing"
+  - "Neural Operator"
+  - "Diffusion Model"
+  - "Karhunen–Loève"
+  - "Flow Matching"
+  - "Probabilistic Surrogate"
 date: 2026-05-08
-content_hash: f4e79df49332dc34
+content_hash: cbed3aa7123c615c
 ---
+
 # Generative Neural Operators Through Diffusion Last Layer
 
 **Conference**: ICML 2026  
@@ -145,15 +146,15 @@ DLL achieves state-of-the-art NRMSE and CRPS on KS with an SSR near 1, improving
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Towards Universal Neural Operators through Multiphysics Pretraining](../../NeurIPS2025/physics/towards_universal_neural_operators_through_multiphysics_pretraining.md)
-- [\[ICML 2026\] EqGINO: Equivariant Geometry-Informed Fourier Neural Operators for 3D PDEs](eqgino_equivariant_geometry-informed_fourier_neural_operators_for_3d_pdes.md)
 - [\[ICML 2026\] PINNfluence: Interpreting PINNs Through Influence Functions](pinnfluence_interpreting_pinns_through_influence_functions.md)
-- [\[ICML 2026\] Iterative Refinement Neural Operators are Learned Fixed-Point Solvers: A Principled Approach to Spectral Bias Mitigation](iterative_refinement_neural_operators_are_learned_fixed-point_solvers_a_principl.md)
-- [\[CVPR 2025\] DiffFNO: Diffusion Fourier Neural Operator](../../CVPR2025/physics/difffno_diffusion_fourier_neural_operator.md)
+- [\[ICML 2026\] EqGINO: Equivariant Geometry-Informed Fourier Neural Operators for 3D PDEs](eqgino_equivariant_geometry-informed_fourier_neural_operators_for_3d_pdes.md)
+- [\[ICML 2026\] Quantum latent distributions in deep generative models](quantum_latent_distributions_in_deep_generative_models.md)
+- [\[ICLR 2026\] Proximal Diffusion Neural Sampler](../../ICLR2026/physics/proximal_diffusion_neural_sampler.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Structure-Aware Spectral Sparsification via Uniform Edge Sampling
 description: >-
-  [NEURIPS2025][spectral sparsification] This paper proves that on graphs with sufficiently strong clustering structure (structure ratio $\Upsilon(k)$ large enough)…
+  [NEURIPS2025][spectral sparsification] This paper proves that on graphs with sufficiently strong clustering structure (structure ratio $\Upsilon(k)$ large enough), **uniform edge sampling** suffices to preserve the spectral subspace structure required for spectral clustering, without expensive effective resistance precomputation — providing the first provable guarantee that uniform sampling preserves such structure.
 tags:
   - "NEURIPS2025"
   - "spectral sparsification"
@@ -11,7 +11,7 @@ tags:
   - "effective resistance"
   - "graph sparsification"
 date: 2026-05-08
-content_hash: 47ddb76b81494ee1
+content_hash: 200fd28b74f9a56f
 ---
 
 # Structure-Aware Spectral Sparsification via Uniform Edge Sampling
@@ -174,11 +174,11 @@ All experiments were conducted on a MacBook Pro M1 (16GB RAM), with means and st
 
 ## Related Papers
 
+- [\[ICML 2025\] Online Sparsification of Bipartite-Like Clusters in Graphs](../../ICML2025/others/online_sparsification_of_bipartite-like_clusters_in_graphs.md)
+- [\[CVPR 2026\] Confusion-Aware Spectral Regularizer for Long-Tailed Recognition](../../CVPR2026/others/confusion-aware_spectral_regularizer_for_long-tailed_recognition.md)
 - [\[AAAI 2026\] Structure-Aware Encodings of Argumentation Properties for Clique-width](../../AAAI2026/others/structure-aware_encodings_of_argumentation_properties_for_clique-width.md)
 - [\[NeurIPS 2025\] Robust Sampling for Active Statistical Inference](robust_sampling_for_active_statistical_inference.md)
-- [\[ICLR 2026\] SONIC: Spectral Oriented Neural Invariant Convolutions](../../ICLR2026/others/sonic_spectral_oriented_neural_invariant_convolutions.md)
-- [\[NeurIPS 2025\] Sharpness-Aware Minimization with Z-Score Gradient Filtering](sharpness-aware_minimization_with_z-score_gradient_filtering.md)
-- [\[NeurIPS 2025\] Frequency-Aware Token Reduction for Efficient Vision Transformer](frequency-aware_token_reduction_for_efficient_vision_transformer.md)
+- [\[CVPR 2025\] SDF-Net: Structure-Aware Disentangled Feature Learning for Optical–SAR Ship Re-Identification](../../CVPR2025/others/sdf-net_structure-aware_disentangled_feature_learning_for_opticall-sar_ship_re-i.md)
 
 </div>
 

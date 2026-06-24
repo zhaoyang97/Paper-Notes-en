@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] JTPRO: A Joint Tool-Prompt Reflective Optimization Framework for Language Agents
 description: >-
-  [ACL 2026][LLM Reasoning][Paper Note] JTPRO proposes a joint optimization framework that avoids model fine-tuning. By using reflection-driven iterative editing, it simultaneously optimizes global instructions and tool-wise schemas/parameter descriptions. This significantly improves end-to-end success rates in large-scale tool library scenarios, achieving a
+  [ACL 2026][Reasoning][Tool call optimization] JTPRO proposes a joint optimization framework that avoids model fine-tuning. By using reflection-driven iterative editing, it simultaneously optimizes global instructions and tool-wise schemas/parameter descriptions. This significantly improves end-to-end success rates in large-scale tool library scenarios, achieving a 5%–20% gain in OSR compared to baselines like GEPA.
 tags:
-  - ACL 2026
-  - LLM Reasoning
+  - "ACL 2026"
+  - "Reasoning"
+  - "Tool call optimization"
+  - "Prompt optimization"
+  - "Reflective learning"
+  - "Large tool libraries"
+  - "Joint optimization"
 date: 2026-05-08
-content_hash: df2bebd9ad45f766
+content_hash: 43faf1557eb75525
 ---
+
 # JTPRO: A Joint Tool-Prompt Reflective Optimization Framework for Language Agents
 
 **Conference**: ACL 2026  
@@ -132,10 +138,10 @@ The optimization goal is to minimize call-level loss, which comprises tool selec
 ## Related Papers
 
 - [\[ICLR 2026\] Adaptive Social Learning via Mode Policy Optimization for Language Agents](../../ICLR2026/llm_reasoning/adaptive_social_learning_via_mode_policy_optimization_for_language_agents.md)
+- [\[ACL 2026\] TInR: Exploring Tool-Internalized Reasoning in Large Language Models](tinr_exploring_tool-internalized_reasoning_in_large_language_models.md)
+- [\[ICLR 2026\] ReForm: Reflective Autoformalization with Prospective Bounded Sequence Optimization](../../ICLR2026/llm_reasoning/reform_reflective_autoformalization_with_prospective_bounded_sequence_optimizati.md)
 - [\[ACL 2026\] Foresight Optimization for Strategic Reasoning in Large Language Models](foresight_optimization_for_strategic_reasoning_in_large_language_models.md)
 - [\[ICML 2026\] Diversity Over Frequency: Rethinking Tool Use in Visual Chain-of-Thought Agents](../../ICML2026/llm_reasoning/diversity_over_frequency_rethinking_tool_use_in_visual_chain-of-thought_agents.md)
-- [\[ICLR 2026\] ReForm: Reflective Autoformalization with Prospective Bounded Sequence Optimization](../../ICLR2026/llm_reasoning/reform_reflective_autoformalization_with_prospective_bounded_sequence_optimizati.md)
-- [\[AAAI 2026\] Beyond ReAct: A Planner-Centric Framework for Complex Tool-Augmented LLM Reasoning](../../AAAI2026/llm_reasoning/beyond_react_a_planner-centric_framework_for_complex_tool-au.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PIP-Stereo: Progressive Iterations Pruner for Iterative Optimization based Stereo Matching
 description: >-
-  [CVPR 2026][3D Vision][FlashGRU] Reveals spatial sparsity and temporal redundancy in iterative stereo matching disparity updates. Proposes Progressive Iterations Pruner (PIP) to compress 32 iterations into 1, a collaborative learning paradigm for depth prior transfer without independent monocular encoders, and a hardware-aware FlashGRU operator (7.28×
+  [CVPR 2026][3D Vision][Stereo Matching] Reveals spatial sparsity and temporal redundancy in iterative stereo matching disparity updates. Proposes Progressive Iterations Pruner (PIP) to compress 32 iterations into 1, a collaborative learning paradigm for depth prior transfer without independent monocular encoders, and a hardware-aware FlashGRU operator (7.28× speedup). This enables high-precision iterative stereo matching to achieve real-time inference on Jetson Orin NX (75ms/…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - FlashGRU
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Stereo Matching"
+  - "Iterative Optimization Pruning"
+  - "Edge Deployment"
+  - "FlashGRU"
+  - "Monocular Depth Prior Transfer"
 date: 2026-05-08
-content_hash: 5316991148004433
+content_hash: 766f5f7ce6c66454
 ---
+
 # PIP-Stereo: Progressive Iterations Pruner for Iterative Optimization based Stereo Matching
 
 **Conference**: CVPR 2026  

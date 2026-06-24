@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Forest vs Tree: The (N, K) Trade-off in Reproducible ML Evaluation
 description: >-
-  [AAAI 2026][Reproducibility] This paper investigates the optimal trade-off between the number of samples $N$ and the number of annotators per sample $K$ in machine learning evaluation. Under a fixed budget $N \times K$…
+  [AAAI 2026][Reproducibility] This paper investigates the optimal trade-off between the number of samples $N$ and the number of annotators per sample $K$ in machine learning evaluation. Under a fixed budget $N \times K$, by analyzing multi-annotator datasets and simulated distributions, the study finds that $K > 10$ is generally optimal when annotator disagreement is considered, and the required total budget $N \times K$ typically does not exceed 1000.
 tags:
   - "AAAI 2026"
   - "Reproducibility"
@@ -11,7 +11,7 @@ tags:
   - "Evaluation Reliability"
   - "Optimal Budget Allocation"
 date: 2026-05-08
-content_hash: c468a7f80978739b
+content_hash: a6aa27896b67f938
 ---
 
 # Forest vs Tree: The (N, K) Trade-off in Reproducible ML Evaluation
@@ -130,10 +130,10 @@ Not applicable (this paper is a study in evaluation methodology and does not inv
 ## Related Papers
 
 - [\[ICCV 2025\] On the Complexity-Faithfulness Trade-off of Gradient-Based Explanations](../../ICCV2025/others/on_the_complexity-faithfulness_trade-off_of_gradient-based_explanations.md)
-- [\[AAAI 2026\] MicroEvoEval: A Systematic Evaluation Framework for Image-Based Microstructure Evolution Prediction](microevoeval_a_systematic_evaluation_framework_for_image-based_microstructure_ev.md)
+- [\[ICML 2026\] Position: Evaluation of ML Resource Utilization Requires Model Life Cycle Assessment](../../ICML2026/others/evaluation_of_ml_resource_utilization_requires_model_life_cycle_assessment.md)
 - [\[AAAI 2026\] Extreme Value Monte Carlo Tree Search for Classical Planning](extreme_value_monte_carlo_tree_search_for_classical_planning.md)
+- [\[ICLR 2026\] PU-Bench: A Unified Benchmark for Rigorously Reproducible PU Learning](../../ICLR2026/others/pu-bench_a_unified_benchmark_for_rigorous_and_reproducible_pu_learning.md)
 - [\[AAAI 2026\] DFDT: Dynamic Fast Decision Tree for IoT Data Stream Mining on Edge Devices](dfdt_dynamic_fast_decision_tree_for_iot_data_stream_mining_on_edge_devices.md)
-- [\[ICML 2026\] Over-Alignment vs Over-Fitting: The Role of Feature Learning Strength in Generalization](../../ICML2026/others/over-alignment_vs_over-fitting_the_role_of_feature_learning_strength_in_generali.md)
 
 </div>
 

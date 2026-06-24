@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MME-VideoOCR: Evaluating OCR-Based Capabilities of Multimodal LLMs in Video Scenarios
 description: >-
-  [NeurIPS 2025][Multimodal VLM][video OCR] This paper introduces MME-VideoOCR, a comprehensive video OCR evaluation benchmark comprising 25 tasks, 44 scenarios, 1,464 videos, and 2,000 manually annotated QA pairs…
+  [NeurIPS 2025][Multimodal VLM][video OCR] This paper introduces MME-VideoOCR, a comprehensive video OCR evaluation benchmark comprising 25 tasks, 44 scenarios, 1,464 videos, and 2,000 manually annotated QA pairs, spanning three levels of text recognition, understanding, and reasoning. Evaluation of 18 state-of-the-art MLLMs reveals that the strongest model (Gemini-2.5 Pro) achieves only 73.7% overall, with cross-frame understanding tasks falling below 25%.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "language prior bias"
   - "multimodal LLM evaluation"
 date: 2026-05-08
-content_hash: 913cace3e2adef69
+content_hash: afa8cf218cb44dfb
 ---
 
 # MME-VideoOCR: Evaluating OCR-Based Capabilities of Multimodal LLMs in Video Scenarios
@@ -132,11 +132,11 @@ This paper introduces MME-VideoOCR, a comprehensive video OCR evaluation benchma
 
 ## Related Papers
 
+- [\[ACL 2025\] VF-Eval: Evaluating Multimodal LLMs for Generating Feedback on AIGC Videos](../../ACL2025/multimodal_vlm/vf_eval_aigc_video_feedback.md)
 - [\[NeurIPS 2025\] Towards Evaluating Proactive Risk Awareness of Multimodal Language Models](towards_evaluating_proactive_risk_awareness_of_multimodal_language_models.md)
-- [\[ACL 2026\] ShredBench: Evaluating the Semantic Reasoning Capabilities of Multimodal LLMs in Document Reconstruction](../../ACL2026/multimodal_vlm/shredbench_evaluating_the_semantic_reasoning_capabilities_of_multimodal_llms_in_.md)
 - [\[NeurIPS 2025\] WearVQA: A Visual Question Answering Benchmark for Wearables in Egocentric Authentic Real-world scenarios](wearvqa_a_visual_question_answering_benchmark_for_wearables_in_egocentric_authen.md)
-- [\[NeurIPS 2025\] Vision Function Layer in Multimodal LLMs](vision_function_layer_in_multimodal_llms.md)
-- [\[NeurIPS 2025\] Video-R1: Reinforcing Video Reasoning in MLLMs](video-r1_reinforcing_video_reasoning_in_mllms.md)
+- [\[ICCV 2025\] Enrich and Detect: Video Temporal Grounding with Multimodal LLMs](../../ICCV2025/multimodal_vlm/enrich_and_detect_video_temporal_grounding_with_multimodal_llms.md)
+- [\[ACL 2025\] Hidden in Plain Sight: Evaluation of the Deception Detection Capabilities of LLMs in Multimodal Settings](../../ACL2025/multimodal_vlm/hidden_in_plain_sight_evaluation_of_the_deception_detection_capabilities_of_llms.md)
 
 </div>
 

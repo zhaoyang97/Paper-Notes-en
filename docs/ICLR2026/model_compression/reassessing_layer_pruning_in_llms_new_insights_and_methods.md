@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reassessing Layer Pruning in LLMs: New Insights and Methods
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] This paper invests thousands of GPU hours to systematically reassess "layer selection metrics" and "post-pruning fine-tuning methods" for LLM layer pruning. It reaches two counter-intuitive conclusions: the simplest "reverse-order pruning of the last few layers" outperforms various complex metrics, and "partial layer f
+  [ICLR 2026][Model Compression][Layer Pruning] This paper invests thousands of GPU hours to systematically reassess "layer selection metrics" and "post-pruning fine-tuning methods" for LLM layer pruning. It reaches two counter-intuitive conclusions: the simplest "reverse-order pruning of the last few layers" outperforms various complex metrics, and "partial layer fine-tuning of only the lm head + last 3 layers" exceeds the standard LoRA. The authors provide a theoretical expla…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Layer Pruning"
+  - "LLM Compression"
+  - "Reverse-order Pruning"
+  - "Partial Layer Fine-tuning"
+  - "Pre-LN Gradient Flow"
 date: 2026-05-08
-content_hash: ad3a65e2d02c8681
+content_hash: 9a127b99debc4754
 ---
+
 # Reassessing Layer Pruning in LLMs: New Insights and Methods
 
 **Conference**: ICLR 2026  
@@ -141,9 +147,9 @@ Ours outperforms all baselines on both models: on Llama-3.1-8B-It, it is 5.62% h
 
 - [\[ICLR 2026\] GradPruner: Gradient-guided Layer Pruning Enabling Efficient Fine-Tuning and Inference for LLMs](gradpruner_gradient-guided_layer_pruning_enabling_efficient_fine-tuning_and_infe.md)
 - [\[ICLR 2026\] Dr.LLM: Dynamic Layer Routing in LLMs](drllm_dynamic_layer_routing_in_llms.md)
+- [\[ICLR 2026\] GPTailor: Large Language Model Pruning Through Layer Cutting and Stitching](gptailor_large_language_model_pruning_through_layer_cutting_and_stitching.md)
 - [\[ICLR 2026\] Token Distillation: Attention-Aware Input Embeddings for New Tokens](token_distillation_attention-aware_input_embeddings_for_new_tokens.md)
 - [\[ACL 2026\] Adaptive Layer Selection for Layer-Wise Token Pruning in LLM Inference](../../ACL2026/model_compression/adaptive_layer_selection_for_layer-wise_token_pruning_in_llm_inference.md)
-- [\[ICLR 2026\] LSA: Layer-wise Sparsity Allocation for Large Language Model Pruning Based on Minimal Linear Reconstruction Error](lsa_layer-wise_sparsity_allocation_for_large_language_model_pruning_based_on_min.md)
 
 </div>
 

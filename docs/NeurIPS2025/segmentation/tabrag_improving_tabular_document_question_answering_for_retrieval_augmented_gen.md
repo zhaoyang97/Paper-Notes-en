@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TabRAG: Improving Tabular Document Question Answering for Retrieval Augmented Generation via Structured Representations
 description: >-
-  [NeurIPS 2025 (AI4Tab Workshop)][Segmentation][Table QA] This paper proposes TabRAG, a parsing-based RAG framework that decomposes documents into fine-grained components via layout segmentation…
+  [NeurIPS 2025 (AI4Tab Workshop)][Segmentation][Table QA] This paper proposes TabRAG, a parsing-based RAG framework that decomposes documents into fine-grained components via layout segmentation, extracts tables into hierarchical structured representations using vision-language models, and integrates a self-generated in-context learning module to adapt to diverse table formats, achieving comprehensive improvements over existing parsing techniques on tabular document question a…
 tags:
   - "NeurIPS 2025 (AI4Tab Workshop)"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Vision-Language Models"
   - "Document Parsing"
 date: 2026-05-08
-content_hash: 2390764f162ce7ca
+content_hash: 8186f66c8e5b0dcf
 ---
 
 # TabRAG: Improving Tabular Document Question Answering for Retrieval Augmented Generation via Structured Representations
@@ -168,8 +168,8 @@ The advantage of TabRAG remains consistent across different LLM backbones.
 ## Related Papers
 
 - [\[ICCV 2025\] Beyond Single Images: Retrieval Self-Augmented Unsupervised Camouflaged Object Detection](../../ICCV2025/segmentation/beyond_single_images_retrieval_self-augmented_unsupervised_camouflaged_object_de.md)
-- [\[AAAI 2026\] Vista: Scene-Aware Optimization for Streaming Video Question Answering Under Post-Hoc Queries](../../AAAI2026/segmentation/vista_scene-aware_optimization_for_streaming_video_question_answering_under_post.md)
 - [\[CVPR 2026\] Follow the Saliency: Supervised Saliency for Retrieval-augmented Dense Video Captioning](../../CVPR2026/segmentation/follow_the_saliency_supervised_saliency_for_retrieval-augmented_dense_video_capt.md)
+- [\[AAAI 2026\] Vista: Scene-Aware Optimization for Streaming Video Question Answering Under Post-Hoc Queries](../../AAAI2026/segmentation/vista_scene-aware_optimization_for_streaming_video_question_answering_under_post.md)
 - [\[NeurIPS 2025\] Exploring Structural Degradation in Dense Representations for Self-supervised Learning](exploring_structural_degradation_in_dense_representations_for_self-supervised_le.md)
 - [\[NeurIPS 2025\] PartNeXt: A Next-Generation Dataset for Fine-Grained and Hierarchical 3D Part Understanding](partnext_a_next-generation_dataset_for_fine-grained_and_hierarchical_3d_part_und.md)
 

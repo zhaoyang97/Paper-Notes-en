@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ExpoCM: Exposure-Aware One-Step Generative Single-Image HDR Reconstruction
 description: >-
-  [CVPR 2026][Image Restoration][PF-ODE] ExpoCM models single-image HDR reconstruction as an exposure-aware consistency model trajectory. By using soft exposure masks to categorize LDR regions into overexposed, underexposed, and normal, distinct PF-ODE consistency trajectories are designed for each (hallucinating details from pure noise for overexposed region
+  [CVPR 2026][Image Restoration][Single-image HDR Reconstruction] ExpoCM models single-image HDR reconstruction as an exposure-aware consistency model trajectory. By using soft exposure masks to categorize LDR regions into overexposed, underexposed, and normal, distinct PF-ODE consistency trajectories are designed for each (hallucinating details from pure noise for overexposed regions, injecting low-frequency priors for underexposed regions, and using the input directly for nor…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - PF-ODE
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Single-image HDR Reconstruction"
+  - "Consistency Models"
+  - "Exposure-Aware"
+  - "PF-ODE"
+  - "One-step Generation"
 date: 2026-05-08
-content_hash: 3a528b218e256118
+content_hash: a606b264368c6306
 ---
+
 # ExpoCM: Exposure-Aware One-Step Generative Single-Image HDR Reconstruction
 
 **Conference**: CVPR 2026  
@@ -139,10 +144,20 @@ ExpoCM leads in PSNR-µ, SSIM-µ, and ∆E2000 across datasets. The lowest ∆E2
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] GDPO-SR: Group Direct Preference Optimization for One-Step Generative Image Super-Resolution](gdpo-sr_group_direct_preference_optimization_for_one-step_generative_image_super.md)
+- [\[CVPR 2026\] Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution](time-aware_one_step_diffusion_network_for_real-world_image_super-resolution.md)
+- [\[CVPR 2026\] Rectifying Latent Space for Generative Single-Image Reflection Removal](rectifying_latent_space_for_generative_single-image_reflection_removal.md)
+- [\[ICLR 2026\] SoFlow: Solution Flow Models for One-Step Generative Modeling](../../ICLR2026/image_restoration/soflow_solution_flow_models_for_one-step_generative_modeling.md)
+- [\[ECCV 2024\] Intrinsic Single-Image HDR Reconstruction](../../ECCV2024/image_restoration/intrinsic_single-image_hdr_reconstruction.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] GDPO-SR: Group Direct Preference Optimization for One-Step Generative Image Super-Resolution](gdpo-sr_group_direct_preference_optimization_for_one-step_generative_image_super.md)

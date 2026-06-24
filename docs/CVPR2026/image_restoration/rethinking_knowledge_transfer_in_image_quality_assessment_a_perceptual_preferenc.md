@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rethinking Knowledge Transfer in Image Quality Assessment: A Perceptual Preference Structure Alignment Perspective
 description: >-
-  [CVPR 2026][Others][Paper Note] The authors attribute the failure of cross-dataset transfer in IQA to the mismatch of "perceptual preference structure" (i.e., differences in conditional distributions $P(Y|X)$ across datasets). They propose Perceptual Preference Representation (PPR) as a feature-score correlation vector to quantify these preferences,
+  [CVPR 2026][Image Restoration][Image Quality Assessment] The authors attribute the failure of cross-dataset transfer in IQA to the mismatch of "perceptual preference structure" (i.e., differences in conditional distributions $P(Y|X)$ across datasets). They propose Perceptual Preference Representation (PPR) as a feature-score correlation vector to quantify these preferences, Perceptual Preference Compatibility (PPC) using cosine similarity to measure dataset compatibility…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Image Quality Assessment"
+  - "Knowledge Transfer"
+  - "Perceptual Preference Structure"
+  - "Conditional Distribution Alignment"
+  - "Data Efficiency"
 date: 2026-05-08
-content_hash: d8ea1e54208d724e
+content_hash: ba07d1045bf781ef
 ---
+
 # Rethinking Knowledge Transfer in Image Quality Assessment: A Perceptual Preference Structure Alignment Perspective
 
 **Conference**: CVPR 2026  
@@ -142,15 +148,16 @@ PreSTA-J outperforms full within-domain joint training on LIVEC while using only
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] A Unified Framework for Knowledge Transfer in Bidirectional Model Scaling](a_unified_framework_for_knowledge_transfer_in_bidirectional_model_scaling.md)
 - [\[CVPR 2026\] DPGF-Net: Dual-Prior Guided Fusion Network for Joint Assessment of Perceptual Quality and Semantic Consistency in AI-Generated Images](dpgf-net_dual-prior_guided_fusion_network_for_joint_assessment_of_perceptual_qua.md)
+- [\[CVPR 2026\] RL-ScanIQA: Reinforcement-Learned Scanpaths for Blind 360deg Image Quality Assessment](rl-scaniqa_reinforcement-learned_scanpaths_for_blind_360deg_image_quality_assess.md)
 - [\[CVPR 2026\] Life-IQA: Boosting Blind Image Quality Assessment through GCN-enhanced Layer Interaction and MoE-based Feature Decoupling](life-iqa_boosting_blind_image_quality_assessment_through_gcn-enhanced_layer_inte.md)
-- [\[CVPR 2026\] Rethinking BCE Loss for Multi-Label Image Recognition with Fine-Tuning](rethinking_bce_loss_for_multi-label_image_recognition_with_fine-tuning.md)
-- [\[ICML 2026\] Complexity as Advantage: A Regret-Based Perspective on Emergent Structure](../../ICML2026/others/complexity_as_advantage_a_regret-based_perspective_on_emergent_structure.md)
+- [\[CVPR 2025\] Augmenting Perceptual Super-Resolution via Image Quality Predictors](../../CVPR2025/image_restoration/augmenting_perceptual_super-resolution_via_image_quality_predictors.md)
+- [\[AAAI 2026\] Temporal Inconsistency Guidance for Super-resolution Video Quality Assessment](../../AAAI2026/image_restoration/temporal_inconsistency_guidance_for_super-resolution_video_quality_assessment.md)
 
 </div>
 

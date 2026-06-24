@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Constitutional Classifiers++: Efficient Production-Grade Defenses against Universal Jailbreaks
 description: >-
-  [ICLR 2026][LLM Safety][Constitutional Classifiers] This paper advances Constitutional Classifiers from "robust but expensive" safety filters to a production-grade version: by combining an exchange classifier with context awareness, a two-stage cascade, and an activation-based linear probe, it enhances robustness in universal jailbreak red-teaming while reducing computa
+  [ICLR2026][LLM Safety][Universal Jailbreak Defense] This paper advances Constitutional Classifiers from "robust but expensive" safety filters to a production-grade version: by combining an exchange classifier with context awareness, a two-stage cascade, and an activation-based linear probe, it enhances robustness in universal jailbreak red-teaming while reducing computational overhead to approximately $1/40$ of a single exchange classifier.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Constitutional Classifiers
-  - exchange classifier
+  - "ICLR2026"
+  - "LLM Safety"
+  - "Universal Jailbreak Defense"
+  - "Constitutional Classifiers"
+  - "exchange classifier"
+  - "Linear Probes"
+  - "Classifier Cascades"
 date: 2026-05-08
-content_hash: 2cec9a0a940f0c10
+content_hash: 56a11a611f2c81e3
 ---
+
 # Constitutional Classifiers++: Efficient Production-Grade Defenses against Universal Jailbreaks
 
 **Conference**: ICLR2026  

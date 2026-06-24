@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Closing the Safety Gap: Surgical Concept Erasure in Visual Autoregressive Models
 description: >-
-  [ICLR 2026][AI Safety][Concept Erasure] This paper addresses the lack of safety concept erasure mechanisms in visual autoregressive (VAR) text-to-image models. It proposes VARE and S-VARE, utilizing auxiliary visual tokens to stabilize erasure training and employing filtered cross-entropy alongside preservation losses to achieve "surgical" concept erasure—re
+  [ICLR 2026][AI Safety][Concept Erasure] This paper addresses the lack of safety concept erasure mechanisms in visual autoregressive (VAR) text-to-image models. It proposes VARE and S-VARE, utilizing auxiliary visual tokens to stabilize erasure training and employing filtered cross-entropy alongside preservation losses to achieve "surgical" concept erasure—removing target concepts while minimizing collateral damage to generation capabilities.
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Concept Erasure
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Concept Erasure"
+  - "Visual Autoregressive Model"
+  - "Text-to-Image Safety"
+  - "NSFW Protection"
+  - "Model Editing"
 date: 2026-05-08
-content_hash: d6ac4af8ebab5566
+content_hash: 1038f4f896f149ac
 ---
+
 # Closing the Safety Gap: Surgical Concept Erasure in Visual Autoregressive Models
 
 **Conference**: ICLR 2026  
@@ -134,8 +139,8 @@ Ablations on the "church" erasure task demonstrate the necessity of each compone
 - [\[CVPR 2026\] ClusterMark: Towards Robust Watermarking for Autoregressive Image Generators with Visual Token Clustering](../../CVPR2026/ai_safety/clustermark_towards_robust_watermarking_for_autoregressive_image_generators_with.md)
 - [\[CVPR 2026\] Selective Amnesia using Contrastive Subnet Erasure for Class Level Unlearning in Vision Models](../../CVPR2026/ai_safety/selective_amnesia_using_contrastive_subnet_erasure_for_class_level_unlearning_in.md)
 - [\[CVPR 2026\] Hidden Dangers of Compositional Generation: Diagnosing Semantic Safety Failures in Text-to-Image Models](../../CVPR2026/ai_safety/hidden_dangers_of_compositional_generation_diagnosing_semantic_safety_failures_i.md)
+- [\[ICLR 2026\] Decoupling the Class Label and the Target Concept in Machine Unlearning](decoupling_the_class_label_and_the_target_concept_in_machine_unlearning.md)
 - [\[CVPR 2026\] Roots Beneath the Cut: Uncovering the Risk of Concept Revival in Pruning-Based Unlearning for Diffusion Models](../../CVPR2026/ai_safety/roots_beneath_the_cut_uncovering_the_risk_of_concept_revival_in_pruning-based_un.md)
-- [\[ICLR 2026\] Concept-Aware Privacy Mechanisms for Defending Embedding Inversion Attacks](concept-aware_privacy_mechanisms_for_defending_embedding_inversion_attacks.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] AeroAgent: A Vision-Physics-Decision Framework for Aerodynamic Vehicle Design
 description: >-
-  [CVPR 2026][Physics & Scientific Computing][AI agent] AeroAgent integrates "text/image-to-3D car generation → second-level drag and flow field prediction via the AeroFormer surrogate model → planner-driven propose-evaluate-refine closed-loop editing" into a unified framework. It utilizes high-fidelity CFD only for final top-K candidate verification, achieving an average d
+  [CVPR 2026][LLM Agent][Aerodynamic Design] AeroAgent integrates "text/image-to-3D car generation → second-level drag and flow field prediction via the AeroFormer surrogate model → planner-driven propose-evaluate-refine closed-loop editing" into a unified framework. It utilizes high-fidelity CFD only for final top-K candidate verification, achieving an average drag reduction of 2–12% within 5 iterations while reducing high-fidelity CFD calls by 50–80%.
 tags:
-  - CVPR 2026
-  - Physics & Scientific Computing
-  - AI agent
-  - Transformer surrogate
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Aerodynamic Design"
+  - "AI Agent"
+  - "CFD Surrogate Model"
+  - "Closed-loop Optimization"
+  - "Transformer Surrogate"
 date: 2026-05-08
-content_hash: a167289366e743a2
+content_hash: 0fbc87e09299dfd6
 ---
+
 # AeroAgent: A Vision-Physics-Decision Framework for Aerodynamic Vehicle Design
 
 **Conference**: CVPR 2026  
@@ -120,15 +124,15 @@ AeroFormer achieved the best performance across all metrics, with Rel L2 for pre
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] 3DID: Direct 3D Inverse Design for Aerodynamics with Physics-Aware Optimization](../../NeurIPS2025/physics/3did_direct_3d_inverse_design_for_aerodynamics_with_physics-aware_optimization.md)
-- [\[NeurIPS 2025\] Vision Transformers for Cosmological Fields: Application to Weak Lensing Mass Maps](../../NeurIPS2025/physics/vision_transformers_for_cosmological_fields_application_to_weak_lensing_mass_map.md)
-- [\[CVPR 2026\] PhysSkin: Real-Time and Generalizable Physics-Based Skin Simulation](physskin_real-time_and_generalizable_physics-based_animation_via_self-supervised.md)
-- [\[CVPR 2026\] AviaSafe: A Physics-Informed Data-Driven Model for Aviation Safety-Critical Cloud Forecasts](aviasafe_a_physics-informed_data-driven_model_for_aviation_safety-critical_cloud.md)
-- [\[ICML 2026\] Learning to Refine: Spectral-Decoupled Iterative Refinement Framework for Precipitation Nowcasting](../../ICML2026/physics/learning_to_refine_spectral-decoupled_iterative_refinement_framework_for_precipi.md)
+- [\[AAAI 2026\] Physics-Informed Autonomous LLM Agents for Explainable Power Electronics Modulation Design](../../AAAI2026/llm_agent/physics-informed_autonomous_llm_agents_for_explainable_power_electronics_modulat.md)
+- [\[CVPR 2026\] Towards GUI Agents: Vision-Language Diffusion Models for GUI Grounding](towards_gui_agents_vision-language_diffusion_models_for_gui_grounding.md)
+- [\[CVPR 2026\] History to Future: Evolving Agent with Experience and Thought for Zero-shot Vision-and-Language Navigation](history_to_future_evolving_agent_with_experience_and_thought_for_zero-shot_visio.md)
+- [\[ICLR 2026\] AgentGym-RL: An Open-Source Framework to Train LLM Agents for Long-Horizon Decision Making via Multi-Turn RL](../../ICLR2026/llm_agent/agentgym-rl_an_open-source_framework_to_train_llm_agents_for_long-horizon_decisi.md)
+- [\[ICLR 2026\] An Information Theoretic Perspective on Agentic System Design](../../ICLR2026/llm_agent/an_information_theoretic_perspective_on_agentic_system_design.md)
 
 </div>
 

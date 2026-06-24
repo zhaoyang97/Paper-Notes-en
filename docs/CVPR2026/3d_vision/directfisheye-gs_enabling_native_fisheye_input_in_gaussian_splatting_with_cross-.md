@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DirectFisheye-GS: Enabling Native Fisheye Input in Gaussian Splatting with Cross-View Joint Optimization
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper natively integrates the Kannala-Brandt fisheye projection model into the 3DGS pipeline and proposes a cross-view joint optimization strategy based on feature overlap. This approach avoids the information loss inherent in pre-rectification and achieves or exceeds SOTA performance on multiple public datasets.
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper natively integrates the Kannala-Brandt fisheye projection model into the 3DGS pipeline and proposes a cross-view joint optimization strategy based on feature overlap. This approach avoids the information loss inherent in pre-rectification and achieves or exceeds SOTA performance on multiple public datasets.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Fisheye Camera"
+  - "Cross-view Joint Optimization"
+  - "Novel View Synthesis"
+  - "Kannala-Brandt Model"
 date: 2026-05-08
-content_hash: 991ab5b475309976
+content_hash: 6a9c360657554b2f
 ---
+
 # DirectFisheye-GS: Enabling Native Fisheye Input in Gaussian Splatting with Cross-View Joint Optimization
 
 **Conference**: CVPR 2026  
@@ -147,10 +153,10 @@ Even with correct projection, the "randomly sample one image per iteration" stra
 ## Related Papers
 
 - [\[CVPR 2026\] Faster-GS: Analyzing and Improving Gaussian Splatting Optimization](faster-gs_analyzing_and_improving_gaussian_splatting_optimization.md)
+- [\[CVPR 2026\] DropAnSH-GS: Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting](dropping_anchor_and_spherical_harmonics_for_sparse-view_gaussian_splatting.md)
+- [\[CVPR 2026\] GS²: Graph-based Spatial Distribution Optimization for Compact 3D Gaussian Splatting](gs2_graph-based_spatial_distribution_optimization_for_compact_3d_gaussian_splatt.md)
 - [\[CVPR 2026\] Intrinsic Geometry-Appearance Consistency Optimization for Sparse-View Gaussian Splatting](intrinsic_geometry-appearance_consistency_optimization_for_sparse-view_gaussian_.md)
-- [\[CVPR 2026\] Cross-View Splatter: Feed-Forward View Synthesis with Georeferenced Images](cross-view_splatter_feed-forward_view_synthesis_with_georeferenced_images.md)
-- [\[CVPR 2026\] Geometry-Aware Cross-Modal Graph Alignment for Referring Segmentation in 3D Gaussian Splatting](geometry-aware_cross-modal_graph_alignment_for_referring_segmentation_in_3d_gaus.md)
-- [\[CVPR 2026\] Energy-GS: Image Energy-guided Pose Alignment Gaussian Splatting with redesigned pose gradient flow](energy-gs_image_energy-guided_pose_alignment_gaussian_splatting_with_redesigned_.md)
+- [\[CVPR 2026\] Plug-and-Play PDE Optimization for 3D Gaussian Splatting: Toward High-Quality Rendering and Reconstruction](plug-and-play_pde_optimization_for_3d_gaussian_splatting_toward_high-quality_ren.md)
 
 </div>
 

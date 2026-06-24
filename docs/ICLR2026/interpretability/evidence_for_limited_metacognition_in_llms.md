@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Evidence for Limited Metacognition in LLMs
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] The authors borrow the "behavior-only, no self-report" metacognition measurement paradigm from ethology to design two experimental frameworks: the Delegate Game (testing "knowing whether one knows") and the Second Chance Game (testing "knowing what one will answer"). They demonstrate that frontier LLMs since 2024 posse
+  [ICLR 2026][Interpretability][Metacognition] The authors borrow the "behavior-only, no self-report" metacognition measurement paradigm from ethology to design two experimental frameworks: the Delegate Game (testing "knowing whether one knows") and the Second Chance Game (testing "knowing what one will answer"). They demonstrate that frontier LLMs since 2024 possess **limited, context-dependent, and non-human-like** metacognitive abilities—they can perceive and utilize interna…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Metacognition"
+  - "Introspection"
+  - "Self-modeling"
+  - "Confidence signals"
+  - "Model self-awareness"
+  - "AI Safety"
 date: 2026-05-08
-content_hash: eddd2b02e014f7eb
+content_hash: 53046bda78c26f54
 ---
+
 # Evidence for Limited Metacognition in LLMs
 
 **Conference**: ICLR 2026  
@@ -117,8 +124,8 @@ flowchart TB
 - [\[ACL 2026\] Do LLMs Capture Embodied Cognition and Cultural Variation? Cross-Linguistic Evidence from Demonstratives](../../ACL2026/interpretability/do_llms_capture_embodied_cognition_and_cultural_variation_cross-linguistic_evide.md)
 - [\[ICLR 2026\] LLMs Process Lists With General Filter Heads](llms_process_lists_with_general_filter_heads.md)
 - [\[ICLR 2026\] LatentQA: Teaching LLMs to Decode Activations Into Natural Language](latentqa_teaching_llms_to_decode_activations_into_natural_language.md)
-- [\[ACL 2025\] The Anatomy of Evidence: An Investigation Into Explainable ICD Coding](../../ACL2025/interpretability/the_anatomy_of_evidence_an_investigation_into_explainable_icd_coding.md)
 - [\[CVPR 2026\] MedLIME: A Distribution-Aligned and Evidence-Supported Framework for Medical Saliency Explanations](../../CVPR2026/interpretability/medlime_a_distribution-aligned_and_evidence-supported_framework_for_medical_sali.md)
+- [\[ACL 2025\] The Anatomy of Evidence: An Investigation Into Explainable ICD Coding](../../ACL2025/interpretability/the_anatomy_of_evidence_an_investigation_into_explainable_icd_coding.md)
 
 </div>
 

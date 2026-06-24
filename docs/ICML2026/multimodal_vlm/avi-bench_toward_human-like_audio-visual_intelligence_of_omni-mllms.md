@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AVI-Bench: Toward Human-like Audio-Visual Intelligence of Omni-MLLMs
 description: >-
-  [ICML 2026][Multimodal VLM][Omni-MLLM] AVI-Bench is an audio-visual benchmark inspired by human cognition. It organizes the evaluation of Omni-MLLMs into three stages: "Perception → Understanding → Reasoning," supplemented by a "Primitive Sensation" (PriSe) extension. Using 14 tasks, 5,864 samples, and 9 metrics, it systematically diagnoses the Audio-Visual
+  [ICML2026][Multimodal VLM][Audio-Visual Intelligence] AVI-Bench is an audio-visual benchmark inspired by human cognition. It organizes the evaluation of Omni-MLLMs into three stages: "Perception → Understanding → Reasoning," supplemented by a "Primitive Sensation" (PriSe) extension. Using 14 tasks, 5,864 samples, and 9 metrics, it systematically diagnoses the Audio-Visual Intelligence (AVI) of 28 open-source/closed-source Omni-MLLMs and proposes a four-level AVI taxonomy.
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - Omni-MLLM
+  - "ICML2026"
+  - "Multimodal VLM"
+  - "Audio-Visual Intelligence"
+  - "Omni-MLLM"
+  - "Cognitive Hierarchical Benchmark"
+  - "Cross-modal grounding"
+  - "Primitive Sensation"
 date: 2026-05-08
-content_hash: ae7a52af4346bfd4
+content_hash: 638214cd57fa6eba
 ---
+
 # AVI-Bench: Toward Human-like Audio-Visual Intelligence of Omni-MLLMs
 
 **Conference**: ICML2026  
@@ -125,11 +130,11 @@ The four stages are balanced across modalities, with PriSe containing the larges
 
 ## Related Papers
 
+- [\[ICLR 2026\] OmniVideoBench: Towards Audio-Visual Understanding Evaluation for Omni MLLMs](../../ICLR2026/multimodal_vlm/omnivideobench_towards_audio-visual_understanding_evaluation_for_omni_mllms.md)
 - [\[CVPR 2026\] HAVE-Bench: Hierarchical Audio-Visual Evaluation from Perception to Interaction](../../CVPR2026/multimodal_vlm/have-bench_hierarchical_audio-visual_evaluation_from_perception_to_interaction.md)
+- [\[ICLR 2026\] MMSI-Bench: A Benchmark for Multi-Image Spatial Intelligence](../../ICLR2026/multimodal_vlm/mmsi-bench_a_benchmark_for_multi-image_spatial_intelligence.md)
 - [\[CVPR 2026\] A More Word-like Image Tokenization for MLLMs](../../CVPR2026/multimodal_vlm/a_more_word-like_image_tokenization_for_mllms.md)
-- [\[ICLR 2026\] On the Generalization Capacities of MLLMs for Spatial Intelligence](../../ICLR2026/multimodal_vlm/on_the_generalization_capacities_of_mllms_for_spatial_intelligence.md)
-- [\[AAAI 2026\] When Eyes and Ears Disagree: Can MLLMs Discern Audio-Visual Confusion?](../../AAAI2026/multimodal_vlm/when_eyes_and_ears_disagree_can_mllms_discern_audio-visual_confusion.md)
-- [\[CVPR 2026\] EgoAVU: Egocentric Audio-Visual Understanding](../../CVPR2026/multimodal_vlm/egoavu_egocentric_audio-visual_understanding.md)
+- [\[ICML 2026\] FutureOmni: Evaluating Future Forecasting from Omni-Modal Context for Multimodal LLMs](futureomni_evaluating_future_forecasting_from_omni-modal_context_for_multimodal_.md)
 
 </div>
 

@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Consensus vs. Controversy: Mapping the Decision Space Where Architectures Diverge
 description: >-
-  [CVPR 2026][Others][ImageNet] The authors perform "disagreement forensics" on ImageNet using 12 pre-trained models from three major families (CNN, ViT, and MLP-Mixer). They find that while overall accuracies are nearly identical (mean 79.9%), architectural differences are concentrated in the most controversial 10% of images. This "controversial sub
+  [CVPR 2026][Architectural Discrepancy Analysis] The authors perform "disagreement forensics" on ImageNet using 12 pre-trained models from three major families (CNN, ViT, and MLP-Mixer). They find that while overall accuracies are nearly identical (mean 79.9%), architectural differences are concentrated in the most controversial 10% of images. This "controversial subset" exhibits ~4.5x higher disagreement than the "consensus subset," and intra-family consistency is significant…
 tags:
-  - CVPR 2026
-  - Others
-  - ImageNet
+  - "CVPR 2026"
+  - "Architectural Discrepancy Analysis"
+  - "Controversy Space"
+  - "Ensemble Construction"
+  - "Inductive Bias"
+  - "ImageNet"
 date: 2026-05-08
-content_hash: 05b41ccbdd351986
+content_hash: 405faa8f1289dd49
 ---
+
 # Consensus vs. Controversy: Mapping the Decision Space Where Architectures Diverge
 
 **Conference**: CVPR 2026  
@@ -138,11 +142,11 @@ The disagreement distribution is right-skewed (mean 0.106, std 0.056), with most
 
 ## Related Papers
 
-- [\[CVPR 2026\] Exemplar-Free Continual Learning for State Space Models](exemplar-free_continual_learning_for_state_space_models.md)
+- [\[CVPR 2026\] Beyond Euclidean Gossip: KL-Barycentric Consensus on Heterogeneous and Imbalanced Images](beyond_euclidean_gossip_kl-barycentric_consensus_on_heterogeneous_and_imbalanced.md)
 - [\[AAAI 2026\] Bayesian Network Structural Consensus via Greedy Min-Cut Analysis](../../AAAI2026/others/bayesian_network_structural_consensus_via_greedy_min-cut_analysis.md)
 - [\[CVPR 2026\] HypeVPR: Exploring Hyperbolic Space for Perspective to Equirectangular Visual Place Recognition](hypevpr_exploring_hyperbolic_space_for_perspective_to_equirectangular_visual_pla.md)
-- [\[CVPR 2026\] Learning Anchor in Dual Orthogonal Space for Fast Multi-view Clustering](learning_anchor_in_dual_orthogonal_space_for_fast_multi-view_clustering.md)
 - [\[ICML 2026\] Decision Tree Learning on Product Spaces](../../ICML2026/others/decision_tree_learning_on_product_spaces.md)
+- [\[CVPR 2026\] InstantRetouch: Efficient and High-Fidelity Instruction-Guided Image Retouching with Bilateral Space](instantretouch_efficient_and_high-fidelity_instruction-guided_image_retouching_w.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Differentiable Structure Learning and Causal Discovery for General Binary Data
 description: >-
-  [NEURIPS2025][Causal Inference][Causal discovery] This paper proposes a general differentiable structure learning framework based on the Multivariate Bernoulli Distribution (MVB) that makes no assumptions about the speci…
+  [NEURIPS2025][Causal Inference][Causal discovery] This paper proposes a general differentiable structure learning framework based on the Multivariate Bernoulli Distribution (MVB) that makes no assumptions about the specific data-generating process, captures arbitrary higher-order dependencies among binary discrete variables, and proves that while DAGs are not identifiable in the general setting, the minimal equivalence class (Markov equivalence class) is recoverable.
 tags:
   - "NEURIPS2025"
   - "Causal Inference"
@@ -12,7 +12,7 @@ tags:
   - "DAG learning"
   - "multivariate Bernoulli distribution"
 date: 2026-05-08
-content_hash: 959bddb84a102386
+content_hash: 86630acb751977b8
 ---
 
 # Differentiable Structure Learning and Causal Discovery for General Binary Data
@@ -144,11 +144,11 @@ This penalty is quadratic on $[0, \delta]$ and flat beyond $\delta$, providing a
 
 ## Related Papers
 
+- [\[ICLR 2026\] Conformalized Survival Counterfactuals Prediction for General Right-Censored Data](../../ICLR2026/causal_inference/conformalized_survival_counterfactuals_prediction_for_general_right-censored_dat.md)
 - [\[AAAI 2026\] Sparse Additive Model Pruning for Order-Based Causal Structure Learning](../../AAAI2026/causal_inference/sparse_additive_model_pruning_for_order-based_causal_structure_learning.md)
-- [\[NeurIPS 2025\] An Analysis of Causal Effect Estimation Using Outcome Invariant Data Augmentation](an_analysis_of_causal_effect_estimation_using_outcome_invariant_data_augmentatio.md)
 - [\[AAAI 2026\] CaDyT: Causal Structure Learning for Dynamical Systems with Theoretical Score Analysis](../../AAAI2026/causal_inference/causal_structure_learning_for_dynamical_systems_with_theoretical_score_analysis.md)
-- [\[ICLR 2026\] Efficient Ensemble Conditional Independence Test Framework for Causal Discovery](../../ICLR2026/causal_inference/efficient_ensemble_conditional_independence_test_framework_for_causal_discovery.md)
-- [\[NeurIPS 2025\] It's Hard to Be Normal: The Impact of Noise on Structure-agnostic Estimation](its_hard_to_be_normal_the_impact_of_noise_on_structure-agnostic_estimation.md)
+- [\[ICLR 2026\] CARL: Preserving Causal Structure in Representation Learning](../../ICLR2026/causal_inference/carl_preserving_causal_structure_in_representation_learning.md)
+- [\[ACL 2025\] On the Reliability of Large Language Models for Causal Discovery](../../ACL2025/causal_inference/llm_causal_discovery_reliability.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Perceptual Flow Network for Visually Grounded Reasoning
 description: >-
-  [ICML 2026][Reinforcement Learning][GFlowNet] Abandoning the traditional RLVR approach of "hard supervision using precise boxes from vision experts," PFlowNet models the act of perception as a structured latent variable called Perceptual Flow. It approximates the ideal reasoning-oriented posterior using a variational distribution $p_\theta(Z|X)$ and trains it via
+  [ICML 2026][Reinforcement Learning][Visually Grounded Reasoning] Abandoning the traditional RLVR approach of "hard supervision using precise boxes from vision experts," PFlowNet models the act of perception as a structured latent variable called Perceptual Flow. It approximates the ideal reasoning-oriented posterior using a variational distribution $p_\theta(Z|X)$ and trains it via Sub-TB variational RL, multi-dimensional rewards, and Vicinal Geometric Shaping. This allows th…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - GFlowNet
-  - Sub-TB
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Visually Grounded Reasoning"
+  - "GFlowNet"
+  - "Sub-TB"
+  - "Variational RL"
+  - "LVLM Hallucinations"
 date: 2026-05-08
-content_hash: 0717c97b85a116f2
+content_hash: b7b33801e460e4e1
 ---
+
 # Perceptual Flow Network for Visually Grounded Reasoning
 
 **Conference**: ICML 2026  
@@ -137,8 +141,21 @@ Note: Larger models like InternVL3-78B or Qwen2.5-VL-72B score only around 42–
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[CVPR 2026\] See It, Say It, Sorted: An Iterative Training-Free Framework for Visually-Grounded Multimodal Reasoning in LVLMs](../../CVPR2026/reinforcement_learning/see_it_say_it_sorted_an_iterative_training-free_framework_for_visually-grounded_.md)
+- [\[ACL 2026\] Visually-Guided Policy Optimization for Multimodal Reasoning](../../ACL2026/reinforcement_learning/visually-guided_policy_optimization_for_multimodal_reasoning.md)
+- [\[ICML 2026\] How Does Reasoning Flow? Tracing Attention-Induced Information Flow for Targeted RL in LLMs](how_does_reasoning_flow_tracing_attention-induced_information_flow_for_targeted_.md)
+- [\[ICML 2026\] Reverse Flow Matching: A Unified Framework for Online Reinforcement Learning with Diffusion and Flow Policies](reverse_flow_matching_a_unified_framework_for_online_reinforcement_learning_with.md)
+- [\[ICLR 2026\] Reference Grounded Skill Discovery](../../ICLR2026/reinforcement_learning/reference_grounded_skill_discovery.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

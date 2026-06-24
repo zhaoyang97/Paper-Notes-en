@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PASE: Leveraging the Phonological Prior of WavLM for Low-Hallucination Generative Speech Enhancement
 description: >-
-  [AAAI 2026][Hallucination Detection][Speech Enhancement] This paper proposes PASE, a framework that leverages robust phonological priors embedded in pretrained WavLM via Denoising Representation Distillation (DRD) to sup…
+  [AAAI 2026][Hallucination Detection][Speech Enhancement] This paper proposes PASE, a framework that leverages robust phonological priors embedded in pretrained WavLM via Denoising Representation Distillation (DRD) to suppress linguistic hallucinations, while employing a dual-stream representation (high-level phonetic + low-level acoustic) to eliminate acoustic hallucinations, simultaneously achieving state-of-the-art performance in both perceptual quality and content fidelity…
 tags:
   - "AAAI 2026"
   - "Hallucination Detection"
@@ -12,7 +12,7 @@ tags:
   - "Phonological Prior"
   - "Representation Distillation"
 date: 2026-05-08
-content_hash: 0cce568060c71af6
+content_hash: f686dbcb246be3b0
 ---
 
 # PASE: Leveraging the Phonological Prior of WavLM for Low-Hallucination Generative Speech Enhancement
@@ -203,11 +203,11 @@ Ablation on acoustic conditioning schemes:
 
 ## Related Papers
 
-- [\[ICML 2026\] Capturing Gaze Shifts for Guidance: Cross-Modal Fusion Enhancement for VLM Hallucination Mitigation](../../ICML2026/hallucination/capturing_gaze_shifts_for_guidance_cross-modal_fusion_enhancement_for_vlm_halluc.md)
+- [\[CVPR 2026\] SVHalluc: Benchmarking Speech-Vision Hallucination in Audio-Visual Large Language Models](../../CVPR2026/hallucination/svhalluc_benchmarking_speech-vision_hallucination_in_audio-visual_large_language.md)
 - [\[ICML 2026\] Adaptive Residual-Update Steering for Low-Overhead Hallucination Mitigation in Large Vision Language Models](../../ICML2026/hallucination/adaptive_residual-update_steering_for_low-overhead_hallucination_mitigation_in_l.md)
-- [\[AAAI 2026\] ESG-Bench: Benchmarking Long-Context ESG Reports for Hallucination Mitigation](esg-bench_benchmarking_long-context_esg_reports_for_hallucination_mitigation.md)
-- [\[AAAI 2026\] MUG: Multi-agent Undercover Gaming — Hallucination Removal via Counterfactual Test for Multimodal Reasoning](multi-agent_undercover_gaming_hallucination_removal_via_coun.md)
-- [\[AAAI 2026\] Does Less Hallucination Mean Less Creativity? An Empirical Investigation in LLMs](does_less_hallucination_mean_less_creativity_an_empirical_investigation_in_llms.md)
+- [\[ICML 2026\] Capturing Gaze Shifts for Guidance: Cross-Modal Fusion Enhancement for VLM Hallucination Mitigation](../../ICML2026/hallucination/capturing_gaze_shifts_for_guidance_cross-modal_fusion_enhancement_for_vlm_halluc.md)
+- [\[ICLR 2026\] Imitating the Truth: Attention-aware Truth-Guided Enhancement for Hallucination Mitigation in Large Vision-Language Models](../../ICLR2026/hallucination/imitating_the_truth_attention-aware_truth-guided_enhancement_for_hallucination_m.md)
+- [\[ICLR 2026\] Leveraging Pretrained Knowledge at Inference Time: LoRA-Gated Contrastive Decoding for Multilingual Factual Language Generation in Adapted LLMs](../../ICLR2026/hallucination/leveraging_pretrained_knowledge_at_inference_time_lora-gated_contrastive_decodin.md)
 
 </div>
 

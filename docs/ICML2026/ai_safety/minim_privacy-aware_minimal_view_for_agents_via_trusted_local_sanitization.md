@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Minim: Privacy-Aware Minimal View for Agents via Trusted Local Sanitization
 description: >-
-  [ICML 2026][AI Safety][Paper Note] Minim is a "trusted sanitization proxy" running locally on a user's device. Before an Agent uploads the interface state (accessibility tree) to a remote inference server, it uses a small model to assign two scores to each UI element—**intrinsic sensitivity $s$** and **task-conditioned necessity $n$**. It then applies a
+  [ICML2026][AI Safety][Agent Privacy] Minim is a "trusted sanitization proxy" running locally on a user's device. Before an Agent uploads the interface state (accessibility tree) to a remote inference server, it uses a small model to assign two scores to each UI element—**intrinsic sensitivity $s$** and **task-conditioned necessity $n$**. It then applies a ternary disclosure strategy (Keep / Abstract / Remove) to release only the minimum information truly required for the task…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML2026"
+  - "AI Safety"
+  - "Agent Privacy"
+  - "Accessibility Tree"
+  - "Contextual Integrity"
+  - "Data Minimization"
+  - "Local Sanitization"
 date: 2026-05-08
-content_hash: f6e3878f943d59f0
+content_hash: b67452f063ae75cb
 ---
+
 # Minim: Privacy-Aware Minimal View for Agents via Trusted Local Sanitization
 
 **Conference**: ICML2026  
@@ -144,11 +150,11 @@ Key metrics: **TCNP** (Task-Critical Node Preservation), **TCNP-I** (Interactive
 
 ## Related Papers
 
-- [\[ICLR 2026\] Membership Privacy Risks of Sharpness Aware Minimization](../../ICLR2026/ai_safety/sam_membership_privacy_risks.md)
+- [\[ICLR 2026\] Fairness-Aware Multi-view Evidential Learning with Adaptive Prior](../../ICLR2026/ai_safety/fairness-aware_multi-view_evidential_learning_with_adaptive_prior.md)
+- [\[ICLR 2026\] Federated Learning of Quantile Inference under Local Differential Privacy](../../ICLR2026/ai_safety/federated_learning_of_quantile_inference_under_local_differential_privacy.md)
 - [\[CVPR 2026\] LDP-Slicing: Local Differential Privacy for Images via Randomized Bit-Plane Slicing](../../CVPR2026/ai_safety/ldp-slicing_local_differential_privacy_for_images_via_randomized_bit-plane_slici.md)
+- [\[ICLR 2026\] Membership Privacy Risks of Sharpness Aware Minimization](../../ICLR2026/ai_safety/sam_membership_privacy_risks.md)
 - [\[ICML 2026\] MetaMoE: Diversity-Aware Proxy Selection for Privacy-Preserving Mixture-of-Experts Unification](metamoe_diversity-aware_proxy_selection_for_privacy-preserving_mixture-of-expert.md)
-- [\[ICML 2026\] Decoupled Training with Local Reinforcement Fine-Tuning in Federated Learning](decoupled_training_with_local_reinforcement_fine-tuning_in_federated_learning.md)
-- [\[CVPR 2026\] Improving Adversarial Transferability with Local Perturbation Augmentation](../../CVPR2026/ai_safety/improving_adversarial_transferability_with_local_perturbation_augmentation.md)
 
 </div>
 

@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Articulation in Motion: Prior-Free Part Mobility Analysis for Articulated Objects
 description: >-
-  [ICLR 2026][Others][articulated objects] The Articulation in Motion (AiM) framework is proposed to reconstruct articulated objects from interaction videos and initial state scans without requiring part-number priors. It achieves motion-static decoupling using a dual Gaussian representation (static GS + deformable GS), utilizes sequential RANSAC for prior-free
+  [ICLR 2026][articulated objects] The Articulation in Motion (AiM) framework is proposed to reconstruct articulated objects from interaction videos and initial state scans without requiring part-number priors. It achieves motion-static decoupling using a dual Gaussian representation (static GS + deformable GS), utilizes sequential RANSAC for prior-free part segmentation and joint estimation, and incorporates an SDMD module to handle newly exposed static regions. On complex 6-p…
 tags:
-  - ICLR 2026
-  - Others
-  - articulated objects
-  - Gaussian splatting
-  - part segmentation
-  - joint estimation
-  - sequential RANSAC
-  - prior-free
+  - "ICLR 2026"
+  - "articulated objects"
+  - "Gaussian splatting"
+  - "part segmentation"
+  - "joint estimation"
+  - "sequential RANSAC"
+  - "prior-free"
+  - "interaction video"
 date: 2026-05-08
-content_hash: 045dfe6dfdd86e5f
+content_hash: 8f6da2933d5a8e57
 ---
+
 # Articulation in Motion: Prior-Free Part Mobility Analysis for Articulated Objects
 
 **Conference**: ICLR 2026  
@@ -137,9 +138,9 @@ The number of movable parts is usually unknown. AiM treats segmentation as a pro
 
 - [\[ICLR 2026\] Prior-Free Tabular Test-Time Adaptation](prior-free_tabular_test-time_adaptation.md)
 - [\[ICLR 2026\] PriorGuide: Test-Time Prior Adaptation for Simulation-Based Inference](priorguide_test-time_prior_adaptation_for_simulation-based_inference.md)
+- [\[ICLR 2026\] Identity-Free Deferral For Unseen Experts](identity-free_deferral_for_unseen_experts.md)
 - [\[ICLR 2026\] Bayesian Influence Functions for Hessian-Free Data Attribution](bayesian_influence_functions_for_hessian-free_data_attribution.md)
 - [\[ECCV 2024\] PartCraft: Crafting Creative Objects by Parts](../../ECCV2024/others/partcraft_crafting_creative_objects_by_parts.md)
-- [\[CVPR 2026\] VideoMaMa: Mask-Guided Video Matting via Generative Prior](../../CVPR2026/others/videomama_mask-guided_video_matting_via_generative_prior.md)
 
 </div>
 

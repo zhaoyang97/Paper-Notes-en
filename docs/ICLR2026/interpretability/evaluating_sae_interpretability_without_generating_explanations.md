@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Evaluating SAE Interpretability Without Generating Explanations
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper proposes two evaluation methods for Sparse Autoencoder (SAE) interpretability—intruder detection and example embedding scoring—that **do not require generating natural language explanations**. By basing evaluation directly on latent activation examples, the study verifies that LLM evaluation is highly correl
+  [ICLR 2026][Interpretability][Sparse Autoencoders] This paper proposes two evaluation methods for Sparse Autoencoder (SAE) interpretability—intruder detection and example embedding scoring—that **do not require generating natural language explanations**. By basing evaluation directly on latent activation examples, the study verifies that LLM evaluation is highly correlated with human judgment through manual annotation.
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Sparse Autoencoders"
+  - "SAE Evaluation"
+  - "Interpretability Metrics"
+  - "Intruder Detection"
+  - "Embedding Scoring"
+  - "Mechanistic Interpretability"
 date: 2026-05-08
-content_hash: 623af7399f0eee27
+content_hash: e7b04843415af49f
 ---
+
 # Evaluating SAE Interpretability Without Generating Explanations
 
 **Conference**: ICLR 2026  
@@ -132,7 +139,7 @@ Strong models consistently correlate with humans ($>0.80$), while weak models (e
 - [\[AAAI 2026\] Using Certifying Constraint Solvers for Generating Step-wise Explanations](../../AAAI2026/interpretability/using_certifying_constraint_solvers_for_generating_step-wise_explanations.md)
 - [\[ICML 2025\] Evaluating Neuron Explanations: A Unified Framework with Sanity Checks](../../ICML2025/interpretability/evaluating_neuron_explanations_a_unified_framework_with_sanity_checks.md)
 - [\[ICLR 2026\] Grokking in LLM Pretraining? Monitor Memorization-to-Generalization without Test](grokking_in_llm_pretraining_monitor_memorization-to-generalization_without_test.md)
-- [\[ICLR 2026\] When Machine Learning Gets Personal: Evaluating Prediction and Explanation](when_machine_learning_gets_personal_evaluating_prediction_and_explanation.md)
+- [\[NeurIPS 2025\] Towards Interpretability Without Sacrifice: Faithful Dense Layer Decomposition with Mixture of Decoders](../../NeurIPS2025/interpretability/towards_interpretability_without_sacrifice_faithful_dense_layer_decomposition_wi.md)
 
 </div>
 

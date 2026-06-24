@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LVTINO: LAtent Video consisTency INverse sOlver for High Definition Video Restoration
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] Proposes LVTINO, the first zero-shot video inverse problem solver based on Video Consistency Model (VCM) priors. By injecting auto-differentiation-free measurement consistency constraints into the VCM sampling process, it achieves superior perceptual quality and temporal consistency over frame-wise image methods across
+  [ICLR 2026][Image Generation][Video Restoration] Proposes LVTINO, the first zero-shot video inverse problem solver based on Video Consistency Model (VCM) priors. By injecting auto-differentiation-free measurement consistency constraints into the VCM sampling process, it achieves superior perceptual quality and temporal consistency over frame-wise image methods across various video inverse problems (e.g., super-resolution, deblurring, inpainting) with minimal Neural Function E…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Video Restoration"
+  - "Consistency Models"
+  - "Inverse Problem Solving"
+  - "Zero-shot"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: dd3068ef3708720c
+content_hash: 50ef6a63822d497d
 ---
+
 # LVTINO: LAtent Video consisTency INverse sOlver for High Definition Video Restoration
 
 **Conference**: ICLR 2026  
@@ -139,10 +144,20 @@ LVTINO significantly outperforms frame-wise methods in perceptual metrics (LPIPS
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICCV 2025\] LATINO-PRO: LAtent consisTency INverse sOlver with PRompt Optimization](../../ICCV2025/image_generation/latino-pro_latent_consistency_inverse_solver_with_prompt_optimization.md)
+- [\[ICLR 2026\] Many-for-Many: Unify the Training of Multiple Video and Image Generation and Manipulation Tasks](many-for-many_unify_the_training_of_multiple_video_and_image_generation_and_mani.md)
+- [\[ICLR 2026\] Dual-Solver: A Generalized ODE Solver for Diffusion Models with Dual Prediction](dual-solver_a_generalized_ode_solver_for_diffusion_models_with_dual_prediction.md)
+- [\[ICLR 2026\] Eliminating VAE for Fast and High-Resolution Generative Detail Restoration](eliminating_vae_for_fast_and_high-resolution_generative_detail_restoration.md)
+- [\[ICLR 2026\] Bridging Degradation Discrimination and Generation for Universal Image Restoration](bridging_degradation_discrimination_and_generation_for_universal_image_restorati.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICCV 2025\] LATINO-PRO: LAtent consisTency INverse sOlver with PRompt Optimization](../../ICCV2025/image_generation/latino-pro_latent_consistency_inverse_solver_with_prompt_optimization.md)

@@ -83,7 +83,7 @@ item_total: 53
 
 **🧪 ICML2026** · **53** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (130)](../../CVPR2026/robotics/index.md) · [🔬 ICLR2026 (162)](../../ICLR2026/robotics/index.md) · [💬 ACL2026 (11)](../../ACL2026/robotics/index.md) · [🤖 AAAI2026 (30)](../../AAAI2026/robotics/index.md) · [🧠 NeurIPS2025 (73)](../../NeurIPS2025/robotics/index.md) · [📹 ICCV2025 (26)](../../ICCV2025/robotics/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (146)](../../CVPR2026/robotics/index.md) · [🔬 ICLR2026 (162)](../../ICLR2026/robotics/index.md) · [💬 ACL2026 (11)](../../ACL2026/robotics/index.md) · [🤖 AAAI2026 (30)](../../AAAI2026/robotics/index.md) · [🧠 NeurIPS2025 (75)](../../NeurIPS2025/robotics/index.md) · [📹 ICCV2025 (26)](../../ICCV2025/robotics/index.md)
 
 🔥 **Top topics:** Multimodal/VLM ×21 · Robotics ×9 · Diffusion Models ×7 · Agents ×4 · Reasoning ×3
 

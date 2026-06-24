@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Resource-Efficient LLMs: End-to-End Energy Accounting of Distillation Pipelines
 description: >-
-  [ICML 2026][Model Compression][Paper Note] The authors developed a staged GPU energy collection framework based on NVML, decomposing the distillation pipeline into "teacher side + student side + evaluation" for stepwise measurement. Findings indicate that for one-off runs, teacher logit caching and synthetic data generation represent the primary energy costs, c
+  [ICML 2026][Model Compression][Distillation energy consumption] The authors developed a staged GPU energy collection framework based on NVML, decomposing the distillation pipeline into "teacher side + student side + evaluation" for stepwise measurement. Findings indicate that for one-off runs, teacher logit caching and synthetic data generation represent the primary energy costs, causing KD and synthetic SFT to consume approximately $2.4\times$ more energy than direct SFT on…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Distillation energy consumption"
+  - "end-to-end accounting"
+  - "teacher-side costs"
+  - "Pareto front"
+  - "teacher reuse"
 date: 2026-05-08
-content_hash: c8cc95a28877b998
+content_hash: f0edaa695c27f6ef
 ---
+
 # Towards Resource-Efficient LLMs: End-to-End Energy Accounting of Distillation Pipelines
 
 **Conference**: ICML 2026  

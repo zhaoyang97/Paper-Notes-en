@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SongEcho: Towards Cover Song Generation via Instance-Adaptive Element-wise Linear Modulation
 description: >-
-  [ICLR 2026][Image Generation][FiLM] Proposes the SongEcho framework, which achieves cover song generation through Instance-Adaptive Element-wise Linear Modulation (IA-EiLM), generating new vocals and accompaniments while preserving the original song's melody contour.
+  [ICLR 2026][Image Generation][Cover song generation] Proposes the SongEcho framework, which achieves cover song generation through Instance-Adaptive Element-wise Linear Modulation (IA-EiLM), generating new vocals and accompaniments while preserving the original song's melody contour.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - FiLM
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Cover song generation"
+  - "FiLM"
+  - "element-wise linear modulation"
+  - "melody control"
+  - "parameter-efficient"
 date: 2026-05-08
-content_hash: ce955fcb4a2ebcef
+content_hash: c8447b195479dc16
 ---
+
 # SongEcho: Towards Cover Song Generation via Instance-Adaptive Element-wise Linear Modulation
 
 **Conference**: ICLR 2026  
@@ -134,9 +139,9 @@ Cover generation has long suffered from a lack of paired full-track data. The au
 
 - [\[CVPR 2026\] Head-wise Adaptive Rotary Positional Encoding for Fine-Grained Image Generation](../../CVPR2026/image_generation/head-wise_adaptive_rotary_positional_encoding_for_fine-grained_image_generation.md)
 - [\[ICLR 2026\] I-DRUID: Layout to Image Generation via Instance-Disentangled Representation and Unpaired Data](i-druid_layout_to_image_generation_via_instance-disentangled_representation_and_.md)
-- [\[ICLR 2026\] Scale-wise Distillation of Diffusion Models](scale-wise_distillation_of_diffusion_models.md)
 - [\[CVPR 2026\] Layer-wise Instance Binding for Regional and Occlusion Control in Text-to-Image Diffusion Transformers](../../CVPR2026/image_generation/layer-wise_instance_binding_for_regional_and_occlusion_control_in_text-to-image_.md)
-- [\[ICLR 2026\] SESaMo: Symmetry-Enforcing Stochastic Modulation for Normalizing Flows](sesamo_symmetry-enforcing_stochastic_modulation_for_normalizing_flows.md)
+- [\[ICLR 2026\] Scale-wise Distillation of Diffusion Models](scale-wise_distillation_of_diffusion_models.md)
+- [\[ICLR 2026\] RegionE: Adaptive Region-Aware Generation for Efficient Image Editing](regione_adaptive_region-aware_generation_for_efficient_image_editing.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From Generation to Attribution: Music AI Agent Architectures for the Post-Streaming Era
 description: >-
-  [NeurIPS 2025 (AI4Music Workshop)][Audio & Speech][Music AI agent] This paper proposes a content-based Music AI Agent architecture that decomposes music into fine-grained Block components and constructs an Attribution La…
+  [NeurIPS 2025 (AI4Music Workshop)][Audio & Speech][Music AI agent] This paper proposes a content-based Music AI Agent architecture that decomposes music into fine-grained Block components and constructs an Attribution Layer, embedding copyright attribution directly into the AI music creation pipeline to establish a fair AI media platform for the post-streaming era.
 tags:
   - "NeurIPS 2025 (AI4Music Workshop)"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "streaming platforms"
   - "fair distribution"
 date: 2026-05-08
-content_hash: e72dbe904015e7f1
+content_hash: 45ebb03fbc351529
 ---
 
 # From Generation to Attribution: Music AI Agent Architectures for the Post-Streaming Era
@@ -141,8 +141,8 @@ No traditional ablation experiments are included. The paper provides qualitative
 - [\[NeurIPS 2025\] Sensorium Arc: AI Agent System for Oceanic Data Exploration and Interactive Eco-Art](sensorium_arc_ai_agent_system_for_oceanic_data_exploration_and_interactive_eco-a.md)
 - [\[NeurIPS 2025\] Echoes of Humanity: Exploring the Perceived Humanness of AI Music](echoes_of_humanity_exploring_the_perceived_humanness_of_ai_music.md)
 - [\[NeurIPS 2025\] Ethics Statements in AI Music Papers: The Effective and the Ineffective](ethics_statements_in_ai_music_papers_the_effective_and_the_ineffective.md)
-- [\[ICML 2026\] Towards Streaming Synchronized Spatial Audio Generation via Autoregressive Diffusion Transformer](../../ICML2026/audio_speech/towards_streaming_synchronized_spatial_audio_generation_via_autoregressive_diffu.md)
 - [\[NeurIPS 2025\] Segment-Factorized Full-Song Generation on Symbolic Piano Music](segment-factorized_full-song_generation_on_symbolic_piano_music.md)
+- [\[ICML 2026\] Towards Streaming Synchronized Spatial Audio Generation via Autoregressive Diffusion Transformer](../../ICML2026/audio_speech/towards_streaming_synchronized_spatial_audio_generation_via_autoregressive_diffu.md)
 
 </div>
 

@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] PoLi-RL: A Point-to-List Reinforcement Learning Framework for Conditional Semantic Textual Similarity
 description: >-
-  [ICLR 2026][Reinforcement Learning][cross-encoder] This paper introduces Reinforcement Learning (RL) to the Conditional Semantic Textual Similarity (C-STS) task for the first time. It proposes PoLi-RL, a two-stage curriculum RL framework that progresses from "point-to-list," along with a Parallel Sliced Ranking Reward (PSRR) mechanism that decomposes coarse batch-level
+  [ICLR 2026][Reinforcement Learning][Conditional Semantic Textual Similarity (C-STS)] This paper introduces Reinforcement Learning (RL) to the Conditional Semantic Textual Similarity (C-STS) task for the first time. It proposes PoLi-RL, a two-stage curriculum RL framework that progresses from "point-to-list," along with a Parallel Sliced Ranking Reward (PSRR) mechanism that decomposes coarse batch-level ranking signals into precise rewards for each individual completion. An 8B…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - cross-encoder
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Conditional Semantic Textual Similarity (C-STS)"
+  - "Ranking Reward"
+  - "Curriculum Learning"
+  - "Cross-encoder"
 date: 2026-05-08
-content_hash: e182fe2c91166893
+content_hash: db3741e8dbe8dbac
 ---
+
 # PoLi-RL: A Point-to-List Reinforcement Learning Framework for Conditional Semantic Textual Similarity
 
 **Conference**: ICLR 2026  
@@ -134,15 +138,16 @@ The curriculum is essential. Naive RL barely improves over few-shot, whereas Sta
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] GRACE: A Language Model Framework for Explainable Inverse Reinforcement Learning](grace_a_language_model_framework_for_explainable_inverse_reinforcement_learning.md)
 - [\[ICLR 2026\] Revolutionizing Reinforcement Learning Framework for Diffusion Large Language Models](revolutionizing_reinforcement_learning_framework_for_diffusion_large_language_mo.md)
+- [\[ICLR 2026\] transitive rl value learning via divide and conquer](transitive_rl_value_learning_via_divide_and_conquer.md)
 - [\[CVPR 2026\] JoPPO: Hierarchical Photography Assessment via Contrastive Joint Conditional Probabilistic Reinforcement Learning](../../CVPR2026/reinforcement_learning/joppo_hierarchical_photography_assessment_via_contrastive_joint_conditional_prob.md)
 - [\[ICLR 2026\] RL for Reasoning by Adaptively Revealing Rationales](rl_for_reasoning_by_adaptively_revealing_rationales.md)
-- [\[NeurIPS 2025\] Enhancing Interpretability in Deep Reinforcement Learning through Semantic Clustering](../../NeurIPS2025/reinforcement_learning/enhancing_interpretability_in_deep_reinforcement_learning_through_semantic_clust.md)
 
 </div>
 

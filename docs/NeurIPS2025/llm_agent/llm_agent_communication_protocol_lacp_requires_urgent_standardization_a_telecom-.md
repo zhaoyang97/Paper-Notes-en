@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LLM Agent Communication Protocol (LACP) Requires Urgent Standardization: A Telecom-Inspired Protocol is Necessary
 description: >-
-  [NeurIPS 2025][LLM Agent][multi-agent communication] This position paper argues that the fragmented ecosystem of current LLM Agent communication mirrors the "protocol wars" of the early networking era. It proposes LACP…
+  [NeurIPS 2025][LLM Agent][multi-agent communication] This position paper argues that the fragmented ecosystem of current LLM Agent communication mirrors the "protocol wars" of the early networking era. It proposes LACP, a three-layer protocol (Semantic, Transactional, and Transport layers) inspired by telecom standardization, and contends that security-by-design, transactional integrity, and semantic interoperability are critical for multi-agent systems.
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "telecom-inspired design"
   - "security-by-design"
 date: 2026-05-08
-content_hash: 1b7f5495ed1db1de
+content_hash: 2e7fde9ca0e97a33
 ---
 
 # LLM Agent Communication Protocol (LACP) Requires Urgent Standardization: A Telecom-Inspired Protocol is Necessary
@@ -183,10 +183,10 @@ Transparent communication between a LangChain ReAct Agent and a standalone LACP 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Agent Data Protocol: Unifying Datasets for Diverse, Effective Fine-tuning of LLM Agents](../../ICLR2026/llm_agent/agent_data_protocol_unifying_datasets_for_diverse_effective_fine-tuning_of_llm_a.md)
 - [\[NeurIPS 2025\] Are Large Language Models Sensitive to the Motives Behind Communication?](are_large_language_models_sensitive_to_the_motives_behind_communication.md)
-- [\[ACL 2026\] Dynamic Generation of Multi-LLM Agents Communication Topologies with Graph Diffusion Models](../../ACL2026/llm_agent/dynamic_generation_of_multi-llm_agents_communication_topologies_with_graph_diffu.md)
+- [\[ICLR 2026\] MCP Security Bench (MSB): Benchmarking Attacks Against Model Context Protocol in LLM Agents](../../ICLR2026/llm_agent/mcp_security_bench_msb_benchmarking_attacks_against_model_context_protocol_in_ll.md)
 - [\[NeurIPS 2025\] Group-in-Group Policy Optimization for LLM Agent Training](groupingroup_policy_optimization_for_llm_agent_training.md)
-- [\[NeurIPS 2025\] Distilling LLM Agent into Small Models with Retrieval and Code Tools](distilling_llm_agent_into_small_models_with_retrieval_and_co.md)
 - [\[NeurIPS 2025\] TrajAgent: An LLM-Agent Framework for Trajectory Modeling via Large-and-Small Model Collaboration](trajagent_an_llm-agent_framework_for_trajectory_modeling_via_large-and-small_mod.md)
 
 </div>

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SAMIX: Reinforcing SAM2 with Semantic Adapter and Reference Selecting Policy for Mix-Supervised Segmentation
 description: >-
-  [CVPR 2026][Segmentation][SAM2] SAMIX transforms the video "instance tracking" memory mechanism of SAM2 into cross-image "semantic tracking." By employing a lightweight semantic adapter and a reference selecting policy network trained via reinforcement learning, it selects a set of semantically similar reference images for each weakly-labeled or unla
+  [CVPR 2026][Segmentation][Mix-supervised segmentation] SAMIX transforms the video "instance tracking" memory mechanism of SAM2 into cross-image "semantic tracking." By employing a lightweight semantic adapter and a reference selecting policy network trained via reinforcement learning, it selects a set of semantically similar reference images for each weakly-labeled or unlabeled image as dense contextual prompts. This generates high-quality pseudo-labels to unify mixed-supervi…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - SAM2
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Mix-supervised segmentation"
+  - "SAM2"
+  - "Semantic Adapter"
+  - "Reinforcement Learning"
+  - "Pseudo-label generation"
 date: 2026-05-08
-content_hash: e61632df8e6756a8
+content_hash: bac9c1d20cb3bb39
 ---
+
 # SAMIX: Reinforcing SAM2 with Semantic Adapter and Reference Selecting Policy for Mix-Supervised Segmentation
 
 **Conference**: CVPR 2026  
@@ -158,10 +162,10 @@ Stacking the three rewards ($r_\alpha \to r_\alpha r_\beta \to$ all) increased V
 ## Related Papers
 
 - [\[ICCV 2025\] Correspondence as Video: Test-Time Adaption on SAM2 for Reference Segmentation in the Wild](../../ICCV2025/segmentation/correspondence_as_video_test-time_adaption_on_sam2_for_reference_segmentation_in.md)
-- [\[CVPR 2026\] Reinforcing Video Object Segmentation to Think before it Segments](reinforcing_video_object_segmentation_to_think_before_it_segments.md)
 - [\[CVPR 2026\] Frequency-Aware Affinity for Weakly Supervised Semantic Segmentation](frequency-aware_affinity_for_weakly_supervised_semantic_segmentation.md)
 - [\[CVPR 2026\] Leveraging Class Distributions in CLIP for Weakly Supervised Semantic Segmentation](leveraging_class_distributions_in_clip_for_weakly_supervised_semantic_segmentati.md)
 - [\[CVPR 2026\] From Softmax to Dirichlet: Evidential Learning for Semi-supervised Semantic Segmentation](from_softmax_to_dirichlet_evidential_learning_for_semi-supervised_semantic_segme.md)
+- [\[CVPR 2026\] Dual-level Adapter Boosting Prompt-free Curvilinear Structure Segmentation](dual-level_adapter_boosting_prompt-free_curvilinear_structure_segmentation.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Elucidating the SNR-t Bias of Diffusion Probabilistic Models
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] This paper reveals a widespread SNR-t bias in diffusion models (where the signal-to-noise ratio of samples in the reverse process does not match the timestep) and proposes Dynamic Difference Correction in the Wavelet Domain (DCW). This training-free, plug-and-play method improves the generation quality of various diffu
+  [CVPR 2026][Image Generation][Diffusion Models] This paper reveals a widespread SNR-t bias in diffusion models (where the signal-to-noise ratio of samples in the reverse process does not match the timestep) and proposes Dynamic Difference Correction in the Wavelet Domain (DCW). This training-free, plug-and-play method improves the generation quality of various diffusion models.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "SNR-t Bias"
+  - "Difference Correction"
+  - "Wavelet Domain"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 9e0646f8a66e2649
+content_hash: 7c1523e61ea4b62d
 ---
+
 # Elucidating the SNR-t Bias of Diffusion Probabilistic Models
 
 **Conference**: CVPR 2026  
@@ -148,10 +153,10 @@ Completely training-free. DCW is embedded into the inference process as a plug-a
 ## Related Papers
 
 - [\[CVPR 2026\] Elucidating the Design Space of Arbitrary-Noise-Based Diffusion Models](eda_arbitrary_noise_diffusion_design_space.md)
-- [\[CVPR 2026\] Bias at the End of the Score: Demographic Biases in Reward Models for T2I](bias_reward_models_t2i.md)
-- [\[CVPR 2026\] Probabilistic Precipitation Nowcasting with Rectified Flow Transformers](probabilistic_precipitation_nowcasting_with_rectified_flow_transformers.md)
-- [\[ICCV 2025\] SMGDiff: Soccer Motion Generation using Diffusion Probabilistic Models](../../ICCV2025/image_generation/smgdiff_soccer_motion_generation_using_diffusion_probabilistic_models.md)
-- [\[ICLR 2026\] Conditionally Whitened Generative Models for Probabilistic Time Series Forecasting](../../ICLR2026/image_generation/conditionally_whitened_generative_models_for_probabilistic_time_series_forecasti.md)
+- [\[CVPR 2026\] MixFlow Training: Alleviating Exposure Bias with Slowed Interpolation Mixture](mixflow_training_alleviating_exposure_bias_with_slowed_interpolation_mixture.md)
+- [\[CVPR 2026\] Neighbor-Aware Localized Concept Erasure in Text-to-Image Diffusion Models](neighbor-aware_localized_concept_erasure_in_text-to-image_diffusion_models.md)
+- [\[CVPR 2026\] Reviving ConvNeXt for Efficient Convolutional Diffusion Models](reviving_convnext_for_efficient_convolutional_diffusion_models.md)
+- [\[ICLR 2026\] A Probabilistic Hard Concept Bottleneck for Steerable Generative Models](../../ICLR2026/image_generation/a_probabilistic_hard_concept_bottleneck_for_steerable_generative_models.md)
 
 </div>
 

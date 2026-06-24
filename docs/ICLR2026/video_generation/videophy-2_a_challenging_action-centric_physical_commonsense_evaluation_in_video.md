@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VideoPhy-2: A Challenging Action-Centric Physical Commonsense Evaluation in Video Generation
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] VideoPhy-2 utilizes 3,940 multi-event prompts derived from 197 real-world actions. Generated videos from modern text-to-video models are scored by humans across three axes: Semantic Adherence, Physical Commonsense, and Physical Rules. The results reveal that even the strongest model, Wan2.2-27B-A14B, achieves only $47.
+  [ICLR 2026][Video Generation][Physical Commonsense] VideoPhy-2 utilizes 3,940 multi-event prompts derived from 197 real-world actions. Generated videos from modern text-to-video models are scored by humans across three axes: Semantic Adherence, Physical Commonsense, and Physical Rules. The results reveal that even the strongest model, Wan2.2-27B-A14B, achieves only $47.7\%$ joint performance on the hard subset. Furthermore, a 7B VideoPhy-2-AutoEval evaluator was trained to re…
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Physical Commonsense"
+  - "Video Generation Evaluation"
+  - "Action-Centric"
+  - "Automatic Evaluator"
+  - "Human Annotation"
 date: 2026-05-08
-content_hash: e5c5051fa3f9d22f
+content_hash: e951ff47dd1793d7
 ---
+
 # VideoPhy-2: A Challenging Action-Centric Physical Commonsense Evaluation in Video Generation
 
 **Conference**: ICLR 2026  
@@ -128,15 +134,15 @@ Auto-Evaluator vs. Off-the-shelf Models (Pearson Correlation $\times 100$):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] NarrLV: Towards a Comprehensive Narrative-Centric Evaluation for Long Video Generation](narrlv_towards_a_comprehensive_narrative-centric_evaluation_for_long_video_gener.md)
 - [\[CVPR 2026\] HandWorld: Hand-Centric Unified Video Action Generation](../../CVPR2026/video_generation/handworld_hand-centric_unified_video_action_generation.md)
-- [\[CVPR 2026\] VideoRealBench: A Chain-of-Thought Realism Evaluation Benchmark for Generated Human-Centric Videos](../../CVPR2026/video_generation/videorealbench_a_chain-of-thought_realism_evaluation_benchmark_for_generated_hum.md)
-- [\[ICLR 2026\] MoAlign: Motion-Centric Representation Alignment for Video Diffusion Models](moalign_motion-centric_representation_alignment_for_video_diffusion_models.md)
-- [\[CVPR 2026\] Physical Simulator In-the-Loop Video Generation](../../CVPR2026/video_generation/physical_simulator_in-the-loop_video_generation.md)
+- [\[ICLR 2026\] $PhyWorldBench$: A Comprehensive Evaluation of Physical Realism in Text-to-Video Models](phyworldbench_a_comprehensive_evaluation_of_physical_realism_in_text-to-video_mo.md)
+- [\[ICLR 2026\] AUHead: Realistic Emotional Talking Head Generation via Action Units Control](auhead_realistic_emotional_talking_head_generation_via_action_units_control.md)
+- [\[ICLR 2026\] The Quest for Generalizable Motion Generation: Data, Model, and Evaluation](the_quest_for_generalizable_motion_generation_data_model_and_evaluation.md)
 
 </div>
 

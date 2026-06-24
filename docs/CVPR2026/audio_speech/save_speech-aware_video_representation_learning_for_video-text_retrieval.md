@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval
 description: >-
-  [CVPR 2026][Audio & Speech][Paper Note] Ours proposes the SAVE method, which achieves speech-aware video representation learning by adding a dedicated speech branch (Whisper ASR + CLIP text encoder) and a soft-ALBEF vision-audio early alignment strategy, significantly outperforming the SOTA on five video-text retrieval benchmarks.
+  [Audio & Speech] Ours proposes the SAVE method, which achieves speech-aware video representation learning by adding a dedicated speech branch (Whisper ASR + CLIP text encoder) and a soft-ALBEF vision-audio early alignment strategy, significantly outperforming the SOTA on five video-text retrieval benchmarks.
 tags:
-  - CVPR 2026
-  - Audio & Speech
+  - "Audio & Speech"
 date: 2026-05-08
-content_hash: 3cc7a3a969e87680
+content_hash: 0954bd21a1fbbd4c
 ---
+
 # SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval
 
 | Information | Content |
@@ -149,7 +149,7 @@ SAVE maintains the same inference latency as AVIGATE (9.90ms) because video feat
 - [\[NeurIPS 2025\] LeVo: High-Quality Song Generation with Multi-Preference Alignment](../../NeurIPS2025/audio_speech/levo_high-quality_song_generation_with_multi-processing_refined_supervision.md)
 - [\[CVPR 2025\] DualTalk: Dual-Speaker Interaction for 3D Talking Head Conversations](../../CVPR2025/audio_speech/dualtalk_dual-speaker_interaction_for_3d_talking_head_conversations.md)
 - [\[CVPR 2026\] PAVAS: Physics-Aware Video-to-Audio Synthesis](pavas_physics-aware_video-to-audio_synthesis.md)
-- [\[CVPR 2026\] Omni2Sound: Towards Unified Video-Text-to-Audio Generation](omni2sound_towards_unified_video-text-to-audio_generation.md)
+- [\[CVPR 2026\] OmniSonic: Towards Universal and Holistic Audio Generation from Video and Text](omnisonic_towards_universal_and_holistic_audio_generation_from_video_and_text.md)
 
 </div>
 

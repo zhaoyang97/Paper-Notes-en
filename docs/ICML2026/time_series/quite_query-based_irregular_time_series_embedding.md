@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] QuITE: Query-based Irregular Time Series Embedding
 description: >-
-  [ICML 2026][Time Series][Paper Note] QuITE is a **plug-and-play embedding module** that aggregates irregular observations into fixed-dimensional representations using learnable query tokens via self-attention. It adapts arbitrary multivariate time series (MTS) models to irregular MTS (IMTS) without architectural modifications or artificial value generatio
+  [ICML 2026][Time Series][Irregular Time Series] QuITE is a **plug-and-play embedding module** that aggregates irregular observations into fixed-dimensional representations using learnable query tokens via self-attention. It adapts arbitrary multivariate time series (MTS) models to irregular MTS (IMTS) without architectural modifications or artificial value generation, achieving an average relative improvement of 54.7% on iTransformer + QuITE.
 tags:
-  - ICML 2026
-  - Time Series
+  - "ICML 2026"
+  - "Time Series"
+  - "Irregular Time Series"
+  - "Embedding"
+  - "Multivariate Forecasting"
+  - "Query Tokens"
 date: 2026-05-08
-content_hash: 57d6aee4d0daeb1d
+content_hash: 3ba41b50e9e7ef26
 ---
+
 # QuITE: Query-based Irregular Time Series Embedding
 
 **Conference**: ICML 2026  
@@ -140,10 +145,10 @@ QuITE++ extends the embedding layer with $L$ hierarchical encoder layers. Each l
 ## Related Papers
 
 - [\[ICML 2026\] Latent Laplace Diffusion for Irregular Multivariate Time Series](latent_laplace_diffusion_for_irregular_multivariate_time_series.md)
-- [\[ICLR 2026\] Learning Recursive Multi-Scale Representations for Irregular Multivariate Time Series Forecasting](../../ICLR2026/time_series/learning_recursive_multi-scale_representations_for_irregular_multivariate_time_s.md)
-- [\[ACL 2025\] LETS-C: Leveraging Text Embedding for Time Series Classification](../../ACL2025/time_series/lets-c_leveraging_text_embedding_for_time_series_classification.md)
-- [\[ICML 2025\] TQNet: Temporal Query Network for Efficient Multivariate Time Series Forecasting](../../ICML2025/time_series/temporal_query_network_for_efficient_multivariate_time_series_forecasting.md)
+- [\[ICLR 2026\] pyrregular: A Unified Framework for Irregular Time Series, with Classification Benchmarks](../../ICLR2026/time_series/pyrregular_a_unified_framework_for_irregular_time_series_with_classification_ben.md)
 - [\[ICML 2026\] Embedding Hybrid Systems into Continuous Latent Vector Fields](embedding_hybrid_systems_into_continuous_latent_vector_fields.md)
+- [\[ICLR 2026\] Reliable Probabilistic Forecasting of Irregular Time Series via Marginal Consistent Flows](../../ICLR2026/time_series/reliable_probabilistic_forecasting_of_irregular_time_series_through_marginalizat.md)
+- [\[ICLR 2026\] Learning Recursive Multi-Scale Representations for Irregular Multivariate Time Series Forecasting](../../ICLR2026/time_series/learning_recursive_multi-scale_representations_for_irregular_multivariate_time_s.md)
 
 </div>
 

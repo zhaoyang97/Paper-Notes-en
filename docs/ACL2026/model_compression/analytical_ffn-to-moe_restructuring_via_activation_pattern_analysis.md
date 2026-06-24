@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Analytical FFN-to-MoE Restructuring via Activation Pattern Analysis
 description: >-
-  [ACL 2026][Model Compression][Paper Note] This paper proposes an analytical post-training framework that rapidly restructures dense FFNs into sparse MoEs through neuron activation pattern analysis. By distinguishing high-frequency shared experts from low-frequency routed experts and constructing routers derived from activation statistics, the method achieves a
+  [ACL 2026][Model Compression][FFN-to-MoE] This paper proposes an analytical post-training framework that rapidly restructures dense FFNs into sparse MoEs through neuron activation pattern analysis. By distinguishing high-frequency shared experts from low-frequency routed experts and constructing routers derived from activation statistics, the method achieves a 1.17× speedup with fine-tuning on only 2k samples.
 tags:
-  - ACL 2026
-  - Model Compression
+  - "ACL 2026"
+  - "Model Compression"
+  - "FFN-to-MoE"
+  - "Activation Pattern Analysis"
+  - "Shared Experts"
+  - "Analytical Routing"
+  - "Post-training Compression"
 date: 2026-05-08
-content_hash: d51e4de242a621ec
+content_hash: ab1ab106d463ad92
 ---
+
 # Analytical FFN-to-MoE Restructuring via Activation Pattern Analysis
 
 **Conference**: ACL 2026  
@@ -125,15 +131,13 @@ The analytical reconstruction is completely training-free (the training-free bas
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[ICLR 2026\] Steering MoE LLMs via Expert (De)Activation](../../ICLR2026/model_compression/steering_moe_llms_via_expert_deactivation.md)
-- [\[ACL 2026\] IMPACT: Importance-Aware Activation Space Reconstruction](impact_importance-aware_activation_space_reconstruction.md)
 - [\[ACL 2026\] A Layer-wise Analysis of Supervised Fine-Tuning](a_layer-wise_analysis_of_supervised_fine-tuning.md)
+- [\[ACL 2026\] IMPACT: Importance-Aware Activation Space Reconstruction](impact_importance-aware_activation_space_reconstruction.md)
 - [\[AAAI 2026\] CAMERA: Multi-Matrix Joint Compression for MoE Models via Micro-Expert Redundancy Analysis](../../AAAI2026/model_compression/camera_multi-matrix_joint_compression_for_moe_models_via_mic.md)
-- [\[ACL 2026\] When Reviews Disagree: Fine-Grained Contradiction Analysis in Scientific Peer Reviews](when_reviews_disagree_fine-grained_contradiction_analysis_in_scientific_peer_rev.md)
+- [\[ICLR 2026\] TD-MoE: Tensor Decomposition for MoE Models](../../ICLR2026/model_compression/td-moe_tensor_decomposition_for_moe_models.md)
 
 </div>
 

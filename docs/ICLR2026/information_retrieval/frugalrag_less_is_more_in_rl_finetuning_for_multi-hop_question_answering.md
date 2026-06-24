@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FrugalRAG: Less is More in RL Finetuning for Multi-hop Question Answering
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Test-Time Compute] FrugalRAG proposes a two-stage "Explore-then-Frugal" finetuning framework: the first stage uses supervised finetuning (SFT) to transform a small model into an exploratory policy that maximizes evidence recall through multiple retrieval queries; the second stage applies GRPO reinforcement learning (RL) to teach the mode
+  [ICLR 2026][Information Retrieval & RAG][Retrieval-Augmented Generation] FrugalRAG proposes a two-stage "Explore-then-Frugal" finetuning framework: the first stage uses supervised finetuning (SFT) to transform a small model into an exploratory policy that maximizes evidence recall through multiple retrieval queries; the second stage applies GRPO reinforcement learning (RL) to teach the model to "decide when to stop based on question difficulty." Consequently…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - Test-Time Compute
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Retrieval-Augmented Generation"
+  - "Multi-hop QA"
+  - "Reinforcement Learning Finetuning"
+  - "Adaptive Retrieval"
+  - "Test-time Compute"
 date: 2026-05-08
-content_hash: 05585b0adec8ba3d
+content_hash: 3450a7dcbc6aefa7
 ---
+
 # FrugalRAG: Less is More in RL Finetuning for Multi-hop Question Answering
 
 **Conference**: ICLR 2026  
@@ -150,9 +155,9 @@ Comparing Efficiency Tradeoff $\text{Eff} = (\text{MBE}+\text{Recall})/(2\times\
 ## Related Papers
 
 - [\[AAAI 2026\] REAP: Enhancing RAG with Recursive Evaluation and Adaptive Planning for Multi-Hop Question Answering](../../AAAI2026/information_retrieval/reap_enhancing_rag_with_recursive_evaluation_and_adaptive_planning_for_multi-hop.md)
+- [\[ICLR 2026\] MergePRAG: Orthogonal Merging of Passage-experts for Multi-hop Parametric RAG](mergeprag_orthogonal_merging_of_passage-experts_for_multi-hop_parametric_rag.md)
 - [\[ICML 2026\] Less Is More: Elevating RAG via Performance-Driven Context Compression](../../ICML2026/information_retrieval/less_is_more_elevating_rag_via_performance-driven_context_compression.md)
 - [\[ICLR 2026\] Demystifying Deep Search: A Holistic Evaluation with Hint-free Multi-Hop Questions and Factorised Metrics](demystifying_deep_search_a_holistic_evaluation_with_hint-free_multi-hop_question.md)
-- [\[ICLR 2026\] MergePRAG: Orthogonal Merging of Passage-experts for Multi-hop Parametric RAG](mergeprag_orthogonal_merging_of_passage-experts_for_multi-hop_parametric_rag.md)
 - [\[ACL 2026\] ChatR1: Reinforcement Learning for Conversational Reasoning and Retrieval Augmented Question Answering](../../ACL2026/information_retrieval/chatr1_reinforcement_learning_for_conversational_reasoning_and_retrieval_augment.md)
 
 </div>

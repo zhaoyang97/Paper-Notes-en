@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] LEAP: Learnable End-to-End Adaptive Pruning of Large Language Models
 description: >-
-  [ICML 2026][Model Compression][Gumbel-Sigmoid] LEAP replaces the "categorical logit per valid sparsity pattern in each group" parameterization found in learnable mask pruning (MaskLLM/PATCH) with a "per-weight Bernoulli gate via Gumbel-Sigmoid". This bypasses the combinatorial explosion deadlock in unstructured sparsity, enabling end-to-end mask learning for unstru
+  [ICML2026][Model Compression][Unstructured Sparsity] LEAP replaces the "categorical logit per valid sparsity pattern in each group" parameterization found in learnable mask pruning (MaskLLM/PATCH) with a "per-weight Bernoulli gate via Gumbel-Sigmoid". This bypasses the combinatorial explosion deadlock in unstructured sparsity, enabling end-to-end mask learning for unstructured LLM pruning for the first time. On five models (0.5B–8B) at 50%/60% sparsity…
 tags:
-  - ICML 2026
-  - Model Compression
-  - Gumbel-Sigmoid
-  - LLM
+  - "ICML2026"
+  - "Model Compression"
+  - "Unstructured Sparsity"
+  - "Learnable Masks"
+  - "Gumbel-Sigmoid"
+  - "End-to-End Pruning"
+  - "LLM"
 date: 2026-05-08
-content_hash: 9c9ac841b8ffdf72
+content_hash: f6ba0693abbac0ed
 ---
+
 # LEAP: Learnable End-to-End Adaptive Pruning of Large Language Models
 
 **Conference**: ICML2026  
@@ -142,8 +146,8 @@ Across 10 configurations (model × sparsity rate), LEAP averages **+2.59** point
 - [\[ICML 2026\] End-to-End Compression for Tabular Foundation Models](end-to-end_compression_for_tabular_foundation_models.md)
 - [\[ICML 2026\] Towards Resource-Efficient LLMs: End-to-End Energy Accounting of Distillation Pipelines](towards_resource-efficient_llms_end-to-end_energy_accounting_of_distillation_pip.md)
 - [\[ICML 2025\] GuidedQuant: Large Language Model Quantization via Exploiting End Loss Guidance](../../ICML2025/model_compression/guidedquant_large_language_model_quantization_via_exploiting_end_loss_guidance.md)
-- [\[ICML 2026\] Model Merging Scaling Laws in Large Language Models](model_merging_scaling_laws_in_large_language_models.md)
-- [\[NeurIPS 2025\] PermLLM: Learnable Channel Permutation for N:M Sparse Large Language Models](../../NeurIPS2025/model_compression/permllm_learnable_channel_permutation_for_nm_sparse_large_language_models.md)
+- [\[ICLR 2026\] Learnable Sparsity for Vision Generative Models](../../ICLR2026/model_compression/learnable_sparsity_for_vision_generative_models.md)
+- [\[ICML 2026\] FAIR-Calib: Frontier-Aware Instability-Reweighted Calibration for Post-Training Quantization of Diffusion Large Language Models](fair-calib_frontier-aware_instability-reweighted_calibration_for_post-training_q.md)
 
 </div>
 

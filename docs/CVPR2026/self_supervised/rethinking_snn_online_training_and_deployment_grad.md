@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Rethinking SNN Online Training and Deployment: Gradient-Coherent Learning via Hybrid-Driven LIF Model
 description: >-
-  [CVPR 2026][Others][SNN] This paper proposes the HD-LIF (Hybrid-Driven LIF) spiking neuron model family. By employing different spike calculation mechanisms above and below the threshold, it theoretically proves gradient separability and alignment, resolving the inconsistency between forward and backward propagation in SNN online training. It
+  [CVPR 2026][Self-Supervised Learning][SNN] This paper proposes the HD-LIF (Hybrid-Driven LIF) spiking neuron model family. By employing different spike calculation mechanisms above and below the threshold, it theoretically proves gradient separability and alignment, resolving the inconsistency between forward and backward propagation in SNN online training. It simultaneously achieves full-stage optimization of learning accuracy, memory complexity…
 tags:
-  - CVPR 2026
-  - Others
-  - SNN
-  - online training
-  - LIF model
-  - gradient separability
-  - low-power inference
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "SNN"
+  - "online training"
+  - "LIF model"
+  - "gradient separability"
+  - "low-power inference"
 date: 2026-05-08
-content_hash: 087922821b49f5f0
+content_hash: e9b8f995a7880237
 ---
+
 # Rethinking SNN Online Training and Deployment: Gradient-Coherent Learning via Hybrid-Driven LIF Model
 
 **Conference**: CVPR 2026  
@@ -152,11 +153,11 @@ Synaptic weights are compressed using 1-bit ($\{-1,+1\}$) or 1.5-bit ($\{0,\pm 1
 
 ## Related Papers
 
-- [\[ICML 2026\] Beyond Model Readiness: Institutional Readiness for AI Deployment in Public Systems](../../ICML2026/others/beyond_model_readiness_institutional_readiness_for_ai_deployment_in_public_syste.md)
-- [\[CVPR 2026\] Convolutional Neural Networks Driven by Content Similarity](convolutional_neural_networks_driven_by_content_similarity.md)
-- [\[AAAI 2026\] DeToNATION: Decoupled Torch Network-Aware Training on Interlinked Online Nodes](../../AAAI2026/others/detonation_decoupled_torch_network-aware_training_on_interlinked_online_nodes.md)
-- [\[CVPR 2026\] Bidirectional Query-Driven Generation of Parametric CAD Sketch](bidirectional_query-driven_generation_of_parametric_cad_sketch.md)
-- [\[CVPR 2026\] AVGGT: Rethinking Global Attention for Accelerating VGGT](avggt_rethinking_global_attention_for_accelerating_vggt.md)
+- [\[CVPR 2026\] Chain-of-Models Pre-Training: Rethinking Training Acceleration of Vision Foundation Models](com_pt_chain_of_models_pretraining.md)
+- [\[CVPR 2026\] An Optimal Transport-driven Approach for Cultivating Latent Space in Online Incremental Learning](an_optimal_transport_driven_approach_for_cultivating_latent_space_in_online_incr.md)
+- [\[CVPR 2026\] The Devil Is in Gradient Entanglement: Energy-Aware Gradient Coordinator for Robust Generalized Category Discovery](the_devil_is_in_gradient_entanglement_energy-aware_gradient_coordinator_for_robu.md)
+- [\[CVPR 2026\] Beyond Myopic Alignment: Lookahead Optimization for Online Class-Incremental Learning](beyond_myopic_alignment_lookahead_optimization_for_online_class-incremental_lear.md)
+- [\[CVPR 2026\] DGS: Dual Gradient and Semantic-Shift Guided Low-Rank Adaptation for Class Incremental Learning](dgs_dual_gradient_and_semantic-shift_guided_low-rank_adaptation_for_class_increm.md)
 
 </div>
 

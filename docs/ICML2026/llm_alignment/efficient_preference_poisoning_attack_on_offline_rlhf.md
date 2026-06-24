@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Efficient Preference Poisoning Attack on Offline RLHF
 description: >-
-  [ICML 2026][Alignment & RLHF][DPO] The paper proposes a key observation for log-linear DPO: "flipping a single preference label equals adding a fixed vector independent of the policy parameters to the loss gradient." Based on this, targeted poisoning attacks are reduced to a binary sparse approximation problem. Two algorithms are introduced: BAL-A (base
+  [ICML 2026][LLM Alignment][Preference Poisoning] The paper proposes a key observation for log-linear DPO: "flipping a single preference label equals adding a fixed vector independent of the policy parameters to the loss gradient." Based on this, targeted poisoning attacks are reduced to a binary sparse approximation problem. Two algorithms are introduced: BAL-A (based on LLL lattice reduction) and BMP-A (based on matching pursuit), along with provable recovery and impossibili…
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - DPO
+  - "ICML 2026"
+  - "LLM Alignment"
+  - "Preference Poisoning"
+  - "DPO"
+  - "Label Flipping"
+  - "Sparse Recovery"
+  - "Lattice Basis Reduction"
 date: 2026-05-08
-content_hash: 050026476863ae45
+content_hash: 8acf3aacc4448070
 ---
+
 # Efficient Preference Poisoning Attack on Offline RLHF
 
 **Conference**: ICML 2026  
@@ -128,14 +133,17 @@ The Clean-vs-attacked distance $\|\pi_{\mathrm{clean}}-\pi_{\hat\theta}\|_1 \app
 
 <div class="related-papers" markdown="1">
 
-- **Nika et al. (2025)**: Provable offline RLHF poisoning via data injection.
-- **Rando & Tramèr (2024)**: Empirical study on stealthy poisoning of LLM preferences.
-- **Babai (1986)**: Basic LLL and the Nearest Plane algorithm for CVP.
+## Related Papers
+
+- [\[AAAI 2026\] On the Exponential Convergence for Offline RLHF with Pairwise Comparisons](../../AAAI2026/llm_alignment/on_the_exponential_convergence_for_offline_rlhf_with_pairwise_comparisons.md)
+- [\[ICML 2026\] Implicit Preference Alignment for Human Image Animation](implicit_preference_alignment_for_human_image_animation.md)
+- [\[ICLR 2026\] ActiveDPO: Active Direct Preference Optimization for Sample-Efficient Alignment](../../ICLR2026/llm_alignment/activedpo_active_direct_preference_optimization_for_sample-efficient_alignment.md)
+- [\[ACL 2026\] Alignment Data Map for Efficient Preference Data Selection and Diagnosis](../../ACL2026/llm_alignment/alignment_data_map_for_efficient_preference_data_selection_and_diagnosis.md)
+- [\[ICML 2026\] SPARD: Defending Harmful Fine-Tuning Attack via Safety Projection with Relevance-Diversity Data Selection](spard_defending_harmful_fine-tuning_attack_via_safety_projection_with_relevance-.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[AAAI 2026\] On the Exponential Convergence for Offline RLHF with Pairwise Comparisons](../../AAAI2026/llm_alignment/on_the_exponential_convergence_for_offline_rlhf_with_pairwise_comparisons.md)

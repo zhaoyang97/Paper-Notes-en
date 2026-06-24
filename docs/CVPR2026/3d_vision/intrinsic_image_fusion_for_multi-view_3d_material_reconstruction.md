@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Intrinsic Image Fusion for Multi-View 3D Material Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Intrinsic Image Fusion (IIF) distills single-view priors from a 2D diffusion material estimator into multi-view inverse rendering. It uses a parametric distribution to aggregate multiple inconsistent PBR predictions per view into a low-dimensional consistent space, achieves 3D consistent textures via distribution match
+  [CVPR 2026][3D Vision][PBR material reconstruction] Intrinsic Image Fusion (IIF) distills single-view priors from a 2D diffusion material estimator into multi-view inverse rendering. It uses a parametric distribution to aggregate multiple inconsistent PBR predictions per view into a low-dimensional consistent space, achieves 3D consistent textures via distribution matching, and finally performs inverse path tracing fine-tuning on only a few parameters per object. This signifi…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "PBR material reconstruction"
+  - "inverse rendering"
+  - "path tracing"
+  - "single-view prior distillation"
+  - "distribution matching"
 date: 2026-05-08
-content_hash: 489c690b86072b57
+content_hash: 17735a2a5526eb58
 ---
+
 # Intrinsic Image Fusion for Multi-View 3D Material Reconstruction
 
 **Conference**: CVPR 2026  
@@ -133,11 +139,11 @@ Influence of the number of predictions (Distribution Matching):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Changes in Real Time: Online Scene Change Detection with Multi-View Fusion](changes_in_real_time_online_scene_change_detection_with_multi-view_fusion.md)
-- [\[CVPR 2026\] MatE: Material Extraction from Single-Image via Geometric Prior](mate_material_extraction_from_single-image_via_geometric_prior.md)
-- [\[CVPR 2026\] Intrinsic Geometry-Appearance Consistency Optimization for Sparse-View Gaussian Splatting](intrinsic_geometry-appearance_consistency_optimization_for_sparse-view_gaussian_.md)
-- [\[CVPR 2026\] Material Magic Wand: Material-Aware Grouping of 3D Parts in Untextured Meshes](material_magic_wand_material-aware_grouping_of_3d_parts_in_untextured_meshes.md)
-- [\[CVPR 2026\] MatSpray: Fusing 2D Material World Knowledge on 3D Geometry](matspray_fusing_2d_material_world_knowledge_on_3d_geometry.md)
+- [\[CVPR 2026\] MatMart: Material Reconstruction of 3D Objects via Diffusion](matmart_material_reconstruction_of_3d_objects_via_diffusion.md)
+- [\[CVPR 2026\] SMVRT: Implicit Human 3D Modeling Using Sparse Multi-View Volumetric Reconstruction with Transformer Fusion](smvrt_implicit_human_3d_modeling.md)
+- [\[CVPR 2026\] EfficientMonoHair: Fast Strand-Level Reconstruction from Monocular Video via Multi-View Direction Fusion](efficientmonohair_fast_strand-level_reconstruction_from_monocular_video_via_mult.md)
+- [\[CVPR 2026\] C-GenReg: Training-Free 3D Point Cloud Registration by Multi-View-Consistent Geometry-to-Image Generation with Probabilistic Modalities Fusion](c-genreg_training-free_3d_point_cloud_registration_by_multi-view-consistent_geom.md)
+- [\[CVPR 2026\] MuM: Multi-View Masked Image Modeling for 3D Vision](mum_multi-view_masked_image_modeling_for_3d_vision.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Entropic Confinement and Mode Connectivity in Overparameterized Neural Networks
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This work reveals that a systematic increase in curvature along low-loss paths generates an entropic force barrier. Even when the energy path is flat, SGD noise confines optimization dynamics to flat regions near minima, explaining the paradox of "mode connectivity vs. restricted dynamics."
+  [ICLR 2026][Optimization][Loss Landscape] This work reveals that a systematic increase in curvature along low-loss paths generates an entropic force barrier. Even when the energy path is flat, SGD noise confines optimization dynamics to flat regions near minima, explaining the paradox of "mode connectivity vs. restricted dynamics."
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Loss Landscape"
+  - "Mode Connectivity"
+  - "Entropic Forces"
+  - "SGD Dynamics"
+  - "Overparameterization"
 date: 2026-05-08
-content_hash: c9d6751d2ad15ca0
+content_hash: 6ffd580550a6c9b0
 ---
+
 # Entropic Confinement and Mode Connectivity in Overparameterized Neural Networks
 
 **Conference**: ICLR 2026  
@@ -128,8 +134,8 @@ Base models use standard SGD (momentum 0.9, weight decay $5 \times 10^{-4}$, lea
 - [\[ICLR 2026\] Exploring Mode Connectivity in Krylov Subspace for Domain Generalization](exploring_mode_connectivity_in_krylov_subspace_for_domain_generalization.md)
 - [\[ICML 2025\] Understanding Mode Connectivity via Parameter Space Symmetry](../../ICML2025/optimization/understanding_mode_connectivity_via_parameter_space_symmetry.md)
 - [\[NeurIPS 2025\] Neural Thermodynamics: Entropic Forces in Deep and Universal Representation Learning](../../NeurIPS2025/optimization/neural_thermodynamics_entropic_forces_in_deep_and_universal_representation_learn.md)
-- [\[ICLR 2026\] Fast Convergence of Natural Gradient Descent for Over-parameterized Physics-Informed Neural Networks](fast_convergence_of_natural_gradient_descent_for_over-parameterized_physics-info.md)
 - [\[ICLR 2026\] Neural Networks Learn Generic Multi-Index Models Near Information-Theoretic Limit](neural_networks_learn_generic_multi-index_models_near_information-theoretic_limi.md)
+- [\[ICLR 2026\] Fast Convergence of Natural Gradient Descent for Over-parameterized Physics-Informed Neural Networks](fast_convergence_of_natural_gradient_descent_for_over-parameterized_physics-info.md)
 
 </div>
 

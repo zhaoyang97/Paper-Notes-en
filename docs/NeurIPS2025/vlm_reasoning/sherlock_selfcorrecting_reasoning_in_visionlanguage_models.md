@@ -2,17 +2,16 @@
 title: >-
   [Paper Note] Sherlock: Self-Correcting Reasoning in Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][self-correction] The first systematic study of self-correction capabilities in reasoning VLMs: existing reasoning VLMs are found to be nearly incapable of self-correction (<10% exhibit an a…
+  [NeurIPS 2025][VLM Reasoning][self-correction] The first systematic study of self-correction capabilities in reasoning VLMs: existing reasoning VLMs are found to be nearly incapable of self-correction (<10% exhibit an aha moment). The paper proposes Sherlock, a three-stage training framework (SFT cold-start → offline trajectory-level preference learning → online self-iterative improvement) that surpasses LLaVA-CoT/Mulberry/LlamaV-o1 (which use 100K–260K annotations) using onl…
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "self-correction"
   - "preference learning"
   - "trajectory-level"
-  - "VLM reasoning"
   - "self-improvement"
 date: 2026-05-08
-content_hash: f475ae54482e1162
+content_hash: 3d3fb137541b626a
 ---
 
 # Sherlock: Self-Correcting Reasoning in Vision-Language Models
@@ -120,9 +119,9 @@ Inference-time scaling: Sherlock combined with the MM-Verify verifier improves M
 
 - [\[NeurIPS 2025\] RoboRefer: Towards Spatial Referring with Reasoning in Vision-Language Models for Robotics](roborefer_towards_spatial_referring_with_reasoning_in_vision-language_models_for.md)
 - [\[NeurIPS 2025\] Unveiling Chain of Step Reasoning for Vision-Language Models with Fine-grained Rewards](unveiling_chain_of_step_reasoning_for_visionlanguage_models.md)
+- [\[ACL 2025\] VReST: Enhancing Reasoning in Large Vision-Language Models through Tree Search and Self-Reward Mechanism](../../ACL2025/vlm_reasoning/vrest_tree_search_vlm_reasoning.md)
 - [\[NeurIPS 2025\] Recognition through Reasoning: Reinforcing Image Geo-localization with Large Vision-Language Models](recognition_through_reasoning_reinforcing_image_geo-localization_with_large_visi.md)
 - [\[NeurIPS 2025\] MM-OPERA: Benchmarking Open-ended Association Reasoning for Large Vision-Language Models](mm-opera_benchmarking_open-ended_association_reasoning_for_large_vision-language.md)
-- [\[NeurIPS 2025\] Adapting Vision-Language Models for Evaluating World Models](adapting_visionlanguage_models_for_evaluating_world_models.md)
 
 </div>
 

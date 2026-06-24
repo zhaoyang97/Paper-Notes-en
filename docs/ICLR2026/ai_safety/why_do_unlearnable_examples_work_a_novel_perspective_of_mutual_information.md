@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Why Do Unlearnable Examples Work: A Novel Perspective of Mutual Information
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This work provides a unified explanation of the effective mechanism of all Unlearnable Examples (UE) from the perspective of Mutual Information (MI) reduction. It proves that reducing the intraclass covariance of poisoned features lowers the MI upper bound. Accordingly, the MI-UE method is proposed to achieve covarianc
+  [ICLR 2026][AI Safety][Unlearnable Examples] This work provides a unified explanation of the effective mechanism of all Unlearnable Examples (UE) from the perspective of Mutual Information (MI) reduction. It proves that reducing the intraclass covariance of poisoned features lowers the MI upper bound. Accordingly, the MI-UE method is proposed to achieve covariance reduction by maximizing intraclass cosine similarity, suppressing test accuracy on CIFAR-10 to 9.95% (near random…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Unlearnable Examples"
+  - "Mutual Information"
+  - "Data Poisoning"
+  - "Covariance Reduction"
+  - "Privacy Protection"
 date: 2026-05-08
-content_hash: 526830f60ad7a79d
+content_hash: 885c39d44fe3f5ee
 ---
+
 # Why Do Unlearnable Examples Work: A Novel Perspective of Mutual Information
 
 **Conference**: ICLR 2026  
@@ -175,8 +181,8 @@ Under the most challenging AT-8 (adversarial training with same budget as UE), M
 
 ## Related Papers
 
-- [\[ICLR 2026\] Reducing Information Dependency Does Not Cause Training Data Privacy. Adversarially Non-Robust Features Do.](reducing_information_dependency_does_not_cause_training_data_privacy_adversarial.md)
 - [\[ICML 2026\] Dual-branch Robust Unlearnable Examples](../../ICML2026/ai_safety/dual-branch_robust_unlearnable_examples.md)
+- [\[ICLR 2026\] Reducing Information Dependency Does Not Cause Training Data Privacy. Adversarially Non-Robust Features Do.](reducing_information_dependency_does_not_cause_training_data_privacy_adversarial.md)
 - [\[ICML 2025\] Generalization in Federated Learning: A Conditional Mutual Information Framework](../../ICML2025/ai_safety/generalization_in_federated_learning_a_conditional_mutual_information_framework.md)
 - [\[ICLR 2026\] Adaptive Methods Are Preferable in High Privacy Settings: An SDE Perspective](adaptive_methods_are_preferable_in_high_privacy_settings_an_sde_perspective.md)
 - [\[ICLR 2026\] Nasty Adversarial Training: A Probability Sparsity Perspective for Robustness Enhancement](nasty_adversarial_training_a_probability_sparsity_perspective_for_robustness_enh.md)

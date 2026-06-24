@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] NRGPT: An Energy-based Alternative for GPT
 description: >-
-  [ICLR 2026][Optimization & Theory][GPT] Ours proposes NRGPT (eNeRgy-GPT), which applies minimal modifications to the standard GPT to transform it into an energy-based model. By designing attention energy and feed-forward energy functions, each forward pass layer becomes equivalent to a gradient descent step of tokens on an energy landscape. The work proves p
+  [ICLR 2026][Optimization][Energy-based models] Ours proposes NRGPT (eNeRgy-GPT), which applies minimal modifications to the standard GPT to transform it into an energy-based model. By designing attention energy and feed-forward energy functions, each forward pass layer becomes equivalent to a gradient descent step of tokens on an energy landscape. The work proves properties of asymptotic energy descent and stable convergence, validating performance comparable to standard GPT…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - GPT
-  - Autoregressive
+  - "ICLR 2026"
+  - "Optimization"
+  - "Energy-based models"
+  - "GPT"
+  - "Autoregressive"
+  - "Gradient descent inference"
+  - "Asymptotic stability"
 date: 2026-05-08
-content_hash: 340a83682b5407ce
+content_hash: 1480a9c2536e5c14
 ---
+
 # NRGPT: An Energy-based Alternative for GPT
 
 **Conference**: ICLR 2026  
@@ -132,15 +136,15 @@ On the Shakespeare dataset, NRGPT exhibits significant anti-overfitting properti
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Cautious Optimizers: Improving Training with One Line of Code](cautious_optimizers_improving_training_with_one_line_of_code.md)
 - [\[ICLR 2026\] ConRep4CO: Contrastive Representation Learning of Combinatorial Optimization Instances across Types](conrep4co_contrastive_representation_learning_of_combinatorial_optimization_inst.md)
+- [\[ICLR 2026\] The Polar Express: Optimal Matrix Sign Methods and their Application to the Muon Algorithm](the_polar_express_optimal_matrix_sign_methods_and_their_application_to_the_muon_.md)
 - [\[ICLR 2026\] A Tale of Two Geometries: Adaptive Optimizers and Non-Euclidean Descent](a_tale_of_two_geometries_adaptive_optimizers_and_non-euclidean_descent.md)
-- [\[ICLR 2026\] SPREAD：基于采样的高效自适应扩散 Pareto 前沿精化](spread_sampling-based_pareto_front_refinement_via_efficient_adaptive_diffusion.md)
-- [\[ICLR 2026\] Neural Sum-of-Squares: Certifying the Nonnegativity of Polynomials with Transformers](neural_sum-of-squares_certifying_the_nonnegativity_of_polynomials_with_transform.md)
-- [\[ICLR 2026\] Elastic Optimal Transport: Theory, Application, and Empirical Evaluation](elastic_optimal_transport_theory_application_and_empirical_evaluation.md)
+- [\[ICLR 2026\] Hierarchical Multi-Stage Recovery Framework for Kronecker Compressed Sensing](hierarchical_multi-stage_recovery_framework_for_kronecker_compressed_sensing.md)
 
 </div>
 

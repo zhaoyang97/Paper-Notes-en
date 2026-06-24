@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FastGS: Training 3D Gaussian Splatting in 100 Seconds
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] FastGS is proposed as a 3DGS acceleration framework based on multi-view consistency. By employing Multi-view Consistency Densification (VCD) and Multi-view Consistency Pruning (VCP) to precisely control the number of Gaussians, it achieves scene training in approximately 100 seconds on datasets like Mip-NeRF 360—a 15×
+  [CVPR2026][3D Vision][3D Gaussian Splatting] FastGS is proposed as a 3DGS acceleration framework based on multi-view consistency. By employing Multi-view Consistency Densification (VCD) and Multi-view Consistency Pruning (VCP) to precisely control the number of Gaussians, it achieves scene training in approximately 100 seconds on datasets like Mip-NeRF 360—a 15× speedup over vanilla 3DGS with comparable rendering quality.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
+  - "CVPR2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Training Acceleration"
+  - "Multi-view Consistency"
+  - "Gaussian Density Control"
+  - "Pruning Strategy"
 date: 2026-05-08
-content_hash: 3f2e52f0d29e75a6
+content_hash: 0e05a5687a24d453
 ---
+
 # FastGS: Training 3D Gaussian Splatting in 100 Seconds
 
 **Conference**: CVPR2026  
@@ -138,11 +143,11 @@ VCD is the primary contributor, reducing the Gaussian count from 2.64M to 0.53M 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Cross-Instance Gaussian Splatting Registration via Geometry-Aware Feature-Guided Alignment](cross-instance_gaussian_splatting_registration_via_geometry-aware_feature-guided.md)
-- [\[CVPR 2026\] DropAnSH-GS: Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting](dropping_anchor_and_spherical_harmonics_for_sparse-view_gaussian_splatting.md)
-- [\[CVPR 2026\] Geometric-Photometric Event-based 3D Gaussian Ray Tracing](geometric-photometric_event-based_3d_gaussian_ray_tracing.md)
-- [\[CVPR 2026\] LightSplat: Fast and Memory-Efficient Open-Vocabulary 3D Scene Understanding in Five Seconds](lightsplat_fast_and_memory-efficient_open-vocabulary_3d_scene_understanding_in_f.md)
-- [\[CVPR 2026\] ExtrinSplat: Decoupling Geometry and Semantics for Open-Vocabulary Understanding in 3D Gaussian Splatting](extrinsplat_decoupling_geometry_and_semantics_for_open-vocabulary_understanding_.md)
+- [\[CVPR 2025\] DashGaussian: Optimizing 3D Gaussian Splatting in 200 Seconds](../../CVPR2025/3d_vision/dashgaussian_optimizing_3d_gaussian_splatting_in_200_seconds.md)
+- [\[ICCV 2025\] Faster and Better 3D Splatting via Group Training](../../ICCV2025/3d_vision/faster_and_better_3d_splatting_via_group_training.md)
+- [\[CVPR 2026\] Speeding Up the Learning of 3D Gaussians with Much Shorter Gaussian Lists](speeding_up_the_learning_of_3d_gaussians_with_much_shorter_gaussian_lists.md)
+- [\[CVPR 2026\] VarSplat: Uncertainty-aware 3D Gaussian Splatting for Robust RGB-D SLAM](varsplat_uncertainty-aware_3d_gaussian_splatting_for_robust_rgb-d_slam.md)
+- [\[CVPR 2025\] SfM-Free 3D Gaussian Splatting via Hierarchical Training](../../CVPR2025/3d_vision/sfm-free_3d_gaussian_splatting_via_hierarchical_training.md)
 
 </div>
 

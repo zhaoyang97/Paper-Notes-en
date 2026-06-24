@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MA-Bench: Towards Fine-grained Micro-Action Understanding
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Ours proposes MA-Bench, a micro-action understanding benchmark containing 1,000 videos and 12,000 structured QA pairs. It systematically evaluates the fine-grained micro-action understanding capabilities of 23 MLLMs through a three-layer "Perception-Understanding-Reasoning" architecture and provides MA-Bench-Train (20.
+  [CVPR 2026][Video Understanding][Micro-action understanding] Ours proposes MA-Bench, a micro-action understanding benchmark containing 1,000 videos and 12,000 structured QA pairs. It systematically evaluates the fine-grained micro-action understanding capabilities of 23 MLLMs through a three-layer "Perception-Understanding-Reasoning" architecture and provides MA-Bench-Train (20.5K samples) for model fine-tuning.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Micro-action understanding"
+  - "Fine-grained action recognition"
+  - "Multimodal Large Model evaluation"
+  - "Sentiment analysis"
+  - "VideoQA"
 date: 2026-05-08
-content_hash: eff66ffe85d6deed
+content_hash: e025a3af94043e04
 ---
+
 # MA-Bench: Towards Fine-grained Micro-Action Understanding
 
 **Conference**: CVPR 2026  
@@ -119,15 +125,15 @@ Evaluation is split by task type: closed-ended questions (CMAR/FMAR, etc.) use a
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] SketchVL: Policy Optimization via Fine-Grained Credit Assignment for Chart Understanding and More](sketchvl_policy_optimization_via_fine-grained_credit_assignment_for_chart_unders.md)
-- [\[CVPR 2026\] See What I Mean: Aligning Vision and Language Representations for Video Fine-grained Object Understanding](see_what_i_mean_aligning_vision_and_language_representations_for_video_fine-grai.md)
-- [\[CVPR 2026\] HanDyVQA: A Video QA Benchmark for Fine-Grained Hand-Object Interaction Dynamics](handyvqa_a_video_qa_benchmark_for_fine-grained_hand-object_interaction_dynamics.md)
-- [\[CVPR 2026\] Hugging Visual Prompt and Segmentation Tokens: Consistency Learning for Fine-Grained Visual Understanding in MLLMs](hugging_visual_prompt_and_segmentation_tokens_consistency_learning_for_fine-grai.md)
-- [\[CVPR 2026\] CropVLM: Learning to Zoom for Fine-Grained Vision-Language Perception](cropvlm_learning_to_zoom_for_fine_grained_vision_language_perception.md)
+- [\[CVPR 2026\] Frame2Freq: Spectral Adapters for Fine-Grained Video Understanding](frame2freq_spectral_adapters_for_fine-grained_video_understanding.md)
+- [\[CVPR 2026\] Mistake Attribution: Fine-Grained Mistake Understanding in Egocentric Videos](mistake_attribution_fine-grained_mistake_understanding_in_egocentric_videos.md)
+- [\[CVPR 2026\] UFVideo: Towards Unified Fine-Grained Video Cooperative Understanding with Large Language Models](ufvideo_towards_unified_fine-grained_video_cooperative_understanding_with_large_.md)
+- [\[CVPR 2026\] Fine-VAD: Towards Fine-Grained Video Anomaly Detection via Progressive Cross-Granularity Learning](fine-vad_towards_fine-grained_video_anomaly_detection_via_progressive_cross-gran.md)
+- [\[AAAI 2026\] FineTec: Fine-Grained Action Recognition Under Temporal Corruption via Skeleton Decomposition and Sequence Completion](../../AAAI2026/video_understanding/finetec_fine-grained_action_recognition_under_temporal_corruption_via_skeleton_d.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] WebGen-Agent: Enhancing Interactive Website Generation with Multi-Level Feedback and Step-Level Reinforcement Learning
 description: >-
-  [ICLR 2026][Code Intelligence][GUI agent] WebGen-Agent enables a coding LLM to iteratively refine website code using multi-level visual feedback ("screenshot + GUI agent testing") at each step. These feedback scores are then utilized as step-level rewards for Step-GRPO reinforcement learning. This approach improves Claude-3.5-Sonnet's accuracy on WebGen-Bench
+  [ICLR 2026][Code Intelligence][Website Generation] WebGen-Agent enables a coding LLM to iteratively refine website code using multi-level visual feedback ("screenshot + GUI agent testing") at each step. These feedback scores are then utilized as step-level rewards for Step-GRPO reinforcement learning. This approach improves Claude-3.5-Sonnet's accuracy on WebGen-Bench from 26.4% to 51.9% and elevates 7B small models from 38.9% to 45.4%.
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - GUI agent
-  - Step-GRPO
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Website Generation"
+  - "Visual Feedback"
+  - "GUI agent"
+  - "Step-GRPO"
+  - "Process Supervision"
 date: 2026-05-08
-content_hash: aadb67bc88896d4a
+content_hash: 367125c8f5d13b8d
 ---
+
 # WebGen-Agent: Enhancing Interactive Website Generation with Multi-Level Feedback and Step-Level Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -150,13 +154,14 @@ Incremental ablation of the workflow (using DeepSeek-V3):
 - Value: ⭐⭐⭐⭐⭐ Highly practical paradigm for interactive product generation, offering a clear path for enhancing small models.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] RECODE-H: A Benchmark for Research Code Development with Interactive Human Feedback](recode-h_a_benchmark_for_research_code_development_with_interactive_human_feedba.md)
-- [\[ICLR 2026\] Critique-Coder: Enhancing Coder Models by Critique Reinforcement Learning](critique-coder_enhancing_coder_models_by_critique_reinforcement_learning.md)
 - [\[ACL 2026\] MARS2: Scaling Multi-Agent Tree Search via Reinforcement Learning for Code Generation](../../ACL2026/code_intelligence/mars2_scaling_multi-agent_tree_search_via_reinforcement_learning_for_code_genera.md)
+- [\[ICLR 2026\] Critique-Coder: Enhancing Coder Models by Critique Reinforcement Learning](critique-coder_enhancing_coder_models_by_critique_reinforcement_learning.md)
 - [\[ICLR 2026\] Gistify: Codebase-Level Understanding via Runtime Execution](gistify_codebase-level_understanding_via_runtime_execution.md)
 - [\[ICLR 2026\] CARD: Towards Conditional Design of Multi-agent Topological Structures](card_towards_conditional_design_of_multi-agent_topological_structures.md)
 

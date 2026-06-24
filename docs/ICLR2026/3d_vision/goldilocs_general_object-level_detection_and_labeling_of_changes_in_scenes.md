@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GOLDILOCS: General Object-Level Detection and Labeling of Changes in Scenes
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] GOLDILOCS reformulates cross-time scene change detection as a problem of "where the static 3D reconstruction hypothesis is violated," utilizing MASt3R for dense reconstruction, back-depth conflict filtering, SAM2 for mask tracking, and SSIM for structural differences to simultaneously detect and label object-level chan
+  [ICLR2026][3D Vision][Scene Change Detection] GOLDILOCS reformulates cross-time scene change detection as a problem of "where the static 3D reconstruction hypothesis is violated," utilizing MASt3R for dense reconstruction, back-depth conflict filtering, SAM2 for mask tracking, and SSIM for structural differences to simultaneously detect and label object-level changes (added, removed, moved, warped) under zero-training conditions.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR2026"
+  - "3D Vision"
+  - "Scene Change Detection"
+  - "3D Reconstruction"
+  - "Object-level Change"
+  - "Zero-shot Detection"
+  - "Multi-view Consistency"
 date: 2026-05-08
-content_hash: 9a49dcd08e2f9174
+content_hash: 2d3be00696221a0e
 ---
+
 # GOLDILOCS: General Object-Level Detection and Labeling of Changes in Scenes
 
 **Conference**: ICLR2026  
@@ -122,6 +128,7 @@ Evaluation was conducted across datasets including ChangeSim, VL-CMU-CD, RC-3D, 
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -130,7 +137,7 @@ Evaluation was conducted across datasets including ChangeSim, VL-CMU-CD, RC-3D, 
 - [\[CVPR 2026\] Changes in Real Time: Online Scene Change Detection with Multi-View Fusion](../../CVPR2026/3d_vision/changes_in_real_time_online_scene_change_detection_with_multi-view_fusion.md)
 - [\[CVPR 2026\] ChronoGS: Disentangling Invariants and Changes in Multi-Period Scenes](../../CVPR2026/3d_vision/chronogs_disentangling_invariants_and_changes_in_multi-period_scenes.md)
 - [\[ECCV 2024\] Dual-level Adaptive Self-Labeling for Novel Class Discovery in Point Cloud Segmentation](../../ECCV2024/3d_vision/dual-level_adaptive_self-labeling_for_novel_class_discovery_in_point_cloud_segme.md)
-- [\[ICCV 2025\] Unified Category-Level Object Detection and Pose Estimation from RGB Images using 3D Prototypes](../../ICCV2025/3d_vision/unified_category-level_object_detection_and_pose_estimation_from_rgb_images_usin.md)
+- [\[ICLR 2026\] Fore-Mamba3D: Mamba-based Foreground-Enhanced Encoding for 3D Object Detection](fore-mamba3d_mamba-based_foreground-enhanced_encoding_for_3d_object_detection.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FireScope: Wildfire Risk Raster Prediction with a Chain-of-Thought Oracle
 description: >-
-  [CVPR 2026][LLM Reasoning][GRPO] A VLM (Oracle) fine-tuned with GRPO and Chain-of-Thought (CoT) reasoning first infers a scalar wildfire risk score from satellite imagery and climate data. Then, FiLM is used to feed this score into a lightweight vision Encoder-Decoder to generate a high-resolution continuous risk raster. In a "US training, Europe test
+  [CVPR 2026][Reasoning][Wildfire Risk Prediction] A VLM (Oracle) fine-tuned with GRPO and Chain-of-Thought (CoT) reasoning first infers a scalar wildfire risk score from satellite imagery and climate data. Then, FiLM is used to feed this score into a lightweight vision Encoder-Decoder to generate a high-resolution continuous risk raster. In a "US training, Europe testing" cross-continent setting, explicit linguistic reasoning significantly improves out-of-distribution (OOD) ge…
 tags:
-  - CVPR 2026
-  - LLM Reasoning
-  - GRPO
+  - "CVPR 2026"
+  - "Reasoning"
+  - "Wildfire Risk Prediction"
+  - "Chain-of-Thought Reasoning"
+  - "Raster Generation"
+  - "Cross-continent Generalization"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 1987f9dceb77c65d
+content_hash: 5f4a1a00c499e2d9
 ---
+
 # FireScope: Wildfire Risk Raster Prediction with a Chain-of-Thought Oracle
 
 **Conference**: CVPR 2026  
@@ -169,11 +174,11 @@ Explainability (Table 4):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](reinforcing_structured_chain-of-thought_for_video_understanding.md)
 - [\[CVPR 2026\] Rationale-Enhanced Decoding for Multi-modal Chain-of-Thought](rationale-enhanced_decoding_for_multi-modal_chain-of-thought.md)
 - [\[NeurIPS 2025\] Re-FORC: Adaptive Reward Prediction for Efficient Chain-of-Thought Reasoning](../../NeurIPS2025/llm_reasoning/re-forc_adaptive_reward_prediction_for_efficient_chain-of-thought_reasoning.md)
 - [\[CVPR 2026\] Latent Chain-of-Thought World Modeling for End-to-End Autonomous Driving](latent_chain-of-thought_world_modeling_for_end-to-end_autonomous_driving.md)
 - [\[CVPR 2026\] Revisiting the Necessity of Lengthy Chain-of-Thought in Vision-centric Reasoning Generalization](revisiting_the_necessity_of_lengthy_chain-of-thought_in_vision-centric_reasoning.md)
+- [\[ICLR 2026\] ATTS: Asynchronous Test-Time Scaling via Conformal Prediction](../../ICLR2026/llm_reasoning/atts_asynchronous_test-time_scaling_via_conformal_prediction.md)
 
 </div>
 

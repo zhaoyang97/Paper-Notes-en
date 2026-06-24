@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VecCISC: Improving Confidence-Informed Self-Consistency with Reasoning Trace Clustering and Candidate Answer Selection
 description: >-
-  [ACL 2026][Model Compression][Paper Note] VecCISC introduces "reasoning trace embedding clustering grouped by answer" prior to the confidence-weighted self-consistency of CISC. By submitting only the representative traces of each semantic cluster to the critic for scoring, it significantly reduces critic calls and token costs while maintaining or slightly impr
+  [ACL2026 Findings][Model Compression][Inference-time Computation] VecCISC introduces "reasoning trace embedding clustering grouped by answer" prior to the confidence-weighted self-consistency of CISC. By submitting only the representative traces of each semantic cluster to the critic for scoring, it significantly reduces critic calls and token costs while maintaining or slightly improving accuracy.
 tags:
-  - ACL 2026
-  - Model Compression
+  - "ACL2026 Findings"
+  - "Model Compression"
+  - "Inference-time Computation"
+  - "Self-Consistency"
+  - "Confidence-weighted Voting"
+  - "Trace Clustering"
+  - "Cost Compression"
 date: 2026-05-08
-content_hash: 85f0d529591e52f8
+content_hash: bf506a92f43253fa
 ---
+
 # VecCISC: Improving Confidence-Informed Self-Consistency with Reasoning Trace Clustering and Candidate Answer Selection
 
 **Conference**: ACL2026 Findings  

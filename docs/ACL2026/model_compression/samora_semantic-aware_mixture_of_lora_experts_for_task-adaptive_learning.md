@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SAMoRA: Semantic-Aware Mixture of LoRA Experts for Task-Adaptive Learning
 description: >-
-  [ACL 2026][Model Compression][LoRA] SAMoRA addresses the issues of imprecise routing and lack of flexibility in weight fusion in existing MoE-LoRA methods through a semantic-aware router and a task-adaptive scaling mechanism. It achieves SOTA performance on multi-task benchmarks with minimal trainable parameters (0.15%).
+  [ACL 2026 Findings][Model Compression][Mixture of Experts] SAMoRA addresses the issues of imprecise routing and lack of flexibility in weight fusion in existing MoE-LoRA methods through a semantic-aware router and a task-adaptive scaling mechanism. It achieves SOTA performance on multi-task benchmarks with minimal trainable parameters (0.15%).
 tags:
-  - ACL 2026
-  - Model Compression
-  - LoRA
+  - "ACL 2026 Findings"
+  - "Model Compression"
+  - "Mixture of Experts"
+  - "LoRA"
+  - "Semantic-Aware Routing"
+  - "Task-Adaptive"
+  - "Multi-Task Learning"
 date: 2026-05-08
-content_hash: 59bd072ca607c8b8
+content_hash: 5bc9532ce78dce52
 ---
+
 # SAMoRA: Semantic-Aware Mixture of LoRA Experts for Task-Adaptive Learning
 
 **Conference**: ACL 2026 Findings  
@@ -162,7 +167,7 @@ The total loss consists of the standard multi-task language modeling loss $\math
 - [\[NeurIPS 2025\] Multi-Task Vehicle Routing Solver via Mixture of Specialized Experts under State-Decomposable MDP](../../NeurIPS2025/model_compression/multi-task_vehicle_routing_solver_via_mixture_of_specialized_experts_under_state.md)
 - [\[ICLR 2026\] LD-MoLE: Learnable Dynamic Routing for Mixture of LoRA Experts](../../ICLR2026/model_compression/ld-mole_learnable_dynamic_routing_for_mixture_of_lora_experts.md)
 - [\[ACL 2026\] TELL-TALE: Task Efficient LLMs with Task Aware Layer Elimination](tell-tale_task_efficient_llms_with_task_aware_layer_elimination.md)
-- [\[ICML 2025\] Make LoRA Great Again: Boosting LoRA with Adaptive Singular Values and Mixture-of-Experts Optimization Alignment](../../ICML2025/model_compression/make_lora_great_again_boosting_lora_with_adaptive_singular_values_and_mixture-of.md)
+- [\[CVPR 2026\] TAS-LoRA: Transformer Architecture Search with Mixture-of-LoRA Experts](../../CVPR2026/model_compression/tas-lora_transformer_architecture_search_with_mixture-of-lora_experts.md)
 
 </div>
 

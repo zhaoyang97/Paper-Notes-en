@@ -2,18 +2,20 @@
 title: >-
   [Paper Note] Evaluating the Impact of Verbal Multiword Expressions on Machine Translation
 description: >-
-  [ACL 2026][Multilingual & Translation][VMWE] This paper presents the first systematic evaluation of the impact of Verbal Multiword Expressions (VMWEs: Verbal Idioms (VID), Verb-Particle Constructions (VPC), and Light Verb Constructions (LVC)) on machine translation quality. Analyzing 8 MT systems across 7 language pairs using two QE models and human DA scores, th
+  [ACL 2026][Multilingual & Machine Translation][VMWE] This paper presents the first systematic evaluation of the impact of Verbal Multiword Expressions (VMWEs: Verbal Idioms (VID), Verb-Particle Constructions (VPC), and Light Verb Constructions (LVC)) on machine translation quality. Analyzing 8 MT systems across 7 language pairs using two QE models and human DA scores, the study proves that VMWEs consistently lead to performance degradation. This degradation is strictly positi…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
-  - VMWE
-  - verb-particle
-  - light verb
-  - xCOMET
-  - MetricX
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "VMWE"
+  - "Verbal Idioms"
+  - "verb-particle"
+  - "light verb"
+  - "xCOMET"
+  - "MetricX"
 date: 2026-05-08
-content_hash: 1afb249fd39c5db5
+content_hash: 5aa8358c0c5ce8fc
 ---
+
 # Evaluating the Impact of Verbal Multiword Expressions on Machine Translation
 
 **Conference**: ACL 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DictAS: A Framework for Class-Generalizable Few-Shot Anomaly Segmentation via Dictionary Lookup
 description: >-
-  [ICCV 2025][Segmentation][Anomaly Detection] Inspired by the intuition of human inspectors "consulting a dictionary," DictAS reformulates few-shot anomaly segmentation (FSAS) as a dictionary lookup task—a query feature i…
+  [ICCV 2025][Segmentation][Anomaly Detection] Inspired by the intuition of human inspectors "consulting a dictionary," DictAS reformulates few-shot anomaly segmentation (FSAS) as a dictionary lookup task—a query feature is deemed anomalous if it cannot be retrieved from a dictionary of normal samples. Through self-supervised training, the framework acquires class-agnostic lookup capability and achieves state-of-the-art FSAS performance and inference speed across 7 industrial a…
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "CLIP"
   - "Self-Supervised Learning"
 date: 2026-05-08
-content_hash: ac3f06b905516f2b
+content_hash: d2142c07f0c4be0b
 ---
 
 # DictAS: A Framework for Class-Generalizable Few-Shot Anomaly Segmentation via Dictionary Lookup
@@ -218,10 +218,10 @@ DictAS is built upon CLIP (ViT-L-14-336) and consists of three core components:
 ## Related Papers
 
 - [\[ICCV 2025\] Object-level Correlation for Few-Shot Segmentation](object-level_correlation_for_few-shot_segmentation.md)
+- [\[CVPR 2025\] Dual-Agent Optimization framework for Cross-Domain Few-Shot Segmentation](../../CVPR2025/segmentation/dual-agent_optimization_framework_for_cross-domain_few-shot_segmentation.md)
 - [\[ICCV 2025\] MOVE: Motion-Guided Few-Shot Video Object Segmentation](move_motion-guided_few-shot_video_object_segmentation.md)
-- [\[ICCV 2025\] Training-Free Class Purification for Open-Vocabulary Semantic Segmentation](training-free_class_purification_for_open-vocabulary_semantic_segmentation.md)
 - [\[ICCV 2025\] Dynamic Dictionary Learning for Remote Sensing Image Segmentation](dynamic_dictionary_learning_for_remote_sensing_image_segmentation.md)
-- [\[NeurIPS 2025\] SANSA: Unleashing the Hidden Semantics in SAM2 for Few-Shot Segmentation](../../NeurIPS2025/segmentation/sansa_unleashing_the_hidden_semantics_in_sam2_for_few-shot_segmentation.md)
+- [\[ICCV 2025\] Training-Free Class Purification for Open-Vocabulary Semantic Segmentation](training-free_class_purification_for_open-vocabulary_semantic_segmentation.md)
 
 </div>
 

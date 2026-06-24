@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Towards Unified Human Perception and Machine Understanding: Token Flow Guided Compression Framework
 description: >-
-  [CVPR 2026][Model Compression][Image Compression] TFGC compresses images into 1D token sequences and utilizes the "token flow" phenomenon for variable bitrate masking combined with conditional Gaussian prediction to reconstruct missing tokens. Through a semantic guidance module, Large Vision-Language Models (LVLMs) directly consume the compressed tokens without decodi
+  [CVPR 2026][Model Compression][Image Compression] TFGC compresses images into 1D token sequences and utilizes the "token flow" phenomenon for variable bitrate masking combined with conditional Gaussian prediction to reconstruct missing tokens. Through a semantic guidance module, Large Vision-Language Models (LVLMs) directly consume the compressed tokens without decoding back to pixels, achieving superior human perception and machine understanding (caption/grounding/VQA) at ul…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Image Compression
-  - 1D token
-  - LVLM
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Image Compression"
+  - "Coding for Machine Vision"
+  - "1D token"
+  - "Variable Bitrate"
+  - "LVLM"
 date: 2026-05-08
-content_hash: 0d081552cf517244
+content_hash: ba767d7af8bc808e
 ---
+
 # Towards Unified Human Perception and Machine Understanding: Token Flow Guided Compression Framework
 
 **Conference**: CVPR 2026  
@@ -152,10 +155,10 @@ Complexity (256×256, P-Param denotes "parameter count per bitrate point"):
 ## Related Papers
 
 - [\[ICLR 2026\] UniFlow: A Unified Pixel Flow Tokenizer for Visual Understanding and Generation](../../ICLR2026/model_compression/uniflow_a_unified_pixel_flow_tokenizer_for_visual_understanding_and_generation.md)
-- [\[CVPR 2026\] IF-Prune: Information-Flow Guided Token Pruning for Efficient Vision-Language Models](if-prune_information-flow_guided_token_pruning_for_efficient_vision-language_mod.md)
 - [\[CVPR 2026\] Decompose, Mix, Adapt: A Unified Framework for Parameter-Efficient Neural Network Recombination and Compression](decompose_mix_adapt_a_unified_framework_for_parameter-efficient_neural_network_r.md)
+- [\[CVPR 2026\] A Unified Framework for Knowledge Transfer in Bidirectional Model Scaling](a_unified_framework_for_knowledge_transfer_in_bidirectional_model_scaling.md)
 - [\[CVPR 2026\] OneSparse: A Unified Framework for Sparse Activation Layers in Vision Models](onesparse_a_unified_framework_for_sparse_activation_layers_in_vision_models.md)
-- [\[ICLR 2026\] Reference-Guided Machine Unlearning](../../ICLR2026/model_compression/reference-guided_machine_unlearning.md)
+- [\[CVPR 2026\] Real-Time Neural Video Compression with Unified Intra and Inter Coding](real-time_neural_video_compression_with_unified_intra_and_inter_coding.md)
 
 </div>
 

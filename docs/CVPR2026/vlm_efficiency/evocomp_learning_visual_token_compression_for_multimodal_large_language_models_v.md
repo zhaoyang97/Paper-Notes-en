@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EvoComp: Learning Visual Token Compression for Multimodal Large Language Models via Semantic-Guided Evolutionary Labeling
 description: >-
-  [CVPR 2026][Multimodal VLM][GHM loss] EvoComp inserts a lightweight compressor between the MLLM's alignment module and the LLM. It is trained using supervision labels generated via an "evolutionary algorithm that finds the token subset minimizing task loss." This approach maintains 99.3%–94.9% of original accuracy under 3×–9× compression and achieves up to
+  [CVPR 2026][Multimodal Efficiency][Visual token compression] EvoComp inserts a lightweight compressor between the MLLM's alignment module and the LLM. It is trained using supervision labels generated via an "evolutionary algorithm that finds the token subset minimizing task loss." This approach maintains 99.3%–94.9% of original accuracy under 3×–9× compression and achieves up to 2.0× speedup on mobile NPUs.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - GHM loss
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Visual token compression"
+  - "evolutionary search labeling"
+  - "MLLM inference acceleration"
+  - "GHM loss"
+  - "edge deployment"
 date: 2026-05-08
-content_hash: 612d7325e3b8c99d
+content_hash: 47794bde00102d51
 ---
+
 # EvoComp: Learning Visual Token Compression for Multimodal Large Language Models via Semantic-Guided Evolutionary Labeling
 
 **Conference**: CVPR 2026  
@@ -154,9 +159,9 @@ On A100 for LLaVA-NeXT-7B (POPE): Prefill latency 175→43 ms (**4.1×**), overa
 ## Related Papers
 
 - [\[CVPR 2026\] OmniZip: Audio-Guided Dynamic Token Compression for Fast Omnimodal Large Language Models](omnizip_audio-guided_dynamic_token_compression_for_fast_omnimodal_large_language.md)
-- [\[CVPR 2026\] ApET: Approximation-Error Guided Token Compression for Efficient VLMs](apet_approximation-error_guided_token_compression_for_efficient_vlms.md)
-- [\[CVPR 2026\] UniCompress: Token Compression for Unified Vision-Language Understanding and Generation](unicompress_token_compression_for_unified_vision-language_understanding_and_gene.md)
-- [\[ICML 2026\] On the Adversarial Robustness of Large Vision-Language Models under Visual Token Compression](../../ICML2026/multimodal_vlm/on_the_adversarial_robustness_of_large_vision-language_models_under_visual_token.md)
+- [\[ICLR 2026\] Task-Related Token Compression in Multimodal Large Language Models from an Explainability Perspective](../../ICLR2026/vlm_efficiency/task-related_token_compression_in_multimodal_large_language_models_from_an_expla.md)
+- [\[CVPR 2026\] CoIn: Coverage and Informativeness-Guided Token Reduction for Efficient Large Multimodal Models](coin_coverage_and_informativeness-guided_token_reduction_for_efficient_large_mul.md)
+- [\[CVPR 2026\] Hybrid Token Compression for Vision-Language Models](hybrid_token_compression_for_vision-language_models.md)
 - [\[CVPR 2026\] GroundVTS: Visual Token Sampling in Multimodal Large Language Models for Video Temporal Grounding](groundvts_visual_token_sampling_in_multimodal_large_language_models_for_video_te.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Diversity Collapse in Multi-Agent LLM Systems: Structural Coupling and Collective Failure in Open-Ended Idea Generation
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] This paper systematically reveals the "diversity collapse" phenomenon in multi-agent LLM systems by evaluating over 10,000 research proposals across three levels: model intelligence, agent cognition, and system dynamics. It demonstrates that stronger models, authority-driven role assignments, and dense communication to
+  [ACL 2026 Findings][Multi-Agent][Multi-agent systems] This paper systematically reveals the "diversity collapse" phenomenon in multi-agent LLM systems by evaluating over 10,000 research proposals across three levels: model intelligence, agent cognition, and system dynamics. It demonstrates that stronger models, authority-driven role assignments, and dense communication topologies suppress semantic diversity, identifying the root cause as the interaction structure rather than…
 tags:
-  - ACL 2026
-  - Multi-Agent
+  - "ACL 2026 Findings"
+  - "Multi-Agent"
+  - "Multi-agent systems"
+  - "diversity collapse"
+  - "structural coupling"
+  - "idea generation"
+  - "collaboration topology"
 date: 2026-05-08
-content_hash: 6be62e850933509c
+content_hash: f81d4888d7540076
 ---
+
 # Diversity Collapse in Multi-Agent LLM Systems: Structural Coupling and Collective Failure in Open-Ended Idea Generation
 
 **Conference**: ACL 2026 Findings  
@@ -136,9 +142,9 @@ While the first two designs diagnose "structural coupling" as the cause, causali
 
 - [\[ACL 2026\] Seeing the Whole Elephant: A Benchmark for Failure Attribution in LLM-based Multi-Agent Systems](seeing_the_whole_elephant_a_benchmark_for_failure_attribution_in_llm-based_multi.md)
 - [\[ICML 2026\] EngiAgent: Fully Connected Coordination of LLM Agents for Solving Open-ended Engineering Problems with Feasible Solutions](../../ICML2026/multi_agent/engiagent_fully_connected_coordination_of_llm_agents_for_solving_open-ended_engi.md)
-- [\[ACL 2026\] Memory-Augmented LLM-based Multi-Agent System for Automated Feature Generation on Tabular Data](memory-augmented_llm-based_multi-agent_system_for_automated_feature_generation_o.md)
+- [\[ICLR 2026\] Aegis: Automated Error Generation and Attribution for Multi-Agent Systems](../../ICLR2026/multi_agent/aegis_automated_error_generation_and_attribution_for_multi-agent_systems.md)
 - [\[ACL 2026\] LLM-Based Human-Agent Collaboration and Interaction Systems: A Survey](llm-based_human-agent_collaboration_and_interaction_systems_a_survey.md)
-- [\[ACL 2026\] Conjunctive Prompt Attacks in Multi-Agent LLM Systems](conjunctive_prompt_attacks_in_multi-agent_llm_systems.md)
+- [\[ACL 2026\] Memory-Augmented LLM-based Multi-Agent System for Automated Feature Generation on Tabular Data](memory-augmented_llm-based_multi-agent_system_for_automated_feature_generation_o.md)
 
 </div>
 

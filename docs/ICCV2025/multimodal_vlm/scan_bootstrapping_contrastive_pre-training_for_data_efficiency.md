@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] SCAN: Bootstrapping Contrastive Pre-training for Data Efficiency
 description: >-
-  [Multimodal VLM] This paper proposes SCAN, a dynamic bootstrapping dataset pruning method that iteratively identifies pruning candidates and applies dataset mutation operations…
+  [Multimodal VLM] This paper proposes SCAN, a dynamic bootstrapping dataset pruning method that iteratively identifies pruning candidates and applies dataset mutation operations, achieving an average performance drop of less than 1% at a 30–35% pruning rate in CLIP and MoCo contrastive pre-training.
 tags:
   - "Multimodal VLM"
 date: 2026-05-08
-content_hash: 79b651e8da25f154
+content_hash: 97bb4c653f5c6a45
 ---
 
 # SCAN: Bootstrapping Contrastive Pre-training for Data Efficiency
@@ -146,11 +146,11 @@ Dynamic bootstrapping outperforms static pruning by 6.6 points; jointly pruning 
 
 ## Related Papers
 
-- [\[ICLR 2026\] WebDS: An End-to-End Benchmark for Web-based Data Science](../../ICLR2026/multimodal_vlm/webds_an_end-to-end_benchmark_for_web-based_data_science.md)
-- [\[ICLR 2026\] Why Reinforcement Fine-Tuning Preserves Prior Knowledge Better: A Data Perspective](../../ICLR2026/multimodal_vlm/why_reinforcement_fine-tuning_enables_mllms_preserve_prior_knowledge_better_a_da.md)
-- [\[AAAI 2026\] FT-NCFM: An Influence-Aware Data Distillation Framework for Efficient VLA Models](../../AAAI2026/multimodal_vlm/ft-ncfm_an_influence-aware_data_distillation_framework_for_efficient_vla_models.md)
 - [\[ICCV 2025\] OrderChain: Towards General Instruct-Tuning for Stimulating the Ordinal Understanding Ability of MLLM](orderchain_towards_general_instruct-tuning_for_stimulating_the_ordinal_understan.md)
-- [\[ICCV 2025\] R1-VL: Learning to Reason with Multimodal Large Language Models via Step-wise Group Relative Policy Optimization](r1-vl_learning_to_reason_with_multimodal_large_language_models_via_step-wise_gro.md)
+- [\[ICCV 2025\] MM-IFEngine: Towards Multimodal Instruction Following](mm-ifengine_towards_multimodal_instruction_following.md)
+- [\[ICCV 2025\] Large Multi-modal Models Can Interpret Features in Large Multi-modal Models](large_multi-modal_models_can_interpret_features_in_large_multi-modal_models.md)
+- [\[ICCV 2025\] SC-Captioner: Improving Image Captioning with Self-Correction by Reinforcement Learning](sc-captioner_improving_image_captioning_with_self-correction_by_reinforcement_le.md)
+- [\[ICCV 2025\] Hints of Prompt: Enhancing Visual Representation for Multimodal LLMs in Autonomous Driving](hints_of_prompt_enhancing_visual_representation_for_multimodal_llms_in_autonomou.md)
 
 </div>
 

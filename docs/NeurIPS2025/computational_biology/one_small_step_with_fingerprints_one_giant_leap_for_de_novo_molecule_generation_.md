@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] One Small Step with Fingerprints, One Giant Leap for De Novo Molecule Generation from Mass Spectra
 description: >-
-  [NeurIPS 2025 (AI4Mat Workshop)][Computational Biology][Mass Spectrometry] By employing MIST as a spectra-to-fingerprint encoder and MolForge as a fingerprint-to-structure decoder…
+  [NeurIPS 2025 (AI4Mat Workshop)][Computational Biology][Mass Spectrometry] By employing MIST as a spectra-to-fingerprint encoder and MolForge as a fingerprint-to-structure decoder, combined with a prior-adjusted thresholding strategy, this work achieves a tenfold performance improvement on the MassSpecGym benchmark for de novo molecular structure generation from mass spectra (top-1 accuracy from 2.3% to 31%).
 tags:
   - "NeurIPS 2025 (AI4Mat Workshop)"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "MolForge"
   - "MIST"
 date: 2026-05-08
-content_hash: 43df39708d4980c5
+content_hash: 3530d020c6ec224b
 ---
 
 # One Small Step with Fingerprints, One Giant Leap for De Novo Molecule Generation from Mass Spectra
@@ -129,9 +129,9 @@ A classical two-stage pipeline is adopted:
 
 - [\[NeurIPS 2025\] Atomic Diffusion Models for Small Molecule Structure Elucidation from NMR Spectra](atomic_diffusion_models_for_small_molecule_structure_elucidation_from_nmr_spectr.md)
 - [\[NeurIPS 2025\] De novo generation of functional terpene synthases using TpsGPT](de_novo_generation_of_functional_terpene_synthases_using_tpsgpt.md)
-- [\[NeurIPS 2025\] Unified All-Atom Molecule Generation with Neural Fields](unified_all-atom_molecule_generation_with_neural_fields.md)
-- [\[ICLR 2026\] CryoNet.Refine: A One-step Diffusion Model for Rapid Refinement of Structural Models with Cryo-EM Density Map Restraints](../../ICLR2026/computational_biology/cryonetrefine_a_one-step_diffusion_model_for_rapid_refinement_of_structural_mode.md)
-- [\[NeurIPS 2025\] Uncertainty-Aware Multi-Objective Reinforcement Learning-Guided Diffusion Models for 3D De Novo Molecular Design](uncertainty-aware_multi-objective_reinforcement_learning-guided_diffusion_models.md)
+- [\[ICML 2025\] PepTune: De Novo Generation of Therapeutic Peptides with Multi-Objective-Guided Discrete Diffusion](../../ICML2025/computational_biology/peptune_de_novo_generation_of_therapeutic_peptides_with_multi-objective-guided_d.md)
+- [\[ICML 2025\] Latent Imputation before Prediction: A New Computational Paradigm for De Novo Peptide Sequencing](../../ICML2025/computational_biology/latent_imputation_before_prediction_a_new_computational_paradigm_for_de_novo_pep.md)
+- [\[ICLR 2026\] One Protein Is All You Need](../../ICLR2026/computational_biology/one_protein_is_all_you_need.md)
 
 </div>
 

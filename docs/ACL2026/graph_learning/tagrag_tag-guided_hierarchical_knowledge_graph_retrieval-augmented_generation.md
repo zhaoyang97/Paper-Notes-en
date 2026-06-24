@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TagRAG: Tag-guided Hierarchical Knowledge Graph Retrieval-Augmented Generation
 description: >-
-  [ACL 2026][Graph Learning][GraphRAG] TagRAG replaces expensive entity community partitioning and global graph summarization in GraphRAG with "object tags + domain tag chains." While significantly reducing construction and retrieval costs, it maintains global knowledge integration capabilities and achieves higher win rates than NaiveRAG, GraphRAG, LightRAG
+  [ACL 2026 Findings][Graph Learning][GraphRAG] TagRAG replaces expensive entity community partitioning and global graph summarization in GraphRAG with "object tags + domain tag chains." While significantly reducing construction and retrieval costs, it maintains global knowledge integration capabilities and achieves higher win rates than NaiveRAG, GraphRAG, LightRAG, and MiniRAG on four UltraDomain datasets using the small model Qwen3-4B.
 tags:
-  - ACL 2026
-  - Graph Learning
-  - GraphRAG
+  - "ACL 2026 Findings"
+  - "Graph Learning"
+  - "GraphRAG"
+  - "Hierarchical Tag Chain"
+  - "Knowledge Graph Retrieval"
+  - "Incremental Update"
+  - "Lightweight RAG"
 date: 2026-05-08
-content_hash: bc1af5948b0cac7c
+content_hash: f3da51f9bd429d80
 ---
+
 # TagRAG: Tag-guided Hierarchical Knowledge Graph Retrieval-Augmented Generation
 
 **Conference**: ACL 2026 Findings  

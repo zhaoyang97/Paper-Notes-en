@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hybrid-Balance GFlowNet for Solving Vehicle Routing Problems
 description: >-
-  [NeurIPS 2025][GFlowNet] This paper proposes the Hybrid-Balance GFlowNet (HBG) framework, which for the first time introduces Detailed Balance (DB) in the VRP setting and unifies it with Trajectory Balance (TB)…
+  [NeurIPS 2025][GFlowNet] This paper proposes the Hybrid-Balance GFlowNet (HBG) framework, which for the first time introduces Detailed Balance (DB) in the VRP setting and unifies it with Trajectory Balance (TB), along with a depot-guided inference strategy. HBG consistently and significantly improves two existing GFlowNet-based solvers (AGFN and GFACS) on CVRP and TSP benchmarks.
 tags:
   - "NeurIPS 2025"
   - "GFlowNet"
@@ -11,7 +11,7 @@ tags:
   - "Detailed Balance"
   - "Hybrid Optimization"
 date: 2026-05-08
-content_hash: 9add2c97dfb443f9
+content_hash: 4fd684a279c81c14
 ---
 
 # Hybrid-Balance GFlowNet for Solving Vehicle Routing Problems
@@ -145,9 +145,9 @@ CVRP benchmark results (Gap% relative to LKH):
 
 - [\[AAAI 2026\] OR-R1: Automating Modeling and Solving of Operations Research Optimization Problems](../../AAAI2026/others/or-r1_automating_modeling_and_solving_of_operations_research_optimization_proble.md)
 - [\[ICLR 2026\] Evaluating GFlowNet from Partial Episodes for Stable and Flexible Policy-Based Training](../../ICLR2026/others/evaluating_gflownet_from_partial_episodes_for_stable_and_flexible_policy-based_t.md)
+- [\[ACL 2025\] MIR: Methodology Inspiration Retrieval for Scientific Research Problems](../../ACL2025/others/mir_methodology_inspiration_retrieval_for_scientific_research_problems.md)
+- [\[ACL 2025\] Hanging in the Balance: Pivotal Moments in Crisis Counseling Conversations](../../ACL2025/others/hanging_in_the_balance_pivotal_moments_in_crisis_counseling_conversations.md)
 - [\[ICCV 2025\] Revisiting Image Fusion for Multi-Illuminant White-Balance Correction](../../ICCV2025/others/revisiting_image_fusion_for_multi-illuminant_white-balance_correction.md)
-- [\[ICCV 2025\] HyTIP: Hybrid Temporal Information Propagation for Masked Conditional Residual Video Coding](../../ICCV2025/others/hytip_hybrid_temporal_information_propagation_for_masked_conditional_residual_vi.md)
-- [\[AAAI 2026\] HybriDLA: Hybrid Generation for Document Layout Analysis](../../AAAI2026/others/hybridla_hybrid_generation_for_document_layout_analysis.md)
 
 </div>
 

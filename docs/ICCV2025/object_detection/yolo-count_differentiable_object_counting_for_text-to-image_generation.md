@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] YOLO-Count: Differentiable Object Counting for Text-to-Image Generation
 description: >-
-  [ICCV 2025][Object Detection][Object Counting] This paper proposes YOLO-Count, a fully differentiable open-vocabulary object counting model built upon the YOLO architecture. Through an innovative cardinality map regressi…
+  [ICCV 2025][Object Detection][Object Counting] This paper proposes YOLO-Count, a fully differentiable open-vocabulary object counting model built upon the YOLO architecture. Through an innovative cardinality map regression target and a hybrid strong-weak supervised training strategy, YOLO-Count achieves state-of-the-art performance on both general object counting and quantity-controlled text-to-image generation.
 tags:
   - "ICCV 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "Cardinality Map"
   - "Open Vocabulary"
 date: 2026-05-08
-content_hash: 516765b70cbf479e
+content_hash: d903bd529f538e73
 ---
 
 # YOLO-Count: Differentiable Object Counting for Text-to-Image Generation
@@ -159,8 +159,8 @@ Each component contributes meaningfully. Weakly supervised fine-tuning is the mo
 
 - [\[AAAI 2026\] AnoStyler: Text-Driven Localized Anomaly Generation via Lightweight Style Transfer](../../AAAI2026/object_detection/anostyler_text-driven_localized_anomaly_generation_via_light.md)
 - [\[ICCV 2025\] Large-scale Pre-training for Grounded Video Caption Generation](large-scale_pre-training_for_grounded_video_caption_generation.md)
-- [\[CVPR 2026\] Does YOLO Really Need to See Every Training Image in Every Epoch?](../../CVPR2026/object_detection/does_yolo_really_need_to_see_every_training_image_in_every_epoch.md)
 - [\[ICCV 2025\] EvRT-DETR: Latent Space Adaptation of Image Detectors for Event-based Vision](evrt-detr_latent_space_adaptation_of_image_detectors_for_event-based_vision.md)
+- [\[CVPR 2026\] Does YOLO Really Need to See Every Training Image in Every Epoch?](../../CVPR2026/object_detection/does_yolo_really_need_to_see_every_training_image_in_every_epoch.md)
 - [\[ICCV 2025\] Diffusion Curriculum: Synthetic-to-Real Data Curriculum via Image-Guided Diffusion](diffusion_curriculum_synthetic-to-real_data_curriculum_via_image-guided_diffusio.md)
 
 </div>

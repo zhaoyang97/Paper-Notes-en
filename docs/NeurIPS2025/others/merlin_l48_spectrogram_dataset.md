@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Merlin L48 Spectrogram Dataset
 description: >-
-  [NeurIPS 2025][Single Positive Multi-Label Learning (SPML)] This paper introduces the L48 dataset — a fine-grained spectrogram multi-label classification benchmark derived from real-world bird recordings that naturally e…
+  [NeurIPS 2025][Single Positive Multi-Label Learning (SPML)] This paper introduces the L48 dataset — a fine-grained spectrogram multi-label classification benchmark derived from real-world bird recordings that naturally exhibits the Single Positive Multi-Label (SPML) setting. The dataset exposes critical shortcomings of existing SPML methods under realistic conditions, and proposes an intra-recording consistency regularization scheme to improve performance.
 tags:
   - "NeurIPS 2025"
   - "Single Positive Multi-Label Learning (SPML)"
@@ -11,7 +11,7 @@ tags:
   - "Fine-Grained Classification"
   - "Ecological Priors"
 date: 2026-05-08
-content_hash: 533c3c17e5971522
+content_hash: 9caf9bc0f97e2aa3
 ---
 
 # Merlin L48 Spectrogram Dataset
@@ -133,10 +133,10 @@ The L48 dataset is sourced from the Merlin Sound ID system covering recordings f
 ## Related Papers
 
 - [\[NeurIPS 2025\] Bispectral OT: Dataset Comparison using Symmetry-Aware Optimal Transport](bispectral_ot_dataset_comparison_using_symmetry-aware_optimal_transport.md)
-- [\[NeurIPS 2025\] Sign-In to the Lottery: Reparameterized Sparse Training from Scratch](sign-in_to_the_lottery_reparameterizing_sparse_training_from_scratch.md)
-- [\[NeurIPS 2025\] MaxSup: Overcoming Representation Collapse in Label Smoothing](maxsup_overcoming_representation_collapse_in_label_smoothing.md)
-- [\[NeurIPS 2025\] Continuous Thought Machines](continuous_thought_machines.md)
-- [\[NeurIPS 2025\] Radar: Benchmarking Language Models on Imperfect Tabular Data](radar_benchmarking_language_models_on_imperfect_tabular_data.md)
+- [\[ACL 2025\] Autalic: A Dataset for Anti-Autistic Ableist Language In Context](../../ACL2025/others/autalic_a_dataset_for_anti-autistic_ableist_language_in_context.md)
+- [\[ACL 2025\] KodCode: A Diverse, Challenging, and Verifiable Synthetic Dataset for Coding](../../ACL2025/others/kodcode_a_diverse_challenging_and_verifiable_synthetic_dataset_for_coding.md)
+- [\[ACL 2025\] Towards Comprehensive Argument Analysis in Education: Dataset, Tasks, and Method](../../ACL2025/others/towards_comprehensive_argument_analysis_in_education_dataset_tasks_and_method.md)
+- [\[ICML 2025\] Lightspeed Geometric Dataset Distance via Sliced Optimal Transport](../../ICML2025/others/lightspeed_geometric_dataset_distance_via_sliced_optimal_transport.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] C$^2$FG: Control Classifier-Free Guidance via Score Discrepancy Analysis
 description: >-
-  [CVPR 2026][Image Generation][Classifier-Free Guidance] This paper utilizes a rigorous upper bound on score discrepancy to prove that "conditional and unconditional distributions converge at an exponential rate during forward diffusion." Based on this, the fixed guidance weight $\omega$ in CFG is replaced with an exponentially decaying time-varying control function $\omega(
+  [CVPR2026][Image Generation][Classifier-Free Guidance] This paper utilizes a rigorous upper bound on score discrepancy to prove that "conditional and unconditional distributions converge at an exponential rate during forward diffusion." Based on this, the fixed guidance weight $\omega$ in CFG is replaced with an exponentially decaying time-varying control function $\omega(t)$. This training-free, plug-and-play method further improves FID/IS to SOTA levels across various frame…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Classifier-Free Guidance
-  - Diffusion Model
-  - training-free
+  - "CVPR2026"
+  - "Image Generation"
+  - "Classifier-Free Guidance"
+  - "Diffusion Models"
+  - "score discrepancy"
+  - "time-varying guidance weight"
+  - "training-free"
 date: 2026-05-08
-content_hash: db42c10b34bb74b2
+content_hash: 0cd33a578b27f022
 ---
+
 # C$^2$FG: Control Classifier-Free Guidance via Score Discrepancy Analysis
 
 **Conference**: CVPR2026  
@@ -145,10 +148,10 @@ Sampler robustness (SiT-XL/2 REPA, ImageNet 256×256, fewer steps, $\omega_0{=}1
 ## Related Papers
 
 - [\[CVPR 2026\] CFG-Ctrl: Control-Based Classifier-Free Diffusion Guidance](cfg-ctrl_control-based_classifier-free_diffusion_guidance.md)
-- [\[AAAI 2026\] DICE: Distilling Classifier-Free Guidance into Text Embeddings](../../AAAI2026/image_generation/dice_distilling_classifier-free_guidance_into_text_embedding.md)
+- [\[ICLR 2026\] Overshoot and Shrinkage in Classifier-Free Guidance: From Theory to Practice](../../ICLR2026/image_generation/overshoot_and_shrinkage_in_classifier-free_guidance_from_theory_to_practice.md)
 - [\[AAAI 2026\] Studying Classifier(-Free) Guidance From A Classifier-Centric Perspective](../../AAAI2026/image_generation/studying_classifier-free_guidance_from_a_classifier-centric_perspective.md)
-- [\[ICLR 2026\] PolyGraph Discrepancy: a classifier-based metric for graph generation](../../ICLR2026/image_generation/polygraph_discrepancy_a_classifier-based_metric_for_graph_generation.md)
-- [\[CVPR 2026\] FG-Portrait: 3D Flow Guided Editable Portrait Animation](fg-portrait_3d_flow_guided_editable_portrait_animation.md)
+- [\[AAAI 2026\] DICE: Distilling Classifier-Free Guidance into Text Embeddings](../../AAAI2026/image_generation/dice_distilling_classifier-free_guidance_into_text_embedding.md)
+- [\[ICLR 2026\] Stage-wise Dynamics of Classifier-Free Guidance in Diffusion Models](../../ICLR2026/image_generation/stage-wise_dynamics_of_classifier-free_guidance_in_diffusion_models.md)
 
 </div>
 

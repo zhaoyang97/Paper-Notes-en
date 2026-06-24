@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] POLAR: A Portrait OLAT Dataset and Generative Framework for Illumination-Aware Face Modeling
 description: >-
-  [CVPR 2026][Image Generation][OLAT] The authors simultaneously collected the largest open-source face OLAT (One-Light-at-a-Time) dataset, POLAR (220 subjects, 156 light directions, 32 views, 16 expressions, 4K), and trained a generative model, POLARNet, based on "latent bridge matching." POLARNet generates single-light responses in various directions dir
+  [CVPR 2026][Image Generation][OLAT] The authors simultaneously collected the largest open-source face OLAT (One-Light-at-a-Time) dataset, POLAR (220 subjects, 156 light directions, 32 views, 16 expressions, 4K), and trained a generative model, POLARNet, based on "latent bridge matching." POLARNet generates single-light responses in various directions directly from a flat-lit portrait in a single step, followed by linear composition for relighting under arbitrary HDR environme…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - OLAT
-  - Flow/Bridge Matching
+  - "CVPR 2026"
+  - "Image Generation"
+  - "OLAT"
+  - "Face Relighting"
+  - "Light Stage"
+  - "Flow/Bridge Matching"
+  - "HDR Environment Lighting"
 date: 2026-05-08
-content_hash: 76cadc543ad08003
+content_hash: 5b8740db5675c43c
 ---
+
 # POLAR: A Portrait OLAT Dataset and Generative Framework for Illumination-Aware Face Modeling
 
 **Conference**: CVPR 2026  
@@ -141,15 +145,15 @@ POLAR leads in identity count, expression diversity, and total frames among open
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] Generative Modeling of Weights: Generalization or Memorization?](generative_modeling_of_weights_generalization_or_memorization.md)
 - [\[CVPR 2026\] FG-Portrait: 3D Flow Guided Editable Portrait Animation](fg-portrait_3d_flow_guided_editable_portrait_animation.md)
 - [\[CVPR 2026\] SpatialDiff: 3D-Aware Object Movement via Implicit Spatial Modeling](spatialdiff_3d-aware_object_movement_via_implicit_spatial_modeling.md)
 - [\[CVPR 2026\] ExpPortrait: Expressive Portrait Generation via Personalized Representation](expportrait_expressive_portrait_generation_via_personalized_representation.md)
-- [\[CVPR 2026\] AS-Bridge: A Bidirectional Generative Framework Bridging Next-Generation Astronomical Surveys](as-bridge_a_bidirectional_generative_framework_bridging_next-generation_astronom.md)
-- [\[CVPR 2026\] SegQuant: A Semantics-Aware and Generalizable Quantization Framework for Diffusion Models](segquant_a_semantics-aware_and_generalizable_quantization_framework_for_diffusio.md)
+- [\[CVPR 2026\] UniGenDet: A Unified Generative-Discriminative Framework for Co-evolutionary Generation and Detection](unigendet_a_unified_generative-discriminative_framework_for_co-evolutionary_imag.md)
 
 </div>
 

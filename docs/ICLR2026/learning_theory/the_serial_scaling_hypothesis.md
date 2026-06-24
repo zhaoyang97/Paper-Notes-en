@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] The Serial Scaling Hypothesis
 description: >-
-  [ICLR 2026][learning_theory][Diffusion Model] This is a position + theoretical paper: the authors use computational complexity (the TC circuit class) to categorize machine learning problems into "efficiently parallelizable" and "inherently serial." They argue that key tasks such as reasoning, decision-making, and physical simulation belong to the latter. They prov
+  [ICLR 2026][Learning Theory][Serial Computation] This is a position + theoretical paper: the authors use computational complexity (the TC circuit class) to categorize machine learning problems into "efficiently parallelizable" and "inherently serial." They argue that key tasks such as reasoning, decision-making, and physical simulation belong to the latter. They prove for the first time that even if a diffusion model samples for thousands of steps…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Diffusion Model
-  - Reinforcement Learning
-  - Scaling
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Computational Complexity"
+  - "Serial Computation"
+  - "Parallel Computation"
+  - "Complexity Theory"
+  - "Diffusion Models"
+  - "Reinforcement Learning"
+  - "Scaling"
 date: 2026-05-08
-content_hash: 3402a6d14bf4e8bf
+content_hash: 77f4c965d644dca6
 ---
+
 # The Serial Scaling Hypothesis
 
 **Conference**: ICLR 2026  
@@ -129,8 +134,8 @@ The final design translates theoretical deductions into actionable advice. For *
 - [\[ICLR 2026\] Critical Attention Scaling in Long-Context Transformers](critical_attention_scaling_in_long-context_transformers.md)
 - [\[ICLR 2026\] Best-of-Majority: Minimax-Optimal Strategy for Pass@k Inference Scaling](best-of-majority_minimax-optimal_strategy_for_passk_inference_scaling.md)
 - [\[ICLR 2026\] Intrinsic Entropy of Context Length Scaling in LLMs](intrinsic_entropy_of_context_length_scaling_in_llms.md)
+- [\[ICLR 2026\] Sample Complexity and Representation Ability of Test-time Scaling Paradigms](sample_complexity_and_representation_ability_of_test-time_scaling_paradigms.md)
 - [\[ICLR 2026\] Theory of Scaling Laws for In-Context Regression: Depth, Width, Context and Time](theory_of_scaling_laws_for_in-context_regression_depth_width_context_and_time.md)
-- [\[ICLR 2026\] Mitigating the Curse of Detail: Scaling Arguments for Feature Learning and Sample Complexity](mitigating_the_curse_of_detail_scaling_arguments_for_feature_learning_and_sample.md)
 
 </div>
 

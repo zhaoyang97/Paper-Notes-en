@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Arbitrary-Order Block SignSGD for Memory-Efficient LLM Fine-Tuning
 description: >-
-  [ICLR 2026][Optimization & Theory][SignSGD] This paper proposes ABSignSGD, an optimizer combining SignSGD with "arbitrary-order block coordinate updates." By updating only one Transformer layer block per step, storing only that block's state, and using sign-based updates, it compresses the GPU memory of full-parameter fine-tuning to near-inference levels. It fur
+  [ICLR2026][Optimization][SignSGD] This paper proposes ABSignSGD, an optimizer combining SignSGD with "arbitrary-order block coordinate updates." By updating only one Transformer layer block per step, storing only that block's state, and using sign-based updates, it compresses the GPU memory of full-parameter fine-tuning to near-inference levels. It further incorporates a depth-biased block selection strategy to save an additional 20% runtime. A unified $O(1/\sqrt{K})$ converg…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - SignSGD
+  - "ICLR2026"
+  - "Optimization"
+  - "SignSGD"
+  - "Block Coordinate Update"
+  - "Full-parameter Fine-tuning"
+  - "Memory-efficient"
+  - "Convergence Analysis"
 date: 2026-05-08
-content_hash: e8b79f67ed4e2564
+content_hash: ecec72c0bf1cea03
 ---
+
 # Arbitrary-Order Block SignSGD for Memory-Efficient LLM Fine-Tuning
 
 **Conference**: ICLR2026  
@@ -133,6 +138,7 @@ Ours achieves the lowest memory (approx. 2 GB less than LoRA/Apollo and 3 GB les
 - Value: ⭐⭐⭐⭐ A practical and theoretically grounded solution for full-parameter fine-tuning under tight memory budgets.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -140,8 +146,8 @@ Ours achieves the lowest memory (approx. 2 GB less than LoRA/Apollo and 3 GB les
 - [\[ICML 2026\] Memory-Efficient LLM Pretraining via Minimalist Optimizer Design](../../ICML2026/optimization/memory-efficient_llm_pretraining_via_minimalist_optimizer_design.md)
 - [\[ICML 2026\] Learning a Zeroth-Order Optimizer for Fine-Tuning LLMs](../../ICML2026/optimization/learning_a_zeroth-order_optimizer_for_fine-tuning_llms.md)
 - [\[ICCV 2025\] Zeroth-Order Fine-Tuning of LLMs in Random Subspaces](../../ICCV2025/optimization/zeroth-order_fine-tuning_of_llms_in_random_subspaces.md)
+- [\[ICLR 2026\] HBO: Hierarchical Balancing Optimization for Fine-Tuning Large Language Models](hbo_hierarchical_balancing_optimization_for_fine-tuning_large_language_models.md)
 - [\[ICLR 2026\] Bi-LoRA: Efficient Sharpness-Aware Minimization for Fine-Tuning Large-Scale Models](bi-lora_efficient_sharpness-aware_minimization_for_fine-tuning_large-scale_model.md)
-- [\[ICLR 2026\] FZOO: Fast Zeroth-Order Optimizer for Fine-Tuning Large Language Models towards Adam-Scale Speed](fzoo_fast_zeroth-order_optimizer_for_finetuning_large_language_models_towards_ad.md)
 
 </div>
 

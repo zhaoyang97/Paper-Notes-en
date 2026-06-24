@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Cycle-Sync: Robust Global Camera Pose Estimation through Enhanced Cycle-Consistent Synchronization
 description: >-
-  [NeurIPS 2025][Human Understanding][Structure-from-Motion] Cycle-Sync is a global camera pose estimation framework that extends Message Passing Least Squares (MPLS) to camera position estimation…
+  [NeurIPS 2025 Spotlight][Human Understanding][Structure-from-Motion] Cycle-Sync is a global camera pose estimation framework that extends Message Passing Least Squares (MPLS) to camera position estimation, introduces a Welsch-type robust loss and cycle-consistency weighting, and surpasses all baselines—including complete SfM pipelines with bundle adjustment (BA)—without requiring BA.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Human Understanding"
   - "Structure-from-Motion"
   - "camera position estimation"
@@ -12,7 +12,7 @@ tags:
   - "robust optimization"
   - "message passing"
 date: 2026-05-08
-content_hash: cce75acd5529a376
+content_hash: 3932ccfa4467d945
 ---
 
 # Cycle-Sync: Robust Global Camera Pose Estimation through Enhanced Cycle-Consistent Synchronization
@@ -133,11 +133,11 @@ The global pipeline consists of: (1) SIFT + RANSAC for essential matrix estimati
 
 ## Related Papers
 
+- [\[CVPR 2025\] GCE-Pose: Global Context Enhancement for Category-Level Object Pose Estimation](../../CVPR2025/human_understanding/gce-pose_global_context_enhancement_for_category-level_object_pose_estimation.md)
 - [\[AAAI 2026\] Robust Long-term Test-Time Adaptation for 3D Human Pose Estimation through Motion Discretization](../../AAAI2026/human_understanding/robust_long-term_test-time_adaptation_for_3d_human_pose_estimation_through_motio.md)
-- [\[NeurIPS 2025\] RAPTR: Radar-Based 3D Pose Estimation Using Transformer](raptr_radar-based_3d_pose_estimation_using_transformer.md)
+- [\[ECCV 2024\] ADen: Adaptive Density Representations for Sparse-view Camera Pose Estimation](../../ECCV2024/human_understanding/aden_adaptive_density_representations_for_sparseview_camera.md)
 - [\[ICCV 2025\] High-Resolution Spatiotemporal Modeling with Global-Local State Space Models for Video-Based Human Pose Estimation](../../ICCV2025/human_understanding/high-resolution_spatiotemporal_modeling_with_global-local_state_space_models_for.md)
-- [\[NeurIPS 2025\] PandaPose: 3D Human Pose Lifting from a Single Image via Propagating 2D Pose Prior to 3D Anchor Space](pandapose_3d_human_pose_lifting_from_a_single_image_via_propagating_2d_pose_prio.md)
-- [\[NeurIPS 2025\] OmniGaze: Reward-inspired Generalizable Gaze Estimation in the Wild](omnigaze_reward-inspired_generalizable_gaze_estimation_in_the_wild.md)
+- [\[ECCV 2024\] WorldPose: A World Cup Dataset for Global 3D Human Pose Estimation](../../ECCV2024/human_understanding/worldpose_a_world_cup_dataset_for_global_3d_human_pose_estimation.md)
 
 </div>
 

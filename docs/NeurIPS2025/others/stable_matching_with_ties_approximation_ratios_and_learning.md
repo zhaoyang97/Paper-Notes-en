@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Stable Matching with Ties: Approximation Ratios and Learning
 description: >-
-  [NeurIPS 2025][stable matching] This paper studies two-sided matching markets with tied preferences, introduces the Optimal Stable Share (OSS) ratio to measure fairness…
+  [NeurIPS 2025][stable matching] This paper studies two-sided matching markets with tied preferences, introduces the Optimal Stable Share (OSS) ratio to measure fairness, proves that the OSS-ratio under distributions over stable matchings is $\Omega(N)$ while under general matching distributions it is $O(\log N)$ (asymptotically tight), and extends the offline approximation results to a bandit learning setting.
 tags:
   - "NeurIPS 2025"
   - "stable matching"
@@ -11,7 +11,7 @@ tags:
   - "OSS-ratio"
   - "multi-armed bandit"
 date: 2026-05-08
-content_hash: 47b9ecbd362ff552
+content_hash: dc60b0659f4a0093
 ---
 
 # Stable Matching with Ties: Approximation Ratios and Learning
@@ -122,11 +122,11 @@ In the bandit setting, each round yields a 1-sub-Gaussian reward $X_i(t)$ with m
 
 ## Related Papers
 
+- [\[ICML 2025\] Learning Distances from Data with Normalizing Flows and Score Matching](../../ICML2025/others/learning_distances_from_data_with_normalizing_flows_and_score_matching.md)
 - [\[ICLR 2026\] Consistent Low-Rank Approximation](../../ICLR2026/others/consistent_low-rank_approximation.md)
+- [\[ICML 2025\] Score Matching with Missing Data](../../ICML2025/others/score_matching_with_missing_data.md)
 - [\[AAAI 2026\] Approximation Algorithm for Constrained k-Center Clustering: A Local Search Approach](../../AAAI2026/others/approximation_algorithm_for_constrained_k-center_clustering_.md)
-- [\[NeurIPS 2025\] Look-Ahead Reasoning on Learning Platforms](look-ahead_reasoning_on_learning_platforms.md)
-- [\[NeurIPS 2025\] Adjusted Count Quantification Learning on Graphs](adjusted_count_quantification_learning_on_graphs.md)
-- [\[ICML 2026\] Private and Stable Test-Time Adaptation with Differential Privacy](../../ICML2026/others/private_and_stable_test-time_adaptation_with_differential_privacy.md)
+- [\[ICLR 2026\] Consistency-Driven Calibration and Matching for Few-Shot Class Incremental Learning](../../ICLR2026/others/consistency-driven_calibration_and_matching_for_few-shot_class_incremental_learn.md)
 
 </div>
 

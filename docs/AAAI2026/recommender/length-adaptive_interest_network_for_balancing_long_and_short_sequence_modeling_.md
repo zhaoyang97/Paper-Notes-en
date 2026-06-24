@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Length-Adaptive Interest Network for Balancing Long and Short Sequence Modeling in CTR Prediction
 description: >-
-  [AAAI 2026][Recommender Systems][CTR prediction] This paper proposes LAIN, a framework that injects sequence length as an explicit conditional signal into CTR models to mitigate performance imbalance between long- and sh…
+  [AAAI 2026][Recommender Systems][CTR prediction] This paper proposes LAIN, a framework that injects sequence length as an explicit conditional signal into CTR models to mitigate performance imbalance between long- and short-sequence users. LAIN comprises three lightweight, plug-and-play modules: a Spectral Length Encoder, Length-Conditioned Prompting, and Length-Modulated Attention.
 tags:
   - "AAAI 2026"
   - "Recommender Systems"
@@ -11,7 +11,7 @@ tags:
   - "attention polarization"
   - "long/short sequence modeling"
 date: 2026-05-08
-content_hash: 7363a100f1093d97
+content_hash: 2a1482cd8a31fad7
 ---
 
 # Length-Adaptive Interest Network for Balancing Long and Short Sequence Modeling in CTR Prediction
@@ -184,10 +184,10 @@ LAIN achieves **consistent improvements** across 5 backbone models (DIN, DIEN, S
 ## Related Papers
 
 - [\[AAAI 2026\] Semi-Supervised Synthetic Data Generation with Fine-Grained Relevance Control for Short Video Search Relevance Modeling](semi-supervised_synthetic_data_generation_with_fine-grained_relevance_control_fo.md)
-- [\[AAAI 2026\] From IDs to Semantics: A Generative Framework for Cross-Domain Recommendation with Adaptive Semantic Tokenization](from_ids_to_semantics_a_generative_framework_for_cross-domain_recommendation_wit.md)
-- [\[AAAI 2026\] Wavelet Enhanced Adaptive Frequency Filter for Sequential Recommendation](wavelet_enhanced_adaptive_frequency_filter_for_sequential_re.md)
+- [\[ICLR 2026\] iFusion: Integrating Dynamic Interest Streams via Diffusion Model for Click-Through Rate Prediction](../../ICLR2026/recommender/ifusion_integrating_dynamic_interest_streams_via_diffusion_model_for_click-throu.md)
+- [\[ICLR 2026\] Token-Efficient Long-Term Interest Sketching and Internalized Reasoning for LLM-based Recommendation](../../ICLR2026/recommender/token-efficient_long-term_interest_sketching_and_internalized_reasoning_for_llm-.md)
 - [\[AAAI 2026\] CroPS: Improving Dense Retrieval with Cross-Perspective Positive Samples in Short-Video Search](crops_improving_dense_retrieval_with_cross-perspective_positive_samples_in_short.md)
-- [\[AAAI 2026\] Bid Farewell to Seesaw: Towards Accurate Long-tail Session-based Recommendation via Dual Constraints of Hybrid Intents](bid_farewell_to_seesaw_towards_accurate_long-tail_session-based_recommendation_v.md)
+- [\[AAAI 2026\] From IDs to Semantics: A Generative Framework for Cross-Domain Recommendation with Adaptive Semantic Tokenization](from_ids_to_semantics_a_generative_framework_for_cross-domain_recommendation_wit.md)
 
 </div>
 

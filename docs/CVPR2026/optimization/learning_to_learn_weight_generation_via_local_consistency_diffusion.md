@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning to Learn Weight Generation via Local Consistency Diffusion
 description: >-
-  [CVPR 2026][Optimization & Theory][Diffusion Model] Mc-Di combines the bi-level optimization of meta-learning with diffusion-based weight generation and transforms the diffusion process from learning only "globally optimal weights" to "local consistency diffusion." By reconstructing weights segmentally along multiple intermediate points on the optimization trajectory, t
+  [CVPR 2026][Optimization][Weight Generation] Mc-Di combines the bi-level optimization of meta-learning with diffusion-based weight generation and transforms the diffusion process from learning only "globally optimal weights" to "local consistency diffusion." By reconstructing weights segmentally along multiple intermediate points on the optimization trajectory, the model achieves higher accuracy and lower inference latency in tasks requiring frequent weight updates…
 tags:
-  - CVPR 2026
-  - Optimization & Theory
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Optimization"
+  - "Weight Generation"
+  - "Diffusion Models"
+  - "Meta-learning"
+  - "Local Consistency"
+  - "Gradient-free Fine-tuning"
 date: 2026-05-08
-content_hash: dab424b9382c9295
+content_hash: e1f9ff8a622d71ef
 ---
+
 # Learning to Learn Weight Generation via Local Consistency Diffusion
 
 **Conference**: CVPR 2026  
@@ -133,11 +138,11 @@ Incremental ablation of main components (Omniglot / Mini-ImageNet, 5-way 1-shot 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Diffusion-DFL: Decision-focused Diffusion Models for Stochastic Optimization](../../ICLR2026/optimization/diffusion-dfl_decision-focused_diffusion_models_for_stochastic_optimization.md)
 - [\[CVPR 2026\] DABO: Difficulty-Aware Bayesian Optimization with Diffusion-Learned Priors](dabo_difficulty-aware_bayesian_optimization_with_diffusion-learned_priors.md)
 - [\[ICLR 2026\] LCA: Local Classifier Alignment for Continual Learning](../../ICLR2026/optimization/lca_local_classifier_alignment_for_continual_learning.md)
-- [\[CVPR 2026\] Defending Unauthorized Model Merging via Dual-Stage Weight Protection](defending_unauthorized_model_merging_via_dual-stage_weight_protection.md)
 - [\[CVPR 2026\] DC-Merge: Improving Model Merging with Directional Consistency](dc-merge_improving_model_merging_with_directional_consistency.md)
-- [\[CVPR 2025\] Model Poisoning Attacks to Federated Learning via Multi-Round Consistency](../../CVPR2025/optimization/model_poisoning_attacks_to_federated_learning_via_multi-round_consistency.md)
+- [\[CVPR 2026\] Defending Unauthorized Model Merging via Dual-Stage Weight Protection](defending_unauthorized_model_merging_via_dual-stage_weight_protection.md)
 
 </div>
 

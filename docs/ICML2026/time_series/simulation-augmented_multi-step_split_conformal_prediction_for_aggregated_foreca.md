@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Simulation-Augmented Multi-Step Split Conformal Prediction for Aggregated Forecasts
 description: >-
-  [ICML 2026][Time Series][Paper Note] Addressing aggregated forecast targets such as "annual totals" and "Year-over-Year (Y-o-Y) growth rates," this paper proposes SA-MSCP. The method collects residuals via expanding window cross-validation and simulates numerous future paths using block bootstrap. Prediction intervals are then constructed from the empiric
+  [ICML2026][Time Series][Conformal Prediction] Addressing aggregated forecast targets such as "annual totals" and "Year-over-Year (Y-o-Y) growth rates," this paper proposes SA-MSCP. The method collects residuals via expanding window cross-validation and simulates numerous future paths using block bootstrap. Prediction intervals are then constructed from the empirical quantiles of the aggregated trajectories. On M4 and a private dataset, this approach significantly improves emp…
 tags:
-  - ICML 2026
-  - Time Series
+  - "ICML2026"
+  - "Time Series"
+  - "Conformal Prediction"
+  - "Aggregated Forecasts"
+  - "Block Bootstrap"
+  - "Multi-step Prediction Intervals"
+  - "Year-over-Year Growth"
 date: 2026-05-08
-content_hash: 257124c6ef49b094
+content_hash: ea16aa268b832f02
 ---
+
 # Simulation-Augmented Multi-Step Split Conformal Prediction for Aggregated Forecasts
 
 **Conference**: ICML2026  
@@ -129,11 +135,11 @@ The improvement in coverage is not free: SA-MSCP intervals are significantly wid
 
 ## Related Papers
 
+- [\[ICLR 2026\] Flow-based Conformal Prediction for Multi-dimensional Time Series](../../ICLR2026/time_series/flow-based_conformal_prediction_for_multi-dimensional_time_series.md)
 - [\[ICLR 2026\] ResCP: Reservoir Conformal Prediction for Time Series Forecasting](../../ICLR2026/time_series/rescp_reservoir_conformal_prediction_for_time_series_forecasting.md)
 - [\[ICLR 2026\] Quadratic Direct Forecast for Training Multi-Step Time-Series Forecast Models](../../ICLR2026/time_series/quadratic_direct_forecast_for_training_multi-step_time-series_forecast_models.md)
-- [\[ICML 2026\] DistMatch: Adaptive Binning via Distribution Matching for Robust Sequential Conformal](distmatch_adaptive_binning_via_distribution_matching_for_robust_sequential_confo.md)
 - [\[ICML 2026\] Semantics-Enhanced Retrieval-Augmented Time Series Forecasting](semantics-enhanced_retrieval-augmented_time_series_forecasting.md)
-- [\[ICCV 2025\] V2XPnP: Vehicle-to-Everything Spatio-Temporal Fusion for Multi-Agent Perception and Prediction](../../ICCV2025/time_series/v2xpnp_vehicle-to-everything_spatio-temporal_fusion_for_multi-agent_perception_a.md)
+- [\[ICML 2026\] DistMatch: Adaptive Binning via Distribution Matching for Robust Sequential Conformal](distmatch_adaptive_binning_via_distribution_matching_for_robust_sequential_confo.md)
 
 </div>
 

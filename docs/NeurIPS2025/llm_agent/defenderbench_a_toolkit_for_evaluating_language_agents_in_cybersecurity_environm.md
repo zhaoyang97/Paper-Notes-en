@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DefenderBench: A Toolkit for Evaluating Language Agents in Cybersecurity Environments
 description: >-
-  [NeurIPS 2025][LLM Agent][Cybersecurity] This paper presents DefenderBench, an open-source modular toolkit for systematically evaluating LLM agents across three categories of cybersecurity tasks—offensive, defensive…
+  [NeurIPS 2025][LLM Agent][Cybersecurity] This paper presents DefenderBench, an open-source modular toolkit for systematically evaluating LLM agents across three categories of cybersecurity tasks—offensive, defensive, and knowledge understanding—covering five scenarios: network intrusion simulation, malicious content detection, code vulnerability detection/repair, and CTI knowledge QA. Benchmark results show that Claude-3.7-sonnet achieves the best overall performance (81.65 p…
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -11,7 +11,7 @@ tags:
   - "Vulnerability Detection"
   - "Network Intrusion Simulation"
 date: 2026-05-08
-content_hash: de7badf1b25fbfa8
+content_hash: 4c6a380e4ab69ac2
 ---
 
 # DefenderBench: A Toolkit for Evaluating Language Agents in Cybersecurity Environments
@@ -162,10 +162,10 @@ This paper presents an evaluation benchmark rather than a training method; no lo
 ## Related Papers
 
 - [\[NeurIPS 2025\] MLRC-Bench: Can Language Agents Solve Machine Learning Research Challenges?](mlrc-bench_can_language_agents_solve_machine_learning_research_challenges.md)
+- [\[ACL 2025\] LegalAgentBench: Evaluating LLM Agents in Legal Domain](../../ACL2025/llm_agent/legalagentbench_evaluating_llm_agents_in_legal_domain.md)
 - [\[ICLR 2026\] Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments](../../ICLR2026/llm_agent/gaia2_benchmarking_llm_agents_on_dynamic_and_asynchronous_environments.md)
-- [\[ACL 2026\] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments](../../ACL2026/llm_agent/feedback-driven_tool-use_improvements_in_large_language_models_via_automated_bui.md)
-- [\[NeurIPS 2025\] The Lighthouse of Language: Enhancing LLM Agents via Critique-Guided Improvement](the_lighthouse_of_language_enhancing_llm_agents_via_critique-guided_improvement.md)
-- [\[NeurIPS 2025\] Zero-Shot Large Language Model Agents for Fully Automated Radiotherapy Treatment Planning](zero-shot_large_language_model_agents_for_fully_automated_radiotherapy_treatment.md)
+- [\[ICLR 2026\] Cyber-Zero: Training Cybersecurity Agents without Runtime](../../ICLR2026/llm_agent/cyber-zero_training_cybersecurity_agents_without_runtime.md)
+- [\[ACL 2025\] ToolHop: A Query-Driven Benchmark for Evaluating Large Language Models in Multi-Hop Tool Use](../../ACL2025/llm_agent/toolhop_multi_hop_tool_use.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ViTPrompt: Training-Free Prompt Refinement with Visual Tokens for Open-Vocabulary Detection
 description: >-
-  [CVPR 2026][Object Detection][Grounding DINO] Addressing the issue where boxes remain unrefined under domain shift in open-vocabulary detection, ViTPrompt concatenates RoI visual tokens of high-confidence targets from the first-pass detection into the text prompts. By re-running Grounding DINO, it refreshes bounding boxes and classification scores simultaneously v
+  [CVPR 2026][Object Detection][Open-vocabulary Detection] Addressing the issue where boxes remain unrefined under domain shift in open-vocabulary detection, ViTPrompt concatenates RoI visual tokens of high-confidence targets from the first-pass detection into the text prompts. By re-running Grounding DINO, it refreshes bounding boxes and classification scores simultaneously via a training-free two-stage inference, achieving SOTA on multiple ODD benchmarks.
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Grounding DINO
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Open-vocabulary Detection"
+  - "Test-time Adaptation"
+  - "Visual Prompting"
+  - "Grounding DINO"
+  - "Training-free"
 date: 2026-05-08
-content_hash: be6ce7a0fd121101
+content_hash: 91d7387dcec70e0c
 ---
+
 # ViTPrompt: Training-Free Prompt Refinement with Visual Tokens for Open-Vocabulary Detection
 
 **Conference**: CVPR 2026  
@@ -131,9 +136,20 @@ Efficiency (Swin-T): Params +0.05M (insignificant), FLOPs increase to 252.26G (~
 - Value: ⭐⭐⭐⭐ Plug-and-play, zero VRAM increase, and practical for OOD scenarios like autonomous driving.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] PET-DINO: Unifying Visual Cues into Grounding DINO with Prompt-Enriched Training](pet-dino_unifying_visual_cues_into_grounding_dino_with_prompt-enriched_training.md)
+- [\[AAAI 2026\] Connecting the Dots: Training-Free Visual Grounding via Agentic Reasoning](../../AAAI2026/object_detection/connecting_the_dots_training-free_visual_grounding_via_agent.md)
+- [\[CVPR 2026\] SubspaceAD: Training-Free Few-Shot Anomaly Detection via Subspace Modeling](subspacead_training-free_few-shot_anomaly_detection_via_subspace_modeling.md)
+- [\[CVPR 2026\] WeDetect: Fast Open-Vocabulary Object Detection as Retrieval](wedetect_fast_open-vocabulary_object_detection_as_retrieval.md)
+- [\[CVPR 2026\] Anomaly as Non-Conformity via Training-Free Graph Laplacian Energy Minimization](anomaly_as_non-conformity_via_training-free_graph_laplacian_energy_minimization.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] PET-DINO: Unifying Visual Cues into Grounding DINO with Prompt-Enriched Training](pet-dino_unifying_visual_cues_into_grounding_dino_with_prompt-enriched_training.md)

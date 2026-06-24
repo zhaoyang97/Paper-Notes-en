@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TPDiff: Temporal Pyramid Video Diffusion Model
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] TPDiff divides the denoising process of video diffusion into multiple stages, progressively doubling the framerate along the denoising path (with full framerate only in the final stage). Combined with a "phased diffusion" training method that uniformly supports DDIM and flow matching, it reduces training costs by appro
+  [ICLR 2026][Video Generation][Video Diffusion] TPDiff divides the denoising process of video diffusion into multiple stages, progressively doubling the framerate along the denoising path (with full framerate only in the final stage). Combined with a "phased diffusion" training method that uniformly supports DDIM and flow matching, it reduces training costs by approximately 50% and accelerates inference by 1.5× without degrading generation quality.
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Video Diffusion"
+  - "Temporal Pyramid"
+  - "Training Acceleration"
+  - "Data-noise Alignment"
+  - "Phased Diffusion"
 date: 2026-05-08
-content_hash: 340c98de5f213e74
+content_hash: 2e084ed973e77ff4
 ---
+
 # TPDiff: Temporal Pyramid Video Diffusion Model
 
 **Conference**: ICLR 2026  
@@ -169,11 +175,11 @@ Training speedup reached 2.11× for DDIM and 2.16× for flow matching; inference
 
 ## Related Papers
 
-- [\[ICLR 2026\] Any-to-Bokeh: Arbitrary-Subject Video Refocusing with Video Diffusion Model](any-to-bokeh_arbitrary-subject_video_refocusing_with_video_diffusion_model.md)
-- [\[ICLR 2026\] Pusa V1.0: Unlocking Temporal Control in Pretrained Video Diffusion Models via Vectorized Timestep Adaptation](pusa_v10_unlocking_temporal_control_in_pretrained_video_diffusion_models_via_vec.md)
-- [\[ICLR 2026\] The Quest for Generalizable Motion Generation: Data, Model, and Evaluation](the_quest_for_generalizable_motion_generation_data_model_and_evaluation.md)
-- [\[ICLR 2026\] TS-Attn: Temporal-wise Separable Attention for Multi-Event Video Generation](ts-attn_temporal-wise_separable_attention_for_multi-event_video_generation.md)
 - [\[ICLR 2026\] Model Already Knows the Best Noise: Bayesian Active Noise Selection via Attention in Video Diffusion Model](model_already_knows_the_best_noise_bayesian_active_noise_selection_via_attention.md)
+- [\[ICLR 2026\] Lumos-1: On Autoregressive Video Generation with Discrete Diffusion from a Unified Model Perspective](lumos-1_on_autoregressive_video_generation_with_discrete_diffusion_from_a_unifie.md)
+- [\[ICLR 2026\] JavisDiT: Joint Audio-Video Diffusion Transformer with Hierarchical Spatio-Temporal Prior Synchronization](javisdit_joint_audio-video_diffusion_transformer_with_hierarchical_spatio-tempor.md)
+- [\[ICLR 2026\] QuantSparse: Comprehensively Compressing Video Diffusion Transformer with Model Quantization and Attention Sparsification](quantsparse_comprehensively_compressing_video_diffusion_transformer_with_model_q.md)
+- [\[ICLR 2026\] Pusa V1.0: Unlocking Temporal Control in Pretrained Video Diffusion Models via Vectorized Timestep Adaptation](pusa_v10_unlocking_temporal_control_in_pretrained_video_diffusion_models_via_vec.md)
 
 </div>
 

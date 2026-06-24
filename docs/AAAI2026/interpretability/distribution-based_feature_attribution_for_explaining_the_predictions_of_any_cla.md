@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Distribution-Based Feature Attribution for Explaining the Predictions of Any Classifier
 description: >-
-  [AAAI 2026 (Oral)][Interpretability][Feature attribution] This paper proposes DFAX, the first distribution-based feature attribution method…
+  [AAAI 2026 (Oral)][Interpretability][Feature attribution] This paper proposes DFAX, the first distribution-based feature attribution method, which quantifies feature importance by comparing the conditional probability density of a target instance under the target class versus non-target classes. It provides the first formal definition of feature attribution, and demonstrates significant improvements over SHAP/LIME and other baselines across 10 datasets while being orders of m…
 tags:
   - "AAAI 2026 (Oral)"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "model-agnostic"
   - "distributional methods"
 date: 2026-05-08
-content_hash: 63cda6626a4e8ab8
+content_hash: 42963821b110e3e6
 ---
 
 # Distribution-Based Feature Attribution for Explaining the Predictions of Any Classifier
@@ -152,11 +152,11 @@ DFAX ranks first or second on 9 out of 10 datasets, substantially outperforming 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Missingness Bias Calibration in Feature Attribution Explanations](../../ICLR2026/interpretability/missingness_bias_calibration_in_feature_attribution_explanations.md)
+- [\[ICLR 2026\] Faithfulness Under the Distribution: A New Look at Attribution Evaluation](../../ICLR2026/interpretability/faithfulness_under_the_distribution_a_new_look_at_attribution_evaluation.md)
+- [\[ICML 2026\] The Perceived Fragility of Explanations in Audio Models: Manipulation of Attribution with Unchanged Predictions](../../ICML2026/interpretability/the_perceived_fragility_of_explanations_in_audio_models_manipulation_of_attribut.md)
+- [\[CVPR 2026\] Back to the Feature: Explaining Video Classifiers with Video Counterfactual Explanations](../../CVPR2026/interpretability/back_to_the_feature_explaining_video_classifiers_with_video_counterfactual_expla.md)
 - [\[ICML 2026\] Manifold-Aligned Guided Integrated Gradients for Reliable Feature Attribution](../../ICML2026/interpretability/manifold-aligned_guided_integrated_gradients_for_reliable_feature_attribution.md)
-- [\[ICCV 2025\] VITAL: More Understandable Feature Visualization through Distribution Alignment and Relevant Information Flow](../../ICCV2025/interpretability/vital_more_understandable_feature_visualization_through_distribution_alignment_a.md)
-- [\[ICLR 2026\] Provably Explaining Neural Additive Models](../../ICLR2026/interpretability/provably_explaining_neural_additive_models.md)
-- [\[AAAI 2026\] ShapBPT: Image Feature Attributions Using Data-Aware Binary Partition Trees](shapbpt_image_feature_attributions_using_data-aware_binary_partition_trees.md)
-- [\[AAAI 2026\] Quiet Feature Learning in Algorithmic Tasks](quiet_feature_learning_in_algorithmic_tasks.md)
 
 </div>
 

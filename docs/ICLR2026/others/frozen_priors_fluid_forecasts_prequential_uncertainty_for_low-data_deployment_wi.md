@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Frozen Priors, Fluid Forecasts: Prequential Uncertainty for Low-Data Deployment with Pretrained Generative Models
 description: >-
-  [ICLR 2026][Others][Paper Note] Targeting low-data deployment scenarios where "only dozens of real samples are available at launch," this paper proposes a "forecast-first" uncertainty quantification (UQ) framework. It uses a **unique Dirichlet mixture schedule** to fuse the empirical distribution with a frozen pretrained generative model into a time-
+  [ICLR 2026][Uncertainty Quantification] Targeting low-data deployment scenarios where "only dozens of real samples are available at launch," this paper proposes a "forecast-first" uncertainty quantification (UQ) framework. It uses a **unique Dirichlet mixture schedule** to fuse the empirical distribution with a frozen pretrained generative model into a time-consistent (martingale) forecast stream. Calibrated intervals for long-term values of operational metrics are then proviâ€¦
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Uncertainty Quantification"
+  - "Prequential Inference"
+  - "Martingale Posterior"
+  - "Frozen Generative Models"
+  - "Low-data Deployment"
+  - "Dirichlet Contraction"
 date: 2026-05-08
-content_hash: 710a401ff43ac7f7
+content_hash: f4f5baf8530538c5
 ---
+
 # Frozen Priors, Fluid Forecasts: Prequential Uncertainty for Low-Data Deployment with Pretrained Generative Models
 
 **Conference**: ICLR 2026  
@@ -118,7 +124,7 @@ Three reasons for success at small sample sizes: (i) **Coherent pseudo-counts**â
 - [\[ICLR 2026\] Exploring State-Space Models for Data-Specific Neural Representations](exploring_state-space_models_for_data-specific_neural_representations.md)
 - [\[NeurIPS 2025\] Improving Forecasts of Suicide Attempts for Patients with Little Data](../../NeurIPS2025/others/improving_forecasts_of_suicide_attempts_for_patients_with_little_data.md)
 - [\[ICLR 2026\] Measuring Uncertainty Calibration](measuring_uncertainty_calibration.md)
-- [\[ICLR 2026\] GoR: A Unified and Extensible Generative Framework for Ordinal Regression](gor_a_unified_and_extensible_generative_framework_for_ordinal_regression.md)
+- [\[ICLR 2026\] What happens when generative AI models train recursively on each others' outputs?](what_happens_when_generative_ai_models_train_recursively_on_each_others_outputs.md)
 - [\[ICML 2026\] Spatial Priors via Space Filling Curves for Small and Limited Data Vision Transformers](../../ICML2026/others/spatial_priors_via_space_filling_curves_for_small_and_limited_data_vision_transf.md)
 
 </div>

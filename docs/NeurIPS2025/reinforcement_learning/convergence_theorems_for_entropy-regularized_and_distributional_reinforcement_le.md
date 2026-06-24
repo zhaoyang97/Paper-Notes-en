@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Convergence Theorems for Entropy-Regularized and Distributional Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][entropy regularization] This paper proposes the **temperature decoupling gambit**, proving that in entropy-regularized reinforcement learning…
+  [NeurIPS 2025][Reinforcement Learning][entropy regularization] This paper proposes the **temperature decoupling gambit**, proving that in entropy-regularized reinforcement learning, by decoupling the evaluation temperature from the behavioral temperature, both the policy and the return distribution converge—as the temperature tends to zero—to an interpretable, diversity-preserving optimal policy.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "temperature decoupling"
   - "optimal policy"
 date: 2026-05-08
-content_hash: b8eecbe4b2ff70d0
+content_hash: 6f3a60db5831fd71
 ---
 
 # Convergence Theorems for Entropy-Regularized and Distributional Reinforcement Learning
@@ -154,8 +154,8 @@ A work of exceptional theoretical depth that resolves long-standing open problem
 - [\[ICML 2026\] Distributional Inverse Reinforcement Learning](../../ICML2026/reinforcement_learning/distributional_inverse_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Last Iterate Convergence in Monotone Mean Field Games](last_iterate_convergence_in_monotone_mean_field_games.md)
 - [\[NeurIPS 2025\] Global Convergence for Average Reward Constrained MDPs with Primal-Dual Actor-Critic](global_convergence_for_average_reward_constrained_mdps_with_primal-dual_actor_cr.md)
-- [\[ICML 2026\] Revisiting Regularized Policy Optimization for Stable and Efficient Reinforcement Learning in Two-Player Games](../../ICML2026/reinforcement_learning/revisiting_regularized_policy_optimization_for_stable_and_efficient_reinforcemen.md)
-- [\[ICLR 2026\] Entropy-Preserving Reinforcement Learning (REPO / ADAPO)](../../ICLR2026/reinforcement_learning/entropy-preserving_reinforcement_learning.md)
+- [\[ICLR 2026\] Convergence of an actor-critic gradient flow for entropy regularised MDPs in general spaces](../../ICLR2026/reinforcement_learning/convergence_of_an_actor-critic_gradient_flow_for_entropy_regularised_mdps_in_gen.md)
+- [\[ICLR 2026\] Distributional value gradients for stochastic environments](../../ICLR2026/reinforcement_learning/distributional_value_gradients_for_stochastic_environments.md)
 
 </div>
 

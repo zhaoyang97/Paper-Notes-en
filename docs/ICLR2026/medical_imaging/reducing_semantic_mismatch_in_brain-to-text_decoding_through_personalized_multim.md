@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reducing Semantic Mismatch in Brain-to-Text Decoding Through Personalized Multimodal Masking
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] This paper proposes Yo'Mind, which employs personalized multimodal semantic masking driven by Optimal Transport (OT). It identifies visual and textual semantics actually encoded by each subject's brain signals during image viewing and uses them for brain-to-text decoding, thereby alleviating semantic mismatch between b
+  [ICLR2026][Medical Imaging][fMRI Brain Decoding] This paper proposes Yo'Mind, which employs personalized multimodal semantic masking driven by Optimal Transport (OT). It identifies visual and textual semantics actually encoded by each subject's brain signals during image viewing and uses them for brain-to-text decoding, thereby alleviating semantic mismatch between brain and machine representations and achieving superior results in cross-subject brain-to-text reconstruction o…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR2026"
+  - "Medical Imaging"
+  - "fMRI Brain Decoding"
+  - "Brain-to-Text Generation"
+  - "Semantic Mismatch"
+  - "Optimal Transport"
+  - "Multimodal Semantic Masking"
 date: 2026-05-08
-content_hash: f1afadba671e1a70
+content_hash: 307f5876b9d09175
 ---
+
 # Reducing Semantic Mismatch in Brain-to-Text Decoding Through Personalized Multimodal Masking
 
 **Conference**: ICLR2026  
@@ -129,6 +135,7 @@ Compared to MindGPT, Yo'Mind improves METEOR, BLEU-4, and CIDEr by approximately
 - **Value**: ⭐⭐⭐⭐⭐ High reference value for brain-to-text decoding and explainable BCI.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

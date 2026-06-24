@@ -2,85 +2,85 @@
 title: >-
   [Paper Note] Breaking the Dyadic Barrier: Rethinking Fairness in Link Prediction Beyond Demographic Parity
 description: >-
-  [AAAI 2026][AI Safety][Link Prediction] This paper identifies three fundamental flaws in dyadic fairness and Demographic Parity (ΔDP) for link prediction—insufficient GNN expressiveness, subgroup bias masking…
+  [AAAI 2026][AI Safety][Link prediction] This paper reveals three fundamental flaws of dyadic fairness and Demographic Parity ($\Delta\text{DP}$) in link prediction—insufficient GNN expressiveness, obscured subgroup bias, and ranking insensitivity. It proposes a ranking-aware fairness metric based on NDKL and a post-processing algorithm, MORAL, achieving state-of-the-art fairness-utility trade-offs across six datasets.
 tags:
   - "AAAI 2026"
   - "AI Safety"
-  - "Link Prediction"
-  - "Fairness"
+  - "Link prediction"
+  - "fairness"
   - "Demographic Parity"
-  - "Ranking Fairness"
-  - "Graph Neural Networks"
+  - "ranking fairness"
+  - "graph neural networks"
   - "NDKL"
 date: 2026-05-08
-content_hash: c6e9981df8be815c
+content_hash: afcef0cdf90e7840
 ---
 
 # Breaking the Dyadic Barrier: Rethinking Fairness in Link Prediction Beyond Demographic Parity
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026  
 **arXiv**: [2511.06568](https://arxiv.org/abs/2511.06568)  
 **Code**: [joaopedromattos/MORAL](https://github.com/joaopedromattos/MORAL)  
-**Area**: AI Safety / Algorithmic Fairness
-**Keywords**: Link Prediction, Fairness, Demographic Parity, Ranking Fairness, Graph Neural Networks, NDKL
+**Area**: AI Safety / Algorithmic Fairness  
+**Keywords**: Link prediction, fairness, Demographic Parity, ranking fairness, graph neural networks, NDKL  
 
 ## TL;DR
 
-This paper identifies three fundamental flaws in dyadic fairness and Demographic Parity (ΔDP) for link prediction—insufficient GNN expressiveness, subgroup bias masking, and ranking insensitivity—and proposes a ranking-aware fairness metric based on NDKL and a post-processing algorithm MORAL, achieving state-of-the-art fairness–utility trade-offs across six datasets.
+This paper reveals three fundamental flaws of dyadic fairness and Demographic Parity ($\Delta\text{DP}$) in link prediction—insufficient GNN expressiveness, obscured subgroup bias, and ranking insensitivity. It proposes a ranking-aware fairness metric based on NDKL and a post-processing algorithm, MORAL, achieving state-of-the-art fairness-utility trade-offs across six datasets.
 
 ## Background & Motivation
 
-Link prediction is a core task in graph machine learning, with broad applications in social recommendation, knowledge graph completion, and beyond. Biased link prediction, however, can exacerbate social inequalities—for instance, in professional networks such as LinkedIn, connection recommendations skewed toward males can reduce job opportunities for women and minorities by 33% (mcdonald2009networks), gradually creating "filter bubble" and "glass ceiling" effects.
+Link prediction is a core task in graph machine learning, widely used in scenarios such as social recommendation and knowledge graph completion. However, biased link prediction can exacerbate social inequalities—for instance, in professional social networks like LinkedIn, connection recommendations biased towards men can reduce job opportunities for women/minorities by 33% (mcdonald2009networks), accumulating in the long term to form "filter bubbles" and "glass ceiling" effects.
 
-Existing fair link prediction methods predominantly adopt the **dyadic fairness framework**, which partitions node pairs into intra-group ($E_{s\text{-}s} \cup E_{s'\text{-}s'}$) and inter-group ($E_{s'\text{-}s}$) sets and measures their prediction probability gap via Demographic Parity (ΔDP). This coarse-grained grouping, however, obscures systematic bias within subgroups, and ΔDP—as a classification-based metric—is entirely insensitive to ranking order and thus fails to capture exposure bias. A more expressive fairness evaluation framework and corresponding debiasing algorithms are therefore urgently needed.
+Existing fair link prediction methods generally adopt a **dyadic fairness framework**, which classifies node pairs into intra-group (intra: $E_{s\text{-}s} \cup E_{s'\text{-}s'}$) and inter-group (inter: $E_{s'\text{-}s}$), using Demographic Parity ($\Delta\text{DP}$) to measure the difference in prediction probabilities between them. However, this coarse-grained grouping obscures systemic biases within subgroups. Furthermore, as a classification-based metric, $\Delta\text{DP}$ is completely insensitive to ranking order and fails to capture exposure bias. Therefore, there is an urgent need for a more expressive fairness evaluation framework and corresponding debiasing algorithms.
 
 ## Core Problem
 
-1. **Insufficient GNN expressiveness impairs fairness**: Standard GNNs are bounded by the expressiveness of the 1-WL test; nodes from different sensitive groups residing in symmetric neighborhoods produce similar embeddings, making it impossible to distinguish node pair types such as $E_{s'\text{-}s'}$ and $E_{s'\text{-}s}$. Consequently, fair node embeddings do not translate into fair link predictions.
-2. **Subgroup bias is masked by dyadic aggregation**: Merging $E_{s\text{-}s}$ and $E_{s'\text{-}s'}$ into a single "intra-group" category allows a model to systematically over-predict one subgroup (e.g., male–male pairs far more than female–female pairs), yet ΔDP cannot detect such "fairness gerrymandering" due to averaging over the aggregated group.
-3. **ΔDP is insensitive to ranking**: ΔDP is permutation-invariant; a biased ranking that places all intra-group pairs at the top can yield the same ΔDP as a fair ranking with uniform interleaving—exposure bias is entirely ignored.
+1. **Insufficient GNN expressiveness impairs fairness**: Standard GNNs are bounded by the expressiveness upper limit of the 1-WL test. Nodes from different sensitive groups in symmetric neighborhoods generate similar embedding representations, failing to distinguish between different types of node pairs such as $E_{s'\text{-}s'}$ and $E_{s'\text{-}s}$, which prevents fair node embeddings from translating into fair link predictions.
+2. **Subgroup bias obscured by dyadic aggregation**: After merging $E_{s\text{-}s}$ and $E_{s'\text{-}s'}$ into a single "intra" group, the model may systematically over-predict one subgroup (e.g., male-male far more than female-female), yet $\Delta\text{DP}$ fails to detect this "fairness gerrymandering" due to aggregated averaging.
+3. **$\Delta\text{DP}$ is insensitive to ranking**: $\Delta\text{DP}$ is permutation-invariant. A biased ranking that places all intra-group pairs at the top and a fair, evenly interleaved ranking can obtain the same $\Delta\text{DP}$ value—completely ignoring exposure bias.
 
 ## Method
 
 ### Theoretical Contributions: Two Fairness Properties
 
-**Property 1 (Non-dyadic distribution-preserving fairness)**: A fairness metric should treat every combination of sensitive attribute values as an independent subgroup, aiming to align the predicted edge-type distribution $\hat{\boldsymbol{\pi}}$ with the true distribution in the original graph $\boldsymbol{\pi} = (\pi_{s\text{-}s}, \pi_{s'\text{-}s}, \pi_{s'\text{-}s'})$ by minimizing $\text{dist}(\hat{\boldsymbol{\pi}}, \boldsymbol{\pi})$.
+**Property 1 (Non-Dyadic Distribution-Preserving Fairness)**: A fairness metric should treat all combinations of sensitive attributes as independent subgroups, aiming to match the predicted edge type distribution $\hat{\boldsymbol{\pi}}$ with the ground-truth distribution of the original graph $\boldsymbol{\pi} = (\pi_{s\text{-}s}, \pi_{s'\text{-}s}, \pi_{s'\text{-}s'})$ as closely as possible, achieved by minimizing $\text{dist}(\hat{\boldsymbol{\pi}}, \boldsymbol{\pi})$.
 
-**Property 2 (Ranking awareness)**: A fairness metric should be sensitive to both the proportion and the position of each node pair type in the ranking. Concretely, it should minimize $\sum_{k=1}^{|\mathcal{C}|} \text{dist}(\hat{\boldsymbol{\pi}}_k, \boldsymbol{\pi}) \cdot \delta_k$, where $\hat{\boldsymbol{\pi}}_k$ is the subgroup distribution among the top-$k$ candidates and $\delta_k$ is a monotonically decreasing exposure decay weight.
+**Property 2 (Ranking Awareness)**: A fairness metric should be sensitive to the proportion and position of each node pair type within the ranking. Specifically, it should minimize $\sum_{k=1}^{|\mathcal{C}|} \text{dist}(\hat{\boldsymbol{\pi}}_k, \boldsymbol{\pi}) \cdot \delta_k$, where $\hat{\boldsymbol{\pi}}_k$ represents the subgroup distribution within the top-$k$ positions, and $\delta_k$ is a monotonically decreasing exposure decay weight.
 
-### Ranking Fairness Metric: NDKL
+### Fair Ranking Metric: NDKL
 
-The paper adopts the Normalized Cumulative KL-Divergence (NDKL) as its fairness metric:
+The paper adopts Normalized Cumulative KL-Divergence (NDKL) as the fairness metric:
 
 $$\text{NDKL} = \frac{1}{Z} \sum_{k=1}^{|\mathcal{C}|} \frac{1}{\log_2(k+1)} D_{\text{KL}}(\hat{\boldsymbol{\pi}}_k \| \boldsymbol{\pi})$$
 
-where $Z = \sum_{i=1}^{|\mathcal{C}|} \frac{1}{\log_2(i+1)}$ is the normalization term. NDKL satisfies both Property 1 (via KL divergence over three subgroups) and Property 2 (via $1/\log_2(k+1)$ position weights that penalize bias at top positions more heavily).
+where $Z = \sum_{i=1}^{|\mathcal{C}|} \frac{1}{\log_2(i+1)}$ is the normalization term. NDKL simultaneously satisfies Property 1 (KL divergence based on the three subgroups) and Property 2 (using $1/\log_2(k+1)$ as position weights, heavily penalizing bias at top positions).
 
-**Theorem 1**: Under the global demographic parity constraint, NDKL is bounded as $0 \leq \text{NDKL} \leq \max_i \log(1/\pi_i)$.
+**Theorem 1**: Under the constraint of global demographic parity, the bounds of NDKL are $0 \leq \text{NDKL} \leq \max_i \log(1/\pi_i)$.
 
-### MORAL Algorithm
+### The MORAL Algorithm
 
-MORAL (Multi-Output Ranking Aggregation for Link fairness) is a lightweight post-processing framework consisting of two stages:
+MORAL (Multi-Output Ranking Aggregation for Link fairness) is a lightweight post-processing framework comprising two stages:
 
-**Stage 1: Decoupled Training**. Three independent link prediction models—$f_{s\text{-}s}$, $f_{s\text{-}s'}$, and $f_{s'\text{-}s'}$—are trained separately, each exclusively on edges of the corresponding type. This decoupling strategy eliminates the performance imbalance across groups that plagues a single jointly trained model.
+**Stage 1: Decoupled Training**. Separate, independent link prediction models $f_{s\text{-}s}$, $f_{s\text{-}s'}$, and $f_{s'\text{-}s'}$ are trained for the three edge types, with each model trained solely on its corresponding type of edges. This decoupling strategy eliminates the performance imbalance of a single model across different groups.
 
-**Stage 2: Greedy Ranking Aggregation**. During inference, a running estimate of the cumulative exposure distribution over edge types is maintained. At each rank position, the candidate edge from any of the three models whose addition minimizes the cumulative KL divergence is selected:
+**Stage 2: Greedy Rank Aggregation**. During inference, a cumulative exposure distribution estimate of the edge types is maintained. For each position in the ranked list, the candidate edge from the three models that minimizes the cumulative KL divergence upon insertion is selected. Specifically:
 
 - Initialize exposure counts $\boldsymbol{c} \leftarrow (0,0,0)$
-- For each rank position $t = 1, \ldots, n$:
-    - For each candidate group $j$, take its highest-scoring candidate edge, temporarily update the counts, and compute $D_{\text{KL}}(\mathbf{q}' \| \boldsymbol{\pi})$
-    - Select the group and candidate edge that minimize the KL divergence and append to the ranking list
-- The optimization objective is a fairness-first criterion: $\min_R \mathcal{L}_A(R) \text{ s.t. } \mathcal{L}_B(R) \leq \min_{R'} \mathcal{L}_B(R')$
+- For each ranking position $t = 1, \ldots, n$:
+    - For each candidate group $j$, retrieve its highest-scoring candidate edge, temporarily update counts, and compute $D_{\text{KL}}(\mathbf{q}' \| \boldsymbol{\pi})$
+    - Select the group and candidate edge that minimize the KL divergence, then append it to the ranked list
+- The optimization targets a fairness-first objective: $\min_R \mathcal{L}_A(R) \text{ s.t. } \mathcal{L}_B(R) \leq \min_{R'} \mathcal{L}_B(R')$
 
-**Computational Efficiency**: Each decoupled model processes $\frac{|E_{\text{train}}|}{|S| \cdot \binom{|S|}{2} \cdot b}$ gradients per epoch; the aggregation stage runs in greedy $O(n \cdot G)$ time, resulting in negligible overall overhead.
+**Computational Efficiency**: Each decoupled model only processes $\frac{|E_{\text{train}}|}{|S| \cdot \binom{|S|}{2} \cdot b}$ gradients per epoch, and the aggregation stage is a greedy $O(n \cdot G)$ process, rendering the overall overhead extremely small.
 
 ## Key Experimental Results
 
 ### Datasets
 
-Experiments are conducted on six real-world datasets spanning social networks, credit assessment, and sports:
+Evaluated on 6 real-world datasets covering diverse scenarios such as social networks, credit assessment, and sports:
 
-| Dataset | Nodes | Edges | Sensitive Attr. | $E_{s'\text{-}s}$% | $E_{s\text{-}s}$% | $E_{s'\text{-}s'}$% | Topology |
+| Dataset | Nodes | Edges | Sensitive Attribute | $E_{s'\text{-}s}$% | $E_{s\text{-}s}$% | $E_{s'\text{-}s'}$% | Topology Type |
 |--------|--------|------|----------|------------|-----------|-------------|----------|
 | Facebook | 1045 | 18726 | Gender | 42% | 44% | 14% | Peripheral |
 | German | 1000 | 15220 | Age | 20% | 61% | 19% | Peripheral |
@@ -100,50 +100,50 @@ Experiments are conducted on six real-world datasets spanning social networks, c
 
 **Key Findings**:
 
-1. **ΔDP fails to detect subgroup bias**: Among top-100 predictions, most baseline methods are strongly skewed toward one subgroup type (e.g., $E_{s\text{-}s}$ far outnumbering $E_{s'\text{-}s'}$), yet their ΔDP values remain low—confirming the fatal flaw of dyadic aggregation.
-2. **ΔDP cannot distinguish ranking quality**: With subgroup proportions fixed, the NDKL gap between the worst and best rankings is substantial, while ΔDP is identical—validating the necessity of ranking awareness.
-3. **MORAL consistently leads**: MORAL achieves the lowest NDKL (0.01–0.04) across all six datasets while maintaining high prec@1000 (0.80–1.00), with no out-of-memory issues.
+1. **$\Delta\text{DP}$ fails to detect subgroup bias**: In the top-100 predictions, most baselines are heavily biased towards a specific subgroup type (e.g., $E_{s\text{-}s}$ far exceeding $E_{s'\text{-}s'}$), yet their $\Delta\text{DP}$ values remain very low—validating the fatal flaw of dyadic aggregation.
+2. **$\Delta\text{DP}$ cannot differentiate ranking quality**: With subgroup proportions fixed, the gap in NDKL between the worst and best rankings is massive, while their $\Delta\text{DP}$ values are identical—demonstrating the necessity of ranking awareness.
+3. **MORAL is comprehensively leading**: MORAL achieves the lowest NDKL (0.01–0.04) across all 6 datasets, while maintaining high prec@1000 levels (0.80–1.00), with no OOM issues.
 
 ## Highlights & Insights
 
-1. **Deep problem insight**: The paper systematically critiques the existing dyadic fairness framework from three complementary angles—GNN expressiveness, subgroup aggregation pitfalls, and ranking insensitivity—each supported by rigorous theoretical analysis and intuitive examples.
-2. **Elegant NDKL metric design**: The logarithmic position weights naturally encode the intuition that bias at top positions should be penalized more heavily, while preserving an elegant connection to information theory via KL divergence.
-3. **Minimalist yet effective method**: MORAL is a purely post-processing approach compatible with any link prediction model, requiring no modification to the training procedure; greedy aggregation incurs minimal computational cost.
-4. **Clever decoupled training strategy**: Training separate models for each edge type avoids cross-group performance imbalance inherent to a single joint model and naturally complements the subsequent group-wise ranking aggregation.
+1. **Profound insights on issues**: Systematically criticizes the existing dyadic fairness framework from three complementary angles: GNN expressiveness, subgroup aggregation traps, and ranking insensitivity. Each argument is supported by clear theoretical analysis and intuitive examples.
+2. **Exquisite design of the NDKL metric**: Naturally realizes the intuition of "heavier penalty on bias at top positions" through logarithmic position weights while maintaining an elegant connection to information theory (KL divergence).
+3. **Extremely simple yet effective method**: MORAL is a pure post-processing method that can be coupled with any link prediction model without modifying the training process. The computational overhead of greedy aggregation is extremely low.
+4. **Clever decoupled training strategy**: Training models separately for different edge types avoids the performance imbalance across groups in a single model, and naturally fits the subsequent grouped ranking aggregation.
 
 ## Limitations & Future Work
 
-1. **Binary sensitive attributes only**: Although the paper claims the framework generalizes to multi-valued and multi-attribute settings, all experiments assume binary attributes ($|S|=2$, three edge types); performance under the rapidly growing subgroup count $\binom{|S|}{2}$ for multi-valued attributes remains unvalidated.
-2. **Greedy strategy is not globally optimal**: The greedy ranking aggregation approximates the fairness-first objective without guaranteeing a global optimum; oscillation may occur under severely imbalanced distributions (e.g., $E_{s'\text{-}s'}$ constituting only 2% in the Credit dataset).
-3. **Strong assumption about the target distribution**: MORAL uses the edge-type distribution $\boldsymbol{\pi}$ of the original graph as the "fairness target," implicitly assuming the original subgroup proportions are ideal. If the original graph itself encodes historical bias, preserving its distribution may entrench unfairness.
-4. **No evaluation in dynamic or online settings**: In real-world recommender systems, link prediction is a continuous process where accumulated feedback alters graph structure and fairness constraints; the paper does not discuss adaptation to online deployment.
-5. **GCN encoder only**: All experiments use a GCN with dot-product decoder; whether stronger link prediction models (e.g., SEAL, NBFNet) would alter the conclusions remains unexplored.
+1. **Considers only binary sensitive attributes**: Although the paper claims the framework is generalizable to multi-valued/multi-attribute scenarios, all experiments are based on binary attributes ($|S|=2$, three edge types). Its performance when the number of subgroups $\binom{|S|}{2}$ grows rapidly under multi-valued attributes remains unvalidated.
+2. **Greedy strategy is non-optimal**: Greedy rank aggregation is an approximate solution to the fairness-first objective and does not guarantee global optimality; oscillations may occur under extremely imbalanced distributions (e.g., only 2% of $E_{s'\text{-}s'}$ in the Credit dataset).
+3. **Strong assumption on target distribution**: MORAL adopts the edge type distribution $\boldsymbol{\pi}$ of the original graph as the "fairness target," which implicitly assumes that the subgroup proportions in the original graph are ideal. However, if the original graph itself contains historical bias, preserving the distribution may perpetuate unfairness.
+4. **Lacks evaluation in dynamic/online scenarios**: In real-world recommendation systems, link prediction is an ongoing process where cumulative feedback can alter the graph structure and fairness constraints. This adaptation for online deployment is not discussed in the paper.
+5. **Uses only a GCN encoder**: All experiments are based on a GCN + dot-product decoder. It remains unverified whether more powerful link prediction models (e.g., SEAL, NBFNet) would alter the conclusions.
 
 ## Related Work & Insights
 
 | Dimension | Existing Methods | MORAL |
 |------|---------|-------|
-| Fairness framework | Dyadic (intra vs. inter) | Non-dyadic (three independent subgroups) |
-| Fairness metric | ΔDP (classification-based, ranking-insensitive) | NDKL (ranking-aware, position-weighted) |
-| Debiasing strategy | Pre-processing / in-training / node embedding level | Post-processing + decoupled training |
-| Scalability | FairAdj / FairLP / EDITS / FairEGM run OOM on large graphs | Runs successfully on all datasets |
-| Model agnosticism | Most methods tied to specific architectures | Compatible with any link prediction model |
-| Utility–fairness trade-off | Improved fairness often incurs large accuracy loss | Optimal NDKL while maintaining high prec@1000 |
+| Fairness Framework | Dyadic (intra vs. inter) | Non-dyadic (three independent subgroups) |
+| Fairness Metric | $\Delta\text{DP}$ (classification metric, ranking-insensitive) | NDKL (ranking-aware, position-weighted) |
+| Debiasing Strategy | Pre-processing / In-processing / Node embedding-level | Post-processing + Decoupled training |
+| Scalability | OOM on large graphs (e.g., FairAdj, FairEGM) | Runnable on all datasets |
+| Model Agnosticity | Most methods are tied to specific architectures | Compatible with any link prediction model |
+| Utility-Fairness Trade-off | Achieving fairness often severely sacrifices accuracy | High prec@1000 maintained while achieving optimal NDKL |
 
-Compared to fair ranking methods from information retrieval (DetConstSort, DELTR), MORAL specifically designs a decoupled training strategy tailored to the combinatorial nature of link prediction rather than directly applying general-purpose ranking fairness schemes.
+Compared to fair ranking methods in information retrieval (DetConstSort, DELTR), MORAL specifically designs a decoupled training strategy for the combinatorial nature of link prediction, rather than directly applying generic ranking fairness schemes.
 
-The paper offers several broader insights:
+## Insights & Connections
 
-1. **"The metric is the bias"**: This paper serves as a textbook example of how replacing the evaluation metric alone can reveal hidden biases. It suggests that any fairness study should rigorously scrutinize the properties of its metric (ranking sensitivity, subgroup coverage) before discussing algorithms.
-2. **Generality of decoupled training**: The idea of decoupling models by subgroup is transferable to other graph tasks (e.g., subgroup-specific classifiers for node classification) and even multi-objective ranking in recommender systems.
-3. **Cross-pollination between recommender systems and graph learning**: NDKL originates in information retrieval (Geyik et al., 2019); its introduction into graph learning here suggests deeper methodological exchange between the two fields.
-4. **New motivation for expressive GNNs**: Fairness requirements provide a novel application-driven motivation for GNN architectures that surpass 1-WL expressiveness, such as higher-order GNNs and subgraph GNNs.
+1. **"Metric as Bias"**: This paper presents a textbook case—simply changing the evaluation metric can expose hidden biases. The insight is that in any fairness research, the properties of the metric itself (such as ranking sensitivity and subgroup coverage) should be rigorously scrutinized before discussing algorithms.
+2. **Universality of decoupled training**: The idea of decoupling models by subgroups can be generalized to other graph tasks (e.g., subgroup-specific classifiers in node classification) and even multi-objective ranking in recommendation systems.
+3. **Connection to fairness in recommendation systems**: NDKL originally originated in information retrieval (Geyik et al., 2019). This paper introduces it to graph learning, suggesting that methods from both fields can cross-fertilize more deeply.
+4. **Implications for GNN expressiveness research**: Fairness requirements provide fresh application motivations for GNN architectures that go beyond 1-WL (e.g., higher-order GNNs, subgraph GNNs).
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — The three-dimensional systematic critique of dyadic fairness and the introduction of NDKL to link prediction both demonstrate strong originality.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Six datasets, ten baselines, and multi-dimensional validation; experiments with stronger GNNs and multi-valued attributes are missing.
-- Writing Quality: ⭐⭐⭐⭐⭐ — Logically structured with well-integrated theory and examples; Figures 1–2 provide highly effective intuitive illustrations.
-- Value: ⭐⭐⭐⭐ — A fundamental rethinking of the fair link prediction evaluation paradigm; MORAL is concise and practical with strong implications for real-world deployment.
+- Novelty: ⭐⭐⭐⭐ — The systematic three-dimensional critique of dyadic fairness and the introduction of NDKL to link prediction demonstrate strong originality.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive validation across 6 datasets with 10 baselines, though experiments with stronger GNNs and multi-valued attributes are missing.
+- Writing Quality: ⭐⭐⭐⭐⭐ — Logically solid, with theory and examples well-interleaved. The intuitive examples in Figure 1-2 are highly effective.
+- Value: ⭐⭐⭐⭐ — A fundamental rethinking of the evaluation paradigm for fair link prediction. MORAL is simple and practical, offering valuable practical guidance.
 
 <!-- RELATED:START -->
 
@@ -151,11 +151,11 @@ The paper offers several broader insights:
 
 ## Related Papers
 
-- [\[ICLR 2026\] Beyond Match Maximization and Fairness: Retention-Optimized Two-Sided Matching](../../ICLR2026/ai_safety/beyond_match_maximization_and_fairness_retention-optimized_two-sided_matching.md)
+- [\[ICML 2026\] Beyond Procedure: Substantive Fairness in Conformal Prediction](../../ICML2026/ai_safety/beyond_procedure_substantive_fairness_in_conformal_prediction.md)
 - [\[AAAI 2026\] FairGSE: Fairness-Aware Graph Neural Network without High False Positive Rates](fairgse_fairness-aware_graph_neural_network_without_high_false_positive_rates.md)
-- [\[AAAI 2026\] Breaking the Adversarial Robustness-Performance Trade-off in Text Classification via Manifold Purification](breaking_the_adversarial_robustness-performance_trade-off_in_text_classification.md)
-- [\[ICML 2026\] Position: Beyond Sensitive Attributes, ML Fairness Should Quantify Structural Injustice via Social Determinants](../../ICML2026/ai_safety/position_beyond_sensitive_attributes_ml_fairness_should_quantify_structural_inju.md)
+- [\[ICML 2025\] Breaking the n^{1.5} Additive Error Barrier for Private and Efficient Graph Sparsification](../../ICML2025/ai_safety/breaking_the_n15_additive_error_barrier_for_private_and_efficient_graph_sparsifi.md)
 - [\[AAAI 2026\] CoRe-Fed: Bridging Collaborative and Representation Fairness via Federated Embedding Distillation](core-fed_bridging_collaborative_and_representation_fairness_via_federated_embedd.md)
+- [\[AAAI 2026\] Revisiting (Un)Fairness in Recourse by Minimizing Worst-Case Social Burden](revisiting_unfairness_in_recourse_by_minimizing_worst-case_social_burden.md)
 
 </div>
 

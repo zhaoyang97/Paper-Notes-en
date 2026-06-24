@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Show-o2: Improved Native Unified Multimodal Models
 description: >-
-  [NeurIPS 2025][Image Generation][Unified multimodal models] This paper presents Show-o2, a natively unified multimodal model built upon autoregressive modeling and Flow Matching. By constructing unified visual representa…
+  [NeurIPS 2025][Image Generation][Unified multimodal models] This paper presents Show-o2, a natively unified multimodal model built upon autoregressive modeling and Flow Matching. By constructing unified visual representations in a 3D causal VAE space via dual-path spatial(-temporal) fusion, Show-o2 supports multimodal understanding and generation across text, images, and video, with a two-stage training strategy that effectively preserves language knowledge.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "3D causal VAE"
   - "visual understanding and generation"
 date: 2026-05-08
-content_hash: 77eb2f5d1e6e94d2
+content_hash: e14b4bb77a131d5a
 ---
 
 # Show-o2: Improved Native Unified Multimodal Models
@@ -51,13 +51,13 @@ Given interleaved text/image/video inputs, text is converted to embeddings via a
 
    A 3D causal VAE encoder extracts visual latents, which are then processed through a dual-path architecture:
 
-   - **Semantic path $\mathcal{S}(\cdot)$**: Shared ViT blocks from SigLIP (with an added 2×2 patch embedding) extract high-level semantic information. A pre-distillation step enables this path to extract semantic features from both clean and noisy visual latents:
+    - **Semantic path $\mathcal{S}(\cdot)$**: Shared ViT blocks from SigLIP (with an added 2×2 patch embedding) extract high-level semantic information. A pre-distillation step enables this path to extract semantic features from both clean and noisy visual latents:
 
    $\mathcal{L}_{\text{distill}} = -\frac{1}{n}\sum\log\text{sim}(\mathcal{S}(\mathbf{x}_t), \text{SigLIP}(\mathbf{X}))$
 
    where $\mathbf{x}_t = t \cdot \mathbf{x}_1 + (1-t) \cdot \mathbf{x}_0$, $t \sim [0,1]$. After training, the cosine similarity between semantic features extracted from clean latents and original SigLIP features reaches approximately 0.9.
 
-   - **Projector $\mathcal{P}(\cdot)$**: A simple 2D patch embedding layer that retains complete low-level structural details.
+    - **Projector $\mathcal{P}(\cdot)$**: A simple 2D patch embedding layer that retains complete low-level structural details.
 
    The two feature streams are merged via a spatial(-temporal) fusion mechanism:
 
@@ -155,11 +155,11 @@ Given interleaved text/image/video inputs, text is converted to embeddings via a
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Co-Reinforcement Learning for Unified Multimodal Understanding and Generation](coreinforcement_learning_for_unified_multimodal_understandin.md)
 - [\[NeurIPS 2025\] Improved Training Technique for Shortcut Models (iSM)](improved_training_technique_for_shortcut_models.md)
+- [\[NeurIPS 2025\] Co-Reinforcement Learning for Unified Multimodal Understanding and Generation](coreinforcement_learning_for_unified_multimodal_understandin.md)
 - [\[NeurIPS 2025\] Mitigating Intra- and Inter-modal Forgetting in Continual Learning of Unified Multimodal Models](mitigating_intra-_and_inter-modal_forgetting_in_continual_learning_of_unified_mu.md)
-- [\[CVPR 2026\] Learning to Generate via Understanding: Understanding-Driven Intrinsic Rewarding for Unified Multimodal Models](../../CVPR2026/image_generation/learning_to_generate_via_understanding_understanding-driven_intrinsic_rewarding_.md)
-- [\[ICLR 2026\] Uni-X: Mitigating Modality Conflict with a Two-End-Separated Architecture for Unified Multimodal Models](../../ICLR2026/image_generation/uni-x_mitigating_modality_conflict_with_a_two-end-separated_architecture_for_uni.md)
+- [\[CVPR 2026\] Improved Mean Flows: On the Challenges of Fastforward Generative Models](../../CVPR2026/image_generation/improved_mean_flows_on_the_challenges_of_fastforward_generative_models.md)
+- [\[CVPR 2025\] TokenFlow: Unified Image Tokenizer for Multimodal Understanding and Generation](../../CVPR2025/image_generation/tokenflow_unified_image_tokenizer_for_multimodal_understanding_and_generation.md)
 
 </div>
 

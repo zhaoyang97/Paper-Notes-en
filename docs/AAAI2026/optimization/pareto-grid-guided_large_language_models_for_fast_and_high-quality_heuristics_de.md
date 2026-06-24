@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Pareto-Grid-Guided Large Language Models for Fast and High-Quality Heuristics Design in Multi-Objective Combinatorial Optimization
 description: >-
-  [AAAI 2026][Optimization][Multi-Objective Optimization] This paper proposes MPaGE, a framework that integrates LLMs with a Pareto Front Grid mechanism and semantic clustering to automatically generate heuristics for mult…
+  [AAAI 2026][Optimization][Multi-Objective Optimization] This paper proposes MPaGE, a framework that integrates LLMs with a Pareto Front Grid mechanism and semantic clustering to automatically generate heuristics for multi-objective combinatorial optimization problems (MOCOPs), jointly optimizing solution quality and runtime efficiency. MPaGE achieves significant improvements in HV and IGD over baselines such as EoH and MEoH on Bi-TSP, Tri-TSP, Bi-CVRP, and Bi-KP benchmarks.
 tags:
   - "AAAI 2026"
   - "Optimization"
@@ -13,7 +13,7 @@ tags:
   - "Heuristic Generation"
   - "Semantic Diversity"
 date: 2026-05-08
-content_hash: 94ff10e06e3f9dad
+content_hash: 85707a3bee8c06f2
 ---
 
 # Pareto-Grid-Guided Large Language Models for Fast and High-Quality Heuristics Design in Multi-Objective Combinatorial Optimization
@@ -113,11 +113,11 @@ The paradigm of using LLMs as evolutionary operators has broad applicability and
 
 ## Related Papers
 
-- [\[ICML 2026\] LiMuon: Light and Fast Muon Optimizer for Large Models](../../ICML2026/optimization/limuon_light_and_fast_muon_optimizer_for_large_models.md)
-- [\[ICML 2026\] Accelerated Multiple Wasserstein Gradient Flows for Multi-objective Distributional Optimization](../../ICML2026/optimization/accelerated_multiple_wasserstein_gradient_flows_for_multi-objective_distribution.md)
-- [\[AAAI 2026\] MOTIF: Multi-strategy Optimization via Turn-based Interactive Framework](motif_multi-strategy_optimization_via_turn-based_interactive_framework.md)
-- [\[NeurIPS 2025\] Constrained Network Slice Assignment via Large Language Models](../../NeurIPS2025/optimization/constrained_network_slice_assignment_via_llms.md)
-- [\[ICML 2026\] Multi-Objective Bayesian Optimization via Adaptive $\varepsilon$-Constraints Decomposition](../../ICML2026/optimization/multi-objective_bayesian_optimization_via_adaptive_varepsilon-constraints_decomp.md)
+- [\[ICML 2026\] Diversity-Driven Offline Multi-Objective Optimization via Nested Pareto Set Learning](../../ICML2026/optimization/diversity-driven_offline_multi-objective_optimization_via_nested_pareto_set_lear.md)
+- [\[ICLR 2026\] Scaling Multi-Task Bayesian Optimization with Large Language Models](../../ICLR2026/optimization/scaling_multi-task_bayesian_optimization_with_large_language_models.md)
+- [\[ICLR 2026\] In-Context Multi-Objective Optimization](../../ICLR2026/optimization/in-context_multi-objective_optimization.md)
+- [\[ICLR 2026\] Neural Multi-Objective Combinatorial Optimization for Flexible Job Shop Scheduling Problems](../../ICLR2026/optimization/neural_multi-objective_combinatorial_optimization_for_flexible_job_shop_scheduli.md)
+- [\[ICLR 2026\] HeuriGym: An Agentic Benchmark for LLM-Crafted Heuristics in Combinatorial Optimization](../../ICLR2026/optimization/heurigym_an_agentic_benchmark_for_llm-crafted_heuristics_in_combinatorial_optimi.md)
 
 </div>
 

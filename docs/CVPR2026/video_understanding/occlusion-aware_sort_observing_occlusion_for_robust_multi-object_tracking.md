@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Occlusion-Aware SORT: Observing Occlusion for Robust Multi-Object Tracking
 description: >-
-  [CVPR 2026][Video Understanding][Kalman Filter] The authors propose OA-SORT, an occlusion-aware tracking framework that explicitly models the occlusion states of objects to mitigate position cost confusion and Kalman Filter estimation instability. It achieves SOTA-level improvements on DanceTrack, SportsMOT, and MOT17, with components that can be integrated into var
+  [CVPR 2026][Video Understanding][Multi-Object Tracking] The authors propose OA-SORT, an occlusion-aware tracking framework that explicitly models the occlusion states of objects to mitigate position cost confusion and Kalman Filter estimation instability. It achieves SOTA-level improvements on DanceTrack, SportsMOT, and MOT17, with components that can be integrated into various trackers in a plug-and-play manner.
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Kalman Filter
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Multi-Object Tracking"
+  - "Occlusion-Aware"
+  - "Kalman Filter"
+  - "Data Association"
+  - "Plug-and-Play"
 date: 2026-05-08
-content_hash: 83b0f0fcfbce13be
+content_hash: 59ad9ef3a5165443
 ---
+
 # Occlusion-Aware SORT: Observing Occlusion for Robust Multi-Object Tracking
 
 **Conference**: CVPR 2026  
@@ -181,10 +186,10 @@ This method is a **training-free** framework, requiring no additional training o
 ## Related Papers
 
 - [\[CVPR 2026\] Rethinking Occlusion Modeling for UAV Tracking](rethinking_occlusion_modeling_for_uav_tracking.md)
+- [\[CVPR 2026\] Tracking through Severe Occlusion via Event-Derived Transient Cues](tracking_through_severe_occlusion_via_event-derived_transient_cues.md)
+- [\[AAAI 2026\] PlugTrack: Multi-Perceptive Motion Analysis for Adaptive Fusion in Multi-Object Tracking](../../AAAI2026/video_understanding/plugtrack_multi-perceptive_motion_analysis_for_adaptive_fusion_in_multi-object_t.md)
 - [\[CVPR 2026\] Hypergraph-State Collaborative Reasoning for Multi-Object Tracking](hypergraph-state_collaborative_reasoning_for_multi-object_tracking.md)
 - [\[CVPR 2026\] ProgTrack: A Multi-Object Tracking Algorithm with Progressive Matching Strategy](progtrack_a_multi-object_tracking_algorithm_with_progressive_matching_strategy.md)
-- [\[CVPR 2026\] Dual-level Adaptation for Multi-Object Tracking: Building Test-Time Calibration from Experience and Intuition](tcei_test_time_calibration_experience_intuition_mot.md)
-- [\[CVPR 2026\] Robust Promptable Video Object Segmentation](robust_promptable_video_object_segmentation.md)
 
 </div>
 

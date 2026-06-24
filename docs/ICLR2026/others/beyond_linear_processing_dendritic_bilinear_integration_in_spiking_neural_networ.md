@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Beyond Linear Processing: Dendritic Bilinear Integration in Spiking Neural Networks
 description: >-
-  [ICLR 2026][Others][Paper Note] This paper introduces a biologically inspired "bilinear dendritic integration" term to the commonly used LIF neuron in Spiking Neural Networks (SNNs). In addition to the linear summation of synaptic inputs, it incorporates an interaction term $s^T K s$ between pairs of inputs, enabling a single neuron to perform non-li
+  [ICLR2026][Spiking Neural Networks] This paper introduces a biologically inspired "bilinear dendritic integration" term to the commonly used LIF neuron in Spiking Neural Networks (SNNs). In addition to the linear summation of synaptic inputs, it incorporates an interaction term $s^T K s$ between pairs of inputs, enabling a single neuron to perform non-linear computations like XOR. Theoretically, it is proven to exploit and propagate input correlation structures across layers.…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR2026"
+  - "Spiking Neural Networks"
+  - "Dendritic Nonlinearity"
+  - "Bilinear Integration"
+  - "LIF Model"
+  - "Neuromorphic Computing"
 date: 2026-05-08
-content_hash: 5cc6d93088b980a7
+content_hash: 4ff2647fbe74ad63
 ---
+
 # Beyond Linear Processing: Dendritic Bilinear Integration in Spiking Neural Networks
 
 **Conference**: ICLR2026  
@@ -141,10 +146,10 @@ Average accuracy improved from 83.95% to 85.18% (+1.23%), while average energy c
 ## Related Papers
 
 - [\[ICLR 2026\] Breaking Gradient Temporal Collinearity for Robust Spiking Neural Networks](breaking_gradient_temporal_collinearity_for_robust_spiking_neural_networks.md)
+- [\[ICML 2026\] Bullet Trains: Parallelizing Training of Temporally Precise Spiking Neural Networks](../../ICML2026/others/bullet_trains_parallelizing_training_of_temporally_precise_spiking_neural_networ.md)
 - [\[ICLR 2026\] Online Pseudo-Zeroth-Order Training of Neuromorphic Spiking Neural Networks](online_pseudo-zeroth-order_training_of_neuromorphic_spiking_neural_networks.md)
 - [\[ICLR 2026\] A Brain-Inspired Gating Mechanism Unlocks Robust Computation in Spiking Neural Networks](a_brain-inspired_gating_mechanism_unlocks_robust_computation_in_spiking_neural_n.md)
 - [\[ICLR 2026\] Fractional-Order Spiking Neural Network](fractional-order_spiking_neural_network.md)
-- [\[ICLR 2026\] Training Deep Normalization-Free Spiking Neural Networks with Lateral Inhibition](training_deep_normalization-free_spiking_neural_networks_with_lateral_inhibition.md)
 
 </div>
 

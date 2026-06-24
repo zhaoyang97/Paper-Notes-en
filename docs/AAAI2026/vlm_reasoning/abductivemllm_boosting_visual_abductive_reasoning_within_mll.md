@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] AbductiveMLLM: Boosting Visual Abductive Reasoning Within MLLMs
 description: >-
-  [AAAI 2026][Multimodal VLM][visual abductive reasoning] Inspired by the dual-mode human cognitive process of verbal abduction and pictorial imagination, this paper proposes AbductiveMLLM…
+  [AAAI 2026 Oral][VLM Reasoning][visual abductive reasoning] Inspired by the dual-mode human cognitive process of verbal abduction and pictorial imagination, this paper proposes AbductiveMLLM, which enhances visual abductive reasoning in MLLMs via two collaborative components — a Reasoner (causal contrastive learning for hypothesis selection) and an Imaginer (diffusion-model-based pictorial reasoning) — achieving state-of-the-art performance on the VAR and YouCookII benchmarks…
 tags:
-  - "AAAI 2026"
-  - "Multimodal VLM"
+  - "AAAI 2026 Oral"
+  - "VLM Reasoning"
   - "visual abductive reasoning"
   - "MLLM"
   - "diffusion model"
   - "contrastive learning"
   - "pictorial thinking"
 date: 2026-05-08
-content_hash: 7dd3d1d39539d51d
+content_hash: 6ad045d34d9713c7
 ---
 
 # AbductiveMLLM: Boosting Visual Abductive Reasoning Within MLLMs
@@ -168,10 +168,10 @@ Top-$k$ hypothesis count: $k=3$ is optimal (CIDEr 57.04); performance drops to 5
 ## Related Papers
 
 - [\[AAAI 2026\] AStar: Boosting Multimodal Reasoning with Automated Structured Thinking](astar_boosting_multimodal_reasoning_with_automated_structure.md)
-- [\[AAAI 2026\] When Eyes and Ears Disagree: Can MLLMs Discern Audio-Visual Confusion?](when_eyes_and_ears_disagree_can_mllms_discern_audio-visual_confusion.md)
-- [\[ICCV 2025\] Free-MoRef: Instantly Multiplexing Context Perception Capabilities of Video-MLLMs within Single Inference](../../ICCV2025/multimodal_vlm/free-moref_instantly_multiplexing_context_perception_capabilities_of_video-mllms.md)
-- [\[ICCV 2025\] Boosting MLLM Reasoning with Text-Debiased Hint-GRPO](../../ICCV2025/multimodal_vlm/boosting_mllm_reasoning_with_text-debiased_hint-grpo.md)
-- [\[CVPR 2026\] PaddleOCR-VL: Boosting Document Parsing Efficiency and Performance with Coarse-to-Fine Visual Processing](../../CVPR2026/multimodal_vlm/paddleocr_vl_coarse_to_fine_document_parsing.md)
+- [\[CVPR 2026\] Boosting Reasoning in Large Multimodal Models via Activation Replay](../../CVPR2026/vlm_reasoning/boosting_reasoning_in_large_multimodal_models_via_activation_replay.md)
+- [\[CVPR 2026\] POINTS-Long: Adaptive Dual-Mode Visual Reasoning in MLLMs](../../CVPR2026/vlm_reasoning/points-long_adaptive_dual-mode_visual_reasoning_in_mllms.md)
+- [\[ICLR 2026\] Perception-R1: Advancing Multimodal Reasoning Capabilities of MLLMs via Visual Perception Reward](../../ICLR2026/vlm_reasoning/perception-r1_advancing_multimodal_reasoning_capabilities_of_mllms_via_visual_pe.md)
+- [\[ICLR 2026\] MM-HELIX: Boosting Multimodal Long-Chain Reflective Reasoning with Holistic Platform and Adaptive Hybrid Policy Optimization](../../ICLR2026/vlm_reasoning/mm-helix_boosting_multimodal_long-chain_reflective_reasoning_with_holistic_platf.md)
 
 </div>
 

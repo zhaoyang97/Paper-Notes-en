@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Inference-Cost-Aware Dynamic Tree Construction for Efficient Inference in Large Language Models
 description: >-
-  [ICLR 2026][LLM Efficiency][EAGLE] CAST introduces the overlooked system variable of "inference cost" (GPU model, batch size) into the dynamic draft tree construction of EAGLE-2/3. By modeling tree width, depth, and the number of verification tokens as a utility maximization problem of "acceptance gain vs. inference cost," it achieves slight improvement
+  [ICLR 2026][LLM Efficiency][Speculative Decoding] CAST introduces the overlooked system variable of "inference cost" (GPU model, batch size) into the dynamic draft tree construction of EAGLE-2/3. By modeling tree width, depth, and the number of verification tokens as a utility maximization problem of "acceptance gain vs. inference cost," it achieves slight improvements in single-sample scenarios and significant gains in batch scenarios over existing SOTAâ€¦
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - EAGLE
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Speculative Decoding"
+  - "Dynamic Draft Tree"
+  - "Inference-Cost-Aware"
+  - "EAGLE"
+  - "Batch Acceleration"
 date: 2026-05-08
-content_hash: 6f928458e47dcc05
+content_hash: 507d4f14388e600f
 ---
+
 # Inference-Cost-Aware Dynamic Tree Construction for Efficient Inference in Large Language Models
 
 **Conference**: ICLR 2026  
@@ -128,11 +133,11 @@ Batch processing is the primary advantage for Ours: While EAGLE-2 drops to 1.11Ã
 
 ## Related Papers
 
-- [\[ICLR 2026\] DND: Boosting Large Language Models with Dynamic Nested Depth](dnd_boosting_large_language_models_with_dynamic_nested_depth.md)
 - [\[ICLR 2026\] PARD: Accelerating LLM Inference with Low-Cost Parallel Draft Model Adaptation](pard_accelerating_llm_inference_with_lowcost_parallel_draft_model_adaptation.md)
+- [\[ICLR 2026\] DND: Boosting Large Language Models with Dynamic Nested Depth](dnd_boosting_large_language_models_with_dynamic_nested_depth.md)
+- [\[ICLR 2026\] FlashDLM: Accelerating Diffusion Language Model Inference via Efficient KV Caching and Guided Diffusion](flashdlm_accelerating_diffusion_language_model_inference_via_efficient_kv_cachin.md)
 - [\[ICLR 2026\] Neuron-Aware Data Selection in Instruction Tuning for Large Language Models](neuron-aware_data_selection_in_instruction_tuning_for_large_language_models.md)
 - [\[ICLR 2026\] Reasoning Language Model Inference Serving Unveiled: An Empirical Study](reasoning_language_model_inference_serving_unveiled_an_empirical_study.md)
-- [\[ICLR 2026\] Libra: Effective yet Efficient Load Balancing for Large-scale MoE Inference](libra_effective_yet_efficient_load_balancing_for_large-scale_moe_inference.md)
 
 </div>
 

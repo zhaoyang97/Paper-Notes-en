@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MAPSS: Manifold-Based Assessment of Perceptual Source Separation
 description: >-
-  [ICLR 2026][Audio & Speech][Paper Note] This paper proposes two complementary metrics, Perceptual Separation (PS) and Perceptual Match (PM). By utilizing diffusion maps to embed self-supervised representations into low-dimensional manifolds, it achieves the first functional decoupling of leakage and self-distortion in source separation. Compared with 18 main
+  [ICLR 2026][Audio & Speech][Source separation evaluation] This paper proposes two complementary metrics, Perceptual Separation (PS) and Perceptual Match (PM). By utilizing diffusion maps to embed self-supervised representations into low-dimensional manifolds, it achieves the first functional decoupling of leakage and self-distortion in source separation. Compared with 18 mainstream metrics, it almost consistently ranks first or second in terms of correlation with subjective s…
 tags:
-  - ICLR 2026
-  - Audio & Speech
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Source separation evaluation"
+  - "perceptual metrics"
+  - "diffusion maps"
+  - "manifold learning"
+  - "self-supervised representation"
 date: 2026-05-08
-content_hash: 7bf87d6ab8f081fc
+content_hash: 2408d5e2ce45ea6b
 ---
+
 # MAPSS: Manifold-Based Assessment of Perceptual Source Separation
 
 **Conference**: ICLR 2026  
@@ -174,8 +180,8 @@ Linear (Pearson) and rank (Spearman) correlations of PS and PM with human subjec
 - [\[ICLR 2026\] Incentive-Aligned Multi-Source LLM Summaries](incentive-aligned_multi-source_llm_summaries.md)
 - [\[ICLR 2026\] Knowing When to Quit: Probabilistic Early Exits for Speech Separation Networks](knowing_when_to_quit_probabilistic_early_exits_for_speech_separation_networks.md)
 - [\[ICML 2026\] Self-Guidance: Enhancing Neural Codecs via Decoder Manifold Alignment](../../ICML2026/audio_speech/self-guidance_enhancing_neural_codecs_via_decoder_manifold_alignment.md)
-- [\[ICLR 2026\] Physics-Informed Audio-Geometry-Grid Representation Learning for Universal Sound Source Localization](physics-informed_audio-geometry-grid_representation_learning_for_universal_sound.md)
-- [\[AAAI 2026\] Multi-granularity Interactive Attention Framework for Residual Hierarchical Pronunciation Assessment](../../AAAI2026/audio_speech/multi-granularity_interactive_attention_framework_for_residual_hierarchical_pron.md)
+- [\[ICLR 2026\] Efficient Audio-Visual Speech Separation with Discrete Lip Semantics and Multi-Scale Global-Local Attention](efficient_audio-visual_speech_separation_with_discrete_lip_semantics_and_multi-s.md)
+- [\[ICLR 2026\] AlignSep: Temporally-Aligned Video-Queried Sound Separation with Flow Matching](alignsep_temporally-aligned_video-queried_sound_separation_with_flow_matching.md)
 
 </div>
 

@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] OrderChain: Towards General Instruct-Tuning for Stimulating the Ordinal Understanding Ability of MLLM
 description: >-
-  [Multimodal VLM] This paper proposes OrderChain, a prompting paradigm that enhances the ordinal understanding capability of multimodal large language models (MLLMs) via task-aware prompts and a Range-Optimized Chain-of-T…
+  [Multimodal VLM] This paper proposes OrderChain, a prompting paradigm that enhances the ordinal understanding capability of multimodal large language models (MLLMs) via task-aware prompts and a Range-Optimized Chain-of-Thought (RO-CoT), achieving for the first time a unified ordinal regression model across diverse tasks.
 tags:
   - "Multimodal VLM"
 date: 2026-05-08
-content_hash: 53ce68b44eeba454
+content_hash: 33af641a9a22b037
 ---
 
 # OrderChain: Towards General Instruct-Tuning for Stimulating the Ordinal Understanding Ability of MLLM
@@ -138,10 +138,10 @@ A binary tree is used for tasks with fewer categories (e.g., 5-class aesthetic a
 ## Related Papers
 
 - [\[NeurIPS 2025\] In the Eye of MLLM: Benchmarking Egocentric Video Intent Understanding with Gaze-Guided Prompting](../../NeurIPS2025/multimodal_vlm/in_the_eye_of_mllm_benchmarking_egocentric_video_intent_understanding_with_gaze-.md)
-- [\[NeurIPS 2025\] RTV-Bench: Benchmarking MLLM Continuous Perception, Understanding and Reasoning through Real-Time Video](../../NeurIPS2025/multimodal_vlm/rtv-bench_benchmarking_mllm_continuous_perception_understanding_and_reasoning_th.md)
+- [\[ACL 2025\] Table Understanding and (Multimodal) LLMs: A Cross-Domain Case Study on Scientific Tables](../../ACL2025/multimodal_vlm/table_understanding_and_multimodal_llms_a_cross-domain_case_study_on_scientific_.md)
 - [\[ICCV 2025\] SC-Captioner: Improving Image Captioning with Self-Correction by Reinforcement Learning](sc-captioner_improving_image_captioning_with_self-correction_by_reinforcement_le.md)
-- [\[ICCV 2025\] Physics Context Builders: A Modular Framework for Physical Reasoning in Vision-Language Models](physics_context_builders_a_modular_framework_for_physical_reasoning_in_vision-la.md)
 - [\[ICCV 2025\] SCAN: Bootstrapping Contrastive Pre-training for Data Efficiency](scan_bootstrapping_contrastive_pre-training_for_data_efficiency.md)
+- [\[ICCV 2025\] Large Multi-modal Models Can Interpret Features in Large Multi-modal Models](large_multi-modal_models_can_interpret_features_in_large_multi-modal_models.md)
 
 </div>
 

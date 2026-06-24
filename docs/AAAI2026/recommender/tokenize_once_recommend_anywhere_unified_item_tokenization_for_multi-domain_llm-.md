@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Tokenize Once, Recommend Anywhere: Unified Item Tokenization for Multi-domain LLM-based Recommendation
 description: >-
-  [AAAI 2026][Recommender Systems] This paper proposes UniTok, a unified item tokenization framework that employs a customized Mixture-of-Experts architecture (TokenMoE) combined with shared codebooks to achieve efficient…
+  [AAAI 2026][Recommender Systems] This paper proposes UniTok, a unified item tokenization framework that employs a customized Mixture-of-Experts architecture (TokenMoE) combined with shared codebooks to achieve efficient discrete item representations across multiple domains, eliminating the need to train a separate tokenizer per domain, while maintaining cross-domain semantic balance through a mutual information calibration mechanism.
 tags:
   - "AAAI 2026"
   - "Recommender Systems"
 date: 2026-05-08
-content_hash: e500045a8a315b9c
+content_hash: 5995d1218d68f1a4
 ---
 
 # Tokenize Once, Recommend Anywhere: Unified Item Tokenization for Multi-domain LLM-based Recommendation
@@ -159,8 +159,8 @@ The paper provides three theoretical guarantees:
 
 - [\[AAAI 2026\] From IDs to Semantics: A Generative Framework for Cross-Domain Recommendation with Adaptive Semantic Tokenization](from_ids_to_semantics_a_generative_framework_for_cross-domain_recommendation_wit.md)
 - [\[AAAI 2026\] Align³GR: Unified Multi-Level Alignment for LLM-based Generative Recommendation](align3gr_unified_multi-level_alignment_for_llm-based_generat.md)
-- [\[AAAI 2026\] Tool4POI: A Tool-Augmented LLM Framework for Next POI Recommendation](tool4poi_a_tool-augmented_llm_framework_for_next_poi_recommendation.md)
 - [\[AAAI 2026\] CroPS: Improving Dense Retrieval with Cross-Perspective Positive Samples in Short-Video Search](crops_improving_dense_retrieval_with_cross-perspective_positive_samples_in_short.md)
+- [\[AAAI 2026\] Tool4POI: A Tool-Augmented LLM Framework for Next POI Recommendation](tool4poi_a_tool-augmented_llm_framework_for_next_poi_recommendation.md)
 - [\[AAAI 2026\] When Top-ranked Recommendations Fail: Modeling Multi-Granular Negative Feedback for Explainable and Robust Video Recommendation](when_top-ranked_recommendations_fail_modeling_multi-granular_negative_feedback_f.md)
 
 </div>

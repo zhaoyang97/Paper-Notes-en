@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VLBiMan: Vision-Language Anchored One-Shot Demonstration Enables Generalizable Bimanual Robotic Manipulation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] The VLBiMan framework is proposed to decompose a single demonstration into invariant and adaptive atomic skills through task-aware bimanual decomposition. It utilizes VLM vision-language anchoring to adapt to object positions and instance variations in new scenes, combined with kinematic-aware trajectory composition fo
+  [ICLR 2026][Robotics][Bimanual Manipulation] The VLBiMan framework is proposed to decompose a single demonstration into invariant and adaptive atomic skills through task-aware bimanual decomposition. It utilizes VLM vision-language anchoring to adapt to object positions and instance variations in new scenes, combined with kinematic-aware trajectory composition for bimanual coordination. On 10 complex bimanual tasks, it achieves an 85.3% success rate with only 1 demonstration…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Bimanual Manipulation"
+  - "One-Shot Demonstration"
+  - "VLM Anchoring"
+  - "Skill Decomposition"
+  - "Cross-Embodiment Transfer"
 date: 2026-05-08
-content_hash: fe4ae7a29c84138b
+content_hash: fcda1aa8efc93020
 ---
+
 # VLBiMan: Vision-Language Anchored One-Shot Demonstration Enables Generalizable Bimanual Robotic Manipulation
 
 **Conference**: ICLR 2026  

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Data-efficient Targeted Token-level Preference Optimization for LLM-based Text-to-Speech
 description: >-
-  [ACL 2026][Audio & Speech][TKTO] Academic paper note for Data-efficient Targeted Token-level Preference Optimization for LLM-based Text-to-Speech.
+  [ACL 2026][Audio & Speech][TKTO] To address the challenge of aligning ambiguous pronunciations in LLM-based TTS (e.g., the Japanese word "辛い" can be read as both *karai* and *tsurai*), the authors propose TKTO. This method first estimates the importance weight $w_t$ for each token using two contrastive KTO models trained with swapped labels. It then decomposes the utterance-level value function of KTO into token-level components and aggregates them with weights. This achieves…
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - TKTO
-  - KTO
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "TKTO"
+  - "KTO"
+  - "Unpaired Preference"
+  - "token-level reward"
+  - "Japanese ambiguous pronunciation"
 date: 2026-05-08
-content_hash: 298c1ea0d5843bbb
+content_hash: 2f7fe988438603cf
 ---
+
 # Data-efficient Targeted Token-level Preference Optimization for LLM-based Text-to-Speech
 
 **Conference**: ACL 2026  
@@ -142,11 +146,11 @@ NMOS subjective scores (Table 2): Base 4.09 < KTO 4.17 < TKTO 4.21. ABX preferen
 
 ## Related Papers
 
-- [\[ICLR 2026\] AVERE: Improving Audiovisual Emotion Reasoning with Preference Optimization](../../ICLR2026/audio_speech/avere_improving_audiovisual_emotion_reasoning_with_preference_optimization.md)
 - [\[ACL 2026\] Semi-Supervised Diseased Detection from Speech Dialogues with Multi-Level Data Modeling](semi-supervised_diseased_detection_from_speech_dialogues_with_multi-level_data_m.md)
+- [\[ICLR 2026\] AVERE: Improving Audiovisual Emotion Reasoning with Preference Optimization](../../ICLR2026/audio_speech/avere_improving_audiovisual_emotion_reasoning_with_preference_optimization.md)
+- [\[ICLR 2026\] TangoFlux: Super-Fast and Faithful Text-to-Audio Generation with Flow Matching and CLAP-Ranked Preference Optimization](../../ICLR2026/audio_speech/tangoflux_super_fast_and_faithful_text_to_audio_generation_with_flow_matching_an.md)
 - [\[ACL 2025\] Spark-TTS: An Efficient LLM-Based Text-to-Speech Model with Single-Stream Decoupled Speech Tokens](../../ACL2025/audio_speech/spark-tts_an_efficient_llm-based_text-to-speech_model_with_single-stream_decoupl.md)
 - [\[ICML 2026\] Sparse Tokens Suffice: Jailbreaking Audio Language Models via Token-Aware Gradient Optimization](../../ICML2026/audio_speech/sparse_tokens_suffice_jailbreaking_audio_language_models_via_token-aware_gradien.md)
-- [\[ICLR 2026\] VowelPrompt: Hearing Speech Emotions from Text via Vowel-level Prosodic Augmentation](../../ICLR2026/audio_speech/vowelprompt_hearing_speech_emotions_from_text_via_vowel-level_prosodic_augmentat.md)
 
 </div>
 

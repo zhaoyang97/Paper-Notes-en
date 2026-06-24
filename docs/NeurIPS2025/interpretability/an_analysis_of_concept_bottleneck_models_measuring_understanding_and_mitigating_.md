@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] An Analysis of Concept Bottleneck Models: Measuring, Understanding, and Mitigating the Impact of Noisy Annotations
 description: >-
-  [NeurIPS 2025][Interpretability][Concept Bottleneck Models] This paper presents the first systematic study on the impact of annotation noise on Concept Bottleneck Models (CBMs). It identifies approximately 23% of concept…
+  [NeurIPS 2025][Interpretability][Concept Bottleneck Models] This paper presents the first systematic study on the impact of annotation noise on Concept Bottleneck Models (CBMs). It identifies approximately 23% of concepts as "susceptible concepts" that drive the majority of performance degradation, and proposes a two-stage mitigation strategy combining SAM at training time and uncertainty-guided intervention at inference time to restore model robustness.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -11,7 +11,7 @@ tags:
   - "Sharpness-Aware Minimization"
   - "Uncertainty-Guided Intervention"
 date: 2026-05-08
-content_hash: 2564f4006716ff41
+content_hash: 04ea5618e144494d
 ---
 
 # An Analysis of Concept Bottleneck Models: Measuring, Understanding, and Mitigating the Impact of Noisy Annotations
@@ -131,9 +131,9 @@ At inference time, predictive entropy is used as a proxy for unobservable suscep
 
 - [\[ICLR 2026\] There Was Never a Bottleneck in Concept Bottleneck Models](../../ICLR2026/interpretability/there_was_never_a_bottleneck_in_concept_bottleneck_models.md)
 - [\[AAAI 2026\] Partially Shared Concept Bottleneck Models](../../AAAI2026/interpretability/partially_shared_concept_bottleneck_models.md)
-- [\[CVPR 2026\] Towards Faithful Multimodal Concept Bottleneck Models](../../CVPR2026/interpretability/towards_faithful_multimodal_concept_bottleneck_models.md)
+- [\[CVPR 2025\] Language Guided Concept Bottleneck Models for Interpretable Continual Learning](../../CVPR2025/interpretability/language_guided_concept_bottleneck_models_for_interpretable_continual_learning.md)
 - [\[CVPR 2026\] Rethinking Concept Bottleneck Models: From Pitfalls to Solutions](../../CVPR2026/interpretability/rethinking_concept_bottleneck_models_from_pitfalls_to_solutions.md)
-- [\[NeurIPS 2025\] Deep Value Benchmark: Measuring Whether Models Generalize Deep Values or Shallow Preferences](deep_value_benchmark_measuring_whether_models_generalize_deep_values_or_shallow_.md)
+- [\[ICLR 2026\] Debugging Concept Bottleneck Models through Removal and Retraining](../../ICLR2026/interpretability/debugging_concept_bottleneck_models_through_removal_and_retraining.md)
 
 </div>
 

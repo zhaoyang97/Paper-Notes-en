@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] The Model Agreed, But Didn't Learn: Diagnosing Surface Compliance in Large Language Models
 description: >-
-  [ACL 2026][Knowledge Editing][Paper Note] The SA-MCQ diagnostic framework is proposed to reveal the "surface compliance" phenomenon in knowledge editing—where editors achieve high scores on standard benchmarks but fail to truly overwrite internal beliefs. Models revert to original parametric memory in discriminative self-assessment, and sequential editing accu
+  [ACL 2026 Findings][Knowledge Editing][Surface Compliance] The SA-MCQ diagnostic framework is proposed to reveal the "surface compliance" phenomenon in knowledge editing—where editors achieve high scores on standard benchmarks but fail to truly overwrite internal beliefs. Models revert to original parametric memory in discriminative self-assessment, and sequential editing accumulates representational residue, leading to cognitive instability.
 tags:
-  - ACL 2026
-  - Knowledge Editing
+  - "ACL 2026 Findings"
+  - "Knowledge Editing"
+  - "Surface Compliance"
+  - "Self-Assessment"
+  - "Parametric Memory"
+  - "In-Context Learning"
 date: 2026-05-08
-content_hash: 9a2adb820df94ca1
+content_hash: 49161bbaeb059b56
 ---
+
 # The Model Agreed, But Didn't Learn: Diagnosing Surface Compliance in Large Language Models
 
 **Conference**: ACL 2026 Findings  
@@ -127,15 +132,15 @@ In practice, knowledge needs frequent updates, raising the question of whether e
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] Can Factual Opinions Be Edited (Manipulated) in Large Language Models?](can_factual_opinions_be_edited_manipulated_in_large_language_models.md)
+- [\[ICLR 2026\] Disentangling Knowledge Representations for Large Language Model Editing](../../ICLR2026/knowledge_editing/disentangling_knowledge_representations_for_large_language_model_editing.md)
 - [\[ICML 2026\] Reverse-Engineering Model Editing on Language Models](../../ICML2026/knowledge_editing/reverse-engineering_model_editing_on_language_models.md)
 - [\[ACL 2025\] Neuron-Level Sequential Editing for Large Language Models](../../ACL2025/knowledge_editing/neuron-level_sequential_editing_for_large_language_models.md)
 - [\[ICML 2026\] The Labyrinth and the Thread: Rethinking Regularizations in Sequential Knowledge Editing for Large Language Models](../../ICML2026/knowledge_editing/the_labyrinth_and_the_thread_rethinking_regularizations_in_sequential_knowledge_.md)
-- [\[ICML 2026\] Revisiting Parameter-Based Knowledge Editing in Large Language Models: Theoretical Limits and Empirical Evidence](../../ICML2026/knowledge_editing/revisiting_parameter-based_knowledge_editing_in_large_language_models_theoretica.md)
 
 </div>
 

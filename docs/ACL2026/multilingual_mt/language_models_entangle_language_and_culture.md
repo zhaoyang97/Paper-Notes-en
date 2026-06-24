@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Language Models Entangle Language and Culture
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] This paper evaluates multilingual LLMs using general advice-seeking questions constructed from the WildChat dataset. It discovers systematic differences in response quality and cultural context across different language queries—response quality in low-resource languages is significantly lower than in English. Furthermo
+  [ACL 2026][Multilingual & Machine Translation][Multilingual LLMs] This paper evaluates multilingual LLMs using general advice-seeking questions constructed from the WildChat dataset. It discovers systematic differences in response quality and cultural context across different language queries—response quality in low-resource languages is significantly lower than in English. Furthermore, the choice of language implicitly alters the cultural information utilized in responses. T…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Multilingual LLMs"
+  - "Cultural Bias"
+  - "Language-Culture Entanglement"
+  - "LLM Evaluation"
+  - "Fairness"
 date: 2026-05-08
-content_hash: 25f599ecd6802185
+content_hash: fec96d7475d638eb
 ---
+
 # Language Models Entangle Language and Culture
 
 **Conference**: ACL 2026  
@@ -149,8 +155,8 @@ All models performed best in English, while Hindi, Swahili, and Hebrew consisten
 - [\[ACL 2025\] Disentangling Language and Culture for Evaluating Multilingual Large Language Models](../../ACL2025/multilingual_mt/disentangle_language_culture.md)
 - [\[ACL 2026\] The GaoYao Benchmark: A Comprehensive Framework for Evaluating Multilingual and Multicultural Abilities of Large Language Models](the_gaoyao_benchmark_a_comprehensive_framework_for_evaluating_multilingual_and_m.md)
 - [\[ACL 2026\] Language on Demand, Knowledge at Core: Composing LLMs with Encoder-Decoder Translation Models for Extensible Multilinguality](language_on_demand_knowledge_at_core_composing_llms_with_encoder-decoder_transla.md)
+- [\[ACL 2026\] Modular Monolingual Adaptation using Pretrained Language Models](modular_monolingual_adaptation_using_pretrained_language_models.md)
 - [\[ACL 2026\] LLM-XTM: Enhancing Cross-Lingual Topic Models with Large Language Models](llm-xtm_enhancing_cross-lingual_topic_models_with_large_language_models.md)
-- [\[ACL 2026\] Multilingual Language Models Encode Script Over Linguistic Structure](multilingual_language_models_encode_script_over_linguistic_structure.md)
 
 </div>
 

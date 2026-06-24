@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Deep Legendre Transform
 description: >-
-  [NeurIPS 2025][Convex conjugate] DLT exploits the implicit Fenchel representation of convex conjugates, $f^*(\nabla f(x)) = \langle x, \nabla f(x) \rangle - f(x)$…
+  [NeurIPS 2025][Convex conjugate] DLT exploits the implicit Fenchel representation of convex conjugates, $f^*(\nabla f(x)) = \langle x, \nabla f(x) \rangle - f(x)$, to reformulate conjugate computation as a standard regression problem, thereby avoiding max/min-max optimization. The method also admits a posteriori error estimation, and when combined with KAN, yields exact closed-form solutions.
 tags:
   - "NeurIPS 2025"
   - "Convex conjugate"
@@ -12,7 +12,7 @@ tags:
   - "a posteriori error estimation"
   - "Hamilton-Jacobi equations"
 date: 2026-05-08
-content_hash: 0db0c824cfd62540
+content_hash: 2bf9a57c10c5b6dd
 ---
 
 # Deep Legendre Transform
@@ -139,7 +139,7 @@ DLT is applied to compute initial conditions for Hamilton-Jacobi equations via t
 - [\[NeurIPS 2025\] Uncertainty Estimation by Flexible Evidential Deep Learning](uncertainty_estimation_by_flexible_evidential_deep_learning.md)
 - [\[NeurIPS 2025\] Deep Learning for Continuous-Time Stochastic Control with Jumps](deep_learning_for_continuous-time_stochastic_control_with_jumps.md)
 - [\[NeurIPS 2025\] Deep Continuous-Time State-Space Models for Marked Event Sequences](deep_continuous-time_state-space_models_for_marked_event_sequences.md)
-- [\[ICML 2026\] Possibilistic Predictive Uncertainty for Deep Learning](../../ICML2026/others/possibilistic_predictive_uncertainty_for_deep_learning.md)
+- [\[CVPR 2025\] Potential Field Based Deep Metric Learning](../../CVPR2025/others/potential_field_based_deep_metric_learning.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AutoMetrics: Approximate Human Judgments with Automatically Generated Evaluators
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] AutoMetrics automatically converts fewer than 100 sparse human feedback signals (upvotes/downvotes, Likert scales, behavioral signals) into a set of interpretable evaluation metrics. It first generates candidate LLM-as-a-Judge criteria and retrieves from a MetricBank of 48 off-the-shelf metrics, then uses Partial Least
+  [ICLR 2026][LLM Evaluation][Automatic metric synthesis] AutoMetrics automatically converts fewer than 100 sparse human feedback signals (upvotes/downvotes, Likert scales, behavioral signals) into a set of interpretable evaluation metrics. It first generates candidate LLM-as-a-Judge criteria and retrieves from a MetricBank of 48 off-the-shelf metrics, then uses Partial Least Squares (PLS) regression to combine them into a composite metric that best fits human judgment. It impr…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Automatic metric synthesis"
+  - "LLM evaluators"
+  - "PLS regression"
+  - "Low-data evaluation"
+  - "Proxy rewards"
 date: 2026-05-08
-content_hash: 14f23b385d30555d
+content_hash: 4420bd48a230f9df
 ---
+
 # AutoMetrics: Approximate Human Judgments with Automatically Generated Evaluators
 
 **Conference**: ICLR 2026  
@@ -144,11 +150,11 @@ On τ-airline (a tool-calling agent), AutoMetrics learned 3 metrics from 25 trai
 
 ## Related Papers
 
+- [\[ICLR 2026\] The Ideation-Execution Gap: Execution Outcomes of LLM-Generated versus Human Research Ideas](the_ideation-execution_gap_execution_outcomes_of_llm-generated_versus_human_rese.md)
+- [\[ICLR 2026\] The Open Proof Corpus: A Large-Scale Study of LLM-Generated Mathematical Proofs](the_open_proof_corpus_a_large-scale_study_of_llm-generated_mathematical_proofs.md)
 - [\[ICLR 2026\] Foundational Automatic Evaluators: Scaling Multi-Task Generative Evaluator Training for Reasoning-Centric Domains](foundational_automatic_evaluators_scaling_multi-task_generative_evaluator_traini.md)
 - [\[ICLR 2026\] Human-LLM Collaborative Feature Engineering for Tabular Learning](human-llm_collaborative_feature_engineering_for_tabular_data.md)
-- [\[ACL 2025\] HPSS: Heuristic Prompting Strategy Search for LLM Evaluators](../../ACL2025/llm_evaluation/hpss_heuristic_prompting_strategy_search_for_llm_evaluators.md)
 - [\[ICLR 2026\] SimBench: Benchmarking the Ability of Large Language Models to Simulate Human Behaviors](simbench_benchmarking_the_ability_of_large_language_models_to_simulate_human_beh.md)
-- [\[ICML 2026\] From Human-Level AI Tales to AI Leveling Human Scales](../../ICML2026/llm_evaluation/from_human-level_ai_tales_to_ai_leveling_human_scales.md)
 
 </div>
 

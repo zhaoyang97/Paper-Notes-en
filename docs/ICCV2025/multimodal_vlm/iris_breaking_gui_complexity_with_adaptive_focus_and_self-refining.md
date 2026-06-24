@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Iris: Breaking GUI Complexity with Adaptive Focus and Self-Refining
 description: >-
-  [ICCV 2025][Multimodal VLM][GUI understanding] Iris introduces two core innovations — Information-Sensitive Cropping (ISC) and Self-Refining Dual Learning (SRDL) — achieving SOTA on multiple GUI understanding benchmarks…
+  [ICCV 2025][Multimodal VLM][GUI understanding] Iris introduces two core innovations — Information-Sensitive Cropping (ISC) and Self-Refining Dual Learning (SRDL) — achieving SOTA on multiple GUI understanding benchmarks with only 850K annotated samples, matching methods that use over 10× more data, while reducing inference time from 3 seconds to 1 second.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "self-refining dual learning"
   - "element grounding"
 date: 2026-05-08
-content_hash: f3cb5b2f37323798
+content_hash: 3091f8db543e5043
 ---
 
 # Iris: Breaking GUI Complexity with Adaptive Focus and Self-Refining
@@ -49,9 +49,9 @@ Iris is built on Qwen-VL as the base model and focuses on two complementary task
 
    The core idea of ISC is to perform adaptive cropping based on the distribution of visual information in GUI screenshots, such that each sub-image contains a balanced amount of information. The process consists of three steps:
 
-   - **Information detection**: Canny edge detection is applied to generate a binary information matrix $M \in \{0,1\}^{n \times m}$, where $M_{i,j}=1$ indicates the presence of meaningful visual information at that location (GUI elements typically exhibit clear boundaries).
-   - **Adaptive cropping**: A multi-scale sliding window approach is employed, starting from the minimum window size $k_{\min}$ with stride $\text{step}=\max(k/4, 32)$. The edge density of each window is computed, and the density threshold decreases as the window size grows: $\rho_k = \rho_{\min} / (k/k_{\min})^2$. When the density exceeds the threshold, the region is extracted and the processed area is zeroed out to avoid overlap. Window sizes increase geometrically by a factor $\alpha$.
-   - **Uniform rescaling**: All cropped sub-images are resized to a uniform resolution (e.g., $224 \times 224$), ensuring that each visual token carries meaningful information.
+    - **Information detection**: Canny edge detection is applied to generate a binary information matrix $M \in \{0,1\}^{n \times m}$, where $M_{i,j}=1$ indicates the presence of meaningful visual information at that location (GUI elements typically exhibit clear boundaries).
+    - **Adaptive cropping**: A multi-scale sliding window approach is employed, starting from the minimum window size $k_{\min}$ with stride $\text{step}=\max(k/4, 32)$. The edge density of each window is computed, and the density threshold decreases as the window size grows: $\rho_k = \rho_{\min} / (k/k_{\min})^2$. When the density exceeds the threshold, the region is extracted and the processed area is zeroed out to avoid overlap. Window sizes increase geometrically by a factor $\alpha$.
+    - **Uniform rescaling**: All cropped sub-images are resized to a uniform resolution (e.g., $224 \times 224$), ensuring that each visual token carries meaningful information.
 
    ISC requires less than 0.1 seconds on CPU and can be executed in parallel with GPU inference, introducing no additional latency. Compared to uniform partitioning, ISC uses far fewer tokens on simple interfaces and automatically increases tokens for complex interfaces, achieving a **300% efficiency improvement**.
 
@@ -59,11 +59,11 @@ Iris is built on Qwen-VL as the base model and focuses on two complementary task
 
    SRDL leverages the complementary relationship between Referring and Grounding to construct a self-reinforcing learning loop. The core pipeline is as follows:
 
-   - **Dual learning loop**: For each UI element in a GUI image, Grounding is first applied to obtain position $\mathbf{p}$; Referring then generates a description $D'$ from that position; Grounding is subsequently applied to $D'$ to obtain a new position. When consecutive positions stabilize (IoU exceeds threshold $\tau$), the sample is considered converged and added to the training set. Formally: $\text{Sim}(G(R(\mathbf{p})), \mathbf{p}) > \tau$.
+    - **Dual learning loop**: For each UI element in a GUI image, Grounding is first applied to obtain position $\mathbf{p}$; Referring then generates a description $D'$ from that position; Grounding is subsequently applied to $D'$ to obtain a new position. When consecutive positions stabilize (IoU exceeds threshold $\tau$), the sample is considered converged and added to the training set. Formally: $\text{Sim}(G(R(\mathbf{p})), \mathbf{p}) > \tau$.
 
-   - **Visual hard sample mining**: The information matrix $M$ from ISC is used to compute spectral entropy $H = -\sum_k p_k \log(p_k)$, where $p_k$ denotes the normalized energy of frequency components. High spectral entropy corresponds to visually complex regions; such images are prioritized and fed into the dual learning loop for additional training.
+    - **Visual hard sample mining**: The information matrix $M$ from ISC is used to compute spectral entropy $H = -\sum_k p_k \log(p_k)$, where $p_k$ denotes the normalized energy of frequency components. High spectral entropy corresponds to visually complex regions; such images are prioritized and fed into the dual learning loop for additional training.
 
-   - **Functional hard sample mining**: Based on historical model performance, samples on which the model performs poorly in functional description understanding are collected as $\mathcal{D}_{\text{hard}}$. An LLM is then used to generate description variants $\{D_i^{(1)}, D_i^{(2)}, \ldots, D_i^{(n)}\}$, which serve as synthetic functional hard samples fed into the dual learning loop.
+    - **Functional hard sample mining**: Based on historical model performance, samples on which the model performs poorly in functional description understanding are collected as $\mathcal{D}_{\text{hard}}$. An LLM is then used to generate description variants $\{D_i^{(1)}, D_i^{(2)}, \ldots, D_i^{(n)}\}$, which serve as synthetic functional hard samples fed into the dual learning loop.
 
    SRDL ultimately generates approximately **3M self-annotated samples**, yielding a **10% accuracy improvement** without requiring additional human annotation.
 
@@ -140,11 +140,11 @@ Training follows the SeeClick pipeline, initialized from Qwen-VL. Initial traini
 
 ## Related Papers
 
-- [\[ICCV 2025\] NegRefine: Refining Negative Label-Based Zero-Shot OOD Detection](negrefine_refining_negative_label-based_zero-shot_ood_detection.md)
+- [\[CVPR 2026\] GUI-SAGE: Enhancing GUI Automation with Self-Explanatory Learning](../../CVPR2026/multimodal_vlm/gui-sage_enhancing_gui_automation_with_self-explanatory_learning.md)
 - [\[ICCV 2025\] Acknowledging Focus Ambiguity in Visual Questions](acknowledging_focus_ambiguity_in_visual_questions.md)
-- [\[ICML 2026\] Breaking Dual Bottlenecks: Evolving Unified Multimodal Models into Self-Adaptive Interleaved Visual Reasoners](../../ICML2026/multimodal_vlm/breaking_dual_bottlenecks_evolving_unified_multimodal_models_into_self-adaptive_.md)
+- [\[ICCV 2025\] NegRefine: Refining Negative Label-Based Zero-Shot OOD Detection](negrefine_refining_negative_label-based_zero-shot_ood_detection.md)
+- [\[ICCV 2025\] VQ-FocusAmbiguity: Acknowledging Focus Ambiguity in Visual Questions](vq_focusambiguity_acknowledging_focus_ambiguity_visual_questions.md)
 - [\[ICCV 2025\] Mastering Collaborative Multi-modal Data Selection: A Focus on Informativeness, Uniqueness, and Representativeness](mastering_collaborative_multi-modal_data_selection_a_focus_on_informativeness_un.md)
-- [\[NeurIPS 2025\] GUI-Rise: Structured Reasoning and History Summarization for GUI Navigation](../../NeurIPS2025/multimodal_vlm/gui-rise_structured_reasoning_and_history_summarization_for_gui_navigation.md)
 
 </div>
 

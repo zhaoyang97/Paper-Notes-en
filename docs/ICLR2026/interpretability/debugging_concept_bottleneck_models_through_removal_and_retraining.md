@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Debugging Concept Bottleneck Models through Removal and Retraining
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] To address the issue of Concept Bottleneck Models (CBMs) learning spurious concepts and systematic misalignment with expert reasoning, this paper proposes a "Removal + Retraining" two-step debugging framework. It introduces CBDebug, which converts expert concept-level feedback into sample-level auxiliary labels and use
+  [ICLR2026][Interpretability][Concept Bottleneck Models] To address the issue of Concept Bottleneck Models (CBMs) learning spurious concepts and systematic misalignment with expert reasoning, this paper proposes a "Removal + Retraining" two-step debugging framework. It introduces CBDebug, which converts expert concept-level feedback into sample-level auxiliary labels and uses permutation weighting and targeted augmentation to eliminate model dependence on spurious concepts. On…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR2026"
+  - "Interpretability"
+  - "Concept Bottleneck Models"
+  - "Interpretability Debugging"
+  - "Spurious Correlation"
+  - "Bias Mitigation"
+  - "Human-in-the-loop"
 date: 2026-05-08
-content_hash: af4d790d0ec2aef6
+content_hash: 0716394447c083d7
 ---
+
 # Debugging Concept Bottleneck Models through Removal and Retraining
 
 **Conference**: ICLR2026  
@@ -153,10 +159,10 @@ Using an LLM with temperature 0 to make binary spuriousness judgments for each t
 ## Related Papers
 
 - [\[ICLR 2026\] There Was Never a Bottleneck in Concept Bottleneck Models](there_was_never_a_bottleneck_in_concept_bottleneck_models.md)
+- [\[AAAI 2026\] Partially Shared Concept Bottleneck Models](../../AAAI2026/interpretability/partially_shared_concept_bottleneck_models.md)
+- [\[CVPR 2026\] Rethinking Concept Bottleneck Models: From Pitfalls to Solutions](../../CVPR2026/interpretability/rethinking_concept_bottleneck_models_from_pitfalls_to_solutions.md)
+- [\[ICLR 2026\] Concept-TRAK: Understanding how diffusion models learn concepts through concept attribution](concept-trak_understanding_how_diffusion_models_learn_concepts_through_concept_a.md)
 - [\[ICLR 2026\] Concepts' Information Bottleneck Models](concepts_information_bottleneck_models.md)
-- [\[ICLR 2026\] Explainable Mixture Models through Differentiable Rule Learning](explainable_mixture_models_through_differentiable_rule_learning.md)
-- [\[ICLR 2026\] GAVEL: Towards Rule-Based Safety through Activation Monitoring](gavel_towards_rule-based_safety_through_activation_monitoring.md)
-- [\[ICLR 2026\] Decomposition of Concept-Level Rules in Visual Scenes](decomposition_of_concept-level_rules_in_visual_scenes.md)
 
 </div>
 

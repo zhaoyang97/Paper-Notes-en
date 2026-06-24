@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] NVGS: Neural Visibility for Occlusion Culling in 3D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] NVGS distills the viewpoint-dependent visibility of all Gaussians within a 3DGS asset into a shared small MLP. This MLP is queried prior to rasterization to discard occluded Gaussians. Coupled with an instantiation-based rasterizer that only processes surviving Gaussians, the system enables real-time rendering of compl
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] NVGS distills the viewpoint-dependent visibility of all Gaussians within a 3DGS asset into a shared small MLP. This MLP is queried prior to rasterization to discard occluded Gaussians. Coupled with an instantiation-based rasterizer that only processes surviving Gaussians, the system enables real-time rendering of complex scenes composed of hundreds of millions of Gaussians while reducing VRAM usage to approximately one-fourth of V…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Occlusion Culling"
+  - "Neural Visibility"
+  - "Instanced Rasterization"
+  - "Large-scale Rendering"
 date: 2026-05-08
-content_hash: 6339375cc370cb75
+content_hash: 6af278f9dbf051b1
 ---
+
 # NVGS: Neural Visibility for Occlusion Culling in 3D Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -138,9 +144,9 @@ FPS measured at max distance to highlight viewpoint impact; FLIP averaged over d
 
 ## Related Papers
 
+- [\[CVPR 2026\] Proxy-GS: Unified Occlusion Priors for Training and Inference in Structured 3D Gaussian Splatting](proxy-gs_unified_occlusion_priors_for_training_and_inference_in_structured_3d_ga.md)
 - [\[CVPR 2026\] Uncertainty-driven 3D Gaussian Splatting Active Mapping via Anisotropic Visibility Field](uncertainty-driven_3d_gaussian_splatting_active_mapping_via_anisotropic_visibili.md)
 - [\[CVPR 2026\] VAD-GS: Visibility-Aware Densification for 3D Gaussian Splatting in Dynamic Urban Scenes](vad-gs_visibility-aware_densification_for_3d_gaussian_splatting_in_dynamic_urban.md)
-- [\[CVPR 2026\] Proxy-GS: Unified Occlusion Priors for Training and Inference in Structured 3D Gaussian Splatting](proxy-gs_unified_occlusion_priors_for_training_and_inference_in_structured_3d_ga.md)
 - [\[CVPR 2026\] Neural Gabor Splatting: Enhanced Gaussian Splatting with Neural Gabor for High-frequency Surface Reconstruction](neural_gabor_splatting.md)
 - [\[AAAI 2026\] Surface-Based Visibility-Guided Uncertainty for Continuous Active 3D Neural Reconstruction](../../AAAI2026/3d_vision/surface-based_visibility-guided_uncertainty_for_continuous_active_3d_neural_reco.md)
 

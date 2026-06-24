@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Thinking as Society: Multi-Social-Agent Self-Distillation for Multimodal Misinformation Detection
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] This work utilizes a group of "social user" MLLM agents to perform truthfulness judgments on multimodal content from different stances. Their collective feedback is distilled into high-quality "Social Chain-of-Thought" (SCoT) preference data. Using a preference optimization algorithm, SCPO, which employs "social misjud
+  [ICLR 2026][Multimodal VLM][Multimodal Misinformation Detection] This work utilizes a group of "social user" MLLM agents to perform truthfulness judgments on multimodal content from different stances. Their collective feedback is distilled into high-quality "Social Chain-of-Thought" (SCoT) preference data. Using a preference optimization algorithm, SCPO, which employs "social misjudgment degree" as a verifiable weight, the collective reasoning capabilities are internalized in…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Misinformation Detection"
+  - "Social Agents"
+  - "Self-Distillation"
+  - "Social Chain-of-Thought"
+  - "Preference Optimization"
 date: 2026-05-08
-content_hash: 245a9c4c8642580b
+content_hash: b27ae0bf79344b81
 ---
+
 # Thinking as Society: Multi-Social-Agent Self-Distillation for Multimodal Misinformation Detection
 
 **Conference**: ICLR 2026  

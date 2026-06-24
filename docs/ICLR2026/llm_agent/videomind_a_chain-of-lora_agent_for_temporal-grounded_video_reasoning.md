@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VideoMind: A Chain-of-LoRA Agent for Temporal-Grounded Video Reasoning
 description: >-
-  [ICLR 2026][LLM Agent][LoRA] VideoMind is proposed as a role-based video-language agent framework that achieves temporal-grounded video reasoning through the collaboration of four roles: Planner, Grounder, Verifier, and Answerer. The core innovation is the Chain-of-LoRA mechanism, which enables seamless role switching on a unified base model by to
+  [ICLR 2026][LLM Agent][Video Reasoning] VideoMind is proposed as a role-based video-language agent framework that achieves temporal-grounded video reasoning through the collaboration of four roles: Planner, Grounder, Verifier, and Answerer. The core innovation is the Chain-of-LoRA mechanism, which enables seamless role switching on a unified base model by toggling LoRA adapters. The 2B model variant outperforms GPT-4o and Gemini-1.5-Pro.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - LoRA
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Video Reasoning"
+  - "Temporal Grounding"
+  - "LoRA"
+  - "Multimodal Agent"
+  - "Video Question Answering"
 date: 2026-05-08
-content_hash: e0ee11ebe7c590b6
+content_hash: eb5c48dfde043854
 ---
+
 # VideoMind: A Chain-of-LoRA Agent for Temporal-Grounded Video Reasoning
 
 **Conference**: ICLR 2026  
@@ -163,11 +168,11 @@ Chain-of-LoRA achieves the same performance as the 16.6G All-Distributed setup w
 
 ## Related Papers
 
+- [\[ICLR 2026\] Memory-T1: Reinforcement Learning for Temporal Reasoning in Multi-session Agents](memory-t1_reinforcement_learning_for_temporal_reasoning_in_multi-session_agents.md)
 - [\[ACL 2026\] ChartAgent: A Multimodal Agent for Visually Grounded Reasoning in Complex Chart Question Answering](../../ACL2026/llm_agent/chartagent_a_multimodal_agent_for_visually_grounded_reasoning_in_complex_chart_q.md)
 - [\[CVPR 2026\] Refer-Agent: A Collaborative Multi-Agent System with Reasoning and Reflection for Referring Video Object Segmentation](../../CVPR2026/llm_agent/refer-agent_a_collaborative_multi-agent_system_with_reasoning_and_reflection_for.md)
-- [\[ICLR 2026\] SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents](simuhome_a_temporal-_and_environment-aware_benchmark_for_smart_home_llm_agents.md)
 - [\[ACL 2026\] SafeMCP: Proactive Power Regulation for LLM Agent Defense via Environment-Grounded Look-Ahead Reasoning](../../ACL2026/llm_agent/safemcp_proactive_power_regulation_for_llm_agent_defense_via_environment-grounde.md)
-- [\[ICLR 2026\] WebFactory: Automated Compression of Foundational Language Intelligence into Grounded Web Agents](webfactory_automated_compression_of_foundational_language_intelligence_into_grou.md)
+- [\[ICLR 2026\] SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents](simuhome_a_temporal-_and_environment-aware_benchmark_for_smart_home_llm_agents.md)
 
 </div>
 

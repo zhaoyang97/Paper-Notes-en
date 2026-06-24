@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Aggregation: Guiding Clients in Heterogeneous Federated Learning
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] FedDRM upgrades the server's role from a "passive aggregator" to an "intelligent router"—utilizing Density Ratio Models (DRM) and Empirical Likelihood (EL) to model heterogeneity as a learnable client classification task. This allows the system to train high-quality local models while enabling the server to route new q
+  [ICLR2026][Optimization][Federated Learning] FedDRM upgrades the server's role from a "passive aggregator" to an "intelligent router"—utilizing Density Ratio Models (DRM) and Empirical Likelihood (EL) to model heterogeneity as a learnable client classification task. This allows the system to train high-quality local models while enabling the server to route new queries to the most specialized client, improving both local and system-level routing accuracy on CIFAR and real-wor…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "Federated Learning"
+  - "Statistical Heterogeneity"
+  - "Density Ratio Model"
+  - "Empirical Likelihood"
+  - "Query Routing"
 date: 2026-05-08
-content_hash: 783d89aef0123083
+content_hash: bc63ca0e836859c5
 ---
+
 # Beyond Aggregation: Guiding Clients in Heterogeneous Federated Learning
 
 **Conference**: ICLR2026  
@@ -127,6 +133,7 @@ FedDRM consistently outperforms baselines (Ditto, FedRep, FedBABU, etc.) in both
 - Value: ⭐⭐⭐⭐ Opens a practical path for "heterogeneity as a resource," especially for multi-center clinical FL.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -135,7 +142,7 @@ FedDRM consistently outperforms baselines (Ditto, FedRep, FedBABU, etc.) in both
 - [\[ICLR 2026\] Byzantine-Robust Federated Learning with Learnable Aggregation Weights](byzantine-robust_federated_learning_with_learnable_aggregation_weights.md)
 - [\[ICML 2026\] HO-SFL: Hybrid-Order Split Federated Learning with Backprop-Free Clients and Dimension-Free Aggregation](../../ICML2026/optimization/ho-sfl_hybrid-order_split_federated_learning_with_backprop-free_clients_and_dime.md)
 - [\[ICLR 2026\] FedDAG: Clustered Federated Learning via Global Data and Gradient Integration for Heterogeneous Environments](feddag_clustered_federated_learning_via_global_data_and_gradient_integration_for.md)
-- [\[AAAI 2026\] SMoFi: Step-wise Momentum Fusion for Split Federated Learning on Heterogeneous Data](../../AAAI2026/optimization/smofi_step-wise_momentum_fusion_for_split_federated_learning_on_heterogeneous_da.md)
+- [\[ICML 2026\] Delayed Momentum Aggregation: Communication-efficient Byzantine-robust Federated Learning with Partial Participation](../../ICML2026/optimization/delayed_momentum_aggregation_communication-efficient_byzantine-robust_federated_.md)
 
 </div>
 

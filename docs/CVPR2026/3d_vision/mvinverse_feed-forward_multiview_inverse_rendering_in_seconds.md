@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MVInverse: Feed-forward Multiview Inverse Rendering in Seconds
 description: >-
-  [CVPR 2026][3D Vision][SVBRDF] MVInverse utilizes a VGGT-style alternating attention Transformer to simultaneously predict per-view consistent albedo, metallic, roughness, normal, and diffuse shading from multiview RGB sequences in a single feed-forward pass. This compresses multiview inverse rendering—which previously required minutes to hours of p
+  [CVPR 2026][3D Vision][Multiview Inverse Rendering] MVInverse utilizes a VGGT-style alternating attention Transformer to simultaneously predict per-view consistent albedo, metallic, roughness, normal, and diffuse shading from multiview RGB sequences in a single feed-forward pass. This compresses multiview inverse rendering—which previously required minutes to hours of per-scene optimization—into seconds, while leveraging self-supervised consistency fine-tuning to ensure stabl…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - SVBRDF
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Multiview Inverse Rendering"
+  - "Feed-forward Prediction"
+  - "Alternating Attention"
+  - "SVBRDF"
+  - "Consistency Fine-tuning"
 date: 2026-05-08
-content_hash: 7c21aa8a9ff961e8
+content_hash: f292d5b5be02af0e
 ---
+
 # MVInverse: Feed-forward Multiview Inverse Rendering in Seconds
 
 **Conference**: CVPR 2026  
@@ -137,6 +142,7 @@ Multiview consistency (Hypersim, cross-view re-projection RMSE):
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -145,7 +151,7 @@ Multiview consistency (Hypersim, cross-view re-projection RMSE):
 - [\[CVPR 2026\] Particulate: Feed-Forward 3D Object Articulation](particulate_feed-forward_3d_object_articulation.md)
 - [\[CVPR 2026\] Z-Order Transformer for Feed-Forward Gaussian Splatting](z-order_transformer_for_feed-forward_gaussian_splatting.md)
 - [\[CVPR 2026\] PanoVGGT: Feed-Forward 3D Reconstruction from Panoramic Imagery](panovggt_feed-forward_3d_reconstruction_from_panoramic_imagery.md)
-- [\[CVPR 2026\] SGS-Intrinsic: Semantic-Invariant Gaussian Splatting for Sparse-View Indoor Inverse Rendering](sgs-intrinsic_semantic-invariant_gaussian_splatting_for_sparse-view_indoor_invers.md)
+- [\[CVPR 2026\] Any4D: Unified Feed-Forward Metric 4D Reconstruction](any4d_unified_feed-forward_metric_4d_reconstruction.md)
 
 </div>
 

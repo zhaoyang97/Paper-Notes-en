@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MusicDET: Zero-Shot AI-Generated Music Detection
 description: >-
-  [ICML 2026][Audio & Speech][Paper Note] MusicDET redefines "AI-Generated Music (AIGM) detection" as a zero-shot problem trained exclusively on real music. By employing sub-band decomposition, intra-band normalizing flows, and a global normalizing flow to learn the probability distribution of real music energy spectrograms, the model utilizes likelihood value
+  [ICML 2026][Audio & Speech][AI-Generated Music Detection] MusicDET redefines "AI-Generated Music (AIGM) detection" as a zero-shot problem trained exclusively on real music. By employing sub-band decomposition, intra-band normalizing flows, and a global normalizing flow to learn the probability distribution of real music energy spectrograms, the model utilizes likelihood values as "authenticity scores." It reduces the average EER from ~17% to 4.51% (zero-shot) and 0.89% (with…
 tags:
-  - ICML 2026
-  - Audio & Speech
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "AI-Generated Music Detection"
+  - "Zero-Shot Detection"
+  - "Normalizing Flows"
+  - "Sub-band Decomposition"
+  - "Likelihood Estimation"
 date: 2026-05-08
-content_hash: 784622fc8f4c896f
+content_hash: e038df38101c11e5
 ---
+
 # MusicDET: Zero-Shot AI-Generated Music Detection
 
 **Conference**: ICML 2026  
@@ -149,9 +155,9 @@ The zero-shot version maintains extreme consistency across subsets (EER 2.73–3
 
 - [\[ICML 2026\] Probing Token Spaces under Generator Shift in AI-Generated Music Detection](probing_token_spaces_under_generator_shift_in_ai-generated_music_detection.md)
 - [\[ICML 2026\] Polyphonia: Zero-Shot Timbre Transfer in Polyphonic Music with Acoustic-Informed Attention Calibration](polyphonia_zero-shot_timbre_transfer_in_polyphonic_music_with_acoustic-informed_.md)
+- [\[ICML 2026\] VocSim: A Training-Free Benchmark for Zero-Shot Content Identity Recognition for Single-Source Audio](vocsim_a_training-free_benchmark_for_zero-shot_content_identity_in_single-source.md)
 - [\[ACL 2025\] Double Entendre: Robust Audio-Based AI-Generated Lyrics Detection via Multi-View Fusion](../../ACL2025/audio_speech/double_entendre_robust_audio-based_ai-generated_lyrics_detection_via_multi-view_.md)
 - [\[ACL 2025\] ControlSpeech: Towards Simultaneous and Independent Zero-shot Speaker Cloning and Zero-shot Language Style Control](../../ACL2025/audio_speech/controlspeech_zero_shot.md)
-- [\[ACL 2025\] Zero-Shot Text-to-Speech for Vietnamese](../../ACL2025/audio_speech/zero-shot_text-to-speech_for_vietnamese.md)
 
 </div>
 

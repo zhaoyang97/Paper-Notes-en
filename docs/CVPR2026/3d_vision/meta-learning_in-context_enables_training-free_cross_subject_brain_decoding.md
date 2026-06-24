@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding
 description: >-
-  [CVPR 2026][Medical Imaging][fMRI] The proposed BrainCoDec framework achieves fMRI visual decoding that generalizes to new subjects without fine-tuning through two-stage hierarchical in-context learning (estimating encoder parameters for each voxel first, then performing functional inversion via cross-voxel aggregation). It improves Top-1 retrieval accu
+  [CVPR 2026][3D Vision][Brain Decoding] The proposed BrainCoDec framework achieves fMRI visual decoding that generalizes to new subjects without fine-tuning through two-stage hierarchical in-context learning (estimating encoder parameters for each voxel first, then performing functional inversion via cross-voxel aggregation). It improves Top-1 retrieval accuracy from MindEye2's 3.9% to 22.7%.
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - fMRI
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Brain Decoding"
+  - "Meta-learning"
+  - "In-Context Learning"
+  - "fMRI"
+  - "Cross-subject Generalization"
 date: 2026-05-08
-content_hash: 844315695f3e4469
+content_hash: 110dbc22ead3c397
 ---
+
 # Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding
 
 **Conference**: CVPR 2026  
@@ -143,11 +148,11 @@ Training utilizes a hybrid cosine-contrastive loss $\mathcal{L} = \mathcal{L}_{\
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Meta-Learning an In-Context Transformer Model of Human Higher Visual Cortex](../../NeurIPS2025/medical_imaging/meta-learning_an_in-context_transformer_model_of_human_higher_visual_cortex.md)
-- [\[AAAI 2026\] CAT-Net: A Cross-Attention Tone Network for Cross-Subject EEG-EMG Fusion Tone Decoding](../../AAAI2026/medical_imaging/cat-net_a_cross-attention_tone_network_for_cross-subject_eeg-emg_fusion_tone_dec.md)
-- [\[NeurIPS 2025\] MoRE-Brain: Routed Mixture of Experts for Interpretable and Generalizable Cross-Subject fMRI Visual Decoding](../../NeurIPS2025/medical_imaging/more-brain_routed_mixture_of_experts_for_interpretable_and_generalizable_cross-s.md)
-- [\[AAAI 2026\] MindCross: Fast New Subject Adaptation with Limited Data for Cross-subject Video Reconstruction from Brain Signals](../../AAAI2026/medical_imaging/mindcross_fast_new_subject_adaptation_with_limited_data_for_cross-subject_video_.md)
-- [\[NeurIPS 2025\] Zebra: Towards Zero-Shot Cross-Subject Generalization for Universal Brain Visual Decoding](../../NeurIPS2025/medical_imaging/zebra_towards_zero-shot_cross-subject_generalization_for_universal_brain_visual_.md)
+- [\[CVPR 2026\] More Natural, More Real: Object-aware Gaussian Splatting for 3D Visual Decoding from Human Brain](more_natural_more_real_object-aware_gaussian_splatting_for_3d_visual_decoding_fr.md)
+- [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](deformation-based_in-context_learning_for_point_cloud_understanding.md)
+- [\[CVPR 2026\] tttLRM: Test-Time Training for Long Context and Autoregressive 3D Reconstruction](tttlrm_test-time_training_for_long_context_and_autoregressive_3d_reconstruction.md)
+- [\[CVPR 2026\] Fast3Dcache: Training-free 3D Geometry Synthesis Acceleration](fast3dcache_training-free_3d_geometry_synthesis_acceleration.md)
+- [\[CVPR 2026\] B³-Seg: Camera-Free, Training-Free 3DGS Segmentation via Analytic EIG and Beta-Bernoulli Bayesian Updates](b3-seg_camera-free_training-free_3dgs_segmentation_via_analytic_eig_and_beta-ber.md)
 
 </div>
 

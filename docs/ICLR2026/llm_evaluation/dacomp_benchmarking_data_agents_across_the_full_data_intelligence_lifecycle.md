@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DAComp: Benchmarking Data Agents across the Full Data Intelligence Lifecycle
 description: >-
-  [ICLR 2026][LLM Evaluation][LLM-judge] DAComp is a 210-task benchmark covering the enterprise-grade "full data intelligence lifecycle." It decomposes data intelligence into a "Hard axis" for warehouse-level Data Engineering (DE) and a "Soft axis" for open-ended Data Analysis (DA). These are evaluated using executable multi-metrics and hierarchical rubric-ba
+  [ICLR2026][LLM Evaluation][Data Agents] DAComp is a 210-task benchmark covering the enterprise-grade "full data intelligence lifecycle." It decomposes data intelligence into a "Hard axis" for warehouse-level Data Engineering (DE) and a "Soft axis" for open-ended Data Analysis (DA). These are evaluated using executable multi-metrics and hierarchical rubric-based LLM-judging, respectively. The study found that even GPT-5's strict success rate on DE is only 20%…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - LLM-judge
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "Data Agents"
+  - "Data Engineering"
+  - "Data Analysis"
+  - "Warehouse-level Evaluation"
+  - "LLM-judge"
 date: 2026-05-08
-content_hash: 03d08e6f04b6ec18
+content_hash: 8fcb168a139bbc34
 ---
+
 # DAComp: Benchmarking Data Agents across the Full Data Intelligence Lifecycle
 
 **Conference**: ICLR2026  
@@ -121,15 +126,15 @@ In DA tasks, most models scored below 50%. Visualization scores were universally
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Detecting Data Contamination in LLMs via In-Context Learning](detecting_data_contamination_in_llms_via_in-context_learning.md)
+- [\[ICLR 2026\] Detecting Data Contamination from Reinforcement Learning Post-training for Large Language Models](detecting_data_contamination_from_reinforcement_learning_post-training_for_large.md)
 - [\[ICLR 2026\] ASIDE: Architectural Separation of Instructions and Data in Language Models](aside_architectural_separation_of_instructions_and_data_in_language_models.md)
 - [\[ICML 2026\] Nonparametric LLM Evaluation from Preference Data](../../ICML2026/llm_evaluation/nonparametric_llm_evaluation_from_preference_data.md)
 - [\[ICLR 2026\] Rethinking LLM Evaluation: Can We Evaluate LLMs with 200× Less Data?](rethinking_llm_evaluation_can_we_evaluate_llms_with_200_less_data.md)
-- [\[ICLR 2026\] DARE-bench: Evaluating Modeling and Instruction Fidelity of LLMs in Data Science](dare-bench_evaluating_modeling_and_instruction_fidelity_of_llms_in_data_science.md)
 
 </div>
 

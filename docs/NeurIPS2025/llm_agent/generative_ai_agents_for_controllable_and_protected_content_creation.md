@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generative AI Agents for Controllable and Protected Content Creation
 description: >-
-  [NeurIPS 2025][LLM Agent][Multi-agent systems] This paper proposes a multi-agent generative framework that addresses controllability and copyright protection in a unified manner through the collaboration of five speciali…
+  [NeurIPS 2025][LLM Agent][Multi-agent systems] This paper proposes a multi-agent generative framework that addresses controllability and copyright protection in a unified manner through the collaboration of five specialized agents — Director/Planner, Generator, Reviewer, Integration, and Protection — augmented with human-in-the-loop feedback.
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "watermarking"
   - "creative AI pipeline"
 date: 2026-05-08
-content_hash: 4779adba20b2f80e
+content_hash: 70a5bd57b4037637
 ---
 
 # Generative AI Agents for Controllable and Protected Content Creation
@@ -160,11 +160,11 @@ A user study is planned with 30–50 participants from creative domains, compari
 
 ## Related Papers
 
+- [\[ACL 2025\] BookWorld: From Novels to Interactive Agent Societies for Story Creation](../../ACL2025/llm_agent/bookworld_from_novels_to_interactive_agent_societies_for_story_creation.md)
+- [\[ICML 2025\] AdvAgent: Controllable Blackbox Red-teaming on Web Agents](../../ICML2025/llm_agent/advagent_controllable_blackbox_red-teaming_on_web_agents.md)
 - [\[NeurIPS 2025\] What AI Speaks for Your Community: Polling AI Agents for Public Opinion on Data Center Projects](what_ai_speaks_for_your_community_polling_ai_agents_for_public_opinion_on_data_c.md)
-- [\[NeurIPS 2025\] SuffixDecoding: Extreme Speculative Decoding for Emerging AI Applications](suffixdecoding_extreme_speculative_decoding_for_emerging_ai_applications.md)
-- [\[ICLR 2026\] PerfGuard: A Performance-Aware Agent for Visual Content Generation](../../ICLR2026/llm_agent/radiometrically_consistent_gaussian_surfels_for_inverse_rendering.md)
-- [\[NeurIPS 2025\] LC-Opt: Benchmarking Reinforcement Learning and Agentic AI for End-to-End Liquid Cooling Optimization in Data Centers](lc-opt_benchmarking_reinforcement_learning_and_agentic_ai_for_end-to-end_liquid_.md)
-- [\[ICLR 2026\] The Controllability Trap: A Governance Framework for Military AI Agents](../../ICLR2026/llm_agent/the_controllability_trap_a_governance_framework_for_military_ai_systems.md)
+- [\[ICLR 2026\] ViMo: A Generative Visual GUI World Model for App Agents](../../ICLR2026/llm_agent/vimo_a_generative_visual_gui_world_model_for_app_agents.md)
+- [\[ICLR 2026\] MemGen: Weaving Generative Latent Memory for Self-Evolving Agents](../../ICLR2026/llm_agent/memgen_weaving_generative_latent_memory_for_self-evolving_agents.md)
 
 </div>
 

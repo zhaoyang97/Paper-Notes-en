@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Vision Transformers for Cosmological Fields: Application to Weak Lensing Mass Maps
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][Vision Transformer] This work presents the first systematic application of Vision Transformers (ViT and Swin Transformer) to constraining cosmological parameters ($\Omega_m$…
+  [NeurIPS 2025][Physics & Scientific Computing][Vision Transformer] This work presents the first systematic application of Vision Transformers (ViT and Swin Transformer) to constraining cosmological parameters ($\Omega_m$ and $S_8$) from weak lensing convergence maps, comparing attention-based architectures against CNNs within a simulation-based inference framework.
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "Swin Transformer"
   - "Simulation-Based Inference"
 date: 2026-05-08
-content_hash: 54bd74815537a1c0
+content_hash: 19bfa8480a510f15
 ---
 
 # Vision Transformers for Cosmological Fields: Application to Weak Lensing Mass Maps
@@ -139,9 +139,9 @@ This work presents the first systematic application of Vision Transformers (ViT 
 
 - [\[NeurIPS 2025\] Neural Deprojection of Galaxy Stellar Mass Profiles](neural_deprojection_of_galaxy_stellar_mass_profiles.md)
 - [\[NeurIPS 2025\] Quantum Doubly Stochastic Transformers](quantum_doubly_stochastic_transformers.md)
+- [\[CVPR 2025\] Accurate Differential Operators for Hybrid Neural Fields](../../CVPR2025/physics/accurate_differential_operators_for_hybrid_neural_fields.md)
+- [\[ICML 2026\] Interpretable Equivariant Marks for Contrastive Cosmological Inference](../../ICML2026/physics/interpretable_neural_marked_statistics_for_cosmological_inference.md)
 - [\[NeurIPS 2025\] AstroCo: Self-Supervised Conformer-Style Transformers for Light-Curve Embeddings](astroco_self-supervised_conformer-style_transformers_for_light-curve_embeddings.md)
-- [\[ICML 2026\] Distribution Transformers: Fast Approximate Bayesian Inference With On-The-Fly Prior Adaptation](../../ICML2026/physics/distribution_transformers_fast_approximate_bayesian_inference_with_on-the-fly_pr.md)
-- [\[ICML 2026\] BALLAST: Bayesian Active Learning with Look-ahead Amendment for Sea-drifter Trajectories under Spatio-Temporal Vector Fields](../../ICML2026/physics/ballast_bayesian_active_learning_with_look-ahead_amendment_for_sea-drifter_traje.md)
 
 </div>
 

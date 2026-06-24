@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Enhancing Instruction Following of LLMs via Activation Steering with Dynamic Rejection
 description: >-
-  [ICLR 2026][Signal & Communications][Paper Note] Proposes Directer (Dynamic Rejection Steering), which significantly enhances the instruction-following capabilities of LLMs by dynamically adjusting KV cache steering intensity and introducing plausibility constraints at each decoding step, while avoiding text quality degradation caused by oversteering.
+  [ICLR 2026][Signal & Communication][Activation Steering] Proposes Directer (Dynamic Rejection Steering), which significantly enhances the instruction-following capabilities of LLMs by dynamically adjusting KV cache steering intensity and introducing plausibility constraints at each decoding step, while avoiding text quality degradation caused by oversteering.
 tags:
-  - ICLR 2026
-  - Signal & Communications
+  - "ICLR 2026"
+  - "Signal & Communication"
+  - "Activation Steering"
+  - "Instruction Following"
+  - "KV Cache Scaling"
+  - "Dynamic Rejection"
+  - "Oversteering Mitigation"
 date: 2026-05-08
-content_hash: a9f71d089e9ee309
+content_hash: b7daf9b1367ea7e3
 ---
+
 # Enhancing Instruction Following of LLMs via Activation Steering with Dynamic Rejection
 
 **Conference**: ICLR 2026  
@@ -153,11 +159,11 @@ Directer is a pure inference-time method without any training or additional data
 
 ## Related Papers
 
-- [\[CVPR 2026\] AcTTA: Rethinking Test-Time Adaptation via Dynamic Activation](../../CVPR2026/signal_comm/actta_rethinking_test-time_adaptation_via_dynamic_activation.md)
 - [\[NeurIPS 2025\] Angular Steering: Behavior Control via Rotation in Activation Space](../../NeurIPS2025/signal_comm/angular_steering_behavior_control_via_rotation_in_activation_space.md)
+- [\[CVPR 2026\] AcTTA: Rethinking Test-Time Adaptation via Dynamic Activation](../../CVPR2026/signal_comm/actta_rethinking_test-time_adaptation_via_dynamic_activation.md)
+- [\[ICLR 2026\] Hystar: Hypernetwork-driven Style-adaptive Retrieval via Dynamic SVD Modulation](hystar_hypernetwork-driven_style-adaptive_retrieval_via_dynamic_svd_modulation.md)
 - [\[ACL 2025\] WirelessMathBench: A Mathematical Modeling Benchmark for LLMs in Wireless Communications](../../ACL2025/signal_comm/wirelessmathbench_a_mathematical_modeling_benchmark_for_llms_in_wireless_communi.md)
 - [\[ICML 2025\] Fourier Position Embedding: Enhancing Attention's Periodic Extension for Length Generalization](../../ICML2025/signal_comm/fourier_position_embedding_enhancing_attentions_periodic_extension_for_length_ge.md)
-- [\[ICLR 2026\] Advancing Spatiotemporal Representations in Spiking Neural Networks via Parametric Invertible Transformation](advancing_spatiotemporal_representations_in_spiking_neural_networks_via_parametr.md)
 
 </div>
 

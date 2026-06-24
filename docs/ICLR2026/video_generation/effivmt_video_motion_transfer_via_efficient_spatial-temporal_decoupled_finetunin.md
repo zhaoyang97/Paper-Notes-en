@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] EffiVMT: Video Motion Transfer via Efficient Spatial-Temporal Decoupled Finetuning
 description: >-
-  [ICLR 2026][Video Generation][Diffusion Transformer] EffiVMT addresses the dual challenges of "motion inconsistency" and "slow finetuning" in DiT-based video motion transfer. It proposes a three-stage spatial-temporal decoupled finetuning process (head classification -> spatial LoRA -> temporal LoRA) combined with sparse motion sampling and adaptive RoPE, achieving signi
+  [ICLR 2026][Video Generation][Video Motion Transfer] EffiVMT addresses the dual challenges of "motion inconsistency" and "slow finetuning" in DiT-based video motion transfer. It proposes a three-stage spatial-temporal decoupled finetuning process (head classification -> spatial LoRA -> temporal LoRA) combined with sparse motion sampling and adaptive RoPE, achieving significant speedups while maintaining higher motion fidelity and temporal consistency.
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Diffusion Transformer
-  - LoRA
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Video Motion Transfer"
+  - "Diffusion Transformer"
+  - "Spatial-Temporal Decoupling"
+  - "LoRA"
+  - "Sparse Sampling"
 date: 2026-05-08
-content_hash: 6b2d69bf0f5b6808
+content_hash: 6c5d2529a90381e5
 ---
+
 # EffiVMT: Video Motion Transfer via Efficient Spatial-Temporal Decoupled Finetuning
 
 **Conference**: ICLR 2026  
@@ -151,9 +155,9 @@ Authors systematically removed three key modules (STD LoRA, Adaptive RoPE, Spars
 
 - [\[ICLR 2026\] FastVMT: Eliminating Redundancy in Video Motion Transfer](fastvmt_eliminating_redundancy_in_video_motion_transfer.md)
 - [\[ICCV 2025\] EfficientMT: Efficient Temporal Adaptation for Motion Transfer in Text-to-Video Diffusion Models](../../ICCV2025/video_generation/efficientmt_efficient_temporal_adaptation_for_motion_transfer_in_text-to-video_d.md)
+- [\[ICCV 2025\] SweetTok: Semantic-Aware Spatial-Temporal Tokenizer for Compact Video Discretization](../../ICCV2025/video_generation/sweettok_semantic-aware_spatial-temporal_tokenizer_for_compact_video_discretizat.md)
+- [\[CVPR 2026\] FlowMotion: Training-Free Flow Guidance for Video Motion Transfer](../../CVPR2026/video_generation/flowmotion_training-free_flow_guidance_for_video_motion_transfer.md)
 - [\[ICLR 2026\] TPDiff: Temporal Pyramid Video Diffusion Model](tpdiff_temporal_pyramid_video_diffusion_model.md)
-- [\[ICLR 2026\] EchoMotion: Unified Human Video and Motion Generation via Dual-Modality Diffusion Transformer](echomotion_unified_human_video_and_motion_generation_via_dual-modality_diffusion.md)
-- [\[ICLR 2026\] MTVCraft: Tokenizing 4D Motion for Arbitrary Character Animation](mtvcraft_tokenizing_4d_motion_for_arbitrary_character_animation.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Stable On-Policy Distillation through Adaptive Target Reformulation
 description: >-
-  [ACL 2026][Model Compression][Knowledge Distillation] This paper proposes Veto, a target-level reformulation method that stabilizes on-policy knowledge distillation by constructing a teacher-student geometric bridging distribution in logit space. A single parameter $\beta$ simultaneously acts as an adaptive gradient vetoer in forward KL (suppressing harmful gradients from
+  [ACL 2026 Findings][Model Compression][Knowledge Distillation] This paper proposes Veto, a target-level reformulation method that stabilizes on-policy knowledge distillation by constructing a teacher-student geometric bridging distribution in logit space. A single parameter $\beta$ simultaneously acts as an adaptive gradient vetoer in forward KL (suppressing harmful gradients from low-confidence tokens) and a decisiveness knob in reverse KL (balancing reward-driven behavior a…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Knowledge Distillation
+  - "ACL 2026 Findings"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "On-policy Distillation"
+  - "Gradient Stability"
+  - "KL Divergence"
+  - "Target Reformulation"
 date: 2026-05-08
-content_hash: f12677d01248cde1
+content_hash: 3bf6b7f506caacd9
 ---
+
 # Stable On-Policy Distillation through Adaptive Target Reformulation
 
 **Conference**: ACL 2026 Findings  
@@ -145,11 +150,20 @@ The experiment uses Qwen2-0.5B-IT as the student and Qwen2-7B-IT as the teacher.
 - Value: ⭐⭐⭐⭐ Provides a simple and effective stabilization scheme for on-policy KD, with a good balance of theory and practice.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-</div>
-<!-- RELATED:END -->
+## Related Papers
 
+- [\[ICML 2026\] Entropy-Aware On-Policy Distillation of Language Models](../../ICML2026/model_compression/entropy-aware_on-policy_distillation_of_language_models.md)
+- [\[ACL 2025\] AlignDistil: Token-Level Language Model Alignment as Adaptive Policy Distillation](../../ACL2025/model_compression/aligndistil_token_level_alignment.md)
+- [\[ICLR 2026\] MASS: MoErging through Adaptive Subspace Selection](../../ICLR2026/model_compression/mass_moerging_through_adaptive_subspace_selection.md)
+- [\[ICLR 2026\] π-Flow: Policy-Based Few-Step Generation via Imitation Distillation](../../ICLR2026/model_compression/pi-flow_policy-based_few-step_generation_via_imitation_distillation.md)
+- [\[ICLR 2026\] Knowledge Distillation for Large Language Models through Residual Learning](../../ICLR2026/model_compression/knowledge_distillation_for_large_language_models_through_residual_learning.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Entropy-Aware On-Policy Distillation of Language Models](../../ICML2026/model_compression/entropy-aware_on-policy_distillation_of_language_models.md)

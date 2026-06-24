@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Text-to-Image: Liberating Generation with a Unified Discrete Diffusion Model
 description: >-
-  [ICLR 2026][Image Generation][MaskGIT] Muddit integrates text and images into a single absorbing-state (masked) discrete diffusion framework. Utilizing an MM-DiT shared generator initialized from the text-to-image model Meissonic, it performs text-to-image generation, image-to-text generation, and VQA by only switching the condition signal $c$. With 1B para
+  [ICLR2026][Image Generation][Unified Generative Model] Muddit integrates text and images into a single absorbing-state (masked) discrete diffusion framework. Utilizing an MM-DiT shared generator initialized from the text-to-image model Meissonic, it performs text-to-image generation, image-to-text generation, and VQA by only switching the condition signal $c$. With 1B parameters, it matches or exceeds the quality and efficiency of significantly larger autoregressive unified m…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - MaskGIT
+  - "ICLR2026"
+  - "Image Generation"
+  - "Unified Generative Model"
+  - "Discrete Diffusion"
+  - "Visual Priors"
+  - "Parallel Decoding"
+  - "MaskGIT"
 date: 2026-05-08
-content_hash: f0cf3d4017b074df
+content_hash: 839a843cd741cda0
 ---
+
 # Beyond Text-to-Image: Liberating Generation with a Unified Discrete Diffusion Model
 
 **Conference**: ICLR2026  
@@ -156,15 +161,16 @@ CIDEr 59.9 exceeds the diffusion baseline D-DiT (56.2), and VQAv2 68.2% is super
 - Value: ⭐⭐⭐⭐ Provides a scalable new path for unified generation using "pure discrete diffusion + visual priors" with open weights.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Continuously Augmented Discrete Diffusion model for Categorical Generative Modeling](continuously_augmented_discrete_diffusion_model_for_categorical_generative_model.md)
+- [\[ICLR 2026\] Soft-Di\[M\]O: Improving One-Step Discrete Image Generation with Soft Embeddings](soft-dimo_improving_one-step_discrete_image_generation_with_soft_embeddings.md)
 - [\[ICLR 2026\] Improving Discrete Diffusion Unmasking Policies Beyond Explicit Reference Policies (UPO)](improving_discrete_diffusion_unmasking_policies_beyond_explicit_reference_polici.md)
 - [\[ICLR 2026\] Consolidating Reinforcement Learning for Multimodal Discrete Diffusion Models](consolidating_reinforcement_learning_for_multimodal_discrete_diffusion_models.md)
 - [\[ICCV 2025\] UniVG: A Generalist Diffusion Model for Unified Image Generation and Editing](../../ICCV2025/image_generation/univg_a_generalist_diffusion_model_for_unified_image_generation_and_editing.md)
-- [\[ICLR 2026\] ReDDiT: Rehashing Noise for Discrete Visual Generation](reddit_rehashing_noise_for_discrete_visual_generation.md)
 
 </div>
 

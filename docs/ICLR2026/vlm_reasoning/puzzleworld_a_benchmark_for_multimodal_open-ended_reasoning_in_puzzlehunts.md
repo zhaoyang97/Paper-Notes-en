@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PuzzleWorld: A Benchmark for Multimodal, Open-Ended Reasoning in Puzzlehunts
 description: >-
-  [ICLR 2026][vlm_reasoning][puzzlehunt] PuzzleWorld collects 667 "puzzlehunt" style multimodal puzzles without explicit problem definitions, annotating each with final answers, stepwise reasoning trajectories, and cognitive skill labels. Results show that current state-of-the-art models achieve final answer accuracies of only 1–18%, far behind puzzle enthusi
+  [ICLR 2026][VLM Reasoning][Open-ended reasoning] PuzzleWorld collects 667 "puzzlehunt" style multimodal puzzles without explicit problem definitions, annotating each with final answers, stepwise reasoning trajectories, and cognitive skill labels. Results show that current state-of-the-art models achieve final answer accuracies of only 1–18%, far behind puzzle enthusiasts. Through stepwise scoring and fine-tuning experiments, the study reveals three major model shortcomings: "…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - puzzlehunt
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Open-ended reasoning"
+  - "multimodal puzzles"
+  - "reasoning benchmark"
+  - "step-level scoring"
+  - "puzzlehunt"
 date: 2026-05-08
-content_hash: 9cee78272bc89bb5
+content_hash: 693b69fc19bf7c89
 ---
+
 # PuzzleWorld: A Benchmark for Multimodal, Open-Ended Reasoning in Puzzlehunts
 
 **Conference**: ICLR 2026  
@@ -138,10 +143,10 @@ In terms of downstream transfer, the trajectory-tuned model showed gains on Rebu
 ## Related Papers
 
 - [\[AAAI 2026\] SToLa: Self-Adaptive Touch-Language Framework with Tactile Commonsense Reasoning in Open-Ended Scenarios](../../AAAI2026/vlm_reasoning/stola_self-adaptive_touch-language_framework_with_tactile_commonsense_reasoning_.md)
+- [\[NeurIPS 2025\] MM-OPERA: Benchmarking Open-ended Association Reasoning for Large Vision-Language Models](../../NeurIPS2025/vlm_reasoning/mm-opera_benchmarking_open-ended_association_reasoning_for_large_vision-language.md)
 - [\[ICLR 2026\] MathNet: A Global Multimodal Benchmark for Mathematical Reasoning and Retrieval](mathnet_a_global_multimodal_benchmark_for_mathematical_reasoning_and_retrieval.md)
 - [\[ICLR 2026\] SportR: A Benchmark for Multimodal Large Language Model Reasoning in Sports](sportr_a_benchmark_for_multimodal_large_language_model_reasoning_in_sports.md)
 - [\[ICLR 2026\] MMR-V: What's Left Unsaid? A Benchmark for Multimodal Deep Reasoning in Videos](mmr-v_whats_left_unsaid_a_benchmark_for_multimodal_deep_reasoning_in_videos.md)
-- [\[NeurIPS 2025\] MM-OPERA: Benchmarking Open-ended Association Reasoning for Large Vision-Language Models](../../NeurIPS2025/vlm_reasoning/mm-opera_benchmarking_open-ended_association_reasoning_for_large_vision-language.md)
 
 </div>
 

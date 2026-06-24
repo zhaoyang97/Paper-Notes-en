@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Comprehensive Scene Understanding: Integrating First and Third-Person Views for LVLMs
 description: >-
-  [NeurIPS 2025 (Spotlight)][Multimodal VLM][Multi-view understanding] This paper proposes E3VQA, the first multi-view VQA benchmark, and M3CoT, a prompting technique that fuses three complementary scene graphs…
+  [NeurIPS 2025 (Spotlight)][Multimodal VLM][Multi-view understanding] This paper proposes E3VQA, the first multi-view VQA benchmark, and M3CoT, a prompting technique that fuses three complementary scene graphs, to enhance multi-view scene understanding in Large Vision-Language Models (LVLMs), achieving gains of 4.84% on GPT-4o and 5.94% on Gemini 2.0 Flash.
 tags:
   - "NeurIPS 2025 (Spotlight)"
   - "Multimodal VLM"
@@ -13,7 +13,7 @@ tags:
   - "VQA"
   - "CoT"
 date: 2026-05-08
-content_hash: 79e7e443061b1362
+content_hash: 827ccfda54ce7f73
 ---
 
 # Towards Comprehensive Scene Understanding: Integrating First and Third-Person Views for LVLMs
@@ -205,10 +205,10 @@ Contribution of each M3CoT component (GPT-4o):
 ## Related Papers
 
 - [\[NeurIPS 2025\] Nautilus: A Large Multimodal Model for Underwater Scene Understanding](nautilus_a_large_multimodal_model_for_underwater_scene_understanding.md)
+- [\[CVPR 2025\] Embodied Scene Understanding for Vision Language Models via MetaVQA](../../CVPR2025/multimodal_vlm/embodied_scene_understanding_for_vision_language_models_via_metavqa.md)
+- [\[NeurIPS 2025\] Face-Human-Bench: A Comprehensive Benchmark of Face and Human Understanding for Multi-modal Assistants](face-human-bench_a_comprehensive_benchmark_of_face_and_human_understanding_for_m.md)
 - [\[NeurIPS 2025\] Video-SafetyBench: A Benchmark for Safety Evaluation of Video LVLMs](video-safetybench_a_benchmark_for_safety_evaluation_of_video_lvlms.md)
-- [\[NeurIPS 2025\] Visual Structures Help Visual Reasoning: Addressing the Binding Problem in LVLMs](visual_structures_helps_visual_reasoning_addressing_the_binding_problem_in_vlms.md)
-- [\[NeurIPS 2025\] CAPability: A Comprehensive Visual Caption Benchmark for Evaluating Both Correctness and Thoroughness](capability_a_comprehensive_visual_caption_benchmark_for_eval.md)
-- [\[CVPR 2026\] Scene-VLM: Multimodal Video Scene Segmentation via Vision-Language Models](../../CVPR2026/multimodal_vlm/scene-vlm_multimodal_video_scene_segmentation_via_vision-language_models.md)
+- [\[ACL 2026\] Response-G1: Explicit Scene Graph Modeling for Proactive Streaming Video Understanding](../../ACL2026/multimodal_vlm/response-g1_explicit_scene_graph_modeling_for_proactive_streaming_video_understa.md)
 
 </div>
 

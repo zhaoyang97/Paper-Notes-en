@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] iLLaVA: An Image is Worth Fewer Than 1/3 Input Tokens in Large Multimodal Models
+  [Paper Note] iLLaVA: An Image Is Worth Fewer Than 1/3 Input Tokens in Large Multimodal Models
 description: >-
-  [ICLR 2026][vlm_efficiency][token merging] iLLaVA breaks the inertia of "compressing tokens only in the LLM stage" by inserting token merging into both the **image encoder** and the **LLM**. Using an "information tokens + recovery tokens" merging strategy to retrieve useful information from discarded tokens, it achieves 2× throughput and 4× prefilling accelerat
+  [ICLR 2026][Multimodal Efficiency][LVLM acceleration] iLLaVA breaks the inertia of "compressing tokens only in the LLM stage" by inserting token merging into both the **image encoder** and the **LLM**. Using an "information tokens + recovery tokens" merging strategy to retrieve useful information from discarded tokens, it achieves 2× throughput and 4× prefilling acceleration training-free while maintaining >95% performance.
 tags:
-  - ICLR 2026
-  - vlm_efficiency
-  - token merging
+  - "ICLR 2026"
+  - "Multimodal Efficiency"
+  - "LVLM acceleration"
+  - "token merging"
+  - "image encoder"
+  - "training-free"
+  - "dual-stage compression"
 date: 2026-05-08
-content_hash: 84a255e0bb7c36b9
+content_hash: a2bd1e75c0cb0c42
 ---
+
 # iLLaVA: An Image Is Worth Fewer Than 1/3 Input Tokens in Large Multimodal Models
 
 **Conference**: ICLR 2026  
@@ -113,15 +118,14 @@ On video benchmarks (VideoMME / MVBench / EgoSchema / MLVU): At 90% reduction, i
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] ReGATE: Learning Faster and Better with Fewer Tokens in MLLMs](../../ACL2026/vlm_efficiency/regate_learning_faster_and_better_with_fewer_tokens_in_mllms.md)
+- [\[ICCV 2025\] ShortV: Efficient Multimodal Large Language Models by Freezing Visual Tokens in Ineffective Layers](../../ICCV2025/vlm_efficiency/shortv_efficient_multimodal_large_language_models_by_freezing_visual_tokens_in_i.md)
 - [\[ICLR 2026\] Photon: Speedup Volume Understanding with Efficient Multimodal Large Language Models](photon_speedup_volume_understanding_with_efficient_multimodal_large_language_mod.md)
 - [\[CVPR 2026\] What Do Visual Tokens Really Encode? Uncovering Sparsity and Redundancy in Multimodal Large Language Models](../../CVPR2026/vlm_efficiency/what_do_visual_tokens_really_encode_uncovering_sparsity_and_redundancy_in_multim.md)
 - [\[ICLR 2026\] PPE: Positional Preservation Embedding for Token Compression in Multimodal Large Language Models](ppe_positional_preservation_embedding_for_token_compression_in_multimodal_large_.md)
-- [\[CVPR 2026\] MM-SeR: Multimodal Self-Refinement for Lightweight Image Captioning](../../CVPR2026/vlm_efficiency/mm-ser_multimodal_self-refinement_for_lightweight_image_captioning.md)
 
 </div>
 

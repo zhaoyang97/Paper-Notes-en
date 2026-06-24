@@ -4,16 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Image Generation][Drag Editing] The first framework to introduce the strong generative priors of FLUX (DiT) into drag editing. It replaces traditional point-level supervision with region-level affine supervision, combined with gradient mask hard constraints and adapter-enhanced inversion, significantly improving the quality of drag editing.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Drag Editing
-  - DiT
-  - Region-Based Supervision
-  - FLUX
-  - Affine Transformation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Drag Editing"
+  - "DiT"
+  - "Region-Based Supervision"
+  - "FLUX"
+  - "Affine Transformation"
 date: 2026-05-08
-content_hash: 616ba904dd03334a
+content_hash: 0295506af70cd746
 ---
+
 # DragFlow: Unleashing DiT Priors with Region Based Supervision for Drag Editing
 
 **Conference**: ICLR 2026  
@@ -153,10 +154,10 @@ A similar trend is observed on DragBench-DR: DragFlow MD1=31.59 (second best 35.
 ## Related Papers
 
 - [\[ICLR 2026\] UniEdit-Flow: Unleashing Inversion and Editing in the Era of Flow Models](uniedit-flow_unleashing_inversion_and_editing_in_the_era_of_flow_models.md)
+- [\[ICLR 2026\] RegionE: Adaptive Region-Aware Generation for Efficient Image Editing](regione_adaptive_region-aware_generation_for_efficient_image_editing.md)
 - [\[ICLR 2026\] LazyDrag: Enabling Stable Drag-Based Editing on Multi-Modal Diffusion Transformers via Explicit Correspondence](lazydrag_enabling_stable_drag-based_editing_on_multi-modal_diffusion_transformer.md)
 - [\[ICLR 2026\] Follow-Your-Shape: Shape-Aware Image Editing via Trajectory-Guided Region Control](follow-your-shape_shape-aware_image_editing_via_trajectory-guided_region_control.md)
 - [\[CVPR 2026\] SpotEdit: Selective Region Editing in Diffusion Transformers](../../CVPR2026/image_generation/spotedit_selective_region_editing_in_diffusion_transformers.md)
-- [\[CVPR 2025\] FaithDiff: Unleashing Diffusion Priors for Faithful Image Super-Resolution](../../CVPR2025/image_generation/faithdiff_unleashing_diffusion_priors_for_faithful_image_super-resolution.md)
 
 </div>
 

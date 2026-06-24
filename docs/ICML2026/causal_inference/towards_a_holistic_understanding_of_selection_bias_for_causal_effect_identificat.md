@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards a Holistic Understanding of Selection Bias for Causal Effect Identification
 description: >-
-  [ICML 2026][Causal Inference][Paper Note] This paper provides a unified "distribution-class" framework, characterizing the necessary and sufficient conditions (Condition 1) for the identifiability of the Average Treatment Effect (ATE) across the entire population under selection bias. It proves that this condition is satisfied under c-overlap propensity scores
+  [ICML 2026][Causal Inference][Selection Bias] This paper provides a unified "distribution-class" framework, characterizing the necessary and sufficient conditions (Condition 1) for the identifiability of the Average Treatment Effect (ATE) across the entire population under selection bias. It proves that this condition is satisfied under c-overlap propensity scores and common distributions such as polynomial exponential families, Gaussian, Laplace, Pareto…
 tags:
-  - ICML 2026
-  - Causal Inference
+  - "ICML 2026"
+  - "Causal Inference"
+  - "Selection Bias"
+  - "ATE Identifiability"
+  - "Truncated Statistics"
+  - "Propensity Score"
+  - "Distribution Class"
 date: 2026-05-08
-content_hash: 835ead5bb8d6aba5
+content_hash: cacb87f6a971e82f
 ---
+
 # Towards a Holistic Understanding of Selection Bias for Causal Effect Identification
 
 **Conference**: ICML 2026  
@@ -120,10 +126,10 @@ Semi-synthetic All of Us: T2D as exposure, BMI as covariate, outcome $Y = f(T, X
 ## Related Papers
 
 - [\[ICML 2025\] Latent Variable Causal Discovery under Selection Bias](../../ICML2025/causal_inference/latent_variable_causal_discovery_under_selection_bias.md)
-- [\[ICML 2025\] Causal Effect Identification in lvLiNGAM from Higher-Order Cumulants](../../ICML2025/causal_inference/causal_effect_identification_in_lvlingam_from_higher-order_cumulants.md)
 - [\[ICML 2026\] Causal Modeling of Selection in Evolution](causal_modeling_of_selection_in_evolution.md)
+- [\[ICML 2025\] Causal Effect Identification in lvLiNGAM from Higher-Order Cumulants](../../ICML2025/causal_inference/causal_effect_identification_in_lvlingam_from_higher-order_cumulants.md)
 - [\[ICML 2026\] Tailoring Strictly Proper Scoring Rules for Downstream Tasks: An Application to Causal Inference](tailoring_strictly_proper_scoring_rules_for_downstream_tasks_an_application_to_c.md)
-- [\[ICML 2026\] Evaluating Bivariate Causal Statements Based on Mutual Compatibility](evaluating_bivariate_causal_statements_based_on_mutual_compatibility.md)
+- [\[ICLR 2026\] Score-based Greedy Search for Structure Identification of Partially Observed Causal Models](../../ICLR2026/causal_inference/score-based_greedy_search_for_structure_identification_of_partially_observed_cau.md)
 
 </div>
 

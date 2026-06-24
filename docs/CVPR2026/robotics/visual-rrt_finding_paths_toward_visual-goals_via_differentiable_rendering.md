@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Visual-RRT: Finding Paths toward Visual-Goals via Differentiable Rendering
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][RRT] This work integrates "visual gradient utilization" based on differentiable robot rendering into the "sampling exploration" framework of RRT. This allows robotic arms to plan collision-free motion paths given **only a single goal image without goal joint angles**, improving success rates on Franka / UR5e / Fetch from th
+  [CVPR 2026][Robotics][Motion Planning] This work integrates "visual gradient utilization" based on differentiable robot rendering into the "sampling exploration" framework of RRT. This allows robotic arms to plan collision-free motion paths given **only a single goal image without goal joint angles**, improving success rates on Franka / UR5e / Fetch from the ~20% range to ~75%.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - RRT
+  - "CVPR 2026"
+  - "Robotics"
+  - "Motion Planning"
+  - "RRT"
+  - "Differentiable Rendering"
+  - "Visual Goals"
+  - "Sampling-based Planning"
 date: 2026-05-08
-content_hash: 39919b107907b79f
+content_hash: dbc49b1affd82462
 ---
+
 # Visual-RRT: Finding Paths toward Visual-Goals via Differentiable Rendering
 
 **Conference**: CVPR 2026  
@@ -159,10 +164,10 @@ vRRT significantly leads in error for the heavily occluded end-effector joint (J
 
 ## Related Papers
 
-- [\[CVPR 2026\] CLiViS: Unleashing Cognitive Map through Linguistic-Visual Synergy for Embodied Visual Reasoning](clivis_unleashing_cognitive_map_through_linguistic-visual_synergy_for_embodied_v.md)
 - [\[CVPR 2026\] Rethinking Visual Rearrangement from A Diffusion Perspective](rethinking_visual_rearrangement_from_a_diffusion_perspective.md)
 - [\[CVPR 2026\] Semantic Audio-Visual Navigation in Continuous Environments](semantic_audio-visual_navigation_in_continuous_environments.md)
 - [\[CVPR 2026\] Diagnose, Correct, and Learn from Manipulation Failures via Visual Symbols](diagnose_correct_and_learn_from_manipulation_failures_via_visual_symbols.md)
+- [\[CVPR 2026\] VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation](viral_visual_sim-to-real_at_scale_for_humanoid_loco-manipulation.md)
 - [\[CVPR 2026\] EgoRoC: Towards Egocentric Robotic Control via Task-Agnostic Visual Alignment](egoroc_towards_egocentric_robotic_control_via_task-agnostic_visual_alignment.md)
 
 </div>

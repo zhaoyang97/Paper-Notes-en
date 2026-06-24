@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Feed-forward Gaussian Registration for Head Avatar Creation and Editing
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] MATCH utilizes a transformer to directly predict "Gaussian Splatting textures under dense semantic correspondence" from calibrated multi-view images in 0.5 seconds. It bypasses the time-consuming mesh tracking and per-subject optimization—which typically take hours or even a day in traditional workflows—and directly en
+  [CVPR 2026][3D Vision][Gaussian Splatting] MATCH utilizes a transformer to directly predict "Gaussian Splatting textures under dense semantic correspondence" from calibrated multi-view images in 0.5 seconds. It bypasses the time-consuming mesh tracking and per-subject optimization—which typically take hours or even a day in traditional workflows—and directly enables cross-identity/cross-expression applications such as avatar creation, interpolation, semantic editing…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "Head Avatar"
+  - "Dense Semantic Correspondence"
+  - "Feed-forward Registration"
+  - "Registration-guided Attention"
 date: 2026-05-08
-content_hash: 4f40b1420f48b489
+content_hash: 0b598244c825b562
 ---
+
 # Feed-forward Gaussian Registration for Head Avatar Creation and Editing
 
 **Conference**: CVPR 2026  
@@ -148,11 +154,11 @@ Relative to GEM (the closest in quality), MATCH achieves a 10× speedup and sign
 
 ## Related Papers
 
-- [\[CVPR 2026\] GeoDiff4D: Geometry-Aware Diffusion for 4D Head Avatar Reconstruction](geodiff4d_geometry-aware_diffusion_for_4d_head_avatar_reconstruction.md)
-- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
-- [\[CVPR 2026\] Fresco: Frequency-Spatial Consistent Optimization for Fine-Grained Head Avatar Modeling](fresco_frequency-spatial_consistent_optimization_for_fine-grained_head_avatar_mo.md)
-- [\[CVPR 2026\] EcoSplat: Efficiency-controllable Feed-forward 3D Gaussian Splatting from Multi-view Images](ecosplat_efficiency-controllable_feed-forward_3d_gaussian_splatting_from_multi-v.md)
-- [\[CVPR 2026\] From Rays to Projections: Better Inputs for Feed-Forward View Synthesis](from_rays_to_projections_better_inputs_for_feed-forward_view_synthesis.md)
+- [\[CVPR 2026\] OMG-Avatar: One-shot Multi-LOD Gaussian Head Avatar](omg-avatar_one-shot_multi-lod_gaussian_head_avatar.md)
+- [\[CVPR 2026\] Feed-Forward One-Shot Animatable Textured Mesh Avatar Reconstruction](feed-forward_one-shot_animatable_textured_mesh_avatar_reconstruction.md)
+- [\[CVPR 2026\] PercHead: Perceptual Head Model for Single-Image 3D Head Reconstruction & Editing](perchead_perceptual_head_model_for_single-image_3d_head_reconstruction_editing.md)
+- [\[CVPR 2026\] Easy3E: Feed-Forward 3D Asset Editing via Rectified Voxel Flow](easy3e_feed-forward_3d_asset_editing_via_rectified_voxel_flow.md)
+- [\[CVPR 2026\] FUSER: Feed-Forward Multiview 3D Registration Transformer and SE(3)$^N$ Diffusion Refinement](fuser_feed-forward_multiview_3d_registration_transformer_and_se3n_diffusion_refi.md)
 
 </div>
 

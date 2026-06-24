@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] TextPecker: Rewarding Structural Anomaly Quantification for Enhancing Visual Text Rendering
 description: >-
-  [CVPR 2026][Image Generation][visual text rendering] TextPecker is proposed as a plug-and-play structural anomaly-aware RL strategy. By constructing a character-level structural anomaly annotation dataset to train a structural-aware recognizer, it replaces noisy OCR reward signals. This approach jointly optimizes semantic alignment and structural fidelity, significantly
+  [CVPR 2026][Image Generation][visual text rendering] TextPecker is proposed as a plug-and-play structural anomaly-aware RL strategy. By constructing a character-level structural anomaly annotation dataset to train a structural-aware recognizer, it replaces noisy OCR reward signals. This approach jointly optimizes semantic alignment and structural fidelity, significantly enhancing visual text rendering quality across multiple text-to-image models (FLUX, SD3.5, Qwen-Image).
 tags:
-  - CVPR 2026
-  - Image Generation
-  - visual text rendering
-  - structural anomaly
-  - reinforcement-learning
-  - reward model
-  - OCR
+  - "CVPR 2026"
+  - "Image Generation"
+  - "visual text rendering"
+  - "structural anomaly"
+  - "reinforcement-learning"
+  - "reward model"
+  - "OCR"
 date: 2026-05-08
-content_hash: 656d6fb35da6dfc8
+content_hash: 29905e68f10b74bd
 ---
+
 # TextPecker: Rewarding Structural Anomaly Quantification for Enhancing Visual Text Rendering
 
 **Conference**: CVPR 2026  
@@ -173,7 +174,7 @@ This paper provides an in-depth analysis and effective solution for the key pain
 - [\[CVPR 2026\] Residual Decoder Adapter: ID-Preserving Tokenizer Adaption for Autoregressive Text Rendering](residual_decoder_adapter_id-preserving_tokenizer_adaption_for_autoregressive_tex.md)
 - [\[CVPR 2026\] IntroSVG: Learning from Rendering Feedback for Text-to-SVG Generation via an Introspective Generator-Critic Framework](introsvg_learning_from_rendering_feedback_for_text-to-svg_generation_via_an_intr.md)
 - [\[CVPR 2026\] Learning to Generate via Understanding: Understanding-Driven Intrinsic Rewarding for Unified Multimodal Models](learning_to_generate_via_understanding_understanding-driven_intrinsic_rewarding_.md)
-- [\[CVPR 2026\] Evaluating Reasoning Fidelity in Visual Text Generation](evaluating_reasoning_fidelity_in_visual_text_generation.md)
+- [\[CVPR 2026\] Towards Photorealistic and Efficient Bokeh Rendering via Diffusion Framework](towards_photorealistic_and_efficient_bokeh_rendering_via_diffusion_framework.md)
 
 </div>
 

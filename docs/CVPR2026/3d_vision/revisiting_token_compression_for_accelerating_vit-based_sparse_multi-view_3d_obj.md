@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Revisiting Token Compression for Accelerating ViT-based Sparse Multi-View 3D Object Detectors
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] To address the slow inference of ViT-based multi-view 3D detectors, this paper proposes SEPatch3D. It replaces traditional token pruning/merging with "scenewise spatio-temporal dynamic patch sizing + coarse patch enhancement using fine patches," achieving up to a 57.7% speedup over StreamPETR on nuScenes with negligibl
+  [CVPR 2026][3D Vision][Multi-view 3D Detection] To address the slow inference of ViT-based multi-view 3D detectors, this paper proposes SEPatch3D. It replaces traditional token pruning/merging with "scenewise spatio-temporal dynamic patch sizing + coarse patch enhancement using fine patches," achieving up to a 57.7% speedup over StreamPETR on nuScenes with negligible accuracy loss.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Multi-view 3D Detection"
+  - "Token Compression"
+  - "Dynamic Patch Size"
+  - "ViT Acceleration"
+  - "Entropy Selection"
 date: 2026-05-08
-content_hash: 415d848fcb729c2f
+content_hash: 8714463f3e34f485
 ---
+
 # Revisiting Token Compression for Accelerating ViT-based Sparse Multi-View 3D Object Detectors
 
 **Conference**: CVPR 2026  
@@ -127,10 +133,20 @@ Adding SPSS alone provides a massive speedup (-40.3%) but drops 2.4 NDS, confirm
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Revisiting Pose Sensitivity in Splat-based Computed Tomography under Sparse-view Reconstruction](revisiting_pose_sensitivity_in_splat-based_computed_tomography_under_sparse-view.md)
+- [\[CVPR 2026\] GauMVC: Generative Decoupled Gaussian Representation for Human-centric Multi-view Video Compression](gaumvc_generative_decoupled_gaussian_representation_for_human-centric_multi-view.md)
+- [\[CVPR 2026\] Aligning Text, Images and 3D Structure Token-by-Token](aligning_text_images_and_3d_structure_token-by-token.md)
+- [\[CVPR 2026\] Block-Sparse Global Attention for Efficient Multi-View Geometry Transformers](block-sparse_global_attention_for_efficient_multi-view_geometry_transformers.md)
+- [\[CVPR 2026\] Confidence-Guided Multi-Scale Aggregation for Sparse-View High-Resolution 3D Gaussian Splatting](confidence-guided_multi-scale_aggregation_for_sparse-view_high-resolution_3d_gau.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] SEPatch3D: Revisiting Token Compression for Accelerating ViT-based Sparse Multi-View 3D Object Detectors](sepatch3d_revisiting_token_compression_for_accelerating_vit_based_sparse_3d_detectors.md)

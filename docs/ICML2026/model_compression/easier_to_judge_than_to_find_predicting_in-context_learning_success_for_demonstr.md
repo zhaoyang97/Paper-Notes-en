@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Easier to Judge Than to Find: Predicting In-Context Learning Success for Demonstration Selection
 description: >-
-  [ICML 2026][Model Compression][Paper Note] This paper reframes ICL demonstration selection from "searching for the optimal $D^\star$ in a vast combinatorial space" to "judging whether a sampled $(q,D)$ pair will succeed." It proposes DiSP—a framework that stratifies queries by difficulty and employs lightweight judge models for "sample-and-judge" with early sto
+  [ICML 2026][Model Compression][In-Context Learning] This paper reframes ICL demonstration selection from "searching for the optimal $D^\star$ in a vast combinatorial space" to "judging whether a sampled $(q,D)$ pair will succeed." It proposes DiSP—a framework that stratifies queries by difficulty and employs lightweight judge models for "sample-and-judge" with early stopping. DiSP achieves up to a 3.4% improvement over strong baselines on five classification benchmarks while…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "In-Context Learning"
+  - "Demonstration Selection"
+  - "Success Rate Prediction"
+  - "Difficulty Stratification"
+  - "Inference Budget"
 date: 2026-05-08
-content_hash: be629eff1bb7b065
+content_hash: 6c524f088d1035c2
 ---
+
 # Easier to Judge Than to Find: Predicting In-Context Learning Success for Demonstration Selection
 
 **Conference**: ICML 2026  
@@ -141,11 +147,11 @@ End-to-end wall-clock cost (Average across 5 datasets):
 
 ## Related Papers
 
-- [\[ICLR 2026\] LLMs Encode Their Failures: Predicting Success from Pre-Generation Activations](../../ICLR2026/model_compression/llms_encode_their_failures_predicting_success_from_pre-generation_activations.md)
-- [\[ICML 2026\] Images as Tables: In-Context Learning with TabPFN for Low-Data Detection of AI-Generated Images](images_as_tables_in-context_learning_with_tabpfn_for_low-data_detection_of_ai-ge.md)
 - [\[ICML 2026\] Token Sparse Attention: Efficient Long-Context Inference with Interleaved Token Selection](token_sparse_attention_efficient_long-context_inference_with_interleaved_token_s.md)
+- [\[ICML 2026\] Images as Tables: In-Context Learning with TabPFN for Low-Data Detection of AI-Generated Images](images_as_tables_in-context_learning_with_tabpfn_for_low-data_detection_of_ai-ge.md)
 - [\[AAAI 2026\] Predicting the Future by Retrieving the Past](../../AAAI2026/model_compression/predicting_the_future_by_retrieving_the_past.md)
-- [\[ICML 2026\] Provably Learning Attention with Queries](provably_learning_attention_with_queries.md)
+- [\[NeurIPS 2025\] Disentangling Latent Shifts of In-Context Learning with Weak Supervision](../../NeurIPS2025/model_compression/disentangling_latent_shifts_of_in-context_learning_with_weak_supervision.md)
+- [\[NeurIPS 2025\] AutoJudge: Judge Decoding Without Manual Annotation](../../NeurIPS2025/model_compression/autojudge_judge_decoding_without_manual_annotation.md)
 
 </div>
 

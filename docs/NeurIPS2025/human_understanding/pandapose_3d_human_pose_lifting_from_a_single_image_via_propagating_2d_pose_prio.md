@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PandaPose: 3D Human Pose Lifting from a Single Image via Propagating 2D Pose Prior to 3D Anchor Space
 description: >-
-  [NeurIPS 2025][Human Understanding][3D human pose estimation] This paper proposes PandaPose, which propagates 2D pose priors into a 3D anchor space as a unified intermediate representation. By combining joint-wise adapti…
+  [NeurIPS 2025][Human Understanding][3D human pose estimation] This paper proposes PandaPose, which propagates 2D pose priors into a 3D anchor space as a unified intermediate representation. By combining joint-wise adaptive 3D anchor setting with joint-wise depth distribution estimation, PandaPose achieves robust single-frame 3D human pose lifting against occlusion and 2D pose errors.
 tags:
   - "NeurIPS 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "self-occlusion"
   - "pose lifting"
 date: 2026-05-08
-content_hash: 075488c3a18ad4e9
+content_hash: 6304c13e7a699c45
 ---
 
 # PandaPose: 3D Human Pose Lifting from a Single Image via Propagating 2D Pose Prior to 3D Anchor Space
@@ -169,11 +169,11 @@ Depth discretization strategy: classification (64 bins) outperforms regression (
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] RAPTR: Radar-Based 3D Pose Estimation Using Transformer](raptr_radar-based_3d_pose_estimation_using_transformer.md)
 - [\[NeurIPS 2025\] VASA-3D: Lifelike Audio-Driven Gaussian Head Avatars from a Single Image](vasa-3d_lifelike_audio-driven_gaussian_head_avatars_from_a_single_image.md)
+- [\[NeurIPS 2025\] RAPTR: Radar-Based 3D Pose Estimation Using Transformer](raptr_radar-based_3d_pose_estimation_using_transformer.md)
 - [\[ICCV 2025\] PoseSyn: Synthesizing Diverse 3D Pose Data from In-the-Wild 2D Data](../../ICCV2025/human_understanding/posesyn_synthesizing_diverse_3d_pose_data_from_in-the-wild_2d_data.md)
-- [\[ICCV 2025\] HccePose(BF): Predicting Front & Back Surfaces to Construct Ultra-Dense 2D-3D Correspondences for Pose Estimation](../../ICCV2025/human_understanding/hcceposebf_predicting_front_back_surfaces_to_construct_ultra-dense_2d-3d_corresp.md)
-- [\[CVPR 2026\] E-3DPSM: A State Machine for Event-Based Egocentric 3D Human Pose Estimation](../../CVPR2026/human_understanding/e-3dpsm_a_state_machine_for_event-based_egocentric_3d_human_pose_estimation.md)
+- [\[ECCV 2024\] 3DSA: Multi-view 3D Human Pose Estimation With 3D Space Attention Mechanisms](../../ECCV2024/human_understanding/3dsa_multi-view_3d_human_pose_estimation_with_3d_space_attention_mechanisms.md)
+- [\[CVPR 2025\] 3D Prior is All You Need: Cross-Task Few-shot 2D Gaze Estimation](../../CVPR2025/human_understanding/3d_prior_is_all_you_need_cross-task_few-shot_2d_gaze_estimation.md)
 
 </div>
 

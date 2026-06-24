@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bilevel Optimization over Saddle Points of Zero-Sum Markov Games
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] The PANDA algorithm is proposed to solve bilevel RL problems where the lower level is a regularized zero-sum Markov game. By employing a penalty reformulation based on the Nikaido-Isoda function and utilizing purely first-order policy gradient methods, it achieves an iteration complexity of $\tilde{O}(\epsilon^{-1})$ a
+  [ICML2026][Reinforcement Learning][Bilevel Optimization] The PANDA algorithm is proposed to solve bilevel RL problems where the lower level is a regularized zero-sum Markov game. By employing a penalty reformulation based on the Nikaido-Isoda function and utilizing purely first-order policy gradient methods, it achieves an iteration complexity of $\tilde{O}(\epsilon^{-1})$ and a sample complexity of $\tilde{O}(\epsilon^{-3})$, matching the best-known rates for single-policy l…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML2026"
+  - "Reinforcement Learning"
+  - "Bilevel Optimization"
+  - "Zero-Sum Markov Games"
+  - "Policy Gradient"
+  - "Nikaido-Isoda Function"
+  - "Saddle Point Equilibrium"
 date: 2026-05-08
-content_hash: 66826b51e8444f21
+content_hash: 8d2f7189c6c1eb48
 ---
+
 # Bilevel Optimization over Saddle Points of Zero-Sum Markov Games
 
 **Conference**: ICML2026  
@@ -132,8 +138,8 @@ To prove convergence without assuming strong convexity, a structural tool for th
 ## Related Papers
 
 - [\[ICML 2025\] Solving Zero-Sum Convex Markov Games](../../ICML2025/reinforcement_learning/solving_zero-sum_convex_markov_games.md)
-- [\[ICML 2026\] Global Policy-Space Response Oracles for Two-Player Zero-Sum Games](global_policy-space_response_oracles_for_two-player_zero-sum_games.md)
 - [\[AAAI 2026\] Perturbing Best Responses in Zero-Sum Games](../../AAAI2026/reinforcement_learning/perturbing_best_responses_in_zero-sum_games.md)
+- [\[ICML 2026\] Global Policy-Space Response Oracles for Two-Player Zero-Sum Games](global_policy-space_response_oracles_for_two-player_zero-sum_games.md)
 - [\[ICML 2026\] FAB: A First-Order AB-based Gradient Algorithm for Distributed Bilevel Optimization over Time-Varying Directed Graphs](fab_a_first-order_ab-based_gradient_algorithm_for_distributed_bilevel_optimizati.md)
 - [\[ICLR 2026\] SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](../../ICLR2026/reinforcement_learning/spiral_self-play_on_zero-sum_games_incentivizes_reasoning_via_multi-agent_multi-.md)
 

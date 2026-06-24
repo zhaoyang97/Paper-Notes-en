@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] E²LoRA: Efficient and Effective Low-Rank Adaptation with Entropy-Guided Adaptive Sharing
 description: >-
-  [ICLR 2026][Model Compression][LoRA] The authors utilize gradient-based "proxy entropy" to detect inter-layer similarity and layer-wise information heterogeneity in pre-trained models. Based on this, they **adaptively partition adjacent similar layers into the same sharing interval and allocate LoRA ranks to each interval according to its information cont
+  [ICLR 2026][Model Compression][LoRA] The authors utilize gradient-based "proxy entropy" to detect inter-layer similarity and layer-wise information heterogeneity in pre-trained models. Based on this, they **adaptively partition adjacent similar layers into the same sharing interval and allocate LoRA ranks to each interval according to its information content**. This approach halves trainable parameters while matching or exceeding the performance of LoRA and ShareLoRA.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - LoRA
-  - PEFT
+  - "ICLR 2026"
+  - "Model Compression"
+  - "LoRA"
+  - "PEFT"
+  - "Parameter Sharing"
+  - "Rank Allocation"
+  - "Proxy Entropy"
+  - "Mutual Information"
 date: 2026-05-08
-content_hash: b9d6ac3f9e449789
+content_hash: 6f5d99396aed8101
 ---
+
 # E²LoRA: Efficient and Effective Low-Rank Adaptation with Entropy-Guided Adaptive Sharing
 
 **Conference**: ICLR 2026  
@@ -143,9 +148,9 @@ Comparison with LoRA under same parameter budget (Llama3.1-8B / GSM8K):
 
 - [\[ICLR 2026\] FlexLoRA: Entropy-Guided Flexible Low-Rank Adaptation](flexlora_entropy-guided_flexible_low-rank_adaptation.md)
 - [\[ICLR 2026\] Stable-LoRA: Stabilizing Feature Learning of Low-Rank Adaptation](stable-lora_stabilizing_feature_learning_of_low-rank_adaptation.md)
+- [\[ICLR 2026\] IGU-LoRA: Adaptive Rank Allocation via Integrated Gradients and Uncertainty-Aware Scoring](igu-lora_adaptive_rank_allocation_via_integrated_gradients_and_uncertainty-aware.md)
 - [\[ICLR 2026\] LoFT: Low-Rank Adaptation That Behaves Like Full Fine-Tuning](loft_low-rank_adaptation_that_behaves_like_full_fine-tuning.md)
-- [\[ICCV 2025\] Beyond Low-Rank Tuning: Model Prior-Guided Rank Allocation for Effective Transfer in Low-Data and Large-Gap Regimes](../../ICCV2025/model_compression/beyond_low-rank_tuning_model_prior-guided_rank_allocation_for_effective_transfer.md)
-- [\[ACL 2026\] TLoRA: Task-aware Low Rank Adaptation of Large Language Models](../../ACL2026/model_compression/tlora_task-aware_low_rank_adaptation_of_large_language_models.md)
+- [\[ICLR 2026\] Gradient Intrinsic Dimensionality Alignment：Narrowing The Gap Between Low-Rank Adaptation and Full Fine-Tuning](gradient_intrinsic_dimensionalityalignmentnarrowing_the_gap_between_low-rank_ad.md)
 
 </div>
 

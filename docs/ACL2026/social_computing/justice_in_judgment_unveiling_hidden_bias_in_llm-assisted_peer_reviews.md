@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Justice in Judgment: Unveiling (Hidden) Bias in LLM-assisted Peer Reviews
 description: >-
-  [ACL 2026][Social Computing][affiliation bias] The authors systematically audit LLM peer review bias across 9 LLMs using a counterfactual evaluation that "modifies author metadata without changing paper content." They find all models exhibit significant favoritism toward Ranked-Stronger (RS) institutions and higher tolerance for senior PIs and prolific authors. Cru
+  [ACL 2026 Findings][Social Computing][Counterfactual evaluation] The authors systematically audit LLM peer review bias across 9 LLMs using a counterfactual evaluation that "modifies author metadata without changing paper content." They find all models exhibit significant favoritism toward Ranked-Stronger (RS) institutions and higher tolerance for senior PIs and prolific authors. Crucially, even when models appear neutral in hard ratings, soft ratings (expected scores based on…
 tags:
-  - ACL 2026
-  - Social Computing
-  - affiliation bias
-  - hidden bias
-  - soft rating
+  - "ACL 2026 Findings"
+  - "Social Computing"
+  - "Counterfactual evaluation"
+  - "affiliation bias"
+  - "hidden bias"
+  - "soft rating"
+  - "alignment bias"
 date: 2026-05-08
-content_hash: 871f0d12f421814b
+content_hash: d8f025d8320d3d7f
 ---
+
 # Justice in Judgment: Unveiling (Hidden) Bias in LLM-assisted Peer Reviews
 
 **Conference**: ACL 2026 Findings  
@@ -137,6 +140,7 @@ The preference for RS (blue) and male (in specific models) is significantly high
 - Value: ⭐⭐⭐⭐⭐ Provides hard evidence against blind trust in LLM-assisted reviews, directly impacting conference policy and alignment research.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

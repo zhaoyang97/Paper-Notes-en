@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy
 description: >-
-  [AAAI 2026][Robotics][Humanoid Robot] This paper proposes SE-Policy, which directly embeds strict symmetry equivariance (actor) and symmetry invariance (critic) into the neural network architecture without additional hyp…
+  [AAAI 2026][Robotics][Humanoid Robot] This paper proposes SE-Policy, which directly embeds strict symmetry equivariance (actor) and symmetry invariance (critic) into the neural network architecture without additional hyperparameters, enabling humanoid robots to produce spatiotemporally coordinated natural locomotion. The velocity tracking error is reduced by 40% compared to DreamWaQ, and the policy is successfully deployed on a physical Unitree G1 robot.
 tags:
   - "AAAI 2026"
   - "Robotics"
@@ -13,7 +13,7 @@ tags:
   - "PPO"
   - "Sim-to-Real"
 date: 2026-05-08
-content_hash: dfd2b8462fb6b251
+content_hash: dfcc0a39c7f7eac3
 ---
 
 # Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy
@@ -179,9 +179,9 @@ The theoretical derivation is complete, naturally motivating the architectural d
 
 - [\[NeurIPS 2025\] Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning](../../NeurIPS2025/robotics/adversarial_locomotion_and_motion_imitation_for_humanoid_policy_learning.md)
 - [\[ICLR 2026\] Partially Equivariant Reinforcement Learning in Symmetry-Breaking Environments](../../ICLR2026/robotics/partially_equivariant_reinforcement_learning_in_symmetry-breaking_environments.md)
+- [\[ICLR 2026\] BFM-Zero: A Promptable Behavioral Foundation Model for Humanoid Control Using Unsupervised Reinforcement Learning](../../ICLR2026/robotics/bfm-zero_a_promptable_behavioral_foundation_model_for_humanoid_control_using_uns.md)
 - [\[AAAI 2026\] RLSLM: A Hybrid Reinforcement Learning Framework Aligning Rule-Based Social Locomotion Model with Human Social Norms](rlslm_a_hybrid_reinforcement_learning_framework_aligning_rule-based_social_locom.md)
-- [\[AAAI 2026\] Scalable Multi-Objective and Meta Reinforcement Learning via Gradient Estimation](scalable_multi-objective_and_meta_reinforcement_learning_via_gradient_estimation.md)
-- [\[ICLR 2026\] Rethinking Policy Diversity in Ensemble Policy Gradient in Large-Scale Reinforcement Learning](../../ICLR2026/robotics/rethinking_policy_diversity_in_ensemble_policy_gradient_in_large-scale_reinforce.md)
+- [\[CVPR 2026\] Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control](../../CVPR2026/robotics/do_you_have_freestyle_expressive_humanoid_locomotion_via_audio_control.md)
 
 </div>
 

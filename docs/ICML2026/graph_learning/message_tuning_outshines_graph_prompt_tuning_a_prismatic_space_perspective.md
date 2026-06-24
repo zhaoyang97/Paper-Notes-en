@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Message Tuning Outshines Graph Prompt Tuning: A Prismatic Space Perspective
 description: >-
-  [ICML 2026][Graph Learning][Paper Note] This paper proposes **Prismatic Space Theory (PS-Theory)**, treating the frozen GNN foundation model as a layer-wise piecewise linear mapping that performs "prismatic" refraction on the input manifold. It rigorously proves that an upper bound exists for the adaptation capability of graph prompt tuning. Consequently, **
+  [ICML 2026][Graph Learning][Graph Foundation Models] This paper proposes **Prismatic Space Theory (PS-Theory)**, treating the frozen GNN foundation model as a layer-wise piecewise linear mapping that performs "prismatic" refraction on the input manifold. It rigorously proves that an upper bound exists for the adaptation capability of graph prompt tuning. Consequently, **Message Tuning (MTG)** is introduced, which injects learnable "message prototypes" into each layer and dyna…
 tags:
-  - ICML 2026
-  - Graph Learning
+  - "ICML 2026"
+  - "Graph Learning"
+  - "Graph Foundation Models"
+  - "Graph Prompt Tuning"
+  - "Prismatic Space Theory"
+  - "Message Tuning"
+  - "Geometric Measure Theory"
 date: 2026-05-08
-content_hash: dac4bfef36af03e8
+content_hash: 23394d1440ab0aad
 ---
+
 # Message Tuning Outshines Graph Prompt Tuning: A Prismatic Space Perspective
 
 **Conference**: ICML 2026  
@@ -132,8 +138,8 @@ Note: MTG achieved the **best performance on all 15 datasets**, with significant
 ## Related Papers
 
 - [\[ICML 2026\] GILT: An LLM-Free, Tuning-Free Graph Foundational Model for In-Context Learning](gilt_an_llm-free_tuning-free_graph_foundational_model_for_in-context_learning.md)
-- [\[ICML 2026\] View Space：跨任意图的表示学习](view_space_learning_representation_across_arbitrary_graphs.md)
 - [\[CVPR 2025\] Coeff-Tuning: A Graph Filter Subspace View for Tuning Attention-Based Large Models](../../CVPR2025/graph_learning/coeff-tuning_a_graph_filter_subspace_view_for_tuning_attention-based_large_model.md)
+- [\[ICML 2026\] View Space: Representation Learning Across Arbitrary Graphs](view_space_learning_representation_across_arbitrary_graphs.md)
 - [\[ACL 2026\] ARK: Answer-Centric Retriever Tuning via KG-augmented Curriculum Learning](../../ACL2026/graph_learning/ark_answer-centric_retriever_tuning_via_kg-augmented_curriculum_learning.md)
 - [\[ICML 2025\] Does Graph Prompt Work? A Data Operation Perspective with Theoretical Analysis](../../ICML2025/graph_learning/does_graph_prompt_work_a_data_operation_perspective_with_theoretical_analysis.md)
 

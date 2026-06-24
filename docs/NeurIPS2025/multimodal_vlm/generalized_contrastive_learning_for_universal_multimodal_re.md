@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Generalized Contrastive Learning for Universal Multimodal Retrieval
 description: >-
-  [NeurIPS 2025][Information Retrieval & RAG][multimodal retrieval] This paper proposes Generalized Contrastive Learning (GCL), which performs contrastive learning over all 6 modality-pair combinations within a mini-batch…
+  [NeurIPS 2025][Multimodal VLM][multimodal retrieval] This paper proposes Generalized Contrastive Learning (GCL), which performs contrastive learning over all 6 modality-pair combinations within a mini-batch (image↔text, image↔image+text, text↔image+text). Without constructing new triplet datasets and using only existing image-text pairs, GCL improves VISTA's average retrieval precision on M-BEIR from 21.18 to 34.06 (+60.8%), and on the text→image+text task of MMEB from 10.1%…
 tags:
   - "NeurIPS 2025"
-  - "Information Retrieval & RAG"
+  - "Multimodal VLM"
   - "multimodal retrieval"
   - "contrastive learning"
   - "GCL"
   - "fused modality"
   - "CLIP"
 date: 2026-05-08
-content_hash: 9f17582f95ce8937
+content_hash: 51eba711e9f9f5bc
 ---
 
 # Generalized Contrastive Learning for Universal Multimodal Retrieval
@@ -134,11 +134,11 @@ CoVR video retrieval (Recall@1): 37.32 vs. CL 33.76 vs. Pretrained 31.22.
 
 ## Related Papers
 
-- [\[CVPR 2026\] MuCo: Multi-turn Contrastive Learning for Multimodal Embedding Model](../../CVPR2026/information_retrieval/muco_multi-turn_contrastive_learning_for_multimodal_embedding_model.md)
-- [\[NeurIPS 2025\] Scaling Language-Centric Omnimodal Representation Learning](scaling_language-centric_omnimodal_representation_learning.md)
-- [\[NeurIPS 2025\] Windsock is Dancing: Adaptive Multimodal Retrieval-Augmented Generation](windsock_is_dancing_adaptive_multimodal_retrieval-augmented_generation.md)
-- [\[NeurIPS 2025\] SuperCLIP: CLIP with Simple Classification Supervision](superclip_clip_with_simple_classification_supervision.md)
-- [\[NeurIPS 2025\] Benchmarking Retrieval-Augmented Multimodal Generation for Document Question Answering](benchmarking_retrievalaugmented_multimodal_generation_for_do.md)
+- [\[NeurIPS 2025\] Continual Multimodal Contrastive Learning](continual_multimodal_contrastive_learning.md)
+- [\[ACL 2025\] MegaPairs: Massive Data Synthesis For Universal Multimodal Retrieval](../../ACL2025/multimodal_vlm/megapairs_massive_data_synthesis_for_universal_multimodal_retrieval.md)
+- [\[ICML 2025\] Universal Retrieval for Multimodal Trajectory Modeling](../../ICML2025/multimodal_vlm/universal_retrieval_for_multimodal_trajectory_modeling.md)
+- [\[ICLR 2026\] U-MARVEL: Unveiling Key Factors for Universal Multimodal Retrieval via Embedding Learning](../../ICLR2026/multimodal_vlm/u-marvel_unveiling_key_factors_for_universal_multimodal_retrieval_via_embedding_.md)
+- [\[CVPR 2025\] UNEM: UNrolled Generalized EM for Transductive Few-Shot Learning](../../CVPR2025/multimodal_vlm/unem_unrolled_generalized_em_for_transductive_few-shot_learning.md)
 
 </div>
 

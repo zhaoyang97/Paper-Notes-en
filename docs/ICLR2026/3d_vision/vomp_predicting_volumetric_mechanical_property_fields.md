@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VoMP: Predicting Volumetric Mechanical Property Fields
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] VoMP is the first feed-forward method to predict **internal** volumetric mechanical material fields (Young's modulus $E$, Poisson's ratio $\nu$, density $\rho$) for 3D objects. It aggregates multi-view DINOv2 features per voxel for any voxelizable and renderable 3D representation (Mesh / Gaussian Splatting / NeRF / SDF
+  [ICLR 2026][3D Vision][Volumetric material prediction] VoMP is the first feed-forward method to predict **internal** volumetric mechanical material fields (Young's modulus $E$, Poisson's ratio $\nu$, density $\rho$) for 3D objects. It aggregates multi-view DINOv2 features per voxel for any voxelizable and renderable 3D representation (Mesh / Gaussian Splatting / NeRF / SDF), predicts per-voxel material latent codes via a Geometry Transformer, and decodes them into real physic…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Volumetric material prediction"
+  - "Young's modulus"
+  - "Feed-forward inference"
+  - "Material latent space"
+  - "Multi-view feature aggregation"
 date: 2026-05-08
-content_hash: a41c89ec7487723c
+content_hash: 9935f87c28601952
 ---
+
 # VoMP: Predicting Volumetric Mechanical Property Fields
 
 **Conference**: ICLR 2026  
@@ -140,15 +146,14 @@ VoMP time breakdown: Rendering 2.11s, DINOv2 calculation 0.86s, DINOv2 reconstru
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Adaptive Volumetric Mechanical Property Fields Invariant to Resolution](../../ICML2026/3d_vision/adaptive_volumetric_mechanical_property_fields_invariant_to_resolution.md)
 - [\[ICLR 2026\] EgoNight: Towards Egocentric Vision Understanding at Night with a Challenging Benchmark](egonight_towards_egocentric_vision_understanding_at_night_with_a_challenging_ben.md)
+- [\[ICLR 2026\] Distractor-free Generalizable 3D Gaussian Splatting](distractor-free_generalizable_3d_gaussian_splatting.md)
+- [\[ICLR 2026\] FlashWorld: High-quality 3D Scene Generation within Seconds](flashworld_high-quality_3d_scene_generation_within_seconds.md)
 - [\[ICLR 2026\] Splat the Net: Radiance Fields with Splattable Neural Primitives](splat_the_net_radiance_fields_with_splattable_neural_primitives.md)
-- [\[ICLR 2026\] Einstein Fields: A Neural Perspective To Computational General Relativity](einstein_fields_a_neural_perspective_to_computational_general_relativity.md)
-- [\[ICLR 2026\] MAVEN: A Mesh-Aware Volumetric Encoding Network for Simulating 3D Flexible Deformation](maven_a_mesh-aware_volumetric_encoding_network_for_simulating_3d_flexible_deform.md)
 
 </div>
 

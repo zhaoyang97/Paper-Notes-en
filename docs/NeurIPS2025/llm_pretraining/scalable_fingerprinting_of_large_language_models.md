@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Scalable Fingerprinting of Large Language Models
 description: >-
-  [NeurIPS 2025][LLM Pretraining][model fingerprinting] This paper proposes Perinucleus sampling to generate scalable LLM fingerprints, enabling the embedding of 24…
+  [NeurIPS 2025 Spotlight][LLM Pretraining][model fingerprinting] This paper proposes Perinucleus sampling to generate scalable LLM fingerprints, enabling the embedding of 24,576 fingerprints in Llama-3.1-8B—two orders of magnitude more than existing methods—without degrading model capability. Theoretical and empirical analyses demonstrate that large-scale fingerprinting is essential for defending against collusion attacks.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "LLM Pretraining"
   - "model fingerprinting"
   - "LLM ownership"
@@ -12,7 +12,7 @@ tags:
   - "collusion attack"
   - "model security"
 date: 2026-05-08
-content_hash: 52c019ee04502179
+content_hash: fdb4c015fbb6e574
 ---
 
 # Scalable Fingerprinting of Large Language Models
@@ -132,10 +132,10 @@ Relative performance exceeds 95% across 10 models with 8,192 fingerprints.
 ## Related Papers
 
 - [\[NeurIPS 2025\] The Curse of Depth in Large Language Models](the_curse_of_depth_in_large_language_models.md)
-- [\[NeurIPS 2025\] Retrospective In-Context Learning for Temporal Credit Assignment with Large Language Models](ricl_temporal_credit.md)
-- [\[NeurIPS 2025\] Leveraging Importance Sampling to Detach Alignment Modules from Large Language Models](leveraging_importance_sampling_to_detach_alignment_modules_from_large_language_m.md)
+- [\[ACL 2025\] Large Vocabulary Size Improves Large Language Models](../../ACL2025/llm_pretraining/large_vocabulary_size_improves_large_language_models.md)
+- [\[ACL 2025\] Retrofitting Large Language Models with Dynamic Tokenization](../../ACL2025/llm_pretraining/retrofitting_large_language_models_with_dynamic_tokenization.md)
 - [\[NeurIPS 2025\] Breaking the Gradient Barrier: Unveiling Large Language Models for Strategic Classification](breaking_the_gradient_barrier_unveiling_large_language_models_for_strategic_clas.md)
-- [\[NeurIPS 2025\] Scaling Embedding Layers in Language Models](scaling_embedding_layers_in_language_models.md)
+- [\[NeurIPS 2025\] Retrospective In-Context Learning for Temporal Credit Assignment with Large Language Models](ricl_temporal_credit.md)
 
 </div>
 

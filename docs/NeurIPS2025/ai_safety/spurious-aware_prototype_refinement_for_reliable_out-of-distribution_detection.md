@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SPROD: Spurious-Aware Prototype Refinement for Reliable Out-of-Distribution Detection
 description: >-
-  [NeurIPS 2025][AI Safety][Spurious correlations] SPROD is a post-hoc OOD detection method designed to handle spurious correlations in training data. It subdivides each class prototype into "correctly classified" and "mis…
+  [NeurIPS 2025][AI Safety][Spurious correlations] SPROD is a post-hoc OOD detection method designed to handle spurious correlations in training data. It subdivides each class prototype into "correctly classified" and "misclassified" subgroups (the latter sharing spurious features), combined with K-means-style refinement and distance-based (generative) scoring. Across 5 spurious-correlation OOD benchmarks, it achieves an average AUROC of 85.1% (+4.8% vs. runner-up KNN) and FPR@…
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "out-of-distribution detection"
   - "K-means"
 date: 2026-05-08
-content_hash: 20c1de6c72bbd814
+content_hash: 11a068ab5596507d
 ---
 
 # SPROD: Spurious-Aware Prototype Refinement for Reliable Out-of-Distribution Detection
@@ -132,9 +132,9 @@ Compared to 19 baseline methods: average AUROC +4.8%, FPR@95 −9.3%.
 
 - [\[NeurIPS 2025\] Revisiting Logit Distributions for Reliable Out-of-Distribution Detection](revisiting_logit_distributions_for_reliable_out-of-distribution_detection.md)
 - [\[NeurIPS 2025\] Redundancy-Aware Test-Time Graph Out-of-Distribution Detection](redundancy-aware_test-time_graph_out-of-distribution_detection.md)
+- [\[ICLR 2026\] GradPCA: Leveraging NTK Alignment for Reliable Out-of-Distribution Detection](../../ICLR2026/ai_safety/gradpca_leveraging_ntk_alignment_for_reliable_out-of-distribution_detection.md)
 - [\[NeurIPS 2025\] Double Descent Meets Out-of-Distribution Detection: Theoretical Insights and Empirical Analysis](double_descent_meets_out-of-distribution_detection_theoretical_insights_and_empi.md)
 - [\[NeurIPS 2025\] Harnessing Feature Resonance under Arbitrary Target Alignment for Out-of-Distribution Node Detection](harnessing_feature_resonance_under_arbitrary_target_alignment_for_out-of-distrib.md)
-- [\[ICLR 2026\] AP-OOD: Attention Pooling for Out-of-Distribution Detection](../../ICLR2026/ai_safety/ap-ood_attention_pooling_for_out-of-distribution_detection.md)
 
 </div>
 

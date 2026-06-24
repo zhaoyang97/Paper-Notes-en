@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Explore How to Inject Beneficial Noise in MLLMs
 description: >-
-  [AAAI 2026][Multimodal VLM][Positive-Incentive Noise] This paper proposes the Multimodal Noise Generator (MuNG), which dynamically generates "beneficial noise" from image-text pairs via a variational inference framework…
+  [AAAI 2026][Multimodal VLM][Positive-Incentive Noise] This paper proposes the Multimodal Noise Generator (MuNG), which dynamically generates "beneficial noise" from image-text pairs via a variational inference framework and injects it into the frozen visual features of an MLLM. The approach suppresses task-irrelevant semantics and enhances cross-modal representation alignment, requiring only ~1% additional parameters while outperforming full fine-tuning and PEFT methods such…
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Variational Inference"
   - "Cross-Modal Alignment"
 date: 2026-05-08
-content_hash: d95620753bcbd2b4
+content_hash: 74a2cad9f6c7ad64
 ---
 
 # Explore How to Inject Beneficial Noise in MLLMs
@@ -143,10 +143,10 @@ where $m$ is the number of samples drawn per training example.
 ## Related Papers
 
 - [\[NeurIPS 2025\] FlySearch: Exploring how vision-language models explore](../../NeurIPS2025/multimodal_vlm/flysearch_exploring_how_vision-language_models_explore.md)
-- [\[AAAI 2026\] MacVQA: Adaptive Memory Allocation and Global Noise Filtering for Continual Visual Question Answering](macvqa_adaptive_memory_allocation_and_global_noise_filtering_for_continual_visua.md)
+- [\[ICLR 2026\] CitySeeker: How Do VLMs Explore Embodied Urban Navigation with Implicit Human Needs?](../../ICLR2026/multimodal_vlm/cityseeker_how_do_vlms_explore_embodied_urban_navigation_with_implicit_human_nee.md)
+- [\[CVPR 2026\] SpatialTree: How Spatial Intelligence Branches Out in MLLMs](../../CVPR2026/multimodal_vlm/spatialtree_how_spatial_intelligence_branches_out_in_mllms.md)
 - [\[AAAI 2026\] When Eyes and Ears Disagree: Can MLLMs Discern Audio-Visual Confusion?](when_eyes_and_ears_disagree_can_mllms_discern_audio-visual_confusion.md)
-- [\[ICLR 2026\] How Do Medical MLLMs Fail? A Study on Visual Grounding in Medical Images](../../ICLR2026/multimodal_vlm/how_do_medical_mllms_fail_a_study_on_visual_grounding_in_medical_images.md)
-- [\[AAAI 2026\] AbductiveMLLM: Boosting Visual Abductive Reasoning Within MLLMs](abductivemllm_boosting_visual_abductive_reasoning_within_mll.md)
+- [\[AAAI 2026\] MacVQA: Adaptive Memory Allocation and Global Noise Filtering for Continual Visual Question Answering](macvqa_adaptive_memory_allocation_and_global_noise_filtering_for_continual_visua.md)
 
 </div>
 

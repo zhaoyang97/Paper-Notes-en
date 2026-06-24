@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Inverse Reinforcement Learning with Dynamic Reward Scaling for LLM Alignment
 description: >-
-  [ICLR 2026][Alignment & RLHF][GRPO] DR-IRL utilizes Inverse Reinforcement Learning (IRL) to train category-specific shadow reward models from "balanced safety demonstration data." It then scales the advantage function in GRPO with a dynamic coefficient determined by both "data difficulty" and "model responsiveness." This concentrates optimization efforts
+  [ICLR 2026][LLM Alignment][Inverse Reinforcement Learning] DR-IRL utilizes Inverse Reinforcement Learning (IRL) to train category-specific shadow reward models from "balanced safety demonstration data." It then scales the advantage function in GRPO with a dynamic coefficient determined by both "data difficulty" and "model responsiveness." This concentrates optimization efforts on long-tail, high-difficulty harmful samples, significantly enhancing safety alignment without sacr…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - GRPO
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Inverse Reinforcement Learning"
+  - "Dynamic Reward Scaling"
+  - "GRPO"
+  - "Safety Alignment"
+  - "Shadow Reward Model"
+  - "Long-tail Threats"
 date: 2026-05-08
-content_hash: e1bb081ae929a702
+content_hash: 1a604bcb6cfc5f10
 ---
+
 # Inverse Reinforcement Learning with Dynamic Reward Scaling for LLM Alignment
 
 **Conference**: ICLR 2026  

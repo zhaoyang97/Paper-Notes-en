@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Language-guided Open-world Video Anomaly Detection under Weak Supervision
 description: >-
-  [ICLR 2026][Video Understanding][Paper Note] Ours proposes LaGoVAD, a language-guided open-world video anomaly detection paradigm. By modeling the anomaly definition as a random variable input in natural language form, and combining it with dynamic video synthesis and contrastive learning regularization strategies, it achieves zero-shot SOTA performance across se
+  [ICLR 2026][Video Understanding][Video Anomaly Detection] Ours proposes LaGoVAD, a language-guided open-world video anomaly detection paradigm. By modeling the anomaly definition as a random variable input in natural language form, and combining it with dynamic video synthesis and contrastive learning regularization strategies, it achieves zero-shot SOTA performance across seven datasets.
 tags:
-  - ICLR 2026
-  - Video Understanding
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Video Anomaly Detection"
+  - "Open World"
+  - "Language-guided"
+  - "Concept Drift"
+  - "Weak Supervision"
 date: 2026-05-08
-content_hash: bdfae8c49a68c5a4
+content_hash: ed53598190baad2a
 ---
+
 # Language-guided Open-world Video Anomaly Detection under Weak Supervision
 
 **Conference**: ICLR 2026  
@@ -139,7 +145,7 @@ Protocol 2: Concept drift evaluation (drift@5). LaGoVAD remains stable under dif
 - [\[ICCV 2025\] TOGA: Temporally Grounded Open-Ended Video QA with Weak Supervision](../../ICCV2025/video_understanding/toga_temporally_grounded_open-ended_video_qa_with_weak_supervision.md)
 - [\[ICLR 2026\] Steering and Rectifying Latent Representation Manifolds in Frozen Multi-Modal LLMs for Video Anomaly Detection](steering_and_rectifying_latent_representation_manifolds_in_frozen_multi-modal_ll.md)
 - [\[CVPR 2026\] Learning from Noisy Supervision: A Denoising-Debiasing Framework for Weakly Supervised Video Anomaly Detection](../../CVPR2026/video_understanding/learning_from_noisy_supervision_a_denoising-debiasing_framework_for_weakly_super.md)
-- [\[CVPR 2026\] OmniVTG: A Large-Scale Dataset and Training Paradigm for Open-World Video Temporal Grounding](../../CVPR2026/video_understanding/omnivtg_a_large-scale_dataset_and_training_paradigm_for_open-world_video_tempora.md)
+- [\[CVPR 2025\] Anomize: Better Open Vocabulary Video Anomaly Detection](../../CVPR2025/video_understanding/anomize_better_open_vocabulary_video_anomaly_detection.md)
 - [\[CVPR 2026\] No Need For Real Anomaly: MLLM Empowered Zero-Shot Video Anomaly Detection](../../CVPR2026/video_understanding/no_need_for_real_anomaly_mllm_empowered_zero-shot_video_anomaly_detection.md)
 
 </div>

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DiffusionFF: A Diffusion-based Framework for Joint Face Forgery Detection and Fine-Grained Artifact Localization
 description: >-
-  [CVPR 2026][AI Safety][Diffusion Model] DiffusionFF repurposes a pre-trained forgery detector as an "artifact encoder" and a denoising diffusion model as an "artifact decoder." Using multi-scale forgery features as conditions, it progressively generates fine-grained DSSIM artifact localization maps, which are subsequently fused back into the detector for cla
+  [CVPR 2026][AI Safety][Face Forgery Detection] DiffusionFF repurposes a pre-trained forgery detector as an "artifact encoder" and a denoising diffusion model as an "artifact decoder." Using multi-scale forgery features as conditions, it progressively generates fine-grained DSSIM artifact localization maps, which are subsequently fused back into the detector for classification, achieving SOTA results in both detection and localization tasks.
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Diffusion Model
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Face Forgery Detection"
+  - "Artifact Localization"
+  - "Diffusion Models"
+  - "DSSIM map"
+  - "Encoder-Decoder"
 date: 2026-05-08
-content_hash: a2bf731b88a166e2
+content_hash: b0915d74f1e1a88d
 ---
+
 # DiffusionFF: A Diffusion-based Framework for Joint Face Forgery Detection and Fine-Grained Artifact Localization
 
 **Conference**: CVPR 2026  
@@ -157,11 +162,11 @@ Ablation on Fusion modules (Average Cross-dataset AUC %):
 
 ## Related Papers
 
-- [\[AAAI 2026\] Fine-Grained DINO Tuning with Dual Supervision for Face Forgery Detection](../../AAAI2026/ai_safety/fine-grained_dino_tuning_with_dual_supervision_for_face_forgery_detection.md)
 - [\[CVPR 2026\] A Sanity Check for Multi-In-Domain Face Forgery Detection in the Real World](a_sanity_check_for_multi-in-domain_face_forgery_detection_in_the_real_world.md)
+- [\[AAAI 2026\] Fine-Grained DINO Tuning with Dual Supervision for Face Forgery Detection](../../AAAI2026/ai_safety/fine-grained_dino_tuning_with_dual_supervision_for_face_forgery_detection.md)
 - [\[CVPR 2026\] Skyra: AI-Generated Video Detection via Grounded Artifact Reasoning](skyra_ai-generated_video_detection_via_grounded_artifact_reasoning.md)
 - [\[CVPR 2026\] GROW: Watermark Generation with Progressive Guidance for Diffusion Models](grow_watermark_generation_with_progressive_guidance_for_diffusion_models.md)
-- [\[CVPR 2026\] Unleashing Stealthy Backdoor Pandemic by Infecting a Single Diffusion Model](unleashing_stealthy_backdoor_pandemic_by_infecting_a_single_diffusion_model.md)
+- [\[CVPR 2026\] No Way To Steal My Face: Proactive Defense Against Identity-Preserving Personalized Generation](no_way_to_steal_my_face_proactive_defense_against_identity-preserving_personaliz.md)
 
 </div>
 

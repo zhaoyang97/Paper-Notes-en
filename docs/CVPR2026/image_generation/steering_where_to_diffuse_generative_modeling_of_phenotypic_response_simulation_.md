@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Steering Where to Diffuse: Generative Modeling of Phenotypic Response Simulation with Steered Diffusion Bridge
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] SimuSDB models the task of "predicting the morphological change of an unperturbed cell image under specific chemical/genetic perturbations" as a **stochastic diffusion bridge** from the source cell distribution to the perturbed distribution. By using a conditional Brownian bridge, trajectories are allowed to diverge ar
+  [CVPR 2026][Image Generation][Diffusion Bridge] SimuSDB models the task of "predicting the morphological change of an unperturbed cell image under specific chemical/genetic perturbations" as a **stochastic diffusion bridge** from the source cell distribution to the perturbed distribution. By using a conditional Brownian bridge, trajectories are allowed to diverge around a deterministic backbone to capture phenotypic diversity. The constraint that "generative results must matc…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Bridge"
+  - "Brownian Bridge"
+  - "Stochastic Optimal Control"
+  - "Phenotypic Response Simulation"
+  - "Cell Morphological Generation"
 date: 2026-05-08
-content_hash: 5bee4df070231990
+content_hash: 75438e5ad84a80fb
 ---
+
 # Steering Where to Diffuse: Generative Modeling of Phenotypic Response Simulation with Steered Diffusion Bridge
 
 **Conference**: CVPR 2026  
@@ -141,11 +147,11 @@ SimuSDB consistently leads across all datasets. PhenDiff performs poorly due to 
 
 ## Related Papers
 
-- [\[CVPR 2026\] AS-Bridge: A Bidirectional Generative Framework Bridging Next-Generation Astronomical Surveys](as-bridge_a_bidirectional_generative_framework_bridging_next-generation_astronom.md)
+- [\[CVPR 2026\] Generative Modeling of Weights: Generalization or Memorization?](generative_modeling_of_weights_generalization_or_memorization.md)
+- [\[CVPR 2026\] Residual Diffusion Bridge Model for Image Restoration](residual_diffusion_bridge_model_for_image_restoration.md)
 - [\[NeurIPS 2025\] Coupling Generative Modeling and an Autoencoder with the Causal Bridge](../../NeurIPS2025/image_generation/coupling_generative_modeling_and_an_autoencoder_with_the_causal_bridge.md)
 - [\[CVPR 2026\] Texvent: Asynchronous Event Data Simulation via Text Prompt](texvent_asynchronous_event_data_simulation_via_text_prompt.md)
 - [\[CVPR 2026\] POLAR: A Portrait OLAT Dataset and Generative Framework for Illumination-Aware Face Modeling](polar_a_portrait_olat_dataset_and_generative_framework_for_illumination-aware_fa.md)
-- [\[CVPR 2026\] Test-Time Instance-Specific Parameter Composition: A New Paradigm for Adaptive Generative Modeling](test-time_instance-specific_parameter_composition_a_new_paradigm_for_adaptive_ge.md)
 
 </div>
 

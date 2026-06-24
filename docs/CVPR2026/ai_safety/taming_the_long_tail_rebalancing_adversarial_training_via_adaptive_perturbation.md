@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Taming the Long Tail: Rebalancing Adversarial Training via Adaptive Perturbation
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] To address the issue of "overconfidence in head classes and lack of robustness in tail classes" in adversarial training (AT) on long-tailed data, this paper theoretically proves that **perturbation intensity itself can simultaneously fix adversarial vulnerability and class imbalance**. Consequently, the authors propose
+  [CVPR 2026][AI Safety][Adversarial Training] To address the issue of "overconfidence in head classes and lack of robustness in tail classes" in adversarial training (AT) on long-tailed data, this paper theoretically proves that **perturbation intensity itself can simultaneously fix adversarial vulnerability and class imbalance**. Consequently, the authors propose RobustLT, a plug-and-play method that assigns larger perturbation budgets to tail classes and smaller budgets to h…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Adversarial Training"
+  - "Long-tail Distribution"
+  - "Adaptive Perturbation"
+  - "Class Balancing"
+  - "Robustness"
 date: 2026-05-08
-content_hash: 981cd1b0d5eafbdd
+content_hash: b981f8f3e7c6057f
 ---
+
 # Taming the Long Tail: Rebalancing Adversarial Training via Adaptive Perturbation
 
 **Conference**: CVPR 2026  

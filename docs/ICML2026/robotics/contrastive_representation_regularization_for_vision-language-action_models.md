@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Contrastive Representation Regularization for Vision-Language-Action Models
 description: >-
-  [ICML 2026][Robotics & Embodied AI][view cutoff] The authors observe that representations in VLA models inherited from VLMs are dominated by visual appearance and are insensitive to robot proprioceptive states. They propose Robot State-aware Contrastive Loss (RS-CL), which uses the Euclidean distance between proprioceptive states as "soft contrastive labels" to resha
+  [ICML 2026][Robotics][Vision-Language-Action Models] The authors observe that representations in VLA models inherited from VLMs are dominated by visual appearance and are insensitive to robot proprioceptive states. They propose Robot State-aware Contrastive Loss (RS-CL), which uses the Euclidean distance between proprioceptive states as "soft contrastive labels" to reshape representations. Combined with "view cutoff" feature-level augmentation…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - view cutoff
-  - GR00T
+  - "ICML 2026"
+  - "Robotics"
+  - "Vision-Language-Action Models"
+  - "Proprioceptive Contrastive Learning"
+  - "Representation Regularization"
+  - "view cutoff"
+  - "GR00T"
 date: 2026-05-08
-content_hash: c6be9442a09da1ef
+content_hash: e9e0f0de53b59ae9
 ---
+
 # Contrastive Representation Regularization for Vision-Language-Action Models
 
 **Conference**: ICML 2026  
@@ -145,10 +149,10 @@ The total objective is $\mathcal{L} = \mathcal{L}_{\text{FM}} + \lambda \, \math
 ## Related Papers
 
 - [\[CVPR 2026\] Cross-Hand Latent Representation for Vision-Language-Action Models](../../CVPR2026/robotics/cross-hand_latent_representation_for_vision-language-action_models.md)
+- [\[ICML 2026\] Scaling by Diversified Experience for Vision-Language-Action Models](scaling_by_diversified_experience_for_vision-language-action_models.md)
 - [\[ICML 2026\] LangForce: Bayesian Decomposition of Vision-Language-Action Models via Latent Action Queries](langforce_bayesian_decomposition_of_vision_language_action_models_via_latent_act.md)
-- [\[ICML 2026\] StableVLA: Towards Robust Vision-Language-Action Models without Extra Data](stablevla_towards_robust_vision-language-action_models_without_extra_data.md)
 - [\[ICML 2026\] From Abstraction to Instantiation: Learning Behavioral Representation for Vision-Language-Action Model](from_abstraction_to_instantiation_learning_behavioral_representation_for_vision-.md)
-- [\[ICML 2026\] SpecPrune-VLA: Accelerating Vision-Language-Action Models via Action-Aware Self-Speculative Pruning](specprune-vla_accelerating_vision-language-action_models_via_action-aware_self-s.md)
+- [\[ICML 2026\] Test-Time Training for Visual Foresight Vision-Language-Action Models](test-time_training_for_visual_foresight_vision-language-action_models.md)
 
 </div>
 

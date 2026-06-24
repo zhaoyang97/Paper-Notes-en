@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Aligning Effective Tokens with Video Anomaly in Large Language Models
 description: >-
-  [ICCV 2025][Video Understanding][Video anomaly understanding] This paper proposes VA-GPT, which efficiently aligns anomaly-relevant tokens within MLLMs via two modules — Spatial Effective Token Selection (SETS) and Tempo…
+  [ICCV 2025][Video Understanding][Video anomaly understanding] This paper proposes VA-GPT, which efficiently aligns anomaly-relevant tokens within MLLMs via two modules — Spatial Effective Token Selection (SETS) and Temporal Effective Token Generation (TETG) — enabling precise detection, description, and temporal localization of anomalous events.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "spatiotemporal alignment"
   - "anomaly detection"
 date: 2026-05-08
-content_hash: 7d8d3061a19a3546
+content_hash: dd9600dc2a472540
 ---
 
 # Aligning Effective Tokens with Video Anomaly in Large Language Models
@@ -161,11 +161,11 @@ $K=0.5$ is optimal; too small a value discards important information, while too 
 
 ## Related Papers
 
-- [\[ICCV 2025\] DisTime: Distribution-based Time Representation for Video Large Language Models](distime_distribution-based_time_representation_for_video_large_language_models.md)
 - [\[ICCV 2025\] 4D-Bench: Benchmarking Multi-modal Large Language Models for 4D Object Understanding](4dbench_benchmarking_multimodal_large_language_models_for_4d.md)
+- [\[ICCV 2025\] DisTime: Distribution-based Time Representation for Video Large Language Models](distime_distribution-based_time_representation_for_video_large_language_models.md)
 - [\[NeurIPS 2025\] MoniTor: Exploiting Large Language Models with Instruction for Online Video Anomaly Detection](../../NeurIPS2025/video_understanding/monitor_exploiting_large_language_models_with_instruction_for_online_video_anoma.md)
+- [\[CVPR 2025\] Video Summarization with Large Language Models](../../CVPR2025/video_understanding/video_summarization_with_large_language_models.md)
 - [\[NeurIPS 2025\] FastVID: Dynamic Density Pruning for Fast Video Large Language Models](../../NeurIPS2025/video_understanding/fastvid_dynamic_density_pruning_for_fast_video_large_languag.md)
-- [\[ICCV 2025\] Factorized Learning for Temporally Grounded Video-Language Models](factorized_learning_for_temporally_grounded_video-language_models.md)
 
 </div>
 

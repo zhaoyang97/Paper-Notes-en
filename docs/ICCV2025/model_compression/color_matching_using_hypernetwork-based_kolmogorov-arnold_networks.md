@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Color Matching Using Hypernetwork-Based Kolmogorov-Arnold Networks (cmKAN)
 description: >-
-  [ICCV 2025][Model Compression][color matching] This paper proposes cmKAN, a hypernetwork-driven Kolmogorov-Arnold Network for color matching. A generator predicts spatially varying KAN spline parameters…
+  [ICCV 2025][Model Compression][color matching] This paper proposes cmKAN, a hypernetwork-driven Kolmogorov-Arnold Network for color matching. A generator predicts spatially varying KAN spline parameters, supporting three scenarios (supervised / unsupervised / pairwise optimization) and three tasks (raw-to-raw / raw-to-sRGB / sRGB-to-sRGB). cmKAN outperforms existing methods by an average of 37.3% across all tasks while remaining extremely lightweight (76.4K parameters).
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -15,7 +15,7 @@ tags:
   - "color transfer"
   - "lightweight"
 date: 2026-05-08
-content_hash: 01c6818362c981c1
+content_hash: c3fe5b310da7d936
 ---
 
 # Color Matching Using Hypernetwork-Based Kolmogorov-Arnold Networks (cmKAN)
@@ -140,11 +140,11 @@ KAN outperforms MLP in low-dimensional signal processing, providing inspiration 
 
 ## Related Papers
 
-- [\[ICCV 2025\] ARGMatch: Adaptive Refinement Gathering for Efficient Dense Matching](argmatch_adaptive_refinement_gathering_for_efficient_dense_matching.md)
+- [\[ICLR 2026\] Lookup multivariate Kolmogorov-Arnold Networks](../../ICLR2026/model_compression/lookup_multivariate_kolmogorov-arnold_networks.md)
 - [\[ICCV 2025\] Colors See Colors Ignore: Clothes Changing ReID with Color Disentanglement](colors_see_colors_ignore_clothes_changing_reid_with_color_disentanglement.md)
-- [\[NeurIPS 2025\] Universal Cross-Tokenizer Distillation via Approximate Likelihood Matching](../../NeurIPS2025/model_compression/universal_cross-tokenizer_distillation_via_approximate_likelihood_matching.md)
+- [\[ICCV 2025\] ARGMatch: Adaptive Refinement Gathering for Efficient Dense Matching](argmatch_adaptive_refinement_gathering_for_efficient_dense_matching.md)
 - [\[ICCV 2025\] Variance-Based Pruning for Accelerating and Compressing Trained Networks](variance-based_pruning_for_accelerating_and_compressing_trained_networks.md)
-- [\[ICLR 2026\] Distillation of Large Language Models via Concrete Score Matching](../../ICLR2026/model_compression/distillation_of_large_language_models_via_concrete_score_matching.md)
+- [\[CVPR 2025\] JamMa: Ultra-lightweight Local Feature Matching with Joint Mamba](../../CVPR2025/model_compression/jamma_ultra-lightweight_local_feature_matching_with_joint_mamba.md)
 
 </div>
 

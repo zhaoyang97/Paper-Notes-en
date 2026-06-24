@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] gLSTM: Mitigating Over-Squashing by Increasing Storage Capacity
 description: >-
-  [ICLR 2026][Graph Learning][over-squashing] This paper disentangles GNN over-squashing into two independent failure modes: "sensitivity limitation" and "storage capacity saturation." It proposes the NAR synthetic task to measure capacity bottlenecks separately and introduces the gLSTM architecture, which incorporates associative memory and gating mechanisms from
+  [ICLR 2026][Graph Learning][over-squashing] This paper disentangles GNN over-squashing into two independent failure modes: "sensitivity limitation" and "storage capacity saturation." It proposes the NAR synthetic task to measure capacity bottlenecks separately and introduces the gLSTM architecture, which incorporates associative memory and gating mechanisms from xLSTM into message passing to explicitly increase node storage capacity.
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - over-squashing
-  - xLSTM
-  - fast weight programmers
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "over-squashing"
+  - "storage capacity"
+  - "associative memory"
+  - "xLSTM"
+  - "fast weight programmers"
+  - "message passing"
 date: 2026-05-08
-content_hash: 21de17dbb7d875cc
+content_hash: e404b5d1e1b74c98
 ---
+
 # gLSTM: Mitigating Over-Squashing by Increasing Storage Capacity
 
 **Conference**: ICLR 2026  
@@ -130,9 +134,9 @@ Removing K-hop leads to significant degradation in most tasks (except SSSP).
 
 - [\[ICML 2025\] Mitigating Over-Squashing in Graph Neural Networks by Spectrum-Preserving Sparsification](../../ICML2025/graph_learning/mitigating_over-squashing_in_graph_neural_networks_by_spectrum-preserving_sparsi.md)
 - [\[ICLR 2026\] Rethinking the Gold Standard: Why Discrete Curvature Fails to Fully Capture Over-squashing in GNNs?](rethinking_the_gold_standard_why_discrete_curvature_fails_to_fully_capture_over-.md)
+- [\[NeurIPS 2025\] Over-squashing in Spatiotemporal Graph Neural Networks](../../NeurIPS2025/graph_learning/over-squashing_in_spatiotemporal_graph_neural_networks.md)
 - [\[ICLR 2026\] DR-GGAD: Dual Residual Centering for Mitigating Anomaly Non‑Discriminativity in Generalist Graph Anomaly Detection](dr-ggad_dual_residual_centering_for_mitigating_anomaly_nondiscriminativity_in_ge.md)
 - [\[ICLR 2026\] On The Expressive Power of GNN Derivatives](on_the_expressive_power_of_gnn_derivatives.md)
-- [\[NeurIPS 2025\] Over-squashing in Spatiotemporal Graph Neural Networks](../../NeurIPS2025/graph_learning/over-squashing_in_spatiotemporal_graph_neural_networks.md)
 
 </div>
 

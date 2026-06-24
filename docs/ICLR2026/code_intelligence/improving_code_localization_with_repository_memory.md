@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Improving Code Localization with Repository Memory
 description: >-
-  [ICLR 2026][Code Intelligence][SWE-bench] Enhances the code localization capabilities of language agents by utilizing the repository's commit history to construct episodic memory (past commits) and semantic memory (summaries of active code functions), achieving significant improvements on SWE-bench.
+  [ICLR 2026][Code Intelligence][Code Localization] Enhances the code localization capabilities of language agents by utilizing the repository's commit history to construct episodic memory (past commits) and semantic memory (summaries of active code functions), achieving significant improvements on SWE-bench.
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - SWE-bench
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Code Localization"
+  - "Repository Memory"
+  - "Commit History"
+  - "Language Agents"
+  - "SWE-bench"
 date: 2026-05-08
-content_hash: 3f25f4b931f81b46
+content_hash: 54968122e56db3e1
 ---
+
 # Improving Code Localization with Repository Memory
 
 **Conference**: ICLR 2026  
@@ -135,11 +140,11 @@ Acc@5 improved by 4.9% on SWE-bench-verified and by 3.1% on SWE-bench-live.
 
 ## Related Papers
 
-- [\[ACL 2026\] Learning Adaptive Parallel Execution for Efficient Code Localization](../../ACL2026/code_intelligence/learning_adaptive_parallel_execution_for_efficient_code_localization.md)
+- [\[ICLR 2026\] SweRank: Software Issue Localization via Code Ranking](swerank_software_issue_localization_with_code_ranking.md)
 - [\[ICLR 2026\] ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory](reasoningbank_scaling_agent_self-evolving_with_reasoning_memory.md)
-- [\[ACL 2026\] SWE-QA: Can Language Models Answer Repository-level Code Questions?](../../ACL2026/code_intelligence/swe-qa_can_language_models_answer_repository-level_code_questions.md)
-- [\[ACL 2026\] CodeRL+: Improving Code Generation via Reinforcement with Execution Semantics Alignment](../../ACL2026/code_intelligence/coderl_improving_code_generation_via_reinforcement_with_execution_semantics_alig.md)
-- [\[ACL 2026\] RepoShapley: Shapley-Enhanced Context Filtering for Repository-Level Code Completion](../../ACL2026/code_intelligence/reposhapley_shapley-enhanced_context_filtering_for_repository-level_code_complet.md)
+- [\[ICLR 2026\] DiffuCoder: Understanding and Improving Masked Diffusion Models for Code Generation](diffucoder_understanding_and_improving_masked_diffusion_models_for_code_generati.md)
+- [\[ACL 2026\] Learning Adaptive Parallel Execution for Efficient Code Localization](../../ACL2026/code_intelligence/learning_adaptive_parallel_execution_for_efficient_code_localization.md)
+- [\[ICLR 2026\] RPG: A Repository Planning Graph for Unified and Scalable Codebase Generation](rpg_a_repository_planning_graph_for_unified_and_scalable_codebase_generation.md)
 
 </div>
 

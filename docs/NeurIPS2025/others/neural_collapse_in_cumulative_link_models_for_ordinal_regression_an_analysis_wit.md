@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Neural Collapse in Cumulative Link Models for Ordinal Regression: An Analysis with Unconstrained Feature Model
 description: >-
-  [NeurIPS 2025][Neural Collapse] This paper extends Neural Collapse (NC) theory to ordinal regression (OR) tasks based on cumulative link models (CLM). Under the unconstrained feature model (UFM) framework…
+  [NeurIPS 2025][Neural Collapse] This paper extends Neural Collapse (NC) theory to ordinal regression (OR) tasks based on cumulative link models (CLM). Under the unconstrained feature model (UFM) framework, three hallmark properties of Ordinal Neural Collapse (ONC) are formally proven: within-class mean collapse (ONC1), feature collapse onto a one-dimensional subspace (ONC2), and ordered arrangement of latent variables by class (ONC3). In the zero-regularization limit…
 tags:
   - "NeurIPS 2025"
   - "Neural Collapse"
@@ -12,7 +12,7 @@ tags:
   - "regularization"
   - "threshold models"
 date: 2026-05-08
-content_hash: d8fde7ec29ac45ec
+content_hash: a9a4cca60930ec87
 ---
 
 # Neural Collapse in Cumulative Link Models for Ordinal Regression: An Analysis with Unconstrained Feature Model
@@ -144,9 +144,9 @@ Fixed thresholds provide fairer predictive probability allocation across all cla
 
 - [\[NeurIPS 2025\] The Persistence of Neural Collapse Despite Low-Rank Bias](the_persistence_of_neural_collapse_despite_low-rank_bias.md)
 - [\[NeurIPS 2025\] Reliable Active Learning from Unreliable Labels via Neural Collapse Geometry](reliable_active_learning_from_unreliable_labels_via_neural_collapse_geometry.md)
-- [\[NeurIPS 2025\] MaxSup: Overcoming Representation Collapse in Label Smoothing](maxsup_overcoming_representation_collapse_in_label_smoothing.md)
-- [\[NeurIPS 2025\] Distributionally Robust Feature Selection](distributionally_robust_feature_selection.md)
+- [\[ICLR 2026\] GoR: A Unified and Extensible Generative Framework for Ordinal Regression](../../ICLR2026/others/gor_a_unified_and_extensible_generative_framework_for_ordinal_regression.md)
 - [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](../../CVPR2026/others/neural_collapse_in_test-time_adaptation.md)
+- [\[NeurIPS 2025\] MaxSup: Overcoming Representation Collapse in Label Smoothing](maxsup_overcoming_representation_collapse_in_label_smoothing.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DDT: Decoupled Diffusion Transformer
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] DDT splits the traditional "decoder-only" Diffusion Transformer into a dedicated condition encoder for semantic extraction and a dedicated velocity decoder for velocity field regression. This decouples the optimization conflict between "semantic encoding" and "high-frequency decoding." It achieves a 1.31 FID on ImageNe
+  [CVPR 2026][Image Generation][Diffusion Transformer] DDT splits the traditional "decoder-only" Diffusion Transformer into a dedicated condition encoder for semantic extraction and a dedicated velocity decoder for velocity field regression. This decouples the optimization conflict between "semantic encoding" and "high-frequency decoding." It achieves a 1.31 FID on ImageNet 256×256 in only 256 epochs (approximately 4× faster than REPA) and further accelerates inference by nearl…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "Encoder-Decoder Decoupling"
+  - "Representation Alignment"
+  - "Self-Conditioning Sharing"
+  - "Dynamic Programming Acceleration"
 date: 2026-05-08
-content_hash: 3b4ba5c3d44d95d3
+content_hash: 1e6328d7a98b53c9
 ---
+
 # DDT: Decoupled Diffusion Transformer
 
 **Conference**: CVPR 2026  

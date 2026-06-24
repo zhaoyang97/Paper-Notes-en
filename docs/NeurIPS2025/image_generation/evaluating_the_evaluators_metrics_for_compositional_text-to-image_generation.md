@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Evaluating the Evaluators: Metrics for Compositional Text-to-Image Generation
 description: >-
-  [NeurIPS 2025][Image Generation][evaluation metrics] This paper systematically evaluates 12 text-image compositional alignment metrics against human judgments…
+  [NeurIPS 2025][Image Generation][evaluation metrics] This paper systematically evaluates 12 text-image compositional alignment metrics against human judgments, finding that no single metric consistently outperforms all others across compositional categories, that VQA metrics are not always superior, and that embedding-based metrics (ImageReward, HPS) are stronger on certain categories.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "VQA metrics"
   - "human judgment"
 date: 2026-05-08
-content_hash: 15851519c4e16b7c
+content_hash: ef93fa531fed68ea
 ---
 
 # Evaluating the Evaluators: Metrics for Compositional Text-to-Image Generation
@@ -163,10 +163,10 @@ This is an evaluation study; no model training is involved. All metrics and data
 ## Related Papers
 
 - [\[NeurIPS 2025\] Flex-Judge: Text-Only Reasoning Unleashes Zero-Shot Multimodal Evaluators](flex-judge_text-only_reasoning_unleashes_zero-shot_multimodal_evaluators.md)
+- [\[NeurIPS 2025\] FineGRAIN: Evaluating Failure Modes of Text-to-Image Models with Vision Language Model Judges](finegrain_evaluating_failure_modes_of_text-to-image_models_with_vision_language_.md)
+- [\[CVPR 2025\] MCCD: Multi-Agent Collaboration-based Compositional Diffusion for Complex Text-to-Image Generation](../../CVPR2025/image_generation/mccd_multi-agent_collaboration-based_compositional_diffusion_for_complex_text-to.md)
 - [\[AAAI 2026\] LongT2IBench: A Benchmark for Evaluating Long Text-to-Image Generation with Graph-structured Annotations](../../AAAI2026/image_generation/longt2ibench_a_benchmark_for_evaluating_long_text-to-image_generation_with_graph.md)
 - [\[AAAI 2026\] Right Looks, Wrong Reasons: Compositional Fidelity in Text-to-Image Generation](../../AAAI2026/image_generation/right_looks_wrong_reasons_compositional_fidelity_in_text-to-image_generation.md)
-- [\[NeurIPS 2025\] Scaling Can Lead to Compositional Generalization](scaling_can_lead_to_compositional_generalization.md)
-- [\[ICCV 2025\] VSC: Visual Search Compositional Text-to-Image Diffusion Model](../../ICCV2025/image_generation/vsc_visual_search_compositional_text-to-image_diffusion_model.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DAMap: Distance-aware MapNet for High Quality HD Map Construction
 description: >-
-  [ICCV 2025][Autonomous Driving][HD Map] This paper identifies two inherent deficiencies in current HD map construction methods regarding high-quality prediction — inappropriate classification labels and suboptimal task-s…
+  [ICCV 2025][Autonomous Driving][HD Map] This paper identifies two inherent deficiencies in current HD map construction methods regarding high-quality prediction — inappropriate classification labels and suboptimal task-specific features — and proposes DAMap (comprising three components: DAFL, HLS, and TMDA) to systematically address task misalignment, achieving consistent gains of 2–3 mAP across multiple baselines on NuScenes and Argoverse2.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Deformable Attention"
   - "Focal Loss"
 date: 2026-05-08
-content_hash: 85b16e9d7d22b861
+content_hash: afb501a3cd0acf5c
 ---
 
 # DAMap: Distance-aware MapNet for High Quality HD Map Construction
@@ -166,10 +166,10 @@ A standard BEV perception pipeline: multi-view images → shared backbone → BE
 ## Related Papers
 
 - [\[NeurIPS 2025\] SDTagNet: Leveraging Text-Annotated Navigation Maps for Online HD Map Construction](../../NeurIPS2025/autonomous_driving/sdtagnet_leveraging_text-annotated_navigation_maps_for_online_hd_map_constructio.md)
-- [\[AAAI 2026\] PriorDrive: Enhancing Online HD Map Construction with Unified Vector Priors](../../AAAI2026/autonomous_driving/priordrive_enhancing_online_hd_mapping_with_unified_vector_p.md)
+- [\[ICML 2025\] SafeMap: Robust HD Map Construction from Incomplete Observations](../../ICML2025/autonomous_driving/safemap_robust_hd_map_construction_from_incomplete_observations.md)
 - [\[ICCV 2025\] EMD: Explicit Motion Modeling for High-Quality Street Gaussian Splatting](emd_explicit_motion_modeling_for_high-quality_street_gaussian_splatting.md)
-- [\[CVPR 2026\] MapGCLR: Geospatial Contrastive Learning of Representations for Online Vectorized HD Map Construction](../../CVPR2026/autonomous_driving/mapgclr_geospatial_contrastive_learning_of_represe.md)
-- [\[ICCV 2025\] Future-Aware Interaction Network For Motion Forecasting](future-aware_interaction_network_for_motion_forecasting.md)
+- [\[CVPR 2025\] Uncertainty-Instructed Structure Injection for Generalizable HD Map Construction](../../CVPR2025/autonomous_driving/uncertainty-instructed_structure_injection_for_generalizable_hd_map_construction.md)
+- [\[CVPR 2026\] AMap: Distilling Future Priors for Ahead-Aware Online HD Map Construction](../../CVPR2026/autonomous_driving/amap_distilling_future_priors_for_ahead-aware_online_hd_map_construction.md)
 
 </div>
 

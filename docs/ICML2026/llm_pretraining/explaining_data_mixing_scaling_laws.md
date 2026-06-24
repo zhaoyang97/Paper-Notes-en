@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Explaining Data Mixing Scaling Laws
 description: >-
-  [ICML 2026][Pretraining][Paper Note] This paper provides the long-missing theoretical explanation for "multi-domain data mixing scaling laws." By extending two classic theories of single-domain scaling laws (the quantization model and the projection linear regression model) to multiple domains, it proposes a "shared head, disjoint tail" distribution hypot
+  [ICML2026][LLM Pretraining][Data Mixing] This paper provides the long-missing theoretical explanation for "multi-domain data mixing scaling laws." By extending two classic theories of single-domain scaling laws (the quantization model and the projection linear regression model) to multiple domains, it proposes a "shared head, disjoint tail" distribution hypothesis. It identifies two mechanisms governing the loss of each domain: **capacity competition** (limited model capacity…
 tags:
-  - ICML 2026
-  - Pretraining
+  - "ICML2026"
+  - "LLM Pretraining"
+  - "Data Mixing"
+  - "Scaling Laws"
+  - "Capacity Competition"
+  - "Quantization Model"
+  - "Bilevel Optimization"
 date: 2026-05-08
-content_hash: c4e0c39a897eb9e6
+content_hash: 2a24c5487f18ce51
 ---
+
 # Explaining Data Mixing Scaling Laws
 
 **Conference**: ICML2026  
@@ -118,11 +124,11 @@ Adding the data quantity noise term reduces the MRE from 2.064% to 1.533% and th
 
 ## Related Papers
 
-- [\[ICML 2026\] InfoLaw: Information Scaling Laws for Large Language Models with Quality-Weighted Mixture Data and Repetition](infolaw_information_scaling_laws_for_large_language_models_with_quality-weighted.md)
-- [\[ICML 2026\] Dropout Universality: Scaling Laws and Optimal Scheduling at the Edge-of-Chaos](dropout_universality_scaling_laws_and_optimal_scheduling_at_the_edge-of-chaos.md)
 - [\[ICML 2026\] AC-ODM: Actor–Critic Online Data Mixing for Sample-Efficient LLM Pretraining](ac-odm_actor--critic_online_data_mixing_for_sample-efficient_llm_pretraining.md)
-- [\[NeurIPS 2025\] Gemstones: A Model Suite for Multi-Faceted Scaling Laws](../../NeurIPS2025/llm_pretraining/gemstones_a_model_suite_for_multi-faceted_scaling_laws.md)
-- [\[ACL 2026\] Data Mixing Agent: Learning to Re-weight Domains for Continual Pre-training](../../ACL2026/llm_pretraining/data_mixing_agent_learning_to_re-weight_domains_for_continual_pre-training.md)
+- [\[ICML 2026\] Dropout Universality: Scaling Laws and Optimal Scheduling at the Edge-of-Chaos](dropout_universality_scaling_laws_and_optimal_scheduling_at_the_edge-of-chaos.md)
+- [\[ICLR 2026\] Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](../../ICLR2026/llm_pretraining/scaling_laws_revisited_modeling_the_role_of_data_quality_in_language_model_pretr.md)
+- [\[ICLR 2026\] Pretraining Scaling Laws for Generative Evaluations of Language Models](../../ICLR2026/llm_pretraining/pretraining_scaling_laws_for_generative_evaluations_of_language_models.md)
+- [\[ICML 2026\] InfoLaw: Information Scaling Laws for Large Language Models with Quality-Weighted Mixture Data and Repetition](infolaw_information_scaling_laws_for_large_language_models_with_quality-weighted.md)
 
 </div>
 

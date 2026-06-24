@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Seeing Through Words: Controlling Visual Retrieval Quality with Language Models
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Paper Note] Addressing the issues of semantic ambiguity and the inability to control image quality in text-to-image retrieval for short queries (e.g., "a dog"), this paper proposes **QCQC**: it utilizes a generative language model to complete short queries into detailed descriptions. By conditioning on discretized "relevance + aes
+  [ICLR 2026][Information Retrieval & RAG][Text-to-Image Retrieval] Addressing the issues of semantic ambiguity and the inability to control image quality in text-to-image retrieval for short queries (e.g., "a dog"), this paper proposes **QCQC**: it utilizes a generative language model to complete short queries into detailed descriptions. By conditioning on discretized "relevance + aesthetics" quality levels, users can guide retrieval results toward specific quality tiers (low/…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Text-to-Image Retrieval"
+  - "Query Completion"
+  - "Quality-Controllable Retrieval"
+  - "Language Models"
+  - "Aesthetic Scoring"
 date: 2026-05-08
-content_hash: 85128ef8ef243aca
+content_hash: ac98df42c875d343
 ---
+
 # Seeing Through Words: Controlling Visual Retrieval Quality with Language Models
 
 **Conference**: ICLR 2026  
@@ -130,15 +136,17 @@ Key Conclusion: Only Ours shows "✓" for controllability—as the aesthetic con
 
 <div class="related-papers" markdown="1">
 
-1. **CLIP (Learning Transferable Visual Models from Natural Language Supervision)**: The foundation for modern VLM-based retrieval.
-2. **CoCa (Contrastive Captioners are Image-Text Foundation Models)**: A key backbone used in this paper for captioning and retrieval.
-3. **Query Expansion/Completion in IR**: Classic literature that this work bridges into the multimodal VLM era.
-4. **Image Aesthetic Assessment**: Fundamental scorers which this work uses as steerable conditions.
+## Related Papers
+
+- [\[ICML 2026\] Seeing to Generalize: How Visual Data Corrects Binding Shortcuts](../../ICML2026/information_retrieval/seeing_to_generalize_how_visual_data_corrects_binding_shortcuts.md)
+- [\[ACL 2026\] A Picture is Worth a Thousand Words? An Empirical Study of Aggregation Strategies for Visual Financial Document Retrieval](../../ACL2026/information_retrieval/a_picture_is_worth_a_thousand_words_an_empirical_study_of_aggregation_strategies.md)
+- [\[ICLR 2026\] Expert Heads: Robust Evidence Identification for Large Language Models](expert_heads_robust_evidence_identification_for_large_language_models.md)
+- [\[ICLR 2026\] MLP Memory: A Retriever-Pretrained Memory for Large Language Models](mlp_memory_a_retriever-pretrained_memory_for_large_language_models.md)
+- [\[ICLR 2026\] TokMem: One-Token Procedural Memory for Large Language Models](tokmem_one-token_procedural_memory_for_large_language_models.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2026\] Seeing to Generalize: How Visual Data Corrects Binding Shortcuts](../../ICML2026/information_retrieval/seeing_to_generalize_how_visual_data_corrects_binding_shortcuts.md)

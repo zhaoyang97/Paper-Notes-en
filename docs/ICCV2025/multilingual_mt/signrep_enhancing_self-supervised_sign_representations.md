@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SignRep: Enhancing Self-Supervised Sign Representations
 description: >-
-  [ICCV 2025][Multilingual & Machine Translation][sign language representation learning] This paper proposes SignRep, a scalable self-supervised sign language representation learning framework that incorporates sign-specif…
+  [ICCV 2025][Multilingual & Machine Translation][sign language representation learning] This paper proposes SignRep, a scalable self-supervised sign language representation learning framework that incorporates sign-specific skeleton priors, feature regularization, and an adversarial style-invariant loss into Masked Autoencoder pretraining. Using only a single RGB modality, SignRep surpasses complex multi-modal and multi-branch methods, achieving state-of-the-art performance on…
 tags:
   - "ICCV 2025"
   - "Multilingual & Machine Translation"
@@ -13,7 +13,7 @@ tags:
   - "adversarial style loss"
   - "dictionary retrieval"
 date: 2026-05-08
-content_hash: be1ed68a647cdc20
+content_hash: e3d4ca0721ae22af
 ---
 
 # SignRep: Enhancing Self-Supervised Sign Representations
@@ -209,11 +209,11 @@ BLEU-4 improves by 3.37 on CSL-Daily, with SignRep entirely frozen, eliminating 
 
 ## Related Papers
 
-- [\[ICLR 2026\] SASFT: Sparse Autoencoder-guided Supervised Finetuning to Mitigate Unexpected Code-Switching in LLMs](../../ICLR2026/multilingual_mt/sasft_sparse_autoencoder-guided_supervised_finetuning_to_mitigate_unexpected_cod.md)
-- [\[NeurIPS 2025\] Reflective Translation: Improving Low-Resource Machine Translation via Structured Self-Reflection](../../NeurIPS2025/multilingual_mt/reflective_translation_improving_low-resource_machine_translation_via_structured.md)
 - [\[ACL 2026\] Selective Contrastive Learning For Gloss Free Sign Language Translation](../../ACL2026/multilingual_mt/selective_contrastive_learning_for_gloss_free_sign_language_translation.md)
-- [\[ACL 2026\] Enhancing BiGRU with a KAN Block for Legal Document Classification and Summarization](../../ACL2026/multilingual_mt/enhancing_bigru_with_a_kan_block_for_legal_document_classification_and_summariza.md)
-- [\[ACL 2026\] Think in Latent Thoughts: A New Paradigm for Gloss-Free Sign Language Translation](../../ACL2026/multilingual_mt/think_in_latent_thoughts_a_new_paradigm_for_gloss-free_sign_language_translation.md)
+- [\[ACL 2025\] CC-Tuning: A Cross-Lingual Connection Mechanism for Improving Joint Multilingual Supervised Fine-Tuning](../../ACL2025/multilingual_mt/cc-tuning_a_cross-lingual_connection_mechanism_for_improving_joint_multilingual_.md)
+- [\[ICLR 2026\] SASFT: Sparse Autoencoder-guided Supervised Finetuning to Mitigate Unexpected Code-Switching in LLMs](../../ICLR2026/multilingual_mt/sasft_sparse_autoencoder-guided_supervised_finetuning_to_mitigate_unexpected_cod.md)
+- [\[ACL 2025\] ShifCon: Enhancing Non-Dominant Language Capabilities with a Shift-based Multilingual Contrastive Framework](../../ACL2025/multilingual_mt/shifcon_nondominant_language.md)
+- [\[ACL 2025\] Trans-Zero: Self-Play Incentivizes Large Language Models for Multilingual Translation](../../ACL2025/multilingual_mt/trans-zero_self-play_incentivizes_large_language_models_for_multilingual_transla.md)
 
 </div>
 

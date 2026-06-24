@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VidTAG: Temporally Aligned Video to GPS Geolocalization with Denoising Sequence Prediction at a Global Scale
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] VidTAG reformulates "video geolocalization" as a **frame-to-GPS coordinate retrieval** problem. By utilizing dual encoders (CLIP+DINOv2) for frame features, TempGeo for inter-frame temporal alignment, and GeoRefiner for trajectory denoising, it generates temporally coherent GPS trajectories on a global scale, achieving
+  [CVPR 2026][Video Generation][Video Geolocalization] VidTAG reformulates "video geolocalization" as a **frame-to-GPS coordinate retrieval** problem. By utilizing dual encoders (CLIP+DINOv2) for frame features, TempGeo for inter-frame temporal alignment, and GeoRefiner for trajectory denoising, it generates temporally coherent GPS trajectories on a global scale, achieving an approximate 20% improvement over GeoCLIP at the 1km threshold.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video Geolocalization"
+  - "Frame-to-GPS Retrieval"
+  - "Temporal Consistency"
+  - "Trajectory Denoising"
+  - "Cross-modal Contrastive Learning"
 date: 2026-05-08
-content_hash: d2472b1182bd37c6
+content_hash: cfc5d3fd0eb7e85a
 ---
+
 # VidTAG: Temporally Aligned Video to GPS Geolocalization with Denoising Sequence Prediction at a Global Scale
 
 **Conference**: CVPR 2026  
@@ -145,11 +151,11 @@ VidTAG outperformed MLLMs (Qwen2.5-VL), CLIP-based models (GeoCLIP), and video c
 
 ## Related Papers
 
-- [\[CVPR 2026\] VidTAG: Temporally Aligned Video to GPS Geolocalization](vidtag_video_gps_geolocalization.md)
-- [\[CVPR 2026\] Video-CoE: Reinforcing Video Event Prediction via Chain of Events](video-coe_reinforcing_video_event_prediction_via_chain_of_events.md)
-- [\[CVPR 2026\] GIFT: Global Irreplaceability Frame Targeting for Efficient Video Understanding](gift_global_irreplaceability_frame_targeting_for_efficient_video_understanding.md)
-- [\[CVPR 2026\] Scene-Centric Unsupervised Video Panoptic Segmentation](scene-centric_unsupervised_video_panoptic_segmentation.md)
-- [\[CVPR 2026\] Bootstrapping Video Semantic Segmentation Model via Distillation-assisted Test-Time Adaptation](bootstrapping_video_semantic_segmentation_model_via_distillation-assisted_test-t.md)
+- [\[CVPR 2026\] Causality in Video Diffusers is Separable from Denoising](causality_in_video_diffusers_is_separable_from_denoising.md)
+- [\[CVPR 2026\] EditCtrl: Disentangled Local and Global Control for Real-Time Generative Video Editing](editctrl_disentangled_local_and_global_control_for_real-time_generative_video_ed.md)
+- [\[CVPR 2026\] Flowception: Temporally Expansive Flow Matching for Video Generation](flowception_temporally_expansive_flow_matching_for_video_generation.md)
+- [\[CVPR 2026\] Captain Safari: A World Engine with Pose-Aligned 3D Memory](captain_safari_a_world_engine_with_pose-aligned_3d_memory.md)
+- [\[CVPR 2026\] FlashPortrait: 6× Faster Infinite Portrait Animation with Adaptive Latent Prediction](flashportrait_6x_faster_infinite_portrait_animation_with_adaptive_latent_predict.md)
 
 </div>
 

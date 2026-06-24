@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Few-way to Many-way: Rethinking Few-shot Fine-grained Image Classification
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Intra-Inter Loss] This paper points out that existing Few-shot Fine-grained Classification (FSFG) methods are trained and evaluated only in "few-class" scenarios (e.g., 5-way), failing significantly when faced with "many-way" settings. The authors decompose the causes of this failure into three actionable guiding principles using a gene
+  [CVPR 2026][Self-Supervised Learning][Few-shot fine-grained classification] This paper points out that existing Few-shot Fine-grained Classification (FSFG) methods are trained and evaluated only in "few-class" scenarios (e.g., 5-way), failing significantly when faced with "many-way" settings. The authors decompose the causes of this failure into three actionable guiding principles using a generalization bound based on the Class Discriminative Index. Accordingly…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Intra-Inter Loss
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Few-shot fine-grained classification"
+  - "many-way setting"
+  - "class discriminative index"
+  - "multi-layer feature synergy"
+  - "Intra-Inter Loss"
 date: 2026-05-08
-content_hash: f0b0dc3d6bf97521
+content_hash: d9fd7ced272e4426
 ---
+
 # From Few-way to Many-way: Rethinking Few-shot Fine-grained Image Classification
 
 **Conference**: CVPR 2026  
@@ -136,8 +141,21 @@ Bidirectional synergy (⇌) across all three layer pairs (t-s/t-l/s-l) achieved 
 - Value: ⭐⭐⭐⭐⭐ Many-way is more practical for real-world deployment; the theoretical framework provides guidance for future FSFG designs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[ICLR 2026\] Exploiting Low-Dimensional Manifold of Features for Few-Shot Whole Slide Image Classification](../../ICLR2026/self_supervised/exploiting_low-dimensional_manifold_of_features_for_few-shot_whole_slide_image_c.md)
+- [\[CVPR 2026\] DDSF: Robust Few-Shot Learning via Disentangled Subspaces with Determinantal Point Process](ddsf_robust_few-shot_learning_via_disentangled_subspaces_with_determinantal_poin.md)
+- [\[CVPR 2026\] Semantic-Guided Global-Local Collaborative Prompt Learning for Few-Shot Class Incremental Learning](semantic-guided_global-local_collaborative_prompt_learning_for_few-shot_class_in.md)
+- [\[CVPR 2026\] Quantized Residuals to Continuous Prompts for Few-Shot Class Incremental Learning in Vision-Language Models](quantized_residuals_to_continuous_prompts_for_few-shot_class_incremental_learning.md)
+- [\[CVPR 2026\] HyCal: A Training-Free Prototype Calibration Method for Cross-Discipline Few-Shot Class-Incremental Learning](hycal_training_free_prototype_calibration_for_cross_discipline_fscil.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

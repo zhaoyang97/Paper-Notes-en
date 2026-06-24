@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 3D-RAD: A Comprehensive 3D Radiology Med-VQA Dataset with Multi-Temporal Analysis and Diverse Diagnostic Tasks
 description: >-
-  [NeurIPS 2025][Medical Imaging][3D Med-VQA] This paper introduces 3D-RAD — the first large-scale 3D medical VQA benchmark, comprising 170K CT-based question-answer pairs across six clinical task categories (including a n…
+  [NeurIPS 2025][Medical Imaging][3D Med-VQA] This paper introduces 3D-RAD — the first large-scale 3D medical VQA benchmark, comprising 170K CT-based question-answer pairs across six clinical task categories (including a novel multi-temporal diagnosis task), accompanied by a 136K training set. The benchmark reveals critical deficiencies of existing VLMs in 3D temporal reasoning.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "longitudinal diagnosis"
   - "benchmark"
 date: 2026-05-08
-content_hash: 5f4b1470f0419f29
+content_hash: 711c13b8b0160833
 ---
 
 # 3D-RAD: A Comprehensive 3D Radiology Med-VQA Dataset with Multi-Temporal Analysis and Diverse Diagnostic Tasks
@@ -134,10 +134,10 @@ Six task categories are divided into open-ended (Tasks 1–3) and closed-ended (
 ## Related Papers
 
 - [\[NeurIPS 2025\] EndoBench: A Comprehensive Evaluation of Multi-Modal Large Language Models for Endoscopy Analysis](endobench_a_comprehensive_evaluation_of_multi-modal_large_language_models_for_en.md)
+- [\[NeurIPS 2025\] CXReasonBench: A Benchmark for Evaluating Structured Diagnostic Reasoning in Chest X-rays](cxreasonbench_a_benchmark_for_evaluating_structured_diagnostic_reasoning_in_ches.md)
+- [\[CVPR 2026\] OmniBrainBench: A Comprehensive Multimodal Benchmark for Brain Imaging Analysis Across Multi-stage Clinical Tasks](../../CVPR2026/medical_imaging/omnibrainbench_a_comprehensive_multimodal_benchmark_for_brain_imaging_analysis_a.md)
 - [\[NeurIPS 2025\] STAMP: Spatial-Temporal Adapter with Multi-Head Pooling](stamp_spatial-temporal_adapter_with_multi-head_pooling.md)
 - [\[NeurIPS 2025\] Surf2CT: Cascaded 3D Flow Matching Models for Torso 3D CT Synthesis from Skin Surface](surf2ct_cascaded_3d_flow_matching_models_for_torso_3d_ct_synthesis_from_skin_sur.md)
-- [\[NeurIPS 2025\] PolyPose: Deformable 2D/3D Registration via Polyrigid Transformations](polypose_deformable_2d3d_registration_via_polyrigid_transformations.md)
-- [\[NeurIPS 2025\] CXReasonBench: A Benchmark for Evaluating Structured Diagnostic Reasoning in Chest X-rays](cxreasonbench_a_benchmark_for_evaluating_structured_diagnostic_reasoning_in_ches.md)
 
 </div>
 

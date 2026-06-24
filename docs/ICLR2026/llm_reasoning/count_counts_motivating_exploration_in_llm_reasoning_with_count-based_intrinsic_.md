@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Count Counts: Motivating Exploration in LLM Reasoning with Count-based Intrinsic Rewards
 description: >-
-  [ICLR 2026][LLM Reasoning][GRPO] Addressing the issue that value-free RL like GRPO/DAPO suffers from "insufficient exploration and premature convergence to repetitive patterns" in LLM reasoning, MERCI leverages the property that transitions in LLM generation are "known and deterministic" to simplify the Uncertainty Bellman Equation (UBE) into estimati
+  [ICLR2026][Reasoning][Intrinsic Rewards] Addressing the issue that value-free RL like GRPO/DAPO suffers from "insufficient exploration and premature convergence to repetitive patterns" in LLM reasoning, MERCI leverages the property that transitions in LLM generation are "known and deterministic" to simplify the Uncertainty Bellman Equation (UBE) into estimating only local reward variance. Using a lightweight "Coin Flip Network" (CFN) to estimate state novelty and convert it i…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - GRPO
+  - "ICLR2026"
+  - "Reasoning"
+  - "Intrinsic Rewards"
+  - "Count-based Exploration"
+  - "Uncertainty Bellman Equation"
+  - "GRPO"
+  - "LLM Reasoning"
 date: 2026-05-08
-content_hash: c53e69929a49a13c
+content_hash: 64d9a68f16e224c0
 ---
+
 # Count Counts: Motivating Exploration in LLM Reasoning with Count-based Intrinsic Rewards
 
 **Conference**: ICLR2026  
@@ -143,13 +148,20 @@ Gains are most prominent on the difficult AIME suite. The consistent improvement
 - Value: ⭐⭐⭐⭐ Provides a scalable, principled intrinsic reward paradigm for LLM RL.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- **DAPO**: Direct Advantage Policy Optimization.
-- **UBE**: Uncertainty Bellman Equation and exploration.
-- **CFN**: Scalable count-based exploration via Coin Flip Networks.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Random Policy Valuation is Enough for LLM Reasoning with Verifiable Rewards](random_policy_valuation_is_enough_for_llm_reasoning_with_verifiable_rewards.md)
+- [\[ICLR 2026\] Beyond Markovian: Reflective Exploration via Bayes-Adaptive RL for LLM Reasoning](beyond_markovian_reflective_exploration_via_bayes-adaptive_rl_for_llm_reasoning.md)
+- [\[ICLR 2026\] Continuous Chain of Thought Enables Parallel Exploration and Reasoning](continuous_chain_of_thought_enables_parallel_exploration_and_reasoning.md)
+- [\[ICLR 2026\] Agentic Reinforcement Learning with Implicit Step Rewards](agentic_reinforcement_learning_with_implicit_step_rewards.md)
+- [\[ICLR 2026\] Attention as a Compass: Efficient Exploration for Process-Supervised RL in Reasoning Models](attention_as_a_compass_efficient_exploration_for_process-supervised_rl_in_reason.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Random Policy Valuation is Enough for LLM Reasoning with Verifiable Rewards](random_policy_valuation_is_enough_for_llm_reasoning_with_verifiable_rewards.md)

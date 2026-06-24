@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Incentivizing Reasoning for Advanced Instruction-Following of Large Language Models
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Instruction Following] This paper proposes RAIF, which employs RL with rule-centric rewards to cultivate deep reasoning capabilities in LLMs for complex instructions containing And/…
+  [NeurIPS 2025][Reinforcement Learning][Instruction Following] This paper proposes RAIF, which employs RL with rule-centric rewards to cultivate deep reasoning capabilities in LLMs for complex instructions containing And/Chain/Selection/Nested compositional constraints. A key finding is that vanilla CoT is detrimental to instruction following, as LLMs tend to shallowly paraphrase instructions rather than analyze constraint structures. RAIF addresses this through superior CoT e…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "CoT"
   - "GRPO"
 date: 2026-05-08
-content_hash: b88919c10d1f37c2
+content_hash: aa3ef4236f76410e
 ---
 
 # Incentivizing Reasoning for Advanced Instruction-Following of Large Language Models
@@ -132,7 +132,7 @@ The framework consists of three stages: (1) **LLM-based instruction evolution**:
 - [\[NeurIPS 2025\] Financial Instruction Following Evaluation (FIFE)](financial_instruction_following_evaluation_fife.md)
 - [\[NeurIPS 2025\] MMaDA: Multimodal Large Diffusion Language Models](mmada_multimodal_large_diffusion_language_models.md)
 - [\[NeurIPS 2025\] GraphChain: Large Language Models for Large-scale Graph Analysis via Tool Chaining](graphchain_large_language_models_for_large-scale_graph_analysis_via_tool_chainin.md)
-- [\[NeurIPS 2025\] Checklists Are Better Than Reward Models For Aligning Language Models](checklists_are_better_than_reward_models_for_aligning_langua.md)
+- [\[NeurIPS 2025\] Reinforcing the Diffusion Chain of Lateral Thought with Diffusion Language Models](reinforcing_the_diffusion_chain_of_lateral_thought_with_diffusion_language_model.md)
 
 </div>
 

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] The Lattice Representation Hypothesis of Large Language Models
 description: >-
-  [ICLR 2026][LLM (Other)][Paper Note] Ours proposes the **Lattice Representation Hypothesis (LRH)** for LLMs: by unifying the Linear Representation Hypothesis (LRH) with Formal Concept Analysis (FCA), it proves that attribute directions in LLM embedding spaces implicitly encode a **concept lattice** through intersections of half-spaces, thereby bridging co
+  [ICLR2026][LLM (Other)][Linear Representation Hypothesis] Ours proposes the **Lattice Representation Hypothesis (LRH)** for LLMs: by unifying the Linear Representation Hypothesis (LRH) with Formal Concept Analysis (FCA), it proves that attribute directions in LLM embedding spaces implicitly encode a **concept lattice** through intersections of half-spaces, thereby bridging continuous geometry with symbolic abstraction.
 tags:
-  - ICLR 2026
-  - LLM (Other)
+  - "ICLR2026"
+  - "LLM (Other)"
+  - "Linear Representation Hypothesis"
+  - "Formal Concept Analysis"
+  - "Concept Lattice"
+  - "Half-space Model"
+  - "Embedding Geometry"
+  - "Symbolic Reasoning"
 date: 2026-05-08
-content_hash: e254b76b6d3e38e5
+content_hash: 21f2e9fb735f5614
 ---
+
 # The Lattice Representation Hypothesis of Large Language Models
 
 **Conference**: ICLR2026  
@@ -190,8 +197,8 @@ Concept combinations are computed directly within the half-space model. The Meet
 - [\[ICML 2026\] The Cylindrical Representation Hypothesis for Language Model Steering](../../ICML2026/llm_nlp/the_cylindrical_representation_hypothesis_for_language_model_steering.md)
 - [\[ACL 2025\] Leveraging Large Language Models to Measure Gender Representation Bias in Gendered Language Corpora](../../ACL2025/llm_nlp/leveraging_large_language_models_to_measure_gender_representation_bias_in_gender.md)
 - [\[ICLR 2026\] COSMOS: A Hybrid Adaptive Optimizer for Efficient Training of Large Language Models](cosmos_a_hybrid_adaptive_optimizer_for_efficient_training_of_large_language_mode.md)
+- [\[ICLR 2026\] PerFit: Exploring Personalization Shifts in Representation Space of LLMs](perfit_exploring_personalization_shifts_in_representation_space_of_llms.md)
 - [\[ICLR 2026\] Differential Fine-Tuning Large Language Models Towards Better Diverse Reasoning Abilities](differential_fine-tuning_large_language_models_towards_better_diverse_reasoning_.md)
-- [\[ACL 2025\] Representation Bending for Large Language Model Safety](../../ACL2025/llm_nlp/repbend_representation_bending_safety.md)
 
 </div>
 

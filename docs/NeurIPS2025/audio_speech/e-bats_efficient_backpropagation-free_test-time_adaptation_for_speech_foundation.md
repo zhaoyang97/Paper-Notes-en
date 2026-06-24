@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] E-BATS: Efficient Backpropagation-Free Test-Time Adaptation for Speech Foundation Models
 description: >-
-  [NeurIPS 2025][Audio & Speech][test-time adaptation] This paper proposes E-BATS, the first backpropagation-free test-time adaptation framework for speech foundation models. Through lightweight prompt adaptation…
+  [NeurIPS 2025][Audio & Speech][test-time adaptation] This paper proposes E-BATS, the first backpropagation-free test-time adaptation framework for speech foundation models. Through lightweight prompt adaptation, multi-scale loss functions, and a test-time EMA mechanism, E-BATS achieves 2.0×–6.4× GPU memory savings while maintaining competitive accuracy.
 tags:
   - "NeurIPS 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "prompt tuning"
   - "CMA-ES"
 date: 2026-05-08
-content_hash: e3ce91eedcfa69d4
+content_hash: fae8bd9ace2d4316
 ---
 
 # E-BATS: Efficient Backpropagation-Free Test-Time Adaptation for Speech Foundation Models
@@ -155,8 +155,8 @@ The covariance and step size are updated analogously. This balances retention of
 - [\[NeurIPS 2025\] AVRobustBench: Benchmarking the Robustness of Audio-Visual Recognition Models at Test-Time](textttavrobustbench_benchmarking_the_robustness_of_audio-visual_recognition_mode.md)
 - [\[ICLR 2026\] When and Where to Reset Matters for Long-Term Test-Time Adaptation](../../ICLR2026/audio_speech/when_and_where_to_reset_matters_for_long-term_test-time_adaptation.md)
 - [\[NeurIPS 2025\] Instance-Specific Test-Time Training for Speech Editing in the Wild](instance-specific_test-time_training_for_speech_editing_in_the_wild.md)
+- [\[NeurIPS 2025\] Efficient Speech Language Modeling via Energy Distance in Continuous Latent Space](efficient_speech_language_modeling_via_energy_distance_in_continuous_latent_spac.md)
 - [\[NeurIPS 2025\] Data-Juicer 2.0: Cloud-Scale Adaptive Data Processing for and with Foundation Models](data-juicer_20_cloud-scale_adaptive_data_processing_for_and_with_foundation_mode.md)
-- [\[NeurIPS 2025\] VITA-1.5: Towards GPT-4o Level Real-Time Vision and Speech Interaction](vita-15_towards_gpt-4o_level_real-time_vision_and_speech_interaction.md)
 
 </div>
 

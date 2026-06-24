@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Transformed Latent Variable Multi-Output Gaussian Processes
 description: >-
-  [ICML 2026][Computational Biology][SVGP] This paper proposes T-LVMOGP: it transforms the core modeling problem of Multi-Output Gaussian Processes (MOGP)—the construction of cross-output covariance $k_{p,p'}(x, x')$—into "computing an inner product with a single scalar base kernel in a Lipschitz-regularized RCNN embedding space." Fully integrated into the SVGP
+  [ICML 2026][Computational Biology][Multi-Output Gaussian Processes] This paper proposes T-LVMOGP: it transforms the core modeling problem of Multi-Output Gaussian Processes (MOGP)—the construction of cross-output covariance $k_{p,p'}(x, x')$—into "computing an inner product with a single scalar base kernel in a Lipschitz-regularized RCNN embedding space." Fully integrated into the SVGP framework, it enables MOGP to handle $P > 10,000$ outputs (including spatial transcriptomic…
 tags:
-  - ICML 2026
-  - Computational Biology
-  - SVGP
+  - "ICML 2026"
+  - "Computational Biology"
+  - "Multi-Output Gaussian Processes"
+  - "Deep Kernels"
+  - "Lipschitz Regularization"
+  - "SVGP"
+  - "Spectral Normalization"
 date: 2026-05-08
-content_hash: 39a481e2f457ba41
+content_hash: f3dea088a0964bff
 ---
+
 # Transformed Latent Variable Multi-Output Gaussian Processes
 
 **Conference**: ICML 2026  
@@ -136,11 +141,11 @@ The training objective is the negative ELBO $-\mathcal{L}_3$. Expectations are c
 
 ## Related Papers
 
-- [\[ICML 2026\] Flow Sampling: Learning to Sample from Unnormalized Densities via Denoising Conditional Processes](flow_sampling_learning_to_sample_from_unnormalized_densities_via_denoising_condi.md)
+- [\[ICLR 2026\] Meta-Learning Theory-Informed Inductive Biases using Deep Kernel Gaussian Processes](../../ICLR2026/computational_biology/meta-learning_theory-informed_inductive_biases_using_deep_kernel_gaussian_proces.md)
 - [\[ICML 2026\] RETROSPECT: RETROsynthesis via Sequential Prediction, and Chemically Transformed-ranking](retrospect_retrosynthesis_via_sequential_prediction_and_chemically_transformed-r.md)
-- [\[ICML 2025\] MF-LAL: Drug Compound Generation Using Multi-Fidelity Latent Space Active Learning](../../ICML2025/computational_biology/mf-lal_drug_compound_generation_using_multi-fidelity_latent_space_active_learnin.md)
-- [\[ICML 2026\] Scalable Single-Cell Gene Expression Generation with Latent Diffusion Models](scalable_single-cell_gene_expression_generation_with_latent_diffusion_models.md)
-- [\[ICML 2026\] Routing by Reaching: Composition of Pre-trained GFlowNets for Multi-Objective Generation](routing_by_reaching_composition_of_pre-trained_gflownets_for_multi-objective_gen.md)
+- [\[ICML 2026\] Disentangling Latent Risk Pathways via Bayesian Hypergraph Inference](disentangling_latent_risk_pathways_via_bayesian_hypergraph_inference.md)
+- [\[ICML 2026\] Flow Sampling: Learning to Sample from Unnormalized Densities via Denoising Conditional Processes](flow_sampling_learning_to_sample_from_unnormalized_densities_via_denoising_condi.md)
+- [\[ICLR 2026\] Coupled Transformer Autoencoder for Disentangling Multi-Region Neural Latent Dynamics](../../ICLR2026/computational_biology/coupled_transformer_autoencoder_for_disentangling_multi-region_neural_latent_dyn.md)
 
 </div>
 

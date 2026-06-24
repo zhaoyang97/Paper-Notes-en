@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Traceable Black-box Watermarks for Federated Learning
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] TraMark is proposed to realize server-side traceable black-box watermark injection in Federated Learning (FL) for the first time by partitioning the model parameter space into main task areas and watermark areas, and employing masked aggregation to prevent watermark collisions. It achieves a 99.58% verification rate wi
+  [ICLR 2026][AI Safety][Federated Learning] TraMark is proposed to realize server-side traceable black-box watermark injection in Federated Learning (FL) for the first time by partitioning the model parameter space into main task areas and watermark areas, and employing masked aggregation to prevent watermark collisions. It achieves a 99.58% verification rate with only a 0.54% reduction in main task accuracy.
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Federated Learning"
+  - "Black-box Watermarking"
+  - "Traceability"
+  - "Model Leakage Detection"
+  - "Masked Aggregation"
 date: 2026-05-08
-content_hash: 6b887ba261dcc888
+content_hash: 1f43859cc3d9a026
 ---
+
 # Traceable Black-box Watermarks for Federated Learning
 
 **Conference**: ICLR 2026  

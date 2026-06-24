@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Hyper-SET: Designing Transformers via Hyperspherical Energy Minimization
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] Transformer layers are reinterpreted as "Maximum Likelihood Estimation (MLE) of tokens on a hypersphere," decomposed into two complementary objectives: **distribution uniformity in low-dimensional subspaces** and **semantic alignment in high-dimensional space**. These are quantified using two extended Hopfield energy f
+  [ICLR 2026][Interpretability][Energy-based Models] Transformer layers are reinterpreted as "Maximum Likelihood Estimation (MLE) of tokens on a hypersphere," decomposed into two complementary objectives: **distribution uniformity in low-dimensional subspaces** and **semantic alignment in high-dimensional space**. These are quantified using two extended Hopfield energy functions for iterative energy minimization. Consequently, symmetric attention, feed-forward layers, RMSNorm…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Energy-based Models"
+  - "Hopfield Energy"
+  - "Hypersphere"
+  - "Recurrent-depth Transformer"
+  - "White-box Architecture"
+  - "Representation Collapse"
 date: 2026-05-08
-content_hash: 55c8a08c50341091
+content_hash: 90024504dc4df542
 ---
+
 # Hyper-SET: Designing Transformers via Hyperspherical Energy Minimization
 
 **Conference**: ICLR 2026  
@@ -125,8 +132,8 @@ With parameter-aligned settings, HYPER-SET outperformed all competitors on CIFAR
 - [\[ICLR 2026\] Spilled Energy in Large Language Models](spilled_energy_in_large_language_models.md)
 - [\[ICLR 2026\] DIVERSE: Disagreement-Inducing Vector Evolution for Rashomon Set Exploration](diverse_disagreement-inducing_vector_evolution_for_rashomon_set_exploration.md)
 - [\[ICLR 2026\] SEED-SET: Scalable Evolving Experimental Design for System-level Ethical Testing](seed-set_scalable_evolving_experimental_design_for_system-level_ethical_testing.md)
-- [\[ICLR 2026\] How Do Transformers Learn to Associate Tokens: Gradient Leading Terms Bring Mechanistic Understanding](how_do_transformers_learn_to_associate_tokens_gradient_leading_terms_bring_mecha.md)
 - [\[ICLR 2026\] Emergent Discrete Controller Modules for Symbolic Planning in Transformers](emergent_discrete_controller_modules_for_symbolic_planning_in_transformers.md)
+- [\[ICLR 2026\] From Concepts to Components: Concept-Agnostic Attention Module Discovery in Transformers](from_concepts_to_components_concept-agnostic_attention_module_discovery_in_trans.md)
 
 </div>
 

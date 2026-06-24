@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Why Steering Works: Toward a Unified View of Language Model Parameter Dynamics
 description: >-
-  [ACL 2026][Model Compression][Activation Steering] This paper unifies local weight fine-tuning, LoRA, and activation steering into "control signal-induced dynamic weight updates." Using preference-utility log-odds and activation manifolds, it explains how strong control enhances target preference at the expense of generation utility. Based on this, the SPLIT training o
+  [ACL2026][Model Compression][Activation Steering] This paper unifies local weight fine-tuning, LoRA, and activation steering into "control signal-induced dynamic weight updates." Using preference-utility log-odds and activation manifolds, it explains how strong control enhances target preference at the expense of generation utility. Based on this, the SPLIT training objective is proposed to better balance preference and utility across three types of interventions.
 tags:
-  - ACL 2026
-  - Model Compression
-  - Activation Steering
-  - LoRA
-  - SPLIT
+  - "ACL2026"
+  - "Model Compression"
+  - "Activation Steering"
+  - "LoRA"
+  - "Dynamic Weights"
+  - "Preference-Utility Trade-off"
+  - "SPLIT"
 date: 2026-05-08
-content_hash: f42bd61cae7826a7
+content_hash: 692b1aa87111094a
 ---
+
 # Why Steering Works: Toward a Unified View of Language Model Parameter Dynamics
 
 **Conference**: ACL2026  
@@ -137,7 +140,7 @@ The authors also verified the fit of theoretical curves to real preference/utili
 - [\[ICML 2026\] The Bridge-Garden Dilemma in LLM Distillation: Why Mixing Hard and Soft Labels Works](../../ICML2026/model_compression/the_bridge-garden_dilemma_in_llm_distillation_why_mixing_hard_and_soft_labels_wo.md)
 - [\[NeurIPS 2025\] Why Knowledge Distillation Works in Generative Models: A Minimal Working Explanation](../../NeurIPS2025/model_compression/why_knowledge_distillation_works_in_generative_models_a_minimal_working_explanat.md)
 - [\[ICML 2026\] An Algebraic View of the Expressivity of Recurrent Language Models](../../ICML2026/model_compression/an_algebraic_view_of_the_expressivity_of_recurrent_language_models.md)
-- [\[CVPR 2026\] A Unified Framework for Knowledge Transfer in Bidirectional Model Scaling](../../CVPR2026/model_compression/a_unified_framework_for_knowledge_transfer_in_bidirectional_model_scaling.md)
+- [\[ACL 2026\] MTA: Multi-Granular Trajectory Alignment for Large Language Model Distillation](mta_multi-granular_trajectory_alignment_for_large_language_model_distillation.md)
 
 </div>
 

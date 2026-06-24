@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Old Habits Die Hard: How Conversational History Geometrically Traps LLMs
 description: >-
-  [ICML 2026][AI Safety][Paper Note] The History-Echoes framework analyzes the carryover effect of LLM conversational history through "Markov chain state consistency" and "latent space geometric angles." It identifies a Spearman correlation of 0.78—once a behavior (hallucination, sycophancy, or refusal) occurs, the model becomes trapped in a latent space
+  [ICML 2026][AI Safety][Conversational History] The History-Echoes framework analyzes the carryover effect of LLM conversational history through "Markov chain state consistency" and "latent space geometric angles." It identifies a Spearman correlation of 0.78—once a behavior (hallucination, sycophancy, or refusal) occurs, the model becomes trapped in a latent space region corresponding to that state, making escape difficult. The "refusal" trap is the strongest…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Conversational History"
+  - "Behavioral Persistence"
+  - "Markov Chains"
+  - "Geometric Traps"
+  - "Refusal / Sycophancy / Hallucination"
 date: 2026-05-08
-content_hash: f3c6243a197a0211
+content_hash: 5c533cbb6b397a3a
 ---
+
 # Old Habits Die Hard: How Conversational History Geometrically Traps LLMs
 
 **Conference**: ICML 2026  
@@ -139,9 +145,9 @@ Shuffling topics significantly reduces the trace and $\theta_{\text{ref}}$, prov
 ## Related Papers
 
 - [\[ICML 2026\] How Hard Can It Be? Hardness-Aware Multi-Objective Unlearning](how_hard_can_it_be_hardness-aware_multi-objective_unlearning.md)
-- [\[ICML 2026\] Multilingual Unlearning in LLMs: 转移、动力学与可逆性](multilingual_unlearning_in_llms_transfer_dynamics_and_reversibility.md)
 - [\[ICML 2026\] Geometrically Constrained Outlier Synthesis](geometrically_constrained_outlier_synthesis.md)
 - [\[ICML 2026\] Gradient Transformer: Learning to Generate Updates for LLMs](gradient_transformer_learning_to_generate_updates_for_llms.md)
+- [\[ICML 2026\] Multilingual Unlearning in LLMs: Transfer, Dynamics, and Reversibility](multilingual_unlearning_in_llms_transfer_dynamics_and_reversibility.md)
 - [\[ICML 2026\] Efficient DP-SGD for LLMs with Randomized Clipping](efficient_dp-sgd_for_llms_with_randomized_clipping.md)
 
 </div>

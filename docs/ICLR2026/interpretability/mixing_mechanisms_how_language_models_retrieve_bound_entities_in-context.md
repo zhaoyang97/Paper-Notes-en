@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Mixing Mechanisms: How Language Models Retrieve Bound Entities In-Context
 description: >-
-  [ICLR 2026][Interpretability][lost-in-the-middle] This paper reveals that language models do not rely solely on the previously recognized **positional mechanism** to retrieve "bound entities" in-context. Instead, they employ a mixture of positional, lexical, and reflexive mechanisms. Based on this, the authors construct a position-weighted causal model that replicates
+  [ICLR 2026][Interpretability][Entity binding] This paper reveals that language models do not rely solely on the previously recognized **positional mechanism** to retrieve "bound entities" in-context. Instead, they employ a mixture of positional, lexical, and reflexive mechanisms. Based on this, the authors construct a position-weighted causal model that replicates the model's next-token distribution with 95% faithfulness and explains the "lost-in-the-middle" phenomenon in lon…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - lost-in-the-middle
-  - interchange intervention
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Entity binding"
+  - "variable binding"
+  - "mechanistic interpretability"
+  - "causal abstraction"
+  - "lost-in-the-middle"
+  - "interchange intervention"
 date: 2026-05-08
-content_hash: 3ddb6b59af82d47e
+content_hash: ca311808653ba7e7
 ---
+
 # Mixing Mechanisms: How Language Models Retrieve Bound Entities In-Context
 
 **Conference**: ICLR 2026  

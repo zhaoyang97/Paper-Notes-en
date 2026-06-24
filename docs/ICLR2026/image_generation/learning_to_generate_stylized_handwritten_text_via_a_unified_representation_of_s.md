@@ -7,7 +7,7 @@ tags:
   - ICLR 2026
   - Image Generation
 date: 2026-05-08
-content_hash: 864b0c21ef7acd96
+content_hash: 2fa6af4fb8a3383e
 ---
 | Setting | FID↓ | KID↓ | HWD↓ | ΔCER↓ |
 |---|---|---|---|---|

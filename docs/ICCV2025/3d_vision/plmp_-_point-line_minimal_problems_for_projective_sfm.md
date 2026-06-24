@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PLMP -- Point-Line Minimal Problems for Projective SfM
 description: >-
-  [ICCV 2025][3D Vision][Minimal problems] This paper provides a complete classification of all point-line minimal problems in projective SfM…
+  [ICCV 2025][3D Vision][Minimal problems] This paper provides a complete classification of all point-line minimal problems in projective SfM, identifying 291 minimal problems (73 of which admit unique solutions solvable by linear methods), and develops a systematic framework for problem decomposition and non-minimality proofs via stabilizer subgroup analysis.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "projective reconstruction"
   - "algebraic geometry"
 date: 2026-05-08
-content_hash: 73f43078a469d69a
+content_hash: a238090873dd2bb2
 ---
 
 # PLMP -- Point-Line Minimal Problems for Projective SfM
@@ -138,11 +138,11 @@ Distribution statistics for the 291 minimal problems:
 
 ## Related Papers
 
+- [\[CVPR 2026\] Solving Minimal Problems Without Matrix Inversion Using FFT-Based Interpolation](../../CVPR2026/3d_vision/solving_minimal_problems_without_matrix_inversion_using_fft-based_interpolation.md)
+- [\[CVPR 2025\] PRaDA: Projective Radial Distortion Averaging](../../CVPR2025/3d_vision/prada_projective_radial_distortion_averaging.md)
+- [\[ICCV 2025\] UPP: Unified Point-Level Prompting for Robust Point Cloud Analysis](upp_unified_point-level_prompting_for_robust_point_cloud_analysis.md)
 - [\[CVPR 2026\] Minimal Constraint Relaxation for Multiview Autocalibration](../../CVPR2026/3d_vision/minimal_constraint_relaxation_for_multiview_autocalibration.md)
 - [\[ICCV 2025\] Efficient Spiking Point Mamba for Point Cloud Analysis](efficient_spiking_point_mamba_for_point_cloud_analysis.md)
-- [\[ICCV 2025\] UPP: Unified Point-Level Prompting for Robust Point Cloud Analysis](upp_unified_point-level_prompting_for_robust_point_cloud_analysis.md)
-- [\[ICCV 2025\] Multi-View 3D Point Tracking](multi-view_3d_point_tracking.md)
-- [\[ICCV 2025\] Noise2Score3D: Tweedie's Approach for Unsupervised Point Cloud Denoising](noise2score3d_tweedies_approach_for_unsupervised_point_cloud_denoising.md)
 
 </div>
 

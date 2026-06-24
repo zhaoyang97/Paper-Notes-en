@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] UCPO：不确定性感知的策略优化
+  [Paper Note] UCPO: Uncertainty-Aware Policy Optimization
 description: >-
-  [ICML 2026][LLM Reasoning][Reinforcement Learning] UCPO addresses the advantage bias caused by fixed uncertainty rewards in existing RL paradigms through two mechanisms: Tri-Advantage Decoupling (TAD) and Dynamic Uncertainty Reward Adjustment (DURA). This allows LLMs to reliably express uncertainty at knowledge boundaries, achieving a PAQ of 79.63% in mathematical reas
+  [ICML2026][Reasoning][Uncertainty Expression] UCPO addresses the advantage bias caused by fixed uncertainty rewards in existing RL paradigms through two mechanisms: Tri-Advantage Decoupling (TAD) and Dynamic Uncertainty Reward Adjustment (DURA). This allows LLMs to reliably express uncertainty at knowledge boundaries, achieving a PAQ of 79.63% in mathematical reasoning on Qwen3-8B.
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - Reinforcement Learning
+  - "ICML2026"
+  - "Reasoning"
+  - "Uncertainty Expression"
+  - "Reinforcement Learning"
+  - "Policy Optimization"
+  - "Trustworthy AI"
+  - "Overconfidence Mitigation"
 date: 2026-05-08
-content_hash: 71981116959e9f90
+content_hash: 443367f4b3f61479
 ---
+
 # UCPO: Uncertainty-Aware Policy Optimization
 
 **Conference**: ICML2026  
@@ -125,15 +130,16 @@ DURA's $\gamma(q)$ relies on intra-group ternary proportions, making the estimat
 - DAPO / Dr.GRPO: Concurrent works improving GRPO training stability, focusing on sampling strategies and clipping mechanisms rather than uncertainty modeling.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICML 2026\] Are Tools Always Beneficial? Learning to Invoke Tools Adaptively for Dual-Mode Multimodal LLM Reasoning](are_tools_always_beneficial_learning_to_invoke_tools_adaptively_for_dual-mode_mu.md)
 - [\[ACL 2026\] Think Outside the Policy: In-Context Steered Policy Optimization](../../ACL2026/llm_reasoning/think_outside_the_policy_in-context_steered_policy_optimization.md)
-- [\[ICML 2026\] Verifying Meta-Awareness via Predictive Rewards in Reasoning Models](verifying_meta-awareness_via_predictive_rewards_in_reasoning_models.md)
-- [\[ICML 2026\] Beyond Two-Stage Training: Cooperative SFT and RL for LLM Reasoning](beyond_two-stage_training_cooperative_sft_and_rl_for_llm_reasoning.md)
-- [\[ICML 2026\] An Information-Theoretic Criterion for Efficient Data Synthesis](an_information-theoretic_criterion_for_efficient_data_synthesis.md)
+- [\[ACL 2026\] Calibration-Aware Policy Optimization for Reasoning LLMs](../../ACL2026/llm_reasoning/calibration-aware_policy_optimization_for_reasoning_llms.md)
+- [\[CVPR 2026\] APPO: Attention-guided Perception Policy Optimization for Video Reasoning](../../CVPR2026/llm_reasoning/appo_attention-guided_perception_policy_optimization_for_video_reasoning.md)
+- [\[ICLR 2026\] Slow-Fast Policy Optimization: Reposition-Before-Update for LLM Reasoning](../../ICLR2026/llm_reasoning/slow-fast_policy_optimization_reposition-before-update_for_llm_reasoning.md)
+- [\[ICML 2026\] The Easy, the Hard, and the Learnable: Confidence and Difficulty-Adaptive Policy Optimization for LLM Reasoning](the_easy_the_hard_and_the_learnable_confidence_and_difficulty-adaptive_policy_op.md)
 
 </div>
 

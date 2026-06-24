@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Free4D: Tuning-free 4D Scene Generation with Spatial-Temporal Consistency
 description: >-
-  [ICCV 2025][Image Generation][4D generation] This paper proposes Free4D, the first tuning-free framework for single-image 4D scene generation. It achieves spatial consistency via 4D geometric structure initialization and…
+  [ICCV 2025][Image Generation][4D generation] This paper proposes Free4D, the first tuning-free framework for single-image 4D scene generation. It achieves spatial consistency via 4D geometric structure initialization and adaptive guidance denoising, temporal consistency via reference latent replacement, and integrates multi-view information into a coherent 4D Gaussian representation through modulation-based refinement, enabling real-time controllable rendering.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "4D Gaussian splatting"
   - "multi-view video generation"
 date: 2026-05-08
-content_hash: 9d696ef9b562050d
+content_hash: d5e84e25674bacde
 ---
 
 # Free4D: Tuning-free 4D Scene Generation with Spatial-Temporal Consistency
@@ -69,21 +69,21 @@ Free4D consists of three stages:
     - Final noise fusion: $\epsilon = M(t,k) \cdot \epsilon_1 + (1-M(t,k)) \cdot \epsilon_2$.
 
 3. **Point Cloud Guided Denoising (PGD)**: Coarsely rendered multi-view images are used to guide the early denoising stages. The coarse render is encoded into a latent $z_0'$ and fused at early denoising timesteps:
-   $$\hat{z}_i = m \cdot z_i' + (1-m) \cdot z_i$$
+    $\hat{z}_i = m \cdot z_i' + (1-m) \cdot z_i$
    This effectively mitigates unwanted motion artifacts in dynamic scenes.
 
 4. **Reference Latent Replacement (RLR)**: A key strategy for resolving temporal inconsistency. For timestep $t_j > 1$, the already-generated image $I(1, k_j)$ from the same viewpoint at the first frame is used as reference. In regions that require inpainting in both frames (co-occluded regions), the current frame's latent is replaced by the reference frame's latent:
-   $$\hat{m} = (1-M(t_j,k_j)) \cdot (1-M(1,k_j))$$
-   $$\hat{z}_i = \hat{m} \cdot z_i^{ref} + (1-\hat{m}) \cdot z_i$$
+    $\hat{m} = (1-M(t_j,k_j)) \cdot (1-M(1,k_j))$
+    $\hat{z}_i = \hat{m} \cdot z_i^{ref} + (1-\hat{m}) \cdot z_i$
    This ensures consistent inpainting of occluded regions across different timesteps of the same viewpoint.
 
 5. **Modulation-Based Refinement (MBR)**: Directly using generated multi-view images for pixel-level supervision introduces inconsistencies. The paper instead proposes modulation in the latent space:
 
     - The coarse 4D-GS render $I^r$ is noise-perturbed to obtain $z_{\bar{T}}^r$.
     - At each denoising step, the denoising direction is modulated using the latent of the generated image $z_0 = \mathcal{E}(I(t_j,k_j))$:
-   $$\tilde{z}_{0 \leftarrow i} = w_i \gamma_i z_0 + (1-w_i) z_{0 \leftarrow i}$$
+    $\tilde{z}_{0 \leftarrow i} = w_i \gamma_i z_0 + (1-w_i) z_{0 \leftarrow i}$
    where $\gamma_i = \text{std}(z_{0 \leftarrow i}) / \text{std}(z_0)$ prevents overexposure.
-   - The resulting enhanced render $\tilde{I^r}$ is used to refine the 4D-GS.
+    - The resulting enhanced render $\tilde{I^r}$ is used to refine the 4D-GS.
 
 ### Loss & Training
 
@@ -176,8 +176,8 @@ User study (78 evaluators, preference ratio "without vs. with" each component):
 - [\[NeurIPS 2025\] SceneDecorator: Towards Scene-Oriented Story Generation with Scene Planning and Scene Consistency](../../NeurIPS2025/image_generation/scenedecorator_towards_scene-oriented_story_generation_with_scene_planning_and_s.md)
 - [\[ICCV 2025\] EEdit: Rethinking the Spatial and Temporal Redundancy for Efficient Image Editing](eedit_rethinking_the_spatial_and_temporal_redundancy_for_efficient_image_editing.md)
 - [\[ICCV 2025\] SA-LUT: Spatial Adaptive 4D Look-Up Table for Photorealistic Style Transfer](sa-lut_spatial_adaptive_4d_look-up_table_for_photorealistic_style_transfer.md)
+- [\[CVPR 2026\] Dynamic-eDiTor: Training-Free Text-Driven 4D Scene Editing with Multimodal Diffusion Transformer](../../CVPR2026/image_generation/dynamic-editor_training-free_text-driven_4d_scene_editing_with_multimodal_diffus.md)
 - [\[ICCV 2025\] Lay-Your-Scene: Natural Scene Layout Generation with Diffusion Transformers](lay-your-scene_natural_scene_layout_generation_with_diffusion_transformers.md)
-- [\[ICCV 2025\] FreeScale: Unleashing the Resolution of Diffusion Models via Tuning-Free Scale Fusion](freescale_unleashing_the_resolution_of_diffusion_models_via_tuning-free_scale_fu.md)
 
 </div>
 

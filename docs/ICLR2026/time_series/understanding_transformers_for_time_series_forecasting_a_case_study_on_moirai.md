@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Understanding Transformers in Time Series Forecasting: A Case Study on MOIRAI
 description: >-
-  [ICLR 2026][Time Series][In-context Learning] This paper theoretically answers "why Transformers (especially MOIRAI) are so powerful in time series forecasting" by proving that a Transformer can fit an autoregressive (AR) model on input sequences via gradient descent through in-context learning. It further demonstrates how MOIRAI's any-variate encoding and attenti
+  [ICLR 2026][Time Series][Time Series Forecasting] This paper theoretically answers "why Transformers (especially MOIRAI) are so powerful in time series forecasting" by proving that a Transformer can fit an autoregressive (AR) model on input sequences via gradient descent through in-context learning. It further demonstrates how MOIRAI's any-variate encoding and attention mechanism automatically parallelize AR regressions of arbitrary numbers of covariates into a single set of…
 tags:
-  - ICLR 2026
-  - Time Series
-  - In-context Learning
-  - Autoregressive
+  - "ICLR 2026"
+  - "Time Series"
+  - "Time Series Forecasting"
+  - "Transformer Theory"
+  - "In-context Learning"
+  - "Autoregressive"
+  - "Generalization Bound"
 date: 2026-05-08
-content_hash: b17cb4e46ee355e7
+content_hash: ce630ac4f980d155
 ---
+
 # Understanding Transformers in Time Series Forecasting: A Case Study on MOIRAI
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Benchmarking Probabilistic Time Series Forecasting Models on Neural Activity
 description: >-
-  [NeurIPS 2025][Interpretability][neural activity prediction] The first systematic evaluation of 12 probabilistic time series forecasting models on mouse cortical calcium imaging data. PatchTST consistently achieves top p…
+  [NeurIPS 2025][Interpretability][neural activity prediction] The first systematic evaluation of 12 probabilistic time series forecasting models on mouse cortical calcium imaging data. PatchTST consistently achieves top performance (informative prediction horizon up to 1.5 s), zero-shot foundation models (Chronos) fail entirely but become competitive after fine-tuning, and the intrinsic predictability ceiling of neural activity is found to be approximately 1.5 seconds.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "benchmarking"
   - "foundation models"
 date: 2026-05-08
-content_hash: ce92c59f9ee61d38
+content_hash: 6fa190eb0c92cf73
 ---
 
 # Benchmarking Probabilistic Time Series Forecasting Models on Neural Activity
@@ -131,11 +131,11 @@ Models span three categories: classical methods (AR, ARIMA, AR-HMM, Theta), deep
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Specialization after Generalization: Towards Understanding Test-Time Training in Foundation Models](specialization_after_generalization_towards_understanding_test-time_training_in_.md)
 - [\[NeurIPS 2025\] Probabilistic Token Alignment for Large Language Model Fusion](probabilistic_token_alignment_for_large_language_model_fusion.md)
 - [\[NeurIPS 2025\] MoPFormer: Motion-Primitive Transformer for Wearable-Sensor Activity Recognition](mopformer_motion-primitive_transformer_for_wearable-sensor_activity_recognition.md)
-- [\[NeurIPS 2025\] Superposition Yields Robust Neural Scaling](superposition_yields_robust_neural_scaling.md)
-- [\[ICLR 2026\] Provably Explaining Neural Additive Models](../../ICLR2026/interpretability/provably_explaining_neural_additive_models.md)
+- [\[ICLR 2026\] TimeSeg: An Information-Theoretic Segment-Wise Explainer for Time-Series Predictions](../../ICLR2026/interpretability/timeseg_an_information-theoretic_segment-wise_explainer_for_time-series_predicti.md)
+- [\[NeurIPS 2025\] Specialization after Generalization: Towards Understanding Test-Time Training in Foundation Models](specialization_after_generalization_towards_understanding_test-time_training_in_.md)
+- [\[NeurIPS 2025\] FaCT: Faithful Concept Traces for Explaining Neural Network Decisions](fact_faithful_concept_traces_for_explaining_neural_network_decisions.md)
 
 </div>
 

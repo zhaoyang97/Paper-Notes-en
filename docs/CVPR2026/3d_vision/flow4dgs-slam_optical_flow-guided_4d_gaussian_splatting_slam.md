@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Flow4DGS-SLAM: Optical Flow-Guided 4D Gaussian Splatting SLAM
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Addressing 3DGS-SLAM in dynamic scenes, this paper employs "camera ego-motion + optical flow" for category-agnostic dynamic/static decomposition. It proposes a hybrid 4D Gaussian representation featuring "explicit keyframe Gaussian centers + GMM time-varying opacity/rotation," combined with scene flow propagation and a
+  [CVPR 2026][3D Vision][Dynamic SLAM] Addressing 3DGS-SLAM in dynamic scenes, this paper employs "camera ego-motion + optical flow" for category-agnostic dynamic/static decomposition. It proposes a hybrid 4D Gaussian representation featuring "explicit keyframe Gaussian centers + GMM time-varying opacity/rotation," combined with scene flow propagation and adaptive insertion to accelerate dynamic Gaussian training. It significantly outperforms 4DGS-SLAM in tracking accuracy…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Dynamic SLAM"
+  - "4D Gaussian Splatting"
+  - "Optical Flow Guidance"
+  - "Motion Decomposition"
+  - "Camera Tracking"
 date: 2026-05-08
-content_hash: 8a0eb97938143947
+content_hash: 1380d87c76bae01c
 ---
+
 # Flow4DGS-SLAM: Optical Flow-Guided 4D Gaussian Splatting SLAM
 
 **Conference**: CVPR 2026  
@@ -138,11 +144,11 @@ Ours achieves better ATE with significantly fewer mapping iterations than 4DGS-S
 
 ## Related Papers
 
+- [\[CVPR 2026\] ODGS-SLAM: Omnidirectional Gaussian Splatting SLAM](odgs-slam_omnidirectional_gaussian_splatting_slam.md)
+- [\[CVPR 2026\] AERGS-SLAM: Auto-Exposure-Robust Stereo 3D Gaussian Splatting SLAM](aergs-slam_auto-exposure-robust_stereo_3d_gaussian_splatting_slam.md)
+- [\[CVPR 2026\] Optical Flow Matching: Reframing Optical Flow as Continuous Transport Dynamics](optical_flow_matching_reframing_optical_flow_as_continuous_transport_dynamics.md)
 - [\[CVPR 2026\] Dynamic Visual SLAM using a General 3D Prior](dynamic_visual_slam_using_a_general_3d_prior.md)
-- [\[CVPR 2026\] Energy-GS: Image Energy-guided Pose Alignment Gaussian Splatting with redesigned pose gradient flow](energy-gs_image_energy-guided_pose_alignment_gaussian_splatting_with_redesigned_.md)
-- [\[CVPR 2026\] 4C4D: 4 Camera 4D Gaussian Splatting](4c4d_4_camera_4d_gaussian_splatting.md)
-- [\[CVPR 2026\] Mark4D: Temporally-Consistent Watermarking for 4D Gaussian Splatting](mark4d_temporally-consistent_watermarking_for_4d_gaussian_splatting.md)
-- [\[CVPR 2026\] GP-4DGS: Probabilistic 4D Gaussian Splatting from Monocular Video via Variational Gaussian Processes](gp-4dgs_probabilistic_4d_gaussian_splatting_from_monocular_video_via_variational.md)
+- [\[CVPR 2026\] Unblur-SLAM: Dense Neural SLAM for Blurry Inputs](unblur-slam_dense_neural_slam_for_blurry_inputs.md)
 
 </div>
 

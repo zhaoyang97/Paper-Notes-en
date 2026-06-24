@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FaceCraft4D: Animated 3D Facial Avatar Generation from a Single Image
 description: >-
-  [ICCV 2025][Image Generation][4D head generation] This paper proposes FaceCraft4D, a framework that generates animatable 360° 4D facial avatars from a single image by combining three complementary priors: a 3D shape prio…
+  [ICCV 2025][Image Generation][4D head generation] This paper proposes FaceCraft4D, a framework that generates animatable 360° 4D facial avatars from a single image by combining three complementary priors: a 3D shape prior (PanoHead GAN inversion), a 2D image prior (diffusion model texture enhancement), and a video prior (LivePortrait expression animation). A COIN training strategy is introduced to address multi-view data inconsistency, enabling high-quality real-time renderin…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "FLAME"
   - "multi-view consistency"
 date: 2026-05-08
-content_hash: 5baca08a7a8181e1
+content_hash: 6133b49528008e48
 ---
 
 # FaceCraft4D: Animated 3D Facial Avatar Generation from a Single Image
@@ -166,9 +166,9 @@ Animation module ablation:
 
 - [\[ICCV 2025\] TeRA: Rethinking Text-guided Realistic 3D Avatar Generation](tera_rethinking_text-guided_realistic_3d_avatar_generation.md)
 - [\[ICCV 2025\] 3DSR: Bridging Diffusion Models and 3D Representations for 3D Consistent Super-Resolution](bridging_diffusion_models_and_3d_representations_a_3d_consis.md)
-- [\[ICCV 2025\] DynamicID: Zero-Shot Multi-ID Image Personalization with Flexible Facial Editability](dynamicid_zero-shot_multi-id_image_personalization_with_flexible_facial_editabil.md)
-- [\[ICCV 2025\] Music-Aligned Holistic 3D Dance Generation via Hierarchical Motion Modeling](music-aligned_holistic_3d_dance_generation_via_hierarchical_motion_modeling.md)
-- [\[ICCV 2025\] Omegance: A Single Parameter for Various Granularities in Diffusion-Based Synthesis](omegance_a_single_parameter_for_various_granularities_in_diffusion-based_synthes.md)
+- [\[CVPR 2025\] DiffLocks: Generating 3D Hair from a Single Image using Diffusion Models](../../CVPR2025/image_generation/difflocks_generating_3d_hair_from_a_single_image_using_diffusion_models.md)
+- [\[ECCV 2024\] RodinHD: High-Fidelity 3D Avatar Generation with Diffusion Models](../../ECCV2024/image_generation/rodinhd_high-fidelity_3d_avatar_generation_with_diffusion_models.md)
+- [\[CVPR 2025\] DeClotH: Decomposable 3D Cloth and Human Body Reconstruction from a Single Image](../../CVPR2025/image_generation/decloth_decomposable_3d_cloth_and_human_body_reconstruction_from_a_single_image.md)
 
 </div>
 

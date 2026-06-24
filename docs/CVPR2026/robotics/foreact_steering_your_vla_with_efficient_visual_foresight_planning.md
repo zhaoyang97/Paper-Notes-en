@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ForeAct: Steering Your VLA with Efficient Visual Foresight Planning
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLA] Instead of driving a VLA with a single high-level language instruction, ForeAct utilizes an efficient "foresight image generator + VLM sub-task planner" to progressively provide the VLA with "imagined future observations + sub-task text." This allows the VLA to focus exclusively on visuo-motor mapping. On 11 real-world
+  [CVPR 2026][Robotics][VLA] Instead of driving a VLA with a single high-level language instruction, ForeAct utilizes an efficient "foresight image generator + VLM sub-task planner" to progressively provide the VLA with "imagined future observations + sub-task text." This allows the VLA to focus exclusively on visuo-motor mapping. On 11 real-world multi-step tasks, it improves the average success rate of $\pi_0$ from 46.5% to 87.4% (+40.9%).
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
-  - World Models
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA"
+  - "Visual Foresight Planning"
+  - "World Model"
+  - "Closed-loop Control"
+  - "Sub-task Planning"
 date: 2026-05-08
-content_hash: 3d62380a28c50008
+content_hash: 8c80f5c91b51275f
 ---
+
 # ForeAct: Steering Your VLA with Efficient Visual Foresight Planning
 
 **Conference**: CVPR 2026  
@@ -162,9 +166,9 @@ The 1.16M sub-task pre-training is the fundamental source of generalization.
 
 ## Related Papers
 
+- [\[ICLR 2026\] Sparse Imagination for Efficient Visual World Model Planning](../../ICLR2026/robotics/sparse_imagination_for_efficient_visual_world_model_planning.md)
 - [\[CVPR 2026\] HiF-VLA: Hindsight, Insight and Foresight through Motion Representation for Vision-Language-Action Models](hif-vla_hindsight_insight_and_foresight_through_motion_representation_for_vision.md)
 - [\[CVPR 2026\] CLaD: Planning with Grounded Foresight via Cross-Modal Latent Dynamics](clad_planning_with_grounded_foresight_via_cross-modal_latent_dynamics.md)
-- [\[ICLR 2026\] Sparse Imagination for Efficient Visual World Model Planning](../../ICLR2026/robotics/sparse_imagination_for_efficient_visual_world_model_planning.md)
 - [\[CVPR 2026\] Mantis: A Versatile Vision-Language-Action Model with Disentangled Visual Foresight](mantis_a_versatile_vision-language-action_model_with_disentangled_visual_foresig.md)
 - [\[CVPR 2026\] Spatial-Aware VLA Pretraining through Visual-Physical Alignment from Human Videos](spatial-aware_vla_pretraining_through_visual-physical_alignment_from_human_video.md)
 

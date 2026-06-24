@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] P3D: Highly Scalable 3D Neural Surrogates for Physics Simulations with Global Context
 description: >-
-  [ICLR 2026][Others][CNN-Transformer] P3D utilizes a hybrid CNN-Transformer backbone, crop-based pre-training, and an optional global context network to scale neural surrogate models for 3D PDE and turbulence simulations to the $512^3$ level, achieving superior accuracy, speed, and memory efficiency across both deterministic prediction and probabilistic ge
+  [ICLR 2026][3D Physics Simulation] P3D utilizes a hybrid CNN-Transformer backbone, crop-based pre-training, and an optional global context network to scale neural surrogate models for 3D PDE and turbulence simulations to the $512^3$ level, achieving superior accuracy, speed, and memory efficiency across both deterministic prediction and probabilistic generation tasks.
 tags:
-  - ICLR 2026
-  - Others
-  - CNN-Transformer
+  - "ICLR 2026"
+  - "3D Physics Simulation"
+  - "PDE Surrogate Models"
+  - "Turbulence Modeling"
+  - "Global Context"
+  - "CNN-Transformer"
 date: 2026-05-08
-content_hash: 0d4d7dff28f028f1
+content_hash: 203fd4964f28d2f1
 ---
+
 # P3D: Highly Scalable 3D Neural Surrogates for Physics Simulations with Global Context
 
 **Conference**: ICLR 2026  
@@ -192,7 +196,7 @@ Turbulence channel flow experiments further validate the role of the context net
 
 ## Related Papers
 
-- [\[CVPR 2026\] Global Underwater Geolocation from Time-Lapse Polarization Imagery](../../CVPR2026/others/global_underwater_geolocation_from_time-lapse_polarization_imagery.md)
+- [\[ICLR 2026\] IC-Custom: Diverse Image Customization via In-Context Learning](ic-custom_diverse_image_customization_via_in-context_learning.md)
 - [\[NeurIPS 2025\] Scalable Inference of Functional Neural Connectivity at Submillisecond Timescales](../../NeurIPS2025/others/scalable_inference_of_functional_neural_connectivity_at_submillisecond_timescale.md)
 - [\[NeurIPS 2025\] Learning to Condition: A Neural Heuristic for Scalable MPE Inference](../../NeurIPS2025/others/learning_to_condition_a_neural_heuristic_for_scalable_mpe_inference.md)
 - [\[ICLR 2026\] A Scalable Inter-edge Correlation Modeling in CopulaGNN for Link Sign Prediction](a_scalable_inter-edge_correlation_modeling_in_copulagnn_for_link_sign_prediction.md)

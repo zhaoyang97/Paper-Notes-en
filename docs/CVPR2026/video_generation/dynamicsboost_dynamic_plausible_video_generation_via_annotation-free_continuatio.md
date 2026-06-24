@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] DynamicsBoost: Dynamic Plausible Video Generation via Annotation-Free Continuation Preference Optimization
 description: >-
-  [CVPR 2026][Video Generation][DPO] This work treats "video continuation" as a natural preference signal—where more conditional frames lead to less generated content and higher overall quality. This enables the automatic construction of structurally matched preference pairs without manual or VLM labeling. By applying Asymmetrical DPO, calculated only in
+  [CVPR 2026][Video Generation][Preference Alignment] This work treats "video continuation" as a natural preference signal—where more conditional frames lead to less generated content and higher overall quality. This enables the automatic construction of structurally matched preference pairs without manual or VLM labeling. By applying Asymmetrical DPO, calculated only in the generated regions, to align text-to-video models, the approach significantly enhances dynamic plausibili…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - DPO
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Preference Alignment"
+  - "DPO"
+  - "Video Continuation"
+  - "Annotation-Free Supervision"
 date: 2026-05-08
-content_hash: 67dc6f4093b8f8a2
+content_hash: d7d327fec80979a0
 ---
+
 # DynamicsBoost: Dynamic Plausible Video Generation via Annotation-Free Continuation Preference Optimization
 
 **Conference**: CVPR 2026  

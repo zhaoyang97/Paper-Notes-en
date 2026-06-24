@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CogMoE: Signal-Quality–Guided Multimodal MoE for Cognitive Load Prediction
 description: >-
-  [ICLR 2026][Multimodal VLM][EEG/ECG/EDA/Gaze] CogMoE reframes cognitive load prediction from multimodal physiological signals (EEG/ECG/EDA/Gaze) from "modality-based fusion" to "quality-based fusion." It first cleans noise, missing segments, and misalignments using wavelet synchronization and cross-modal recovery. Then, it utilizes three experts specialized in cle
+  [ICLR2026][Multimodal VLM][Cognitive Load] CogMoE reframes cognitive load prediction from multimodal physiological signals (EEG/ECG/EDA/Gaze) from "modality-based fusion" to "quality-based fusion." It first cleans noise, missing segments, and misalignments using wavelet synchronization and cross-modal recovery. Then, it utilizes three experts specialized in clean, noisy, and recovered signals, respectively, with adaptive routing via a quality-aware gate. Combined with the COR…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - EEG/ECG/EDA/Gaze
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Cognitive Load"
+  - "Signal Quality"
+  - "Mixture of Experts"
+  - "EEG/ECG/EDA/Gaze"
+  - "Quality-Aware Gating"
 date: 2026-05-08
-content_hash: 8fbdbe2a3f637257
+content_hash: 3c9d0b3f6d20d18e
 ---
+
 # CogMoE: Signal-Quality–Guided Multimodal MoE for Cognitive Load Prediction
 
 **Conference**: ICLR2026  
@@ -135,6 +140,7 @@ CogMoE consistently outperforms baselines across all combinations. Notably, usin
 - **Value**: ⭐⭐⭐⭐ Addresses the real-world bottleneck of physiological signal quality; the approach is applicable to other noisy multi-sensor time-series tasks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

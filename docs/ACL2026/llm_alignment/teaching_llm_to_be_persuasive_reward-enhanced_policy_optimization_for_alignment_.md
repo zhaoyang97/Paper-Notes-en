@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Teaching LLM to be Persuasive: Reward-Enhanced Policy Optimization for Alignment from Heterogeneous Rewards
 description: >-
-  [ACL 2026][Alignment & RLHF][PPO] Addressing hotel price reduction negotiation scenarios on online travel platforms (OTA), this paper proposes REPO. It co-trains Qwen3-32B using three types of rewards: preference reward models, LLM reviewers, and rule functions. The method simultaneously improves persuasiveness, SOP compliance, and badcase repair quali
+  [ACL2026][LLM Alignment][Persuasive Dialogue] Addressing hotel price reduction negotiation scenarios on online travel platforms (OTA), this paper proposes REPO. It co-trains Qwen3-32B using three types of rewards: preference reward models, LLM reviewers, and rule functions. The method simultaneously improves persuasiveness, SOP compliance, and badcase repair quality across expert evaluations and 9,653 real A/B dialogues.
 tags:
-  - ACL 2026
-  - Alignment & RLHF
-  - PPO
+  - "ACL2026"
+  - "LLM Alignment"
+  - "Persuasive Dialogue"
+  - "Multi-source Rewards"
+  - "PPO"
+  - "Business Negotiation"
+  - "Rule Constraints"
 date: 2026-05-08
-content_hash: abbdaf8898775b0d
+content_hash: a17333a59e164a3d
 ---
+
 # Teaching LLM to be Persuasive: Reward-Enhanced Policy Optimization for Alignment from Heterogeneous Rewards
 
 **Conference**: ACL2026  
@@ -149,15 +154,16 @@ Production A/B tests compared REPO with the existing intent-driven system, as ot
 - **Value**: ⭐⭐⭐⭐⭐ Highly relevant for enterprise task-oriented agents, sales agents, and constrained RLHF.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] RE-PO: Robust Enhanced Policy Optimization as a General Framework for LLM Alignment](../../ICLR2026/llm_alignment/re-po_robust_enhanced_policy_optimization_as_a_general_framework_for_llm_alignme.md)
 - [\[ACL 2026\] Topology-Enhanced Alignment for Large Language Models: Trajectory Topology Loss and Topological Preference Optimization](topology-enhanced_alignment_for_large_language_models_trajectory_topology_loss_a.md)
+- [\[ICLR 2026\] Verification and Co-Alignment via Heterogeneous Consistency for Preference-Aligned LLM Annotations](../../ICLR2026/llm_alignment/verification_and_co-alignment_via_heterogeneous_consistency_for_preference-align.md)
+- [\[ICLR 2026\] Pretrain Value, Not Reward: Decoupled Value Policy Optimization](../../ICLR2026/llm_alignment/pretrain_value_not_reward_decoupled_value_policy_optimization.md)
 - [\[ACL 2025\] Probability-Consistent Preference Optimization for Enhanced LLM Reasoning](../../ACL2025/llm_alignment/probability-consistent_preference_optimization_for_enhanced_llm_reasoning.md)
-- [\[ACL 2025\] Teaching an Old LLM Secure Coding: Localized Preference Optimization on Distilled Preferences](../../ACL2025/llm_alignment/teaching_an_old_llm_secure_coding.md)
-- [\[ACL 2026\] MDP-GRPO: Stabilized Group Relative Policy Optimization for Multi-Constraint Instruction Following](mdp-grpo_stabilized_group_relative_policy_optimization_for_multi-constraint_inst.md)
-- [\[CVPR 2026\] Unlocking Token Rewards via Training-Free Reward Attribution](../../CVPR2026/llm_alignment/unlocking_token_rewards_via_training-free_reward_attribution.md)
 
 </div>
 

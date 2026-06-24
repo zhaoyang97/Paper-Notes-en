@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Robust Amortized Bayesian Inference with Self-Consistency Losses on Unlabeled Data
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] To address the catastrophic failure of Amortized Bayesian Inference (ABI) on real observations not covered by training simulations, this paper reformulates Bayesian self-consistency (the marginal likelihood identity of Bayes' rule) into a strictly proper loss that does not require ground-truth parameter labels. This al
+  [ICLR 2026][Learning Theory][Self-Consistency Loss] To address the catastrophic failure of Amortized Bayesian Inference (ABI) on real observations not covered by training simulations, this paper reformulates Bayesian self-consistency (the marginal likelihood identity of Bayes' rule) into a strictly proper loss that does not require ground-truth parameter labels. This allows semi-supervised training on **unlabeled real data**, where only 4 unlabeled samples can yield accurate…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Amortized Bayesian Inference"
+  - "Simulation-Based Inference"
+  - "Self-Consistency Loss"
+  - "Semi-supervised"
+  - "Robustness to Model Mismatch"
+  - "Strictly Proper Loss"
 date: 2026-05-08
-content_hash: 8e657dcdce2e8247
+content_hash: b874280f653f9a35
 ---
+
 # Robust Amortized Bayesian Inference with Self-Consistency Losses on Unlabeled Data
 
 **Conference**: ICLR 2026  
@@ -127,15 +134,16 @@ With the self-consistency loss, all parameters and metrics improved significantl
 - **Value**: ⭐⭐⭐⭐⭐ Directly addresses the robustness bottleneck for real-world ABI deployment with high efficiency and no loss of inference speed.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Optimizing Data Augmentation through Bayesian Model Selection](optimizing_data_augmentation_through_bayesian_model_selection.md)
 - [\[ICML 2026\] Realizable Bayes-Consistency for General Metric Losses](../../ICML2026/learning_theory/realizable_bayes-consistency_for_general_metric_losses.md)
+- [\[ICLR 2026\] Optimizing Data Augmentation through Bayesian Model Selection](optimizing_data_augmentation_through_bayesian_model_selection.md)
 - [\[ICLR 2026\] Near Optimal Robust Federated Learning Against Data Poisoning Attack](near_optimal_robust_federated_learning_against_data_poisoning_attack.md)
-- [\[ICLR 2026\] Poly-attention: a general scheme for higher-order self-attention](poly-attention_a_general_scheme_for_higher-order_self-attention.md)
 - [\[ICLR 2026\] Variational Inference for Cyclic Learning](variational_inference_for_cyclic_learning.md)
+- [\[ICLR 2026\] Poly-attention: a general scheme for higher-order self-attention](poly-attention_a_general_scheme_for_higher-order_self-attention.md)
 
 </div>
 

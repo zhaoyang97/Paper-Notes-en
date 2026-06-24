@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SpeechOp: Inference-Time Task Composition for Generative Speech Processing
 description: >-
-  [ICLR 2026][Audio & Speech][Paper Note] SpeechOp transforms a pretrained TTS diffusion model into a "universal speech processor." By using a single multi-task latent diffusion model, it simultaneously handles synthesis, enhancement, and separation. Crucially, it introduces the TC-CFG guidance strategy, allowing independently learned capabilities to be freely
+  [ICLR 2026][Audio & Speech][Latent Diffusion] SpeechOp transforms a pretrained TTS diffusion model into a "universal speech processor." By using a single multi-task latent diffusion model, it simultaneously handles synthesis, enhancement, and separation. Crucially, it introduces the TC-CFG guidance strategy, allowing independently learned capabilities to be freely combined at **inference time** (e.g., using ASR-generated transcripts to guide enhancement)…
 tags:
-  - ICLR 2026
-  - Audio & Speech
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Latent Diffusion"
+  - "Multi-task Speech Processing"
+  - "TTS Pretraining"
+  - "Inference-time Task Composition"
+  - "Classifier-Free Guidance"
 date: 2026-05-08
-content_hash: 1cad3be6b50c9341
+content_hash: efa9e32267e860e7
 ---
+
 # SpeechOp: Inference-Time Task Composition for Generative Speech Processing
 
 **Conference**: ICLR 2026  
@@ -144,6 +150,7 @@ TC-Avg improved WER (8.1% to 3.4%) but worsened MCD (4.83 to 5.24) and PESQ (2.0
 - Value: ⭐⭐⭐⭐⭐ (Proposes a data-efficient, controllable paradigm for speech processing)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

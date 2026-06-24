@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reading Recognition in the Wild
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Reading recognition] This paper introduces a novel reading recognition task and the first large-scale multimodal "reading-in-the-wild" dataset (100 hours). A lightweight Transformer model f…
+  [NeurIPS 2025][Multimodal VLM][Reading recognition] This paper introduces a novel reading recognition task and the first large-scale multimodal "reading-in-the-wild" dataset (100 hours). A lightweight Transformer model fusing three complementary modalities—RGB, gaze, and IMU—enables real-time reading detection on smart glasses.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "eye tracking"
   - "egocentric vision"
 date: 2026-05-08
-content_hash: e12cfb704d9eac31
+content_hash: 8684ad98bdd867a0
 ---
 
 # Reading Recognition in the Wild
@@ -150,11 +150,11 @@ The three-modality model improves accuracy by +4.6% over the best single-modalit
 
 ## Related Papers
 
-- [\[ICLR 2026\] Decoding Open-Ended Information Seeking Goals from Eye Movements in Reading](../../ICLR2026/multimodal_vlm/decoding_open-ended_information_seeking_goals_from_eye_movements_in_reading.md)
-- [\[NeurIPS 2025\] Recognition through Reasoning: Reinforcing Image Geo-localization with Large Vision-Language Models](recognition_through_reasoning_reinforcing_image_geo-localization_with_large_visi.md)
+- [\[ICCV 2025\] Trust but Verify: Programmatic VLM Evaluation in the Wild](../../ICCV2025/multimodal_vlm/trust_but_verify_programmatic_vlm_evaluation_in_the_wild.md)
+- [\[ICLR 2026\] Figma2Code: Automating Multimodal Design to Code in the Wild](../../ICLR2026/multimodal_vlm/figma2code_automating_multimodal_design_to_code_in_the_wild.md)
 - [\[CVPR 2026\] Joint-Aligned Latent Action: Towards Scalable VLA Pretraining in the Wild](../../CVPR2026/multimodal_vlm/joint-aligned_latent_action_towards_scalable_vla_pretraining_in_the_wild.md)
-- [\[NeurIPS 2025\] Uni-MuMER: Unified Multi-Task Fine-Tuning of Vision-Language Model for Handwritten Mathematical Expression Recognition](uni-mumer_unified_multi-task_fine-tuning_of_vision-language_model_for_handwritte.md)
-- [\[ICCV 2025\] A Quality-Guided Mixture of Score-Fusion Experts Framework for Human Recognition](../../ICCV2025/multimodal_vlm/a_qualityguided_mixture_of_scorefusion_experts_framework_for.md)
+- [\[ECCV 2024\] Nymeria: A Massive Collection of Multimodal Egocentric Daily Motion in the Wild](../../ECCV2024/multimodal_vlm/nymeria_a_massive_collection_of_multimodal_egocentric_daily_motion_in_the_wild.md)
+- [\[CVPR 2025\] Recognition-Synergistic Scene Text Editing](../../CVPR2025/multimodal_vlm/recognition-synergistic_scene_text_editing.md)
 
 </div>
 

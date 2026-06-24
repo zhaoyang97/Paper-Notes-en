@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] GuirlVG: Incentivize GUI Visual Grounding via Empirical Exploration on Reinforcement Learning
 description: >-
-  [ICLR 2026][Multimodal VLM][GUI Visual Grounding] This paper decomposes Rule-based Reinforcement Fine-Tuning (RFT/GRPO) into "reward function, prediction format, KL penalty, and training configuration" for systematic controlled ablation. By introducing an **Adversarial KL Factor** that adaptively suppresses reward over-optimization, it surpasses methods utilizing tens
+  [ICLR 2026][Multimodal VLM][GUI Visual Grounding] This paper decomposes Rule-based Reinforcement Fine-Tuning (RFT/GRPO) into "reward function, prediction format, KL penalty, and training configuration" for systematic controlled ablation. By introducing an **Adversarial KL Factor** that adaptively suppresses reward over-optimization, it surpasses methods utilizing tens of millions of SFT samples on the ScreenSpot benchmark with only 5.2K samples.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - GUI Visual Grounding
-  - GRPO
-  - Reinforcement Fine-Tuning
-  - MLLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "GUI Visual Grounding"
+  - "GRPO"
+  - "Reinforcement Fine-Tuning"
+  - "MLLM"
+  - "Data Efficiency"
 date: 2026-05-08
-content_hash: 5aa01b37df4157a2
+content_hash: 89df363afd35fa77
 ---
+
 # GuirlVG: Incentivize GUI Visual Grounding via Empirical Exploration on Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -126,7 +128,7 @@ Using only 5.2K samples, the method outperforms OS-Atlas (13.58M samples) by +7.
 - [\[ICLR 2026\] MMDuet2: Enhancing Proactive Interaction of Video MLLMs with Multi-Turn Reinforcement Learning](mmduet2_enhancing_proactive_interaction_of_video_mllms_with_multi-turn_reinforce.md)
 - [\[CVPR 2026\] DRS-GUI: Dynamic Region Search for Training-Free GUI Grounding](../../CVPR2026/multimodal_vlm/drs-gui_dynamic_region_search_for_training-free_gui_grounding.md)
 - [\[ACL 2025\] Aria-UI: Visual Grounding for GUI Instructions](../../ACL2025/multimodal_vlm/aria-ui_visual_grounding_for_gui_instructions.md)
-- [\[CVPR 2026\] Explore with Long-term Memory: A Benchmark and Multimodal LLM-based Reinforcement Learning Framework for Embodied Exploration](../../CVPR2026/multimodal_vlm/explore_with_long-term_memory_a_benchmark_and_multimodal_llm-based_reinforcement.md)
+- [\[ICLR 2026\] CapRL: Stimulating Dense Image Capabilities via Reinforcement Learning](caprl_stimulating_dense_image_caption_capabilities_via_reinforcement_learning.md)
 
 </div>
 

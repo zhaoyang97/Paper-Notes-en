@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MARCH: Multi-Agent Radiology Clinical Hierarchy for CT Report Generation
 description: >-
-  [ACL 2026][Medical NLP][Multi-Agent] This paper proposes MARCH, a multi-agent framework that simulates the hierarchical collaboration of radiology Residents, Fellows, and Attending physicians. Through a three-stage process (initial drafting, retrieval-augmented revision, and consensus-driven finalization), it generates CT reports. On the RadGenome-ChestCT
+  [ACL 2026][Medical LLM][Multi-agent] This paper proposes MARCH, a multi-agent framework that simulates the hierarchical collaboration of radiology Residents, Fellows, and Attending physicians. Through a three-stage process (initial drafting, retrieval-augmented revision, and consensus-driven finalization), it generates CT reports. On the RadGenome-ChestCT dataset, it achieves a CE-F1 of 0.399, representing a 57.7% improvement over the best baseline, Reg2RG (0.253).
 tags:
-  - ACL 2026
-  - Medical NLP
-  - Multi-Agent
-  - 3D CT
+  - "ACL 2026"
+  - "Medical LLM"
+  - "Multi-agent"
+  - "Radiology report generation"
+  - "Consensus-driven"
+  - "Retrieval-augmented"
+  - "3D CT"
 date: 2026-05-08
-content_hash: 4e707c131ec54db2
+content_hash: 61f1eeeaac00beec
 ---
+
 # MARCH: Multi-Agent Radiology Clinical Hierarchy for CT Report Generation
 
 **Conference**: ACL 2026  
@@ -153,10 +157,10 @@ The Resident agent is trained using AdamW (lr=1e-5) for 10 epochs, with the ViT3
 ## Related Papers
 
 - [\[ACL 2026\] CT-FineBench: A Diagnostic Fidelity Benchmark for Fine-Grained Evaluation of CT Report Generation](ct-finebench_a_diagnostic_fidelity_benchmark_for_fine-grained_evaluation_of_ct_r.md)
+- [\[ACL 2026\] RA-RRG: Multimodal Retrieval-Augmented Radiology Report Generation with Key Phrase Extraction](ra-rrg_multimodal_retrieval-augmented_radiology_report_generation_with_key_phras.md)
 - [\[ACL 2025\] Automated Structured Radiology Report Generation](../../ACL2025/medical_nlp/automated_structured_radiology_report_generation.md)
 - [\[ACL 2025\] Online Iterative Self-Alignment for Radiology Report Generation](../../ACL2025/medical_nlp/oisa_radiology_report_gen.md)
-- [\[ACL 2026\] RA-RRG: Multimodal Retrieval-Augmented Radiology Report Generation with Key Phrase Extraction](ra-rrg_multimodal_retrieval-augmented_radiology_report_generation_with_key_phras.md)
-- [\[ACL 2026\] SEMA-RAG: A Self-Evolving Multi-Agent Retrieval-Augmented Generation Framework for Medical Reasoning](sema-rag_a_self-evolving_multi-agent_retrieval-augmented_generation_framework_fo.md)
+- [\[ACL 2025\] Radar: Enhancing Radiology Report Generation with Supplementary Knowledge Injection](../../ACL2025/medical_nlp/radar_radiology_report_gen.md)
 
 </div>
 

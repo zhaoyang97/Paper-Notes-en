@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ADMN: A Layer-Wise Adaptive Multimodal Network for Dynamic Input Noise and Compute Resources
 description: >-
-  [NeurIPS 2025][Multimodal VLM][multimodal] This paper proposes ADMN (Adaptive Depth Multimodal Network), a two-stage training framework: (1) Multimodal LayerDrop fine-tuning to make the backbone robust to arbitrary layer…
+  [NeurIPS 2025][Multimodal VLM][multimodal] This paper proposes ADMN (Adaptive Depth Multimodal Network), a two-stage training framework: (1) Multimodal LayerDrop fine-tuning to make the backbone robust to arbitrary layer configurations, and (2) a QoI-aware controller that dynamically allocates layer budgets across modalities. ADMN adaptively assigns layers based on per-modality quality-of-information (QoI) under strict compute constraints, matching full-model accuracy while r…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -14,7 +14,7 @@ tags:
   - "layer allocation"
   - "sensor corruption"
 date: 2026-05-08
-content_hash: 6215f0e9a5d48ffd
+content_hash: fc12723bc103714c
 ---
 
 # ADMN: A Layer-Wise Adaptive Multimodal Network for Dynamic Input Noise and Compute Resources
@@ -122,9 +122,9 @@ GDTM (Blur, 8 layers): ADMN localization error ~11 cm, approaching the upper bou
 
 - [\[NeurIPS 2025\] Vision Function Layer in Multimodal LLMs](vision_function_layer_in_multimodal_llms.md)
 - [\[NeurIPS 2025\] Learning to Steer: Input-dependent Steering for Multimodal LLMs](learning_to_steer_input-dependent_steering_for_multimodal_llms.md)
+- [\[CVPR 2026\] Beyond Layer-Wise Merging: Chain-of-Merging for Vision-Language Models](../../CVPR2026/multimodal_vlm/beyond_layer-wise_merging_chain-of-merging_for_vision-language_models.md)
 - [\[NeurIPS 2025\] SITCOM: Scaling Inference-Time COMpute for VLAs](sitcom_scaling_inference-time_compute_for_vlas.md)
-- [\[AAAI 2026\] MacVQA: Adaptive Memory Allocation and Global Noise Filtering for Continual Visual Question Answering](../../AAAI2026/multimodal_vlm/macvqa_adaptive_memory_allocation_and_global_noise_filtering_for_continual_visua.md)
-- [\[ICLR 2026\] TableDART: Dynamic Adaptive Multi-Modal Routing for Table Understanding](../../ICLR2026/multimodal_vlm/tabledart_dynamic_adaptive_multi-modal_routing_for_table_understanding.md)
+- [\[NeurIPS 2025\] Windsock is Dancing: Adaptive Multimodal Retrieval-Augmented Generation](windsock_is_dancing_adaptive_multimodal_retrieval-augmented_generation.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Measurement Score-based Diffusion Model (MSM)
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] Instead of attempting to learn the "score of clean images," this method directly learns a "local measurement score" for subsampled, noisy data in the **measurement domain**. By aggregating these via random masks, the full measurement is reconstructed, allowing diffusion models to be trained entirely on degraded observa
+  [ICLR 2026][Image Generation][Diffusion Models] Instead of attempting to learn the "score of clean images," this method directly learns a "local measurement score" for subsampled, noisy data in the **measurement domain**. By aggregating these via random masks, the full measurement is reconstructed, allowing diffusion models to be trained entirely on degraded observations for both unconditional generation and linear inverse problems.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Self-supervised"
+  - "Measurement Domain"
+  - "Training without Clean Data"
+  - "MRI Reconstruction"
+  - "Posterior Sampling"
 date: 2026-05-08
-content_hash: 33dbb25f9463721d
+content_hash: 36171a150c03f638
 ---
+
 # Measurement Score-based Diffusion Model (MSM)
 
 **Conference**: ICLR 2026  
@@ -134,8 +140,8 @@ MSM outperforms A-DPS across the board in inpainting and SR (A-DPS sometimes per
 - [\[ICLR 2026\] Sample-Efficient Evidence Estimation of Score-Based Priors for Model Selection](sample-efficient_evidence_estimation_of_score_based_priors_for_model_selection.md)
 - [\[ICLR 2026\] Large Scale Diffusion Distillation via Score-Regularized Continuous-Time Consistency](large_scale_diffusion_distillation_via_score-regularized_continuous-time_consist.md)
 - [\[CVPR 2025\] Traversing Distortion-Perception Tradeoff Using a Single Score-Based Generative Model](../../CVPR2025/image_generation/traversing_distortion-perception_tradeoff_using_a_single_score-based_generative_.md)
+- [\[ICLR 2026\] Score Distillation Beyond Acceleration: Generative Modeling from Corrupted Data](score_distillation_beyond_acceleration_generative_modeling_from_corrupted_data.md)
 - [\[ICML 2026\] Alignment-Guided Score Matching for Text-to-Image Alignment in Diffusion Models](../../ICML2026/image_generation/alignment-guided_score_matching_for_text-to-image_alignment_in_diffusion_models.md)
-- [\[ICLR 2026\] Latent Diffusion Model without Variational Autoencoder](latent_diffusion_model_without_variational_autoencoder.md)
 
 </div>
 

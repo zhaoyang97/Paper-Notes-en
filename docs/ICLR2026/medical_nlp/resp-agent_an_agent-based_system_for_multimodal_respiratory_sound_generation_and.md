@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Resp-Agent: An Agent-Based System for Multimodal Respiratory Sound Generation and Disease Diagnosis
 description: >-
-  [ICLR 2026][Medical NLP][Flow Matching] Ours proposes the Resp-Agent closed-loop multi-agent framework, which coordinates a controllable respiratory sound generator and a multimodal diagnoser via an active adversarial curriculum planner (Thinker-A2CA). It achieves generation↔diagnosis co-design on a 229k-scale benchmark, significantly improving diagnostic pe
+  [ICLR2026][Medical LLM][Respiratory sound analysis] Ours proposes the Resp-Agent closed-loop multi-agent framework, which coordinates a controllable respiratory sound generator and a multimodal diagnoser via an active adversarial curriculum planner (Thinker-A2CA). It achieves generation↔diagnosis co-design on a 229k-scale benchmark, significantly improving diagnostic performance for long-tail categories.
 tags:
-  - ICLR 2026
-  - Medical NLP
-  - Flow Matching
+  - "ICLR2026"
+  - "Medical LLM"
+  - "Respiratory sound analysis"
+  - "multimodal fusion"
+  - "controllable audio generation"
+  - "active adversarial curriculum learning"
+  - "flow matching"
+  - "data augmentation"
 date: 2026-05-08
-content_hash: 08886543097d8981
+content_hash: 3686352fbe49719e
 ---
+
 # Resp-Agent: An Agent-Based System for Multimodal Respiratory Sound Generation and Disease Diagnosis
 
 **Conference**: ICLR2026  
@@ -141,14 +147,17 @@ In style swap experiments, fixing pathology labels while changing style referenc
 
 <div class="related-papers" markdown="1">
 
-- **OPERA**: Uni-modal pre-training for respiratory sound.
-- **RespLLM**: Multimodal fusion for respiratory sounds via concatenation.
-- **ICBHI/SPRSound**: Core public datasets utilized for the benchmark.
+## Related Papers
+
+- [\[ACL 2026\] MARCH: Multi-Agent Radiology Clinical Hierarchy for CT Report Generation](../../ACL2026/medical_nlp/march_multi-agent_radiology_clinical_hierarchy_for_ct_report_generation.md)
+- [\[ACL 2026\] SEMA-RAG: A Self-Evolving Multi-Agent Retrieval-Augmented Generation Framework for Medical Reasoning](../../ACL2026/medical_nlp/sema-rag_a_self-evolving_multi-agent_retrieval-augmented_generation_framework_fo.md)
+- [\[ACL 2025\] LLMs Can Simulate Standardized Patients via Agent Coevolution](../../ACL2025/medical_nlp/evopatient_standardized_patient.md)
+- [\[ICML 2025\] Agent WARPP: Workflow Adherence via Runtime Parallel Personalization](../../ICML2025/medical_nlp/agent_warpp_workflow_adherence_via_runtime_parallel_personalization.md)
+- [\[ACL 2026\] RA-RRG: Multimodal Retrieval-Augmented Radiology Report Generation with Key Phrase Extraction](../../ACL2026/medical_nlp/ra-rrg_multimodal_retrieval-augmented_radiology_report_generation_with_key_phras.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] MARCH: Multi-Agent Radiology Clinical Hierarchy for CT Report Generation](../../ACL2026/medical_nlp/march_multi-agent_radiology_clinical_hierarchy_for_ct_report_generation.md)

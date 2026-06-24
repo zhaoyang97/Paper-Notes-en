@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Optimal Brain Restoration for Joint Quantization and Sparsification of LLMs
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] This paper proposes OBR (Optimal Brain Restoration), a training-free framework that utilizes a closed-form solution for group error compensation based on second-order Hessian information. It reconciles the conflicting weight distribution requirements of pruning and quantization, achieving the first W4A4KV4 + 50% sparse
+  [ICLR 2026][Model Compression][LLM Compression] This paper proposes OBR (Optimal Brain Restoration), a training-free framework that utilizes a closed-form solution for group error compensation based on second-order Hessian information. It reconciles the conflicting weight distribution requirements of pruning and quantization, achieving the first W4A4KV4 + 50% sparse LLM. On Llama2-7B, it incurs only a 1.4 perplexity drop compared to the FP16 dense baseline while delivering up…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "LLM Compression"
+  - "Joint Quantization and Pruning"
+  - "Second-order Hessian"
+  - "Error Compensation"
+  - "Training-free"
 date: 2026-05-08
-content_hash: c30c97e968d3fa8d
+content_hash: e8c895d942147e9a
 ---
+
 # Optimal Brain Restoration for Joint Quantization and Sparsification of LLMs
 
 **Conference**: ICLR 2026  
@@ -145,7 +151,6 @@ Even with naive RTN quantization, OBR outperforms SparseGPT+GPTQ (improving PPL 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

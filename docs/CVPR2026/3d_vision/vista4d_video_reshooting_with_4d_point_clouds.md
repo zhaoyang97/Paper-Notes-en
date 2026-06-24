@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Vista4D: Video Reshooting with 4D Point Clouds
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Vista4D lifts input videos into "temporally persistent" 4D point clouds where static pixels are preserved across time. By rendering these clouds from a target camera and feeding them into a fine-tuned video diffusion model alongside the source video, it "reshoots" the scene from new angles while preserving dynamics. Th
+  [CVPR 2026][3D Vision][Video Reshooting] Vista4D lifts input videos into "temporally persistent" 4D point clouds where static pixels are preserved across time. By rendering these clouds from a target camera and feeding them into a fine-tuned video diffusion model alongside the source video, it "reshoots" the scene from new angles while preserving dynamics. The model is trained on noisy multi-view data to ensure robustness against real-world 4D reconstruction artifacts.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Video Reshooting"
+  - "4D Point Clouds"
+  - "Novel View Video Synthesis"
+  - "Camera Control"
+  - "Video Diffusion Models"
 date: 2026-05-08
-content_hash: 44702594e734275e
+content_hash: 6969b475d35468de
 ---
+
 # Vista4D: Video Reshooting with 4D Point Clouds
 
 **Conference**: CVPR 2026  
@@ -127,13 +133,14 @@ Ablations show that "Full" (noisy training + in-context source) is robust to bot
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] V-DPM: 4D Video Reconstruction with Dynamic Point Maps](v-dpm_4d_video_reconstruction_with_dynamic_point_maps.md)
 - [\[CVPR 2026\] 3D sans 3D Scans: Scalable Pre-training from Video-Generated Point Clouds](3d_sans_3d_scans_scalable_pre-training_from_video-generated_point_clouds.md)
-- [\[CVPR 2026\] STS-Mixer: Spatio-Temporal-Spectral Mixer for 4D Point Cloud Video Understanding](sts_mixer_4d_point_cloud.md)
+- [\[ICML 2026\] DynaTok: Token-Based 4D Reconstruction from Partial Point Clouds](../../ICML2026/3d_vision/dynatok_token-based_4d_reconstruction_from_partial_point_clouds.md)
 - [\[CVPR 2026\] mmWaveFlow: Unified Enhancement and Generation of mmWave Human Point Clouds](mmwaveflow_unified_enhancement_and_generation_of_mmwave_human_point_clouds.md)
 - [\[CVPR 2026\] Ghosts in the Point Clouds: De-glaring LiDAR in the Transient Domain](ghosts_in_the_point_clouds_de-glaring_lidar_in_the_transient_domain.md)
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] HCLFuse: Revisiting Generative Infrared and Visible Image Fusion Based on Human Cognitive Laws
 description: >-
-  [NeurIPS 2025][Segmentation][Infrared-visible fusion] HCLFuse performs modality alignment via the information bottleneck principle and optimal transport theory…
+  [NeurIPS 2025 Spotlight][Segmentation][Infrared-visible fusion] HCLFuse performs modality alignment via the information bottleneck principle and optimal transport theory, combining a Variational Bottleneck Encoder (VBE) with a physics-guided conditional diffusion model. Three physical constraints—heat conduction, structure preservation, and physical consistency—are injected into the diffusion process. On the MSRS dataset, the gradient metric AG improves by 69.87% and spatial…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Segmentation"
   - "Infrared-visible fusion"
   - "variational information bottleneck"
@@ -12,7 +12,7 @@ tags:
   - "physics-guided diffusion"
   - "Wasserstein distance"
 date: 2026-05-08
-content_hash: d79f9154b3ca5e3d
+content_hash: 1195ada1d6489b78
 ---
 
 # HCLFuse: Revisiting Generative Infrared and Visible Image Fusion Based on Human Cognitive Laws
@@ -126,10 +126,10 @@ Infrared image $X$ + visible image $Y$ → **Optimal Transport Alignment**: Sink
 ## Related Papers
 
 - [\[AAAI 2026\] CtrlFuse: Mask-Prompt Guided Controllable Infrared and Visible Image Fusion](../../AAAI2026/segmentation/ctrlfuse_mask-prompt_guided_controllable_infrared_and_visible_image_fusion.md)
-- [\[NeurIPS 2025\] HAODiff: Human-Aware One-Step Diffusion via Dual-Prompt Guidance](haodiff_human-aware_one-step_diffusion_via_dual-prompt_guidance.md)
+- [\[CVPR 2025\] Task-driven Image Fusion with Learnable Fusion Loss](../../CVPR2025/segmentation/task-driven_image_fusion_with_learnable_fusion_loss.md)
+- [\[CVPR 2025\] Image Quality Assessment: From Human to Machine Preference](../../CVPR2025/segmentation/image_quality_assessment_from_human_to_machine_preference.md)
 - [\[NeurIPS 2025\] HumanCrafter: Synergizing Generalizable Human Reconstruction and Semantic 3D Segmentation](humancrafter_synergizing_generalizable_human_reconstruction_and_semantic_3d_segm.md)
-- [\[NeurIPS 2025\] Panoptic Captioning: An Equivalence Bridge for Image and Text](panoptic_captioning_an_equivalence_bridge_for_image_and_text.md)
-- [\[NeurIPS 2025\] HopaDIFF: Holistic-Partial Aware Fourier Conditioned Diffusion for Referring Human Action Segmentation in Multi-Person Scenarios](hopadiff_holistic-partial_aware_fourier_conditioned_diffusion_for_referring_huma.md)
+- [\[NeurIPS 2025\] HAODiff: Human-Aware One-Step Diffusion via Dual-Prompt Guidance](haodiff_human-aware_one-step_diffusion_via_dual-prompt_guidance.md)
 
 </div>
 

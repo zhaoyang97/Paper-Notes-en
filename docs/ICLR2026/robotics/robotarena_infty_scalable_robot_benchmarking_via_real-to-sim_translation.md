@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RobotArena ∞: Scalable Robot Benchmarking via Real-to-Sim Translation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][real-to-sim] This paper proposes RobotArena ∞, a scalable evaluation framework that **automatically translates real robot demonstration videos into simulation digital twins**. It deploys VLA policies within these simulations and uses a dual-track scoring system (VLM progress scores + crowdsourced human pairwise preferences). Based
+  [ICLR 2026][Robotics][Robot Benchmarking] This paper proposes RobotArena ∞, a scalable evaluation framework that **automatically translates real robot demonstration videos into simulation digital twins**. It deploys VLA policies within these simulations and uses a dual-track scoring system (VLM progress scores + crowdsourced human pairwise preferences). Based on over 8,500 preference pairs, it compares 6 VLAs from global laboratories, revealing that current policies exhibit w…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - real-to-sim
+  - "ICLR 2026"
+  - "Robotics"
+  - "Robot Benchmarking"
+  - "Real-to-Sim"
+  - "VLA Policy"
+  - "Human Preference Ranking"
+  - "Differentiable Rendering"
 date: 2026-05-08
-content_hash: 361865f169f8b0cd
+content_hash: 977d2c86a104aee2
 ---
+
 # RobotArena ∞: Scalable Robot Benchmarking via Real-to-Sim Translation
 
 **Conference**: ICLR 2026  
@@ -120,6 +125,7 @@ The initial benchmark aggregated **over 8,500 preference pairs** (8,749 for Brid
 - **Value**: ⭐⭐⭐⭐⭐ Addresses the critical lack of standard benchmarks in robotics; potential to become core community infrastructure.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

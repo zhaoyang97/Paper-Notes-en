@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MetaMoE: Diversity-Aware Proxy Selection for Privacy-Preserving Mixture-of-Experts Unification
 description: >-
-  [ICML 2026][AI Safety][Paper Note] Expert models fine-tuned independently on private data by multiple clients can be merged into a single deployable MoE model without sharing private data. The core approach utilizes relevance-weighted Determinantal Point Processes (DPP) to select proxy samples from public data that are both "relevant and diverse." This
+  [ICML 2026][AI Safety][MoE Unification] Expert models fine-tuned independently on private data by multiple clients can be merged into a single deployable MoE model without sharing private data. The core approach utilizes relevance-weighted Determinantal Point Processes (DPP) to select proxy samples from public data that are both "relevant and diverse." This is followed by proxy-aligned expert training and context-aware router training to align expert behavior with proxy super…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "MoE Unification"
+  - "Privacy Protection"
+  - "DPP Diversity"
+  - "Proxy Data"
+  - "Routing Training"
 date: 2026-05-08
-content_hash: 2f43f1c9dd4804ed
+content_hash: 5bddf7be671bbedc
 ---
+
 # MetaMoE: Diversity-Aware Proxy Selection for Privacy-Preserving Mixture-of-Experts Unification
 
 **Conference**: ICML 2026  
@@ -138,10 +144,10 @@ On CV (ViT-B/32 based Pets, Cars, CIFAR-100) and NLP (LLM-based multi-task bench
 ## Related Papers
 
 - [\[CVPR 2026\] ReMoE: Region-Mixture Experts for Adversarially-Robust Vision Transformers](../../CVPR2026/ai_safety/remoe_region-mixture_experts_for_adversarially-robust_vision_transformers.md)
+- [\[ICLR 2026\] Privacy Beyond Pixels: Latent Anonymization for Privacy-Preserving Video Understanding](../../ICLR2026/ai_safety/privacy_beyond_pixels_latent_anonymization_for_privacy-preserving_video_understa.md)
+- [\[ICML 2026\] Generative Models Erode Human Temporal Learning Through Market Selection](generative_models_erode_human_temporal_learning_through_market_selection.md)
 - [\[ICCV 2025\] FedVLA: Federated Vision-Language-Action Learning with Dual Gating Mixture-of-Experts for Robotic Manipulation](../../ICCV2025/ai_safety/fedvla_federated_vision-language-action_learning_with_dual_gating_mixture-of-exp.md)
-- [\[ICCV 2025\] FedMeNF: Privacy-Preserving Federated Meta-Learning for Neural Fields](../../ICCV2025/ai_safety/fedmenf_privacy-preserving_federated_meta-learning_for_neural_fields.md)
-- [\[ICML 2026\] Persuasive Privacy](persuasive_privacy.md)
-- [\[ICLR 2026\] Membership Privacy Risks of Sharpness Aware Minimization](../../ICLR2026/ai_safety/sam_membership_privacy_risks.md)
+- [\[ICML 2026\] SemGrad: Gradients w.r.t. Semantics-Preserving Embeddings Tell LLM Uncertainty](gradients_with_respect_to_semantics_preserving_embeddings_tell_the_uncertainty_o.md)
 
 </div>
 

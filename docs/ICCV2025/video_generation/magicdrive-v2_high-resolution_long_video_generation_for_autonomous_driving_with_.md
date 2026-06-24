@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MagicDrive-V2: High-Resolution Long Video Generation for Autonomous Driving with Adaptive Control
 description: >-
-  [ICCV 2025][Video Generation][DiT] MagicDrive-V2 proposes a multi-view driving video generation framework based on DiT + 3D VAE. Through a spatial-temporal condition encoding module and a progressive training strategy…
+  [ICCV 2025][Video Generation][DiT] MagicDrive-V2 proposes a multi-view driving video generation framework based on DiT + 3D VAE. Through a spatial-temporal condition encoding module and a progressive training strategy, it achieves high-resolution long video generation at 848×1600×6 views and 241 frames, significantly surpassing existing methods in both resolution and frame count.
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -11,7 +11,7 @@ tags:
   - "Multi-view"
   - "Controllable Generation"
 date: 2026-05-08
-content_hash: bf6a8c2269d07ea1
+content_hash: ceb8cbaef7590a96
 ---
 
 # MagicDrive-V2: High-Resolution Long Video Generation for Autonomous Driving with Adaptive Control
@@ -132,10 +132,10 @@ FVD is reduced by over 55%, mAP improves by over 50%, while resolution is 3.3× 
 ## Related Papers
 
 - [\[NeurIPS 2025\] RLGF: Reinforcement Learning with Geometric Feedback for Autonomous Driving Video Generation](../../NeurIPS2025/video_generation/rlgf_reinforcement_learning_with_geometric_feedback_for_autonomous_driving_video.md)
-- [\[NeurIPS 2025\] Foresight: Adaptive Layer Reuse for Accelerated and High-Quality Text-to-Video Generation](../../NeurIPS2025/video_generation/foresight_adaptive_layer_reuse_for_accelerated_and_highquali.md)
 - [\[ICCV 2025\] Long Context Tuning for Video Generation](long_context_tuning_for_video_generation.md)
-- [\[ICCV 2025\] VSRM: A Robust Mamba-Based Framework for Video Super-Resolution](vsrm_a_robust_mamba-based_framework_for_video_super-resolution.md)
-- [\[ICCV 2025\] Dual-Expert Consistency Model for Efficient and High-Quality Video Generation](dual-expert_consistency_model_for_efficient_and_high-quality_video_generation.md)
+- [\[NeurIPS 2025\] Foresight: Adaptive Layer Reuse for Accelerated and High-Quality Text-to-Video Generation](../../NeurIPS2025/video_generation/foresight_adaptive_layer_reuse_for_accelerated_and_highquali.md)
+- [\[ICLR 2026\] DrivingGen: A Comprehensive Benchmark for Generative Video World Models in Autonomous Driving](../../ICLR2026/video_generation/drivinggen_a_comprehensive_benchmark_for_generative_video_world_models_in_autono.md)
+- [\[ICCV 2025\] MotionShot: Adaptive Motion Transfer across Arbitrary Objects for Text-to-Video Generation](motionshot_adaptive_motion_transfer_across_arbitrary_objects_for_text-to-video_g.md)
 
 </div>
 

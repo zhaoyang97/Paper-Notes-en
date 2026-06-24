@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] NitroGen: An Open Foundation Model for Generalist Gaming Agents
 description: >-
-  [CVPR 2026][LLM Agent][flow matching] NitroGen treats "controller input overlays used by players in livestreams" as natural action labels. It automatically extracts (frame, action) pairs from 40,000 hours of public videos covering 1,000+ games. By training a single vision-action Transformer using flow-matching, the model can directly play various 2D/3D gam
+  [CVPR 2026][Self-Supervised Learning][Gaming Agent] NitroGen treats "controller input overlays used by players in livestreams" as natural action labels. It automatically extracts (frame, action) pairs from 40,000 hours of public videos covering 1,000+ games. By training a single vision-action Transformer using flow-matching, the model can directly play various 2D/3D games. Pre-trained weights provide a maximum relative success rate improvement of 52% when fine-tuned on unseen…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - flow matching
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Gaming Agent"
+  - "Vision-Action Model"
+  - "Behavior Cloning"
+  - "flow matching"
+  - "internet-scale data"
 date: 2026-05-08
-content_hash: f1f170c04497e0a8
+content_hash: 9cef992671715abe
 ---
+
 # NitroGen: An Open Foundation Model for Generalist Gaming Agents
 
 **Conference**: CVPR 2026  
@@ -143,11 +148,11 @@ The relative improvement for the isometric roguelike was ~10%, while the 3D acti
 
 ## Related Papers
 
-- [\[CVPR 2026\] RetouchIQ: MLLM Agents for Instruction-Based Image Retouching with Generalist Reward](retouchiq_mllm_agents_for_instruction-based_image_retouching_with_generalist_rew.md)
-- [\[AAAI 2026\] AutoGLM: Autonomous Foundation Agents for GUIs](../../AAAI2026/llm_agent/autoglm_autonomous_foundation_agents_for_guis.md)
-- [\[ICLR 2026\] AgentSynth: Scalable Task Generation for Generalist Computer-Use Agents](../../ICLR2026/llm_agent/agentsynth_scalable_task_generation_for_generalist_computer-use_agents.md)
-- [\[CVPR 2026\] SceneAssistant: A Visual Feedback Agent for Open-Vocabulary 3D Scene Generation](sceneassistant_a_visual_feedback_agent_for_openvoc.md)
-- [\[CVPR 2026\] Seeing as Experts Do: A Knowledge-Augmented Agent for Open-Set Fine-Grained Visual Understanding](seeing_as_experts_do_a_knowledge-augmented_agent_for_open-set_fine-grained_visua.md)
+- [\[CVPR 2026\] MOMO: Mars Orbital Model — Foundation Model for Mars Orbital Applications](momo_mars_orbital_model_foundation_model_for_mars_orbital_applications.md)
+- [\[ICML 2026\] How 'Neural' is a Neural Foundation Model?](../../ICML2026/self_supervised/how_neural_is_a_neural_foundation_model.md)
+- [\[CVPR 2026\] PAF: Perturbation-Aware Filtering for Open-Set Semi-Supervised Learning](paf_perturbation-aware_filtering_for_open-set_semi-supervised_learning.md)
+- [\[AAAI 2026\] Spikingformer: A Key Foundation Model for Spiking Neural Networks](../../AAAI2026/self_supervised/spikingformer_a_key_foundation_model_for_spiking_neural_networks.md)
+- [\[CVPR 2026\] SECOS: Semantic Capture for Rigorous Classification in Open-World Semi-Supervised Learning](secos_semantic_capture_for_rigorous_classification_in_open-world_semi-supervised.md)
 
 </div>
 

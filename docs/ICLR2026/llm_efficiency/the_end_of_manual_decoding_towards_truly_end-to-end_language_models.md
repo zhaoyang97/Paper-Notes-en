@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] The End of Manual Decoding: Towards Truly End-to-End Language Models
 description: >-
-  [ICLR 2026][LLM Efficiency][top-p] This paper proposes AutoDeco, which attaches two lightweight prediction heads to a standard Transformer. It enables the model to predict the temperature and top-p for each decoding step, transforming the manually tuned decoding process into a differentiable, end-to-end trainable component. Across 8 benchmarks, it consi
+  [ICLR 2026][LLM Efficiency][Adaptive decoding] This paper proposes AutoDeco, which attaches two lightweight prediction heads to a standard Transformer. It enables the model to predict the temperature and top-p for each decoding step, transforming the manually tuned decoding process into a differentiable, end-to-end trainable component. Across 8 benchmarks, it consistently outperforms default sampling and matches the "oracle" upper bound obtained by tuning parameters on the te…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - top-p
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Adaptive decoding"
+  - "temperature prediction"
+  - "top-p"
+  - "end-to-end"
+  - "differentiable sampling"
 date: 2026-05-08
-content_hash: 18e0d56c1ad7ef27
+content_hash: b7c65373883cd746
 ---
+
 # The End of Manual Decoding: Towards Truly End-to-End Language Models
 
 **Conference**: ICLR 2026  

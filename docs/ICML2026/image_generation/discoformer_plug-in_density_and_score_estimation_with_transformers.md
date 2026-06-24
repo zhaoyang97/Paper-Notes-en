@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DiScoFormer: Plug-In Density and Score Estimation with Transformers
 description: >-
-  [ICML 2026][Image Generation][Transformer] This paper proposes DiScoFormer, a Transformer that is equivariant to sample permutation and coordinate affine transformations. It maps any i.i.d. sample set to corresponding densities $f$ and scores $\nabla\log f$ in a single forward pass. Theoretically, it proves that self-attention with appropriate parametrization c
+  [ICML 2026 Oral][Image Generation][Density estimation] This paper proposes DiScoFormer, a Transformer that is equivariant to sample permutation and coordinate affine transformations. It maps any i.i.d. sample set to corresponding densities $f$ and scores $\nabla\log f$ in a single forward pass. Theoretically, it proves that self-attention with appropriate parametrization can exactly replicate normalized Gaussian KDE. Experimentally, it outperforms classical KDE across various…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Transformer
+  - "ICML 2026 Oral"
+  - "Image Generation"
+  - "Density estimation"
+  - "score estimation"
+  - "Transformer"
+  - "Kernel Density Estimation"
+  - "Equivariant networks"
 date: 2026-05-08
-content_hash: 352d099c97aa210c
+content_hash: 2bca85c96ad0b9f6
 ---
+
 # DiScoFormer: Plug-In Density and Score Estimation with Transformers
 
 **Conference**: ICML 2026 Oral  
@@ -136,8 +141,8 @@ All experiments run on a single 48GB L40S GPU. Baselines include Scott's Rule KD
 
 - [\[ICLR 2026\] Sample-Efficient Evidence Estimation of Score-Based Priors for Model Selection](../../ICLR2026/image_generation/sample-efficient_evidence_estimation_of_score_based_priors_for_model_selection.md)
 - [\[CVPR 2025\] Taming Score-Based Denoisers in ADMM: A Convergent Plug-and-Play Framework](../../CVPR2025/image_generation/taming_score-based_denoisers_in_admm_a_convergent_plug-and-play_framework.md)
-- [\[ICML 2026\] Scalable GANs with Transformers](scalable_gans_with_transformers.md)
 - [\[ICLR 2026\] Monocular Normal Estimation via Shading Sequence Estimation](../../ICLR2026/image_generation/monocular_normal_estimation_via_shading_sequence_estimation.md)
+- [\[ICLR 2026\] Enhanced Generative Model Evaluation with Clipped Density and Coverage](../../ICLR2026/image_generation/enhanced_generative_model_evaluation_with_clipped_density_and_coverage.md)
 - [\[ICML 2026\] Rao-Blackwellized Score Matching on Manifolds](rao-blackwellized_score_matching_on_manifolds.md)
 
 </div>

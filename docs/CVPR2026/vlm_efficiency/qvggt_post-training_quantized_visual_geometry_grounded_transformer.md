@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] QVGGT: Post-Training Quantized Visual Geometry Grounded Transformer
 description: >-
-  [CVPR 2026][Model Compression][VGGT] Targeting the 1.26B parameter feed-forward 3D reconstruction model VGGT, this paper proposes QVGGT, a geometry-aware post-training quantization framework. By utilizing "block-wise sensitivity mixed precision + camera token filtering compensation + task-aware scale search," it achieves nearly lossless performance under
+  [CVPR 2026][Multimodal Efficiency][Post-Training Quantization] Targeting the 1.26B parameter feed-forward 3D reconstruction model VGGT, this paper proposes QVGGT, a geometry-aware post-training quantization framework. By utilizing "block-wise sensitivity mixed precision + camera token filtering compensation + task-aware scale search," it achieves nearly lossless performance under W4A16 (CO3Dv2 camera pose AUC@30 89.4 vs. FP16 89.5), while reducing memory by 3–4.9× and providi…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - VGGT
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Post-Training Quantization"
+  - "VGGT"
+  - "Mixed Precision"
+  - "Camera tokens"
+  - "Geometric consistency"
 date: 2026-05-08
-content_hash: 143c1826bc2d4115
+content_hash: e6193a62e637e200
 ---
+
 # QVGGT: Post-Training Quantized Visual Geometry Grounded Transformer
 
 **Conference**: CVPR 2026  
@@ -132,15 +137,16 @@ Component-wise ablation (Q=Naive Quant, S=Selective Mixed Precision, D=Token Fil
 - Value: ⭐⭐⭐⭐ Enables 1.2B VGGT to run nearly lossless on consumer GPUs, highly practical for edge-side 3D perception.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models](../../ICLR2026/model_compression/ptq4arvg_post-training_quantization_for_autoregressive_visual_generation_models.md)
-- [\[ACL 2026\] Task-Stratified Knowledge Scaling Laws for Post-Training Quantized LLMs](../../ACL2026/model_compression/task-stratified_knowledge_scaling_laws_for_post-training_quantized_large_languag.md)
-- [\[CVPR 2026\] Progressive Supernet Training for Efficient Visual Autoregressive Modeling](progressive_supernet_training_for_efficient_visual_autoregressive_modeling.md)
 - [\[CVPR 2026\] VLM-PTQ: Efficient Post-Training Quantization for Large Vision-Language Models](vlm-ptq_efficient_post-training_quantization_for_large_vision-language_models.md)
-- [\[CVPR 2026\] CAR-SAM: Cross-Attention Reconstruction for Post-Training Quantization of the Segment Anything Model](car-sam_cross-attention_reconstruction_for_post-training_quantization_of_the_seg.md)
+- [\[CVPR 2026\] Fine-Grained Post-Training Quantization for Large Vision Language Models with Quantization-Aware Integrated Gradients](fine-grained_post-training_quantization_for_large_vision_language_models_with_qu.md)
+- [\[CVPR 2026\] LS-ViT: Least-Squares Hessian Based Block Reconstruction for Low-Bit Post-Training Quantization of Vision Transformers](ls-vit_least-squares_hessian_based_block_reconstruction_for_low-bit_post-trainin.md)
+- [\[CVPR 2026\] LiteVGGT: Boosting Vanilla VGGT via Geometry-aware Cached Token Merging](litevggt_boosting_vanilla_vggt_via_geometry-aware_cached_token_merging.md)
+- [\[CVPR 2026\] TimeViper: A Hybrid Mamba-Transformer Vision-Language Model for Efficient Long Video Understanding](timeviper_a_hybrid_mamba-transformer_vision-language_model_for_efficient_long_vi.md)
 
 </div>
 

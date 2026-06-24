@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] MedAgent-Pro: Towards Evidence-based Multi-modal Medical Diagnosis via Reasoning Agentic Workflow
 description: >-
-  [ICLR 2026][LLM Agent][Agentic Workflow] MedAgent-Pro decomposes the modern clinical "evidence-based diagnosis" process into a two-layer agentic workflow: **disease-level standardized planning** and **patient-level step-by-step evidence reasoning**. It utilizes RAG to align with medical guidelines, employs vision/coding tools for quantitative analysis, and ut
+  [ICLR 2026][LLM Agent][Medical Diagnosis] MedAgent-Pro decomposes the modern clinical "evidence-based diagnosis" process into a two-layer agentic workflow: **disease-level standardized planning** and **patient-level step-by-step evidence reasoning**. It utilizes RAG to align with medical guidelines, employs vision/coding tools for quantitative analysis, and utilizes an evidence reflection mechanism to prune unreliable intermediate conclusions. This transforms VLMs from "empir…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Agentic Workflow
-  - RAG
-  - VLM
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Medical Diagnosis"
+  - "Agentic Workflow"
+  - "RAG"
+  - "Tool Use"
+  - "Evidence-based Reasoning"
+  - "VLM"
 date: 2026-05-08
-content_hash: 97063cd83e23c31d
+content_hash: 25419846bae86721
 ---
+
 # MedAgent-Pro: Towards Evidence-based Multi-modal Medical Diagnosis via Reasoning Agentic Workflow
 
 **Conference**: ICLR 2026  
@@ -126,8 +130,8 @@ Tool accessibility ablation (Table 6): Providing the same toolset directly to th
 - [\[ACL 2025\] MAM: Modular Multi-Agent Framework for Multi-Modal Medical Diagnosis via Role-Specialized Collaboration](../../ACL2025/llm_agent/mam_modular_multi-agent_framework_for_multi-modal_medical_diagnosis_via_role-spe.md)
 - [\[ICLR 2026\] OrchestrationBench: LLM-Driven Agentic Planning and Tool Use in Multi-Domain Scenarios](orchestrationbench_llm-driven_agentic_planning_and_tool_use_in_multi-domain_scen.md)
 - [\[ICLR 2026\] Evaluating Memory in LLM Agents via Incremental Multi-Turn Interactions](evaluating_memory_in_llm_agents_via_incremental_multi-turn_interactions.md)
-- [\[ICLR 2026\] A$^2$FM: An Adaptive Agent Foundation Model for Tool-Aware Hybrid Reasoning](a2fm_an_adaptive_agent_foundation_model_for_tool-aware_hybrid_reasoning.md)
-- [\[ICLR 2026\] TaskCraft: Automated Generation of Agentic Tasks](taskcraft_automated_generation_of_agentic_tasks.md)
+- [\[ICLR 2026\] UI-Ins: Enhancing GUI Grounding with Multi-Perspective Instruction-as-Reasoning](ui-ins_enhancing_gui_grounding_with_multi-perspective_instruction_as_reasoning.md)
+- [\[ICLR 2026\] In-the-Flow Agentic System Optimization for Effective Planning and Tool Use](in-the-flow_agentic_system_optimization_for_effective_planning_and_tool_use.md)
 
 </div>
 

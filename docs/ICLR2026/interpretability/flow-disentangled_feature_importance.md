@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Flow-Disentangled Feature Importance
 description: >-
-  [ICLR 2026][Interpretability][Flow Matching] FDFI utilizes flow matching to learn an invertible mapping that disentangles correlated features into independent latent variables. It calculates the importance of each direction in the latent space and "returns" the scores to original features using squared Jacobian weights. This generalizes DFI, which is restricted t
+  [ICLR 2026][Interpretability][Feature Importance] FDFI utilizes flow matching to learn an invertible mapping that disentangles correlated features into independent latent variables. It calculates the importance of each direction in the latent space and "returns" the scores to original features using squared Jacobian weights. This generalizes DFI, which is restricted to $\ell_2$ loss, to any differentiable loss (including classification) and provides semiparametrically efficie…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Flow Matching
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Feature Importance"
+  - "Flow Matching"
+  - "Disentangled Representation"
+  - "Semiparametric Inference"
+  - "Correlation Distortion"
 date: 2026-05-08
-content_hash: de491b5e5eba2f0b
+content_hash: aec3349c6980153c
 ---
+
 # Flow-Disentangled Feature Importance
 
 **Conference**: ICLR 2026  

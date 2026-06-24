@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hyden: A Hybrid Dual-Path Encoder for Monocular Geometry of High-resolution Images
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] Hyden utilizes a low-resolution ViT to capture global geometry and a full-resolution CNN to recover local details. Through self-distillation using both global and local crop pseudo-labels, it upgrades monocular geometry models like DepthAnything-v2 and MoGe2 into versions that are faster, sharper, and more accurate und
+  [ICLR2026][3D Vision][Monocular Geometry Estimation] Hyden utilizes a low-resolution ViT to capture global geometry and a full-resolution CNN to recover local details. Through self-distillation using both global and local crop pseudo-labels, it upgrades monocular geometry models like DepthAnything-v2 and MoGe2 into versions that are faster, sharper, and more accurate under high-resolution inputs.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR2026"
+  - "3D Vision"
+  - "Monocular Geometry Estimation"
+  - "High-resolution Depth"
+  - "Point Map"
+  - "Surface Normal"
+  - "Self-distillation"
 date: 2026-05-08
-content_hash: 08aec86a49aa3c8c
+content_hash: cc7edf303a59a4d1
 ---
+
 # Hyden: A Hybrid Dual-Path Encoder for Monocular Geometry of High-resolution Images
 
 **Conference**: ICLR2026  
@@ -163,7 +169,7 @@ The table above shows mean angular error (lower is better) for surface normals. 
 - [\[ICCV 2025\] One Look is Enough: Seamless Patchwise Refinement for Zero-Shot Monocular Depth Estimation on High-Resolution Images](../../ICCV2025/3d_vision/one_look_is_enough_seamless_patchwise_refinement_for_zero-shot_monocular_depth_e.md)
 - [\[AAAI 2026\] SmartSplat: Feature-Smart Gaussians for Scalable Compression of Ultra-High-Resolution Images](../../AAAI2026/3d_vision/smartsplat_feature-smart_gaussians_for_scalable_compression_of_ultra-high-resolu.md)
 - [\[ECCV 2024\] High-Resolution and Few-shot View Synthesis from Asymmetric Dual-Lens Inputs](../../ECCV2024/3d_vision/high-resolution_and_few-shot_view_synthesis_from_asymmetric_dual-lens_inputs.md)
-- [\[CVPR 2026\] Any Resolution Any Geometry: From Multi-View To Multi-Patch](../../CVPR2026/3d_vision/any_resolution_any_geometry_from_multi-view_to_multi-patch.md)
+- [\[ICLR 2026\] 3DSMT: A Hybrid Spiking Mamba-Transformer for Point Cloud Analysis](3dsmt_a_hybrid_spiking_mamba-transformer_for_point_cloud_analysis.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adaptive Theory of Mind for LLM-based Multi-Agent Coordination
 description: >-
-  [AAAI 2026][Multi-Agent][Theory of Mind] This paper proposes the Adaptive Theory of Mind agent (A-ToM), which formulates ToM order alignment as an online expert advice problem. By employing Follow-the-Leader (FTL) or Hed…
+  [AAAI 2026][Multi-Agent][Theory of Mind] This paper proposes the Adaptive Theory of Mind agent (A-ToM), which formulates ToM order alignment as an online expert advice problem. By employing Follow-the-Leader (FTL) or Hedge algorithms to estimate a partner's ToM order in real time and dynamically adjust its own reasoning depth, A-ToM achieves robust zero-shot multi-agent coordination across four task categories, including repeated matrix games, grid navigation, and Overcooked.
 tags:
   - "AAAI 2026"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "Online Learning"
   - "Expert Advice"
 date: 2026-05-08
-content_hash: 2f0c8f3815cc5227
+content_hash: d880d9167895cdaa
 ---
 
 # Adaptive Theory of Mind for LLM-based Multi-Agent Coordination
@@ -137,9 +137,9 @@ Experiments use LLaMA-3.3-70B-Instruct (temperature=0.1), with 30 independent re
 ## Related Papers
 
 - [\[ACL 2026\] ATLAS: Adaptive Trading with LLM AgentS Through Dynamic Prompt Optimization and Multi-Agent Coordination](../../ACL2026/multi_agent/atlas_adaptive_trading_with_llm_agents_through_dynamic_prompt_optimization_and_m.md)
+- [\[ICLR 2026\] Emergent Coordination in Multi-Agent Language Models](../../ICLR2026/multi_agent/emergent_coordination_in_multi-agent_language_models.md)
 - [\[ICML 2026\] CoOT: Learning to Coordinate In-Context with Coordination Transformers](../../ICML2026/multi_agent/coot_learning_to_coordinate_in-context_with_coordination_transformers.md)
 - [\[ACL 2026\] SILO-BENCH: A Scalable Environment for Evaluating Distributed Coordination in Multi-Agent LLM Systems](../../ACL2026/multi_agent/silo-bench_a_scalable_environment_for_evaluating_distributed_coordination_in_mul.md)
-- [\[ICLR 2026\] HAMLET: A Hierarchical and Adaptive Multi-Agent Framework for Live Embodied Theatre](../../ICLR2026/multi_agent/hamlet_a_hierarchical_and_adaptive_multi-agent_framework_for_live_embodied_theat.md)
 - [\[AAAI 2026\] Scalable and Accurate Graph Reasoning with LLM-Based Multi-Agents](scalable_and_accurate_graph_reasoning_with_llm-based_multi-agents.md)
 
 </div>

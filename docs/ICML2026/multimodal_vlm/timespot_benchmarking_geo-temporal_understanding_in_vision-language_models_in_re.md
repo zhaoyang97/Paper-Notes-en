@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TimeSpot: Benchmarking Geo-Temporal Understanding in Vision-Language Models in Real-World Settings
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] The authors construct the TimeSpot benchmark, covering 1,455 real-world ground-level images from 80 countries. It mandates VLMs to provide structured nine-field predictions covering both "When" (season, month, minute-level local time, day phase) and "Where" (continent, country, climate zone, environment type, coordinat
+  [ICML 2026][Multimodal VLM][Geo-temporal reasoning] The authors construct the TimeSpot benchmark, covering 1,455 real-world ground-level images from 80 countries. It mandates VLMs to provide structured nine-field predictions covering both "When" (season, month, minute-level local time, day phase) and "Where" (continent, country, climate zone, environment type, coordinates). Results indicate that even the strongest model, Gemini-2.5-Flash-Thinking…
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Geo-temporal reasoning"
+  - "VLM benchmark"
+  - "Physical consistency"
+  - "Calibration"
+  - "SFT"
 date: 2026-05-08
-content_hash: 0378759c2b4e6033
+content_hash: 2e98d767d4d19052
 ---
+
 # TimeSpot: Benchmarking Geo-Temporal Understanding in Vision-Language Models in Real-World Settings
 
 **Conference**: ICML 2026  
@@ -135,10 +141,10 @@ Strong models still exhibit significant cross-field contradictions; "low violati
 ## Related Papers
 
 - [\[ICLR 2026\] Can Vision-Language Models Answer Face to Face Questions in the Real-World?](../../ICLR2026/multimodal_vlm/can_vision-language_models_answer_face_to_face_questions_in_the_real-world.md)
+- [\[ICLR 2026\] WorldSense: Evaluating Real-World Omnimodal Understanding for Multimodal LLMs](../../ICLR2026/multimodal_vlm/worldsense_evaluating_real-world_omnimodal_understanding_for_multimodal_llms.md)
 - [\[ICML 2026\] Benchmarking and Enhancing VLM for Compressed Image Understanding](benchmarking_and_enhancing_vlm_for_compressed_image_understanding.md)
-- [\[CVPR 2026\] World in a Frame: Understanding Culture Mixing as a New Challenge for Vision-Language Models](../../CVPR2026/multimodal_vlm/world_in_a_frame_understanding_culture_mixing_as_a_new_challenge_for_vision-lang.md)
+- [\[ICLR 2026\] Bongard-RWR+: Real-World Representations of Fine-Grained Concepts in Bongard Problems](../../ICLR2026/multimodal_vlm/bongard-rwr_real-world_representations_of_fine-grained_concepts_in_bongard_probl.md)
 - [\[ICML 2026\] Immuno-VLM: Immunizing Large Vision-Language Models via Generative Semantic Antibodies for Open-World Trustworthiness](immuno-vlm_immunizing_large_vision-language_models_via_generative_semantic_antib.md)
-- [\[ICCV 2025\] AdvDreamer Unveils: Are Vision-Language Models Truly Ready for Real-World 3D Variations?](../../ICCV2025/multimodal_vlm/advdreamer_unveils_are_visionlanguage_models_truly_ready_for.md)
 
 </div>
 

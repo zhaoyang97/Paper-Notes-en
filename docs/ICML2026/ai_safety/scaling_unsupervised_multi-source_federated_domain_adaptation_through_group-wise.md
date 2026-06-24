@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scaling Unsupervised Multi-Source Federated Domain Adaptation through Group-Wise Discrepancy Minimization
 description: >-
-  [ICML 2026][AI Safety][Digit-18] To address the issues where existing Federated Multi-source Unsupervised Domain Adaptation (UMDA) methods can only handle $2-6$ sources and suffer from training instability or computational blow-up as the number of sources increases, the authors propose GALA. GALA randomly divides all sources into several small groups
+  [ICML 2026][AI Safety][Federated Domain Adaptation] To address the issues where existing Federated Multi-source Unsupervised Domain Adaptation (UMDA) methods can only handle $2-6$ sources and suffer from training instability or computational blow-up as the number of sources increases, the authors propose GALA. GALA randomly divides all sources into several small groups and minimizes the discrepancy of prediction distributions between groups (compressing $O(N^2)$ pairwise alig…
 tags:
-  - ICML 2026
-  - AI Safety
-  - Digit-18
+  - "ICML 2026"
+  - "AI Safety"
+  - "Federated Domain Adaptation"
+  - "Multi-source Domains"
+  - "Group-level Discrepancy"
+  - "Negative Transfer"
+  - "Digit-18"
 date: 2026-05-08
-content_hash: ad7727fbf47a78b8
+content_hash: 6ea4c8a21c028f2c
 ---
+
 # Scaling Unsupervised Multi-Source Federated Domain Adaptation through Group-Wise Discrepancy Minimization
 
 **Conference**: ICML 2026  
@@ -123,10 +128,20 @@ GALA was compared against standard UMDA benchmarks (Digit-5, Office-Caltech10, D
 - Value: ⭐⭐⭐⭐ First to explicitly target scalability in federated UMDA with a viable solution and benchmark.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[NeurIPS 2025\] Towards Unsupervised Open-Set Graph Domain Adaptation via Dual Reprogramming](../../NeurIPS2025/ai_safety/towards_unsupervised_open-set_graph_domain_adaptation_via_dual_reprogramming.md)
+- [\[ICML 2026\] Fair Dataset Distillation via Cross-Group Barycenter Alignment](fair_dataset_distillation_via_cross-group_barycenter_alignment.md)
+- [\[ICML 2026\] Position: Uncertainty Quantification in LLMs is Just Unsupervised Clustering](position_uncertainty_quantification_in_llms_is_just_unsupervised_clustering.md)
+- [\[CVPR 2026\] LaSM: Layer-wise Scaling Mechanism for Defending Pop-up Attack on GUI Agents](../../CVPR2026/ai_safety/lasm_layer-wise_scaling_mechanism_for_defending_pop-up_attack_on_gui_agents.md)
+- [\[ICML 2026\] TimeGuard: Channel-wise Pool Training for Backdoor Defense in Time Series Forecasting](timeguard_channel-wise_pool_training_for_backdoor_defense_in_time_series_forecas.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[NeurIPS 2025\] Towards Unsupervised Open-Set Graph Domain Adaptation via Dual Reprogramming](../../NeurIPS2025/ai_safety/towards_unsupervised_open-set_graph_domain_adaptation_via_dual_reprogramming.md)

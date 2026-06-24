@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Clear Nights Ahead: Towards Multi-Weather Nighttime Image Restoration
 description: >-
-  [AAAI 2026][Image Restoration][nighttime image restoration] This paper is the first to define and explore the multi-weather nighttime image restoration task. It constructs the AllWeatherNight dataset (8K training + 1K sy…
+  [AAAI 2026][Image Restoration][nighttime image restoration] This paper is the first to define and explore the multi-weather nighttime image restoration task. It constructs the AllWeatherNight dataset (8K training + 1K synthetic test + 1K real-world test) and proposes the ClearNight unified framework, which simultaneously removes compound degradations—haze, rain streaks, raindrops, snow, and flare—in a single stage via Retinex dual-prior guidance and weather-aware dynamic spec…
 tags:
   - "AAAI 2026"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "dynamic MoE"
   - "AllWeatherNight dataset"
 date: 2026-05-08
-content_hash: 3d699e166ca39613
+content_hash: a6157fdd3c4b0849
 ---
 
 # Clear Nights Ahead: Towards Multi-Weather Nighttime Image Restoration
@@ -145,9 +145,9 @@ Adam optimizer, lr=2×10⁻⁴, cosine annealing, 100 epochs, patch size 256×25
 
 - [\[AAAI 2026\] MFmamba: A Multi-function Network for Panchromatic Image Resolution Restoration Based on State-Space Model](mfmamba_a_multi-function_network_for_panchromatic_image_resolution_restoration_b.md)
 - [\[NeurIPS 2025\] MoDEM: A Morton-Order Degradation Estimation Mechanism for Adverse Weather Image Restoration](../../NeurIPS2025/image_restoration/modem_a_morton-order_degradation_estimation_mechanism_for_adverse_weather_image_.md)
-- [\[ICLR 2026\] Learning Domain-Aware Task Prompt Representations for Multi-Domain All-in-One Image Restoration](../../ICLR2026/image_restoration/learning_domain-aware_task_prompt_representations_for_multi-domain_all-in-one_im.md)
-- [\[ICCV 2025\] MP-HSIR: A Multi-Prompt Framework for Universal Hyperspectral Image Restoration](../../ICCV2025/image_restoration/mp-hsir_a_multi-prompt_framework_for_universal_hyperspectral_image_restoration.md)
+- [\[CVPR 2026\] ShreddingNet: Coarse-to-Fine Restoration for Multi-Source Shredded Manuscripts](../../CVPR2026/image_restoration/shreddingnet_coarse-to-fine_restoration_for_multi-source_shredded_manuscripts.md)
 - [\[NeurIPS 2025\] Rethinking Nighttime Image Deraining via Learnable Color Space Transformation](../../NeurIPS2025/image_restoration/rethinking_nighttime_image_deraining_via_learnable_color_space_transformation.md)
+- [\[ICLR 2026\] Learning Domain-Aware Task Prompt Representations for Multi-Domain All-in-One Image Restoration](../../ICLR2026/image_restoration/learning_domain-aware_task_prompt_representations_for_multi-domain_all-in-one_im.md)
 
 </div>
 

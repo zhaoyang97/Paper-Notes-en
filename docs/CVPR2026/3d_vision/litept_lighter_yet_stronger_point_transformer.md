@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LitePT: Lighter Yet Stronger Point Transformer
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] LitePT proposes a hierarchical hybrid architecture that utilizes sparse convolutions in shallow layers and attention in deep layers, based on an in-depth analysis of their respective roles across U-Net levels. By introducing the parameter-free PointROPE positional encoding, LitePT achieves 3.6x fewer parameters, 2x fas
+  [CVPR 2026][3D Vision][Point Cloud Transformer] LitePT proposes a hierarchical hybrid architecture that utilizes sparse convolutions in shallow layers and attention in deep layers, based on an in-depth analysis of their respective roles across U-Net levels. By introducing the parameter-free PointROPE positional encoding, LitePT achieves 3.6x fewer parameters, 2x faster speed, and 2x memory savings compared to Point Transformer V3, while matching or exceeding its performance a…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Point Cloud Transformer"
+  - "Hybrid Architecture"
+  - "Positional Encoding"
+  - "Efficient Inference"
+  - "3D Semantic Segmentation"
 date: 2026-05-08
-content_hash: 9f0faaffa29b7390
+content_hash: 6dfa45449b71af66
 ---
+
 # LitePT: Lighter Yet Stronger Point Transformer
 
 **Conference**: CVPR 2026  
@@ -172,11 +178,11 @@ Following standard point cloud segmentation training pipelines, cross-entropy lo
 
 ## Related Papers
 
+- [\[CVPR 2026\] GGPT: Geometry-Grounded Point Transformer](ggpt_geometry_grounded_point_transformer.md)
+- [\[CVPR 2026\] PQDT: Pseudo-Query Dual Transformer for Robust Point Cloud Restoration](pqdt_pseudo-query_dual_transformer_for_robust_point_cloud_restoration.md)
+- [\[ICLR 2026\] Spiking Discrepancy Transformer for Point Cloud Analysis](../../ICLR2026/3d_vision/spiking_discrepancy_transformer_for_point_cloud_analysis.md)
 - [\[CVPR 2026\] ART: Articulated Reconstruction Transformer](art_articulated_reconstruction_transformer.md)
-- [\[CVPR 2026\] Fast Spatial Tracking with Visual Geometry Transformer](fast_spatial_tracking_with_visual_geometry_transformer.md)
-- [\[CVPR 2026\] MVGGT: Multimodal Visual Geometry Grounded Transformer for Multiview 3D Referring Expression Segmentation](mvggt_multimodal_visual_geometry_grounded_transformer_for_multiview_3d_referring.md)
-- [\[CVPR 2026\] MimiCAT: Mimic with Correspondence-Aware Cascade-Transformer for Category-Free 3D Pose Transfer](mimicat_mimic_with_correspondence-aware_cascade-transformer_for_category-free_3d.md)
-- [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](deformation-based_in-context_learning_for_point_cloud_understanding.md)
+- [\[NeurIPS 2025\] How Many Tokens Do 3D Point Cloud Transformer Architectures Really Need?](../../NeurIPS2025/3d_vision/how_many_tokens_do_3d_point_cloud_transformer_architectures_really_need.md)
 
 </div>
 

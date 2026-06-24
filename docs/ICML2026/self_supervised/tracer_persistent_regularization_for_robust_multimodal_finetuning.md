@@ -1,16 +1,20 @@
 ---
 title: >-
-  [Paper Note] TRACER: 用 WMA teacher + 几何分解证明的鲁棒多模态微调
+  [Paper Note] TRACER: Robust Multimodal Fine-tuning Proven with WMA Teacher + Geometric Decomposition
 description: >-
-  [ICML 2026][Self-Supervised Learning][EMA teacher] TRACER utilizes closed-form theoretical analysis to geometrically decompose contrastive fine-tuning into "task subspace" and "orthogonal preservation" components. It proves that EMA teachers collapse and lose regularization power, prompting the proposal of a Weighted Moving Average (WMA) teacher. This teacher maintains
+  [ICML 2026][Self-Supervised Learning][CLIP Fine-tuning] TRACER utilizes closed-form theoretical analysis to geometrically decompose contrastive fine-tuning into "task subspace" and "orthogonal preservation" components. It proves that EMA teachers collapse and lose regularization power, prompting the proposal of a Weighted Moving Average (WMA) teacher. This teacher maintains finite-horizon continuous constraints and achieves unbiased convergence in the task subspace. On CLIP V…
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
-  - EMA teacher
-  - WMA teacher
+  - "ICML 2026"
+  - "Self-Supervised Learning"
+  - "CLIP Fine-tuning"
+  - "OOD Robustness"
+  - "Self-distillation"
+  - "EMA teacher"
+  - "WMA teacher"
 date: 2026-05-08
-content_hash: 604b264d88764de6
+content_hash: 13ca3a1872875ffd
 ---
+
 # TRACER: Robust Multimodal Fine-tuning Proven with WMA Teacher + Geometric Decomposition
 
 **Conference**: ICML 2026  
@@ -160,11 +164,11 @@ Compared to a broad range of baselines, TRACER achieves the strongest average OO
 
 ## Related Papers
 
-- [\[ACL 2025\] WhiSPA: Semantically and Psychologically Aligned Whisper with Self-Supervised Contrastive and Student-Teacher Learning](../../ACL2025/self_supervised/whispa_semantically_and_psychologically_aligned_whisper_with_self-supervised_con.md)
-- [\[ICML 2026\] The Geometry of Projection Heads: Conditioning, Invariance and Collapse](the_geometry_of_projection_heads_conditioning_invariance_and_collapse.md)
-- [\[ICML 2026\] NumLeak: Public Numeric Benchmarks as Latent Labels in Foundation Models](numleak_public_numeric_benchmarks_as_latent_labels_in_foundation_models.md)
-- [\[ICML 2026\] NITP: Next Implicit Token Prediction for LLM Pre-training](nitp_next_implicit_token_prediction_for_llm_pre-training.md)
-- [\[ICML 2026\] PartCo: Part-Level Correspondence Priors Enhance Category Discovery](partco_part-level_correspondence_priors_enhance_category_discovery.md)
+- [\[ICML 2026\] Riemannian Metric Matching for Scalable Geometric Modeling of Distributions](riemannian_metric_matching_for_scalable_geometric_modeling_of_distributions.md)
+- [\[ICLR 2026\] Disentanglement of Variations with Multimodal Generative Modeling](../../ICLR2026/self_supervised/disentanglement_of_variations_with_multimodal_generative_modeling.md)
+- [\[ICML 2025\] Proxy-FDA: Proxy-based Feature Distribution Alignment for Fine-tuning Vision Foundation Models without Forgetting](../../ICML2025/self_supervised/proxy-fda_proxy-based_feature_distribution_alignment_for_fine-tuning_vision_foun.md)
+- [\[ICLR 2026\] Incomplete Multi-View Multi-Label Classification via Shared Codebook and Fused-Teacher Self-Distillation](../../ICLR2026/self_supervised/incomplete_multi-view_multi-label_classification_via_shared_codebook_and_fused-t.md)
+- [\[CVPR 2026\] D2Dewarp: Dual Dimensions Geometric Representation Learning Based Document Image Dewarping](../../CVPR2026/self_supervised/d2dewarp_dual_dimensions_geometric_representation_learning_based_document_image_.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Stop Tracking Me! Proactive Defense Against Attribute Inference Attack in LLMs
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] TRACE-RPS proposes a unified defense framework against LLM attribute inference attacks: TRACE utilizes attention mechanisms and reasoning chains to pinpoint privacy-leaking text elements for fine-grained anonymization, while RPS employs lightweight suffix optimization to induce model refusal, reducing attribute inferen
+  [ICLR 2026][LLM Safety][Attribute Inference Attack] TRACE-RPS proposes a unified defense framework against LLM attribute inference attacks: TRACE utilizes attention mechanisms and reasoning chains to pinpoint privacy-leaking text elements for fine-grained anonymization, while RPS employs lightweight suffix optimization to induce model refusal, reducing attribute inference accuracy from approximately 50% to below 5%.
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Attribute Inference Attack"
+  - "Privacy Protection"
+  - "LLM Security"
+  - "Attention Anonymization"
+  - "Optimization Defense"
 date: 2026-05-08
-content_hash: cd38d3c3b89eb6f7
+content_hash: 226564a0c29bc8b0
 ---
+
 # Stop Tracking Me! Proactive Defense Against Attribute Inference Attack in LLMs
 
 **Conference**: ICLR 2026  
@@ -140,15 +146,15 @@ RPS relies on the model's "willingness to be dissuaded." However, highly instruc
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2025\] Defense Against Prompt Injection Attack by Leveraging Attack Techniques](../../ACL2025/llm_safety/defense_prompt_injection.md)
 - [\[ICLR 2026\] Membership Inference Attacks Against Fine-tuned Diffusion Language Models (SAMA)](membership_inference_attacks_against_fine-tuned_diffusion_language_models.md)
 - [\[ICLR 2026\] VEAttack: Downstream-Agnostic Vision Encoder Attack Against Large Vision Language Models](veattack_downstream-agnostic_vision_encoder_attack_against_large_vision_language.md)
+- [\[ICLR 2026\] Safety Instincts: LLMs Learn to Trust Their Internal Compass for Self-Defense](safety_instincts_llms_learn_to_trust_their_internal_compass_for_self-defense.md)
 - [\[ACL 2026\] DualGuard: Dual-stream Large Language Model Watermarking Defense against Paraphrase and Spoofing Attack](../../ACL2026/llm_safety/dualguard_dual-stream_large_language_model_watermarking_defense_against_paraphra.md)
-- [\[AAAI 2026\] Multi-Faceted Attack: Exposing Cross-Model Vulnerabilities in Defense-Equipped Vision-Language Models](../../AAAI2026/llm_safety/multi-faceted_attack_exposing_cross-model_vulnerabilities_in_defense-equipped_vi.md)
 
 </div>
 

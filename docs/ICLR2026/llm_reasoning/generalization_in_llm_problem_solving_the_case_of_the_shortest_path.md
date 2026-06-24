@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Generalization in LLM Problem Solving: The Case of the Shortest Path
 description: >-
-  [ICLR 2026][LLM Reasoning][Reinforcement Learning] This paper uses a controllable synthetic environment of shortest paths to decompose the sources of generalization in LLM problem solving. It finds that models can transfer learned local rules to unseen maps, yet fail on longer paths due to the instability of recursive composition. Data coverage determines the upper bou
+  [ICLR2026][Reasoning][Shortest Path] This paper uses a controllable synthetic environment of shortest paths to decompose the sources of generalization in LLM problem solving. It finds that models can transfer learned local rules to unseen maps, yet fail on longer paths due to the instability of recursive composition. Data coverage determines the upper bound of performance, while RL primarily stabilizes training rather than extending the limit…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Reasoning"
+  - "Shortest Path"
+  - "Systemic Generalization"
+  - "Length Extrapolation"
+  - "Data Coverage"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: a8b0b535fe8e159a
+content_hash: 8ac782422ca2e409
 ---
+
 # Generalization in LLM Problem Solving: The Case of the Shortest Path
 
 **Conference**: ICLR2026  
@@ -175,11 +180,11 @@ RL uses Dr.GRPO with binary rewards: $1$ if the generated sequence constitutes a
 
 ## Related Papers
 
+- [\[ICLR 2026\] The Path of Least Resistance: Guiding LLM Reasoning Trajectories for Efficient Consistency](the_path_of_least_resistance_guiding_llm_reasoning_trajectories_for_efficient_co.md)
 - [\[ICLR 2026\] The Path of Least Resistance: Guiding LLM Reasoning Trajectories with Prefix Consensus](the_path_of_least_resistance_guiding_llm_reasoning_trajectories_with_prefix_cons.md)
-- [\[ICLR 2026\] InT: Self-Proposed Interventions Enable Credit Assignment in LLM Reasoning](int_self-proposed_interventions_enable_credit_assignment_in_llm_reasoning.md)
-- [\[ICLR 2026\] RL of Thoughts: Navigating LLM Reasoning with Inference-Time Reinforcement Learning](rl_of_thoughts_navigating_llm_reasoning_with_inference-time_reinforcement_learni.md)
+- [\[ACL 2025\] BPP-Search: Enhancing Tree of Thought Reasoning for Mathematical Modeling Problem Solving](../../ACL2025/llm_reasoning/bpp-search_enhancing_tree_of_thought_reasoning_for_mathematical_modeling_problem.md)
+- [\[ICLR 2026\] $\textbf{Re}^{2}$: Unlocking LLM Reasoning via Reinforcement Learning with Re-solving](textbfre2_unlocking_llm_reasoning_via_reinforcement_learning_with_re-solving.md)
 - [\[ICLR 2026\] OR-PRM: A Process Reward Model for Algorithmic Problem in Operations Research](or-prm_a_process_reward_model_for_algorithmic_problem_in_operations_research.md)
-- [\[ICLR 2026\] RLAD: Training LLMs to Discover Abstractions for Solving Reasoning Problems](rlad_training_llms_to_discover_abstractions_for_solving_reasoning_problems.md)
 
 </div>
 

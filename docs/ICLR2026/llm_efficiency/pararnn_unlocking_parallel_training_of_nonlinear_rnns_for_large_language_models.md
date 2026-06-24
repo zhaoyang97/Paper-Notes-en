@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ParaRNN: Unlocking Parallel Training of Nonlinear RNNs for Large Language Models
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] The authors recast the sequential recursion of nonlinear RNNs into a system of $L$ nonlinear equations, solved simultaneously using Newton iteration combined with block bi-diagonal parallel reduction. This enables classic nonlinear RNNs (GRU/LSTM) to be trained in parallel along the sequence length for the first time—a
+  [ICLR 2026][LLM Efficiency][Nonlinear RNN] The authors recast the sequential recursion of nonlinear RNNs into a system of $L$ nonlinear equations, solved simultaneously using Newton iteration combined with block bi-diagonal parallel reduction. This enables classic nonlinear RNNs (GRU/LSTM) to be trained in parallel along the sequence length for the first time—achieving up to 665× speedup over naive sequential application and resulting in 7B-scale RNN language models with comp…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Nonlinear RNN"
+  - "Sequence Parallelism"
+  - "Newton Iteration"
+  - "Parallel Reduction"
+  - "Language Modeling"
 date: 2026-05-08
-content_hash: befed002120d2bb0
+content_hash: ba71754c28bc12f7
 ---
+
 # ParaRNN: Unlocking Parallel Training of Nonlinear RNNs for Large Language Models
 
 **Conference**: ICLR 2026  
@@ -145,7 +151,6 @@ ParaGRU/ParaLSTM outperform the DCLM Transformer baseline while trailing slightl
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Presupposition and Reasoning in Conditionals: A Theory-Based Study of Humans and LLMs
 description: >-
-  [ACL 2026][LLM Evaluation][LLM-as-a-Judge] This paper compares humans and four LLMs on a conditional presupposition projection task based on linguistic theory. It finds that while humans jointly utilize probability, antecedent-presupposition relevance, and contextual cues, LLM scoring similarity is significantly decoupled from the quality of theorized reasoning
+  [ACL2026][LLM Evaluation][Presupposition projection] This paper compares humans and four LLMs on a conditional presupposition projection task based on linguistic theory. It finds that while humans jointly utilize probability, antecedent-presupposition relevance, and contextual cues, LLM scoring similarity is significantly decoupled from the quality of theorized reasoning; many human-like judgments likely stem from surface pattern matching.
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - LLM-as-a-Judge
+  - "ACL2026"
+  - "LLM Evaluation"
+  - "Presupposition projection"
+  - "conditional reasoning"
+  - "pragmatic competence evaluation"
+  - "human-AI comparison"
+  - "LLM-as-a-Judge"
 date: 2026-05-08
-content_hash: 72aae6c6f3057aea
+content_hash: 9b879083c56a2f07
 ---
+
 # Presupposition and Reasoning in Conditionals: A Theory-Based Study of Humans and LLMs
 
 **Conference**: ACL2026  
@@ -149,10 +154,10 @@ There is a clear decoupling between behavioral alignment and explanation quality
 ## Related Papers
 
 - [\[ACL 2026\] BizCompass: Benchmarking the Reasoning Capabilities of LLMs in Business Knowledge and Applications](bizcompass_benchmarking_the_reasoning_capabilities_of_llms_in_business_knowledge.md)
-- [\[ACL 2026\] Do LLMs Overthink Basic Math Reasoning? Benchmarking the Accuracy-Efficiency Tradeoff](do_llms_overthink_basic_math_reasoning_benchmarking_the_accuracy-efficiency_trad.md)
 - [\[ACL 2026\] Are They Lovers or Friends? Evaluating LLMs' Social Reasoning in English and Korean Dialogues](are_they_lovers_or_friends_evaluating_llms39_social_reasoning_in_english_and_kor.md)
+- [\[ACL 2026\] Do LLMs Overthink Basic Math Reasoning? Benchmarking the Accuracy-Efficiency Tradeoff](do_llms_overthink_basic_math_reasoning_benchmarking_the_accuracy-efficiency_trad.md)
 - [\[AAAI 2026\] Where Norms and References Collide: Evaluating LLMs on Normative Reasoning](../../AAAI2026/llm_evaluation/where_norms_and_references_collide_evaluating_llms_on_normative_reasoning.md)
-- [\[ACL 2026\] SCAN: Structured Capability Assessment and Navigation for LLMs](scan_structured_capability_assessment_and_navigation_for_llms.md)
+- [\[ACL 2026\] Erosion of Correct Beliefs: A Study of LLM Cognitive Resilience under Clinical Stress](when_correct_beliefs_collapse_epistemic_resilience_of_llms_under_clinical_pressu.md)
 
 </div>
 

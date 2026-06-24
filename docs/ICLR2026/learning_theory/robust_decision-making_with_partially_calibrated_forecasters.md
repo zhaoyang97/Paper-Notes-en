@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Robust Decision Making with Partially Calibrated Forecasts
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] When a predictor satisfies only "partial calibration" (weaker than full calibration), this paper characterizes the optimal decision rule through a minimax robust lens. The optimal rule is an optimal response to the "worst-case distribution allowed by the calibration constraints." Furthermore, it proves that once calibr
+  [ICLR 2026][Learning Theory][Calibration] When a predictor satisfies only "partial calibration" (weaker than full calibration), this paper characterizes the optimal decision rule through a minimax robust lens. The optimal rule is an optimal response to the "worst-case distribution allowed by the calibration constraints." Furthermore, it proves that once calibration strength reaches "decision calibration"—a **computable weak condition**—the optimal robust rule collapses into "…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Decision Theory"
+  - "Calibration"
+  - "Decision Calibration"
+  - "Minimax Robust Decision Making"
+  - "H-Calibration"
+  - "Dual Characterization"
 date: 2026-05-08
-content_hash: 0a9b2cdd2c77825b
+content_hash: 5fe204292bd58fcb
 ---
+
 # Robust Decision Making with Partially Calibrated Forecasts
 
 **Conference**: ICLR 2026  
@@ -129,16 +136,16 @@ Average utility on test set (adversary respects $H$-calibration):
 - Value: ⭐⭐⭐⭐ (Provides a computable answer for trustworthy decision-making and establishes decision calibration as a critical design target)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Online Decision Making with Generative Action Sets](online_decision_making_with_generative_action_sets.md)
+- [\[ICLR 2026\] Trained on Tokens, Calibrated on Concepts: The Emergence of Semantic Calibration in LLMs](trained_on_tokens_calibrated_on_concepts_the_emergence_of_semantic_calibration_i.md)
 - [\[ICLR 2026\] Online Decision-Focused Learning](online_decision-focused_learning.md)
 - [\[ICLR 2026\] Conformalized Decision Risk Assessment](conformalized_decision_risk_assessment.md)
 - [\[ICLR 2026\] Noise Tolerance of Distributionally Robust Learning](noise_tolerance_of_distributionally_robust_learning.md)
-- [\[ICLR 2026\] Adversarially Pretrained Transformers May Be Universally Robust In-Context Learners](adversarially_pretrained_transformers_may_be_universally_robust_in-context_learn.md)
 
 </div>
 

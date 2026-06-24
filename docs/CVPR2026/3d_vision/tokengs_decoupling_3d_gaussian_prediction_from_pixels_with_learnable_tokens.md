@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TokenGS: Decoupling 3D Gaussian Prediction from Pixels with Learnable Tokens
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] TokenGS transforms feed-forward 3D Gaussian Splatting reconstruction from "regressing depth along a ray for each pixel" to "directly regressing 3D coordinates using a set of learnable Gaussian tokens." This completely decouples the number of Gaussians from input resolution and the number of views, achieving SOTA perfor
+  [CVPR 2026][3D Vision][Feed-forward 3DGS reconstruction] TokenGS transforms feed-forward 3D Gaussian Splatting reconstruction from "regressing depth along a ray for each pixel" to "directly regressing 3D coordinates using a set of learnable Gaussian tokens." This completely decouples the number of Gaussians from input resolution and the number of views, achieving SOTA performance on both static and dynamic scenes with cleaner geometry, robustness to pose noise…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Feed-forward 3DGS reconstruction"
+  - "learnable Gaussian tokens"
+  - "encoder-decoder"
+  - "direct coordinate regression"
+  - "test-time optimization"
 date: 2026-05-08
-content_hash: b80644ab3bbcd4ea
+content_hash: 1deab8bf88568e77
 ---
+
 # TokenGS: Decoupling 3D Gaussian Prediction from Pixels with Learnable Tokens
 
 **Conference**: CVPR 2026  
@@ -170,11 +176,11 @@ With 6 views, Ours+TT outperforms the baseline with 72% fewer Gaussians and fast
 
 ## Related Papers
 
+- [\[CVPR 2026\] ExtrinSplat: Decoupling Geometry and Semantics for Open-Vocabulary Understanding in 3D Gaussian Splatting](extrinsplat_decoupling_geometry_and_semantics_for_open-vocabulary_understanding_.md)
 - [\[CVPR 2026\] Featurising Pixels from Dynamic 3D Scenes with Linear In-Context Learners](featurising_pixels_from_dynamic_3d_scenes_with_linear_in-context_learners.md)
-- [\[CVPR 2026\] CUBE: Representing 3D Faces with Learnable B-Spline Volumes](cube_bspline_3d_faces.md)
+- [\[CVPR 2026\] Registration-Free Learnable Multi-View Capture of Faces in Dense Semantic Correspondence](registration-free_learnable_multi-view_capture_of_faces_in_dense_semantic_corres.md)
 - [\[CVPR 2026\] ORD: Object-Relation Decoupling for Generalized 3D Visual Grounding](ord_object-relation_decoupling_for_generalized_3d_visual_grounding.md)
-- [\[CVPR 2026\] PaNDaS: Learnable Shape Interpolation Modeling with Localized Control](pandas_learnable_shape_interpolation_modeling_with_localized_control.md)
-- [\[CVPR 2026\] Unleashing the Power of Chain-of-Prediction for Monocular 3D Object Detection](unleashing_the_power_of_chain-of-prediction_for_monocular_3d_object_detection.md)
+- [\[CVPR 2026\] SparseSplat: Towards Applicable Feed-Forward 3D Gaussian Splatting with Pixel-Unaligned Prediction](sparsesplat_towards_applicable_feed-forward_3d_gaussian_splatting_with_pixel-una.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Dynamic Gaussian Splatting from Defocused and Motion-blurred Monocular Videos
 description: >-
-  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] A unified framework is proposed that jointly models defocus blur and motion blur via learnable blur kernel convolution…
+  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] A unified framework is proposed that jointly models defocus blur and motion blur via learnable blur kernel convolution, combined with a dynamic Gaussian densification strategy and unseen-view constraints, enabling high-quality novel view synthesis of dynamic scenes from blurry monocular videos using 3DGS.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "motion blur"
   - "novel view synthesis"
 date: 2026-05-08
-content_hash: 49c9027a1b8fb3ec
+content_hash: 764e98a1fe5e58e0
 ---
 
 # Dynamic Gaussian Splatting from Defocused and Motion-blurred Monocular Videos
@@ -156,10 +156,10 @@ The decoupled design of blur kernel prediction and blur intensity prediction is 
 ## Related Papers
 
 - [\[ICCV 2025\] CoMoGaussian: Continuous Motion-Aware Gaussian Splatting from Motion-Blurred Images](../../ICCV2025/3d_vision/comogaussian_continuous_motionaware_gaussian_splatting_from.md)
+- [\[CVPR 2025\] CoCoGaussian: Leveraging Circle of Confusion for Gaussian Splatting from Defocused Images](../../CVPR2025/3d_vision/cocogaussian_leveraging_circle_of_confusion_for_gaussian_splatting_from_defocuse.md)
 - [\[NeurIPS 2025\] HAIF-GS: Hierarchical and Induced Flow-Guided Gaussian Splatting for Dynamic Scene](haif-gs_hierarchical_and_induced_flow-guided_gaussian_splatting_for_dynamic_scen.md)
 - [\[NeurIPS 2025\] DGH: Dynamic Gaussian Hair](dgh_dynamic_gaussian_hair.md)
-- [\[NeurIPS 2025\] IBGS: Image-Based Gaussian Splatting](ibgs_image-based_gaussian_splatting.md)
-- [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](../../CVPR2026/3d_vision/learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
+- [\[ECCV 2024\] Dynamic Neural Radiance Field from Defocused Monocular Video](../../ECCV2024/3d_vision/dynamic_neural_radiance_field_from_defocused_monocular_video.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Deep Modularity Networks with Diversity-Preserving Regularization
 description: >-
-  [NEURIPS2025][Interpretability][graph clustering] This work augments Deep Modularity Networks (DMoN) with three diversity-preserving regularization terms—distance-based, variance-based…
+  [NEURIPS2025][Interpretability][graph clustering] This work augments Deep Modularity Networks (DMoN) with three diversity-preserving regularization terms—distance-based, variance-based, and entropy-based—to explicitly promote inter-cluster separation and assignment diversity in feature space, achieving significant clustering quality improvements on feature-rich graph datasets.
 tags:
   - "NEURIPS2025"
   - "Interpretability"
@@ -11,7 +11,7 @@ tags:
   - "diversity regularization"
   - "GNN pooling"
 date: 2026-05-08
-content_hash: 74c102e81140fdcf
+content_hash: 9d2b992c1bb43320
 ---
 
 # Deep Modularity Networks with Diversity-Preserving Regularization
@@ -150,11 +150,11 @@ Comparisons against DiffPool, MinCutPool, and DMoN are conducted on 5 benchmark 
 
 ## Related Papers
 
+- [\[ICML 2025\] FastCAV: Efficient Computation of Concept Activation Vectors for Explaining Deep Neural Networks](../../ICML2025/interpretability/fastcav_efficient_computation_of_concept_activation_vectors_for_explaining_deep_.md)
+- [\[NeurIPS 2025\] H-SPLID: HSIC-based Saliency Preserving Latent Information Decomposition](h-splid_hsic-based_saliency_preserving_latent_information_decomposition.md)
+- [\[CVPR 2026\] Hidden Monotonicity: Explaining Deep Neural Networks via their DC Decomposition](../../CVPR2026/interpretability/hidden_monotonicity_explaining_deep_neural_networks_via_their_dc_decomposition.md)
 - [\[NeurIPS 2025\] Deep Value Benchmark: Measuring Whether Models Generalize Deep Values or Shallow Preferences](deep_value_benchmark_measuring_whether_models_generalize_deep_values_or_shallow_.md)
-- [\[ICLR 2026\] Modal Logical Neural Networks for Financial AI](../../ICLR2026/interpretability/modal_logical_neural_networks_for_financial_ai.md)
-- [\[ICLR 2026\] Addressing Divergent Representations from Causal Interventions on Neural Networks](../../ICLR2026/interpretability/addressing_divergent_representations_causal.md)
-- [\[ICML 2026\] Verified SHAP: Provable Bounds for Exact Shapley Values in Neural Networks](../../ICML2026/interpretability/verified_shap_provable_bounds_for_exact_shapley_values_of_neural_networks.md)
-- [\[ICML 2026\] Position: Zeroth-Order Optimization in Deep Learning Is Underexplored, Not Underpowered](../../ICML2026/interpretability/position_zeroth-order_optimization_in_deep_learning_is_underexplored_not_underpo.md)
+- [\[ICLR 2026\] Temporal Geometry of Deep Networks: Hyperbolic Representations of Training Dynamics for Intrinsic Explainability](../../ICLR2026/interpretability/temporal_geometry_of_deep_networks_hyperbolic_representations_of_training_dynami.md)
 
 </div>
 

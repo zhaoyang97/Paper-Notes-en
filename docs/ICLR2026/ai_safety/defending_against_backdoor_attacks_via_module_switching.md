@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Defending against Backdoor Attacks via Module Switching
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] Focusing on the post-training scenario where "suspicious pre-trained models are obtained without training data or trigger priors," this paper proposes **Module Switching Defense (MSD)**. By interchanging weights of specific layers or modules between multiple isomorphic models, MSD disrupts the "shortcut paths" that bac
+  [ICLR 2026][AI Safety][Backdoor Attack] Focusing on the post-training scenario where "suspicious pre-trained models are obtained without training data or trigger priors," this paper proposes **Module Switching Defense (MSD)**. By interchanging weights of specific layers or modules between multiple isomorphic models, MSD disrupts the "shortcut paths" that backdoors rely on. The authors theoretically prove that its backdoor deviation is strictly higher than Weight Averaging (WA…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Backdoor Attack"
+  - "Backdoor Defense"
+  - "Model Merging"
+  - "Module Switching"
+  - "Evolutionary Search"
+  - "Post-Training Defense"
 date: 2026-05-08
-content_hash: 0e7d5f1ddbcb5ab5
+content_hash: a7b6e4702d46d08e
 ---
+
 # Defending against Backdoor Attacks via Module Switching
 
 **Conference**: ICLR 2026  
@@ -115,12 +122,17 @@ When three backdoor models are available, while WAG becomes stronger, MSD still 
 
 <div class="related-papers" markdown="1">
 
-*(Note: Related papers would be listed here in the original format if applicable)*
+## Related Papers
+
+- [\[ICLR 2026\] TrojanTO: Action-Level Backdoor Attacks Against Trajectory Optimization Models](trojanto_action-level_backdoor_attacks_against_trajectory_optimization_models.md)
+- [\[ICLR 2026\] Concept-Aware Privacy Mechanisms for Defending Embedding Inversion Attacks](concept-aware_privacy_mechanisms_for_defending_embedding_inversion_attacks.md)
+- [\[ICLR 2026\] Beware Untrusted Simulators -- Reward-Free Backdoor Attacks in Reinforcement Learning](beware_untrusted_simulators_--_reward-free_backdoor_attacks_in_reinforcement_lea.md)
+- [\[ICML 2025\] Adversarial Inception Backdoor Attacks against Reinforcement Learning](../../ICML2025/ai_safety/adversarial_inception_backdoor_attacks_against_reinforcement_learning.md)
+- [\[CVPR 2026\] AntiStyler: Defending Object Detection Models Against Adversarial Patch Attacks Using Style Removal](../../CVPR2026/ai_safety/antistyler_defending_object_detection_models_against_adversarial_patch_attacks_u.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] TrojanTO: Action-Level Backdoor Attacks Against Trajectory Optimization Models](trojanto_action-level_backdoor_attacks_against_trajectory_optimization_models.md)

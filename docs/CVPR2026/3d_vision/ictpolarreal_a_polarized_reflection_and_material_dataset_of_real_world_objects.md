@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ICTPolarReal: A Polarized Reflection and Material Dataset of Real World Objects
 description: >-
-  [CVPR 2026][3D Vision][Light Stage] This work constructs ICTPolarReal, the first large-scale real-world polarized reflection and material dataset. Utilizing a Light Stage system with 8 cameras and 346 light sources, cross- and parallel-polarized captures were performed on 218 daily objects. This yielded over 1.2 million high-resolution images with ground
+  [CVPR 2026][3D Vision][Polarization imaging] This work constructs ICTPolarReal, the first large-scale real-world polarized reflection and material dataset. Utilizing a Light Stage system with 8 cameras and 346 light sources, cross- and parallel-polarized captures were performed on 218 daily objects. This yielded over 1.2 million high-resolution images with ground truth diffuse-specular separation, significantly enhancing the performance of inverse rendering…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Light Stage
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Polarization imaging"
+  - "Material dataset"
+  - "Inverse rendering"
+  - "Reflection separation"
+  - "Light Stage"
 date: 2026-05-08
-content_hash: a5e67a89e64bf979
+content_hash: 531a0a7f1648c555
 ---
+
 # ICTPolarReal: A Polarized Reflection and Material Dataset of Real World Objects
 
 **Conference**: CVPR 2026  
@@ -156,10 +161,10 @@ Both inverse and forward rendering networks are fine-tuned using LoRA on RGB2X. 
 ## Related Papers
 
 - [\[CVPR 2026\] OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control](olatverse_a_large-scale_real-world_object_dataset_with_precise_lighting_control.md)
+- [\[CVPR 2026\] PolarGuide-GSDR: 3D Gaussian Splatting Driven by Polarization Priors and Deferred Reflection for Real-World Reflective Scenes](polarguide-gsdr_3d_gaussian_splatting_driven_by_polarization_priors_and_deferred.md)
+- [\[CVPR 2026\] MatMart: Material Reconstruction of 3D Objects via Diffusion](matmart_material_reconstruction_of_3d_objects_via_diffusion.md)
+- [\[CVPR 2026\] Choreographing a World of Dynamic Objects](choreographing_a_world_of_dynamic_objects.md)
 - [\[CVPR 2026\] Artiverse: A Diverse and Physically Grounded Dataset for Articulated Objects](artiverse_a_diverse_and_physically_grounded_dataset_for_articulated_objects.md)
-- [\[CVPR 2026\] MatSpray: Fusing 2D Material World Knowledge on 3D Geometry](matspray_fusing_2d_material_world_knowledge_on_3d_geometry.md)
-- [\[CVPR 2026\] Learning a Particle Dynamics Model with Real-world Videos](learning_a_particle_dynamics_model_with_real-world_videos.md)
-- [\[CVPR 2026\] Learning 3D Shape Fidelity Metric from Real-world Distortions](learning_3d_shape_fidelity_metric_from_real-world_distortions.md)
 
 </div>
 

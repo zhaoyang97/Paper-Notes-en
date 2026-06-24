@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] COS3D: Collaborative Open-Vocabulary 3D Segmentation
 description: >-
-  [NeurIPS 2025][Segmentation][Open-vocabulary 3D segmentation] This paper proposes COS3D — a collaborative prompt-segmentation framework that constructs a collaborative field comprising an instance field and a language fi…
+  [NeurIPS 2025][Segmentation][Open-vocabulary 3D segmentation] This paper proposes COS3D — a collaborative prompt-segmentation framework that constructs a collaborative field comprising an instance field and a language field. During training, the language field is built via instance-to-language feature mapping; during inference, language-to-instance adaptive prompt refinement generates precise segmentation results. COS3D substantially outperforms existing methods on two mainst…
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "instance-language mapping"
   - "prompt segmentation"
 date: 2026-05-08
-content_hash: 689759aff7cd1f37
+content_hash: 1f93c715c14f1d2b
 ---
 
 # COS3D: Collaborative Open-Vocabulary 3D Segmentation
@@ -181,8 +181,8 @@ The technical design is compact and elegant — the concept of the collaborative
 - [\[NeurIPS 2025\] LangHOPS: Language Grounded Hierarchical Open-Vocabulary Part Segmentation](langhops_language_grounded_hierarchical_open-vocabulary_part_segmentation.md)
 - [\[CVPR 2026\] GeoGuide: Hierarchical Geometric Guidance for Open-Vocabulary 3D Semantic Segmentation](../../CVPR2026/segmentation/geoguide_hierarchical_geometric_guidance_for_open-vocabulary_3d_semantic_segment.md)
 - [\[NeurIPS 2025\] HumanCrafter: Synergizing Generalizable Human Reconstruction and Semantic 3D Segmentation](humancrafter_synergizing_generalizable_human_reconstruction_and_semantic_3d_segm.md)
-- [\[ICCV 2025\] FLOSS: Free Lunch in Open-vocabulary Semantic Segmentation](../../ICCV2025/segmentation/floss_free_lunch_in_openvocabulary_semantic_segmentation.md)
-- [\[ICCV 2025\] Stepping Out of Similar Semantic Space for Open-Vocabulary Segmentation](../../ICCV2025/segmentation/stepping_out_of_similar_semantic_space_for_open-vocabulary_segmentation.md)
+- [\[CVPR 2025\] Exploring Simple Open-Vocabulary Semantic Segmentation](../../CVPR2025/segmentation/exploring_simple_open-vocabulary_semantic_segmentation.md)
+- [\[CVPR 2025\] Effective SAM Combination for Open-Vocabulary Semantic Segmentation](../../CVPR2025/segmentation/effective_sam_combination_for_open-vocabulary_semantic_segmentation.md)
 
 </div>
 

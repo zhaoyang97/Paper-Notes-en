@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Scalable Neural Incentive Design with Parameterized Mean-Field Approximation
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][incentive design] This paper proposes the AMID algorithm, which formalizes the multi-agent incentive design (ID) problem as a parameterized mean-field game (PMFG)…
+  [NeurIPS 2025][Reinforcement Learning][incentive design] This paper proposes the AMID algorithm, which formalizes the multi-agent incentive design (ID) problem as a parameterized mean-field game (PMFG), proves that the finite-$N$-agent objective approximates the infinite-population limit at a rate of $\mathscr{O}(1/\sqrt{N})$, and achieves substantial revenue improvements across multiple auction settings.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "auction"
   - "multi-agent"
 date: 2026-05-08
-content_hash: 6c8e17bbfb589617
+content_hash: eddc684f90569bb8
 ---
 
 # Scalable Neural Incentive Design with Parameterized Mean-Field Approximation
@@ -135,8 +135,8 @@ The incentive design problem is modeled as a bilevel optimization: the outer lev
 - [\[NeurIPS 2025\] Last Iterate Convergence in Monotone Mean Field Games](last_iterate_convergence_in_monotone_mean_field_games.md)
 - [\[NeurIPS 2025\] Solving Continuous Mean Field Games: Deep Reinforcement Learning for Non-Stationary Dynamics](solving_continuous_mean_field_games_deep_reinforcement_learning_for_non-stationa.md)
 - [\[NeurIPS 2025\] Learning in Stackelberg Mean Field Games: A Non-Asymptotic Analysis](learning_in_stackelberg_mean_field_games_a_non-asymptotic_analysis.md)
-- [\[NeurIPS 2025\] Mean-Field Sampling for Cooperative Multi-Agent Reinforcement Learning](mean-field_sampling_for_cooperative_multi-agent_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Non-convex Entropic Mean-Field Optimization via Best Response Flow](non-convex_entropic_mean-field_optimization_via_best_response_flow.md)
+- [\[NeurIPS 2025\] Mean-Field Sampling for Cooperative Multi-Agent Reinforcement Learning](mean-field_sampling_for_cooperative_multi-agent_reinforcement_learning.md)
 
 </div>
 

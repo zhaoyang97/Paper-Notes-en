@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] A Unified Solution to Video Fusion: From Multi-Frame Learning to Benchmarking
 description: >-
-  [NeurIPS 2025][Medical Imaging][video fusion] This paper proposes UniVF, the first unified video fusion framework based on multi-frame learning, optical flow feature warping, and temporal consistency loss…
+  [NeurIPS 2025 Spotlight][Medical Imaging][video fusion] This paper proposes UniVF, the first unified video fusion framework based on multi-frame learning, optical flow feature warping, and temporal consistency loss, along with VF-Bench, the first video fusion benchmark covering four major fusion tasks (multi-exposure, multi-focus, infrared-visible, and medical), achieving state-of-the-art performance across all sub-tasks.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Medical Imaging"
   - "video fusion"
   - "multi-frame learning"
@@ -12,7 +12,7 @@ tags:
   - "temporal consistency"
   - "benchmark"
 date: 2026-05-08
-content_hash: d0ea6d152644209e
+content_hash: 6b4f21f4812b47bb
 ---
 
 # A Unified Solution to Video Fusion: From Multi-Frame Learning to Benchmarking
@@ -192,10 +192,10 @@ Loss weight configurations: $\{\alpha_1, \alpha_2\} = \{10,2\}, \{1,0.5\}, \{5,2
 
 ## Related Papers
 
+- [\[ICLR 2026\] WavePolyp: Video Polyp Segmentation via Hierarchical Wavelet-based Feature Aggregation and Inter-frame Divergence Perception](../../ICLR2026/medical_imaging/wavepolyp_video_polyp_segmentation_via_hierarchical_wavelet-based_feature_aggreg.md)
+- [\[CVPR 2026\] EchoVDiff: Cardiac-Cycle Echocardiography Video Generation from Arbitrary Single Frame](../../CVPR2026/medical_imaging/echovdiff_cardiac-cycle_echocardiography_video_generation_from_arbitrary_single_.md)
 - [\[NeurIPS 2025\] Self-supervised Learning of Echocardiographic Video Representations via Online Cluster Distillation](self-supervised_learning_of_echocardiographic_video_representations_via_online_c.md)
 - [\[CVPR 2026\] MedGRPO: Multi-Task Reinforcement Learning for Heterogeneous Medical Video Understanding](../../CVPR2026/medical_imaging/medgrpo_multi-task_reinforcement_learning_for_heterogeneous_medical_video_unders.md)
-- [\[NeurIPS 2025\] UniMRSeg: Unified Modality-Relax Segmentation via Hierarchical Self-Supervised Compensation](unimrseg_unified_modality-relax_segmentation_via_hierarchical_self-supervised_co.md)
-- [\[NeurIPS 2025\] BrainOmni: A Brain Foundation Model for Unified EEG and MEG Signals](brainomni_a_brain_foundation_model_for_unified_eeg_and_meg_signals.md)
 - [\[ICCV 2025\] PVChat: Personalized Video Chat with One-Shot Learning](../../ICCV2025/medical_imaging/pvchat_personalized_video_chat_with_one-shot_learning.md)
 
 </div>

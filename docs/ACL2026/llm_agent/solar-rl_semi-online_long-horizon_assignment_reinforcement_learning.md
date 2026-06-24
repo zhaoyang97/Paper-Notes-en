@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SOLAR-RL: Semi-Online Long-horizon Assignment Reinforcement Learning
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] SOLAR-RL utilizes offline trajectory reconstruction, failure point detection, and target-aligned reward shaping to process static GUI data into long-horizon training signals with pseudo-online feedback. This allows the Qwen2.5-VL-7B scale GUI agent to achieve stable performance on Android Control, GUI-Odyssey, and Andr
+  [ACL2026 Findings][LLM Agent][GUI Agent] SOLAR-RL utilizes offline trajectory reconstruction, failure point detection, and target-aligned reward shaping to process static GUI data into long-horizon training signals with pseudo-online feedback. This allows the Qwen2.5-VL-7B scale GUI agent to achieve stable performance on Android Control, GUI-Odyssey, and Android World, matching or exceeding strong offline baselines.
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL2026 Findings"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "Semi-online Reinforcement Learning"
+  - "Long-horizon Tasks"
+  - "Credit Assignment"
+  - "Reward Shaping"
 date: 2026-05-08
-content_hash: 8384d2e934dad42f
+content_hash: f150624c587215cc
 ---
+
 # SOLAR-RL: Semi-Online Long-horizon Assignment Reinforcement Learning
 
 **Conference**: ACL2026 Findings  
@@ -127,11 +133,11 @@ SOLAR-RL is trained using the GRPO/verl framework, with modifications focused on
 
 ## Related Papers
 
+- [\[ICLR 2026\] MobileRL: Online Agentic Reinforcement Learning for Mobile GUI Agents](../../ICLR2026/llm_agent/mobilerl_online_agentic_reinforcement_learning_for_mobile_gui_agents.md)
 - [\[CVPR 2026\] SAGE: Training Smart Any-Horizon Agents for Long Video Reasoning with Reinforcement Learning](../../CVPR2026/llm_agent/sage_training_smart_any-horizon_agents_for_long_video_reasoning_with_reinforceme.md)
-- [\[ACL 2026\] TiMem: Temporal-Hierarchical Memory Consolidation for Long-Horizon Conversational Agents](timem_temporal-hierarchical_memory_consolidation_for_long-horizon_conversational.md)
-- [\[ACL 2026\] StructMem: Structured Memory for Long-Horizon Behavior in LLMs](structmem_structured_memory_for_long-horizon_behavior_in_llms.md)
-- [\[ICLR 2026\] Solving the Granularity Mismatch: Hierarchical Preference Learning for Long-Horizon LLM Agents](../../ICLR2026/llm_agent/solving_the_granularity_mismatch_hierarchical_preference_learning_for_long-horiz.md)
+- [\[ICLR 2026\] Unlocking Long-Horizon Agentic Search with Large-Scale End-to-End RL](../../ICLR2026/llm_agent/unlocking_long-horizon_agentic_search_with_large-scale_end-to-end_rl.md)
 - [\[ICLR 2026\] AgentGym-RL: An Open-Source Framework to Train LLM Agents for Long-Horizon Decision Making via Multi-Turn RL](../../ICLR2026/llm_agent/agentgym-rl_an_open-source_framework_to_train_llm_agents_for_long-horizon_decisi.md)
+- [\[ACL 2026\] TiMem: Temporal-Hierarchical Memory Consolidation for Long-Horizon Conversational Agents](timem_temporal-hierarchical_memory_consolidation_for_long-horizon_conversational.md)
 
 </div>
 

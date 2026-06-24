@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ReTabAD: A Benchmark for Restoring Semantic Context in Tabular Anomaly Detection
 description: >-
-  [ICLR 2026][Anomaly Detection][Interpretability] ReTabAD is the first "context-aware" tabular anomaly detection benchmark. It restores discarded textual semantics (feature descriptions, domain knowledge, original categorical values) into 20 curated datasets, provides implementations for 20 classic/deep/LLM-based algorithms, and proposes a training-free zero-shot LLM
+  [ICLR 2026][Anomaly Detection][Tabular Anomaly Detection] ReTabAD is the first "context-aware" tabular anomaly detection benchmark. It restores discarded textual semantics (feature descriptions, domain knowledge, original categorical values) into 20 curated datasets, provides implementations for 20 classic/deep/LLM-based algorithms, and proposes a training-free zero-shot LLM framework. Experiments demonstrate that semantic context improves detection AUROC by an average of 7.6…
 tags:
-  - ICLR 2026
-  - Anomaly Detection
-  - Interpretability
+  - "ICLR 2026"
+  - "Anomaly Detection"
+  - "Tabular Anomaly Detection"
+  - "Semantic Context"
+  - "Text Metadata"
+  - "Zero-shot LLM"
+  - "Explainability"
 date: 2026-05-08
-content_hash: 70188a5beab01db2
+content_hash: 5584d9a701ca53ab
 ---
+
 # ReTabAD: A Benchmark for Restoring Semantic Context in Tabular Anomaly Detection
 
 **Conference**: ICLR 2026  
@@ -145,10 +150,20 @@ Full semantics (Type D) yields the highest win rate. Providing only domain knowl
 - Value: ⭐⭐⭐⭐⭐ Opens a new measurable research direction with public resources.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] LayoutAD: Exploring Semantic-Geometric Misalignment Reasoning for Scene Layout Anomaly Detection](../../CVPR2026/anomaly_detection/layoutad_exploring_semantic-geometric_misalignment_reasoning_for_scene_layout_an.md)
+- [\[ICLR 2026\] LLM as an Algorithmist: Enhancing Anomaly Detectors via Programmatic Synthesis](llm_as_an_algorithmist_enhancing_anomaly_detectors_via_programmatic_synthesis.md)
+- [\[ICLR 2026\] MRAD: Zero-Shot Anomaly Detection with Memory-Driven Retrieval](mrad_zero-shot_anomaly_detection_with_memory-driven_retrieval.md)
+- [\[ICLR 2026\] Low Rank Transformer for Multivariate Time Series Anomaly Detection and Localization](low_rank_transformer_for_multivariate_time_series_anomaly_detection_and_localiza.md)
+- [\[ICLR 2026\] Adaptive Conformal Anomaly Detection with Time Series Foundation Models for Signal Monitoring](adaptive_conformal_anomaly_detection_with_time_series_foundation_models_for_sign.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] LayoutAD: Exploring Semantic-Geometric Misalignment Reasoning for Scene Layout Anomaly Detection](../../CVPR2026/anomaly_detection/layoutad_exploring_semantic-geometric_misalignment_reasoning_for_scene_layout_an.md)

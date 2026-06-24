@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FreeAdapt: Unleashing Diffusion Priors for Ultra-High-Definition Image Restoration
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] This paper proposes a training-free "Frequency-Feature Collaborative Guidance" (FFSG) mechanism. It utilizes the phase spectrum of a low-resolution reference image and global attention to constrain local generation during each denoising step of patch-based inference. Combined with an optional VAE decoder fine-tuning mo
+  [ICLR 2026][Image Restoration][UHD Image Restoration] This paper proposes a training-free "Frequency-Feature Collaborative Guidance" (FFSG) mechanism. It utilizes the phase spectrum of a low-resolution reference image and global attention to constrain local generation during each denoising step of patch-based inference. Combined with an optional VAE decoder fine-tuning module, it achieves plug-and-play adaptation of pretrained LDMs for Ultra-High-Definition (4K/8K) image rest…
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "UHD Image Restoration"
+  - "Latent Diffusion Models"
+  - "Training-free Guidance"
+  - "Frequency Domain Guidance"
+  - "VAE Fine-tuning"
 date: 2026-05-08
-content_hash: eef489f0a6e0845d
+content_hash: 192998ef6614c180
 ---
+
 # FreeAdapt: Unleashing Diffusion Priors for Ultra-High-Definition Image Restoration
 
 **Conference**: ICLR 2026  
@@ -126,7 +132,6 @@ FreqG alone improves PSNR from 18.91 to 21.76 (locking global structure is the l
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -134,7 +139,7 @@ FreqG alone improves PSNR from 18.91 to 21.76 (locking global structure is the l
 - [\[CVPR 2026\] UniLDiff: Unlocking the Power of Diffusion Priors for All-in-One Image Restoration](../../CVPR2026/image_restoration/unildiff_unlocking_the_power_of_diffusion_priors_for_all-in-one_image_restoratio.md)
 - [\[ICLR 2026\] FideDiff: Efficient Diffusion Model for High-Fidelity Image Motion Deblurring](fidediff_efficient_diffusion_model_for_high-fidelity_image_motion_deblurring.md)
 - [\[ICLR 2026\] Energy-oriented Diffusion Bridge for Image Restoration with Foundational Diffusion Models](energy-oriented_diffusion_bridge_for_image_restoration_with_foundational_diffusi.md)
-- [\[ICLR 2026\] Text-Aware Image Restoration with Diffusion Models](text-aware_image_restoration_with_diffusion_models.md)
+- [\[CVPR 2026\] DreamSR: Towards Ultra-High-Resolution Image Super-Resolution via a Receptive-Field Enhanced Diffusion Transformer](../../CVPR2026/image_restoration/dreamsr_towards_ultra-high-resolution_image_super-resolution_via_a_receptive-fie.md)
 
 </div>
 

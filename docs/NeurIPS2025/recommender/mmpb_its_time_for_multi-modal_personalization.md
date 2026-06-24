@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MMPB: It's Time for Multi-Modal Personalization
 description: >-
-  [NeurIPS 2025][Recommender Systems][VLM] This paper introduces MMPB, the first VLM personalization evaluation benchmark, comprising 111 personalizable concepts, 10k+ image-text QA pairs…
+  [NeurIPS 2025][Recommender Systems][VLM] This paper introduces MMPB, the first VLM personalization evaluation benchmark, comprising 111 personalizable concepts, 10k+ image-text QA pairs, and 15 task types. Evaluation of 23 VLMs reveals that even the strongest model, GPT-4o, performs poorly on personalization tasks, exposing critical limitations in preference reasoning, visual cue utilization, and conflicts between safety alignment and personalization.
 tags:
   - "NeurIPS 2025"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "visual question answering"
   - "Cold-start"
 date: 2026-05-08
-content_hash: dd9e7c7af97092a5
+content_hash: f6401db6ba32a860
 ---
 
 # MMPB: It's Time for Multi-Modal Personalization
@@ -133,8 +133,8 @@ MMPB evaluation proceeds in three stages:
 
 - [\[NeurIPS 2025\] VisualLens: Personalization through Task-Agnostic Visual History](visuallens_personalization_through_task-agnostic_visual_history.md)
 - [\[ICML 2026\] T-POP: Test-Time Personalization with Online Preference Feedback](../../ICML2026/recommender/t-pop_test-time_personalization_with_online_preference_feedback.md)
-- [\[NeurIPS 2025\] Inference-Time Reward Hacking in Large Language Models](inference-time_reward_hacking_in_large_language_models.md)
 - [\[NeurIPS 2025\] TV-Rec: Time-Variant Convolutional Filter for Sequential Recommendation](tv-rec_time-variant_convolutional_filter_for_sequential_recommendation.md)
+- [\[ICML 2025\] PARM: Multi-Objective Test-Time Alignment via Preference-Aware Autoregressive Reward Model](../../ICML2025/recommender/parm_multi-objective_test-time_alignment_via_preference-aware_autoregressive_rew.md)
 - [\[NeurIPS 2025\] EMPATHIA: Multi-Faceted Human-AI Collaboration for Refugee Integration](empathia_multi-faceted_human-ai_collaboration_for_refugee_integration.md)
 
 </div>

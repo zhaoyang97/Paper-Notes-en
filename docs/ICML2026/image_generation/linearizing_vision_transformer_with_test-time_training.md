@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Linearizing Vision Transformer with Test-Time Training
 description: >-
-  [ICML 2026][Image Generation][Test-Time Training] The authors discover that a two-layer TTT inner model is structurally equivalent to Softmax attention (where Softmax can be viewed as a two-layer dynamic MLP). This facilitates direct weight inheritance of Q/K/V/MLP. By incorporating key Instance Normalization for shift-invariance and depthwise convolutions on Q/K for
+  [ICML 2026][Image Generation][Test-Time Training] The authors discover that a two-layer TTT inner model is structurally equivalent to Softmax attention (where Softmax can be viewed as a two-layer dynamic MLP). This facilitates direct weight inheritance of Q/K/V/MLP. By incorporating key Instance Normalization for shift-invariance and depthwise convolutions on Q/K for locality, they linearized and accelerated Stable Diffusion 3.5 by 1.32×–1.47× with only 1 hour of fine-tuning.
 tags:
-  - ICML 2026
-  - Image Generation
-  - Test-Time Training
-  - Linear Attention
-  - Weight Inheritance
-  - Instance Normalization
+  - "ICML 2026"
+  - "Image Generation"
+  - "Test-Time Training"
+  - "Linear Attention"
+  - "Weight Inheritance"
+  - "Instance Normalization"
+  - "DiT Acceleration"
 date: 2026-05-08
-content_hash: ab61fd1861b710c9
+content_hash: 43730dfe592bb635
 ---
+
 # Linearizing Vision Transformer with Test-Time Training
 
 **Conference**: ICML 2026  
@@ -153,9 +155,9 @@ Two fine-tuning protocols: (1) Freeze Protocol—only train new TTT internal par
 
 - [\[ICLR 2026\] Test-Time Iterative Error Correction for Efficient Diffusion Models](../../ICLR2026/image_generation/test-time_iterative_error_correction_for_efficient_diffusion_models.md)
 - [\[CVPR 2026\] Progress by Pieces: Test-Time Scaling for Autoregressive Image Generation](../../CVPR2026/image_generation/progress_by_pieces_test-time_scaling_for_autoregressive_image_generation.md)
+- [\[ICLR 2026\] Projected Coupled Diffusion for Test-Time Constrained Joint Generation](../../ICLR2026/image_generation/projected_coupled_diffusion_for_test-time_constrained_joint_generation.md)
 - [\[CVPR 2026\] From Scale to Speed: Adaptive Test-Time Scaling for Image Editing](../../CVPR2026/image_generation/from_scale_to_speed_adaptive_test-time_scaling_for_image_editing.md)
-- [\[CVPR 2025\] LaVin-DiT: Large Vision Diffusion Transformer](../../CVPR2025/image_generation/lavin-dit_large_vision_diffusion_transformer.md)
-- [\[CVPR 2026\] Test-Time Instance-Specific Parameter Composition: A New Paradigm for Adaptive Generative Modeling](../../CVPR2026/image_generation/test-time_instance-specific_parameter_composition_a_new_paradigm_for_adaptive_ge.md)
+- [\[NeurIPS 2025\] Linear Differential Vision Transformer: Learning Visual Contrasts via Pairwise Differentials](../../NeurIPS2025/image_generation/linear_differential_vision_transformer_learning_visual_contrasts_via_pairwise_di.md)
 
 </div>
 

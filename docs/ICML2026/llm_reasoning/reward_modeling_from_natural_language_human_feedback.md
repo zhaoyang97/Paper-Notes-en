@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Reward Modeling from Natural Language Human Feedback
 description: >-
-  [ICML 2026][LLM Reasoning][MetaRM] This paper identifies a severe outcome-process inconsistency in generative reward models (GRMs) trained on binary preference rewards—where models "predict the preference correctly but provide incorrect critiques" (20–30%, up to 44%). It proposes RM-NLHF: using the similarity of core arguments between model critiques an
+  [ICML 2026][Reasoning][Generative Reward Model (GRM)] This paper identifies a severe outcome-process inconsistency in generative reward models (GRMs) trained on binary preference rewards—where models "predict the preference correctly but provide incorrect critiques" (20–30%, up to 44%). It proposes RM-NLHF: using the similarity of core arguments between model critiques and human critiques as an additional process reward, and using MetaRM to automatically predict process rewar…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - MetaRM
-  - GRPO
+  - "ICML 2026"
+  - "Reasoning"
+  - "Generative Reward Model (GRM)"
+  - "Process Reward"
+  - "Natural Language Feedback"
+  - "MetaRM"
+  - "GRPO"
 date: 2026-05-08
-content_hash: f8ea925d1b459387
+content_hash: 83f435b1a7107da5
 ---
+
 # Reward Modeling from Natural Language Human Feedback
 
 **Conference**: ICML 2026  
@@ -126,15 +130,16 @@ Comparisons across HelpSteer3, RewardBench, and PandaLM involve base GRMs such a
 - Value: ⭐⭐⭐⭐ (Addresses missing process supervision in GRMs with high transferability to existing RLHF pipelines).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Critique-GRPO: Advancing LLM Reasoning with Natural Language and Numerical Feedback](critique-grpo_advancing_llm_reasoning_with_natural_language_and_numerical_feedba.md)
 - [\[ICML 2026\] GRPO is Secretly a Process Reward Model](grpo_is_secretly_a_process_reward_model.md)
+- [\[ICML 2026\] The Role of Feedback Alignment in Self-Distillation](the_role_of_feedback_alignment_in_self-distillation.md)
 - [\[ACL 2026\] C2: Scalable Rubric-Augmented Reward Modeling from Binary Preferences](../../ACL2026/llm_reasoning/c2_scalable_rubric-augmented_reward_modeling_from_binary_preferences.md)
 - [\[ICML 2026\] Prioritize the Process, Not Just the Outcome: Rewarding Latent Thought Trajectories Improves Reasoning in Looped Language Models](prioritize_the_process_not_just_the_outcome_rewarding_latent_thought_trajectorie.md)
-- [\[ACL 2026\] Efficient Process Reward Modeling via Contrastive Mutual Information](../../ACL2026/llm_reasoning/efficient_process_reward_modeling_via_contrastive_mutual_information.md)
 
 </div>
 

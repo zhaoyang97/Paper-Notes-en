@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MDNS: Masked Diffusion Neural Sampler via Stochastic Optimal Control
 description: >-
-  [NeurIPS 2025][Optimization][Discrete diffusion models] This paper proposes the Masked Diffusion Neural Sampler (MDNS), a framework grounded in stochastic optimal control theory for continuous-time Markov chains (CTMCs).…
+  [NeurIPS 2025][Optimization][Discrete diffusion models] This paper proposes the Masked Diffusion Neural Sampler (MDNS), a framework grounded in stochastic optimal control theory for continuous-time Markov chains (CTMCs). By aligning path measures, MDNS trains a discrete neural sampler capable of accurately sampling from Ising/Potts models with state spaces as large as $10^{122}$, substantially outperforming existing learning-based baselines.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -13,7 +13,7 @@ tags:
   - "Ising model"
   - "Potts model"
 date: 2026-05-08
-content_hash: 91057d2c95fbff9d
+content_hash: 06b508f73abe3535
 ---
 
 # MDNS: Masked Diffusion Neural Sampler via Stochastic Optimal Control
@@ -175,11 +175,11 @@ At low and critical temperatures, MDNS shows a dramatic advantage over LEAPS (ES
 
 ## Related Papers
 
+- [\[ICLR 2026\] A Schrödinger Eigenfunction Method for Long-Horizon Stochastic Optimal Control](../../ICLR2026/optimization/a_schrödinger_eigenfunction_method_for_long-horizon_stochastic_optimal_control.md)
 - [\[NeurIPS 2025\] Understanding the Generalization of Stochastic Gradient Adam in Learning Neural Networks](understanding_the_generalization_of_stochastic_gradient_adam_in_learning_neural_.md)
-- [\[NeurIPS 2025\] Optimal Rates for Generalization of Gradient Descent for Deep ReLU Classification](optimal_rates_for_generalization_of_gradient_descent_for_deep_relu_classificatio.md)
+- [\[ICLR 2026\] Diffusion-DFL: Decision-focused Diffusion Models for Stochastic Optimization](../../ICLR2026/optimization/diffusion-dfl_decision-focused_diffusion_models_for_stochastic_optimization.md)
 - [\[NeurIPS 2025\] VIKING: Deep Variational Inference with Stochastic Projections](viking_deep_variational_inference_with_stochastic_projections.md)
 - [\[NeurIPS 2025\] Isotropic Noise in Stochastic and Quantum Convex Optimization](isotropic_noise_in_stochastic_and_quantum_convex_optimization.md)
-- [\[NeurIPS 2025\] Unveiling m-Sharpness Through the Structure of Stochastic Gradient Noise](unveiling_m-sharpness_through_the_structure_of_stochastic_gradient_noise.md)
 
 </div>
 

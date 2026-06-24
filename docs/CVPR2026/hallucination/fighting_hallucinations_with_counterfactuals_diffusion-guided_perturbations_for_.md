@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Fighting Hallucinations with Counterfactuals: Diffusion-Guided Perturbations for LVLM Hallucination Suppression
 description: >-
-  [CVPR 2026][Hallucination Detection][Diffusion Model] Ours proposes CIPHER, a training-free test-time hallucination suppression method. In the offline stage, a diffusion model is used to generate counterfactual images to construct the OHC-25K dataset, from which a visual hallucination subspace is extracted via SVD. During inference, hidden states are projected onto the or
+  [CVPR2026][Hallucination Detection][Large Vision-Language Models] Ours proposes CIPHER, a training-free test-time hallucination suppression method. In the offline stage, a diffusion model is used to generate counterfactual images to construct the OHC-25K dataset, from which a visual hallucination subspace is extracted via SVD. During inference, hidden states are projected onto the orthogonal complement of this subspace, significantly reducing visual hallucinations in LVLMs wi…
 tags:
-  - CVPR 2026
-  - Hallucination Detection
-  - Diffusion Model
+  - "CVPR2026"
+  - "Hallucination Detection"
+  - "Large Vision-Language Models"
+  - "Hallucination Suppression"
+  - "Counterfactual Reasoning"
+  - "Diffusion Models"
+  - "Feature Projection"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 9a8ca118b82b4bba
+content_hash: 1b25ad28144e35f0
 ---
+
 # Fighting Hallucinations with Counterfactuals: Diffusion-Guided Perturbations for LVLM Hallucination Suppression
 
 ## Basic Information
@@ -166,15 +172,15 @@ The throughput of CIPHER is perfectly consistent with standard Greedy decoding (
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ACL 2026\] Lost in Diffusion: Uncovering Hallucination Patterns and Failure Modes in Diffusion Large Language Models](../../ACL2026/hallucination/lost_in_diffusion_uncovering_hallucination_patterns_and_failure_modes_in_diffusi.md)
 - [\[CVPR 2026\] Tell Model Where to Look: Mitigating Hallucinations in MLLMs by Vision-Guided Attention](tell_model_where_to_look_mitigating_hallucinations_in_mllms_by_vision-guided_att.md)
-- [\[AAAI 2026\] Bridging Day and Night: Target-Class Hallucination Suppression in Unpaired Image Translation](../../AAAI2026/hallucination/bridging_day_and_night_target-class_hallucination_suppressio.md)
+- [\[ACL 2026\] Lost in Diffusion: Uncovering Hallucination Patterns and Failure Modes in Diffusion Large Language Models](../../ACL2026/hallucination/lost_in_diffusion_uncovering_hallucination_patterns_and_failure_modes_in_diffusi.md)
 - [\[CVPR 2026\] AdaIAT: Adaptively Increasing Attention to Generated Text to Alleviate Hallucinations in LVLM](adaiat_adaptively_increasing_attention_to_generated_text_to_alleviate_hallucinat.md)
 - [\[CVPR 2026\] Cross-Modal Attention Calibration for LVLM Hallucination Mitigation](cross-modal_attention_calibration_for_lvlm_hallucination_mitigation.md)
+- [\[AAAI 2026\] Bridging Day and Night: Target-Class Hallucination Suppression in Unpaired Image Translation](../../AAAI2026/hallucination/bridging_day_and_night_target-class_hallucination_suppressio.md)
 
 </div>
 

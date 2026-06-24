@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HiddenEcho: Mitigating Noise Amplification in Differentially Private LLMs with Hidden-State Correction
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] To address the issue of Differential Privacy (DP) noise amplifying layer-by-layer within LLM transformer blocks and degrading downstream task performance, HiddenEcho allows the server to return intermediate hidden states to the client. A lightweight denoising module performs end-to-end layer-wise noise correction based
+  [ICLR 2026][LLM Safety][Differential Privacy] To address the issue of Differential Privacy (DP) noise amplifying layer-by-layer within LLM transformer blocks and degrading downstream task performance, HiddenEcho allows the server to return intermediate hidden states to the client. A lightweight denoising module performs end-to-end layer-wise noise correction based on clean embeddings without requiring pre-training. Meanwhile, communication overhead is reduced by over 85% thro…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Differential Privacy"
+  - "Noise Amplification"
+  - "Hidden-state Denoising"
+  - "Split Learning"
+  - "Information Bottleneck"
 date: 2026-05-08
-content_hash: 9939049dcce27f35
+content_hash: 5f535e23aa903002
 ---
+
 # HiddenEcho: Mitigating Noise Amplification in Differentially Private LLMs with Hidden-State Correction
 
 **Conference**: ICLR 2026  
@@ -116,14 +122,17 @@ Removing residuals leads to a drop of 1.1%–11.51%. Removing HLF causes the lar
 
 <div class="related-papers" markdown="1">
 
-- **[d$\chi$-DP]** Qu et al., "Differentially Private Text Generation with Adpative Noise Injection," 2023.
-- **[SnD]** Mai et al., "Split and Denoise: Protect Cloud LLMs from Embedding Inversion Attacks," 2024.
-- **[LST]** Sung et al., "LST: Ladder Side-Tuning for Parameter and Memory Efficient Transfer Learning," 2022.
+## Related Papers
+
+- [\[ICLR 2026\] Secret-Protected Evolution for Differentially Private Synthetic Text Generation](secret-protected_evolution_for_differentially_private_synthetic_text_generation.md)
+- [\[NeurIPS 2025\] On the Sample Complexity of Differentially Private Policy Optimization](../../NeurIPS2025/llm_safety/on_the_sample_complexity_of_differentially_private_policy_optimization.md)
+- [\[ACL 2026\] Differentially Private Synthetic Text Generation for Retrieval-Augmented Generation (RAG)](../../ACL2026/llm_safety/differentially_private_synthetic_text_generation_for_retrieval-augmented_generat.md)
+- [\[ACL 2026\] TrajGuard: Streaming Hidden-state Trajectory Detection for Decoding-time Jailbreak Defense](../../ACL2026/llm_safety/trajguard_streaming_hidden-state_trajectory_detection_for_decoding-time_jailbrea.md)
+- [\[ICLR 2026\] DP-Fusion: Token-Level Differentially Private Inference for Large Language Models](dp-fusion_token-level_differentially_private_inference_for_large_language_models.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Secret-Protected Evolution for Differentially Private Synthetic Text Generation](secret-protected_evolution_for_differentially_private_synthetic_text_generation.md)

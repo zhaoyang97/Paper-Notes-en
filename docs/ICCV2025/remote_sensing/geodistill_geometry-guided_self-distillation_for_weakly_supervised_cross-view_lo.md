@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GeoDistill: Geometry-Guided Self-Distillation for Weakly Supervised Cross-View Localization
 description: >-
-  [ICCV 2025][Remote Sensing][cross-view localization] This paper proposes GeoDistill, a framework that enhances locally discriminative feature learning via a Field-of-View (FoV) occlusion-based teacher-student self-distil…
+  [ICCV 2025][Remote Sensing][cross-view localization] This paper proposes GeoDistill, a framework that enhances locally discriminative feature learning via a Field-of-View (FoV) occlusion-based teacher-student self-distillation paradigm. Under weakly supervised conditions (requiring only coarse GPS annotations), it achieves robust cross-view localization with performance improvements exceeding 10%, and can be applied as a plug-and-play component to different localization frame…
 tags:
   - "ICCV 2025"
   - "Remote Sensing"
@@ -12,7 +12,7 @@ tags:
   - "FoV occlusion"
   - "orientation estimation"
 date: 2026-05-08
-content_hash: 2c4bf9f20c771488
+content_hash: d917716fd7ae7610
 ---
 
 # GeoDistill: Geometry-Guided Self-Distillation for Weakly Supervised Cross-View Localization
@@ -146,11 +146,11 @@ The student is updated by minimizing the self-distillation loss via gradient des
 
 ## Related Papers
 
-- [\[AAAI 2026\] UniABG: Unified Adversarial View Bridging and Graph Correspondence for Unsupervised Cross-View Geo-Localization](../../AAAI2026/remote_sensing/uniabg_unified_adversarial_view_bridging_and_graph_correspondence_for_unsupervis.md)
-- [\[CVPR 2026\] RHO: Robust Holistic OSM-Based Metric Cross-View Geo-Localization](../../CVPR2026/remote_sensing/rho_robust_holistic_osm-based_metric_cross-view_geo-localization.md)
-- [\[NeurIPS 2025\] C3PO: Cross-View Cross-Modality Correspondence by Pointmap Prediction](../../NeurIPS2025/remote_sensing/c3po_cross-view_cross-modality_correspondence_by_pointmap_prediction.md)
+- [\[CVPR 2026\] Geo2: Geometry-Guided Cross-view Geo-Localization and Image Synthesis](../../CVPR2026/remote_sensing/geo2_geometry-guided_cross-view_geo-localization_and_image_synthesis.md)
+- [\[ECCV 2024\] Weakly-Supervised Camera Localization by Ground-to-Satellite Image Registration](../../ECCV2024/remote_sensing/weakly-supervised_camera_localization_by_ground-to-satellite_image_registration.md)
+- [\[CVPR 2026\] MOGeo: Beyond One-to-One Cross-View Object Geo-localization](../../CVPR2026/remote_sensing/mogeo_beyond_one-to-one_cross-view_object_geo-localization.md)
 - [\[ICCV 2025\] GeoExplorer: Active Geo-Localization with Curiosity-Driven Exploration](geoexplorer_active_geo-localization_with_curiosity-driven_exploration.md)
-- [\[ICCV 2025\] RS-vHeat: Heat Conduction Guided Efficient Remote Sensing Foundation Model](rs-vheat_heat_conduction_guided_efficient_remote_sensing_foundation_model.md)
+- [\[ECCV 2024\] Adapting Fine-Grained Cross-View Localization to Areas without Fine Ground Truth](../../ECCV2024/remote_sensing/adapting_fine-grained_cross-view_localization_to_areas_without_fine_ground_truth.md)
 
 </div>
 

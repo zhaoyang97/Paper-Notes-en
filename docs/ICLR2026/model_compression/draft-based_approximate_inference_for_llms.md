@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Draft-based Approximate Inference for LLMs
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] Ours proposes the Draft-based Approximate Inference framework, which utilizes lookahead predictions from a small draft model to more accurately estimate the importance of tokens and KV pairs. The framework includes SpecKV (KV cache dropping), SpecPC (prompt compression), and SpecKV-PC (cascaded compression), consistent
+  [ICLR 2026][Model Compression][Approximate inference] Ours proposes the Draft-based Approximate Inference framework, which utilizes lookahead predictions from a small draft model to more accurately estimate the importance of tokens and KV pairs. The framework includes SpecKV (KV cache dropping), SpecPC (prompt compression), and SpecKV-PC (cascaded compression), consistently outperforming existing baselines on long-context benchmarks.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Approximate inference"
+  - "KV cache compression"
+  - "prompt compression"
+  - "draft model"
+  - "sparse attention"
 date: 2026-05-08
-content_hash: 98b2e0b6295714bb
+content_hash: 0530674355ad5286
 ---
+
 # Draft-based Approximate Inference for LLMs
 
 **Conference**: ICLR 2026  
@@ -138,9 +144,9 @@ All three methods are training-free inference-time optimizations requiring no ad
 
 - [\[ICLR 2026\] GradPruner: Gradient-guided Layer Pruning Enabling Efficient Fine-Tuning and Inference for LLMs](gradpruner_gradient-guided_layer_pruning_enabling_efficient_fine-tuning_and_infe.md)
 - [\[ICLR 2026\] NLI: Non-uniform Linear Interpolation Approximation of Nonlinear Operations for Efficient LLMs Inference](nli_non-uniform_linear_interpolation_approximation_of_nonlinear_operations_for_e.md)
+- [\[ICLR 2026\] Channel-Aware Mixed-Precision Quantization for Efficient Long-Context Inference](channel-aware_mixed-precision_quantization_for_efficient_long-context_inference.md)
 - [\[NeurIPS 2025\] Universal Cross-Tokenizer Distillation via Approximate Likelihood Matching](../../NeurIPS2025/model_compression/universal_cross-tokenizer_distillation_via_approximate_likelihood_matching.md)
 - [\[ICLR 2026\] Metis: Training LLMs with FP4 Quantization](metis_training_llms_with_fp4_quantization.md)
-- [\[ICLR 2026\] ParoQuant: Pairwise Rotation Quantization for Efficient Reasoning LLM Inference](paroquant_pairwise_rotation_quantization_for_efficient_reasoning_llm_inference.md)
 
 </div>
 

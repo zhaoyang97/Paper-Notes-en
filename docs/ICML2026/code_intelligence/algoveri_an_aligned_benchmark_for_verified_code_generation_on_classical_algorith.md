@@ -2,17 +2,20 @@
 title: >-
   [Paper Note] AlgoVeri: An Aligned Benchmark for Verified Code Generation on Classical Algorithms
 description: >-
-  [ICML 2026][Code Intelligence][verified code generation] AlgoVeri constructs a strictly aligned benchmark for verified code generation of classical algorithms across Dafny, Verus, and Lean. It demonstrates that current LLMs still face significant gaps in handling complex global invariants, system-level constraints, and explicit proof search, with success rates in Lean and Ve
+  [ICML 2026][Code Intelligence][verified code generation] AlgoVeri constructs a strictly aligned benchmark for verified code generation of classical algorithms across Dafny, Verus, and Lean. It demonstrates that current LLMs still face significant gaps in handling complex global invariants, system-level constraints, and explicit proof search, with success rates in Lean and Verus being substantially lower than those in Dafny.
 tags:
-  - ICML 2026
-  - Code Intelligence
-  - verified code generation
-  - Dafny
-  - Verus
-  - Lean
+  - "ICML 2026"
+  - "Code Intelligence"
+  - "verified code generation"
+  - "formal verification"
+  - "Dafny"
+  - "Verus"
+  - "Lean"
+  - "algorithm benchmark"
 date: 2026-05-08
-content_hash: 3349e29652d5393c
+content_hash: 6fe9a4f80279962b
 ---
+
 # AlgoVeri: An Aligned Benchmark for Verified Code Generation on Classical Algorithms
 
 **Conference**: ICML 2026  
@@ -124,8 +127,8 @@ The analysis section focuses on comparing deep repair and wide sampling for test
 - [\[ACL 2025\] CodeDPO: Aligning Code Models with Self Generated and Verified Source Code](../../ACL2025/code_intelligence/codedpo_code_alignment.md)
 - [\[ACL 2025\] TeXpert: A Multi-Level Benchmark for Evaluating LaTeX Code Generation by LLMs](../../ACL2025/code_intelligence/texpert_a_multi-level_benchmark_for_evaluating_latex_code_generation_by_llms.md)
 - [\[ACL 2025\] GALLa: Graph Aligned Large Language Models for Improved Source Code Understanding](../../ACL2025/code_intelligence/galla_graph_aligned_large_language_models.md)
-- [\[ACL 2025\] FEA-Bench: A Benchmark for Evaluating Repository-Level Code Generation for Feature Implementation](../../ACL2025/code_intelligence/feabench_repo_code_gen.md)
-- [\[ACL 2025\] DynaCode: A Dynamic Complexity-Aware Code Benchmark for Evaluating Large Language Models in Code Generation](../../ACL2025/code_intelligence/dynacode_a_dynamic_complexity-aware_code_benchmark_for_evaluating_large_language.md)
+- [\[ICML 2026\] Towards Functional Correctness of Code Models with Selective Generation](towards_functional_correctness_of_large_code_models_with_selective_generation.md)
+- [\[ICML 2026\] A Benchmark and Framework for Evaluating Next Action Predictions in Spreadsheets](a_benchmark_and_framework_for_evaluating_next_action_predictions_in_spreadsheets.md)
 
 </div>
 

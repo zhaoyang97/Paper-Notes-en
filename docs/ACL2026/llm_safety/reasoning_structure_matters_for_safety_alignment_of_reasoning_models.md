@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Reasoning Structure Matters for Safety Alignment of Reasoning Models
 description: >-
-  [ACL 2026][LLM Safety][AltTrain] The paper identifies that the safety issues in large reasoning models (LRMs) stem from a reasoning structure of "understanding the problem first, then solving with full effort." It proposes AltTrain, which uses 1K SFT data samples to reshape the reasoning structure into "problem understanding → harmfulness assessment →
+  [ACL 2026][LLM Safety][Large Reasoning Models] The paper identifies that the safety issues in large reasoning models (LRMs) stem from a reasoning structure of "understanding the problem first, then solving with full effort." It proposes AltTrain, which uses 1K SFT data samples to reshape the reasoning structure into "problem understanding → harmfulness assessment → conditional reasoning," significantly reducing harmful responses while largely preserving reasoning capabilities…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - AltTrain
-  - SFT
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Large Reasoning Models"
+  - "Safety Alignment"
+  - "Reasoning Structure"
+  - "AltTrain"
+  - "SFT"
 date: 2026-05-08
-content_hash: 8d97d4ec1ce76840
+content_hash: 4919b7d371eff8e4
 ---
+
 # Reasoning Structure Matters for Safety Alignment of Reasoning Models
 
 **Conference**: ACL 2026  
@@ -159,9 +163,9 @@ Data volume analysis shows that over-refusal in AltTrain can be mitigated by sca
 
 - [\[ACL 2026\] Reasoning Hijacking: The Fragility of Reasoning Alignment in Large Language Models](reasoning_hijacking_the_fragility_of_reasoning_alignment_in_large_language_model.md)
 - [\[ACL 2026\] AutoRAN: Automated Hijacking of Safety Reasoning in Large Reasoning Models](autoran_automated_hijacking_of_safety_reasoning_in_large_reasoning_models.md)
-- [\[ACL 2026\] How Should We Enhance the Safety of Large Reasoning Models: An Empirical Study](how_should_we_enhance_the_safety_of_large_reasoning_models_an_empirical_study.md)
+- [\[ICLR 2026\] AdvChain: Adversarial Chain-of-Thought Tuning for Robust Safety Alignment of Large Reasoning Models](../../ICLR2026/llm_safety/advchain_adversarial_chain-of-thought_tuning_for_robust_safety_alignment_of_larg.md)
 - [\[ACL 2026\] When Models Outthink Their Safety: Unveiling and Mitigating Self-Jailbreak in Large Reasoning Models](when_models_outthink_their_safety_unveiling_and_mitigating_self-jailbreak_in_lar.md)
-- [\[ACL 2026\] CiPO: Counterfactual Unlearning for Large Reasoning Models through Iterative Preference Optimization](cipo_counterfactual_unlearning_for_large_reasoning_models_through_iterative_pref.md)
+- [\[ACL 2026\] How Should We Enhance the Safety of Large Reasoning Models: An Empirical Study](how_should_we_enhance_the_safety_of_large_reasoning_models_an_empirical_study.md)
 
 </div>
 

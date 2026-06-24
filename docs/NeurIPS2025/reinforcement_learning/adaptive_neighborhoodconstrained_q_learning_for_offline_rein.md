@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Adaptive Neighborhood-Constrained Q Learning for Offline Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][offline RL] This paper proposes ANQ (Adaptive Neighborhood-constrained Q learning), which introduces advantage-function-based adaptive neighborhood constraints for offline RL. ANQ o…
+  [NeurIPS 2025 Spotlight][Reinforcement Learning][offline RL] This paper proposes ANQ (Adaptive Neighborhood-constrained Q learning), which introduces advantage-function-based adaptive neighborhood constraints for offline RL. ANQ offers a flexible middle ground between density constraints (overly conservative) and support constraints (requiring precise behavior policy modeling), and realizes efficient Q learning via a bilevel optimization framework…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Reinforcement Learning"
   - "offline RL"
   - "neighborhood constraint"
@@ -12,7 +12,7 @@ tags:
   - "adaptive conservatism"
   - "bilevel optimization"
 date: 2026-05-08
-content_hash: 456c2372604d18cc
+content_hash: 6c10a34165321abe
 ---
 
 # Adaptive Neighborhood-Constrained Q Learning for Offline Reinforcement Learning
@@ -139,11 +139,11 @@ The core of ANQ is to define an adaptive neighborhood constraint $\mathcal{C}_{A
 
 ## Related Papers
 
+- [\[ICLR 2026\] Offline Reinforcement Learning with Adaptive Feature Fusion](../../ICLR2026/reinforcement_learning/offline_reinforcement_learning_with_adaptive_feature_fusion.md)
+- [\[ICLR 2026\] Adaptive Scaling of Policy Constraints for Offline Reinforcement Learning](../../ICLR2026/reinforcement_learning/adaptive_scaling_of_policy_constraints_for_offline_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Risk-Averse Constrained Reinforcement Learning with Optimized Certainty Equivalents](risk-averse_constrained_reinforcement_learning_with_optimized_certainty_equivale.md)
-- [\[NeurIPS 2025\] Online Optimization for Offline Safe Reinforcement Learning](online_optimization_for_offline_safe_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Structural Information-based Hierarchical Diffusion for Offline Reinforcement Learning](structural_information-based_hierarchical_diffusion_for_offline_reinforcement_le.md)
-- [\[NeurIPS 2025\] Boundary-to-Region Supervision for Offline Safe Reinforcement Learning](boundary_to_region_supervision_for_offline_safe_rl.md)
-- [\[NeurIPS 2025\] Forecasting in Offline Reinforcement Learning for Non-stationary Environments](forecasting_in_offline_reinforcement_learning_for_non-stationary_environments.md)
+- [\[NeurIPS 2025\] DeepDiver: Adaptive Search Intensity Scaling via Open-Web Reinforcement Learning](deepdiver_adaptive_search_intensity_scaling_via_open-web_reinforcement_learning.md)
+- [\[ICML 2025\] Learning to Trust Bellman Updates: Selective State-Adaptive Regularization for Offline RL](../../ICML2025/reinforcement_learning/learning_to_trust_bellman_updates_selective_state-adaptive_regularization_for_of.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CoRA: Boosting Time Series Foundation Models for Multivariate Forecasting through Correlation-aware Adapter
 description: >-
-  [ICLR 2026][Time Series][Paper Note] CoRA is a lightweight plug-and-play adapter that enables "channel-independent" Time Series Foundation Models (TSFMs)—which typically ignore inter-channel correlations—to simultaneously learn dynamic, heterogeneous (positive/negative), and partial (existing only between specific channels) correlations during downstream
+  [ICLR2026][Time Series][Time Series Foundation Models] CoRA is a lightweight plug-and-play adapter that enables "channel-independent" Time Series Foundation Models (TSFMs)—which typically ignore inter-channel correlations—to simultaneously learn dynamic, heterogeneous (positive/negative), and partial (existing only between specific channels) correlations during downstream fine-tuning. It significantly improves multivariate forecasting accuracy across 10 real-world datasets in…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR2026"
+  - "Time Series"
+  - "Time Series Foundation Models"
+  - "Channel Correlation"
+  - "Plug-and-play Adapter"
+  - "Contrastive Learning"
+  - "Low-rank Decomposition"
 date: 2026-05-08
-content_hash: 854ec384cdab8d78
+content_hash: 3311b5e38d243125
 ---
+
 # CoRA: Boosting Time Series Foundation Models for Multivariate Forecasting through Correlation-aware Adapter
 
 **Conference**: ICLR2026  
@@ -146,15 +152,15 @@ Incremental addition of modules (DCE, HD, HPCL) on ETTm2 and Electricity shows a
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] COSA: Context-aware Output-Space Adapter for Test-Time Adaptation in Time Series Forecasting](cosa_context-aware_output-space_adapter_for_test-time_adaptation_in_time_series_.md)
 - [\[ICLR 2026\] CauKer: Classification Time Series Foundation Models Can Be Pretrained on Synthetic Data](cauker_classification_time_series_foundation_models_can_be_pretrained_on_synthet.md)
-- [\[ICML 2026\] Time-series Forecasting Through the Lens of Dynamics](../../ICML2026/time_series/time-series_forecasting_through_the_lens_of_dynamics.md)
-- [\[ICLR 2026\] Bridging Past and Future: Distribution-Aware Alignment for Time Series Forecasting](bridging_past_and_future_distribution-aware_alignment_for_time_series_forecastin.md)
-- [\[ICLR 2026\] Context parroting: A simple but tough-to-beat baseline for foundation models in scientific machine learning](context_parroting_a_simple_but_tough-to-beat_baseline_for_foundation_models_in_s.md)
+- [\[ICML 2026\] DAG: A Dual Correlation Network for Time Series Forecasting with Exogenous Variables](../../ICML2026/time_series/dag_a_dual_correlation_network_for_time_series_forecasting_with_exogenous_variab.md)
+- [\[ICLR 2026\] Beyond Accuracy: Are Time Series Foundation Models Well-Calibrated?](beyond_accuracy_are_time_series_foundation_models_well-calibrated.md)
+- [\[ICLR 2026\] Understanding the Implicit Biases of Design Choices for Time Series Foundation Models](understanding_the_implicit_biases_of_design_choices_for_time_series_foundation_m.md)
 
 </div>
 

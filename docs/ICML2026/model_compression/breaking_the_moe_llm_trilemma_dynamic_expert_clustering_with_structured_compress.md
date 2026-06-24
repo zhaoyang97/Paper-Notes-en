@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Breaking the MoE LLM Trilemma: Dynamic Expert Clustering with Structured Compression
 description: >-
-  [ICML 2026][Model Compression][Mixture-of-Experts] To address the "load imbalance – parameter redundancy – communication overhead" trilemma in MoE LLMs, this paper proposes a unified framework: using online clustering based on "parameter + activation" dual similarity to group experts. Within groups, structured compression (~5×) is applied via a "shared base matrix + lo
+  [ICML 2026][Model Compression][Mixture-of-Experts] To address the "load imbalance – parameter redundancy – communication overhead" trilemma in MoE LLMs, this paper proposes a unified framework: using online clustering based on "parameter + activation" dual similarity to group experts. Within groups, structured compression (~5×) is applied via a "shared base matrix + low-rank residuals." This is combined with two-stage hierarchical routing ("select group then select expert")…
 tags:
-  - ICML 2026
-  - Model Compression
-  - Mixture-of-Experts
+  - "ICML 2026"
+  - "Model Compression"
+  - "Mixture-of-Experts"
+  - "Dynamic Expert Clustering"
+  - "Low-rank Residuals"
+  - "Hierarchical Routing"
+  - "Heterogeneous Precision"
 date: 2026-05-08
-content_hash: 3dbe2b46ca9c64ab
+content_hash: ab358d0128206220
 ---
+
 # Breaking the MoE LLM Trilemma: Dynamic Expert Clustering with Structured Compression
 
 **Conference**: ICML 2026  
@@ -139,12 +144,11 @@ Training optimizes Eq. 1, balancing task loss with the three regulatory terms $I
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICML 2026\] Geo-Expert: 用 LoRA 把 8B 模型微调成专家级地质推理 LLM](geo-expert_towards_expert-level_geological_reasoning_via_parameter-efficient_fin.md)
 - [\[ICML 2026\] GEMQ: Global Expert-Level Mixed-Precision Quantization for MoE LLMs](gemq_global_expert-level_mixed-precision_quantization_for_moe_llms.md)
+- [\[ICML 2026\] Geo-Expert: Fine-Tuning an 8B Model into an Expert-Level Geological Reasoning LLM via LoRA](geo-expert_towards_expert-level_geological_reasoning_via_parameter-efficient_fin.md)
 - [\[ICLR 2026\] Steering MoE LLMs via Expert (De)Activation](../../ICLR2026/model_compression/steering_moe_llms_via_expert_deactivation.md)
 - [\[AAAI 2026\] CAMERA: Multi-Matrix Joint Compression for MoE Models via Micro-Expert Redundancy Analysis](../../AAAI2026/model_compression/camera_multi-matrix_joint_compression_for_moe_models_via_mic.md)
 - [\[ICLR 2026\] SERE: Similarity-based Expert Re-routing for Efficient Batch Decoding in MoE Models](../../ICLR2026/model_compression/sere_similarity-based_expert_re-routing_for_efficient_batch_decoding_in_moe_mode.md)

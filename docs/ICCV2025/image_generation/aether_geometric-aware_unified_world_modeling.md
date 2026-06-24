@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Aether: Geometric-Aware Unified World Modeling
 description: >-
-  [ICCV 2025][Image Generation][World Model] Aether proposes a geometric-aware unified world modeling framework that jointly trains reconstruction, prediction, and planning capabilities on synthetic 4D data…
+  [ICCV 2025][Image Generation][World Model] Aether proposes a geometric-aware unified world modeling framework that jointly trains reconstruction, prediction, and planning capabilities on synthetic 4D data, built upon post-training of CogVideoX to achieve zero-shot generalization to real-world scenes.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Visual Planning"
   - "Diffusion Model"
 date: 2026-05-08
-content_hash: b8941b4392d233d2
+content_hash: 49852324247b98c3
 ---
 
 # Aether: Geometric-Aware Unified World Modeling
@@ -161,11 +161,11 @@ Incorporating the depth reconstruction objective yields consistent improvements 
 
 ## Related Papers
 
+- [\[CVPR 2025\] Unified Uncertainty-Aware Diffusion for Multi-Agent Trajectory Modeling](../../CVPR2025/image_generation/unified_uncertainty-aware_diffusion_for_multi-agent_trajectory_modeling.md)
 - [\[NeurIPS 2025\] InfinityStar: Unified Spacetime AutoRegressive Modeling for Visual Generation](../../NeurIPS2025/image_generation/infinitystar_unified_spacetime_autoregressive_modeling_for_v.md)
-- [\[ICCV 2025\] Generative Modeling of Shape-Dependent Self-Contact Human Poses](generative_modeling_of_shape-dependent_self-contact_human_poses.md)
 - [\[ICCV 2025\] A0: An Affordance-Aware Hierarchical Model for General Robotic Manipulation](a0_an_affordance-aware_hierarchical_model_for_general_robotic_manipulation.md)
-- [\[NeurIPS 2025\] RLVR-World: Training World Models with Reinforcement Learning](../../NeurIPS2025/image_generation/rlvr-world_training_world_models_with_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Latent Zoning Network: A Unified Principle for Generative Modeling, Representation Learning, and Classification](../../NeurIPS2025/image_generation/latent_zoning_network_a_unified_principle_for_generative_modeling_representation.md)
+- [\[ICCV 2025\] Generative Modeling of Shape-Dependent Self-Contact Human Poses](generative_modeling_of_shape-dependent_self-contact_human_poses.md)
+- [\[CVPR 2025\] UniCom: Unified Multimodal Modeling via Compressed Continuous Semantic Representations](../../CVPR2025/image_generation/unicom_unified_multimodal_modeling_via_compressed_continuous_semantic_representa.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Advancing Complex Video Object Segmentation via Progressive Concept Construction
 description: >-
-  [ICLR 2026][Segmentation][LVLM] This paper introduces Segment Concept (SeC), which injects object-level "concept representations" extracted by Large Vision-Language Models (LVLMs) into a SAM 2.1-style Video Object Segmentation (VOS) pipeline on demand. This approach significantly reduces appearance-based interference and object reappearance failures
+  [ICLR2026][Segmentation][Video Object Segmentation] This paper introduces Segment Concept (SeC), which injects object-level "concept representations" extracted by Large Vision-Language Models (LVLMs) into a SAM 2.1-style Video Object Segmentation (VOS) pipeline on demand. This approach significantly reduces appearance-based interference and object reappearance failures in complex multi-shot scenarios while establishing the SeCVOS benchmark specifically for evaluating semantic…
 tags:
-  - ICLR 2026
-  - Segmentation
-  - LVLM
-  - SeCVOS
+  - "ICLR2026"
+  - "Segmentation"
+  - "Video Object Segmentation"
+  - "Concept Guidance"
+  - "LVLM"
+  - "Scene Switching"
+  - "SeCVOS"
 date: 2026-05-08
-content_hash: e41fbb1a334476b2
+content_hash: 2ff445e0703c11d9
 ---
+
 # Advancing Complex Video Object Segmentation via Progressive Concept Construction
 
 **Conference**: ICLR2026  
@@ -131,8 +135,8 @@ Ablation of modules shows that SeC's gains are multi-faceted. The pixel-level as
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -140,7 +144,7 @@ Ablation of modules shows that SeC's gains are multi-faceted. The pixel-level as
 - [\[CVPR 2026\] RMAE-ProGRess: Advancing Semantic Segmentation in Unstructured Environments](../../CVPR2026/segmentation/rmae-progress_advancing_semantic_segmentation_in_unstructured_environments.md)
 - [\[CVPR 2026\] SemLayer: Semantic-aware Generative Segmentation and Layer Construction for Abstract Icons](../../CVPR2026/segmentation/semlayer_semantic-aware_generative_segmentation_and_layer_construction_for_abstr.md)
 - [\[CVPR 2026\] Cross-Domain Few-Shot Segmentation via Multi-view Progressive Adaptation](../../CVPR2026/segmentation/cross-domain_few-shot_segmentation_via_multi-view_progressive_adaptation.md)
-- [\[ECCV 2024\] ActionVOS: Actions as Prompts for Video Object Segmentation](../../ECCV2024/segmentation/actionvos_actions_as_prompts_for_video_object_segmentation.md)
+- [\[CVPR 2025\] LiVOS: Light Video Object Segmentation with Gated Linear Matching](../../CVPR2025/segmentation/livos_light_video_object_segmentation_with_gated_linear_matching.md)
 
 </div>
 

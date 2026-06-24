@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DreamStyle: A Unified Framework for Video Stylization
 description: >-
-  [CVPR 2026][Video Generation][Token-specific LoRA] DreamStyle unifies three style conditions—text, style images, and stylized first frames—into a video stylization model based on Wan14B-I2V. It addresses the lack of paired data through a data construction pipeline that "first stylizes the first frame, then generates paired videos via I2V," and utilizes token-specific L
+  [CVPR 2026][Video Generation][Video Stylization] DreamStyle unifies three style conditions—text, style images, and stylized first frames—into a video stylization model based on Wan14B-I2V. It addresses the lack of paired data through a data construction pipeline that "first stylizes the first frame, then generates paired videos via I2V," and utilizes token-specific LoRA to eliminate interference between different condition tokens, outperforming specialized models across three…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Token-specific LoRA
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video Stylization"
+  - "Unified Framework"
+  - "Condition Injection"
+  - "Token-specific LoRA"
+  - "Data Construction Pipeline"
 date: 2026-05-08
-content_hash: a58b155250594e60
+content_hash: 3e256c43b568878b
 ---
+
 # DreamStyle: A Unified Framework for Video Stylization
 
 **Conference**: CVPR 2026  
@@ -148,9 +153,9 @@ Evaluated on style image guidance (Table 2 in paper):
 
 - [\[CVPR 2026\] TV2TV: A Unified Framework for Interleaved Language and Video Generation](tv2tv_a_unified_framework_for_interleaved_language_and_video_generation.md)
 - [\[CVPR 2026\] U-Mind: A Unified Framework for Real-Time Multimodal Interaction with Audiovisual Generation](u-mind_a_unified_framework_for_real-time_multimodal_interaction_with_audiovisual.md)
-- [\[CVPR 2026\] UniTalking: A Unified Audio-Video Framework for Talking Portrait Generation](unitalking_a_unified_audio-video_framework_for_talking_portrait_generation.md)
 - [\[CVPR 2026\] VGA-Bench: A Unified Benchmark and Multi-Model Framework for Video Aesthetics and Generation Quality Evaluation](vga-bench_a_unified_benchmark_and_multi-model_framework_for_video_aesthetics_and.md)
-- [\[CVPR 2026\] THEval: Evaluation Framework for Talking Head Video Generation](theval_evaluation_framework_for_talking_head_video_generation.md)
+- [\[ICLR 2026\] FreeViS: Training-free Video Stylization with Inconsistent References](../../ICLR2026/video_generation/freevis_training-free_video_stylization_with_inconsistent_references.md)
+- [\[CVPR 2026\] EasyV2V: A High-quality Instruction-based Video Editing Framework](easyv2v_a_high-quality_instruction-based_video_editing_framework.md)
 
 </div>
 

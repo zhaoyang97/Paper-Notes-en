@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing
 description: >-
-  [ICML 2026][Human Understanding][Diffusion Forcing] DiscoForcing reformulates the "music $\to$ full-body dance" offline generation problem into a strictly causal, bounded-latency streaming task. It utilizes a VQ-PAE causal music encoder, latent-space Diffusion Forcing, hybrid temporal noise scheduling, and Temporal Guidance sampling to translate music streams into 30 FP
+  [ICML 2026][Human Understanding][Audio-driven character control] DiscoForcing reformulates the "music $\to$ full-body dance" offline generation problem into a strictly causal, bounded-latency streaming task. It utilizes a VQ-PAE causal music encoder, latent-space Diffusion Forcing, hybrid temporal noise scheduling, and Temporal Guidance sampling to translate music streams into 30 FPS full-body motions that directly drive Unity avatars and Unitree G1 humanoid robots in real-ti…
 tags:
-  - ICML 2026
-  - Human Understanding
-  - Diffusion Forcing
-  - VQ-PAE
+  - "ICML 2026"
+  - "Human Understanding"
+  - "Audio-driven character control"
+  - "Diffusion Forcing"
+  - "Streaming generation"
+  - "VQ-PAE"
+  - "Temporal Guidance"
 date: 2026-05-08
-content_hash: f77c671b4fc1510c
+content_hash: 22c5777bd637ff94
 ---
+
 # DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing
 
 **Conference**: ICML 2026  
@@ -138,8 +142,8 @@ Ours significantly leads in the primary motion quality metric (FIDk) across both
 ## Related Papers
 
 - [\[CVPR 2026\] Avatar Forcing: Real-Time Interactive Head Avatar Generation for Natural Conversation](../../CVPR2026/human_understanding/avatar_forcing_real-time_interactive_head_avatar_generation_for_natural_conversa.md)
-- [\[CVPR 2026\] UniLS: End-to-End Audio-Driven Avatars for Unified Listening and Speaking](../../CVPR2026/human_understanding/unils_end-to-end_audio-driven_avatars_for_unified_listening_and_speaking.md)
 - [\[CVPR 2026\] FloodDiffusion: Tailored Diffusion Forcing for Streaming Motion Generation](../../CVPR2026/human_understanding/flooddiffusion_tailored_diffusion_forcing_for_streaming_motion_generation.md)
+- [\[CVPR 2026\] UniLS: End-to-End Audio-Driven Avatars for Unified Listening and Speaking](../../CVPR2026/human_understanding/unils_end-to-end_audio-driven_avatars_for_unified_listening_and_speaking.md)
 - [\[CVPR 2026\] MimicTalker: A Multimodal Interactive and Memory-Enhanced Framework for Real-Time Dyadic 3D Head Generation](../../CVPR2026/human_understanding/mimictalker_a_multimodal_interactive_and_memory-enhanced_framework_for_real-time.md)
 - [\[CVPR 2026\] PC-Talk: Precise Facial Animation Control for Audio-Driven Talking Face Generation](../../CVPR2026/human_understanding/pc-talk_precise_facial_animation_control_for_audio-driven_talking_face_generatio.md)
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PMRNet: Physics-informed Multi-scale Refinement Network for Medical Image Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] PMRNet does not rely on parameter stacking. Instead, it embeds three physics priors—symplectic geometry, renormalization group, and heat diffusion—into the network architecture. With only 0.87M parameters and 3.43 GFLOPs, it outperforms SOTA models with 10–100 times more parameters across 12 medical segmentation datase
+  [CVPR 2026][Medical Imaging][Medical Image Segmentation] PMRNet does not rely on parameter stacking. Instead, it embeds three physics priors—symplectic geometry, renormalization group, and heat diffusion—into the network architecture. With only 0.87M parameters and 3.43 GFLOPs, it outperforms SOTA models with 10–100 times more parameters across 12 medical segmentation datasets, while maintaining real-time inference at 152 FPS.
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Medical Image Segmentation"
+  - "Lightweight Network"
+  - "Physics Priors"
+  - "Boundary Awareness"
+  - "Symplectic Geometry"
 date: 2026-05-08
-content_hash: 650b7b66845954e7
+content_hash: 1b1017085751941c
 ---
+
 # PMRNet: Physics-informed Multi-scale Refinement Network for Medical Image Segmentation
 
 **Conference**: CVPR 2026  
@@ -154,8 +160,8 @@ Module substitution experiments further prove the effectiveness of physics prior
 - [\[CVPR 2026\] TAMER: A Tri-Modal Contrastive Alignment and Multi-Scale Embedding Refinement Framework for Zero-Shot ECG Diagnosis](tamer_a_tri-modal_contrastive_alignment_and_multi-scale_embedding_refinement_fra.md)
 - [\[CVPR 2026\] From Infusion to Assimilation Distillation for Medical Image Segmentation](from_infusion_to_assimilation_distillation_for_medical_image_segmentation.md)
 - [\[AAAI 2026\] FunKAN: Functional Kolmogorov-Arnold Network for Medical Image Enhancement and Segmentation](../../AAAI2026/medical_imaging/funkan_functional_kolmogorov-arnold_network_for_medical_image_enhancement_and_se.md)
-- [\[CVPR 2026\] TopoSlide: Topologically-Informed Histopathology Whole Slide Image Representation Learning](toposlide_topologically-informed_histopathology_whole_slide_image_representation.md)
 - [\[CVPR 2026\] SegMoTE: Token-Level Mixture of Experts for Medical Image Segmentation](segmote_token-level_mixture_of_experts_for_medical_image_segmentation.md)
+- [\[CVPR 2026\] TopoSlide: Topologically-Informed Histopathology Whole Slide Image Representation Learning](toposlide_topologically-informed_histopathology_whole_slide_image_representation.md)
 
 </div>
 

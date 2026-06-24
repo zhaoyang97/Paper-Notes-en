@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Multi-Subspace Multi-Modal Modeling for Diffusion Models: Estimation, Convergence and Mixture of Experts
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] This paper proposes "Mixture of Subspaces with Mixture of Low-rank Gaussians" (MoLR-MoG) modeling, characterizing real image data as a union of multiple low-dimensional linear subspaces, with a Gaussian mixture residing within each subspace. This induces a nonlinear score function with an inherent MoE structure, theore
+  [ICLR 2026][Image Generation][Diffusion Models] This paper proposes "Mixture of Subspaces with Mixture of Low-rank Gaussians" (MoLR-MoG) modeling, characterizing real image data as a union of multiple low-dimensional linear subspaces, with a Gaussian mixture residing within each subspace. This induces a nonlinear score function with an inherent MoE structure, theoretically reducing the estimation error to $\sqrt{\sum_k n_k}\sqrt{\sum_k n_k d_k}/\sqrt{n}$ (escaping the curse o…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Estimation Error"
+  - "Curse of Dimensionality"
+  - "Mixture of Experts (MoE)"
+  - "Low-Rank Gaussian Mixture"
+  - "Convergence Analysis"
 date: 2026-05-08
-content_hash: 5c21719ed87892a8
+content_hash: cf8a4a44921fda8f
 ---
+
 # Multi-Subspace Multi-Modal Modeling for Diffusion Models: Estimation, Convergence and Mixture of Experts
 
 **Conference**: ICLR 2026  
@@ -109,8 +115,8 @@ This work sits at the intersection of two theoretical veins: score estimation er
 ## Related Papers
 
 - [\[CVPR 2026\] Mixture of Style Experts for Diverse Image Stylization](../../CVPR2026/image_generation/mixture_of_style_experts_for_diverse_image_stylization.md)
+- [\[ICLR 2026\] ColorCtrl: Training-Free Text-Guided Color Editing Based on Multi-Modal Diffusion Transformer](training-free_text-guided_color_editing_with_multi-modal_diffusion_transformer.md)
 - [\[ICML 2026\] Diffusion Models Are Statistically Optimal for Learning Low-Dimensional Multi-Modal Distributions](../../ICML2026/image_generation/diffusion_models_are_statistically_optimal_for_learning_low-dimensional_multi-mo.md)
-- [\[CVPR 2025\] MMAR: Towards Lossless Multi-Modal Auto-Regressive Probabilistic Modeling](../../CVPR2025/image_generation/mmar_towards_lossless_multi-modal_auto-regressive_probabilistic_modeling.md)
 - [\[ICLR 2026\] LazyDrag: Enabling Stable Drag-Based Editing on Multi-Modal Diffusion Transformers via Explicit Correspondence](lazydrag_enabling_stable_drag-based_editing_on_multi-modal_diffusion_transformer.md)
 - [\[ICLR 2026\] LapFlow: Laplacian Multi-scale Flow Matching for Generative Modeling](lapflow_laplacian_multi-scale_flow_matching_for_generative_modeling.md)
 

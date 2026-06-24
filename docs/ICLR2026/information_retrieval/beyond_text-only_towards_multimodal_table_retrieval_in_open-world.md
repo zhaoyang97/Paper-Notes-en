@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Text-Only: Towards Multimodal Table Retrieval in Open-World
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][RAG] This paper argues that "serializing tables into text before retrieval" sacrifices structural and multimodal information. It redefines open-domain table retrieval as "multimodal retrieval of table screenshots" and constructs TaR-ViR, the first benchmarks for image-based table retrieval. Experiments demonstrate that mult
+  [ICLR2026][Information Retrieval & RAG][Table Retrieval] This paper argues that "serializing tables into text before retrieval" sacrifices structural and multimodal information. It redefines open-domain table retrieval as "multimodal retrieval of table screenshots" and constructs TaR-ViR, the first benchmarks for image-based table retrieval. Experiments demonstrate that multimodal retrievers can match or exceed text-based ones in recall while bypassing the error-prone table-t…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - RAG
+  - "ICLR2026"
+  - "Information Retrieval & RAG"
+  - "Table Retrieval"
+  - "Multimodal Retrieval"
+  - "Image-based Tables"
+  - "Benchmark"
+  - "RAG"
 date: 2026-05-08
-content_hash: 461981594541eb9b
+content_hash: bc1e3f38feb76bcf
 ---
+
 # Beyond Text-Only: Towards Multimodal Table Retrieval in Open-World  
 
 **Conference**: ICLR2026  
@@ -136,15 +141,15 @@ TaR-ViR also evaluates RAG. Using Qwen3-8B as the top-performing generator, accu
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] Retrieve Only Relevant Tables Whether Few or Many: Adaptive Table Retrieval Method](../../ACL2026/information_retrieval/retrieve_only_relevant_tables_whether_few_or_many_adaptive_table_retrieval_metho.md)
+- [\[ICLR 2026\] MetaEmbed: Scaling Multimodal Retrieval at Test-Time with Flexible Late Interaction](metaembed_scaling_multimodal_retrieval_at_test-time_with_flexible_late_interacti.md)
 - [\[ICLR 2026\] MRMR: A Realistic and Expert-Level Multidisciplinary Benchmark for Reasoning-Intensive Multimodal Retrieval](mrmr_a_realistic_and_expert-level_multidisciplinary_benchmark_for_reasoning-inte.md)
-- [\[ICLR 2026\] Beyond Sequential Reranking: Reranker-Guided Search Improves Reasoning Intensive Retrieval](beyond_sequential_reranking_reranker-guided_search_improves_reasoning_intensive_.md)
 - [\[ICLR 2026\] Supervised Fine-Tuning or Contrastive Learning? Towards Better Multimodal LLM Reranking](supervised_fine-tuning_or_contrastive_learning_towards_better_multimodal_llm_rer.md)
-- [\[ICLR 2026\] Beyond RAG vs. Long-Context: Learning Distraction-Aware Retrieval for Efficient Knowledge Grounding](beyond_rag_vs_long-context_learning_distraction-aware_retrieval_for_efficient_kn.md)
+- [\[ICLR 2026\] Beyond Sequential Reranking: Reranker-Guided Search Improves Reasoning Intensive Retrieval](beyond_sequential_reranking_reranker-guided_search_improves_reasoning_intensive_.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HGNet: Scalable Foundation Model for Automated Knowledge Graph Generation from Scientific Literature
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] A two-stage framework with ~300M parameters is proposed: Z-NERD utilizes "Orthogonal Semantic Decomposition + Multi-scale TCQK Attention" for domain-agnostic multi-word entity recognition, while HGNet employs "Parent/Child/Peer three-channel message passing + Differentiable Hierarchy Loss + Continuous Abstraction Field
+  [ICLR 2026][Graph Learning][Knowledge Graph Construction] A two-stage framework with ~300M parameters is proposed: Z-NERD utilizes "Orthogonal Semantic Decomposition + Multi-scale TCQK Attention" for domain-agnostic multi-word entity recognition, while HGNet employs "Parent/Child/Peer three-channel message passing + Differentiable Hierarchy Loss + Continuous Abstraction Field Loss" to constrain relation extraction into a logically consistent and geometrically ordered Directed…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Knowledge Graph Construction"
+  - "Named Entity Recognition"
+  - "Relation Extraction"
+  - "Hierarchy-aware GNN"
+  - "Zero-shot Generalization"
 date: 2026-05-08
-content_hash: b17738bf5139347c
+content_hash: 2513df6190c234ca
 ---
+
 # HGNet: Scalable Foundation Model for Automated Knowledge Graph Generation from Scientific Literature
 
 **Conference**: ICLR 2026  
@@ -142,8 +148,8 @@ flowchart TD
 - [\[ICLR 2026\] Towards a Foundation Model for Crowdsourced Label Aggregation](towards_a_foundation_model_for_crowdsourced_label_aggregation.md)
 - [\[ICLR 2026\] FLOCK: A Knowledge Graph Foundation Model via Learning on Random Walks](flock_a_knowledge_graph_foundation_model_via_learning_on_random_walks.md)
 - [\[ICLR 2026\] HYPER: A Foundation Model for Inductive Link Prediction with Knowledge Hypergraphs](hyper_a_foundation_model_for_inductive_link_prediction_with_knowledge_hypergraph.md)
-- [\[NeurIPS 2025\] GFM-RAG: Graph Foundation Model for Retrieval Augmented Generation](../../NeurIPS2025/graph_learning/gfm-rag_graph_foundation_model_for_retrieval_augmented_generation.md)
 - [\[ICLR 2026\] RAS: Retrieval-And-Structuring for Knowledge-Intensive LLM Generation](ras_retrieval-and-structuring_for_knowledge-intensive_llm_generation.md)
+- [\[ICLR 2026\] Knowledge Reasoning Language Model: Unifying Knowledge and Language for Inductive Knowledge Graph Reasoning](knowledge_reasoning_language_model_unifying_knowledge_and_language_for_inductive.md)
 
 </div>
 

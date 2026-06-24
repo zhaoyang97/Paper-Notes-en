@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Distilling Linearized Behavior into Non-Linear Fine-Tuning for Effective Task Arithmetic
 description: >-
-  [ICML 2026][Optimization & Theory][task arithmetic] This paper proposes DELTA, which distills intermediate activations from a "tangent space linearized teacher" into a standard non-linear student in an online manner. Combined with EK-FAC curvature regularization and sampling along the interpolation path, DELTA ensures that task vectors from standard non-linear fine-tuni
+  [ICML 2026][Optimization][task arithmetic] This paper proposes DELTA, which distills intermediate activations from a "tangent space linearized teacher" into a standard non-linear student in an online manner. Combined with EK-FAC curvature regularization and sampling along the interpolation path, DELTA ensures that task vectors from standard non-linear fine-tuning inherit properties like "addability, low interference, and robustness to scaling" typically found in linearized mo…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - task arithmetic
-  - linearization
-  - knowledge distillation
-  - weight disentanglement
-  - EK-FAC
+  - "ICML 2026"
+  - "Optimization"
+  - "task arithmetic"
+  - "linearization"
+  - "knowledge distillation"
+  - "weight disentanglement"
+  - "EK-FAC"
 date: 2026-05-08
-content_hash: 622f09f0462d581a
+content_hash: 2ce6a0cdb42f12b8
 ---
+
 # Distilling Linearized Behavior into Non-Linear Fine-Tuning for Effective Task Arithmetic
 
 **Conference**: ICML 2026  
@@ -140,15 +141,15 @@ With LoRA students + full FT teachers, DELTA achieves 87.5 absolute / 99.5 norma
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Learning a Zeroth-Order Optimizer for Fine-Tuning LLMs](learning_a_zeroth-order_optimizer_for_fine-tuning_llms.md)
-- [\[ICML 2025\] Provable In-Context Vector Arithmetic via Retrieving Task Concepts](../../ICML2025/optimization/provable_in-context_vector_arithmetic_via_retrieving_task_concepts.md)
 - [\[ICML 2026\] Utility-Diversity Aware Online Batch Selection for LLM Supervised Fine-tuning](utility-diversity_aware_online_batch_selection_for_llm_supervised_fine-tuning.md)
-- [\[ICCV 2025\] Zeroth-Order Fine-Tuning of LLMs in Random Subspaces](../../ICCV2025/optimization/zeroth-order_fine-tuning_of_llms_in_random_subspaces.md)
-- [\[ICML 2026\] Bayesian Gated Non-Negative Contrastive Learning](bayesian_gated_non-negative_contrastive_learning.md)
+- [\[ICML 2025\] Provable In-Context Vector Arithmetic via Retrieving Task Concepts](../../ICML2025/optimization/provable_in-context_vector_arithmetic_via_retrieving_task_concepts.md)
+- [\[ICLR 2026\] HBO: Hierarchical Balancing Optimization for Fine-Tuning Large Language Models](../../ICLR2026/optimization/hbo_hierarchical_balancing_optimization_for_fine-tuning_large_language_models.md)
+- [\[ICLR 2026\] Arbitrary-Order Block SignSGD for Memory-Efficient LLM Fine-Tuning](../../ICLR2026/optimization/arbitrary-order_block_signsgd_for_memory-efficient_llm_fine-tuning.md)
 
 </div>
 

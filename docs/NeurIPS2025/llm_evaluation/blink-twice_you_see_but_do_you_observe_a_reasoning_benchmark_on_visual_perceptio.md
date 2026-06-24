@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BLINK-Twice: You See But Do You Observe? A Reasoning Benchmark on Visual Perception
 description: >-
-  [NeurIPS 2025][LLM Evaluation][visual reasoning] This paper introduces BLINK-Twice, a vision-centric reasoning benchmark comprising 345 visually challenging images, 103 adversarial samples, 896 VQA pairs, and 1…
+  [NeurIPS 2025][LLM Evaluation][visual reasoning] This paper introduces BLINK-Twice, a vision-centric reasoning benchmark comprising 345 visually challenging images, 103 adversarial samples, 896 VQA pairs, and 1,725 annotated reasoning steps. Through seven categories of visual illusion scenarios, it evaluates the "you see but do not observe" reasoning capability of MLLMs. The strongest model, Gemini-2.5 Pro, achieves only 26.9% G-Acc, suggesting that multi-round image observat…
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -13,7 +13,7 @@ tags:
   - "reasoning chain evaluation"
   - "benchmark"
 date: 2026-05-08
-content_hash: 1566c74f4889d4b3
+content_hash: 18fee2ccd9838221
 ---
 
 # BLINK-Twice: You See But Do You Observe? A Reasoning Benchmark on Visual Perception
@@ -138,9 +138,9 @@ The benchmark consists of three components: (1) seven categories of visually cha
 
 - [\[ICLR 2026\] Can You Hear Me Now? A Benchmark for Long-Range Graph Propagation and Beyond](../../ICLR2026/llm_evaluation/can_you_hear_me_now_a_benchmark_for_long-range_graph_propagation_and_beyond.md)
 - [\[ACL 2026\] DiningBench: A Hierarchical Multi-view Benchmark for Perception and Reasoning in the Dietary Domain](../../ACL2026/llm_evaluation/diningbench_a_hierarchical_multi-view_benchmark_for_perception_and_reasoning_in_.md)
+- [\[ACL 2025\] CoV-Eval: Can You Really Trust Code Copilots? Evaluating Large Language Models from a Code Security Perspective](../../ACL2025/llm_evaluation/cov_eval_evaluating_llms_from_code_security_perspective.md)
+- [\[ACL 2025\] PhysReason: A Comprehensive Benchmark towards Physics-Based Reasoning](../../ACL2025/llm_evaluation/physreason_a_comprehensive_benchmark_towards_physics-based_reasoning.md)
 - [\[NeurIPS 2025\] PARROT: A Benchmark for Evaluating LLMs in Cross-System SQL Translation](parrot_a_benchmark_for_evaluating_llms_in_cross-system_sql_translation.md)
-- [\[ICCV 2025\] 3DSRBench: A Comprehensive 3D Spatial Reasoning Benchmark](../../ICCV2025/llm_evaluation/3dsrbench_a_comprehensive_3d_spatial_reasoning_benchmark.md)
-- [\[ACL 2026\] Do LLMs Overthink Basic Math Reasoning? Benchmarking the Accuracy-Efficiency Tradeoff](../../ACL2026/llm_evaluation/do_llms_overthink_basic_math_reasoning_benchmarking_the_accuracy-efficiency_trad.md)
 
 </div>
 

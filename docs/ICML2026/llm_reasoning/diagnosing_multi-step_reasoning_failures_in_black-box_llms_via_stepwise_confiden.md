@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Diagnosing Multi-step Reasoning Failures in Black-box LLMs via Stepwise Confidence Attribution
 description: >-
-  [ICML 2026][LLM Reasoning][Paper Note] This work formalizes the identification of erroneous steps in Chain-of-Thought (CoT) reasoning as a step-wise confidence attribution problem in black-box scenarios. By utilizing the Information Bottleneck (IB) principle, "correct reasoning trajectories obtained via multiple sampling of the same problem" are compressed
+  [ICML2026][Reasoning][Step-wise Confidence] This work formalizes the identification of erroneous steps in Chain-of-Thought (CoT) reasoning as a step-wise confidence attribution problem in black-box scenarios. By utilizing the Information Bottleneck (IB) principle, "correct reasoning trajectories obtained via multiple sampling of the same problem" are compressed into a consensus structure. Two implementations are provided: the training-free NIBS (Semantic Consensus Alignment)…
 tags:
-  - ICML 2026
-  - LLM Reasoning
+  - "ICML2026"
+  - "Reasoning"
+  - "Step-wise Confidence"
+  - "Information Bottleneck"
+  - "Consensus Graph"
+  - "Black-box LLMs"
+  - "Self-correction"
 date: 2026-05-08
-content_hash: 87b415daabe1eeab
+content_hash: f30ca00534351d51
 ---
+
 # Diagnosing Multi-step Reasoning Failures in Black-box LLMs via Stepwise Confidence Attribution
 
 **Conference**: ICML2026  
@@ -141,11 +147,11 @@ Consensus source ablation (GIBS, MoreHopQA AUROC): Correct-only 0.808 > Self-con
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Self-Evaluating LLMs for Multi-Step Tasks: Stepwise Confidence Estimation for Failure Detection](../../NeurIPS2025/llm_reasoning/self-evaluating_llms_for_multi-step_tasks_stepwise_confidence_estimation_for_fai.md)
+- [\[NeurIPS 2025\] Note 6: Self-Evaluating LLMs - Step-Level Confidence Estimation for Multi-Step Tasks](../../NeurIPS2025/llm_reasoning/value-guided_search_for_efficient_chain-of-thought_reasoning.md)
+- [\[ICLR 2026\] TRIM: Hybrid Inference via Targeted Stepwise Routing in Multi-Step Reasoning Tasks](../../ICLR2026/llm_reasoning/trim_hybrid_inference_via_targeted_stepwise_routing_in_multi-step_reasoning_task.md)
 - [\[ICML 2026\] Inducing Overthink: Hierarchical Genetic Algorithm-based DoS Attack on Black-Box Large Language Reasoning Models](inducing_overthink_hierarchical_genetic_algorithm-based_dos_attack_on_black-box_.md)
-- [\[ICML 2026\] Inference Time Optimization with Confidence Dynamics](inference_time_optimization_with_confidence_dynamics.md)
 - [\[ACL 2026\] Merlin's Whisper: Enabling Efficient Reasoning in Large Language Models via Black-box Persuasive Prompting](../../ACL2026/llm_reasoning/merlin39s_whisper_enabling_efficient_reasoning_in_large_language_models_via_blac.md)
-- [\[ICML 2026\] MOSAIC: Learning When to Act or Refuse — Guarding Agentic Reasoning Models for Safe Multi-step Tool Use](learning_when_to_act_or_refuse_guarding_agentic_reasoning_models_for_safe_multi-.md)
+- [\[ICML 2026\] Inference Time Optimization with Confidence Dynamics](inference_time_optimization_with_confidence_dynamics.md)
 
 </div>
 

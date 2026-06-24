@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] Scale Space Diffusion：把尺度空间塞进扩散过程
+  [Paper Note] Scale Space Diffusion: Integrating Scale Space into the Diffusion Process
 description: >-
-  [CVPR 2026][Image Generation][Flexi-UNet] This paper argues that "diffusion noising" and "scale-space downsampling" are nearly equivalent in terms of information degradation—high-noise states carry no more information than a small image. By treating "progressive downsampling" as the degradation operator in the diffusion process, the authors derive a family of
+  [CVPR 2026][Image Generation][Scale Space] This paper argues that "diffusion noising" and "scale-space downsampling" are nearly equivalent in terms of information degradation—high-noise states carry no more information than a small image. By treating "progressive downsampling" as the degradation operator in the diffusion process, the authors derive a family of Scale Space Diffusion (SSD) based on generalized linear degradation. This allows the model to perform high-noise step…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Flexi-UNet
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Scale Space"
+  - "Pixel Diffusion"
+  - "Generalized Linear Degradation"
+  - "Multi-resolution Generation"
+  - "Flexi-UNet"
 date: 2026-05-08
-content_hash: 72d5ccf0a5683ce0
+content_hash: 78e4e675248ea557
 ---
+
 # Scale Space Diffusion: Integrating Scale Space into the Diffusion Process
 
 **Conference**: CVPR 2026  
@@ -137,6 +142,7 @@ Increasing levels significantly reduces training time and GFLOPs at the cost of 
 - Value: ⭐⭐⭐⭐ (Provides a new quality-efficiency axis; ideas are transferable to other linear degradation diffusion)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

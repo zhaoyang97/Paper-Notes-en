@@ -2,18 +2,13 @@
 title: >-
   [Paper Note] S2R-HDR: A Large-Scale Rendered Dataset for HDR Fusion
 description: >-
-  [ICLR 2026][Model Compression][HDR Fusion] Proposes S2R-HDR, the first large-scale high-quality synthetic HDR fusion dataset (24,000 samples), and designs S2R-Adapter, a domain adaptation method to bridge the synthetic-to-real gap, achieving SOTA HDR fusion performance on real-world datasets.
+  [Model Compression] Proposes S2R-HDR, the first large-scale high-quality synthetic HDR fusion dataset (24,000 samples), and designs S2R-Adapter, a domain adaptation method to bridge the synthetic-to-real gap, achieving SOTA HDR fusion performance on real-world datasets.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - HDR Fusion
-  - Synthetic Dataset
-  - Domain Adaptation
-  - Unreal Engine
-  - Sim-to-Real
+  - "Model Compression"
 date: 2026-05-08
-content_hash: 79e6eae3fb3109a9
+content_hash: c8eed71d80c68d39
 ---
+
 # S2R-HDR: A Large-Scale Rendered Dataset for HDR Fusion
 
 ## Basic Information

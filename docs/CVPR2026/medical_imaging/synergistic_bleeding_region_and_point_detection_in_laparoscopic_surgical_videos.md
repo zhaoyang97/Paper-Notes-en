@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Synergistic Bleeding Region and Point Detection in Laparoscopic Surgical Videos
 description: >-
-  [CVPR 2026][Medical Imaging][SAM2] The authors construct SurgBlood, the first annotated laparoscopic surgery dataset for both bleeding regions and bleeding points. They propose BlooDet, a SAM2-based dual-branch bidirectional guided online detector, achieving joint optimization of bleeding region segmentation and bleeding point localization through syner
+  [CVPR 2026][Medical Imaging][Bleeding Detection] The authors construct SurgBlood, the first annotated laparoscopic surgery dataset for both bleeding regions and bleeding points. They propose BlooDet, a SAM2-based dual-branch bidirectional guided online detector, achieving joint optimization of bleeding region segmentation and bleeding point localization through synergistic Mask/Point branches.
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - SAM2
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Bleeding Detection"
+  - "Laparoscopic Surgery"
+  - "SAM2"
+  - "Dual-task Synergy"
+  - "Optical Flow"
 date: 2026-05-08
-content_hash: 11852027382fe860
+content_hash: ace95baf60b8405e
 ---
+
 # Synergistic Bleeding Region and Point Detection in Laparoscopic Surgical Videos
 
 **Conference**: CVPR 2026  
@@ -157,11 +162,11 @@ BlooDet outperforms 13 comparison methods on SurgBlood, with IoU gains of 12.05%
 
 ## Related Papers
 
-- [\[CVPR 2026\] Event-Level Detection of Surgical Instrument Handovers in Videos](event_level_detection_of_surgical_instrument_handovers_in_videos.md)
 - [\[CVPR 2026\] SurgCoT: Advancing Spatiotemporal Reasoning in Surgical Videos through a Chain-of-Thought Benchmark](surgcot_advancing_spatiotemporal_reasoning_in_surgical_videos_through_a_chain-of.md)
-- [\[CVPR 2026\] URICA: A Uniformity Region Affine Identifier Capture Algorithm for Arbitrary Region Retrieval in Pathology Images](urica_a_uniformity_region_affine_identifier_capture_algorithm_for_arbitrary_regi.md)
 - [\[AAAI 2026\] Rethinking Surgical Smoke: A Smoke-Type-Aware Laparoscopic Video Desmoking Method and Dataset](../../AAAI2026/medical_imaging/rethinking_surgical_smoke_a_smoke-type-aware_laparoscopic_video_desmoking_method.md)
-- [\[CVPR 2026\] Benchmarking Endoscopic Surgical Image Restoration and Beyond](benchmarking_endoscopic_surgical_image_restoration_and_beyond.md)
+- [\[CVPR 2026\] URICA: A Uniformity Region Affine Identifier Capture Algorithm for Arbitrary Region Retrieval in Pathology Images](urica_a_uniformity_region_affine_identifier_capture_algorithm_for_arbitrary_regi.md)
+- [\[ICLR 2026\] ProstaTD: Bridging Surgical Triplet from Classification to Fully Supervised Detection](../../ICLR2026/medical_imaging/prostatd_bridging_surgical_triplet_from_classification_to_fully_supervised_detec.md)
+- [\[CVPR 2026\] Decoding 3D Perception via BrainSSD: Synergistic Fusion of EEG Representations from Static and Dynamic Visual Streams](decoding_3d_perception_via_brainssd_synergistic_fusion_of_eeg_representations_fr.md)
 
 </div>
 

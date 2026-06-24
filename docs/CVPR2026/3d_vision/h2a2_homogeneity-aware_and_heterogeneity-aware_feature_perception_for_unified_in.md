@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] H²A²: Homogeneity-Aware and Heterogeneity-Aware Feature Perception for Unified Indoor 3D Object Detection
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] The authors discover that basic geometric structures such as lines, planes, and corners in indoor 3D detection induce **highly consistent offset responses in sparse convolution kernels** (homogeneous features) across different scenes, while scene-specific structures produce heterogeneous responses. H²A² utilizes a stru
+  [CVPR 2026][3D Vision][Indoor 3D Detection] The authors discover that basic geometric structures such as lines, planes, and corners in indoor 3D detection induce **highly consistent offset responses in sparse convolution kernels** (homogeneous features) across different scenes, while scene-specific structures produce heterogeneous responses. H²A² utilizes a structure-aware kernel selection mechanism (SF-KS) to dynamically decide whether to use a "cross-scene shared kernel" or…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Indoor 3D Detection"
+  - "Cross-Scene Joint Training"
+  - "Homogeneous/Heterogeneous Features"
+  - "Sparse Kernel Selection"
+  - "Gradient Balancing"
 date: 2026-05-08
-content_hash: c9c9361c366d0924
+content_hash: 4c9f67add1bee622
 ---
+
 # H²A²: Homogeneity-Aware and Heterogeneity-Aware Feature Perception for Unified Indoor 3D Object Detection
 
 **Conference**: CVPR 2026  
@@ -172,11 +178,11 @@ SF-KS is the primary performance contributor (e.g., +5.9 mAP@0.25 on ScanNet). N
 
 ## Related Papers
 
+- [\[CVPR 2026\] Towards Intrinsic-Aware Monocular 3D Object Detection](towards_intrinsic-aware_monocular_3d_object_detection.md)
+- [\[CVPR 2026\] Few-Shot Incremental 3D Object Detection in Dynamic Indoor Environments](few-shot_incremental_3d_object_detection_in_dynamic_indoor_environments.md)
 - [\[CVPR 2026\] Generalizable Structure-Aware Keypoint Correspondence for Category-Unified 3D Single Object Tracking](generalizable_structure-aware_keypoint_correspondence_for_category-unified_3d_si.md)
-- [\[CVPR 2026\] MonoSAOD: Monocular 3D Object Detection with Sparsely Annotated Label](monosaod_monocular_3d_object_detection_with_sparsely_annotated_label.md)
-- [\[CVPR 2026\] Cov2Pose: Leveraging Spatial Covariance for Direct Manifold-aware 6-DoF Object Pose Estimation](cov2pose_leveraging_spatial_covariance_for_direct_manifold-aware_6-dof_object_po.md)
-- [\[CVPR 2026\] HAD: Hallucination-Aware Diffusion Priors for 3D Reconstruction](had_hallucination-aware_diffusion_priors_for_3d_reconstruction.md)
-- [\[CVPR 2026\] ESAM++: Efficient Online 3D Perception on the Edge](esam_efficient_online_3d_perception_on_the_edge.md)
+- [\[CVPR 2026\] Geometry-Aligned and Anomaly-Aware Reconstruction for 3D Anomaly Detection](geometry-aligned_and_anomaly-aware_reconstruction_for_3d_anomaly_detection.md)
+- [\[CVPR 2026\] 3D-Object Perception Transformer (3PT)](3d-object_perception_transformer_3pt.md)
 
 </div>
 

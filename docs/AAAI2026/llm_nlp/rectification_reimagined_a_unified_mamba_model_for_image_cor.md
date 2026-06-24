@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Rectification Reimagined: A Unified Mamba Model for Image Correction and Rectangling with Prompts
 description: >-
-  [AAAI 2026][LLM/NLP][image correction] From a unified distortion rectification perspective, this paper proposes the UniRect framework…
+  [AAAI 2026][LLM (Other)][image correction] From a unified distortion rectification perspective, this paper proposes the UniRect framework, which employs Residual Progressive TPS for geometric deformation correction and Residual Mamba Blocks for degradation compensation. UniRect jointly handles four tasks—portrait correction, wide-angle rectangling, stitching rectangling, and rotation correction—via Sparse MoE for four-in-one multi-task learning. It achieves PSNR gains of 3.82…
 tags:
   - "AAAI 2026"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "image correction"
   - "image rectangling"
   - "unified rectification"
@@ -13,7 +13,7 @@ tags:
   - "thin-plate spline"
   - "mixture-of-experts"
 date: 2026-05-08
-content_hash: 32c3700325e21bf8
+content_hash: 4c818ccc7d8e786f
 ---
 
 # Rectification Reimagined: A Unified Mamba Model for Image Correction and Rectangling with Prompts
@@ -131,9 +131,9 @@ where $\mathcal{L}_a$ is the L1 appearance loss, $\mathcal{L}_b$ is the boundary
 
 - [\[AAAI 2026\] TransMamba: A Sequence-Level Hybrid Transformer-Mamba Language Model](transmamba_a_sequence-level_hybrid_transformer-mamba_language_model.md)
 - [\[AAAI 2026\] Soft Filtering: Guiding Zero-Shot Composed Image Retrieval with Prescriptive and Proscriptive Prompts](soft_filtering_guiding_zero-shot_composed_image_retrieval_with_prescriptive_and_.md)
-- [\[ICML 2026\] SAC-Opt: Semantic Anchors for Iterative Correction in Optimization Modeling](../../ICML2026/llm_nlp/sac-opt_semantic_anchors_for_iterative_correction_in_optimization_modeling.md)
+- [\[ECCV 2024\] PromptIQA: Boosting the Performance and Generalization for No-Reference Image Quality Assessment via Prompts](../../ECCV2024/llm_nlp/promptiqa_boosting_the_performance_and_generalization_for_no-reference_image_qua.md)
 - [\[AAAI 2026\] An Invariant Latent Space Perspective on Language Model Inversion](an_invariant_latent_space_perspective_on_language_model_inve.md)
-- [\[AAAI 2026\] ICL-Router: In-Context Learned Model Representations for LLM Routing](icl-router_in-context_learned_model_representations_for_llm_routing.md)
+- [\[ICML 2026\] SAC-Opt: Semantic Anchors for Iterative Correction in Optimization Modeling](../../ICML2026/llm_nlp/sac-opt_semantic_anchors_for_iterative_correction_in_optimization_modeling.md)
 
 </div>
 

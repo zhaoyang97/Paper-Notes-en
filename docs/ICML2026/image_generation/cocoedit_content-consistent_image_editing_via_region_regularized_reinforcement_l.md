@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CoCoEdit: Content-Consistent Image Editing via Region Regularized Reinforcement Learning
 description: >-
-  [ICML 2026][Image Generation][DiffusionNFT] To address the issue where "editing models often make unintended changes in non-edited regions," this paper constructs the CoCoEdit-40K local editing dataset, proposes a pixel-level similarity reward to complement MLLM rewards, and designs a region-regularized RL objective (constraining consistency in non-edited region
+  [ICML 2026][Image Generation][Content-consistent editing] To address the issue where "editing models often make unintended changes in non-edited regions," this paper constructs the CoCoEdit-40K local editing dataset, proposes a pixel-level similarity reward to complement MLLM rewards, and designs a region-regularized RL objective (constraining consistency in non-edited regions for high-reward samples and forcing changes in edited regions for low-reward samples). This improves…
 tags:
-  - ICML 2026
-  - Image Generation
-  - DiffusionNFT
-  - FLUX/Qwen-Image-Edit
+  - "ICML 2026"
+  - "Image Generation"
+  - "Content-consistent editing"
+  - "pixel-level similarity reward"
+  - "region regularization"
+  - "DiffusionNFT"
+  - "FLUX/Qwen-Image-Edit"
 date: 2026-05-08
-content_hash: c25bdef2951f100d
+content_hash: 39c2c88b697ff5c0
 ---
+
 # CoCoEdit: Content-Consistent Image Editing via Region Regularized Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -140,7 +144,7 @@ On Qwen-Image-Edit, CoCoEdit achieves the highest edit score (7.754) and highest
 - [\[ICML 2026\] Path-Coupled Bellman Flows for Distributional Reinforcement Learning](path-coupled_bellman_flows_for_distributional_reinforcement_learning.md)
 - [\[CVPR 2026\] PaCo-RL: Advancing Reinforcement Learning for Consistent Image Generation with Pairwise Reward Modeling](../../CVPR2026/image_generation/paco-rl_advancing_reinforcement_learning_for_consistent_image_generation_with_pa.md)
 - [\[ICML 2026\] Offline Multi-agent Reinforcement Learning via Sequential Score Decomposition](offline_multi-agent_reinforcement_learning_via_sequential_score_decomposition.md)
-- [\[ECCV 2024\] RegionDrag: Fast Region-Based Image Editing with Diffusion Models](../../ECCV2024/image_generation/regiondrag_fast_region-based_image_editing_with_diffusion_models.md)
+- [\[ICLR 2026\] FlowAlign: Trajectory-Regularized, Inversion-Free Flow-based Image Editing](../../ICLR2026/image_generation/flowalign_trajectory-regularized_inversion-free_flow-based_image_editing.md)
 
 </div>
 

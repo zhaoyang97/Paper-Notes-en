@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LAPRAS: Learning-Augmented PRivate Answering for Linear Query Streams
 description: >-
-  [ICML 2026][AI Safety][Matrix Mechanism] LAPRAS utilizes a predictor of "which queries will arrive" to categorize an online DP query stream into predicted and unpredicted queries. Predicted queries are released with low noise through the offline optimal Matrix Mechanism, while unpredicted queries use Smooth Allocation to estimate the total count online based
+  [ICML 2026][AI Safety][Differential Privacy] LAPRAS utilizes a predictor of "which queries will arrive" to categorize an online DP query stream into predicted and unpredicted queries. Predicted queries are released with low noise through the offline optimal Matrix Mechanism, while unpredicted queries use Smooth Allocation to estimate the total count online based on the observed arrival positions of "unpredicted queries" and distribute the budget smoothly. It nearly matches of…
 tags:
-  - ICML 2026
-  - AI Safety
-  - Matrix Mechanism
+  - "ICML 2026"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "Linear Queries"
+  - "Matrix Mechanism"
+  - "Prediction Augmentation"
+  - "Budget Allocation"
 date: 2026-05-08
-content_hash: 52ba06984e7da8b3
+content_hash: 087bdd2a8d0c048b
 ---
+
 # LAPRAS: Learning-Augmented PRivate Answering for Linear Query Streams
 
 **Conference**: ICML 2026  
@@ -128,11 +133,11 @@ Matrix-heavy provides optimal utility in high overlap but degrades significantly
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Private Continual Counting of Unbounded Streams](../../NeurIPS2025/ai_safety/private_continual_counting_of_unbounded_streams.md)
 - [\[ICLR 2026\] Skirting Additive Error Barriers for Private Turnstile Streams](../../ICLR2026/ai_safety/skirting_additive_error_barriers_for_private_turnstile_streams.md)
-- [\[NeurIPS 2025\] Nearly-Linear Time Private Hypothesis Selection with the Optimal Approximation Factor](../../NeurIPS2025/ai_safety/nearly-linear_time_private_hypothesis_selection_with_the_optimal_approximation_f.md)
 - [\[ICML 2026\] Private Learning with Public Feature Conditioning](private_learning_with_public_feature_conditioning.md)
-- [\[ICML 2026\] PRISM: Gauge-Invariant Tangent-Space Differentially Private LoRA](prism_gauge-invariant_tangent-space_differentially_private_lora.md)
+- [\[NeurIPS 2025\] Private Continual Counting of Unbounded Streams](../../NeurIPS2025/ai_safety/private_continual_counting_of_unbounded_streams.md)
+- [\[NeurIPS 2025\] Nearly-Linear Time Private Hypothesis Selection with the Optimal Approximation Factor](../../NeurIPS2025/ai_safety/nearly-linear_time_private_hypothesis_selection_with_the_optimal_approximation_f.md)
+- [\[ICML 2026\] Differentially Private Preference Data Synthesis for Large Language Model Alignment](differentially_private_preference_data_synthesis_for_large_language_model_alignm.md)
 
 </div>
 

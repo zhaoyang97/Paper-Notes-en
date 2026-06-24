@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Scaling Tumor Segmentation: Best Lessons from Real and Synthetic Data
 description: >-
-  [ICCV 2025][Medical Imaging][Data scaling laws] Through a systematic study of data scaling laws on a large-scale private dataset, this work demonstrates that synthetic tumors can substantially reduce the need for real an…
+  [ICCV 2025][Medical Imaging][Data scaling laws] Through a systematic study of data scaling laws on a large-scale private dataset, this work demonstrates that synthetic tumors can substantially reduce the need for real annotations (from 1,500 to 500 cases). Building on these findings, the authors construct AbdomenAtlas 2.0—the first large-scale manually annotated CT dataset with over 10,000 scans covering six organ tumor types—achieving significant improvements on both in-dist…
 tags:
   - "ICCV 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "AbdomenAtlas"
   - "CT segmentation"
 date: 2026-05-08
-content_hash: bce159f358abe464
+content_hash: 96cc853fc914a5d5
 ---
 
 # Scaling Tumor Segmentation: Best Lessons from Real and Synthetic Data
@@ -170,9 +170,9 @@ Key finding: **500 real cases + 3× synthetic data ≈ 1,500 real-only cases in 
 
 - [\[ICCV 2025\] M-Net: MRI Brain Tumor Sequential Segmentation Network via Mesh-Cast](m-net_mri_brain_tumor_sequential_segmentation_network_via_mesh-cast.md)
 - [\[ICCV 2025\] MRGen: Segmentation Data Engine for Underrepresented MRI Modalities](mrgen_segmentation_data_engine_for_underrepresented_mri_modalities.md)
+- [\[ECCV 2024\] Brain Netflix: Scaling Data to Reconstruct Videos from Brain Signals](../../ECCV2024/medical_imaging/brain_netflix_scaling_data_to_reconstruct_videos_from_brain_signals.md)
 - [\[ICCV 2025\] RadGPT: Constructing 3D Image-Text Tumor Datasets](radgpt_constructing_3d_image-text_tumor_datasets.md)
-- [\[CVPR 2026\] RDFace: A Benchmark Dataset for Rare Disease Facial Image Analysis under Extreme Data Scarcity and Phenotype-Aware Synthetic Generation](../../CVPR2026/medical_imaging/rdface_a_benchmark_dataset_for_rare_disease_facial_image_analysis_under_extreme_.md)
-- [\[CVPR 2026\] PGR-Net: Prior-Guided ROI Reasoning Network for Brain Tumor MRI Segmentation](../../CVPR2026/medical_imaging/pgr-net_prior-guided_roi_reasoning_network_for_brain_tumor_mri_segmentation.md)
+- [\[CVPR 2025\] Enhancing Virtual Try-On with Synthetic Pairs and Error-Aware Noise Scheduling](../../CVPR2025/medical_imaging/enhancing_virtual_try-on_with_synthetic_pairs_and_error-aware_noise_scheduling.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MEMOIR: Lifelong Model Editing with Minimal Overwrite and Informed Retention for LLMs
 description: >-
-  [NeurIPS 2025][Knowledge Editing][Model Editing] MEMOIR introduces a framework that incorporates zero-initialized residual memory matrices into FFN layers…
+  [NeurIPS 2025][Knowledge Editing][Model Editing] MEMOIR introduces a framework that incorporates zero-initialized residual memory matrices into FFN layers, employs TopHash-based sparse masks to confine each edit to a distinct subset of memory parameters, and at inference time conditionally activates stored knowledge by measuring mask overlap. The approach achieves an optimal balance among reliability, generalization, and locality across 15,000 sequential edits.
 tags:
   - "NeurIPS 2025"
   - "Knowledge Editing"
@@ -12,7 +12,7 @@ tags:
   - "Residual Memory"
   - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: bdbcdd9012fc2ec9
+content_hash: d4c948db8d8fa095
 ---
 
 # MEMOIR: Lifelong Model Editing with Minimal Overwrite and Informed Retention for LLMs
@@ -131,10 +131,10 @@ Standard cross-entropy loss is applied to $\mathbf{W}_m$ for a few gradient desc
 ## Related Papers
 
 - [\[NeurIPS 2025\] Edit Less, Achieve More: Dynamic Sparse Neuron Masking for Lifelong Knowledge Editing in LLMs](edit_less_achieve_more_dynamic_sparse_neuron_masking_for_lifelong_knowledge_edit.md)
-- [\[ACL 2026\] Representation Interventions Enable Lifelong Knowledge Memory Control in LLMs](../../ACL2026/knowledge_editing/representation_interventions_enable_lifelong_knowledge_memory_control_in_llms.md)
+- [\[ICML 2025\] WikiBigEdit: Understanding the Limits of Lifelong Knowledge Editing in LLMs](../../ICML2025/knowledge_editing/wikibigedit_understanding_the_limits_of_lifelong_knowledge_editing_in_llms.md)
+- [\[ACL 2025\] Efficient Knowledge Editing via Minimal Precomputation](../../ACL2025/knowledge_editing/efficient_knowledge_editing.md)
 - [\[NeurIPS 2025\] Rethinking Residual Distribution in Locate-then-Edit Model Editing](rethinking_residual_distribution_in_locate-then-edit_model_editing.md)
-- [\[ACL 2026\] HiEdit: Lifelong Model Editing with Hierarchical Reinforcement Learning](../../ACL2026/knowledge_editing/hiedit_lifelong_model_editing_with_hierarchical_reinforcement_learning.md)
-- [\[ICLR 2026\] Fine-tuning Done Right in Model Editing](../../ICLR2026/knowledge_editing/fine-tuning_done_right_in_model_editing.md)
+- [\[ACL 2026\] Representation Interventions Enable Lifelong Knowledge Memory Control in LLMs](../../ACL2026/knowledge_editing/representation_interventions_enable_lifelong_knowledge_memory_control_in_llms.md)
 
 </div>
 

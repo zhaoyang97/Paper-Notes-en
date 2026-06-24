@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Is Graph Unlearning Ready for Practice? A Benchmark on Efficiency, Utility, and Forgetting
 description: >-
-  [ICLR 2026][Graph Learning][GDPR] This paper constructs the first systematic benchmark for graph unlearning, evaluating 10 categories of mainstream methods across 7 datasets based on three dimensions: efficiency, utility, and forgetting quality. The study reaches a dispiriting yet pragmatic conclusion: on large-scale graphs, most unlearning methods are
+  [ICLR 2026][Graph Learning][Graph Neural Networks] This paper constructs the first systematic benchmark for graph unlearning, evaluating 10 categories of mainstream methods across 7 datasets based on three dimensions: efficiency, utility, and forgetting quality. The study reaches a dispiriting yet pragmatic conclusion: on large-scale graphs, most unlearning methods are neither faster than retraining from scratch nor thorough in forgetting. **Retraining remains the most reliab…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - GDPR
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Graph Neural Networks"
+  - "Machine Unlearning"
+  - "GDPR"
+  - "Privacy Attacks"
+  - "Benchmarking"
+  - "Node Deletion"
 date: 2026-05-08
-content_hash: 049ed45fa4a3d14d
+content_hash: ed2f43270d46167a
 ---
+
 # Is Graph Unlearning Ready for Practice? A Benchmark on Efficiency, Utility, and Forgetting
 
 **Conference**: ICLR 2026  
@@ -137,8 +143,8 @@ This work distinguishes itself from existing GNN unlearning benchmarks by: (1) p
 - [\[ICLR 2026\] LRIM: a Physics-Based Benchmark for Provably Evaluating Long-Range Capabilities in Graph Learning](lrim_a_physics-based_benchmark_for_provably_evaluating_long-range_capabilities_i.md)
 - [\[ICLR 2026\] GDGB: A Benchmark for Generative Dynamic Text-Attributed Graph Learning](gdgb_a_benchmark_for_generative_dynamic_text-attributed_graph_learning.md)
 - [\[ICLR 2026\] DHG-Bench: A Comprehensive Benchmark for Deep Hypergraph Learning](dhg-bench_a_comprehensive_benchmark_for_deep_hypergraph_learning.md)
+- [\[ICML 2025\] A Cognac Shot To Forget Bad Memories: Corrective Unlearning for Graph Neural Networks](../../ICML2025/graph_learning/a_cognac_shot_to_forget_bad_memories_corrective_unlearning_for_graph_neural_netw.md)
 - [\[CVPR 2026\] R2G: A Multi-View Circuit Graph Benchmark Suite from RTL to GDSII](../../CVPR2026/graph_learning/r2g_multi_view_circuit_graph_benchmark_suite_from_rtl_to_gdsii.md)
-- [\[ICML 2025\] Balancing Efficiency and Expressiveness: Subgraph GNNs with Walk-Based Centrality](../../ICML2025/graph_learning/balancing_efficiency_and_expressiveness_subgraph_gnns_with_walk-based_centrality.md)
 
 </div>
 

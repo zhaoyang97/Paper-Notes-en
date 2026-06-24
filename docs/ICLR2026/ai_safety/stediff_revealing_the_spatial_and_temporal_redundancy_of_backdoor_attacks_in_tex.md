@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] STEDiff：揭示文生图扩散模型后门攻击中的时空冗余
+  [Paper Note] STEDiff: Unveiling Spatio-Temporal Redundancy in Backdoor Attacks on Text-to-Image Diffusion Models
 description: >-
-  [ICLR 2026][AI Safety][Diffusion Model] The authors first reveal significant "spatio-temporal redundancy" in diffusion model backdoor attacks—only a few key weights (enrichment phenomenon) and a few key timesteps (marginal effect) are truly involved in backdoor injection. Based on this, a unified framework STEDiff is proposed. On the attack side, STEBA accel
+  [ICLR 2026][AI Safety][Backdoor Attack] The authors first reveal significant "spatio-temporal redundancy" in diffusion model backdoor attacks—only a few key weights (enrichment phenomenon) and a few key timesteps (marginal effect) are truly involved in backdoor injection. Based on this, a unified framework STEDiff is proposed. On the attack side, STEBA accelerates backdoor injection by up to 15.07× while saving 82% VRAM. On the defense side…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Diffusion Model
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Backdoor Attack"
+  - "Diffusion Model"
+  - "Spatio-Temporal Redundancy"
+  - "Enrichment Phenomenon"
+  - "Backdoor Detection"
 date: 2026-05-08
-content_hash: 100a9338a0c30238
+content_hash: b0a9a05f866cfe19
 ---
+
 # STEDiff: Unveiling Spatio-Temporal Redundancy in Backdoor Attacks on Text-to-Image Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -138,11 +143,11 @@ STEDF achieves BDR close to 99-100% across all trigger types with FPR compressed
 
 ## Related Papers
 
-- [\[ICLR 2026\] Dataless Weight Disentanglement in Task Arithmetic via Kronecker-Factored Approximate Curvature](dataless_weight_disentanglement_in_task_arithmetic_via_kronecker-factored_approx.md)
+- [\[CVPR 2026\] Towards Human-Imperceptible Backdoor Attacks on Text-to-Image Diffusion Models](../../CVPR2026/ai_safety/towards_human-imperceptible_backdoor_attacks_on_text-to-image_diffusion_models.md)
 - [\[ICLR 2026\] TrojanTO: Action-Level Backdoor Attacks Against Trajectory Optimization Models](trojanto_action-level_backdoor_attacks_against_trajectory_optimization_models.md)
-- [\[ICLR 2026\] Towards a Certificate of Trust: Task-Aware OOD Detection for Scientific AI](towards_a_certificate_of_trust_task-aware_ood_detection_for_scientific_ai.md)
-- [\[ICLR 2026\] NatADiff: Adversarial Boundary Guidance for Natural Adversarial Diffusion](natadiff_adversarial_boundary_guidance_for_natural_adversarial_diffusion.md)
-- [\[ICLR 2026\] Reliable Poisoned Sample Detection against Backdoor Attacks Enhanced by Sharpness-Aware Minimization](reliable_poisoned_sample_detection_against_backdoor_attacks_enhanced_by_sharpnes.md)
+- [\[ICLR 2026\] Defending against Backdoor Attacks via Module Switching](defending_against_backdoor_attacks_via_module_switching.md)
+- [\[ICLR 2026\] Beware Untrusted Simulators -- Reward-Free Backdoor Attacks in Reinforcement Learning](beware_untrusted_simulators_--_reward-free_backdoor_attacks_in_reinforcement_lea.md)
+- [\[CVPR 2026\] Unleashing Stealthy Backdoor Pandemic by Infecting a Single Diffusion Model](../../CVPR2026/ai_safety/unleashing_stealthy_backdoor_pandemic_by_infecting_a_single_diffusion_model.md)
 
 </div>
 

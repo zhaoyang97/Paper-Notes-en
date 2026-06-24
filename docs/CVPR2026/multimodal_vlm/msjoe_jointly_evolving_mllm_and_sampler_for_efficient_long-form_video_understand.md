@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MSJoE: Jointly Evolving MLLM and Sampler for Efficient Long-Form Video Understanding
 description: >-
-  [CVPR 2026][Multimodal VLM][Reinforcement Learning] The MSJoE framework is proposed to jointly evolve an MLLM and a lightweight keyframe sampler via reinforcement learning. The MLLM generates visual queries to guide frame retrieval, and a 1D U-Net sampler learns to select frames from a CLIP similarity matrix. End-to-end joint optimization achieves an +8% accuracy improv
+  [CVPR 2026][Multimodal VLM][Long-form Video Understanding] The MSJoE framework is proposed to jointly evolve an MLLM and a lightweight keyframe sampler via reinforcement learning. The MLLM generates visual queries to guide frame retrieval, and a 1D U-Net sampler learns to select frames from a CLIP similarity matrix. End-to-end joint optimization achieves an +8% accuracy improvement in long-form video QA.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Reinforcement Learning
-  - GRPO
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Long-form Video Understanding"
+  - "Keyframe Sampling"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Joint Optimization"
 date: 2026-05-08
-content_hash: d5fa970c7e90c38c
+content_hash: e840de65b4c0cd16
 ---
+
 # MSJoE: Jointly Evolving MLLM and Sampler for Efficient Long-Form Video Understanding
 
 **Conference**: CVPR 2026  
@@ -133,11 +137,11 @@ The sampler is first pre-trained independently using the difficulty-aware reward
 
 ## Related Papers
 
-- [\[CVPR 2026\] REVISOR: Beyond Textual Reflection, Towards Multimodal Introspective Reasoning in Long-Form Video Understanding](revisor_beyond_textual_reflection_towards_multimodal_introspective_reasoning_in_.md)
-- [\[CVPR 2026\] TimeViper: A Hybrid Mamba-Transformer Vision-Language Model for Efficient Long Video Understanding](timeviper_a_hybrid_mamba-transformer_vision-language_model_for_efficient_long_vi.md)
-- [\[CVPR 2026\] ReMoRa: Multimodal Large Language Model based on Refined Motion Representation for Long-Video Understanding](remora_multimodal_large_language_model_based_on_refined_motion_representation_fo.md)
 - [\[CVPR 2026\] VisPlay: Self-Evolving Vision-Language Models](visplay_self-evolving_vision-language_models.md)
-- [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
+- [\[ICML 2026\] FlowNar: Scalable Streaming Narration for Long-Form Videos](../../ICML2026/multimodal_vlm/flownar_scalable_streaming_narration_for_long-form_videos.md)
+- [\[CVPR 2026\] ReMoRa: Multimodal Large Language Model based on Refined Motion Representation for Long-Video Understanding](remora_multimodal_large_language_model_based_on_refined_motion_representation_fo.md)
+- [\[CVPR 2026\] VinQA: Visual Elements Interleaved Long-form Answer Generation for Real-World Multimodal Document QA](vinqa_visual_elements_interleaved_long-form_answer_generation_for_real-world_mul.md)
+- [\[CVPR 2025\] Efficient Motion-Aware Video MLLM](../../CVPR2025/multimodal_vlm/efficient_motion-aware_video_mllm.md)
 
 </div>
 

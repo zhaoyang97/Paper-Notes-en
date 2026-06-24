@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Chain-of-Thought Driven Adversarial Scenario Extrapolation for Robust Language Models
 description: >-
-  [AAAI 2026][LLM Reasoning][adversarial defense] This paper proposes ASE (Adversarial Scenario Extrapolation), an inference-time CoT defense framework that enables LLMs to autonomously simulate adversarial scenarios and f…
+  [AAAI 2026][Reasoning][adversarial defense] This paper proposes ASE (Adversarial Scenario Extrapolation), an inference-time CoT defense framework that enables LLMs to autonomously simulate adversarial scenarios and formulate defensive strategies prior to responding. ASE achieves near-zero attack success rates across four categories of safety threats (jailbreak, toxicity, hallucination, and bias), while reducing direct refusal rates to ≤4%, effectively balancing robustness and…
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "adversarial defense"
   - "chain-of-thought"
   - "jailbreak"
   - "seamless response"
   - "inference-time defense"
 date: 2026-05-08
-content_hash: 62bdd59f88dc31c5
+content_hash: bc61099419d4163c
 ---
 
 # Chain-of-Thought Driven Adversarial Scenario Extrapolation for Robust Language Models
@@ -131,10 +131,10 @@ ASE prepends two CoT reasoning steps as a "warm-up" at inference time: $x \right
 ## Related Papers
 
 - [\[ICLR 2026\] Are Reasoning LLMs Robust to Interventions on Their Chain-of-Thought?](../../ICLR2026/llm_reasoning/are_reasoning_llms_robust_to_interventions_on_their_chain-of-thought.md)
-- [\[ICLR 2026\] AIMCoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning](../../ICLR2026/llm_reasoning/aimcot_active_information-driven_multimodal_chain-of-thought_for_vision-language.md)
+- [\[ICLR 2026\] Analytica: Soft Propositional Reasoning for Robust and Scalable LLM-Driven Analysis](../../ICLR2026/llm_reasoning/analytica_soft_propositional_reasoning_for_robust_and_scalable_llm-driven_analys.md)
 - [\[ACL 2026\] AIM-CoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning](../../ACL2026/llm_reasoning/aim-cot_active_information-driven_multimodal_chain-of-thought_for_vision-languag.md)
+- [\[ICML 2025\] Adversarial Manipulation of Reasoning Models using Internal Representations](../../ICML2025/llm_reasoning/adversarial_manipulation_of_reasoning_models_using_internal_representations.md)
 - [\[ACL 2026\] LegalDrill: Diagnosis-Driven Synthesis for Legal Reasoning in Small Language Models](../../ACL2026/llm_reasoning/legaldrill_diagnosis-driven_synthesis_for_legal_reasoning_in_small_language_mode.md)
-- [\[AAAI 2026\] Deep Hidden Cognition Facilitates Reliable Chain-of-Thought Reasoning](deep_hidden_cognition_facilitates_reliable_chain-of-thought_.md)
 
 </div>
 

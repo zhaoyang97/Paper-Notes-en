@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ICEdit: Enabling Instructional Image Editing with In-Context Generation in Large Scale Diffusion Transformer
 description: >-
-  [NeurIPS 2025][Image Generation][Instruction-based image editing] ICEdit proposes an in-context editing paradigm built upon large-scale Diffusion Transformers (DiT)…
+  [NeurIPS 2025][Image Generation][Instruction-based image editing] ICEdit proposes an in-context editing paradigm built upon large-scale Diffusion Transformers (DiT), achieving state-of-the-art editing performance with only 0.1% of the training data through an in-context prompt design, lightweight LoRA-MoE fine-tuning, and VLM-guided early-filter inference-time scaling.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "LoRA-MoE"
   - "inference-time scaling"
 date: 2026-05-08
-content_hash: cf55fb9dc1351462
+content_hash: 5ffd8f8063f77427
 ---
 
 # ICEdit: Enabling Instructional Image Editing with In-Context Generation in Large Scale Diffusion Transformer
@@ -234,10 +234,10 @@ The authors find that traditional CLIP text–image direction similarity **is se
 
 ## Related Papers
 
+- [\[CVPR 2025\] LaVin-DiT: Large Vision Diffusion Transformer](../../CVPR2025/image_generation/lavin-dit_large_vision_diffusion_transformer.md)
 - [\[NeurIPS 2025\] CAMILA: Context-Aware Masking for Image Editing with Language Alignment](camila_contextaware_masking_for_image_editing_with_language.md)
 - [\[NeurIPS 2025\] UltraHR-100K: Enhancing UHR Image Synthesis with A Large-Scale High-Quality Dataset](ultrahr-100k_enhancing_uhr_image_synthesis_with_a_large-scale_high-quality_datas.md)
 - [\[NeurIPS 2025\] Large-Scale Training Data Attribution for Music Generative Models via Unlearning](large-scale_training_data_attribution_for_music_generative_models_via_unlearning.md)
-- [\[NeurIPS 2025\] Hephaestus: Mixture Generative Modeling with Energy Guidance for Large-scale QoS Degradation](hephaestus_mixture_generative_modeling_with_energy_guidance_for_large-scale_qos_.md)
 - [\[NeurIPS 2025\] SparseDiT: Token Sparsification for Efficient Diffusion Transformer](sparsedit_token_sparsification_for_efficient_diffusion_transformer.md)
 
 </div>

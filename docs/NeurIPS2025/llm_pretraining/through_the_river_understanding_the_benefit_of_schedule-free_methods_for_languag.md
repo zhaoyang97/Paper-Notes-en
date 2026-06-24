@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Through the River: Understanding the Benefit of Schedule-Free Methods for Language Model Training
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Schedule-Free optimizer] From the geometric perspective of the river-valley loss landscape, this paper analyzes why the Schedule-Free (SF) optimizer can continuously track the optimal solu…
+  [NeurIPS 2025][LLM Pretraining][Schedule-Free optimizer] From the geometric perspective of the river-valley loss landscape, this paper analyzes why the Schedule-Free (SF) optimizer can continuously track the optimal solution during language model pre-training without requiring learning rate decay or weight averaging. It further reveals that SF implicitly performs weight averaging, and proposes an improved SF-AdamW that decouples the momentum and averaging window parameters.
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "weight averaging"
   - "large-scale pre-training"
 date: 2026-05-08
-content_hash: 879da4ae945e45b5
+content_hash: 19be5f8af00c4aa8
 ---
 
 # Through the River: Understanding the Benefit of Schedule-Free Methods for Language Model Training
@@ -165,9 +165,9 @@ Rationale: The paper is highly rigorous in both theoretical depth and experiment
 
 - [\[NeurIPS 2025\] Final-Model-Only Data Attribution with a Unifying View of Gradient-Based Methods](final-model-only_data_attribution_with_a_unifying_view_of_gradient-based_methods.md)
 - [\[NeurIPS 2025\] Language Model Behavioral Phases are Consistent Across Architecture, Training Data, and Scale](language_model_behavioral_phases_are_consistent_across_archi.md)
-- [\[NeurIPS 2025\] Nemotron-CLIMB: CLustering-based Iterative Data Mixture Bootstrapping for Language Model Pre-training](nemotron-climb_clustering-based_iterative_data_mixture_bootstrapping_for_languag.md)
 - [\[ICCV 2025\] SynCity: Training-Free Generation of 3D Worlds](../../ICCV2025/llm_pretraining/syncity_training-free_generation_of_3d_worlds.md)
-- [\[NeurIPS 2025\] Broken Tokens: Your Language Model Can Secretly Handle Non-Canonical Tokenization](broken_tokens_your_language_model_can_secretly_handle_non-canonical_tokenization.md)
+- [\[NeurIPS 2025\] Nemotron-CLIMB: CLustering-based Iterative Data Mixture Bootstrapping for Language Model Pre-training](nemotron-climb_clustering-based_iterative_data_mixture_bootstrapping_for_languag.md)
+- [\[ACL 2025\] Stealing Training Data from Large Language Models in Decentralized Training through Activation Inversion Attack](../../ACL2025/llm_pretraining/stealing_training_data_from_large_language_models_in_decentralized_training_thro.md)
 
 </div>
 

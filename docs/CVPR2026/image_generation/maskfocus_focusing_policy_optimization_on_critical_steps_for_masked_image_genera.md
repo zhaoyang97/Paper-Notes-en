@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MaskFocus: Focusing Policy Optimization on Critical Steps for Masked Image Generation
 description: >-
-  [CVPR 2026][Image Generation][GRPO] MaskFocus introduces a reinforcement learning post-training framework for Masked Generative Models (MGM). It identifies a few critical sampling steps for image formation using "cosine similarity changes between intermediate and final image embeddings," performing policy optimization only on these steps to avoid the hig
+  [CVPR 2026][Image Generation][Masked Generative Models] MaskFocus introduces a reinforcement learning post-training framework for Masked Generative Models (MGM). It identifies a few critical sampling steps for image formation using "cosine similarity changes between intermediate and final image embeddings," performing policy optimization only on these steps to avoid the high cost of full-trajectory estimation. Additionally, it employs "entropy-based dynamic routing sampling"…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - GRPO
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Masked Generative Models"
+  - "GRPO"
+  - "Critical Step Selection"
+  - "Dynamic Routing Sampling"
+  - "Text-to-Image"
 date: 2026-05-08
-content_hash: d651802ef4711ac0
+content_hash: a8ea3c3f5ef044e2
 ---
+
 # MaskFocus: Focusing Policy Optimization on Critical Steps for Masked Image Generation
 
 **Conference**: CVPR 2026  
@@ -136,11 +141,11 @@ On DrawBench preference metrics, MaskFocus elevates Meissonic to levels comparab
 
 ## Related Papers
 
+- [\[ICLR 2026\] Group Critical-token Policy Optimization for Autoregressive Image Generation](../../ICLR2026/image_generation/group_critical-token_policy_optimization_for_autoregressive_image_generation.md)
 - [\[CVPR 2026\] Curriculum Group Policy Optimization: Adaptive Sampling for Unleashing the Potential of Text-to-Image Generation](curriculum_group_policy_optimization_adaptive_sampling_for_unleashing_the_potent.md)
 - [\[CVPR 2026\] Seeing What Matters: Visual Preference Policy Optimization for Visual Generation](seeing_what_matters_visual_preference_policy_optimization_for_visual_generation.md)
 - [\[CVPR 2026\] Neighbor GRPO: Contrastive ODE Policy Optimization Aligns Flow Models](neighbor_grpo_contrastive_ode_policy_optimization_aligns_flow_models.md)
-- [\[CVPR 2026\] VA-π: Variational Policy Alignment for Pixel-Aware Autoregressive Generation](va-p_variational_policy_alignment_for_pixel-aware_autoregressive_generation.md)
-- [\[CVPR 2026\] OSPO: Object-Centric Self-Improving Preference Optimization for Text-to-Image Generation](ospo_object-centric_self-improving_preference_optimization_for_text-to-image_gen.md)
+- [\[CVPR 2026\] Resolving the Identity Crisis in Text-to-Image Generation](resolving_the_identity_crisis_in_text-to-image_generation.md)
 
 </div>
 

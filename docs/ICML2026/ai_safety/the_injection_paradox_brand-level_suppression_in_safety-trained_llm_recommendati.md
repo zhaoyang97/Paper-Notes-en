@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] The Injection Paradox: Brand-Level Suppression in Safety-Trained LLM Recommendations via RAG Context Injection
 description: >-
-  [ICML 2026][AI Safety][RAG] This paper reports a reproducible failure mode in safety-trained LLMs within RAG recommendations termed the "Injection Paradox": prompt injections inserted into retrieved documents by attackers do not promote the target brand; instead, the heavily safety-trained Claude treats them as violations and suppresses the brand
+  [ICML2026][AI Safety][Prompt Injection] This paper reports a reproducible failure mode in safety-trained LLMs within RAG recommendations termed the "Injection Paradox": prompt injections inserted into retrieved documents by attackers do not promote the target brand; instead, the heavily safety-trained Claude treats them as violations and suppresses the brand below the baseline. Furthermore, this suppression spreads from the single injected document to **all unmodified documen…
 tags:
-  - ICML 2026
-  - AI Safety
-  - RAG
+  - "ICML2026"
+  - "AI Safety"
+  - "Prompt Injection"
+  - "Safety Training"
+  - "RAG"
+  - "Recommender Systems"
+  - "Failure Modes"
 date: 2026-05-08
-content_hash: 5a4d914c06e8114b
+content_hash: 9aad2a232b698083
 ---
+
 # The Injection Paradox: Brand-Level Suppression in Safety-Trained LLM Recommendations via RAG Context Injection
 
 **Conference**: ICML2026  
@@ -129,8 +134,8 @@ In a 40-document corpus, Edifier accounts for 4 documents. Only `blog_210` has a
 
 ## Related Papers
 
-- [\[ICML 2026\] From Parameter Dynamics to Risk Scoring: Quantifying Sample-Level Safety Degradation in LLM Fine-tuning](from_parameter_dynamics_to_risk_scoring_quantifying_sample-level_safety_degradat.md)
 - [\[ICML 2026\] Hiding in Plain Floats: Steganographic Carriers for Indirect Prompt and Content Injection](hiding_in_plain_floats_steganographic_carriers_for_indirect_prompt_and_content_i.md)
+- [\[ICML 2026\] From Parameter Dynamics to Risk Scoring: Quantifying Sample-Level Safety Degradation in LLM Fine-tuning](from_parameter_dynamics_to_risk_scoring_quantifying_sample-level_safety_degradat.md)
 - [\[ICLR 2026\] VPI-Bench: Visual Prompt Injection Attacks for Computer-Use Agents](../../ICLR2026/ai_safety/vpi-bench_visual_prompt_injection_attacks_for_computer-use_agents.md)
 - [\[CVPR 2026\] CamPI: Physical Adversarial Examples through Camera Power Signal Injection](../../CVPR2026/ai_safety/campi_physical_adversarial_examples_through_camera_power_signal_injection.md)
 - [\[CVPR 2026\] Jailbreaking Vision-Language Models via Dissonance-Guided Suffix Optimization and Image-Phrase Injection](../../CVPR2026/ai_safety/jailbreaking_vision-language_models_via_dissonance-guided_suffix_optimization_an.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 4D Visual Pre-training for Robot Learning
 description: >-
-  [ICCV 2025][3D Vision][Point cloud pre-training] FVP formulates 3D visual pre-training as a *next-point-cloud-prediction* problem, training a conditional diffusion model to predict the current-frame point cloud from hist…
+  [ICCV 2025][3D Vision][Point cloud pre-training] FVP formulates 3D visual pre-training as a *next-point-cloud-prediction* problem, training a conditional diffusion model to predict the current-frame point cloud from historical-frame point clouds. This approach achieves a 28% average success rate improvement over DP3 across 12 real-world manipulation tasks, establishing a new state of the art.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "3D representation learning"
   - "robot manipulation"
 date: 2026-05-08
-content_hash: 40a499f276c05691
+content_hash: 7d0fc8e513b160ce
 ---
 
 # 4D Visual Pre-training for Robot Learning
@@ -147,8 +147,8 @@ FVP achieves absolute success rate improvements of 15%–55% across real-world t
 - [\[ICCV 2025\] Learning 3D Object Spatial Relationships from Pre-trained 2D Diffusion Models](learning_3d_object_spatial_relationships_from_pre-trained_2d_diffusion_models.md)
 - [\[ICCV 2025\] Towards More Diverse and Challenging Pre-training for Point Cloud Learning: Self-Supervised Cross Reconstruction with Decoupled Views](towards_more_diverse_and_challenging_pre-training_for_point_cloud_learning_self-.md)
 - [\[ICCV 2025\] RoboPearls: Editable Video Simulation for Robot Manipulation](robopearls_editable_video_simulation_for_robot_manipulation.md)
+- [\[ECCV 2024\] Formula-Supervised Visual-Geometric Pre-training (FSVGP)](../../ECCV2024/3d_vision/formula-supervised_visual-geometric_pre-training.md)
 - [\[CVPR 2026\] E-RayZer: Self-supervised 3D Reconstruction as Spatial Visual Pre-training](../../CVPR2026/3d_vision/e-rayzer_self-supervised_3d_reconstruction_as_spatial_visual_pre-training.md)
-- [\[ICCV 2025\] Vivid4D: Improving 4D Reconstruction from Monocular Video by Video Inpainting](vivid4d_improving_4d_reconstruction_from_monocular_video_by_video_inpainting.md)
 
 </div>
 

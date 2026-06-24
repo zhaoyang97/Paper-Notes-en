@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Semantic Regexes: Auto-Interpreting LLM Features with a Structured Language
 description: >-
-  [ICLR 2026][Interpretability][mechanistic_interpretability] This paper proposes **Semantic Regexes**, a structured language for automated description of LLM features. By combining primitives (symbol/lexeme/field) and modifiers (context/composition/quantification), it achieves feature descriptions that are as accurate as natural language but more concise, consistent, and analyza
+  [ICLR 2026][Interpretability][mechanistic_interpretability] This paper proposes **Semantic Regexes**, a structured language for automated description of LLM features. By combining primitives (symbol/lexeme/field) and modifiers (context/composition/quantification), it achieves feature descriptions that are as accurate as natural language but more concise, consistent, and analyzable.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - mechanistic_interpretability
-  - automated_interpretability
-  - sparse_autoencoders
-  - structured_language
-  - feature_description
+  - "ICLR 2026"
+  - "Interpretability"
+  - "mechanistic_interpretability"
+  - "automated_interpretability"
+  - "sparse_autoencoders"
+  - "structured_language"
+  - "feature_description"
 date: 2026-05-08
-content_hash: af35ad6fb1f10d3a
+content_hash: 431646d58272765c
 ---
+
 # Semantic Regexes: Auto-Interpreting LLM Features with a Structured Language
 
 **Conference**: ICLR 2026  
@@ -144,15 +145,15 @@ Core Conclusion: **Semantic Regex performs at least as well as natural language 
 - **Overall Rating**: ⭐⭐⭐⭐ (4/5)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Thought Branches: Interpreting LLM Reasoning Requires Resampling](thought_branches_interpreting_llm_reasoning_requires_resampling.md)
 - [\[ACL 2026\] Style over Story: Measuring LLM Narrative Preferences via Structured Selection](../../ACL2026/interpretability/style_over_story_measuring_llm_narrative_preferences_via_structured_selection.md)
 - [\[ICML 2026\] Query Lens: Interpreting Sparse Key-Value Features with Indirect Effects](../../ICML2026/interpretability/query_lens_interpreting_sparse_key-value_features_with_indirect_effects.md)
-- [\[ICLR 2026\] Conjuring Semantic Similarity](conjuring_semantic_similarity.md)
+- [\[ICLR 2026\] Structural Inference: Interpreting Small Language Models with Susceptibilities](structural_inference_interpreting_small_language_models_with_susceptibilities.md)
 - [\[ICLR 2026\] Persona Features Control Emergent Misalignment](persona_features_control_emergent_misalignment.md)
 
 </div>

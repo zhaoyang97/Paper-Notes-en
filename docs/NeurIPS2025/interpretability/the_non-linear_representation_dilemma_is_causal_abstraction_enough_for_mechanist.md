@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Non-Linear Representation Dilemma: Is Causal Abstraction Enough for Mechanistic Interpretability?
 description: >-
-  [NeurIPS 2025 (Spotlight)][Interpretability][Causal Abstraction] This paper proves that when alignment maps in causal abstraction are unconstrained by linearity, any neural network can be mapped to any algorithm…
+  [NeurIPS 2025 (Spotlight)][Interpretability][Causal Abstraction] This paper proves that when alignment maps in causal abstraction are unconstrained by linearity, any neural network can be mapped to any algorithm, rendering causal abstraction trivial and uninformative. This gives rise to the "non-linear representation dilemma"—the absence of a principled trade-off between the complexity and the fidelity of alignment maps.
 tags:
   - "NeurIPS 2025 (Spotlight)"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "Alignment Map"
   - "Interchange Intervention"
 date: 2026-05-08
-content_hash: 7da0af2cdd441af2
+content_hash: 3d9772a00c360d9d
 ---
 
 # The Non-Linear Representation Dilemma: Is Causal Abstraction Enough for Mechanistic Interpretability?
@@ -126,11 +126,11 @@ Compared to **Distributed Alignment Search (DAS)**: DAS is a specific instantiat
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] nnterp: A Standardized Interface for Mechanistic Interpretability of Transformers](nnterp_a_standardized_interface_for_mechanistic_interpretability_of_transformers.md)
 - [\[NeurIPS 2025\] Minimizing False-Positive Attributions in Explanations of Non-Linear Models](minimizing_false-positive_attributions_in_explanations_of_non-linear_models.md)
-- [\[ICLR 2026\] Formal Mechanistic Interpretability: Automated Circuit Discovery with Provable Guarantees](../../ICLR2026/interpretability/formal_mechanistic_interpretability_automated_circuit_discovery_with_provable_gu.md)
-- [\[ICML 2026\] Grokking: From Abstraction to Intelligence](../../ICML2026/interpretability/grokking_from_abstraction_to_intelligence.md)
-- [\[NeurIPS 2025\] SHAP Values via Sparse Fourier Representation](shap_values_via_sparse_fourier_representation.md)
+- [\[NeurIPS 2025\] nnterp: A Standardized Interface for Mechanistic Interpretability of Transformers](nnterp_a_standardized_interface_for_mechanistic_interpretability_of_transformers.md)
+- [\[ICML 2025\] MIB: A Mechanistic Interpretability Benchmark](../../ICML2025/interpretability/mib_a_mechanistic_interpretability_benchmark.md)
+- [\[ACL 2025\] An Empirical Study of Mechanistic Interpretability Approaches for Factual Recall](../../ACL2025/interpretability/an_empirical_study_of_mechanistic_interpretability_approaches_for_factual_recall.md)
+- [\[ACL 2025\] Mechanistic Interpretability of Emotion Inference in Large Language Models](../../ACL2025/interpretability/mechanistic_interpretability_of_emotion_inference_in_large_language_models.md)
 
 </div>
 

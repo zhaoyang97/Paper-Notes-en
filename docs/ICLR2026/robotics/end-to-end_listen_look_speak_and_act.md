@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] End-to-end Listen, Look, Speak and Act
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][SA-MoE] ELLSA is the first truly end-to-end full-duplex multimodal system. Through the SA-MoE architecture, it connects speech experts and action experts with unified attention, enabling a robot to "listen, look, speak, and act" simultaneously while supporting previously impossible interactions such as barge-in, speaking-while
+  [ICLR 2026][Robotics][Full-duplex interaction] ELLSA is the first truly end-to-end full-duplex multimodal system. Through the SA-MoE architecture, it connects speech experts and action experts with unified attention, enabling a robot to "listen, look, speak, and act" simultaneously while supporting previously impossible interactions such as barge-in, speaking-while-acting, and contextual visual question answering.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - SA-MoE
-  - VLA
+  - "ICLR 2026"
+  - "Robotics"
+  - "Full-duplex interaction"
+  - "SA-MoE"
+  - "Multimodal MIMO"
+  - "VLA"
+  - "Embodied Conversation"
 date: 2026-05-08
-content_hash: 7fd5f5bcba9b95a0
+content_hash: e5cd5f652e13ffe2
 ---
+
 # End-to-end Listen, Look, Speak and Act
 
 **Conference**: ICLR 2026  

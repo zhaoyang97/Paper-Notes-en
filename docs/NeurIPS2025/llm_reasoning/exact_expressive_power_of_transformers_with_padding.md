@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Exact Expressive Power of Transformers with Padding
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Transformer expressive power] This paper provides an exact characterization of the expressive power of Transformers with padding: fixed depth combined with polynomial padding is precisely eq…
+  [NeurIPS 2025][Reasoning][Transformer expressive power] This paper provides an exact characterization of the expressive power of Transformers with padding: fixed depth combined with polynomial padding is precisely equivalent to $\mathsf{FO}$-uniform $\mathsf{TC}^0$; further combined with $O(\log^d n)$ looping, this is precisely equivalent to $\mathsf{FO}$-uniform $\mathsf{TC}^d$; and polylog looping converges to $\mathsf{NC}$. These results establish a complete theoretical fo…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Transformer expressive power"
   - "padding"
   - "looping"
   - "circuit complexity"
   - "TC0"
 date: 2026-05-08
-content_hash: 445b8970ab8bd09f
+content_hash: 972261969246628f
 ---
 
 # Exact Expressive Power of Transformers with Padding
@@ -144,7 +144,7 @@ This paper contains no experiments. The central results are mathematical theorem
 - [\[ICML 2026\] The Expressive Power of Low Precision Softmax Transformers with (Summarized) Chain-of-Thought](../../ICML2026/llm_reasoning/the_expressive_power_of_low_precision_softmax_transformers_with_summarized_chain.md)
 - [\[NeurIPS 2025\] Transformers Provably Learn Chain-of-Thought Reasoning with Length Generalization](transformers_provably_learn_chain-of-thought_reasoning_with_length_generalizatio.md)
 - [\[NeurIPS 2025\] Unlabeled Data Can Provably Enhance In-Context Learning of Transformers](unlabeled_data_can_provably_enhance_in-context_learning_of_transformers.md)
-- [\[NeurIPS 2025\] A Theoretical Study on Bridging Internal Probability and Self-Consistency for LLM Reasoning](a_theoretical_study_on_bridging_internal_probability_and_sel.md)
+- [\[NeurIPS 2025\] Visual Thoughts: A Unified Perspective of Understanding Multimodal Chain-of-Thought](visual_thoughts_a_unified_perspective_of_understanding_multi.md)
 
 </div>
 

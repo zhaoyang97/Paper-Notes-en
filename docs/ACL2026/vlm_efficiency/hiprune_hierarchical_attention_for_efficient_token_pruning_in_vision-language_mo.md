@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HiPrune: Hierarchical Attention for Efficient Token Pruning in Vision-Language Models
 description: >-
-  [ACL 2026][vlm_efficiency][Paper Note] This paper identifies a hierarchical attention pattern in vision encoders—middle layers focus on primary objects while deep layers capture global information. Based on this, it proposes HiPrune, a training-free and model-agnostic vision token pruning method. By selecting three types of tokens (Anchor/Buffer/Register) t
+  [ACL 2026 Findings][Multimodal Efficiency][Vision Token Pruning] This paper identifies a hierarchical attention pattern in vision encoders—middle layers focus on primary objects while deep layers capture global information. Based on this, it proposes HiPrune, a training-free and model-agnostic vision token pruning method. By selecting three types of tokens (Anchor/Buffer/Register) to preserve multi-level visual information, it maintains 99.3% performance using only 1/3 of the…
 tags:
-  - ACL 2026
-  - vlm_efficiency
+  - "ACL 2026 Findings"
+  - "Multimodal Efficiency"
+  - "Vision Token Pruning"
+  - "Hierarchical Attention"
+  - "Training-free"
+  - "Model-agnostic"
+  - "VLM Acceleration"
 date: 2026-05-08
-content_hash: 0363d9e7919fe8b6
+content_hash: 702d44cf8cd79c2b
 ---
+
 # HiPrune: Hierarchical Attention for Efficient Token Pruning in Vision-Language Models
 
 **Conference**: ACL 2026 Findings  
@@ -132,15 +138,16 @@ This is a completely training-free method that does not modify any model paramet
 - Value: ⭐⭐⭐⭐⭐ Extremely high practical value as a plug-and-play tool with 58.7% FLOPs reduction.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] LearnPruner: Rethinking Attention-based Token Pruning in Vision Language Models](../../ICLR2026/vlm_efficiency/learnpruner_rethinking_attention-based_token_pruning_in_vision_language_models.md)
+- [\[CVPR 2026\] SCoRe: Salience-Coverage Reduction for Vision Token Pruning in Vision-Language Models](../../CVPR2026/vlm_efficiency/score_salience-coverage_reduction_for_vision_token_pruning_in_vision-language_mo.md)
 - [\[CVPR 2026\] TransPrune: Token Transition Pruning for Efficient Large Vision-Language Model](../../CVPR2026/vlm_efficiency/transprune_token_transition_pruning_for_efficient_large_vision-language_model.md)
-- [\[ICML 2026\] CLIP Tricks You: Training-free Token Pruning for Efficient Pixel Grounding in Large Vision-Language Models](../../ICML2026/vlm_efficiency/clip_tricks_you_training-free_token_pruning_for_efficient_pixel_grounding_in_lar.md)
-- [\[ICCV 2025\] METEOR: Multi-Encoder Collaborative Token Pruning for Efficient Vision Language Models](../../ICCV2025/vlm_efficiency/meteor_multi-encoder_collaborative_token_pruning_for_efficient_vision_language_m.md)
+- [\[ACL 2026\] HERMES: KV Cache as Hierarchical Memory for Efficient Streaming Video Understanding](hermes_kv_cache_as_hierarchical_memory_for_efficient_streaming_video_understandi.md)
 - [\[CVPR 2026\] Attention-aware Inference Optimizations for Large Vision-Language Models with Memory-efficient Decoding](../../CVPR2026/vlm_efficiency/attention-aware_inference_optimizations_for_large_vision-language_models_with_me.md)
-- [\[ECCV 2024\] IVTP: Instruction-Guided Visual Token Pruning for Large Vision-Language Models](../../ECCV2024/vlm_efficiency/ivtp_instruction-guided_visual_token_pruning_for_large_vision-language_models.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UNSEEN: Enhancing Dataset Pruning from a Generalization Perspective
 description: >-
-  [AAAI 2026][Image Generation][Dataset Pruning] This paper proposes UNSEEN, a dataset pruning method that improves coreset selection from a generalization perspective—considering not only how retained samples contribute t…
+  [AAAI 2026][Image Generation][Dataset Pruning] This paper proposes UNSEEN, a dataset pruning method that improves coreset selection from a generalization perspective—considering not only how retained samples contribute to training loss, but also how they contribute to test-time generalization. UNSEEN selects coresets that better align the training distribution with unseen test distributions.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Sample Selection"
   - "Coreset"
 date: 2026-05-08
-content_hash: ac7664c35a51939e
+content_hash: 5eb809db582f410d
 ---
 
 # UNSEEN: Enhancing Dataset Pruning from a Generalization Perspective
@@ -109,9 +109,9 @@ The optimization objective for coreset selection = training error minimization +
 
 - [\[AAAI 2026\] Enhancing Multimodal Misinformation Detection by Replaying the Whole Story from Image Modality Perspective](enhancing_multimodal_misinformation_detection_by_replaying_the_whole_story_from_.md)
 - [\[NeurIPS 2025\] A Closer Look at Model Collapse: From a Generalization-to-Memorization Perspective](../../NeurIPS2025/image_generation/a_closer_look_at_model_collapse_from_a_generalization-to-memorization_perspectiv.md)
+- [\[CVPR 2026\] Meta-CoT: Enhancing Granularity and Generalization in Image Editing](../../CVPR2026/image_generation/meta-cot_enhancing_granularity_and_generalization_in_image_editing.md)
 - [\[ICML 2026\] Enhancing Membership Inference Attacks on Diffusion Models from a Frequency-Domain Perspective](../../ICML2026/image_generation/enhancing_membership_inference_attacks_on_diffusion_models_from_a_frequency-doma.md)
 - [\[AAAI 2026\] Studying Classifier(-Free) Guidance From A Classifier-Centric Perspective](studying_classifier-free_guidance_from_a_classifier-centric_perspective.md)
-- [\[AAAI 2026\] TSGDiff: Rethinking Synthetic Time Series Generation from a Pure Graph Perspective](tsgdiff_rethinking_synthetic_time_series_generation_from_a_pure_graph_perspectiv.md)
 
 </div>
 

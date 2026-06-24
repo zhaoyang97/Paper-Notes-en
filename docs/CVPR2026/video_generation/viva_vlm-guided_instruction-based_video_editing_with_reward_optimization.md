@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VIVA: VLM-Guided Instruction-Based Video Editing with Reward Optimization
 description: >-
-  [CVPR 2026][Video Generation][GRPO] VIVA utilizes a VLM "instructor" to encode instructions, initial frames, and optional reference images into visually grounded multimodal conditions for a video DiT. It employs "Edit-GRPO" post-training (featuring triple rewards for instruction following, source fidelity, and human preference) for alignment. Combined wi
+  [CVPR 2026][Video Generation][Instruction-Based Video Editing] VIVA utilizes a VLM "instructor" to encode instructions, initial frames, and optional reference images into visually grounded multimodal conditions for a video DiT. It employs "Edit-GRPO" post-training (featuring triple rewards for instruction following, source fidelity, and human preference) for alignment. Combined with a self-constructed dataset of 1.5 million synthetic pairs, VIVA outperforms open-source SOTA a…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - GRPO
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Instruction-Based Video Editing"
+  - "VLM Conditional Encoding"
+  - "GRPO"
+  - "Reward Optimization"
+  - "Data Synthesis"
 date: 2026-05-08
-content_hash: 6262ffb4c727149a
+content_hash: 5b832e5bcecd7012
 ---
+
 # VIVA: VLM-Guided Instruction-Based Video Editing with Reward Optimization
 
 **Conference**: CVPR 2026  
@@ -146,15 +151,16 @@ Ablations on components (V=VLM, M=Masked Loss, I=Image Data, E=Edit-GRPO) show t
 - Value: ⭐⭐⭐⭐ Strong open-source alternative to commercial tools with reusable data/training strategies.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Identity-Preserving Image-to-Video Generation via Reward-Guided Optimization](identity-preserving_image-to-video_generation_via_reward-guided_optimization.md)
-- [\[CVPR 2026\] CoT-Edit: Let CoT Guide Instruction Video Editing](cot-edit_let_cot_guide_instruction_video_editing.md)
+- [\[CVPR 2026\] EasyV2V: A High-quality Instruction-based Video Editing Framework](easyv2v_a_high-quality_instruction-based_video_editing_framework.md)
+- [\[CVPR 2026\] Scaling Instruction-Based Video Editing with a High-Quality Synthetic Dataset](scaling_instruction-based_video_editing_with_a_high-quality_synthetic_dataset.md)
 - [\[CVPR 2026\] Diverse Video Generation with Determinantal Point Process-Guided Policy Optimization](diverse_video_generation_with_determinantal_point_process-guided_policy_optimiza.md)
-- [\[CVPR 2026\] Thinking with Frames: Generative Video Distortion Evaluation via Frame Reward Model](thinking_with_frames_generative_video_distortion_evaluation_via_frame_reward_mod.md)
-- [\[CVPR 2026\] RecEdit-Drive: 3D Reconstruction-Guided Spatiotemporal Video Editing for Autonomous Driving Scenes](recedit-drive_3d_reconstruction-guided_spatiotemporal_video_editing_for_autonomo.md)
+- [\[CVPR 2026\] CoT-Edit: Let CoT Guide Instruction Video Editing](cot-edit_let_cot_guide_instruction_video_editing.md)
+- [\[ICLR 2026\] IVEBench: Modern Benchmark Suite for Instruction-Guided Video Editing Assessment](../../ICLR2026/video_generation/ivebench_modern_benchmark_suite_for_instruction-guided_video_editing_assessment.md)
 
 </div>
 

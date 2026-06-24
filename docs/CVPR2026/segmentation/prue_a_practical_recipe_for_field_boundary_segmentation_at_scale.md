@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PRUE: A Practical Recipe for Field Boundary Segmentation at Scale
 description: >-
-  [CVPR 2026][Segmentation][U-Net] This paper provides a systematic evaluation of 18 segmentation and Geospatial Foundation Models (GFM), proposing PRUE—a field boundary segmentation recipe combining a U-Net backbone, composite loss functions, and targeted data augmentation. It achieves 76% IoU and 47% object-F1 on the FTW benchmark, improvements of 6%
+  [CVPR 2026][Segmentation][Agricultural field boundary segmentation] This paper provides a systematic evaluation of 18 segmentation and Geospatial Foundation Models (GFM), proposing PRUE—a field boundary segmentation recipe combining a U-Net backbone, composite loss functions, and targeted data augmentation. It achieves 76% IoU and 47% object-F1 on the FTW benchmark, improvements of 6% and 9% over the baseline respectively, while introducing a new set of metrics for evaluating…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - U-Net
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Agricultural field boundary segmentation"
+  - "Geospatial Foundation Models"
+  - "U-Net"
+  - "Deployment robustness"
+  - "Large-scale mapping"
 date: 2026-05-08
-content_hash: 86366c54ad857bd3
+content_hash: 77d72422be9ca05e
 ---
+
 # PRUE: A Practical Recipe for Field Boundary Segmentation at Scale
 
 **Conference**: CVPR 2026  
@@ -140,11 +145,11 @@ The total loss is log-cosh Dice with class weights $[0.05, 0.20, 0.75]$. Adam is
 
 ## Related Papers
 
-- [\[CVPR 2026\] GABI: Geometry-Aware Boundary Integration for Spacecraft Segmentation](gabi_geometry-aware_boundary_integration_for_spacecraft_segmentation.md)
+- [\[CVPR 2026\] Boundary-Responsive Differentiable Gating for Superpixel-Based Segmentation](boundary-responsive_differentiable_gating_for_superpixel-based_segmentation.md)
 - [\[CVPR 2026\] FoV-Net: Rotation-Invariant CAD B-rep Learning via Field-of-View Ray Casting](fov-net_rotation-invariant_cad_b-rep_learning_via_field-of-view_ray_casting.md)
 - [\[CVPR 2026\] XSeg: A Large-scale X-ray Contraband Segmentation Benchmark for Real-World Security Screening](xseg_a_large-scale_x-ray_contraband_segmentation_benchmark_for_real-world_securi.md)
-- [\[CVPR 2026\] Unsupervised Multi-Scale Segmentation of 3D Subcellular World with Stable Diffusion Foundation Model](unsupervised_multi-scale_segmentation_of_3d_subcellular_world_with_stable_diffus.md)
 - [\[CVPR 2026\] Making Training-Free Diffusion Segmentors Scale with the Generative Power](making_training-free_diffusion_segmentors_scale_with_the_generative_power.md)
+- [\[ICCV 2025\] Online Generic Event Boundary Detection](../../ICCV2025/segmentation/online_generic_event_boundary_detection.md)
 
 </div>
 

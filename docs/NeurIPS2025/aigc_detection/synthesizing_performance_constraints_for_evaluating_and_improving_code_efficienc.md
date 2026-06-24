@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Synthesizing Performance Constraints for Evaluating and Improving Code Efficiency
 description: >-
-  [NeurIPS 2025][AIGC Detection][Performance constraint synthesis] This paper proposes Wedge, a framework that uses LLMs to synthesize performance-characterizing constraints to guide constraint-aware fuzzing…
+  [NeurIPS 2025][AIGC Detection][Performance constraint synthesis] This paper proposes Wedge, a framework that uses LLMs to synthesize performance-characterizing constraints to guide constraint-aware fuzzing, generating stress-test inputs that expose code performance bottlenecks. It further constructs the PerfForge benchmark, enabling LLM-based code optimizers (e.g., Effi-Learner) to achieve up to 24% additional reduction in CPU instructions.
 tags:
   - "NeurIPS 2025"
   - "AIGC Detection"
@@ -12,7 +12,7 @@ tags:
   - "LLM code optimization"
   - "PerfForge"
 date: 2026-05-08
-content_hash: 7000fc3f67bdd52e
+content_hash: cb1a37375aa9a9d9
 ---
 
 # Synthesizing Performance Constraints for Evaluating and Improving Code Efficiency
@@ -132,8 +132,8 @@ PerfForge-based evaluation reveals that Pie's actual speedup is higher than its 
 - [\[NeurIPS 2025\] ASCIIBench: Evaluating Language-Model-Based Understanding of Visually-Oriented Text](asciibench_evaluating_language-model-based_understanding_of_visually-oriented_te.md)
 - [\[NeurIPS 2025\] QiMeng-NeuComBack: Self-Evolving Translation from IR to Assembly Code](qimeng-neucomback_self-evolving_translation_from_ir_to_assembly_code.md)
 - [\[NeurIPS 2025\] DuoLens: A Framework for Robust Detection of Machine-Generated Multilingual Text and Code](duolens_a_framework_for_robust_detection_of_machine-generated_multilingual_text_.md)
-- [\[AAAI 2026\] Optimized Algorithms for Text Clustering with LLM-Generated Constraints](../../AAAI2026/aigc_detection/optimized_algorithms_for_text_clustering_with_llm-generated_constraints.md)
 - [\[NeurIPS 2025\] Classical Planning with LLM-Generated Heuristics: Challenging the State of the Art with Python Code](classical_planning_with_llm-generated_heuristics_challenging_the_state_of_the_ar.md)
+- [\[AAAI 2026\] Optimized Algorithms for Text Clustering with LLM-Generated Constraints](../../AAAI2026/aigc_detection/optimized_algorithms_for_text_clustering_with_llm-generated_constraints.md)
 
 </div>
 

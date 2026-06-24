@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BioHiCL: Hierarchical Multi-Label Contrastive Learning for Biomedical Retrieval with MeSH Labels
 description: >-
-  [ACL 2026][Medical NLP][Paper Note] BioHiCL utilizes **hierarchical multi-label annotations** of MeSH (Medical Subject Headings) to provide structured supervision for dense retrievers. By aligning the embedding space with the MeSH semantic space through depth-weighted label similarity, a 0.1B model outperforms most specialized models on biomedical retrie
+  [ACL 2026][Medical LLM][Biomedical Retrieval] BioHiCL utilizes **hierarchical multi-label annotations** of MeSH (Medical Subject Headings) to provide structured supervision for dense retrievers. By aligning the embedding space with the MeSH semantic space through depth-weighted label similarity, a 0.1B model outperforms most specialized models on biomedical retrieval, sentence similarity, and question-answering tasks.
 tags:
-  - ACL 2026
-  - Medical NLP
+  - "ACL 2026"
+  - "Medical LLM"
+  - "Biomedical Retrieval"
+  - "MeSH Hierarchy"
+  - "Contrastive Learning"
+  - "Multi-label"
+  - "Parameter-Efficient Fine-Tuning"
 date: 2026-05-08
-content_hash: ec893c74c26ba652
+content_hash: 0fa9555b8876f320
 ---
+
 # BioHiCL: Hierarchical Multi-Label Contrastive Learning for Biomedical Retrieval with MeSH Labels
 
 **Conference**: ACL 2026  

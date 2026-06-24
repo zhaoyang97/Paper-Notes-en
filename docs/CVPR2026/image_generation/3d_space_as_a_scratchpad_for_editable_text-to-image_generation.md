@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] 3D Space as a Scratchpad for Editable Text-to-Image Generation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] This paper proposes treating an editable **3D scene as a "spatial scratchpad"** for text-to-image generation. A suite of LLM agents parses text prompts into subject meshes, plans placements/orientations/cameras in 3D, and renders this layout into an image via identity-preserving depth-conditioned generation. It achieve
+  [CVPR 2026][Image Generation][3D Spatial Reasoning] This paper proposes treating an editable **3D scene as a "spatial scratchpad"** for text-to-image generation. A suite of LLM agents parses text prompts into subject meshes, plans placements/orientations/cameras in 3D, and renders this layout into an image via identity-preserving depth-conditioned generation. It achieves a **32% training-free improvement** in text alignment on GenAI-Bench and supports consistent image updates…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "3D Spatial Reasoning"
+  - "Spatial Scratchpad"
+  - "Agentic Planning"
+  - "Compositional Generation"
+  - "Editable Generation"
 date: 2026-05-08
-content_hash: ca1c34799de1ea3d
+content_hash: 92f066a9d90aa665
 ---
+
 # 3D Space as a Scratchpad for Editable Text-to-Image Generation
 
 **Conference**: CVPR 2026  
@@ -140,14 +146,15 @@ Text alignment on GenAI-Bench improved by ~32% relative to the Flux baseline whi
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] FG-Portrait: 3D Flow Guided Editable Portrait Animation](fg-portrait_3d_flow_guided_editable_portrait_animation.md)
 - [\[CVPR 2026\] SeeThrough3D: Occlusion Aware 3D Control in Text-to-Image Generation](seethrough3d_occlusion_aware_3d_control_in_text-to-image_generation.md)
+- [\[CVPR 2026\] Synthetic Curriculum Reinforces Compositional Text-to-Image Generation](synthetic_curriculum_reinforces_compositional_text-to-image_generation.md)
 - [\[CVPR 2026\] Vinedresser3D: Agentic Text-guided 3D Editing](vinedresser3d_agentic_text-guided_3d_editing.md)
-- [\[CVPR 2026\] CAST: Context-Aware Dynamic Latent Space Transformation for Interactive Text-to-Image Retrieval](cast_context-aware_dynamic_latent_space_transformation_for_interactive_text-to-i.md)
 - [\[CVPR 2026\] ShapeAR: Generating Editable Shape Layers via Autoregressive Diffusion](shapear_generating_editable_shape_layers_via_autoregressive_diffusion.md)
 
 </div>

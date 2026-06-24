@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] APEIRIA: Distilling Neuro-Symbolic Programs into 3D Multi-modal LLMs
 description: >-
-  [ICML 2026][3D Vision][GRPO] This paper proposes APEIRIA, which distills the execution traces of neuro-symbolic 3D concept learners into natural language chain-of-thought (CoC) for 3D MLLMs. By employing GRPO reinforcement learning, it generalizes these reasoning patterns to open-vocabulary and deeply nested instructions. APEIRIA simultaneously ou
+  [ICML 2026][3D Vision][Neuro-symbolic] This paper proposes APEIRIA, which distills the execution traces of neuro-symbolic 3D concept learners into natural language chain-of-thought (CoC) for 3D MLLMs. By employing GRPO reinforcement learning, it generalizes these reasoning patterns to open-vocabulary and deeply nested instructions. APEIRIA simultaneously outperforms traditional NS3D methods and current state-of-the-art 3D MLLMs on ScanRefer, Multi3DRefer, SQA3D, and Scan2Cap…
 tags:
-  - ICML 2026
-  - 3D Vision
-  - GRPO
+  - "ICML 2026"
+  - "3D Vision"
+  - "Neuro-symbolic"
+  - "3D Spatial Reasoning"
+  - "Chain-of-Thought"
+  - "GRPO"
+  - "Curriculum Learning"
 date: 2026-05-08
-content_hash: 3f526ef1059704fc
+content_hash: 605564e493e0f250
 ---
+
 # APEIRIA: Distilling Neuro-Symbolic Programs into 3D Multi-modal LLMs
 
 **Conference**: ICML 2026  
@@ -141,15 +146,14 @@ Cross-task generalization: Scan2Cap C@0.25 = 90.6 (Prev. SOTA LEGO 84.7), SQA3D 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] OmniWorld: A Multi-Domain and Multi-Modal Dataset for 4D World Modeling](../../ICLR2026/3d_vision/omniworld_a_multi-domain_and_multi-modal_dataset_for_4d_world_modeling.md)
 - [\[CVPR 2026\] Foundry: Distilling 3D Foundation Models for the Edge](../../CVPR2026/3d_vision/foundry_distilling_3d_foundation_models_for_the_edge.md)
+- [\[CVPR 2025\] Neuro-3D: Towards 3D Visual Decoding from EEG Signals](../../CVPR2025/3d_vision/neuro-3d_towards_3d_visual_decoding_from_eeg_signals.md)
 - [\[AAAI 2026\] STMI: Segmentation-Guided Token Modulation with Cross-Modal Hypergraph Interaction for Multi-Modal Object Re-Identification](../../AAAI2026/3d_vision/stmi_segmentation-guided_token_modulation_with_cross-modal_hypergraph_interactio.md)
 - [\[CVPR 2026\] Multi-modal Frequency Decomposition Network for Semantic Scene Completion](../../CVPR2026/3d_vision/multi-modal_frequency_decomposition_network_for_semantic_scene_completion.md)
-- [\[CVPR 2025\] Neuro-3D: Towards 3D Visual Decoding from EEG Signals](../../CVPR2025/3d_vision/neuro-3d_towards_3d_visual_decoding_from_eeg_signals.md)
-- [\[AAAI 2026\] Multi-Modal Assistance for Unsupervised Domain Adaptation on Point Cloud 3D Object Detection](../../AAAI2026/3d_vision/multi-modal_assistance_for_unsupervised_domain_adaptation_on_point_cloud_3d_obje.md)
 
 </div>
 

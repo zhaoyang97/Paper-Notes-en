@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] YOLO-IOD: Towards Real Time Incremental Object Detection
 description: >-
-  [AAAI 2026][Object Detection][Incremental Object Detection] This work is the first to systematically integrate incremental object detection (IOD) into the YOLO real-time framework. It identifies three types of knowledge…
+  [AAAI 2026][Object Detection][Incremental Object Detection] This work is the first to systematically integrate incremental object detection (IOD) into the YOLO real-time framework. It identifies three types of knowledge conflict, proposes a three-module solution (CPR + IKS + CAKD), and introduces the more realistic LoCo COCO benchmark for evaluation.
 tags:
   - "AAAI 2026"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "Catastrophic Forgetting"
   - "Pseudo Labels"
 date: 2026-05-08
-content_hash: 18059c938ef44682
+content_hash: 050634c1e6b7c160
 ---
 
 # YOLO-IOD: Towards Real Time Incremental Object Detection
@@ -225,11 +225,11 @@ All methods show AP drops on LoCo COCO, confirming the presence of data leakage 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Beyond Prompt Degradation: Prototype-Guided Dual-Pool Prompting for Incremental Object Detection](../../CVPR2026/object_detection/beyond_prompt_degradation_prototype-guided_dual-pool_prompting_for_incremental_o.md)
-- [\[ICCV 2025\] YOLOE: Real-Time Seeing Anything](../../ICCV2025/object_detection/yoloe_realtime_seeing_anything.md)
-- [\[AAAI 2026\] An Overall Real-Time Mechanism for Classification and Quality Evaluation of Rice](an_overall_real-time_mechanism_for_classification_and_quality_evaluation_of_rice.md)
-- [\[CVPR 2026\] RC-NF: Robot-Conditioned Normalizing Flow for Real-Time Anomaly Detection in Robotic Manipulation](../../CVPR2026/object_detection/rc-nf_robot-conditioned_normalizing_flow_for_real-time_anomaly_detection_in_robo.md)
-- [\[ICCV 2025\] Dynamic-DINO: Fine-Grained Mixture of Experts Tuning for Real-time Open-Vocabulary Object Detection](../../ICCV2025/object_detection/dynamicdino_finegrained_mixture_of_experts_tuning_for_realti.md)
+- [\[CVPR 2026\] AKCMamba-YOLO: Selective State Space Models For Real-Time Object Detection](../../CVPR2026/object_detection/akcmamba-yolo_selective_state_space_models_for_real-time_object_detection.md)
+- [\[CVPR 2026\] YOLO-Master: MOE-Accelerated with Specialized Transformers for Enhanced Real-time Detection](../../CVPR2026/object_detection/yolo-master_moe-accelerated_with_specialized_transformers_for_enhanced_real-time.md)
+- [\[CVPR 2026\] YOLO-ULM: Ultra-Lightweight Models for Real-Time Object Detection](../../CVPR2026/object_detection/yolo-ulm_ultra-lightweight_models_for_real-time_object_detection.md)
+- [\[CVPR 2026\] Incremental Object Detection via Future-Aware Decoupled Cross-Head Distillation](../../CVPR2026/object_detection/incremental_object_detection_via_future-aware_decoupled_cross-head_distillation.md)
+- [\[CVPR 2026\] Parameterized Prompt for Incremental Object Detection](../../CVPR2026/object_detection/parameterized_prompt_for_incremental_object_detection.md)
 
 </div>
 

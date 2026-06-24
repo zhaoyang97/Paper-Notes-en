@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GPTailor: Large Language Model Pruning Through Layer Cutting and Stitching
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] GPTailor reformulates LLM structured pruning as a zeroth-order optimization problem of "layer-wise cutting and stitching over a family of fine-tuned variants from the same base." It supports three operations: layer deletion, cross-model layer selection, and layer merging. By employing a ParEGO multi-task objective and
+  [ICLR 2026][Model Compression][Structured Pruning] GPTailor reformulates LLM structured pruning as a zeroth-order optimization problem of "layer-wise cutting and stitching over a family of fine-tuned variants from the same base." It supports three operations: layer deletion, cross-model layer selection, and layer merging. By employing a ParEGO multi-task objective and SMAC multi-fidelity search to automatically find configurations, it allows Llama2-13B to retain 97.3% of its…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Structured Pruning"
+  - "Layer Cutting"
+  - "Model Merging"
+  - "Zeroth-order Optimization"
+  - "Multi-fidelity Search"
 date: 2026-05-08
-content_hash: d7839c4fc882389b
+content_hash: 29e5afa3f7304632
 ---
+
 # GPTailor: Large Language Model Pruning Through Layer Cutting and Stitching
 
 **Conference**: ICLR 2026  
@@ -141,15 +147,16 @@ Deconstructing the contribution of three operations on 7B (Avg Score):
 - Value: ⭐⭐⭐⭐⭐ 97.3% retention without post-training is highly valuable for deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] LSA: Layer-wise Sparsity Allocation for Large Language Model Pruning Based on Minimal Linear Reconstruction Error](lsa_layer-wise_sparsity_allocation_for_large_language_model_pruning_based_on_min.md)
 - [\[ICLR 2026\] RCPU: Rotation-Constrained Error Compensation for Structured Pruning of Large Language Models](rcpu_rotation-constrained_error_compensation_for_structured_pruning_of_large_lan.md)
+- [\[ACL 2025\] DRPruning: Efficient Large Language Model Pruning through Distributionally Robust Optimization](../../ACL2025/model_compression/drpruning_robust_pruning.md)
 - [\[ICLR 2026\] Knowledge Distillation for Large Language Models through Residual Learning](knowledge_distillation_for_large_language_models_through_residual_learning.md)
 - [\[ICLR 2026\] Entropy-Based Block Pruning for Efficient Large Language Models](entropy-based_block_pruning_for_efficient_large_language_models.md)
-- [\[ICLR 2026\] GradPruner: Gradient-guided Layer Pruning Enabling Efficient Fine-Tuning and Inference for LLMs](gradpruner_gradient-guided_layer_pruning_enabling_efficient_fine-tuning_and_infe.md)
 
 </div>
 

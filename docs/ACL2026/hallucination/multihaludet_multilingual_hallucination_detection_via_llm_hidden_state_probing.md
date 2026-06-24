@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MultiHaluDet: Multilingual Hallucination Detection via LLM Hidden State Probing
 description: >-
-  [ACL 2026][Hallucination Detection][OOF stacking] MultiHaluDet utilizes the full-layer hidden state trajectories of frozen LLMs for multi-scale sequence modeling, subsequently discriminating hallucinations through out-of-fold representations and an ensemble meta-learner. It achieves approximately 98% AUROC on HaluEval / TriviaQA and transfers effectively to French, Ba
+  [ACL2026][Hallucination Detection][Multilingual Hallucination Detection] MultiHaluDet utilizes the full-layer hidden state trajectories of frozen LLMs for multi-scale sequence modeling, subsequently discriminating hallucinations through out-of-fold representations and an ensemble meta-learner. It achieves approximately 98% AUROC on HaluEval / TriviaQA and transfers effectively to French, Bangla, and Amharic.
 tags:
-  - ACL 2026
-  - Hallucination Detection
-  - OOF stacking
+  - "ACL2026"
+  - "Hallucination Detection"
+  - "Multilingual Hallucination Detection"
+  - "Hidden State Probing"
+  - "Multi-scale Attention"
+  - "OOF stacking"
+  - "Cross-lingual Robustness"
 date: 2026-05-08
-content_hash: d3e52558dc027264
+content_hash: 2e40a660fd31fbcf
 ---
+
 # MultiHaluDet: Multilingual Hallucination Detection via LLM Hidden State Probing
 
 **Conference**: ACL2026  
@@ -154,10 +159,10 @@ Multilingual evaluation is performed without language-specific fine-tuning. The 
 
 ## Related Papers
 
-- [\[ACL 2025\] ICR Probe: Tracking Hidden State Dynamics for Reliable Hallucination Detection in LLMs](../../ACL2025/hallucination/icr_probe_tracking_hidden_state_dynamics_for_reliable_hallucination_detection_in.md)
 - [\[ICML 2026\] Zero-source LLM Hallucination Detection with Human-like Criteria Probing](../../ICML2026/hallucination/zero-source_llm_hallucination_detection_with_human-like_criteria_probing.md)
+- [\[ACL 2025\] ICR Probe: Tracking Hidden State Dynamics for Reliable Hallucination Detection in LLMs](../../ACL2025/hallucination/icr_probe_tracking_hidden_state_dynamics_for_reliable_hallucination_detection_in.md)
 - [\[ACL 2026\] Rethinking Evaluation for LLM Hallucination Detection: A Desiderata, A New RAG-based Benchmark, New Insights](rethinking_evaluation_for_llm_hallucination_detection_a_desiderata_a_new_rag-bas.md)
-- [\[ACL 2026\] 为什么 LLM 在结构化知识上产生幻觉：推理过程的机制分析](why_llms_hallucinate_on_structured_knowledge_a_mechanistic_analysis_of_reasoning.md)
+- [\[ACL 2025\] Activation Steering Decoding: Mitigating Hallucination in Large Vision-Language Models through Bidirectional Hidden State Intervention](../../ACL2025/hallucination/activation_steering_decoding_mitigating_hallucination_in_large_vision-language_m.md)
 - [\[ACL 2026\] Logical Consistency as a Bridge: Improving LLM Hallucination Detection via Label Constraint Modeling between Responses and Self-Judgments](logical_consistency_as_a_bridge_improving_llm_hallucination_detection_via_label_.md)
 
 </div>

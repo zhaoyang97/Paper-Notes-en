@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Harnessing Vision-Language Models for Time Series Anomaly Detection
 description: >-
-  [AAAI2026][Object Detection][time series anomaly detection] A two-stage zero-shot time series anomaly detection framework is proposed: ViT4TS employs a lightweight ViT to perform multi-scale cross-patch matching on line-…
+  [AAAI2026 Oral][Object Detection][time series anomaly detection] A two-stage zero-shot time series anomaly detection framework is proposed: ViT4TS employs a lightweight ViT to perform multi-scale cross-patch matching on line-chart renderings of time series for candidate anomaly interval localization, while VLM4TS leverages GPT-4o with global temporal context to validate and refine detection results. The framework achieves F1-max surpassing the best baseline by 24.6% across 11…
 tags:
-  - "AAAI2026"
+  - "AAAI2026 Oral"
   - "Object Detection"
   - "time series anomaly detection"
   - "VLM"
@@ -12,7 +12,7 @@ tags:
   - "zero-shot"
   - "ViT4TS"
 date: 2026-05-08
-content_hash: 7480f5535d5efa16
+content_hash: fc4e9756d3034ec0
 ---
 
 # Harnessing Vision-Language Models for Time Series Anomaly Detection
@@ -117,11 +117,11 @@ Token consumption is only **1/27** of TAMA and **1/51** of SigLLM-PG.
 
 ## Related Papers
 
+- [\[ICLR 2026\] Complexity- and Statistics-Guided Anomaly Detection in Time Series Foundation Models](../../ICLR2026/object_detection/complexity-_and_statistics-guided_anomaly_detection_in_time_series_foundation_mo.md)
 - [\[ICLR 2026\] Contextual and Seasonal LSTMs for Time Series Anomaly Detection](../../ICLR2026/object_detection/contextual_and_seasonal_lstms_for_time_series_anomaly_detection.md)
-- [\[ICLR 2026\] PAANO: Patch-Based Representation Learning for Time-Series Anomaly Detection](../../ICLR2026/object_detection/paano_patch-based_representation_learning_for_time-series_anomaly_detection.md)
 - [\[CVPR 2026\] VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer](../../CVPR2026/object_detection/visualad_language-free_zero-shot_anomaly_detection_via_vision_transformer.md)
-- [\[NeurIPS 2025\] ScatterAD: Temporal-Topological Scattering Mechanism for Time Series Anomaly Detection](../../NeurIPS2025/object_detection/scatterad_temporal-topological_scattering_mechanism_for_time_series_anomaly_dete.md)
-- [\[CVPR 2026\] Back to Point: Exploring Point-Language Models for Zero-Shot 3D Anomaly Detection](../../CVPR2026/object_detection/back_to_point_exploring_point-language_models_for_zero-shot_3d_anomaly_detection.md)
+- [\[ICLR 2026\] PAANO: Patch-Based Representation Learning for Time-Series Anomaly Detection](../../ICLR2026/object_detection/paano_patch-based_representation_learning_for_time-series_anomaly_detection.md)
+- [\[ICML 2025\] KAN-AD: Time Series Anomaly Detection with Kolmogorov-Arnold Networks](../../ICML2025/object_detection/kan-ad_time_series_anomaly_detection_with_kolmogorov-arnold_networks.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PolicyFlow: Policy Optimization with Continuous Normalizing Flow in Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][PPO] This paper proposes PolicyFlow, which seamlessly integrates Continuous Normalizing Flow (CNF) policies into the PPO framework. By approximating importance ratios through velocity field changes along an interpolation path (avoiding backpropagation through the full ODE path) and introducing an implicit entropy regularize
+  [ICLR 2026][Reinforcement Learning][Continuous Normalizing Flows] This paper proposes PolicyFlow, which seamlessly integrates Continuous Normalizing Flow (CNF) policies into the PPO framework. By approximating importance ratios through velocity field changes along an interpolation path (avoiding backpropagation through the full ODE path) and introducing an implicit entropy regularizer inspired by Brownian motion to prevent mode collapse, PolicyFlow achieves or exceeds the per…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - PPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Continuous Normalizing Flows"
+  - "PPO"
+  - "Multimodal Policy"
+  - "Importance Ratio Approximation"
+  - "Brownian Motion Entropy Regularization"
 date: 2026-05-08
-content_hash: 4823fe1c97dc8c2c
+content_hash: 1ff1d0bafc1952f8
 ---
+
 # PolicyFlow: Policy Optimization with Continuous Normalizing Flow in Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -137,14 +142,17 @@ In a MultiGoal environment with 6 equidistant targets: PPO (Gaussian policy) can
 
 <div class="related-papers" markdown="1">
 
-- **FPO**: Flow-based Policy Optimization.
-- **DPPO**: Diffusion Policy Policy Optimization.
-- **PPO**: Proximal Policy Optimization.
+## Related Papers
+
+- [\[ICLR 2026\] Flow Matching Policy Gradients](flow_matching_policy_gradients.md)
+- [\[ICLR 2026\] Guided Flow Policy: Learning from High-Value Actions in Offline Reinforcement Learning](guided_flow_policy_learning_from_high-value_actions_in_offline_reinforcement_lea.md)
+- [\[ICLR 2026\] Reinforcement Learning via Value Gradient Flow](reinforcement_learning_via_value_gradient_flow.md)
+- [\[ICLR 2026\] Bridging Successor Measure and Online Policy Learning with Flow Matching-Based Representations](bridging_successor_measure_and_online_policy_learning_with_flow_matching-based_r.md)
+- [\[ICLR 2026\] Belief-Based Offline Reinforcement Learning for Delay-Robust Policy Optimization](belief-based_offline_reinforcement_learning_for_delay-robust_policy_optimization.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Flow Actor-Critic for Offline Reinforcement Learning (FAC)](flow_actor-critic_for_offline_reinforcement_learning.md)

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Do Multimodal RAG Systems Leak Data? A Comprehensive Evaluation of Membership Inference and Image Caption Retrieval Attacks
 description: >-
-  [ACL 2026][LLM Safety][Multimodal RAG] The authors provide the first systematic evaluation of privacy leakage risks in **image-driven multimodal RAG (mRAG)** systems. They demonstrate that a naive black-box text prompt combined with a single target image can achieve **MIA F1=0.993** and **caption exact-match=0.835** across 4 datasets and 3 VLMs. The attacks
+  [ACL 2026 Findings][LLM Safety][Multimodal RAG] The authors provide the first systematic evaluation of privacy leakage risks in **image-driven multimodal RAG (mRAG)** systems. They demonstrate that a naive black-box text prompt combined with a single target image can achieve **MIA F1=0.993** and **caption exact-match=0.835** across 4 datasets and 3 VLMs. The attacks remain effective even when images undergo transformations such as cropping, masking, rotation…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Multimodal RAG
-  - Membership Inference Attack
-  - Image Caption Retrieval
-  - Black-box Privacy
-  - VLM
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "Multimodal RAG"
+  - "Membership Inference Attack"
+  - "Image Caption Retrieval"
+  - "Black-box Privacy"
+  - "VLM"
 date: 2026-05-08
-content_hash: cda924a7b1644916
+content_hash: 592fadb2fe4a8d6f
 ---
+
 # Do Multimodal RAG Systems Leak Data? A Comprehensive Evaluation of Membership Inference and Image Caption Retrieval Attacks
 
 **Conference**: ACL 2026 Findings  
@@ -138,15 +139,16 @@ MIA is nearly perfect (F1 $\ge$ 0.89). For ICR, Qwen2.5-VL can recover over 70% 
 - Value: ⭐⭐⭐⭐⭐ Immediate practical value for developers using mRAG in sensitive domains.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ACL 2026\] LeakDojo: Decoding the Leakage Threats of RAG Systems](leakdojo_decoding_the_leakage_threats_of_rag_systems.md)
 - [\[ICLR 2026\] No Caption, No Problem: Caption-Free Membership Inference via Model-Fitted Embeddings](../../ICLR2026/llm_safety/no_caption_no_problem_caption-free_membership_inference_via_model-fitted_embeddi.md)
 - [\[ACL 2026\] Membership Inference Attacks on In-Context Learning Recommendation](membership_inference_attacks_on_llm-based_recommender_systems.md)
+- [\[ICLR 2026\] Tab-MIA: A Benchmark Dataset for Membership Inference Attacks on Tabular Data in LLMs](../../ICLR2026/llm_safety/tab-mia_a_benchmark_dataset_for_membership_inference_attacks_on_tabular_data_in_.md)
+- [\[ACL 2026\] LeakDojo: Decoding the Leakage Threats of RAG Systems](leakdojo_decoding_the_leakage_threats_of_rag_systems.md)
 - [\[ACL 2026\] Differentially Private Synthetic Text Generation for Retrieval-Augmented Generation (RAG)](differentially_private_synthetic_text_generation_for_retrieval-augmented_generat.md)
-- [\[ACL 2026\] Fast-MIA: Efficient and Scalable Membership Inference for LLMs](fast-mia_efficient_and_scalable_membership_inference_for_llms.md)
 
 </div>
 

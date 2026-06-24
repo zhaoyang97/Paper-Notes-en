@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EchoPOSE: 6D Pose Estimation of Sparse Echocardiograms for Left-Ventricular 3D Shape Reconstruction
 description: >-
-  [CVPR 2026][Medical Imaging][Transformer] This paper proposes EchoPOSE, a Transformer-based network that automatically regresses the 6D pose (3 translations + 3 rotations) of 5 sparse 2D ultrasound slices typically collected in clinical practice. By feeding the posed segmentation masks into a Graph Harmonic Deformation (GHD) algorithm, the 3D shape of the left
+  [CVPR 2026][Medical Imaging][Echocardiography] This paper proposes EchoPOSE, a Transformer-based network that automatically regresses the 6D pose (3 translations + 3 rotations) of 5 sparse 2D ultrasound slices typically collected in clinical practice. By feeding the posed segmentation masks into a Graph Harmonic Deformation (GHD) algorithm, the 3D shape of the left ventricle (LV) is reconstructed across the cardiac cycle. On synthetic MITEA data…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Transformer
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Echocardiography"
+  - "6D Pose Estimation"
+  - "Left Ventricular 3D Reconstruction"
+  - "Transformer"
+  - "Geometric Consistency Loss"
 date: 2026-05-08
-content_hash: 8da84ca3e72ca655
+content_hash: 68e46e0c480906f1
 ---
+
 # EchoPOSE: 6D Pose Estimation of Sparse Echocardiograms for Left-Ventricular 3D Shape Reconstruction
 
 **Conference**: CVPR 2026  
@@ -132,12 +137,20 @@ Key takeaway: EchoPOSE reduces pose error significantly compared to the 10.83 mm
 - Value: ⭐⭐⭐⭐⭐ High potential for lowering ultrasound operation barriers and improving quantification accuracy without additional hardware.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- **[7]** Freitas, et al. "FoCUS: Fast cardiac ultrasound slice intersection detection," 2023.
-- **[21]** OReX: Object Reconstruction from sparse X-rays, 2023.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] GaussianPile: A Unified Sparse Gaussian Splatting Framework for Slice-based Volumetric Reconstruction](gaussianpile_a_unified_sparse_gaussian_splatting_framework_for_slice-based_volum.md)
+- [\[ECCV 2024\] Shape-Guided Configuration-Aware Learning for Endoscopic-Image-Based Pose Estimation of Flexible Robotic Instruments](../../ECCV2024/medical_imaging/shape-guided_configuration-aware_learning_for_endoscopic-image-based_pose_estima.md)
+- [\[CVPR 2026\] Prospective Dynamic 3D MRI Reconstruction via Latent-Space Motion Tracking from Single Measurement](prospective_dynamic_3d_mri_reconstruction_via_latent-space_motion_tracking_from_.md)
+- [\[ICLR 2026\] NAB: Neural Adaptive Binning for Sparse-View CT Reconstruction](../../ICLR2026/medical_imaging/nab_neural_adaptive_binning_for_sparse-view_ct_reconstruction.md)
+- [\[CVPR 2026\] Real2Sim2Real: RetinalDepth-64K for Depth Estimation in Posterior Segment Ophthalmic Surgery](real2sim2real_retinaldepth-64k_for_depth_estimation_in_posterior_segment_ophthal.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] GaussianPile: A Unified Sparse Gaussian Splatting Framework for Slice-based Volumetric Reconstruction](gaussianpile_a_unified_sparse_gaussian_splatting_framework_for_slice-based_volum.md)

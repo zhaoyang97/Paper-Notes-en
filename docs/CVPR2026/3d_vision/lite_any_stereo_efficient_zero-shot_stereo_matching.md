@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Lite Any Stereo: Efficient Zero-Shot Stereo Matching
 description: >-
-  [CVPR 2026][3D Vision][Knowledge Distillation] Lite Any Stereo is proposed, which utilizes a hybrid 2D-3D cost aggregation module and a three-stage million-scale data training strategy (supervised → self-distillation → real-world knowledge distillation). With less than 1% of the computation (33G MACs) compared to SOTA precise methods, it ranks 1st on four real-worl
+  [CVPR 2026][3D Vision][Stereo Matching] Lite Any Stereo is proposed, which utilizes a hybrid 2D-3D cost aggregation module and a three-stage million-scale data training strategy (supervised → self-distillation → real-world knowledge distillation). With less than 1% of the computation (33G MACs) compared to SOTA precise methods, it ranks 1st on four real-world benchmarks, demonstrating for the first time that ultra-lightweight models can possess strong zero-shot generalization…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Stereo Matching"
+  - "Zero-shot Generalization"
+  - "Efficient Inference"
+  - "Hybrid Cost Aggregation"
+  - "Knowledge Distillation"
 date: 2026-05-08
-content_hash: e5a455e8322cd514
+content_hash: 5f1ab5046b8dfd22
 ---
+
 # Lite Any Stereo: Efficient Zero-Shot Stereo Matching
 
 **Conference**: CVPR 2026  
@@ -169,10 +174,10 @@ Note: On the DrivingStereo weather subset, Lite Any Stereo (33G MACs) outperform
 ## Related Papers
 
 - [\[CVPR 2026\] Fast-FoundationStereo: Real-Time Zero-Shot Stereo Matching](fast-foundationstereo_real-time_zero-shot_stereo_matching.md)
-- [\[CVPR 2026\] AsymLoc: Towards Asymmetric Feature Matching for Efficient Visual Localization](asymloc_towards_asymmetric_feature_matching_for_efficient_visual_localization.md)
-- [\[CVPR 2026\] GS-ASM: 2DGS-Supervised Active Stereo Matching](gs-asm_2dgs-supervised_active_stereo_matching.md)
-- [\[CVPR 2026\] Distilling Unsigned Distance Function for Surface Reconstruction from 3D Gaussian Splatting](distilling_unsigned_distance_function_for_surface_reconstruction_from_3d_gaussia.md)
-- [\[CVPR 2026\] 240FPS Stereo Vision from Monocular Mixed Spikes](240fps_stereo_vision_from_monocular_mixed_spikes.md)
+- [\[CVPR 2026\] What Makes Good Synthetic Training Data for Zero-Shot Stereo Matching?](what_makes_good_synthetic_training_data_for_zero-shot_stereo_matching.md)
+- [\[CVPR 2026\] PromptStereo: Zero-Shot Stereo Matching via Structure and Motion Prompts](promptstereo_zero-shot_stereo_matching_via_structure_and_motion_prompts.md)
+- [\[CVPR 2026\] PIP-Stereo: Progressive Iterations Pruner for Iterative Optimization based Stereo Matching](pip-stereo_progressive_iterations_pruner_for_iterative_optimization_based_stereo.md)
+- [\[ICCV 2025\] ZeroStereo: Zero-shot Stereo Matching from Single Images](../../ICCV2025/3d_vision/zerostereo_zero-shot_stereo_matching_from_single_images.md)
 
 </div>
 

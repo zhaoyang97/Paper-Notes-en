@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Scalable Web Accessibility Audit with MLLMs as Copilots
 description: >-
-  [AAAI2026][Multimodal VLM][web accessibility] This paper proposes the AAA framework, which operationalizes the WCAG-EM standard through two key innovations—GRASP (Graph-based multimodal page sampling) and MaC (MLLM as Co…
+  [AAAI2026][Multimodal VLM][web accessibility] This paper proposes the AAA framework, which operationalizes the WCAG-EM standard through two key innovations—GRASP (Graph-based multimodal page sampling) and MaC (MLLM as Copilot)—enabling scalable end-to-end web accessibility auditing.
 tags:
   - "AAAI2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "graph neural network"
   - "page sampling"
 date: 2026-05-08
-content_hash: d5d39aefc2cd447c
+content_hash: 63a4bb9f7960e4b9
 ---
 
 # Towards Scalable Web Accessibility Audit with MLLMs as Copilots
@@ -102,9 +102,9 @@ GRASP_IGNN substantially outperforms baselines in both representation spaces, de
 
 - [\[ICLR 2026\] Customizing Visual Emotion Evaluation for MLLMs: An Open-vocabulary, Multifaceted, and Scalable Approach](../../ICLR2026/multimodal_vlm/customizing_visual_emotion_evaluation_for_mllms_an_open-vocabulary_multifaceted_.md)
 - [\[ICLR 2026\] WebDS: An End-to-End Benchmark for Web-based Data Science](../../ICLR2026/multimodal_vlm/webds_an_end-to-end_benchmark_for_web-based_data_science.md)
-- [\[ICLR 2026\] LiveWeb-IE: A Benchmark For Online Web Information Extraction](../../ICLR2026/multimodal_vlm/liveweb-ie_a_benchmark_for_online_web_information_extraction.md)
 - [\[AAAI 2026\] Towards Human-AI Accessibility Mapping in India: VLM-Guided Annotations and POI-Centric Analysis in Chandigarh](towards_human-ai_accessibility_mapping_in_india_vlm-guided_annotations_and_poi-c.md)
-- [\[ICML 2026\] FlowNar: Scalable Streaming Narration for Long-Form Videos](../../ICML2026/multimodal_vlm/flownar_scalable_streaming_narration_for_long-form_videos.md)
+- [\[ICLR 2026\] LiveWeb-IE: A Benchmark For Online Web Information Extraction](../../ICLR2026/multimodal_vlm/liveweb-ie_a_benchmark_for_online_web_information_extraction.md)
+- [\[ICLR 2026\] DAVE: A VLM Vision Encoder for Document Understanding and Web Agents](../../ICLR2026/multimodal_vlm/dave_a_vlm_vision_encoder_for_document_understanding_and_web_agents.md)
 
 </div>
 

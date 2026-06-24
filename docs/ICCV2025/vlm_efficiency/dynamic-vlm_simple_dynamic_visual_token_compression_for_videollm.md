@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Dynamic-VLM: Simple Dynamic Visual Token Compression for VideoLLM
 description: >-
-  [ICCV 2025][Multimodal VLM][VideoLLM] This paper proposes Dynamic-VLM, which employs a dynamic visual token compressor to flexibly adjust the number of tokens per frame according to video length. Combined with a 2-millio…
+  [ICCV 2025][Multimodal Efficiency][VideoLLM] This paper proposes Dynamic-VLM, which employs a dynamic visual token compressor to flexibly adjust the number of tokens per frame according to video length. Combined with a 2-million-scale high-quality synthetic video QA dataset, the method achieves a 2.7% improvement over LLaVA-OneVision on VideoMME and a 10.7% improvement on MuirBench.
 tags:
   - "ICCV 2025"
-  - "Multimodal VLM"
+  - "Multimodal Efficiency"
   - "VideoLLM"
   - "Visual Token Compression"
   - "Dynamic Compression"
   - "Synthetic Data"
   - "Multimodal"
 date: 2026-05-08
-content_hash: 0a89453cd93ce0c4
+content_hash: 0446b15443893483
 ---
 
 # Dynamic-VLM: Simple Dynamic Visual Token Compression for VideoLLM
@@ -168,11 +168,11 @@ The optimal point is 100 tokens/frame, indicating that a moderate compression ra
 
 ## Related Papers
 
-- [\[ICCV 2025\] Dynamic Group Detection using VLM-augmented Temporal Groupness Graph](dynamic_group_detection_using_vlm-augmented_temporal_groupness_graph.md)
-- [\[ICCV 2025\] Dynamic Multimodal Prototype Learning in Vision-Language Models](dynamic_multimodal_prototype_learning_in_vision-language_models.md)
-- [\[CVPR 2026\] Dynamic Token Reweighting for Robust Vision-Language Models](../../CVPR2026/multimodal_vlm/dynamic_token_reweighting_for_robust_vision-language_models.md)
-- [\[ICML 2026\] VisionPulse: Dynamic Visual Sparsification in Multimodal Reasoning](../../ICML2026/multimodal_vlm/visionpulse_dynamic_visual_sparsity_for_efficient_multimodal_reasoning.md)
-- [\[CVPR 2026\] DSCA: Dynamic Subspace Concept Alignment for Lifelong VLM Editing](../../CVPR2026/multimodal_vlm/dsca_dynamic_subspace_concept_alignment_for_lifelong_vlm_editing.md)
+- [\[CVPR 2026\] Blink: Dynamic Visual Token Resolution for Enhanced Multimodal Understanding](../../CVPR2026/vlm_efficiency/blink_dynamic_visual_token_resolution_for_enhanced_multimodal_understanding.md)
+- [\[ICCV 2025\] SparseVILA: Decoupling Visual Sparsity for Efficient VLM Inference](sparsevila_decoupling_visual_sparsity_for_efficient_vlm_inference.md)
+- [\[CVPR 2026\] OmniZip: Audio-Guided Dynamic Token Compression for Fast Omnimodal Large Language Models](../../CVPR2026/vlm_efficiency/omnizip_audio-guided_dynamic_token_compression_for_fast_omnimodal_large_language.md)
+- [\[CVPR 2026\] Dynamic Token Reweighting for Robust Vision-Language Models](../../CVPR2026/vlm_efficiency/dynamic_token_reweighting_for_robust_vision-language_models.md)
+- [\[CVPR 2026\] SODA: Sensitivity-Oriented Dynamic Acceleration for Diffusion Transformer](../../CVPR2026/vlm_efficiency/soda_sensitivity-oriented_dynamic_acceleration_for_diffusion_transformer.md)
 
 </div>
 

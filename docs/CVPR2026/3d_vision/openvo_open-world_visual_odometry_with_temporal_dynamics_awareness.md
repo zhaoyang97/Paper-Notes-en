@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OpenVO: Open-World Visual Odometry with Temporal Dynamics Awareness
 description: >-
-  [CVPR 2026][3D Vision][Autonomous Driving] Ours proposes OpenVO, an open-world monocular visual odometry framework that achieves robust metric-scale ego-motion estimation under uncalibrated and variable frame rate conditions. Through a time-aware flow encoder and a geometry-aware context encoder, it achieves over a 20% improvement in cross-dataset ATE and reduc
+  [CVPR2026][3D Vision][Visual Odometry] Ours proposes OpenVO, an open-world monocular visual odometry framework that achieves robust metric-scale ego-motion estimation under uncalibrated and variable frame rate conditions. Through a time-aware flow encoder and a geometry-aware context encoder, it achieves over a 20% improvement in cross-dataset ATE and reduces errors by 46%-92% in variable frame rate scenarios.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Autonomous Driving
+  - "CVPR2026"
+  - "3D Vision"
+  - "Visual Odometry"
+  - "Temporal Dynamics Awareness"
+  - "Uncalibrated Camera"
+  - "3D Flow Field"
+  - "Autonomous Driving"
 date: 2026-05-08
-content_hash: ccfa4051d41de181
+content_hash: 0b41c610040662aa
 ---
+
 # OpenVO: Open-World Visual Odometry with Temporal Dynamics Awareness
 
 **Conference**: CVPR2026  
@@ -174,9 +179,9 @@ OpenVO is the only uncalibrated VO method that simultaneously incorporates tempo
 ## Related Papers
 
 - [\[CVPR 2026\] RayNova: Scale-Temporal Autoregressive World Modeling in Ray Space](raynova_scale-temporal_autoregressive_world_modeling_in_ray_space.md)
-- [\[CVPR 2026\] Learning a Particle Dynamics Model with Real-world Videos](learning_a_particle_dynamics_model_with_real-world_videos.md)
 - [\[CVPR 2026\] Towards Visual Query Localization in the 3D World](towards_visual_query_localization_in_the_3d_world.md)
 - [\[CVPR 2026\] Wanderland: Geometrically Grounded Simulation for Open-World Embodied AI](wanderland_geometrically_grounded_simulation_for_open-world_embodied_ai.md)
+- [\[CVPR 2026\] Natural Human Motion Recovery by Aligning High-Order Temporal Dynamics from Monocular Videos](natural_human_motion_recovery_by_aligning_high-order_temporal_dynamics_from_mono.md)
 - [\[ICCV 2025\] Ross3D: Reconstructive Visual Instruction Tuning with 3D-Awareness](../../ICCV2025/3d_vision/ross3d_reconstructive_visual_instruction_tuning_with_3d-awareness.md)
 
 </div>

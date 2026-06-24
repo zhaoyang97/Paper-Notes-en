@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Stochastic Self-Guidance for Training-Free Enhancement of Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] This paper proposes S²-Guidance, which utilizes **randomly dropped transformer block sub-networks** as weak models for self-guidance during the denoising process. This corrects suboptimal CFG predictions without additional training, consistently outperforming CFG and other advanced guidance strategies in text-to-image
+  [ICLR2026][Image Generation][Diffusion Models] This paper proposes S²-Guidance, which utilizes **randomly dropped transformer block sub-networks** as weak models for self-guidance during the denoising process. This corrects suboptimal CFG predictions without additional training, consistently outperforming CFG and other advanced guidance strategies in text-to-image and text-to-video tasks.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
-  - Classifier-Free Guidance
+  - "ICLR2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Classifier-Free Guidance"
+  - "Sub-networks"
+  - "Stochastic block-dropping"
+  - "Self-guidance"
+  - "Text-to-Image"
+  - "Text-to-Video"
 date: 2026-05-08
-content_hash: 7cc7fc93043306a9
+content_hash: ce14e65f956c08e2
 ---
+
 # Stochastic Self-Guidance for Training-Free Enhancement of Diffusion Models
 
 **Conference**: ICLR2026  
@@ -159,9 +165,9 @@ Achieved the highest total scores on both 1.3B and 14B models, validating the ge
 
 - [\[AAAI 2026\] Self-NPO: Data-Free Diffusion Model Enhancement via Truncated Diffusion Fine-Tuning](../../AAAI2026/image_generation/self-npo_data-free_diffusion_model_enhancement_via_truncated_diffusion_fine-tuni.md)
 - [\[ICLR 2026\] Stage-wise Dynamics of Classifier-Free Guidance in Diffusion Models](stage-wise_dynamics_of_classifier-free_guidance_in_diffusion_models.md)
+- [\[ICLR 2026\] Generative Modeling from Black-Box Corruptions via Self-Consistent Stochastic Interpolants](generative_modeling_from_black-box_corruptions_via_self-consistent_stochastic_in.md)
 - [\[ICLR 2026\] Overshoot and Shrinkage in Classifier-Free Guidance: From Theory to Practice](overshoot_and_shrinkage_in_classifier-free_guidance_from_theory_to_practice.md)
-- [\[ICLR 2026\] Improving Classifier-Free Guidance in Masked Diffusion: Low-Dim Theoretical Insights with High-Dim Impact](improving_classifier-free_guidance_in_masked_diffusion_low-dim_theoretical_insig.md)
-- [\[ICLR 2026\] A Noise is Worth Diffusion Guidance](a_noise_is_worth_diffusion_guidance.md)
+- [\[ICLR 2026\] Dynamic Classifier-Free Diffusion Guidance via Online Feedback](dynamic_classifier-free_diffusion_guidance_via_online_feedback.md)
 
 </div>
 

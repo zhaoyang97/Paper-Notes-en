@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Variational Inference for Cyclic Learning
 description: >-
-  [ICLR 2026][learning_theory][ELBO] This paper treats intermediate data points in cyclic learning as latent variables and formulates cross-domain mappings as conditional probabilities. By doing so, it derives the "cycle-consistency" objective as an Evidence Lower Bound (ELBO) using variational inference. Based on this, two general training strategies are
+  [ICLR 2026][Learning Theory][Cyclic Consistency] This paper treats intermediate data points in cyclic learning as latent variables and formulates cross-domain mappings as conditional probabilities. By doing so, it derives the "cycle-consistency" objective as an Evidence Lower Bound (ELBO) using variational inference. Based on this, two general training strategies are proposed: single-step joint optimization and EM-based alternating optimization. This framework not only provid…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - ELBO
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Weakly Supervised Learning"
+  - "Variational Inference"
+  - "Cyclic Consistency"
+  - "ELBO"
+  - "EM Algorithm"
+  - "Unsupervised Tracking"
 date: 2026-05-08
-content_hash: 8a2dee2fe86dcd74
+content_hash: 80eee1605ddf87a1
 ---
+
 # Variational Inference for Cyclic Learning
 
 **Conference**: ICLR 2026  
@@ -163,11 +169,11 @@ Under both settings, CycleTrack leads previous state-of-the-art unsupervised tra
 
 ## Related Papers
 
-- [\[ICLR 2026\] Variational Deep Learning via Implicit Regularization](variational_deep_learning_via_implicit_regularization.md)
 - [\[ICLR 2026\] Diffusion Bridge Variational Inference for Deep Gaussian Processes](diffusion_bridge_variational_inference_for_deep_gaussian_processes.md)
+- [\[ICLR 2026\] Variational Deep Learning via Implicit Regularization](variational_deep_learning_via_implicit_regularization.md)
+- [\[ICLR 2026\] Learning Shrinks the Hard Tail: Training-Dependent Inference Scaling in a Solvable Linear Model](learning_shrinks_the_hard_tail_trainingdependent_inference_scaling_in_a_solvable.md)
 - [\[ICLR 2026\] Multiple-Prediction-Powered Inference](multiple-prediction-powered_inference.md)
 - [\[ICLR 2026\] Best-of-Majority: Minimax-Optimal Strategy for Pass@k Inference Scaling](best-of-majority_minimax-optimal_strategy_for_passk_inference_scaling.md)
-- [\[ICLR 2026\] Robust Amortized Bayesian Inference with Self-Consistency Losses on Unlabeled Data](robust_amortized_bayesian_inference_with_self-consistency_losses_on_unlabeled_da.md)
 
 </div>
 

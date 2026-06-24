@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] SAFA-SNN: 面向端侧小样本类增量学习的稀疏感知快速自适应脉冲神经网络
+  [Paper Note] SAFA-SNN: Sparse-aware Fast Adaptive Spiking Neural Network for On-device Few-Shot Class-Incremental Learning
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] This paper proposes SAFA-SNN, which utilizes a "sparse-aware dynamic threshold + zero-order optimization + prototype orthogonal subspace projection" toolkit to enable Spiking Neural Networks (SNNs) to perform Few-Shot Class-Incremental Learning (FSCIL) on resource-constrained edge devices. It achieves a 4.01% higher ac
+  [ICLR 2026][Model Compression][Spiking Neural Networks] This paper proposes SAFA-SNN, which utilizes a "sparse-aware dynamic threshold + zero-order optimization + prototype orthogonal subspace projection" toolkit to enable Spiking Neural Networks (SNNs) to perform Few-Shot Class-Incremental Learning (FSCIL) on resource-constrained edge devices. It achieves a 4.01% higher accuracy than the second-best method in the final session of Mini-ImageNet and reduces training energy con…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Spiking Neural Networks"
+  - "Few-Shot Class-Incremental Learning"
+  - "On-device Learning"
+  - "Dynamic Threshold"
+  - "Zero-order Optimization"
 date: 2026-05-08
-content_hash: 6e252318c94cce2e
+content_hash: 7b727dd9be202731
 ---
+
 # SAFA-SNN: Sparse-aware Fast Adaptive Spiking Neural Network for On-device Few-Shot Class-Incremental Learning
 
 **Conference**: ICLR 2026  
@@ -147,11 +153,11 @@ Verifying the three components (SA: Sparse-aware Dynamics, ZOO: Zero-order Optim
 
 ## Related Papers
 
-- [\[ICLR 2026\] TP-Spikformer: Token Pruned Spiking Transformer](tp-spikformer_token_pruned_spiking_transformer.md)
-- [\[ICLR 2026\] Study of Training Dynamics for Memory-Constrained Fine-Tuning (TraDy)](study_of_training_dynamics_for_memory-constrained_fine-tuning.md)
-- [\[ICLR 2026\] SMixer: Rethinking Efficient-Training and Event-Driven SNNs](smixer_rethinking_efficient-training_and_event-driven_snns.md)
-- [\[ICLR 2026\] Fine-tuning Quantized Neural Networks with Zeroth-order Optimization](fine-tuning_quantized_neural_networks_with_zeroth-order_optimization.md)
-- [\[ICLR 2026\] TurboBoA: Faster and Exact Attention-aware Quantization without Backpropagation](turboboa_faster_and_exact_attention-aware_quantization_without_backpropagation.md)
+- [\[CVPR 2025\] Tripartite Weight-Space Ensemble for Few-Shot Class-Incremental Learning](../../CVPR2025/model_compression/tripartite_weight-space_ensemble_for_few-shot_class-incremental_learning.md)
+- [\[ICLR 2026\] Cannistraci-Hebb Training on Ultra-Sparse Spiking Neural Networks](cannistraci-hebb_training_on_ultra-sparse_spiking_neural_networks.md)
+- [\[ICLR 2026\] Robust Selective Activation with Randomized Temporal K-Winner-Take-All in Spiking Neural Networks for Continual Learning](robust_selective_activation_with_randomized_temporal_k-winner-take-all_in_spikin.md)
+- [\[ICLR 2026\] Beyond Student: An Asymmetric Network for Neural Network Inheritance](beyond_student_an_asymmetric_network_for_neural_network_inheritance.md)
+- [\[AAAI 2026\] A Closer Look at Knowledge Distillation in Spiking Neural Network Training](../../AAAI2026/model_compression/a_closer_look_at_knowledge_distillation_in_spiking_neural_ne.md)
 
 </div>
 

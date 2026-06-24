@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] BD-Merging: Bias-Aware Dynamic Model Merging with Evidence-Guided Contrastive Learning
 description: >-
-  [CVPR 2026][Optimization & Theory][Model Merging] The authors propose the BD-Merging framework, which utilizes Dirichlet evidence modeling, Neighborhood Disparity Score (ADS), and disparity-aware contrastive learning to train a debiasing router for adaptive assignment of model merging weights. This significantly improves the robustness and generalization of merged mod
+  [CVPR 2026][Optimization][Model Merging] The authors propose the BD-Merging framework, which utilizes Dirichlet evidence modeling, Neighborhood Disparity Score (ADS), and disparity-aware contrastive learning to train a debiasing router for adaptive assignment of model merging weights. This significantly improves the robustness and generalization of merged models under test-time distribution shifts and unseen tasks.
 tags:
-  - CVPR 2026
-  - Optimization & Theory
-  - Model Merging
-  - Multi-Task Learning
-  - Evidential Deep Learning
-  - Distribution Shift
-  - Contrastive Learning
-  - uncertainty estimation
+  - "CVPR 2026"
+  - "Optimization"
+  - "Model Merging"
+  - "Multi-Task Learning"
+  - "Evidential Deep Learning"
+  - "Distribution Shift"
+  - "Contrastive Learning"
+  - "uncertainty estimation"
 date: 2026-05-08
-content_hash: a76f365361515bee
+content_hash: 9ae8c590d46e7767
 ---
+
 # BD-Merging: Bias-Aware Dynamic Model Merging with Evidence-Guided Contrastive Learning
 
 **Conference**: CVPR 2026  
@@ -191,8 +192,8 @@ The debiasing router is the most critical component (dropping ~9/11 points when 
 - [\[CVPR 2026\] Model Merging in the Essential Subspace](model_merging_in_the_essential_subspace.md)
 - [\[CVPR 2026\] ACE-Merging: Data-Free Model Merging with Adaptive Covariance Estimation](ace-merging_data-free_model_merging_with_adaptive_covariance_estimation.md)
 - [\[CVPR 2026\] DC-Merge: Improving Model Merging with Directional Consistency](dc-merge_improving_model_merging_with_directional_consistency.md)
+- [\[ICLR 2026\] How does the optimizer implicitly bias the model merging loss landscape?](../../ICLR2026/optimization/how_does_the_optimizer_implicitly_bias_the_model_merging_loss_landscape.md)
 - [\[CVPR 2026\] Defending Unauthorized Model Merging via Dual-Stage Weight Protection](defending_unauthorized_model_merging_via_dual-stage_weight_protection.md)
-- [\[CVPR 2026\] Label-Free Cross-Task LoRA Merging with Null-Space Compression](label-free_cross-task_lora_merging_with_null-space_compression.md)
 
 </div>
 

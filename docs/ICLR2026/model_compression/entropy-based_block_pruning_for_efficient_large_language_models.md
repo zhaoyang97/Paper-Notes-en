@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Entropy-Based Block Pruning for Efficient Large Language Models
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] This paper proposes EntroDrop, which utilizes the "entropy increase" of hidden states instead of traditional cosine similarity to measure the redundancy of Transformer calculation blocks. It identifies a two-stage pattern in LLM hidden state entropy—"compression followed by expansion." By pruning blocks with the minimu
+  [ICLR 2026][Model Compression][Block-level Pruning] This paper proposes EntroDrop, which utilizes the "entropy increase" of hidden states instead of traditional cosine similarity to measure the redundancy of Transformer calculation blocks. It identifies a two-stage pattern in LLM hidden state entropy—"compression followed by expansion." By pruning blocks with the minimum entropy increase only during the expansion stage, the method removes 37.5% of attention layers in Llama3.1…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Block-level Pruning"
+  - "Entropy Increase Criterion"
+  - "Efficient LLM Inference"
+  - "Redundancy Analysis"
+  - "Calibration Dataset"
 date: 2026-05-08
-content_hash: b07126160992ef13
+content_hash: c8ade6fc65205436
 ---
+
 # Entropy-Based Block Pruning for Efficient Large Language Models
 
 **Conference**: ICLR 2026  

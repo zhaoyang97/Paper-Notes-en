@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Human-AI Accessibility Mapping in India: VLM-Guided Annotations and POI-Centric Analysis in Chandigarh
 description: >-
-  [AAAI 2026][Multimodal VLM][Accessibility mapping] This paper adapts the Project Sidewalk accessibility annotation platform to Chandigarh, India, through customized interface labels…
+  [AAAI 2026][Multimodal VLM][Accessibility mapping] This paper adapts the Project Sidewalk accessibility annotation platform to Chandigarh, India, through customized interface labels, VLM-driven task guidance (Gemini 2.5 Flash), and a POI-centric analysis framework. Approximately 40 km of sidewalks are audited across three regions of distinct land use, identifying 1,644 locations where accessibility improvements can be made.
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "POI analysis"
   - "human-AI collaboration"
 date: 2026-05-08
-content_hash: 55d4d6a79d5323bf
+content_hash: db1c83c9678eb987
 ---
 
 # Towards Human-AI Accessibility Mapping in India: VLM-Guided Annotations and POI-Centric Analysis in Chandigarh
@@ -162,11 +162,11 @@ Mean utility score: **4.66/5**
 
 ## Related Papers
 
+- [\[ICLR 2026\] VLSU: Mapping the Limits of Joint Multimodal Understanding for AI Safety](../../ICLR2026/multimodal_vlm/vlsu_mapping_the_limits_of_joint_multimodal_understanding_for_ai_safety.md)
 - [\[CVPR 2026\] VLM-Guided Group Preference Alignment for Diffusion-based Human Mesh Recovery](../../CVPR2026/multimodal_vlm/vlm-guided_group_preference_alignment_for_diffusion-based_human_mesh_recovery.md)
-- [\[CVPR 2026\] HumanVBench: Probing Human-Centric Video Understanding in MLLMs with Automatically Synthesized Benchmarks](../../CVPR2026/multimodal_vlm/humanvbench_probing_human_centric_video_understanding_in_mllms_with_automatica.md)
-- [\[ICLR 2026\] VLM-SubtleBench: How Far Are VLMs from Human-Level Subtle Comparative Reasoning?](../../ICLR2026/multimodal_vlm/vlm-subtlebench_how_far_are_vlms_from_human-level_subtle_comparative_reasoning.md)
-- [\[AAAI 2026\] Towards Scalable Web Accessibility Audit with MLLMs as Copilots](towards_scalable_web_accessibility_audit_with_mllms_as_copilots.md)
-- [\[AAAI 2026\] CreBench: Human-Aligned Creativity Evaluation from Idea to Process to Product](crebench_human-aligned_creativity_evaluation_from_idea_to_process_to_product.md)
+- [\[ICLR 2026\] Human-MME: A Holistic Evaluation Benchmark for Human-Centric Multimodal Large Language Models](../../ICLR2026/multimodal_vlm/human-mme_a_holistic_evaluation_benchmark_for_human-centric_multimodal_large_lan.md)
+- [\[ACL 2025\] A Survey on Patent Analysis: From NLP to Multimodal AI](../../ACL2025/multimodal_vlm/patent_analysis_survey.md)
+- [\[ICLR 2026\] HumanPCR: Probing MLLM Capabilities in Diverse Human-Centric Scenes](../../ICLR2026/multimodal_vlm/humanpcr_probing_mllm_capabilities_in_diverse_human-centric_scenes.md)
 
 </div>
 

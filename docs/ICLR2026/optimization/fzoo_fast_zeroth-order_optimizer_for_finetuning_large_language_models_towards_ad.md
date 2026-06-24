@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] FZOO: Fast Zeroth-Order Optimizer for Fine-Tuning Large Language Models towards Adam-Scale Speed
 description: >-
-  [ICLR 2026][Optimization & Theory][ZO] FZOO utilizes "batched one-sided estimation + Rademacher (±1) perturbation" to bring zeroth-order optimizers close to Adam's convergence speed. By adopting adaptive step sizes based on the standard deviation of batch losses, it reduces the required forward passes by an order of magnitude. Simultaneously, ±1 perturbatio
+  [ICLR 2026][Optimization][Zeroth-Order Optimization] FZOO utilizes "batched one-sided estimation + Rademacher (±1) perturbation" to bring zeroth-order optimizers close to Adam's convergence speed. By adopting adaptive step sizes based on the standard deviation of batch losses, it reduces the required forward passes by an order of magnitude. Simultaneously, ±1 perturbations allow multiple forward passes to be merged into a single batched matrix multiplication…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - ZO
-  - MeZO
-  - normalized-SGD
+  - "ICLR 2026"
+  - "Optimization"
+  - "Zeroth-Order Optimization"
+  - "ZO"
+  - "MeZO"
+  - "normalized-SGD"
+  - "Rademacher perturbation"
+  - "Memory-efficient fine-tuning"
 date: 2026-05-08
-content_hash: 28c2eb3971e5cde0
+content_hash: 33cf1a354f54f268
 ---
+
 # FZOO: Fast Zeroth-Order Optimizer for Fine-Tuning Large Language Models towards Adam-Scale Speed
 
 **Conference**: ICLR 2026  
@@ -135,9 +139,9 @@ Per-step forward passes are 9 (4.5× more than MeZO), but wall-clock time only i
 
 - [\[ICML 2026\] Learning a Zeroth-Order Optimizer for Fine-Tuning LLMs](../../ICML2026/optimization/learning_a_zeroth-order_optimizer_for_fine-tuning_llms.md)
 - [\[ICLR 2026\] Bi-LoRA: Efficient Sharpness-Aware Minimization for Fine-Tuning Large-Scale Models](bi-lora_efficient_sharpness-aware_minimization_for_fine-tuning_large-scale_model.md)
+- [\[ICLR 2026\] HBO: Hierarchical Balancing Optimization for Fine-Tuning Large Language Models](hbo_hierarchical_balancing_optimization_for_fine-tuning_large_language_models.md)
+- [\[ICLR 2026\] ViTSP: Guiding Large-Scale Traveling Salesman Problem Solving with Vision-Language Models](vitsp_a_vision_language_models_guided_framework_for_solving_large-scale_travelin.md)
 - [\[ICCV 2025\] Zeroth-Order Fine-Tuning of LLMs in Random Subspaces](../../ICCV2025/optimization/zeroth-order_fine-tuning_of_llms_in_random_subspaces.md)
-- [\[ICML 2026\] LiMuon: Light and Fast Muon Optimizer for Large Models](../../ICML2026/optimization/limuon_light_and_fast_muon_optimizer_for_large_models.md)
-- [\[ICLR 2026\] New Hybrid Fine-Tuning Paradigm for LLMs: Algorithm Design and Convergence Analysis Framework](new_hybrid_fine-tuning_paradigm_for_llms_algorithm_design_and_convergence_analys.md)
 
 </div>
 

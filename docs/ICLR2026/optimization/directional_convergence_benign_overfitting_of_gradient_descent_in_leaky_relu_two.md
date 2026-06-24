@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Directional Convergence, Benign Overfitting of Gradient Descent in leaky ReLU two-layer Neural Networks
 description: >-
-  [ICLR 2026][Optimization & Theory][benign overfitting] This paper provides the first proof of directional convergence for gradient descent in leaky ReLU two-layer neural networks. Based on this, it establishes sufficient conditions for benign overfitting under a broad mixture data setting that significantly exceeds nearly orthogonal data while identifying a new phase trans
+  [ICLR2026][Optimization][benign overfitting] This paper provides the first proof of directional convergence for gradient descent in leaky ReLU two-layer neural networks. Based on this, it establishes sufficient conditions for benign overfitting under a broad mixture data setting that significantly exceeds nearly orthogonal data while identifying a new phase transition phenomenon.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - benign overfitting
-  - directional convergence
-  - leaky ReLU
-  - implicit bias
-  - gradient descent
-  - neural networks
+  - "ICLR2026"
+  - "Optimization"
+  - "benign overfitting"
+  - "directional convergence"
+  - "leaky ReLU"
+  - "implicit bias"
+  - "gradient descent"
+  - "neural networks"
 date: 2026-05-08
-content_hash: 0fbecf1d8433c185
+content_hash: 85ac7712df54fe0f
 ---
+
 # Directional Convergence, Benign Overfitting of Gradient Descent in leaky ReLU two-layer Neural Networks
 
 **Conference**: ICLR2026  
@@ -114,14 +115,15 @@ The positioning of this work is clear: it advances known results across all key 
 - Value: ⭐⭐⭐⭐⭐ (Fills a critical theoretical gap with lasting impact)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] On the Convergence Direction of Gradient Descent](on_the_convergence_direction_of_gradient_descent.md)
 - [\[ICLR 2026\] Fast Convergence of Natural Gradient Descent for Over-parameterized Physics-Informed Neural Networks](fast_convergence_of_natural_gradient_descent_for_over-parameterized_physics-info.md)
 - [\[ICLR 2026\] Deep-ICE: The First Globally Optimal Algorithm for Minimizing 0–1 Loss in Two-Layer ReLU and Maxout Networks](deep-ice_the_first_globally_optimal_algorithm_for_empirical_risk_minimization_of.md)
 - [\[ICML 2026\] Sharp Description of Local Minima in the Loss Landscape of High-Dimensional Two-Layer ReLU Networks](../../ICML2026/optimization/sharp_description_of_local_minima_in_the_loss_landscape_of_high-dimensional_two-.md)
-- [\[ICLR 2026\] On the Convergence Direction of Gradient Descent](on_the_convergence_direction_of_gradient_descent.md)
 - [\[AAAI 2026\] On the Learning Dynamics of Two-Layer Linear Networks with Label Noise SGD](../../AAAI2026/optimization/on_the_learning_dynamics_of_two-layer_linear_networks_with_label_noise_sgd.md)
 
 </div>

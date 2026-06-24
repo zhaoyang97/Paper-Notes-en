@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Multi-Level Strategic Classification: Incentivizing Improvement Through Promotion and Relegation Dynamics
 description: >-
-  [ICML 2026][Others][Paper Note] This paper extends traditional one-shot "strategic classification" into a sequential mechanism composed of multi-level ternary classifiers (pass/abstain/fail = promotion/stay/relegation). It proves that by leveraging three intertemporal effects — the discount factor $\beta$, skill retention rate $\gamma$, and "leg-up g
+  [ICML 2026][Strategic Classification] This paper extends traditional one-shot "strategic classification" into a sequential mechanism composed of multi-level ternary classifiers (pass/abstain/fail = promotion/stay/relegation). It proves that by leveraging three intertemporal effects — the discount factor $\beta$, skill retention rate $\gamma$, and "leg-up gain" $\delta$ — the non-incentivizable region can be shrunk from $c^+>c^-$ to $(1-\beta\gamma)c^+>c^-$. Furthermore…
 tags:
-  - ICML 2026
-  - Others
+  - "ICML 2026"
+  - "Strategic Classification"
+  - "Multi-level Mechanisms"
+  - "Promotion-Relegation"
+  - "Markov Decision Processes"
+  - "Incentive Compatibility"
 date: 2026-05-08
-content_hash: 10c302e04a6a2f6f
+content_hash: 48040842de98ef1d
 ---
+
 # Multi-Level Strategic Classification: Incentivizing Improvement Through Promotion and Relegation Dynamics
 
 **Conference**: ICML 2026  
@@ -123,15 +128,14 @@ FICO credit score data (normalized to $[0,10]$) simulates a multi-level credit p
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] DF²-VB: Dual-level Fuzzy Fusion with View-specific Boosting for Multi-view Multi-label Classification](../../CVPR2026/others/df2-vb_dual-level_fuzzy_fusion_with_view-specific_boosting_for_multi-view_multi-.md)
 - [\[ICML 2026\] Networked Information Aggregation for Binary Classification](networked_information_aggregation_for_binary_classification.md)
+- [\[ICLR 2026\] Permutation-Consistent Variational Encoding for Incomplete Multi-View Multi-Label Classification](../../ICLR2026/others/permutation-consistent_variational_encoding_for_incomplete_multi-view_multi-labe.md)
 - [\[CVPR 2026\] Prototype-based Causal Intervention for Multi-Label Image Classification](../../CVPR2026/others/prototype-based_causal_intervention_for_multi-label_image_classification.md)
 - [\[AAAI 2026\] DcMatch: Unsupervised Multi-Shape Matching with Dual-Level Consistency](../../AAAI2026/others/dcmatch_unsupervised_multi-shape_matching_with_dual-level_consistency.md)
-- [\[ICLR 2026\] Distributionally Robust Classification for Multi-Source Unsupervised Domain Adaptation](../../ICLR2026/others/distributionally_robust_classification_for_multi-source_unsupervised_domain_adap.md)
 
 </div>
 

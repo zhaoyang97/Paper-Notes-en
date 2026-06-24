@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Not All Directions Matter: Towards Structured and Task-Aware Low-Rank Model Adaptation
 description: >-
-  [ACL 2026][Model Compression][LoRA] Ours proposes StructLoRA: it utilizes an Information Bottleneck (IB) to filter out task-irrelevant directions in low-rank updates and employs a Graph Neural Network (GNN) during training to coordinate LoRA updates across different layers. It consistently outperforms LoRA, AdaLoRA, DoRA, and Sensitivity-LoRA across lang
+  [ACL 2026][Model Compression][LoRA] Ours proposes StructLoRA: it utilizes an Information Bottleneck (IB) to filter out task-irrelevant directions in low-rank updates and employs a Graph Neural Network (GNN) during training to coordinate LoRA updates across different layers. It consistently outperforms LoRA, AdaLoRA, DoRA, and Sensitivity-LoRA across language, vision, and multimodal tasks while maintaining zero additional inference overhead.
 tags:
-  - ACL 2026
-  - Model Compression
-  - LoRA
+  - "ACL 2026"
+  - "Model Compression"
+  - "LoRA"
+  - "PEFT"
+  - "Information Bottleneck"
+  - "Graph Neural Networks"
+  - "Inter-layer Coordination"
 date: 2026-05-08
-content_hash: 98e22b0dc0f3526a
+content_hash: 82ae42656acf7f61
 ---
+
 # Not All Directions Matter: Towards Structured and Task-Aware Low-Rank Model Adaptation
 
 **Conference**: ACL 2026  
@@ -175,15 +180,15 @@ Training overhed is minimal: for LLaMA-7B, training time is 1.06x and peak memor
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] TLoRA: Task-aware Low Rank Adaptation of Large Language Models](tlora_task-aware_low_rank_adaptation_of_large_language_models.md)
-- [\[ACL 2026\] TalkLoRA: Communication-Aware Mixture of Low-Rank Adaptation for Large Language Models](talklora_communication-aware_mixture_of_low-rank_adaptation_for_large_language_m.md)
 - [\[ICML 2026\] Energy-Structured Low-Rank Adaptation for Continual Learning](../../ICML2026/model_compression/energy-structured_low-rank_adaptation_for_continual_learning.md)
-- [\[AAAI 2026\] Group Orthogonal Low-Rank Adaptation for RGB-T Tracking](../../AAAI2026/model_compression/group_orthogonal_low-rank_adaptation_for_rgb-t_tracking.md)
+- [\[ACL 2026\] TalkLoRA: Communication-Aware Mixture of Low-Rank Adaptation for Large Language Models](talklora_communication-aware_mixture_of_low-rank_adaptation_for_large_language_m.md)
+- [\[ICLR 2026\] FlexLoRA: Entropy-Guided Flexible Low-Rank Adaptation](../../ICLR2026/model_compression/flexlora_entropy-guided_flexible_low-rank_adaptation.md)
 - [\[ACL 2026\] Polynomial Expansion Rank Adaptation: Enhancing Low-Rank Fine-Tuning with High-Order Interactions](polynomial_expansion_rank_adaptation_enhancing_low-rank_fine-tuning_with_high-or.md)
 
 </div>

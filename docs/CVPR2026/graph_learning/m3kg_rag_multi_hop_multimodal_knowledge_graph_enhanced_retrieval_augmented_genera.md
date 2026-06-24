@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] M3KG-RAG: Multi-hop Multimodal Knowledge Graph-enhanced Retrieval-Augmented Generation
 description: >-
-  [CVPR 2026][Graph Learning][Paper Note] M3KG-RAG is proposed, which constructs a Multi-hop Multimodal Knowledge Graph (M3KG) via a lightweight multi-agent pipeline and designs the GRASP mechanism for entity grounding and selective pruning. It retains only query-relevant and answer-assisting knowledge, significantly enhancing the audio-visual reasoning capabi
+  [CVPR 2026][Graph Learning][Multimodal Knowledge Graph] M3KG-RAG is proposed, which constructs a Multi-hop Multimodal Knowledge Graph (M3KG) via a lightweight multi-agent pipeline and designs the GRASP mechanism for entity grounding and selective pruning. It retains only query-relevant and answer-assisting knowledge, significantly enhancing the audio-visual reasoning capabilities of MLLMs.
 tags:
-  - CVPR 2026
-  - Graph Learning
+  - "CVPR 2026"
+  - "Graph Learning"
+  - "Multimodal Knowledge Graph"
+  - "Retrieval-Augmented Generation"
+  - "Audio-Visual Reasoning"
+  - "Graph Pruning"
+  - "Multi-hop Reasoning"
 date: 2026-05-08
-content_hash: 58e420effc246834
+content_hash: 352503c4d5d711bc
 ---
+
 # M3KG-RAG: Multi-hop Multimodal Knowledge Graph-enhanced Retrieval-Augmented Generation
 
 **Conference**: CVPR 2026  
@@ -136,10 +142,10 @@ This is a training-free pipeline. M3KG is constructed offline for evaluation ben
 ## Related Papers
 
 - [\[ACL 2026\] MegaRAG: Multimodal Knowledge Graph-Based Retrieval Augmented Generation](../../ACL2026/graph_learning/megarag_multimodal_knowledge_graph-based_retrieval_augmented_generation.md)
+- [\[NeurIPS 2025\] GFM-RAG: Graph Foundation Model for Retrieval Augmented Generation](../../NeurIPS2025/graph_learning/gfm-rag_graph_foundation_model_for_retrieval_augmented_generation.md)
 - [\[CVPR 2026\] Graph2Eval: Automatic Multimodal Task Generation for Agents via Knowledge Graphs](graph2eval_automatic_multimodal_task_generation_for_agents_via_knowledge_graphs.md)
 - [\[ACL 2026\] STEM: Structure-Tracing Evidence Mining for Knowledge Graphs-Driven Retrieval-Augmented Generation](../../ACL2026/graph_learning/stem_structure-tracing_evidence_mining_for_knowledge_graphs-driven_retrieval-aug.md)
 - [\[ACL 2026\] LegalGraphRAG: Multi-Agent Graph Retrieval-Augmented Generation for Reliable Legal Reasoning](../../ACL2026/graph_learning/legalgraphrag_multi-agent_graph_retrieval-augmented_generation_for_reliable_lega.md)
-- [\[NeurIPS 2025\] GFM-RAG: Graph Foundation Model for Retrieval Augmented Generation](../../NeurIPS2025/graph_learning/gfm-rag_graph_foundation_model_for_retrieval_augmented_generation.md)
 
 </div>
 

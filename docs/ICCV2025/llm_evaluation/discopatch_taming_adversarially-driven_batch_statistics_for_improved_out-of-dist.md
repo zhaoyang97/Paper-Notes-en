@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DisCoPatch: Taming Adversarially-driven Batch Statistics for Improved Out-of-Distribution Detection
 description: >-
-  [ICCV 2025][LLM Evaluation][Out-of-Distribution Detection] This paper proposes DisCoPatch, a framework that exploits the inherent bias of BatchNorm toward batch statistics in adversarial VAEs to distinguish ID from OOD s…
+  [ICCV 2025][LLM Evaluation][Out-of-Distribution Detection] This paper proposes DisCoPatch, a framework that exploits the inherent bias of BatchNorm toward batch statistics in adversarial VAEs to distinguish ID from OOD samples. At inference time, multiple patches from the same image are composed into a batch to ensure distributional consistency. The method achieves state-of-the-art performance on covariate-shift OOD detection (ImageNet-1K(-C) 95.5% AUROC) and near-OOD detecti…
 tags:
   - "ICCV 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "Covariate Shift"
   - "Patch Strategy"
 date: 2026-05-08
-content_hash: 59a51d098f571c53
+content_hash: 20b04b3e9346a0a7
 ---
 
 # DisCoPatch: Taming Adversarially-driven Batch Statistics for Improved Out-of-Distribution Detection
@@ -139,10 +139,10 @@ Average near-OOD AUROC of 95.0% (SOTA); covariate-shift AUROC of 95.5% (substant
 ## Related Papers
 
 - [\[ICCV 2025\] ODP-Bench: Benchmarking Out-of-Distribution Performance Prediction](odp-bench_benchmarking_out-of-distribution_performance_prediction.md)
+- [\[ECCV 2024\] Gradient-Regularized Out-of-Distribution Detection](../../ECCV2024/llm_evaluation/gradient-regularized_out-of-distribution_detection.md)
 - [\[ICCV 2025\] Few-Shot Pattern Detection via Template Matching and Regression](few-shot_pattern_detection_via_template_matching_and_regression.md)
-- [\[NeurIPS 2025\] Leveraging Robust Optimization for LLM Alignment under Distribution Shifts](../../NeurIPS2025/llm_evaluation/leveraging_robust_optimization_for_llm_alignment_under_distribution_shifts.md)
-- [\[NeurIPS 2025\] Benchmarking Large Language Models for Zero-Shot and Few-Shot Phishing URL Detection](../../NeurIPS2025/llm_evaluation/benchmarking_large_language_models_for_zero-shot_and_few-shot_phishing_url_detec.md)
-- [\[ICLR 2026\] BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation](../../ICLR2026/llm_evaluation/biasscope_towards_automated_detection_of_bias_in_llm-as-a-judge_evaluation.md)
+- [\[ACL 2025\] Movie101v2: Improved Movie Narration Benchmark](../../ACL2025/llm_evaluation/movie101v2_improved_movie_narration_benchmark.md)
+- [\[ACL 2025\] EcomScriptBench: A Multi-task Benchmark for E-commerce Script Planning via Step-wise Intention-Driven Product Association](../../ACL2025/llm_evaluation/ecomscriptbench.md)
 
 </div>
 

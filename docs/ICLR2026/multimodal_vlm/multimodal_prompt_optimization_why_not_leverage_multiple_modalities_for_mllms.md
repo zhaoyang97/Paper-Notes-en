@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Multimodal Prompt Optimization: Why Not Leverage Multiple Modalities for MLLMs
 description: >-
-  [ICLR 2026][Multimodal VLM][MLLM] This work extends Automated Prompt Optimization (APO) from a text-only space to a multimodal space for the first time. It proposes the MPO framework, featuring alignment-preserving joint exploration (driven by unified semantic gradients for text and non-text updates with Generation/Edit/Mix operators) and prior-inherit
+  [ICLR 2026][Multimodal VLM][Multimodal Prompt] This work extends Automated Prompt Optimization (APO) from a text-only space to a multimodal space for the first time. It proposes the MPO framework, featuring alignment-preserving joint exploration (driven by unified semantic gradients for text and non-text updates with Generation/Edit/Mix operators) and prior-inherited Bayesian UCB candidate selection (using parent performance to warm-start child Beta priors). MPO achieves an a…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - MLLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Prompt"
+  - "Automated Prompt Optimization"
+  - "Bayesian Selection"
+  - "MLLM"
+  - "Cross-modal Alignment"
 date: 2026-05-08
-content_hash: f35206176741863d
+content_hash: 69ed32af4101fd5a
 ---
+
 # Multimodal Prompt Optimization: Why Not Leverage Multiple Modalities for MLLMs
 
 **Conference**: ICLR 2026  
@@ -143,11 +148,11 @@ MPO achieved the best performance on all 10 datasets, with a 65.1% average accur
 
 ## Related Papers
 
+- [\[ICLR 2026\] OptMerge: Unifying Multimodal LLM Capabilities and Modalities via Model Merging](optmerge_unifying_multimodal_llm_capabilities_and_modalities_via_model_merging.md)
 - [\[ICCV 2025\] MMOne: Representing Multiple Modalities in One Scene](../../ICCV2025/multimodal_vlm/mmone_representing_multiple_modalities_in_one_scene.md)
 - [\[ICLR 2026\] Investigating Redundancy in Multimodal Large Language Models with Multiple Vision Encoders](investigating_redundancy_in_multimodal_large_language_models_with_multiple_visio.md)
-- [\[ICLR 2026\] OptMerge: Unifying Multimodal LLM Capabilities and Modalities via Model Merging](optmerge_unifying_multimodal_llm_capabilities_and_modalities_via_model_merging.md)
 - [\[ICLR 2026\] Importance Sampling for Multi-Negative Multimodal Direct Preference Optimization](importance_sampling_for_multi-negative_multimodal_direct_preference_optimization.md)
-- [\[ICLR 2026\] Visual Jigsaw Post-Training Improves MLLMs](visual_jigsaw_post-training_improves_mllms.md)
+- [\[ICLR 2026\] EventFlash: Towards Efficient MLLMs for Event-Based Vision](eventflash_towards_efficient_mllms_for_event-based_vision.md)
 
 </div>
 

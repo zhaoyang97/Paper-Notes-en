@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Personalized Subgraph Federated Learning with Differentiable Auxiliary Projections
 description: >-
-  [NeurIPS 2025][Optimization][Federated Learning] This paper proposes FedAux, a framework that introduces differentiable Auxiliary Projection Vectors (APVs) to map node embeddings into a one-dimensional space and perform…
+  [NeurIPS 2025][Optimization][Federated Learning] This paper proposes FedAux, a framework that introduces differentiable Auxiliary Projection Vectors (APVs) to map node embeddings into a one-dimensional space and perform soft-ranking aggregation via Gaussian kernels. The APV simultaneously serves as a compact, privacy-preserving summary of the local subgraph for server-side similarity computation and participates in joint client-side optimization…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Subgraph Heterogeneity"
   - "Auxiliary Projection Vector"
 date: 2026-05-08
-content_hash: 55bc133ed6ce1639
+content_hash: 9c6d9407adbe0ee3
 ---
 
 # Personalized Subgraph Federated Learning with Differentiable Auxiliary Projections
@@ -147,10 +147,10 @@ The FedAux workflow proceeds as follows:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Streaming Federated Learning with Markovian Data](streaming_federated_learning_with_markovian_data.md)
-- [\[NeurIPS 2025\] VIKING: Deep Variational Inference with Stochastic Projections](viking_deep_variational_inference_with_stochastic_projections.md)
 - [\[NeurIPS 2025\] Learning Reconfigurable Representations for Multimodal Federated Learning with Missing Data](learning_reconfigurable_representations_for_multimodal_federated_learning_with_m.md)
+- [\[NeurIPS 2025\] VIKING: Deep Variational Inference with Stochastic Projections](viking_deep_variational_inference_with_stochastic_projections.md)
+- [\[CVPR 2026\] Few-for-Many Personalized Federated Learning](../../CVPR2026/optimization/few-for-many_personalized_federated_learning.md)
 - [\[NeurIPS 2025\] Multiplayer Federated Learning: Reaching Equilibrium with Less Communication](multiplayer_federated_learning_reaching_equilibrium_with_less_communication.md)
-- [\[AAAI 2026\] pFed1BS: Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching](../../AAAI2026/optimization/personalized_federated_learning_with_bidirectional_communication_compression_via.md)
 
 </div>
 

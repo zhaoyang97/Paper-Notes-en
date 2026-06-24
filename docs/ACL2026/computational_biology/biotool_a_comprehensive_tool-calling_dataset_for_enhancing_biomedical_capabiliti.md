@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] BioTool: A Comprehensive Tool-Calling Dataset for Enhancing Biomedical Capabilities of Large Language Models
 description: >-
-  [ACL 2026][Computational Biology][NCBI/Ensembl/UniProt] BioTool constructs an instruction fine-tuning dataset consisting of 7,040 human-verified "query–API call" pairs covering 34 commonly used tools from three major biomedical databases: NCBI, Ensembl, and UniProt. After fine-tuning 4B-scale open-source LLMs with this data, the tool-calling quality exceeds commercial model
+  [ACL 2026][Computational Biology][Biomedical tool calling] BioTool constructs an instruction fine-tuning dataset consisting of 7,040 human-verified "query–API call" pairs covering 34 commonly used tools from three major biomedical databases: NCBI, Ensembl, and UniProt. After fine-tuning 4B-scale open-source LLMs with this data, the tool-calling quality exceeds commercial models such as GPT-5.1, Gemini-3 Pro, and Claude-4.5-Sonnet by over 15%.
 tags:
-  - ACL 2026
-  - Computational Biology
-  - NCBI/Ensembl/UniProt
+  - "ACL 2026"
+  - "Computational Biology"
+  - "Biomedical tool calling"
+  - "NCBI/Ensembl/UniProt"
+  - "instruction fine-tuning"
+  - "small models surpassing commercial LLMs"
 date: 2026-05-08
-content_hash: 750cd7b6f0a4892e
+content_hash: 324f229df17aed69
 ---
+
 # BioTool: A Comprehensive Tool-Calling Dataset for Enhancing Biomedical Capabilities of Large Language Models
 
 **Conference**: ACL 2026  
@@ -127,11 +131,11 @@ Test set size: 1,048 test queries, with head-to-head preference evaluation condu
 
 ## Related Papers
 
-- [\[ICLR 2026\] Tracing Pharmacological Knowledge in Large Language Models](../../ICLR2026/computational_biology/tracing_pharmacological_knowledge_in_large_language_models.md)
 - [\[NeurIPS 2025\] FGBench: A Dataset and Benchmark for Molecular Property Reasoning at Functional Group-Level in Large Language Models](../../NeurIPS2025/computational_biology/fgbench_a_dataset_and_benchmark_for_molecular_property_reasoning_at_functional_g.md)
-- [\[ICLR 2026\] AFD-INSTRUCTION: A Comprehensive Antibody Instruction Dataset with Functional Annotations for LLM-Based Understanding and Design](../../ICLR2026/computational_biology/afd-instruction_a_comprehensive_antibody_instruction_dataset_with_functional_ann.md)
 - [\[NeurIPS 2025\] Mol-LLaMA: Towards General Understanding of Molecules in Large Molecular Language Models](../../NeurIPS2025/computational_biology/mol-llama_towards_general_understanding_of_molecules_in_large_molecular_language.md)
 - [\[ACL 2026\] ProtoCycle: Reflective Tool-Augmented Planning for Text-Guided Protein Design](protocycle_reflective_tool-augmented_planning_for_text-guided_protein_design.md)
+- [\[ICLR 2026\] Antibody: Strengthening Defense Against Harmful Fine-Tuning for Large Language Models via Attenuating Harmful Gradient Influence](../../ICLR2026/computational_biology/antibody_strengthening_defense_against_harmful_fine-tuning_for_large_language_mo.md)
+- [\[ICLR 2026\] Controlling Repetition in Protein Language Models](../../ICLR2026/computational_biology/controlling_repetition_in_protein_language_models.md)
 
 </div>
 

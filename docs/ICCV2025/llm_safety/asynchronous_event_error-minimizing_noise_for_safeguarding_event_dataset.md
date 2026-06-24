@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Asynchronous Event Error-Minimizing Noise for Safeguarding Event Dataset
 description: >-
-  [ICCV 2025][LLM Safety][Unlearnable Examples] This paper proposes UEvs, the first unlearnable example generation method for asynchronous event data. It introduces Event Error-Minimizing Noise (E²MN) and an adaptive proje…
+  [ICCV 2025][LLM Safety][Unlearnable Examples] This paper proposes UEvs, the first unlearnable example generation method for asynchronous event data. It introduces Event Error-Minimizing Noise (E²MN) and an adaptive projection mechanism that prevent unauthorized models from learning from event datasets while preserving utility for legitimate use.
 tags:
   - "ICCV 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Error-Minimizing Noise"
   - "Asynchronous Event Stream"
 date: 2026-05-08
-content_hash: 4bf66fd648ab1abc
+content_hash: 709f4b67138e170b
 ---
 
 # Asynchronous Event Error-Minimizing Noise for Safeguarding Event Dataset
@@ -164,9 +164,9 @@ Reconstructing the unlearnable event stream from the unlearnable event stack pro
 
 - [\[ACL 2026\] SERE: Structural Example Retrieval for Enhancing LLMs in Event Causality Identification](../../ACL2026/llm_safety/sere_structural_example_retrieval_for_enhancing_llms_in_event_causality_identifi.md)
 - [\[NeurIPS 2025\] MaskSQL: Safeguarding Privacy for LLM-Based Text-to-SQL via Abstraction](../../NeurIPS2025/llm_safety/masksql_safeguarding_privacy_for_llm-based_text-to-sql_via_abstraction.md)
-- [\[NeurIPS 2025\] Enhancing Sample Selection Against Label Noise by Cutting Mislabeled Easy Examples](../../NeurIPS2025/llm_safety/enhancing_sample_selection_against_label_noise_by_cutting_mislabeled_easy_exampl.md)
-- [\[NeurIPS 2025\] CPRet: A Dataset, Benchmark, and Model for Retrieval in Competitive Programming](../../NeurIPS2025/llm_safety/cpret_a_dataset_benchmark_and_model_for_retrieval_in_competitive_programming.md)
 - [\[ICCV 2025\] Temporal Unlearnable Examples: Preventing Personal Video Data from Unauthorized Exploitation](temporal_unlearnable_examples_preventing_personal_video_data_from_unauthorized_e.md)
+- [\[NeurIPS 2025\] CPRet: A Dataset, Benchmark, and Model for Retrieval in Competitive Programming](../../NeurIPS2025/llm_safety/cpret_a_dataset_benchmark_and_model_for_retrieval_in_competitive_programming.md)
+- [\[NeurIPS 2025\] Enhancing Sample Selection Against Label Noise by Cutting Mislabeled Easy Examples](../../NeurIPS2025/llm_safety/enhancing_sample_selection_against_label_noise_by_cutting_mislabeled_easy_exampl.md)
 
 </div>
 

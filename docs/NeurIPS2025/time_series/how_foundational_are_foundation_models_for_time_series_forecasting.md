@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] How Foundational are Foundation Models for Time Series Forecasting?
 description: >-
-  [NeurIPS 2025][Time Series][Time series foundation models] Through systematic experiments on synthetic and real-world electricity consumption data…
+  [NeurIPS 2025][Time Series][Time series foundation models] Through systematic experiments on synthetic and real-world electricity consumption data, this paper reveals that the zero-shot generalization capability of time series foundation models (TSFMs) is highly dependent on the pretraining data distribution. Under domain shift, SAMFormer—a lightweight specialized model with only 49.5K parameters trained from scratch—outperforms fine-tuned TimesFM with 500M+ parameters.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "domain transfer"
   - "lightweight models"
 date: 2026-05-08
-content_hash: 59f91fa659182a9a
+content_hash: faa63f5db6580ed7
 ---
 
 # How Foundational are Foundation Models for Time Series Forecasting?

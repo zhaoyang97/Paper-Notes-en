@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Ensemble++: Scalable Exploration via Ensemble
 description: >-
-  [NeurIPS 2025][Model Compression][Thompson Sampling] This paper proposes Ensemble++, which achieves regret bounds comparable to exact Thompson Sampling using only $\Theta(d\log T)$ ensemble size via an incremental update…
+  [NeurIPS 2025][Model Compression][Thompson Sampling] This paper proposes Ensemble++, which achieves regret bounds comparable to exact Thompson Sampling using only $\Theta(d\log T)$ ensemble size via an incremental update mechanism over shared factor matrices, with natural extension to nonlinear/neural network settings.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Exploration-Exploitation"
   - "Approximate Posterior"
 date: 2026-05-08
-content_hash: 154c041bb88b306f
+content_hash: 19b956d5d68e63c8
 ---
 
 # Ensemble++: Scalable Exploration via Ensemble
@@ -108,11 +108,11 @@ Ensemble++ maintains a shared matrix factor $\mathbf{A}_t \in \mathbb{R}^{d \tim
 
 ## Related Papers
 
+- [\[CVPR 2025\] Tripartite Weight-Space Ensemble for Few-Shot Class-Incremental Learning](../../CVPR2025/model_compression/tripartite_weight-space_ensemble_for_few-shot_class-incremental_learning.md)
 - [\[ICLR 2026\] FlyPrompt: Brain-Inspired Random-Expanded Routing with Temporal-Ensemble Experts for General Continual Learning](../../ICLR2026/model_compression/flyprompt_brain-inspired_random-expanded_routing.md)
 - [\[NeurIPS 2025\] GraSS: Scalable Data Attribution with Gradient Sparsification and Sparse Projection](grass_scalable_data_attribution_with_gradient_sparsification_and_sparse_projecti.md)
-- [\[ACL 2026\] SSSD: Simply-Scalable Speculative Decoding](../../ACL2026/model_compression/sssd_simply-scalable_speculative_decoding.md)
-- [\[AAAI 2026\] Stratified Knowledge-Density Super-Network for Scalable Vision Transformers](../../AAAI2026/model_compression/stratified_knowledge-density_super-network_for_scalable_vision_transformers.md)
-- [\[NeurIPS 2025\] Single-Teacher View Augmentation: Boosting Knowledge Distillation via Angular Diversity](single-teacher_view_augmentation_boosting_knowledge_distillation_via_angular_div.md)
+- [\[ACL 2025\] Pre-training Distillation for Large Language Models: A Design Space Exploration](../../ACL2025/model_compression/pre-training_distillation_for_large_language_models_a_design_space_exploration.md)
+- [\[ACL 2025\] STUN: Structured-Then-Unstructured Pruning for Scalable MoE Pruning](../../ACL2025/model_compression/stun_moe_pruning.md)
 
 </div>
 

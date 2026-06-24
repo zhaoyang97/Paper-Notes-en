@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sketch-HARP: Hierarchical Autoregressive Sketch Generation for Flexible Stroke-Level Drawing Manipulation
 description: >-
-  [AAAI 2026][Sketch Generation] This paper proposes Sketch-HARP, a hierarchical autoregressive sketch generation framework that achieves, for the first time…
+  [AAAI 2026][Sketch Generation] This paper proposes Sketch-HARP, a hierarchical autoregressive sketch generation framework that achieves, for the first time, flexible stroke-level manipulation during the drawing process through a three-stage hierarchical pipeline (predicting stroke embeddings → determining canvas positions → generating drawing action sequences). The method significantly outperforms SketchEdit on tasks including stroke replacement, erasure, and extension.
 tags:
   - "AAAI 2026"
   - "Sketch Generation"
@@ -11,7 +11,7 @@ tags:
   - "Sketch-HARP"
   - "Sketch Editing"
 date: 2026-05-08
-content_hash: 82057af744f42fd1
+content_hash: 5eddadf081f1e19c
 ---
 
 # Sketch-HARP: Hierarchical Autoregressive Sketch Generation for Flexible Stroke-Level Drawing Manipulation
@@ -133,10 +133,10 @@ The method is elegantly designed with a natural and well-motivated hierarchical 
 ## Related Papers
 
 - [\[ICCV 2025\] Stroke2Sketch: Harnessing Stroke Attributes for Training-Free Sketch Generation](../../ICCV2025/others/stroke2sketch_harnessing_stroke_attributes_for_training-free_sketch_generation.md)
+- [\[CVPR 2026\] Bidirectional Query-Driven Generation of Parametric CAD Sketch](../../CVPR2026/others/bidirectional_query-driven_generation_of_parametric_cad_sketch.md)
 - [\[AAAI 2026\] LeanRAG: Knowledge-Graph-Based Generation with Semantic Aggregation and Hierarchical Retrieval](leanrag_knowledge-graph-based_generation_with_semantic_aggregation_and_hierarchi.md)
-- [\[AAAI 2026\] DcMatch: Unsupervised Multi-Shape Matching with Dual-Level Consistency](dcmatch_unsupervised_multi-shape_matching_with_dual-level_consistency.md)
-- [\[AAAI 2026\] HybriDLA: Hybrid Generation for Document Layout Analysis](hybridla_hybrid_generation_for_document_layout_analysis.md)
 - [\[AAAI 2026\] CAE: Hierarchical Semantic Alignment for Image Clustering](hierarchical_semantic_alignment_for_image_clustering.md)
+- [\[AAAI 2026\] DcMatch: Unsupervised Multi-Shape Matching with Dual-Level Consistency](dcmatch_unsupervised_multi-shape_matching_with_dual-level_consistency.md)
 
 </div>
 

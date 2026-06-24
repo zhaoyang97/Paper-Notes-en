@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Keep it SymPL: Symbolic Projective Layout for Allocentric Spatial Reasoning in Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] SymPL identifies that VLMs struggle with "allocentric" spatial reasoning (reasoning from the perspective of an object in the scene). It proposes a training-free approach to extract 3D information and rewrite such problems into a "symbolic layout problem" (e.g., "which colored dot falls in the yellow region") using four
+  [CVPR 2026][VLM Reasoning][Allocentric Spatial Reasoning] SymPL identifies that VLMs struggle with "allocentric" spatial reasoning (reasoning from the perspective of an object in the scene). It proposes a training-free approach to extract 3D information and rewrite such problems into a "symbolic layout problem" (e.g., "which colored dot falls in the yellow region") using four factors: Projection, Abstraction, Bipartition, and Localization. This converts difficult perspective…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Allocentric Spatial Reasoning"
+  - "Perspective Transformation"
+  - "Symbolic Layout"
+  - "Training-free"
+  - "VLM Prompt Reconstruction"
 date: 2026-05-08
-content_hash: 7e06f9de65761f5f
+content_hash: be1aa32bedbd1bf3
 ---
+
 # Keep it SymPL: Symbolic Projective Layout for Allocentric Spatial Reasoning in Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -130,10 +136,10 @@ On visual illusions (COMFORT VI) and multi-view consistency (COMFORT Multi), Sym
 ## Related Papers
 
 - [\[CVPR 2026\] Hierarchical Process Reward Models are Symbolic Vision Learners](hierarchical_process_reward_models_are_symbolic_vision_learners.md)
-- [\[CVPR 2026\] HOG-Layout: Hierarchical 3D Scene Generation, Optimization and Editing via Vision-Language Models](hog_layout_hierarchical_3d_scene_generation_optimization_and_editing.md)
 - [\[CVPR 2026\] SpatiaLQA: A Benchmark for Evaluating Spatial Logical Reasoning in Vision-Language Models](spatialqa_a_benchmark_for_evaluating_spatial_logical_reasoning_in_vision-languag.md)
-- [\[CVPR 2026\] Hear you are: Teaching LLMs Spatial Reasoning with Vision and Spatial Sound](hear_you_are_teaching_llms_spatial_reasoning_with_vision_and_spatial_sound.md)
+- [\[CVPR 2026\] Learning to Reason in 4D: Dynamic Spatial Understanding for Vision Language Models](learning_to_reason_in_4d_dynamic_spatial_understanding_for_vision_language_model.md)
 - [\[CVPR 2026\] HandVQA: Diagnosing and Improving Fine-Grained Spatial Reasoning about Hands in Vision-Language Models](handvqa_diagnosing_and_improving_fine-grained_spatial_reasoning_about_hands_in_v.md)
+- [\[ICLR 2026\] OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models](../../ICLR2026/vlm_reasoning/omnispatial_towards_comprehensive_spatial_reasoning_benchmark_for_vision_languag.md)
 
 </div>
 

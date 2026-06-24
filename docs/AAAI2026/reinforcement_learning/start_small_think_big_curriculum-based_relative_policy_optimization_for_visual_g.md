@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Start Small, Think Big: Curriculum-based Relative Policy Optimization for Visual Grounding
 description: >-
-  [AAAI 2026][Reinforcement Learning][Visual Grounding] This work identifies that CoT reasoning can be counterproductive in visual grounding, and proposes CuRPO (Curriculum-based Relative Policy Optimization)…
+  [AAAI 2026 Oral][Reinforcement Learning][Visual Grounding] This work identifies that CoT reasoning can be counterproductive in visual grounding, and proposes CuRPO (Curriculum-based Relative Policy Optimization), which leverages CoT length and gIoU reward as data complexity proxies for curriculum-based RL training, achieving up to +12.52 mAP improvement over Visual-RFT on RefCOCO.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Reinforcement Learning"
   - "Visual Grounding"
   - "Curriculum Learning"
@@ -12,7 +12,7 @@ tags:
   - "Chain-of-Thought"
   - "Vision-Language Models"
 date: 2026-05-08
-content_hash: 9299c6db21149095
+content_hash: 8b13d98ba510d21a
 ---
 
 # Start Small, Think Big: Curriculum-based Relative Policy Optimization for Visual Grounding
@@ -189,10 +189,10 @@ With only 50 samples, CuRPO surpasses Visual-RFT trained on all 239 samples.
 ## Related Papers
 
 - [\[AAAI 2026\] InfiGUI-G1: Advancing GUI Grounding with Adaptive Exploration Policy Optimization](infigui-g1_advancing_gui_grounding_with_adaptive_exploration_policy_optimization.md)
-- [\[AAAI 2026\] Realistic Curriculum Reinforcement Learning for Autonomous and Sustainable Marine Vessel Navigation](realistic_curriculum_reinforcement_learning_for_autonomous_and_sustainable_marin.md)
-- [\[ACL 2026\] Visually-Guided Policy Optimization for Multimodal Reasoning](../../ACL2026/reinforcement_learning/visually-guided_policy_optimization_for_multimodal_reasoning.md)
-- [\[AAAI 2026\] Think, Speak, Decide: Language-Augmented Multi-Agent Reinforcement Learning for Economic Decision-Making](think_speak_decide_language-augmented_multi-agent_reinforcement_learning_for_eco.md)
-- [\[ICML 2026\] Learning to Route Languages for Multilingual Policy Optimization](../../ICML2026/reinforcement_learning/learning_to_route_languages_for_multilingual_policy_optimization.md)
+- [\[ICLR 2026\] Revisiting Group Relative Policy Optimization: Insights into On-Policy and Off-Policy Training](../../ICLR2026/reinforcement_learning/revisiting_group_relative_policy_optimization_insights_into_on-policy_and_off-po.md)
+- [\[ICLR 2026\] Relative Entropy Pathwise Policy Optimization](../../ICLR2026/reinforcement_learning/relative_entropy_pathwise_policy_optimization.md)
+- [\[ICLR 2026\] Sample More to Think Less: Group Filtered Policy Optimization for Concise Reasoning](../../ICLR2026/reinforcement_learning/sample_more_to_think_less_group_filtered_policy_optimization_for_concise_reasoni.md)
+- [\[ECCV 2024\] Visual Grounding for Object-Level Generalization in Reinforcement Learning](../../ECCV2024/reinforcement_learning/visual_grounding_for_object-level_generalization_in_reinforcement_learning.md)
 
 </div>
 

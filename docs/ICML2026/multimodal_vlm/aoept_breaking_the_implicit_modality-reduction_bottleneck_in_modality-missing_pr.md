@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] AOEPT: Breaking the Implicit Modality-Reduction Bottleneck in Modality-Missing Prompt Tuning
 description: >-
-  [ICML 2026][Multimodal VLM][Prompt Tuning] AOEPT points out that existing missing-modality prompt tuning compresses the inference scope of Multimodal Transformers into visible modality subspaces. It utilizes Modal-Contextualized Prompts (MCPs) distilled from the training set as a retrievable implicit information source for missing modalities, consistently outpe
+  [ICML 2026][Multimodal VLM][Missing Modality] AOEPT points out that existing missing-modality prompt tuning compresses the inference scope of Multimodal Transformers into visible modality subspaces. It utilizes Modal-Contextualized Prompts (MCPs) distilled from the training set as a retrievable implicit information source for missing modalities, consistently outperforming existing methods across multiple datasets, missing rates, and backbones.
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - Prompt Tuning
-  - NM2I
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Missing Modality"
+  - "Multimodal Transformer"
+  - "Prompt Tuning"
+  - "Modal-Contextualized Prompt"
+  - "NM2I"
 date: 2026-05-08
-content_hash: be655864fadef239
+content_hash: 222a55f78f57ef6f
 ---
+
 # AOEPT: Breaking the Implicit Modality-Reduction Bottleneck in Modality-Missing Prompt Tuning
 
 **Conference**: ICML 2026  
@@ -136,13 +140,20 @@ Ablation on 70% text missing scenario in MM-IMDb:
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- MAPs: Prompting for Missing Modality Learning.
-- SyP: Synergistic Prompting for Multimodal Transformers.
-- DCP: Dynamic Contextual Prompts for VLM.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] MoRA: Missing Modality Low-Rank Adaptation for Visual Recognition](../../ICLR2026/multimodal_vlm/mora_missing_modality_low-rank_adaptation_for_visual_recognition.md)
+- [\[CVPR 2026\] Parameter-Efficient Adaptation for MLLMs via Implicit Modality Decomposition](../../CVPR2026/multimodal_vlm/parameter-efficient_adaptation_for_mllms_via_implicit_modality_decomposition.md)
+- [\[ICML 2026\] Jailbreaking Vision-Language Models Through the Visual Modality](jailbreaking_vision-language_models_through_the_visual_modality.md)
+- [\[ICML 2026\] Calibrated Multimodal Representation Learning with Missing Modalities](calibrated_multimodal_representation_learning_with_missing_modalities.md)
+- [\[CVPR 2026\] DeepAlign: Mitigating Modality Conflict through Modality-Specific Alignment](../../CVPR2026/multimodal_vlm/deepalign_mitigating_modality_conflict_through_modality-specific_alignment.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Parameter-Efficient Adaptation for MLLMs via Implicit Modality Decomposition](../../CVPR2026/multimodal_vlm/parameter-efficient_adaptation_for_mllms_via_implicit_modality_decomposition.md)

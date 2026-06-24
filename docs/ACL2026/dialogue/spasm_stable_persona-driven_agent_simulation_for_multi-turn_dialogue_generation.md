@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SPASM: Stable Persona-driven Agent Simulation for Multi-turn Dialogue Generation
 description: >-
-  [ACL 2026][Dialogue Systems][Paper Note] This paper proposes SPASM, a stability-centric persona-driven multi-turn dialogue simulation framework. Through modular persona generation, Egocentric Context Projection (ECP), and termination detection, it significantly reduces character drift and "echo" effects in LLM-LLM dialogues, constructing a high-quality datase
+  [ACL 2026 Findings][Dialogue Systems][Persona-driven Dialogue] This paper proposes SPASM, a stability-centric persona-driven multi-turn dialogue simulation framework. Through modular persona generation, Egocentric Context Projection (ECP), and termination detection, it significantly reduces character drift and "echo" effects in LLM-LLM dialogues, constructing a high-quality dataset of 45,000 multi-turn dialogues.
 tags:
-  - ACL 2026
-  - Dialogue Systems
+  - "ACL 2026 Findings"
+  - "Dialogue Systems"
+  - "Persona-driven Dialogue"
+  - "Multi-turn Simulation"
+  - "Character Drift"
+  - "Egocentric Projection"
+  - "Data Generation"
 date: 2026-05-08
-content_hash: a25854694ef633a7
+content_hash: a9e008a03b759b31
 ---
+
 # SPASM: Stable Persona-driven Agent Simulation for Multi-turn Dialogue Generation
 
 **Conference**: ACL 2026 Findings  

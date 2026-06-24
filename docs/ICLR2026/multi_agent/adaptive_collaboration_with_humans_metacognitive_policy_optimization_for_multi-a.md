@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Adaptive Collaboration with Humans: Metacognitive Policy Optimization for Multi-Agent LLMs with Continual Learning
 description: >-
-  [ICLR 2026][Multi-Agent][GRPO] The HILA framework is proposed to enable multi-agent LLMs to learn a set of "metacognitive policies"—judging when to solve problems independently and when to defer to human experts. By using Dual-Loop Policy Optimization, it decouples the optimization of "when to ask" (inner-loop reinforcement learning) from "how to ga
+  [ICLR2026][Multi-Agent][Multi-agent systems] The HILA framework is proposed to enable multi-agent LLMs to learn a set of "metacognitive policies"—judging when to solve problems independently and when to defer to human experts. By using Dual-Loop Policy Optimization, it decouples the optimization of "when to ask" (inner-loop reinforcement learning) from "how to gain capability from assistance" (outer-loop continual learning), consistently outperforming existing autonomous mult…
 tags:
-  - ICLR 2026
-  - Multi-Agent
-  - GRPO
+  - "ICLR2026"
+  - "Multi-Agent"
+  - "Multi-agent systems"
+  - "human-in-the-loop"
+  - "metacognitive policies"
+  - "GRPO"
+  - "continual learning"
 date: 2026-05-08
-content_hash: 353baaab5839339c
+content_hash: a6e307dbb18b5c58
 ---
+
 # Adaptive Collaboration with Humans: Metacognitive Policy Optimization for Multi-Agent LLMs with Continual Learning
 
 **Conference**: ICLR2026  
@@ -152,11 +157,11 @@ Adding only GRPO yielded limited overall improvements. Significant gains appeare
 
 ## Related Papers
 
+- [\[ICLR 2026\] Stronger-MAS: Multi-Agent Reinforcement Learning for Collaborative LLMs](stronger-mas_multi-agent_reinforcement_learning_for_collaborative_llms.md)
 - [\[ICLR 2026\] AgentPO: Enhancing Multi-Agent Collaboration via Reinforcement Learning](agentpo_enhancing_multi-agent_collaboration_via_reinforcement_learning.md)
 - [\[ICML 2026\] OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration](../../ICML2026/multi_agent/omac_a_holistic_optimization_framework_for_llm-based_multi-agent_collaboration.md)
 - [\[ICLR 2026\] Learning to Summarize by Learning to Quiz: Adversarial Agentic Collaboration for Long Document Summarization](learning_to_summarize_by_learning_to_quiz_adversarial_agentic_collaboration_for_.md)
 - [\[ACL 2026\] ATLAS: Adaptive Trading with LLM AgentS Through Dynamic Prompt Optimization and Multi-Agent Coordination](../../ACL2026/multi_agent/atlas_adaptive_trading_with_llm_agents_through_dynamic_prompt_optimization_and_m.md)
-- [\[ACL 2026\] MAGEO: From Experience to Skill — Multi-Agent Generative Engine Optimization via Reusable Strategy Learning](../../ACL2026/multi_agent/from_experience_to_skill_multi-agent_generative_engine_optimization_via_reusable.md)
 
 </div>
 

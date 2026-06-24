@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Not All Splits Are Equal: Rethinking Attribute Generalization Across Unrelated Categories
 description: >-
-  [NEURIPS2025][LLM Evaluation][attribute generalization] This paper presents the first systematic evaluation of how train/test splitting strategies affect generalization performance in attribute prediction tasks. It propo…
+  [NEURIPS2025][LLM Evaluation][attribute generalization] This paper presents the first systematic evaluation of how train/test splitting strategies affect generalization performance in attribute prediction tasks. It proposes four progressively harder splitting schemes based on LLM semantic grouping, embedding similarity, embedding clustering, and ground-truth supercategory labels. The study finds that unsupervised clustering-based splitting achieves leakage reduction comparabl…
 tags:
   - "NEURIPS2025"
   - "LLM Evaluation"
@@ -13,7 +13,7 @@ tags:
   - "linear probing"
   - "visual representations"
 date: 2026-05-08
-content_hash: 221605ea9f094425
+content_hash: 4749c7afc74f433c
 ---
 
 # Not All Splits Are Equal: Rethinking Attribute Generalization Across Unrelated Categories
@@ -142,11 +142,11 @@ The paper proposes a suite of progressively harder train/test splitting strategi
 
 ## Related Papers
 
-- [\[ICCV 2025\] Rethinking Few Shot CLIP Benchmarks: A Critical Analysis in the Inductive Setting](../../ICCV2025/llm_evaluation/rethinking_few_shot_clip_benchmarks_a_critical_analysis_in_the_inductive_setting.md)
-- [\[ICML 2026\] Reasoning Is Not Free: Robust Adaptive Cost-Efficient Routing for LLM-as-a-Judge](../../ICML2026/llm_evaluation/reasoning_is_not_free_robust_adaptive_cost-efficient_routing_for_llm-as-a-judge.md)
-- [\[ACL 2026\] Finch: Benchmarking Finance & Accounting across Spreadsheet-Centric Enterprise Workflows](../../ACL2026/llm_evaluation/finch_benchmarking_finance_amp_accounting_across_spreadsheet-centric_enterprise_.md)
-- [\[AAAI 2026\] Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory](../../AAAI2026/llm_evaluation/lost_in_benchmarks_rethinking_large_language_model_benchmarking_with_item_respon.md)
-- [\[ICML 2026\] Whose Alignment? Comparing LLM Process Alignment Across Diverse Organizational Decision Contexts](../../ICML2026/llm_evaluation/whose_alignment_comparing_llm_process_alignment_across_diverse_organizational_de.md)
+- [\[ACL 2025\] Language Model Probabilities are Not Calibrated in Numeric Contexts](../../ACL2025/llm_evaluation/language_model_probabilities_are_not_calibrated_in_numeric_contexts.md)
+- [\[ACL 2025\] Beyond One-Size-Fits-All: Tailored Benchmarks for Efficient Evaluation](../../ACL2025/llm_evaluation/beyond_one-size-fits-all_tailored_benchmarks_for_efficient_evaluation.md)
+- [\[ACL 2025\] ONEBench to Test Them All: Sample-Level Benchmarking Over Open-Ended Capabilities](../../ACL2025/llm_evaluation/onebench_to_test_them_all_sample-level_benchmarking_over_open-ended_capabilities.md)
+- [\[ICLR 2026\] FRABench and UFEval: Unified Fine-grained Evaluation with Task and Aspect Generalization](../../ICLR2026/llm_evaluation/frabench_and_ufeval_unified_fine-grained_evaluation_with_task_and_aspect_general.md)
+- [\[ICML 2025\] MultiCogEval: Evaluating LLMs Across Multi-Cognitive Levels](../../ICML2025/llm_evaluation/evaluating_llms_across_multi-cognitive_levels_from_medical_knowledge_mastery_to_.md)
 
 </div>
 

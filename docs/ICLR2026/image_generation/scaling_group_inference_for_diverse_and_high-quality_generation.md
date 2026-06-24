@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Scaling Group Inference for Diverse and High-Quality Generation
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] Addressing the pain point where "users view a set of images (4-8) but i.i.d. sampling produces highly redundant results," this paper reformulates "generating a set of images for a prompt" as a **Quadratic Integer Programming (QIP) selection problem**. It selects a subset from a large candidate pool to simultaneously ma
+  [ICLR 2026][Image Generation][Group Inference] Addressing the pain point where "users view a set of images (4-8) but i.i.d. sampling produces highly redundant results," this paper reformulates "generating a set of images for a prompt" as a **Quadratic Integer Programming (QIP) selection problem**. It selects a subset from a large candidate pool to simultaneously maximize individual quality (unary term) and intra-group diversity (binary term). By observing that "intermediate p…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Group Inference"
+  - "Diversity"
+  - "Quadratic Integer Programming"
+  - "Progressive Pruning"
+  - "Inference-time Scaling"
 date: 2026-05-08
-content_hash: feba324aae64a4ff
+content_hash: 1250c27e269c9ff8
 ---
+
 # Scaling Group Inference for Diverse and High-Quality Generation
 
 **Conference**: ICLR 2026  
@@ -131,16 +137,16 @@ The preference gaps are even larger on SD3-M. Baselines tend to fail by either d
 - Value: ⭐⭐⭐⭐⭐ Directly addresses a real pain point in image generation products with a training-free, plug-and-play solution.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] PosterCraft: Rethinking High-Quality Aesthetic Poster Generation in a Unified Framework](postercraft_rethinking_high-quality_aesthetic_poster_generation_in_a_unified_fra.md)
 - [\[ICLR 2026\] Inference-Time Scaling of Diffusion Models Through Classical Search](inference-time_scaling_of_diffusion_models_through_classical_search.md)
+- [\[ICLR 2026\] PosterCraft: Rethinking High-Quality Aesthetic Poster Generation in a Unified Framework](postercraft_rethinking_high-quality_aesthetic_poster_generation_in_a_unified_fra.md)
 - [\[ICLR 2026\] Diverse Text-to-Image Generation via Contrastive Noise Optimization](diverse_text-to-image_generation_via_contrastive_noise_optimization.md)
-- [\[ICLR 2026\] Compositional Visual Planning via Inference-Time Diffusion Scaling](compositional_visual_planning_via_inference-time_diffusion_scaling.md)
-- [\[ICLR 2026\] PQGAN: Product-Quantised Image Representation for High-Quality Image Synthesis](pqgan_product-quantised_image_representation_for_high-quality_image_synthesis.md)
+- [\[CVPR 2026\] Rethinking Prompt Design for Inference-time Scaling in Text-to-Visual Generation](../../CVPR2026/image_generation/rethinking_prompt_design_for_inference-time_scaling_in_text-to-visual_generation.md)
+- [\[ICLR 2026\] Inference-Time Scaling of Discrete Diffusion Models via Importance Weighting and Optimal Proposal Design](inference-time_scaling_of_discrete_diffusion_models_via_importance_weighting_and.md)
 
 </div>
 

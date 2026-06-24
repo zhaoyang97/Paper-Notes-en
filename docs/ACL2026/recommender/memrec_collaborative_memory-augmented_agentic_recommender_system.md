@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MemRec: Collaborative Memory-Augmented Agentic Recommender System
 description: >-
-  [ACL 2026][Recommender Systems][Agentic RS] MemRec employs a **lightweight LLM to specifically manage a dynamic "Collaborative Memory Graph"** (connecting semantic memories of multiple users and items via interaction edges), and feeds distilled "collaborative facets" to a heavy-duty reasoning LLM for final recommendation. By utilizing a "Curate-then-Synthesize"
+  [ACL 2026][Recommender Systems][Collaborative Memory] MemRec employs a **lightweight LLM to specifically manage a dynamic "Collaborative Memory Graph"** (connecting semantic memories of multiple users and items via interaction edges), and feeds distilled "collaborative facets" to a heavy-duty reasoning LLM for final recommendation. By utilizing a "Curate-then-Synthesize" denoising strategy and asynchronous $O(1)$ label propagation updates, it achieves a relative H@1 improveme…
 tags:
-  - ACL 2026
-  - Recommender Systems
-  - Agentic RS
+  - "ACL 2026"
+  - "Recommender Systems"
+  - "Collaborative Memory"
+  - "Agentic RS"
+  - "Memory Graph"
+  - "Decoupled Architecture"
+  - "Label Propagation"
 date: 2026-05-08
-content_hash: 0afe19d5674afe78
+content_hash: 35d712d38417f37f
 ---
+
 # MemRec: Collaborative Memory-Augmented Agentic Recommender System
 
 **Conference**: ACL 2026  

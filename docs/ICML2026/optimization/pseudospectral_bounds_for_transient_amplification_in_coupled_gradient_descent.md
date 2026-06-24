@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Pseudospectral Bounds for Transient Amplification in Coupled Gradient Descent
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] This paper establishes sharp Kreiss constant bounds $K(J) \leq 2/(1-\gamma) + \|C\|/(4(1-\gamma))$ for block-triangular Jacobians $J = \begin{bmatrix} A & 0 \\ C & D \end{bmatrix}$ in coupled gradient descent, providing matching lower bounds. It reveals that transient amplification can be arbitrarily large even when th
+  [ICML 2026][Optimization][Pseudospectra] This paper establishes sharp Kreiss constant bounds $K(J) \leq 2/(1-\gamma) + \|C\|/(4(1-\gamma))$ for block-triangular Jacobians $J = \begin{bmatrix} A & 0 \\ C & D \end{bmatrix}$ in coupled gradient descent, providing matching lower bounds. It reveals that transient amplification can be arbitrarily large even when the spectral radius is $< 1$. This theory serves as a scaling law for high-dimensional learning dynamics…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML 2026"
+  - "Optimization"
+  - "Pseudospectra"
+  - "Kreiss Constant"
+  - "Coupled Gradient Descent"
+  - "Bilevel Optimization"
+  - "Two-Time-Scale"
 date: 2026-05-08
-content_hash: e909d8f67e192675
+content_hash: 9d0b3c08bea63344
 ---
+
 # Pseudospectral Bounds for Transient Amplification in Coupled Gradient Descent
 
 **Conference**: ICML 2026  
@@ -123,10 +129,10 @@ The effective $K(J)$ of linearized dynamics was tracked during GAN training. The
 ## Related Papers
 
 - [\[ICML 2026\] On the Convergence Rate of LoRA Gradient Descent](on_the_convergence_rate_of_lora_gradient_descent.md)
-- [\[ICML 2026\] Interpretability and Generalization Bounds for Learning Spatial Physics](interpretability_and_generalization_bounds_for_learning_spatial_physics.md)
 - [\[ICML 2026\] Flatland: The Adventures of Gradient Descent with Large Step Sizes](flatland_the_adventures_of_gradient_descent_with_large_step_sizes.md)
-- [\[ICML 2025\] Quantum Optimization via Gradient-Based Hamiltonian Descent](../../ICML2025/optimization/quantum_optimization_via_gradient-based_hamiltonian_descent.md)
-- [\[ICML 2026\] Mirror Descent Under Generalized Smoothness](mirror_descent_under_generalized_smoothness.md)
+- [\[ICLR 2026\] Corner Gradient Descent](../../ICLR2026/optimization/corner_gradient_descent.md)
+- [\[ICML 2026\] Interpretability and Generalization Bounds for Learning Spatial Physics](interpretability_and_generalization_bounds_for_learning_spatial_physics.md)
+- [\[ICLR 2026\] Fast Data Mixture Optimization via Gradient Descent](../../ICLR2026/optimization/fast_data_mixture_optimization_via_gradient_descent.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RayI2P: Learning Rays for Image-to-Point Cloud Registration
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] This paper reformulates image-to-point cloud registration from "establishing 2D-3D correspondences" to "predicting a bundle of 3D rays for each image patch." A differentiable ray-guided regression module is then used to directly estimate the camera's 6-DoF pose, fundamentally bypassing projection ambiguity and scale in
+  [ICLR 2026][3D Vision][Image-to-point cloud registration] This paper reformulates image-to-point cloud registration from "establishing 2D-3D correspondences" to "predicting a bundle of 3D rays for each image patch." A differentiable ray-guided regression module is then used to directly estimate the camera's 6-DoF pose, fundamentally bypassing projection ambiguity and scale inconsistency, setting new state-of-the-art accuracy on KITTI and nuScenes.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Image-to-point cloud registration"
+  - "Camera pose estimation"
+  - "Ray representation"
+  - "Cross-modal"
+  - "Differentiable pose regression"
 date: 2026-05-08
-content_hash: 8d04596ea9d66b14
+content_hash: c3b993b9645d0a00
 ---
+
 # RayI2P: Learning Rays for Image-to-Point Cloud Registration
 
 **Conference**: ICLR 2026  
@@ -136,15 +142,16 @@ Testing on KITTI (Seqs 9-10) and nuScenes, using metrics: Mean Relative Translat
 - Value: ⭐⭐⭐⭐⭐ SOTA accuracy, 80x speedup, and a simple, transferable ray representation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Hg-I2P: Bridging Modalities for Generalizable Image-to-Point-Cloud Registration via Heterogeneous Graphs](../../CVPR2026/3d_vision/hg-i2p_bridging_modalities_for_generalizable_image-to-point-cloud_registration_v.md)
 - [\[CVPR 2026\] SuP: Sub-cloud Driven Point Cloud Registration](../../CVPR2026/3d_vision/sup_sub-cloud_driven_point_cloud_registration.md)
+- [\[CVPR 2026\] Hg-I2P: Bridging Modalities for Generalizable Image-to-Point-Cloud Registration via Heterogeneous Graphs](../../CVPR2026/3d_vision/hg-i2p_bridging_modalities_for_generalizable_image-to-point-cloud_registration_v.md)
+- [\[ICLR 2026\] Point-UQ: An Uncertainty Quantification Paradigm for Point Cloud Few-Shot Class-Incremental Learning](point-uq_an_uncertainty-quantification_paradigm_for_point_cloud_few-shot_class_i.md)
 - [\[ICLR 2026\] Spiking Discrepancy Transformer for Point Cloud Analysis](spiking_discrepancy_transformer_for_point_cloud_analysis.md)
 - [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](../../CVPR2026/3d_vision/deformation-based_in-context_learning_for_point_cloud_understanding.md)
-- [\[CVPR 2026\] C-GenReg: Training-Free 3D Point Cloud Registration by Multi-View-Consistent Geometry-to-Image Generation with Probabilistic Modalities Fusion](../../CVPR2026/3d_vision/c-genreg_training-free_3d_point_cloud_registration_by_multi-view-consistent_geom.md)
 
 </div>
 

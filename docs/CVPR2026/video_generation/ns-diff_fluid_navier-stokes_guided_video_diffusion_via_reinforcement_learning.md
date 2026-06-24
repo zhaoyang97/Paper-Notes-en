@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] NS-Diff: Fluid Navier-Stokes Guided Video Diffusion via Reinforcement Learning
 description: >-
-  [CVPR 2026][Video Generation][Navier-Stokes] NS-Diff reformulates the denoising trajectory of video diffusion as a "physically constrained Markov Decision Process." It detects rigid/fluid regions in the latent space of a DiT, injects velocity fields and deformation gradients, and fine-tunes the denoising policy using PPO with a reward based on "rigid body minimum
+  [CVPR 2026][Video Generation][Video Diffusion] NS-Diff reformulates the denoising trajectory of video diffusion as a "physically constrained Markov Decision Process." It detects rigid/fluid regions in the latent space of a DiT, injects velocity fields and deformation gradients, and fine-tunes the denoising policy using PPO with a reward based on "rigid body minimum jerk + fluid simplified Navier-Stokes." This ensures motion adheres to physical laws (reducing jerk error by 43%…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Navier-Stokes
-  - Reinforcement Learning
-  - PPO
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video Diffusion"
+  - "Physical Plausibility"
+  - "Navier-Stokes"
+  - "Reinforcement Learning"
+  - "PPO"
 date: 2026-05-08
-content_hash: 0e9186ada7607dc7
+content_hash: c8ace6e4b329ac33
 ---
+
 # NS-Diff: Fluid Navier-Stokes Guided Video Diffusion via Reinforcement Learning
 
 **Conference**: CVPR 2026  
@@ -130,14 +133,14 @@ Ablations on PhysVideoBench (1B DiT):
 - **Value**: ⭐⭐⭐⭐⭐ Provides a reusable paradigm for injecting domain-specific physical knowledge into generative models without annotations.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Goal-Driven Reward by Video Diffusion Models for Reinforcement Learning](goal-driven_reward_by_video_diffusion_models_for_reinforcement_learning.md)
-- [\[CVPR 2026\] Identity-Preserving Image-to-Video Generation via Reward-Guided Optimization](identity-preserving_image-to-video_generation_via_reward-guided_optimization.md)
+- [\[CVPR 2026\] Efficient Training for Human Video Generation with Entropy-Guided Prioritized Progressive Learning](efficient_training_for_human_video_generation_with_entropy-guided_prioritized_pr.md)
 - [\[NeurIPS 2025\] RLGF: Reinforcement Learning with Geometric Feedback for Autonomous Driving Video Generation](../../NeurIPS2025/video_generation/rlgf_reinforcement_learning_with_geometric_feedback_for_autonomous_driving_video.md)
+- [\[ICCV 2025\] Disentangled World Models: Learning to Transfer Semantic Knowledge from Distracting Videos for Reinforcement Learning](../../ICCV2025/video_generation/disentangled_world_models_learning_to_transfer_semantic_knowledge_from_distracti.md)
 - [\[CVPR 2026\] Accelerating Autoregressive Video Diffusion via History-Guided Cache and Residual Correction](accelerating_autoregressive_video_diffusion_via_history-guided_cache_and_residua.md)
 - [\[CVPR 2026\] PropFly: Learning to Propagate via On-the-Fly Supervision from Pre-trained Video Diffusion Models](propfly_learning_to_propagate_via_on-the-fly_supervision_from_pre-trained_video_.md)
 

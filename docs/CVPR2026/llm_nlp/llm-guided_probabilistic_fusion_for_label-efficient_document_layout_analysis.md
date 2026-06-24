@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LLM-Guided Probabilistic Fusion for Label-Efficient Document Layout Analysis
 description: >-
-  [CVPR 2026][LLM (Other)][Paper Note] This paper integrates text-pretrained LLMs as "structural prior generators" into the pseudo-label refinement stage of semi-supervised layout detection. By using OCR+LLM to infer document hierarchical regions and performing inverse variance probabilistic fusion (including learnable instance-adaptive gating) with teacher
+  [CVPR 2026][LLM (Other)][Document Layout Analysis] This paper integrates text-pretrained LLMs as "structural prior generators" into the pseudo-label refinement stage of semi-supervised layout detection. By using OCR+LLM to infer document hierarchical regions and performing inverse variance probabilistic fusion (including learnable instance-adaptive gating) with teacher detector outputs, the method achieves 88.2 AP (lightweight backbone) and 89.7 AP (LayoutLMv3) on PubLayNet u…
 tags:
-  - CVPR 2026
-  - LLM (Other)
+  - "CVPR 2026"
+  - "LLM (Other)"
+  - "Document Layout Analysis"
+  - "Semi-supervised Detection"
+  - "LLM Structural Prior"
+  - "Inverse Variance Fusion"
+  - "Pseudo-labeling"
 date: 2026-05-08
-content_hash: 38a5b01a6a086279
+content_hash: 60df74600e757e01
 ---
+
 # LLM-Guided Probabilistic Fusion for Label-Efficient Document Layout Analysis
 
 **Conference**: CVPR 2026  
@@ -138,10 +144,10 @@ PubLayNet (5% labels) component-wise analysis:
 ## Related Papers
 
 - [\[CVPR 2026\] OmniDocLayout: Towards Diverse Document Layout Generation via Coarse-to-Fine LLM Learning](omnidoclayout_towards_diverse_document_layout_generation_via_coarse-to-fine_llm_.md)
-- [\[CVPR 2026\] CoLLM-NAS: Collaborative Large Language Models for Efficient Knowledge-Guided Neural Architecture Search](collm-nas_collaborative_large_language_models_for_efficient_knowledge-guided_neu.md)
 - [\[ACL 2026\] CAST: Achieving Stable LLM-based Text Analysis for Data Analytics](../../ACL2026/llm_nlp/cast_achieving_stable_llm-based_text_analysis_for_data_analytics.md)
 - [\[ICML 2026\] Token-Efficient Change Detection in LLM APIs](../../ICML2026/llm_nlp/token-efficient_change_detection_in_llm_apis.md)
 - [\[ACL 2025\] Efficient Universal Goal Hijacking with Semantics-guided Prompt Organization](../../ACL2025/llm_nlp/goal_hijacking_attack.md)
+- [\[ACL 2025\] Efficient and Accurate Prompt Optimization: the Benefit of Memory in Exemplar-Guided Reflection](../../ACL2025/llm_nlp/erm_prompt_optimization_memory.md)
 
 </div>
 

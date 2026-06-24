@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rotation Invariant and Symmetry Aware Pixel Difference Network for Remote Sensing Object Detection
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] This work integrates "continuous rotation invariance" and "structural symmetry" geometric priors directly into the convolutional kernel by proposing the RIS-PDC operator (Pixel Difference + Polar Harmonic Symmetry Kernel + SO(2) 8-direction kernel rotation averaging). As a plug-and-play replacement for convolutions in
+  [CVPR 2026][Object Detection][Rotation Invariance] This work integrates "continuous rotation invariance" and "structural symmetry" geometric priors directly into the convolutional kernel by proposing the RIS-PDC operator (Pixel Difference + Polar Harmonic Symmetry Kernel + SO(2) 8-direction kernel rotation averaging). As a plug-and-play replacement for convolutions in mainstream remote sensing detectors, it achieves 78.53% mAP on DOTA-v1.0 single-scale without increasing para…
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Rotation Invariance"
+  - "Symmetry Modeling"
+  - "Pixel Difference Convolution"
+  - "SO(2) Group"
+  - "Polar Harmonic Transform"
 date: 2026-05-08
-content_hash: fd5687fa4b93770f
+content_hash: d5c9ca06794249c7
 ---
+
 # Rotation Invariant and Symmetry Aware Pixel Difference Network for Remote Sensing Object Detection
 
 **Conference**: CVPR 2026  
@@ -150,11 +156,11 @@ Symmetry modeling comparison (same backbone, different operators):
 
 ## Related Papers
 
-- [\[CVPR 2026\] VLM4RSDet: Collaborative Optimization with Vision-Language Model for Enhancing Remote Sensing Object Detection](vlm4rsdet_collaborative_optimization_with_vision-language_model_for_enhancing_re.md)
-- [\[CVPR 2026\] Prompt-Free Unknown Label Generation for Open World Detection in Remote Sensing](prompt-free_unknown_label_generation_for_open_world_detection_in_remote_sensing.md)
-- [\[CVPR 2026\] ORSATR-X: A Foundation Model based on Differential-and-Excitation Networks for Optical Remote Sensing Object Recognition](orsatr-x_a_foundation_model_based_on_differential-and-excitation_networks_for_op.md)
-- [\[CVPR 2026\] HySeg: Learning Generative Priors for Structure-Aware Remote Sensing Segmentation](hyseg_learning_generative_priors_for_structure-aware_remote_sensing_segmentation.md)
-- [\[CVPR 2026\] QuCNet: Quantum Deep Learning Driven Multi-Circuit Network for Remote Sensing Image Classification](qucnet_quantum_deep_learning_driven_multi-circuit_network_for_remote_sensing_ima.md)
+- [\[CVPR 2026\] Fourier Angle Alignment for Oriented Object Detection in Remote Sensing](fourier_angle_alignment_for_oriented_object_detection_in_remote_sensing.md)
+- [\[CVPR 2026\] Balanced Hierarchical Contrastive Learning with Decoupled Queries for Fine-grained Object Detection in Remote Sensing Images](balanced_hierarchical_contrastive_learning_with_decoupled_queries_for_fine-grain.md)
+- [\[AAAI 2026\] SM3Det: A Unified Model for Multi-Modal Remote Sensing Object Detection](../../AAAI2026/object_detection/sm3det_a_unified_model_for_multi-modal_remote_sensing_object_detection.md)
+- [\[ICCV 2025\] OpenRSD: Towards Open-prompts for Object Detection in Remote Sensing Images](../../ICCV2025/object_detection/openrsd_towards_open-prompts_for_object_detection_in_remote_sensing_images.md)
+- [\[ECCV 2024\] MutDet: Mutually Optimizing Pre-training for Remote Sensing Object Detection](../../ECCV2024/object_detection/mutdet_mutually_optimizing_pre-training_for_remote_sensing_object_detection.md)
 
 </div>
 

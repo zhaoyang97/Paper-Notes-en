@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Why Are Linear RNNs More Parallelizable?
 description: >-
-  [ICML 2026][LLM (Other)][Linear RNN] This paper uses circuit complexity to strictly explain why Linear RNNs are more easily parallelized like Transformers compared to traditional non-linear RNNs: LRNNs fall within arithmetic circuit classes of approximate log-depth, whereas non-linear RNNs can express harder-to-parallelize $\mathsf{logspace}$ / $\mathsf{p
+  [ICML2026][LLM (Other)][Linear RNN] This paper uses circuit complexity to strictly explain why Linear RNNs are more easily parallelized like Transformers compared to traditional non-linear RNNs: LRNNs fall within arithmetic circuit classes of approximate log-depth, whereas non-linear RNNs can express harder-to-parallelize $\mathsf{logspace}$ / $\mathsf{polynomial}$-time complete problems, forming a fundamental trade-off between expressivity and parallelizability.
 tags:
-  - ICML 2026
-  - LLM (Other)
-  - Linear RNN
+  - "ICML2026"
+  - "LLM (Other)"
+  - "Linear RNN"
+  - "Parallelization"
+  - "Circuit Complexity"
+  - "Expressivity"
+  - "Long Context Architectures"
 date: 2026-05-08
-content_hash: ffab9218a0bb2e24
+content_hash: 60b56896ded0f853
 ---
+
 # Why Are Linear RNNs More Parallelizable?
 
 **Conference**: ICML2026  
@@ -128,8 +133,8 @@ Synthetic experiments validate these predictions. While all models learn In-Dist
 - [\[ACL 2025\] Language Models, Graph Searching, and Supervision Adulteration: When More Supervision is Less and How to Make More More](../../ACL2025/llm_nlp/lm_graph_search_supervision.md)
 - [\[NeurIPS 2025\] Composing Linear Layers from Irreducibles](../../NeurIPS2025/llm_nlp/composing_linear_layers_from_irreducibles.md)
 - [\[ICLR 2026\] Fine-Grained Activation Steering: Steering Less, Achieving More](../../ICLR2026/llm_nlp/fine-grained_activation_steering_steering_less_achieving_more.md)
-- [\[ICLR 2026\] Weight Decay may matter more than μP for Learning Rate Transfer in Practice](../../ICLR2026/llm_nlp/weight_decay_may_matter_more_than_mup_for_learning_rate_transfer_in_practice.md)
-- [\[NeurIPS 2025\] Linear Transformers Implicitly Discover Unified Numerical Algorithms](../../NeurIPS2025/llm_nlp/linear_transformers_implicitly_discover_unified_numerical_algorithms.md)
+- [\[ICML 2026\] Structured Generalized Linear Token Mixing: Shifting Gears Between Complexity and Expressivity with SND + Kronecker](trading_complexity_for_expressivity_through_structured_generalized_linear_token_.md)
+- [\[ICML 2026\] Multi-Agent Teams Hold Experts Back: Why Self-Organized LLM Teams Fail to Retain "Experts"](multi-agent_teams_hold_experts_back.md)
 
 </div>
 

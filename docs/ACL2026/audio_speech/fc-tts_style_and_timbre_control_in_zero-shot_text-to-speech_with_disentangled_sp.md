@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] FC-TTS: Style and Timbre Control in Zero-Shot Text-to-Speech with Disentangled Speech Representations
 description: >-
-  [ACL 2026][Audio & Speech][FACodec] FC-TTS utilizes disentangled speech representations from FACodec as conditioning sources. Through two-stage spectrogram generation, a VQ-VAE style encoder, and a conditional consistency loss, it separates timbre and speaking style—originally entangled within a single reference in zero-shot TTS—into two independently co
+  [ACL2026][Audio & Speech][Zero-shot TTS] FC-TTS utilizes disentangled speech representations from FACodec as conditioning sources. Through two-stage spectrogram generation, a VQ-VAE style encoder, and a conditional consistency loss, it separates timbre and speaking style—originally entangled within a single reference in zero-shot TTS—into two independently controllable inputs.
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - FACodec
-  - flow matching
+  - "ACL2026"
+  - "Audio & Speech"
+  - "Zero-shot TTS"
+  - "Timbre control"
+  - "Style control"
+  - "FACodec"
+  - "flow matching"
 date: 2026-05-08
-content_hash: ff941cd52f02415c
+content_hash: 4d54553fcc916b43
 ---
+
 # FC-TTS: Style and Timbre Control in Zero-Shot Text-to-Speech with Disentangled Speech Representations
 
 **Conference**: ACL2026  
@@ -153,10 +157,10 @@ Training uses LibriHeavy for 200k iterations with AdamW, batch size 64, and lear
 ## Related Papers
 
 - [\[ACL 2026\] ReStyle-TTS: Relative and Continuous Style Control for Zero-Shot Speech Synthesis](restyle-tts_relative_and_continuous_style_control_for_zero-shot_speech_synthesis.md)
+- [\[ICLR 2026\] FlexiVoice: Enabling Flexible Style Control in Zero-Shot TTS with Natural Language Instructions](../../ICLR2026/audio_speech/flexivoice_enabling_flexible_style_control_in_zero-shot_tts_with_natural_languag.md)
+- [\[ACL 2025\] Zero-Shot Text-to-Speech for Vietnamese](../../ACL2025/audio_speech/zero-shot_text-to-speech_for_vietnamese.md)
 - [\[ACL 2026\] ImmersiveTTS: Environment-Aware Text-to-Speech with Multimodal Diffusion Transformer and Domain-Specific Representation Alignment](immersivetts_environment-aware_text-to-speech_with_multimodal_diffusion_transfor.md)
 - [\[ACL 2025\] ControlSpeech: Towards Simultaneous and Independent Zero-shot Speaker Cloning and Zero-shot Language Style Control](../../ACL2025/audio_speech/controlspeech_zero_shot.md)
-- [\[ACL 2025\] Zero-Shot Text-to-Speech for Vietnamese](../../ACL2025/audio_speech/zero-shot_text-to-speech_for_vietnamese.md)
-- [\[ICML 2026\] Polyphonia: Zero-Shot Timbre Transfer in Polyphonic Music with Acoustic-Informed Attention Calibration](../../ICML2026/audio_speech/polyphonia_zero-shot_timbre_transfer_in_polyphonic_music_with_acoustic-informed_.md)
 
 </div>
 

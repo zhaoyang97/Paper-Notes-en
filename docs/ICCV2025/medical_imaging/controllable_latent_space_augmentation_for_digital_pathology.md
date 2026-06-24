@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Controllable Latent Space Augmentation for Digital Pathology
 description: >-
-  [ICCV 2025][Medical Imaging][Data Augmentation] This paper proposes HistAug — a lightweight Transformer-based latent space augmentation model that simulates realistic image transformations (hue shifts, erosion…
+  [ICCV 2025][Medical Imaging][Data Augmentation] This paper proposes HistAug — a lightweight Transformer-based latent space augmentation model that simulates realistic image transformations (hue shifts, erosion, etc.) in feature space via conditional cross-attention, providing controllable and computationally efficient data augmentation for pathology MIL training at minimal overhead.
 tags:
   - "ICCV 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Digital Pathology"
   - "Foundation Models"
 date: 2026-05-08
-content_hash: 0dca07e59e0bf8d0
+content_hash: a9c956c4df84ab9a
 ---
 
 # Controllable Latent Space Augmentation for Digital Pathology
@@ -145,11 +145,11 @@ $$\mathcal{L} = \|\rho(\mathbf{z}, (T_k, \alpha_k)) - \mathcal{E}(\tau(\mathbf{x
 
 ## Related Papers
 
+- [\[CVPR 2026\] Prospective Dynamic 3D MRI Reconstruction via Latent-Space Motion Tracking from Single Measurement](../../CVPR2026/medical_imaging/prospective_dynamic_3d_mri_reconstruction_via_latent-space_motion_tracking_from_.md)
 - [\[ICCV 2025\] ViCTr: Vital Consistency Transfer for Pathology Aware Image Synthesis](victr_vital_consistency_transfer_for_pathology_aware_image_synthesis.md)
+- [\[ICML 2025\] LangDAug: Langevin Data Augmentation for Multi-Source Domain Generalization in Medical Image Segmentation](../../ICML2025/medical_imaging/langdaug_langevin_data_augmentation_for_multi-source_domain_generalization_in_me.md)
+- [\[CVPR 2025\] SALIENT: Frequency-Aware Paired Diffusion for Controllable Long-Tail CT Detection](../../CVPR2025/medical_imaging/salient_frequency-aware_paired_diffusion_for_controllable_long-tail_ct_detection.md)
 - [\[AAAI 2026\] MPA: Multimodal Prototype Augmentation for Few-Shot Learning](../../AAAI2026/medical_imaging/mpa_multimodal_prototype_augmentation_for_few-shot_learning.md)
-- [\[NeurIPS 2025\] A Novel Approach to Classification of ECG Arrhythmia Types with Latent ODEs](../../NeurIPS2025/medical_imaging/a_novel_approach_to_classification_of_ecg_arrhythmia_types_with_latent_odes.md)
-- [\[ICCV 2025\] AcZeroTS: Active Learning for Zero-shot Tissue Segmentation in Pathology Images](aczerots_active_learning_for_zeroshot_tissue_segmentation_in.md)
-- [\[NeurIPS 2025\] DyG-Mamba: Continuous State Space Modeling on Dynamic Graphs](../../NeurIPS2025/medical_imaging/dyg-mamba_continuous_state_space_modeling_on_dynamic_graphs.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Black-Box Interventions: Latent Probing for Faithful Retrieval-Augmented Generation
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] ProbeRAG is proposed to address RAG faithfulness through the model's internal mechanisms by discovering the linear separability of conflicting/aligned knowledge in the LLM's latent space. It employs a three-stage framework: fine-grained knowledge pruning, latent space conflict probing, and conflict-aware attention.
+  [ACL 2026 Findings][Information Retrieval & RAG][RAG Faithfulness] ProbeRAG is proposed to address RAG faithfulness through the model's internal mechanisms by discovering the linear separability of conflicting/aligned knowledge in the LLM's latent space. It employs a three-stage framework: fine-grained knowledge pruning, latent space conflict probing, and conflict-aware attention.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL 2026 Findings"
+  - "Information Retrieval & RAG"
+  - "RAG Faithfulness"
+  - "Knowledge Conflict"
+  - "Latent Space Probing"
+  - "Attention Guidance"
+  - "Context Pruning"
 date: 2026-05-08
-content_hash: e217a09e9d1fe0bf
+content_hash: c5aed95bdee31ada
 ---
+
 # Beyond Black-Box Interventions: Latent Probing for Faithful Retrieval-Augmented Generation
 
 **Conference**: ACL 2026 Findings  
@@ -128,9 +134,9 @@ The joint objective combines cross-entropy and attention guidance loss, with $\l
 
 ## Related Papers
 
-- [\[ACL 2026\] CiteGuard: Faithful Citation Attribution for LLMs via Retrieval-Augmented Validation](citeguard_faithful_citation_attribution_for_llms_via_retrieval-augmented_validat.md)
-- [\[ACL 2025\] FaithfulRAG: Fact-Level Conflict Modeling for Context-Faithful Retrieval-Augmented Generation](../../ACL2025/information_retrieval/faithfulrag_fact_level_conflict.md)
+- [\[ICLR 2026\] Interact-RAG: Reason and Interact with the Corpus, Beyond Black-Box Retrieval](../../ICLR2026/information_retrieval/interact-rag_reason_and_interact_with_the_corpus_beyond_black-box_retrieval.md)
 - [\[ACL 2026\] Language-Coupled Reinforcement Learning for Multilingual Retrieval-Augmented Generation](language-coupled_reinforcement_learning_for_multilingual_retrieval-augmented_gen.md)
+- [\[ACL 2026\] CiteGuard: Faithful Citation Attribution for LLMs via Retrieval-Augmented Validation](citeguard_faithful_citation_attribution_for_llms_via_retrieval-augmented_validat.md)
 - [\[ACL 2026\] Beyond Chunks and Graphs: Retrieval-Augmented Generation through Triplet-Driven Thinking](beyond_chunks_and_graphs_retrieval-augmented_generation_through_triplet-driven_t.md)
 - [\[ACL 2026\] Feedback Adaptation for Retrieval-Augmented Generation](feedback_adaptation_for_retrieval-augmented_generation.md)
 

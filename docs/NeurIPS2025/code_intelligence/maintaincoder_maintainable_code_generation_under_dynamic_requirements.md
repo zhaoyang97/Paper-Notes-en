@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MaintainCoder: Maintainable Code Generation Under Dynamic Requirements
 description: >-
-  [NeurIPS 2025][Code Intelligence][maintainable code] This work is the first to systematically define and address the **maintainability** problem in LLM-based code generation…
+  [NeurIPS 2025][Code Intelligence][maintainable code] This work is the first to systematically define and address the **maintainability** problem in LLM-based code generation, contributing both a benchmark and a method. MaintainBench evaluates code maintainability under requirement evolution using 4 change patterns and dynamic metrics; MaintainCoder integrates the Waterfall model, design patterns, and 6 specialized agents, achieving 60%+ improvement on dynamic maintainability…
 tags:
   - "NeurIPS 2025"
   - "Code Intelligence"
@@ -13,7 +13,7 @@ tags:
   - "dynamic requirements"
   - "MaintainBench"
 date: 2026-05-08
-content_hash: e795f532d2a20b4f
+content_hash: ccabeb16604355af
 ---
 
 # MaintainCoder: Maintainable Code Generation Under Dynamic Requirements
@@ -189,11 +189,11 @@ MaintainCoder's token consumption is comparable to MapCoder and far below MetaGP
 
 ## Related Papers
 
+- [\[ACL 2025\] DynaCode: A Dynamic Complexity-Aware Code Benchmark for Evaluating Large Language Models in Code Generation](../../ACL2025/code_intelligence/dynacode_a_dynamic_complexity-aware_code_benchmark_for_evaluating_large_language.md)
 - [\[NeurIPS 2025\] Embedding Alignment in Code Generation for Audio](embedding_alignment_in_code_generation_for_audio.md)
 - [\[NeurIPS 2025\] QiMeng-SALV: Signal-Aware Learning for Verilog Code Generation](qimeng-salv_signal-aware_learning_for_verilog_code_generation.md)
 - [\[NeurIPS 2025\] Text-to-Code Generation for Modular Building Layouts in Building Information Modeling](text-to-code_generation_for_modular_building_layouts_in_building_information_mod.md)
-- [\[AAAI 2026\] TAPA: Training-Free Adaptation of Programmatic Agents via LLM-Guided Program Synthesis in Dynamic Environments](../../AAAI2026/code_intelligence/tapas_are_free_training-free_adaptation_of_programmatic_agen.md)
-- [\[NeurIPS 2025\] Table2LaTeX-RL: High-Fidelity LaTeX Code Generation from Table Images via Reinforced Multimodal Language Models](table2latex-rl_high-fidelity_latex_code_generation_from_table_images_via_reinfor.md)
+- [\[ICLR 2026\] Code2Bench: Scaling Source and Rigor for Dynamic Benchmark Construction](../../ICLR2026/code_intelligence/code2bench_scaling_source_and_rigor_for_dynamic_benchmark_construction.md)
 
 </div>
 

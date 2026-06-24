@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Limitations and Power of NP-Oracle-Based Functional Synthesis Techniques
 description: >-
-  [AAAI 2026][Functional Synthesis] This paper systematically investigates, from a theoretical perspective, the capabilities and limitations of functional synthesis methods that rely on NP oracles. It proves that naive bit…
+  [AAAI 2026][Functional Synthesis] This paper systematically investigates, from a theoretical perspective, the capabilities and limitations of functional synthesis methods that rely on NP oracles. It proves that naive bit-by-bit learning approaches necessarily fail in multi-output settings, that Resolution-interpolation-based methods produce exponential-size circuits, and that an NP oracle is a necessary condition for efficient synthesis. Positive results are also established…
 tags:
   - "AAAI 2026"
   - "Functional Synthesis"
@@ -11,7 +11,7 @@ tags:
   - "Computational Complexity"
   - "Interpolation Methods"
 date: 2026-05-08
-content_hash: 4b52a8ff2d94f764
+content_hash: 9b45e057eca4dabb
 ---
 
 # The Limitations and Power of NP-Oracle-Based Functional Synthesis Techniques
@@ -125,9 +125,9 @@ Not applicable (theoretical work).
 
 - [\[ICLR 2026\] The Counting Power of Transformers](../../ICLR2026/others/the_counting_power_of_transformers.md)
 - [\[AAAI 2026\] GDBA Revisited: Unleashing the Power of Guided Local Search for Distributed Constraint Optimization](gdba_revisited_unleashing_the_power_of_guided_local_search_for_distributed_const.md)
+- [\[ACL 2025\] Tokenisation is NP-Complete](../../ACL2025/others/tokenisation_is_np-complete.md)
 - [\[AAAI 2026\] SynWeather: Weather Observation Data Synthesis across Multiple Regions and Variables via a General Diffusion Transformer](synweather_weather_observation_data_synthesis_across_multiple_regions_and_variab.md)
-- [\[NeurIPS 2025\] Scalable Inference of Functional Neural Connectivity at Submillisecond Timescales](../../NeurIPS2025/others/scalable_inference_of_functional_neural_connectivity_at_submillisecond_timescale.md)
-- [\[ICCV 2025\] LayerTracer: Cognitive-Aligned Layered SVG Synthesis via Diffusion Transformer](../../ICCV2025/others/layertracer_cognitive-aligned_layered_svg_synthesis_via_diffusion_transformer.md)
+- [\[ICML 2026\] Functional Equivalence in Attention: A Comprehensive Study with Applications to Linear Mode Connectivity](../../ICML2026/others/functional_equivalence_in_attention_a_comprehensive_study_with_applications_to_l.md)
 
 </div>
 

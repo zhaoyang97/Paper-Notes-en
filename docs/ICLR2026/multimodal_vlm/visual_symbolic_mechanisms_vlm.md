@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Visual Symbolic Mechanisms: Emergent Symbol Processing in Vision Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][visual binding] This paper discovers an emergent three-stage symbolic processing mechanism (ID retrieval → ID selection → feature retrieval) within VLMs. It utilizes content-independent spatial position indices (position IDs) to solve the visual binding problem and demonstrates that binding errors can be directly traced to the failure
+  [ICLR 2026 Oral][Multimodal VLM][visual binding] This paper discovers an emergent three-stage symbolic processing mechanism (ID retrieval → ID selection → feature retrieval) within VLMs. It utilizes content-independent spatial position indices (position IDs) to solve the visual binding problem and demonstrates that binding errors can be directly traced to the failure of these mechanisms.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - visual binding
-  - position IDs
-  - mechanistic interpretability
-  - causal mediation
-  - VLM
+  - "ICLR 2026 Oral"
+  - "Multimodal VLM"
+  - "visual binding"
+  - "position IDs"
+  - "mechanistic interpretability"
+  - "causal mediation"
+  - "VLM"
 date: 2026-05-08
-content_hash: afa1f5947eda8049
+content_hash: ee8aa8cc287d73ca
 ---
+
 # Visual Symbolic Mechanisms: Emergent Symbol Processing in Vision Language Models
 
 **Conference**: ICLR 2026 Oral  
@@ -145,8 +146,8 @@ where $d_o$ is the estimated direction of the original ID and $d_t$ is the targe
 - [\[CVPR 2026\] Mechanisms of Object Localization in Vision-Language Models](../../CVPR2026/multimodal_vlm/mechanisms_of_object_localization_in_vision-language_models.md)
 - [\[CVPR 2026\] Understanding Counting Mechanisms in Large Language and Vision-Language Models](../../CVPR2026/multimodal_vlm/understanding_counting_mechanisms_in_large_language_and_vision-language_models.md)
 - [\[CVPR 2026\] Boosting Document Parsing Efficiency and Performance with Coarse-to-Fine Visual Processing](../../CVPR2026/multimodal_vlm/boosting_document_parsing_efficiency_and_performance_with_coarse-to-fine_visual_.md)
+- [\[ICML 2026\] Unveiling Visual Counting Bottlenecks in Vision-Language Models](../../ICML2026/multimodal_vlm/unveiling_the_visual_counting_bottleneck_in_vision-language_models.md)
 - [\[ICLR 2026\] ERGO: Efficient High-Resolution Visual Understanding for Vision-Language Models](ergo_efficient_high-resolution_visual_understanding_for_vision-language_models.md)
-- [\[ICLR 2026\] Mordal: Automated Pretrained Model Selection for Vision Language Models](mordal_automated_pretrained_model_selection_for_vision_language_models.md)
 
 </div>
 

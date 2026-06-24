@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Achieving Approximate Symmetry Is Exponentially Easier than Exact Symmetry
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper defines a quantifiable cost for "forcing model symmetry"—**averaging complexity**—and proves an exponential separation: under standard conditions, forcing **exact symmetry** requires a number of queries linear in the group size $|G|$, while forcing **approximate symmetry** requires only logarithmic queries $
+  [ICLR2026][Learning Theory][Approximate symmetry] This paper defines a quantifiable cost for "forcing model symmetry"—**averaging complexity**—and proves an exponential separation: under standard conditions, forcing **exact symmetry** requires a number of queries linear in the group size $|G|$, while forcing **approximate symmetry** requires only logarithmic queries $O(\log|G|/\varepsilon)$. This provides the first theoretical explanation for "why approximate symmetry is ofte…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Geometric Machine Learning"
+  - "Approximate symmetry"
+  - "averaging complexity"
+  - "group representation theory"
+  - "equivariant learning"
+  - "Fourier analysis"
 date: 2026-05-08
-content_hash: 16356d52a7dbbbc8
+content_hash: ab6acc802d6d87fd
 ---
+
 # Achieving Approximate Symmetry Is Exponentially Easier than Exact Symmetry
 
 **Conference**: ICLR2026  
@@ -137,9 +144,9 @@ This is a pure theory paper without benchmark experiments, supported instead by 
 
 - [\[ICLR 2026\] To Augment or Not to Augment? Diagnosing Distributional Symmetry Breaking](to_augment_or_not_to_augment_diagnosing_distributional_symmetry_breaking.md)
 - [\[ICLR 2026\] Reducing Symmetry Increase in Equivariant Neural Networks](reducing_symmetry_increase_in_equivariant_neural_networks.md)
+- [\[ICLR 2026\] Two (narrow) heads are better than (an arbitrarily wide) one](two_narrow_heads_are_better_than_an_arbitrarily_wide_one.md)
 - [\[ICLR 2026\] Branch and Bound Search for Exact MAP Inference in Credal Networks](branch_and_bound_search_for_exact_map_inference_in_credal_networks.md)
-- [\[ICLR 2026\] Expressive Power of Implicit Models: Rich Equilibria and Test-Time Scaling](expressive_power_of_implicit_models_rich_equilibria_and_test-time_scaling.md)
-- [\[ICLR 2026\] Better Bounds for the Distributed Experts Problem](better_bounds_for_the_distributed_experts_problem.md)
+- [\[ICLR 2026\] Adaptive Hopfield Network: Rethinking Similarities in Associative Memory](adaptive_hopfield_network_rethinking_similarities_in_associative_memory.md)
 
 </div>
 

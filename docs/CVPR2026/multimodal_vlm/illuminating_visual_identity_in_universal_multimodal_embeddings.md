@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Illuminating Visual Identity in Universal Multimodal Embeddings
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Addressing the "visual identity discrimination" capability long overlooked by Universal Multimodal Embeddings (UME), this paper formalizes it into 4 meta-tasks, constructs the MVEB benchmark with 522K samples, and introduces a simple framework of "identity-aware sampling + unified contrastive loss." This allows a 7B mo
+  [CVPR 2026][Multimodal VLM][Universal Multimodal Embeddings] Addressing the "visual identity discrimination" capability long overlooked by Universal Multimodal Embeddings (UME), this paper formalizes it into 4 meta-tasks, constructs the MVEB benchmark with 522K samples, and introduces a simple framework of "identity-aware sampling + unified contrastive loss." This allows a 7B model to achieve an average score of 78.8 on identity benchmarks (significantly outperforming existin…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Universal Multimodal Embeddings"
+  - "Visual Identity Discrimination"
+  - "Contrastive Learning"
+  - "Identity-aware Sampling"
+  - "Benchmark Construction"
 date: 2026-05-08
-content_hash: 02dc4f0b1bd6ffb6
+content_hash: 4590d66e280923ed
 ---
+
 # Illuminating Visual Identity in Universal Multimodal Embeddings
 
 **Conference**: CVPR 2026  
@@ -132,11 +138,11 @@ At the 7B scale, VisME leads with an average of 78.8. Existing UME models (best 
 
 ## Related Papers
 
+- [\[ICLR 2026\] WAVE: Learning Unified & Versatile Audio-Visual Embeddings with Multimodal LLM](../../ICLR2026/multimodal_vlm/wave_learning_unified_versatile_audio-visual_embeddings_with_multimodal_llm.md)
+- [\[ACL 2026\] ViLL-E: Video LLM Embeddings for Retrieval](../../ACL2026/multimodal_vlm/vill-e_video_llm_embeddings_for_retrieval.md)
 - [\[CVPR 2026\] ORION: ORthonormal Text Encoding for Universal VLM Adaptation](orion_orthonormal_text_encoding_for_universal_vlm_adaptation.md)
 - [\[ICML 2025\] Universal Retrieval for Multimodal Trajectory Modeling](../../ICML2025/multimodal_vlm/universal_retrieval_for_multimodal_trajectory_modeling.md)
 - [\[ICLR 2026\] U-MARVEL: Unveiling Key Factors for Universal Multimodal Retrieval via Embedding Learning](../../ICLR2026/multimodal_vlm/u-marvel_unveiling_key_factors_for_universal_multimodal_retrieval_via_embedding_.md)
-- [\[ICCV 2025\] BASIC: Boosting Visual Alignment with Intrinsic Refined Embeddings in Multimodal Large Language Models](../../ICCV2025/multimodal_vlm/basic_boosting_visual_alignment_with_intrinsic_refined_embeddings_in_multimodal_.md)
-- [\[ACL 2025\] MegaPairs: Massive Data Synthesis For Universal Multimodal Retrieval](../../ACL2025/multimodal_vlm/megapairs_massive_data_synthesis_for_universal_multimodal_retrieval.md)
 
 </div>
 

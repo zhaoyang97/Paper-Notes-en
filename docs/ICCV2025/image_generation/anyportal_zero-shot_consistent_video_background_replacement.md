@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AnyPortal: Zero-Shot Consistent Video Background Replacement
 description: >-
-  [ICCV 2025][Image Generation][Video background replacement] AnyPortal presents a zero-shot, training-free video background replacement framework that synergistically leverages IC-Light's relighting capability and the tem…
+  [ICCV 2025][Image Generation][Video background replacement] AnyPortal presents a zero-shot, training-free video background replacement framework that synergistically leverages IC-Light's relighting capability and the temporal prior of a video diffusion model (CogVideoX), together with a newly proposed Refinement Projection Algorithm (RPA) for pixel-level foreground preservation, running efficiently on a single 24 GB GPU.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "diffusion models"
   - "temporal consistency"
 date: 2026-05-08
-content_hash: ee24d56e00a2b639
+content_hash: 12ded66753798eb7
 ---
 
 # AnyPortal: Zero-Shot Consistent Video Background Replacement
@@ -136,8 +136,8 @@ Comparison with zero-shot baselines on a test set of 30 samples:
 - [\[ICCV 2025\] Early Timestep Zero-Shot Candidate Selection for Instruction-Guided Image Editing](early_timestep_zero-shot_candidate_selection_for_instruction-guided_image_editin.md)
 - [\[ICCV 2025\] BVINet: Unlocking Blind Video Inpainting with Zero Annotations](bvinet_unlocking_blind_video_inpainting_with_zero_annotations.md)
 - [\[NeurIPS 2025\] Semantic Surgery: Zero-Shot Concept Erasure in Diffusion Models](../../NeurIPS2025/image_generation/semantic_surgery_zero-shot_concept_erasure_in_diffusion_models.md)
+- [\[CVPR 2025\] Pursuing Temporal-Consistent Video Virtual Try-On via Dynamic Pose Interaction](../../CVPR2025/image_generation/pursuing_temporal-consistent_video_virtual_try-on_via_dynamic_pose_interaction.md)
 - [\[ICCV 2025\] DynamicID: Zero-Shot Multi-ID Image Personalization with Flexible Facial Editability](dynamicid_zero-shot_multi-id_image_personalization_with_flexible_facial_editabil.md)
-- [\[NeurIPS 2025\] Towards Robust Zero-Shot Reinforcement Learning](../../NeurIPS2025/image_generation/towards_robust_zero-shot_reinforcement_learning.md)
 
 </div>
 

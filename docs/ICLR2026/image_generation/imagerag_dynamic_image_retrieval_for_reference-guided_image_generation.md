@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] ImageRAG: Dynamic Image Retrieval for Reference-Guided Image Generation
 description: >-
-  [ICLR 2026][Image Generation][Retrieval-Augmented Generation] ImageRAG translates the RAG concept from LLMs to image generation: it first produces a draft using a T2I model, then uses a VLM's guided Chain-of-Thought to identify "incorrectly drawn or missing" concepts, retrieves reference images as needed, and feeds them back into the model. This process significantly improves the
+  [ICLR 2026][Image Generation][Retrieval-Augmented Generation] ImageRAG translates the RAG concept from LLMs to image generation: it first produces a draft using a T2I model, then uses a VLM's guided Chain-of-Thought to identify "incorrectly drawn or missing" concepts, retrieves reference images as needed, and feeds them back into the model. This process significantly improves the generation of rare and fine-grained concepts without requiring any additional training.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Retrieval-Augmented Generation
-  - Rare Concept Generation
-  - Vision-Language Model
-  - Training-free
-  - Reference-guided Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Retrieval-Augmented Generation"
+  - "Rare Concept Generation"
+  - "Vision-Language Model"
+  - "Training-free"
+  - "Reference-guided Generation"
 date: 2026-05-08
-content_hash: 9a444d76492fcee9
+content_hash: 6274c56d2c155651
 ---
+
 # ImageRAG: Dynamic Image Retrieval for Reference-Guided Image Generation
 
 **Conference**: ICLR 2026  
@@ -119,15 +120,16 @@ Rewriting the prompt alone yielded almost no gain, indicating that benefits stem
 - **Value**: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] CAST: Context-Aware Dynamic Latent Space Transformation for Interactive Text-to-Image Retrieval](../../CVPR2026/image_generation/cast_context-aware_dynamic_latent_space_transformation_for_interactive_text-to-i.md)
+- [\[ICLR 2026\] SketchEvo: Enhancing Sketch-Guided Image Generation with Dynamic Drawing Processes](sketchevo_leveraging_drawing_dynamics_for_enhanced_image_synthesis.md)
 - [\[ICLR 2026\] Training-Free Reward-Guided Image Editing via Trajectory Optimal Control](training-free_reward-guided_image_editing_via_trajectory_optimal_control.md)
+- [\[CVPR 2026\] CAST: Context-Aware Dynamic Latent Space Transformation for Interactive Text-to-Image Retrieval](../../CVPR2026/image_generation/cast_context-aware_dynamic_latent_space_transformation_for_interactive_text-to-i.md)
 - [\[ICLR 2026\] Follow-Your-Shape: Shape-Aware Image Editing via Trajectory-Guided Region Control](follow-your-shape_shape-aware_image_editing_via_trajectory-guided_region_control.md)
-- [\[ICLR 2026\] SIGMA-GEN: Structure and Identity Guided Multi-Subject Assembly for Image Generation](sigma-gen_structure_and_identity_guided_multi-subject_assembly_for_image_generat.md)
-- [\[CVPR 2026\] MultiBanana: A Challenging Benchmark for Multi-Reference Text-to-Image Generation](../../CVPR2026/image_generation/multibanana_a_challenging_benchmark_for_multi_reference_text_to_image_generation.md)
+- [\[CVPR 2026\] ImageRAGTurbo: Towards One-step Text-to-Image Generation with Retrieval-Augmented Diffusion Models](../../CVPR2026/image_generation/imageragturbo_towards_one-step_text-to-image_generation_with_retrieval-augmented.md)
 
 </div>
 

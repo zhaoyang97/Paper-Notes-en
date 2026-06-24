@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] When Does Language Matter? Multilingual Instructions Reveal Step-wise Language Sensitivity in Vision-Language-Action Models
 description: >-
-  [ACL 2026][Robotics & Embodied AI][VLA] By translating the LIBERO robotic manipulation benchmark into ten languages, this paper systematically reveals for the first time that VLA models suffer a 30–50% drop in success rates under non-English instructions. It identifies that "linguistic influence is highly non-uniform across execution steps"—where only a few
+  [ACL2026][Robotics][VLA] By translating the LIBERO robotic manipulation benchmark into ten languages, this paper systematically reveals for the first time that VLA models suffer a 30–50% drop in success rates under non-English instructions. It identifies that "linguistic influence is highly non-uniform across execution steps"—where only a few critical steps are sensitive to language but dominate failure cases. Based on this, a method for inference-time representation alignmen…
 tags:
-  - ACL 2026
-  - Robotics & Embodied AI
-  - VLA
-  - LIBERO
+  - "ACL2026"
+  - "Robotics"
+  - "VLA"
+  - "Multilingual Instructions"
+  - "Step-wise Language Sensitivity"
+  - "Inference-time Alignment"
+  - "LIBERO"
 date: 2026-05-08
-content_hash: c98ef5f1397b4bc9
+content_hash: f6b6cca324974dd4
 ---
+
 # When Does Language Matter? Multilingual Instructions Reveal Step-wise Language Sensitivity in Vision-Language-Action Models
 
 **Conference**: ACL2026  
@@ -135,11 +139,11 @@ The Goal suite is the most fragile (e.g., Spanish and Arabic drop to only 6.4 on
 
 ## Related Papers
 
+- [\[ICLR 2026\] VLM4VLA: Revisiting Vision-Language-Models in Vision-Language-Action Models](../../ICLR2026/robotics/vlm4vla_revisiting_vision-language-models_in_vision-language-action_models.md)
 - [\[CVPR 2026\] MAPS: Preserving Vision-Language Representations via Module-Wise Proximity Scheduling for Better Vision-Language-Action Generalization](../../CVPR2026/robotics/maps_preserving_vision-language_representations_via_module-wise_proximity_schedu.md)
-- [\[ACL 2026\] VLN-NF: Feasibility-Aware Vision-and-Language Navigation with False-Premise Instructions](vln-nf_feasibility-aware_vision-and-language_navigation_with_false-premise_instr.md)
 - [\[CVPR 2026\] MoEActok: A MoE-based Action Tokenizer for Vision-Language-Action Models](../../CVPR2026/robotics/moeactok_a_moe-based_action_tokenizer_for_vision-language-action_models.md)
-- [\[ICML 2026\] Contrastive Representation Regularization for Vision-Language-Action Models](../../ICML2026/robotics/contrastive_representation_regularization_for_vision-language-action_models.md)
-- [\[ICML 2026\] Scaling by Diversified Experience for Vision-Language-Action Models](../../ICML2026/robotics/scaling_by_diversified_experience_for_vision-language-action_models.md)
+- [\[CVPR 2026\] ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](../../CVPR2026/robotics/acot-vla_action_chain-of-thought_for_vision-language-action_models.md)
+- [\[ICLR 2026\] FASTer: Toward Powerful and Efficient Autoregressive Vision-Language-Action Models with Learnable Action Tokenizer and Block-wise Decoding](../../ICLR2026/robotics/faster_toward_powerful_and_efficient_autoregressive_visionlanguageaction_models_.md)
 
 </div>
 

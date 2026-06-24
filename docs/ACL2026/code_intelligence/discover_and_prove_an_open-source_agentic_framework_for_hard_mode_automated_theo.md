@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Discover and Prove: An Open-source Agentic Framework for Hard Mode Automated Theorem Proving in Lean 4
 description: >-
-  [ACL 2026][Code Intelligence][Hard Mode] DAP introduces the concept of Hard Mode ATP (where AI must discover answers before constructing proofs, rather than using Easy Mode statements with embedded answers), releases MiniF2F-Hard and FIMO-Hard benchmarks, and designs a "discover-and-prove" two-stage framework. By using LLMs for natural language reasoning to d
+  [ACL 2026][Code Intelligence][Automated Theorem Proving] DAP introduces the concept of Hard Mode ATP (where AI must discover answers before constructing proofs, rather than using Easy Mode statements with embedded answers), releases MiniF2F-Hard and FIMO-Hard benchmarks, and designs a "discover-and-prove" two-stage framework. By using LLMs for natural language reasoning to discover answers and rewriting them into Easy Mode statements for formal provers…
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - Hard Mode
-  - Lean 4
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Automated Theorem Proving"
+  - "Hard Mode"
+  - "Lean 4"
+  - "Answer Discovery"
+  - "Formal Verification"
 date: 2026-05-08
-content_hash: 4444208f7ca55ed9
+content_hash: 2483a1ed29684405
 ---
+
 # Discover and Prove: An Open-source Agentic Framework for Hard Mode Automated Theorem Proving in Lean 4
 
 **Conference**: ACL 2026  
@@ -134,7 +138,7 @@ No training is involved. The Discovery Module is driven by carefully designed pr
 - [\[ACL 2026\] FormalScience: Scalable Human-in-the-Loop Autoformalisation of Science with Agentic Code Generation in Lean](formalscience_scalable_human-in-the-loop_autoformalisation_of_science_with_agent.md)
 - [\[ACL 2026\] LogicEval: A Systematic Framework for Evaluating Automated Repair Techniques for Logical Vulnerabilities in Real-World Software](logiceval_a_systematic_framework_for_evaluating_automated_repair_techniques_for_.md)
 - [\[ACL 2026\] CuBridge: An LLM-Based Framework for Understanding and Reconstructing High-Performance Attention Kernels](cubridge_an_llm-based_framework_for_understanding_and_reconstructing_high-perfor.md)
-- [\[AAAI 2026\] Why Do Open-Source LLMs Struggle with Data Analysis? A Systematic Empirical Study](../../AAAI2026/code_intelligence/why_do_open-source_llms_struggle_with_data_analysis_a_systematic_empirical_study.md)
+- [\[ACL 2026\] SOCIA-EVO: Automated Simulator Construction via Dual-Anchored Bi-Level Optimization](socia-evo_automated_simulator_construction_via_dual-anchored_bi-level_optimizati.md)
 
 </div>
 

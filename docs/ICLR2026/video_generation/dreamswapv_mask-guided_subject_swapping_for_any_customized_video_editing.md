@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DreamSwapV: Mask-guided Subject Swapping for Any Customized Video Editing
 description: >-
-  [ICLR 2026][Video Generation][Diffusion Transformer] DreamSwapV redefines "video subject swapping" as a **mask-guided video inpainting** task. Given a source video, a mask designating the object to be replaced, and a reference image of the target subject, the model performs end-to-end swapping of any subject with any new target. This is achieved through a conditional fus
+  [ICLR2026][Video Generation][Video Subject Swapping] DreamSwapV redefines "video subject swapping" as a **mask-guided video inpainting** task. Given a source video, a mask designating the object to be replaced, and a reference image of the target subject, the model performs end-to-end swapping of any subject with any new target. This is achieved through a conditional fusion module and an adaptive masking strategy for fine-grained control and natural subject-environment intera…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Diffusion Transformer
+  - "ICLR2026"
+  - "Video Generation"
+  - "Video Subject Swapping"
+  - "Mask-guided"
+  - "Video Inpainting"
+  - "Conditional Fusion"
+  - "Diffusion Transformer"
 date: 2026-05-08
-content_hash: 1285f53d0e982598
+content_hash: 11ea0afb2e278dd1
 ---
+
 # DreamSwapV: Mask-guided Subject Swapping for Any Customized Video Editing
 
 **Conference**: ICLR2026  
@@ -142,7 +147,7 @@ DreamSwapV ranks first across all major metrics. While Kling 1.6 is competitive 
 - [\[ICLR 2026\] Any-to-Bokeh: Arbitrary-Subject Video Refocusing with Video Diffusion Model](any-to-bokeh_arbitrary-subject_video_refocusing_with_video_diffusion_model.md)
 - [\[ICLR 2026\] MAGREF: Masked Guidance for Any-Reference Video Generation with Subject Disentanglement](magref_masked_guidance_for_any-reference_video_generation_with_subject_disentang.md)
 - [\[CVPR 2026\] SMRABooth: Subject and Motion Representation Alignment for Customized Video Generation](../../CVPR2026/video_generation/smrabooth_subject_and_motion_representation_alignment_for_customized_video_gener.md)
-- [\[ICCV 2025\] DIVE: Taming DINO for Subject-Driven Video Editing](../../ICCV2025/video_generation/dive_taming_dino_for_subject-driven_video_editing.md)
+- [\[ICLR 2026\] Pixel-Perfect Puppetry: Precision-Guided Enhancement for Face Image and Video Editing](pixel-perfect_puppetry_precision-guided_enhancement_for_face_image_and_video_edi.md)
 
 </div>
 

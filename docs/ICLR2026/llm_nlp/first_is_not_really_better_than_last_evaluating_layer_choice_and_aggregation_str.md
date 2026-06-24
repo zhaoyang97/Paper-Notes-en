@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] First is Not Really Better Than Last: Evaluating Layer Choice and Aggregation Strategies in Language Model Data Influence Estimation
 description: >-
-  [ICLR 2026][LLM (Other)][Influence Functions] This work demonstrates theoretically and experimentally that the conclusion from prior work—claiming the first layer (embedding) is most suitable for influence estimation—is unreliable. It finds that middle attention layers are superior choices and proposes two new cross-layer aggregation strategies, Rank and Vote, alo
+  [ICLR 2026][LLM (Other)][Influence Functions] This work demonstrates theoretically and experimentally that the conclusion from prior work—claiming the first layer (embedding) is most suitable for influence estimation—is unreliable. It finds that middle attention layers are superior choices and proposes two new cross-layer aggregation strategies, Rank and Vote, along with the Noise Detection Rate (NDR) proxy metric, significantly improving the detection of harmful training sam…
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - Influence Functions
-  - Data Attribution
-  - Layer Analysis
-  - LLM Interpretability
-  - Training Data Quality
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Influence Functions"
+  - "Data Attribution"
+  - "Layer Analysis"
+  - "LLM Interpretability"
+  - "Training Data Quality"
 date: 2026-05-08
-content_hash: 5b563b3bfd2fcbd5
+content_hash: 4e44b0131d582d8b
 ---
+
 # First is Not Really Better Than Last: Evaluating Layer Choice and Aggregation Strategies in Language Model Data Influence Estimation
 
 **Conference**: ICLR 2026  
@@ -147,13 +148,13 @@ The best layers outperform the worst layer (CL) by 10-15% in post-filtering accu
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ACL 2025\] Evaluating Language Models as Synthetic Data Generators](../../ACL2025/llm_nlp/evaluating_lms_synthetic_data_gen.md)
 - [\[ICLR 2026\] Evaluating Text Creativity across Diverse Domains: A Dataset and Large Language Model Evaluator](evaluating_text_creativity_across_diverse_domains_a_dataset_and_large_language_m.md)
 - [\[NeurIPS 2025\] The Last Vote: A Multi-Stakeholder Framework for Language Model Governance](../../NeurIPS2025/llm_nlp/the_last_vote_a_multi-stakeholder_framework_for_language_model_governance.md)
-- [\[ACL 2025\] Evaluating Language Models as Synthetic Data Generators](../../ACL2025/llm_nlp/evaluating_lms_synthetic_data_gen.md)
 - [\[ACL 2025\] Wait, that's not an option: LLMs Robustness with Incorrect Multiple-Choice Options](../../ACL2025/llm_nlp/llm_robustness_incorrect_mcq.md)
 - [\[ACL 2025\] Training Language Model to Critique for Better Refinement](../../ACL2025/llm_nlp/training_language_model_to_critique_for_better_refinement.md)
 

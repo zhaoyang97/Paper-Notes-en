@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] The Last Vote: A Multi-Stakeholder Framework for Language Model Governance
 description: >-
-  [NeurIPS 2025][LLM/NLP][AI governance] This paper proposes a comprehensive framework for language model governance comprising a seven-category democratic risk taxonomy…
+  [NeurIPS 2025][LLM (Other)][AI governance] This paper proposes a comprehensive framework for language model governance comprising a seven-category democratic risk taxonomy, a stakeholder-adaptive Incident Severity Score (ISS), and a phased six-year implementation roadmap, with the goal of embedding democratic values into the institutional design of AI regulation.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "AI governance"
   - "democratic risk"
   - "multi-stakeholder"
   - "incident severity scoring"
   - "language model regulation"
 date: 2026-05-08
-content_hash: 52373fc38306e0cf
+content_hash: 44d9214db6a62cfa
 ---
 
 # The Last Vote: A Multi-Stakeholder Framework for Language Model Governance
@@ -50,28 +50,28 @@ The framework rests on three pillars: (1) a seven-category democratic risk taxon
 1. **Seven-Category Democratic Risk Taxonomy**
 
    Derived from democratic theory and historical institutional threats, the taxonomy covers both direct process-level risks and indirect institutional interactions, spanning individual exclusion to systemic collapse:
-   - $f_{\text{disc}}$: Discriminatory discourse amplification (bias amplification, synthetic content bias, linguistic exclusion)
-   - $f_{\text{surv}}$: Surveillance and democratic chilling effects (conversation monitoring, political sentiment tracking, dissent detection)
-   - $f_{\text{elec}}$: Electoral process manipulation (AI-generated propaganda, personalized political advertising, synthetic news)
-   - $f_{\text{manip}}$: Public opinion manipulation (conversational manipulation, LM bot amplification, deepfake text)
-   - $f_{\text{civic}}$: Civic engagement degradation (filter bubble amplification, personalization bubbles, radicalization pathways)
-   - $f_{\text{capture}}$: Regulatory and institutional capture (model concentration, infrastructure dependency, vendor capture)
-   - $f_{\text{emerg}}$: Emerging democratic threats (multi-model cascade risks, objective misalignment, emergent behaviors)
+    - $f_{\text{disc}}$: Discriminatory discourse amplification (bias amplification, synthetic content bias, linguistic exclusion)
+    - $f_{\text{surv}}$: Surveillance and democratic chilling effects (conversation monitoring, political sentiment tracking, dissent detection)
+    - $f_{\text{elec}}$: Electoral process manipulation (AI-generated propaganda, personalized political advertising, synthetic news)
+    - $f_{\text{manip}}$: Public opinion manipulation (conversational manipulation, LM bot amplification, deepfake text)
+    - $f_{\text{civic}}$: Civic engagement degradation (filter bubble amplification, personalization bubbles, radicalization pathways)
+    - $f_{\text{capture}}$: Regulatory and institutional capture (model concentration, infrastructure dependency, vendor capture)
+    - $f_{\text{emerg}}$: Emerging democratic threats (multi-model cascade risks, objective misalignment, emergent behaviors)
 
    Each category aggregates multiple sub-risk components, with L2 normalization ensuring proportional contributions.
 
 2. **Incident Severity Score (ISS)**
 
    A three-tier design ranging from simple to complex:
-   - **Classic four-factor ISS**: Stakeholders assign weights to impact (I), exploitability (E), reproducibility (R), and exposure (X), supporting both linear aggregation $\text{ISS}_{\text{lin}} = w_I \cdot I + w_E \cdot E + w_R \cdot R + w_X \cdot X$ and multiplicative aggregation (capturing superadditive interactions among risks).
-   - **High-dimensional learnable ISS**: A seven-dimensional risk vector $\bm{f} \in [0,1]^7$ passed through a second-order polynomial with sigmoid output:
+    - **Classic four-factor ISS**: Stakeholders assign weights to impact (I), exploitability (E), reproducibility (R), and exposure (X), supporting both linear aggregation $\text{ISS}_{\text{lin}} = w_I \cdot I + w_E \cdot E + w_R \cdot R + w_X \cdot X$ and multiplicative aggregation (capturing superadditive interactions among risks).
+    - **High-dimensional learnable ISS**: A seven-dimensional risk vector $\bm{f} \in [0,1]^7$ passed through a second-order polynomial with sigmoid output:
 
-   $$\text{ISS}(\bm{f};\bm{\theta}) = \sigma(b + \bm{w}^T\bm{f} + \bm{f}^T\bm{W}\bm{f})$$
+    $\text{ISS}(\bm{f};\bm{\theta}) = \sigma(b + \bm{w}^T\bm{f} + \bm{f}^T\bm{W}\bm{f})$
 
    where the symmetric interaction matrix $\bm{W}$ captures pairwise risk synergies; parameters are learned on historical incident data using Huber loss with L2 regularization.
-   - **Stakeholder-adaptive weights**: Seven stakeholder categories (democratic institutions, civil society, regulators, technical experts, affected communities, industry, academia) each propose weight vectors, aggregated via utility-based softmax:
+    - **Stakeholder-adaptive weights**: Seven stakeholder categories (democratic institutions, civil society, regulators, technical experts, affected communities, industry, academia) each propose weight vectors, aggregated via utility-based softmax:
 
-   $$u_k = \alpha_k \cdot \log p(\bm{\theta}^* | \text{stakeholder } k) + \beta_k \cdot \text{expertise}_k + \gamma_k \cdot \text{impact}_k$$
+    $u_k = \alpha_k \cdot \log p(\bm{\theta}^* | \text{stakeholder } k) + \beta_k \cdot \text{expertise}_k + \gamma_k \cdot \text{impact}_k$
 
    Affected communities receive the highest impact weight $\gamma_k$ (up to 2.0), reflecting the precautionary principle.
 
@@ -83,7 +83,7 @@ The framework rests on three pillars: (1) a seven-category democratic risk taxon
     - **Stage 4 (72+ months)**: Adaptive governance—governance innovation laboratories, dynamic risk threshold updates, institutionalized continuous learning
 
    **Threshold-dependent trigger mechanism**: Interventions are triggered when ISS exceeds time-evolving thresholds:
-   $$P(S \geq s_j(t)) = 1 - F_S(s_j(t)) \geq \alpha_j(t)$$
+    $P(S \geq s_j(t)) = 1 - F_S(s_j(t)) \geq \alpha_j(t)$
    The high-risk initial threshold of 0.8 decreases to 0.75 at maturity, reflecting greater sensitivity as institutional capacity matures.
 
 ### Loss & Training
@@ -156,10 +156,10 @@ Comparison of ISS aggregation methods:
 ## Related Papers
 
 - [\[NeurIPS 2025\] SYMPHONY: Synergistic Multi-agent Planning with Heterogeneous Language Model Assemblies](symphony_synergistic_multi-agent_planning_with_heterogeneous_language_model_asse.md)
+- [\[ACL 2025\] Uni-Retrieval: A Multi-Style Retrieval Framework for STEM's Education](../../ACL2025/llm_nlp/uni-retrieval_a_multi-style_retrieval_framework_for_stems_education.md)
+- [\[ACL 2025\] Beyond Dialogue: A Profile-Dialogue Alignment Framework Towards General Role-Playing Language Model](../../ACL2025/llm_nlp/beyond_dialogue_a_profile-dialogue_alignment_framework_towards_general_role-play.md)
 - [\[NeurIPS 2025\] StreamBridge: Turning Your Offline Video Large Language Model into a Proactive Streaming Model](streambridge_turning_your_offline_video_large_language_model_into_a_proactive_st.md)
-- [\[ACL 2026\] MulDimIF: A Multi-Dimensional Constraint Framework for Evaluating and Improving Instruction Following in Large Language Models](../../ACL2026/llm_nlp/muldimif_a_multi-dimensional_constraint_framework_for_evaluating_and_improving_i.md)
 - [\[ICLR 2026\] First is Not Really Better Than Last: Evaluating Layer Choice and Aggregation Strategies in Language Model Data Influence Estimation](../../ICLR2026/llm_nlp/first_is_not_really_better_than_last_evaluating_layer_choice_and_aggregation_str.md)
-- [\[NeurIPS 2025\] Synergy over Discrepancy: A Partition-Based Approach to Multi-Domain LLM Fine-Tuning](synergy_over_discrepancy_a_partition-based_approach_to_multi-domain_llm_fine-tun.md)
 
 </div>
 

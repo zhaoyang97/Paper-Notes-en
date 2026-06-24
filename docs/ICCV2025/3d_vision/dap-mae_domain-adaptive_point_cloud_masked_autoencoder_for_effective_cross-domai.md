@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DAP-MAE: Domain-Adaptive Point Cloud Masked Autoencoder for Effective Cross-Domain Learning
 description: >-
-  [ICCV 2025][3D Vision][masked autoencoder] DAP-MAE is proposed to jointly learn multi-domain point cloud data via a Heterogeneous Domain Adapter (HDA) and a Domain Feature Generator (DFG)…
+  [ICCV 2025][3D Vision][masked autoencoder] DAP-MAE is proposed to jointly learn multi-domain point cloud data via a Heterogeneous Domain Adapter (HDA) and a Domain Feature Generator (DFG), enabling a single pretraining run to adapt to diverse downstream tasks including object classification, expression recognition, part segmentation, and 3D detection.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "domain adaptation"
   - "self-supervised learning"
 date: 2026-05-08
-content_hash: d711e8197f026e37
+content_hash: 4e3e31ca6c6c11a2
 ---
 
 # DAP-MAE: Domain-Adaptive Point Cloud Masked Autoencoder for Effective Cross-Domain Learning
@@ -227,10 +227,10 @@ The combination of all three features achieves the best result. The point cloud 
 ## Related Papers
 
 - [\[AAAI 2026\] DAPointMamba: Domain Adaptive Point Mamba for Point Cloud Completion](../../AAAI2026/3d_vision/dapointmamba_domain_adaptive_point_mamba_for_point_cloud_completion.md)
+- [\[ECCV 2024\] T-MAE: Temporal Masked Autoencoders for Point Cloud Representation Learning](../../ECCV2024/3d_vision/t-mae_temporal_masked_autoencoders_for_point_cloud_representation_learning.md)
 - [\[ICCV 2025\] StruMamba3D: Exploring Structural Mamba for Self-supervised Point Cloud Representation Learning](strumamba3d_exploring_structural_mamba_for_self-supervised_point_cloud_represent.md)
 - [\[ICCV 2025\] Towards More Diverse and Challenging Pre-training for Point Cloud Learning: Self-Supervised Cross Reconstruction with Decoupled Views](towards_more_diverse_and_challenging_pre-training_for_point_cloud_learning_self-.md)
-- [\[ICCV 2025\] CstNet: Constraint-Aware Feature Learning for Parametric Point Cloud](constraint-aware_feature_learning_for_parametric_point_cloud.md)
-- [\[AAAI 2026\] Multi-Modal Assistance for Unsupervised Domain Adaptation on Point Cloud 3D Object Detection](../../AAAI2026/3d_vision/multi-modal_assistance_for_unsupervised_domain_adaptation_on_point_cloud_3d_obje.md)
+- [\[ECCV 2024\] DG-PIC: Domain Generalized Point-In-Context Learning for Point Cloud Understanding](../../ECCV2024/3d_vision/dg-pic_domain_generalized_point-in-context_learning_for_point_cloud_understandin.md)
 
 </div>
 

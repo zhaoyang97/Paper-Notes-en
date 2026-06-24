@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Probing to Refine: Reinforcement Distillation of LLMs via Explanatory Inversion
 description: >-
-  [ICLR 2026][LLM Reasoning][GRPO] This paper identifies that distilled small models "amplify" generalization defects (memorizing patterns while failing upon directional shifts). It proposes "Explanatory Inversion" to generate probes that compel students to clarify underlying logic, followed by reinforcement refinement using ExGRPO with a "Dialogic Stru
+  [ICLR 2026][Reasoning][Reasoning Distillation] This paper identifies that distilled small models "amplify" generalization defects (memorizing patterns while failing upon directional shifts). It proposes "Explanatory Inversion" to generate probes that compel students to clarify underlying logic, followed by reinforcement refinement using ExGRPO with a "Dialogic Structure Utility Reward" to organize these probes into multi-turn dialogues. Across 12 datasets…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - GRPO
-  - Generalizability
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Reasoning Distillation"
+  - "Explanatory Inversion"
+  - "GRPO"
+  - "Generalization"
+  - "Multi-turn Dialogue Reward"
 date: 2026-05-08
-content_hash: 98ec3a67d49ca957
+content_hash: 441c7e91579d7e01
 ---
+
 # Probing to Refine: Reinforcement Distillation of LLMs via Explanatory Inversion
 
 **Conference**: ICLR 2026  

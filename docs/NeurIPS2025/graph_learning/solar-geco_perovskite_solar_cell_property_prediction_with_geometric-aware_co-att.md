@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Solar-GECO: Perovskite Solar Cell Property Prediction with Geometric-Aware Co-Attention
 description: >-
-  [NeurIPS 2025][Graph Learning][Perovskite solar cells] This paper proposes Solar-GECO, a multimodal framework that encodes the 3D crystal structure of the perovskite absorber layer via a geometric GNN and the remaining d…
+  [NeurIPS 2025][Graph Learning][Perovskite solar cells] This paper proposes Solar-GECO, a multimodal framework that encodes the 3D crystal structure of the perovskite absorber layer via a geometric GNN and the remaining device layers via LLM text embeddings, fuses them through a co-attention module, and predicts power conversion efficiency (PCE) along with its uncertainty, reducing MAE from 3.066 to 2.936.
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "co-attention mechanism"
   - "uncertainty quantification"
 date: 2026-05-08
-content_hash: d2f90631eedbc4e8
+content_hash: 2ee0945508dcb404
 ---
 
 # Solar-GECO: Perovskite Solar Cell Property Prediction with Geometric-Aware Co-Attention
@@ -149,10 +149,10 @@ All differences with respect to Solar-GECO are statistically significant under a
 ## Related Papers
 
 - [\[NeurIPS 2025\] Geometric Imbalance in Semi-Supervised Node Classification](geometric_imbalance_in_semi-supervised_node_classification.md)
-- [\[ICML 2026\] Unsat Core Prediction through Polarity-Aware Representation Learning over Clause-Literal Hypergraphs](../../ICML2026/graph_learning/unsat_core_prediction_through_polarity-aware_representation_learning_over_clause.md)
+- [\[ICLR 2026\] FlowSymm: Physics–Aware, Symmetry–Preserving Graph Attention for Network Flow Completion](../../ICLR2026/graph_learning/flowsymm_physicsaware_symmetrypreserving_graph_attention_for_network_flow_comple.md)
 - [\[NeurIPS 2025\] TAMI: Taming Heterogeneity in Temporal Interactions for Temporal Graph Link Prediction](tami_taming_heterogeneity_in_temporal_interactions_for_temporal_graph_link_predi.md)
-- [\[AAAI 2026\] Kernelized Edge Attention: Addressing Semantic Attention Blurring in Temporal Graph Neural Networks](../../AAAI2026/graph_learning/kernelized_edge_attention_addressing_semantic_attention_blurring_in_temporal_gra.md)
 - [\[NeurIPS 2025\] Graph Neural Networks for Efficient AC Power Flow Prediction in Power Grids](graph_neural_networks_for_efficient_ac_power_flow_prediction_in_power_grids.md)
+- [\[NeurIPS 2025\] OCN: Effectively Utilizing Higher-Order Common Neighbors for Better Link Prediction](ocn_effectively_utilizing_higher-order_common_neighbors_for_better_link_predicti.md)
 
 </div>
 

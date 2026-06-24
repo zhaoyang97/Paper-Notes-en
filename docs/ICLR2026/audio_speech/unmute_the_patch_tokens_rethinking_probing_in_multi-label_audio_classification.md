@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Unmute the Patch Tokens: Rethinking Probing in Multi-Label Audio Classification
 description: >-
-  [ICLR 2026][Audio & Speech][AudioSet] The authors point out that audio self-supervised models (SSL) rely on expensive fine-tuning to achieve SOTA on AudioSet because lightweight linear probing performs poorly. The root cause is not the embedding quality, but a "global pooling bottleneck": the `[cls]`-token compresses scattered, local sound events into a si
+  [ICLR 2026][Audio & Speech][Audio Self-Supervision] The authors point out that audio self-supervised models (SSL) rely on expensive fine-tuning to achieve SOTA on AudioSet because lightweight linear probing performs poorly. The root cause is not the embedding quality, but a "global pooling bottleneck": the `[cls]`-token compresses scattered, local sound events into a single vector, losing critical information. They propose **protobin (Binarized Prototype Probe)**…
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - AudioSet
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Audio Self-Supervision"
+  - "Probing Evaluation"
+  - "Multi-Label Classification"
+  - "Prototype Pooling"
+  - "AudioSet"
 date: 2026-05-08
-content_hash: 7511e3332c38f4c8
+content_hash: 782bb99e4fb8fbbd
 ---
+
 # Unmute the Patch Tokens: Rethinking Probing in Multi-Label Audio Classification
 
 **Conference**: ICLR 2026  

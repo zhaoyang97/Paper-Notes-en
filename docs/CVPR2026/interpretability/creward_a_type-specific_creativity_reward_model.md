@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CREward: A Type-Specific Creativity Reward Model
 description: >-
-  [CVPR 2026][Interpretability][LoRA slider] This paper decomposes "visual creativity" along the image formation pipeline into three interpretable axes: **Geometry / Material / Texture**. It first establishes a human benchmark, CreBench, via expert pairwise comparisons to confirm that Large Vision-Language Models (LVLMs) align closely with human judgment regardin
+  [CVPR 2026][Interpretability][Creativity Metric] This paper decomposes "visual creativity" along the image formation pipeline into three interpretable axes: **Geometry / Material / Texture**. It first establishes a human benchmark, CreBench, via expert pairwise comparisons to confirm that Large Vision-Language Models (LVLMs) align closely with human judgment regarding creativity. Subsequently, a lightweight type-specific reward model, CREward (comprising a frozen visual backb…
 tags:
-  - CVPR 2026
-  - Interpretability
-  - LoRA slider
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Creativity Metric"
+  - "Type-Specific Reward Model"
+  - "LVLM Annotation"
+  - "Preference Learning"
+  - "LoRA slider"
 date: 2026-05-08
-content_hash: eabffdf42f937f80
+content_hash: 79b1e80c231b5a75
 ---
+
 # CREward: A Type-Specific Creativity Reward Model
 
 **Conference**: CVPR 2026  
@@ -148,11 +153,11 @@ Correlation between types and overall creativity (Table 3, Geometry dominates ov
 
 ## Related Papers
 
+- [\[ICLR 2026\] Latent Thinking Optimization: Your Latent Reasoning Language Model Secretly Encodes Reward Signals in Its Latent Thoughts](../../ICLR2026/interpretability/latent_thinking_optimization_your_latent_reasoning_language_model_secretly_encod.md)
 - [\[CVPR 2025\] Attribute-formed Class-specific Concept Space: Endowing Language Bottleneck Model with Better Interpretability and Scalability](../../CVPR2025/interpretability/albm_attribute_concept_space.md)
 - [\[NeurIPS 2025\] Rectifying Shortcut Behaviors in Preference-based Reward Learning](../../NeurIPS2025/interpretability/rectifying_shortcut_behaviors_in_preference-based_reward_learning.md)
 - [\[AAAI 2026\] Probing Preference Representations: A Multi-Dimensional Evaluation and Analysis Method for Reward Models](../../AAAI2026/interpretability/probing_preference_representations_a_multi-dimensional_evaluation_and_analysis_m.md)
 - [\[ACL 2026\] Learning What Matters: Dynamic Dimension Selection and Aggregation for Interpretable Vision-Language Reward Modeling](../../ACL2026/interpretability/learning_what_matters_dynamic_dimension_selection_and_aggregation_for_interpreta.md)
-- [\[AAAI 2026\] Flexible Concept Bottleneck Model](../../AAAI2026/interpretability/flexible_concept_bottleneck_model.md)
 
 </div>
 

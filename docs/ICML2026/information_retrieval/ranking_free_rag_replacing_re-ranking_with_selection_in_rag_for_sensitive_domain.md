@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Ranking-Free RAG: Replacing Re-Ranking with Selection in RAG for Sensitive Domains
 description: >-
-  [ICML 2026][Information Retrieval & RAG][RAG] This paper introduces METEORA, a trio consisting of a DPO-trained rationale generator, statistical elbow detection, and a shared-framework Verifier. It replaces the uninterpretable, top-$k$-dependent re-ranker in RAG, achieving higher recall, an 80% reduction in evidence volume, and a 4.4× improvement in adversarial ro
+  [ICML 2026][Information Retrieval & RAG][RAG] This paper introduces METEORA, a trio consisting of a DPO-trained rationale generator, statistical elbow detection, and a shared-framework Verifier. It replaces the uninterpretable, top-$k$-dependent re-ranker in RAG, achieving higher recall, an 80% reduction in evidence volume, and a 4.4× improvement in adversarial robustness across six sensitive domain datasets.
 tags:
-  - ICML 2026
-  - Information Retrieval & RAG
-  - RAG
-  - DPO
+  - "ICML 2026"
+  - "Information Retrieval & RAG"
+  - "RAG"
+  - "Evidence Selection"
+  - "DPO"
+  - "Adaptive Thresholding"
+  - "Corpus Poisoning Defense"
 date: 2026-05-08
-content_hash: 6b0da78434811ebd
+content_hash: a4f1b6ba23c4ed12
 ---
+
 # Ranking-Free RAG: Replacing Re-Ranking with Selection in RAG for Sensitive Domains
 
 **Conference**: ICML 2026  
@@ -131,10 +135,10 @@ The advantage grows as documents become longer and more complex: MAUD recall jum
 ## Related Papers
 
 - [\[ACL 2025\] SetR: Shifting from Ranking to Set Selection for Retrieval Augmented Generation](../../ACL2025/information_retrieval/setr_set_selection_rag.md)
+- [\[NeurIPS 2025\] SeCon-RAG: A Two-Stage Semantic Filtering and Conflict-Free Framework for Trustworthy RAG](../../NeurIPS2025/information_retrieval/secon-rag_a_two-stage_semantic_filtering_and_conflict-free_framework_for_trustwo.md)
 - [\[ICML 2026\] BlitzRank: Principled Zero-shot Ranking Agents with Tournament Graphs](blitzrank_principled_zero-shot_ranking_agents_with_tournament_graphs.md)
 - [\[ICML 2026\] Less Is More: Elevating RAG via Performance-Driven Context Compression](less_is_more_elevating_rag_via_performance-driven_context_compression.md)
 - [\[ACL 2025\] Re-ranking Using Large Language Models for Mitigating Exposure to Harmful Content on Social Media Platforms](../../ACL2025/information_retrieval/llm_reranking_harmful_content.md)
-- [\[NeurIPS 2025\] SeCon-RAG: A Two-Stage Semantic Filtering and Conflict-Free Framework for Trustworthy RAG](../../NeurIPS2025/information_retrieval/secon-rag_a_two-stage_semantic_filtering_and_conflict-free_framework_for_trustwo.md)
 
 </div>
 

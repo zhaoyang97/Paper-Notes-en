@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Optimal Rates for Generalization of Gradient Descent for Deep ReLU Classification
 description: >-
-  [NeurIPS 2025][Optimization][Deep ReLU networks] This paper establishes a generalization rate of $\widetilde{O}(L^4(1+\gamma L^2)/(n\gamma^2))$ for gradient descent on deep ReLU networks…
+  [NeurIPS 2025][Optimization][Deep ReLU networks] This paper establishes a generalization rate of $\widetilde{O}(L^4(1+\gamma L^2)/(n\gamma^2))$ for gradient descent on deep ReLU networks, achieving for the first time simultaneously: (1) the optimal $1/n$ dependence on sample size $n$, and (2) only polynomial dependence on depth $L$.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "NTK separability"
   - "gradient descent"
 date: 2026-05-08
-content_hash: f2eca5183d717af4
+content_hash: ac3321fec6fce704
 ---
 
 # Optimal Rates for Generalization of Gradient Descent for Deep ReLU Classification
@@ -127,7 +127,7 @@ This paper is a purely theoretical contribution. The main results are summarized
 - [\[NeurIPS 2025\] Learning Provably Improves the Convergence of Gradient Descent](learning_provably_improves_the_convergence_of_gradient_descent.md)
 - [\[NeurIPS 2025\] Large Stepsizes Accelerate Gradient Descent for Regularized Logistic Regression](large_stepsizes_accelerate_gradient_descent_for_regularized_logistic_regression.md)
 - [\[NeurIPS 2025\] Understanding the Generalization of Stochastic Gradient Adam in Learning Neural Networks](understanding_the_generalization_of_stochastic_gradient_adam_in_learning_neural_.md)
-- [\[NeurIPS 2025\] Do Neural Networks Need Gradient Descent to Generalize? A Theoretical Study](do_neural_networks_need_gradient_descent_to_generalize_a_theoretical_study.md)
+- [\[NeurIPS 2025\] CHiQPM: Calibrated Hierarchical Interpretable Image Classification](chiqpm_calibrated_hierarchical_interpretable_image_classification.md)
 
 </div>
 

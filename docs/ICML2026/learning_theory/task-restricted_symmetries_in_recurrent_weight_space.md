@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Task-Restricted Symmetries in Recurrent Weight Space
 description: >-
-  [ICML 2026][learning_theory][Paper Note] The paper uses "ordered real Schur coordinates" to decompose the recurrent matrix of a trained single-layer tanh RNN into spectral blocks and non-normal coupling blocks. Through structured ablation by zeroing out blocks, it reveals that certain non-normal couplings can be removed with almost no impact on task behavior
+  [ICML 2026][Learning Theory][Weight space symmetry] The paper uses "ordered real Schur coordinates" to decompose the recurrent matrix of a trained single-layer tanh RNN into spectral blocks and non-normal coupling blocks. Through structured ablation by zeroing out blocks, it reveals that certain non-normal couplings can be removed with almost no impact on task behavior (approximate functional invariance), while others are task-critical directions. This profile of "removable/n…
 tags:
-  - ICML 2026
-  - learning_theory
+  - "ICML 2026"
+  - "Learning Theory"
+  - "RNN Weight Space Analysis"
+  - "Weight space symmetry"
+  - "Recurrent networks"
+  - "Schur decomposition"
+  - "Non-normality"
+  - "Mechanistic interpretability"
 date: 2026-05-08
-content_hash: 9da808a5c0577761
+content_hash: a757bcbe1c9f4308
 ---
+
 # Task-Restricted Symmetries in Recurrent Weight Space
 
 **Conference**: ICML 2026  
@@ -121,11 +128,11 @@ Raw degradation $\Delta\mathrm{FVU}$ for single-block ablations across three neu
 
 ## Related Papers
 
-- [\[ICML 2026\] Understanding the Parameter Space Geometry of Transformers Encoding Boolean Functions](understanding_the_parameter_space_geometry_of_transformers_encoding_boolean_func.md)
-- [\[ICML 2026\] Multi-task Linear Regression without Eigenvalue Lower Bounds: Adaptivity, Robustness and Safety](multi-task_linear_regression_without_eigenvalue_lower_bounds_adaptivity_robustne.md)
 - [\[ICML 2026\] Catastrophic Forgetting is Low-Rank: A Function-Space Theory for Continual Adaptation](catastrophic_forgetting_is_low-rank_a_function-space_theory_for_continual_adapta.md)
-- [\[ICLR 2026\] Function Spaces Without Kernels: Learning Compact Hilbert Space Representations](../../ICLR2026/learning_theory/function_spaces_without_kernels_learning_compact_hilbert_space_representations.md)
-- [\[ICML 2026\] Simple Algorithms for Bad Triangle Transversals with Applications to Correlation Clustering](simple_algorithms_for_bad_triangle_transversals_with_applications_to_correlation.md)
+- [\[ICLR 2026\] On the Benefits of Weight Normalization for Overparameterized Matrix Sensing](../../ICLR2026/learning_theory/on_the_benefits_of_weight_normalization_for_overparameterized_matrix_sensing.md)
+- [\[ICLR 2026\] In-Context Algorithm Emulation in Fixed-Weight Transformers](../../ICLR2026/learning_theory/in-context_algorithm_emulation_in_fixed-weight_transformers.md)
+- [\[ICLR 2026\] Neural Collapse in Multi-Task Learning](../../ICLR2026/learning_theory/neural_collapse_in_multi-task_learning.md)
+- [\[ICML 2026\] Understanding the Parameter Space Geometry of Transformers Encoding Boolean Functions](understanding_the_parameter_space_geometry_of_transformers_encoding_boolean_func.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Perceptual Neural Video Compression with Color Separation and Rank Chain
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] To address the issues of existing neural video compression focusing solely on PSNR, neglecting the human eye's perceptual differences between luma and chroma, and inconsistent perceptual quality under variable bitrates, this paper proposes PNVC-CR. This framework combines a "luma-chroma separated dual-codec framework (
+  [CVPR 2026][Model Compression][Neural Video Compression] To address the issues of existing neural video compression focusing solely on PSNR, neglecting the human eye's perceptual differences between luma and chroma, and inconsistent perceptual quality under variable bitrates, this paper proposes PNVC-CR. This framework combines a "luma-chroma separated dual-codec framework (PNVC-C)" with "rate-rank chain adversarial optimization (Rc-GAN)," achieving BD-rate savings of 77.71%…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Neural Video Compression"
+  - "Perceptual Quality"
+  - "Luma-Chroma Separation"
+  - "Rank Chain Loss"
+  - "Variable Bitrate"
 date: 2026-05-08
-content_hash: 6ddf5083d954b1a8
+content_hash: 57fcdce41b6257c4
 ---
+
 # Perceptual Neural Video Compression with Color Separation and Rank Chain
 
 **Conference**: CVPR 2026  
@@ -142,11 +148,11 @@ Key Highlights: PNVC-CR leads across all four perceptual metrics (where most oth
 
 ## Related Papers
 
+- [\[CVPR 2026\] Ultra-Fast Neural Video Compression](ultra-fast_neural_video_compression.md)
 - [\[CVPR 2026\] Real-Time Neural Video Compression with Unified Intra and Inter Coding](real-time_neural_video_compression_with_unified_intra_and_inter_coding.md)
-- [\[CVPR 2026\] VLIC: Vision-Language Models As Perceptual Judges for Human-Aligned Image Compression](vlic_vision-language_models_as_perceptual_judges_for_human-aligned_image_compres.md)
-- [\[CVPR 2026\] ReflexSplit: Single Image Reflection Separation via Layer Fusion-Separation](reflexsplit_single_image_reflection_separation_via_layer_fusion-separation.md)
-- [\[CVPR 2026\] Low-Rank Residual Diffusion Models](low-rank_residual_diffusion_models.md)
-- [\[CVPR 2026\] Reflection Separation from a Single Image via Joint Latent Diffusion](reflection_separation_from_a_single_image_via_joint_latent_diffusion.md)
+- [\[CVPR 2026\] Ultra-Low Bitrate Perceptual Image Compression with Shallow Encoder](ultra-low_bitrate_perceptual_image_compression_with_shallow_encoder.md)
+- [\[CVPR 2026\] Content-Adaptive Hierarchical Hyperprior for Neural Video Coding](content-adaptive_hierarchical_hyperprior_for_neural_video_coding.md)
+- [\[CVPR 2026\] Generative Video Compression with One-Dimensional Latent Representation](generative_video_compression_with_one-dimensional_latent_representation.md)
 
 </div>
 

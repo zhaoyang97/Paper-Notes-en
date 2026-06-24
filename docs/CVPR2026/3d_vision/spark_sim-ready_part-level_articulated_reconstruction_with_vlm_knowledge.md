@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SPARK: Sim-ready Part-level Articulated Reconstruction with VLM Knowledge
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] SPARK starts from a single RGB image, using a VLM to parse coarse URDF parameters, part-level reference images, and an open-state image. A Diffusion Transformer with multi-layer attention then simultaneously generates part-level and global meshes. Finally, differentiable forward kinematics optimize joint parameters, cr
+  [CVPR 2026][3D Vision][Articulated Object Reconstruction] SPARK starts from a single RGB image, using a VLM to parse coarse URDF parameters, part-level reference images, and an open-state image. A Diffusion Transformer with multi-layer attention then simultaneously generates part-level and global meshes. Finally, differentiable forward kinematics optimize joint parameters, creating end-to-end "sim-ready" articulated objects compatible with physics engines…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Articulated Object Reconstruction"
+  - "URDF Estimation"
+  - "Diffusion Transformer"
+  - "VLM Prior"
+  - "Differentiable Forward Kinematics"
 date: 2026-05-08
-content_hash: 6013d2ff29181a57
+content_hash: 68a412eb8b850b21
 ---
+
 # SPARK: Sim-ready Part-level Articulated Reconstruction with VLM Knowledge
 
 **Conference**: CVPR 2026  
@@ -157,7 +163,7 @@ All three error metrics are dramatically lower than the baselines, especially co
 - [\[CVPR 2026\] Part$^{2}$GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting](part2gs_part-aware_modeling_of_articulated_objects_using_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] UniPR: Unified Object-level Real-to-Sim Perception and Reconstruction from a Single Stereo Pair](unipr_unified_object-level_real-to-sim_perception_and_reconstruction_from_a_sing.md)
 - [\[ICLR 2026\] PD²GS: Part-Level Decoupling and Continuous Deformation of Articulated Objects via Gaussian Splatting](../../ICLR2026/3d_vision/pd2gs_part-level_decoupling_and_continuous_deformation_of_articulated_objects_vi.md)
-- [\[CVPR 2026\] SCAPO: Self-Supervised Category-Level Articulated Pose Estimation from a Single 3D Observation](scapo_self-supervised_category-level_articulated_pose_estimation_from_a_single_3.md)
+- [\[CVPR 2026\] ArtPro: Self-Supervised Articulated Object Reconstruction with Adaptive Integration of Mobility Proposals](artpro_self-supervised_articulated_object_reconstruction_with_adaptive_integrati.md)
 
 </div>
 

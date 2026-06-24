@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] MEGState: Phoneme Decoding from Magnetoencephalography Signals
 description: >-
-  [NeurIPS 2025][MEG] This paper proposes MEGState, an architecture combining multi-resolution convolution and sensor-wise state space models (SSMs) for decoding phonemes from magnetoencephalography (MEG) signals…
+  [NeurIPS 2025][Medical Imaging][MEG] This paper proposes MEGState, an architecture combining multi-resolution convolution and sensor-wise state space models (SSMs) for decoding phonemes from magnetoencephalography (MEG) signals, achieving substantial improvements over baseline methods on the LibriBrain dataset.
 tags:
   - "NeurIPS 2025"
+  - "Medical Imaging"
   - "MEG"
   - "phoneme decoding"
   - "state space model"
   - "multi-resolution convolution"
   - "brain-computer interface"
 date: 2026-05-08
-content_hash: 765c302858dab998
+content_hash: 019786a88d9c89c0
 ---
 
 # MEGState: Phoneme Decoding from Magnetoencephalography Signals
@@ -130,10 +131,10 @@ Dataset: LibriBrain, comprising MEG recordings from a single subject listening t
 ## Related Papers
 
 - [\[NeurIPS 2025\] BrainOmni: A Brain Foundation Model for Unified EEG and MEG Signals](brainomni_a_brain_foundation_model_for_unified_eeg_and_meg_signals.md)
+- [\[ICLR 2026\] Autoregressive Visual Decoding from EEG Signals](../../ICLR2026/medical_imaging/autoregressive_visual_decoding_from_eeg_signals.md)
 - [\[NeurIPS 2025\] Generalizable, Real-Time Neural Decoding with Hybrid State-Space Models](generalizable_real-time_neural_decoding_with_hybrid_state-space_models.md)
 - [\[NeurIPS 2025\] Zebra: Towards Zero-Shot Cross-Subject Generalization for Universal Brain Visual Decoding](zebra_towards_zero-shot_cross-subject_generalization_for_universal_brain_visual_.md)
 - [\[NeurIPS 2025\] MoRE-Brain: Routed Mixture of Experts for Interpretable and Generalizable Cross-Subject fMRI Visual Decoding](more-brain_routed_mixture_of_experts_for_interpretable_and_generalizable_cross-s.md)
-- [\[ICLR 2026\] Neuro-Symbolic Decoding of Neural Activity](../../ICLR2026/medical_imaging/neuro-symbolic_decoding_of_neural_activity.md)
 
 </div>
 

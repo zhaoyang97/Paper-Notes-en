@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Polynomial Expansion Rank Adaptation: Enhancing Low-Rank Fine-Tuning with High-Order Interactions
 description: >-
-  [ACL 2026][Model Compression][Paper Note] This paper proposes PERA (Polynomial Expansion Rank Adaptation), which expands the linear adaptation space of LoRA into a polynomial manifold by introducing structured polynomial expansion (square and cross terms) within the parameter space of low-rank factors. It significantly enhances weight update expressiveness wit
+  [ACL 2026 Findings][Model Compression][Low-Rank Adaptation] This paper proposes PERA (Polynomial Expansion Rank Adaptation), which expands the linear adaptation space of LoRA into a polynomial manifold by introducing structured polynomial expansion (square and cross terms) within the parameter space of low-rank factors. It significantly enhances weight update expressiveness without increasing rank or inference overhead, consistently outperforming methods such as LoRA, DoRA…
 tags:
-  - ACL 2026
-  - Model Compression
+  - "ACL 2026 Findings"
+  - "Model Compression"
+  - "Low-Rank Adaptation"
+  - "Polynomial Expansion"
+  - "High-Order Feature Interaction"
+  - "PEFT"
+  - "LoRA Improvement"
 date: 2026-05-08
-content_hash: ccfc42c766a1d5b8
+content_hash: 233293c25579349d
 ---
+
 # Polynomial Expansion Rank Adaptation: Enhancing Low-Rank Fine-Tuning with High-Order Interactions
 
 **Conference**: ACL 2026 Findings  
@@ -156,10 +162,10 @@ Standard next-token prediction loss is employed. During training, only the low-r
 ## Related Papers
 
 - [\[ICML 2026\] ScaLoRA: Optimally Scaled Low-Rank Adaptation for Efficient High-Rank Fine-Tuning](../../ICML2026/model_compression/scalora_optimally_scaled_low-rank_adaptation_for_efficient_high-rank_fine-tuning.md)
-- [\[ICLR 2026\] LoFT: Low-Rank Adaptation That Behaves Like Full Fine-Tuning](../../ICLR2026/model_compression/loft_low-rank_adaptation_that_behaves_like_full_fine-tuning.md)
-- [\[AAAI 2026\] Group Orthogonal Low-Rank Adaptation for RGB-T Tracking](../../AAAI2026/model_compression/group_orthogonal_low-rank_adaptation_for_rgb-t_tracking.md)
 - [\[ACL 2026\] TLoRA: Task-aware Low Rank Adaptation of Large Language Models](tlora_task-aware_low_rank_adaptation_of_large_language_models.md)
-- [\[ACL 2026\] TalkLoRA: Communication-Aware Mixture of Low-Rank Adaptation for Large Language Models](talklora_communication-aware_mixture_of_low-rank_adaptation_for_large_language_m.md)
+- [\[ICLR 2026\] LoFT: Low-Rank Adaptation That Behaves Like Full Fine-Tuning](../../ICLR2026/model_compression/loft_low-rank_adaptation_that_behaves_like_full_fine-tuning.md)
+- [\[ACL 2026\] Not All Directions Matter: Towards Structured and Task-Aware Low-Rank Model Adaptation](not_all_directions_matter_towards_structured_and_task-aware_low-rank_model_adapt.md)
+- [\[NeurIPS 2025\] Beyond Higher Rank: Token-wise Input-Output Projections for Efficient Low-Rank Adaptation](../../NeurIPS2025/model_compression/beyond_higher_rank_token-wise_input-output_projections_for_efficient_low-rank_ad.md)
 
 </div>
 

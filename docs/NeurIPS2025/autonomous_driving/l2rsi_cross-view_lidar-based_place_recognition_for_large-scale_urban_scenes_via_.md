@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] L2RSI: Cross-View LiDAR-Based Place Recognition for Large-Scale Urban Scenes via Remote Sensing Imagery
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Place Recognition] This paper proposes L2RSI, the first framework for LiDAR-based place recognition in ultra-large-scale urban scenes (100 km²) leveraging high-resolution remote sensing…
+  [NeurIPS 2025][Autonomous Driving][Place Recognition] This paper proposes L2RSI, the first framework for LiDAR-based place recognition in ultra-large-scale urban scenes (100 km²) leveraging high-resolution remote sensing imagery. It aligns LiDAR BEV representations with remote sensing semantic spaces via semantic contrastive learning, and introduces Spatio-Temporal Particle Estimation (STPE) to aggregate spatio-temporal information from consecutive queries…
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Cross-View Retrieval"
   - "Particle Estimation"
 date: 2026-05-08
-content_hash: 5f42e91bb8137427
+content_hash: 6d70e723aa1531a6
 ---
 
 # L2RSI: Cross-View LiDAR-Based Place Recognition for Large-Scale Urban Scenes via Remote Sensing Imagery
@@ -176,11 +176,11 @@ Cross-scene generalization (LiRSI-Oxford, without fine-tuning):
 
 ## Related Papers
 
+- [\[CVPR 2025\] ForestLPR: LiDAR Place Recognition in Forests Attentioning Multiple BEV Density Images](../../CVPR2025/autonomous_driving/forestlpr_lidar_place_recognition_in_forests_attentioning_multiple_bev_density_i.md)
 - [\[NeurIPS 2025\] CuMoLoS-MAE: A Masked Autoencoder for Remote Sensing Data Reconstruction](cumolos-mae_a_masked_autoencoder_for_remote_sensing_data_reconstruction.md)
 - [\[NeurIPS 2025\] X-Scene: Large-Scale Driving Scene Generation with High Fidelity and Flexible Controllability](x-scene_large-scale_driving_scene_generation_with_high_fidelity_and_flexible_con.md)
+- [\[CVPR 2026\] C-LaV: Conditional Latent Velocity Field Denoising for Weather-Robust LiDAR Place Recognition](../../CVPR2026/autonomous_driving/c-lav_conditional_latent_velocity_field_denoising_for_weather-robust_lidar_place.md)
 - [\[NeurIPS 2025\] UrbanIng-V2X: A Large-Scale Multi-Vehicle Multi-Infrastructure Dataset Across Multiple Intersections for Cooperative Perception](urbaning-v2x_a_large-scale_multi-vehicle_multi-infrastructure_dataset_across_mul.md)
-- [\[ICCV 2025\] Extrapolated Urban View Synthesis Benchmark](../../ICCV2025/autonomous_driving/extrapolated_urban_view_synthesis_benchmark.md)
-- [\[CVPR 2026\] Ghost-FWL: A Large-Scale Full-Waveform LiDAR Dataset for Ghost Detection and Removal](../../CVPR2026/autonomous_driving/ghost-fwl_a_large-scale_full-waveform_lidar_dataset_for_ghost_detection_and_remo.md)
 
 </div>
 

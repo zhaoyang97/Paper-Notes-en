@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Refer to Any Segmentation Mask Group With Vision-Language Prompts
 description: >-
-  [ICCV 2025][Segmentation][Omni-modal referring segmentation] This paper proposes the Omni-modal Referring Expression Segmentation (ORES) task and the RAS framework…
+  [ICCV 2025][Segmentation][Omni-modal referring segmentation] This paper proposes the Omni-modal Referring Expression Segmentation (ORES) task and the RAS framework, which leverages a mask-level LMM with a non-autoregressive decoding mechanism to select target mask groups from a candidate pool based on vision-language hybrid prompts. The approach achieves state-of-the-art performance on the newly introduced ORES dataset as well as classical RES/GRES benchmarks.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "large multimodal models"
   - "non-autoregressive decoding"
 date: 2026-05-08
-content_hash: 617fdefd182a52e1
+content_hash: 4ce61c86bf40b99f
 ---
 
 # Refer to Any Segmentation Mask Group With Vision-Language Prompts
@@ -157,10 +157,10 @@ RAS also achieves state-of-the-art results on GRES (gRefCOCO), with an overall c
 
 ## Related Papers
 
+- [\[CVPR 2026\] SAMTok: Representing Any Mask with Two Words](../../CVPR2026/segmentation/samtok_representing_any_mask_with_two_words.md)
 - [\[ICCV 2025\] How Do Optical Flow and Textual Prompts Collaborate to Assist in Audio-Visual Semantic Segmentation?](how_do_optical_flow_and_textual_prompts_collaborate_to_assist_in_audio-visual_se.md)
 - [\[ICCV 2025\] HiMTok: Learning Hierarchical Mask Tokens for Image Segmentation with Large Multimodal Model](himtok_learning_hierarchical_mask_tokens_for_image_segmentation_with_large_multi.md)
 - [\[ICCV 2025\] LawDIS: Language-Window-based Controllable Dichotomous Image Segmentation](lawdis_language-window-based_controllable_dichotomous_image_segmentation.md)
-- [\[ICCV 2025\] Exploiting Domain Properties in Language-Driven Domain Generalization for Semantic Segmentation](exploiting_domain_properties_in_language-driven_domain_generalization_for_semant.md)
 - [\[ICCV 2025\] O-MaMa: Learning Object Mask Matching between Egocentric and Exocentric Views](o-mama_learning_object_mask_matching_between_egocentric_and_exocentric_views.md)
 
 </div>

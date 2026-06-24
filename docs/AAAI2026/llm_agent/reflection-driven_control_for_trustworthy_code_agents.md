@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reflection-Driven Control for Trustworthy Code Agents
 description: >-
-  [AAAI 2026][LLM Agent][reflection-driven control] This paper proposes a Reflection-Driven Control module that elevates "self-reflection" from a post-hoc patch to a first-class control loop within the agent reasoning proc…
+  [AAAI 2026][LLM Agent][reflection-driven control] This paper proposes a Reflection-Driven Control module that elevates "self-reflection" from a post-hoc patch to a first-class control loop within the agent reasoning process. Through three components—a lightweight self-checker, evidence-driven repair, and a reflective memory repository—the approach significantly improves code security rates on secure code generation tasks.
 tags:
   - "AAAI 2026"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "dynamic memory repository"
   - "trustworthy agent"
 date: 2026-05-08
-content_hash: e9753edac6d4291b
+content_hash: 7f8b7a453bf4d65b
 ---
 
 # Reflection-Driven Control for Trustworthy Code Agents
@@ -134,9 +134,9 @@ The conceptual innovation is strong—elevating reflection from an ad hoc patch 
 ## Related Papers
 
 - [\[AAAI 2026\] Towards Trustworthy Multi-Turn LLM Agents via Behavioral Guidance](towards_trustworthy_multi-turn_llm_agents_via_behavioral_guidance.md)
+- [\[ICLR 2026\] Code Driven Planning with Domain-Adaptive Selector](../../ICLR2026/llm_agent/code_driven_planning_with_domain-adaptive_selector.md)
 - [\[ICML 2026\] AutoRPA: Efficient GUI Automation through LLM-Driven Code Synthesis from Interactions](../../ICML2026/llm_agent/autorpa_efficient_gui_automation_through_llm-driven_code_synthesis_from_interact.md)
 - [\[AAAI 2026\] COVR: Collaborative Optimization of VLMs and RL Agent for Visual-Based Control](covrcollaborative_optimization_of_vlms_and_rl_agent_for_visu.md)
-- [\[ACL 2026\] CodeStruct: Code Agents over Structured Action Spaces](../../ACL2026/llm_agent/codestruct_code_agents_over_structured_action_spaces.md)
 - [\[AAAI 2026\] PerTouch: VLM-Driven Agent for Personalized and Semantic Image Retouching](pertouch_vlm-driven_agent_for_personalized_and_semantic_image_retouching.md)
 
 </div>

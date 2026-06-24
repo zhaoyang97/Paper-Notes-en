@@ -2,17 +2,20 @@
 title: >-
   [Paper Note] GenSR: Symbolic Regression based on Equation Generative Space
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Symbolic Regression] GenSR utilizes a dual-branch CVAE to reparameterize the discrete equation space into a generative latent space (a "map" of the equation world) that is "globally symbolic-continuous and locally numerical-smooth." Following an "architecture of map construction $\rightarrow$ coarse localization $\rightarrow$ fine search,"
+  [ICLR 2026][Physics & Scientific Computing][Symbolic Regression] GenSR utilizes a dual-branch CVAE to reparameterize the discrete equation space into a generative latent space (a "map" of the equation world) that is "globally symbolic-continuous and locally numerical-smooth." Following an "architecture of map construction $\rightarrow$ coarse localization $\rightarrow$ fine search," it employs a degenerate CMA-ES to efficiently find equations in the latent space…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - Symbolic Regression
-  - CVAE
-  - CMA-ES
-  - ELBO
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Symbolic Regression"
+  - "CVAE"
+  - "Generative Latent Space"
+  - "CMA-ES"
+  - "ELBO"
+  - "Bayesian Inference"
 date: 2026-05-08
-content_hash: 9348fe58aa41d9a5
+content_hash: 5c86b6fdddde0ec7
 ---
+
 # GenSR: Symbolic Regression based on Equation Generative Space
 
 **Conference**: ICLR 2026  
@@ -129,9 +132,9 @@ Further coloring by "normalized $y$ mean" shows that within each GenSR structura
 
 - [\[NeurIPS 2025\] Symbolic Regression Is All You Need: From Simulations to Scaling Laws in Binary Neutron Star Mergers](../../NeurIPS2025/physics/symbolic_regression_is_all_you_need_from_simulations_to_scaling_laws_in_binary_n.md)
 - [\[ICLR 2026\] Deep Learning for Subspace Regression](deep_learning_for_subspace_regression.md)
+- [\[ICLR 2026\] Efficient Regression-based Training of Normalizing Flows for Boltzmann Generators](efficient_regression-based_training_of_normalizing_flows_for_boltzmann_generator.md)
 - [\[ICLR 2026\] $\partial^\infty$-Grid: A Neural Differential Equation Solver with Differentiable Feature Grids](boldsymbolpartialinfty-grid_a_neural_differential_equation_solver_with_different.md)
 - [\[ICML 2026\] Quantum latent distributions in deep generative models](../../ICML2026/physics/quantum_latent_distributions_in_deep_generative_models.md)
-- [\[ICML 2026\] Generative Neural Operators Through Diffusion Last Layer](../../ICML2026/physics/generative_neural_operators_through_diffusion_last_layer.md)
 
 </div>
 

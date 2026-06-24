@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Provable Scaling Laws for the Test-Time Compute of Large Language Models
 description: >-
-  [NeurIPS 2025][LLM Reasoning][test-time compute] This paper proposes two two-stage test-time compute algorithms — Knockout (pairwise elimination in a tournament bracket) and League (ranking by average win rate) — and pro…
+  [NeurIPS 2025][Reasoning][test-time compute] This paper proposes two two-stage test-time compute algorithms — Knockout (pairwise elimination in a tournament bracket) and League (ranking by average win rate) — and proves under minimal assumptions that the failure probability decays exponentially or as a power law to zero as test-time compute increases. The assumptions required are merely that (1) the LLM generates a correct solution with nonzero probability…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "test-time compute"
   - "scaling laws"
   - "knockout"
@@ -14,7 +14,7 @@ tags:
   - "Best-of-N"
   - "provable guarantees"
 date: 2026-05-08
-content_hash: c461db6fd3b99b0b
+content_hash: 43786ff906dab400
 ---
 
 # Provable Scaling Laws for the Test-Time Compute of Large Language Models
@@ -149,8 +149,8 @@ This work is a purely inference-time method requiring **no training or fine-tuni
 - [\[NeurIPS 2025\] Towards Thinking-Optimal Scaling of Test-Time Compute for LLM Reasoning](towards_thinking-optimal_scaling_of_test-time_compute_for_llm_reasoning.md)
 - [\[NeurIPS 2025\] Rethinking Optimal Verification Granularity for Compute-Efficient Test-Time Scaling](rethinking_optimal_verification_granularity_for_compute-efficient_test-time_scal.md)
 - [\[NeurIPS 2025\] Does Thinking More Always Help? Mirage of Test-Time Scaling in Reasoning Models](does_thinking_more_always_help_mirage_of_test-time_scaling_in_reasoning_models.md)
-- [\[ICML 2026\] Diversity Matters: Revisiting Test-Time Compute in Vision-Language Models](../../ICML2026/llm_reasoning/diversity_matters_revisiting_test-time_compute_in_vision-language_models.md)
-- [\[NeurIPS 2025\] Sampling-Efficient Test-Time Scaling: Self-Estimating the Best-of-N Sampling in Early Decoding](sampling-efficient_test-time_scaling_self-estimating_the_best-of-n_sampling_in_e.md)
+- [\[ICLR 2026\] Strategic Scaling of Test-Time Compute: A Bandit Learning Approach](../../ICLR2026/llm_reasoning/strategic_scaling_of_test-time_compute_a_bandit_learning_approach.md)
+- [\[ICLR 2026\] T1: Tool-Integrated Verification for Test-Time Compute Scaling in Small Language Models](../../ICLR2026/llm_reasoning/t1_tool-integrated_verification_for_test-time_compute_scaling_in_small_language_.md)
 
 </div>
 

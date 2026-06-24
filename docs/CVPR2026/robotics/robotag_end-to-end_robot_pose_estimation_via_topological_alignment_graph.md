@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RoboTAG: End-to-end Robot Pose Estimation via Topological Alignment Graph
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] To address the pain points of monocular RGB robot pose estimation—specifically its high reliance on annotations and the loss of spatial priors when compressing 3D problems into 2D—RoboTAG organizes camera-robot system state variables into a "Topological Alignment Graph" featuring 2D and 3D branches. By identifying "clo
+  [CVPR 2026][Robotics][Robot Pose Estimation] To address the pain points of monocular RGB robot pose estimation—specifically its high reliance on annotations and the loss of spatial priors when compressing 3D problems into 2D—RoboTAG organizes camera-robot system state variables into a "Topological Alignment Graph" featuring 2D and 3D branches. By identifying "closed loops" within the graph to impose 2D-3D consistency supervision, the two backbone networks co-evolve. This allo…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Robot Pose Estimation"
+  - "3D Prior"
+  - "Topological Alignment Graph"
+  - "Cross-dimensional Consistency Supervision"
+  - "Unlabeled Alignment"
 date: 2026-05-08
-content_hash: 5ce7c6b217fa2a88
+content_hash: d279da89a3b8b14d
 ---
+
 # RoboTAG: End-to-end Robot Pose Estimation via Topological Alignment Graph
 
 **Conference**: CVPR 2026  
@@ -131,11 +137,11 @@ Mean joint angle error (Degrees ↓, Panda) and module ablation (AUC ↑):
 
 ## Related Papers
 
-- [\[CVPR 2026\] LEAD: Minimizing Learner-Expert Asymmetry in End-to-End Driving](lead_minimizing_learner-expert_asymmetry_in_end-to-end_driving.md)
 - [\[CVPR 2026\] End-to-End Language-Action Model for Humanoid Whole Body Control](end-to-end_language-action_model_for_humanoid_whole_body_control.md)
+- [\[ICLR 2026\] RAVEN: End-to-end Equivariant Robot Learning with RGB Cameras](../../ICLR2026/robotics/raven_end-to-end_equivariant_robot_learning_with_rgb_cameras.md)
+- [\[ICLR 2026\] LeRobot: An Open-Source Library for End-to-End Robot Learning](../../ICLR2026/robotics/lerobot_an_open-source_library_for_end-to-end_robot_learning.md)
 - [\[CVPR 2026\] A Cross-view Fusion Framework for Robust 6-DoF Grasp Pose Estimation](a_cross-view_fusion_framework_for_robust_6-dof_grasp_pose_estimation.md)
-- [\[NeurIPS 2025\] SutureBot: A Precision Framework & Benchmark for Autonomous End-to-End Suturing](../../NeurIPS2025/robotics/suturebot_a_precision_framework_benchmark_for_autonomous_end-to-end_suturing.md)
-- [\[CVPR 2025\] TinyNav: End-to-End TinyML for Real-Time Autonomous Navigation on Microcontrollers](../../CVPR2025/robotics/tinynav_end-to-end_tinyml_for_real-time_autonomous_navigation_on_microcontroller.md)
+- [\[ICLR 2026\] End-to-end Listen, Look, Speak and Act](../../ICLR2026/robotics/end-to-end_listen_look_speak_and_act.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Disentangled Textual Priors for Diffusion-based Image Super-Resolution
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] DTPSR is proposed to achieve superior perceptual quality in diffusion-based super-resolution by disentangling textual priors across two dimensions: spatial hierarchy (global/local) and frequency semantics (low/high), integrated through a decoupled cross-attention pipeline and a multi-branch CFG strategy.
+  [CVPR 2026][Image Restoration][Diffusion-based SR] DTPSR is proposed to achieve superior perceptual quality in diffusion-based super-resolution by disentangling textual priors across two dimensions: spatial hierarchy (global/local) and frequency semantics (low/high), integrated through a decoupled cross-attention pipeline and a multi-branch CFG strategy.
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Diffusion-based SR"
+  - "Text-guided"
+  - "Disentangled Priors"
+  - "Frequency-aware"
+  - "Semantic Control"
 date: 2026-05-08
-content_hash: 4f35414c15ccf041
+content_hash: 8f6fd46e9f059f11
 ---
+
 # Disentangled Textual Priors for Diffusion-based Image Super-Resolution
 
 **Conference**: CVPR 2026  
@@ -180,11 +186,11 @@ Note: DTPSR achieves SOTA on all no-reference perceptual metrics, though PSNR/SS
 
 ## Related Papers
 
-- [\[CVPR 2026\] Thermal Diffusion Matters: Infrared Spatial-Temporal Video Super-Resolution through Heat Conduction Priors](thermal_diffusion_matters_infrared_spatial-temporal_video_super-resolution_throu.md)
 - [\[CVPR 2026\] UniLDiff: Unlocking the Power of Diffusion Priors for All-in-One Image Restoration](unildiff_unlocking_the_power_of_diffusion_priors_for_all-in-one_image_restoratio.md)
-- [\[CVPR 2026\] FiDeSR: High-Fidelity and Detail-Preserving One-Step Diffusion Super-Resolution](fidesr_high-fidelity_and_detail-preserving_one-step_diffusion_super-resolution.md)
 - [\[CVPR 2026\] DreamSR: Towards Ultra-High-Resolution Image Super-Resolution via a Receptive-Field Enhanced Diffusion Transformer](dreamsr_towards_ultra-high-resolution_image_super-resolution_via_a_receptive-fie.md)
 - [\[CVPR 2026\] TUDSR: Twice Upsampling-Diffusion for Higher Super-Resolution](tudsr_twice_upsampling-diffusion_for_higher_super-resolution.md)
+- [\[CVPR 2026\] One-Step Diffusion Transformer for Controllable Real-World Image Super-Resolution](one-step_diffusion_transformer_for_controllable_real-world_image_super-resolutio.md)
+- [\[CVPR 2026\] Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution](time-aware_one_step_diffusion_network_for_real-world_image_super-resolution.md)
 
 </div>
 

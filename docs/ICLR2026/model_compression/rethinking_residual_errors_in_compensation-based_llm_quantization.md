@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rethinking Residual Errors in Compensation-based LLM Quantization
 description: >-
-  [ICLR 2026][Model Compression][GPTQ] This paper revisits the column-level calibration objectives of "column-wise quantization + compensated residual weights" methods like GPTQ / GPTAQ. It points out that these methods erroneously treat the "output of compensated weights" as the alignment baseline. Consequently, it derives a missing residual term—Compensat
+  [ICLR 2026][Model Compression][Post-training quantization] This paper revisits the column-level calibration objectives of "column-wise quantization + compensated residual weights" methods like GPTQ / GPTAQ. It points out that these methods erroneously treat the "output of compensated weights" as the alignment baseline. Consequently, it derives a missing residual term—Compensation-aware Error (CAE)—and integrates it efficiently into weight update formulas using the neuron deco…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - GPTQ
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Post-training quantization"
+  - "weight compensation"
+  - "GPTQ"
+  - "residual error"
+  - "compensation-aware error"
 date: 2026-05-08
-content_hash: 0c062622baf660ef
+content_hash: afe3277577527cfd
 ---
+
 # Rethinking Residual Errors in Compensation-based LLM Quantization
 
 **Conference**: ICLR 2026  
@@ -148,11 +153,11 @@ Table 4 verifies the added term $(W^{(0)}_{:,q}-W^{(q)}_{:,q})P2_{q,q:}$ specifi
 
 ## Related Papers
 
+- [\[ICLR 2026\] SAES-SVD: Self-Adaptive Suppression of Accumulated and Local Errors for SVD-based LLM Compression](saes-svd_self-adaptive_suppression_of_accumulated_and_local_errors_for_svd-based.md)
 - [\[ICLR 2026\] ParoQuant: Pairwise Rotation Quantization for Efficient Reasoning LLM Inference](paroquant_pairwise_rotation_quantization_for_efficient_reasoning_llm_inference.md)
 - [\[ICML 2026\] ReSpinQuant: Efficient Layer-Wise LLM Quantization via Subspace Residual Rotation Approximation](../../ICML2026/model_compression/respinquant_efficient_layer-wise_llm_quantization_via_subspace_residual_rotation.md)
 - [\[ICLR 2026\] SERQ: Saliency-Aware Low-Rank Error Reconstruction for LLM Quantization](serq_saliency-aware_low-rank_error_reconstruction_for_llm_quantization.md)
 - [\[ICLR 2026\] The Geometry of LLM Quantization: GPTQ as Babai's Nearest Plane Algorithm](the_geometry_of_llm_quantization_gptq_as_babais_nearest_plane_algorithm.md)
-- [\[AAAI 2026\] First-Order Error Matters: Accurate Compensation for Quantized Large Language Models](../../AAAI2026/model_compression/first-order_error_matters_accurate_compensation_for_quantized_large_language_mod.md)
 
 </div>
 

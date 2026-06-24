@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bridging Draft Policy Misalignment: Group Tree Optimization for Speculative Decoding
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Paper Note] During speculative decoding training, only a single greedy draft path is optimized, while during decoding, an entire draft tree is used for re-ranking and verification. This misalignment limits acceleration. This paper proposes Group Tree Optimization (GTO), which uses "draft tree rewards + group-based draft policy tra
+  [ICLR2026][Information Retrieval & RAG][Speculative Decoding] During speculative decoding training, only a single greedy draft path is optimized, while during decoding, an entire draft tree is used for re-ranking and verification. This misalignment limits acceleration. This paper proposes Group Tree Optimization (GTO), which uses "draft tree rewards + group-based draft policy training" to directly align with the tree policy used during decoding. GTO achieves an average increa…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
+  - "ICLR2026"
+  - "Information Retrieval & RAG"
+  - "Speculative Decoding"
+  - "Draft Policy Misalignment"
+  - "Tree Drafting"
+  - "Group Optimization"
+  - "Acceptance Length"
 date: 2026-05-08
-content_hash: 3d8f7ba446bb1172
+content_hash: 675f512e446a1290
 ---
+
 # Bridging Draft Policy Misalignment: Group Tree Optimization for Speculative Decoding
 
 **Conference**: ICLR2026  
@@ -120,15 +126,16 @@ Overall, GTO improves acceptance length by **7.4%** and provides an additional *
 - Value: ⭐⭐⭐⭐ Practical plug-and-play value for LLM inference acceleration.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] Enhancing LLM-based Search Agents via Contribution Weighted Group Relative Policy Optimization](../../ACL2026/information_retrieval/enhancing_llm-based_search_agents_via_contribution_weighted_group_relative_polic.md)
 - [\[ICML 2025\] RAPID: Long-Context Inference with Retrieval-Augmented Speculative Decoding](../../ICML2025/information_retrieval/rapid_long-context_inference_with_retrieval-augmented_speculative_decoding.md)
+- [\[ACL 2026\] End-to-End Optimization of LLM-Driven Multi-Agent Search Systems via Heterogeneous-Group-Based Reinforcement Learning](../../ACL2026/information_retrieval/end-to-end_optimization_of_llm-driven_multi-agent_search_systems_via_heterogeneo.md)
 - [\[ICLR 2026\] Attribution-Guided Decoding](attribution-guided_decoding.md)
 - [\[ICLR 2026\] CFT-RAG: An Entity Tree Based Retrieval Augmented Generation Algorithm With Cuckoo Filter](cft-rag_an_entity_tree_based_retrieval_augmented_generation_algorithm_with_cucko.md)
-- [\[ACL 2026\] End-to-End Optimization of LLM-Driven Multi-Agent Search Systems via Heterogeneous-Group-Based Reinforcement Learning](../../ACL2026/information_retrieval/end-to-end_optimization_of_llm-driven_multi-agent_search_systems_via_heterogeneo.md)
 
 </div>
 

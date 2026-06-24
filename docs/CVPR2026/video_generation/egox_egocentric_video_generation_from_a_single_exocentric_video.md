@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EgoX: Egocentric Video Generation from a Single Exocentric Video
 description: >-
-  [CVPR 2026][Video Generation][exo-to-ego] Given a **single** exocentric video and a target egocentric camera trajectory, EgoX first performs 3D lifting to render an "egocentric prior video." It then employs width/channel-wise bidirectional concatenation combined with geometry-guided self-attention, leveraging a pre-trained video diffusion model (Wan 2.1 14B +
+  [CVPR 2026][Video Generation][Egocentric video generation] Given a **single** exocentric video and a target egocentric camera trajectory, EgoX first performs 3D lifting to render an "egocentric prior video." It then employs width/channel-wise bidirectional concatenation combined with geometry-guided self-attention, leveraging a pre-trained video diffusion model (Wan 2.1 14B + LoRA) to generate geometrically consistent, high-fidelity egocentric videos. It significantly outperf…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - exo-to-ego
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Egocentric video generation"
+  - "exo-to-ego"
+  - "video diffusion models"
+  - "point cloud rendering prior"
+  - "geometry-guided attention"
 date: 2026-05-08
-content_hash: ab792f7adf083aab
+content_hash: 8bb60f0997452acc
 ---
+
 # EgoX: Egocentric Video Generation from a Single Exocentric Video
 
 **Conference**: CVPR 2026  
@@ -142,10 +147,10 @@ The gap in object-level metrics is most significant (Seen scene IoU 0.363 vs. 0.
 ## Related Papers
 
 - [\[CVPR 2026\] EgoControl: Controllable Egocentric Video Generation via 3D Full-Body Poses](egocontrol_controllable_egocentric_video_generation_via_3d_full-body_poses.md)
+- [\[CVPR 2026\] Generating Humanless Environment Walkthroughs from Egocentric Walking Tour Videos](generating_humanless_environment_walkthroughs_from_egocentric_walking_tour_video.md)
 - [\[CVPR 2026\] EgoEdit: Dataset, Real-Time Streaming Model, and Benchmark for Egocentric Video Editing](egoedit_dataset_real-time_streaming_model_and_benchmark_for_egocentric_video_edi.md)
 - [\[ECCV 2024\] SV3D: Novel Multi-view Synthesis and 3D Generation from a Single Image using Latent Video Diffusion](../../ECCV2024/video_generation/sv3d_novel_multi-view_synthesis_and_3d_generation_from_a_single_image_using_late.md)
 - [\[ICCV 2025\] ReCamMaster: Camera-Controlled Generative Rendering from A Single Video](../../ICCV2025/video_generation/recammaster_camera-controlled_generative_rendering_from_a_single_video.md)
-- [\[ICCV 2025\] Causal-Entity Reflected Egocentric Traffic Accident Video Synthesis](../../ICCV2025/video_generation/causal-entity_reflected_egocentric_traffic_accident_video_synthesis.md)
 
 </div>
 

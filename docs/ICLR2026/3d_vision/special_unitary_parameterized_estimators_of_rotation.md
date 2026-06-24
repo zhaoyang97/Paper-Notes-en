@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Special Unitary Parameterized Estimators of Rotation
 description: >-
-  [ICLR 2026][3D Vision][SU(2)] This paper re-derives the classical Wahba rotation estimation problem using the special unitary group $SU(2)$, yielding linear quaternion constraints, a closed-form two-point solution, and two network-oriented continuous rotation representations. Among these, 2-vec generally outperforms Gram-Schmidt within the same dim
+  [ICLR2026][3D Vision][Rotation Estimation] This paper re-derives the classical Wahba rotation estimation problem using the special unitary group $SU(2)$, yielding linear quaternion constraints, a closed-form two-point solution, and two network-oriented continuous rotation representations. Among these, 2-vec generally outperforms Gram-Schmidt within the same dimensionality, and QuadMobius achieves state-of-the-art or competitive results across multiple rotation learning tasks.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - SU(2)
-  - SO(3)
+  - "ICLR2026"
+  - "3D Vision"
+  - "Rotation Estimation"
+  - "Wahba's Problem"
+  - "SU(2)"
+  - "SO(3)"
+  - "Rotation Representations"
 date: 2026-05-08
-content_hash: 75aea021db14351f
+content_hash: d61c105fd111830a
 ---
+
 # Special Unitary Parameterized Estimators of Rotation
 
 **Conference**: ICLR2026  

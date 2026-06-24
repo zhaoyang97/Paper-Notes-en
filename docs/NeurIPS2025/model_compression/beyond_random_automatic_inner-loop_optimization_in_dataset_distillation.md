@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond Random: Automatic Inner-Loop Optimization in Dataset Distillation
 description: >-
-  [NeurIPS 2025][Model Compression][Dataset Distillation] This paper proposes AT-BPTT (Adaptive Truncation BPTT), which partitions DNN training into early/middle/late stages and adaptively adjusts truncation strategies and…
+  [NeurIPS 2025][Model Compression][Dataset Distillation] This paper proposes AT-BPTT (Adaptive Truncation BPTT), which partitions DNN training into early/middle/late stages and adaptively adjusts truncation strategies and window sizes accordingly. The method achieves average accuracy gains of 3–17% on CIFAR-10/100/Tiny-ImageNet/ImageNet-1K, while delivering 3.9× speedup and 63% memory reduction.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Low-Rank Hessian Approximation"
   - "Patch-wise Semantic Preservation"
 date: 2026-05-08
-content_hash: 3cdd85caccbb8386
+content_hash: cc8e5213ff9ea9b8
 ---
 
 # Beyond Random: Automatic Inner-Loop Optimization in Dataset Distillation
@@ -132,8 +132,8 @@ Outer loop: loss is computed on the real validation set and backpropagated to th
 - [\[NeurIPS 2025\] Hyperbolic Dataset Distillation](hyperbolic_dataset_distillation.md)
 - [\[NeurIPS 2025\] Rectifying Soft-Label Entangled Bias in Long-Tailed Dataset Distillation](rectifying_soft-label_entangled_bias_in_long-tailed_dataset_distillation.md)
 - [\[NeurIPS 2025\] Optimizing Distributional Geometry Alignment with Optimal Transport for Generative Dataset Distillation](optimizing_distributional_geometry_alignment_with_optimal_transport_for_generati.md)
+- [\[CVPR 2026\] Beyond Soft Label: Dataset Distillation via Orthogonal Gradient Matching](../../CVPR2026/model_compression/beyond_soft_label_dataset_distillation_via_orthogonal_gradient_matching.md)
 - [\[ACL 2026\] RouteNLP: Closed-Loop LLM Routing with Conformal Cascading and Distillation Co-Optimization](../../ACL2026/model_compression/routenlp_closed-loop_llm_routing_with_conformal_cascading_and_distillation_co-op.md)
-- [\[ICCV 2025\] Dataset Distillation via the Wasserstein Metric](../../ICCV2025/model_compression/dataset_distillation_via_the_wasserstein_metric.md)
 
 </div>
 

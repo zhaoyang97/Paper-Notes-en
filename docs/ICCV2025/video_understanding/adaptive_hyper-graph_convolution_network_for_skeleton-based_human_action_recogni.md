@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adaptive Hyper-Graph Convolution Network for Skeleton-Based Human Action Recognition
 description: >-
-  [ICCV 2025][Video Understanding][Skeleton-based action recognition] This paper proposes Hyper-GCN, which replaces conventional binary graphs with an **adaptive non-uniform hypergraph** to model skeletal topology…
+  [ICCV 2025][Video Understanding][Skeleton-based action recognition] This paper proposes Hyper-GCN, which replaces conventional binary graphs with an **adaptive non-uniform hypergraph** to model skeletal topology, and introduces **virtual hyper-joints** to create virtual connections that enable direct modeling of multi-joint cooperative relationships. The approach achieves state-of-the-art performance on NTU-60/120 and NW-UCLA with the most lightweight GCN design (base variant…
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "virtual connections"
   - "graph convolutional network"
 date: 2026-05-08
-content_hash: c2a12886f48a9572
+content_hash: 993ed40ca591d275
 ---
 
 # Adaptive Hyper-Graph Convolution Network for Skeleton-Based Human Action Recognition

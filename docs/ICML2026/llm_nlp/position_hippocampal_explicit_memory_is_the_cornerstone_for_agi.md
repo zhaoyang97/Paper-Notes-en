@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Position: Hippocampal Explicit Memory Is the Cornerstone for AGI
 description: >-
-  [ICML 2026][LLM (Other)][AGI] This position paper leverages neuroscientific evidence to argue that the underlying learning mechanism of LLMs corresponds to "implicit memory" in the human brain (habitual/procedural learning in the basal ganglia). However, higher-order cognition essential for AGI—such as long-range planning, metacognition, and symbol
+  [ICML2026][LLM (Other)][Explicit Memory] This position paper leverages neuroscientific evidence to argue that the underlying learning mechanism of LLMs corresponds to "implicit memory" in the human brain (habitual/procedural learning in the basal ganglia). However, higher-order cognition essential for AGI—such as long-range planning, metacognition, and symbolic reasoning—depends on hippocampal "explicit memory" and cannot emerge from purely statistical implicit learning. Cons…
 tags:
-  - ICML 2026
-  - LLM (Other)
-  - AGI
+  - "ICML2026"
+  - "LLM (Other)"
+  - "Explicit Memory"
+  - "Implicit Memory"
+  - "Hippocampus"
+  - "AGI"
+  - "Neuroscience"
 date: 2026-05-08
-content_hash: 43e7b2db252b4f04
+content_hash: 4bb30a8e84fa7360
 ---
+
 # Position: Hippocampal Explicit Memory Is the Cornerstone for AGI
 
 **Conference**: ICML2026  
@@ -125,11 +130,11 @@ As a position paper, it lacks standard benchmarks, presenting instead falsifiabl
 
 ## Related Papers
 
-- [\[ICML 2026\] Position: Adversarial ML for LLMs Is Not Making Any Progress](position_adversarial_ml_for_llms_is_not_making_any_progress.md)
 - [\[ICML 2026\] Position: The Turing-Completeness of Autoregressive Transformers Relies Heavily on Context Management](position_the_turing-completeness_of_autoregressive_transformers_relies_heavily_o.md)
-- [\[ACL 2026\] Think in Sentences: Explicit Sentence Boundaries Enhance Language Model's Capabilities](../../ACL2026/llm_nlp/think_in_sentences_explicit_sentence_boundaries_enhance_language_model39s_capabi.md)
 - [\[ICML 2026\] Position: The ML Community Must Build an AI-Augmented Peer-Review Ecosystem](position_the_ml_community_must_build_an_ai-augmented_peer-review_ecosystem.md)
 - [\[ACL 2025\] Explicit and Implicit Data Augmentation for Social Event Detection](../../ACL2025/llm_nlp/explicit_and_implicit_data_augmentation_for_social_event_detection.md)
+- [\[ICML 2026\] Position: Adversarial ML for LLMs Is Not Making Any Progress](position_adversarial_ml_for_llms_is_not_making_any_progress.md)
+- [\[ACL 2026\] Think in Sentences: Explicit Sentence Boundaries Enhance Language Model's Capabilities](../../ACL2026/llm_nlp/think_in_sentences_explicit_sentence_boundaries_enhance_language_model39s_capabi.md)
 
 </div>
 

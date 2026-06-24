@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] UniUGG: Unified 3D Understanding and Generation via Geometric-Semantic Encoding
 description: >-
-  [ICLR 2026][3D Vision][Spatial-VAE] UniUGG is the first "Unified Understanding and Generation" framework for 3D modalities. It utilizes a jointly pre-trained geometric-semantic ViT to encode visual representations and enables an LLM, combined with a diffusion model, to "imagine" geometrically consistent 3D scenes from a reference image and target view tr
+  [ICLR 2026][3D Vision][Unified Understanding and Generation] UniUGG is the first "Unified Understanding and Generation" framework for 3D modalities. It utilizes a jointly pre-trained geometric-semantic ViT to encode visual representations and enables an LLM, combined with a diffusion model, to "imagine" geometrically consistent 3D scenes from a reference image and target view transforms via conditional denoising on compressed latent tokens. It maintains superior spatial VQA c…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Spatial-VAE
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Unified Understanding and Generation"
+  - "3D Scene Generation"
+  - "Geometric-Semantic Encoding"
+  - "Spatial-VAE"
+  - "Spatial VQA"
 date: 2026-05-08
-content_hash: 18436b24c700d444
+content_hash: dd58971a3f7217b2
 ---
+
 # UniUGG: Unified 3D Understanding and Generation via Geometric-Semantic Encoding
 
 **Conference**: ICLR 2026  
@@ -156,8 +161,8 @@ UniUGG-3B outperforms others on VSI-Bench by 17.9% and leads significantly on SP
 - [\[ICLR 2026\] Omni-View: Unlocking How Generation Facilitates Understanding in Unified 3D Model based on Multiview images](omni-view_unlocking_how_generation_facilitates_understanding_in_unified_3d_model.md)
 - [\[ICLR 2026\] Positional Encoding Field](positional_encoding_field.md)
 - [\[ICLR 2026\] One2Scene: Geometric Consistent Explorable 3D Scene Generation from a Single Image](one2scene_geometric_consistent_explorable_3d_scene_generation_from_a_single_imag.md)
+- [\[ICLR 2026\] Unified 3D Scene Understanding Through Physical World Modeling](unified_3d_scene_understanding_through_physical_world_modeling.md)
 - [\[CVPR 2026\] Uni3R: Unified 3D Reconstruction and Semantic Understanding via Generalizable Gaussian Splatting from Unposed Multi-View Images](../../CVPR2026/3d_vision/uni3r_unified_3d_reconstruction_and_semantic_understanding_via_generalizable_gau.md)
-- [\[ECCV 2024\] nuCraft: Crafting High Resolution 3D Semantic Occupancy for Unified 3D Scene Understanding](../../ECCV2024/3d_vision/nucraft_crafting_high_resolution_3d_semantic_occupancy_for_unified_3d_scene_unde.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Progressive Neural Architecture Generation
 description: >-
-  [CVPR 2026][Others][Paper Note] PNAG remodels neural architecture "generation" as a coarse-to-fine autoregressive process—each step decodes a **fully functional sub-architecture** using vector quantization, gradually increasing in scale until the target architecture is reached. By applying consistency constraints at every step to ensure validity, it
+  [CVPR 2026][Neural Architecture Generation] PNAG remodels neural architecture "generation" as a coarse-to-fine autoregressive process—each step decodes a **fully functional sub-architecture** using vector quantization, gradually increasing in scale until the target architecture is reached. By applying consistency constraints at every step to ensure validity, it compresses single-generation time by 1300× compared to diffusion-based methods while achieving higher architectural…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Neural Architecture Generation"
+  - "Autoregressive Generation"
+  - "Vector Quantization"
+  - "Coarse-to-fine"
+  - "Stepwise Constraints"
 date: 2026-05-08
-content_hash: ee0610576f9e5d88
+content_hash: 86a5106b36de49bc
 ---
+
 # Progressive Neural Architecture Generation
 
 **Conference**: CVPR 2026  
@@ -154,11 +159,11 @@ Single generation takes 0.006s, a **1300× speedup** over DiffusionNAG (8s). On 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Adapting In-context Generation for Enhanced Composed Image Retrieval](adapting_in-context_generation_for_enhanced_composed_image_retrieval.md)
+- [\[CVPR 2026\] InTrain: Intrinsic Trainability for Zero-Cost Neural Architecture Search](intrain_intrinsic_trainability_for_zero-cost_neural_architecture_search.md)
+- [\[CVPR 2026\] HyperNAS: Enhancing Architecture Representation for NAS Predictor via Hypernetwork](hypernas_enhancing_architecture_representation_for_nas_predictor_via_hypernetwor.md)
+- [\[ICCV 2025\] Loss Functions for Predictor-based Neural Architecture Search](../../ICCV2025/others/loss_functions_for_predictor-based_neural_architecture_search.md)
+- [\[CVPR 2025\] Subnet-Aware Dynamic Supernet Training for Neural Architecture Search](../../CVPR2025/others/subnet-aware_dynamic_supernet_training_for_neural_architecture_search.md)
 - [\[CVPR 2026\] Bidirectional Query-Driven Generation of Parametric CAD Sketch](bidirectional_query-driven_generation_of_parametric_cad_sketch.md)
-- [\[CVPR 2026\] CAD-Refiner: A Unified Framework for CAD Generation and Iterative Editing](cad-refiner_a_unified_framework_for_cad_generation_and_iterative_editing.md)
-- [\[CVPR 2026\] Neural Mixture Density Processes](neural_mixture_density_processes.md)
-- [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](neural_collapse_in_test-time_adaptation.md)
 
 </div>
 

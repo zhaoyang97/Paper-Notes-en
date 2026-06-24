@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Atom of Thoughts for Markov LLM Test-Time Scaling
 description: >-
-  [NeurIPS 2025][LLM Reasoning][test-time scaling] This paper proposes Atom of Thoughts (AoT), which models LLM reasoning as a Markov chain where each state is a self-contained subproblem that is answer-equivalent to the o…
+  [NeurIPS 2025][Reasoning][test-time scaling] This paper proposes Atom of Thoughts (AoT), which models LLM reasoning as a Markov chain where each state is a self-contained subproblem that is answer-equivalent to the original question but of strictly lower complexity. A two-phase transition mechanism based on DAG decomposition and contraction eliminates historical dependencies. AoT integrates seamlessly with existing methods such as ToT and reflection…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "test-time scaling"
   - "Markov process"
   - "atomic reasoning"
   - "DAG decomposition"
   - "reasoning framework"
 date: 2026-05-08
-content_hash: c1f1c3bd01728e90
+content_hash: 912f75158eab28ef
 ---
 
 # Atom of Thoughts for Markov LLM Test-Time Scaling

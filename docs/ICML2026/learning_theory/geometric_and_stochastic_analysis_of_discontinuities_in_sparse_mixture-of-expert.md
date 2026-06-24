@@ -2,14 +2,22 @@
 title: >-
   [Paper Note] Geometric and Stochastic Analysis of Discontinuities in Sparse Mixture-of-Experts
 description: >-
-  [ICML 2026][learning_theory][Sparse MoE] This paper presents the first rigorous geometric and stochastic analysis of the "input-output mapping discontinuity" caused by Top-$k$ routing in Sparse Mixture-of-Experts (SMoE). By classifying discontinuity surfaces based on the "number of tied experts," the authors prove that order-1 surfaces occupy almost all "near
+  [ICML 2026][Learning Theory][Sparse MoE] This paper presents the first rigorous geometric and stochastic analysis of the "input-output mapping discontinuity" caused by Top-$k$ routing in Sparse Mixture-of-Experts (SMoE). By classifying discontinuity surfaces based on the "number of tied experts," the authors prove that order-1 surfaces occupy almost all "near-discontinuity" volume, while higher-order volumes are negligible. Using diffusion processes…
 tags:
-  - ICML 2026
-  - learning_theory
-  - Sparse MoE
+  - "ICML 2026"
+  - "Learning Theory"
+  - "Sparse Mixture-of-Experts"
+  - "Routing Continuity"
+  - "Sparse MoE"
+  - "Top-k Routing"
+  - "Discontinuity Analysis"
+  - "Measure Theory"
+  - "Diffusion Processes"
+  - "Local Smoothing"
 date: 2026-05-08
-content_hash: f89ed383e56aee42
+content_hash: 0777fdcfa6b7f072
 ---
+
 # Geometric and Stochastic Analysis of Discontinuities in Sparse Mixture-of-Experts
 
 **Conference**: ICML 2026  
@@ -123,11 +131,11 @@ SmoothSMoE consistently outperformed Top-$k$ SMoE and ReMoE. It achieved a 1.17 
 
 ## Related Papers
 
-- [\[ICLR 2026\] A Generalized Geometric Theoretical Framework of Centroid Discriminant Analysis for Linear Classification of Multi-dimensional Data](../../ICLR2026/learning_theory/a_generalized_geometric_theoretical_framework_of_centroid_discriminant_analysis_.md)
-- [\[NeurIPS 2025\] Finite-Time Analysis of Stochastic Nonconvex Nonsmooth Optimization on the Riemannian Manifolds](../../NeurIPS2025/learning_theory/finite-time_analysis_of_stochastic_nonconvex_nonsmooth_optimization_on_the_riema.md)
+- [\[ICLR 2026\] Adaptive Conformal Prediction via Mixture-of-Experts Gating Similarity](../../ICLR2026/learning_theory/adaptive_conformal_prediction_via_mixture-of-experts_gating_similarity.md)
 - [\[ICML 2026\] Robustness of Mixtures of Experts to Feature Noise](robustness_of_mixtures_of_experts_to_feature_noise.md)
-- [\[ICLR 2026\] Lipschitz Bandits with Stochastic Delayed Feedback](../../ICLR2026/learning_theory/lipschitz_bandits_with_stochastic_delayed_feedback.md)
-- [\[ICLR 2026\] Better Bounds for the Distributed Experts Problem](../../ICLR2026/learning_theory/better_bounds_for_the_distributed_experts_problem.md)
+- [\[ICLR 2026\] High-Dimensional Analysis of Single-Layer Attention for Sparse-Token Classification](../../ICLR2026/learning_theory/high-dimensional_analysis_of_single-layer_attention_for_sparse-token_classificat.md)
+- [\[ICLR 2026\] Finite-Time Convergence Analysis of ODE-based Generative Models for Stochastic Interpolants](../../ICLR2026/learning_theory/finite-time_convergence_analysis_of_ode-based_generative_models_for_stochastic_i.md)
+- [\[ICLR 2026\] A Generalized Geometric Theoretical Framework of Centroid Discriminant Analysis for Linear Classification of Multi-dimensional Data](../../ICLR2026/learning_theory/a_generalized_geometric_theoretical_framework_of_centroid_discriminant_analysis_.md)
 
 </div>
 

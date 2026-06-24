@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SimWorld-Robotics: Synthesizing Photorealistic and Dynamic Urban Environments for Multimodal Robot Navigation and Collaboration
 description: >-
-  [NeurIPS 2025][Autonomous Driving][simulation] This paper presents SimWorld-Robotics (SWR), a large-scale urban simulation platform built on Unreal Engine 5 that supports procedural generation of unlimited photorealistic…
+  [NeurIPS 2025][Autonomous Driving][simulation] This paper presents SimWorld-Robotics (SWR), a large-scale urban simulation platform built on Unreal Engine 5 that supports procedural generation of unlimited photorealistic city environments. Built upon this platform, two new benchmarks are introduced — SimWorld-MMNav for multimodal navigation and SimWorld-MRS for multi-robot search — which collectively reveal critical capability gaps in current VLMs on outdoor urban tasks.
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "multi-robot"
   - "benchmark"
 date: 2026-05-08
-content_hash: 3894534319f80305
+content_hash: 2a74c6ce79d23680
 ---
 
 # SimWorld-Robotics: Synthesizing Photorealistic and Dynamic Urban Environments for Multimodal Robot Navigation and Collaboration
@@ -140,11 +140,11 @@ RoCo is limited to tabletop manipulation tasks and does not involve environment 
 
 ## Related Papers
 
+- [\[ECCV 2024\] SLEDGE: Synthesizing Driving Environments with Generative Models and Rule-Based Traffic](../../ECCV2024/autonomous_driving/sledge_synthesizing_driving_environments_with_generative_models_and_rule-based_t.md)
 - [\[ICCV 2025\] Leveraging 2D Priors and SDF Guidance for Dynamic Urban Scene Rendering](../../ICCV2025/autonomous_driving/leveraging_2d_priors_and_sdf_guidance_for_urban_scene_rendering.md)
-- [\[NeurIPS 2025\] Layer-wise Modality Decomposition for Interpretable Multimodal Sensor Fusion](layer-wise_modality_decomposition_for_interpretable_multimodal_sensor_fusion.md)
 - [\[NeurIPS 2025\] URB -- Urban Routing Benchmark for RL-Equipped Connected Autonomous Vehicles](urb_--_urban_routing_benchmark_for_rl-equipped_connected_autonomous_vehicles.md)
-- [\[ICCV 2025\] Extrapolated Urban View Synthesis Benchmark](../../ICCV2025/autonomous_driving/extrapolated_urban_view_synthesis_benchmark.md)
-- [\[NeurIPS 2025\] SDTagNet: Leveraging Text-Annotated Navigation Maps for Online HD Map Construction](sdtagnet_leveraging_text-annotated_navigation_maps_for_online_hd_map_constructio.md)
+- [\[NeurIPS 2025\] Layer-wise Modality Decomposition for Interpretable Multimodal Sensor Fusion](layer-wise_modality_decomposition_for_interpretable_multimodal_sensor_fusion.md)
+- [\[NeurIPS 2025\] CymbaDiff: Structured Spatial Diffusion for Sketch-based 3D Semantic Urban Scene Generation](cymbadiff_structured_spatial_diffusion_for_sketch-based_3d_semantic_urban_scene_.md)
 
 </div>
 

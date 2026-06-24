@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LabUtopia: High-Fidelity Simulation and Hierarchical Benchmark for Scientific Embodied Agents
 description: >-
-  [NeurIPS 2025][Robotics][embodied agent] This paper proposes LabUtopia — a high-fidelity simulation and hierarchical benchmark suite for scientific laboratory environments. It comprises the LabSim simulator with chemical…
+  [NeurIPS 2025][Robotics][embodied agent] This paper proposes LabUtopia — a high-fidelity simulation and hierarchical benchmark suite for scientific laboratory environments. It comprises the LabSim simulator with chemical reaction modeling, LabScene for procedural laboratory scene generation, and LabBench, a five-level benchmark spanning atomic operations to long-horizon mobile manipulation. The suite reveals significant bottlenecks in existing imitation learning methods with…
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "hierarchical benchmark"
   - "imitation learning"
 date: 2026-05-08
-content_hash: 716cd617987ecd70
+content_hash: 6c82f1b633e1ac08
 ---
 
 # LabUtopia: High-Fidelity Simulation and Hierarchical Benchmark for Scientific Embodied Agents
@@ -133,10 +133,10 @@ LabUtopia consists of three core components: (1) **LabSim** — an Isaac Sim-bas
 ## Related Papers
 
 - [\[NeurIPS 2025\] Provable Ordering and Continuity in Vision-Language Pretraining for Generalizable Embodied Agents](provable_ordering_and_continuity_in_vision-language_pretraining_for_generalizabl.md)
-- [\[NeurIPS 2025\] Memo: Training Memory-Efficient Embodied Agents with Reinforcement Learning](memo_training_memory-efficient_embodied_agents_with_reinforcement_learning.md)
 - [\[NeurIPS 2025\] MindForge: Empowering Embodied Agents with Theory of Mind for Lifelong Cultural Learning](mindforge_empowering_embodied_agents_with_theory_of_mind_for_lifelong_cultural_l.md)
-- [\[NeurIPS 2025\] ESCA: Contextualizing Embodied Agents via Scene-Graph Generation](esca_contextualizing_embodied_agents_via_scene-graph_generation.md)
 - [\[NeurIPS 2025\] SutureBot: A Precision Framework & Benchmark for Autonomous End-to-End Suturing](suturebot_a_precision_framework_benchmark_for_autonomous_end-to-end_suturing.md)
+- [\[NeurIPS 2025\] ESCA: Contextualizing Embodied Agents via Scene-Graph Generation](esca_contextualizing_embodied_agents_via_scene-graph_generation.md)
+- [\[ICML 2026\] Fourier Features Let Agents Learn High Precision Policies with Imitation Learning](../../ICML2026/robotics/fourier_features_let_agents_learn_high_precision_policies_with_imitation_learnin.md)
 
 </div>
 

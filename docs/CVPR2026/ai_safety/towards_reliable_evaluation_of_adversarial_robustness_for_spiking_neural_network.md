@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Reliable Evaluation of Adversarial Robustness for Spiking Neural Networks
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] To address the "artificially high" adversarial robustness evaluation of Spiking Neural Networks (SNNs) caused by gradient vanishing—stemming from the binary and discontinuous nature of spike activations—this paper proposes **ASSG** (Adaptive-Sharpness Surrogate Gradient) and **SA-PGD** (Stable Adaptive PGD). By optimiz
+  [CVPR 2026][AI Safety][Spiking Neural Networks] To address the "artificially high" adversarial robustness evaluation of Spiking Neural Networks (SNNs) caused by gradient vanishing—stemming from the binary and discontinuous nature of spike activations—this paper proposes **ASSG** (Adaptive-Sharpness Surrogate Gradient) and **SA-PGD** (Stable Adaptive PGD). By optimizing both gradient approximation and attack algorithms, this work significantly increases the Attack Success Rate…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Spiking Neural Networks"
+  - "Adversarial Robustness Evaluation"
+  - "Surrogate Gradient"
+  - "Gradient Vanishing"
+  - "PGD Attack"
 date: 2026-05-08
-content_hash: 7d28aa322d081429
+content_hash: 4c039293adef7e0f
 ---
+
 # Towards Reliable Evaluation of Adversarial Robustness for Spiking Neural Networks
 
 **Conference**: CVPR 2026  
@@ -139,15 +145,15 @@ ASSG leads across all datasets and training schemes, often by nearly 10 percenta
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Robust Spiking Neural Networks Against Adversarial Attacks](../../ICLR2026/ai_safety/robust_spiking_neural_networks_against_adversarial_attacks.md)
 - [\[AAAI 2026\] MPD-SGR: Robust Spiking Neural Networks with Membrane Potential Distribution-Driven Surrogate Gradient Regularization](../../AAAI2026/ai_safety/mpd-sgr_robust_spiking_neural_networks_with_membrane_potential_distribution-driv.md)
 - [\[ICML 2026\] Frequency Matching in Spiking Neural Networks for mmWave Sensing](../../ICML2026/ai_safety/frequency_matching_in_spiking_neural_networks_for_mmwave_sensing.md)
+- [\[ICLR 2026\] Robustify Spiking Neural Networks via Dominant Singular Deflation under Heterogeneous Training Vulnerability](../../ICLR2026/ai_safety/robustify_spiking_neural_networks_via_dominant_singular_deflation_under_heteroge.md)
 - [\[CVPR 2026\] Verifying Neural Network Robustness with Dual Perturbations](verifying_neural_network_robustness_with_dual_perturbations.md)
-- [\[ICLR 2026\] Time Is All It Takes: Spike-Retiming Attacks on Event-Driven Spiking Neural Networks](../../ICLR2026/ai_safety/time_is_all_it_takes_spike-retiming_attacks_on_event-driven_spiking_neural_netwo.md)
 
 </div>
 

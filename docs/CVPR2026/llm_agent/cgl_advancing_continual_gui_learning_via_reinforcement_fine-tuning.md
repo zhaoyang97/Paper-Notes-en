@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CGL: Advancing Continual GUI Learning via Reinforcement Fine-Tuning
 description: >-
-  [CVPR 2026][LLM Agent][GUI Agent] Aiming at the "learning new while forgetting old" problem of GUI agents under frequent app updates, this paper discovers that SFT learns quickly but overwrites old knowledge, while RL (GRPO) resists forgetting but learns slowly. Therefore, the CGL framework is proposed—using "error-aware routing + entropy-regulated wei
+  [CVPR 2026][LLM Agent][GUI Agent] Aiming at the "learning new while forgetting old" problem of GUI agents under frequent app updates, this paper discovers that SFT learns quickly but overwrites old knowledge, while RL (GRPO) resists forgetting but learns slowly. Therefore, the CGL framework is proposed—using "error-aware routing + entropy-regulated weighting + conditional gradient surgery" to integrate SFT and GRPO, achieving the highest accuracy and near-zero forgetting on t…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - GUI Agent
-  - GRPO
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "Continual Learning"
+  - "GRPO"
+  - "Gradient Surgery"
+  - "Policy Entropy"
 date: 2026-05-08
-content_hash: 7f44e3cc838599df
+content_hash: 99c21ecd6b0d90c1
 ---
+
 # CGL: Advancing Continual GUI Learning via Reinforcement Fine-Tuning
 
 **Conference**: CVPR 2026  
@@ -151,11 +155,11 @@ Stepwise addition of modules for QwenVL2.5-3b under Task Order 1 (D-SFT = Dynami
 
 ## Related Papers
 
-- [\[CVPR 2026\] SAGE: Training Smart Any-Horizon Agents for Long Video Reasoning with Reinforcement Learning](sage_training_smart_any-horizon_agents_for_long_video_reasoning_with_reinforceme.md)
-- [\[CVPR 2026\] SenseSearch: Empowering Vision-Language Models with High-Resolution Agentic Search-Reasoning via Reinforcement Learning](sensesearch_empowering_vision-language_models_with_high-resolution_agentic_searc.md)
-- [\[AAAI 2026\] MoralReason: Generalizable Moral Decision Alignment For LLM Agents Using Reasoning-Level Reinforcement Learning](../../AAAI2026/llm_agent/moralreason_generalizable_moral_decision_alignment_for_llm_agents_using_reasonin.md)
-- [\[CVPR 2026\] OS-Oracle: A Comprehensive Framework for Cross-Platform GUI Critic Models](os-oracle_a_comprehensive_framework_for_cross-platform_gui_critic_models.md)
-- [\[ACL 2026\] Temp-R1: A Unified Autonomous Agent for Complex Temporal KGQA via Reverse Curriculum Reinforcement Learning](../../ACL2026/llm_agent/temp-r1_a_unified_autonomous_agent_for_complex_temporal_kgqa_via_reverse_curricu.md)
+- [\[ICLR 2026\] GUI-Shift: Enhancing VLM-Based GUI Agents through Self-supervised Reinforcement Learning](../../ICLR2026/llm_agent/gui-shift_enhancing_vlm-based_gui_agents_through_self-supervised_reinforcement_l.md)
+- [\[ICLR 2026\] MobileRL: Online Agentic Reinforcement Learning for Mobile GUI Agents](../../ICLR2026/llm_agent/mobilerl_online_agentic_reinforcement_learning_for_mobile_gui_agents.md)
+- [\[ICML 2026\] Position: Modular Memory is the Key to Continual Learning Agents](../../ICML2026/llm_agent/position_modular_memory_is_the_key_to_continual_learning_agents.md)
+- [\[ICLR 2026\] LLMs are Greedy Agents: Effects of RL Fine-tuning on Decision-Making Abilities](../../ICLR2026/llm_agent/llms_are_greedy_agents_effects_of_rl_fine-tuning_on_decision-making_abilities.md)
+- [\[ICLR 2026\] PolySkill: Learning Generalizable Skills through Polymorphic Abstraction for Continual Agents](../../ICLR2026/llm_agent/polyskill_learning_generalizable_skills_through_polymorphic_abstraction_for_cont.md)
 
 </div>
 

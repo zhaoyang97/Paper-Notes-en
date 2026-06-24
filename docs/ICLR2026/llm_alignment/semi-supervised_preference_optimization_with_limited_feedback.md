@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Semi-Supervised Preference Optimization with Limited Feedback
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] SSPO reformulates preference optimization as a probabilistic classification problem. It learns a reward threshold from a small amount of paired preference labels that can reliably separate "winning" and "losing" responses. This threshold is then used to assign pseudo-labels to a massive amount of unpaired samples (e.g.
+  [ICLR 2026][LLM Alignment][Preference Optimization] SSPO reformulates preference optimization as a probabilistic classification problem. It learns a reward threshold from a small amount of paired preference labels that can reliably separate "winning" and "losing" responses. This threshold is then used to assign pseudo-labels to a massive amount of unpaired samples (e.g., SFT data), which are jointly trained using a curriculum scheduling. Using only 1% of UltraFeedback…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Preference Optimization"
+  - "Semi-supervised Learning"
+  - "Pseudo-labeling"
+  - "Reward Threshold"
+  - "Data Efficiency"
 date: 2026-05-08
-content_hash: 5458ea779cb10662
+content_hash: 3c703fa1ed20d991
 ---
+
 # Semi-Supervised Preference Optimization with Limited Feedback
 
 **Conference**: ICLR 2026  
@@ -131,15 +137,13 @@ Toy experiments (GPT-2-small RM, shortest word preference) show: in noise-free s
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
+- [\[ICLR 2026\] Learning from Noisy Preferences: A Semi-Supervised Learning Approach to Direct Preference Optimization](learning_from_noisy_preferences_a_semi-supervised_learning_approach_to_direct_pr.md)
 - [\[ICLR 2026\] Stackelberg Learning from Human Feedback: Preference Optimization as a Sequential Game](stackelberg_learning_from_human_feedback_preference_optimization_as_a_sequential.md)
 - [\[ICLR 2026\] Anchored Supervised Fine-Tuning](anchored_supervised_fine-tuning.md)
-- [\[ACL 2025\] Fine-grained Video Dubbing Duration Alignment with Segment Supervised Preference Optimization](../../ACL2025/llm_alignment/fine-grained_video_dubbing_duration_alignment_with_segment_supervised_preference.md)
 - [\[ICLR 2026\] What's In My Human Feedback? Learning Interpretable Descriptions of Preference Data](whats_in_my_human_feedback_learning_interpretable_descriptions_of_preference_dat.md)
-- [\[ICLR 2026\] Multiplayer Nash Preference Optimization](multiplayer_nash_preference_optimization.md)
+- [\[ICLR 2026\] Keep the Best, Forget the Rest: Reliable Alignment with Order-Aware Preference Optimization](keep_the_best_forget_the_rest_reliable_alignment_with_order-aware_preference_opt.md)
 
 </div>
 

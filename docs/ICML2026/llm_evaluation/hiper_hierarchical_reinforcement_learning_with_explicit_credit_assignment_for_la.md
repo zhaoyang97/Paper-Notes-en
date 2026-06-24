@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] HiPER: Hierarchical Reinforcement Learning with Explicit Credit Assignment for Large Language Model Agents
 description: >-
-  [ICML 2026][LLM Evaluation][Plan-Execute] HiPER transforms the flat RL used for LLM agents into a two-level Plan-Execute structure consisting of "high-level planning of subgoals + low-level execution of atomic actions." It introduces Hierarchical Advantage Estimation (HAE), which slices GAE along subgoal segments to perform coupled advantage estimation with bo
+  [ICML 2026][LLM Evaluation][Hierarchical Reinforcement Learning] HiPER transforms the flat RL used for LLM agents into a two-level Plan-Execute structure consisting of "high-level planning of subgoals + low-level execution of atomic actions." It introduces Hierarchical Advantage Estimation (HAE), which slices GAE along subgoal segments to perform coupled advantage estimation with bounded differences. On ALFWorld and WebShop, HiPER achieves success rates of 97.4% and 83.3% res…
 tags:
-  - ICML 2026
-  - LLM Evaluation
-  - Plan-Execute
-  - Credit Assignment
-  - Long-horizon Agent
-  - GAE
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "Hierarchical Reinforcement Learning"
+  - "Plan-Execute"
+  - "Credit Assignment"
+  - "Long-horizon Agent"
+  - "GAE"
 date: 2026-05-08
-content_hash: 7e8988b0d696b9ee
+content_hash: 288a7f45a9d860fa
 ---
+
 # HiPER: Hierarchical Reinforcement Learning with Explicit Credit Assignment for Large Language Model Agents
 
 **Conference**: ICML 2026  
@@ -167,8 +169,8 @@ Breakdown of ALFWorld sub-categories is particularly telling: on the most diffic
 - [\[ICML 2026\] Beyond Trajectory-Level Attribution: Graph-Based Credit Assignment for Agentic Reinforcement Learning](beyond_trajectory-level_attribution_graph-based_credit_assignment_for_agentic_re.md)
 - [\[ICML 2026\] Agent World Model: Infinity Synthetic Environments for Agentic Reinforcement Learning](agent_world_model_infinity_synthetic_environments_for_agentic_reinforcement_lear.md)
 - [\[ICML 2026\] Multi$^2$: Hierarchical Multi-Agent Decision-Making with LLM-Based Agents in Interactive Environments](multi2_hierarchical_multi-agent_decision-making_with_llm-based_agents_in_interac.md)
-- [\[ICML 2026\] BESPOKE: Benchmark for Search-Augmented Large Language Model Personalization via Diagnostic Feedback](bespoke_benchmark_for_search-augmented_large_language_model_personalization_via_.md)
-- [\[ICML 2026\] Toward Training Superintelligent Software Agents through Self-Play SWE-RL](toward_training_superintelligent_software_agents_through_self-play_swe-rl.md)
+- [\[ICLR 2026\] Detecting Data Contamination from Reinforcement Learning Post-training for Large Language Models](../../ICLR2026/llm_evaluation/detecting_data_contamination_from_reinforcement_learning_post-training_for_large.md)
+- [\[ICLR 2026\] Rewarding Doubt: A Reinforcement Learning Approach to Calibrated Confidence Expression of Large Language Models](../../ICLR2026/llm_evaluation/rewarding_doubt_a_reinforcement_learning_approach_to_calibrated_confidence_expre.md)
 
 </div>
 

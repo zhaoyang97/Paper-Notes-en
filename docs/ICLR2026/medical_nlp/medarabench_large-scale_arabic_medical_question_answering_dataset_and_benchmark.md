@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MedAraBench: Large-scale Arabic Medical Question Answering Dataset and Benchmark
 description: >-
-  [ICLR 2026][Medical NLP][LLM-as-a-judge] The authors manually digitized and cleaned paper-based exam questions from medical schools in the Arabic region into 24,883 medical Multiple-Choice Questions (MCQs) with professional department and difficulty annotations. After constructing the large-scale Arabic medical QA benchmark, MedAraBench, and performing double
+  [ICLR2026][Medical LLM][Arabic Medical QA] The authors manually digitized and cleaned paper-based exam questions from medical schools in the Arabic region into 24,883 medical Multiple-Choice Questions (MCQs) with professional department and difficulty annotations. After constructing the large-scale Arabic medical QA benchmark, MedAraBench, and performing double quality checks via expert review and LLM-as-a-judge, 16 open-source and closed-source LLMs were evaluated in a zero-…
 tags:
-  - ICLR 2026
-  - Medical NLP
-  - LLM-as-a-judge
+  - "ICLR2026"
+  - "Medical LLM"
+  - "Arabic Medical QA"
+  - "Multiple-Choice Benchmark"
+  - "Expert Quality Assessment"
+  - "LLM-as-a-judge"
+  - "QLoRA Fine-tuning"
 date: 2026-05-08
-content_hash: 72651c5f66cff8b0
+content_hash: b682bf8238bb2d12
 ---
+
 # MedAraBench: Large-scale Arabic Medical Question Answering Dataset and Benchmark
 
 **Conference**: ICLR2026  
@@ -121,15 +126,14 @@ The gap is clear: closed-source reasoning models lead significantly, but even GP
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of Large Language Models in Mental Health Question Answering](counselbench_a_large-scale_expert_evaluation_and_adversarial_benchmarking_of_lar.md)
 - [\[ACL 2025\] AfriMed-QA: A Pan-African, Multi-Specialty, Medical Question-Answering Benchmark Dataset](../../ACL2025/medical_nlp/afrimed_qa_pan_african.md)
 - [\[ICLR 2026\] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of LLMs in Mental Health QA](counselbench_llm_mental_health_qa.md)
-- [\[ICLR 2026\] SurvHTE-Bench: A Benchmark for Heterogeneous Treatment Effect Estimation in Survival Analysis](survhte-bench_a_benchmark_for_heterogeneous_treatment_effect_estimation_in_survi.md)
-- [\[ICLR 2026\] From Medical Records to Diagnostic Dialogues: A Clinical-Grounded Approach and Dataset for Psychiatric Comorbidity](from_medical_records_to_diagnostic_dialogues_a_clinical-grounded_approach_and_da.md)
+- [\[AAAI 2026\] Expert-Guided Prompting and Retrieval-Augmented Generation for Emergency Medical Service Question Answering](../../AAAI2026/medical_nlp/expert-guided_prompting_and_retrieval-augmented_generation_for_emergency_medical.md)
+- [\[ACL 2026\] Query Pipeline Optimization for Cancer Patient Question Answering Systems](../../ACL2026/medical_nlp/query_pipeline_optimization_for_cancer_patient_question_answering_systems.md)
 
 </div>
 

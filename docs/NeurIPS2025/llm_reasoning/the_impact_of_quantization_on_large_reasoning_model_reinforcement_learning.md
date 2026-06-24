@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] The Impact of Quantization on Large Reasoning Model Reinforcement Learning
 description: >-
-  [NeurIPS 2025 (Workshop: Efficient Reasoning)][LLM Reasoning][Quantization] This paper presents a systematic empirical study showing that quantization-aware fine-tuning (QAFT/STE) during RL training of large reasoning mo…
+  [NeurIPS 2025 (Workshop: Efficient Reasoning)][Reasoning][Quantization] This paper presents a systematic empirical study showing that quantization-aware fine-tuning (QAFT/STE) during RL training of large reasoning models (LRMs) degrades reasoning capability, whereas post-training quantization (PTQ) and QLoRA preserve reasoning performance well even at 4-bit precision. The authors recommend a practical pipeline of full-precision RL training followed by PTQ quantization.
 tags:
   - "NeurIPS 2025 (Workshop: Efficient Reasoning)"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Quantization"
   - "Reasoning Models"
   - "Reinforcement Learning"
   - "GRPO"
   - "QLoRA"
 date: 2026-05-08
-content_hash: d915624dcb9badc8
+content_hash: f717d22bed2956d3
 ---
 
 # The Impact of Quantization on Large Reasoning Model Reinforcement Learning
@@ -132,8 +132,8 @@ Base model → RL training (GRPO/drGRPO) → optional quantization → mathemati
 - [\[NeurIPS 2025\] SQL-R1: Training Natural Language to SQL Reasoning Model By Reinforcement Learning](sql-r1_training_natural_language_to_sql_reasoning_model_by_reinforcement_learnin.md)
 - [\[ACL 2026\] Revisiting Entropy in Reinforcement Learning for Large Reasoning Models](../../ACL2026/llm_reasoning/revisiting_entropy_in_reinforcement_learning_for_large_reasoning_models.md)
 - [\[NeurIPS 2025\] SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning](srpo_enhancing_multimodal_llm_reasoning_via_reflection-aware_reinforcement_learn.md)
-- [\[AAAI 2026\] Incorporating Self-Rewriting into Large Language Model Reasoning Reinforcement](../../AAAI2026/llm_reasoning/incorporating_self-rewriting_into_large_language_model_reasoning_reinforcement.md)
-- [\[NeurIPS 2025\] SWE-RL: Advancing LLM Reasoning via Reinforcement Learning on Open Software Evolution](swe-rl_advancing_llm_reasoning_via_reinforcement_learning_on_open_software_evolu.md)
+- [\[ICLR 2026\] GPG: A Simple and Strong Reinforcement Learning Baseline for Model Reasoning](../../ICLR2026/llm_reasoning/gpg_a_simple_and_strong_reinforcement_learning_baseline_for_model_reasoning.md)
+- [\[ICLR 2026\] Conditional Advantage Estimation for Reinforcement Learning in Large Reasoning Models](../../ICLR2026/llm_reasoning/conditional_advantage_estimation_for_reinforcement_learning_in_large_reasoning_m.md)
 
 </div>
 

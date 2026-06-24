@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multi-head Transformers Provably Learn Symbolic Multi-step Reasoning via Gradient Descent
 description: >-
-  [NeurIPS 2025][Optimization][Transformer] This work rigorously proves, from the perspective of gradient descent training dynamics, that a single-layer multi-head Transformer can learn both forward and backward reasoning…
+  [NeurIPS 2025][Optimization][Transformer] This work rigorously proves, from the perspective of gradient descent training dynamics, that a single-layer multi-head Transformer can learn both forward and backward reasoning on a tree path-finding task via Chain-of-Thought, and reveals that distinct attention heads spontaneously specialize to collaboratively solve multi-stage subtasks.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "gradient descent dynamics"
   - "attention head specialization"
 date: 2026-05-08
-content_hash: 3dd556f761bdf037
+content_hash: 2362b608ff1ef80b
 ---
 
 # Multi-head Transformers Provably Learn Symbolic Multi-step Reasoning via Gradient Descent
@@ -191,10 +191,10 @@ Note: Head Specialization Score measures the degree of functional differentiatio
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning Provably Improves the Convergence of Gradient Descent](learning_provably_improves_the_convergence_of_gradient_descent.md)
-- [\[NeurIPS 2025\] Learning Orthogonal Multi-Index Models: A Fine-Grained Information Exponent Analysis](learning_orthogonal_multi-index_models_a_fine-grained_information_exponent_analy.md)
-- [\[NeurIPS 2025\] MOBO-OSD: Batch Multi-Objective Bayesian Optimization via Orthogonal Search Directions](mobo-osd_batch_multi-objective_bayesian_optimization_via_orthogonal_search_direc.md)
-- [\[NeurIPS 2025\] Effective Policy Learning for Multi-Agent Online Coordination Beyond Submodular Objectives](effective_policy_learning_for_multi-agent_online_coordination_beyond_submodular_.md)
-- [\[NeurIPS 2025\] Optimal Rates for Generalization of Gradient Descent for Deep ReLU Classification](optimal_rates_for_generalization_of_gradient_descent_for_deep_relu_classificatio.md)
+- [\[ICML 2025\] In-Context Linear Regression Demystified: Training Dynamics and Mechanistic Interpretability of Multi-Head Softmax Attention](../../ICML2025/optimization/in-context_linear_regression_demystified_training_dynamics_and_mechanistic_inter.md)
+- [\[ICML 2026\] Gradient Descent with Large Step Size Restores Symmetry in Deep Linear Networks with Multi-Pathway](../../ICML2026/optimization/gradient_descent_with_large_step_size_restores_symmetry_in_deep_linear_networks_.md)
+- [\[NeurIPS 2025\] NeuSymEA: Neuro-symbolic Entity Alignment via Variational Inference](neuro-symbolic_entity_alignment_via_variational_inference.md)
+- [\[ICML 2025\] Can Transformers Learn Full Bayesian Inference In Context?](../../ICML2025/optimization/can_transformers_learn_full_bayesian_inference_in_context.md)
 
 </div>
 

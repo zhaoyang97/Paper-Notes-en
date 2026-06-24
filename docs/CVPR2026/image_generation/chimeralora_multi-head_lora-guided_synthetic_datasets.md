@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ChimeraLoRA: Multi-Head LoRA-Guided Synthetic Datasets
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] To address data scarcity in few-shot and long-tail scenarios, ChimeraLoRA decomposes the LoRA of diffusion models into a shared matrix A (encoding class priors) and multiple per-image B heads (encoding instance details). By mixing multiple B heads with Dirichlet weights and applying Grounded-SAM box constraints during
+  [CVPR 2026][Image Generation][Synthetic Datasets] To address data scarcity in few-shot and long-tail scenarios, ChimeraLoRA decomposes the LoRA of diffusion models into a shared matrix A (encoding class priors) and multiple per-image B heads (encoding instance details). By mixing multiple B heads with Dirichlet weights and applying Grounded-SAM box constraints during cropping to preserve target objects, the method synthesizes training sets that are both diverse and detail-ric…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Synthetic Datasets"
+  - "Multi-head LoRA"
+  - "Diffusion Model Fine-tuning"
+  - "Few-shot"
+  - "Long-tail Classification"
 date: 2026-05-08
-content_hash: 7c4cce0b93fd373d
+content_hash: 5591c2918a293a8f
 ---
+
 # ChimeraLoRA: Multi-Head LoRA-Guided Synthetic Datasets
 
 **Conference**: CVPR 2026  
@@ -153,14 +159,17 @@ The gain on the medical dataset ISIC (+3.6pp over LoFT) underscores the value of
 
 <div class="related-papers" markdown="1">
 
-1. **LoFT**: [LoRA-based Fine-tuning for Image Synthesis](https://arxiv.org/abs/2310.xxxxx)
-2. **DataDream**: [Class-wise Diffusion for Synthetic Data](https://arxiv.org/abs/2311.xxxxx)
-3. **Grounded-SAM**: [Grounding DINO + Segment Anything](https://github.com/IDEA-Research/Grounded-Segment-Anything)
+## Related Papers
+
+- [\[CVPR 2026\] AHS: Adaptive Head Synthesis via Synthetic Data Augmentations](ahs_adaptive_head_synthesis.md)
+- [\[ICML 2026\] UnHype: CLIP-Guided Hypernetworks for Dynamic LoRA Unlearning](../../ICML2026/image_generation/unhype_clip-guided_hypernetworks_for_dynamic_lora_unlearning.md)
+- [\[CVPR 2026\] MapReduce LoRA: Advancing the Pareto Front in Multi-Preference Optimization for Generative Models](mapreduce_lora_advancing_the_pareto_front_in_multi-preference_optimization_for_g.md)
+- [\[ICML 2025\] Synthetic Face Datasets Generation via Latent Space Exploration from Brownian Identity Diffusion](../../ICML2025/image_generation/synthetic_face_datasets_generation_via_latent_space_exploration_from_brownian_id.md)
+- [\[CVPR 2026\] Head-wise Adaptive Rotary Positional Encoding for Fine-Grained Image Generation](head-wise_adaptive_rotary_positional_encoding_for_fine-grained_image_generation.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] AHS: Adaptive Head Synthesis via Synthetic Data Augmentations](ahs_adaptive_head_synthesis.md)

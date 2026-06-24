@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DiverseGRPO: Mitigating Mode Collapse in Image Generation via Diversity-Aware GRPO
 description: >-
-  [CVPR 2026][Image Generation][GRPO] Addressing the "mode collapse" (uniform faces and compositions) that occurs after applying GRPO to diffusion models for RLHF, DiverseGRPO tackles the issue from both reward modeling and denoising dynamics. It groups samples of the same caption using spectral clustering to issue "exploration rewards" inversely proportio
+  [CVPR 2026][Image Generation][GRPO] Addressing the "mode collapse" (uniform faces and compositions) that occurs after applying GRPO to diffusion models for RLHF, DiverseGRPO tackles the issue from both reward modeling and denoising dynamics. It groups samples of the same caption using spectral clustering to issue "exploration rewards" inversely proportional to cluster size, and replaces the late-stage uniform KL regularization with a Wasserstein constraint applied only to ear…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - GRPO
+  - "CVPR 2026"
+  - "Image Generation"
+  - "GRPO"
+  - "mode collapse"
+  - "image diversity"
+  - "spectral clustering reward"
+  - "Wasserstein regularization"
 date: 2026-05-08
-content_hash: f06e7f29a694f994
+content_hash: 51415487f4330a6b
 ---
+
 # DiverseGRPO: Mitigating Mode Collapse in Image Generation via Diversity-Aware GRPO
 
 **Conference**: CVPR 2026  
@@ -127,11 +132,11 @@ Key points: DreamSim diversity increases by +13.9%–+18.8%, FID decreases simul
 
 ## Related Papers
 
+- [\[CVPR 2026\] Expand and Prune: Maximizing Trajectory Diversity for Effective GRPO in Generative Models](expand_and_prune_maximizing_trajectory_diversity_for_effective_grpo_in_generativ.md)
 - [\[CVPR 2026\] GRPO-Guard: Mitigating Implicit Over-Optimization in Flow Matching via Regulated Clipping](grpo-guard_mitigating_implicit_over-optimization_in_flow_matching_via_regulated_.md)
+- [\[ICML 2026\] Escaping Mode Collapse in LLM Generation via Geometric Regulation](../../ICML2026/image_generation/escaping_mode_collapse_in_llm_generation_via_geometric_regulation.md)
 - [\[CVPR 2026\] Taming Preference Mode Collapse via Directional Decoupling Alignment in Diffusion Reinforcement Learning](taming_preference_mode_collapse_via_directional_decoupling_alignment_in_diffusio.md)
 - [\[CVPR 2026\] Style-GRPO: Semantic-Aware Preference Optimization for Image Style Transfer Guided by Reward Modeling](style-grpo_semantic-aware_preference_optimization_for_image_style_transfer_guide.md)
-- [\[ICML 2026\] Escaping Mode Collapse in LLM Generation via Geometric Regulation](../../ICML2026/image_generation/escaping_mode_collapse_in_llm_generation_via_geometric_regulation.md)
-- [\[CVPR 2026\] Fine-Grained GRPO for Precise Preference Alignment in Flow Models](fine-grained_grpo_for_precise_preference_alignment_in_flow_models.md)
 
 </div>
 

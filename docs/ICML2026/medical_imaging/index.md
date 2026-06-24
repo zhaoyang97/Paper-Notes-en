@@ -78,7 +78,7 @@ item_total: 28
 
 **🧪 ICML2026** · **28** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (163)](../../CVPR2026/medical_imaging/index.md) · [🔬 ICLR2026 (88)](../../ICLR2026/medical_imaging/index.md) · [🤖 AAAI2026 (75)](../../AAAI2026/medical_imaging/index.md) · [🧠 NeurIPS2025 (74)](../../NeurIPS2025/medical_imaging/index.md) · [📹 ICCV2025 (31)](../../ICCV2025/medical_imaging/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (172)](../../CVPR2026/medical_imaging/index.md) · [🔬 ICLR2026 (88)](../../ICLR2026/medical_imaging/index.md) · [🤖 AAAI2026 (75)](../../AAAI2026/medical_imaging/index.md) · [🧠 NeurIPS2025 (77)](../../NeurIPS2025/medical_imaging/index.md) · [📹 ICCV2025 (31)](../../ICCV2025/medical_imaging/index.md) · [🧪 ICML2025 (21)](../../ICML2025/medical_imaging/index.md)
 
 🔥 **Top topics:** Medical Imaging ×14 · Segmentation ×4 · Reasoning ×4 · Multimodal/VLM ×3 · Alignment/RLHF ×3
 

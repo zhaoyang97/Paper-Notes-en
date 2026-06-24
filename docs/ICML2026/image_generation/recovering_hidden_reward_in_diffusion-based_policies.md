@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Recovering Hidden Reward in Diffusion-Based Policies
 description: >-
-  [ICML 2026][Image Generation][diffusion policy] EnergyFlow explicitly parameterizes the score field of a diffusion policy as the negative gradient of a scalar energy function. It proves that under maximum-entropy optimality, the score equals the gradient of the soft Q-function, thereby providing a "free" scalar signal for downstream RL reward shaping without adversa
+  [ICML 2026][Image Generation][diffusion policy] EnergyFlow explicitly parameterizes the score field of a diffusion policy as the negative gradient of a scalar energy function. It proves that under maximum-entropy optimality, the score equals the gradient of the soft Q-function, thereby providing a "free" scalar signal for downstream RL reward shaping without adversarial optimization, while the conservative field constraint improves OOD generalization.
 tags:
-  - ICML 2026
-  - Image Generation
-  - diffusion policy
-  - IRL
-  - energy-based model
+  - "ICML 2026"
+  - "Image Generation"
+  - "diffusion policy"
+  - "IRL"
+  - "energy-based model"
+  - "conservative field"
+  - "inverse RL shaping"
 date: 2026-05-08
-content_hash: 8191e436536051b5
+content_hash: 43195bc0e2a47069
 ---
+
 # Recovering Hidden Reward in Diffusion-Based Policies
 
 **Conference**: ICML 2026  
@@ -126,10 +129,20 @@ Comparison of SAC reward sources (RoboMimic Square / Transport):
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Compose Your Policies! Improving Diffusion-based or Flow-based Robot Policies via Test-time Distribution-level Composition](../../ICLR2026/image_generation/compose_your_policies_improving_diffusion-based_or_flow-based_robot_policies_via.md)
+- [\[ICLR 2026\] Improving Discrete Diffusion Unmasking Policies Beyond Explicit Reference Policies (UPO)](../../ICLR2026/image_generation/improving_discrete_diffusion_unmasking_policies_beyond_explicit_reference_polici.md)
+- [\[ICML 2026\] Learning General Causal Structures with Hidden Dynamic Process for Climate Analysis](learning_general_causal_structures_with_hidden_dynamic_process_for_climate_analy.md)
+- [\[ICLR 2026\] A Hidden Semantic Bottleneck in Conditional Embeddings of Diffusion Transformers](../../ICLR2026/image_generation/a_hidden_semantic_bottleneck_in_conditional_embeddings_of_diffusion_transformers.md)
+- [\[AAAI 2026\] PADiff: Predictive and Adaptive Diffusion Policies for Ad Hoc Teamwork](../../AAAI2026/image_generation/padiff_predictive_and_adaptive_diffusion_policies_for_ad_hoc_teamwork.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Improving Discrete Diffusion Unmasking Policies Beyond Explicit Reference Policies (UPO)](../../ICLR2026/image_generation/improving_discrete_diffusion_unmasking_policies_beyond_explicit_reference_polici.md)

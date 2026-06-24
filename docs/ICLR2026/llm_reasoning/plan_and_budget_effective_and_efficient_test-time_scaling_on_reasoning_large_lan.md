@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Plan and Budget: Effective and Efficient Test-Time Scaling on Reasoning LLMs
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] The Plan-and-Budget framework is proposed to achieve efficient test-time scaling for reasoning LLMs by decomposing complex queries into sub-problems and adaptively allocating token budgets based on estimated complexity—achieving up to 70% higher accuracy, 39% fewer tokens, and a 193.8% improvement in the E3 metric.
+  [ICLR 2026][Reasoning][Test-time scaling] The Plan-and-Budget framework is proposed to achieve efficient test-time scaling for reasoning LLMs by decomposing complex queries into sub-problems and adaptively allocating token budgets based on estimated complexity—achieving up to 70% higher accuracy, 39% fewer tokens, and a 193.8% improvement in the E3 metric.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Test-time scaling"
+  - "Reasoning Efficiency"
+  - "Overthinking"
+  - "Token Budget Allocation"
+  - "Reasoning LLMs"
 date: 2026-05-08
-content_hash: 45f335ee1b6362d3
+content_hash: b35fbd2d12f603d1
 ---
+
 # Plan and Budget: Effective and Efficient Test-Time Scaling on Reasoning LLMs
 
 **Conference**: ICLR 2026  
@@ -143,15 +149,16 @@ Evaluated across four reasoning LLMs (DS-Qwen-32B, QwQ-32B, DS-LLaMA-70B, OpenAI
 -   **Value**: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] ATTS: Asynchronous Test-Time Scaling via Conformal Prediction](atts_asynchronous_test-time_scaling_via_conformal_prediction.md)
-- [\[ICLR 2026\] CaTS: Calibrated Test-Time Scaling for Efficient LLM Reasoning](cats_calibrated_test-time_scaling_for_efficient_llm_reasoning.md)
 - [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](efficient_test-time_scaling_for_small_vision-language_models.md)
-- [\[ICLR 2026\] Understanding the Role of Training Data in Test-Time Scaling](understanding_the_role_of_training_data_in_test-time_scaling.md)
+- [\[ICLR 2026\] CaTS: Calibrated Test-Time Scaling for Efficient LLM Reasoning](cats_calibrated_test-time_scaling_for_efficient_llm_reasoning.md)
 - [\[ICLR 2026\] Optimal Aggregation of LLM and PRM Signals for Efficient Test-Time Scaling](optimal_aggregation_of_llm_and_prm_signals_for_efficient_test-time_scaling.md)
+- [\[ICLR 2026\] Test-Time Scaling in Diffusion LLMs via Hidden Semi-Autoregressive Experts](test-time_scaling_in_diffusion_llms_via_hidden_semi-autoregressive_experts.md)
+- [\[ACL 2026\] Efficient Test-Time Scaling via Temporal Reasoning Aggregation](../../ACL2026/llm_reasoning/efficient_test-time_scaling_via_temporal_reasoning_aggregation.md)
 
 </div>
 

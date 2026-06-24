@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Sonar-TS: Search-Then-Verify Natural Language Querying for Time Series Databases
 description: >-
-  [ICML 2026][Time Series][Text-to-SQL] Addressing the new problem of "querying morphological intent using natural language on massive Time Series Databases (TSDB)," this paper proposes the **Sonar-TS** neuro-symbolic framework. Much like active sonar, it first "pings" to coarsely filter candidate windows using SQL on multi-scale feature indices, then "locks
+  [ICML 2026][Time Series][Time-series databases] Addressing the new problem of "querying morphological intent using natural language on massive Time Series Databases (TSDB)," this paper proposes the **Sonar-TS** neuro-symbolic framework. Much like active sonar, it first "pings" to coarsely filter candidate windows using SQL on multi-scale feature indices, then "locks on" to raw signals for precise verification using LLM-generated Python programs (Search-Then-Verify). Accompani…
 tags:
-  - ICML 2026
-  - Time Series
-  - Text-to-SQL
+  - "ICML 2026"
+  - "Time Series"
+  - "Time-series databases"
+  - "natural language querying"
+  - "neuro-symbolic"
+  - "Text-to-SQL"
+  - "morphological retrieval"
 date: 2026-05-08
-content_hash: 62c3d9aaee655d31
+content_hash: 1147de6d0262812c
 ---
+
 # Sonar-TS: Search-Then-Verify Natural Language Querying for Time Series Databases
 
 **Conference**: ICML 2026  
@@ -151,11 +156,11 @@ Removing components yields the following impact (from least to most critical):
 
 ## Related Papers
 
+- [\[ICML 2026\] Building Social World Models with Large Language Models](building_social_world_models_with_large_language_models.md)
+- [\[ICLR 2026\] Semantic-Enhanced Time-Series Forecasting via Large Language Models](../../ICLR2026/time_series/semantic-enhanced_time-series_forecasting_via_large_language_models.md)
 - [\[ICLR 2026\] TimeOmni-1: Incentivizing Complex Reasoning with Time Series in Large Language Models](../../ICLR2026/time_series/timeomni-1_incentivizing_complex_reasoning_with_time_series_in_large_language_mo.md)
 - [\[ICLR 2026\] Language in the Flow of Time: Time-Series-Paired Texts Weaved into a Unified Temporal Narrative](../../ICLR2026/time_series/language_in_the_flow_of_time_time-series-paired_texts_weaved_into_a_unified_temp.md)
-- [\[ICML 2026\] Building Social World Models with Large Language Models](building_social_world_models_with_large_language_models.md)
 - [\[ACL 2026\] Temporal Leakage in Search-Engine Date-Filtered Web Retrieval: A Retrospective Forecasting Case Study](../../ACL2026/time_series/temporal_leakage_in_search-engine_date-filtered_web_retrieval_a_retrospective_fo.md)
-- [\[ICCV 2025\] VLRMBench: A Comprehensive and Challenging Benchmark for Vision-Language Reward Models](../../ICCV2025/time_series/vlrmbench_a_comprehensive_and_challenging_benchmark_for_vision-language_reward_m.md)
 
 </div>
 

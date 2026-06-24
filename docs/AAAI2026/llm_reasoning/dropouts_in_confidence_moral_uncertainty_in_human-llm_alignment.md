@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Dropouts in Confidence: Moral Uncertainty in Human-LLM Alignment
 description: >-
-  [AAAI 2026][LLM Reasoning][Moral Reasoning] This paper systematically investigates decision-making uncertainty across 32 open-source LLMs in moral dilemma scenarios (trolley problem variants)…
+  [AAAI 2026][Reasoning][Moral Reasoning] This paper systematically investigates decision-making uncertainty across 32 open-source LLMs in moral dilemma scenarios (trolley problem variants), finding that uncertainty is primarily driven by model architecture rather than moral dimension. Introducing attention dropout at inference time significantly increases mutual information and improves human-LLM moral alignment, suggesting that reducing overconfidence in moral scenarios can e…
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Moral Reasoning"
   - "LLM Alignment"
   - "Uncertainty"
   - "Dropout"
   - "Moral Machine"
 date: 2026-05-08
-content_hash: a39ba4223902fd61
+content_hash: c92527a8fa99689e
 ---
 
 # Dropouts in Confidence: Moral Uncertainty in Human-LLM Alignment
@@ -129,11 +129,11 @@ Building on the Moral Machine experimental framework (an autonomous driving vari
 
 ## Related Papers
 
-- [\[ICLR 2026\] From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning](../../ICLR2026/llm_reasoning/from_assumptions_to_actions_turning_llm_reasoning_into_uncertainty-aware_plannin.md)
 - [\[ACL 2026\] Chain-of-Thought as a Lens: Evaluating Structured Reasoning Alignment between Human Preferences and Large Language Models](../../ACL2026/llm_reasoning/chain-of-thought_as_a_lens_evaluating_structured_reasoning_alignment_between_hum.md)
+- [\[ICLR 2026\] From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning](../../ICLR2026/llm_reasoning/from_assumptions_to_actions_turning_llm_reasoning_into_uncertainty-aware_plannin.md)
+- [\[ICLR 2026\] Deep Think with Confidence](../../ICLR2026/llm_reasoning/deep_think_with_confidence.md)
 - [\[ACL 2026\] CoAct: Co-Active LLM Preference Learning with Human-AI Synergy](../../ACL2026/llm_reasoning/coact_co-active_llm_preference_learning_with_human-ai_synergy.md)
-- [\[ICML 2026\] UCPO: Uncertainty-aware Policy Optimization](../../ICML2026/llm_reasoning/ucpo_uncertainty-aware_policy_optimization.md)
-- [\[ICML 2026\] Inference Time Optimization with Confidence Dynamics](../../ICML2026/llm_reasoning/inference_time_optimization_with_confidence_dynamics.md)
+- [\[ICLR 2026\] Theory-Grounded Evaluation of Human-Like Fallacy Patterns in LLM Reasoning](../../ICLR2026/llm_reasoning/theory-grounded_evaluation_of_human-like_fallacy_patterns_in_llm_reasoning.md)
 
 </div>
 

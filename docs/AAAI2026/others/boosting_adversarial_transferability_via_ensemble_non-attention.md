@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Boosting Adversarial Transferability via Ensemble Non-Attention
 description: >-
-  [AAAI 2026][adversarial transferability] This paper proposes NAMEA (Non-Attention Meta Ensemble Attack), which for the first time exploits the non-attention areas of ensemble models to integrate transferable information…
+  [AAAI 2026][adversarial transferability] This paper proposes NAMEA (Non-Attention Meta Ensemble Attack), which for the first time exploits the non-attention areas of ensemble models to integrate transferable information from both CNNs and ViTs, and combines meta-learning gradient optimization to achieve an average improvement of 15.0% and 9.6% over the state-of-the-art methods AdaEA and SMER, respectively, on cross-architecture adversarial transferability.
 tags:
   - "AAAI 2026"
   - "adversarial transferability"
@@ -11,7 +11,7 @@ tags:
   - "meta-learning"
   - "cross-architecture attack"
 date: 2026-05-08
-content_hash: 75176e82ad938095
+content_hash: d1bddef002d38faa
 ---
 
 # Boosting Adversarial Transferability via Ensemble Non-Attention
@@ -198,9 +198,9 @@ Even against the strong diffusion-based defense DiffPure, NAMEA outperforms base
 
 - [\[AAAI 2026\] ASAG: Toward the Frontiers of Reliable Diffusion Sampling via Adversarial Sinkhorn Attention Guidance](toward_the_frontiers_of_reliable_diffusion_sampling_via_adversarial_sinkhorn_att.md)
 - [\[ICCV 2025\] NAPPure: Adversarial Purification for Robust Image Classification under Non-Additive Perturbations](../../ICCV2025/others/nappure_adversarial_purification_for_robust_image_classification_under_non-addit.md)
+- [\[ACL 2025\] Battling against Tough Resister: Strategy Planning with Adversarial Game for Non-collaborative Dialogues](../../ACL2025/others/battling_against_tough_resister_strategy_planning_with_adversarial_game_for_non-.md)
 - [\[AAAI 2026\] Guided Perturbation Sensitivity (GPS): Detecting Adversarial Text via Embedding Stability and Word Importance](guided_perturbation_sensitivity_gps_detecting_adversarial_text_via_embedding_sta.md)
 - [\[AAAI 2026\] On the Edge of Core (Non-)Emptiness: An Automated Reasoning Approach to Approval-Based Multi-Winner Voting](on_the_edge_of_core_non-emptiness_an_automated_reasoning_approach_to_approval-ba.md)
-- [\[NeurIPS 2025\] Statistical Inference for Gradient Boosting Regression](../../NeurIPS2025/others/statistical_inference_for_gradient_boosting_regression.md)
 
 </div>
 

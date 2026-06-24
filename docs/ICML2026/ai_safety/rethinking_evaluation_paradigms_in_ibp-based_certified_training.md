@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rethinking Evaluation Paradigms in IBP-based Certified Training
 description: >-
-  [ICML 2026][AI Safety][Paper Note] The authors point out that comparing IBP-based certified training methods using "biased configurations" is unfair. They propose drawing the Pareto front for each method using multi-objective Bayesian hyperparameter search, proving that existing SOTA methods are generally under-tuned—CROWN-IBP clean accuracy can increas
+  [ICML 2026][AI Safety][Interval Bound Propagation] The authors point out that comparing IBP-based certified training methods using "biased configurations" is unfair. They propose drawing the Pareto front for each method using multi-objective Bayesian hyperparameter search, proving that existing SOTA methods are generally under-tuned—CROWN-IBP clean accuracy can increase by approximately $6\%$, and MTL-IBP on Tiny ImageNet can simultaneously gain $\sim2\%$ in both clean and ce…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Interval Bound Propagation"
+  - "Certified Training"
+  - "Pareto Front"
+  - "Multi-objective Bayesian Optimization"
+  - "Robust-Accuracy trade-off"
 date: 2026-05-08
-content_hash: 372f2bde32932ee9
+content_hash: 8ee21393e6355470
 ---
+
 # Rethinking Evaluation Paradigms in IBP-based Certified Training
 
 **Conference**: ICML 2026  
@@ -140,8 +146,8 @@ Key Findings: On CIFAR-10 $2/255$, SABR and MTL-IBP are complementary, together 
 - [\[ICML 2026\] BioAgent Bench: An AI Agent Evaluation Suite for Bioinformatics](bioagent_bench_an_ai_agent_evaluation_suite_for_bioinformatics.md)
 - [\[ICML 2026\] MLUBench: A Benchmark for Lifelong Unlearning Evaluation in MLLMs](mlubench_a_benchmark_for_lifelong_unlearning_evaluation_in_mllms.md)
 - [\[AAAI 2026\] An Information Theoretic Evaluation Metric for Strong Unlearning](../../AAAI2026/ai_safety/an_information_theoretic_evaluation_metric_for_strong_unlearning.md)
-- [\[ICML 2026\] SORA: Free Second-Order Attacks in Fast Adversarial Training](sora_free_second-order_attacks_in_fast_adversarial_training.md)
-- [\[ICML 2026\] Training-Free Coverless Multi-Image Steganography with Access Control](training-free_coverless_multi-image_steganography_with_access_control.md)
+- [\[ICML 2026\] In-Training Defenses Against Emergent Misalignment in Language Models](in-training_defenses_against_emergent_misalignment_in_language_models.md)
+- [\[ICML 2026\] Red-Teaming Agent Execution Contexts: Open-World Security Evaluation on OpenClaw](red-teaming_agent_execution_contexts_open-world_security_evaluation_on_openclaw.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GS-CLIP: Zero-shot 3D Anomaly Detection by Geometry-Aware Prompt and Synergistic View Representation Learning
 description: >-
-  [CVPR 2026][Object Detection][CLIP] Ours proposes GS-CLIP, a two-stage framework that injects global shape and local defect information of 3D point clouds into text prompts via a Geometry Defect Distillation Module (GDDM). It synergistically fuses rendered images and depth maps using a LoRA-based dual-stream architecture, achieving SOTA performance in ze
+  [CVPR 2026][Object Detection][Zero-shot 3D Anomaly Detection] Ours proposes GS-CLIP, a two-stage framework that injects global shape and local defect information of 3D point clouds into text prompts via a Geometry Defect Distillation Module (GDDM). It synergistically fuses rendered images and depth maps using a LoRA-based dual-stream architecture, achieving SOTA performance in zero-shot 3D anomaly detection across four large-scale datasets.
 tags:
-  - CVPR 2026
-  - Object Detection
-  - CLIP
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Zero-shot 3D Anomaly Detection"
+  - "CLIP"
+  - "Geometry-Aware Prompt"
+  - "Multi-view Fusion"
+  - "Point Cloud"
 date: 2026-05-08
-content_hash: e7ca5b92039a6d47
+content_hash: d263fa8a003be264
 ---
+
 # GS-CLIP: Zero-shot 3D Anomaly Detection by Geometry-Aware Prompt and Synergistic View Representation Learning
 
 **Conference**: CVPR 2026  
@@ -180,10 +185,10 @@ This explicitly complements appearance anomalies (textures, scratches) caught by
 
 ## Related Papers
 
-- [\[CVPR 2026\] Geometry-Aligned and Anomaly-Aware Reconstruction for 3D Anomaly Detection](geometry-aligned_and_anomaly-aware_reconstruction_for_3d_anomaly_detection.md)
 - [\[CVPR 2026\] Bidirectional Multimodal Prompt Learning with Scale-Aware Training for Few-Shot Multi-Class Anomaly Detection](bidirectional_multimodal_prompt_learning_with_scale-aware_training_for_few-shot_.md)
 - [\[CVPR 2026\] FB-CLIP: Fine-Grained Zero-Shot Anomaly Detection with Foreground-Background Disentanglement](fb-clip_fine-grained_zero-shot_anomaly_detection_with_foreground-background_dise.md)
-- [\[CVPR 2026\] CoPS: Conditional Prompt Synthesis for Zero-Shot Anomaly Detection](cops_conditional_prompt_synthesis_for_zero-shot_anomaly_detection.md)
+- [\[CVPR 2026\] Back to Point: Exploring Point-Language Models for Zero-Shot 3D Anomaly Detection](back_to_point_exploring_point-language_models_for_zero-shot_3d_anomaly_detection.md)
+- [\[CVPR 2026\] DLVP-CLIP: Enhancing Fine-Grained Zero-Shot Anomaly Detection via Dynamic Local Visual Prompting](dlvp-clip_enhancing_fine-grained_zero-shot_anomaly_detection_via_dynamic_local_v.md)
 - [\[CVPR 2026\] MoECLIP: Patch-Specialized Experts for Zero-shot Anomaly Detection](moeclip_patch-specialized_experts_for_zero-shot_anomaly_detection.md)
 
 </div>

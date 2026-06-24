@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Transducing Language Models
 description: >-
-  [ICLR 2026][LLM (Other)][Paper Note] This paper formally elevates the engineering task of "applying deterministic string transformations to language model outputs" to a new class of language models. By encoding transformations using Finite-State Transducers (FSTs) and combining them with pre-trained LMs, the authors propose an algorithm capable of summing
+  [ICLR 2026][LLM (Other)][Finite-State Transducers] This paper formally elevates the engineering task of "applying deterministic string transformations to language model outputs" to a new class of language models. By encoding transformations using Finite-State Transducers (FSTs) and combining them with pre-trained LMs, the authors propose an algorithm capable of summing over all "source strings mapping to a target string" in finite time. This restores an autoregressive interfa…
 tags:
-  - ICLR 2026
-  - LLM (Other)
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Finite-State Transducers"
+  - "String Transformations"
+  - "Subword-to-Byte"
+  - "Prefix Probabilities"
+  - "Inference-time Adaptation"
 date: 2026-05-08
-content_hash: 3808e68b155a7499
+content_hash: 8571d5015ec3c1ce
 ---
+
 # Transducing Language Models
 
 **Conference**: ICLR 2026  
@@ -129,11 +135,20 @@ The primary sensitivity analysis focused on the **pruning threshold $\tau$**, wh
 - Value: ⭐⭐⭐⭐ Provides a theoretically grounded tool for inference-time adaptation without retraining.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Related papers would go here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] TableMaster: A Recipe to Advance Table Understanding with Language Models](tablemaster_a_recipe_to_advance_table_understanding_with_language_models.md)
+- [\[ICLR 2026\] Teaching Metric Distance to Discrete Autoregressive Language Models](teaching_metric_distance_to_discrete_autoregressive_language_models.md)
+- [\[ICLR 2026\] Neural Synchrony Between Socially Interacting Language Models](neural_synchrony_between_socially_interacting_language_models.md)
+- [\[ICLR 2026\] PT2-LLM: Post-Training Ternarization for Large Language Models](pt2-llm_post-training_ternarization_for_large_language_models.md)
+- [\[ICLR 2026\] Toward Safer Diffusion Language Models: Discovery and Mitigation of Priming Vulnerabilities](toward_safer_diffusion_language_models_discovery_and_mitigation_of_priming_vulne.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] TableMaster: A Recipe to Advance Table Understanding with Language Models](tablemaster_a_recipe_to_advance_table_understanding_with_language_models.md)

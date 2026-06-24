@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UCAN: Unified Convolutional Attention Network for Expansive Receptive Fields in Lightweight Super-Resolution
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] The authors propose UCAN, a lightweight super-resolution network that unifies convolutional and attention mechanisms to efficiently expand the effective receptive field. By introducing Hedgehog attention, it addresses the rank collapse problem in linear attention. The model incorporates a large kernel distillation modu
+  [CVPR 2026][Image Restoration][Lightweight Super-Resolution] The authors propose UCAN, a lightweight super-resolution network that unifies convolutional and attention mechanisms to efficiently expand the effective receptive field. By introducing Hedgehog attention, it addresses the rank collapse problem in linear attention. The model incorporates a large kernel distillation module and a semi-sharing parameter strategy, achieving a 31.63 dB PSNR on Manga109 (4×) with only 48.4…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Lightweight Super-Resolution"
+  - "Hedgehog Attention"
+  - "Large Kernel Distillation"
+  - "Receptive Field Expansion"
+  - "Parameter Sharing"
 date: 2026-05-08
-content_hash: 73e3b4653620530f
+content_hash: dd1acae7726e6b65
 ---
+
 # UCAN: Unified Convolutional Attention Network for Expansive Receptive Fields in Lightweight Super-Resolution
 
 **Conference**: CVPR 2026  
@@ -134,16 +140,16 @@ L1 reconstruction loss + LDL loss + Wavelet loss. Adam optimizer ($\beta_1=0.9, 
 - Value: ⭐⭐⭐⭐ Sets a new SOTA direction for lightweight SR.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] LightRR: A Lightweight Network for Single Image Reflection Removal](lightrr_a_lightweight_network_for_single_image_reflection_removal.md)
 - [\[CVPR 2026\] DreamSR: Towards Ultra-High-Resolution Image Super-Resolution via a Receptive-Field Enhanced Diffusion Transformer](dreamsr_towards_ultra-high-resolution_image_super-resolution_via_a_receptive-fie.md)
 - [\[CVPR 2026\] Toward Real-world Infrared Image Super-Resolution: A Unified Autoregressive Framework and Benchmark Dataset](real_iisr_infrared_image_super_resolution_autoregressive.md)
+- [\[ICLR 2026\] SuperF: Neural Implicit Fields for Multi-Image Super-Resolution](../../ICLR2026/image_restoration/superf_neural_implicit_fields_for_multi-image_super-resolution.md)
 - [\[CVPR 2026\] Dual Graph Regularized Deep Unfolding Network for Guided Depth Map Super-resolution](dual_graph_regularized_deep_unfolding_network_for_guided_depth_map_super-resolut.md)
-- [\[CVPR 2026\] Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution](time-aware_one_step_diffusion_network_for_real-world_image_super-resolution.md)
 
 </div>
 

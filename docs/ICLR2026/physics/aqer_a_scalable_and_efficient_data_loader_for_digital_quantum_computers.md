@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AQER: A Scalable and Efficient Data Loader for Digital Quantum Computers
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] This paper unifies various Approximate Quantum Loaders (AQL) into a single optimization problem of "minimizing the distance between the target state and the circuit output state." It proves that the approximate loading error is linearly dominated by a newly proposed entanglement measure $S$. Based on this, it designs A
+  [ICLR2026][Physics & Scientific Computing][Approximate Quantum Loader] This paper unifies various Approximate Quantum Loaders (AQL) into a single optimization problem of "minimizing the distance between the target state and the circuit output state." It proves that the approximate loading error is linearly dominated by a newly proposed entanglement measure $S$. Based on this, it designs AQER—a method that gradually reduces entanglement by greedily appending two-qubit gate blo…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR2026"
+  - "Physics & Scientific Computing"
+  - "Approximate Quantum Loader"
+  - "Quantum State Preparation"
+  - "Entanglement Measurement"
+  - "Information-Theoretic Bounds"
+  - "Variational Quantum Circuits"
 date: 2026-05-08
-content_hash: adcfdef8be3ded30
+content_hash: fed0a3357098e7b8
 ---
+
 # AQER: A Scalable and Efficient Data Loader for Digital Quantum Computers
 
 **Conference**: ICLR2026  

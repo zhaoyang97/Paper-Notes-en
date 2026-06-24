@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rethinking the Simulation vs. Rendering Dichotomy: No Free Lunch in Spatial World Modelling
 description: >-
-  [NeurIPS 2025][Robotics][Spatial world models] From a cognitive neuroscience perspective, this paper challenges the prevailing view that simulation and rendering are separable processes: it argues that spatial reasoning…
+  [NeurIPS 2025][Robotics][Spatial world models] From a cognitive neuroscience perspective, this paper challenges the prevailing view that simulation and rendering are separable processes: it argues that spatial reasoning relies on fine-grained perceptual representations rather than coarse abstractions, and concludes that AI spatial world models likewise require rich perceptual detail — there is no free lunch in spatial modelling.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "higher-order theory of consciousness"
   - "embodied AI"
 date: 2026-05-08
-content_hash: c79cc410415efa19
+content_hash: 28beb6cb50082bba
 ---
 
 # Rethinking the Simulation vs. Rendering Dichotomy: No Free Lunch in Spatial World Modelling
@@ -134,7 +134,7 @@ The paper presents no quantitative experiments, but offers key comparative evide
 - [\[NeurIPS 2025\] MineAnyBuild: Benchmarking Spatial Planning for Open-world AI Agents](mineanybuild_benchmarking_spatial_planning_for_openworld_ai.md)
 - [\[NeurIPS 2025\] Learning Spatial-Aware Manipulation Ordering](learning_spatial-aware_manipulation_ordering.md)
 - [\[NeurIPS 2025\] LabUtopia: High-Fidelity Simulation and Hierarchical Benchmark for Scientific Embodied Agents](labutopia_high-fidelity_simulation_and_hierarchical_benchmark_for_scientific_emb.md)
-- [\[NeurIPS 2025\] Real-World Reinforcement Learning of Active Perception Behaviors](real-world_reinforcement_learning_of_active_perception_behaviors.md)
+- [\[CVPR 2026\] Rethinking Visual Rearrangement from A Diffusion Perspective](../../CVPR2026/robotics/rethinking_visual_rearrangement_from_a_diffusion_perspective.md)
 
 </div>
 

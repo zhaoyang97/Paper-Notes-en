@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PIRN: Prototypical-based Intra-modal Reconstruction with Normality Communication for Multi-modal Anomaly Detection.
 description: >-
-  [ICLR 2026][Anomaly Detection][Paper Note] PIRN targets few-shot multimodal industrial anomaly detection for RGB images and 3D surface normals. It reconstructs normal features of each modality using adaptive prototype codebooks and enhances texture and geometric cues through cross-modal normality communication, achieving superior detection and localization perf
+  [ICLR 2026][Anomaly Detection][Multimodal anomaly detection] PIRN targets few-shot multimodal industrial anomaly detection for RGB images and 3D surface normals. It reconstructs normal features of each modality using adaptive prototype codebooks and enhances texture and geometric cues through cross-modal normality communication, achieving superior detection and localization performance on MVTec 3D-AD, Eyecandies, and Real-IAD D3.
 tags:
-  - ICLR 2026
-  - Anomaly Detection
+  - "ICLR 2026"
+  - "Anomaly Detection"
+  - "Multimodal anomaly detection"
+  - "few-shot learning"
+  - "prototypical reconstruction"
+  - "optimal transport"
+  - "RGB-3D fusion"
 date: 2026-05-08
-content_hash: eab5895836fe1468
+content_hash: 67a22ab6bc704193
 ---
+
 # PIRN: Prototypical-based Intra-modal Reconstruction with Normality Communication for Multi-modal Anomaly Detection.
 
 **Conference**: ICLR 2026  
@@ -133,13 +139,20 @@ Ablations on MVTec 3D-AD (10-shot) show that MNC is the most critical module.
 - Value: ⭐⭐⭐⭐⭐ High practical value for industrial settings where few normal samples are available.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- INP-Former: Intrinsic Normal Prototype Transformer for Anomaly Detection (2023)
-- M3DM: Multi-modal Memory-based Discrete Matching for Anomaly Detection (CVPR 2023)
-- FIND: Feature Interpolation and Normalization for Multimodal Anomaly Detection (2024)
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Hunting Normality from Query Sample via Residual Learning for Generalist Anomaly Detection](../../CVPR2026/anomaly_detection/hunting_normality_from_query_sample_via_residual_learning_for_generalist_anomaly.md)
+- [\[CVPR 2026\] Multi-Prototype Compactness and Boundary-Aware Synthesis for Unsupervised Anomaly Detection](../../CVPR2026/anomaly_detection/multi-prototype_compactness_and_boundary-aware_synthesis_for_unsupervised_anomal.md)
+- [\[CVPR 2026\] Dual-Prototype-Guided Multi-task Learning for Unsupervised Anomaly Detection and Classification](../../CVPR2026/anomaly_detection/dual-prototype-guided_multi-task_learning_for_unsupervised_anomaly_detection_and.md)
+- [\[ICLR 2026\] ReTabAD: A Benchmark for Restoring Semantic Context in Tabular Anomaly Detection](retabad_a_benchmark_for_restoring_semantic_context_in_tabular_anomaly_detection.md)
+- [\[ICLR 2026\] MRAD: Zero-Shot Anomaly Detection with Memory-Driven Retrieval](mrad_zero-shot_anomaly_detection_with_memory-driven_retrieval.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Hunting Normality from Query Sample via Residual Learning for Generalist Anomaly Detection](../../CVPR2026/anomaly_detection/hunting_normality_from_query_sample_via_residual_learning_for_generalist_anomaly.md)

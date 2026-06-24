@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BOP-Ask: Object-Interaction Reasoning for Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper automatically transforms the 6D object pose benchmark BOP into BOP-Ask, a large-scale object interaction reasoning dataset containing 150K images, 33.8M Q&A pairs, and covering six skill categories (pose/grasp/trajectory/rearrangement/spatial/depth). Fine-tuning open-source VLMs on this dataset significantly
+  [CVPR 2026][VLM Reasoning][Object Interaction Reasoning] This paper automatically transforms the 6D object pose benchmark BOP into BOP-Ask, a large-scale object interaction reasoning dataset containing 150K images, 33.8M Q&A pairs, and covering six skill categories (pose/grasp/trajectory/rearrangement/spatial/depth). Fine-tuning open-source VLMs on this dataset significantly outperforms GPT-5 and Gemini on the in-house test set, generalizes to out-of-domain spatial reasoning…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Object Interaction Reasoning"
+  - "6D Pose"
+  - "Grasping"
+  - "Motion Planning"
+  - "VQA Benchmark"
 date: 2026-05-08
-content_hash: 74e4871dbfc89b46
+content_hash: 65708eb9652a2cef
 ---
+
 # BOP-Ask: Object-Interaction Reasoning for Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -128,11 +134,11 @@ Compared to **SpatialVLM** and **RoboSpatial**, which often rely on approximate 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Mechanisms of Object Localization in Vision-Language Models](mechanisms_of_object_localization_in_vision-language_models.md)
-- [\[CVPR 2026\] HanDyVQA: A Video QA Benchmark for Fine-Grained Hand-Object Interaction Dynamics](handyvqa_a_video_qa_benchmark_for_fine-grained_hand-object_interaction_dynamics.md)
-- [\[CVPR 2026\] Boosting Vision-Language Models Towards Cross-Domain Incremental Object Detection](boosting_vision-language_models_towards_cross-domain_incremental_object_detectio.md)
-- [\[CVPR 2026\] ORIC: Benchmarking Object Recognition under Contextual Incongruity in Large Vision-Language Models](oric_benchmarking_object_recognition_under_contextual_incongruity_in_large_visio.md)
-- [\[ACL 2025\] Teaching Vision-Language Models to Ask: Resolving Ambiguity in Visual Questions](../../ACL2025/multimodal_vlm/teaching_vlm_ask_ambiguity.md)
+- [\[ICLR 2026\] Agentic Jigsaw Interaction Learning for Enhancing Visual Perception and Reasoning in Vision-Language Models](../../ICLR2026/vlm_reasoning/agentic_jigsaw_interaction_learning_for_enhancing_visual_perception_and_reasonin.md)
+- [\[CVPR 2026\] HandVQA: Diagnosing and Improving Fine-Grained Spatial Reasoning about Hands in Vision-Language Models](handvqa_diagnosing_and_improving_fine-grained_spatial_reasoning_about_hands_in_v.md)
+- [\[CVPR 2026\] Improving Vision-language Models with Perception-centric Process Reward Models](improving_vision-language_models_with_perception-centric_process_reward_models.md)
+- [\[CVPR 2026\] VOLD: Reasoning Transfer from LLMs to Vision-Language Models via On-Policy Distillation](vold_reasoning_transfer_from_llms_to_vision-language_models_via_on-policy_distil.md)
+- [\[CVPR 2026\] Chain-of-Thought Guided Multi-Modal Object Re-Identification](chain-of-thought_guided_multi-modal_object_re-identification.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ProActor: Timing-Aware Reinforcement Learning for Proactive Task Scheduling Agents
 description: >-
-  [ACL 2026][Model Compression][GRPO] ProActor advances conversational task scheduling from "reacting to explicit user instructions" to "proactively triggering actions at appropriate timings." Through automated reference action annotation, proactiveness metrics, turn-level GRPO, and the ART-F efficient training framework, the 4-bit Qwen2.5-14B-ProActor-Q4
+  [ACL2026][Model Compression][Proactive Agent] ProActor advances conversational task scheduling from "reacting to explicit user instructions" to "proactively triggering actions at appropriate timings." Through automated reference action annotation, proactiveness metrics, turn-level GRPO, and the ART-F efficient training framework, the 4-bit Qwen2.5-14B-ProActor-Q4 achieves a top PRI of 0.7293 on ABCD+, significantly enhancing proactive timing while maintaining action consisten…
 tags:
-  - ACL 2026
-  - Model Compression
-  - GRPO
+  - "ACL2026"
+  - "Model Compression"
+  - "Proactive Agent"
+  - "Task Scheduling"
+  - "Timing-Aware RL"
+  - "GRPO"
+  - "RULER Reward"
 date: 2026-05-08
-content_hash: 026426fcc54bc94a
+content_hash: 1d00294081780837
 ---
+
 # ProActor: Timing-Aware Reinforcement Learning for Proactive Task Scheduling Agents
 
 **Conference**: ACL2026  
@@ -164,14 +169,17 @@ ART-F and the training setup emphasize engineering feasibility: ABCD+ training w
 
 <div class="related-papers" markdown="1">
 
-- **ABCD**: Action-Based Conversations Dataset
-- **GRPO**: Group Relative Policy Optimization
-- **LoRA**: Low-Rank Adaptation of Large Language Models
+## Related Papers
+
+- [\[ACL 2026\] SAMoRA: Semantic-Aware Mixture of LoRA Experts for Task-Adaptive Learning](samora_semantic-aware_mixture_of_lora_experts_for_task-adaptive_learning.md)
+- [\[ACL 2026\] TELL-TALE: Task Efficient LLMs with Task Aware Layer Elimination](tell-tale_task_efficient_llms_with_task_aware_layer_elimination.md)
+- [\[ACL 2026\] TLoRA: Task-aware Low Rank Adaptation of Large Language Models](tlora_task-aware_low_rank_adaptation_of_large_language_models.md)
+- [\[ACL 2026\] Enabling Agents to Communicate Entirely in Latent Space](enabling_agents_to_communicate_entirely_in_latent_space.md)
+- [\[ICCV 2025\] Scheduling Weight Transitions for Quantization-Aware Training](../../ICCV2025/model_compression/scheduling_weight_transitions_for_quantization-aware_training.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] SAMoRA: Semantic-Aware Mixture of LoRA Experts for Task-Adaptive Learning](samora_semantic-aware_mixture_of_lora_experts_for_task-adaptive_learning.md)

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Semi-Supervised Neural Super-Resolution for Mesh-Based Simulations
 description: >-
-  [ICML 2026][Image Restoration][Paper Note] SuperMeshNet employs two complementary MPNNs—a primary model predicting LR→HR and an auxiliary model predicting HR-HR differences corresponding to LR-LR pairs—to mutually generate pseudo-labels for unpaired samples. Combined with two lightweight inductive biases (node-level and message-level centering), this approach a
+  [ICML 2026][Image Restoration][mesh super-resolution] SuperMeshNet employs two complementary MPNNs—a primary model predicting LR→HR and an auxiliary model predicting HR-HR differences corresponding to LR-LR pairs—to mutually generate pseudo-labels for unpaired samples. Combined with two lightweight inductive biases (node-level and message-level centering), this approach allows PDE mesh super-resolution to outperform a 100% HR fully supervised baseline using only 10% HR data…
 tags:
-  - ICML 2026
-  - Image Restoration
+  - "ICML 2026"
+  - "Image Restoration"
+  - "mesh super-resolution"
+  - "semi-supervised regression"
+  - "complementary learning"
+  - "message passing inductive bias"
+  - "PDE simulation acceleration"
 date: 2026-05-08
-content_hash: 85fe5e2946231171
+content_hash: 5e90a9d7e7161302
 ---
+
 # Semi-Supervised Neural Super-Resolution for Mesh-Based Simulations
 
 **Conference**: ICML 2026  
@@ -155,11 +161,11 @@ Semi-supervised Regression Baselines (Dataset 1, $N_h=20, N=200$, MGN):
 
 ## Related Papers
 
+- [\[ICLR 2026\] SuperF: Neural Implicit Fields for Multi-Image Super-Resolution](../../ICLR2026/image_restoration/superf_neural_implicit_fields_for_multi-image_super-resolution.md)
 - [\[CVPR 2026\] SDUIE: Semi-Supervised Diffusion for Underwater Image Enhancement with Quant-Text Dual Control](../../CVPR2026/image_restoration/sduie_semi-supervised_diffusion_for_underwater_image_enhancement_with_quant-text.md)
 - [\[ICML 2026\] Coloring the Noise: Adversarial Sobolev Alignment for Faithful Image Super Resolution](coloring_the_noise_adversarial_sobolev_alignment_for_faithful_image_super_resolu.md)
-- [\[NeurIPS 2025\] Spiking Meets Attention: Efficient Remote Sensing Image Super-Resolution with Attention Spiking Neural Networks](../../NeurIPS2025/image_restoration/spiking_meets_attention_efficient_remote_sensing_image_super-resolution_with_att.md)
 - [\[ICML 2026\] PODiff: Latent Diffusion in Proper Orthogonal Decomposition Space for Scientific Super-Resolution](podiff_latent_diffusion_in_proper_orthogonal_decomposition_space_for_scientific_.md)
-- [\[ICML 2026\] Phy-CoSF: Physics-Guided Continuous Spectral Fields Reconstruction and Super-Resolution for Snapshot Compressive Imaging](phy-cosf_physics-guided_continuous_spectral_fields_reconstruction_and_super-reso.md)
+- [\[NeurIPS 2025\] Spiking Meets Attention: Efficient Remote Sensing Image Super-Resolution with Attention Spiking Neural Networks](../../NeurIPS2025/image_restoration/spiking_meets_attention_efficient_remote_sensing_image_super-resolution_with_att.md)
 
 </div>
 

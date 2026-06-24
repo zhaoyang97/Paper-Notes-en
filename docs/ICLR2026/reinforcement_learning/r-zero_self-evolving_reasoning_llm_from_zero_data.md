@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] R-Zero: Self-Evolving Reasoning LLM from Zero Data
 description: >-
-  [ICLR 2026][Reinforcement Learning][Challenger-Solver] R-Zero initializes two roles, a "Challenger" and a "Solver," from a single base model. The Challenger is rewarded for generating difficult problems at the edge of the Solver's capability (accuracy $\approx 50\%$), while the Solver is rewarded for solving them. The two are trained alternately using GRPO in a co-evolutio
+  [ICLR 2026][Reinforcement Learning][Self-Evolution] R-Zero initializes two roles, a "Challenger" and a "Solver," from a single base model. The Challenger is rewarded for generating difficult problems at the edge of the Solver's capability (accuracy $\approx 50\%$), while the Solver is rewarded for solving them. The two are trained alternately using GRPO in a co-evolutionary process. Without any human-authored questions or labels, this method improves the mathematical reasonin…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Challenger-Solver
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Self-Evolution"
+  - "Zero-Data"
+  - "Challenger-Solver"
+  - "Co-evolution"
+  - "GRPO"
+  - "Pseudo-labeling"
 date: 2026-05-08
-content_hash: e98774d8610be57c
+content_hash: a92537e9f363128a
 ---
+
 # R-Zero: Self-Evolving Reasoning LLM from Zero Data
 
 **Conference**: ICLR 2026  

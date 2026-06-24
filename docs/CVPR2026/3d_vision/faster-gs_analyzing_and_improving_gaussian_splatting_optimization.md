@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Faster-GS: Analyzing and Improving Gaussian Splatting Optimization
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper systematically organizes, aligns, and integrates training acceleration techniques scattered across multiple 3DGS follow-up works into a clean baseline. By introducing "memory-coalescence-friendly z-order densification" and "backward-propagation-optimizer fusion + custom Adam," it accelerates 3DGS training by
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper systematically organizes, aligns, and integrates training acceleration techniques scattered across multiple 3DGS follow-up works into a clean baseline. By introducing "memory-coalescence-friendly z-order densification" and "backward-propagation-optimizer fusion + custom Adam," it accelerates 3DGS training by up to 5× and reduces VRAM by 30% without changing reconstruction quality or Gaussian count…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Training Acceleration"
+  - "GPU Memory Optimization"
+  - "Kernel Fusion"
+  - "z-order Densification"
 date: 2026-05-08
-content_hash: d652f80dd6be6e68
+content_hash: d91278445f9a9395
 ---
+
 # Faster-GS: Analyzing and Improving Gaussian Splatting Optimization
 
 **Conference**: CVPR 2026  
@@ -144,11 +150,11 @@ Newer GPUs show higher speedup ratios, suggesting greater potential on future ha
 
 ## Related Papers
 
+- [\[CVPR 2026\] GS²: Graph-based Spatial Distribution Optimization for Compact 3D Gaussian Splatting](gs2_graph-based_spatial_distribution_optimization_for_compact_3d_gaussian_splatt.md)
 - [\[CVPR 2026\] DirectFisheye-GS: Enabling Native Fisheye Input in Gaussian Splatting with Cross-View Joint Optimization](directfisheye-gs_enabling_native_fisheye_input_in_gaussian_splatting_with_cross-.md)
+- [\[CVPR 2026\] SparseOIT: Improving Order-Independent Transparency 3DGS via Active Set Method](sparseoit_improving_order-independent_transparency_3dgs_via_active_set_method.md)
 - [\[CVPR 2026\] Intrinsic Geometry-Appearance Consistency Optimization for Sparse-View Gaussian Splatting](intrinsic_geometry-appearance_consistency_optimization_for_sparse-view_gaussian_.md)
-- [\[CVPR 2026\] LumiMotion: Improving Gaussian Relighting with Scene Dynamics](lumimotion_gaussian_relighting_dynamics.md)
-- [\[CVPR 2026\] Energy-GS: Image Energy-guided Pose Alignment Gaussian Splatting with redesigned pose gradient flow](energy-gs_image_energy-guided_pose_alignment_gaussian_splatting_with_redesigned_.md)
-- [\[CVPR 2026\] BulletGen: Improving 4D Reconstruction with Bullet-Time Generation](bulletgen_improving_4d_reconstruction_with_bullet-time_generation.md)
+- [\[CVPR 2026\] Turbo-GS: Accelerating 3D Gaussian Fitting for High-Resolution Radiance Fields](turbo-gs_accelerating_3d_gaussian_fitting_for_high-quality_radiance_fields.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GUIDE: Gated Uncertainty-Informed Disentangled Experts for Long-tailed Recognition
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] GUIDE systematically dismantles the three-level "representation-decision-optimization" entanglement prevalent in multi-expert long-tailed recognition. It employs competitive specialization to force experts to learn distinct features, utilizes epistemic/aleatoric uncertainty decomposition to diagnose difficult samples f
+  [ICLR 2026][Self-Supervised Learning][Long-tailed recognition] GUIDE systematically dismantles the three-level "representation-decision-optimization" entanglement prevalent in multi-expert long-tailed recognition. It employs competitive specialization to force experts to learn distinct features, utilizes epistemic/aleatoric uncertainty decomposition to diagnose difficult samples for targeted refinement, and implements dual-time-scale updates to isolate the optimization of the…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Long-tailed recognition"
+  - "Multi-expert models"
+  - "Uncertainty decomposition"
+  - "Meta-learning"
+  - "Representation disentanglement"
 date: 2026-05-08
-content_hash: 49923bd376317fda
+content_hash: cb5a29b393c31a6c
 ---
+
 # GUIDE: Gated Uncertainty-Informed Disentangled Experts for Long-tailed Recognition
 
 **Conference**: ICLR 2026  

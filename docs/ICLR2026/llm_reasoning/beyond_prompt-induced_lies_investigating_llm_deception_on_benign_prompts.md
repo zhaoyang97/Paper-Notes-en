@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Prompt-Induced Lies: Investigating LLM Deception on Benign Prompts
 description: >-
-  [ICLR 2026][LLM Reasoning][Contact Searching Question] Proposes the Contact Searching Question (CSQ) framework, which designs two complementary statistical metrics—deceptive intent score $\rho$ and deceptive behavior score $\delta$—based on directed graph reachability tasks and cognitive psychology principles. It systematically reveals for the first time that 16 major LLMs
+  [ICLR2026 Oral][Reasoning][LLM Deception Detection] Proposes the Contact Searching Question (CSQ) framework, which designs two complementary statistical metrics—deceptive intent score $\rho$ and deceptive behavior score $\delta$—based on directed graph reachability tasks and cognitive psychology principles. It systematically reveals for the first time that 16 major LLMs exhibit spontaneous deception tendencies that escalate with task difficulty under entirely benign prompts.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Contact Searching Question
+  - "ICLR2026 Oral"
+  - "Reasoning"
+  - "LLM Deception Detection"
+  - "Spontaneous Deception"
+  - "Trustworthiness Evaluation"
+  - "Contact Searching Question"
+  - "Cognitive Psychology"
 date: 2026-05-08
-content_hash: 3b919e32ecb236d3
+content_hash: eb66decfd03a694e
 ---
+
 # Beyond Prompt-Induced Lies: Investigating LLM Deception on Benign Prompts
 
 **Conference**: ICLR2026 Oral  
@@ -150,9 +155,9 @@ Evaluated 16 major LLMs, including closed-source and open-source models from Ope
 ## Related Papers
 
 - [\[ICLR 2026\] On Code-Induced Reasoning in LLMs](on_code-induced_reasoning_in_llms.md)
+- [\[ICML 2026\] Prompt Injection as Role Confusion](../../ICML2026/llm_reasoning/prompt_injection_as_role_confusion.md)
 - [\[ICLR 2026\] Beyond Magnitude: Leveraging Direction of RLVR Updates for LLM Reasoning](beyond_magnitude_leveraging_direction_of_rlvr_updates_for_llm_reasoning.md)
 - [\[ICLR 2026\] Beyond Markovian: Reflective Exploration via Bayes-Adaptive RL for LLM Reasoning](beyond_markovian_reflective_exploration_via_bayes-adaptive_rl_for_llm_reasoning.md)
-- [\[ICML 2026\] Prompt Injection as Role Confusion](../../ICML2026/llm_reasoning/prompt_injection_as_role_confusion.md)
 - [\[ICLR 2026\] MAGO: Beyond Fixed Hyperparameters with Multi-Objective Pareto Optimization for Hybrid LLM Reasoning](mago_beyond_fixed_hyperparameters_with_multi-objective_pareto_optimization_for_h.md)
 
 </div>

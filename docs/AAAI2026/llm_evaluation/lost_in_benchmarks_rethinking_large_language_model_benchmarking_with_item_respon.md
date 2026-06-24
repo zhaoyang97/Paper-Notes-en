@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory
 description: >-
-  [AAAI 2026][LLM Evaluation][IRT] This paper proposes PSN-IRT (Pseudo-Siamese Network for IRT), an enhanced Item Response Theory framework that jointly estimates LLM ability parameters and four-parameter item characterist…
+  [AAAI 2026 Oral][LLM Evaluation][IRT] This paper proposes PSN-IRT (Pseudo-Siamese Network for IRT), an enhanced Item Response Theory framework that jointly estimates LLM ability parameters and four-parameter item characteristics (difficulty / discrimination / guessing / feasibility). Applied to 41,871 items across 11 benchmarks, the framework reveals systemic issues including widespread saturation, insufficient difficulty ceilings, and data contamination. Item subsets selecte…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "LLM Evaluation"
   - "IRT"
   - "benchmark evaluation"
@@ -12,7 +12,7 @@ tags:
   - "item quality"
   - "PSN-IRT"
 date: 2026-05-08
-content_hash: ba081f0389fe7ecc
+content_hash: 0847568735d5bfaa
 ---
 
 # Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory
@@ -126,11 +126,11 @@ Input: binary response matrices of 12 LLMs $\times$ 11 benchmarks $\rightarrow$ 
 
 ## Related Papers
 
-- [\[ICLR 2026\] How Reliable is Language Model Micro-Benchmarking?](../../ICLR2026/llm_evaluation/how_reliable_is_language_model_micro-benchmarking.md)
+- [\[ICML 2025\] Position: Theory of Mind Benchmarks are Broken for Large Language Models](../../ICML2025/llm_evaluation/position_theory_of_mind_benchmarks_are_broken_for_large_language_models.md)
 - [\[ICCV 2025\] Rethinking Few Shot CLIP Benchmarks: A Critical Analysis in the Inductive Setting](../../ICCV2025/llm_evaluation/rethinking_few_shot_clip_benchmarks_a_critical_analysis_in_the_inductive_setting.md)
-- [\[NeurIPS 2025\] Bayesian Evaluation of Large Language Model Behavior](../../NeurIPS2025/llm_evaluation/bayesian_evaluation_of_large_language_model_behavior.md)
-- [\[ICML 2026\] BESPOKE: Benchmark for Search-Augmented Large Language Model Personalization via Diagnostic Feedback](../../ICML2026/llm_evaluation/bespoke_benchmark_for_search-augmented_large_language_model_personalization_via_.md)
-- [\[ICML 2026\] HiPER: Hierarchical Reinforcement Learning with Explicit Credit Assignment for Large Language Model Agents](../../ICML2026/llm_evaluation/hiper_hierarchical_reinforcement_learning_with_explicit_credit_assignment_for_la.md)
+- [\[ICLR 2026\] How Reliable is Language Model Micro-Benchmarking?](../../ICLR2026/llm_evaluation/how_reliable_is_language_model_micro-benchmarking.md)
+- [\[ICLR 2026\] Don't Pass@k: A Bayesian Framework for Large Language Model Evaluation](../../ICLR2026/llm_evaluation/dont_passk_a_bayesian_framework_for_large_language_model_evaluation.md)
+- [\[ICLR 2026\] TokUR: Token-Level Uncertainty Estimation for Large Language Model Reasoning](../../ICLR2026/llm_evaluation/tokur_token-level_uncertainty_estimation_for_large_language_model_reasoning.md)
 
 </div>
 

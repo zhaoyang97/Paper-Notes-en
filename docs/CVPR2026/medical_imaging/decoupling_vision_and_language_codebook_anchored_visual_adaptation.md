@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Decoupling Vision and Language: Codebook Anchored Visual Adaptation
 description: >-
-  [CVPR 2026][Medical Imaging][codebook] Ours proposes CRAFT, which decouples the vision encoder from the language model through a discrete codebook. By fine-tuning only the vision encoder, domain adaptation is achieved in a way that allows the adapted encoder to be seamlessly reused across different LLM architectures, resulting in an average improvement of 1
+  [CVPR2026][Medical Imaging][Discrete visual tokens] Ours proposes CRAFT, which decouples the vision encoder from the language model through a discrete codebook. By fine-tuning only the vision encoder, domain adaptation is achieved in a way that allows the adapted encoder to be seamlessly reused across different LLM architectures, resulting in an average improvement of 13.51% across 10 domain benchmarks.
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - codebook
-  - LVLM
+  - "CVPR2026"
+  - "Medical Imaging"
+  - "Discrete visual tokens"
+  - "codebook"
+  - "vision encoder adaptation"
+  - "domain transfer"
+  - "token pruning"
+  - "LVLM"
 date: 2026-05-08
-content_hash: f1da70f2e9e8b713
+content_hash: 461ed27eda7af571
 ---
+
 # Decoupling Vision and Language: Codebook Anchored Visual Adaptation
 
 **Conference**: CVPR2026  
@@ -162,15 +167,16 @@ An encoder trained with Qwen2-0.5B was directly paired with Qwen2.5-3B for infer
 - Value: ⭐⭐⭐⭐ — Highly practical for resource-constrained domain adaptation (e.g., medical).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] MedCLIPSeg: Probabilistic Vision-Language Adaptation for Data-Efficient and Generalizable Medical Image Segmentation](medclipseg_probabilistic_vision-language_adaptation_for_data-efficient_and_gener.md)
+- [\[CVPR 2026\] MedKCO: Medical Vision-Language Pretraining via Knowledge-Driven Cognitive Orchestration](medkco_medical_vision-language_pretraining_via_knowledge-driven_cognitive_orches.md)
 - [\[CVPR 2026\] Tell2Adapt: A Unified Framework for Source Free Unsupervised Domain Adaptation via Vision Foundation Model](tell2adapt_a_unified_framework_for_source_free_unsupervised_domain_adaptation_vi.md)
 - [\[CVPR 2026\] From Panel to Pixel: Zoom-In Vision-Language Pretraining from Biomedical Scientific Literature](from_panel_to_pixel_zoom-in_vision-language_pretraining_from_biomedical_scientif.md)
-- [\[CVPR 2026\] MedKCO: Medical Vision-Language Pretraining via Knowledge-Driven Cognitive Orchestration](medkco_medical_vision-language_pretraining_via_knowledge-driven_cognitive_orches.md)
-- [\[CVPR 2026\] Attention Consistent Longitudinal Medical Visual Question Answering Guided by Vision Foundation Models](attention_consistent_longitudinal_medical_visual_question_answering_guided_by_vi.md)
+- [\[CVPR 2026\] KAMP: Knowledge-Anchored Multimodal Pretraining Framework for Medical Image Representation](kamp_knowledge-anchored_multimodal_pretraining_framework_for_medical_image_repre.md)
 
 </div>
 

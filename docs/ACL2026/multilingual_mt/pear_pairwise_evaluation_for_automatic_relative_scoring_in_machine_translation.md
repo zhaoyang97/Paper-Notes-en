@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PEAR: Pairwise Evaluation for Automatic Relative Scoring in Machine Translation
 description: >-
-  [ACL 2026][Multilingual & Translation][MQM] PEAR transforms reference-free MT quality estimation from "assigning absolute scores to single translations" to "directly comparing the relative differences between two candidate translations." It outperforms matched single-candidate QE baselines and some large-scale metrics in the WMT24 MQM evaluation with a smaller m
+  [ACL2026][Multilingual & Machine Translation][Pairwise evaluation] PEAR transforms reference-free MT quality estimation from "assigning absolute scores to single translations" to "directly comparing the relative differences between two candidate translations." It outperforms matched single-candidate QE baselines and some large-scale metrics in the WMT24 MQM evaluation with a smaller model size.
 tags:
-  - ACL 2026
-  - Multilingual & Translation
-  - MQM
+  - "ACL2026"
+  - "Multilingual & Machine Translation"
+  - "Pairwise evaluation"
+  - "Machine Translation"
+  - "Quality Estimation"
+  - "MQM"
+  - "MBR decoding"
 date: 2026-05-08
-content_hash: fe358571370c3621
+content_hash: 7fce3570d65c7e8c
 ---
+
 # PEAR: Pairwise Evaluation for Automatic Relative Scoring in Machine Translation
 
 **Conference**: ACL2026  

@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] NeuraLeaf: Neural Parametric Leaf Models with Shape and Deformation Disentanglement
 description: >-
-  [3D Vision] NeuraLeaf disentangles the 3D geometry of leaves into two latent spaces — a 2D base shape space and a 3D deformation space — leveraging large-scale 2D leaf image datasets to learn the shape space…
+  [3D Vision] NeuraLeaf disentangles the 3D geometry of leaves into two latent spaces — a 2D base shape space and a 3D deformation space — leveraging large-scale 2D leaf image datasets to learn the shape space, proposes a skeleton-free skinning model to handle highly flexible leaf deformations, and introduces DeformLeaf, the first 3D dataset dedicated to leaf deformation modeling.
 tags:
   - "3D Vision"
 date: 2026-05-08
-content_hash: c0347727621c95a8
+content_hash: 1a9ee07c6a96cdb2
 ---
 
 # NeuraLeaf: Neural Parametric Leaf Models with Shape and Deformation Disentanglement
@@ -142,7 +142,7 @@ The deformation mapping loss is critical for imposing an orderly structure on th
 - [\[ICCV 2025\] Unleashing Vecset Diffusion Model for Fast Shape Generation (FlashVDM)](unleashing_vecset_diffusion_model_for_fast_shape_generation.md)
 - [\[ICCV 2025\] Repurposing 2D Diffusion Models with Gaussian Atlas for 3D Generation](repurposing_2d_diffusion_models_with_gaussian_atlas_for_3d_generation.md)
 - [\[ICCV 2025\] SL2A-INR: Single-Layer Learnable Activation for Implicit Neural Representation](sl2a-inr_single-layer_learnable_activation_for_implicit_neural_representation.md)
-- [\[ICCV 2025\] LayerLock: Non-collapsing Representation Learning with Progressive Freezing](layerlock_non-collapsing_representation_learning_with_progressive_freezing.md)
+- [\[CVPR 2025\] DualPM: Dual Posed-Canonical Point Maps for 3D Shape and Pose Reconstruction](../../CVPR2025/3d_vision/dualpm_dual_posed-canonical_point_maps_for_3d_shape_and_pose_reconstruction.md)
 
 </div>
 

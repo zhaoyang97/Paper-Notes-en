@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] GenCompositor: Generative Video Compositing with Diffusion Transformer
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Transformer] GenCompositor introduces the task of "Generative Video Compositing," using a specially designed DiT pipeline to inject external foreground videos into background videos based on user-specified trajectories and scales. It maintains background consistency while inheriting foreground identity and dynamics, significantly o
+  [ICLR2026][Image Generation][Generative Video Compositing] GenCompositor introduces the task of "Generative Video Compositing," using a specially designed DiT pipeline to inject external foreground videos into background videos based on user-specified trajectories and scales. It maintains background consistency while inheriting foreground identity and dynamics, significantly outperforming alternative solutions in video harmonization, trajectory control, and ablation studies.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Transformer
-  - Video Editing
-  - ERoPE
+  - "ICLR2026"
+  - "Image Generation"
+  - "Generative Video Compositing"
+  - "Diffusion Transformer"
+  - "Video Editing"
+  - "ERoPE"
+  - "Trajectory Control"
 date: 2026-05-08
-content_hash: 8b4112b1fed1c92c
+content_hash: 08be8240eab1b725
 ---
+
 # GenCompositor: Generative Video Compositing with Diffusion Transformer
 
 **Conference**: ICLR2026  
@@ -159,7 +162,7 @@ The ablation study examines four components: replacing DiT fusion blocks with cr
 - [\[CVPR 2026\] DDT: Decoupled Diffusion Transformer](../../CVPR2026/image_generation/ddt_decoupled_diffusion_transformer.md)
 - [\[ICLR 2026\] QVGen: Pushing the Limit of Quantized Video Generative Models](qvgen_pushing_the_limit_of_quantized_video_generative_models.md)
 - [\[CVPR 2026\] STCDiT: Spatio-Temporally Consistent Diffusion Transformer for High-Quality Video Super-Resolution](../../CVPR2026/image_generation/stcdit_spatio-temporally_consistent_diffusion_transformer_for_high-quality_video.md)
-- [\[ICLR 2026\] ColorCtrl: 基于多模态扩散 Transformer 的免训练文本引导颜色编辑](training-free_text-guided_color_editing_with_multi-modal_diffusion_transformer.md)
+- [\[ICCV 2025\] SummDiff: Generative Modeling of Video Summarization with Diffusion](../../ICCV2025/image_generation/summdiff_generative_modeling_of_video_summarization_with_diffusion.md)
 
 </div>
 

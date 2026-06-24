@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Thought Branches: Interpreting LLM Reasoning Requires Resampling
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper argues that interpreting reasoning models requires analyzing the **distribution of all possible trajectories** generated under the same prompt rather than a single Chain-of-Thought (CoT). By **resampling subsequent text** starting from a specific sentence in a CoT, the authors measure its causal influence. T
+  [ICLR 2026][Interpretability][Chain-of-Thought Interpretability] This paper argues that interpreting reasoning models requires analyzing the **distribution of all possible trajectories** generated under the same prompt rather than a single Chain-of-Thought (CoT). By **resampling subsequent text** starting from a specific sentence in a CoT, the authors measure its causal influence. They propose a suite of methods including counterfactual importance, resilience…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Chain-of-Thought Interpretability"
+  - "Resampling"
+  - "Counterfactual Importance"
+  - "Causal Mediation"
+  - "CoT Unfaithfulness"
 date: 2026-05-08
-content_hash: ae1fd6df20e21409
+content_hash: b18e987c0eb258d0
 ---
+
 # Thought Branches: Interpreting LLM Reasoning Requires Resampling
 
 **Conference**: ICLR 2026  

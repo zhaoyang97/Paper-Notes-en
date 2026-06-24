@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AudioAvatar: Personalized Audio-driven Whole-body Talking Avatars
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] AudioAvatar reconstructs a canonical 3D Gaussian whole-body digital human from a single portrait and allows audio to **directly** modulate the motion trajectory of each Gaussian particle (skipping the lossy intermediate chain of "audio → parametric pose → rendering"). By leveraging large-scale audio-driven video diffus
+  [CVPR 2026][Human Understanding][Audio-driven digital humans] AudioAvatar reconstructs a canonical 3D Gaussian whole-body digital human from a single portrait and allows audio to **directly** modulate the motion trajectory of each Gaussian particle (skipping the lossy intermediate chain of "audio → parametric pose → rendering"). By leveraging large-scale audio-driven video diffusion models for feature distillation, it significantly outperforms pose-driven baselines in lip syn…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Audio-driven digital humans"
+  - "3D Gaussians"
+  - "Particle deformation fields"
+  - "Diffusion distillation"
+  - "Single-image personalization"
 date: 2026-05-08
-content_hash: 3c19530e3886aff6
+content_hash: 643f560e4c5774ca
 ---
+
 # AudioAvatar: Personalized Audio-driven Whole-body Talking Avatars
 
 **Conference**: CVPR 2026  

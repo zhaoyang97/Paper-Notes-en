@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When Robots Obey the Patch: Universal Transferable Patch Attacks on Vision-Language-Action Models
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] Ours proposes the UPA-RFAS framework to learn a single physical adversarial patch that achieves universal, transferable black-box attacks on VLA robot policies through a three-pronged approach: feature-space shifting, attention hijacking, and semantic misalignment.
+  [CVPR 2026][AI Safety][Adversarial Attacks] Ours proposes the UPA-RFAS framework to learn a single physical adversarial patch that achieves universal, transferable black-box attacks on VLA robot policies through a three-pronged approach: feature-space shifting, attention hijacking, and semantic misalignment.
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Adversarial Attacks"
+  - "VLA Models"
+  - "Universal Adversarial Patches"
+  - "Black-box Transfer Attacks"
+  - "Robot Safety"
 date: 2026-05-08
-content_hash: 9b1c59f2ff033c5f
+content_hash: ab44a62bdf360714
 ---
+
 # When Robots Obey the Patch: Universal Transferable Patch Attacks on Vision-Language-Action Models
 
 **Conference**: CVPR 2026  

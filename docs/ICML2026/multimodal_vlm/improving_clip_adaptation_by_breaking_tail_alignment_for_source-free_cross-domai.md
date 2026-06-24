@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] ATHA: 通过打破尾部对齐改进 CLIP 在源数据无关跨域小样本上的适配
+  [Paper Note] ATHA: Improving CLIP Adaptation on Source-Free Cross-Domain Few-Shot Learning by Breaking Tail Alignment
 description: >-
-  [ICML 2026][Multimodal VLM][Tail Token] ATHA proposes an asymmetric alignment paradigm of "aligning head tokens and pushing away tail tokens" for CLIP cross-domain few-shot fine-tuning. By actively pushing semantically sparse patches away from text embeddings, it mitigates overfitting and improves 1-shot average accuracy from 55.92% to 58.35%.
+  [ICML 2026][Multimodal VLM][CLIP fine-tuning] ATHA proposes an asymmetric alignment paradigm of "aligning head tokens and pushing away tail tokens" for CLIP cross-domain few-shot fine-tuning. By actively pushing semantically sparse patches away from text embeddings, it mitigates overfitting and improves 1-shot average accuracy from 55.92% to 58.35%.
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - Tail Token
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "CLIP fine-tuning"
+  - "Cross-domain few-shot learning"
+  - "Vision-language alignment"
+  - "Tail Token"
+  - "Source-free adaptation"
 date: 2026-05-08
-content_hash: 2093cf1963e3a845
+content_hash: 32d665c2c2977849
 ---
+
 # ATHA: Improving CLIP Adaptation on Source-Free Cross-Domain Few-Shot Learning by Breaking Tail Alignment
 
 **Conference**: ICML 2026  
@@ -146,11 +151,11 @@ The authors use distribution and CKA analysis to verify three aspects:
 
 ## Related Papers
 
-- [\[ICLR 2026\] Breaking the Limits of Open-Weight CLIP: An Optimization Framework for Self-supervised Fine-tuning of CLIP](../../ICLR2026/multimodal_vlm/breaking_the_limits_of_open-weight_clip_an_optimization_framework_for_self-super.md)
-- [\[CVPR 2026\] Reevaluating the Intra-Modal Misalignment Hypothesis in CLIP](../../CVPR2026/multimodal_vlm/reevaluating_the_intra-modal_misalignment_hypothesis_in_clip.md)
+- [\[CVPR 2026\] Addressing Exacerbated Attention Sink for Source-Free Cross-Domain Few-Shot Learning](../../CVPR2026/multimodal_vlm/addressing_exacerbated_attention_sink_for_source-free_cross-domain_few-shot_lear.md)
+- [\[CVPR 2026\] Vision-Language Model Guided Source-Free Domain Adaptation via Optimal Transport](../../CVPR2026/multimodal_vlm/vision-language_model_guided_source-free_domain_adaptation_via_optimal_transport.md)
+- [\[ICLR 2026\] Exploring Cross-Modal Flows for Few-Shot Learning](../../ICLR2026/multimodal_vlm/exploring_cross-modal_flows_for_few-shot_learning.md)
 - [\[ICML 2026\] Left-Right Symmetry Breaking in CLIP-style Vision-Language Models Trained on Synthetic Spatial-Relation Data](left-right_symmetry_breaking_in_clip-style_vision-language_models_trained_on_syn.md)
-- [\[CVPR 2026\] CLIP-like Model as a Foundational Density Ratio Estimator](../../CVPR2026/multimodal_vlm/clip-like_model_as_a_foundational_density_ratio_estimator.md)
-- [\[CVPR 2026\] Boosting Visual Reprogramming for CLIP with Dual Granularity Alignment](../../CVPR2026/multimodal_vlm/boosting_visual_reprogramming_for_clip_with_dual_granularity_alignment.md)
+- [\[ICCV 2025\] Causal Disentanglement and Cross-Modal Alignment for Enhanced Few-Shot Learning](../../ICCV2025/multimodal_vlm/causal_disentanglement_and_cross-modal_alignment_for_enhanced_few-shot_learning.md)
 
 </div>
 

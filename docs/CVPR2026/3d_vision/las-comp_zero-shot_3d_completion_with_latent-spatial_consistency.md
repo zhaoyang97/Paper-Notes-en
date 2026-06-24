@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LaS-Comp: Zero-shot 3D Completion with Latent-Spatial Consistency
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] LaS-Comp is proposed as a zero-shot, category-agnostic 3D shape completion framework. By injecting known geometry in the spatial domain through an Explicit Replacement Stage and optimizing boundary consistency via the Implicit Alignment Stage, it bridges the gap between the latent and spatial domains of pretrained 3D f
+  [CVPR 2026][3D Vision][3D Shape Completion] LaS-Comp is proposed as a zero-shot, category-agnostic 3D shape completion framework. By injecting known geometry in the spatial domain through an Explicit Replacement Stage and optimizing boundary consistency via the Implicit Alignment Stage, it bridges the gap between the latent and spatial domains of pretrained 3D foundation models, achieving SOTA performance across various partial observation modes.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Shape Completion"
+  - "Zero-shot"
+  - "3D Foundation Model"
+  - "Latent-Spatial Consistency"
+  - "Point Cloud Completion"
 date: 2026-05-08
-content_hash: d310973704216ba9
+content_hash: 18d179d2227487a6
 ---
+
 # LaS-Comp: Zero-shot 3D Completion with Latent-Spatial Consistency
 
 **Conference**: CVPR 2026  
@@ -142,11 +148,11 @@ LaS-Comp is **training-free**—it requires no additional training and performs 
 
 ## Related Papers
 
+- [\[CVPR 2026\] Zero-Shot Depth Completion with Vision-Language Model](zero-shot_depth_completion_with_vision-language_model.md)
 - [\[CVPR 2026\] Learning Spatial-Temporal Consistency for 3D Semantic Scene Completion](learning_spatial-temporal_consistency_for_3d_semantic_scene_completion.md)
-- [\[CVPR 2026\] Elastic3D: Controllable Stereo Video Conversion with Guided Latent Decoding](elastic3d_controllable_stereo_video_conversion_with_guided_latent_decoding.md)
-- [\[CVPR 2026\] I-Scene: 3D Instance Models are Implicit Generalizable Spatial Learners](i-scene_3d_instance_models_are_implicit_generalizable_spatial_learners.md)
-- [\[CVPR 2026\] Dehallu3D: Hallucination-Mitigated 3D Generation from a Single Image via Cyclic View Consistency Refinement](dehallu3d_hallucination-mitigated_3d_generation_from_a_single_image_via_cyclic_v.md)
-- [\[CVPR 2026\] 3D-Fixer: Coarse-to-Fine In-place Completion for 3D Scenes from a Single Image](3d-fixer_coarse-to-fine_in-place_completion_for_3d_scenes_from_a_single_image.md)
+- [\[CVPR 2025\] GenPC: Zero-shot Point Cloud Completion via 3D Generative Priors](../../CVPR2025/3d_vision/genpc_zero-shot_point_cloud_completion_via_3d_generative_priors.md)
+- [\[ICLR 2026\] pySpatial: Generating 3D Visual Programs for Zero-Shot Spatial Reasoning](../../ICLR2026/3d_vision/pyspatial_generating_3d_visual_programs_for_zero-shot_spatial_reasoning.md)
+- [\[CVPR 2026\] VGGT-360: Geometry-Consistent Zero-Shot Panoramic Depth Estimation](vggt-360_geometry-consistent_zero-shot_panoramic_depth_estimation.md)
 
 </div>
 

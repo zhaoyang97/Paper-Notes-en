@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LottieGPT: Tokenizing Vector Animation for Autoregressive Generation
 description: >-
-  [CVPR 2026][Video Generation][Lottie] Ours proposes LottieGPT, the first autoregressive generation framework for vector animations. It designs a Lottie tokenizer to encode hierarchical geometries, transformations, and keyframe motions into compact token sequences. By constructing a 660K animation dataset and fine-tuning Qwen-VL, it achieves direct generati
+  [CVPR 2026][Video Generation][Vector Animation] Ours proposes LottieGPT, the first autoregressive generation framework for vector animations. It designs a Lottie tokenizer to encode hierarchical geometries, transformations, and keyframe motions into compact token sequences. By constructing a 660K animation dataset and fine-tuning Qwen-VL, it achieves direct generation of editable vector animations from text or images.
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Lottie
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Vector Animation"
+  - "Lottie"
+  - "Autoregressive Generation"
+  - "Tokenizer"
+  - "Multimodal"
 date: 2026-05-08
-content_hash: 01af816316a1160b
+content_hash: 067d966963706578
 ---
+
 # LottieGPT: Tokenizing Vector Animation for Autoregressive Generation
 
 **Conference**: CVPR 2026  
@@ -140,9 +145,9 @@ The tokenizer supports lossless round-tripping—the decoded animation is identi
 
 - [\[CVPR 2026\] OmniLottie: Generating Vector Animations via Parameterized Lottie Tokens](omnilottie_generating_vector_animations_via_parameterized_lottie_tokens.md)
 - [\[CVPR 2026\] Vector Prism: Animating Vector Graphics by Stratifying Semantic Structure](vector_prism_animating_vector_graphics_by_stratifying_semantic_structure.md)
-- [\[ICML 2026\] VAnim: Rendering-Aware Sparse State Modeling for Structure-Preserving Vector Animation](../../ICML2026/video_generation/vanim_rendering-aware_sparse_state_modeling_for_structure-preserving_vector_anim.md)
+- [\[ICLR 2026\] MTVCraft: Tokenizing 4D Motion for Arbitrary Character Animation](../../ICLR2026/video_generation/mtvcraft_tokenizing_4d_motion_for_arbitrary_character_animation.md)
 - [\[CVPR 2026\] STARFlow-V: End-to-End Video Generative Modeling with Autoregressive Normalizing Flows](starflow-v_end-to-end_video_generative_modeling_with_autoregressive_normalizing_.md)
-- [\[CVPR 2026\] One-to-All Animation: Alignment-Free Character Animation and Image Pose Transfer](one-to-all_animation_alignment-free_character_animation_and_image_pose_transfer.md)
+- [\[ICML 2026\] VAnim: Rendering-Aware Sparse State Modeling for Structure-Preserving Vector Animation](../../ICML2026/video_generation/vanim_rendering-aware_sparse_state_modeling_for_structure-preserving_vector_anim.md)
 
 </div>
 

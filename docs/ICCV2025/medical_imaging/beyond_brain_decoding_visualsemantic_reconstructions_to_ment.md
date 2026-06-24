@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond Brain Decoding: Visual-Semantic Reconstructions to Mental Creation Extension Based on fMRI
 description: >-
-  [ICCV 2025][Medical Imaging][fMRI brain decoding] This paper proposes NeuroCreat — a multimodal brain architecture that integrates the visual and textual capabilities of LLMs — extending fMRI decoding from single-task vi…
+  [ICCV 2025][Medical Imaging][fMRI brain decoding] This paper proposes NeuroCreat — a multimodal brain architecture that integrates the visual and textual capabilities of LLMs — extending fMRI decoding from single-task visual stimulus reconstruction to three levels: **image reconstruction + text captioning + mental creation**. A Prompt Variant Alignment (PVA) module is introduced to effectively bridge the gap between low-resolution fMRI signals and high-level semantic represen…
 tags:
   - "ICCV 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "large language models"
   - "multimodal brain architecture"
 date: 2026-05-08
-content_hash: 3edb1b2390344523
+content_hash: a641c51cf18af7da
 ---
 
 # Beyond Brain Decoding: Visual-Semantic Reconstructions to Mental Creation Extension Based on fMRI
@@ -156,9 +156,9 @@ Key takeaways:
 
 - [\[ICLR 2026\] SEED: Towards More Accurate Semantic Evaluation for Visual Brain Decoding](../../ICLR2026/medical_imaging/seed_towards_more_accurate_semantic_evaluation_for_visual_brain_decoding.md)
 - [\[NeurIPS 2025\] MoRE-Brain: Routed Mixture of Experts for Interpretable and Generalizable Cross-Subject fMRI Visual Decoding](../../NeurIPS2025/medical_imaging/more-brain_routed_mixture_of_experts_for_interpretable_and_generalizable_cross-s.md)
+- [\[ICLR 2026\] Seeing Through the Brain: New Insights from Decoding Visual Stimuli with fMRI](../../ICLR2026/medical_imaging/seeing_through_the_brain_new_insights_from_decoding_visual_stimuli_with_fmri.md)
 - [\[ICCV 2025\] NEURONS: Emulating the Human Visual Cortex Improves Fidelity and Interpretability in fMRI-to-Video Reconstruction](neurons_emulating_the_human_visual_cortex_improves_fidelity_and_interpretability.md)
-- [\[ICLR 2026\] Towards Interpretable Visual Decoding with Attention to Brain Representations](../../ICLR2026/medical_imaging/towards_interpretable_visual_decoding_with_attention_to_brain_representations.md)
-- [\[NeurIPS 2025\] Zebra: Towards Zero-Shot Cross-Subject Generalization for Universal Brain Visual Decoding](../../NeurIPS2025/medical_imaging/zebra_towards_zero-shot_cross-subject_generalization_for_universal_brain_visual_.md)
+- [\[ICLR 2026\] Reducing Semantic Mismatch in Brain-to-Text Decoding Through Personalized Multimodal Masking](../../ICLR2026/medical_imaging/reducing_semantic_mismatch_in_brain-to-text_decoding_through_personalized_multim.md)
 
 </div>
 

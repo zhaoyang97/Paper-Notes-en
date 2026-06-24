@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Memory as a Markov Matrix: Sample Efficient Knowledge Expansion via Token-to-Dictionary Mapping
 description: >-
-  [ICML 2026][AI Safety][embedding tuning] The next-token distribution of an autoregressive LLM is interpreted as the state transition matrix of a Markov chain. Consequently, "learning new words" becomes "adding new states to the state space and representing them as sparse combinations of existing states." Theoretically, this requires only $O(s)$ samples (where
+  [ICML 2026][AI Safety][Markov Process] The next-token distribution of an autoregressive LLM is interpreted as the state transition matrix of a Markov chain. Consequently, "learning new words" becomes "adding new states to the state space and representing them as sparse combinations of existing states." Theoretically, this requires only $O(s)$ samples (where $s$ is the number of mapped old tokens), and in practice, fine-tuning only the new token embeddings achieves cross-lingu…
 tags:
-  - ICML 2026
-  - AI Safety
-  - embedding tuning
+  - "ICML 2026"
+  - "AI Safety"
+  - "Markov Process"
+  - "Vocabulary Expansion"
+  - "embedding tuning"
+  - "zero forgetting"
+  - "sample complexity"
 date: 2026-05-08
-content_hash: bef442079a29e055
+content_hash: e26afb8917fb553d
 ---
+
 # Memory as a Markov Matrix: Sample Efficient Knowledge Expansion via Token-to-Dictionary Mapping
 
 **Conference**: ICML 2026  
@@ -127,8 +132,8 @@ Verified using three types of tasks: Arithmetic operator tasks where Llama-3.2-3
 - [\[ICML 2026\] From Volume to Value: Preference-Aligned Memory Construction for On-Device RAG](from_volume_to_value_preference-aligned_memory_construction_for_on-device_rag.md)
 - [\[ICML 2026\] Optimizing Token Choice for Code Watermarking: An RL Approach](optimizing_token_choice_for_code_watermarking_an_rl_approach.md)
 - [\[CVPR 2026\] SEBA: Sample-Efficient Black-Box Attacks on Visual Reinforcement Learning](../../CVPR2026/ai_safety/seba_sample-efficient_black-box_attacks_on_visual_reinforcement_learning.md)
+- [\[ICLR 2026\] Uncertainty Estimation via Hyperspherical Confidence Mapping](../../ICLR2026/ai_safety/uncertainty_estimation_via_hyperspherical_confidence_mapping.md)
 - [\[ICLR 2026\] Sample-Efficient Distributionally Robust Multi-Agent Reinforcement Learning via Online Interaction](../../ICLR2026/ai_safety/sample-efficient_distributionally_robust_multi-agent_reinforcement_learning_via_.md)
-- [\[ICML 2026\] From Parameter Dynamics to Risk Scoring: Quantifying Sample-Level Safety Degradation in LLM Fine-tuning](from_parameter_dynamics_to_risk_scoring_quantifying_sample-level_safety_degradat.md)
 
 </div>
 

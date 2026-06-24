@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] XQ-MEval: A Dataset with Cross-lingual Parallel Quality for Benchmarking Translation Metrics
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] Ours constructs XQ-MEval, the first translation evaluation benchmark with cross-lingual parallel quality. By generating controllable-quality pseudo-translations through semi-automatic MQM error injection, it empirically reveals cross-lingual scoring biases in automatic metrics for the first time and proposes the LGN no
+  [ACL 2026 Findings][Multilingual & Machine Translation][Translation evaluation metrics] Ours constructs XQ-MEval, the first translation evaluation benchmark with cross-lingual parallel quality. By generating controllable-quality pseudo-translations through semi-automatic MQM error injection, it empirically reveals cross-lingual scoring biases in automatic metrics for the first time and proposes the LGN normalization strategy to effectively calibrate multilingual metric evalua…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
+  - "ACL 2026 Findings"
+  - "Multilingual & Machine Translation"
+  - "Translation evaluation metrics"
+  - "cross-lingual score bias"
+  - "MQM error injection"
+  - "multilingual benchmark"
+  - "metric calibration"
 date: 2026-05-08
-content_hash: 003a21d52192c873
+content_hash: 7e5f348d8c98279b
 ---
+
 # XQ-MEval: A Dataset with Cross-lingual Parallel Quality for Benchmarking Translation Metrics
 
 **Conference**: ACL 2026 Findings  
@@ -126,15 +132,14 @@ XQ-MEval is an evaluation benchmark rather than a training method. LGN is a test
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] LQM: Linguistically Motivated Multidimensional Quality Metrics for Machine Translation](lqm_linguistically_motivated_multidimensional_quality_metrics_for_machine_transl.md)
-- [\[ACL 2026\] Beyond Literal Mapping: Benchmarking and Improving Non-Literal Translation Evaluation](beyond_literal_mapping_benchmarking_and_improving_non-literal_translation_evalua.md)
 - [\[ACL 2026\] Efficient Training for Cross-lingual Speech Language Models](efficient_training_for_cross-lingual_speech_language_models.md)
 - [\[ACL 2026\] IndoTabVQA: A Benchmark for Cross-Lingual Table Understanding in Bahasa Indonesia Documents](indotabvqa_a_benchmark_for_cross-lingual_table_understanding_in_bahasa_indonesia.md)
 - [\[ACL 2026\] FairQE: Multi-Agent Framework for Mitigating Gender Bias in Translation Quality Estimation](fairqe_multi-agent_framework_for_mitigating_gender_bias_in_translation_quality_e.md)
+- [\[ICLR 2026\] DiscoX: Benchmarking Discourse-Level Translation in Expert Domains](../../ICLR2026/multilingual_mt/discox_benchmarking_discourse-level_translation_in_expert_domains.md)
 
 </div>
 

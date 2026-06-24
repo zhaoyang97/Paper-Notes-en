@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Decentralized Attention Fails Centralized Signals: Rethinking Transformers for Medical Time Series
 description: >-
-  [ICLR 2026][Time Series][Transformer] The TeCh framework is proposed, utilizing a Core Token Aggregation-Redistribution (CoTAR) module to replace standard attention in Transformers for modeling channel dependencies in medical time series. By introducing a global "core token" as a proxy to aggregate and redistribute channel information, complexity is reduce
+  [ICLR 2026 Oral][Time Series][Medical Time Series] The TeCh framework is proposed, utilizing a Core Token Aggregation-Redistribution (CoTAR) module to replace standard attention in Transformers for modeling channel dependencies in medical time series. By introducing a global "core token" as a proxy to aggregate and redistribute channel information, complexity is reduced from $O(n^2)$ to $O(n)$. It achieves 86.86% accuracy on the APAVA dataset (outperforming Medformer by 12.13…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Transformer
+  - "ICLR 2026 Oral"
+  - "Time Series"
+  - "Medical Time Series"
+  - "Transformer"
+  - "Channel Dependency"
+  - "Core Token"
+  - "Linear Complexity"
 date: 2026-05-08
-content_hash: 34fb00696dffa684
+content_hash: e1926a473a033f37
 ---
+
 # Decentralized Attention Fails Centralized Signals: Rethinking Transformers for Medical Time Series
 
 **Conference**: ICLR 2026 Oral  
@@ -139,6 +144,7 @@ Efficiency (APAVA, batch=128): TeCh uses only **33% memory** and **20% inference
 - Value: ⭐⭐⭐⭐⭐ Establishes a new paradigm for medical time series channel modeling.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

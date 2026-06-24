@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CodeStruct: Code Agents over Structured Action Spaces
 description: >-
-  [ACL 2026][LLM Agent][SWE-Bench] This paper proposes the CodeStruct framework, which redefines code repositories as AST-based structured action spaces. It enables LLM code agents to perform read and edit operations through named program entities (rather than text snippets), achieving a $1.2-5.0\%$ accuracy improvement on SWE-Bench Verified while reduc
+  [ACL 2026][LLM Agent][Code Agent] This paper proposes the CodeStruct framework, which redefines code repositories as AST-based structured action spaces. It enables LLM code agents to perform read and edit operations through named program entities (rather than text snippets), achieving a $1.2-5.0\%$ accuracy improvement on SWE-Bench Verified while reducing token consumption by $12-38\%$.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - SWE-Bench
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Code Agent"
+  - "AST structured operations"
+  - "Code editing"
+  - "SWE-Bench"
+  - "Action space"
 date: 2026-05-08
-content_hash: f4c81502903262b0
+content_hash: 20453f72a460dbe0
 ---
+
 # CodeStruct: Code Agents over Structured Action Spaces
 
 **Conference**: ACL 2026  
@@ -128,11 +133,11 @@ CodeAssistBench (135 multi-turn programming tasks): All models showed a $0.8-4.4
 
 ## Related Papers
 
-- [\[ACL 2026\] StructMem: Structured Memory for Long-Horizon Behavior in LLMs](structmem_structured_memory_for_long-horizon_behavior_in_llms.md)
 - [\[ACL 2026\] PersonaAgent: Bridging Memory and Action for Personalized LLM Agents](personaagent_bridging_memory_and_action_for_personalized_llm_agents.md)
+- [\[ACL 2026\] StructMem: Structured Memory for Long-Horizon Behavior in LLMs](structmem_structured_memory_for_long-horizon_behavior_in_llms.md)
 - [\[AAAI 2026\] Reflection-Driven Control for Trustworthy Code Agents](../../AAAI2026/llm_agent/reflection-driven_control_for_trustworthy_code_agents.md)
 - [\[ACL 2026\] Context-Value-Action Architecture for Value-Driven Large Language Model Agents](context-value-action_architecture_for_value-driven_large_language_model_agents.md)
-- [\[ACL 2026\] Don't Act Blindly: Robust GUI Automation via Action-Effect Verification and Self-Correction](don39t_act_blindly_robust_gui_automation_via_action-effect_verification_and_self.md)
+- [\[ICLR 2026\] Go-Browse: Training Web Agents with Structured Exploration](../../ICLR2026/llm_agent/go-browse_training_web_agents_with_structured_exploration.md)
 
 </div>
 

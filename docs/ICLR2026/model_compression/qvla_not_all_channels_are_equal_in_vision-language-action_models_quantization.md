@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] QVLA: Not All Channels Are Equal in Vision-Language-Action Model's Quantization
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] QVLA identifies that directly applying "uniform bit-width quantization" from LLMs to VLA models causes collapse due to action error accumulation. It proposes a fine-grained quantization framework governed by **action space sensitivity**, assigning $\{0,2,4,8,16\}$ bits (where 0 indicates pruning) to individual weight c
+  [ICLR 2026][Model Compression][VLA Quantization] QVLA identifies that directly applying "uniform bit-width quantization" from LLMs to VLA models causes collapse due to action error accumulation. It proposes a fine-grained quantization framework governed by **action space sensitivity**, assigning $\{0,2,4,8,16\}$ bits (where 0 indicates pruning) to individual weight channels. On LIBERO, it allows OpenVLA-OFT to maintain a 98.9% success rate while using only 29.2% of VRAM and a…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "VLA Quantization"
+  - "Channel-level Mixed Precision"
+  - "Action Space Sensitivity"
+  - "Unified Quantization + Pruning"
+  - "Greedy Bit-reduction"
 date: 2026-05-08
-content_hash: 0e337ec90b75bd21
+content_hash: b149b0820069cffc
 ---
+
 # QVLA: Not All Channels Are Equal in Vision-Language-Action Model's Quantization
 
 **Conference**: ICLR 2026  
@@ -148,7 +154,6 @@ In aggressive W4A4 settings, QVLA only loses 1.1% on OpenVLA-OFT, while SmoothQu
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

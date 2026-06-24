@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] CME-CAD: Heterogeneous Collaborative Multi-Expert Reinforcement Learning for CAD Code Generation
 description: >-
-  [CVPR 2026][Reinforcement Learning][GRPO] Aiming at the industrial scenario of "directly generating executable and editable CAD code from 2D engineering triple-views," CME-CAD enables multiple heterogeneous pre-trained large models to act as "experts" with distinct styles. It first employs Multi-Expert Fine-Tuning (MEFT) using their respective reasoning styles
+  [CVPR 2026][Reinforcement Learning][Multi-expert Reinforcement Learning] Aiming at the industrial scenario of "directly generating executable and editable CAD code from 2D engineering triple-views," CME-CAD enables multiple heterogeneous pre-trained large models to act as "experts" with distinct styles. It first employs Multi-Expert Fine-Tuning (MEFT) using their respective reasoning styles, followed by a Multi-Expert Reinforcement Learning (MERL) stage. In MERL…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - GRPO
-  - CADQuery
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "Multi-expert Reinforcement Learning"
+  - "GRPO"
+  - "Triple-view"
+  - "CADQuery"
+  - "Knowledge Distillation"
 date: 2026-05-08
-content_hash: 0956724f3e4be5d4
+content_hash: 29fa28740cdce483
 ---
+
 # CME-CAD: Heterogeneous Collaborative Multi-Expert Reinforcement Learning for CAD Code Generation
 
 **Conference**: CVPR 2026  
@@ -154,16 +157,16 @@ Ours improves IoU by 8.87% over CAD-RL, with an execution rate of 98.25%.
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] cadrille: Multi-modal CAD Reconstruction with Reinforcement Learning](../../ICLR2026/reinforcement_learning/cadrille_multi-modal_cad_reconstruction_with_reinforcement_learning.md)
+- [\[ICLR 2026\] R1-Code-Interpreter: LLMs Reason with Code via Supervised and Multi-stage Reinforcement Learning](../../ICLR2026/reinforcement_learning/r1-code-interpreter_llms_reason_with_code_via_supervised_and_multi-stage_reinfor.md)
 - [\[CVPR 2026\] MSRL: Scaling Generative Multimodal Reward Modeling via Multi-Stage Reinforcement Learning](msrl_scaling_generative_multimodal_reward_modeling.md)
-- [\[CVPR 2026\] EVA: Efficient Reinforcement Learning for End-to-End Video Agent](eva_efficient_reinforcement_learning_for_end-to-end_video_agent.md)
-- [\[CVPR 2026\] Reading or Reasoning? Format Decoupled Reinforcement Learning for Document OCR](reading_or_reasoning_format_decoupled_reinforcement_learning_for_document_ocr.md)
-- [\[CVPR 2026\] Cross-modal Identity Mapping: Minimizing Information Loss in Modality Conversion via Reinforcement Learning](cross-modal_identity_mapping_minimizing_information_loss_in_modality_conversion_.md)
+- [\[ICLR 2026\] MAGE: Multi-scale Autoregressive Generation for Offline Reinforcement Learning](../../ICLR2026/reinforcement_learning/mage_multi-scale_autoregressive_generation_for_offline_reinforcement_learning.md)
+- [\[CVPR 2026\] TaskForce: Cooperative Multi-agent Reinforcement Learning for Multi-task Optimization](taskforce_cooperative_multi-agent_reinforcement_learning_for_multi-task_optimiza.md)
+- [\[CVPR 2026\] ReAG: Reasoning-Augmented Generation for Knowledge-based Visual Question Answering](reag_reasoning-augmented_generation_for_knowledge-based_visual_question_answerin.md)
 
 </div>
 

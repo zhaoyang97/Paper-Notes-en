@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Accurate Legal Reasoning at Scale: Neuro-Symbolic Offloading and Structural Auditability for Robust Legal Adjudication
 description: >-
-  [ACL 2026][LLM Reasoning][DACL] This paper proposes the Amortized Intelligence paradigm: treating the LLM as a "one-time compiler" to compile legal contracts into a deterministic Directed Acyclic Graph (DAG) intermediate representation called DACL. At runtime, a lightweight agent schedules a symbolic engine for execution, achieving 99.5% accuracy acr
+  [ACL 2026][Reasoning][Neuro-Symbolic] This paper proposes the Amortized Intelligence paradigm: treating the LLM as a "one-time compiler" to compile legal contracts into a deterministic Directed Acyclic Graph (DAG) intermediate representation called DACL. At runtime, a lightweight agent schedules a symbolic engine for execution, achieving 99.5% accuracy across 400 real-world contract events. Compared to large reasoning models like GPT-5.2/Claude/Gemini…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - DACL
-  - amortized intelligence
+  - "ACL 2026"
+  - "Reasoning"
+  - "Neuro-Symbolic"
+  - "Legal Reasoning"
+  - "DACL"
+  - "amortized intelligence"
+  - "Auditability"
 date: 2026-05-08
-content_hash: 392e92f34f2c9a3a
+content_hash: 2138230c9a65bc51
 ---
+
 # Accurate Legal Reasoning at Scale: Neuro-Symbolic Offloading and Structural Auditability for Robust Legal Adjudication
 
 **Conference**: ACL 2026  
@@ -138,9 +142,9 @@ No new models were trained. Zero-shot LRM baselines (GPT-5.2 with reasoning_effo
 
 - [\[ACL 2026\] LegalDrill: Diagnosis-Driven Synthesis for Legal Reasoning in Small Language Models](legaldrill_diagnosis-driven_synthesis_for_legal_reasoning_in_small_language_mode.md)
 - [\[ACL 2026\] LePREC: Reasoning as Classification over Structured Factors for Assessing Relevance of Legal Issues](leprec_reasoning_as_classification_over_structured_factors_for_assessing_relevan.md)
-- [\[AAAI 2026\] NeSTR: A Neuro-Symbolic Abductive Framework for Temporal Reasoning in Large Language Models](../../AAAI2026/llm_reasoning/nestr_a_neuro-symbolic_abductive_framework_for_temporal_reasoning_in_large_langu.md)
+- [\[ICLR 2026\] LEXam: Benchmarking Legal Reasoning on 340 Law Exams](../../ICLR2026/llm_reasoning/lexam_benchmarking_legal_reasoning_on_340_law_exams.md)
 - [\[ICLR 2026\] A Balanced Neuro-Symbolic Approach for Commonsense Abductive Logic](../../ICLR2026/llm_reasoning/a_balanced_neuro-symbolic_approach_for_commonsense_abductive_logic.md)
-- [\[ACL 2026\] Discovering a Shared Logical Subspace: Steering LLM Logical Reasoning via Alignment of Natural-Language and Symbolic Views](discovering_a_shared_logical_subspace_steering_llm_logical_reasoning_via_alignme.md)
+- [\[ICLR 2026\] VERICOT: Neuro-Symbolic Chain-of-Thought Validation via Logical Consistency Checks](../../ICLR2026/llm_reasoning/vericot_neuro-symbolic_chain-of-thought_validation_via_logical_consistency_check.md)
 
 </div>
 

@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] HeuriGym: An Agentic Benchmark for LLM-Crafted Heuristics in Combinatorial Optimization
 description: >-
-  [ICLR 2026][Optimization & Theory][Agentic Benchmark] HeuriGym places LLMs into an agentic closed loop of "problem reading—code writing—execution feedback—iterative refinement," requiring them to write complete heuristics from scratch for 9 real-world combinatorial optimization (CO) problems (EDA, biology, logistics, etc.). It uses a new metric, QYI, to measure solution q
+  [ICLR 2026][Optimization][Combinatorial Optimization] HeuriGym places LLMs into an agentic closed loop of "problem reading—code writing—execution feedback—iterative refinement," requiring them to write complete heuristics from scratch for 9 real-world combinatorial optimization (CO) problems (EDA, biology, logistics, etc.). It uses a new metric, QYI, to measure solution quality and feasibility—results show that even the strongest GPT-o4-mini-high and Gemini-2.5-Pro score only…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Agentic Benchmark
-  - LLM Evaluation
-  - Quality-Yield Index
+  - "ICLR 2026"
+  - "Optimization"
+  - "Combinatorial Optimization"
+  - "Heuristic Generation"
+  - "Agentic Benchmark"
+  - "LLM Evaluation"
+  - "Iterative Refinement"
+  - "Quality-Yield Index"
 date: 2026-05-08
-content_hash: 96d741f6d08739e1
+content_hash: 8815e254c8d8d3ff
 ---
+
 # HeuriGym: An Agentic Benchmark for LLM-Crafted Heuristics in Combinatorial Optimization
 
 **Conference**: ICLR 2026  
@@ -136,8 +140,8 @@ Both the number of demos and iteration rounds contribute significantly to perfor
 - [\[NeurIPS 2025\] Evaluating LLMs for Combinatorial Optimization: One-Phase and Two-Phase Heuristics for 2D Bin-Packing](../../NeurIPS2025/optimization/evaluating_llms_for_combinatorial_optimization_one-phase_and_two-phase_heuristic.md)
 - [\[ICLR 2026\] ConRep4CO: Contrastive Representation Learning of Combinatorial Optimization Instances across Types](conrep4co_contrastive_representation_learning_of_combinatorial_optimization_inst.md)
 - [\[AAAI 2026\] Pareto-Grid-Guided Large Language Models for Fast and High-Quality Heuristics Design in Multi-Objective Combinatorial Optimization](../../AAAI2026/optimization/pareto-grid-guided_large_language_models_for_fast_and_high-quality_heuristics_de.md)
+- [\[ICLR 2026\] FrontierCO: Real-World and Large-Scale Evaluation of Machine Learning Solvers for Combinatorial Optimization](frontierco_real-world_and_large-scale_evaluation_of_machine_learning_solvers_for.md)
 - [\[ICLR 2026\] NExCO: Native Solution Expansion for Diffusion-based Combinatorial Optimization](nexco_native_solution_expansion_for_diffusion-based_combinatorial_optimization.md)
-- [\[ICLR 2026\] Multi-Action Self-Improvement for Neural Combinatorial Optimization](multi-action_self-improvement_for_neural_combinatorial_optimization.md)
 
 </div>
 

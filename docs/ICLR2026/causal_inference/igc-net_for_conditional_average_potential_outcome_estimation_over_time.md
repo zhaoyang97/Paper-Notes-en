@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] IGC-Net for Conditional Average Potential Outcome Estimation Over Time
 description: >-
-  [ICLR 2026][Causal Inference][G-computation] This paper proposes **IGC-Net**: the first neural network to estimate temporal Conditional Average Potential Outcomes (CAPO) through pure regression-based iterative G-computation end-to-end. It correctly adjusts for time-varying confounding while bypassing the zero-division instability of Inverse Probability Weighting
+  [ICLR 2026][Causal Inference][Time-varying confounding] This paper proposes **IGC-Net**: the first neural network to estimate temporal Conditional Average Potential Outcomes (CAPO) through pure regression-based iterative G-computation end-to-end. It correctly adjusts for time-varying confounding while bypassing the zero-division instability of Inverse Probability Weighting (IPW) and the high-dimensional full distribution estimation of G-Net.
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - G-computation
-  - MIMIC-III
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Time-varying confounding"
+  - "G-computation"
+  - "Conditional Average Potential Outcome (CAPO)"
+  - "Iterative regression"
+  - "Counterfactual prediction"
+  - "MIMIC-III"
 date: 2026-05-08
-content_hash: 737b98765ea44657
+content_hash: dc3a5d38a1988441
 ---
+
 # IGC-Net for Conditional Average Potential Outcome Estimation Over Time
 
 **Conference**: ICLR 2026  
@@ -133,10 +138,10 @@ Improvements increase with prediction window $\tau$, achieving up to **26.7%** r
 ## Related Papers
 
 - [\[ICLR 2026\] Overlap-Adaptive Regularization for Conditional Average Treatment Effect Estimation](overlap-adaptive_regularization_for_conditional_average_treatment_effect_estimat.md)
-- [\[ICLR 2026\] Direct Doubly Robust Estimation of Conditional Quantile Contrasts](direct_doubly_robust_estimation_of_conditional_quantile_contrasts.md)
 - [\[ICLR 2026\] Overlap-Weighted Orthogonal Meta-Learner for Treatment Effect Estimation over Time](overlap-weighted_orthogonal_meta-learner_for_treatment_effect_estimation_over_ti.md)
+- [\[ICLR 2026\] Direct Doubly Robust Estimation of Conditional Quantile Contrasts](direct_doubly_robust_estimation_of_conditional_quantile_contrasts.md)
 - [\[ICLR 2026\] GDR-learners: Orthogonal Learning of Generative Models for Potential Outcomes](gdr-learners_orthogonal_learning_of_generative_models_for_potential_outcomes.md)
-- [\[ICLR 2026\] ActiveCQ: Active Estimation of Causal Quantities](activecq_active_estimation_of_causal_quantities.md)
+- [\[ICLR 2026\] Matching without Group Barrier for Heterogeneous Treatment Effect Estimation](matching_without_group_barrier_for_heterogeneous_treatment_effect_estimation.md)
 
 </div>
 

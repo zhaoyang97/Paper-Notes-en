@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Fantastic Features and Where to Find Them: A Probing Method to Combine Features from Multiple Foundation Models
 description: >-
-  [NeurIPS 2025][Optimization][foundation model] This paper proposes ComBo, a lightweight probing-based adapter that compresses multi-layer activations from multiple frozen foundation models via affine projection…
+  [NeurIPS 2025][Optimization][foundation model] This paper proposes ComBo, a lightweight probing-based adapter that compresses multi-layer activations from multiple frozen foundation models via affine projection, then fuses them with a small transformer—without backpropagation through any backbone. ComBo efficiently integrates complementary representations across models, surpassing prior probing methods and matching distillation-based methods on VTAB-1k.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "feature combination"
   - "model selection"
 date: 2026-05-08
-content_hash: ac93c9195acaa44c
+content_hash: 23bb8317921ccc61
 ---
 
 # Fantastic Features and Where to Find Them: A Probing Method to Combine Features from Multiple Foundation Models
@@ -143,11 +143,11 @@ ComBo Top-2 (78.6) outperforms RADIOv2.5+Adapter+, which requires expensive dist
 
 ## Related Papers
 
+- [\[ICLR 2026\] Fantastic Pretraining Optimizers and Where to Find Them](../../ICLR2026/optimization/fantastic_pretraining_optimizers_and_where_to_find_them.md)
 - [\[NeurIPS 2025\] Kernel Learning with Adversarial Features: Numerical Efficiency and Adaptive Regularization](kernel_learning_with_adversarial_features_numerical_efficiency_and_adaptive_regu.md)
 - [\[NeurIPS 2025\] Probing Neural Combinatorial Optimization Models](probing_neural_combinatorial_optimization_models.md)
-- [\[ICLR 2026\] Rapid Training of Hamiltonian Graph Networks using Random Features](../../ICLR2026/optimization/rapid_training_of_hamiltonian_graph_networks_using_random_features.md)
-- [\[NeurIPS 2025\] Extragradient Method for $(L_0, L_1)$-Lipschitz Root-finding Problems](extragradient_method_for_l_0_l_1-lipschitz_root-finding_problems.md)
 - [\[NeurIPS 2025\] Revisiting Orbital Minimization Method for Neural Operator Decomposition](revisiting_orbital_minimization_method_for_neural_operator_decomposition.md)
+- [\[NeurIPS 2025\] Extragradient Method for $(L_0, L_1)$-Lipschitz Root-finding Problems](extragradient_method_for_l_0_l_1-lipschitz_root-finding_problems.md)
 
 </div>
 

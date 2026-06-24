@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Debiased Sample Selection for Learning with Noisy Labels
 description: >-
-  [CVPR 2026][Others][small-loss trick] This paper identifies two types of confirmation bias inherent in the "small-loss-is-clean" sample selection strategy dominant in noisy label learning: class-level bias (easy-to-learn classes are over-selected while hard-to-learn classes are neglected) and instance-level bias (mislabeled samples with pseudo-low losses a
+  [CVPR 2026][Noise Label Learning] This paper identifies two types of confirmation bias inherent in the "small-loss-is-clean" sample selection strategy dominant in noisy label learning: class-level bias (easy-to-learn classes are over-selected while hard-to-learn classes are neglected) and instance-level bias (mislabeled samples with pseudo-low losses are memorized as clean samples). It proposes two plug-and-play modules, MDA (Marginal Distribution Adjustment) and CCS (Candida…
 tags:
-  - CVPR 2026
-  - Others
-  - small-loss trick
+  - "CVPR 2026"
+  - "Noise Label Learning"
+  - "Sample Selection"
+  - "small-loss trick"
+  - "confirmation bias"
+  - "plug-and-play module"
 date: 2026-05-08
-content_hash: 90af3923d51c2a45
+content_hash: f1ad00392f84a369
 ---
+
 # Debiased Sample Selection for Learning with Noisy Labels
 
 **Conference**: CVPR 2026  
@@ -143,13 +147,13 @@ Ablation of DSS+ components (Test ACC + Precision/Recall for clean selection, %)
 - Value: ⭐⭐⭐⭐ Practical, plug-and-play debiasing toolbox for the LNL community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICCV 2025\] Joint Asymmetric Loss for Learning with Noisy Labels](../../ICCV2025/others/joint_asymmetric_loss_for_learning_with_noisy_labels.md)
 - [\[ECCV 2024\] Foster Adaptivity and Balance in Learning with Noisy Labels](../../ECCV2024/others/foster_adaptivity_and_balance_in_learning_with_noisy_labels.md)
+- [\[ICCV 2025\] Joint Asymmetric Loss for Learning with Noisy Labels](../../ICCV2025/others/joint_asymmetric_loss_for_learning_with_noisy_labels.md)
 - [\[CVPR 2026\] Bootstrapping Multi-view Learning for Test-time Noisy Correspondence](bootstrapping_multi-view_learning_for_test-time_noisy_correspondence.md)
 - [\[CVPR 2026\] Learning What Helps: Task-Aligned Context Selection for Vision Tasks](learning_what_helps_task-aligned_context_selection_for_vision_tasks.md)
 - [\[CVPR 2026\] A Debiased Reconstruction-based Framework for Training-Free Detection of AI-Generated Images](a_debiased_reconstruction-based_framework_for_training-free_detection_of_ai-gene.md)

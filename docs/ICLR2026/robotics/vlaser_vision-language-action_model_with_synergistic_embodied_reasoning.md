@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Vlaser: Vision-Language-Action Model with Synergistic Embodied Reasoning
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Flow Matching] This paper constructs Vlaser (based on InternVL3, 2B/8B versions), a vision-language-action model using the self-developed Vlaser-6M dataset to integrate "high-level embodied reasoning" and "low-level robot control" into a single backbone. It systematically addresses a long-ignored question: **which type of pre-trainin
+  [ICLR 2026][Robotics][Embodied Reasoning] This paper constructs Vlaser (based on InternVL3, 2B/8B versions), a vision-language-action model using the self-developed Vlaser-6M dataset to integrate "high-level embodied reasoning" and "low-level robot control" into a single backbone. It systematically addresses a long-ignored question: **which type of pre-training data is most useful for downstream VLA policy learning?** The conclusion is that "higher scores on online reasoning…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Flow Matching
+  - "ICLR 2026"
+  - "Robotics"
+  - "Embodied Reasoning"
+  - "Vision-Language-Action Model"
+  - "Data Engine"
+  - "Flow Matching"
+  - "Domain Shift"
 date: 2026-05-08
-content_hash: bc2eb386c9903c52
+content_hash: fef55c15c32ea04c
 ---
+
 # Vlaser: Vision-Language-Action Model with Synergistic Embodied Reasoning
 
 **Conference**: ICLR 2026  
@@ -158,11 +163,11 @@ Sensitivity analysis on WidowX: Reducing predict/execute length from $4/4$ to $4
 
 ## Related Papers
 
+- [\[ICLR 2026\] OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning](onetwovla_a_unified_vision-language-action_model_with_adaptive_reasoning.md)
 - [\[ICLR 2026\] On Robustness of Vision-Language-Action Model against Multi-Modal Perturbations](on_robustness_of_vision-language-action_model_against_multi-modal_perturbations.md)
-- [\[ICLR 2026\] PixelVLA: Advancing Pixel-level Understanding in Vision-Language-Action Model](pixelvla_advancing_pixel-level_understanding_in_vision-language-action_model.md)
-- [\[ICLR 2026\] Vision-Language-Action Instruction Tuning: From Understanding to Manipulation](vision-language-action_instruction_tuning_from_understanding_to_manipulation.md)
 - [\[ICLR 2026\] UniVLA: Unified Vision-Language-Action Model](unified_vision-language-action_model.md)
-- [\[CVPR 2026\] SemanticVLA: Towards Semantic Reasoning over Action Memorization via Synergistic Explicit Trace and Latent Action Planning](../../CVPR2026/robotics/semanticvla_towards_semantic_reasoning_over_action_memorization_via_synergistic_.md)
+- [\[ICLR 2026\] Self-Refining Vision Language Model for Robotic Failure Detection and Reasoning](self-refining_vision_language_model_for_robotic_failure_detection_and_reasoning.md)
+- [\[ICLR 2026\] Embodied-R1: Reinforced Embodied Reasoning for General Robotic Manipulation](embodied-r1_reinforced_embodied_reasoning_for_general_robotic_manipulation.md)
 
 </div>
 

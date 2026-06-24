@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] UniVLA: Unified Vision-Language-Action Model
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][VLA] UniVLA discretizes vision, language, and action into tokens within a shared vocabulary, modeling interleaved observation-action sequences with a single autoregressive Transformer. By introducing a "world model" objective for post-training on 620,000 action-free robot videos before fine-tuning, it sets new SOTA records
+  [ICLR 2026][Robotics][VLA] UniVLA discretizes vision, language, and action into tokens within a shared vocabulary, modeling interleaved observation-action sequences with a single autoregressive Transformer. By introducing a "world model" objective for post-training on 620,000 action-free robot videos before fine-tuning, it sets new SOTA records across CALVIN, LIBERO, and SimplerEnv-Bridge (e.g., 95.5% average on LIBERO, surpassing π0-FAST's 85.5%).
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - VLA
-  - World Models
-  - Autoregressive
+  - "ICLR 2026"
+  - "Robotics"
+  - "VLA"
+  - "Unified Discrete Tokens"
+  - "World Model"
+  - "Autoregressive"
+  - "Robot Manipulation"
 date: 2026-05-08
-content_hash: 402526af7d85327e
+content_hash: 8e4dba85d972804c
 ---
+
 # UniVLA: Unified Vision-Language-Action Model
 
 **Conference**: ICLR 2026  
@@ -144,10 +147,10 @@ Data efficiency and history window ablation:
 ## Related Papers
 
 - [\[ICLR 2026\] HybridVLA: Collaborative Diffusion and Autoregression in a Unified Vision-Language-Action Model](hybridvla_collaborative_diffusion_and_autoregression_in_a_unified_vision-languag.md)
-- [\[ICLR 2026\] WMPO: World Model-based Policy Optimization for Vision-Language-Action Models](wmpo_world_model-based_policy_optimization_for_vision-language-action_models.md)
+- [\[ICLR 2026\] OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning](onetwovla_a_unified_vision-language-action_model_with_adaptive_reasoning.md)
 - [\[ICLR 2026\] Unified Diffusion VLA: Vision-Language-Action Model via Joint Discrete Denoising Diffusion Process](unified_diffusion_vla_vision-language-action_model_via_joint_discrete_denosing_d.md)
 - [\[ICLR 2026\] AutoFly: Vision-Language-Action Model for UAV Autonomous Navigation in the Wild](autofly_vision-language-action_model_for_uav_autonomous_navigation_in_the_wild.md)
-- [\[ICLR 2026\] On Robustness of Vision-Language-Action Model against Multi-Modal Perturbations](on_robustness_of_vision-language-action_model_against_multi-modal_perturbations.md)
+- [\[ICLR 2026\] WMPO: World Model-based Policy Optimization for Vision-Language-Action Models](wmpo_world_model-based_policy_optimization_for_vision-language-action_models.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AssemblyBench: Physics-Aware Assembly of Complex Industrial Objects
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] To address the limitations of existing assembly datasets focusing only on "final poses and IKEA furniture," this paper presents AssemblyBench, a synthetic dataset featuring 2,789 complex industrial objects with step-by-step multimodal instructions and 6-DoF assembly trajectories. It introduces AssemblyDyno, a Transform
+  [CVPR 2026][3D Vision][Industrial Assembly] To address the limitations of existing assembly datasets focusing only on "final poses and IKEA furniture," this paper presents AssemblyBench, a synthetic dataset featuring 2,789 complex industrial objects with step-by-step multimodal instructions and 6-DoF assembly trajectories. It introduces AssemblyDyno, a Transformer-based model that jointly predicts the assembly sequence and part trajectories in a single forward pass. It is the…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Industrial Assembly"
+  - "6-DoF Trajectory Prediction"
+  - "Multimodal Instruction"
+  - "Physics Simulation Evaluation"
+  - "Point Cloud"
 date: 2026-05-08
-content_hash: 1154f9bb15ec5bb4
+content_hash: 8cd1630178debcb3
 ---
+
 # AssemblyBench: Physics-Aware Assembly of Complex Industrial Objects
 
 **Conference**: CVPR 2026  
@@ -136,11 +142,11 @@ Under GT Order, the importance of the trajectory module is even clearer: without
 
 ## Related Papers
 
+- [\[CVPR 2026\] PAD-Hand: Physics-Aware Diffusion for Hand Motion Recovery](pad-hand_physics-aware_diffusion_for_hand_motion_recovery.md)
 - [\[CVPR 2026\] BrickNet: Graph-Backed Generative Brick Assembly](bricknet_graph-backed_generative_brick_assembly.md)
-- [\[CVPR 2026\] Artiverse: A Diverse and Physically Grounded Dataset for Articulated Objects](artiverse_a_diverse_and_physically_grounded_dataset_for_articulated_objects.md)
-- [\[CVPR 2026\] GenMatter: Perceiving Physical Objects with Generative Matter Models](genmatter_perceiving_physical_objects_with_generative_matter_models.md)
-- [\[CVPR 2026\] JRM: Joint Reconstruction Model for Multiple Objects without Alignment](jrm_joint_reconstruction_model_for_multiple_objects_without_alignment.md)
-- [\[CVPR 2026\] Dynamic Black-hole Emission Tomography with Physics-informed Neural Fields](dynamic_black-hole_emission_tomography_with_physics-informed_neural_fields.md)
+- [\[CVPR 2026\] MeshMosaic: Scaling Artist Mesh Generation via Local-to-Global Assembly](meshmosaic_scaling_artist_mesh_generation_via_local-to-global_assembly.md)
+- [\[CVPR 2026\] Part$^{2}$GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting](part2gs_part-aware_modeling_of_articulated_objects_using_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] PhysGaia: A Physics-Aware Benchmark with Multi-Body Interactions for Dynamic Novel View Synthesis](physgaia_a_physics-aware_benchmark_with_multi-body_interactions_for_dynamic_nove.md)
 
 </div>
 

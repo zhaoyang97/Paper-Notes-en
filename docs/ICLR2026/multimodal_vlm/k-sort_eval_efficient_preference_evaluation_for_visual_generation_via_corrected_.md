@@ -4,12 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Multimodal VLM][VLM-as-a-Judge] The K-Sort Eval framework is proposed, which, through posterior correction and dynamic matching strategies, enables VLMs to reliably and efficiently replace humans for preference evaluation of visual generation models, typically requiring fewer than 90 model runs to achieve results consistent with the human Arena.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - VLM-as-a-Judge
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "VLM-as-a-Judge"
+  - "Preference Evaluation"
+  - "Posterior Correction"
+  - "Dynamic Matching"
+  - "Visual Generation"
 date: 2026-05-08
-content_hash: 1c5f07c218fe36fc
+content_hash: c2eb1f029d439a22
 ---
+
 # K-Sort Eval: Efficient Preference Evaluation for Visual Generation via Corrected VLM-as-a-Judge
 
 **Conference**: ICLR 2026  
@@ -130,7 +135,7 @@ The method does not train any network but estimates capability online in a Bayes
 - [\[ICLR 2026\] A High Quality Dataset and Reliable Evaluation for Interleaved Image-Text Generation](a_high_quality_dataset_and_reliable_evaluation_for_interleaved_image-text_genera.md)
 - [\[ICLR 2026\] OmniVideoBench: Towards Audio-Visual Understanding Evaluation for Omni MLLMs](omnivideobench_towards_audio-visual_understanding_evaluation_for_omni_mllms.md)
 - [\[ICLR 2026\] DualToken: Towards Unifying Visual Understanding and Generation with Dual Visual Vocabularies](dualtoken_towards_unifying_visual_understanding_and_generation_with_dual_visual_.md)
-- [\[CVPR 2026\] VLM-Guided Group Preference Alignment for Diffusion-based Human Mesh Recovery](../../CVPR2026/multimodal_vlm/vlm-guided_group_preference_alignment_for_diffusion-based_human_mesh_recovery.md)
+- [\[ICLR 2026\] Simulation to Rules: A Dual-VLM Framework for Formal Visual Planning](simulation_to_rules_a_dual-vlm_framework_for_formal_visual_planning.md)
 
 </div>
 

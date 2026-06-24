@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Fast-FoundationStereo: Real-Time Zero-Shot Stereo Matching
 description: >-
-  [CVPR 2026][3D Vision][Knowledge Distillation] FoundationStereo, which features strong zero-shot performance but slow execution, is compressed using a "divide and conquer" strategy comprising three pillars: feature distillation, block-wise search for cost filtering, and pruning of the refinement module. Supplemented by an automated pseudo-labeling pipeline processi
+  [CVPR 2026][3D Vision][Stereo Matching] FoundationStereo, which features strong zero-shot performance but slow execution, is compressed using a "divide and conquer" strategy comprising three pillars: feature distillation, block-wise search for cost filtering, and pruning of the refinement module. Supplemented by an automated pseudo-labeling pipeline processing 1.4M real stereo pairs, this approach maintains near-original zero-shot accuracy at real-time frame rates…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Stereo Matching"
+  - "Zero-shot Generalization"
+  - "Knowledge Distillation"
+  - "Neural Architecture Search"
+  - "Structured Pruning"
 date: 2026-05-08
-content_hash: 8ab794979b7d2bab
+content_hash: 26dcb12f8f817910
 ---
+
 # Fast-FoundationStereo: Real-Time Zero-Shot Stereo Matching
 
 **Conference**: CVPR 2026  
@@ -155,10 +160,10 @@ Ours is the only method that remains real-time while approaching the performance
 ## Related Papers
 
 - [\[CVPR 2026\] Lite Any Stereo: Efficient Zero-Shot Stereo Matching](lite_any_stereo_efficient_zero-shot_stereo_matching.md)
-- [\[CVPR 2026\] AsymLoc: Towards Asymmetric Feature Matching for Efficient Visual Localization](asymloc_towards_asymmetric_feature_matching_for_efficient_visual_localization.md)
-- [\[CVPR 2026\] Distilling Unsigned Distance Function for Surface Reconstruction from 3D Gaussian Splatting](distilling_unsigned_distance_function_for_surface_reconstruction_from_3d_gaussia.md)
-- [\[CVPR 2026\] GS-ASM: 2DGS-Supervised Active Stereo Matching](gs-asm_2dgs-supervised_active_stereo_matching.md)
-- [\[CVPR 2026\] LaS-Comp: Zero-shot 3D Completion with Latent-Spatial Consistency](las-comp_zero-shot_3d_completion_with_latent-spatial_consistency.md)
+- [\[CVPR 2026\] What Makes Good Synthetic Training Data for Zero-Shot Stereo Matching?](what_makes_good_synthetic_training_data_for_zero-shot_stereo_matching.md)
+- [\[AAAI 2026\] Generalized Geometry Encoding Volume for Real-time Stereo Matching](../../AAAI2026/3d_vision/generalized_geometry_encoding_volume_for_real-time_stereo_matching.md)
+- [\[CVPR 2026\] PromptStereo: Zero-Shot Stereo Matching via Structure and Motion Prompts](promptstereo_zero-shot_stereo_matching_via_structure_and_motion_prompts.md)
+- [\[CVPR 2025\] FoundationStereo: Zero-Shot Stereo Matching](../../CVPR2025/3d_vision/foundationstereo_zero-shot_stereo_matching.md)
 
 </div>
 

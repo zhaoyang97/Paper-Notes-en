@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Efficiently Reconstructing Dynamic Scenes One D4RT at a Time
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] D4RT uses a unified encoder-decoder Transformer to first encode a video into a fixed global scene representation, and then utilizes a single "query 3D position of any spatio-temporal point" decoding interface to simultaneously obtain depth, point clouds, 3D point trajectories, and camera extrinsics/intrinsics. It achie
+  [CVPR 2026][3D Vision][Dynamic 4D reconstruction] D4RT uses a unified encoder-decoder Transformer to first encode a video into a fixed global scene representation, and then utilizes a single "query 3D position of any spatio-temporal point" decoding interface to simultaneously obtain depth, point clouds, 3D point trajectories, and camera extrinsics/intrinsics. It achieves new SOTA in dynamic 4D reconstruction and tracking, running approximately 9× faster than VGGT and two orde…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Dynamic 4D reconstruction"
+  - "point trajectory tracking"
+  - "feed-forward Transformer"
+  - "on-demand query decoding"
+  - "camera pose estimation"
 date: 2026-05-08
-content_hash: 6aacc21d2f5a695a
+content_hash: c8a4e7866407ce8c
 ---
+
 # Efficiently Reconstructing Dynamic Scenes One D4RT at a Time
 
 **Conference**: CVPR 2026  
@@ -151,11 +157,11 @@ Efficiency: At a 1 FPS target, D4RT produces 40,180 trajectories, compared to Sp
 
 ## Related Papers
 
+- [\[CVPR 2026\] MotionScale: Reconstructing Appearance, Geometry, and Motion of Dynamic Scenes with Scalable 4D Gaussian Splatting](motionscale_reconstructing_appearance_geometry_and_motion_of_dynamic_scenes_with.md)
+- [\[CVPR 2026\] Space-Time Forecasting of Dynamic Scenes with Motion-aware Gaussian Grouping](space-time_forecasting_of_dynamic_scenes_with_motion-aware_gaussian_grouping.md)
 - [\[CVPR 2026\] FunREC: Reconstructing Functional 3D Scenes from Egocentric Interaction Videos](funrec_reconstructing_functional_3d_scenes_from_egocentric_interaction_videos.md)
 - [\[CVPR 2026\] Inferring Compositional 4D Scenes without Ever Seeing One](inferring_compositional_4d_scenes_without_ever_seeing_one.md)
-- [\[CVPR 2026\] Dynamic-Static Decomposition for Novel View Synthesis of Dynamic Scenes with Spiking Neurons](dynamic-static_decomposition_for_novel_view_synthesis_of_dynamic_scenes_with_spi.md)
 - [\[CVPR 2026\] MoVieS: Motion-Aware 4D Dynamic View Synthesis in One Second](movies_motion-aware_4d_dynamic_view_synthesis_in_one_second.md)
-- [\[CVPR 2026\] Featurising Pixels from Dynamic 3D Scenes with Linear In-Context Learners](featurising_pixels_from_dynamic_3d_scenes_with_linear_in-context_learners.md)
 
 </div>
 

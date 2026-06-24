@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] JointDiT: Enhancing RGB-Depth Joint Modeling with Diffusion Transformers
 description: >-
-  [3D Vision] JointDiT builds an RGB-Depth joint distribution model upon the Flux diffusion Transformer. Through adaptive scheduling weights and an unbalanced timestep sampling strategy…
+  [3D Vision] JointDiT builds an RGB-Depth joint distribution model upon the Flux diffusion Transformer. Through adaptive scheduling weights and an unbalanced timestep sampling strategy, a single model can flexibly perform three tasks—joint generation, depth estimation, and depth-conditioned image generation—by controlling the timestep of each modality.
 tags:
   - "3D Vision"
 date: 2026-05-08
-content_hash: 9d7a4894fe064fdd
+content_hash: b21bba4f344c5ed3
 ---
 
 # JointDiT: Enhancing RGB-Depth Joint Modeling with Diffusion Transformers

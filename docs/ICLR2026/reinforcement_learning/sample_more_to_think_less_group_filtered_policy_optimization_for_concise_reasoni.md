@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Sample More to Think Less: Group Filtered Policy Optimization for Concise Reasoning
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] To address the "length inflation" problem where reasoning chains become excessively long after RLVR (GRPO) training, this paper proposes GFPO. It samples a larger set of candidates during training and calculates policy gradients using only the top-k responses filtered by length or token efficiency. By trading "more sam
+  [ICLR 2026][Reinforcement Learning][RLVR] To address the "length inflation" problem where reasoning chains become excessively long after RLVR (GRPO) training, this paper proposes GFPO. It samples a larger set of candidates during training and calculates policy gradients using only the top-k responses filtered by length or token efficiency. By trading "more sampling during training" for "less thinking during inference," GFPO reduces length inflation in Phi-4-reasoning by up to…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "GRPO"
+  - "Concise Reasoning"
+  - "Rejection Sampling"
+  - "Reasoning Length"
 date: 2026-05-08
-content_hash: 9eea0462bf8d8b53
+content_hash: 64b0af652e6b4198
 ---
+
 # Sample More to Think Less: Group Filtered Policy Optimization for Concise Reasoning
 
 **Conference**: ICLR 2026  

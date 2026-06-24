@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Readout Representation: Redefining Neural Codes by Input Recovery
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] This paper proposes defining neural representations based on "what can be read out from neural features" rather than "what input causally produced the feature." Through perturbed feature inversion experiments in vision and language models, it demonstrates that a single input often corresponds to a broad recoverable reg
+  [ICLR2026][Computational Biology][Neural Coding] This paper proposes defining neural representations based on "what can be read out from neural features" rather than "what input causally produced the feature." Through perturbed feature inversion experiments in vision and language models, it demonstrates that a single input often corresponds to a broad recoverable region in the feature space, and the representation size serves as a metric for redundancy, robustness…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR2026"
+  - "Computational Biology"
+  - "Neural Coding"
+  - "Readout Representation"
+  - "Feature Inversion"
+  - "Representation Redundancy"
+  - "Computational Neuroscience"
 date: 2026-05-08
-content_hash: e4e49c371bfc1ff0
+content_hash: 1d4a4233c2fe34b8
 ---
+
 # Readout Representation: Redefining Neural Codes by Input Recovery
 
 **Conference**: ICLR2026  
@@ -128,6 +134,7 @@ The representation size reflects the representational state of individual sample
 - Value: ⭐⭐⭐⭐⭐ Encourages a fundamental rethink of "what is a neural code."
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

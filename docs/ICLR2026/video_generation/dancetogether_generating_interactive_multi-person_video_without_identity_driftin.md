@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DanceTogether: Generating Interactive Multi-Person Video without Identity Drifting
 description: >-
-  [ICLR 2026][Video Generation][MaskPoseAdapter] DanceTogether generates long-duration multi-person interactive videos using a single reference image and individual pose-mask sequences per actor. The core mechanism continuously binds "who the person is" with "how the person moves" during the diffusion denoising process, significantly mitigating identity drifting duri
+  [ICLR2026][Video Generation][Multi-person video generation] DanceTogether generates long-duration multi-person interactive videos using a single reference image and individual pose-mask sequences per actor. The core mechanism continuously binds "who the person is" with "how the person moves" during the diffusion denoising process, significantly mitigating identity drifting during character swaps, occlusions, and physical contact.
 tags:
-  - ICLR 2026
-  - Video Generation
-  - MaskPoseAdapter
+  - "ICLR2026"
+  - "Video Generation"
+  - "Multi-person video generation"
+  - "Identity preservation"
+  - "Pose control"
+  - "MaskPoseAdapter"
+  - "Interaction consistency"
 date: 2026-05-08
-content_hash: ebd277b77774fd6a
+content_hash: 28153073c1f50d6b
 ---
+
 # DanceTogether: Generating Interactive Multi-Person Video without Identity Drifting
 
 **Conference**: ICLR2026  
@@ -163,11 +168,11 @@ ID consistency shows the most significant gain: even with additional fine-tuning
 
 ## Related Papers
 
+- [\[CVPR 2026\] PLACID: Identity-Preserving Multi-Object Compositing via Video Diffusion with Synthetic Trajectories](../../CVPR2026/video_generation/placid_identity-preserving_multi-object_compositing_via_video_diffusion_with_syn.md)
 - [\[ICLR 2026\] EgoTwin: Dreaming Body and View in First Person](egotwin_dreaming_body_and_view_in_first_person.md)
-- [\[ICLR 2026\] Streaming Drag-Oriented Interactive Video Manipulation: Drag Anything, Anytime!](streaming_drag-oriented_interactive_video_manipulation_drag_anything_anytime.md)
-- [\[ICLR 2026\] TS-Attn: Temporal-wise Separable Attention for Multi-Event Video Generation](ts-attn_temporal-wise_separable_attention_for_multi-event_video_generation.md)
-- [\[ICLR 2026\] LongLive: Real-time Interactive Long Video Generation](longlive_real-time_interactive_long_video_generation.md)
 - [\[ICLR 2026\] ReactID: Synchronizing Realistic Actions and Identity in Personalized Video Generation](reactid_synchronizing_realistic_actions_and_identity_in_personalized_video_gener.md)
+- [\[ICCV 2025\] Multi-identity Human Image Animation with Structural Video Diffusion](../../ICCV2025/video_generation/multi-identity_human_image_animation_with_structural_video_diffusion.md)
+- [\[ICLR 2026\] ConsisDrive: Identity-Preserving Driving World Models for Video Generation by Instance Mask](consisdrive_identity-preserving_driving_world_models_for_video_generation_by_ins.md)
 
 </div>
 

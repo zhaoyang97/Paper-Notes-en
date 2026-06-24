@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unlocking Motion from Large Vision Models with a Semantic and Kinematic Duality for Gait Recognition
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] GaitMax utilizes a frozen DINOv3 Large Vision Model (LVM) to concurrently deploy a "Semantic Branch" (capturing global, order-invariant silhouettes) and a "Kinematic Branch" (tracking spatio-temporal trajectories of body parts via learnable queries). It incorporates a Conditional Decoupling Loss (CDLoss) to suppress sh
+  [CVPR 2026][Human Understanding][Gait Recognition] GaitMax utilizes a frozen DINOv3 Large Vision Model (LVM) to concurrently deploy a "Semantic Branch" (capturing global, order-invariant silhouettes) and a "Kinematic Branch" (tracking spatio-temporal trajectories of body parts via learnable queries). It incorporates a Conditional Decoupling Loss (CDLoss) to suppress shortcuts by de-correlating gait embeddings from textual descriptions of distractors (e.g., clothing…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Gait Recognition"
+  - "Motion Modeling"
+  - "Large Vision Models"
+  - "Decoupled Learning"
+  - "Vision-Language Supervision"
 date: 2026-05-08
-content_hash: 21b87baa4c9a90fe
+content_hash: 23d110627ded4d06
 ---
+
 # Unlocking Motion from Large Vision Models with a Semantic and Kinematic Duality for Gait Recognition
 
 **Conference**: CVPR 2026  
@@ -169,7 +175,7 @@ In terms of efficiency, GaitMax's total parameters and GFLOPs are comparable to 
 - [\[CVPR 2026\] EventGait: Towards Robust Gait Recognition with Event Streams](eventgait_towards_robust_gait_recognition_with_event_streams.md)
 - [\[CVPR 2026\] HyperGait: Unleashing the Power of Parsing for Gait Recognition in the Wild via Hypergraph](hypergait_unleashing_the_power_of_parsing_for_gait_recognition_in_the_wild_via_h.md)
 - [\[CVPR 2026\] Text-guided Feature Disentanglement for Cross-modal Gait Recognition](text-guided_feature_disentanglement_for_cross-modal_gait_recognition.md)
-- [\[CVPR 2026\] RoMo: A Large-Scale, Richly Organized Dataset and Semantic Taxonomy for Human Motion Generation](romo_a_large-scale_richly_organized_dataset_and_semantic_taxonomy_for_human_moti.md)
+- [\[CVPR 2026\] MS^2Gait: A Multi-Scale Spatio-Temporal Fusion Network for LiDAR-based Gait Recognition](ms2gait_a_multi-scale_spatio-temporal_fusion_network_for_lidar-based_gait_recogn.md)
 
 </div>
 

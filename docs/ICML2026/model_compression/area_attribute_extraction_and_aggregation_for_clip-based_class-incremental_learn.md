@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AREA: Attribute Extraction and Aggregation for CLIP-Based Class-Incremental Learning
 description: >-
-  [ICML 2026][Model Compression][CLIP] This paper decomposes forgetting in CLIP-based class-incremental learning into "attribute extraction drift" and "attribute aggregation drift." It proposes Area, which utilizes Principal Geodesic Analysis (PGA) to fix visual/textual attribute anchors on the hypersphere, combined with lightweight task experts, Variationa
+  [ICML 2026][Model Compression][CLIP] This paper decomposes forgetting in CLIP-based class-incremental learning into "attribute extraction drift" and "attribute aggregation drift." It proposes Area, which utilizes Principal Geodesic Analysis (PGA) to fix visual/textual attribute anchors on the hypersphere, combined with lightweight task experts, Variational Information Bottleneck (VIB) regularization, and Optimal Transport (OT) routing to stabilize attribute aggregation. This…
 tags:
-  - ICML 2026
-  - Model Compression
-  - CLIP
+  - "ICML 2026"
+  - "Model Compression"
+  - "CLIP"
+  - "Class-Incremental Learning"
+  - "Attribute Anchors"
+  - "Principal Geodesic Analysis"
+  - "Optimal Transport Routing"
 date: 2026-05-08
-content_hash: 9e3d17e543449d28
+content_hash: ee899babb3a6f7f4
 ---
+
 # AREA: Attribute Extraction and Aggregation for CLIP-Based Class-Incremental Learning
 
 **Conference**: ICML 2026  
@@ -153,10 +158,10 @@ The paper validates Area's design through component ablation, caption sources, a
 ## Related Papers
 
 - [\[CVPR 2026\] QKD: Quantum-Gated Task-interaction Knowledge Distillation for Class-Incremental Learning](../../CVPR2026/model_compression/qkd_quantum_gated_incremental_learning.md)
-- [\[CVPR 2025\] Adapter Merging with Centroid Prototype Mapping for Scalable Class-Incremental Learning](../../CVPR2025/model_compression/adapter_merging_with_centroid_prototype_mapping_for_scalable_class-incremental_l.md)
 - [\[AAAI 2026\] Compensating Distribution Drifts in Class-incremental Learning of Pre-trained Vision Transformers](../../AAAI2026/model_compression/compensating_distribution_drifts_in_class-incremental_learning_of_pre-trained_vi.md)
+- [\[NeurIPS 2025\] Mixture of Noise for Pre-Trained Model-Based Class-Incremental Learning](../../NeurIPS2025/model_compression/mixture_of_noise_for_pre-trained_model-based_class-incremental_learning.md)
+- [\[CVPR 2025\] Adapter Merging with Centroid Prototype Mapping for Scalable Class-Incremental Learning](../../CVPR2025/model_compression/adapter_merging_with_centroid_prototype_mapping_for_scalable_class-incremental_l.md)
 - [\[ICCV 2025\] Integrating Task-Specific and Universal Adapters for Pre-Trained Model-based Class-Incremental Learning](../../ICCV2025/model_compression/integrating_task-specific_and_universal_adapters_for_pre-trained_model-based_cla.md)
-- [\[ICCV 2025\] Achieving More with Less: Additive Prompt Tuning for Rehearsal-Free Class-Incremental Learning](../../ICCV2025/model_compression/achieving_more_with_less_additive_prompt_tuning_for_rehearsal-free_class-increme.md)
 
 </div>
 

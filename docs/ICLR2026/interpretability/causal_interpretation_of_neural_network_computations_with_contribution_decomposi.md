@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Causal Interpretation of Neural Network Computations with Contribution Decomposition
 description: >-
-  [ICLR 2026][Interpretability][neural network interpretability] The authors propose CODEC (Contribution Decomposition), which utilizes Integrated Gradients to calculate the contributions of hidden layer neurons toward the output (rather than merely analyzing activations). These contributions are then decomposed into sparse modes using a Sparse Autoencoder (SAE). This approach achie
+  [ICLR2026][Interpretability][neural network interpretability] The authors propose CODEC (Contribution Decomposition), which utilizes Integrated Gradients to calculate the contributions of hidden layer neurons toward the output (rather than merely analyzing activations). These contributions are then decomposed into sparse modes using a Sparse Autoencoder (SAE). This approach achieves stronger causal interpretability and network control capabilities compared to activation analy…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - neural network interpretability
-  - contribution decomposition
-  - sparse autoencoder
-  - causal analysis
-  - retinal modeling
+  - "ICLR2026"
+  - "Interpretability"
+  - "neural network interpretability"
+  - "contribution decomposition"
+  - "sparse autoencoder"
+  - "causal analysis"
+  - "retinal modeling"
 date: 2026-05-08
-content_hash: 642b6be80a2b4f7e
+content_hash: 1485cfc5289ac535
 ---
+
 # Causal Interpretation of Neural Network Computations with Contribution Decomposition
 
 **Conference**: ICLR2026  

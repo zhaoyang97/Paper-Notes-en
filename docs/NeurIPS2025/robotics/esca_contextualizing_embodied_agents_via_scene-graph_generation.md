@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ESCA: Contextualizing Embodied Agents via Scene-Graph Generation
 description: >-
-  [NeurIPS 2025 (Spotlight)][Robotics][Scene graph generation] This paper proposes the ESCA framework, which provides structured visual understanding context for MLLM-driven embodied agents via open-vocabulary scene graph…
+  [NeurIPS 2025 (Spotlight)][Robotics][Scene graph generation] This paper proposes the ESCA framework, which provides structured visual understanding context for MLLM-driven embodied agents via open-vocabulary scene graph generation (the SGClip model), substantially reducing perception error rates and improving task completion rates.
 tags:
   - "NeurIPS 2025 (Spotlight)"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "vision-language models"
   - "neuro-symbolic learning"
 date: 2026-05-08
-content_hash: 0cf4acbbc7ddde73
+content_hash: 32d2688078238b8c
 ---
 
 # ESCA: Contextualizing Embodied Agents via Scene-Graph Generation

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] RACO: Reward-free Alignment for Conflicting Objectives
 description: >-
-  [ICML 2026][Optimization & Theory][CAGrad-Clip] RACO reformulates multi-objective LLM preference alignment as a multi-objective optimization problem, where each objective possesses its own DPO loss. Gradient conflicts are addressed using clipped CAGrad (CAGrad with coefficients clipped by user weights). It theoretically guarantees convergence to Pareto-critical poin
+  [ICML 2026 Oral][Optimization][Multi-objective alignment] RACO reformulates multi-objective LLM preference alignment as a multi-objective optimization problem, where each objective possesses its own DPO loss. Gradient conflicts are addressed using clipped CAGrad (CAGrad with coefficients clipped by user weights). It theoretically guarantees convergence to Pareto-critical points respecting user-specified weights (with strict acceleration in two-objective scenarios). Empiricall…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - CAGrad-Clip
-  - DPO
+  - "ICML 2026 Oral"
+  - "Optimization"
+  - "Multi-objective alignment"
+  - "Gradient conflict"
+  - "CAGrad-Clip"
+  - "Pareto-critical points"
+  - "DPO"
 date: 2026-05-08
-content_hash: 1b66fd0d990b0685
+content_hash: 6bb47de77938a75b
 ---
+
 # RACO: Reward-free Alignment for Conflicting Objectives
 
 **Conference**: ICML 2026 Oral  
@@ -162,9 +166,9 @@ In two-objective scenarios, CAGrad-Clip is ~25% faster than vanilla CAGrad in re
 
 - [\[ICML 2026\] Conflicting Biases at the Edge of Stability: Norm versus Sharpness Regularization](conflicting_biases_at_the_edge_of_stability_norm_versus_sharpness_regularization.md)
 - [\[ICML 2026\] HO-SFL: Hybrid-Order Split Federated Learning with Backprop-Free Clients and Dimension-Free Aggregation](ho-sfl_hybrid-order_split_federated_learning_with_backprop-free_clients_and_dime.md)
-- [\[ICLR 2026\] Celo2: Towards Learned Optimization Free Lunch](../../ICLR2026/optimization/celo2_towards_learned_optimization_free_lunch.md)
+- [\[ICML 2026\] Distribution Alignment for One-Shot Federated Learning via Optimal Transport](distribution_alignment_for_one-shot_federated_learning_via_optimal_transport.md)
 - [\[ICML 2026\] Distribution-Free Uncertainty Quantification for Continuous AI Agent Evaluation](distribution-free_uncertainty_quantification_for_continuous_ai_agent_evaluation.md)
-- [\[NeurIPS 2025\] Covariances for Free: Exploiting Mean Distributions for Training-free Federated Learning](../../NeurIPS2025/optimization/covariances_for_free_exploiting_mean_distributions_for_training-free_federated_l.md)
+- [\[ICLR 2026\] Celo2: Towards Learned Optimization Free Lunch](../../ICLR2026/optimization/celo2_towards_learned_optimization_free_lunch.md)
 
 </div>
 

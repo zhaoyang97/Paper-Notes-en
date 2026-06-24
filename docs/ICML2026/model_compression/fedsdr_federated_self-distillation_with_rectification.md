@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FedSDR: Federated Self-Distillation with Rectification
 description: >-
-  [ICML 2026][Model Compression][Paper Note] To address "weight drift" caused by heterogeneous client data distributions in federated LLM fine-tuning, this work first uses the model itself to rewrite original instructions into a "model-understandable space" for data-level alignment (FedSD). It then employs a LoRA-S/LoRA-R dual-stream structure to absorb style noi
+  [ICML 2026][Model Compression][Federated Learning] To address "weight drift" caused by heterogeneous client data distributions in federated LLM fine-tuning, this work first uses the model itself to rewrite original instructions into a "model-understandable space" for data-level alignment (FedSD). It then employs a LoRA-S/LoRA-R dual-stream structure to absorb style noise and anchor factual correctness, respectively, while aggregating only LoRA-R. This decouples alignment from…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Federated Learning"
+  - "LLM Instruction Tuning"
+  - "Self-Distillation"
+  - "Dual-Stream LoRA"
+  - "Selective Aggregation"
 date: 2026-05-08
-content_hash: 65342e372933c1a4
+content_hash: 13004035440c7b1b
 ---
+
 # FedSDR: Federated Self-Distillation with Rectification
 
 **Conference**: ICML 2026  
@@ -125,10 +131,10 @@ The "rewriting paradox" and "distribution alignment" mechanisms were quantitativ
 ## Related Papers
 
 - [\[ICML 2026\] FedRot-LoRA: Mitigating Rotational Misalignment in Federated LoRA](fedrot-lora_mitigating_rotational_misalignment_in_federated_lora.md)
+- [\[ICLR 2026\] ERTACache: Error Rectification and Timesteps Adjustment for Efficient Diffusion](../../ICLR2026/model_compression/ertacache_error_rectification_and_timesteps_adjustment_for_efficient_diffusion.md)
 - [\[ICML 2026\] PRISM: Synergizing Vision Foundation Models via Self-Organized Expert Specialization](prism_synergizing_vision_foundation_models_via_self-organized_expert_specializat.md)
 - [\[ICML 2026\] OSAQ: Outlier Self-Absorption for Accurate Low-bit LLM Quantization](osaq_outlier_self-absorption_for_accurate_low-bit_llm_quantization.md)
-- [\[ICCV 2025\] Soft Separation and Distillation: Toward Global Uniformity in Federated Unsupervised Learning](../../ICCV2025/model_compression/soft_separation_and_distillation_toward_global_uniformity_in_federated_unsupervi.md)
-- [\[ICML 2026\] UB-SMoE: Universally Balanced Sparse Mixture-of-Experts for Resource-Adaptive Federated Fine-tuning of Foundation Models](ub-smoe_universally_balanced_sparse_mixture-of-experts_for_resource-adaptive_fed.md)
+- [\[NeurIPS 2025\] How to Build a Consistency Model: Learning Flow Maps via Self-Distillation](../../NeurIPS2025/model_compression/how_to_build_a_consistency_model_learning_flow_maps_via_self-distillation.md)
 
 </div>
 

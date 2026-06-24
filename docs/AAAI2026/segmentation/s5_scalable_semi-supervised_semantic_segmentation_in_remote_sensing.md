@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] S5: Scalable Semi-Supervised Semantic Segmentation in Remote Sensing
 description: >-
-  [AAAI 2026][Segmentation][semi-supervised learning] This paper proposes the S5 framework, which for the first time extends semi-supervised semantic segmentation into a pre-training paradigm for remote sensing foundation…
+  [AAAI 2026 Oral][Segmentation][semi-supervised learning] This paper proposes the S5 framework, which for the first time extends semi-supervised semantic segmentation into a pre-training paradigm for remote sensing foundation models (RSFMs). By constructing the million-scale RS4P-1M dataset and introducing a MoE-based multi-dataset fine-tuning strategy, S5 achieves state-of-the-art performance across multiple remote sensing segmentation and detection benchmarks.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Segmentation"
   - "semi-supervised learning"
   - "remote sensing"
@@ -12,7 +12,7 @@ tags:
   - "semantic segmentation"
   - "mixture of experts"
 date: 2026-05-08
-content_hash: c2fbee3ea4ce7ed1
+content_hash: 3bf4b81593afebe5
 ---
 
 # S5: Scalable Semi-Supervised Semantic Segmentation in Remote Sensing
@@ -160,11 +160,11 @@ MoE-MDF achieves an average accuracy gain of 0.64 points over SDF while using on
 
 ## Related Papers
 
-- [\[AAAI 2026\] RS2-SAM2: Customized SAM2 for Referring Remote Sensing Image Segmentation](rs2-sam2_customized_sam2_for_referring_remote_sensing_image_segmentation.md)
+- [\[CVPR 2026\] From Softmax to Dirichlet: Evidential Learning for Semi-supervised Semantic Segmentation](../../CVPR2026/segmentation/from_softmax_to_dirichlet_evidential_learning_for_semi-supervised_semantic_segme.md)
 - [\[AAAI 2026\] LWGANet: Addressing Spatial and Channel Redundancy in Remote Sensing Visual Tasks with Light-Weight Grouped Attention](lwganet_addressing_spatial_and_channel_redundancy_in_remote_sensing_visual_tasks.md)
-- [\[CVPR 2026\] SGMA: Semantic-Guided Modality-Aware Segmentation for Remote Sensing with Incomplete Multimodal Data](../../CVPR2026/segmentation/sgma_semantic-guided_modality-aware_segmentation_for_remote_sensing_with_incompl.md)
-- [\[AAAI 2026\] SSR: Semantic and Spatial Rectification for CLIP-based Weakly Supervised Segmentation](ssr_semantic_and_spatial_rectification_for_clip-based_weakly_supervised_segmenta.md)
-- [\[ICCV 2025\] ConformalSAM: Unlocking the Potential of Foundational Segmentation Models in Semi-Supervised Semantic Segmentation with Conformal Prediction](../../ICCV2025/segmentation/conformalsam_unlocking_the_potential_of_foundational_segmentation_models_in_semi.md)
+- [\[CVPR 2026\] ReSAM: Refine, Requery, and Reinforce: Self-Prompting Point-Supervised Segmentation for Remote Sensing Images](../../CVPR2026/segmentation/resam_refine_requery_and_reinforce_self-prompting_point-supervised_segmentation_.md)
+- [\[ECCV 2024\] LASS3D: Language-Assisted Semi-Supervised 3D Semantic Segmentation with Progressive Unreliable Data Exploitation](../../ECCV2024/segmentation/lass3d_language-assisted_semi-supervised_3d_semantic_segmentation_with_progressi.md)
+- [\[AAAI 2026\] RS2-SAM2: Customized SAM2 for Referring Remote Sensing Image Segmentation](rs2-sam2_customized_sam2_for_referring_remote_sensing_image_segmentation.md)
 
 </div>
 

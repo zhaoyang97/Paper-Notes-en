@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Offline Policy Evaluation of Multi-Turn LLM Health Coaching with Real Users
 description: >-
-  [NeurIPS 2025 Workshop (Multi-Turn Interactions in Large Language Models)][Model Compression][Offline Policy Evaluation] This paper conducts offline policy evaluation (OPE) on a deployed LLM health coaching system with r…
+  [NeurIPS 2025 Workshop (Multi-Turn Interactions in Large Language Models)][Model Compression][Offline Policy Evaluation] This paper conducts offline policy evaluation (OPE) on a deployed LLM health coaching system with real users. It finds that a uniformly high tool-use policy improves average reward but harms specific user subgroups. Through simulator experiments, the paper further validates that early information-gain exploration (curiosity reward) accelerates user profile…
 tags:
   - "NeurIPS 2025 Workshop (Multi-Turn Interactions in Large Language Models)"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Personalization"
   - "POMDP"
 date: 2026-05-08
-content_hash: 597b2255d00cefda
+content_hash: 10f1364d06cb9ba7
 ---
 
 # Offline Policy Evaluation of Multi-Turn LLM Health Coaching with Real Users
@@ -147,11 +147,11 @@ The curiosity reward significantly improves goal success rate (0.935→0.970), p
 
 ## Related Papers
 
+- [\[ACL 2025\] Magnet: Multi-turn Tool-use Data Synthesis and Distillation via Graph Translation](../../ACL2025/model_compression/magnet_multi-turn_tool-use_data_synthesis_and_distillation_via_graph_translation.md)
 - [\[NeurIPS 2025\] ORPO-Distill: Mixed-Policy Preference Optimization for Cross-Architecture LLM Distillation](orpo-distill_mixed-policy_preference_optimization_for_cross-architecture_llm_dis.md)
+- [\[ICLR 2026\] Towards Reliable Benchmarking: A Contamination Free, Controllable Evaluation Framework for Multi-step LLM Function Calling](../../ICLR2026/model_compression/towards_reliable_benchmarking_a_contamination_free_controllable_evaluation_frame.md)
 - [\[NeurIPS 2025\] Loquetier: A Virtualized Multi-LoRA Framework for Unified LLM Fine-tuning and Serving](loquetier_a_virtualized_multi-lora_framework_for_unified_llm_fine-tuning_and_ser.md)
 - [\[NeurIPS 2025\] Binary Quadratic Quantization: Beyond First-Order Quantization for Real-Valued Matrix Compression](binary_quadratic_quantization_beyond_first-order_quantization_for_real-valued_ma.md)
-- [\[ICLR 2026\] Multi-View Encoders for Performance Prediction in LLM-Based Agentic Workflows](../../ICLR2026/model_compression/multi-view_encoders_for_performance_prediction_in_llm-based_agentic_workflows.md)
-- [\[ICLR 2026\] BeyondBench: Contamination-Resistant Evaluation of Reasoning in Language Models](../../ICLR2026/model_compression/beyondbench_contamination-resistant_evaluation_of_reasoning_in_language_models.md)
 
 </div>
 

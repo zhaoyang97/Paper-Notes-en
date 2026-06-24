@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Automatic Layer Selection for Hallucination Detection
 description: >-
-  [ICML 2026][Hallucination Detection][Paper Note] FEPoID (First Effective Peak of Intrinsic Dimension) is proposed as a training-free automatic layer selection criterion. Combined with the First Sentence Truncation (FST) strategy, it consistently selects near-optimal intermediate layers across various QA and summarization hallucination detection benchmarks, significan
+  [ICML 2026][Hallucination Detection][Intermediate Layer Selection] FEPoID (First Effective Peak of Intrinsic Dimension) is proposed as a training-free automatic layer selection criterion. Combined with the First Sentence Truncation (FST) strategy, it consistently selects near-optimal intermediate layers across various QA and summarization hallucination detection benchmarks, significantly outperformed existing baseline methods.
 tags:
-  - ICML 2026
-  - Hallucination Detection
+  - "ICML 2026"
+  - "Hallucination Detection"
+  - "Intermediate Layer Selection"
+  - "Intrinsic Dimension"
+  - "Hidden-state Probing"
+  - "Large Language Models"
 date: 2026-05-08
-content_hash: 646eadfe94375d59
+content_hash: f883156acff86338
 ---
+
 # Automatic Layer Selection for Hallucination Detection
 
 **Conference**: ICML 2026  
@@ -131,7 +136,7 @@ AUROC comparison on 5 QA datasets and 2 instruction-tuned models (extracting the
 - [\[ICML 2026\] From Out-of-Distribution Detection to Hallucination Detection: A Geometric View](from_out-of-distribution_detection_to_hallucination_detection_a_geometric_view.md)
 - [\[ICML 2026\] Finding the Correct Visual Evidence Without Forgetting: Mitigating Hallucination in LVLMs via Inter-Layer Visual Attention Discrepancy](finding_the_correct_visual_evidence_without_forgetting_mitigating_hallucination_.md)
 - [\[ICML 2026\] Harnessing Reasoning Trajectories for Hallucination Detection via Answer-agreement Representation Shaping](harnessing_reasoning_trajectories_for_hallucination_detection_via_answer-agreeme.md)
-- [\[AAAI 2026\] Listen Like a Teacher: Mitigating Whisper Hallucinations using Adaptive Layer Attention and Knowledge Distillation](../../AAAI2026/hallucination/listen_like_a_teacher_mitigating_whisper_hallucinations_using_adaptive_layer_att.md)
+- [\[ICML 2026\] Zero-source LLM Hallucination Detection with Human-like Criteria Probing](zero-source_llm_hallucination_detection_with_human-like_criteria_probing.md)
 
 </div>
 

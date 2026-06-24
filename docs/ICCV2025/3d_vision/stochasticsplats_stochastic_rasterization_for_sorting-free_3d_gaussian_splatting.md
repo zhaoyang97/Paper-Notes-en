@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] StochasticSplats: Stochastic Rasterization for Sorting-Free 3D Gaussian Splatting
 description: >-
-  [3D Vision] StochasticSplats introduces Stochastic Transparency into 3DGS, replacing depth-sorted alpha blending with an unbiased Monte Carlo estimator to achieve sorting-free, popping-free rendering. At 1 SPP…
+  [3D Vision] StochasticSplats introduces Stochastic Transparency into 3DGS, replacing depth-sorted alpha blending with an unbiased Monte Carlo estimator to achieve sorting-free, popping-free rendering. At 1 SPP, it is 4× faster than standard CUDA 3DGS, and the number of samples provides a flexible quality–speed trade-off.
 tags:
   - "3D Vision"
 date: 2026-05-08
-content_hash: bd78eba084eba751
+content_hash: ed71a9d0b4c3fe65
 ---
 
 # StochasticSplats: Stochastic Rasterization for Sorting-Free 3D Gaussian Splatting

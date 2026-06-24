@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Efficient Reinforcement Learning by Guiding World Models with Non-Curated Data
 description: >-
-  [ICLR 2026][Reinforcement Learning][World Models] NCRL first pre-trains a task-agnostic world model using reward-free, mixed-quality, multi-embodiment non-curated data, then guides exploration during online RL via retrieval-based experience replay and behavior cloning prior policies. This significantly mitigates the distribution mismatch between offline pre-training a
+  [ICLR 2026][Reinforcement Learning][Non-curated offline data] NCRL first pre-trains a task-agnostic world model using reward-free, mixed-quality, multi-embodiment non-curated data, then guides exploration during online RL via retrieval-based experience replay and behavior cloning prior policies. This significantly mitigates the distribution mismatch between offline pre-training and online fine-tuning, achieving performance comparable to training from scratch with several time…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - World Models
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Non-curated offline data"
+  - "World models"
+  - "Sample-efficient RL"
+  - "Offline-to-online RL"
+  - "Exploration guidance"
 date: 2026-05-08
-content_hash: b0a2bbdf6306ed14
+content_hash: 74f7d2df0e4145e2
 ---
+
 # Efficient Reinforcement Learning by Guiding World Models with Non-Curated Data
 
 **Conference**: ICLR 2026  
@@ -142,10 +147,20 @@ Experiments were conducted on 72 tasks across DMControl and Meta-World. Offline 
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Object-Centric World Models from Few-Shot Annotations for Sample-Efficient Reinforcement Learning](object-centric_world_models_from_few-shot_annotations_for_sample-efficient_reinf.md)
+- [\[ICLR 2026\] From Observations to Events: Event-Aware World Models for Reinforcement Learning](from_observations_to_events_event-aware_world_models_for_reinforcement_learning.md)
+- [\[ICLR 2026\] Learning Massively Multitask World Models for Continuous Control](learning_massively_multitask_world_models_for_continuous_control.md)
+- [\[ICLR 2026\] Mixture-of-World Models: Scaling Multi-Task Reinforcement Learning with Modular Latent Dynamics](mixture-of-world_models_scaling_multi-task_reinforcement_learning_with_modular_l.md)
+- [\[ICLR 2026\] Learning to Be Uncertainty: Pre-training World Models with Horizon-Calibrated Uncertainty](learning_to_be_uncertain_pre-training_world_models_with_horizon-calibrated_uncer.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Object-Centric World Models from Few-Shot Annotations for Sample-Efficient Reinforcement Learning](object-centric_world_models_from_few-shot_annotations_for_sample-efficient_reinf.md)

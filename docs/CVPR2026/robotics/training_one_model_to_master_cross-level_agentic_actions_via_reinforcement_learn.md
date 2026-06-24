@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Training One Model to Master Cross-Level Agentic Actions via Reinforcement Learning
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Minecraft] CrossHA unifies heterogeneous action spaces including "language, grounding, motion, atomic, and latent" into a single VLM agent. It employs a three-stage GRPO pipeline—"Mixed SFT → Single-step RL → Multi-turn RL"—to train the agent to **autonomously select the most suitable action space at each step** of a trajectory.
+  [CVPR 2026][Robotics][Heterogeneous Action Spaces] CrossHA unifies heterogeneous action spaces including "language, grounding, motion, atomic, and latent" into a single VLM agent. It employs a three-stage GRPO pipeline—"Mixed SFT → Single-step RL → Multi-turn RL"—to train the agent to **autonomously select the most suitable action space at each step** of a trajectory. Trained on only 30 Minecraft tasks, it generalizes to over 800 tasks and achieves SOTA performance (54.6% ASR…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Minecraft
+  - "CVPR 2026"
+  - "Robotics"
+  - "Heterogeneous Action Spaces"
+  - "Action Space Selection"
+  - "Multi-turn GRPO"
+  - "Embodied Game Agent"
+  - "Minecraft"
 date: 2026-05-08
-content_hash: d460dbb734aec414
+content_hash: 90a17d90008ee982
 ---
+
 # Training One Model to Master Cross-Level Agentic Actions via Reinforcement Learning
 
 **Conference**: CVPR 2026  
@@ -148,14 +153,13 @@ CrossHA leads significantly in ASR (54.6 vs OpenHA's 31.5 and Game-TARS's 42.2),
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Learning to Act Robustly with View-Invariant Latent Actions](learning_to_act_robustly_with_view-invariant_latent_actions.md)
 - [\[CVPR 2026\] From Manuals to Actions: A Unified VLA Model for Chain-of-Thought Manual Generation and Robotic Manipulation](from_manuals_to_actions_a_unified_vla_model_for_chain-of-thought_manual_generati.md)
-- [\[CVPR 2026\] MergeVLA: Cross-Skill Model Merging Toward a Generalist Vision-Language-Action Agent](mergevla_cross-skill_model_merging_toward_a_generalist_vision-language-action_ag.md)
-- [\[ICLR 2026\] Cross-Embodiment Offline Reinforcement Learning for Heterogeneous Robot Datasets](../../ICLR2026/robotics/cross-embodiment_offline_reinforcement_learning_for_heterogeneous_robot_datasets.md)
+- [\[ICLR 2026\] SimpleVLA-RL: Scaling VLA Training via Reinforcement Learning](../../ICLR2026/robotics/simplevla-rl_scaling_vla_training_via_reinforcement_learning.md)
+- [\[CVPR 2026\] RehearseVLA: Simulated Post-Training for VLAs with Physically-Consistent World Model](rehearsevla_simulated_post-training_for_vlas_with_physically-consistent_world_mo.md)
 - [\[CVPR 2026\] Video2Robo: 3DGS-based Synthetic Data from One Video Enables Scalable Robot Learning](video2robo_3dgs-based_synthetic_data_from_one_video_enables_scalable_robot_learn.md)
 
 </div>

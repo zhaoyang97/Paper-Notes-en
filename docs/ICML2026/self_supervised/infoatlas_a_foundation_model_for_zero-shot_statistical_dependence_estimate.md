@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] InfoAtlas: A Foundation Model for Zero-Shot Statistical Dependence Estimation
 description: >-
-  [ICML 2026][Self-Supervised Learning][Paper Note] InfoAtlas transforms mutual information estimation from an optimization problem where an evaluation network is trained from scratch for each dataset into a "single forward pass" problem using a hypernetwork pre-trained on large-scale synthetic data. This achieves accuracy comparable to neural estimators like MINE/MINDE
+  [ICML 2026][Self-Supervised Learning][Mutual Information] InfoAtlas transforms mutual information estimation from an optimization problem where an evaluation network is trained from scratch for each dataset into a "single forward pass" problem using a hypernetwork pre-trained on large-scale synthetic data. This achieves accuracy comparable to neural estimators like MINE/MINDE while providing a 100× speedup.
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
+  - "ICML 2026"
+  - "Self-Supervised Learning"
+  - "Mutual Information"
+  - "Foundation Models"
+  - "Hypernetwork"
+  - "Sliced Mutual Information"
+  - "Synthetic Data Pre-training"
 date: 2026-05-08
-content_hash: 3d5d29137b103942
+content_hash: 43f916be0b3160ce
 ---
+
 # InfoAtlas: A Foundation Model for Zero-Shot Statistical Dependence Estimation
 
 **Conference**: ICML 2026  
@@ -150,7 +156,7 @@ InfoAtlas consistently matches the accuracy of gradient-optimized methods like M
 - [\[ICML 2026\] How 'Neural' is a Neural Foundation Model?](how_neural_is_a_neural_foundation_model.md)
 - [\[ICML 2026\] Statistical Consistency and Generalization of Contrastive Representation Learning](statistical_consistency_and_generalization_of_contrastive_representation_learnin.md)
 - [\[ICML 2025\] Foundation Model Insights and a Multi-Model Approach for Superior Fine-Grained One-shot Subset Selection](../../ICML2025/self_supervised/foundation_model_insights_and_a_multi-model_approach_for_superior_fine-grained_o.md)
-- [\[CVPR 2026\] MOMO: Mars Orbital Model — Foundation Model for Mars Orbital Applications](../../CVPR2026/self_supervised/momo_mars_orbital_model_foundation_model_for_mars_orbital_applications.md)
+- [\[ICML 2026\] Zero-Flow Encoders](zero-flow_encoders.md)
 
 </div>
 

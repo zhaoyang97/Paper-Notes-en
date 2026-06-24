@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Vision-aligned Latent Reasoning for Multi-modal Large Language Model
 description: >-
-  [ICML 2026][vlm_reasoning][REPA] This paper proposes VaLR: a method that inserts several "latent tokens" before each step of CoT reasoning in MLLMs and performs representation alignment (REPA) between these tokens and the patch features of visual encoders like DINOv3, SigLIP, or $\pi^3$. This continuously "feeds" visual information back into the model
+  [ICML 2026][VLM Reasoning][Latent reasoning] This paper proposes VaLR: a method that inserts several "latent tokens" before each step of CoT reasoning in MLLMs and performs representation alignment (REPA) between these tokens and the patch features of visual encoders like DINOv3, SigLIP, or $\pi^3$. This continuously "feeds" visual information back into the model during long-chain reasoning, improving the accuracy of Qwen2.5-VL on VSI-Bench from 33.0% to 52.9% and enabling ML…
 tags:
-  - ICML 2026
-  - vlm_reasoning
-  - REPA
-  - MLLM
-  - Test-time scaling
+  - "ICML 2026"
+  - "VLM Reasoning"
+  - "Latent reasoning"
+  - "Visual alignment"
+  - "REPA"
+  - "MLLM"
+  - "Test-time scaling"
 date: 2026-05-08
-content_hash: e1faeb9459ecb999
+content_hash: caec6fbe04ce583d
 ---
+
 # Vision-aligned Latent Reasoning for Multi-modal Large Language Model
 
 **Conference**: ICML 2026  
@@ -144,11 +147,11 @@ Ablations on alignment layer position (Front/Middle/Last, i.e., layers 4/12/27) 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Reasoning-Aligned Perception Decoupling for Scalable Multi-modal Reasoning](../../ICLR2026/vlm_reasoning/reasoning-aligned_perception_decoupling_for_scalable_multi-modal_reasoning.md)
 - [\[ICML 2026\] From Correspondence to Actions: Human-Like Multi-Image Spatial Reasoning in Multi-modal Large Language Models](from_correspondence_to_actions_human-like_multi-image_spatial_reasoning_in_multi.md)
-- [\[ACL 2026\] OMIBench: Benchmarking Olympiad-Level Multi-Image Reasoning in Large Vision-Language Models](../../ACL2026/vlm_reasoning/omibench_benchmarking_olympiad-level_multi-image_reasoning_in_large_vision-langu.md)
-- [\[NeurIPS 2025\] ACT as Human: Multimodal Large Language Model Data Annotation with Critical Thinking](../../NeurIPS2025/vlm_reasoning/act_as_human_multimodal_large_language_model_data_annotation.md)
-- [\[CVPR 2026\] Evolving Contextual Safety in Multi-Modal Large Language Models via Inference-Time Self-Reflective Memory](../../CVPR2026/vlm_reasoning/evolving_contextual_safety_in_multi-modal_large_language_models_via_inference-ti.md)
 - [\[CVPR 2026\] dMLLM-TTS: Self-Verified and Efficient Test-Time Scaling for Diffusion Multi-Modal Large Language Models](../../CVPR2026/vlm_reasoning/dmllm-tts_self-verified_and_efficient_test-time_scaling_for_diffusion_multi-moda.md)
+- [\[ICML 2026\] Native Active Perception as Reasoning for Omni-Modal Understanding](native_active_perception_as_reasoning_for_omni-modal_understanding.md)
+- [\[ICLR 2026\] Vision-SR1: Self-Rewarding Vision-Language Model via Reasoning Decomposition and Multi-Reward Policy Optimization](../../ICLR2026/vlm_reasoning/vision-sr1_self-rewarding_vision-language_model_via_reasoning_decomposition_and_.md)
 
 </div>
 

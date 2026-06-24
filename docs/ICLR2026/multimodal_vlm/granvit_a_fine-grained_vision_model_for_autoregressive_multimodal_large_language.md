@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] GranViT: A Fine-Grained Vision Model For Autoregressive Multimodal Large Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][MLLM] By constructing the Gran-29M dataset with 29.51 million images and 183 million region-level annotations, and pre-training a vision encoder using bidirectional "Bbox→Caption / Caption→Bbox" autoregressive tasks along with local self-distillation, GranViT enables a ViT to possess fine-grained local perception capabilitie
+  [ICLR 2026][Multimodal VLM][Vision Encoder] By constructing the Gran-29M dataset with 29.51 million images and 183 million region-level annotations, and pre-training a vision encoder using bidirectional "Bbox→Caption / Caption→Bbox" autoregressive tasks along with local self-distillation, GranViT enables a ViT to possess fine-grained local perception capabilities aligned with the LLM semantic space for the first time, achieving new SOTAs in visual grounding and OCR understand…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - MLLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Vision Encoder"
+  - "MLLM"
+  - "Fine-grained Perception"
+  - "Autoregressive Pre-training"
+  - "Region-level Annotation"
+  - "Self-distillation"
 date: 2026-05-08
-content_hash: 10fe7eedd7519011
+content_hash: 35c6cb59ad18e4ac
 ---
+
 # GranViT: A Fine-Grained Vision Model For Autoregressive Multimodal Large Language Models
 
 **Conference**: ICLR 2026  
@@ -150,11 +156,11 @@ Cumulative component addition (trained on small-scale 8M+8M):
 
 ## Related Papers
 
+- [\[ICLR 2026\] Benchmarking Large Vision-Language Models on Fine-Grained Image Tasks: A Comprehensive Evaluation](benchmarking_large_vision-language_models_on_fine-grained_image_tasks_a_comprehe.md)
+- [\[ICLR 2026\] Catching the Details: Self-Distilled RoI Predictors for Fine-Grained MLLM Perception](catching_the_details_self-distilled_roi_predictors_for_fine-grained_mllm_percept.md)
 - [\[ICLR 2026\] UniF2ace: A Unified Fine-grained Face Understanding and Generation Model](unif2ace_a_underlineunified_underlinefine-grained_underlineface_understanding_an.md)
 - [\[CVPR 2026\] DiG: Differential Grounding for Enhancing Fine-Grained Perception in Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/dig_differential_grounding_for_enhancing_fine-grained_perception_in_multimodal_l.md)
 - [\[CVPR 2026\] OddGridBench: Exposing the Lack of Fine-Grained Visual Discrepancy Sensitivity in Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/oddgridbench_exposing_the_lack_of_fine-grained_visual_discrepancy_sensitivity_in.md)
-- [\[CVPR 2025\] Multimodal Autoregressive Pre-training of Large Vision Encoders](../../CVPR2025/multimodal_vlm/multimodal_autoregressive_pre-training_of_large_vision_encoders.md)
-- [\[ICLR 2026\] MotionSight: Boosting Fine-Grained Motion Understanding in Multimodal LLMs](motionsight_boosting_fine-grained_motion_understanding_in_multimodal_llms.md)
 
 </div>
 

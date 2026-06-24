@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Enhancing CLIP Robustness via Cross-Modality Alignment
 description: >-
-  [NeurIPS 2025 (Spotlight)][LLM Safety][CLIP] This paper proposes COLA, a training-free framework that eliminates non-semantic noise by projecting adversarially perturbed image features onto the subspace spanned by text f…
+  [NeurIPS 2025 (Spotlight)][LLM Safety][CLIP] This paper proposes COLA, a training-free framework that eliminates non-semantic noise by projecting adversarially perturbed image features onto the subspace spanned by text features, and then employs optimal transport (OT) to perform fine-grained distribution-level image-text alignment. COLA achieves an average improvement of 6.7% in adversarial robust accuracy across 14 zero-shot classification benchmarks while preserving clean s…
 tags:
   - "NeurIPS 2025 (Spotlight)"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "cross-modality alignment"
   - "subspace projection"
 date: 2026-05-08
-content_hash: 62becf33ecf40961
+content_hash: caabbad659f3645e
 ---
 
 # Enhancing CLIP Robustness via Cross-Modality Alignment
@@ -160,10 +160,10 @@ The paper provides two key theoretical results:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Zero-Shot Robustness of Vision Language Models Via Confidence-Aware Weighting](zero-shot_robustness_of_vision_language_models_via_confidence-aware_weighting.md)
-- [\[ICML 2026\] AliMark: Enhancing Robustness of Sentence-Level Watermarking Against Text Paraphrasing](../../ICML2026/llm_safety/alimark_enhancing_robustness_of_sentence-level_watermarking_against_text_paraphr.md)
+- [\[ICLR 2026\] AdPO: Enhancing the Adversarial Robustness of Large Vision-Language Models with Preference Optimization](../../ICLR2026/llm_safety/adpo_enhancing_the_adversarial_robustness_of_large_vision-language_models_with_p.md)
+- [\[ACL 2025\] CLIPErase: Efficient Unlearning of Visual-Textual Associations in CLIP](../../ACL2025/llm_safety/cliperase_efficient_unlearning_of_visual-textual_associations_in_clip.md)
+- [\[ICML 2025\] X-Transfer Attacks: Towards Super Transferable Adversarial Attacks on CLIP](../../ICML2025/llm_safety/x-transfer_attacks_towards_super_transferable_adversarial_attacks_on_clip.md)
 - [\[NeurIPS 2025\] ToxicTextCLIP: Text-Based Poisoning and Backdoor Attacks on CLIP Pre-training](toxictextclip_text-based_poisoning_and_backdoor_attacks_on_clip_pre-training.md)
-- [\[NeurIPS 2025\] On the Robustness of Verbal Confidence of LLMs in Adversarial Attacks](on_the_robustness_of_verbal_confidence_of_llms_in_adversarial_attacks.md)
-- [\[AAAI 2026\] Federated CLIP for Resource-Efficient Heterogeneous Medical Image Classification](../../AAAI2026/llm_safety/federated_clip_for_resource-efficient_heterogeneous_medical_image_classification.md)
 
 </div>
 

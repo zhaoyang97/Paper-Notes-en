@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reinforcement Learning Finetunes Small Subnetworks in Large Language Models
 description: >-
-  [NeurIPS 2025][LLM Alignment][reinforcement-learning] RL fine-tuning of LLMs updates only 5%–30% of parameters in practice (sparse subnetworks)…
+  [NeurIPS 2025][LLM Alignment][reinforcement-learning] RL fine-tuning of LLMs updates only 5%–30% of parameters in practice (sparse subnetworks), and these subnetworks exhibit high consistency across different random seeds, datasets, and algorithms. Fine-tuning only the identified subnetwork can reproduce both the performance and the parameter values of full fine-tuning.
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "LLM finetuning"
   - "lottery ticket hypothesis"
 date: 2026-05-08
-content_hash: 9caba12b9b56b4ce
+content_hash: aa3459e8732d7a77
 ---
 
 # Reinforcement Learning Finetunes Small Subnetworks in Large Language Models
@@ -161,7 +161,7 @@ Core finding: **Training on in-distribution data is the primary driver of sparsi
 - [\[NeurIPS 2025\] Strategyproof Reinforcement Learning from Human Feedback](strategyproof_reinforcement_learning_from_human_feedback.md)
 - [\[NeurIPS 2025\] Adjacent Words, Divergent Intents: Jailbreaking Large Language Models via Task Concurrency](adjacent_words_divergent_intents_jailbreaking_large_language_models_via_task_con.md)
 - [\[NeurIPS 2025\] Jailbreak-Zero: A Path to Pareto Optimal Red Teaming for Large Language Models](jailbreak-zero_a_path_to_pareto_optimal_red_teaming_for_large_language_models.md)
-- [\[AAAI 2026\] EASE: Practical and Efficient Safety Alignment for Small Language Models](../../AAAI2026/llm_alignment/ease_practical_and_efficient_safety_alignment_for_small_language_models.md)
+- [\[ACL 2025\] Beyond the Tip of Efficiency: Uncovering the Submerged Threats of Jailbreak Attacks in Small Language Models](../../ACL2025/llm_alignment/beyond_the_tip_of_efficiency_uncovering_the_submerged_threats_of_jailbreak_attac.md)
 
 </div>
 

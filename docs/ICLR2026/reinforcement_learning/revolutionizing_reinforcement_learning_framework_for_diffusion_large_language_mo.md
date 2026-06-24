@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Revolutionizing Reinforcement Learning Framework for Diffusion Large Language Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][Diffusion Language Model] This paper proposes TraceRL—a trace-aware reinforcement learning framework that incorporates the **decoding trace** of Diffusion Large Language Models (DLMs) during inference into the post-training objective. It features a variance-reducing diffusion value model that uniformly adapts to both full-attention and block-at
+  [ICLR 2026][Reinforcement Learning][Diffusion Language Models] This paper proposes TraceRL—a trace-aware reinforcement learning framework that incorporates the **decoding trace** of Diffusion Large Language Models (DLMs) during inference into the post-training objective. It features a variance-reducing diffusion value model that uniformly adapts to both full-attention and block-attention DLMs. Based on this, the TraDo series of SOTA diffusion language models are trained…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Diffusion Language Model
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Diffusion Language Models"
+  - "Trace-aware RL"
+  - "Value Model"
+  - "Block Diffusion"
+  - "Math/Code Reasoning"
 date: 2026-05-08
-content_hash: 3b49f700a225f8e3
+content_hash: 4fad94e88bc79a94
 ---
+
 # Revolutionizing Reinforcement Learning Framework for Diffusion Large Language Models
 
 **Conference**: ICLR 2026  

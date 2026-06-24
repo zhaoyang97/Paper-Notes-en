@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Understanding Transformers for Time Series: Rank Structure, Flow-of-ranks, and Compressibility
 description: >-
-  [ICLR 2026][Time Series][flow-of-ranks] This paper analyzes Time Series Transformers from the perspective of "numerical rank." It proves that patch embeddings of time series naturally fall into extremely low-rank subspaces, allowing $Q/K/V$ attention matrices to be approximated by low-rank counterparts. It proposes the "flow-of-ranks" to explain why rank gro
+  [ICLR 2026][Time Series][Time Series Foundation Models] This paper analyzes Time Series Transformers from the perspective of "numerical rank." It proves that patch embeddings of time series naturally fall into extremely low-rank subspaces, allowing $Q/K/V$ attention matrices to be approximated by low-rank counterparts. It proposes the "flow-of-ranks" to explain why rank grows with depth and why shallow layers are most compressible. Based on these insights…
 tags:
-  - ICLR 2026
-  - Time Series
-  - flow-of-ranks
+  - "ICLR 2026"
+  - "Time Series"
+  - "Time Series Foundation Models"
+  - "Numerical Rank"
+  - "Low-rank Attention"
+  - "flow-of-ranks"
+  - "Chronos Compression"
 date: 2026-05-08
-content_hash: 220fd3420b328ae3
+content_hash: 77a0ce2414245f22
 ---
+
 # Understanding Transformers for Time Series: Rank Structure, Flow-of-ranks, and Compressibility
 
 **Conference**: ICLR 2026  
@@ -147,16 +152,16 @@ Chronos can be compressed to ~**23.7%** with nearly no loss, while T5 LLM degrad
 - Value: ⭐⭐⭐⭐⭐ Practical conclusions (65% speedup) are directly applicable to TSFM deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Understanding Transformers in Time Series Forecasting: A Case Study on MOIRAI](understanding_transformers_for_time_series_forecasting_a_case_study_on_moirai.md)
 - [\[ICLR 2026\] Understanding the Implicit Biases of Design Choices for Time Series Foundation Models](understanding_the_implicit_biases_of_design_choices_for_time_series_foundation_m.md)
 - [\[CVPR 2026\] Probabilistic Precipitation Nowcasting with Rectified Flow Transformers](../../CVPR2026/time_series/probabilistic_precipitation_nowcasting_with_rectified_flow_transformers.md)
-- [\[ICLR 2026\] Time-Gated Multi-Scale Flow Matching for Time-Series Imputation](time-gated_multi-scale_flow_matching_for_time-series_imputation.md)
-- [\[ICLR 2026\] SciTS: Scientific Time Series Understanding and Generation with LLMs](scits_scientific_time_series_understanding_and_generation_with_llms.md)
+- [\[ICLR 2026\] Structure Learning from Time-Series Data with Lag-Agnostic Structural Prior](structure_learning_from_time-series_data_with_lag-agnostic_structural_prior.md)
+- [\[ICLR 2026\] Flow-based Conformal Prediction for Multi-dimensional Time Series](flow-based_conformal_prediction_for_multi-dimensional_time_series.md)
 
 </div>
 

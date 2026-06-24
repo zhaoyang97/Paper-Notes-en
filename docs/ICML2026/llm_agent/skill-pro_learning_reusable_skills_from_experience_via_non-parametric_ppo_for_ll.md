@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Skill-Pro: Learning Reusable Skills from Experience via Non-Parametric PPO for LLM Agents
 description: >-
-  [ICML 2026][LLM Agent][Skill-MDP] Skill-Pro explicitly extracts interactive experiences of LLM agents into a "activation + execution + termination" skill triplet. It uses semantic gradients to generate candidate skills and verifies them with a PPO-style trust region (PPO Gate) before inclusion. Ultimately, it achieves over 0.85 reuse rate and significa
+  [ICML 2026 Spotlight][LLM Agent][Reusable Skills] Skill-Pro explicitly extracts interactive experiences of LLM agents into a "activation + execution + termination" skill triplet. It uses semantic gradients to generate candidate skills and verifies them with a PPO-style trust region (PPO Gate) before inclusion. Ultimately, it achieves over 0.85 reuse rate and significant performance gains in ALFWorld/Mastermind with a minimal memory library of ~800 tokens.
 tags:
-  - ICML 2026
-  - LLM Agent
-  - Skill-MDP
+  - "ICML 2026 Spotlight"
+  - "LLM Agent"
+  - "Reusable Skills"
+  - "Skill-MDP"
+  - "Non-parametric PPO"
+  - "Semantic Gradient"
+  - "Procedural Memory"
 date: 2026-05-08
-content_hash: 92c85bde5717a14f
+content_hash: 115101c14d2f303b
 ---
+
 # Skill-Pro: Learning Reusable Skills from Experience via Non-Parametric PPO for LLM Agents
 
 **Conference**: ICML 2026 Spotlight  
@@ -177,14 +182,17 @@ Storage is **~50×** smaller than the next best baseline (G-Memory), with a reus
 
 <div class="related-papers" markdown="1">
 
-1. **Agent Workflow Memory (AWM)** (arXiv 2024): First to focus on explicit workflows.
-2. **TextGrad** (arXiv 2024): Optimization of prompts via gradients.
-3. **PPO (Proximal Policy Optimization)** (OpenAI 2017): The foundational RL algorithm adapted here.
+## Related Papers
+
+- [\[ICLR 2026\] PolySkill: Learning Generalizable Skills through Polymorphic Abstraction for Continual Agents](../../ICLR2026/llm_agent/polyskill_learning_generalizable_skills_through_polymorphic_abstraction_for_cont.md)
+- [\[ICML 2026\] Lifting Traces to Logic: Programmatic Skill Induction with Neuro-Symbolic Learning for Long-Horizon Agentic Tasks](lifting_traces_to_logic_programmatic_skill_induction_with_neuro-symbolic_learnin.md)
+- [\[ICLR 2026\] Scaling Agent Learning via Experience Synthesis](../../ICLR2026/llm_agent/scaling_agent_learning_via_experience_synthesis.md)
+- [\[CVPR 2026\] Learning to Select Visual Tools from Experience](../../CVPR2026/llm_agent/learning_to_select_visual_tools_from_experience.md)
+- [\[ICLR 2026\] Dyna-Mind: Learning to Simulate from Experience for Better AI Agents](../../ICLR2026/llm_agent/dyna-mind_learning_to_simulate_from_experience_for_better_ai_agents.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Learning to Select Visual Tools from Experience](../../CVPR2026/llm_agent/learning_to_select_visual_tools_from_experience.md)

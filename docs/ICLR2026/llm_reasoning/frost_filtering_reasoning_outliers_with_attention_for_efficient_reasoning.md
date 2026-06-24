@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] FROST: Filtering Reasoning Outliers with Attention for Efficient Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Softmax1] Redundant sentences in reasoning chains with "low attention and low contribution" are defined as **reasoning outliers**. By replacing vanilla Softmax with Softmax₁ and performing lightweight SFT, large reasoning models can reduce reasoning tokens by approximately 70% while maintaining or even improving performance.
+  [ICLR 2026][Reasoning][Efficient inference] Redundant sentences in reasoning chains with "low attention and low contribution" are defined as **reasoning outliers**. By replacing vanilla Softmax with Softmax₁ and performing lightweight SFT, large reasoning models can reduce reasoning tokens by approximately 70% while maintaining or even improving performance.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Softmax1
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Efficient inference"
+  - "reasoning outliers"
+  - "attention pruning"
+  - "Softmax1"
+  - "attention outliers"
+  - "overthinking"
 date: 2026-05-08
-content_hash: 05b57286cd613100
+content_hash: 7d1200faeaefd957
 ---
+
 # FROST: Filtering Reasoning Outliers with Attention for Efficient Reasoning
 
 **Conference**: ICLR 2026  
@@ -131,8 +137,8 @@ Average across three models: FROST improves accuracy by 26.70% and reduces token
 - [\[ICLR 2026\] Attention as a Compass: Efficient Exploration for Process-Supervised RL in Reasoning Models](attention_as_a_compass_efficient_exploration_for_process-supervised_rl_in_reason.md)
 - [\[ICLR 2026\] Whatever Remains Must Be True: Filtering Drives Reasoning in LLMs, Shaping Diversity](whatever_remains_must_be_true_filtering_drives_reasoning_in_llms_shaping_diversi.md)
 - [\[ICLR 2026\] Echoes as Anchors: Probabilistic Costs and Attention Refocusing in LLM Reasoning](echoes_as_anchors_probabilistic_costs_and_attention_refocusing_in_llm_reasoning.md)
-- [\[ICLR 2026\] Retrieval-of-Thought: Efficient Reasoning via Reusing Thoughts](retrieval-of-thought_efficient_reasoning_via_reusing_thoughts.md)
 - [\[ACL 2026\] DELTA: Dynamic Layer-Aware Token Attention for Efficient Long-Context Reasoning](../../ACL2026/llm_reasoning/delta_dynamic_layer-aware_token_attention_for_efficient_long-context_reasoning.md)
+- [\[ICLR 2026\] DRPO: Efficient Reasoning via Decoupled Reward Policy Optimization](drpo_efficient_reasoning_via_decoupled_reward_policy_optimization.md)
 
 </div>
 

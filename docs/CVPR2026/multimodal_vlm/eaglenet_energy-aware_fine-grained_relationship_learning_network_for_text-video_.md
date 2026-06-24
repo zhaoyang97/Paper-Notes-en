@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EagleNet: Energy-Aware Fine-Grained Relationship Learning Network for Text-Video Retrieval
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] EagleNet constructs a text-frame relationship graph and employs a Relational Graph Attention Network to learn fine-grained interaction between text-frame and frame-frame units. It generates enhanced text embeddings that integrate video contextual information and introduces an energy-aware matching mechanism to capture
+  [CVPR 2026][Multimodal VLM][Text-Video Retrieval] EagleNet constructs a text-frame relationship graph and employs a Relational Graph Attention Network to learn fine-grained interaction between text-frame and frame-frame units. It generates enhanced text embeddings that integrate video contextual information and introduces an energy-aware matching mechanism to capture the distribution of real text-video pairs, achieving SOTA performance across four benchmark datasets.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Text-Video Retrieval"
+  - "Graph Attention Network"
+  - "Energy-Based Model"
+  - "Fine-grained Relationship Learning"
+  - "Cross-modal Alignment"
 date: 2026-05-08
-content_hash: 80d042b51299ceb8
+content_hash: 8947c05003992bf7
 ---
+
 # EagleNet: Energy-Aware Fine-Grained Relationship Learning Network for Text-Video Retrieval
 
 **Conference**: CVPR 2026  
@@ -160,11 +166,11 @@ Where $\lambda_{sup} = 0.8$ and $\lambda_{eam} = 1.0$. The model is initialized 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Camouflage-aware Image-Text Retrieval via Expert Collaboration](camouflage-aware_image-text_retrieval_via_expert_collaboration.md)
+- [\[CVPR 2026\] Quota-Calibrated Fine-Grained Alignment with Context-Aware Marginals for Text-based Person Retrieval](quota-calibrated_fine-grained_alignment_with_context-aware_marginals_for_text-ba.md)
 - [\[CVPR 2026\] Gravitation-Driven Semantic Alignment for Text Video Retrieval](gravitation-driven_semantic_alignment_for_text_video_retrieval.md)
-- [\[CVPR 2026\] CropVLM: Learning to Zoom for Fine-Grained Vision-Language Perception](cropvlm_learning_to_zoom_for_fine_grained_vision_language_perception.md)
-- [\[CVPR 2026\] HanDyVQA: A Video QA Benchmark for Fine-Grained Hand-Object Interaction Dynamics](handyvqa_a_video_qa_benchmark_for_fine-grained_hand-object_interaction_dynamics.md)
-- [\[CVPR 2026\] CoVR-R: Reason-Aware Composed Video Retrieval](covr-rreason-aware_composed_video_retrieval.md)
+- [\[CVPR 2026\] Camouflage-aware Image-Text Retrieval via Expert Collaboration](camouflage-aware_image-text_retrieval_via_expert_collaboration.md)
+- [\[CVPR 2026\] Language-driven Fine-grained Retrieval](language-driven_fine-grained_retrieval.md)
+- [\[CVPR 2026\] Beyond Global Similarity: Multi-Conditional Retrieval for Fine-Grained Cross-Modal Understanding](beyond_global_similarity_multi-conditional_retrieval_for_fine-grained_cross-moda.md)
 
 </div>
 

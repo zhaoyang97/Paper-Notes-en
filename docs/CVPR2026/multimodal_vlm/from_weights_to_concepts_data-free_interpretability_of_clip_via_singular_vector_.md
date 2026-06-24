@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Weights to Concepts: Data-Free Interpretability of CLIP via Singular Vector Decomposition
 description: >-
-  [CVPR 2026][Interpretability][Paper Note] This paper proposes SITH (Semantic Inspection of Transformer Heads), a completely data-free and training-free CLIP interpretability framework. By performing SVD on the Value-Output weight matrices of attention heads and utilizing the self-developed COMP algorithm to map singular vectors to sparse combinations of semant
+  [CVPR 2026][Multimodal VLM][CLIP interpretability] This paper proposes SITH (Semantic Inspection of Transformer Heads), a completely data-free and training-free CLIP interpretability framework. By performing SVD on the Value-Output weight matrices of attention heads and utilizing the self-developed COMP algorithm to map singular vectors to sparse combinations of semantically coherent concepts, SITH achieves significantly finer intra-head interpretability compared to existing…
 tags:
-  - CVPR 2026
-  - Interpretability
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "CLIP interpretability"
+  - "SVD"
+  - "attention head analysis"
+  - "weight space editing"
+  - "data-free"
 date: 2026-05-08
-content_hash: 317528d0ebf814ed
+content_hash: 450cf2f67e110a38
 ---
+
 # From Weights to Concepts: Data-Free Interpretability of CLIP via Singular Vector Decomposition
 
 **Conference**: CVPR 2026  
@@ -137,11 +143,11 @@ SITH suppresses NSFW concepts via weight editing without sacrificing performance
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Beyond Components: Singular Vector-Based Interpretability of Transformer Circuits](../../NeurIPS2025/interpretability/beyond_components_singular_vector-based_interpretability_of_transformer_circuits.md)
-- [\[ICLR 2026\] STRIDE: Subset-Free Functional Decomposition for XAI in Tabular Settings](../../ICLR2026/interpretability/stride_subset-free_functional_decomposition_for_xai_in_tabular_settings.md)
-- [\[CVPR 2026\] Cut to the Chase: Training-free Multimodal Summarization via Chain-of-Events](cut_to_the_chase_training-free_multimodal_summarization_via_chain-of-events.md)
-- [\[CVPR 2026\] Hidden Monotonicity: Explaining Deep Neural Networks via their DC Decomposition](hidden_monotonicity_explaining_deep_neural_networks_via_their_dc_decomposition.md)
-- [\[ICLR 2026\] Exploring Interpretability for Visual Prompt Tuning with Cross-layer Concepts](../../ICLR2026/interpretability/exploring_interpretability_for_visual_prompt_tuning_with_cross-layer_concepts.md)
+- [\[CVPR 2026\] Explaining CLIP Zero-shot Predictions Through Concepts](explaining_clip_zero-shot_predictions_through_concepts.md)
+- [\[CVPR 2026\] Molmo2: Open Weights and Data for Vision-Language Models with Video Understanding and Grounding](molmo2_open_weights_and_data_for_vision-language_models_with_video_understanding.md)
+- [\[CVPR 2026\] Which Concepts to Forget and How to Refuse? Decomposing Concepts for Continual Unlearning in Large Vision-Language Models](which_concepts_to_forget_and_how_to_refuse_decomposing_concepts_for_continual_un.md)
+- [\[CVPR 2026\] Synthesizing Visual Concepts as Vision-Language Programs](synthesizing_visual_concepts_as_vision-language_programs.md)
+- [\[CVPR 2026\] Information-Theoretic Decomposition for Multimodal Interaction Learning](information-theoretic_decomposition_for_multimodal_interaction_learning.md)
 
 </div>
 

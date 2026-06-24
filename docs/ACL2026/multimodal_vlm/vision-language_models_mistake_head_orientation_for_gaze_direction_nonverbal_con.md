@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Vision-Language Models Mistake Head Orientation for Gaze Direction: Nonverbal Conversation Cues
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] This paper uses 1,360 controlled real-world photos and pre-registered statistical tests to find that current VLMs perform much worse than humans in judging which object a person is looking at. They primarily mistake head orientation for gaze direction. Fine-tuning specialized gaze models can alleviate but cannot comple
+  [ACL2026][Multimodal VLM][Gaze target inference] This paper uses 1,360 controlled real-world photos and pre-registered statistical tests to find that current VLMs perform much worse than humans in judging which object a person is looking at. They primarily mistake head orientation for gaze direction. Fine-tuning specialized gaze models can alleviate but cannot completely eliminate this bias.
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL2026"
+  - "Multimodal VLM"
+  - "Gaze target inference"
+  - "head orientation bias"
+  - "nonverbal cues"
+  - "VLM behavior evaluation"
+  - "controlled experiments"
 date: 2026-05-08
-content_hash: 5958152d3f2d9ee5
+content_hash: 95d5bdbfa7ef7dd0
 ---
+
 # Vision-Language Models Mistake Head Orientation for Gaze Direction: Nonverbal Conversation Cues
 
 **Conference**: ACL2026  
@@ -128,10 +134,18 @@ Head bias tests further demonstrate that models are not simply "unable to unders
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] StructXLIP: Enhancing Vision-Language Models with Multimodal Structural Cues](../../CVPR2026/multimodal_vlm/structxlip_enhancing_vision-language_models_with_multimodal_structural_cues.md)
+- [\[ACL 2025\] Speaking Beyond Language: A Large-Scale Multimodal Dataset for Learning Nonverbal Cues from Video-Grounded Dialogues](../../ACL2025/multimodal_vlm/speaking_beyond_language.md)
+- [\[CVPR 2026\] Direction-aware 3D Large Multimodal Models](../../CVPR2026/multimodal_vlm/direction-aware_3d_large_multimodal_models.md)
+- [\[ICCV 2025\] MultiVerse: A Multi-Turn Conversation Benchmark for Evaluating Large Vision and Language Models](../../ICCV2025/multimodal_vlm/multiverse_a_multi-turn_conversation_benchmark_for_evaluating_large_vision_and_l.md)
+- [\[ICLR 2026\] Procedural Mistake Detection via Action Effect Modeling](../../ICLR2026/multimodal_vlm/procedural_mistake_detection_via_action_effect_modeling.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] StructXLIP: Enhancing Vision-Language Models with Multimodal Structural Cues](../../CVPR2026/multimodal_vlm/structxlip_enhancing_vision-language_models_with_multimodal_structural_cues.md)

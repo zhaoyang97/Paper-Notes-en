@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] WUSH: Near-Optimal Adaptive Transforms for LLM Quantization
 description: >-
-  [ICML 2026][Model Compression][Hadamard] WUSH derives closed-form, data-adaptive blockwise linear transforms for LLM weight-activation low-bit quantization. It combines the uniform diffusion capability of Hadamard with second-order statistics of weights and activations, significantly improving accuracy for W4A4 (especially MXFP4) scenarios with almost no sacr
+  [ICML 2026][Model Compression][W4A4 Quantization] WUSH derives closed-form, data-adaptive blockwise linear transforms for LLM weight-activation low-bit quantization. It combines the uniform diffusion capability of Hadamard with second-order statistics of weights and activations, significantly improving accuracy for W4A4 (especially MXFP4) scenarios with almost no sacrifice to FP4 kernel throughput.
 tags:
-  - ICML 2026
-  - Model Compression
-  - Hadamard
-  - MXFP4
-  - GPTQ
+  - "ICML 2026"
+  - "Model Compression"
+  - "W4A4 Quantization"
+  - "Adaptive Transforms"
+  - "Hadamard"
+  - "MXFP4"
+  - "GPTQ"
 date: 2026-05-08
-content_hash: fc4000922fd9654a
+content_hash: 927df30328f0947c
 ---
+
 # WUSH: Near-Optimal Adaptive Transforms for LLM Quantization
 
 **Conference**: ICML 2026  
@@ -147,10 +150,10 @@ Layerwise quantization loss validates WUSH design components. The table shows tr
 ## Related Papers
 
 - [\[ICML 2026\] NeUQI: Near-Optimal Uniform Quantization Parameter Initialization for Low-Bit LLMs](neuqi_near-optimal_uniform_quantization_parameter_initialization_for_low-bit_llm.md)
+- [\[ICLR 2026\] TurboQuant: Online Vector Quantization with Near-Optimal Distortion Rate](../../ICLR2026/model_compression/turboquant_online_vector_quantization_with_near-optimal_distortion_rate.md)
 - [\[ICML 2026\] OSAQ: Outlier Self-Absorption for Accurate Low-bit LLM Quantization](osaq_outlier_self-absorption_for_accurate_low-bit_llm_quantization.md)
 - [\[ICML 2026\] ReSpinQuant: Efficient Layer-Wise LLM Quantization via Subspace Residual Rotation Approximation](respinquant_efficient_layer-wise_llm_quantization_via_subspace_residual_rotation.md)
 - [\[ICLR 2026\] Dataset Distillation as Pushforward Optimal Quantization](../../ICLR2026/model_compression/dataset_distillation_as_pushforward_optimal_quantization.md)
-- [\[ICLR 2026\] Compute-Optimal Quantization-Aware Training](../../ICLR2026/model_compression/compute-optimal_quantization-aware_training.md)
 
 </div>
 

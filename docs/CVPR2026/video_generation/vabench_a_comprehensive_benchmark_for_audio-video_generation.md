@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VABench: A Comprehensive Benchmark for Audio-Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] VABench is a comprehensive benchmark for "synchronized audio-video generation," covering three tasks: Text-to-Audio-Video (T2AV), Image-to-Audio-Video (I2AV), and Stereo Generation across seven content categories. It employs a dual-track evaluation system involving 15 fine-grained metrics from "Expert Models + Multimod
+  [CVPR 2026][Video Generation][Audio-Video Generation] VABench is a comprehensive benchmark for "synchronized audio-video generation," covering three tasks: Text-to-Audio-Video (T2AV), Image-to-Audio-Video (I2AV), and Stereo Generation across seven content categories. It employs a dual-track evaluation system involving 15 fine-grained metrics from "Expert Models + Multimodal Large Language Models (MLLMs)" — plus 9 stereo acoustic metrics — to perform reference-free evaluation…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Audio-Video Generation"
+  - "Synchronous Evaluation"
+  - "Multimodal Benchmark"
+  - "Stereo Evaluation"
+  - "MLLM Judging"
 date: 2026-05-08
-content_hash: fc16d722cd596d01
+content_hash: dc7110033740448a
 ---
+
 # VABench: A Comprehensive Benchmark for Audio-Video Generation
 
 **Conference**: CVPR 2026  
@@ -116,16 +122,16 @@ Tests included end-to-end models (Veo3-fast, Wan2.5 Preview, Sora2) and decouple
 - Value: ⭐⭐⭐⭐ Provides a standardized, interpretable tool for the trending field of audio-video generation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] ActivityForensics: A Comprehensive Benchmark for Localizing Manipulated Activity in Videos](activityforensics_a_comprehensive_benchmark_for_localizing_manipulated_activity_.md)
+- [\[ICML 2026\] V2V-Bench: A Comprehensive Benchmark for Video-to-Video Generation Evaluation](../../ICML2026/video_generation/v2v-bench_a_comprehensive_benchmark_for_video-to-video_generation_evaluation.md)
 - [\[ICLR 2026\] DrivingGen: A Comprehensive Benchmark for Generative Video World Models in Autonomous Driving](../../ICLR2026/video_generation/drivinggen_a_comprehensive_benchmark_for_generative_video_world_models_in_autono.md)
-- [\[ACL 2025\] VidCapBench: A Comprehensive Benchmark of Video Captioning for Controllable Text-to-Video Generation](../../ACL2025/video_generation/vidcapbench_a_comprehensive_benchmark_of_video_captioning_for_controllable_text-.md)
-- [\[CVPR 2026\] Harmony: Harmonizing Audio and Video Generation through Cross-Task Synergy](harmony_harmonizing_audio_and_video_generation_through_cross-task_synergy.md)
 - [\[CVPR 2026\] UniAVGen: Unified Audio and Video Generation with Asymmetric Cross-Modal Interactions](uniavgen_unified_audio_and_video_generation_with_asymmetric_cross-modal_interact.md)
+- [\[ACL 2025\] VidCapBench: A Comprehensive Benchmark of Video Captioning for Controllable Text-to-Video Generation](../../ACL2025/video_generation/vidcapbench_a_comprehensive_benchmark_of_video_captioning_for_controllable_text-.md)
 
 </div>
 

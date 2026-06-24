@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Structured Language Generation Model: Loss Calibration and Formatted Decoding for Efficient Text
 description: >-
-  [Text Generation] This paper proposes the SLGM framework, which reformulates structured prediction tasks for generative language models as classification problems via three components: **structured input format**…
+  [Text Generation] This paper proposes the SLGM framework, which reformulates structured prediction tasks for generative language models as classification problems via three components: **structured input format**, **format loss**, and **format-aware decoding**. Without introducing additional model parameters, SLGM significantly improves structural prediction performance of sub-1B models across 13 datasets spanning 5 task categories, including NER, RE, and SRL.
 tags:
   - "Text Generation"
 date: 2026-05-08
-content_hash: 5de455950514ea45
+content_hash: 68a5cb7b97960c63
 ---
 
 # Structured Language Generation Model: Loss Calibration and Formatted Decoding for Efficient Text
@@ -144,11 +144,11 @@ Formatted decoding improves the CE baseline by 6 F1 points and reduces format er
 
 ## Related Papers
 
+- [\[ACL 2025\] PerSphere: A Comprehensive Framework for Multi-Faceted Perspective Retrieval and Summarization](../../ACL2025/nlp_generation/persphere_a_comprehensive_framework_for_multi-faceted_perspective_retrieval_and_.md)
 - [\[ICLR 2026\] FS-DFM: Fast and Accurate Long Text Generation with Few-Step Diffusion Language Model](../../ICLR2026/nlp_generation/fs-dfm_fast_and_accurate_long_text_generation_with_few-step_diffusion_language_m.md)
+- [\[ICLR 2026\] Unveiling the Potential of Diffusion Large Language Model in Controllable Generation](../../ICLR2026/nlp_generation/unveiling_the_potential_of_diffusion_large_language_model_in_controllable_genera.md)
 - [\[ACL 2026\] Losses that Cook: Topological Optimal Transport for Structured Recipe Generation](../../ACL2026/nlp_generation/losses_that_cook_topological_optimal_transport_for_structured_recipe_generation.md)
-- [\[ICML 2026\] Characterizing the Effect of Noise in Language Generation in the Limit](../../ICML2026/nlp_generation/characterizing_the_effect_of_noise_in_language_generation_in_the_limit.md)
-- [\[AAAI 2026\] C3TG: Conflict-aware, Composite, and Collaborative Controlled Text Generation](c3tg_conflict-aware_composite_and_collaborative_controlled_text_generation.md)
-- [\[ACL 2026\] Planning Beyond Text: Graph-based Reasoning for Complex Narrative Generation](../../ACL2026/nlp_generation/planning_beyond_text_graph-based_reasoning_for_complex_narrative_generation.md)
+- [\[ICLR 2026\] Diverse Text Decoding via Iterative Reweighting](../../ICLR2026/nlp_generation/diverse_text_decoding_via_iterative_reweighting.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VGR: Visual Grounded Reasoning
 description: >-
-  [ICLR 2026][vlm_reasoning][Chain-of-Thought] VGR enables Multimodal Large Language Models (MLLMs) to "replay visual memory" during the thinking process—autonomously framing key regions during reasoning and retrieving high-resolution visual tokens to continue thinking. Coupled with a set of VGR-SFT data containing grounding signals, it significantly outperforms ba
+  [ICLR 2026][VLM Reasoning][Multimodal Reasoning] VGR enables Multimodal Large Language Models (MLLMs) to "replay visual memory" during the thinking process—autonomously framing key regions during reasoning and retrieving high-resolution visual tokens to continue thinking. Coupled with a set of VGR-SFT data containing grounding signals, it significantly outperforms baselines on fine-grained image understanding tasks such as ChartQA, AI2D, and MMStar…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Multimodal Reasoning"
+  - "Visual Grounding"
+  - "Visual Memory Replay"
+  - "Chain-of-Thought"
+  - "SFT Data Construction"
 date: 2026-05-08
-content_hash: 993fb895e033624a
+content_hash: 1cef5546e459f215
 ---
+
 # VGR: Visual Grounded Reasoning
 
 **Conference**: ICLR 2026  
@@ -132,11 +137,11 @@ Backbone Generalization: Applying VGR to Qwen2.5+SigLIP or Qwen2.5+InternViT lea
 
 ## Related Papers
 
+- [\[CVPR 2026\] Thinking Diffusion: Penalize and Guide Visual-Grounded Reasoning in Diffusion Multimodal Language Models](../../CVPR2026/vlm_reasoning/thinking_diffusion_penalize_and_guide_visual-grounded_reasoning_in_diffusion_mul.md)
+- [\[ICLR 2026\] Rex-Thinker: Grounded Object Referring via Chain-of-Thought Reasoning](rex-thinker_grounded_object_referring_via_chain-of-thought_reasoning.md)
 - [\[ICLR 2026\] Composition-Grounded Data Synthesis for Visual Reasoning](composition-grounded_data_synthesis_for_visual_reasoning.md)
 - [\[CVPR 2026\] TerraScope: Pixel-Grounded Visual Reasoning for Earth Observation](../../CVPR2026/vlm_reasoning/terrascope_pixel-grounded_visual_reasoning_for_earth_observation.md)
-- [\[CVPR 2026\] Thinking Diffusion: Penalize and Guide Visual-Grounded Reasoning in Diffusion Multimodal Language Models](../../CVPR2026/vlm_reasoning/thinking_diffusion_penalize_and_guide_visual-grounded_reasoning_in_diffusion_mul.md)
 - [\[ICLR 2026\] IV-Bench: A Benchmark for Image-Grounded Video Perception and Reasoning in Multimodal LLMs](iv-bench_a_benchmark_for_image-grounded_video_perception_and_reasoning_in_multim.md)
-- [\[CVPR 2026\] AV-Reasoner: Improving and Benchmarking Clue-Grounded Audio-Visual Counting for MLLMs](../../CVPR2026/vlm_reasoning/av-reasoner_improving_and_benchmarking_clue-grounded_audio-visual_counting_for_m.md)
 
 </div>
 

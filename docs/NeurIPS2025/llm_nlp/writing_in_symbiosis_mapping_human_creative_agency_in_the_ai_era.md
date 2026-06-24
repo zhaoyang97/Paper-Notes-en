@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Writing in Symbiosis: Mapping Human Creative Agency in the AI Era
 description: >-
-  [NeurIPS 2025][LLM/NLP][human-AI coevolution] Through longitudinal corpus analysis of 50,000+ documents, this paper proposes the "Dual-Track Evolution" hypothesis — that in the LLM era…
+  [NeurIPS 2025][LLM (Other)][human-AI coevolution] Through longitudinal corpus analysis of 50,000+ documents, this paper proposes the "Dual-Track Evolution" hypothesis — that in the LLM era, human writing exhibits thematic convergence alongside structural stylistic differentiation — and identifies three authorial adaptation archetypes: Adopters, Resistors, and Pragmatists.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "human-AI coevolution"
   - "creative writing"
   - "stylometric analysis"
   - "authorial archetypes"
   - "LLM influence detection"
 date: 2026-05-08
-content_hash: ccf38708f7e8537c
+content_hash: 4ee20ea0c5c3672e
 ---
 
 # Writing in Symbiosis: Mapping Human Creative Agency in the AI Era
@@ -200,10 +200,10 @@ This suggests that once LLM-like stylistic features become stigmatized, authors 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Towards Implicit Aggregation: Robust Image Representation for Place Recognition in the Transformer Era](towards_implicit_aggregation_robust_image_representation_for_place_recognition_i.md)
-- [\[ICML 2026\] "I've Seen How This Goes": Characterizing LLM and Human Writing Diversity via Progressive Conditional Surprisal](../../ICML2026/llm_nlp/ive_seen_how_this_goes_characterizing_diversity_via_progressive_conditional_surp.md)
-- [\[NeurIPS 2025\] Systematizing LLM Persona Design: A Four-Quadrant Technical Taxonomy for AI Companions](systematizing_llm_persona_design_a_four-quadrant_technical_taxonomy_for_ai_compa.md)
-- [\[ICLR 2026\] Speculative Actions: A Lossless Framework for Faster AI Agents](../../ICLR2026/llm_nlp/speculative_actions_faster_ai_agents.md)
-- [\[ACL 2026\] Big AI is Accelerating the Metacrisis: What Can We Do?](../../ACL2026/llm_nlp/big_ai_is_accelerating_the_metacrisis_what_can_we_do.md)
+- [\[ACL 2025\] Towards Enhanced Immersion and Agency for LLM-based Interactive Drama](../../ACL2025/llm_nlp/towards_enhanced_immersion_and_agency_for_llm-based_interactive_drama.md)
+- [\[ICML 2026\] "I've Seen How This Goes": Characterizing LLM vs. Human Writing Diversity using Progressive Conditional Surprisal](../../ICML2026/llm_nlp/ive_seen_how_this_goes_characterizing_diversity_via_progressive_conditional_surp.md)
+- [\[ACL 2025\] EscapeBench: Towards Advancing Creative Intelligence of Language Model Agents](../../ACL2025/llm_nlp/escapebench_creative_agent.md)
+- [\[ACL 2025\] Mapping 1,000+ Language Models via the Log-Likelihood Vector](../../ACL2025/llm_nlp/mapping_1000_models_loglikelihood.md)
 
 </div>
 

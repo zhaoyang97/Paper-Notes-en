@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GEWDiff: Geometric Enhanced Wavelet-based Diffusion Model for Hyperspectral Image Super-resolution
 description: >-
-  [AAAI 2026][Image Generation][Hyperspectral Image Super-resolution] This paper proposes GEWDiff, a geometric enhanced wavelet-based diffusion model that efficiently compresses hyperspectral data into a latent space via a…
+  [AAAI 2026][Image Generation][Hyperspectral Image Super-resolution] This paper proposes GEWDiff, a geometric enhanced wavelet-based diffusion model that efficiently compresses hyperspectral data into a latent space via a wavelet encoder-decoder, introduces edge-aware noise scheduling and mask-conditional control to preserve geometric integrity, and designs a multi-level loss function to facilitate stable convergence, achieving state-of-the-art performance on 4× hyperspectral…
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Geometric Enhancement"
   - "Remote Sensing"
 date: 2026-05-08
-content_hash: b2a14e1f14bafaae
+content_hash: 3d09498c2d884c74
 ---
 
 # GEWDiff: Geometric Enhanced Wavelet-based Diffusion Model for Hyperspectral Image Super-resolution
@@ -182,11 +182,11 @@ Training is conducted on 4 NVIDIA A100 GPUs with a learning rate of $1 \times 10
 
 ## Related Papers
 
+- [\[CVPR 2026\] EMR-Diff: Edge-aware Multimodal Residual Diffusion Model for Hyperspectral Image Super-resolution](../../CVPR2026/image_generation/emr-diff_edge-aware_multimodal_residual_diffusion_model_for_hyperspectral_image_.md)
 - [\[CVPR 2026\] VOSR: A Vision-Only Generative Model for Image Super-Resolution](../../CVPR2026/image_generation/vosr_a_vision_only_generative_model_for_image_super_resolution.md)
-- [\[AAAI 2026\] Realism Control One-step Diffusion for Real-World Image Super-Resolution](realism_control_one-step_diffusion_for_real-world_image_super-resolution.md)
+- [\[CVPR 2025\] Uncertainty-guided Perturbation for Image Super-Resolution Diffusion Model](../../CVPR2025/image_generation/uncertainty-guided_perturbation_for_image_super-resolution_diffusion_model.md)
+- [\[ICLR 2026\] Latent Wavelet Diffusion for Ultra-High-Resolution Image Synthesis](../../ICLR2026/image_generation/latent_wavelet_diffusion_for_ultra_high-resolution_image_synthesis.md)
 - [\[AAAI 2026\] Mixture of Ranks with Degradation-Aware Routing for One-Step Real-World Image Super-Resolution](mixture_of_ranks_with_degradation-aware_routing_for_one-step_real-world_image_su.md)
-- [\[AAAI 2026\] Exposing DeepFakes via Hyperspectral Domain Mapping](exposing_deepfakes_via_hyperspectral_domain_mapping.md)
-- [\[AAAI 2026\] Continuous Degradation Modeling via Latent Flow Matching for Real-World Super-Resolution](continuous_degradation_modeling_via_latent_flow_matching_for_real-world_super-re.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Probing Token Spaces under Generator Shift in AI-Generated Music Detection
 description: >-
-  [ICML 2026][Audio & Speech][Paper Note] This paper elevates the **token space** (choice of tokenizer), which was previously treated as a "preprocessing detail" in AI music detection, to a **primary experimental variable**. By fixing the downstream classifier (CoMoE) and swapping only the input tokens, and conducting "source-restricted" evaluations on the new
+  [ICML2026][Audio & Speech][AI music detection] This paper elevates the **token space** (choice of tokenizer), which was previously treated as a "preprocessing detail" in AI music detection, to a **primary experimental variable**. By fixing the downstream classifier (CoMoE) and swapping only the input tokens, and conducting "source-restricted" evaluations on the newly constructed MoM-open (where only one fake generator is seen during training while others are used for testing)…
 tags:
-  - ICML 2026
-  - Audio & Speech
+  - "ICML2026"
+  - "Audio & Speech"
+  - "AI music detection"
+  - "neural audio codecs"
+  - "discrete tokens"
+  - "generator shift"
+  - "cross-source generalization"
 date: 2026-05-08
-content_hash: 2d578dca34c8840d
+content_hash: 77775d3ee831ff31
 ---
+
 # Probing Token Spaces under Generator Shift in AI-Generated Music Detection
 
 **Conference**: ICML2026  
@@ -135,9 +141,9 @@ Held-out-fake detection rates (%) on unseen fake sources after fixing the valida
 
 - [\[ICML 2026\] MusicDET: Zero-Shot AI-Generated Music Detection](musicdet_zero-shot_ai-generated_music_detection.md)
 - [\[ACL 2025\] Double Entendre: Robust Audio-Based AI-Generated Lyrics Detection via Multi-View Fusion](../../ACL2025/audio_speech/double_entendre_robust_audio-based_ai-generated_lyrics_detection_via_multi-view_.md)
+- [\[ICML 2026\] CMI-RewardBench: Evaluating Music Reward Models with Compositional Multimodal Instruction](cmi-rewardbench_evaluating_music_reward_models_with_compositional_multimodal_ins.md)
 - [\[ICML 2026\] Probing Cross-modal Information Hubs in Audio-Visual LLMs](probing_cross-modal_information_hubs_in_audio-visual_llms.md)
 - [\[ACL 2026\] Analyzing Reasoning Shifts in Audio Deepfake Detection under Adversarial Attacks: The Reasoning Tax versus Shield Bifurcation](../../ACL2026/audio_speech/analyzing_reasoning_shifts_in_audio_deepfake_detection_under_adversarial_attacks.md)
-- [\[AAAI 2026\] Aligning Generative Music AI with Human Preferences: Methods and Challenges](../../AAAI2026/audio_speech/aligning_generative_music_ai_with_human_preferences_methods_and_challenges.md)
 
 </div>
 

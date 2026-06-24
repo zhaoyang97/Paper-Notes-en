@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generative Active Learning for Long-tail Trajectory Prediction via Controllable Diffusion Model
 description: >-
-  [ICCV 2025][Autonomous Driving][long-tail trajectory prediction] This paper proposes GALTraj, the first method to apply generative active learning to trajectory prediction. During training…
+  [ICCV 2025][Autonomous Driving][long-tail trajectory prediction] This paper proposes GALTraj, the first method to apply generative active learning to trajectory prediction. During training, it dynamically identifies tail samples on which the model fails, and employs a controllable diffusion model to synthesize new samples that preserve tail-behavior characteristics while complying with traffic rules. This effectively alleviates long-tail data imbalance…
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "traffic simulator"
   - "data augmentation"
 date: 2026-05-08
-content_hash: 9870537d64b7de91
+content_hash: b75a082628a0c578
 ---
 
 # Generative Active Learning for Long-tail Trajectory Prediction via Controllable Diffusion Model
@@ -168,9 +168,9 @@ FPR5 is reduced from 0.42 to 0.22 (halved!), while minFDE6 also improves from 0.
 
 - [\[ICCV 2025\] DONUT: A Decoder-Only Model for Trajectory Prediction](donut_a_decoder-only_model_for_trajectory_prediction.md)
 - [\[ICCV 2025\] LangTraj: Diffusion Model and Dataset for Language-Conditioned Trajectory Simulation](langtraj_diffusion_model_and_dataset_for_language-conditioned_trajectory_simulat.md)
-- [\[ICCV 2025\] Epona: Autoregressive Diffusion World Model for Autonomous Driving](epona_autoregressive_diffusion_world_model_for_autonomous_driving.md)
+- [\[ECCV 2024\] Optimizing Diffusion Models for Joint Trajectory Prediction and Controllable Generation](../../ECCV2024/autonomous_driving/optimizing_diffusion_models_for_joint_trajectory_prediction_and_controllable_gen.md)
 - [\[AAAI 2026\] SAML: A Differentiable Semantic Meta-Learning Framework for Long-Tail Motion Prediction](../../AAAI2026/autonomous_driving/differentiable_semantic_meta-learning_framework_for_long-tail_motion_forecasting.md)
-- [\[ICCV 2025\] Foresight in Motion: Reinforcing Trajectory Prediction with Reward Heuristics](foresight_in_motion_reinforcing_trajectory_prediction_with_reward_heuristics.md)
+- [\[ICCV 2025\] Epona: Autoregressive Diffusion World Model for Autonomous Driving](epona_autoregressive_diffusion_world_model_for_autonomous_driving.md)
 
 </div>
 

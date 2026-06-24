@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Neural Estimation of Pairwise Mutual Information in Masked Discrete Sequence Models
 description: >-
-  [ICML 2026][Computational Biology][ESM-C] Starting from the hidden states of a pre-trained masked diffusion model (MDM), this paper trains a lightweight "mutual information predictor head" to output the full conditional mutual information matrix between all token pairs in a single forward pass. By selecting "conditionally independent" token subsets for paralle
+  [ICML2026][Computational Biology][Masked diffusion models] Starting from the hidden states of a pre-trained masked diffusion model (MDM), this paper trains a lightweight "mutual information predictor head" to output the full conditional mutual information matrix between all token pairs in a single forward pass. By selecting "conditionally independent" token subsets for parallel decoding based on this matrix, it reduces inference NFE by 3-5x on Sudoku and proteins (ESM-C) whil…
 tags:
-  - ICML 2026
-  - Computational Biology
-  - ESM-C
-  - Sudoku
+  - "ICML2026"
+  - "Computational Biology"
+  - "Masked diffusion models"
+  - "mutual information"
+  - "parallel sampling"
+  - "ESM-C"
+  - "Sudoku"
 date: 2026-05-08
-content_hash: 8866480f50b390a5
+content_hash: dc7db753e4f3a90a
 ---
+
 # Neural Estimation of Pairwise Mutual Information in Masked Discrete Sequence Models
 
 **Conference**: ICML2026  
@@ -135,11 +139,11 @@ For 500 unconditional generation samples (length 50–100), the Jensen-Shannon d
 
 ## Related Papers
 
-- [\[CVPR 2026\] Cell-Type Prototype-Informed Neural Network for Gene Expression Estimation from Pathology Images](../../CVPR2026/computational_biology/cell-type_prototype-informed_neural_network_for_gene_expression_estimation_from_.md)
+- [\[ICLR 2026\] PepTri: Physical, Evolutionary, and Mutual Information Tri-guided All-atom Diffusion Peptide Design](../../ICLR2026/computational_biology/peptri_tri-guided_all-atom_diffusion_for_peptide_design_via_physics_evolution_an.md)
+- [\[ICLR 2026\] Uncovering Semantic Selectivity of Latent Groups in Higher Visual Cortex with Mutual Information-Guided Diffusion](../../ICLR2026/computational_biology/uncovering_semantic_selectivity_of_latent_groups_in_higher_visual_cortex_with_mu.md)
+- [\[ICML 2026\] Insertion Based Sequence Generation with Learnable Order Dynamics](insertion_based_sequence_generation_with_learnable_order_dynamics.md)
 - [\[NeurIPS 2025\] Is Sequence Information All You Need for Bayesian Optimization of Antibodies?](../../NeurIPS2025/computational_biology/is_sequence_information_all_you_need_for_bayesian_optimization_of_antibodies.md)
 - [\[NeurIPS 2025\] KLASS: KL-Guided Fast Inference in Masked Diffusion Models](../../NeurIPS2025/computational_biology/klass_kl-guided_fast_inference_in_masked_diffusion_models.md)
-- [\[ICML 2025\] ExLM: Rethinking the Impact of \[MASK\] Tokens in Masked Language Models](../../ICML2025/computational_biology/exlm_rethinking_the_impact_of_mask_tokens_in_masked_language_models.md)
-- [\[ICML 2026\] Plug-and-Play Guidance for Discrete Diffusion Models via Gradient-Informed Logit Correction](plug-and-play_guidance_for_discrete_diffusion_models_via_gradient-informed_logit.md)
 
 </div>
 

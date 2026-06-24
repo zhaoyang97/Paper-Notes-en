@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adaptive Sharpness-Aware Minimization with a Polyak-type Step size: A Theory-Grounded Scheduler
 description: >-
-  [ICML 2026][Optimization][SAM] This paper generalizes the Polyak step size to USAM/SAM, providing a sharpness-aware scheduler that does not rely on manual learning rate tuning. Its stability and performance are verified…
+  [ICML 2026][Optimization][SAM] This paper generalizes the Polyak step size to USAM/SAM, providing a sharpness-aware scheduler that does not rely on manual learning rate tuning. Its stability and performance are verified through convex optimization theory and CIFAR experiments.
 tags:
   - "ICML 2026"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Adaptive learning rate"
   - "Convergence theory"
 date: 2026-05-08
-content_hash: bbb0331eea9553b8
+content_hash: 1d0170d9a6d502ee
 ---
 
 # Adaptive Sharpness-Aware Minimization with a Polyak-type Step size: A Theory-Grounded Scheduler
@@ -127,10 +127,10 @@ The ablation and analysis primarily compare different schedulers, various sharpn
 ## Related Papers
 
 - [\[ICML 2026\] Stability Analysis of Sharpness-Aware Minimization](stability_analysis_of_sharpness-aware_minimization.md)
+- [\[ICML 2025\] Tilted Sharpness-Aware Minimization](../../ICML2025/optimization/tilted_sharpness-aware_minimization.md)
+- [\[ICLR 2026\] MASAM: Multimodal Adaptive Sharpness-Aware Minimization for Heterogeneous Data Fusion](../../ICLR2026/optimization/masam_multimodal_adaptive_sharpness-aware_minimization_for_heterogeneous_data_fu.md)
 - [\[ICML 2026\] SPSsafe: Safeguarded Stochastic Polyak Step Sizes for Non-smooth Optimization](safeguarded_stochastic_polyak_step_sizes_for_non-smooth_optimization_robust_perf.md)
-- [\[ICLR 2026\] Minor First, Major Last: A Depth-Induced Implicit Bias of Sharpness-Aware Minimization](../../ICLR2026/optimization/minor_first_major_last_a_depth-induced_implicit_bias_of_sharpness-aware_minimiza.md)
-- [\[ICML 2026\] LoRe: Adaptive Interaction-Evaluation Routing with Per-Step Interaction Budgets for Iterative Graph Solvers](lore_adaptive_interaction-evaluation_routing_with_per-step_interaction_budgets_f.md)
-- [\[ICML 2026\] Towards Understanding Continual Factual Knowledge Acquisition of Language Models: From Theory to Algorithm](towards_understanding_continual_factual_knowledge_acquisition_of_language_models.md)
+- [\[ICLR 2026\] Towards Understanding the Calibration Benefits of Sharpness-Aware Minimization](../../ICLR2026/optimization/towards_understanding_the_calibration_benefits_of_sharpness-aware_minimization.md)
 
 </div>
 

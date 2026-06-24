@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PersonaVLM: Long-Term Personalized Multimodal LLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper proposes PersonaVLM, a multimodal agent framework for long-term personalization. By utilizing active memory management (four memory databases), multi-step reasoning retrieval, and a momentum-based personality evolution mechanism, it transforms general MLLMs into personalized assistants capable of adapting to
+  [CVPR 2026][Multimodal VLM][Personalization] This paper proposes PersonaVLM, a multimodal agent framework for long-term personalization. By utilizing active memory management (four memory databases), multi-step reasoning retrieval, and a momentum-based personality evolution mechanism, it transforms general MLLMs into personalized assistants capable of adapting to evolving user preferences, outperforming GPT-4o by 5.2% in 128K context scenarios.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Personalization"
+  - "Long-term Memory"
+  - "Multimodal Agent"
+  - "Big Five Personality"
+  - "Agent Framework"
 date: 2026-05-08
-content_hash: e6646e620a83094c
+content_hash: 6f486eef1a4b5c92
 ---
+
 # PersonaVLM: Long-Term Personalized Multimodal LLMs
 
 **Conference**: CVPR 2026  
@@ -159,8 +165,8 @@ A user previously liked Sprite (recorded in Core Memory and Episodic events). If
 - [\[CVPR 2026\] Explore with Long-term Memory: A Benchmark and Multimodal LLM-based Reinforcement Learning Framework for Embodied Exploration](explore_with_long-term_memory_a_benchmark_and_multimodal_llm-based_reinforcement.md)
 - [\[CVPR 2026\] Unified Personalized Understanding, Generating and Editing](unified_personalized_understanding_generating_and_editing.md)
 - [\[CVPR 2026\] Personalized Image Descriptions from Attention Sequences](personalized_image_descriptions_from_attention_sequences.md)
-- [\[CVPR 2026\] Customized Visual Storytelling with Unified Multimodal LLMs](customized_visual_storytelling_with_unified_multimodal_llms.md)
 - [\[AAAI 2026\] URaG: Unified Retrieval and Generation in Multimodal LLMs for Efficient Long Document Understanding](../../AAAI2026/multimodal_vlm/urag_unified_retrieval_and_generation_in_multimodal_llms_for.md)
+- [\[CVPR 2026\] TimeLens: Rethinking Video Temporal Grounding with Multimodal LLMs](timelens_rethinking_video_temporal_grounding_with_multimodal_llms.md)
 
 </div>
 

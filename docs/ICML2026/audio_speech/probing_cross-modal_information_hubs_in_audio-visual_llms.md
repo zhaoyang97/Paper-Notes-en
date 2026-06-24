@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Probing Cross-modal Information Hubs in Audio-Visual LLMs
 description: >-
-  [ICML 2026][Audio & Speech][AVLLM] The authors employ a causal tracing and unimodal-dominance framework to reveal hidden hubs in Audio-Visual LLMs called "cross-modal sink tokens," where the majority of cross-modal information is condensed. Based on this, a training-free attention amplification strategy is proposed to significantly mitigate object hallu
+  [ICML 2026][Audio & Speech][AVLLM] The authors employ a causal tracing and unimodal-dominance framework to reveal hidden hubs in Audio-Visual LLMs called "cross-modal sink tokens," where the majority of cross-modal information is condensed. Based on this, a training-free attention amplification strategy is proposed to significantly mitigate object hallucinations.
 tags:
-  - ICML 2026
-  - Audio & Speech
-  - AVLLM
-  - attention sink
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "AVLLM"
+  - "attention sink"
+  - "cross-modal information"
+  - "causal tracing"
+  - "hallucination mitigation"
 date: 2026-05-08
-content_hash: a9765cbe46ff2166
+content_hash: 93fc8976ac00ff75
 ---
+
 # Probing Cross-modal Information Hubs in Audio-Visual LLMs
 
 **Conference**: ICML 2026  
@@ -131,10 +135,10 @@ Patching effects of different token subsets (Higher IE indicates more cross-moda
 ## Related Papers
 
 - [\[AAAI 2026\] CCFQA: A Benchmark for Cross-Lingual and Cross-Modal Speech and Text Factuality Evaluation](../../AAAI2026/audio_speech/ccfqa_a_benchmark_for_cross-lingual_and_cross-modal_speech_and_text_factuality_e.md)
-- [\[ICML 2026\] Do Audio LLMs Listen or Read? Analyzing and Mitigating Paralinguistic Failures with VoxParadox](do_audio_llms_listen_or_read_analyzing_and_mitigating_paralinguistic_failures_wi.md)
 - [\[ICML 2026\] Towards Understanding Modality Interaction in Multimodal Language Models via Partial Information Decomposition](towards_understanding_modality_interaction_in_multimodal_language_models_via_par.md)
+- [\[ICML 2026\] Do Audio LLMs Listen or Read? Analyzing and Mitigating Paralinguistic Failures with VoxParadox](do_audio_llms_listen_or_read_analyzing_and_mitigating_paralinguistic_failures_wi.md)
 - [\[ICML 2026\] JAEGER: Joint 3D Audio-Visual Grounding and Reasoning in Simulated Physical Environments](jaeger_joint_3d_audio-visual_grounding_and_reasoning_in_simulated_physical_envir.md)
-- [\[ACL 2026\] Protecting Bystander Privacy via Selective Hearing in Audio LLMs](../../ACL2026/audio_speech/protecting_bystander_privacy_via_selective_hearing_in_audio_llms.md)
+- [\[ICML 2026\] Probing Token Spaces under Generator Shift in AI-Generated Music Detection](probing_token_spaces_under_generator_shift_in_ai-generated_music_detection.md)
 
 </div>
 

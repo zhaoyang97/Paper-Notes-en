@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Personalized Collaborative Learning with Affinity-Based Variance Reduction
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] Proposes the personalized collaborative learning framework AffPCL. Through bias correction and importance correction mechanisms, heterogeneous agents collaboratively learn personalized solutions without prior knowledge, achieving an adaptive convergence rate of $O(t^{-1} \cdot \max\{n^{-1}, \delta\})$. This results in
+  [ICLR 2026][Optimization][Personalized Federated Learning] Proposes the personalized collaborative learning framework AffPCL. Through bias correction and importance correction mechanisms, heterogeneous agents collaboratively learn personalized solutions without prior knowledge, achieving an adaptive convergence rate of $O(t^{-1} \cdot \max\{n^{-1}, \delta\})$. This results in linear acceleration when agents are similar and performance no worse than independent learning when d…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Personalized Federated Learning"
+  - "Collaborative Learning"
+  - "Variance Reduction"
+  - "Heterogeneity"
+  - "Affinity-Based Acceleration"
 date: 2026-05-08
-content_hash: 966c241e1f87b032
+content_hash: 2dbff5f853c8c0c6
 ---
+
 # Personalized Collaborative Learning with Affinity-Based Variance Reduction
 
 **Conference**: ICLR 2026  
@@ -141,8 +147,8 @@ Core theoretical results based on progressive analysis:
 - [\[CVPR 2026\] Few-for-Many Personalized Federated Learning](../../CVPR2026/optimization/few-for-many_personalized_federated_learning.md)
 - [\[ICML 2026\] CLoVE: Personalized Federated Learning through Clustering of Loss Vector Embeddings](../../ICML2026/optimization/clove_personalized_federated_learning_through_clustering_of_loss_vector_embeddin.md)
 - [\[ICML 2026\] TPV: Parameter Perturbations Through the Lens of Test Prediction Variance](../../ICML2026/optimization/tpv_parameter_perturbations_through_the_lens_of_test_prediction_variance.md)
-- [\[AAAI 2026\] Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching](../../AAAI2026/optimization/personalized_federated_learning_with_bidirectional_communication_compression_via.md)
 - [\[NeurIPS 2025\] Personalized Subgraph Federated Learning with Differentiable Auxiliary Projections](../../NeurIPS2025/optimization/personalized_subgraph_federated_learning_with_differentiable_auxiliary_projectio.md)
+- [\[AAAI 2026\] pFed1BS: Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching](../../AAAI2026/optimization/personalized_federated_learning_with_bidirectional_communication_compression_via.md)
 
 </div>
 

@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Detecting Generated Images by Fitting Natural Image Distributions
 description: >-
-  [Image Generation] This paper proposes ConV, a consistency verification framework that exploits the geometric discrepancy between the natural image manifold and generated images. By constructing two gradient-orthogonal f…
+  [Image Generation] This paper proposes ConV, a consistency verification framework that exploits the geometric discrepancy between the natural image manifold and generated images. By constructing two gradient-orthogonal functions, ConV achieves training-free generated image detection. An enhanced variant, F-ConV, further amplifies manifold deviation via Normalizing Flows.
 tags:
   - "Image Generation"
 date: 2026-05-08
-content_hash: e5137f4bdb8770f1
+content_hash: be1401a2a196cb1e
 ---
 
 # Detecting Generated Images by Fitting Natural Image Distributions
@@ -135,9 +135,9 @@ $$\mathcal{L} = \underbrace{-\mathbb{E}_{v \sim \mathcal{D}_n} \log p(v) + \math
 
 - [\[ICCV 2025\] Lay-Your-Scene: Natural Scene Layout Generation with Diffusion Transformers](../../ICCV2025/image_generation/lay-your-scene_natural_scene_layout_generation_with_diffusion_transformers.md)
 - [\[NeurIPS 2025\] Diff-ICMH: Harmonizing Machine and Human Vision in Image Compression with Generative Prior](diff-icmh_harmonizing_machine_and_human_vision_in_image_compression_with_generat.md)
-- [\[ICCV 2025\] Timestep-Aware Diffusion Model for Extreme Image Rescaling](../../ICCV2025/image_generation/timestep-aware_diffusion_model_for_extreme_image_rescaling.md)
-- [\[ICCV 2025\] FlowTok: Flowing Seamlessly Across Text and Image Tokens](../../ICCV2025/image_generation/flowtok_flowing_seamlessly_across_text_and_image_tokens.md)
-- [\[ICCV 2025\] Trans-Adapter: A Plug-and-Play Framework for Transparent Image Inpainting](../../ICCV2025/image_generation/trans-adapter_a_plug-and-play_framework_for_transparent_image_inpainting.md)
+- [\[NeurIPS 2025\] Emergence and Evolution of Interpretable Concepts in Diffusion Models](emergence_and_evolution_of_interpretable_concepts_in_diffusi.md)
+- [\[NeurIPS 2025\] Denoising Weak Lensing Mass Maps with Diffusion Model and Generative Adversarial Network](denoising_weak_lensing_mass_maps_with_diffusion_model_and_generative_adversarial.md)
+- [\[NeurIPS 2025\] DEXTER: Diffusion-Guided EXplanations with TExtual Reasoning for Vision Models](dexter_diffusion-guided_explanations_with_textual_reasoning_for_vision_models.md)
 
 </div>
 

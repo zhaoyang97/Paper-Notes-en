@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] InfGen: A Resolution-Agnostic Paradigm for Scalable Image Synthesis
 description: >-
-  [ICCV 2025][Image Generation][Arbitrary-resolution generation] This paper proposes InfGen, a "second-generation" paradigm that replaces the VAE decoder with a Transformer-based generator…
+  [ICCV 2025][Image Generation][Arbitrary-resolution generation] This paper proposes InfGen, a "second-generation" paradigm that replaces the VAE decoder with a Transformer-based generator, decoding fixed-size latents into images at arbitrary resolution in a single forward pass—without modifying or retraining the diffusion model. It reduces 4K image generation to under 10 seconds, achieving over 10× speedup compared to the fastest existing method, UltraPixel.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "implicit neural positional encoding"
   - "efficient 4K generation"
 date: 2026-05-08
-content_hash: 30ec11b221d38dc5
+content_hash: 43d4b9c5d8aa925a
 ---
 
 # InfGen: A Resolution-Agnostic Paradigm for Scalable Image Synthesis
@@ -167,8 +167,8 @@ The approach is conceptually clear, methodologically concise, and practically ef
 - [\[NeurIPS 2025\] ScaleDiff: Higher-Resolution Image Synthesis via Efficient and Model-Agnostic Diffusion](../../NeurIPS2025/image_generation/scalediff_higher-resolution_image_synthesis_via_efficient_and_model-agnostic_dif.md)
 - [\[ICCV 2025\] PolarAnything: Diffusion-based Polarimetric Image Synthesis](polaranything_diffusion-based_polarimetric_image_synthesis.md)
 - [\[ICCV 2025\] LIFT: Latent Implicit Functions for Task- and Data-Agnostic Encoding](lift_latent_implicit_functions_for_task-_and_data-agnostic_encoding.md)
+- [\[ICCV 2025\] DiffuMatch: Category-Agnostic Spectral Diffusion Priors for Robust Non-rigid Shape Matching](diffumatch_category-agnostic_spectral_diffusion_priors_for_robust_non-rigid_shap.md)
 - [\[ICCV 2025\] PatchScaler: An Efficient Patch-Independent Diffusion Model for Image Super-Resolution](patchscaler_an_efficient_patch-independent_diffusion_model_for_image_super-resol.md)
-- [\[ICCV 2025\] Efficient Input-Level Backdoor Defense on Text-to-Image Synthesis via Neuron Activation Variation](efficient_input-level_backdoor_defense_on_text-to-image_synthesis_via_neuron_act.md)
 
 </div>
 

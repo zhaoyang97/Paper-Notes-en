@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VSRM: A Robust Mamba-Based Framework for Video Super-Resolution
 description: >-
-  [ICCV 2025][Video Generation][Video Super-Resolution] This work is the first to introduce Mamba into video super-resolution, proposing the Dual Aggregation Mamba Block (DAMB) for long-range spatiotemporal dependency mode…
+  [ICCV 2025][Video Generation][Video Super-Resolution] This work is the first to introduce Mamba into video super-resolution, proposing the Dual Aggregation Mamba Block (DAMB) for long-range spatiotemporal dependency modeling, the Deformable Cross-Mamba Alignment module (DCA) for more flexible inter-frame alignment, and the Frequency Charbonnier-like Loss (FCL) for improved high-frequency detail recovery, achieving state-of-the-art results on REDS4, Vid4, and Vimeo-90K.
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "Deformable Alignment"
   - "Frequency Loss"
 date: 2026-05-08
-content_hash: 1e4fc3760f1d638b
+content_hash: a6f1836576fe3445
 ---
 
 # VSRM: A Robust Mamba-Based Framework for Video Super-Resolution
@@ -60,7 +60,7 @@ VSRM consists of two components: a feature extractor (Conv2d + Feature Propagati
 
 3. **Frequency Charbonnier-like Loss (FCL)**: Charbonnier losses are computed separately on the real and imaginary parts of the FFT-transformed images, rather than on the amplitude/phase (avoiding numerical instabilities from square roots and arctan operations).
 
-   $$\mathcal{L}_{FCL} = \sum_{i \in \{Re, Im\}} \lambda_i \sqrt{\|i\mathcal{F}(\mathbf{I}_{SR}) - i\mathcal{F}(\mathbf{I}_{HR})\|^2 + \epsilon^2}$$
+    $\mathcal{L}_{FCL} = \sum_{i \in \{Re, Im\}} \lambda_i \sqrt{\|i\mathcal{F}(\mathbf{I}_{SR}) - i\mathcal{F}(\mathbf{I}_{HR})\|^2 + \epsilon^2}$
 
 ### Loss & Training
 
@@ -146,11 +146,11 @@ VSRM outperforms IART by 0.21 dB on REDS4 (16-frame setting) and 0.18 dB on Vid4
 
 ## Related Papers
 
+- [\[CVPR 2025\] VideoGigaGAN: Towards Detail-rich Video Super-Resolution](../../CVPR2025/video_generation/videogigagan_towards_detail-rich_video_super-resolution.md)
+- [\[CVPR 2025\] PatchVSR: Breaking Video Diffusion Resolution Limits with Patch-Wise Video Super-Resolution](../../CVPR2025/video_generation/patchvsr_breaking_video_diffusion_resolution_limits_with_patch-wise_video_super-.md)
 - [\[CVPR 2026\] Compressed-Domain-Aware Online Video Super-Resolution](../../CVPR2026/video_generation/compressed-domain-aware_online_video_super-resolution.md)
-- [\[ICCV 2025\] MagicDrive-V2: High-Resolution Long Video Generation for Autonomous Driving with Adaptive Control](magicdrive-v2_high-resolution_long_video_generation_for_autonomous_driving_with_.md)
-- [\[ICCV 2025\] FuXi-RTM: A Physics-Guided Prediction Framework with Radiative Transfer Modeling](fuxi-rtm_a_physics-guided_prediction_framework_with_radiative_transfer_modeling.md)
-- [\[ICCV 2025\] Long-Context State-Space Video World Models](long-context_state-space_video_world_models.md)
-- [\[ICCV 2025\] Generating, Fast and Slow: Scalable Parallel Video Generation with Video Interface Networks](generating_fast_and_slow_scalable_parallel_video_generation_with_video_interface.md)
+- [\[CVPR 2025\] BF-STVSR: B-Splines and Fourier—Best Friends for High Fidelity Spatial-Temporal Video Super-Resolution](../../CVPR2025/video_generation/bf-stvsr_b-splines_and_fourier---best_friends_for_high_fidelity_spatia.md)
+- [\[CVPR 2026\] VSRELL: A Simple Baseline for Video Super-Resolution and Enhancement in Low-Light Environment](../../CVPR2026/video_generation/vsrell_a_simple_baseline_for_video_super-resolution_and_enhancement_in_low-light.md)
 
 </div>
 

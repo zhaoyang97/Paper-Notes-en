@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Breaking Block Boundaries: Anchor-based History-stable Decoding for Diffusion Large Language Models
 description: >-
-  [ACL 2026][LLM Efficiency][Diffusion Language Model] This paper proposes AHD (Anchor-based History-stable Decoding), a training-free, plug-and-play dynamic decoding strategy. By utilizing dynamic anchors to backtrack historical trajectories and identify cross-block stable tokens in diffusion LLMs, AHD achieves early unlocking. It reduces decoding steps by 80% on BBH whil
+  [ACL 2026][LLM Efficiency][Diffusion Language Models] This paper proposes AHD (Anchor-based History-stable Decoding), a training-free, plug-and-play dynamic decoding strategy. By utilizing dynamic anchors to backtrack historical trajectories and identify cross-block stable tokens in diffusion LLMs, AHD achieves early unlocking. It reduces decoding steps by 80% on BBH while simultaneously improving performance by 3.67%.
 tags:
-  - ACL 2026
-  - LLM Efficiency
-  - Diffusion Language Model
-  - Semi-autoregressive Decoding
-  - Cross-block Stable Token
-  - Dynamic Anchor
-  - Inference Acceleration
+  - "ACL 2026"
+  - "LLM Efficiency"
+  - "Diffusion Language Models"
+  - "Semi-autoregressive Decoding"
+  - "Cross-block Stable Tokens"
+  - "Dynamic Anchors"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: 782d831b4083f73b
+content_hash: 6fb6359c68560e2b
 ---
+
 # Breaking Block Boundaries: Anchor-based History-stable Decoding for Diffusion Large Language Models
 
 **Conference**: ACL 2026  
@@ -127,10 +128,10 @@ AHD is a training-free, plug-and-play method that only operates during inference
 ## Related Papers
 
 - [\[ACL 2026\] CreditDecoding: Accelerating Parallel Decoding in Diffusion Large Language Models with Trace Credit](creditdecoding_accelerating_parallel_decoding_in_diffusion_large_language_models.md)
-- [\[ICML 2026\] dLLM-Cache: Accelerating Diffusion Large Language Models with Adaptive Caching](../../ICML2026/llm_efficiency/dllm-cache_accelerating_diffusion_large_language_models_with_adaptive_caching.md)
-- [\[ACL 2026\] Lizard: An Efficient Linearization Framework for Large Language Models](lizard_an_efficient_linearization_framework_for_large_language_models.md)
-- [\[ACL 2026\] Are Large Language Models Economically Viable for Industry Deployment?](are_large_language_models_economically_viable_for_industry_deployment.md)
-- [\[ACL 2026\] Tandem: Riding Together with Large and Small Language Models for Efficient Reasoning](tandem_riding_together_with_large_and_small_language_models_for_efficient_reason.md)
+- [\[ICLR 2026\] Diffusion Language Models Know the Answer Before Decoding](../../ICLR2026/llm_efficiency/diffusion_language_model_knows_the_answer_before_it_decodes.md)
+- [\[ICLR 2026\] Hierarchy Decoding: A Training-free Parallel Decoding Strategy for Diffusion Large Language Models](../../ICLR2026/llm_efficiency/hierarchy_decoding_a_training-free_parallel_decoding_strategy_for_diffusion_larg.md)
+- [\[ICLR 2026\] Learning to Parallel: Accelerating Diffusion Large Language Models via Learnable Parallel Decoding](../../ICLR2026/llm_efficiency/learning_to_parallel_accelerating_diffusion_large_language_models_via_learnable_.md)
+- [\[ICLR 2026\] SparseD: Sparse Attention for Diffusion Language Models](../../ICLR2026/llm_efficiency/sparsed_sparse_attention_for_diffusion_language_models.md)
 
 </div>
 

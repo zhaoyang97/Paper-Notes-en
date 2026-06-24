@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Probabilistic Precipitation Nowcasting with Rectified Flow Transformers
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] This work proposes FREUD—a framework utilizing a Rectified Flow Transformer as a "compressed first stage." It employs a frame-level encoder to independently encode each frame and a joint video decoder to reconstruct all frames simultaneously, replacing deterministic decoding with probabilistic decoding to quantify unce
+  [CVPR 2026][Time Series][Precipitation Nowcasting] This work proposes FREUD—a framework utilizing a Rectified Flow Transformer as a "compressed first stage." It employs a frame-level encoder to independently encode each frame and a joint video decoder to reconstruct all frames simultaneously, replacing deterministic decoding with probabilistic decoding to quantify uncertainty during the compression stage. Combined with a latent-space rectified flow nowcasting model…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Time Series"
+  - "Precipitation Nowcasting"
+  - "Rectified Flow"
+  - "Probabilistic Compression"
+  - "Uncertainty Quantification"
+  - "Spatiotemporal Transformer"
 date: 2026-05-08
-content_hash: 7eb7be3f2b44edcd
+content_hash: 2ed78282106f86d0
 ---
+
 # Probabilistic Precipitation Nowcasting with Rectified Flow Transformers
 
 **Conference**: CVPR 2026  
@@ -164,11 +170,11 @@ Model Scaling (Tab.3): LSM-S 44M (CRPS 0.0200) $\to$ LSM-B 141M (0.0196) $\to$ L
 
 ## Related Papers
 
-- [\[ICLR 2026\] FlowCast: Advancing Precipitation Nowcasting with Conditional Flow Matching](../../ICLR2026/image_generation/flowcast_advancing_precipitation_nowcasting_with_conditional_flow_matching.md)
-- [\[CVPR 2026\] NAMI: Efficient Image Generation via Bridged Progressive Rectified Flow Transformers](nami_efficient_image_generation_via_bridged_progressive_rectified_flow_transform.md)
-- [\[CVPR 2026\] RecTok: Reconstruction Distillation along Rectified Flow](rectok_reconstruction_distillation_along_rectified_flow.md)
-- [\[CVPR 2026\] CaReFlow: Cyclic Adaptive Rectified Flow for Multimodal Fusion](careflow_cyclic_adaptive_rectified_flow_for_multimodal_fusion.md)
-- [\[CVPR 2026\] Region-Adaptive Sampling for Diffusion Transformers](region-adaptive_sampling_for_diffusion_transformers.md)
+- [\[NeurIPS 2025\] Probability Calibration for Precipitation Nowcasting](../../NeurIPS2025/time_series/probability_calibration_for_precipitation_nowcasting.md)
+- [\[ICLR 2026\] Extreme Weather Nowcasting via Local Precipitation Pattern Prediction](../../ICLR2026/time_series/extreme_weather_nowcasting_via_local_precipitation_pattern_prediction.md)
+- [\[ICLR 2026\] SRT: Super-Resolution for Time Series via Disentangled Rectified Flow](../../ICLR2026/time_series/srt_super-resolution_for_time_series_via_disentangled_rectified_flow.md)
+- [\[ICLR 2026\] Understanding Transformers for Time Series: Rank Structure, Flow-of-ranks, and Compressibility](../../ICLR2026/time_series/understanding_transformers_for_time_series_rank_structure_flow-of-ranks_and_comp.md)
+- [\[ICLR 2026\] Flow-based Conformal Prediction for Multi-dimensional Time Series](../../ICLR2026/time_series/flow-based_conformal_prediction_for_multi-dimensional_time_series.md)
 
 </div>
 

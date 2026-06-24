@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DreamSR: Towards Ultra-High-Resolution Image Super-Resolution via a Receptive-Field Enhanced Diffusion Transformer
 description: >-
-  [CVPR 2026][Image Restoration][ControlNet] DreamSR utilizes a dual-branch "global + local" MM-ControlNet to inject patch-level text prompts into a FLUX-based (DiT) super-resolution model. Combined with a one-step restoration LoRA and receptive-field enhanced training, it specifically addresses the "over-generation caused by local patch and global prompt semanti
+  [CVPR 2026][Image Restoration][Real-world Super-Resolution] DreamSR utilizes a dual-branch "global + local" MM-ControlNet to inject patch-level text prompts into a FLUX-based (DiT) super-resolution model. Combined with a one-step restoration LoRA and receptive-field enhanced training, it specifically addresses the "over-generation caused by local patch and global prompt semantic mismatch" during patch-wise inference for ultra-high-definition ($\ge$ 4K) images…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - ControlNet
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Real-world Super-Resolution"
+  - "Ultra-High-Definition (4K)"
+  - "Diffusion Transformer"
+  - "ControlNet"
+  - "Patch-wise Inference"
 date: 2026-05-08
-content_hash: 4f4718a7e5fecf2f
+content_hash: 0af3b785e36970cf
 ---
+
 # DreamSR: Towards Ultra-High-Resolution Image Super-Resolution via a Receptive-Field Enhanced Diffusion Transformer
 
 **Conference**: CVPR 2026  
@@ -139,10 +144,20 @@ Validated on the high-resolution RealDeg dataset.
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] One-Step Diffusion Transformer for Controllable Real-World Image Super-Resolution](one-step_diffusion_transformer_for_controllable_real-world_image_super-resolutio.md)
+- [\[CVPR 2026\] HDW-SR: High-Frequency Guided Diffusion Model based on Wavelet Decomposition for Image Super-Resolution](hdw-sr_high-frequency_guided_diffusion_model_based_on_wavelet_decomposition_for_.md)
+- [\[CVPR 2026\] UCAN: Unified Convolutional Attention Network for Expansive Receptive Fields in Lightweight Super-Resolution](ucan_unified_convolutional_attention_lightweight_sr.md)
+- [\[CVPR 2026\] Disentangled Textual Priors for Diffusion-based Image Super-Resolution](disentangled_textual_priors_for_diffusion-based_image_super-resolution.md)
+- [\[CVPR 2026\] TUDSR: Twice Upsampling-Diffusion for Higher Super-Resolution](tudsr_twice_upsampling-diffusion_for_higher_super-resolution.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] One-Step Diffusion Transformer for Controllable Real-World Image Super-Resolution](one-step_diffusion_transformer_for_controllable_real-world_image_super-resolutio.md)

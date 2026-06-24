@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] FlowTok: Flowing Seamlessly Across Text and Image Tokens
 description: >-
-  [Image Generation] FlowTok proposes encoding both text and images as compact 1D token representations ($77 \times 16$) and directly evolving between text and image tokens via flow matching…
+  [Image Generation] FlowTok proposes encoding both text and images as compact 1D token representations ($77 \times 16$) and directly evolving between text and image tokens via flow matching, eliminating the need for complex conditioning mechanisms or noise schedules, thereby enabling efficient cross-modal generation.
 tags:
   - "Image Generation"
 date: 2026-05-08
-content_hash: c6ba97107bd50b2a
+content_hash: a6b33ca1a8deb17a
 ---
 
 # FlowTok: Flowing Seamlessly Across Text and Image Tokens
@@ -147,9 +147,9 @@ $$\mathcal{L} = \mathcal{L}_{\text{fm}} + \gamma_1 \cdot \mathcal{L}_{\text{kld}
 
 - [\[ICCV 2025\] EmotiCrafter: Text-to-Emotional-Image Generation based on Valence-Arousal Model](emoticrafter_text-to-emotional-image_generation_based_on_valence-arousal_model.md)
 - [\[ICCV 2025\] TRCE: Towards Reliable Malicious Concept Erasure in Text-to-Image Diffusion Models](trce_towards_reliable_malicious_concept_erasure_in_text-to-image_diffusion_model.md)
+- [\[CVPR 2025\] Fine-Grained Erasure in Text-to-Image Diffusion-based Foundation Models](../../CVPR2025/image_generation/fine-grained_erasure_in_text-to-image_diffusion-based_foundation_models.md)
 - [\[ICCV 2025\] What Makes for Text to 360-degree Panorama Generation with Stable Diffusion?](what_makes_for_text_to_360-degree_panorama_generation_with_stable_diffusion.md)
 - [\[ICCV 2025\] Timestep-Aware Diffusion Model for Extreme Image Rescaling](timestep-aware_diffusion_model_for_extreme_image_rescaling.md)
-- [\[ICCV 2025\] LiT: Delving into a Simple Linear Diffusion Transformer for Image Generation](lit_delving_into_a_simple_linear_diffusion_transformer_for_image_generation.md)
 
 </div>
 

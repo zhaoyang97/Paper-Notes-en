@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VideoITG: Multimodal Video Understanding with Instructed Temporal Grounding
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] VideoITG reformulates "selecting frames based on user instructions" as a standalone temporal grounding task. By utilizing a GPT-4o-driven three-stage pipeline (VidThinker), it automatically annotates "which frames are relevant to an instruction" across 40K videos, generating 500K instruction-aligned annotations. A plug
+  [CVPR 2026][Video Understanding][Video-LLM] VideoITG reformulates "selecting frames based on user instructions" as a standalone temporal grounding task. By utilizing a GPT-4o-driven three-stage pipeline (VidThinker), it automatically annotates "which frames are relevant to an instruction" across 40K videos, generating 500K instruction-aligned annotations. A plug-and-play frame selector is then trained and prepended to various Video-LLMs, achieving or exceeding the performance…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video-LLM"
+  - "Frame Sampling"
+  - "Instructed Temporal Grounding"
+  - "Data Annotation Pipeline"
+  - "Plug-and-play"
 date: 2026-05-08
-content_hash: 9a4ec977d0e0765b
+content_hash: 5f1f61c6e43e2485
 ---
+
 # VideoITG: Multimodal Video Understanding with Instructed Temporal Grounding
 
 **Conference**: CVPR 2026  
@@ -126,14 +132,15 @@ VideoITG improves LLaVA-OneVision-7B's average score from 54.9 to 61.6 (**+6.7**
 - **Value**: ⭐⭐⭐⭐⭐ High practical utility as a plug-and-play module and an open-source dataset.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] T2SGrid: Temporal-to-Spatial Gridification for Video Temporal Grounding](t2sgrid_temporal-to-spatial_gridification_for_video_temporal_grounding.md)
-- [\[CVPR 2026\] MTLLFM: Multimodal-Temporal Laughter Localization](mtllfm_multimodal-temporal_laughter_localization_ur-funny-temporal_and_smile-tem.md)
 - [\[CVPR 2026\] HieraMamba: Video Temporal Grounding via Hierarchical Anchor-Mamba Pooling](hieramamba_video_temporal_grounding_via_hierarchical_anchor-mamba_pooling.md)
 - [\[CVPR 2026\] CVA: Context-aware Video-text Alignment for Video Temporal Grounding](cva_context-aware_video-text_alignment_for_video_temporal_grounding.md)
+- [\[CVPR 2026\] DeRVOS: Decoupling Consistent Trajectory Generation and Multimodal Understanding for Referring Video Object Segmentation](dervos_decoupling_consistent_trajectory_generation_and_multimodal_understanding_.md)
 - [\[CVPR 2026\] OmniVTG: A Large-Scale Dataset and Training Paradigm for Open-World Video Temporal Grounding](omnivtg_a_large-scale_dataset_and_training_paradigm_for_open-world_video_tempora.md)
 
 </div>

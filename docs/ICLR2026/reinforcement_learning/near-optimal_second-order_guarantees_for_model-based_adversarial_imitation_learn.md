@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Near-Optimal Second-Order Guarantees for Model-Based Adversarial Imitation Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper proposes the MB-AIL (Model-Based Adversarial Imitation Learning) algorithm and establishes horizon-free second-order sample complexity upper bounds under general function approximation. Combined with newly constructed information-theoretic lower bounds on difficult instances, it proves that MB-AIL achieves m
+  [ICLR 2026][Reinforcement Learning][Adversarial Imitation Learning] This paper proposes the MB-AIL (Model-Based Adversarial Imitation Learning) algorithm and establishes horizon-free second-order sample complexity upper bounds under general function approximation. Combined with newly constructed information-theoretic lower bounds on difficult instances, it proves that MB-AIL achieves minimax optimality (up to logarithmic factors) in online interaction sample complexity.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Adversarial Imitation Learning"
+  - "Model-Based Methods"
+  - "Second-Order Bounds"
+  - "Sample Complexity"
+  - "Information-Theoretic Lower Bounds"
 date: 2026-05-08
-content_hash: 19d4525126a24cdb
+content_hash: c779c53cd867a154
 ---
+
 # Near-Optimal Second-Order Guarantees for Model-Based Adversarial Imitation Learning
 
 **Conference**: ICLR 2026  
@@ -181,9 +187,9 @@ Theoretically, the three components fulfill distinct roles: rewards are optimize
 
 - [\[ICLR 2026\] Model Predictive Adversarial Imitation Learning for Planning from Observation](model_predictive_adversarial_imitation_learning_for_planning_from_observation.md)
 - [\[ICLR 2026\] On Discovering Algorithms for Adversarial Imitation Learning](on_discovering_algorithms_for_adversarial_imitation_learning.md)
-- [\[ICLR 2026\] Latent Wasserstein Adversarial Imitation Learning](latent_wasserstein_adversarial_imitation_learning.md)
 - [\[ICLR 2026\] Minimax Optimal Adversarial Reinforcement Learning](minimax_optimal_adversarial_reinforcement_learning.md)
-- [\[ICLR 2026\] MIRACLE: Model-free Imitation and Reinforcement Learning for Adaptive Cut-Selection](miracle_model-free_imitation_and_reinforcement_learning_for_adaptive_cut-selecti.md)
+- [\[ICLR 2026\] Latent Wasserstein Adversarial Imitation Learning](latent_wasserstein_adversarial_imitation_learning.md)
+- [\[ICLR 2026\] Imitation Learning as Return Distribution Matching](imitation_learning_as_return_distribution_matching.md)
 
 </div>
 

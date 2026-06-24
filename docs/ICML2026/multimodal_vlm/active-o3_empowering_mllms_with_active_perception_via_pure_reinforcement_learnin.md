@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ACTIVE-o3: Empowering MLLMs with Active Perception via Pure Reinforcement Learning
 description: >-
-  [ICML 2026][Multimodal VLM][MLLM] ACTIVE-o3 delegates the decision of "where and how to look" to an MLLM for autonomous learning. Using pure reinforcement learning (GRPO), the model is trained to parallelly select up to 3 sub-regions most worthy of magnification. A dual-form reward mechanism (task reward + heuristic reward) is employed to solve the spa
+  [ICML 2026][Multimodal VLM][Active Perception] ACTIVE-o3 delegates the decision of "where and how to look" to an MLLM for autonomous learning. Using pure reinforcement learning (GRPO), the model is trained to parallelly select up to 3 sub-regions most worthy of magnification. A dual-form reward mechanism (task reward + heuristic reward) is employed to solve the sparsity of pure task rewards. The method consistently outperforms baselines in small/dense object detection…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - MLLM
-  - GRPO
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Active Perception"
+  - "MLLM"
+  - "GRPO"
+  - "Region Selection"
+  - "Small Object Detection"
 date: 2026-05-08
-content_hash: db041c194016f7e2
+content_hash: 425caacf31b3f621
 ---
+
 # ACTIVE-o3: Empowering MLLMs with Active Perception via Pure Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -138,15 +142,17 @@ Connecting ACTIVE-o3's perception strategy to a stronger GDINO (ACTIVE-o3+GDINO)
 
 <div class="related-papers" markdown="1">
 
-1. **GPT-o3**: Zoom-in search for vision-language models.
-2. **Qwen2.5-VL**: Base multimodal large language model used in this work.
-3. **DeepEyes**: RL-based visual thinking optimization.
-4. **V***: Guided visual search as a bottleneck for MLLMs.
+## Related Papers
+
+- [\[CVPR 2026\] SaPaVe: Towards Active Perception and Manipulation in Vision-Language-Action Models for Robotics](../../CVPR2026/multimodal_vlm/sapave_active_perception_manipulation_vla_roboti.md)
+- [\[ICML 2026\] Injecting Distributional Awareness into MLLMs via Reinforcement Learning for Deep Imbalanced Regression](injecting_distributional_awareness_into_mllms_via_reinforcement_learning_for_dee.md)
+- [\[CVPR 2026\] Label What Matters: Modality-Balanced and Difficulty-Aware Multimodal Active Learning](../../CVPR2026/multimodal_vlm/label_what_matters_modality-balanced_and_difficulty-aware_multimodal_active_lear.md)
+- [\[ICLR 2026\] PSP: Prompt-Guided Self-Training Sampling Policy for Active Prompt Learning](../../ICLR2026/multimodal_vlm/psp_prompt-guided_self-training_sampling_policy_for_active_prompt_learning.md)
+- [\[ICML 2026\] Med-Scout: Curing MLLMs' Geometric Blindness in Medical Perception via Geometry-Aware RL Post-Training](med-scout_curing_mllms_geometric_blindness_in_medical_perception_via_geometry-aw.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] SaPaVe: Towards Active Perception and Manipulation in Vision-Language-Action Models for Robotics](../../CVPR2026/multimodal_vlm/sapave_active_perception_manipulation_vla_roboti.md)

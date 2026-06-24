@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] In-Context Algebra
 description: >-
-  [ICLR 2026][LLM (Other)][in-context learning] This paper designs an **in-context algebra task** where tokens act as pure variables with meanings randomized for each sequence. It discovers that under this setting, Transformers cease to learn classical Fourier/geometric representations and instead emerge with three **symbolic reasoning mechanisms** (swap-copy, ident
+  [ICLR2026][LLM (Other)][in-context learning] This paper designs an **in-context algebra task** where tokens act as pure variables with meanings randomized for each sequence. It discovers that under this setting, Transformers cease to learn classical Fourier/geometric representations and instead emerge with three **symbolic reasoning mechanisms** (swap-copy, identity recognition, and closure cancellation). Furthermore, it reveals that these abilities appear sequentially as pha…
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - in-context learning
-  - mechanistic interpretability
-  - symbolic reasoning
-  - finite groups
-  - transformer mechanisms
+  - "ICLR2026"
+  - "LLM (Other)"
+  - "in-context learning"
+  - "mechanistic interpretability"
+  - "symbolic reasoning"
+  - "finite groups"
+  - "transformer mechanisms"
 date: 2026-05-08
-content_hash: de26b48b90159dee
+content_hash: b99c972ca54c550f
 ---
+
 # In-Context Algebra
 
 **Conference**: ICLR2026  
@@ -175,15 +176,15 @@ Complementary to Akyürek et al. (2024) regarding induction/n-gram head analysis
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Constrained Decoding of Diffusion LLMs with Context-Free Grammars](constrained_decoding_of_diffusion_llms_with_context-free_grammars.md)
 - [\[ACL 2025\] Mixtures of In-Context Learners](../../ACL2025/llm_nlp/mixtures_of_in-context_learners.md)
 - [\[ACL 2026\] UCS: Estimating Unseen Coverage for Improved In-Context Learning](../../ACL2026/llm_nlp/ucs_estimating_unseen_coverage_for_improved_in-context_learning.md)
-- [\[ICML 2026\] Position: The Turing-Completeness of Autoregressive Transformers Relies Heavily on Context Management](../../ICML2026/llm_nlp/position_the_turing-completeness_of_autoregressive_transformers_relies_heavily_o.md)
-- [\[NeurIPS 2025\] In-Context Learning of Linear Dynamical Systems with Transformers: Approximation Bounds and Depth-Separation](../../NeurIPS2025/llm_nlp/in-context_learning_of_linear_dynamical_systems_with_transformers_approximation_.md)
+- [\[AAAI 2026\] LILAD: Learning In-context Lyapunov-stable Adaptive Dynamics Models](../../AAAI2026/llm_nlp/lilad_learning_in-context_lyapunov-stable_adaptive_dynamics_models.md)
+- [\[ACL 2026\] OOD Proxy Demonstration Retrieval Scheme for Robust In-Context Learning](../../ACL2026/llm_nlp/toward_robust_in-context_learning_leveraging_out-of-distribution_proxies_for_tar.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Proximal Supervised Fine-Tuning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] PSFT reinterprets standard SFT as "policy gradient with strictly positive advantages" and borrows the clipped trust region mechanism from PPO to impose a soft constraint on SFT updates. This preserves target task performance while significantly mitigating entropy collapse, maintaining general capabilities, and providin
+  [ICLR 2026][Reinforcement Learning][Supervised Fine-Tuning] PSFT reinterprets standard SFT as "policy gradient with strictly positive advantages" and borrows the clipped trust region mechanism from PPO to impose a soft constraint on SFT updates. This preserves target task performance while significantly mitigating entropy collapse, maintaining general capabilities, and providing greater optimization space for subsequent RL/DPO stages.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Supervised Fine-Tuning"
+  - "Trust Region"
+  - "PPO Clipping"
+  - "Entropy Collapse"
+  - "Generalization"
 date: 2026-05-08
-content_hash: 34a641733eb21948
+content_hash: 6f4261cb1916ca1a
 ---
+
 # Proximal Supervised Fine-Tuning
 
 **Conference**: ICLR 2026  
@@ -153,9 +159,9 @@ While PSFT is slightly lower on-domain during the SFT stage, it **surpasses** SF
 
 - [\[ICLR 2026\] SRFT: A Single-Stage Method with Supervised and Reinforcement Fine-Tuning for Reasoning](srft_a_single-stage_method_with_supervised_and_reinforcement_fine-tuning_for_rea.md)
 - [\[ICLR 2026\] On-Policy RL Meets Off-Policy Experts: Harmonizing Supervised Fine-Tuning and Reinforcement Learning via Dynamic Weighting](on-policy_rl_meets_off-policy_experts_harmonizing_supervised_fine-tuning_and_rei.md)
+- [\[ICLR 2026\] Fine-tuning Behavioral Cloning Policies with Preference-Based Reinforcement Learning](fine-tuning_behavioral_cloning_policies_with_preferencebased_reinforcement_learn.md)
+- [\[ICLR 2026\] Escaping Policy Contraction: Contraction-Aware PPO (CaPPO) for Stable Language Model Fine-Tuning](escaping_policy_contraction_contraction-aware_ppo_cappo_for_stable_language_mode.md)
 - [\[ICLR 2026\] Sparse but Critical: A Token-Level Analysis of Distributional Shifts in RLVR Fine-Tuning of LLMs](sparse_but_critical_a_token-level_analysis_of_distributional_shifts_in_rlvr_fine.md)
-- [\[ICLR 2026\] Efficient Morphology-Control Co-Design via Stackelberg Proximal Policy Optimization](efficient_morphology-control_co-design_via_stackelberg_proximal_policy_optimizat.md)
-- [\[ICLR 2026\] Don't Just Fine-tune the Agent, Tune the Environment](dont_just_fine-tune_the_agent_tune_the_environment.md)
 
 </div>
 

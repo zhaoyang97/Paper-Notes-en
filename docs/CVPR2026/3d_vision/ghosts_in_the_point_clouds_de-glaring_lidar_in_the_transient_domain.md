@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Ghosts in the Point Clouds: De-glaring LiDAR in the Transient Domain
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Addressing internal multipath glare in new-generation solid-state single-photon LiDAR—which creates "ghost" objects and obscures real ones—this paper models glare as a **linear, scene-independent Glare Spread Function (GSF)**. The method processes low-level echoes per pixel before point cloud formation: it uses the met
+  [CVPR 2026][3D Vision][Internal Multipath Glare] Addressing internal multipath glare in new-generation solid-state single-photon LiDAR—which creates "ghost" objects and obscures real ones—this paper models glare as a **linear, scene-independent Glare Spread Function (GSF)**. The method processes low-level echoes per pixel before point cloud formation: it uses the method of moments to correct photon pileup distortion, predicts glare contributions with the GSF…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Internal Multipath Glare"
+  - "Transient Domain"
+  - "Glare Spread Function (GSF)"
+  - "Photon Pileup"
+  - "Training-free De-glaring"
 date: 2026-05-08
-content_hash: 2deabd02c224e2fd
+content_hash: 85ea59504f8f5a14
 ---
+
 # Ghosts in the Point Clouds: De-glaring LiDAR in the Transient Domain
 
 **Conference**: CVPR 2026  
@@ -109,11 +115,11 @@ The DL baseline [5] relies on synthetic data and simple geometric assumptions (r
 
 ## Related Papers
 
-- [\[CVPR 2026\] JOPP-3D: Joint Open Vocabulary Semantic Segmentation on Point Clouds and Panoramas](jopp3d_joint_open_vocabulary_semantic_segmentation.md)
+- [\[CVPR 2026\] Vista4D: Video Reshooting with 4D Point Clouds](vista4d_video_reshooting_with_4d_point_clouds.md)
+- [\[CVPR 2026\] mmWaveFlow: Unified Enhancement and Generation of mmWave Human Point Clouds](mmwaveflow_unified_enhancement_and_generation_of_mmwave_human_point_clouds.md)
+- [\[CVPR 2026\] QD-PCQA: Quality-Aware Domain Adaptation for Point Cloud Quality Assessment](qd-pcqa_quality-aware_domain_adaptation_for_point_cloud_quality_assessment.md)
+- [\[CVPR 2026\] Task-Driven Implicit Representations for Automated Design of LiDAR Systems](task-driven_implicit_representations_for_automated_design_of_lidar_systems.md)
 - [\[CVPR 2026\] GaussianGrow: Geometry-aware Gaussian Growing from 3D Point Clouds with Text Guidance](gaussiangrow_geometry-aware_gaussian_growing_from_3d_point_clouds_with_text_guid.md)
-- [\[CVPR 2026\] 3D sans 3D Scans: Scalable Pre-training from Video-Generated Point Clouds](3d_sans_3d_scans_scalable_pre-training_from_video-generated_point_clouds.md)
-- [\[CVPR 2026\] Edges Compete for Trust: Group Relative Edge Optimization for Building Reconstruction from Point Clouds](edges_compete_for_trust_group_relative_edge_optimization_for_building_reconstruc.md)
-- [\[CVPR 2026\] LitePT: Lighter Yet Stronger Point Transformer](litept_lighter_yet_stronger_point_transformer.md)
 
 </div>
 

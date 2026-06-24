@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ProbFM: Probabilistic Time Series Foundation Model with Uncertainty Decomposition
 description: >-
-  [AAAI2026][Time Series][foundation model] This work is the first to introduce Deep Evidential Regression (DER) with a Normal-Inverse-Gamma prior into a time series foundation model architecture…
+  [AAAI2026][Time Series][foundation model] This work is the first to introduce Deep Evidential Regression (DER) with a Normal-Inverse-Gamma prior into a time series foundation model architecture, enabling epistemic-aleatoric uncertainty decomposition in a single forward pass. The practical value of uncertainty-aware trading strategies is validated on cryptocurrency forecasting.
 tags:
   - "AAAI2026"
   - "Time Series"
@@ -11,7 +11,7 @@ tags:
   - "deep evidential regression"
   - "financial forecasting"
 date: 2026-05-08
-content_hash: ecb029db8d1fc5e7
+content_hash: 465dc016857d430e
 ---
 
 # ProbFM: Probabilistic Time Series Foundation Model with Uncertainty Decomposition
@@ -125,10 +125,10 @@ ProbFM = Adaptive Patching + Transformer Backbone + DER Head, comprising six com
 ## Related Papers
 
 - [\[AAAI 2026\] A Unified Shape-Aware Foundation Model for Time Series Classification](a_unified_shape-aware_foundation_model_for_time_series_class.md)
-- [\[AAAI 2026\] Interpreting Fedspeak with Confidence: A LLM-Based Uncertainty-Aware Framework Guided by Monetary Policy Transmission Paths](interpreting_fedspeak_with_confidence_a_llm-based_uncertainty-aware_framework_gu.md)
-- [\[ICLR 2026\] Uni-NTFM: A Unified Foundation Model for EEG Signal Representation Learning](../../ICLR2026/time_series/uni-ntfm_a_unified_foundation_model_for_eeg_signal_representation_learning.md)
-- [\[NeurIPS 2025\] PlanU: Large Language Model Reasoning through Planning under Uncertainty](../../NeurIPS2025/time_series/planu_large_language_model_reasoning_through_planning_under_uncertainty.md)
-- [\[ICLR 2026\] Adapt Data to Model: Adaptive Transformation Optimization for Domain-shared Time Series Foundation Models](../../ICLR2026/time_series/adapt_data_to_model_adaptive_transformation_optimization_for_domain-shared_time_.md)
+- [\[ICLR 2026\] EVEREST: A Transformer for Probabilistic Rare-Event Anomaly Detection with Evidential and Tail-Aware Uncertainty](../../ICLR2026/time_series/everest_a_transformer_for_probabilistic_rare-event_anomaly_detection_with_eviden.md)
+- [\[ICLR 2026\] Repurposing Foundation Model for Generalizable Medical Time Series Classification](../../ICLR2026/time_series/repurposing_foundation_model_for_generalizable_medical_time_series_classificatio.md)
+- [\[ICLR 2026\] UniCA: Unified Covariate Adaptation for Time Series Foundation Model](../../ICLR2026/time_series/unica_unified_covariate_adaptation_for_time_series_foundation_model.md)
+- [\[ICLR 2026\] TimeSliver: Symbolic-Linear Decomposition for Explainable Time Series Classification](../../ICLR2026/time_series/timesliver_symbolic-linear_decomposition_for_explainable_time_series_classificat.md)
 
 </div>
 

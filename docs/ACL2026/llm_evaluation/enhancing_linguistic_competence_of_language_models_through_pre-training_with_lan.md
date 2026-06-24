@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Enhancing Linguistic Competence of Language Models through Pre-training with Language Learning Tasks
 description: >-
-  [ACL 2026][LLM Evaluation][Pretraining] L2T proposes a pre-training framework that integrates 14 language learning tasks (char-level to discourse-level) with standard next-token prediction. It improves BLiMP linguistic competence scores by 2-3 percentage points and accelerates the acquisition process at 500M and 1B parameter scales while maintaining general
+  [ACL 2026][LLM Evaluation][Linguistic Competence] L2T proposes a pre-training framework that integrates 14 language learning tasks (char-level to discourse-level) with standard next-token prediction. It improves BLiMP linguistic competence scores by 2-3 percentage points and accelerates the acquisition process at 500M and 1B parameter scales while maintaining general reasoning performance.
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Pretraining
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Linguistic Competence"
+  - "Pre-training"
+  - "Language Learning Tasks"
+  - "Language Acquisition"
+  - "Structured Stimuli"
 date: 2026-05-08
-content_hash: 62482861136252f2
+content_hash: 45d10f4a6d7b846e
 ---
+
 # Enhancing Linguistic Competence of Language Models through Pre-training with Language Learning Tasks
 
 **Conference**: ACL 2026  
@@ -135,15 +140,15 @@ Loss is calculated over all tokens, including both the input and output segments
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Detecting Data Contamination from Reinforcement Learning Post-training for Large Language Models](../../ICLR2026/llm_evaluation/detecting_data_contamination_from_reinforcement_learning_post-training_for_large.md)
+- [\[ACL 2026\] Automated Creativity Evaluation of Language Models Across Open-Ended Tasks](automated_creativity_evaluation_of_language_models_across_open-ended_tasks.md)
 - [\[NeurIPS 2025\] Exploiting Vocabulary Frequency Imbalance in Language Model Pre-training](../../NeurIPS2025/llm_evaluation/exploiting_vocabulary_frequency_imbalance_in_language_model_pre-training.md)
 - [\[ACL 2026\] Teaching Language Models to Forecast Research Success Through Comparative Idea Evaluation](teaching_language_models_to_forecast_research_success_through_comparative_idea_e.md)
-- [\[ACL 2026\] Automated Creativity Evaluation of Language Models Across Open-Ended Tasks](automated_creativity_evaluation_of_language_models_across_open-ended_tasks.md)
 - [\[ACL 2026\] How Hypocritical Is Your LLM Judge? Listener–Speaker Asymmetries in the Pragmatic Competence of Large Language Models](how_hypocritical_is_your_llm_judge_listener-speaker_asymmetries_in_the_pragmatic.md)
-- [\[ACL 2026\] Evaluating Temporal Consistency in Multi-Turn Language Models](evaluating_temporal_consistency_in_multi-turn_language_models.md)
 
 </div>
 

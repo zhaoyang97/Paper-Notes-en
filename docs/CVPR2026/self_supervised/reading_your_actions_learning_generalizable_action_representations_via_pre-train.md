@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reading Your Actions: Learning Generalizable Action Representations via Pre-training AEMG
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] AEMG treats surface electromyography (EMG) as a "language"—utilizing an energy-driven tokenizer to segment muscle contractions into "words" and multi-channel coordination into "sentences." By applying vector quantization (VQ) codebooks and masked reconstruction for self-supervised pre-training, it yields a universal EM
+  [CVPR 2026][Self-Supervised Learning][Surface Electromyography (sEMG)] AEMG treats surface electromyography (EMG) as a "language"—utilizing an energy-driven tokenizer to segment muscle contractions into "words" and multi-channel coordination into "sentences." By applying vector quantization (VQ) codebooks and masked reconstruction for self-supervised pre-training, it yields a universal EMG foundation model across devices, subjects, and tasks. In the rigorous Zero-shot Leave-O…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Surface Electromyography (sEMG)"
+  - "Self-Supervised Pre-training"
+  - "Vector Quantization"
+  - "Masked Modeling"
+  - "Cross-Subject Generalization"
 date: 2026-05-08
-content_hash: 0ed3c1bf7dec6053
+content_hash: 4113844246e00b32
 ---
+
 # Reading Your Actions: Learning Generalizable Action Representations via Pre-training AEMG
 
 **Conference**: CVPR 2026  
@@ -146,11 +152,11 @@ Removing NCT's energy gating and using fixed-size/fixed-stride blind slicing whi
 
 ## Related Papers
 
+- [\[CVPR 2026\] In Pursuit of Pixel Supervision for Visual Pre-training](in_pursuit_of_pixel_supervision_for_visual_pre-training.md)
 - [\[CVPR 2026\] Chain-of-Models Pre-Training: Rethinking Training Acceleration of Vision Foundation Models](com_pt_chain_of_models_pretraining.md)
 - [\[ICML 2026\] NITP: Next Implicit Token Prediction for LLM Pre-training](../../ICML2026/self_supervised/nitp_next_implicit_token_prediction_for_llm_pre-training.md)
-- [\[CVPR 2026\] Decouple Your Discovery and Memory in Continual Generalized Category Discovery](decouple_your_discovery_and_memory_in_continual_generalized_category_discovery.md)
-- [\[ECCV 2024\] Efficient Image Pre-Training with Siamese Cropped Masked Autoencoders](../../ECCV2024/self_supervised/efficient_image_pre-training_with_siamese_cropped_masked_autoencoders.md)
-- [\[CVPR 2026\] Suppressing Non-Semantic Noise in Masked Image Modeling Representations](suppressing_non-semantic_noise_in_masked_image_modeling_representations.md)
+- [\[CVPR 2026\] Your Dissimilarities Define You: Complementary Learning Exploiting Class Diversities](your_dissimilarities_define_you_complementary_learning_exploiting_class_diversit.md)
+- [\[CVPR 2026\] Beyond Binary Contrast: Modeling Continuous Skeleton Action Spaces with Transitional Anchors](beyond_binary_contrast_modeling_continuous_skeleton_action_spaces_with_transitio.md)
 
 </div>
 

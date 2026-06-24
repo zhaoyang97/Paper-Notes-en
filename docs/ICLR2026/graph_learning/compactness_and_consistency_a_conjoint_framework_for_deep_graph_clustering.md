@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Compactness and Consistency: A Conjoint Framework for Deep Graph Clustering
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] CoCo utilizes graph convolutional filtering to extract complementary node representations from two views: local (adjacency graph) and global (graph diffusion matrix). It then employs a shared low-rank subspace to compress these into compact embeddings for redundancy and noise removal (Compactness). Finally, a cross-vie
+  [ICLR2026][Graph Learning][Deep Graph Clustering] CoCo utilizes graph convolutional filtering to extract complementary node representations from two views: local (adjacency graph) and global (graph diffusion matrix). It then employs a shared low-rank subspace to compress these into compact embeddings for redundancy and noise removal (Compactness). Finally, a cross-view similarity distribution consistency loss aligns the semantics of both sides (Consistency)…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR2026"
+  - "Graph Learning"
+  - "Deep Graph Clustering"
+  - "Low-rank Subspace"
+  - "Graph Diffusion"
+  - "Local-Global Views"
+  - "Consistency Learning"
 date: 2026-05-08
-content_hash: 76e1332375039226
+content_hash: 92e4e7ece5d50625
 ---
+
 # Compactness and Consistency: A Conjoint Framework for Deep Graph Clustering
 
 **Conference**: ICLR2026  
@@ -152,10 +158,10 @@ Consistency Loss Comparison (Cora):
 ## Related Papers
 
 - [\[ICLR 2026\] Dual-Branch Representations with Dynamic Gated Fusion and Triple-Granularity Alignment for Deep Multi-View Clustering](dual-branch_representations_with_dynamic_gated_fusion_and_triple-granularity_ali.md)
-- [\[ICLR 2026\] Confident Block Diagonal Structure-Aware Invariable Graph Completion for Incomplete Multi-view Clustering](confident_block_diagonal_structure-aware_invariable_graph_completion_for_incompl.md)
-- [\[ICLR 2026\] Federated Graph-Level Clustering Network with Dual Knowledge Separation](federated_graph-level_clustering_network_with_dual_knowledge_separation.md)
+- [\[ICLR 2026\] Escaping the Homophily Trap: A Threshold-free Graph Outlier Detection Framework via Clustering-guided Edge Reweighting](escaping_the_homophily_trap_a_threshold-free_graph_outlier_detection_framework_v.md)
+- [\[ICLR 2026\] Self-Consistency Improves the Trustworthiness of Self-Interpretable GNNs](self-consistency_improves_the_trustworthiness_of_self-interpretable_gnns.md)
 - [\[ICML 2026\] Deep Neural Sheaf Diffusion](../../ICML2026/graph_learning/deep_neural_sheaf_diffusion.md)
-- [\[ICLR 2026\] DHG-Bench: A Comprehensive Benchmark for Deep Hypergraph Learning](dhg-bench_a_comprehensive_benchmark_for_deep_hypergraph_learning.md)
+- [\[ICLR 2026\] Confident Block Diagonal Structure-Aware Invariable Graph Completion for Incomplete Multi-view Clustering](confident_block_diagonal_structure-aware_invariable_graph_completion_for_incompl.md)
 
 </div>
 

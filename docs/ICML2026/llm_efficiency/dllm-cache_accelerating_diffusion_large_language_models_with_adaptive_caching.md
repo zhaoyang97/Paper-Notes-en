@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] dLLM-Cache: Accelerating Diffusion Large Language Models with Adaptive Caching
 description: >-
-  [ICML 2026][LLM Efficiency][Diffusion Language Model] To address the bottleneck where diffusion Large Language Models (dLLMs) suffer from extremely slow inference due to bidirectional attention and the inability to reuse KV caches, this paper proposes dLLM-Cache. This training-free method applies long-interval caching for static prompts and short-interval refreshing for d
+  [ICML 2026][LLM Efficiency][Diffusion Large Language Models] To address the bottleneck where diffusion Large Language Models (dLLMs) suffer from extremely slow inference due to bidirectional attention and the inability to reuse KV caches, this paper proposes dLLM-Cache. This training-free method applies long-interval caching for static prompts and short-interval refreshing for dynamic responses. By using Value cosine similarity (V-verify) to select and recompute the top 25% m…
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - Diffusion Language Model
-  - Inference Acceleration
-  - V-verify
-  - LLaDA / Dream
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "Diffusion Large Language Models"
+  - "Inference Acceleration"
+  - "Adaptive Caching"
+  - "V-verify"
+  - "LLaDA / Dream"
 date: 2026-05-08
-content_hash: 271b22f19d17edda
+content_hash: 27124465a1a68794
 ---
+
 # dLLM-Cache: Accelerating Diffusion Large Language Models with Adaptive Caching
 
 **Conference**: ICML 2026  
@@ -136,16 +138,16 @@ Comparison with Llama 3 8B on GSM8K: LLaDA Base originally achieved 7.37 TPS / 6
 - Value: ⭐⭐⭐⭐⭐ Pulls dLLM inference speed into the same range as ARMs, addressing the biggest obstacle to dLLM deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] CreditDecoding: Accelerating Parallel Decoding in Diffusion Large Language Models with Trace Credit](../../ACL2026/llm_efficiency/creditdecoding_accelerating_parallel_decoding_in_diffusion_large_language_models.md)
-- [\[ACL 2026\] Breaking Block Boundaries: Anchor-based History-stable Decoding for Diffusion Large Language Models](../../ACL2026/llm_efficiency/breaking_block_boundaries_anchor-based_history-stable_decoding_for_diffusion_lar.md)
-- [\[ICML 2026\] TEAM: Temporal-Spatial Consistency Guided Expert Activation for MoE Diffusion Language Model Acceleration](team_temporal-spatial_consistency_guided_expert_activation_for_moe_diffusion_lan.md)
-- [\[ICML 2026\] ProactiveLLM: Learning Active Interaction for Streaming Large Language Models](proactivellm_learning_active_interaction_for_streaming_large_language_models.md)
-- [\[ICML 2026\] Fast-dLLM++: Fréchet Profile Decoding for Faster Diffusion LLM Inference](fast-dllm_fréchet_profile_decoding_for_faster_diffusion_llm_inference.md)
+- [\[ICLR 2026\] Learning to Parallel: Accelerating Diffusion Large Language Models via Learnable Parallel Decoding](../../ICLR2026/llm_efficiency/learning_to_parallel_accelerating_diffusion_large_language_models_via_learnable_.md)
+- [\[ICLR 2026\] FlashDLM: Accelerating Diffusion Language Model Inference via Efficient KV Caching and Guided Diffusion](../../ICLR2026/llm_efficiency/flashdlm_accelerating_diffusion_language_model_inference_via_efficient_kv_cachin.md)
+- [\[ICLR 2026\] Accelerating Diffusion Large Language Models with SlowFast Sampling: The Three Golden Principles](../../ICLR2026/llm_efficiency/accelerating_diffusion_large_language_models_with_slowfast_sampling_the_three_go.md)
+- [\[ICLR 2026\] Dynamic-dLLM: Dynamic Cache-Budget and Adaptive Parallel Decoding for Training-Free Acceleration of Diffusion LLM](../../ICLR2026/llm_efficiency/dynamic-dllm_dynamic_cache-budget_and_adaptive_parallel_decoding_for_training-fr.md)
 
 </div>
 

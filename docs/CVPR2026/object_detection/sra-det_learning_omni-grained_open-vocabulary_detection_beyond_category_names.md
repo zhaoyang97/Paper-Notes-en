@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SRA-Det: Learning Omni-Grained Open-Vocabulary Detection Beyond Category Names
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] Addressing the issue where open-vocabulary detectors only match "category names" and remain insensitive to fine-grained attributes like color, material, and pattern, SRA-Det uses learnable retrieval queries to extract multiple semantic "facets" from text tokens. It employs soft-min matching as a "logic AND" to ensure a
+  [CVPR 2026][Object Detection][Open-vocabulary detection] Addressing the issue where open-vocabulary detectors only match "category names" and remain insensitive to fine-grained attributes like color, material, and pattern, SRA-Det uses learnable retrieval queries to extract multiple semantic "facets" from text tokens. It employs soft-min matching as a "logic AND" to ensure all facets are satisfied. Combined with an attribute-augmented pipeline that uses LLMs for generation an…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Open-vocabulary detection"
+  - "fine-grained recognition"
+  - "semantic retrieval"
+  - "soft-min matching"
+  - "attribute-augmented data"
 date: 2026-05-08
-content_hash: 93939bca1427a17c
+content_hash: 1cda380482770d2c
 ---
+
 # SRA-Det: Learning Omni-Grained Open-Vocabulary Detection Beyond Category Names
 
 **Conference**: CVPR 2026  
@@ -141,9 +147,9 @@ Compared to MLLMs, SRA-Det (0.116B params) achieves a higher F1 (46.29) and Reca
 
 - [\[CVPR 2026\] Consistency Beyond Contrast: Enhancing Open-Vocabulary Object Detection Robustness via Contextual Consistency Learning](consistency_beyond_contrast_enhancing_open-vocabulary_object_detection_robustnes.md)
 - [\[CVPR 2026\] NoOVD: Novel Category Discovery and Embedding for Open-Vocabulary Object Detection](noovd_novel_category_discovery_and_embedding_for_open-vocabulary_object_detectio.md)
+- [\[AAAI 2026\] VK-Det: Visual Knowledge Guided Prototype Learning for Open-Vocabulary Aerial Object Detection](../../AAAI2026/object_detection/vk-det_visual_knowledge_guided_prototype_learning_for_open-vocabulary_aerial_obj.md)
 - [\[CVPR 2026\] Thermal-Det: Language-Guided Cross-Modal Distillation for Open-Vocabulary Thermal Object Detection](thermal-det_language-guided_cross-modal_distillation_for_open-vocabulary_thermal.md)
 - [\[CVPR 2026\] WeDetect: Fast Open-Vocabulary Object Detection as Retrieval](wedetect_fast_open-vocabulary_object_detection_as_retrieval.md)
-- [\[CVPR 2026\] ViTPrompt: Training-Free Prompt Refinement with Visual Tokens for Open-Vocabulary Detection](vitprompt_training-free_prompt_refinement_with_visual_tokens_for_open-vocabulary.md)
 
 </div>
 

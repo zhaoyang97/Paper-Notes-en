@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] DA-AC: Distributions as Actions — A Unified RL Framework for Diverse Action Spaces
 description: >-
-  [ICLR 2026][Others][Paper Note] DA-AC proposes treating the parameters of action distributions (such as softmax probabilities or Gaussian mean/variance) as the "actions" output by the agent, moving the action sampling process into the environment. This allows a unified deterministic policy gradient framework to handle discrete, continuous, and hybrid
+  [ICLR 2026][Unified action space] DA-AC proposes treating the parameters of action distributions (such as softmax probabilities or Gaussian mean/variance) as the "actions" output by the agent, moving the action sampling process into the environment. This allows a unified deterministic policy gradient framework to handle discrete, continuous, and hybrid action spaces. The method theoretically guarantees strictly lower variance than LR and RP estimators and achieves competitive…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Unified action space"
+  - "distribution parameterization"
+  - "deterministic policy gradient"
+  - "discrete-continuous hybrid control"
+  - "variance reduction"
 date: 2026-05-08
-content_hash: d7078a8c2716565b
+content_hash: 1f777005287188bc
 ---
+
 # DA-AC: Distributions as Actions — A Unified RL Framework for Diverse Action Spaces
 
 **Conference**: ICLR 2026  
@@ -153,9 +158,9 @@ ICL consistently improves performance across all settings.
 
 - [\[ICML 2026\] iWorld-Bench: A Benchmark for Interactive World Models with a Unified Action Generation Framework](../../ICML2026/others/iworld-bench_a_benchmark_for_interactive_world_models_with_a_unified_action_gene.md)
 - [\[ICLR 2026\] GoR: A Unified and Extensible Generative Framework for Ordinal Regression](gor_a_unified_and_extensible_generative_framework_for_ordinal_regression.md)
+- [\[ICLR 2026\] IC-Custom: Diverse Image Customization via In-Context Learning](ic-custom_diverse_image_customization_via_in-context_learning.md)
 - [\[ICLR 2026\] Learning Distributions over Permutations and Rankings with Factorized Representations](learning_distributions_over_permutations_and_rankings_with_factorized_representa.md)
 - [\[ICLR 2026\] Learning Survival Distributions with Individually Calibrated Asymmetric Laplace Distribution](learning_survival_distributions_with_individually_calibrated_asymmetric_laplace_.md)
-- [\[ECCV 2024\] An Incremental Unified Framework for Small Defect Inspection](../../ECCV2024/others/an_incremental_unified_framework_for_small_defect_inspection.md)
 
 </div>
 

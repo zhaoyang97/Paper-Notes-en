@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Adaptive Auxiliary Prompt Blending for Target-Faithful Diffusion Generation
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] Proposes Adaptive Auxiliary Prompt Blending (AAPB), which derives a closed-form adaptive blending coefficient via Tweedie’s formula to dynamically balance the contributions of auxiliary anchor prompts and target prompts at each denoising step. This training-free approach significantly improves semantic accuracy and str
+  [CVPR2026][Image Generation][Diffusion Models] Proposes Adaptive Auxiliary Prompt Blending (AAPB), which derives a closed-form adaptive blending coefficient via Tweedie’s formula to dynamically balance the contributions of auxiliary anchor prompts and target prompts at each denoising step. This training-free approach significantly improves semantic accuracy and structural fidelity in rare concept generation and zero-shot image editing.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
-  - Image Editing
+  - "CVPR2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Text-to-Image Generation"
+  - "Rare Concept Generation"
+  - "Image Editing"
+  - "Adaptive Prompt Blending"
+  - "Tweedie's Formula"
+  - "Classifier-Free Guidance"
 date: 2026-05-08
-content_hash: f8a90c39ae46ffb4
+content_hash: b3241e35f86d532b
 ---
+
 # Adaptive Auxiliary Prompt Blending for Target-Faithful Diffusion Generation
 
 **Conference**: CVPR2026  
@@ -146,9 +152,9 @@ Since a closed-form solution exists, no iterative optimization is required; it i
 ## Related Papers
 
 - [\[CVPR 2026\] Precise Object and Effect Removal with Adaptive Target-Aware Attention](precise_object_and_effect_removal_with_adaptive_target-aware_attention.md)
-- [\[CVPR 2026\] MAGIC: Few-Shot Mask-Guided Anomaly Inpainting with Prompt Perturbation, Spatially Adaptive Guidance, and Context Awareness](magic_few-shot_mask-guided_anomaly_inpainting_with_prompt_perturbation_spatially.md)
-- [\[CVPR 2026\] Denoising, Fast and Slow: Difficulty-Aware Adaptive Sampling for Image Generation](denoising_fast_and_slow_difficulty-aware_adaptive_sampling_for_image_generation.md)
 - [\[CVPR 2026\] Region-Adaptive Sampling for Diffusion Transformers](region-adaptive_sampling_for_diffusion_transformers.md)
+- [\[ICLR 2026\] Long-Text-to-Image Generation via Compositional Prompt Decomposition](../../ICLR2026/image_generation/long-text-to-image_generation_via_compositional_prompt_decomposition.md)
+- [\[CVPR 2026\] Rethinking Prompt Design for Inference-time Scaling in Text-to-Visual Generation](rethinking_prompt_design_for_inference-time_scaling_in_text-to-visual_generation.md)
 - [\[ACL 2025\] Planning with Diffusion Models for Target-Oriented Dialogue Systems](../../ACL2025/image_generation/difftod_diffusion_dialogue_planning.md)
 
 </div>

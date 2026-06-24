@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Diffusion Transformers as Open-World Spatiotemporal Foundation Models
 description: >-
-  [NeurIPS 2025][Time Series][Diffusion Transformer] This paper proposes UrbanDiT, the first open-world urban spatiotemporal foundation model based on Diffusion Transformers. It integrates heterogeneous data types (grid/gr…
+  [NeurIPS 2025][Time Series][Diffusion Transformer] This paper proposes UrbanDiT, the first open-world urban spatiotemporal foundation model based on Diffusion Transformers. It integrates heterogeneous data types (grid/graph) and diverse tasks (prediction, interpolation, extrapolation, imputation) through a unified prompt learning framework, achieving state-of-the-art performance across multiple cities and scenarios while demonstrating strong zero-shot generalization.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "Prompt Learning"
   - "Zero-shot"
 date: 2026-05-08
-content_hash: dea2851f52c63cc5
+content_hash: eb568b0adc807e86
 ---
 
 # Diffusion Transformers as Open-World Spatiotemporal Foundation Models
@@ -162,9 +162,9 @@ UrbanDiT is the only model satisfying all five criteria. Compared to CSDI (the s
 
 - [\[NeurIPS 2025\] MIRA: Medical Time Series Foundation Model for Real-World Health Data](mira_medical_time_series_foundation_model_for_real-world_health_data.md)
 - [\[NeurIPS 2025\] BubbleFormer: Forecasting Boiling with Transformers](bubbleformer_forecasting_boiling_with_transformers.md)
-- [\[ICLR 2026\] Relational Feature Caching for Accelerating Diffusion Transformers](../../ICLR2026/time_series/relational_feature_caching_for_accelerating_diffusion_transformers.md)
 - [\[NeurIPS 2025\] How Foundational are Foundation Models for Time Series Forecasting?](how_foundational_are_foundation_models_for_time_series_forecasting.md)
 - [\[NeurIPS 2025\] SEMPO: Lightweight Foundation Models for Time Series Forecasting](sempo_lightweight_foundation_models_for_time_series_forecasting.md)
+- [\[ICLR 2026\] Relational Feature Caching for Accelerating Diffusion Transformers](../../ICLR2026/time_series/relational_feature_caching_for_accelerating_diffusion_transformers.md)
 
 </div>
 

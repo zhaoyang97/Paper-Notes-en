@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] INC: An Indirect Neural Corrector for Auto-Regressive Hybrid PDE Solvers
 description: >-
-  [NEURIPS2025][Physics & Scientific Computing][PDE solving] This paper proposes the Indirect Neural Corrector (INC), which embeds learned correction terms into the right-hand side (RHS) of PDEs rather than directly modify…
+  [NEURIPS2025][Physics & Scientific Computing][PDE solving] This paper proposes the Indirect Neural Corrector (INC), which embeds learned correction terms into the right-hand side (RHS) of PDEs rather than directly modifying the state. The approach is theoretically shown to reduce error amplification by a factor of $\mathcal{O}(\Delta t^{-1}+L)$, and achieves substantial improvements in long-term trajectory performance across 6 PDE systems (from 1D chaos to 3D turbulence)…
 tags:
   - "NEURIPS2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "auto-regressive stability"
   - "indirect correction"
 date: 2026-05-08
-content_hash: c3b0ed70f0d43963
+content_hash: 1fa2365471e68e56
 ---
 
 # INC: An Indirect Neural Corrector for Auto-Regressive Hybrid PDE Solvers
@@ -114,8 +114,8 @@ The neural correction term $\mathcal{G}_\theta$ is relocated from the state upda
 
 - [\[NeurIPS 2025\] Hamiltonian Neural PDE Solvers through Functional Approximation](hamiltonian_neural_pde_solvers_through_functional_approximation.md)
 - [\[NeurIPS 2025\] Enforcing Governing Equation Constraints in Neural PDE Solvers via Training-free Projections](enforcing_governing_equation_constraints_in_neural_pde_solvers_via_training-free.md)
+- [\[CVPR 2025\] Accurate Differential Operators for Hybrid Neural Fields](../../CVPR2025/physics/accurate_differential_operators_for_hybrid_neural_fields.md)
 - [\[NeurIPS 2025\] DeltaPhi: Physical States Residual Learning for Neural Operators in Data-Limited PDE Solving](deltaphi_physical_states_residual_learning_for_neural_operators_in_data-limited_.md)
-- [\[ICLR 2026\] One Operator to Rule Them All? On Boundary-Indexed Operator Families in Neural PDE Solvers](../../ICLR2026/physics/one_operator_to_rule_them_all_on_boundary-indexed_operator_families_in_neural_pd.md)
 - [\[NeurIPS 2025\] Scaling Laws and Pathologies of Single-Layer PINNs: Network Width and PDE Nonlinearity](scaling_laws_and_pathologies_of_single-layer_pinns_network_width_and_pde_nonline.md)
 
 </div>

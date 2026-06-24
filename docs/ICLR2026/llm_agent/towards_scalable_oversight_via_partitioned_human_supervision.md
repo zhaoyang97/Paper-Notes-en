@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Scalable Oversight via Partitioned Human Supervision
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] A scalable oversight framework based on partitioned human supervision is proposed. When tasks exceed the capability of a single expert, complementary labels (excluding incorrect options) provided by domain experts are used to construct an unbiased accuracy estimator, enabling the evaluation and training of AI systems w
+  [ICLR2026][LLM Agent][Scalable oversight] A scalable oversight framework based on partitioned human supervision is proposed. When tasks exceed the capability of a single expert, complementary labels (excluding incorrect options) provided by domain experts are used to construct an unbiased accuracy estimator, enabling the evaluation and training of AI systems without requiring full ground-truth annotations.
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR2026"
+  - "LLM Agent"
+  - "Scalable oversight"
+  - "complementary labels"
+  - "partitioned human supervision"
+  - "unbiased estimation"
+  - "Agent training"
 date: 2026-05-08
-content_hash: 0042962fd10d4ec7
+content_hash: 18ff5457dfab00ae
 ---
+
 # Towards Scalable Oversight via Partitioned Human Supervision
 
 **Conference**: ICLR2026  
@@ -139,9 +145,9 @@ To ensure the estimators can be reliably used for evaluation and training, the m
 
 - [\[ICLR 2026\] Repurposing Synthetic Data for Fine-grained Search Agent Supervision](repurposing_synthetic_data_for_fine-grained_search_agent_supervision.md)
 - [\[ACL 2026\] SynthAgent: Adapting Web Agents with Synthetic Supervision](../../ACL2026/llm_agent/synthagent_adapting_web_agents_with_synthetic_supervision.md)
+- [\[ICLR 2026\] Search Self-Play: Pushing the Frontier of Agent Capability without Supervision](search_self-play_pushing_the_frontier_of_agent_capability_without_supervision.md)
 - [\[ICLR 2026\] AgentSynth: Scalable Task Generation for Generalist Computer-Use Agents](agentsynth_scalable_task_generation_for_generalist_computer-use_agents.md)
 - [\[ICLR 2026\] Grounding Computer Use Agents on Human Demonstrations](grounding_computer_use_agents_on_human_demonstrations.md)
-- [\[ICLR 2026\] ToolWeaver: Weaving Collaborative Semantics for Scalable Tool Use in Large Language Models](toolweaver_weaving_collaborative_semantics_for_scalable_tool_use_in_large_langua.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LabelAny3D: Label Any Object 3D in the Wild
 description: >-
-  [NeurIPS 2025][Autonomous Driving][3D annotation] This paper proposes LabelAny3D, an analysis-by-synthesis automatic 3D annotation pipeline that reconstructs complete 3D scenes from monocular images to obtain high-qualit…
+  [NeurIPS 2025][Autonomous Driving][3D annotation] This paper proposes LabelAny3D, an analysis-by-synthesis automatic 3D annotation pipeline that reconstructs complete 3D scenes from monocular images to obtain high-quality 3D bounding box annotations. Based on this pipeline, the authors construct the COCO3D benchmark covering 80 categories of everyday objects, achieving significant improvements in open-vocabulary monocular 3D detection.
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "automatic annotation"
   - "foundation models"
 date: 2026-05-08
-content_hash: 969fbff3680e3933
+content_hash: 90bb009412761ee0
 ---
 
 # LabelAny3D: Label Any Object 3D in the Wild
@@ -185,8 +185,8 @@ The advantage is particularly pronounced at high IoU thresholds (AP₃D^50: 57.3
 
 - [\[NeurIPS 2025\] OpenBox: Annotate Any Bounding Boxes in 3D](openbox_annotate_any_bounding_boxes_in_3d.md)
 - [\[ICCV 2025\] Detect Anything 3D in the Wild](../../ICCV2025/autonomous_driving/detect_anything_3d_in_the_wild.md)
-- [\[AAAI 2026\] Difficulty-Aware Label-Guided Denoising for Monocular 3D Object Detection](../../AAAI2026/autonomous_driving/difficulty-aware_label-guided_denoising_for_monocular_3d_object_detection.md)
 - [\[NeurIPS 2025\] Towards Predicting Any Human Trajectory in Context](towards_predicting_any_human_trajectory_in_context.md)
+- [\[AAAI 2026\] Difficulty-Aware Label-Guided Denoising for Monocular 3D Object Detection](../../AAAI2026/autonomous_driving/difficulty-aware_label-guided_denoising_for_monocular_3d_object_detection.md)
 - [\[CVPR 2026\] Learning to Drive is a Free Gift: Large-Scale Label-Free Autonomy Pretraining from Unposed In-The-Wild Videos](../../CVPR2026/autonomous_driving/learning_to_drive_is_a_free_gift_large-scale_label-free_autonomy_pretraining_fro.md)
 
 </div>

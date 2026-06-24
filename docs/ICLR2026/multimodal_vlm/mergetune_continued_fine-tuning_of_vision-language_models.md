@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MergeTune: Continued Fine-Tuning of Vision-Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] MERGETUNE defines the recovery of pre-trained knowledge in an already fine-tuned CLIP/VLM as a "continued fine-tuning" problem. By using Linear Mode Connectivity (LMC) constraints to further optimize previously trained parameters, the final model is positioned closer to both the zero-shot CLIP and the downstream fine-t
+  [ICLR2026][Multimodal VLM][VLM Continued Fine-Tuning] MERGETUNE defines the recovery of pre-trained knowledge in an already fine-tuned CLIP/VLM as a "continued fine-tuning" problem. By using Linear Mode Connectivity (LMC) constraints to further optimize previously trained parameters, the final model is positioned closer to both the zero-shot CLIP and the downstream fine-tuned model, improving base-novel, cross-dataset, domain generalization, and ID-OOD robustness without addi…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "VLM Continued Fine-Tuning"
+  - "CLIP Adaptation"
+  - "Model Merging"
+  - "Linear Mode Connectivity"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: 366f9c4766745d2a
+content_hash: a81f97303d2d4f34
 ---
+
 # MergeTune: Continued Fine-Tuning of Vision-Language Models
 
 **Conference**: ICLR2026  
@@ -175,8 +181,8 @@ In base-to-novel experiments, MERGETUNE boosts CoOp's Novel accuracy from 63.22 
 - Value: ⭐⭐⭐⭐⭐ High practical value for improving existing VLM fine-tuning pipelines without inference overhead.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

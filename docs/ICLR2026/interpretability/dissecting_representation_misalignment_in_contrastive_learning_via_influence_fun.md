@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Dissecting Representation Misalignment in Contrastive Learning via Influence Function
 description: >-
-  [ICLR 2026][Interpretability][CLIP] Addressing the issue that classical influence functions are designed only for pointwise loss and cannot be directly applied to contrastive loss, this paper derives ECIF, an extended influence function specifically for contrastive learning. By analytically expressing the dual influence of a sample as both a "positive sa
+  [ICLR2026][Interpretability][Influence Function] Addressing the issue that classical influence functions are designed only for pointwise loss and cannot be directly applied to contrastive loss, this paper derives ECIF, an extended influence function specifically for contrastive learning. By analytically expressing the dual influence of a sample as both a "positive sample" and a "negative sample" in closed-form, it enables evaluating the contribution of each image-text pair in…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - CLIP
+  - "ICLR2026"
+  - "Interpretability"
+  - "Influence Function"
+  - "Contrastive Loss"
+  - "Data Valuation"
+  - "Misalignment Detection"
+  - "CLIP"
 date: 2026-05-08
-content_hash: e86c2277029b7452
+content_hash: 8ed3a1bd8a93065f
 ---
+
 # Dissecting Representation Misalignment in Contrastive Learning via Influence Function
 
 **Conference**: ICLR2026  
@@ -160,9 +165,9 @@ Accuracy after ECIF removes harmful samples almost aligns with retraining and is
 
 - [\[ICLR 2026\] Sparse CLIP: Co-optimizing Interpretability and Performance in Contrastive Learning](sparse_clip_co-optimizing_interpretability_and_performance_in_contrastive_learni.md)
 - [\[ICLR 2026\] MICLIP: Learning to Interpret Representation in Vision Models](miclip_learning_to_interpret_representation_in_vision_models.md)
-- [\[ICLR 2026\] Influence Dynamics and Stagewise Data Attribution](influence_dynamics_and_stagewise_data_attribution.md)
 - [\[ICLR 2026\] Decoupling Dynamical Richness from Representation Learning: Towards Practical Measurement](decoupling_dynamical_richness_from_representation_learning_towards_practical_mea.md)
 - [\[ICLR 2026\] Decomposing Representation Space into Interpretable Subspaces with Unsupervised Learning](decomposing_representation_space_into_interpretable_subspaces_with_unsupervised_.md)
+- [\[ICLR 2026\] Causality ≠ Invariance: Function and Concept Vectors in LLMs](causality_invariance_function_and_concept_vectors_in_llms.md)
 
 </div>
 

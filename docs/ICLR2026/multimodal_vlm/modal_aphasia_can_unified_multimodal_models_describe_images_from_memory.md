@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Modal Aphasia: Can Unified Multimodal Models Describe Images From Memory?
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] This paper identifies and systematically defines the phenomenon of "Modal Aphasia"—where unified multimodal models can near-perfectly generate visual concepts (such as movie posters) from memory but exhibit error rates over 7 times higher when describing the same concepts in text, with severe hallucinations occurring a
+  [ICLR 2026][Multimodal VLM][Modal Aphasia] This paper identifies and systematically defines the phenomenon of "Modal Aphasia"—where unified multimodal models can near-perfectly generate visual concepts (such as movie posters) from memory but exhibit error rates over 7 times higher when describing the same concepts in text, with severe hallucinations occurring almost exclusively in the text modality. Through real-world experiments on frontier models (ChatGPT-5) and synthetic c…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Modal Aphasia"
+  - "Unified Multimodal Models"
+  - "Cross-modal Knowledge Transfer"
+  - "Memorization"
+  - "AI Safety"
 date: 2026-05-08
-content_hash: b60d498b41301325
+content_hash: 30103ae3fbaa6e60
 ---
+
 # Modal Aphasia: Can Unified Multimodal Models Describe Images From Memory?
 
 **Conference**: ICLR 2026  
@@ -123,11 +129,20 @@ Example: For a Harry Potter poster, Image Generation passed 16/17 rubric items, 
 - **Value**: ⭐⭐⭐⭐⭐ Offers fundamental implications for VLM architecture and immediate practical warnings for AI safety alignment.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-...
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Reconstruction Alignment Improves Unified Multimodal Models](reconstruction_alignment_improves_unified_multimodal_models.md)
+- [\[ICLR 2026\] MME-Unify: A Comprehensive Benchmark for Unified Multimodal Understanding and Generation Models](mme-unify_a_comprehensive_benchmark_for_unified_multimodal_understanding_and_gen.md)
+- [\[ICLR 2026\] Patch-as-Decodable-Token: Towards Unified Multi-Modal Vision Tasks in MLLMs](patch-as-decodable-token_towards_unified_multi-modal_vision_tasks_in_mllms.md)
+- [\[ACL 2025\] Finding Needles in Images: Can Multi-modal LLMs Locate Fine Details?](../../ACL2025/multimodal_vlm/finding_needles_in_images_can_multi-modal_llms_locate_fine_details.md)
+- [\[ICLR 2026\] InternSVG: Towards Unified SVG Tasks with Multimodal Large Language Models](internsvg_towards_unified_svg_tasks_with_multimodal_large_language_models.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Thinking with Camera: A Unified Multimodal Model for Camera-Centric Understanding and Generation](thinking_with_camera_a_unified_multimodal_model_for_camera-centric_understanding.md)

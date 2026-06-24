@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] 240FPS Stereo Vision from Monocular Mixed Spikes
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] A single monocular spike camera is used to optically mix left and right views onto the same sensor, with one view subjected to periodic 60 Hz modulation. Through a two-stage process—"Least Squares Baseline Decoupling + SMS-Net Depth Refinement"—a 240 FPS binocular video is reconstructed from the mixed spike stream. Thi
+  [CVPR 2026][3D Vision][Spike camera] A single monocular spike camera is used to optically mix left and right views onto the same sensor, with one view subjected to periodic 60 Hz modulation. Through a two-stage process—"Least Squares Baseline Decoupling + SMS-Net Depth Refinement"—a 240 FPS binocular video is reconstructed from the mixed spike stream. This approach maintains the compact hardware and data efficiency of a monocular setup while achieving depth estimation accurac…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Spike camera"
+  - "Stereo vision"
+  - "Temporal optical modulation"
+  - "Binocular decoupling"
+  - "High frame rate depth"
 date: 2026-05-08
-content_hash: 084b5f73cbc9a435
+content_hash: 04f42f3734551f17
 ---
+
 # 240FPS Stereo Vision from Monocular Mixed Spikes
 
 **Conference**: CVPR 2026  
@@ -141,11 +147,11 @@ Refine-DEFOM significantly improves over the baseline and outperforms monocular 
 
 ## Related Papers
 
-- [\[CVPR 2026\] A Cookbook of 3D Vision: Data, Learning Paradigms, and Application](a_cookbook_of_3d_vision_data_learning_paradigms_and_application.md)
-- [\[CVPR 2026\] GS-ASM: 2DGS-Supervised Active Stereo Matching](gs-asm_2dgs-supervised_active_stereo_matching.md)
-- [\[CVPR 2026\] Elastic3D: Controllable Stereo Video Conversion with Guided Latent Decoding](elastic3d_controllable_stereo_video_conversion_with_guided_latent_decoding.md)
-- [\[CVPR 2026\] Bidirectional Cross-Modal Prompting for Event-Frame Asymmetric Stereo](bidirectional_cross-modal_prompting_for_event-frame_asymmetric_stereo.md)
-- [\[CVPR 2026\] GeoCodeBench: Benchmarking PhD-Level Coding in 3D Geometric Computer Vision](benchmarking_phd-level_coding_in_3d_geometric_computer_vision.md)
+- [\[CVPR 2026\] MonoVLM: Monocular 3D Visual Grounding with Vision Language Models](monovlm_monocular_3d_visual_grounding_with_vision_language_models.md)
+- [\[CVPR 2026\] GaussianFluent: Gaussian Simulation for Dynamic Scenes with Mixed Materials](gaussianfluent_gaussian_simulation_for_dynamic_scenes_with_mixed_materials.md)
+- [\[CVPR 2026\] SPE-MVS: Spatial Position Encoding Enhanced Multi-View Stereo with Monocular Depth Priors](spe-mvs_spatial_position_encoding_enhanced_multi-view_stereo_with_monocular_dept.md)
+- [\[CVPR 2026\] Lite Any Stereo: Efficient Zero-Shot Stereo Matching](lite_any_stereo_efficient_zero-shot_stereo_matching.md)
+- [\[CVPR 2026\] PIP-Stereo: Progressive Iterations Pruner for Iterative Optimization based Stereo Matching](pip-stereo_progressive_iterations_pruner_for_iterative_optimization_based_stereo.md)
 
 </div>
 

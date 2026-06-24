@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LF-BVN: Blind-View Network for Self-Supervised Light Field Denoising
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] The "blind-spot" ideology from single-image denoising is extended to "blind-view" for light fields (LF). By masking a subset of views and reconstructing them using the multi-view consistency of the remaining views, the network is trained without clean images. A Geometric Invariant Mask (GIM) enables a single weight-sha
+  [CVPR 2026][Image Restoration][Light Field Denoising] The "blind-spot" ideology from single-image denoising is extended to "blind-view" for light fields (LF). By masking a subset of views and reconstructing them using the multi-view consistency of the remaining views, the network is trained without clean images. A Geometric Invariant Mask (GIM) enables a single weight-shared network to denoise all views. The method achieves or surpasses supervised counterparts on synthetic…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Light Field Denoising"
+  - "Self-supervised"
+  - "Blind-view"
+  - "Geometric Invariant Mask"
+  - "Cross-view Consistency"
 date: 2026-05-08
-content_hash: e799e3a6f545060e
+content_hash: dfde9ac966129fc8
 ---
+
 # LF-BVN: Blind-View Network for Self-Supervised Light Field Denoising
 
 **Conference**: CVPR 2026  
@@ -145,6 +151,7 @@ Component Breakdown (Table 6):
 - Value: ⭐⭐⭐⭐ First self-supervised framework applicable to both standard LF and LFM with high generalization.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

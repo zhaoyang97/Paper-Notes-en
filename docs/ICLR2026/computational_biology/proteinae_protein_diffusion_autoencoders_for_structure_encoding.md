@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ProteinAE: Protein Diffusion Autoencoders for Structure Encoding
 description: >-
-  [ICLR 2026][Computational Biology][Flow Matching] ProteinAE utilizes a non-equivariant Diffusion Transformer to compress protein backbone coordinates directly in $E(3)$ space into a continuous and compact latent representation. Trained end-to-end with only a single flow matching loss, its reconstruction accuracy ($C\alpha$ RMSD) significantly outperforms existing disc
+  [ICLR 2026][Computational Biology][Protein Autoencoder] ProteinAE utilizes a non-equivariant Diffusion Transformer to compress protein backbone coordinates directly in $E(3)$ space into a continuous and compact latent representation. Trained end-to-end with only a single flow matching loss, its reconstruction accuracy ($C\alpha$ RMSD) significantly outperforms existing discrete tokenizers. Furthermore, a protein generative model built on this latent space rivals structural do…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Flow Matching
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Protein Autoencoder"
+  - "Flow Matching"
+  - "Continuous Latent Space"
+  - "Non-equivariant Transformer"
+  - "Latent Diffusion Generation"
 date: 2026-05-08
-content_hash: bd2cadfd7dcd4f19
+content_hash: 0a433e1126fd736f
 ---
+
 # ProteinAE: Protein Diffusion Autoencoders for Structure Encoding
 
 **Conference**: ICLR 2026  
@@ -152,9 +157,9 @@ Generation Efficiency: On a single 80G A100 for generating a 200-residue backbon
 
 - [\[ICLR 2026\] Protein Structure Tokenization via Geometric Byte Pair Encoding](protein_structure_tokenization_via_geometric_byte_pair_encoding.md)
 - [\[ICLR 2026\] Flow Autoencoders are Effective Protein Tokenizers](flow_autoencoders_are_effective_protein_tokenizers.md)
-- [\[ICLR 2026\] Animal behavioral analysis and neural encoding with transformer-based self-supervised pretraining](animal_behavioral_analysis_and_neural_encoding_with_transformer-based_self-super.md)
 - [\[ICLR 2026\] Greater than the Sum of Its Parts: Building Substructure into Protein Encoding Models](greater_than_the_sum_of_its_parts_building_substructure_into_protein_encoding_mo.md)
 - [\[ICLR 2026\] FlexRibbon: Joint Sequence and Structure Pretraining for Protein Modeling](flexribbon_joint_sequence_and_structure_pretraining_for_protein_modeling.md)
+- [\[ICLR 2026\] MolEditRL: Structure-Preserving Molecular Editing via Discrete Diffusion and Reinforcement Learning](moleditrl_structure-preserving_molecular_editing_via_discrete_diffusion_and_rein.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Latent-to-Data Cascaded Diffusion Models for Unconditional Time Series Generation
 description: >-
-  [ICLR 2026][Time Series][Paper Note] Ours proposes L2D-Diff—a cascaded (latent-to-data) dual-space framework that decomposes unconditional time series generation into two steps: modeling the high-level representation distribution in latent space and using these representations as conditions to guide the refinement of local details in data space, thereby b
+  [ICLR 2026][Time Series][Unconditional Time Series Generation] Ours proposes L2D-Diff—a cascaded (latent-to-data) dual-space framework that decomposes unconditional time series generation into two steps: modeling the high-level representation distribution in latent space and using these representations as conditions to guide the refinement of local details in data space, thereby balancing representation consistency and local fidelity.
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Unconditional Time Series Generation"
+  - "Cascaded Diffusion"
+  - "Latent Space Diffusion"
+  - "Data Space Diffusion"
+  - "Representation Learning"
 date: 2026-05-08
-content_hash: dd1d3f4d2cc0302a
+content_hash: 7faea0eb3aeb78e2
 ---
+
 # Latent-to-Data Cascaded Diffusion Models for Unconditional Time Series Generation
 
 **Conference**: ICLR 2026  
@@ -120,10 +126,10 @@ L2D-Diff achieves an average rank of 1.45, significantly outperforming all basel
 ## Related Papers
 
 - [\[ICLR 2026\] A Study of Posterior Stability in Time-Series Latent Diffusion](a_study_of_posterior_stability_in_time-series_latent_diffusion.md)
+- [\[ICLR 2026\] TEDM: Elucidated Diffusion Models for Time Series Forecasting](tedm_time_series_forecasting_with_elucidated_diffusion_models.md)
 - [\[ICML 2026\] Latent Laplace Diffusion for Irregular Multivariate Time Series](../../ICML2026/time_series/latent_laplace_diffusion_for_irregular_multivariate_time_series.md)
 - [\[NeurIPS 2025\] Synthetic Series-Symbol Data Generation for Time Series Foundation Models](../../NeurIPS2025/time_series/synthetic_series-symbol_data_generation_for_time_series_foundation_models.md)
 - [\[ICLR 2026\] TrajFlow: Nationwide Pseudo GPS Trajectory Generation with Flow Matching Models](trajflow_nation-wide_pseudo_gps_trajectory_generation_with_flow_matching_models.md)
-- [\[ICLR 2026\] Adapt Data to Model: Adaptive Transformation Optimization for Domain-shared Time Series Foundation Models](adapt_data_to_model_adaptive_transformation_optimization_for_domain-shared_time_.md)
 
 </div>
 

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] LoRA-Mixer: Coordinate Modular LoRA Experts Through Serial Attention Routing
 description: >-
-  [ICLR 2026][Model Compression][LoRA] The paper "serializes" multiple independently trained LoRA experts into the input/output projection matrices of attention modules rather than replacing FFNs or using parallel branches. It incorporates a Routing Specialization Loss (RSL) that unifies load balancing and input-aware specialization via entropy regularizati
+  [ICLR 2026][Model Compression][LoRA] The paper "serializes" multiple independently trained LoRA experts into the input/output projection matrices of attention modules rather than replacing FFNs or using parallel branches. It incorporates a Routing Specialization Loss (RSL) that unifies load balancing and input-aware specialization via entropy regularization, outperforming LoRA-MoE SOTA on 15 multi-task benchmarks using only 48% of trainable parameters.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - LoRA
-  - Mixture-of-Experts
+  - "ICLR 2026"
+  - "Model Compression"
+  - "LoRA"
+  - "Mixture-of-Experts"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Multi-task Adaptation"
+  - "Routing Specialization"
+  - "Attention Projection Layer"
 date: 2026-05-08
-content_hash: f93ee7355950445b
+content_hash: 43d297c46c033529
 ---
+
 # LoRA-Mixer: Coordinate Modular LoRA Experts Through Serial Attention Routing
 
 **Conference**: ICLR 2026  
@@ -133,9 +138,9 @@ Across three backbones (Falcon-Mamba-7B / Mistral-7B / LLaMA3-8B) and seven benc
 
 - [\[ICLR 2026\] LD-MoLE: Learnable Dynamic Routing for Mixture of LoRA Experts](ld-mole_learnable_dynamic_routing_for_mixture_of_lora_experts.md)
 - [\[ICLR 2026\] Stable-LoRA: Stabilizing Feature Learning of Low-Rank Adaptation](stable-lora_stabilizing_feature_learning_of_low-rank_adaptation.md)
+- [\[ICLR 2026\] CAR-LoRA: Training Compression-Aware and Robust LoRA Adapters for Evolving LLMs](car-lora_training_compression-aware_and_robust_lora_adapters_for_evolving_llms.md)
 - [\[CVPR 2026\] TAS-LoRA: Transformer Architecture Search with Mixture-of-LoRA Experts](../../CVPR2026/model_compression/tas-lora_transformer_architecture_search_with_mixture-of-lora_experts.md)
 - [\[ICML 2025\] Make LoRA Great Again: Boosting LoRA with Adaptive Singular Values and Mixture-of-Experts Optimization Alignment](../../ICML2025/model_compression/make_lora_great_again_boosting_lora_with_adaptive_singular_values_and_mixture-of.md)
-- [\[ICLR 2026\] TiTok: Transfer Token-level Knowledge via Contrastive Excess to Transplant LoRA](titok_transfer_token-level_knowledge_via_contrastive_excess_to_transplant_lora.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DIIP: Diffusion Image Prior
 description: >-
-  [ICCV 2025][Image Generation][diffusion model] This paper discovers that pretrained diffusion models exhibit an implicit bias analogous to Deep Image Prior (DIP) when reconstructing degraded images—the iterative optimiza…
+  [ICCV 2025][Image Generation][diffusion model] This paper discovers that pretrained diffusion models exhibit an implicit bias analogous to Deep Image Prior (DIP) when reconstructing degraded images—the iterative optimization first produces a clean image before overfitting to the degraded input—and that this bias generalizes to a broader range of degradation types than DIP. Based on this finding, the authors propose DIIP, a fully blind (degradation-model-free) image restoratio…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Early Stopping"
   - "Zero-shot"
 date: 2026-05-08
-content_hash: fa9939c92f95f490
+content_hash: a3276c6d46584fa7
 ---
 
 # DIIP: Diffusion Image Prior
@@ -171,9 +171,9 @@ Note: Partially blind methods such as BIRD and BlindDPS **cannot be applied** to
 
 - [\[ICCV 2025\] Learning Deblurring Texture Prior from Unpaired Data with Diffusion Model](learning_deblurring_texture_prior_from_unpaired_data_with_diffusion_model.md)
 - [\[ICCV 2025\] DPoser-X: Diffusion Model as Robust 3D Whole-Body Human Pose Prior](dposer-x_diffusion_model_as_robust_3d_whole-body_human_pose_prior.md)
+- [\[ECCV 2024\] FreeCompose: Generic Zero-Shot Image Composition with Diffusion Prior](../../ECCV2024/image_generation/freecompose_generic_zero-shot_image_composition_with_diffusion_prior.md)
+- [\[CVPR 2025\] Navigating Image Restoration with VAR's Distribution Alignment Prior](../../CVPR2025/image_generation/navigating_image_restoration_with_vars_distribution_alignment_prior.md)
 - [\[NeurIPS 2025\] Diff-ICMH: Harmonizing Machine and Human Vision in Image Compression with Generative Prior](../../NeurIPS2025/image_generation/diff-icmh_harmonizing_machine_and_human_vision_in_image_compression_with_generat.md)
-- [\[ICML 2026\] Bayesian Tensor Decomposition with Diffusion Model Prior](../../ICML2026/image_generation/bayesian_tensor_decomposition_with_diffusion_model_prior.md)
-- [\[ICCV 2025\] PolarAnything: Diffusion-based Polarimetric Image Synthesis](polaranything_diffusion-based_polarimetric_image_synthesis.md)
 
 </div>
 

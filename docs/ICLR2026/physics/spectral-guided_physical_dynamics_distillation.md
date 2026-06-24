@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Spectral-Guided Physical Dynamics Distillation
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Knowledge Distillation] Addressing the challenge of predicting long-term 3D trajectories of particles given only the initial state, this paper proposes SGDD: using a teacher encoder that observes future trajectories as "privileged information" to adaptively weight key frequency components in a unified spatiotemporal spectral domain, and then
+  [ICLR 2026][Physics & Scientific Computing][Physical Dynamics Prediction] Addressing the challenge of predicting long-term 3D trajectories of particles given only the initial state, this paper proposes SGDD: using a teacher encoder that observes future trajectories as "privileged information" to adaptively weight key frequency components in a unified spatiotemporal spectral domain, and then distilling this dynamics-rich representation into a student encoder that only sees the…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Physical Dynamics Prediction"
+  - "Spectral Graph Analysis"
+  - "Knowledge Distillation"
+  - "Privileged Information"
+  - "Spatiotemporal Representation"
 date: 2026-05-08
-content_hash: 05a2e47ea0e38ad4
+content_hash: f61bf3fe4353e8b1
 ---
+
 # Spectral-Guided Physical Dynamics Distillation
 
 **Conference**: ICLR 2026  

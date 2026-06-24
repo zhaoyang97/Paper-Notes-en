@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FFP-300K: Scaling First-Frame Propagation for Generalizable Video Editing
 description: >-
-  [CVPR 2026][Video Generation][Video Editing] Addressing the limitation that "First-Frame Propagation (FFP) video editing relies on run-time guidance," this work first constructs FFP-300K, a high-fidelity dataset of 290,000 pairs of 720p, 81-frame edited videos via a dual-track pipeline. It then introduces FreeProp, a guidance-free framework that dynamically decou
+  [CVPR 2026][Video Generation][First-Frame Propagation] Addressing the limitation that "First-Frame Propagation (FFP) video editing relies on run-time guidance," this work first constructs FFP-300K, a high-fidelity dataset of 290,000 pairs of 720p, 81-frame edited videos via a dual-track pipeline. It then introduces FreeProp, a guidance-free framework that dynamically decouples "first-frame appearance" from "source motion" using AST-RoPE and employs self-distillation…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Video Editing
+  - "CVPR 2026"
+  - "Video Generation"
+  - "First-Frame Propagation"
+  - "Video Editing"
+  - "Dataset Construction"
+  - "Rotary Positional Embedding (RoPE)"
+  - "Self-Distillation"
 date: 2026-05-08
-content_hash: a0881836f44955df
+content_hash: 26dd64c821728e21
 ---
+
 # FFP-300K: Scaling First-Frame Propagation for Generalizable Video Editing
 
 **Conference**: CVPR 2026  
@@ -138,15 +143,16 @@ Based on the 81-frame variant:
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] First Frame Is the Place to Go for Video Content Customization](first_frame_is_the_place_to_go_for_video_content_customization.md)
-- [\[ICLR 2026\] LoRA-Edit: Controllable First-Frame-Guided Video Editing via Mask-Aware LoRA Fine-Tuning](../../ICLR2026/video_generation/lora-edit_controllable_first-frame-guided_video_editing_via_mask-aware_lora_fine.md)
-- [\[CVPR 2026\] VideoCoF: Unified Video Editing with Temporal Reasoner](videocof_unified_video_editing_with_temporal_reasoner.md)
+- [\[ICLR 2026\] Controllable First-Frame-Guided Video Editing via Mask-Aware LoRA Fine-Tuning](../../ICLR2026/video_generation/controllable_first-frame-guided_video_editing_via_mask-aware_lora_fine-tuning.md)
+- [\[ICLR 2026\] Anchor Frame Bridging for Coherent First-Last Frame Video Generation](../../ICLR2026/video_generation/anchor_frame_bridging_for_coherent_first-last_frame_video_generation.md)
+- [\[CVPR 2026\] Scaling Instruction-Based Video Editing with a High-Quality Synthetic Dataset](scaling_instruction-based_video_editing_with_a_high-quality_synthetic_dataset.md)
+- [\[CVPR 2026\] Scaling Zero-Shot Reference-to-Video Generation](scaling_zero-shot_reference-to-video_generation.md)
 - [\[CVPR 2026\] LoL: Longer than Longer, Scaling Video Generation to Hour](lol_longer_than_longer_scaling_video_generation_to_hour.md)
-- [\[CVPR 2026\] RecEdit-Drive: 3D Reconstruction-Guided Spatiotemporal Video Editing for Autonomous Driving Scenes](recedit-drive_3d_reconstruction-guided_spatiotemporal_video_editing_for_autonomo.md)
 
 </div>
 

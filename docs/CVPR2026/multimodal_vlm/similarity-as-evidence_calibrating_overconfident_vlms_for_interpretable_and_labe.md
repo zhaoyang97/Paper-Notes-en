@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Similarity-as-Evidence: Calibrating Overconfident VLMs for Interpretable and Label-Efficient Medical Active Learning
 description: >-
-  [CVPR 2026][Multimodal VLM][Vision-Language Model] Ours proposes the Similarity-as-Evidence (SaE) framework, which reinterprets VLM text-image similarity as Dirichlet evidence. By calibrating overconfident softmax outputs through the Similarity Evidence Head (SEH) and implementing an interpretable and efficient medical active learning process based on a dual-factor acq
+  [CVPR2026][Multimodal VLM][Active Learning] Ours proposes the Similarity-as-Evidence (SaE) framework, which reinterprets VLM text-image similarity as Dirichlet evidence. By calibrating overconfident softmax outputs through the Similarity Evidence Head (SEH) and implementing an interpretable and efficient medical active learning process based on a dual-factor acquisition strategy of vacuity (knowledge gap) and dissonance (evidence conflict), Ours achieves a SOTA macro average…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Active Learning"
+  - "Vision-Language Models"
+  - "Uncertainty Quantification"
+  - "Dirichlet Distribution"
+  - "Evidential Deep Learning"
+  - "Medical Image Classification"
+  - "Calibration"
 date: 2026-05-08
-content_hash: 0343b015e574edf8
+content_hash: 6e18b5ffcc215bfe
 ---
+
 # Similarity-as-Evidence: Calibrating Overconfident VLMs for Interpretable and Label-Efficient Medical Active Learning
 
 **Conference**: CVPR2026  
@@ -152,11 +159,11 @@ SEH provides the largest incremental Gain (+3.95%), proving that calibration is 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Perceptual-Evidence Anchored Reinforced Learning for Multimodal Reasoning](perceptual-evidence_anchored_reinforced_learning_for_multimodal_reasoning.md)
-- [\[CVPR 2026\] Relational Visual Similarity](relational_visual_similarity.md)
+- [\[CVPR 2026\] Label What Matters: Modality-Balanced and Difficulty-Aware Multimodal Active Learning](label_what_matters_modality-balanced_and_difficulty-aware_multimodal_active_lear.md)
 - [\[CVPR 2026\] Sparse Spectral LoRA: Routed Experts for Medical VLMs](sparse_spectral_lora_routed_experts_for_medical_vlms.md)
 - [\[CVPR 2026\] RNED: Rotary Number Encoding and Decoding for Medical VLMs](rned_rotary_number_encoding_and_decoding_for_medical_vlms.md)
 - [\[CVPR 2026\] Towards Calibrating Prompt Tuning of Vision-Language Models](towards_calibrating_prompt_tuning_of_vision-language_models.md)
+- [\[CVPR 2026\] Relational Visual Similarity](relational_visual_similarity.md)
 
 </div>
 

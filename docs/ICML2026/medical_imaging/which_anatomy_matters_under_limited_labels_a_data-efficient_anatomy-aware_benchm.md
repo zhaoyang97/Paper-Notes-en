@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Which Anatomy Matters Under Limited Labels? A Data-Efficient Anatomy-Aware Benchmark for Cardiac Pathology Prediction
 description: >-
-  [ICML 2026][Medical Imaging][ACDC] This paper constructs a "low-label + constrained compute" anatomy-aware benchmark using the public ACDC cardiac MRI dataset. By performing 5-class cardiac pathology classification using patient-level shape descriptors derived from segmentation masks, it systematically demonstrates that when labels are scarce, **choosin
+  [ICML 2026][Medical Imaging][Anatomy-aware representation] This paper constructs a "low-label + constrained compute" anatomy-aware benchmark using the public ACDC cardiac MRI dataset. By performing 5-class cardiac pathology classification using patient-level shape descriptors derived from segmentation masks, it systematically demonstrates that when labels are scarce, **choosing the right anatomical representation is more important than increasing model complexity**—specifical…
 tags:
-  - ICML 2026
-  - Medical Imaging
-  - ACDC
+  - "ICML 2026"
+  - "Medical Imaging"
+  - "Anatomy-aware representation"
+  - "low-label"
+  - "cardiac pathology classification"
+  - "ACDC"
+  - "feature engineering"
 date: 2026-05-08
-content_hash: e14abaef2b674331
+content_hash: d0a143817531a81b
 ---
+
 # Which Anatomy Matters Under Limited Labels? A Data-Efficient Anatomy-Aware Benchmark for Cardiac Pathology Prediction
 
 **Conference**: ICML 2026  
@@ -126,8 +131,8 @@ The authors also investigate whether "adding simple inter-phase dynamic informat
 - [\[ICLR 2026\] Anatomy-aware Representation Learning for Medical Ultrasound](../../ICLR2026/medical_imaging/anatomy-aware_representation_learning_for_medical_ultrasound.md)
 - [\[AAAI 2026\] Vascular Anatomy-aware Self-supervised Pre-training for X-ray Angiogram Analysis](../../AAAI2026/medical_imaging/vascular_anatomy-aware_self-supervised_pre-training_for_x-ray_angiogram_analysis.md)
 - [\[CVPR 2026\] RDFace: A Benchmark Dataset for Rare Disease Facial Image Analysis under Extreme Data Scarcity and Phenotype-Aware Synthetic Generation](../../CVPR2026/medical_imaging/rdface_a_benchmark_dataset_for_rare_disease_facial_image_analysis_under_extreme_.md)
-- [\[CVPR 2026\] CHIPS: Efficient CLIP Adaptation via Curvature-aware Hybrid Influence-based Data Selection](../../CVPR2026/medical_imaging/chips_efficient_clip_adaptation_via_curvature-aware_hybrid_influence-based_data_.md)
-- [\[ECCV 2024\] Chameleon: A Data-Efficient Generalist for Dense Visual Prediction in the Wild](../../ECCV2024/medical_imaging/chameleon_a_data-efficient_generalist_for_dense_visual_prediction_in_the_wild.md)
+- [\[ICML 2026\] MEG-XL: Data-Efficient Brain-to-Text via Long-Context Pre-Training](meg-xl_data-efficient_brain-to-text_via_long-context_pre-training.md)
+- [\[AAAI 2026\] GuideGen: A Text-Guided Framework for Paired Full-Torso Anatomy and CT Volume Generation](../../AAAI2026/medical_imaging/guidegen_a_text-guided_framework_for_paired_full-torso_anatomy_and_ct_volume_gen.md)
 
 </div>
 

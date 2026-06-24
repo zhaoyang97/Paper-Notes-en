@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TOGA: Temporally Grounded Open-Ended Video QA with Weak Supervision
 description: >-
-  [ICCV 2025][Video Understanding][Video QA] This paper proposes TOGA — a weakly supervised vision-language model that generates pseudo temporal labels via a multi-scale visual-language connector and consistency constraint…
+  [ICCV 2025][Video Understanding][Video QA] This paper proposes TOGA — a weakly supervised vision-language model that generates pseudo temporal labels via a multi-scale visual-language connector and consistency constraints, enabling joint generation of open-ended answers and temporal grounding **without any temporal annotations**, achieving SOTA on NExT-GQA, MSVD-QA, and ActivityNet-QA.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "vision-language models"
   - "multi-scale temporal modeling"
 date: 2026-05-08
-content_hash: a04691db1c4cdeed
+content_hash: e1663d8e08dfce4b
 ---
 
 # TOGA: Temporally Grounded Open-Ended Video QA with Weak Supervision
@@ -166,8 +166,8 @@ Temporal questions (especially past/future) are significantly harder than causal
 - [\[ICCV 2025\] Factorized Learning for Temporally Grounded Video-Language Models](factorized_learning_for_temporally_grounded_video-language_models.md)
 - [\[ICLR 2026\] Language-guided Open-world Video Anomaly Detection under Weak Supervision](../../ICLR2026/video_understanding/language-guided_open-world_video_anomaly_detection_under_weak_supervision.md)
 - [\[ICCV 2025\] ResidualViT for Efficient Temporally Dense Video Encoding](residualvit_for_efficient_temporally_dense_video_encoding.md)
-- [\[ICCV 2025\] Attention to Trajectory: Trajectory-Aware Open-Vocabulary Tracking](attention_to_trajectory_trajectory-aware_open-vocabulary_tracking.md)
 - [\[CVPR 2026\] MovieRecapsQA: A Multimodal Open-Ended Video Question-Answering Benchmark](../../CVPR2026/video_understanding/movierecapsqa_a_multimodal_open-ended_video_question-answering_benchmark.md)
+- [\[ICCV 2025\] Attention to Trajectory: Trajectory-Aware Open-Vocabulary Tracking](attention_to_trajectory_trajectory-aware_open-vocabulary_tracking.md)
 
 </div>
 

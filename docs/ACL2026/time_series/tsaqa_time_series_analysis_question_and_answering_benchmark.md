@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TSAQA: Time Series Analysis Question And Answering Benchmark
 description: >-
-  [ACL 2026][Time Series][Paper Note] TSAQA is a unified time series question answering benchmark: it casts 6 types of temporal analysis tasks (anomaly detection, classification, representation, comparison, data transformation, and temporal relations) into 3 closed-form question types (true/false TF, multiple-choice MC, and the newly proposed puzzling PZ).
+  [ACL 2026][Time Series][Time Series QA] TSAQA is a unified time series question answering benchmark: it casts 6 types of temporal analysis tasks (anomaly detection, classification, representation, comparison, data transformation, and temporal relations) into 3 closed-form question types (true/false TF, multiple-choice MC, and the newly proposed puzzling PZ). Across 13 domains with 210k samples, LLMs and time series foundation models are evaluated under a unified zero-shot pro…
 tags:
-  - ACL 2026
-  - Time Series
+  - "ACL 2026"
+  - "Time Series"
+  - "Time Series QA"
+  - "Unified Benchmark"
+  - "Analysis Capability Evaluation"
+  - "Pushing Problems"
+  - "Time Series Foundation Models"
 date: 2026-05-08
-content_hash: c5edb57663f1a1d5
+content_hash: 2d81115622baea69
 ---
+
 # TSAQA: Time Series Analysis Question And Answering Benchmark
 
 **Conference**: ACL 2026  
@@ -130,11 +136,11 @@ Instruction tuning significantly boosts performance, though PZ remains difficult
 
 ## Related Papers
 
+- [\[ACL 2025\] Time-MQA: Time Series Multi-Task Question Answering with Context Enhancement](../../ACL2025/time_series/time-mqa_time_series_multi-task_question_answering_with_context_enhancement.md)
 - [\[ICML 2026\] PATRA: Pattern-Aware Alignment and Balanced Reasoning for Time Series Question Answering](../../ICML2026/time_series/patra_pattern-aware_alignment_and_balanced_reasoning_for_time_series_question_an.md)
 - [\[ACL 2026\] ODTQA-FoRe: An Open-Domain Tabular Question Answering Dataset for Future Data Forecasting and Reasoning](odtqa-fore_an_open-domain_tabular_question_answering_dataset_for_future_data_for.md)
-- [\[ACL 2025\] Time-MQA: Time Series Multi-Task Question Answering with Context Enhancement](../../ACL2025/time_series/time-mqa_time_series_multi-task_question_answering_with_context_enhancement.md)
 - [\[ACL 2026\] Test of Time: Rethinking Temporal Signal of Benchmark Contamination](test_of_time_rethinking_temporal_signal_of_benchmark_contamination.md)
-- [\[ICLR 2026\] Reasoning on Time-Series for Financial Technical Analysis](../../ICLR2026/time_series/reasoning_on_time-series_for_financial_technical_analysis.md)
+- [\[ICLR 2026\] CTBench: Cryptocurrency Time Series Generation Benchmark](../../ICLR2026/time_series/ctbench_cryptocurrency_time_series_generation_benchmark.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Object-Centric Representation Learning for Enhanced 3D Semantic Scene Graph Prediction
 description: >-
-  [NeurIPS 2025][3D Vision][3D semantic scene graph] Through empirical analysis, this paper identifies object feature discriminability as the critical bottleneck in 3D scene graph predicate prediction (object misclassifica…
+  [NeurIPS 2025][3D Vision][3D semantic scene graph] Through empirical analysis, this paper identifies object feature discriminability as the critical bottleneck in 3D scene graph predicate prediction (object misclassification accounts for 92%+ of predicate errors). It proposes an independently contrastively pre-trained object encoder (3D-2D-Text tri-modal alignment), a geometry-regularized relation encoder, and a bidirectional edge-gated GNN, achieving new SOTA on 3DSSG with O…
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "GNN"
   - "relation prediction"
 date: 2026-05-08
-content_hash: 200a4d4bc9829b84
+content_hash: 50eff8fede7b0bd5
 ---
 
 # Object-Centric Representation Learning for Enhanced 3D Semantic Scene Graph Prediction
@@ -128,11 +128,11 @@ The framework proceeds in two stages: (1) **Pre-training stage**: contrastive le
 
 ## Related Papers
 
+- [\[ECCV 2024\] Heterogeneous Graph Learning for Scene Graph Prediction in 3D Point Clouds](../../ECCV2024/3d_vision/heterogeneous_graph_learning_for_scene_graph_prediction_in_3d_point_clouds.md)
 - [\[NeurIPS 2025\] On Geometry-Enhanced Parameter-Efficient Fine-Tuning for 3D Scene Segmentation](on_geometry-enhanced_parameter-efficient_fine-tuning_for_3d_scene_segmentation.md)
-- [\[CVPR 2026\] EvObj: Learning Evolving Object-centric Representations for 3D Instance Segmentation without Scene Supervision](../../CVPR2026/3d_vision/evobj_learning_evolving_object-centric_representations_for_3d_instance_segmentat.md)
-- [\[AAAI 2026\] Graph Smoothing for Enhanced Local Geometry Learning in Point Cloud Analysis](../../AAAI2026/3d_vision/graph_smoothing_for_enhanced_local_geometry_learning_in_point_cloud_analysis.md)
 - [\[NeurIPS 2025\] Fair Representation Learning with Controllable High Confidence Guarantees via Adversarial Inference](fair_representation_learning_with_controllable_high_confidence_guarantees_via_ad.md)
-- [\[ICCV 2025\] Disentangling Instance and Scene Contexts for 3D Semantic Scene Completion](../../ICCV2025/3d_vision/disentangling_instance_and_scene_contexts_for_3d_semantic_scene_completion.md)
+- [\[NeurIPS 2025\] Motion4D: Learning 3D-Consistent Motion and Semantics for 4D Scene Understanding](motion4d_learning_3d-consistent_motion_and_semantics_for_4d_scene_understanding.md)
+- [\[NeurIPS 2025\] Novel Class Discovery for Point Cloud Segmentation via Joint Learning of Causal Representation and Reasoning](novel_class_discovery_for_point_cloud_segmentation_via_joint_learning_of_causal_.md)
 
 </div>
 

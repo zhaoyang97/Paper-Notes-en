@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] LitmusValues: Will AI Tell Lies to Save Sick Children? Litmus-Testing AI Values Prioritization with AIRiskDilemmas
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] Ours proposes the **LitmusValues** evaluation framework and the **AIRiskDilemmas** dataset. By forcing models to make choices in "value-conflict" dilemma scenarios, it reveals their true value priorities. It demonstrates that these revealed values (even seemingly harmless ones like "Care") can predict risk behaviors in
+  [ICLR 2026][AI Safety][AI Values] Ours proposes the **LitmusValues** evaluation framework and the **AIRiskDilemmas** dataset. By forcing models to make choices in "value-conflict" dilemma scenarios, it reveals their true value priorities. It demonstrates that these revealed values (even seemingly harmless ones like "Care") can predict risk behaviors in both seen and unseen scenarios, serving as an early warning system for AI risks.
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "AI Values"
+  - "Revealed Preferences"
+  - "Risk Pre-warning"
+  - "Alignment Faking"
+  - "Value Dilemmas"
+  - "Elo Ranking"
 date: 2026-05-08
-content_hash: 5e89e1c96d76489e
+content_hash: 756575bf0e61c042
 ---
+
 # LitmusValues: Will AI Tell Lies to Save Sick Children? Litmus-Testing AI Values Prioritization with AIRiskDilemmas
 
 **Conference**: ICLR 2026  
@@ -132,8 +139,8 @@ The correlation between "Human vs. AI" rankings scales with model capability: **
 
 - [\[ICLR 2026\] Comparing AI Agents to Cybersecurity Professionals in Real-World Penetration Testing](comparing_ai_agents_to_cybersecurity_professionals_in_real-world_penetration_tes.md)
 - [\[ICLR 2026\] Fair Reinforcement Learning for Just AI](fair_reinforcement_learning_for_just_ai.md)
+- [\[ICLR 2026\] Control Tax: The Price of Keeping AI in Check](control_tax_the_price_of_keeping_ai_in_check.md)
 - [\[ICLR 2026\] Watermark-based Detection and Attribution of AI-Generated Content](watermark-based_attribution_of_ai-generated_content.md)
-- [\[CVPR 2026\] SAIDO: 基于场景感知与重要性引导动态优化的可泛化 AI 生成图像检测](../../CVPR2026/ai_safety/saido_generalizable_detection_of_ai-generated_images_via_scene-aware_and_importa.md)
 - [\[ICLR 2026\] PluriHarms: Benchmarking the Full Spectrum of Human Judgments on AI Harm](pluriharms_benchmarking_the_full_spectrum_of_human_judgments_on_ai_harm.md)
 
 </div>

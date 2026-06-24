@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Policy-as-Prompt: Turning AI Governance Rules into Guardrails for AI Agents
 description: >-
-  [NeurIPS 2025][Social Computing][AI governance] This paper proposes the Policy-as-Prompt framework, a two-stage end-to-end pipeline—POLICY-TREE-GEN and POLICY-AS-PROMPT-GEN—that automatically converts a team's existing u…
+  [NeurIPS 2025][Social Computing][AI governance] This paper proposes the Policy-as-Prompt framework, a two-stage end-to-end pipeline—POLICY-TREE-GEN and POLICY-AS-PROMPT-GEN—that automatically converts a team's existing unstructured design documents (PRD, TDD, code) into runtime-enforceable policy guardrails, using a lightweight LLM as a compliance "judge," achieving 70–73% input/output classification accuracy in HR and SOC applications.
 tags:
   - "NeurIPS 2025"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "least privilege principle"
   - "policy-as-code"
 date: 2026-05-08
-content_hash: 5a39265773b5b6cd
+content_hash: cae95942cd61152c
 ---
 
 # Policy-as-Prompt: Turning AI Governance Rules into Guardrails for AI Agents
@@ -138,11 +138,11 @@ Input consists of a team's PRD, TDD, and code → POLICY-TREE-GEN extracts and c
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Position Paper: If Innovation in AI Systematically Violates Fundamental Rights, Is It Innovation at All?](position_paper_if_innovation_in_ai_systematically_violates_fundamental_rights_is.md)
 - [\[ACL 2026\] Imperfectly Cooperative Human-AI Interactions: Comparing the Impacts of Human and AI Attributes in Simulated and User Studies](../../ACL2026/social_computing/imperfectly_cooperative_human-ai_interactions_comparing_the_impacts_of_human_and.md)
-- [\[NeurIPS 2025\] OS-Harm: A Benchmark for Measuring Safety of Computer Use Agents](os-harm_a_benchmark_for_measuring_safety_of_computer_use_agents.md)
+- [\[NeurIPS 2025\] Position Paper: If Innovation in AI Systematically Violates Fundamental Rights, Is It Innovation at All?](position_paper_if_innovation_in_ai_systematically_violates_fundamental_rights_is.md)
+- [\[ICLR 2026\] INTIMA: A Benchmark for Human-AI Companionship Behavior](../../ICLR2026/social_computing/intima_a_benchmark_for_human-ai_companionship_behavior.md)
+- [\[ICLR 2026\] The Value of Information in Human-AI Decision-Making](../../ICLR2026/social_computing/the_value_of_information_in_human-ai_decision-making.md)
 - [\[NeurIPS 2025\] VDRP: Visual Diversity and Region-aware Prompt Learning for Zero-shot HOI Detection](visual_diversity_and_region-aware_prompt_learning_for_zero-shot_hoi_detection.md)
-- [\[ICLR 2026\] Propaganda AI: An Analysis of Semantic Divergence in Large Language Models](../../ICLR2026/social_computing/propaganda_ai_an_analysis_of_semantic_divergence_in_large_language_models.md)
 
 </div>
 

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] MME-Emotion: A Holistic Evaluation Benchmark for Emotional Intelligence in Multimodal Large Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][MLLM] MME-Emotion constructs the largest emotional intelligence benchmark for multimodal large language models to date—comprising 6,500 video segments, 8 emotion tasks, and 27 scenarios—and provides a label-free multi-agent evaluation suite (unifying recognition, reasoning, and CoT scores). After evaluating 20 frontier MLLMs
+  [ICLR 2026][Multimodal VLM][Emotional Intelligence] MME-Emotion constructs the largest emotional intelligence benchmark for multimodal large language models to date—comprising 6,500 video segments, 8 emotion tasks, and 27 scenarios—and provides a label-free multi-agent evaluation suite (unifying recognition, reasoning, and CoT scores). After evaluating 20 frontier MLLMs, it was discovered that current emotional intelligence is far from satisfactory, with the strongest model…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - MLLM
-  - MLLM-as-judge
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Emotional Intelligence"
+  - "MLLM"
+  - "Evaluation Benchmark"
+  - "Multi-agent Evaluation"
+  - "MLLM-as-judge"
+  - "Emotional Reasoning"
 date: 2026-05-08
-content_hash: d02d5a636d96bcaf
+content_hash: b327e16bf71df650
 ---
+
 # MME-Emotion: A Holistic Evaluation Benchmark for Emotional Intelligence in Multimodal Large Language Models
 
 **Conference**: ICLR 2026  
@@ -129,10 +134,10 @@ All recognition scores are below 40%, and most closed-source models have CoT sco
 ## Related Papers
 
 - [\[ICLR 2026\] Human-MME: A Holistic Evaluation Benchmark for Human-Centric Multimodal Large Language Models](human-mme_a_holistic_evaluation_benchmark_for_human-centric_multimodal_large_lan.md)
-- [\[ICLR 2026\] MMSI-Bench: A Benchmark for Multi-Image Spatial Intelligence](mmsi-bench_a_benchmark_for_multi-image_spatial_intelligence.md)
+- [\[ICLR 2026\] SpaCE-10: A Comprehensive Benchmark for Multimodal Large Language Models in Compositional Spatial Intelligence](space-10_a_comprehensive_benchmark_for_multimodal_large_language_models_in_compo.md)
+- [\[ICLR 2026\] MME-Unify: A Comprehensive Benchmark for Unified Multimodal Understanding and Generation Models](mme-unify_a_comprehensive_benchmark_for_unified_multimodal_understanding_and_gen.md)
 - [\[ICLR 2026\] Customizing Visual Emotion Evaluation for MLLMs: An Open-vocabulary, Multifaceted, and Scalable Approach](customizing_visual_emotion_evaluation_for_mllms_an_open-vocabulary_multifaceted_.md)
-- [\[ICLR 2026\] RAR: Reversing Visual Attention Re-Sinking for Unlocking Potential in Multimodal Large Language Models](rar_reversing_visual_attention_re-sinking_for_unlocking_potential_in_multimodal_.md)
-- [\[ICLR 2026\] GranViT: A Fine-Grained Vision Model For Autoregressive Multimodal Large Language Models](granvit_a_fine-grained_vision_model_for_autoregressive_multimodal_large_language.md)
+- [\[ICLR 2026\] MMSI-Bench: A Benchmark for Multi-Image Spatial Intelligence](mmsi-bench_a_benchmark_for_multi-image_spatial_intelligence.md)
 
 </div>
 

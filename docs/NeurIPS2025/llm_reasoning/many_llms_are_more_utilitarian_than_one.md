@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Many LLMs Are More Utilitarian Than One
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Multi-Agent Systems] A controlled study across six LLMs identifies a "Utilitarian Boost" phenomenon: LLMs engaged in dyadic or triadic moral deliberation are more likely than their solo coun…
+  [NeurIPS 2025][Reasoning][Multi-Agent Systems] A controlled study across six LLMs identifies a "Utilitarian Boost" phenomenon: LLMs engaged in dyadic or triadic moral deliberation are more likely than their solo counterparts to endorse harming a minority for the benefit of the majority. This effect is especially pronounced in personal dilemmas involving direct harm ($\beta=0.31, p<.0001$), and the underlying mechanisms differ across models—some exhibit reduced norm sensitivit…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Multi-Agent Systems"
   - "Moral Reasoning"
   - "Utilitarian Boost"
@@ -13,7 +13,7 @@ tags:
   - "AI Alignment"
   - "Deontology"
 date: 2026-05-08
-content_hash: 901b2649c63da924
+content_hash: d952ff8477c182c4
 ---
 
 # Many LLMs Are More Utilitarian Than One
@@ -125,11 +125,11 @@ Two conditions are compared: *Solo* (a single LLM independently evaluates moral 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Does Thinking More Always Help? Mirage of Test-Time Scaling in Reasoning Models](does_thinking_more_always_help_mirage_of_test-time_scaling_in_reasoning_models.md)
+- [\[ACL 2025\] Self-Correction is More than Refinement: A Learning Framework for Visual and Language Reasoning Tasks](../../ACL2025/llm_reasoning/self-correction_is_more_than_refinement_a_learning_framework_for_visual_and_lang.md)
 - [\[NeurIPS 2025\] Let Me Think! A Long Chain-of-Thought Can Be Worth Exponentially Many Short Ones](let_me_think_a_long_chainofthought_can_be_worth_exponentiall.md)
-- [\[ICML 2026\] Many-Shot CoT-ICL: Making In-Context Learning Truly Learn](../../ICML2026/llm_reasoning/many-shot_cot-icl_making_in-context_learning_truly_learn.md)
-- [\[NeurIPS 2025\] Beyond Accuracy: Dissecting Mathematical Reasoning for LLMs Under Reinforcement Learning](beyond_accuracy_dissecting_mathematical_reasoning_for_llms_u.md)
-- [\[NeurIPS 2025\] TimE: A Multi-level Benchmark for Temporal Reasoning of LLMs in Real-World Scenarios](time_a_multilevel_benchmark_for_temporal_reasoning_of_llms_i.md)
+- [\[NeurIPS 2025\] Does Thinking More Always Help? Mirage of Test-Time Scaling in Reasoning Models](does_thinking_more_always_help_mirage_of_test-time_scaling_in_reasoning_models.md)
+- [\[ICML 2025\] One Missing Piece for Open-Source Reasoning Models: A Dataset to Mitigate Cold-Starting Short CoT LLMs in RL](../../ICML2025/llm_reasoning/one_missing_piece_for_open-source_reasoning_models_a_dataset_to_mitigate_cold-st.md)
+- [\[ICLR 2026\] When More Is Less: Understanding Chain-of-Thought Length in LLMs](../../ICLR2026/llm_reasoning/when_more_is_less_understanding_chain-of-thought_length_in_llms.md)
 
 </div>
 

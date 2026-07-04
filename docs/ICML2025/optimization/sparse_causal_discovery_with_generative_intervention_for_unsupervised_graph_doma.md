@@ -13,9 +13,9 @@ content_hash: 0ab8920b9fd76905
 
 - **Conference**: ICML 2025
 - **arXiv**: [2507.07621](https://arxiv.org/abs/2507.07621)
-- **Code**: 未公开
-- **Area**: 图域自适应 / 因果发现 / 稳定学习
-- **Keywords**: 无监督图域自适应, 稀疏因果建模, 生成式干预, 伪标签校准, 互信息瓶颈
+- **Code**: Not publicly available
+- **Area**: Graph domain adaptation / Causal discovery / Stable learning
+- **Keywords**: Unsupervised graph domain adaptation, sparse causal modeling, generative intervention, pseudo-label calibration, mutual information bottleneck
 
 ## TL;DR
 
@@ -49,7 +49,7 @@ SLOGAN consists of three complementary stability-enhancing components:
 
 **Stability-Aware Decoupling Learning**: Based on the principle of Sparse Variable Independence (SVI), the optimization objective is formulated as:
 
-$$\underbrace{\max I(Y; Z^c)}_{\text{稳定预测}} - \underbrace{\beta I(Z^s; Z)}_{\text{残余控制}} + \underbrace{\min I(Z^s; Y)}_{\text{虚假抑制}}$$
+$$\underbrace{\max I(Y; Z^c)}_{\text{stable prediction}} - \underbrace{\beta I(Z^s; Z)}_{\text{spurious control}} + \underbrace{\min I(Z^s; Y)}_{\text{spurious suppression}}$$
 
 **Causal Feature Extraction**: InfoNCE is utilized to maximize the mutual information between causal features $\mathbf{z}^c$ and labels $\mathbf{y}$:
 

@@ -47,19 +47,19 @@ RouteJudge treats each router as a **black-box decision-maker**: given the same 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
 flowchart TD
-    Q["用户 query + 可选多模态 + 预算 C"] --> M["预算可行模型集<br/>M_C = {m | 估计成本 ≤ C}"]
-    M --> R["路由器委员会各选一个模型<br/>m_i = r_i(x,h,I,M_C)"]
-    R --> V["投票聚合选对决对<br/>票数 v(m)，取 Top-2"]
-    V --> J["匿名成对判断<br/>A Win/B Win/Tie/Both Bad"]
-    J --> A["四标签打分 + 路由器层面归因<br/>非参与记 ∅"]
-    A --> REC["路由中心评测记录 Z<br/>存 query/决策/偏好/成本/延迟/任务"]
-    subgraph ORBIT["ORBIT 开发与提交层"]
+    Q["User query + optional multimodal input + budget C"] --> M["Budget-feasible model set<br/>M_C = {m | estimated cost ≤ C}"]
+    M --> R["Router committee each selects one model<br/>m_i = r_i(x,h,I,M_C)"]
+    R --> V["Vote aggregation to select matchup pair<br/>vote count v(m), take Top-2"]
+    V --> J["Anonymous pairwise judgment<br/>A Win / B Win / Tie / Both Bad"]
+    J --> A["Four-label scoring + router-level attribution<br/>non-participants recorded as ∅"]
+    A --> REC["Routing center evaluation record Z<br/>stores query / decision / preference / cost / latency / task"]
+    subgraph ORBIT["ORBIT Development and Submission Layer"]
       direction TB
-      O1["统一接口：数据/编码器/路由器/训练/评测"]
-      O2["两阶段集成：历史回放 → 在线评测"]
+      O1["Unified interface: data / encoder / router / training / evaluation"]
+      O2["Two-phase integration: historical replay → online evaluation"]
     end
-    ORBIT -.提交兼容路由器.-> R
-    REC -.历史记录回放.-> O2
+    ORBIT -.submit compatible router.-> R
+    REC -.historical record replay.-> O2
 ```
 
 The core difference of this design is that while traditional routing benchmarks compare whether a router agrees with fixed labels, RouteJudge compares whether a router's decision makes the user more satisfied, incorporating cost, latency, and task types into conditional analyses through complete logging.

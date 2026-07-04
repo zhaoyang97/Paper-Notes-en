@@ -86,7 +86,7 @@ The optimization objective in the proxy discovery phase is to maximize the rank 
 | Existing classification proxies (SynFlow, etc.) | Low rank correlation | Proxies designed for classification have poor predictive power on generation tasks |
 | Single-statistic proxies | Medium rank correlation | A single feature statistic has limited capability |
 | Composite proxies (without evolutionary optimization) | Relatively high rank correlation | Hand-crafted combinations have some effect but are insufficient |
-| Auto-GAS (完整进化搜索) | Highest rank correlation | Automatically discovered proxies significantly outperform all hand-crafted proxies |
+| Auto-GAS (Full Evolutionary Search) | Highest rank correlation | Automatically discovered proxies significantly outperform all hand-crafted proxies |
 
 ### Key Findings
 

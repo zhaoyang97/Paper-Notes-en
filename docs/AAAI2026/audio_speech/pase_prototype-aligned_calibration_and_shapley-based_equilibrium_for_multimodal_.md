@@ -16,7 +16,6 @@ date: 2026-05-08
 content_hash: ccf655a34787a221
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # PaSE: Prototype-aligned Calibration and Shapley-based Equilibrium for Multimodal Sentiment Analysis
 
 **Conference**: AAAI 2026  

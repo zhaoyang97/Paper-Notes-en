@@ -17,7 +17,7 @@ content_hash: 992c14d2dd4a9fef
 # Revisiting F-measure Optimization in Multi-Label Classification: A Sampling-based Approach
 
 **Conference**: CVPR 2026  
-**论文**: [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Wang_Revisiting_F-measure_Optimization_in_Multi-Label_Classification_A_Sampling-based_Approach_CVPR_2026_paper.html)  
+**Paper**: [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Wang_Revisiting_F-measure_Optimization_in_Multi-Label_Classification_A_Sampling-based_Approach_CVPR_2026_paper.html)  
 **Code**: https://github.com/ZixunWang/MLC-F1-Sampling  
 **Area**: Multi-label Classification / F-measure Optimization  
 **Keywords**: Multi-label classification, F-measure optimization, Bayesian decision rules, Autoregressive sampling, FFT acceleration

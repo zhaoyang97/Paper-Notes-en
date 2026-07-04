@@ -9,7 +9,7 @@ tags:
   - "Political Bias"
   - "Multi-document Summarization"
   - "Fairness Evaluation"
-  - "加 Debiasing Methods"
+  - "Add Debiasing Methods"
   - "Model Scaling"
 date: 2026-05-08
 content_hash: f3c4f8eab0534030
@@ -21,7 +21,7 @@ content_hash: f3c4f8eab0534030
 **arXiv**: [2604.21309](https://arxiv.org/abs/2604.21309)  
 **Code**: [https://github.com/nii-yamagishilab-visitors/fair_multi_news_summ](https://github.com/nii-yamagishilab-visitors/fair_multi_news_summ)  
 **Area**: AI Fairness / News Summarization  
-**Keywords**: Political Bias, Multi-document Summarization, Fairness Evaluation,加 Debiasing Methods, Model Scaling
+**Keywords**: Political Bias, Multi-document Summarization, Fairness Evaluation, Debiasing Methods, Model Scaling
 
 ## TL;DR
 

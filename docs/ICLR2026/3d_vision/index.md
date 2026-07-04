@@ -777,7 +777,7 @@ item_total: 197
 
 **[TIGaussian: Disentangle Gaussians for Spatial-Aware Text-Image-3D Alignment](tigaussian_disentangle_gaussians_for_spatial-awared_text-image-3d_alignment.md)**
 
-:   TIGaussian刷新了文本-图像-3DGS三模态对齐的SOTA。该方法通过多分支编码器解耦3D Gaussian Splatting (3DGS) 的内在属性，利用扩散先验将单视图图像补充为多视图融合特征，并使用 Query Transformer 将3D特征投影至文本空间。
+:   TIGaussian sets a new SOTA for text-image-3DGS tri-modal alignment. The method decouples the intrinsic attributes of 3D Gaussian Splatting (3DGS) via a multi-branch encoder, leverages diffusion priors to supplement single-view images into multi-view fused features, and uses a Query Transformer to project 3D features into text space.
 
 **[TINKER: Diffusion's Gift to 3D--Multi-View Consistent Editing From Sparse Inputs without Per-Scene Optimization](tinker_diffusions_gift_to_3d--multi-view_consistent_editing_from_sparse_inputs_w.md)**
 

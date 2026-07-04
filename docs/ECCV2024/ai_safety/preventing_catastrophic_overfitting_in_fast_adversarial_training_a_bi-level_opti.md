@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: 8cddc4577acc39ad
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Preventing Catastrophic Overfitting in Fast Adversarial Training: A Bi-level Optimization Perspective
 
 **Conference**: ECCV2024  

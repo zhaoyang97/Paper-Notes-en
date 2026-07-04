@@ -53,7 +53,7 @@ This work is a methodological position paper rather than a proposal for a new al
 
 3. **Advocacy for Scientific Methodology**: The authors argue that research on deep learning phenomena should adhere more rigorously to the scientific method, including hypothesis-driven research, reporting of negative results, falsifiability, preregistration, and meta-studies/replication. These practices have long-standing traditions in the natural sciences but remain underutilized in deep learning.
 
-### 三大现象的具体分析
+### Detailed Analysis of Three Key Phenomena
 
 | Phenomenon | Practical Irrelevance | Broad Theoretical Value |
 |------|-------------|-------------|

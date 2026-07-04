@@ -1024,7 +1024,7 @@ item_total: 240
 
 **[Vulcan: Tailoring Compact Class-Specific Vision Transformers for Edge Intelligence](vulcan_crafting_compact_class-specific_vision_transformers_for_edge_intelligence.md)**
 
-:   Vulcan discovers that the Feed-Forward Network (FFN) in a ViT stores "class-specific knowledge" while the Multi-Head Attention (MHA) stores "class-agnostic patterns." It proposes a "train-then-prune" post-training method that collapses FFN neurons toward high-activation anchor neurons and uses Truncated Nuclear Norm Regularization (TNNR) to compress MHA projection matrices into low-rank structures. This approach yields compact edge ViTs (20%–40% of the original size) that认-target classes with nearly lossless accuracy—sometimes outperforming the original ViT on specific classes by up to 15.12%.
+:   Vulcan discovers that the Feed-Forward Network (FFN) in a ViT stores "class-specific knowledge" while the Multi-Head Attention (MHA) stores "class-agnostic patterns." It proposes a "train-then-prune" post-training method that collapses FFN neurons toward high-activation anchor neurons and uses Truncated Nuclear Norm Regularization (TNNR) to compress MHA projection matrices into low-rank structures. This approach yields compact edge ViTs (20%–40% of the original size) that recognize target classes with nearly lossless accuracy—sometimes outperforming the original ViT on specific classes by up to 15.12%.
 
 **[What Layers When: Learning to Skip Compute in LLMs with Residual Gates](what_layers_when_learning_to_skip_compute_in_llms_with_residual_gates.md)**
 

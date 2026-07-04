@@ -115,7 +115,7 @@ The construction of PunchBench consists of four steps: (1) Collect and manually 
 - **Writing Quality**: ⭐⭐⭐⭐ Clear structure with rich examples and diagrams.
 - **Value**: ⭐⭐⭐⭐ Fills a crucial gap in evaluating the punchline comprehension of MLLMs.
 
-<!-- 数据规模: 6,000 image-caption pairs, 54,000 QA pairs, 4类多媒体域, 12个模型评测 -->
+<!-- Data scale: 6,000 image-caption pairs, 54,000 QA pairs, 4 multimedia domains, 12 model evaluations -->
 
 <!-- RELATED:START -->
 

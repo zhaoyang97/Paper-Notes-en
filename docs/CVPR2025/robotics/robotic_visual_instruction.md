@@ -94,7 +94,7 @@ The RoVI Book dataset contains 15K image-text QA pairs, constructed based on the
 | Gemini-1.5 Pro | 68% | Weaker simulation performance |
 | Claude 3.5 Sonnet | 70% | Accuracy drops in multi-step tasks |
 | LLaVA-13B (RoVI Book) | 38% | Low planning accuracy but high execution success rate |
-| Small Models (<13B) | 0% | Completely fails to understand RoVI指令 |
+| Small Models (<13B) | 0% | Completely fails to understand RoVI instructions |
 | Sketchy Style | 74% | - |
 | Geometric Style | **80%** | Structured style is more friendly for VLM understanding |
 

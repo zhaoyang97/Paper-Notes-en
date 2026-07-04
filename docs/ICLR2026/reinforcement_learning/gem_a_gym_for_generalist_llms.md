@@ -36,7 +36,7 @@ GEM is an open-source "environment simulator" for the LLM agent era—comparable
 
 **Goal**: To provide "infrastructure" for the LLM agent era—unified environment interfaces + standardized environment suites + seamless integration with mainstream training frameworks + a simple, strong baseline compatible with full multi-turn RL settings.
 
-**Core Idea**: **(1) Environment Standardization**—Replicate the OpenAI-Gym `reset()`/`step()` interface, composing "tasks × tools" into environments with asynchronous vectorization and modular wrappers; **(2)回归 action=response perspective**—Avoid the "entire interaction as action" compromise and use REINFORCE for policy gradients at the response granularity, augmented with Return Batch Normalization (a lightweight normalization) to remain compatible with dense rewards and arbitrary $\gamma$.
+**Core Idea**: **(1) Environment Standardization**—Replicate the OpenAI-Gym `reset()`/`step()` interface, composing "tasks × tools" into environments with asynchronous vectorization and modular wrappers; **(2) Return to the action=response perspective**—Avoid the "entire interaction as action" compromise and use REINFORCE for policy gradients at the response granularity, augmented with Return Batch Normalization (a lightweight normalization) to remain compatible with dense rewards and arbitrary $\gamma$.
 
 ## Method
 

@@ -141,7 +141,7 @@ CoFiDA-M significantly outperforms TENT (top TTA baseline) and DALUPI (PI baseli
 - Novelty: ⭐⭐⭐⭐ (Clean integration of PI, FiLM, and feature distillation to solve the deployment paradox).
 - Experimental Thoroughness: ⭐⭐⭐⭐ (Robust validation across 14 baselines and 6 unseen sets).
 - Writing Quality: ⭐⭐⭐⭐ (Clear motivation and alignment between components and results).
-- Value: ⭐⭐⭐⭐ (Practical范式 for using noisy/non-inferable metadata in specialized domains like medicine).
+- Value: ⭐⭐⭐⭐ (Practical paradigm for using noisy/non-inferable metadata in specialized domains like medicine).
 
 <!-- RELATED:START -->
 

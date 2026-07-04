@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: b03d4f2582c9671b
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Density Ratio Estimation-based Bayesian Optimization with Semi-Supervised Learning
 
 **Conference**: ICML2025  

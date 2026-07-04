@@ -79,7 +79,7 @@ A Gaussian mixture is used because the model may fall into different "learning m
 
 **2. Semantic Key Feature Extraction Network (SKFEN): Filtering the latent space for decision-relevant dimensions**
 
-As the second stage of HSSE, although the latent space is lower-dimensional, it still contains redundancy irrelevant to "which classes to select." SKFEN提纯 (purifies) this in two steps: first, it uses a 1×1 → 5×5 depthwise separable → 1×1 convolutional combination for feature fusion and interaction, expanding and splitting channels into $G$ groups. Each group undergoes max pooling and average pooling to capture "peak" and "mean" statistical perspectives. These are concatenated and fused via 3×3 convolution with residual connections to obtain the refined feature $z_{out}$.
+As the second stage of HSSE, although the latent space is lower-dimensional, it still contains redundancy irrelevant to "which classes to select." SKFEN purifies this in two steps: first, it uses a 1×1 → 5×5 depthwise separable → 1×1 convolutional combination for feature fusion and interaction, expanding and splitting channels into $G$ groups. Each group undergoes max pooling and average pooling to capture "peak" and "mean" statistical perspectives. These are concatenated and fused via 3×3 convolution with residual connections to obtain the refined feature $z_{out}$.
 
 **3. Class $\alpha$-Fair Policy Gradient (C$\alpha$PG): Embedding fairness into the optimization to prioritize lagging classes**
 

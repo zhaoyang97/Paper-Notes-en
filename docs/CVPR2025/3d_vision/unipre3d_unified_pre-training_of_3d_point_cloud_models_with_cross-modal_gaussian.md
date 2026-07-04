@@ -47,7 +47,7 @@ UniPre3D proposes the first unified 3D pre-training framework that predicts Gaus
 
 The pipeline of UniPre3D consists of two modal branches. The **3D branch** comprises a point cloud backbone, a lightweight Gaussian predictor, and a differentiable image renderer. The **2D branch** includes a pre-trained image feature extractor, a 2D-to-3D geometric projector, and a scale-adaptive fusion module. The overall forward propagation is divided into three stages: Extract, Fuse, and Render.
 
-The inputs are the point cloud $P \in \mathbb{R格式}^{N \times 3}$ and a reference view image $I_{\text{ref}}$, and the output is the image $I_r$ rendered from the predicted Gaussian primitives, which is optimized end-to-end using the MSE loss against the ground-truth image.
+The inputs are the point cloud $P \in \mathbb{R}^{N \times 3}$ and a reference view image $I_{\text{ref}}$, and the output is the image $I_r$ rendered from the predicted Gaussian primitives, which is optimized end-to-end using the MSE loss against the ground-truth image.
 
 ### Key Designs
 

@@ -75,7 +75,7 @@ As early layers still perform visual semantic aggregation, DTP does not crudely 
 
 The advantage of selective pruning is the early removal of redundant backgrounds, duplicate patches, and low-impact visual regions, allowing subsequent layers to process shorter sequences and directly reducing prefill FLOPs. Meanwhile, because the retained vision tokens are those $\Delta_t$ deems most capable of altering state updates, the model maintains the core visual evidence needed to answer questions. Compared to random pruning, DTP’s top-k visual-only strategy is significantly more stable in GQA, TextVQA, and OKVQA.
 
-**4. Late Complete Pruning:徹底 Removing Remaining Vision Tokens After Visual Contribution Destabilizes**
+**4. Late Complete Pruning: Thoroughly Removing Remaining Vision Tokens After Visual Contribution Destabilizes**
 
 The second stage of DTP is more aggressive: in late layers, the paper observes that the importance distribution of vision tokens becomes scattered, standard deviation undergoes mutation, and implicit attention token-token interactions weaken. Ours explains that by this point, visual information has already been injected into the hidden states and text conditions by previous layers. Retaining vision tokens no longer yields stable gains but consumes significant computation.
 

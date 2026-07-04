@@ -99,7 +99,7 @@ For pixel-based segmenters, synthetic loss is the cross-entropy with OT-based so
 | Configuration | Metric | Description |
 |------|---------|------|
 | Dense vs Sparse composition, Flux | 66.56 vs 61.81 mIoU | Dense scenes (avg instances 22.21 vs 11.48) are significantly better. |
-| Fine vs Coarse fidelity | 68.17 vs 66.56 mIoU | High-freq boundaries and texture带来 independently +1.61. |
+| Fine vs Coarse fidelity | 68.17 vs 66.56 mIoU | High-freq boundaries and texture independently contribute +1.61. |
 | Synthetic scale on Cityscapes | 79.80 → 81.27 mIoU | Scaling from 1× to 6× synthetic data shows diminishing returns but continuous gains. |
 | w/o OT vs OT, Cityscapes | 79.50 → 80.65 mIoU | OT assignment provides +1.15 mIoU. |
 | w/o OT vs OT, COCO / ADE20K | 62.74→63.30 / 49.62→50.23 | Consistent gains from OT across three datasets. |

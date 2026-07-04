@@ -123,7 +123,7 @@ Core Observation: In all four settings, small initialization achieves the same m
 | **FGD-ES (Ours, Early Stop)** | 23.66 | 0.1426 | 22.72 | 0.1585 |
 | **FGD-best (Ours, Best Step)** | **23.84** | **0.1395** | **22.86** | **0.1559** |
 
-In completion tasks on 50 $481\times321\times3$ color images from the Berkeley dataset (Bernoulli sampling + Gaussian noise), FGD-best leads in PSNR across all采样率/noise combinations. FGD-ES is slightly lower but consistently outperforms all baseline methods. Notably, as tensor completion does not satisfy t-RIP, small initialization still achieves the lowest reconstruction error.
+In completion tasks on 50 $481\times321\times3$ color images from the Berkeley dataset (Bernoulli sampling + Gaussian noise), FGD-best leads in PSNR across all sampling-rate/noise combinations. FGD-ES is slightly lower but consistently outperforms all baseline methods. Notably, as tensor completion does not satisfy t-RIP, small initialization still achieves the lowest reconstruction error.
 
 ### Key Findings
 - **Small initialization is the sole switch for decoupling error from $R$**: With the same FGD and early stopping, simply changing the initialization scale from spectral/large to near-zero transforms the error from "linearly increasing with $R$" to "constant at the exact rank baseline."

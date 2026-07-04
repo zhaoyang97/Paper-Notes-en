@@ -16,7 +16,6 @@ date: 2026-05-08
 content_hash: 4adcd01c347ee1a8
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Log-Sum-Exponential Estimator for Off-Policy Evaluation and Learning
 
 **Conference**: ICML2025 Spotlight  

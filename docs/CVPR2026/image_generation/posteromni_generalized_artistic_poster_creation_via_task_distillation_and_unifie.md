@@ -64,7 +64,7 @@ The primary limitation is the lack of multi-task image-to-poster data. The autho
 **2. Task Distillation: Merging Local and Global Experts into a Single Student while Avoiding Parameter-level Interference**
 
 Merging LoRA experts directly at the parameter level (e.g., linear addition, SVD, ZipLoRA) often causes degradation due to latent space discrepancies. Instead, the authors train two experts $E_{local}$ and $E_{global}$ (rank-128 LoRA, flow matching loss $\mathcal{L}_{SFT}=\mathbb{E}\,[\,\lVert v_t-v_\theta(x_t,t,c_t)\rVert_2^2\,]$, mixed with text-only data for character-level rendering). Task distillation then teaches a new student under the joint supervision of both experts:
-$$\mathcal{L}_{total}=\underbrace{\mathbb{E}\,[\,\lVert v_t-v_\theta\rVert_2^2\,]}_{\text{文字渲染辅助损失}}+\lambda_E\,\underbrace{\mathbb{E}\,[\,\lVert v_\theta-v_E\rVert_2^2\,]}_{\text{任务蒸馏损失}}$$
+$$\mathcal{L}_{total}=\underbrace{\mathbb{E}\,[\,\lVert v_t-v_\theta\rVert_2^2\,]}_{\text{text rendering auxiliary loss}}+\lambda_E\,\underbrace{\mathbb{E}\,[\,\lVert v_\theta-v_E\rVert_2^2\,]}_{\text{task distillation loss}}$$
 where $v_E$ is the output velocity field of the corresponding expert and $\lambda_E=1$. This ensures the student (half-rank LoRA 64) inherits both local precision and global reasoning without expert interference.
 
 **3. Unified PosterOmni Reward Model: Simultaneously Learning Aesthetic Preference and Task Fidelity**

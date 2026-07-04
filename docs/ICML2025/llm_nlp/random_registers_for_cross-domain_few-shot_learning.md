@@ -93,7 +93,7 @@ Specific steps:
 
 The attention map is partitioned into three components:
 
-$$A_{i,j} = \frac{e^{Q_i K^T_j}}{\underbrace{\sum_{k=1}^{m} e^{Q_i K^T_k}}_{\text{保留图像}} + \underbrace{\sum_{k=1}^{n-m} e^{Q_i \bar{K}^T_k}}_{\text{图像扰动}} + \underbrace{\sum_{k=1}^{\tilde{n}} e^{Q_i \tilde{K}^T_k}}_{\text{寄存器扰动}}}$$
+$$A_{i,j} = \frac{e^{Q_i K^T_j}}{\underbrace{\sum_{k=1}^{m} e^{Q_i K^T_k}}_{\text{Preserved Image}} + \underbrace{\sum_{k=1}^{n-m} e^{Q_i \bar{K}^T_k}}_{\text{Image Perturbation}} + \underbrace{\sum_{k=1}^{\tilde{n}} e^{Q_i \tilde{K}^T_k}}_{\text{Register Perturbation}}}$$
 
 This design exploits ViT's attention dependency on contiguous regional patterns, allowing **a small number of registers to achieve strong perturbation** through cluster replacement.
 

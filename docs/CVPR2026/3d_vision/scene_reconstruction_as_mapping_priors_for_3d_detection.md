@@ -166,7 +166,7 @@ Notably, MPA3D using only **4 frames** outperforms MAD using **100 frames** by +
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐ Redefining scene reconstruction as a scalable mapping prior for detection is a fresh and clever perspective.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive主 and ablation results on WOD, but lacks cross-dataset validation and open-source availability.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive main and ablation results on WOD, but lacks cross-dataset validation and open-source availability.
 - Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation and a logical progression from prior generation to fusion and training.
 - Value: ⭐⭐⭐⭐ High utility for industrial-grade autonomous driving, though the high resource barrier limits academic accessibility.
 

@@ -69,7 +69,7 @@ Downsampling compacts the grid but loses high-frequency textures. The authors tr
 To utilize the compositional structure during training, grid-aware cropping is introduced. A grid $I$ with $L^2$ units of size $h\times w$ is cropped using a mixture of aligned and random strategies: $C(I;p_{\text{align}})=\mathrm{AlignedCrop}(I)$ with probability $p_{\text{align}}$ (starting from integer multiples of $h,w$) and $\mathrm{RandomCrop}(I)$ otherwise. This mixture ensures the patches maintain semantic coherence within units while remaining robust to perturbations and compatible with standard 224×224 testing.
 
 ### Loss & Training
-Experiments were conducted on a single A6000 (48GB). Submodular weights were set to $\alpha=1.0, \beta=0.6, \gamma=0.3$ with $p_{\text{align}}=0.6$. Grid size was $L=4$, and spectral modes $r=32$. For ImageNet-1K, the分辨率 was 256×256 (following Minimax) or 224×224 (following RDED). SSDIM takes approx. 18s to build the kernel for ~1300 images per class, and enhancement takes 57s per class.
+Experiments were conducted on a single A6000 (48GB). Submodular weights were set to $\alpha=1.0, \beta=0.6, \gamma=0.3$ with $p_{\text{align}}=0.6$. Grid size was $L=4$, and spectral modes $r=32$. For ImageNet-1K, the resolution was 256×256 (following Minimax) or 224×224 (following RDED). SSDIM takes approx. 18s to build the kernel for ~1300 images per class, and enhancement takes 57s per class.
 
 ## Key Experimental Results
 

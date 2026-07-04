@@ -109,7 +109,7 @@ Specialized models cannot handle hybrid instructions, so comparisons are made ag
 | Uni-NaVid† | +OctoNav FT | 9.20 | 6.21 | 17.80 |
 | **OctoNav-R1 (Ours)** | **VLA + HTP** | **19.40** | **13.77** | **29.40** |
 
-OctoNav-R1 leads across all categories, e.g., ImgNav SR 23.97 (vs. 11.16次优) and VLN SR 37.14.
+OctoNav-R1 leads across all categories, e.g., ImgNav SR 23.97 (vs. 11.16 second-best) and VLN SR 37.14.
 
 ### Ablation Study
 

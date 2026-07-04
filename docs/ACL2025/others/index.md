@@ -515,7 +515,7 @@ item_total: 184
 
 **[Meta-Learning Neural Mechanisms rather than Bayesian Priors](meta-learning_neural_mechanisms_rather_than_bayesian_priors.md)**
 
-:   Challenges the mainstream view that "meta-learning distills Bayesian simplicity priors in neural networks," demonstrating through formal language experiments that meta-learning actually implants useful **破坏性神经机制** (e.g., counters) in models, rather than learning a preference for simplicity.
+:   Challenges the mainstream view that "meta-learning distills Bayesian simplicity priors in neural networks," demonstrating through formal language experiments that meta-learning actually implants useful **disruptive neural mechanisms** (e.g., counters) in models, rather than learning a preference for simplicity.
 
 **[MEXMA: Token-level Objectives Improve Sentence Representations](mexma_token-level_objectives_improve_sentence_representations.md)**
 

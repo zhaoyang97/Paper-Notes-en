@@ -126,7 +126,7 @@ Localization errors of the four matching/retrieval baselines are around ~30 m be
 ## Related Work & Insights
 - **vs. M2T Matching (University-1652 / DenseUAV)**: These methods are constrained by grid density and lack heading; Ours uses 4-tile regression for higher accuracy and navigability.
 - **vs. GTA-UAV**: Also addresses non-alignment but stays within the matching paradigm and lacks heading; Ours uses regression and includes heading.
-- **vs. AngleRobust**: It predicts azimuth from sequences but is limited to dense corridors; Ours估 performs single-step joint position-heading estimation from adjacent tiles.
+- **vs. AngleRobust**: It predicts azimuth from sequences but is limited to dense corridors; Ours performs single-step joint position-heading estimation from adjacent tiles.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐ Reformulating localization as multi-tile reference regression and integrating heading into end-to-end navigation is a paradigm-level contribution.

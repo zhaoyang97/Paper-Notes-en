@@ -54,7 +54,7 @@ The model uses a pre-trained Chinese BART/T5 as its backbone network, taking an 
 2. **Glyph Feature Encoder**:
 
     - Function: Captures visual similarity relationships in Chinese, helping the model identify spelling errors based on visual similarity.
-    - Mechanism: Renders each Chinese character into an image and extracts glyph feature vectors using a lightweight CNN (such as the first few layers of ResNet-18). Glyph features are similarly fused with token embeddings through a gating mechanism. For visually similar characters (e.g., "己" and "已", "戊" and "戌"), the glyph features exhibit high similarity, allowing the model to identify potential visual errors based on this.
+    - Mechanism: Renders each Chinese character into an image and extracts glyph feature vectors using a lightweight CNN (such as the first few layers of ResNet-18). Glyph features are similarly fused with token embeddings through a gating mechanism. For visually similar characters (e.g., "ji" and "yi", "wu" and "xu"), the glyph features exhibit high similarity, allowing the model to identify potential visual errors based on this.
     - Design Motivation: Approximately 30% of Chinese spelling errors are visual similarity errors, and glyph information provides visual similarity cues that cannot be obtained from the text surface.
 
 3. **Syntax-Enhanced Decoder**:

@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: 13181bdb47e09555
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # SK-VQA: Synthetic Knowledge Generation at Scale for Training Context-Augmented Multimodal LLMs
 
 **Conference**: ICML2025 Oral Spotlight  

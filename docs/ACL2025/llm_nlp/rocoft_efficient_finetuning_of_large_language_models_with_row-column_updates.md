@@ -46,8 +46,8 @@ The methodology of RoCoFT is highly straightforward: **it only updates a small n
 
 For the weight matrices $\mathbf{W}_q, \mathbf{W}_k, \mathbf{W}_v, \mathbf{W}_{ff}$ in Transformers, the updates of RoCoFT can be formulated as:
 
-$$\mathbf{W} = \mathbf{W}_0 + \mathbf{R} \quad \text{（行更新）}$$
-$$\mathbf{W} = \mathbf{W}_0 + \mathbf{C} \quad \text{（列更新）}$$
+$$\mathbf{W} = \mathbf{W}_0 + \mathbf{R} \quad \text{(row update)}$$
+$$\mathbf{W} = \mathbf{W}_0 + \mathbf{C} \quad \text{(column update)}$$
 
 Where $\mathbf{R}$ and $\mathbf{C}$ are restricted weight matrices with at most $r$ non-zero rows or columns.
 

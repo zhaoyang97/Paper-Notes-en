@@ -133,7 +133,7 @@ DrPose extends direct reward tuning concepts to the 3D human generation task by 
 <!-- RELATED:END -->
 ## Related Papers
 
-- [\[ICLR 2026\] WILD-Diffusion：一种受 WDRO 启发的有限数据扩散模型训练方法](wild-diffusion_a_wdro_inspired_training_method_for_diffusion_models_under_limite.md)
+- [\[ICLR 2026\] WILD-Diffusion: A WDRO-Inspired Training Method for Diffusion Models under Limited Data](wild-diffusion_a_wdro_inspired_training_method_for_diffusion_models_under_limite.md)
 - [\[CVPR 2026\] Reward Sharpness-Aware Fine-Tuning for Diffusion Models](../../CVPR2026/image_generation/reward_sharpness-aware_fine-tuning_for_diffusion_models.md)
 - [\[ICLR 2026\] EditReward: A Human-Aligned Reward Model for Instruction-Guided Image Editing](editreward_a_human-aligned_reward_model_for_instruction-guided_image_editing.md)
 - [\[ICLR 2026\] Diffusion Fine-Tuning via Reparameterized Policy Gradient of the Soft Q-Function](diffusion_fine-tuning_via_reparameterized_policy_gradient_of_the_soft_q-function.md)

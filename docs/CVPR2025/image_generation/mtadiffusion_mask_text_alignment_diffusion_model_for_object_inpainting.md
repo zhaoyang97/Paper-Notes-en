@@ -110,7 +110,7 @@ User Study (30 participants × 60 images × 3 questions): In the three metrics o
 - **vs SDI (Stable Diffusion Inpainting)**: SDI uses whole-image captions + random masks for training, causing semantic misalignment during the training phase. However, its style consistency achieved through training on 600M images is worth learning from.
 
 ## Rating
-- Novelty: ⭐⭐⭐行业 Systematic solutions across three dimensions (data + structure + style), but the innovation of each single component is limited on its own.
+- Novelty: ⭐⭐⭐ Systematic solutions across three dimensions (data + structure + style), but the innovation of each single component is limited on its own.
 - Experimental Thoroughness: ⭐⭐⭐⭐ Adequate comparisons on BrushBench and EditBench, and a convincing user study, but the ablation is not fully integrated.
 - Writing Quality: ⭐⭐⭐⭐ Clarified problem definition and well-structured methodology description.
 - Value: ⭐⭐⭐⭐ MTAPipeline and MTADataset provide sustained value to the community, and the three strategies can be generalized to other inpainting models.

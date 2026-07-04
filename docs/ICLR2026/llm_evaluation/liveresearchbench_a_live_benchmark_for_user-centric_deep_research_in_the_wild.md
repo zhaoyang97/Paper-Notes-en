@@ -69,7 +69,7 @@ flowchart TD
 **4. Agent-Ensemble-as-a-Judge.** To reduce inductive bias, all evaluations use a dual-judge ensemble of Gemini 2.5 Pro and GPT-5, taking the average of the two as the final score.
 
 ## Key Experimental Results
-評测 included **17** SoTA systems: single-agent web search (GPT-5, Gemini 2.5 Pro, etc.), single-agent deep research (o3 DR, Gemini DR, etc.), and multi-agent deep research (Manus, Open Deep Research, Deerflow+, etc.).
+Evaluation included **17** SoTA systems: single-agent web search (GPT-5, Gemini 2.5 Pro, etc.), single-agent deep research (o3 DR, Gemini DR, etc.), and multi-agent deep research (Manus, Open Deep Research, Deerflow+, etc.).
 
 ### Main Results (DeepEval 4-Dimensions, 0-100, Selected)
 

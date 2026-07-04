@@ -48,7 +48,7 @@ Given a source image, OMG-Avatar first uses DINOv2 to extract local features $F_
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["Source Image<br/>DINOv2 + 3DMM Estimate FLAME mesh误差"] --> B["Hierarchical Global-Local Feature Extraction<br/>Cross-attn for Global + Projection Sampling for Local<br/>Coarse-to-fine Subdivision 5K→80K"]
+    A["Source Image<br/>DINOv2 + 3DMM Estimate FLAME mesh error"] --> B["Hierarchical Global-Local Feature Extraction<br/>Cross-attn for Global + Projection Sampling for Local<br/>Coarse-to-fine Subdivision 5K→80K"]
     B --> C["Occlusion-Aware Feature Fusion (OAFF)<br/>Depth Buffer Visibility Mask<br/>Retain Local Features of Visible Vertices"]
     C --> D["Multi-region Modeling<br/>Head + Shoulder Divide-and-Conquer Concatenation"]
     D --> E["3DGS Rendering Coarse Map + Neural Refiner<br/>Multi-LOD Real-time Enactment"]

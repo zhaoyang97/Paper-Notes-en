@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: 42a11d99c36f8f67
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Revisiting Unknowns: Towards Effective and Efficient Open-Set Active Learning
 
 **Conference**: CVPR2026  

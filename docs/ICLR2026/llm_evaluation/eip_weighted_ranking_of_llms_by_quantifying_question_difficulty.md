@@ -49,15 +49,15 @@ To avoid periodicity issues in bipartite graph random walks, EIP incorporates a 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-	A[模型-题目答题结果] --> B[构建正确矩阵 A]
-	A --> C[构建失败矩阵 A_hat]
-	B --> D[题目到模型转移 P_Q→M]
-	C --> E[模型到题目转移 P_M→Q]
-	D --> F[阻尼双向迭代传播]
+	A["Model-Question Answer Results"] --> B["Build Correct Matrix A"]
+	A --> C["Build Failure Matrix A_hat"]
+	B --> D["Question-to-Model Transfer P_Q→M"]
+	C --> E["Model-to-Question Transfer P_M→Q"]
+	D --> F["Damped Bidirectional Iterative Propagation"]
 	E --> F
-	F --> G[题目难度分数 pi_Q]
-	F --> H[模型能力分数 pi_M]
-	G --> I[难度感知模型排名]
+	F --> G["Question Difficulty Score pi_Q"]
+	F --> H["Model Capability Score pi_M"]
+	G --> I["Difficulty-Aware Model Ranking"]
 	H --> I
 ```
 

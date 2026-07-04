@@ -58,7 +58,7 @@ A GPT-2 style decoder-only Transformer architecture is adopted. After channel-in
 
 2. **ARMA Attention Structure (WAVE Attention)**: The standard attention output is decomposed into an AR term and an MA term. The AR term is computed by the original attention mechanism, while the MA term models the short-term patterns of predictions residuals:
 
-    $\bm{v}_{t+1} = \underbrace{\sum_{i=1}^{t} \mathbf{w}_{t,i} \odot \bm{v}_i}_{\text{AR项 } \bm{o}_t^{AR}} + \underbrace{\sum_{j=1}^{t-1} \bm{\theta}_{t-1,j} \odot \bm{\epsilon}_j}_{\text{MA项 } \bm{o}_t^{MA}} + \bm{\epsilon}_t$
+    $\bm{v}_{t+1} = \underbrace{\sum_{i=1}^{t} \mathbf{w}_{t,i} \odot \bm{v}_i}_{\text{AR term } \bm{o}_t^{AR}} + \underbrace{\sum_{j=1}^{t-1} \bm{\theta}_{t-1,j} \odot \bm{\epsilon}_j}_{\text{MA term } \bm{o}_t^{MA}} + \bm{\epsilon}_t$
 
    where $\bm{\epsilon}_t$ is the residual error after introducing the MA term, and $\bm{\theta}_{t-1,j}$ represents the MA weights. This design originates from the classic ARMA model—the AR term captures long-term dependencies and periodic patterns, and the MA term captures short-term fluctuations and local effects, achieving effective decoupling between the two.
 

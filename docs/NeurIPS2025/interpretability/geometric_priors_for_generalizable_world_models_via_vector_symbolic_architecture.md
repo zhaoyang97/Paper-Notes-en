@@ -186,7 +186,6 @@ Experimental Setup: $10 \times 10$ GridWorld (100 discrete states, 4 determinist
 | Experimental Thoroughness | ⭐⭐ | Limited to a 10×10 GridWorld, using weak baselines and lacking evaluations on standard benchmarks. |
 | Writing Quality | ⭐⭐⭐⭐ | Clear theoretical derivations, intuitive visualizations, and a highly cohesive structure. |
 | Practical Value | ⭐⭐⭐ | The idea is promising, but validated scale is insufficient, leaving a gap before practical applicability. |
-<!-- 由 src/gen_stubs.py 自动生成 -->
 
 <!-- RELATED:START -->
 

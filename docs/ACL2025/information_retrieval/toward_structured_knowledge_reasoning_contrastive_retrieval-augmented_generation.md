@@ -49,19 +49,19 @@ CoRE consists of three modules: (1) **Experience Memory Builder**—explores rea
 
 ### Key Designs
 
-1. **Experience Memory Builder（基于 MCTS 的经验记忆构建）**:
+1. **Experience Memory Builder (MCTS-based experience memory construction)**:
 
     - **Function**: Automatically generate a large number of diverse reasoning trajectories, containing reward labels for intermediate steps.
     - **Mechanism**: Decompose the structured reasoning problem into a sequence of sub-questions $\tau = \{(q_1, a_1), (q_2, a_2), ..., (q_n, a_n)\}$, and search for the optimal trajectory using MCTS. Four stages: **Selection**—balance exploration and exploitation using the UCT formula $q_k^* = \arg\max [Q_{value} + w\sqrt{\ln N(s)/N(c)}]$; **Expansion**—generate $d$ candidate sub-questions using LLM; **Simulation**—simulated forward to the terminal state, evaluating with a hybrid reward function $f_r = r_1^\alpha \cdot r_2^{1-\alpha}$ (where $r_1$ is consistency reward, and $r_2$ is self-evaluation reward); **Back-propagation**—propagate back along the path to update Q-values. The final generated experience memory contains records of $(q, a, r)$ consisting of the question, answer, and reward label.
     - **Design Motivation**: Compared to directly generating few-shot exemplars with LLMs, MCTS can systematically explore the reasoning space and generate diverse success and failure cases. The original training set is expanded by 8-9 times, significantly increasing coverage.
 
-2. **Retriever（双排序检索器）**:
+2. **Retriever (dual-ranking retriever)**:
 
     - **Function**: Retrieve the most relevant positive and negative exemplars for a new question.
     - **Mechanism**: Adopt a two-stage ranking strategy. First, retrieve the top-$k$ experiences using semantic similarity $\text{Sim}(Q_{current}, Q_{e_i})$. Then, perform secondary ranking based on reward labels: positive cases are ranked by a linear combination of $\text{rank}_{sim}$ and $\text{rank}_{reward}$ (preferring high rewards); negative cases are ranked by combining $\text{rank}_{sim}$ with the reverse of $\text{rank}_{reward}$ (preferring low rewards). SQL queries are appended with natural language descriptions of ASTs to improve retrieval accuracy.
     - **Design Motivation**: Negative exemplars retrieved solely by semantic similarity might not be "relevant enough" or "typical enough." Secondary ranking via reward labels ensures that negative exemplars are both relevant to the new question and genuinely erroneous cases.
 
-3. **Contrastive Thinker（对比式推理器）**:
+3. **Contrastive Thinker**:
 
     - **Function**: Use retrieved positive and negative exemplars to guide the LLM to generate the correct answer.
     - **Mechanism**: Build a contrastive prompt template: "Reference successful experiences and avoid repeating failed mistakes." Positive exemplars serve as patterns to learn, while negative exemplars (with error analysis) serve as patterns to avoid. It supports two contrastive modes: (a) Single-round contrast—display both positive and negative exemplars in one prompt; (b) Multi-round contrast—first provide positive exemplars for the model to generate an initial answer, and then provide negative exemplars for the model to correct. Both methods achieve similar performance, and the multi-round approach can accommodate token constraints.

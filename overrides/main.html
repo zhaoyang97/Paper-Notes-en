@@ -74,7 +74,7 @@
 
 {% if page %}
 
-{# Detect page type — frontmatter title already carries any '[论文解读]' prefix
+{# Detect page type — frontmatter title already carries any '[Paper Note]' prefix
    from src/add_seo.py, so the template never adds another prefix. #}
 {% set _src = (page.file.src_uri if page and page.file else '') %}
 {% set _is_index = _src.endswith('index.md') %}
@@ -262,40 +262,40 @@
 (function() {
   var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-  // ── Bilingual query expansion mapping (中↔英) ──
+  // -- Bilingual query expansion mapping (CJK-to-English) --
   var P = [
-    "上下文学习|in-context learning","持续学习|continual learning","课程学习|curriculum learning",
-    "小样本学习|few-shot learning","零样本|zero-shot","元学习|meta-learning",
-    "模仿学习|imitation learning","主动学习|active learning","自监督学习|self-supervised learning",
-    "多任务学习|multi-task learning","迁移学习|transfer learning","强化学习|reinforcement learning",
-    "对比学习|contrastive learning","知识蒸馏|knowledge distillation","联邦学习|federated learning",
-    "微调|fine-tuning","预训练|pre-training","指令微调|instruction tuning",
-    "合成数据|synthetic data","数据增强|data augmentation",
-    "推理|reasoning","空间推理|spatial reasoning","视觉推理|visual reasoning",
-    "幻觉|hallucination","越狱攻击|jailbreak","对齐|alignment","奖励模型|reward model",
-    "偏好优化|preference optimization","推测解码|speculative decoding","长上下文|long context",
-    "知识编辑|knowledge editing","知识图谱|knowledge graph","代码生成|code generation",
-    "多智能体|multi-agent","具身智能|embodied ai","视觉定位|visual grounding",
-    "文生图|text-to-image","视频生成|video generation","新视角合成|novel view synthesis",
-    "运动生成|motion generation","鲁棒性|robustness","对抗攻击|adversarial attack",
-    "差分隐私|differential privacy","可解释性|interpretability","泛化|generalization",
-    "不确定性|uncertainty","异常检测|anomaly detection","因果推理|causal inference",
-    "基础模型|foundation model","世界模型|world model","扩散模型|diffusion model",
-    "目标检测|object detection","语义分割|semantic segmentation","实例分割|instance segmentation",
-    "图像分割|image segmentation","点云|point cloud","深度估计|depth estimation",
-    "光流|optical flow","姿态估计|pose estimation","图像复原|image restoration",
-    "图像生成|image generation","图像编辑|image editing","超分辨率|super-resolution",
-    "视频理解|video understanding","动作识别|action recognition","视觉问答|visual question answering",
-    "文生视频|text-to-video","语音识别|speech recognition","自动驾驶|autonomous driving",
-    "遥感|remote sensing","医学影像|medical imaging","模型压缩|model compression",
-    "量化|quantization","多模态|multi-modal","跨模态|cross-modal",
-    "图神经网络|graph neural network","注意力机制|attention mechanism",
-    "域适应|domain adaptation","领域泛化|domain generalization","分布外|out-of-distribution",
-    "开放词汇|open-vocabulary","人脸识别|face recognition","机器翻译|machine translation",
-    "情感分析|sentiment analysis","文档理解|document understanding","问答|question answering",
-    "轨迹预测|trajectory prediction","图像修复|image inpainting","去噪|denoising",
-    "模型剪枝|model pruning","参数高效微调|parameter-efficient fine-tuning",
-    "灾难性遗忘|catastrophic forgetting","3D目标检测|3d object detection",
+    "\u4e0a\u4e0b\u6587\u5b66\u4e60|in-context learning","\u6301\u7eed\u5b66\u4e60|continual learning","\u8bfe\u7a0b\u5b66\u4e60|curriculum learning",
+    "\u5c0f\u6837\u672c\u5b66\u4e60|few-shot learning","\u96f6\u6837\u672c|zero-shot","\u5143\u5b66\u4e60|meta-learning",
+    "\u6a21\u4eff\u5b66\u4e60|imitation learning","\u4e3b\u52a8\u5b66\u4e60|active learning","\u81ea\u76d1\u7763\u5b66\u4e60|self-supervised learning",
+    "\u591a\u4efb\u52a1\u5b66\u4e60|multi-task learning","\u8fc1\u79fb\u5b66\u4e60|transfer learning","\u5f3a\u5316\u5b66\u4e60|reinforcement learning",
+    "\u5bf9\u6bd4\u5b66\u4e60|contrastive learning","\u77e5\u8bc6\u84b8\u998f|knowledge distillation","\u8054\u90a6\u5b66\u4e60|federated learning",
+    "\u5fae\u8c03|fine-tuning","\u9884\u8bad\u7ec3|pre-training","\u6307\u4ee4\u5fae\u8c03|instruction tuning",
+    "\u5408\u6210\u6570\u636e|synthetic data","\u6570\u636e\u589e\u5f3a|data augmentation",
+    "\u63a8\u7406|reasoning","\u7a7a\u95f4\u63a8\u7406|spatial reasoning","\u89c6\u89c9\u63a8\u7406|visual reasoning",
+    "\u5e7b\u89c9|hallucination","\u8d8a\u72f1\u653b\u51fb|jailbreak","\u5bf9\u9f50|alignment","\u5956\u52b1\u6a21\u578b|reward model",
+    "\u504f\u597d\u4f18\u5316|preference optimization","\u63a8\u6d4b\u89e3\u7801|speculative decoding","\u957f\u4e0a\u4e0b\u6587|long context",
+    "\u77e5\u8bc6\u7f16\u8f91|knowledge editing","\u77e5\u8bc6\u56fe\u8c31|knowledge graph","\u4ee3\u7801\u751f\u6210|code generation",
+    "\u591a\u667a\u80fd\u4f53|multi-agent","\u5177\u8eab\u667a\u80fd|embodied ai","\u89c6\u89c9\u5b9a\u4f4d|visual grounding",
+    "\u6587\u751f\u56fe|text-to-image","\u89c6\u9891\u751f\u6210|video generation","\u65b0\u89c6\u89d2\u5408\u6210|novel view synthesis",
+    "\u8fd0\u52a8\u751f\u6210|motion generation","\u9c81\u68d2\u6027|robustness","\u5bf9\u6297\u653b\u51fb|adversarial attack",
+    "\u5dee\u5206\u9690\u79c1|differential privacy","\u53ef\u89e3\u91ca\u6027|interpretability","\u6cdb\u5316|generalization",
+    "\u4e0d\u786e\u5b9a\u6027|uncertainty","\u5f02\u5e38\u68c0\u6d4b|anomaly detection","\u56e0\u679c\u63a8\u7406|causal inference",
+    "\u57fa\u7840\u6a21\u578b|foundation model","\u4e16\u754c\u6a21\u578b|world model","\u6269\u6563\u6a21\u578b|diffusion model",
+    "\u76ee\u6807\u68c0\u6d4b|object detection","\u8bed\u4e49\u5206\u5272|semantic segmentation","\u5b9e\u4f8b\u5206\u5272|instance segmentation",
+    "\u56fe\u50cf\u5206\u5272|image segmentation","\u70b9\u4e91|point cloud","\u6df1\u5ea6\u4f30\u8ba1|depth estimation",
+    "\u5149\u6d41|optical flow","\u59ff\u6001\u4f30\u8ba1|pose estimation","\u56fe\u50cf\u590d\u539f|image restoration",
+    "\u56fe\u50cf\u751f\u6210|image generation","\u56fe\u50cf\u7f16\u8f91|image editing","\u8d85\u5206\u8fa8\u7387|super-resolution",
+    "\u89c6\u9891\u7406\u89e3|video understanding","\u52a8\u4f5c\u8bc6\u522b|action recognition","\u89c6\u89c9\u95ee\u7b54|visual question answering",
+    "\u6587\u751f\u89c6\u9891|text-to-video","\u8bed\u97f3\u8bc6\u522b|speech recognition","\u81ea\u52a8\u9a7e\u9a76|autonomous driving",
+    "\u9065\u611f|remote sensing","\u533b\u5b66\u5f71\u50cf|medical imaging","\u6a21\u578b\u538b\u7f29|model compression",
+    "\u91cf\u5316|quantization","\u591a\u6a21\u6001|multi-modal","\u8de8\u6a21\u6001|cross-modal",
+    "\u56fe\u795e\u7ecf\u7f51\u7edc|graph neural network","\u6ce8\u610f\u529b\u673a\u5236|attention mechanism",
+    "\u57df\u9002\u5e94|domain adaptation","\u9886\u57df\u6cdb\u5316|domain generalization","\u5206\u5e03\u5916|out-of-distribution",
+    "\u5f00\u653e\u8bcd\u6c47|open-vocabulary","\u4eba\u8138\u8bc6\u522b|face recognition","\u673a\u5668\u7ffb\u8bd1|machine translation",
+    "\u60c5\u611f\u5206\u6790|sentiment analysis","\u6587\u6863\u7406\u89e3|document understanding","\u95ee\u7b54|question answering",
+    "\u8f68\u8ff9\u9884\u6d4b|trajectory prediction","\u56fe\u50cf\u4fee\u590d|image inpainting","\u53bb\u566a|denoising",
+    "\u6a21\u578b\u526a\u679d|model pruning","\u53c2\u6570\u9ad8\u6548\u5fae\u8c03|parameter-efficient fine-tuning",
+    "\u707e\u96be\u6027\u9057\u5fd8|catastrophic forgetting","3D\u76ee\u6807\u68c0\u6d4b|3d object detection",
   ];
   var M = {};
   P.forEach(function(p) { var s = p.split('|'); M[s[0]] = s[1]; M[s[1]] = s[0]; });
@@ -433,12 +433,12 @@
 <!-- Add deep-search fallback link in search results (both mobile and desktop) -->
 <script>
 (function() {
-  // Inject a "全文深度搜索 via Bing" link at the bottom of search results.
+  // Inject a "full-text search via Bing" link at the bottom of search results.
   //
   // IMPORTANT: we must NOT use a MutationObserver on `.md-search` with
   // subtree:true and then appendChild into `.md-search-result`, because the
   // append mutates the observed subtree → triggers the observer again → infinite
-  // loop → tab OOM ("喔唷，崩溃啦 / Out of Memory"). Instead we listen to the
+  // loop -> tab OOM. Instead we listen to the
   // search input's `input` event (which does NOT fire from our own DOM
   // mutations) and debounce updates to the fallback link.
   var lastQuery = null;

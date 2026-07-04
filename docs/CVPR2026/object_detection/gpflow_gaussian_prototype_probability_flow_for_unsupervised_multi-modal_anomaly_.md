@@ -143,7 +143,7 @@ Comparison of Prototype and Routing Mechanisms:
 - **vs. FIND (Reconstructive SOTA)**: FIND uses a multi-stage architecture with reverse distillation and cross-modal transforms. GPFlow's explicit information bottleneck is more robust in few-shot scenarios, representing a choice between "strong inductive bias" and "high-capacity fitting."
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐扎实 Solid theoretical grounding in linking Tweedie/Probability flow to an analytical bottleneck.
+- Novelty: ⭐⭐⭐⭐⭐ Solid theoretical grounding in linking Tweedie/Probability flow to an analytical bottleneck.
 - Experimental Thoroughness: ⭐⭐⭐⭐ Extensive few-shot testing and multi-angle ablations.
 - Writing Quality: ⭐⭐⭐⭐⭐ Clear derivations, intuitive toy examples, and cohesive logic.
 - Value: ⭐⭐⭐⭐ Practical SOTA for few-shot multi-modal industrial inspection with transferable bottleneck concepts.

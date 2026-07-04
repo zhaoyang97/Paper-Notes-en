@@ -44,12 +44,12 @@ The framework consists of two layers: The upper layer is an **analytical populat
 
 ```mermaid
 flowchart TD
-    A[生物物理仿真<br/>随机HH单房室神经元] -->|扫描 vrest/gleak/gsyn| B[噪声σ²与能量εtotal]
-    B -->|沿等能量线取最低噪声| C[最优衰减路径 δopt]
-    C -->|拟合| D["标定 α=1<br/>离散因子 ηκ(E)=η0+c1/(E−c2)"]
-    D --> E[解析群体编码优化]
-    E -->|稳态约束 + 能量约束 + tiling| F[闭式解 g(s),d(s),FI(s)]
-    F --> G[预测调谐曲线变平<br/>复现 Padamsey 2022]
+    A[Biophysical simulation<br/>Stochastic HH single-compartment neuron] -->|Sweep vrest/gleak/gsyn| B[Noise sigma^2 and energy epsilon_total]
+    B -->|Minimize noise along iso-energy curve| C[Optimal decay path delta_opt]
+    C -->|Fit| D["Calibrate alpha=1<br/>Discrete factor eta_kappa(E)=eta0+c1/(E-c2)"]
+    D --> E[Analytical population code optimization]
+    E -->|Homeostatic constraint + energy constraint + tiling| F[Closed-form solution g(s),d(s),FI(s)]
+    F --> G[Predict tuning curve flattening<br/>Reproduces Padamsey 2022]
 ```
 
 ### Key Designs

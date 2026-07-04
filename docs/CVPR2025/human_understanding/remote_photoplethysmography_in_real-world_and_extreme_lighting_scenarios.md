@@ -116,7 +116,7 @@ Three loss terms are jointly optimized: the spatio-temporal reconstruction loss 
 
 - **ND-DeeprPPG**: Leverages the consistency of foreground and background noise to achieve decoupling, but depends on external discriminators. Ours replaces this with self-supervised similarity computations.
 - **PhysFormer**: A Transformer-based rPPG approach, but not specifically designed for extreme illumination.
-- **Insight**: Environmental interference is not pure noise but rather part of a utilizable reference signal. The concept of "干扰即信息" (interference as information) is worth exploring in other signal processing tasks.
+- **Insight**: Environmental interference is not pure noise but rather part of a utilizable reference signal. The concept of "interference as information" is worth exploring in other signal processing tasks.
 
 ## Rating
 

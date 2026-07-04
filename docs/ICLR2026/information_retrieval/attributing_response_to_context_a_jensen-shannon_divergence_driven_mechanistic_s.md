@@ -128,7 +128,7 @@ When $G < 0$, the mask approaches 0.7, suppressing the component's contribution.
 - **Simplicity and Efficiency**: The concept—leave-one-out ablation + JSD comparison—is elegant, training-free, and plug-and-play for any RAG system.
 - **Theoretical Grounding**: Choosing JSD is well-justified by its symmetry and boundedness compared to KL/TV/Wasserstein.
 - **Closed-Loop Mechanistic Analysis**: Moves from identification (JSD) to validation (Semantic Gain) and application (Gating).
-- **Visual Semantic Evolution**: Logit Lens reveals how Qwen2 transitions from Chinese tokens to English terms in higher layers ("一只 → A", "翅膀 → wings"), aligning with language anchoring phenomena.
+- **Visual Semantic Evolution**: Logit Lens reveals how Qwen2 transitions from Chinese tokens to English terms in higher layers ("yi zhi → A", "chibang → wings"), aligning with language anchoring phenomena.
 - **Practical Value**: Significant hallucination reduction without retraining.
 
 ## Limitations & Future Work

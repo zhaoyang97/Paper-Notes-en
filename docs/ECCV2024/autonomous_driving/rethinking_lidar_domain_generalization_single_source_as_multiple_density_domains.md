@@ -58,7 +58,7 @@ Additionally, a **Density augmentation** strategy is incorporated to expand the 
 - Voxel-level features $F^v$ and point-level features $F^p$ are generated simultaneously. Voxel-level encoding bypasses intra-voxel local information via direct encoding, eliminating variances brought by grid-size variations.
 
 **Beam density estimation**:
-- Construct 1-D binary vectors $\mathbf{B}_h$ and $\mathbf{B}_v$ using LiDAR sensor configurations (horizontal/垂直 beam numbers and FOVs), indicating whether each projection pixel has a beam passing through.
+- Construct 1-D binary vectors $\mathbf{B}_h$ and $\mathbf{B}_v$ using LiDAR sensor configurations (horizontal/vertical beam numbers and FOVs), indicating whether each projection pixel has a beam passing through.
 - Apply 1D Gaussian kernel convolutions with four standard deviations $\sigma_k = \{10, 30, 50, 70\}$ to obtain multi-scale smoothed beam densities.
 - The final density is computed as $\mathcal{D}_i = [\sqrt{\hat{B}_h^{(k)} \cdot \hat{B}_v^{(k)} / r_i^2}]_{k=1}^4$, where the $r^2$ factor reflects the physical law of beam density decreasing quadratically with distance.
 

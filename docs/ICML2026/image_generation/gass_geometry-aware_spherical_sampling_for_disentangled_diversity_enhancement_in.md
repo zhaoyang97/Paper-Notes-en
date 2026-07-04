@@ -50,7 +50,7 @@ GASS aims to solve the problem where "repeated sampling of the same prompt yield
 flowchart TD
     A["Frozen T2I backbone sampling<br/>Insert guidance every few steps"] --> B["CLIP encodes predicted clean image<br/>to obtain unit spherical embeddings"]
     B --> C["SPP spherical disentangled metric<br/>Text axis e_t + Principal residual axis u_ind"]
-    C --> D["Spherical projection expansion + Re-normalization<br/>Inject perturbation along两轴 to get target embeddings"]
+    C --> D["Spherical projection expansion + Re-normalization<br/>Inject perturbation along two axes to get target embeddings"]
     D --> E["Gradient computation for predicted clean image<br/>Minimize L_SPP using Adam"]
     E --> F["Optimized clean image fed back to solver<br/>Adjust subsequent sampling trajectory"]
     F -->|Sparse scheduling 10-20 steps| A

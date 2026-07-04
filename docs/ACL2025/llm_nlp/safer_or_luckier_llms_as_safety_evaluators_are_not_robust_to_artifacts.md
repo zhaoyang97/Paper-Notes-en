@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: 6a1b1c73f155cf0a
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Safer or Luckier? LLMs as Safety Evaluators Are Not Robust to Artifacts
 
 **Conference**: ACL2025  

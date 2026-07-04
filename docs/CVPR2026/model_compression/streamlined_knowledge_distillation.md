@@ -18,7 +18,7 @@ content_hash: cff23092817f6416
 # Streamlined Knowledge Distillation
 
 **Conference**: CVPR 2026  
-**论文**: [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Jeong_Streamlined_Knowledge_Distillation_CVPR_2026_paper.html)  
+**Paper**: [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Jeong_Streamlined_Knowledge_Distillation_CVPR_2026_paper.html)  
 **Code**: https://github.com/HyunJunSik/StreamLined  
 **Area**: Model Compression / Knowledge Distillation  
 **Keywords**: logit distillation, directional relations, Gram matrix, Mahalanobis distance, covariance whitening

@@ -16,7 +16,6 @@ date: 2026-05-08
 content_hash: 6bf0996c9b994bd5
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Which Retain Set Matters for LLM Unlearning? A Case Study on Entity Unlearning
 
 **Conference**: ACL 2025  

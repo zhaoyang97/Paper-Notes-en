@@ -18,7 +18,7 @@ content_hash: dd1f8d51d611a78e
 # MODIX: A Training-Free Multimodal Information-Driven Positional Index Scaling for Vision-Language Models
 
 **Conference**: CVPR 2026  
-**论文**: [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Huang_MODIX_A_Training-Free_Multimodal_Information-Driven_Positional_Index_Scaling_for_Vision-Language_CVPR_2026_paper.html)  
+**Paper**: [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Huang_MODIX_A_Training-Free_Multimodal_Information-Driven_Positional_Index_Scaling_for_Vision-Language_CVPR_2026_paper.html)  
 **Code**: None  
 **Area**: Multimodal VLMs  
 **Keywords**: Positional encoding, RoPE, training-free, information theory, vision-language models  

@@ -100,7 +100,7 @@ Ours improves by up to 7% relative to the best baseline. On BUID (small lesions)
 
 ### Key Findings
 - **All components contribute positively**: Removing EBR drops the score to 0.368, GM to 0.396, and STTA to 0.427, with EBR and GM providing the largest gains.
-- **GM effectively pulls samples back in-distribution**: t-SNE shows GM perturbed samples聚 in the original data manifold; higher IoU between mask and ground truth correlates with larger drops in classification scores.
+- **GM effectively pulls samples back in-distribution**: t-SNE shows GM perturbed samples clustered in the original data manifold; higher IoU between mask and ground truth correlates with larger drops in classification scores.
 - **STTA lowers loss and improves localization**: 20 steps of test-time training increase ViT prediction scores by >1% and drop training loss by ~10% on RSNA.
 - **EBR's dual mechanisms are vital**: Replacing kNN with random neighbors or NW weighting with simple means causes AUPRC to decline.
 - According to fidelity metrics (Quantus), MedLIME is optimal in LeRF↑ (0.36) and consistency (0.87), and lowest in MoRF↓ (0.28).

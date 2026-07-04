@@ -121,7 +121,7 @@ Overview: In retrieval, FDA achieved average ASR reductions of 18/13/53% across 
 
 ## Limitations & Future Work
 - The authors admit direct subtraction is efficient but might be less refined than modular removal; evaluations on larger VLMs or PEFT (like LoRA) were limited by hardware.
-- **Architecture limitations**: FDA is designed for fusion-encoder backbones (ALBEF/TCL/BLIP) and has not yet been实证 demonstrated on projector-based models (like LLaVA/Qwen-VL), and it excludes CLIP due to the lack of a fusion encoder.
+- **Architecture limitations**: FDA is designed for fusion-encoder backbones (ALBEF/TCL/BLIP) and has not yet been empirically demonstrated on projector-based models (like LLaVA/Qwen-VL), and it excludes CLIP due to the lack of a fusion encoder.
 - **Manual dictionary**: The optimal dictionary size requires validation; reliance on stop-word lists makes cross-lingual/domain generalization uncertain.
 
 ## Related Work & Insights

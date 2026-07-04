@@ -133,7 +133,7 @@ Comparing attention steering strategies on Parallel: Direct 57.88 / SampleAttent
 
 ## Related Work & Insights
 - **Compositional Instruction Following**: Compared to Chain-of-Instruction (sequential) or Complexbench (conditional) which cover limited structures and rely on fine-tuning/multi-round reasoning, ATA unifies three structures in a single forward pass.
-- **Attention Steering**: While SampleAttention/SASK提 promotes efficiency via sparse attention (often losing context), and PASTA/autoPASTA magnifies pre-defined or self-selected regions (static), ATA differentiates by **restricting steering to exclusive spans** and **dynamically switching the active target** step-by-step.
+- **Attention Steering**: While SampleAttention/SASK promotes efficiency via sparse attention (often losing context), and PASTA/autoPASTA magnifies pre-defined or self-selected regions (static), ATA differentiates by **restricting steering to exclusive spans** and **dynamically switching the active target** step-by-step.
 - **Insights**: Inference-time steering is becoming a cost-effective path to modify behavior without touching parameters. ATA demonstrates a general paradigm: use LLMs to parse structural constraints and then use these constraints as safety boundaries for attention intervention. This could extend to long-document partitioning, multi-constraint generation, or agent subtask scheduling.
 
 ## Rating

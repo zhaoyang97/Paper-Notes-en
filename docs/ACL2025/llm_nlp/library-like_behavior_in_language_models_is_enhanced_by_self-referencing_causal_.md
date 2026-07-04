@@ -34,8 +34,8 @@ The **Reversal Curse** is a well-known limitation of autoregressive language mod
 
 This phenomenon stems from the unidirectional causality of autoregressive models—models generate subsequent tokens based on preceding tokens, requiring knowledge to be learned and recalled in a consistent token order. Formally:
 
-$$S_r = \arg\max_{s \in \mathcal{S}} P_\mathcal{M}(s|S_l) \quad \text{（容易）}$$
-$$S_l \neq \arg\max_{s \in \mathcal{S}} P_\mathcal{M}(s|S_r) \quad \text{（困难）}$$
+$$S_r = \arg\max_{s \in \mathcal{S}} P_\mathcal{M}(s|S_l) \quad \text{(easy)}$$
+$$S_l \neq \arg\max_{s \in \mathcal{S}} P_\mathcal{M}(s|S_r) \quad \text{(hard)}$$
 
 Existing solutions primarily rely on data augmentation (such as token permutation, reversal training, and other manual interventions). The authors propose a fresh perspective: **the reversal curse is not always an insurmountable barrier—naturally occurring patterns in pre-training data are sufficient to mitigate this issue**.
 

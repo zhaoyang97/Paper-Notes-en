@@ -16,7 +16,6 @@ date: 2026-05-08
 content_hash: cf5d974c6e09bb4d
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # To Code or not to Code? Adaptive Tool Integration for Math Language Models via Expectation-Maximization
 
 **Conference**: ACL2025  

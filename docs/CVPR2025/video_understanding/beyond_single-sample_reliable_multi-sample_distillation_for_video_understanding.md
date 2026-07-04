@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: eceba9e635893b8f
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Beyond Single-Sample: Reliable Multi-Sample Distillation for Video Understanding
 
 **Conference**: CVPR 2025  

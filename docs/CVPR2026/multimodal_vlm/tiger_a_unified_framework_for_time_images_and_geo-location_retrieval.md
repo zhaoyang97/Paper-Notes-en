@@ -134,7 +134,7 @@ The training strategy utilizes 5 pairs of InfoNCE contrastive losses (excluding 
 - Writing Quality: ⭐⭐⭐⭐ Clear problem definition and detailed data construction.
 - Value: ⭐⭐⭐⭐ Geo-temporal understanding is a promising new direction with practical demand.
 
-## 补充说明 (Additional Notes)
+## Additional Notes
 - The image encoder uses a frozen CLIP ViT-L/14; location and time use Random Fourier Features.
 - The 4.5M image training set comes from 1,255 global static webcams; the 86k test set has no webcam overlap.
 - HEALPix divides the Earth into 768 equal-area regions; time is divided into 288 bins (24 hours × 12 months).

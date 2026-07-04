@@ -121,7 +121,7 @@ Average DeepSADR AUC/AUPR is 0.856/0.862, outperforming GANDALF (0.791/0.765), W
 ## Highlights & Insights
 - **Transferring the response process rather than static expression**: Unlike domain adaptation methods that align expression distributions, DeepSADR focuses on the interaction patterns of drug fragments and functional pathways.
 - **Interpretable intermediate layer**: The model produces interaction heatmaps between drug substructures and gene functional subsequences, providing mechanistic clues rather than just black-box probabilities.
-- **克制 (Restrained) fine-tuning strategy**: By updating only AR and the predictor, the model avoids destroying the general structural knowledge learned from large-scale cell line data while adapting to small clinical samples.
+- **Restrained fine-tuning strategy**: By updating only AR and the predictor, the model avoids destroying the general structural knowledge learned from large-scale cell line data while adapting to small clinical samples.
 - **Threshold-driven mechanism hypothesis**: Filtering low-confidence edges converts a dense graph into a sparse hypothesis of drug action, improving both performance and readability.
 
 ## Limitations & Future Work

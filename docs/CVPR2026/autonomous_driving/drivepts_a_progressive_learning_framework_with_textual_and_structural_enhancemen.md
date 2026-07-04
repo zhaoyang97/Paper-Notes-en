@@ -49,13 +49,13 @@ The entire pipeline consists of three components: (1) A **progressive learning s
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["HD地图 + 3D框 + 文本"] --> B["渐进式学习策略<br/>阶段1分开学路/物，交替训练"]
-    B --> C["互信息约束<br/>InfoNCE推开地图/框特征"]
-    A --> D["多视角分层描述<br/>VLM生成六维细粒度文本"]
-    C --> E["阶段2双条件联合适配"]
+    A["HD Map + 3D Boxes + Text"] --> B["Progressive Learning Strategy<br/>Stage 1: train road and objects separately, alternating training"]
+    B --> C["Mutual Information Constraint<br/>InfoNCE pushes map/box features apart"]
+    A --> D["Multi-View Hierarchical Description<br/>VLM generates six-dimensional fine-grained text"]
+    C --> E["Stage 2: Dual-Condition Joint Adaptation"]
     D --> E
-    E --> F["频域引导结构损失<br/>高通滤波强化前景边缘"]
-    F --> G["可控驾驶场景生成"]
+    E --> F["Frequency-Domain Guided Structure Loss<br/>High-pass filter reinforces foreground edges"]
+    F --> G["Controllable Driving Scene Generation"]
 ```
 
 ### Key Designs

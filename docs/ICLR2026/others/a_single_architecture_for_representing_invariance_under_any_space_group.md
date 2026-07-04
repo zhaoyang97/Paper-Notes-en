@@ -144,7 +144,7 @@ Standard material property regression/classification losses are used. During tra
 <!-- RELATED:END -->
 ## Related Papers
 
-- [\[ICLR 2026\] From atom to space：面向材料空间性质的区域化读出函数 SpatialRead](from_atom_to_space_a_region-based_readout_function_for_spatial_properties_of_mat.md)
+- [\[ICLR 2026\] From atom to space: A region-based readout function SpatialRead for spatial properties of materials](from_atom_to_space_a_region-based_readout_function_for_spatial_properties_of_mat.md)
 - [\[AAAI 2026\] Learning Compact Latent Space for Representing Neural Signed Distance Functions with High-fidelity Geometry Details](../../AAAI2026/others/learning_compact_latent_space_for_representing_neural_signed_distance_functions_.md)
 - [\[ICLR 2026\] Spurious Correlation-Aware Embedding Regularization for Worst-Group Robustness](spurious_correlation-aware_embedding_regularization_for_worst-group_robustness.md)
 - [\[ICLR 2026\] Adaptive Conformal Guidance for Learning under Uncertainty](adaptive_conformal_guidance_for_learning_under_uncertainty.md)

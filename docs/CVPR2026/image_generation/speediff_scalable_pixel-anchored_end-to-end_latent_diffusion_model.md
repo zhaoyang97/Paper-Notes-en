@@ -135,7 +135,7 @@ Incremental additions (ImageNet 256, 80 epochs, gFID↓), comparing "detached" v
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐ Restores the abandoned E2E VAE+Diffusion path with a minimal TPR loss.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive dual-resolution主表, component ablations, and latent diagnostics.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive dual-resolution main-table, component ablations, and latent diagnostics.
 - Writing Quality: ⭐⭐⭐⭐ Clear narrative flow; minor formatting/spelling artifacts in the preprint.
 - Value: ⭐⭐⭐⭐⭐ Significant 140×/61× training acceleration and SOTA FID results.
 

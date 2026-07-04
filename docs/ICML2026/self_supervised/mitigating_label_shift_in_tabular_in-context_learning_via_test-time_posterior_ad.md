@@ -51,7 +51,7 @@ flowchart TD
     TR["Training Set D_train (w/ prior p_train) + Test Sample x"] --> TPF["TabPFN Forward Pass<br/>logits → softmax"]
     TPF --> POST["Posterior p̂(y)"]
     POST -->|"÷ p_train, numerator p̂²"| DP["DistPFN: Posterior/Prior Ratio<br/>Fixed intensity partial correction"]
-    POST -->|"τ=CE(p̂,p_train) Temp Scaling p̂→p̂_T"| DPT["DistPFN-T: CE Adaptive Temp<br/>調整 intensity based on deviation"]
+    POST -->|"τ=CE(p̂,p_train) Temp Scaling p̂→p̂_T"| DPT["DistPFN-T: CE Adaptive Temp<br/>Adjusts intensity based on deviation"]
     DP --> OUT["Renormalization Norm → Output Prediction"]
     DPT --> OUT["Renormalization Norm → Output Prediction"]
 ```

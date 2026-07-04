@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: 5daf669d0a2fb631
 ---
 
-<!-- 由 src/conference/gen_openreview_stubs.py 自动生成 -->
 # Projected Coupled Diffusion for Test-Time Constrained Joint Generation
 
 **Conference**: ICLR2026  

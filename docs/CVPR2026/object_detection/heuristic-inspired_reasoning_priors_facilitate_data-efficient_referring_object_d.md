@@ -104,7 +104,7 @@ $$z_j = \text{MLP}\!\left(\text{Cat}\big[H_s(o_j, d_i),\, H_v(o_j, d_i, I_i),\, 
 
 $$\text{Cost}_h = \text{Cost}_{cls} + \text{Cost}_{bbox} + \text{Cost}_{giou} - H(o_j, d_i, I_i)$$
 
-Matching is定下 (settled) if alignment with the prior is better (lower cost). After matching, an additional loss $L_{conf}$ is added—an MSE between the predicted confidence and the prior score (treating the prior as a soft label): $L_h = L_{cls} + L_{bbox} + L_{conf}$, encouraging the model to align its confidence with "prior-defined reasonableness" in addition to predicting the correct box.
+Matching is settled if alignment with the prior is better (lower cost). After matching, an additional loss $L_{conf}$ is added—an MSE between the predicted confidence and the prior score (treating the prior as a soft label): $L_h = L_{cls} + L_{bbox} + L_{conf}$, encouraging the model to align its confidence with "prior-defined reasonableness" in addition to predicting the correct box.
 
 > The three injection points are complementary: early-stage (candidate ranking) provides coarse filtering bias, late-stage (final prediction) perform adaptive balancing, and the loss side provides stable supervisory guidance. All are indispensable (see Ablation Tab. 3/4).
 

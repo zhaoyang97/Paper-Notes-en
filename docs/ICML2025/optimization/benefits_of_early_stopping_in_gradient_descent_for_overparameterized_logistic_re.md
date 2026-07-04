@@ -17,7 +17,6 @@ date: 2026-05-08
 content_hash: e16315e4045c9da1
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Benefits of Early Stopping in Gradient Descent for Overparameterized Logistic Regression
 
 **Conference**: ICML2025  

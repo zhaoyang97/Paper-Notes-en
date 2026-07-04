@@ -49,12 +49,12 @@ RoboMaster performs conditional control on the pre-trained CogVideoX-5B: given a
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    IN["初始帧 I + 文本 c<br/>+ 机械臂/物体 mask M_d, M_s"] --> EMB["耦合外观-形状物体嵌入<br/>VAE 编码 → mask 池化 → 圆形体积 v"]
-    TRAJ["协作轨迹 C：交互按时间拆三段<br/>前交互(臂主导) → 交互(物体主导) → 后交互(臂主导)"] --> EMB
-    EMB --> V["时序轨迹 latent V<br/>(v 沿轨迹落点铺开)"]
-    V --> INJ["运动注入模块<br/>patchify → 零初始化卷积 → 加法注入"]
-    INJ --> DIT["预训练 DiT 主干 (CogVideoX-5B)"]
-    DIT --> OUT["机器人操作视频 X"]
+    IN["Initial frame I + text c<br/>+ arm/object mask M_d, M_s"] --> EMB["Coupled appearance-shape object embedding<br/>VAE encode → mask pooling → circular volume v"]
+    TRAJ["Collaborative trajectory C: interaction split into three temporal phases<br/>Pre-interaction (arm-dominated) → Interaction (object-dominated) → Post-interaction (arm-dominated)"] --> EMB
+    EMB --> V["Temporal trajectory latent V<br/>(v spread along trajectory waypoints)"]
+    V --> INJ["Motion injection module<br/>patchify → zero-initialized convolution → additive injection"]
+    INJ --> DIT["Pre-trained DiT backbone (CogVideoX-5B)"]
+    DIT --> OUT["Robot manipulation video X"]
 ```
 
 ### Key Designs

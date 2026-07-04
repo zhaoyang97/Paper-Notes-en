@@ -49,12 +49,12 @@ The entire loop is **event-triggered**: the Collective Intelligence Layer provid
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["输入：异构 agent 群<br/>+ 任务集 + 共享环境"] --> CI["集体空间智能<br/>汇总观测→MLP 预测物体位置先验"]
-    CI -->|位置先验 p̂| AFF["亲和度调度<br/>资源抽象+亲和度矩阵+DCHA 分配"]
-    AFF --> TC["信任链容错<br/>每任务排好备份守护序列"]
-    TC --> EXE["自治层双角色<br/>执行者干活 / 守护者听心跳"]
-    EXE -->|"agent 掉线/恢复(心跳异常)"| AFF
-    EXE --> O["输出：不间断完成任务"]
+    A["Input: Heterogeneous agent group<br/>+ Task set + Shared environment"] --> CI["Collective spatial intelligence<br/>Aggregate observations → MLP predicts object position priors"]
+    CI -->|Position prior p̂| AFF["Affinity scheduling<br/>Resource abstraction + affinity matrix + DCHA assignment"]
+    AFF --> TC["Trust chain fault tolerance<br/>Pre-ranked backup guardian sequence per task"]
+    TC --> EXE["Autonomy layer dual roles<br/>Executor works / Guardian monitors heartbeat"]
+    EXE -->|"Agent offline/recovery (heartbeat anomaly)"| AFF
+    EXE --> O["Output: Uninterrupted task completion"]
 ```
 
 ### Key Designs

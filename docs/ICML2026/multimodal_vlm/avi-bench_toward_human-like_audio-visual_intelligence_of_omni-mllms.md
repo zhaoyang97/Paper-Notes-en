@@ -42,7 +42,7 @@ AVI-Bench is an audio-visual benchmark inspired by human cognition. It organizes
 ## Method
 
 ### Overall Architecture
-AVI-Bench is not a model but a **comprehensive evaluation protocol + dataset + taxonomy**. It organizes 14 tasks into four stages: **Perception → Understanding → Reasoning → Primitive Sensation (PriSe)**. The first three stages correspond to the progressive levels of human cognition, while PriSe serves as an extension to test out-of-distribution generalization. Within each stage, audio-dominant, vision-dominant, and audio-visual协同 tasks are balanced to prevent scores from being dominated by a single modality. Finally, data from testing 28 Omni-MLLMs is used to summarize a four-level AVI taxonomy.
+AVI-Bench is not a model but a **comprehensive evaluation protocol + dataset + taxonomy**. It organizes 14 tasks into four stages: **Perception → Understanding → Reasoning → Primitive Sensation (PriSe)**. The first three stages correspond to the progressive levels of human cognition, while PriSe serves as an extension to test out-of-distribution generalization. Within each stage, audio-dominant, vision-dominant, and audio-visual collaborative tasks are balanced to prevent scores from being dominated by a single modality. Finally, data from testing 28 Omni-MLLMs is used to summarize a four-level AVI taxonomy.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%

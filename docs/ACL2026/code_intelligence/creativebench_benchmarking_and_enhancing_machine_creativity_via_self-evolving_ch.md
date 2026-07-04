@@ -9,7 +9,6 @@ tags:
 date: 2026-05-08
 content_hash: b4a5c892d2881ad6
 ---
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # CreativeBench: Benchmarking and Enhancing Machine Creativity via Self-Evolving Challenges
 
 **Conference**: ACL2026  

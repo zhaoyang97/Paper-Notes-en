@@ -122,7 +122,7 @@ Evaluated using mAP@IoU (0.1~0.5) AVG on UCF-Crime and XD-Violence.
 
 ## Highlights & Insights
 - **Leveraging Label Asymmetry**: Efficiently uses abundant binary labels to structure the feature space for data-scarce tasks.
-- **Pseudo-macros as "脚手架" (Scaffolding)**: Downgrading noisy pseudo-labels from supervision targets to attention skeletons avoids overfitting noise.
+- **Pseudo-macros as "Scaffolding"**: Downgrading noisy pseudo-labels from supervision targets to attention skeletons avoids overfitting noise.
 - **Targeted Refinement**: Weighted losses focus the discriminative "budget" on visually similar hard pairs rather than all classes equally.
 - **Paradigm Generalization**: Gains are independent of the specific backbone, providing a plug-and-play training recipe.
 

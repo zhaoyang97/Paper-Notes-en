@@ -19,7 +19,7 @@ content_hash: 9e69f8b7c3e6ee95
 
 **Conference**: CVPR 2026  
 **Paper**: [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Li_FastRef_Fast_Prototype_Refinement_for_Few-shot_Industrial_Anomaly_Detection_CVPR_2026_paper.html)  
-**Code**: https://github.com/liyufei25/FastRef (开源承诺)  
+**Code**: https://github.com/liyufei25/FastRef (open-source commitment)  
 **Area**: Object Detection / Industrial Anomaly Detection  
 **Keywords**: Industrial Anomaly Detection, Few-shot, Prototype Refinement, Optimal Transport, Sinkhorn  
 

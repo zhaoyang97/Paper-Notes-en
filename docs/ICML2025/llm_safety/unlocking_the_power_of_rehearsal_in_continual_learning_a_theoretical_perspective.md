@@ -53,7 +53,7 @@ Consider $T$ sequentially arriving tasks, where each task $t$ has a data distrib
 1. **Forgetting Bound Decomposition Theorem**:
 
     - **Function**: Precisely quantifying the mechanism of rehearsal in controlling forgetting.
-    - **Mechanism**: Decomposing the total forgetting into two terms: $\text{Forgetting} = \underbrace{\text{梯度偏差项}}_{\text{排练缓冲不完美}} + \underbrace{\text{优化误差项}}_{\text{SGD 本身}}$. The core insight is that the bias $\|\hat{g}_t - g^*\|$ between the gradient signal $\hat{g}_t$ provided by the samples in the rehearsal buffer and the true joint gradient $g^*$ can be reduced by increasing the buffer size. When the buffer size is infinite, the bias is zero, and rehearsal is equivalent to joint training.
+    - **Mechanism**: Decomposing the total forgetting into two terms: $\text{Forgetting} = \underbrace{\text{Gradient Bias Term}}_{\text{Imperfect Rehearsal Buffer}} + \underbrace{\text{Optimization Error Term}}_{\text{SGD Itself}}$. The core insight is that the bias $\|\hat{g}_t - g^*\|$ between the gradient signal $\hat{g}_t$ provided by the samples in the rehearsal buffer and the true joint gradient $g^*$ can be reduced by increasing the buffer size. When the buffer size is infinite, the bias is zero, and rehearsal is equivalent to joint training.
     - **Design Motivation**: This decomposition reveals the fundamental reason behind the effectiveness of rehearsal—it is not merely simple "data replay" but a systematic correction of the gradient direction.
 
 2. **Precise Relationship Between Buffer Size and Forgetting**:

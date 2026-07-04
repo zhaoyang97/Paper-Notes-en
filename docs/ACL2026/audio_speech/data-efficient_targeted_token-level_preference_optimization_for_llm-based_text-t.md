@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Data-efficient Targeted Token-level Preference Optimization for LLM-based Text-to-Speech
 description: >-
-  [ACL 2026][Audio & Speech][TKTO] To address the challenge of aligning ambiguous pronunciations in LLM-based TTS (e.g., the Japanese word "辛い" can be read as both *karai* and *tsurai*), the authors propose TKTO. This method first estimates the importance weight $w_t$ for each token using two contrastive KTO models trained with swapped labels. It then decomposes the utterance-level value function of KTO into token-level components and aggregates them with weights. This achieves…
+  [ACL 2026][Audio & Speech][TKTO] To address the challenge of aligning ambiguous pronunciations in LLM-based TTS (e.g., the Japanese word "karai/tsurai" can be read as both *karai* and *tsurai*), the authors propose TKTO. This method first estimates the importance weight $w_t$ for each token using two contrastive KTO models trained with swapped labels. It then decomposes the utterance-level value function of KTO into token-level components and aggregates them with weights. This achieves…
 tags:
   - "ACL 2026"
   - "Audio & Speech"
@@ -24,12 +24,12 @@ content_hash: 2f7fe988438603cf
 **Keywords**: TKTO, KTO, Unpaired Preference, token-level reward, Japanese ambiguous pronunciation
 
 ## TL;DR
-To address the challenge of aligning ambiguous pronunciations in LLM-based TTS (e.g., the Japanese word "辛い" can be read as both *karai* and *tsurai*), the authors propose TKTO. This method first estimates the importance weight $w_t$ for each token using two contrastive KTO models trained with swapped labels. It then decomposes the utterance-level value function of KTO into token-level components and aggregates them with weights. This achieves both "no paired data required" and "automatic targeting of objective tokens," increasing Japanese pronunciation accuracy from 0.668 to 0.958 (+39%) and reducing CER by 54%.
+To address the challenge of aligning ambiguous pronunciations in LLM-based TTS (e.g., the Japanese word "karai/tsurai" can be read as both *karai* and *tsurai*), the authors propose TKTO. This method first estimates the importance weight $w_t$ for each token using two contrastive KTO models trained with swapped labels. It then decomposes the utterance-level value function of KTO into token-level components and aggregates them with weights. This achieves both "no paired data required" and "automatic targeting of objective tokens," increasing Japanese pronunciation accuracy from 0.668 to 0.958 (+39%) and reducing CER by 54%.
 
 ## Background & Motivation
 **Background**: LLM-based TTS (e.g., CosyVoice2, F5-TTS) has widely adopted DPO-series preference optimization (Zhang et al. 2025, Tian et al. 2025) to improve intelligibility and speaker similarity, bypassing the rigid rules of traditional G2P converters.
 
-**Limitations of Prior Work**: There are two major bottlenecks for ambiguous pronunciation scenarios (e.g., Japanese "辛い", kanji heteronyms, names of people and places): (i) **Requirement for paired data**: DPO requires the simultaneous existence of "correct pronunciation + incorrect pronunciation" samples for the same sentence. However, actual TTS outputs are often "entirely correct" or "entirely incorrect." Paper statistics show that 89.5% of sentences have only single-sided samples, while only 10.5% have complete pairs; (ii) **Utterance-level optimization**: Pronunciation issues are inherently char/token-level, but DPO treats the entire utterance as a single label, diluting the target signal across hundreds of tokens.
+**Limitations of Prior Work**: There are two major bottlenecks for ambiguous pronunciation scenarios (e.g., Japanese *karai/tsurai*, kanji heteronyms, names of people and places): (i) **Requirement for paired data**: DPO requires the simultaneous existence of "correct pronunciation + incorrect pronunciation" samples for the same sentence. However, actual TTS outputs are often "entirely correct" or "entirely incorrect." Paper statistics show that 89.5% of sentences have only single-sided samples, while only 10.5% have complete pairs; (ii) **Utterance-level optimization**: Pronunciation issues are inherently char/token-level, but DPO treats the entire utterance as a single label, diluting the target signal across hundreds of tokens.
 
 **Key Challenge**: Fine-grained signals (should be at the token level and usable with unpaired data) vs. existing preference optimizations (utterance-level + mandatory pairing). The latter directly limits sample efficiency and alignment precision.
 
@@ -42,7 +42,7 @@ To address the challenge of aligning ambiguous pronunciations in LLM-based TTS (
 ## Method
 
 ### Overall Architecture
-LLM-based TTS systems struggle with alignment when encountering ambiguous pronunciations (e.g., "辛い" can be *karai* or *tsurai*). This is due to two factors: pronunciation errors are token-level, yet 89.5% of real-world data consists of single-sided "all-correct" or "all-incorrect" samples that cannot be paired. TKTO solves these pain points in two steps: Step 1 trains two contrastive KTO models, $\pi^+$ (original labels) and $\pi^-$ (desirable ↔ undesirable swapped), on the same unpaired data. The log-ratio of the two is used to estimate the importance weight $w_t$ for each token, automatically locating tokens that "truly decide pronunciation correctness." Step 2 decomposes the original utterance-level sigmoid value of KTO into token-level $v_t$, which are then weighted by $w_t$ and summed as the loss. The base model is CosyVoice2 (0.5B), with only the preference optimization layer trained, leaving the vocoder untouched.
+LLM-based TTS systems struggle with alignment when encountering ambiguous pronunciations (e.g., *karai/tsurai* can be *karai* or *tsurai*). This is due to two factors: pronunciation errors are token-level, yet 89.5% of real-world data consists of single-sided "all-correct" or "all-incorrect" samples that cannot be paired. TKTO solves these pain points in two steps: Step 1 trains two contrastive KTO models, $\pi^+$ (original labels) and $\pi^-$ (desirable ↔ undesirable swapped), on the same unpaired data. The log-ratio of the two is used to estimate the importance weight $w_t$ for each token, automatically locating tokens that "truly decide pronunciation correctness." Step 2 decomposes the original utterance-level sigmoid value of KTO into token-level $v_t$, which are then weighted by $w_t$ and summed as the loss. The base model is CosyVoice2 (0.5B), with only the preference optimization layer trained, leaving the vocoder untouched.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
@@ -67,7 +67,7 @@ flowchart TD
 
 **1. KTO Contrastive LLM + Token-level Importance Estimation: Automatically identifying critical tokens deciding quality without token labeling**
 
-Manual token-level preference labeling is extremely costly, and paired data is scarce. TKTO's solution is to train two models with non-shared parameters on the "same data with flipped labels": $\pi^+$ uses the original desirable/undesirable labels, while $\pi^-$ swaps them. For each generated token, the weight is calculated as $w_t = \exp\left(\mu\cdot \text{clamp}\left(\log\frac{\pi^+(y_t\mid x, y_{<t})}{\pi^-(y_t\mid x, y_{<t})}, L, U\right)\right)$, where $\mu>0$ for desirable samples and $\mu<0$ for undesirable samples, and $[L,U]$ is the clipping range. The intuition is clear: if a token has a high probability under the positive model and a low probability under the negative model, it is critical for distinguishing quality, and its weight is amplified. If probabilities are similar, it is irrelevant to preference and the weight approaches 1. This effectively distills a token-level reward using contrastive KTO in an unpaired setting without additional labeling. Tests show that for the target character "辛", the reward for desirable tokens is 0.22 (higher than the sentence average of 0.12), and -1.54 for undesirable tokens, resulting in a 12.8× automatic amplification.
+Manual token-level preference labeling is extremely costly, and paired data is scarce. TKTO's solution is to train two models with non-shared parameters on the "same data with flipped labels": $\pi^+$ uses the original desirable/undesirable labels, while $\pi^-$ swaps them. For each generated token, the weight is calculated as $w_t = \exp\left(\mu\cdot \text{clamp}\left(\log\frac{\pi^+(y_t\mid x, y_{<t})}{\pi^-(y_t\mid x, y_{<t})}, L, U\right)\right)$, where $\mu>0$ for desirable samples and $\mu<0$ for undesirable samples, and $[L,U]$ is the clipping range. The intuition is clear: if a token has a high probability under the positive model and a low probability under the negative model, it is critical for distinguishing quality, and its weight is amplified. If probabilities are similar, it is irrelevant to preference and the weight approaches 1. This effectively distills a token-level reward using contrastive KTO in an unpaired setting without additional labeling. Tests show that for the target character "karai/tsurai", the reward for desirable tokens is 0.22 (higher than the sentence average of 0.12), and -1.54 for undesirable tokens, resulting in a 12.8× automatic amplification.
 
 **2. Token-level KTO Value Function: Splitting sigmoid values from the utterance level to each token**
 
@@ -83,7 +83,7 @@ Standard KTO is used for training contrastive LLMs. In the TKTO stage, contrasti
 ## Key Experimental Results
 
 ### Main Results
-A test set of 5,000 Japanese sentences containing "辛い" was used. Acc (accuracy of the target character pronunciation), CER, and Bad (ratio of CER > 0.3) are reported for female and male speakers. Selected from Table 1:
+A test set of 5,000 Japanese sentences containing the ambiguous word *karai/tsurai* was used. Acc (accuracy of the target character pronunciation), CER, and Bad (ratio of CER > 0.3) are reported for female and male speakers. Selected from Table 1:
 
 | Model / Data Setup | Female Acc ↑ | Female CER ↓ | Male Acc ↑ | Male CER ↓ |
 |------------------|-----------:|----------:|-----------:|----------:|
@@ -114,7 +114,7 @@ NMOS subjective scores (Table 2): Base 4.09 < KTO 4.17 < TKTO 4.21. ABX preferen
 ### Key Findings
 - **Token-level weighting is more valuable than changing data**: Under identical unpaired data, adding token weights improves Acc by 0.6–1.6 pt over vanilla KTO and reduces CER. Directing weights to "decisive tokens" consistently improves performance even at the same data scale.
 - **Training dynamics**: TKTO only increases the log-likelihood of desirable tokens (Figure 3), whereas SFT increases the likelihood for undesirable tokens as well. This indicates that TKTO gradients are more focused and safer.
-- **Token weights automatically locate target characters**: Without being told that "辛" is critical, the model assigns an average weight at that position 12.8× the sentence average. Case studies show weights for other kanji near 1, proving $\pi^+/\pi^-$ effectively performs implicit token attribution.
+- **Token weights automatically locate target characters**: Without being told that the target kanji is critical, the model assigns an average weight at that position 12.8× the sentence average. Case studies show weights for other kanji near 1, proving $\pi^+/\pi^-$ effectively performs implicit token attribution.
 - **Paired data as a bottleneck**: DPO can only use 1.5K pairs, whereas KTO/TKTO unpaired can utilize 9K. This 6× data dividend is directly reflected in the Acc jump from 0.668 to 0.958.
 
 ## Highlights & Insights
@@ -123,7 +123,7 @@ NMOS subjective scores (Table 2): Base 4.09 < KTO 4.17 < TKTO 4.21. ABX preferen
 - In TTS, where G2P has long dominated, this method "lets the LLM learn which characters are most prone to error and weights them in training." This self-attributed curriculum concept has transfer potential in any task where local outputs determine global quality (e.g., speech, OCR, code).
 
 ## Limitations & Future Work
-- Evaluation is limited to Japanese, one target character ("辛"), 5,000 sentences, and three annotators; it lacks generalization testing across multiple languages or ambiguous characters.
+- Evaluation is limited to Japanese, one target character (*karai/tsurai*), 5,000 sentences, and three annotators; it lacks generalization testing across multiple languages or ambiguous characters.
 - Contrastive LLM training assumes "same data, flipped labels"; when desirable/undesirable boundaries are blurred (e.g., candidates are similar), $\pi^-$ may fail to learn stable signals. Calibration of clamp $[L,U]$ and $\mu$ relies on manual tuning.
 - The full process only tunes the TTS decoder without end-to-end optimization of the vocoder or text G2P, possibly leaving residual biases from upstream G2P.
 - NMOS and ABX only compared Base/KTO/TKTO, lacking subjective blind tests against gpt-4o-mini-tts and other closed-source models.

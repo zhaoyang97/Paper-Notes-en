@@ -18,7 +18,7 @@ content_hash: 61a72d29e633b028
 # Thinking in 360°: Humanoid Visual Search in the Wild
 
 **Conference**: CVPR 2026  
-**论文**: [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Yu_Thinking_in_360deg_Humanoid_Visual_Search_in_the_Wild_CVPR_2026_paper.html)  
+**Paper**: [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Yu_Thinking_in_360deg_Humanoid_Visual_Search_in_the_Wild_CVPR_2026_paper.html)  
 **Code**: https://humanoid-vstar.github.io  
 **Area**: Multimodal VLM / LLM Reasoning / Embodied Visual Search  
 **Keywords**: Humanoid Visual Search, 360° Panorama, Visual Chain-of-Thought, Embodied Reasoning, Post-training  

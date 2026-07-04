@@ -16,7 +16,6 @@ date: 2026-05-08
 content_hash: 044e766e0370abb5
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # A2Z-10M+: Geometric Deep Learning with A-to-Z BRep Annotations for AI-Assisted CAD Modeling and Reverse Engineering
 
 **Conference**: CVPR 2025  

@@ -19,7 +19,7 @@ content_hash: 239430db47338f99
 
 **Conference**: ICLR 2026  
 **OpenReview**: [https://openreview.net/forum?id=3C1U86DcW4](https://openreview.net/forum?id=3C1U86DcW4)  
-**论文**: [OpenReview Forum](https://openreview.net/forum?id=3C1U86DcW4)  
+**Paper**: [OpenReview Forum](https://openreview.net/forum?id=3C1U86DcW4)  
 **Code**: https://github.com/SimonZhan-code/DT-CORL  
 **Area**: Reinforcement Learning  
 **Keywords**: Offline Reinforcement Learning, Delay-Robust Control, belief state, Transformer, D4RL  

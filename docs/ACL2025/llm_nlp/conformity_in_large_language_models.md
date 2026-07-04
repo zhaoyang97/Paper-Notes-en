@@ -56,7 +56,7 @@ The experiment consists of three steps:
 
     - **Function**: Constructs prompts simulating multi-party conversations, casting the LLM as one of the experiment participants.
     - **Mechanism**: The prompt template is "You are one of the participants in an experiment. There are N other participants who have given their answers...". The answers of the "other participants" are configured by the experimenter to be identical incorrect or conflicting answers, thereby exerting majority pressure. The conformity rate is defined as:
-    $\text{Conformity Rate} = \frac{\text{改变答案的次数}}{\text{总测试次数}}$
+    $\text{Conformity Rate} = \frac{\text{Number of Answer Changes}}{\text{Total Number of Tests}}$
     - **Design Motivation**: Directly mimicking classic social psychology experiments allows for a direct comparison with human data. By controlling variables such as the number of majority members and the naturalness of expressions, the study systematically investigates the influencing factors.
 
 2. **Analysis of the Relationship Between Uncertainty and Conformity**:

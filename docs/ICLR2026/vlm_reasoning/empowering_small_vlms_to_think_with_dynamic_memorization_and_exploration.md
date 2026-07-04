@@ -41,21 +41,21 @@ DyME transforms SFT and GRPO from a "two-stage sequential" process into a "step-
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
 flowchart TD
-    IN["输入：图像 x + 问题"] --> SAMP["策略模型每步采样<br/>K 个回复"]
-    SAMP --> SW{"动态切换规则<br/>K 个里至少 1 个答案正确？"}
-    SW -->|"是·已有可靠信号"| GRPO["GRPO 探索模式<br/>相对优势 + 思维奖励 r_t"]
-    SW -->|"否·K 个全错"| SFT["SFT 记忆模式<br/>参考响应喂正确行为"]
-    GRPO --> UPD["统一梯度更新<br/>SFT 是 GRPO 特例，同一目标二选一"]
+    IN["Input: image x + question"] --> SAMP["Policy model samples<br/>K responses per step"]
+    SAMP --> SW{"Dynamic switching rule<br/>At least 1 correct answer among K?"}
+    SW -->|"Yes · reliable signal exists"| GRPO["GRPO exploration mode<br/>relative advantage + thinking reward r_t"]
+    SW -->|"No · all K wrong"| SFT["SFT memorization mode<br/>reference response feeds correct behavior"]
+    GRPO --> UPD["Unified gradient update<br/>SFT is a special case of GRPO, one objective chosen"]
     SFT --> UPD
-    UPD -->|"下一训练步"| SAMP
-    subgraph VS["视觉检查器与精炼器（视觉监督）"]
+    UPD -->|"next training step"| SAMP
+    subgraph VS["Visual Checker and Refiner (Visual Supervision)"]
         direction TB
-        CHK["视觉检查器<br/>按视觉事实 I_c 给思维轨迹打分"]
-        REF["视觉精炼器<br/>合成视觉锚定参考响应"]
+        CHK["Visual Checker<br/>scores thinking traces against visual facts I_c"]
+        REF["Visual Refiner<br/>synthesizes visually grounded reference responses"]
     end
-    GRPO -.->|"高分轨迹入池"| REF
-    CHK -.->|"作为思维奖励"| GRPO
-    REF -.->|"作为 SFT 目标"| SFT
+    GRPO -.->|"high-score traces enter pool"| REF
+    CHK -.->|"used as thinking reward"| GRPO
+    REF -.->|"used as SFT target"| SFT
 ```
 
 ### Key Designs

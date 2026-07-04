@@ -114,7 +114,7 @@ To avoid running generation every time to find redundant tokens, the authors tra
 
 ## Limitations & Future Work
 - Prompts are focused on object-centric simple grammatical cases; generalization to typos, rare words, or abstract concepts remains to be explored.
-- While VLM evaluation shows high consistency with human judgment (评估 coefficients 0.868), it remains an approximate assessment.
+- While VLM evaluation shows high consistency with human judgment (evaluation coefficients 0.868), it remains an approximate assessment.
 - The mechanism of representative token formation in bidirectional encoders (e.g., why "T" becomes the representative token in "T-shirt") is still an open question.
 - The redundant token classifier was only trained and evaluated on FLUX-schnell; transferability to other T2I models requires verification.
 

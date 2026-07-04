@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: 2bcb6d05d909b8a3
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # LaCache: Ladder-Shaped KV Caching for Efficient Long-Context Modeling of Large Language Models
 
 **Conference**: ICML2025  

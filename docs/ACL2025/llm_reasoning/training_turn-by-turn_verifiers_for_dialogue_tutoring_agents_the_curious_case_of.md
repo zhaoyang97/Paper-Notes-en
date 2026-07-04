@@ -16,7 +16,6 @@ date: 2026-05-08
 content_hash: 433ffe529f7858c5
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Training Turn-by-Turn Verifiers for Dialogue Tutoring Agents: The Curious Case of LLMs as Your Coding Tutors
 
 **Conference**: ACL 2025  

@@ -125,7 +125,7 @@ Removing the physics loss $\mathcal{L}_{phy}$ results in consistent performance 
 
 ## Related Work & Insights
 - **vs HIMO-Gen**: HIMO-Gen treats human and object as pure kinematic signals; PAMotion incorporates physical reasoning through $\mathcal{L}_{phy}$ and fine-stage refinement, proving more robust as object count increases.
-- **vs Physics-based HOI**: Traditional physics-based methods use explicit force modeling and simulation, which are computationally heavy. PAMotion offers a middle ground by using acceleration as a contact proxy, remaining端-to-end trainable and lightweight at the cost of full physical fidelity.
+- **vs Physics-based HOI**: Traditional physics-based methods use explicit force modeling and simulation, which are computationally heavy. PAMotion offers a middle ground by using acceleration as a contact proxy, remaining end-to-end trainable and lightweight at the cost of full physical fidelity.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐ Using acceleration to infer contact states and converting it into a gated loss is an intuitive and effective bridge between kinematics and physics.

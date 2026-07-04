@@ -15,11 +15,10 @@ date: 2026-05-08
 content_hash: 147312d2752a104d
 ---
 
-<!-- 由 tmp/gen_cvf_stubs.py 自动生成（CVF-only，无 arXiv） -->
 # EffectMaker: Unifying Reasoning and Generation for Customized Visual Effect Creation
 
 **Conference**: CVPR 2026  
-**论文**: [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Yang_EffectMaker_Unifying_Reasoning_and_Generation_for_Customized_Visual_Effect_Creation_CVPR_2026_paper.html)  
+**Paper**: [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Yang_EffectMaker_Unifying_Reasoning_and_Generation_for_Customized_Visual_Effect_Creation_CVPR_2026_paper.html)  
 **Code**: [Project Page](https://effectmaker.github.io)  
 **Area**: Video Generation  
 **Keywords**: Visual Effect Generation, Reference-driven, MLLM Reasoning, Diffusion Transformer, In-context Learning

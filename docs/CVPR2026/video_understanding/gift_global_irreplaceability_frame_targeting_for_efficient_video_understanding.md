@@ -128,7 +128,7 @@ Breakdown of two core modules (LLaVA-Video, 32 frames) and sensitivity of batch 
 ### Key Findings
 - **Directional Diversity is the primary engine**: Changing to relevance-independent standard diversity causes performance on LongVideoBench to drop from 103.8% to 101.7%. Traditional diversity selects noise; conditioning diversity on relevance is key to robustness.
 - **BAR primarily assists temporal tasks**: Removing it drops MLVU by 2.7%. It solves the problem where static scoring over-suppresses neighbors, forcing the selection of noisy frames.
-- **越缺帧越占便宜 (Higher relative gain at low budgets)**: At 4 frames, GIFT retains 93.9% performance because its global perspective is naturally robust to redundancy and noise.
+- **Higher relative gain at low budgets**: At 4 frames, GIFT retains 93.9% performance because its global perspective is naturally robust to redundancy and noise.
 
 ## Highlights & Insights
 - **"Directionalizing" diversity is the true turning point**: Traditional methods aim for "being different from everyone." GIFT changes this to "I only look for substitutes among those more relevant than me," cleanly separating visual novelty from informational uniqueness.

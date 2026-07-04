@@ -47,16 +47,16 @@ This paper does not propose a new architecture but designs a suite of large-scal
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["10T-token 语料<br/>采集→清洗→300+指标准入"] --> B["拆 Code / Code-NL<br/>纯程序 vs 代码-文本混合，切七域"]
-    B --> C["MoE 从头预训练<br/>固定总 token 预算"]
-    C --> D["固定预算消融<br/>移除某域→其余域按比例补齐"]
-    D -->|保留 Code-NL，移除纯 Code| E["w/o code"]
-    D -->|移除 Math| F["w/o math"]
-    D -->|Math 内替换| G["认知脚手架<br/>FastText f≥τ 筛结构化样本"]
-    E --> H["五维能力评估"]
+    A["10T-token corpus<br/>Collect → clean → 300+ metric admission"] --> B["Split Code / Code-NL<br/>Pure code vs. code-text mixed, divided into 7 domains"]
+    B --> C["MoE pre-training from scratch<br/>Fixed total token budget"]
+    C --> D["Fixed-budget ablation<br/>Remove one domain → remaining domains scaled up proportionally"]
+    D -->|Keep Code-NL, remove pure Code| E["w/o code"]
+    D -->|Remove Math| F["w/o math"]
+    D -->|Replace within Math| G["Cognitive scaffolding<br/>FastText f≥τ filters structured samples"]
+    E --> H["Five-dimensional capability evaluation"]
     F --> H
     G --> H
-    H --> I["MoE 专家路由分析<br/>JS 散度看激活偏移"]
+    H --> I["MoE expert routing analysis<br/>JS divergence examines activation shift"]
 ```
 
 ### Key Designs

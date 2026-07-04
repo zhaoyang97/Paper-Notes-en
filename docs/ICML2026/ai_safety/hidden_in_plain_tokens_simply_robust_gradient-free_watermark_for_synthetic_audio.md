@@ -49,7 +49,7 @@ The method solves the core issue of exponential watermark signal decay caused by
 flowchart TD
     subgraph OFF["Confusion Matrix-based Community Detection Vocabulary Distillation (Offline)"]
         direction TB
-        A["Unlabeled Audio Dataset"] --> B["逐条 E→D→E Re-encoding<br/>Collect Token Confusion Counts"]
+        A["Unlabeled Audio Dataset"] --> B["Per-sample E→D→E Re-encoding<br/>Collect Token Confusion Counts"]
         B --> C["Confusion Matrix M (Weighted Directed Graph)"]
         C --> D["Leiden Community Detection<br/>Maximize Modularity"]
         D --> E["Token→Cluster Map C<br/>Vocabulary contraction factor c"]

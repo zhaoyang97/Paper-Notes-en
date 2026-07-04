@@ -57,7 +57,7 @@ The core of Ground-V is an automated data generation workflow: (1) identifying f
 
 ### Key Designs
 
-1. **五大挑战维度的数据设计**:
+1. **Data Design across Five Challenge Dimensions**:
 
     - Function: Systematically cover key difficulties in real-world referring expression segmentation.
     - Mechanism:
@@ -68,13 +68,13 @@ The core of Ground-V is an automated data generation workflow: (1) identifying f
       - **Part Reference**: Target components that are parts of an object (e.g., "the button of the microwave").
     - Design Motivation: To cover the complete instruction spectrum from simple to complex, and from concrete to abstract.
 
-2. **自动化数据生成管道**:
+2. **Automated Data Generation Pipeline**:
 
     - Function: Generate large-scale instruction-response pairs with pixel-level annotations.
     - Mechanism: Handcrafting 3-shot examples for each dimension, using Claude 3 Sonnet to generate new instruction-response pairs based on the query image, and associating them with existing COCO segmentation annotations. For the test set, Claude 3.5 Sonnet is used for secondary validation, followed by human audit.
     - Design Motivation: Automating data generation utilizing the powerful language capabilities of teacher VLMs to minimize manual annotation requirements.
 
-3. **无缝集成到现有模型**:
+3. **Seamless Integration into Existing Models**:
 
     - Function: Plug-and-play integration of Ground-V as extra training data.
     - Mechanism: Keeping the original training hyperparameters and evaluation settings of LISA/PSALM unchanged, and simply incorporating Ground-V into the training data.

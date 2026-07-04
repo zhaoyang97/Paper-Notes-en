@@ -55,33 +55,33 @@ Key innovation: **Reconstructing the degradation residual instead of the clean i
 
 ### Key Designs
 
-1. **Prompt Pool 构建 Weather-Prompts**:
+1. **Prompt Pool Construction of Weather-Prompts**:
 
     - Function: Design a prompt pool $\mathcal{P} = \{\mathcal{P}_s^i\}_{i=1}^N$ containing $N=20$ sub-prompts, where each sub-prompt $\mathcal{P}_s^i \in \mathbb{R}^{L_s \times D}$ ($L_s=64$ tokens). The network autonomously selects the top-$k$ ($k=5$) most relevant sub-prompts based on the input degraded image, concatenating them to construct the weather-prompt $\mathcal{P}_w$.
     - Mechanism: Each sub-prompt is paired with a learnable key $\mathcal{K}_s^i \in \mathbb{R}^{1 \times D}$. The degradation residual embedding $\mathcal{F}_e$ is processed by spatial mean pooling to obtain $\mathcal{F}_e^{mean} \in \mathbb{R}^{1 \times D}$. Its cosine similarity $\delta(\mathcal{K}_s^i, \mathcal{F}_e)$ with each key is computed, and the top-$k$ most similar sub-prompts are selected and concatenated: $\mathcal{P}_w = \bigcup_{i=1}^k \mathcal{K}_s^i$, where $\delta(\mathcal{K}_s^i, \mathcal{F}_e) \geq \delta(\mathcal{K}_s^{i+1}, \mathcal{F}_e)$.
     - Design Motivation: Different weather degradations share both **commonalities** (e.g., fog occlusion, reduced contrast) and **differences** (e.g., rain streaks vs. snow particles). The prompt pool allows the network to capture commonalities by sharing certain sub-prompts (e.g., rain and raindrops sharing similar activation frequencies for some sub-prompts) while modeling differences using independent sub-prompts.
     - t-SNE visualization validation: Weather-prompts constructed under different weather conditions not only maintain their respective clustering characteristics but also exhibit overlap across different weathers.
 
-2. **Depth-Anything 约束的 General Prompts**:
+2. **Depth-Anything Constrained General Prompts**:
 
     - Function: Design a set of general prompts $\mathcal{P}_g \in \mathbb{R}^{L_g \times D}$ ($L_g=256$ tokens), which interact with the intermediate features $\mathcal{F}_d$ of Depth-Anything via cross-attention to obtain scene-aware $\mathcal{P}_{gd} = \text{softmax}(\frac{\mathcal{Q}_g \mathcal{K}_d^T}{\sqrt{\mathcal{D}}}) \mathcal{V}_d$.
     - Mechanism: t-SNE visualization shows that scene features of clean images share commonalities in the latent space (being distinctly different from degradation features). Depth-Anything remains robust in depth estimation even under extreme weather degradations. Its intermediate layer features possess **degradation invariance**, allowing them to reliably represent scene structures.
     - Design Motivation: The robustness of intermediate features from DINO, DINOv2, and Depth-Anything was compared, with Depth-Anything yielding the best results (as it was trained for depth estimation on large-scale datasets on top of DINOv2, gaining additional robustness against degradations).
     - Architecture selection: Depth-Anything ViT-S (only 115 MB) is used to achieve the best balance between performance and memory usage.
 
-3. **两阶段 Cross-Attention 注入**:
+3. **Two-Stage Cross-Attention Injection**:
 
     - Function: Inject weather-prompts and general prompts into the latent features of the diffusion network in two separate stages via cross-attention.
     - Formulation: $\mathcal{F}_e' = \text{CA}(\mathcal{F}_e, \mathcal{P}_w)$, $\hat{\mathcal{F}_e} = \text{CA}(\mathcal{F}_e', \mathcal{P}_{gd})$
     - Design Motivation: Similar to the injection of text embeddings in Stable Diffusion, degradation information is processed first, followed by the integration of scene information, which is natural and efficient.
 
-4. **对比 Prompt Loss (Contrastive Prompt Loss)**:
+4. **Contrastive Prompt Loss**:
 
     - Function: Constrain the representations of both prompt types—the keys of weather-prompts should be far from the keys of general prompts (serving as mutual negatives), while the keys of general prompts should be close to Depth-Anything features (positives).
     - Formulation: $\mathcal{L}_{cp} = \frac{1}{b} \frac{1}{k} \sum_{j=1}^b \sum_{i=1}^k [\gamma(\mathcal{K}_{gd}, \mathcal{F}_d^{mean}) - \gamma(\mathcal{K}_s^i, \mathcal{K}_{gd})]$, where $\gamma(\cdot) = 1 - \delta(\cdot)$.
     - Design Motivation: The two types of prompts have fundamentally different design goals (degradation modeling vs. scene modeling) and naturally act as negative pairs for each other, eliminating the need to construct additional negative samples.
 
-5. **退化残差重建目标**:
+5. **Degradation Residual Reconstruction Objective**:
 
     - Function: Modify the reconstruction target of diffusion from the clean image $\mathbf{x}$ to the degradation residual $\mathbf{r}_d = \mathbf{x} - \mathbf{y}$.
     - Training objective: $\mathcal{L}_{res} = \mathbb{E}\|\boldsymbol{\epsilon} - \boldsymbol{\epsilon}_\theta(\sqrt{\bar{\alpha}}(\mathbf{x}-\mathbf{y}) + \sqrt{1-\bar{\alpha}}\boldsymbol{\epsilon}, \mathbf{y}, \mathbf{c})\|_2^2$

@@ -126,7 +126,7 @@ SpecBranch outperforms PEARL in all configurations, achieving 1.8×∼4.5× spee
 - **Feature Layer $K$**: Increasing $K$ beyond 4 yielded diminishing returns (1-2 tokens/s gain) while significantly increasing memory overhead; $K=4$ was chosen as the balance.
 
 ## Highlights & Insights
-- **Clean Interdisciplinary Transfer**: Mapping CPU branch prediction to SD—uncertainty as the trigger, Top-$k$ as the speculative execution, and discarding落选 (losing) branches upon verification—is executed precisely.
+- **Clean Interdisciplinary Transfer**: Mapping CPU branch prediction to SD—uncertainty as the trigger, Top-$k$ as the speculative execution, and discarding rejected (losing) branches upon verification—is executed precisely.
 - **Dimensionality Reduction for Drafting**: By splitting the complex $\gamma$-class length prediction into two easy "Hard" signals and one "Soft" signal, SpecBranch overcomes the limitations of both explicit and implicit methods.
 - **Rollback Rate as a Metric**: Quantifying RB reveals why prior parallel methods fail in weak-alignment scenarios (e.g., PEARL's 90% RB).
 - **Nearly Zero Cost**: H-RAD is a 5-minute trained MLP, requires no draft model fine-tuning, is lossless, and is easy to integrate.

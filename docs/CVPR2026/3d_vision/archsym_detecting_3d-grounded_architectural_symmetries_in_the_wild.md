@@ -116,7 +116,7 @@ While the paper lacks a traditional module-by-module ablation table, the DIRECT 
 
 ## Highlights & Insights
 - **Turning a "System Bug" into a "Labeling Signal"**: Doppelganger matching in SfM, usually treated as noise to be fixed by tools like Doppelganger++, is repurposed here as a symmetry discoverer—this "problem as a signal" perspective is highly transferable to other tasks where "ambiguity implies structure."
-- **Supervision Anchored on Model's Own Geometry**: Defining the SDF relative to VGGT's predicted point map (rather than GT geometry) ensures self-consistent predictions and consistent scale, providing an elegant way to bypass monocular scale ambiguity. This "relative dense supervision" approach could be extended to other ill-posed回归 tasks like single-view normals, planes, or depth.
+- **Supervision Anchored on Model's Own Geometry**: Defining the SDF relative to VGGT's predicted point map (rather than GT geometry) ensures self-consistent predictions and consistent scale, providing an elegant way to bypass monocular scale ambiguity. This "relative dense supervision" approach could be extended to other ill-posed regression tasks like single-view normals, planes, or depth.
 - **DETR-style Set Prediction for Symmetry Planes**: Using instance queries, bipartite matching, and FiLM conditional injection solves the multi-instance problem of "multiple symmetry planes per image," cleanly repurposing mature detection paradigms for geometric prior extraction.
 - **Plug-and-play Completion**: Detected symmetry planes are used to mirror VGGT's incomplete point clouds, "hallucinating" occluded back-side geometry and demonstrating the practical value of symmetry as a downstream geometric prior.
 

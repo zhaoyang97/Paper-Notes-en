@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: 2be7b60be3885036
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Deconstructing the Failure of Ideal Noise Correction: A Three-Pillar Diagnosis
 
 **Conference**: CVPR 2025  

@@ -115,7 +115,7 @@ Human preference for MAD-LTX-2B (values = preference rate of full model over var
 - **Decoupling is the primary driver of quality**: MAD-LTX overwhelmingly outperforms Fine-tuned LTX under identical compute, providing a convincing apples-to-apples comparison.
 - **Direct video fine-tuning triggers memorization/mode collapse**: Fine-tuned LTX 13B had 37.8% lower APD6 than MAD-LTX and 40% worse minADE6. Authors attribute this to diffusion models memorizing in pixel space, whereas MAD predicts in abstract pose space, forcing the model to learn true motion rather than spurious correlations.
 - **Pose representation is the optimal choice**: Preference rates (HDMap 78% > Panoptic Seg 74% > No noise 62%) confirm the value of scalable, 3D-aware, object-centric pose representations.
-- **Native resolution/frame rate training is essential**: Downsampling拉 high data requirements by forcing models to learn out-of-distribution priors.
+- **Native resolution/frame rate training is essential**: Downsampling raises high data requirements by forcing models to learn out-of-distribution priors.
 
 ## Highlights & Insights
 - **"Predict Dynamics, then Render Appearance" = Video Chain-of-Thought**: Abstracting the animator's animatic workflow into two-stage generation, with pose video as "reasoning drafts," is an intuitive and transferable paradigm for any "motion+appearance coupled" task.

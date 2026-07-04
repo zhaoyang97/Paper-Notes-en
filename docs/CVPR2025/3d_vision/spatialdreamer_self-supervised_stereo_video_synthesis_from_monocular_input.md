@@ -43,19 +43,19 @@ SpatialDreamer is built upon Stable Video Diffusion (SVD) and comprises four cor
 
 ### Key Designs
 
-**1. Depth-based Video Generation (DVG) — 深度引导视频数据生成**
+**1. Depth-based Video Generation (DVG) — Depth-Guided Video Data Generation**
 
 - **Function**: Self-supervisedly generates paired stereo video training data from monocular videos to address data scarcity.
 - **Mechanism**: A forward-backward rendering mechanism is employed: (a) estimate video depth; (b) render the reference-view image to the target view to generate an occlusion mask; (c) use an inpainting model to fill the occluded regions, yielding the target-view image $x_2$; (d) backward-render $x_2$ back to the original view. A key improvement is the propagation of occlusion information across adjacent frames using optical flow $u, v$ and forward-backward consistency confidence $C$: $m^t(i,j) = 1$ when $\sum_{k \in \{t-1,t+1\}} m^k(i+u,j+v) \cdot C(i,j) \geq 1$.
 - **Design Motivation**: Direct frame-by-frame rendering leads to inconsistent occlusion masks across frames, inducing jitter. By establishing inter-frame pixel correspondences via optical flow and fusing occlusion information from adjacent frames, the occluded areas are made smoother and more coherent temporally.
 
-**2. RefinerNet + 空间注意力 — 参考视角特征注入**
+**2. RefinerNet + Spatial Attention — Reference View Feature Injection**
 
 - **Function**: Learns spatial distribution discrepancies between paired views and injects reference-view features into the denoising process.
 - **Mechanism**: RefinerNet adopts the same architecture as the denoising U-Net (excluding temporal layers) and is initialized with SD2.1 weights. Feature maps $z_t$ from the denoising U-Net and $z_r$ from RefinerNet are concatenated along the height dimension before self-attention is applied, with the first half taken as the output. This allows the U-Net to adaptively learn associated features from RefinerNet within the same feature space.
 - **Design Motivation**: Compared to the ControlNet architecture, RefinerNet shares the same structure and weight initialization with U-Net, keeping both in the same feature space and allowing more natural feature fusion of paired views (experiments demonstrate that RefinerNet outperforms ControlNet).
 
-**3. Consistency Control Module — 一致性控制**
+**3. Consistency Control Module — Consistency Control**
 
 - **Function**: Simultaneously ensures geometric and temporal consistency.
 - **Mechanism**: Contains two sub-modules: (a) **TIL (Temporal Interaction Learning)**: fuses the reference frame feature $z_r^t$ with those of $N_r$ neighboring frames: $aug_r^t = \lambda \cdot \text{Attn}_{r,r} + (1-\lambda) \cdot \frac{1}{N_r}\sum_{i=1}^{N_r}\text{Attn}_{r,i}$, balancing self-attention and cross-frame attention; (b) **Stereo Deviation Strength**: quantifies the latent space discrepancy between the two views $s(z) = |z_0 - z_{ref}|$, serving as a positional embedding added to the residual blocks, and directly supervised via a stereo-aware loss $l_d = \|s(z_0) - s(\hat{z}_0)\|_2^2$.

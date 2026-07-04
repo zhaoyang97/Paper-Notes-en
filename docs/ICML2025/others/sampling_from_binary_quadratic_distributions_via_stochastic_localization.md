@@ -130,7 +130,7 @@ On three types of QUBO combinatorial optimization problems (MIS, MaxCut, MaxCliq
 
 - **SLIPS** (Grenioux et al., 2024): An SL sampling framework in the continuous domain, which this work extends theoretically to the discrete domain.
 - **GWG/PAS/DMALA**: Three representative discrete MCMC samplers enhanced by gradient information (Grathwohl 2021, Sun 2021, Zhang 2022).
-- **SK模型SL** (El Alaoui et al., 2022): Application of SL to specific models; this work generalizes it to general BQDs.
+- **SK model SL** (El Alaoui et al., 2022): Application of SL to specific models; this work generalizes it to general BQDs.
 - **DISCS** (Goshvadi et al., 2024): A benchmarking framework for discrete sampling.
 
 **Related Work & Insights**: The core idea of SL, "decomposing difficult sampling into simple subproblems," aligns with the central concept of diffusion models. Can similar theoretical tools be used to analyze the convergence of discrete diffusion models?

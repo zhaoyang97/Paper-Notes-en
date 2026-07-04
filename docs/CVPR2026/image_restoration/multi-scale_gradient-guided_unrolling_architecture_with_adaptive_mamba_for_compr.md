@@ -48,7 +48,7 @@ MambaCS consists of a sampling stage + $2t$ reconstruction stages (default $t=4$
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
     A["Input Image x"] --> B["Sampling: Block + Global Conv<br/>y = FS(FB(x))"]
-    B --> C["Initialization: Transposed Conv + ConvF<br/>得到 x⁽⁰⁾"]
+    B --> C["Initialization: Transposed Conv + ConvF<br/>to obtain x⁽⁰⁾"]
     C --> D["Multi-Scale U-Shaped Unrolling UPIN<br/>2t-stage PGD Iteration + Shuffle Up/Downsampling"]
     D --> E["HDGF High-Dimensional Gradient Fusion<br/>Multi-channel Gradient Injection (Gradient Step)"]
     E --> F["FAPO Feature-Adaptive Proximal Operator<br/>A-SSB as Learnable Sparse Basis (Proximal Step)"]

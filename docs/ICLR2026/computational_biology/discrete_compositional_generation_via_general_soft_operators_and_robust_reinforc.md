@@ -119,7 +119,7 @@ TGM variants **match or exceed** GFN/PPO/SAC in all tasks. The gap is most signi
 ## Highlights & Insights
 - **Unity via a single knob**: Unifying soft Bellman, soft mellowmax, and mellowmax using $q$ provides a continuous design space to balance the accumulation-dilution contradiction.
 - **Quantifying sampling bias**: Using $\mathrm{Acc}/\mathrm{Dil}$ and worst-case $|\Delta^T_s|$ bounds provides theoretical guarantees for why GM is better.
-- **Robust RL interpretation**: By showing GFN’s uncertainty set fails to contain the proxy reward, the paper provides a全新 theoretical reason for why deviating from reward-proportional sampling is necessary.
+- **Robust RL interpretation**: By showing GFN's uncertainty set fails to contain the proxy reward, the paper provides a completely new theoretical reason for why deviating from reward-proportional sampling is necessary.
 - **Backward compatibility**: TGM reduces to GFN at $q=0$, allowing it to work with existing GFN tricks like temperature conditioning with minimal migration cost.
 
 ## Limitations & Future Work
@@ -138,7 +138,7 @@ TGM variants **match or exceed** GFN/PPO/SAC in all tasks. The gap is most signi
 - Novelty: ⭐⭐⭐⭐⭐ Unifying three soft RL operators via $q$ with an original Robust RL interpretation.
 - Experimental Thoroughness: ⭐⭐⭐⭐ Solid coverage across synthetic and real biological tasks with hyperparameter sweeps; however, strictly in-silico.
 - Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, well-structured derivation, and good intuition.
-- Value: ⭐⭐⭐⭐ Plug-and-play超集 for GFN with high practical utility for scientific discovery.
+- Value: ⭐⭐⭐⭐ Plug-and-play superset for GFN with high practical utility for scientific discovery.
 
 <!-- RELATED:START -->
 

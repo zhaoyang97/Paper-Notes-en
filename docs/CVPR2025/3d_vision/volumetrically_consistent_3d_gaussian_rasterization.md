@@ -49,19 +49,19 @@ The input consists of the 3D Gaussian scene representation (density $\kappa_i$, 
 
 ### Key Designs
 
-1. **无 splatting 的 Alpha Blending 推导**:
+1. **Alpha Blending Derivation without Splatting**:
 
     - **Function**: Prove that the volumetric rendering equation can be expressed as alpha blending without using splatting
     - **Mechanism**: Substitute the density field $\sigma(\mathbf{x}) = \sum_i \kappa_i G_i(\mathbf{x})$ into the volume rendering equation, assuming the Gaussians do not overlap and are sorted from front to back to separate each Gaussian's contribution. Utilizing the differential property of exponential transmittance $dT(t_{in}, t) = -T(t_{in}, t) \sigma(\mathbf{r}(t))$, it is proved that the inner integral is exactly equal to $\alpha_i = 1 - \bar{T}_i$. This yields an alpha blending equation structurally identical to 3DGS, but with a different definition for $\alpha_i$.
     - **Design Motivation**: Shows that the difference lies solely in how alpha values are calculated. Thus, replacing the alpha computation is sufficient to bring volumetric consistency into any 3DGS framework, enabling a drop-in replacement with minimal modifications.
 
-2. **解析透射率计算**:
+2. **Analytic Transmittance Computation**:
 
     - **Function**: Accurately calculate the accumulated opacity of each 3D Gaussian along the ray
     - **Mechanism**: The integration of a 3D Gaussian along the ray direction can be simplified to a 1D Gaussian integration. First, project the 3D Gaussian along the ray direction to obtain the 1D parameters: mean $\gamma_j = (\boldsymbol{\mu}_j - \mathbf{o})^T \Sigma_j^{-1} \mathbf{d} / (\mathbf{d}^T \Sigma_j^{-1} \mathbf{d})$ and variance $\beta_j = 1/\sqrt{\mathbf{d}^T \Sigma_j^{-1} \mathbf{d}}$. Then, integrating the 1D Gaussian yields an error function, which simplifies to $\bar{T}_j = \exp(-\kappa_j G_j(\gamma_j \mathbf{d}) \sqrt{2\pi} \beta_j)$ under the assumption of infinite support.
     - **Design Motivation**: 3DGS splatting discards scale information along the z-direction (along the ray), leading to identical rendering results for Gaussians of different z-scales, which is physically unrealistic. Analytical integration preserves the impact of the z-scale, where a larger $\beta_j$ (wider in the z-direction) results in a larger alpha.
 
-3. **密度重参数化**:
+3. **Density Reparameterization**:
 
     - **Function**: Address the gradient vanishing problem in optimizing high-density Gaussians
     - **Mechanism**: Reparameterize the density $\kappa$ as $\kappa = -\log(1 - 0.99\theta) \cdot \frac{1}{3}(\frac{1}{s_x} + \frac{1}{s_y} + \frac{1}{s_z})$, where $\theta \in [0,1]$. This naturally assigns higher density (more opaque) to smaller Gaussians and lower density to larger Gaussians, preventing large Gaussians from creating blurry occlusions. Meanwhile, adaptive density refinement strategies are modified: halve the density during split/clone, and prune low-density points.

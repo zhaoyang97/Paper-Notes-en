@@ -162,7 +162,7 @@ Fine-tuning Qwen2.5-7B: fp32-SFT 62.6, 4bit-base 62.5, **4bit-GRASP 62.8**, demo
 - **vs 4-bit Shampoo (Wang et al. 2024)**: Both target spectral/matrix-op optimizers, but Shampoo compresses the second-order preconditioner. This is the first work targeting Muon's first-order momentum orthogonalization.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First 4-bit Muon work with deep insights into error归因 (subspace amplification).
+- Novelty: ⭐⭐⭐⭐⭐ First 4-bit Muon work with deep insights into error attribution (subspace amplification).
 - Experimental Thoroughness: ⭐⭐⭐⭐ Extensive pre-training and fine-tuning, though pre-training stops at 1.1B.
 - Writing Quality: ⭐⭐⭐⭐⭐ Extremely logical "Diagnosis—Decomposition—Design" flow.
 - Value: ⭐⭐⭐⭐ Practical value is high; 28% memory savings with zero loss is ready for production.

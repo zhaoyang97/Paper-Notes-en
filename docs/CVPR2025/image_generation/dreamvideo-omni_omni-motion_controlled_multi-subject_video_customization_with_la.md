@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: 9771d8316274bd79
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # DreamVideo-Omni: Omni-Motion Controlled Multi-Subject Video Customization with Latent Identity Reinforcement Learning
 
 **Conference**: CVPR 2025  

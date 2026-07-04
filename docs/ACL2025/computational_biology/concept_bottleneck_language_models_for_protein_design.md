@@ -46,19 +46,19 @@ The model consists of three modules: (1) a concept encoder that extracts require
 
 ### Key Designs
 
-1. **生物学概念定义与量化**:
+1. **Biological Concept Definition and Quantification**:
 
     - **Function**: Define specific concepts in the concept bottleneck layer of the protein language model.
     - **Mechanism**: Extract 50+ key protein property concepts from protein biology literature, including structural concepts ($\alpha$-helix propensity, $\beta$-sheet propensity, random coil ratio), physicochemical concepts (isoelectric point, thermal stability, solubility), and functional concepts (binding site types, catalytic mechanism types, substrate specificity). Each concept is quantified as continuous values or discrete categories. Train concept predictors using annotated data from UniProt and PDB databases, utilizing these concepts as supervision signals for the intermediate representations of the model.
     - **Design Motivation**: The selection of concepts must satisfy two conditions: (a) human interpretability, allowing biologists to make judgments based on concept values; (b) a strong correlation with protein function, ensuring that the bottleneck layer does not lose critical information.
 
-2. **双向概念瓶颈架构**:
+2. **Bidirectional Concept Bottleneck Architecture**:
 
     - **Function**: Implement bidirectional mapping of "functional description $\rightarrow$ concept" and "concept $\rightarrow$ sequence" at the concept layer.
     - **Mechanism**: The concept encoder maps the textual description of the target function (e.g., "thermostable lipase") to a concept vector $c \in \mathbb{R}^{50}$, where each dimension corresponds to a predicted value of a biological concept. The concept bottleneck layer imposes three constraints on $c$: (a) concept hyperparameter constraints—certain concept values must lie within biologically plausible ranges; (b) concept consistency constraints—known biological relationships exist between some concepts (e.g., high thermal stability is often accompanied by high hydrophobic core packing density); (c) concept intervenability—allowing biologists to manually modify concept values to guide the design direction. The conditional generator receives the (potentially modified) concept vector and generates amino acid sequences via autoregressive decoding.
     - **Design Motivation**: Traditional CBMs are unidirectional (input $\rightarrow$ concept $\rightarrow$ label), but protein design requires generating sequences "backward" from concepts. The interactiveness/intervenability of the concepts in this bidirectional architecture is a key innovation—biologists can say, "keep other properties constant but increase thermal stability," and the model adjusts generation accordingly.
 
-3. **概念对齐训练策略**:
+3. **Concept Alignment Training Strategy**:
 
     - **Function**: Ensure that the model's intermediate concept representations are aligned with real biological concepts.
     - **Mechanism**: Training is divided into two phases: (a) concept pre-training: train the concept predictor on large-scale protein databases to accurately predict concept values from protein sequences or functional descriptions, using MSE loss for continuous concept regression training and cross-entropy for discrete concept classification training; (b) joint fine-tuning: embed the concept predictor into the generative model as a bottleneck layer, simultaneously optimizing sequence generation quality (language model loss) and concept prediction accuracy (concept supervision loss), using a $\lambda$ weight to balance the two objectives.

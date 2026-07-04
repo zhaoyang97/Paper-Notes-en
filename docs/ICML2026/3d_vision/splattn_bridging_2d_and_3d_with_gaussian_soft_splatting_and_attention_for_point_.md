@@ -81,7 +81,7 @@ Passive concatenation is prone to background noise and fails to selectively util
 
 $$\mathcal{F}_g = \mathcal{F}_{geo} + \mathrm{Softmax}\!\Big(\frac{(\mathcal{F}_{geo}\mathbf{W}_Q)(\mathcal{V}\mathbf{W}_K)^\top}{\sqrt{d}}\Big)(\mathcal{V}\mathbf{W}_V),$$
 
-equivalent to a "differentiable dictionary lookup." The decoding side focuses generation pressure on missing regions rather than uniform global distribution: Chamfer Distance is used as a proxy for local reconstruction uncertainty. This geometric error is mapped to a high-dimensional embedding, allowing Structure Self-Attention to densify features in high-entropy (missing) areas. Cross-Attention then injects local high-curvature information from $\mathcal{F}_l$, which is the key inductive bias for hierarchical upsampling to补 refine details.
+equivalent to a "differentiable dictionary lookup." The decoding side focuses generation pressure on missing regions rather than uniform global distribution: Chamfer Distance is used as a proxy for local reconstruction uncertainty. This geometric error is mapped to a high-dimensional embedding, allowing Structure Self-Attention to densify features in high-entropy (missing) areas. Cross-Attention then injects local high-curvature information from $\mathcal{F}_l$, which is the key inductive bias for hierarchical upsampling to refine details.
 
 ### Loss & Training
 

@@ -80,15 +80,15 @@ The authors used Mistral-Large-2411 for claim decomposition, TRUE for entailment
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    subgraph DS["短语级上下文归因数据集"]
+    subgraph DS["Phrase-Level Contextual Attribution Dataset"]
         direction TB
-        A["melanoma RCT 摘要<br/>PubMed 检索 607 篇 → 筛选 152 篇"] --> B["定义 16 个医学方面<br/>PICO + 医生访谈"]
-        B --> C["专家三步标注<br/>句子标方面 → 写方面摘要 → 圈贡献短语"]
-        C --> D["1,799 个三元组实例<br/>摘要 + 引用句 + 贡献短语"]
+        A["Melanoma RCT Abstracts<br/>PubMed search: 607 retrieved → 152 selected"] --> B["Define 16 Medical Aspects<br/>PICO + physician interviews"]
+        B --> C["Expert Three-Step Annotation<br/>Label sentences with aspects → write aspect summaries → mark contributing phrases"]
+        C --> D["1,799 Triplet Instances<br/>Summary + cited sentence + contributing phrase"]
     end
-    DS --> E["解耦式三层评测指标<br/>claim / sentence / phrase 各自计分"]
-    E --> F["三种归因策略统一比较<br/>intrinsic / prior / post-hoc"]
-    F --> G["诊断 LLM 可验证摘要能力"]
+    DS --> E["Decoupled Three-Level Evaluation Metrics<br/>Separate scoring at claim / sentence / phrase level"]
+    E --> F["Unified Comparison of Three Attribution Strategies<br/>intrinsic / prior / post-hoc"]
+    F --> G["Diagnose LLM Verifiable Summarization Capability"]
 ```
 
 ### Key Designs

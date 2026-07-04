@@ -88,7 +88,7 @@ $$\mathcal{L}_{\text{total}} = \frac{1}{2}(\mathcal{L}_{\text{text}} + \mathcal{
 
 **Auxiliary Loss (Priming Loss)**: Trains the heatmap processor to mimic an identity function during the cold start phase:
 
-$$\mathcal{L}_{\text{priming}} = (I_i - I_i^R)^2 \quad \text{当} \quad E_i = \mathbf{1}$$
+$$\mathcal{L}_{\text{priming}} = (I_i - I_i^R)^2 \quad \text{when} \quad E_i = \mathbf{1}$$
 
 Total loss: $\mathcal{L} = w_p \cdot \mathcal{L}_{\text{priming}} + (1 - w_p) \cdot \mathcal{L}_{\text{clip}}$, where $w_p = 0.1$.
 

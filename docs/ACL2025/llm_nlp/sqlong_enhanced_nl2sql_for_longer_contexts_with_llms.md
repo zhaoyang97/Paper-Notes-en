@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: da9ecea84a1f6fed
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # SQLong: Enhanced NL2SQL for Longer Contexts with LLMs
 
 **Conference**: ACL2025  

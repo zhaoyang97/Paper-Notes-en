@@ -88,7 +88,7 @@ item_total: 182
 
 **[3D-Aware Implicit Motion Control for View-Adaptive Human Video Generation](3d-aware_implicit_motion_control_for_view-adaptive_human_video_generation.md)**
 
-:   3DiMo shifts human motion control from "relying on external SMPL reconstruction" to "jointly learning a set of view-invariant implicit motion tokens end-to-end with the video generator." By leveraging cross-attention semantic injection and multi-view rich data supervision, the model recovers genuine 3D motion from 2D driving frames. This allows for faithful action reproduction while supporting free camera视角 control via text, with results significantly exceeding 2D pose and SMPL baselines in motion fidelity and image quality.
+:   3DiMo shifts human motion control from "relying on external SMPL reconstruction" to "jointly learning a set of view-invariant implicit motion tokens end-to-end with the video generator." By leveraging cross-attention semantic injection and multi-view rich data supervision, the model recovers genuine 3D motion from 2D driving frames. This allows for faithful action reproduction while supporting free camera viewpoint control via text, with results significantly exceeding 2D pose and SMPL baselines in motion fidelity and image quality.
 
 **[A Frame is Worth One Token: Efficient Generative World Modeling with Delta Tokens](a_frame_is_worth_one_token_efficient_generative_world_modeling_with_delta_tokens.md)**
 

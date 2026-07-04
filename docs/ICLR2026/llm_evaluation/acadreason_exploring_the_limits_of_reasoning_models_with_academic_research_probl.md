@@ -62,7 +62,7 @@ To prevent vague research questions, AcadReason includes **Question Answerabilit
 
 **4. LLM-as-Judge + Dual Metrics: Proving GPT-5-mini's Reliability as a Judge**
 
-As research answers are open-ended, exact matching is insufficient. AcadReason uses GPT-5-mini as the judge but validates it via an Inter-Rater Reliability (IRR) study with three human experts, achieving a Cohen's $\kappa = 0.861$. GPT-5-mini reached $89.55\%$ accuracy relative to human consensus on Checklist scores. The judge evaluates two metrics: (i) Exact correspondence with the golden answer (记 1 if all info is present and non-contradictory, else 0); (ii) Whether individual checklist items are satisfied.
+As research answers are open-ended, exact matching is insufficient. AcadReason uses GPT-5-mini as the judge but validates it via an Inter-Rater Reliability (IRR) study with three human experts, achieving a Cohen's $\kappa = 0.861$. GPT-5-mini reached $89.55\%$ accuracy relative to human consensus on Checklist scores. The judge evaluates two metrics: (i) Exact correspondence with the golden answer (scored 1 if all info is present and non-contradictory, else 0); (ii) Whether individual checklist items are satisfied.
 
 $$R_p = \frac{\sum_{q=1}^{50} s_q}{50} \times 100, \qquad R_j = \frac{\sum_{q=1}^{50}\sum_{i=1}^{5} c_{q,i}}{250} \times 100$$
 

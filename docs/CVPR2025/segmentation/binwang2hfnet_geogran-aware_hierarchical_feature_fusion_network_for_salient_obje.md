@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: 5384ab61bdfa12f0
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # G2HFNet: GeoGran-Aware Hierarchical Feature Fusion Network for Salient Object Detection in Optical Remote Sensing Images
 
 **Conference**: CVPR 2025  

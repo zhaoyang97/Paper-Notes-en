@@ -857,7 +857,7 @@ item_total: 442
 
 **[GORP: Continual Gradient Low-Rank Projection Fine-Tuning for LLMs](gorp_continual_gradient_projection.md)**
 
-:   GORP proposes to unify the gradients of full-rank parameters and LoRA low-rank parameters by projecting them into a low-rank gradient subspace for joint updates. By utilizing the first moment of Adam to implicitly construct a shared gradient space across tasks, it alleviates catastrophic forgetting. In continual学习 settings on T5 and LLaMA2, its performance is close to the multi-task joint training upper bound.
+:   GORP proposes to unify the gradients of full-rank parameters and LoRA low-rank parameters by projecting them into a low-rank gradient subspace for joint updates. By utilizing the first moment of Adam to implicitly construct a shared gradient space across tasks, it alleviates catastrophic forgetting. In continual learning settings on T5 and LLaMA2, its performance is close to the multi-task joint training upper bound.
 
 **[GradOT: Training-free Gradient-preserving Offsite-tuning for Large Language Models](gradot_offsite_tuning.md)**
 

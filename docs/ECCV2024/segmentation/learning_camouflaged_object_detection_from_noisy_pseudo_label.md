@@ -65,7 +65,7 @@ The ratio of $M$ is set to $\{1\%, 5\%, 10\%, 20\%\}$; the corresponding models 
 
     - Core formula: $\mathcal{L}_{NC} = \frac{\sum_{i=1}^{H \times W} |p_i - g_i|^q}{\sum_{i=1}^{H \times W}(p_i + g_i) - \sum_{i=1}^{H \times W} p_i \cdot g_i}$
     - **Early Learning Phase** ($q=2$): Equivalent to IoU-form loss, accelerating model convergence to correct pixels.
-    - **Memorization Phase** ($q=1$): Shifts to MAE-form loss. The gradient magnitude is identical for every pixel ($\frac{\partial \mathcal{L}_{NC}}{\partial p_i} = \frac{sign(p_i - g_i)}{分母}$), preventing the loss from being dominated by noisy pixels.
+    - **Memorization Phase** ($q=1$): Shifts to MAE-form loss. The gradient magnitude is identical for every pixel ($\frac{\partial \mathcal{L}_{NC}}{\partial p_i} = \frac{sign(p_i - g_i)}{\text{denominator}}$), preventing the loss from being dominated by noisy pixels.
     - Compared to pure MAE: $\mathcal{L}_{NC}$ is area-dependent, leveraging spatial correlation between pixels to achieve faster and better convergence.
     - Tolerates up to a 50% noise rate.
     - **Design Motivation**: Traditional CE and IoU losses are more sensitive to hard pixels, which is beneficial for clean labels but leads to severe misguidance when training on noisy labels.

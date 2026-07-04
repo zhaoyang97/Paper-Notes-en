@@ -123,7 +123,7 @@ Variants trained on DL3DV at $256 \times 256$ for 100K steps:
 - **Robustness to long context**: When trained on 32 views but tested on 48, MVP’s PSNR increases by +1.18, whereas other baselines saturate.
 
 ## Highlights & Insights
-- **Dual Hierarchy Synergy**: MVP正交叠加 (orthogonally stacks) view grouping and spatial token merging. Neither alone is sufficient to handle token totals in long contexts.
+- **Dual Hierarchy Synergy**: MVP orthogonally stacks view grouping and spatial token merging. Neither alone is sufficient to handle token totals in long contexts.
 - **Attention Dilution as a Quality Issue**: The authors frame hierarchy not just as a speed optimization, but as a quality necessity to prevent diluted attention scores in long sequences.
 - **Unified Transformer Framework**: The framework elegantly unifies intra-frame, intra-group, and global attention, making it easily adaptable to dynamic scenes or geometric tasks.
 - **Redundancy Pruning**: Pruning Gaussians with opacity $<0.01$ removes 89% of primitives at 256 views with minimal (0.15 dB) PSNR loss.

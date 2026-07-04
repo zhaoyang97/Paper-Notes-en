@@ -78,7 +78,7 @@ $$p_d=p_g+\mathrm{Tanh}(\mathrm{Linear}(\mathrm{ReLu}(\.Linear(F_d)))),\quad p_s
 
 Using $F_d, F_s$ as indicators, scan points are shifted towards corresponding regions. Each branch samples features via bilinear interpolation $\bar F_\gamma=\mathrm{BI}(F_g,p_\gamma)$ and processes them via Mamba $F'_\gamma=\mathrm{DM}(\bar F_\gamma)$. This allows the dynamic branch to capture object evolution while the static branch captures global structure.
 
-**4. Latent Diffusion + Optional Planner: Autonomous推演 and "what-if" generation**
+**4. Latent Diffusion + Optional Planner: Autonomous Rollout and "what-if" generation**
 
 GEM use the diffusion paradigm. During training, noise $\epsilon_t$ is added to $Z_f$ to get $Z_f^t$, and the world model predicts the noise: $L_{LD}=\mathbb{E}[\lVert\epsilon_t-\mathrm{WM}(Z_f^t,Z_p^t,t,c;\theta)\rVert^2]$. To address unknown future ego status, a joint planner predicts future actions $a_f$: $L_{Planner}=\lVert a_f-\mathrm{Planner}(a_p;\eta\mid\theta_{WM})\rVert^2$. Control signals $c$ are injected via adaptive group normalization, supporting BEV layout-based controllable generation. Total objective: $L=L_{LD}+L_{Planner}$.
 
@@ -125,7 +125,7 @@ Component contributions (nuScenes 3s, degradation when removed):
 - **Architecture-Physics Isomorphism**: Aligning LiDAR's line-by-line scanning with Mamba's sequential update provides a theoretical foundation for the Mamba tokenizer.
 - **Lightweight Decoupling**: The "frame diff for dynamic, temporal mean for static" trick requires no labels and is easily transferable to other LiDAR tasks.
 - **Deformable Scan as "Attention"**: Learning $p_d$ and $p_s$ allows Mamba to focus on regions of interest, gaining spatial selectivity similar to deformable attention while maintaining linear complexity.
-- **Autonomous推演**: By treating future ego status as an unknown and using a joint planner, GEM transforms the world model from a mere predictor into a closed-loop simulator.
+- **Autonomous Rollout**: By treating future ego status as an unknown and using a joint planner, GEM transforms the world model from a mere predictor into a closed-loop simulator.
 
 ## Limitations & Future Work
 - **Optionality of Planner**: The cumulative error and stability of the planner for long-horizon rollouts were not extensively discussed.

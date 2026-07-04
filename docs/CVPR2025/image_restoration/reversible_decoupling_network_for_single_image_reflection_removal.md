@@ -40,7 +40,7 @@ RDNet proposes a single image reflection removal method based on a reversible de
 
 ### Overall Architecture
 
-RDNet consists of three core modules: a Pre-trained Hierarchical Feature Extractor (PHE) extracts multi-scale semantic features from the input image, feeding them into the first column of the Multi-column Reversible Encoder (MCRE); a Transmission-Aware Prompt Generator (TAPG) estimates transmission rate parameters and generates channel-wise prompts to modulate features; within MCRE, transmission/reflection features are progressively decoupled across multiple columns via同层可逆连接 (intra-layer reversible connections) and cross-layer bidirectional interactions; the hierarchical encoding of each column is decoded by a Hierarchical Decoder (HDec), with the output of the final column yielding the final separation result.
+RDNet consists of three core modules: a Pre-trained Hierarchical Feature Extractor (PHE) extracts multi-scale semantic features from the input image, feeding them into the first column of the Multi-column Reversible Encoder (MCRE); a Transmission-Aware Prompt Generator (TAPG) estimates transmission rate parameters and generates channel-wise prompts to modulate features; within MCRE, transmission/reflection features are progressively decoupled across multiple columns via intra-layer reversible connections and cross-layer bidirectional interactions; the hierarchical encoding of each column is decoded by a Hierarchical Decoder (HDec), with the output of the final column yielding the final separation result.
 
 ### Key Designs
 

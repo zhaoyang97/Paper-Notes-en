@@ -105,7 +105,7 @@ Mask generation ablation: SAM masks are generally superior to random masks, with
 - SAM masks provide a "modest" gain over random masks (+0.7 in classification for PowerCLIP-S vs -R), suggesting the method does not heavily rely on a high-quality segmenter.
 
 ## Highlights & Insights
-- **Formalizing compositional semantics as "powerset × syntax tree" alignment**: Using the natural hierarchical structure of text (parse trees) to match image region combinations is a建模 approach closer to the essence of "compositionality" than simple token-to-token alignment.
+- **Formalizing compositional semantics as "powerset × syntax tree" alignment**: Using the natural hierarchical structure of text (parse trees) to match image region combinations is a modeling approach closer to the essence of "compositionality" than simple token-to-token alignment.
 - **Dual Solution of Theory and Engineering**: Instead of using heuristic approximations for the seemingly infeasible powerset alignment, the authors designed NLA with proven arbitrary precision and linear complexity. The relationship between hard/soft assignment (Temperature → ReLU degradation) is clearly characterized, providing a solid theoretical foundation for implementation.
 - **Soft Assignment Stabilizes Training**: Replacing hard max assignment with Softplus/tanh soft assignment achieves linear complexity while simultaneously improving training stability.
 

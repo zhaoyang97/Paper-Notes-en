@@ -18,7 +18,7 @@ content_hash: cb300270a47bc78b
 # Unpaired Image Deraining Using Reward-Guided Self-Reinforcement Strategy
 
 **Conference**: CVPR 2026  
-**论文**: [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Chen_Unpaired_Image_Deraining_Using_Reward-Guided_Self-Reinforcement_Strategy_CVPR_2026_paper.html)  
+**Paper**: [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Chen_Unpaired_Image_Deraining_Using_Reward-Guided_Self-Reinforcement_Strategy_CVPR_2026_paper.html)  
 **Code**: None  
 **Area**: Image Restoration / Image Deraining  
 **Keywords**: Unsupervised Deraining, Self-Reinforcement, VLM-IQA, Reward Recycling, Pseudo-paired Data

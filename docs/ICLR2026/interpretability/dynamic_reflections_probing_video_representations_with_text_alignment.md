@@ -141,7 +141,7 @@ Ours sits at the intersection of three directions: (1) Platonic Representation H
 *   Novelty: ⭐⭐⭐⭐ — First extension of PRH to video; novel and predictive test-time scaling laws.
 *   Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Extensive coverage of 121 model combinations across multiple datasets with rigorous fitting.
 *   Writing Quality: ⭐⭐⭐⭐ — Clear structure and intuitive visualizations; core findings stated precisely.
-*   Value: ⭐⭐⭐底 — Significant implications for video representation evaluation and multimodal alignment theory.
+*   Value: ⭐⭐⭐ — Significant implications for video representation evaluation and multimodal alignment theory.
 
 <!-- RELATED:START -->
 

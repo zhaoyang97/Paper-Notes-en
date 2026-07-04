@@ -54,31 +54,31 @@ Instead of proposing a new model architecture or training algorithm, this paper 
 
 ### Key Designs
 
-1. **特征纠缠度度量（Entanglement Measure）**:
+1. **Feature Entanglement Measure**:
 
     - **Function**: Quantify the degree to which a certain feature is "entangled" with other features in the representation space.
     - **Mechanism**: Define the entanglement of feature $P_i$ as $\mathcal{E}_{P_i} = \max\{|v_{P_i} \cdot v_{P_j}|\}_{j \neq i}$, which represents the maximum absolute cosine similarity between this feature direction and all other feature directions. Lower entanglement means more independent feature representation, leading to fewer side effects during editing.
     - **Design Motivation**: When $N$ features are compressed into an $M$-dimensional space ($N > M$), superposition inevitably occurs. The Welch bound provides a lower bound for maximum entanglement: $\sqrt{(N-M)/((N-1)M)}$, which is only achieved when feature directions are uniformly distributed. Underrepresented features deviate from the uniform distribution, resulting in higher entanglement.
 
-2. **Toy 实验设计**:
+2. **Toy Experiment Design**:
 
     - **Function**: Verify the hypothesis that "data proportion affects entanglement" in a controlled environment.
     - **Mechanism**: Generate sequences using $N$ cyclic Markov chains (sharing state space $V$), choose one chain to reduce its data volume, train a 4-layer Transformer (4D latent space, 10 random seeds), and observe changes in the entanglement of underrepresented features.
     - **Key Findings**: As the proportion of data for the underrepresented feature increases, its entanglement **drops sharply**, gradually approaching the average entanglement of other features (around 0.8).
 
-3. **OLMo-1B 受控预训练实验**:
+3. **OLMo-1B Controlled Pretraining Experiment**:
 
     - **Function**: Verify the impact of toxic data on representation quality at a realistic LLM scale.
     - **Mechanism**: Keep the amount of clean C4 data constant and gradually add 4chan data from 0% to 25% (in steps of 5%), taking the total tokens from 20.1B to 25.7B. Each configuration is trained twice with different seeds. Utilizing 16 H100 GPUs, each configuration takes approximately 12 hours.
     - **Design Motivation**: Keeping the amount of clean data constant isolates the confounding factor of "reducing high-quality data," ensuring that experimental results reflect only the impact of toxic data.
 
-4. **线性探针分析（Probing）**:
+4. **Linear Probing Analysis**:
 
     - **Function**: Detect whether a good linear representation of toxicity has been established inside the model.
     - **Mechanism**: For each text segment in the ToxiGen dataset, collect activations at the final token from each attention head of the model, and train binary linear probes. Compare the models trained with 0% vs. 25% toxic data.
     - **Key Findings**: The model containing toxic data exhibits a significant "fat right tail" in probe accuracy distribution ($p = 0.0002$), indicating that more heads specialize in toxicity detection. This is crucial for ITI, which relies on selecting high-accuracy heads for intervention.
 
-5. **推理时干预（ITI）去毒**:
+5. **Inference-Time Intervention (ITI) Detoxification**:
 
     - **Function**: Shift activations along the toxicity-related linear directions during decoding to guide the model towards generating non-toxic content.
     - **Mechanism**: Select the 30 heads with the highest probing accuracy and intervene with three levels of intensity (weak=4, mid=8, strong=12).

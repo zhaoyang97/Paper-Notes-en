@@ -131,7 +131,7 @@ Throughput: INT8 provides 20%–30% speedup on 7B models, ~30%–56% on 14B, and
 
 ## Rating
 - **Novelty**: ⭐⭐⭐⭐ Systematizing quantized rollout as off-policy RL is insightful; ACR is derived structurally, and UAQ's $s^2$ leverage is clever.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers three RL algorithms across multiple GPU types and models;主 experiments, ablations, and throughput are comprehensive, though limited to 8-bit.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers three RL algorithms across multiple GPU types and models; main experiments, ablations, and throughput are comprehensive, though limited to 8-bit.
 - **Writing Quality**: ⭐⭐⭐⭐ Clear chain of logic from problem to failure cases to solution; formulas and figures are well-coordinated.
 - **Value**: ⭐⭐⭐⭐ Directly addresses the 70% rollout bottleneck in RLVR with 20%–80% speedup and minimal loss; high engineering value.
 

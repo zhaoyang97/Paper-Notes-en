@@ -61,7 +61,7 @@ The metric computation incorporates element weights $w_{ij}$:
 ### Key Design 3: Temporally Indispensable MCQ Generation
 
 The Q&A generation workflow consists of:
-1. Leveraging LMMs' own "视觉误判" (visual misjudgments) as **error-prone points**.
+1. Leveraging LMMs' own "visual misjudgments" as **error-prone points**.
 2. Generating multiple-choice questions based on 10 task types (camera movement, transitions, scene description, action recognition, action sequence, etc.).
 3. **Temporally Indispensable Filtering**: Excluding questions that can be answered using a single frame, ensuring that multi-frame temporal understanding is mandatory.
 

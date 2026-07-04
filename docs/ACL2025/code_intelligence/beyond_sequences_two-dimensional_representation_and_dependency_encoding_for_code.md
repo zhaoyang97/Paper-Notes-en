@@ -105,8 +105,8 @@ The model is trained using the standard cross-entropy loss for sequence generati
 - Future research can combine the code understanding capabilities of LLMs with the proposed structural encoding to construct structure-aware code LLMs.
 
 ## Related Work & Insights
-- **vs TreeGen（AST级代码生成）**: TreeGen generates directly on the AST but suffers from low training and inference efficiency. Ours introduces structural information into a sequence generation framework, achieving a better balance between efficiency and effectiveness.
-- **vs SynCoBERT（结构感知预训练）**: SynCoBERT introduces structural info during the pre-training stage, while ours introduces it during the generation stage, making the two approaches complementary.
+- **vs TreeGen (AST-level code generation)**: TreeGen generates directly on the AST but suffers from low training and inference efficiency. Ours introduces structural information into a sequence generation framework, achieving a better balance between efficiency and effectiveness.
+- **vs SynCoBERT (structure-aware pre-training)**: SynCoBERT introduces structural info during the pre-training stage, while ours introduces it during the generation stage, making the two approaches complementary.
 - **vs GraphCodeBERT**: GraphCodeBERT leverages data flow graphs to enhance code understanding; ours further applies graph structure information to the generation stage, serving as a natural extension from understanding to generation.
 
 ## Rating

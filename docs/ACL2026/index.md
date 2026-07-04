@@ -1336,7 +1336,7 @@ item_total: 1419
 
 **[Do LLMs Capture Embodied Cognition and Cultural Variation? Cross-Linguistic Evidence from Demonstratives](interpretability/do_llms_capture_embodied_cognition_and_cultural_variation_cross-linguistic_evide.md)**
 
-:   The authors use demonstratives such as "this/that" and "这/那" as probes to construct a bilingual English-Chinese dataset (80 items/language × 4 cues × 4 perspectives × 5 scenarios). By establishing a human baseline from 6,400 responses from 320 native speakers, the study finds that English speakers excel at proximal–distal differentiation but are weaker in other-perspective taking, while Chinese speakers show the opposite pattern. In contrast, five SOTA LLMs failed to consistently distinguish between proximal and distal categories and exhibited no cross-cultural variation, generally reverting to English-centric reasoning or "All of the above" safety fallbacks.
+:   The authors use demonstratives such as "this/that" and their Chinese equivalents "zhe/na" as probes to construct a bilingual English-Chinese dataset (80 items/language × 4 cues × 4 perspectives × 5 scenarios). By establishing a human baseline from 6,400 responses from 320 native speakers, the study finds that English speakers excel at proximal–distal differentiation but are weaker in other-perspective taking, while Chinese speakers show the opposite pattern. In contrast, five SOTA LLMs failed to consistently distinguish between proximal and distal categories and exhibited no cross-cultural variation, generally reverting to English-centric reasoning or "All of the above" safety fallbacks.
 
 [Browse all 63 Interpretability papers →](interpretability/)
 

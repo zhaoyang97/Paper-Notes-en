@@ -16,7 +16,6 @@ date: 2026-05-08
 content_hash: 0695607b1cb57ad6
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Improving Multimodal Sentiment Analysis via Modality Optimization and Dynamic Primary Modality Selection
 
 **Conference**: AAAI 2026  

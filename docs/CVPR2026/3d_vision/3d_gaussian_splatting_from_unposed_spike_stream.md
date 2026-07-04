@@ -136,7 +136,7 @@ Verification on Tanks and Temples (Key. = Key-frame, Time = Avg optimization tim
 - **NBDS and accumulation loss are complementary**: Removing either (ID II/III) drops PSNR. NBDS governs details/speed, while accumulation loss ensures long-term structure.
 
 ## Highlights & Insights
-- **Turning "Sensor Noise" into "Statistical Signal"**: The random initial voltage $V_x$, usually a nuisance, is used to prove pixel independence, aggregating Bernoulli spikes into low-variance Binomial distributions. This "deriving stable supervision from physical noise" is a general-purpose insight for spikeカメラ.
+- **Turning "Sensor Noise" into "Statistical Signal"**: The random initial voltage $V_x$, usually a nuisance, is used to prove pixel independence, aggregating Bernoulli spikes into low-variance Binomial distributions. This "deriving stable supervision from physical noise" is a general-purpose insight for spike cameras.
 - **Differential Sub-frame Loss**: Subtracting adjacent frames cancels shared noise and amplifies edge errors, unifying "stable supervision" and "importance on key regions" into one formula.
 - **Error Attribution for Key-frame Splitting**: Using $\mathcal{L}_{nbds}$ and $\mathcal{L}_{sub}$ to separate photometric errors into pose and Gaussian errors allows optimization resources to be used where they are most needed.
 

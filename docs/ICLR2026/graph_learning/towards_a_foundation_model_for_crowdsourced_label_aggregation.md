@@ -135,7 +135,7 @@ CrowdFM achieves an average accuracy of 83.41%, with no statistically significan
 - The evaluation only covers **categorical** crowdsourcing (measured by accuracy); its effectiveness on regression, ranking, or structured annotation tasks remains unverified.
 - Strong dependence on the "realism" of the synthetic generator: if real scenarios deviate from the 3PL assumption (e.g., malicious adversarial labels, collusion, worker correlations), the transfer might fail, as hinted by the slight underperformance on Senti.
 - There is no explicit mechanism for worker correlations (which EBCC models); the model relies purely on attention to absorb this implicitly, and it may struggle with highly correlated workers.
-- Although ablations show "bigger is better," the paper does not provide a scaling law analysis for收益-cost curves at very large scales.
+- Although ablations show "bigger is better," the paper does not provide a scaling law analysis for benefit-cost curves at very large scales.
 
 ## Related Work & Insights
 - **vs Dataset-specific methods (DS / EBCC / BWA / GLAD / GOVERN)**: These methods estimate parameters per dataset; they are accurate but require retraining and are non-transferable. CrowdFM matches their performance zero-shot while being 1–2 orders of magnitude faster.

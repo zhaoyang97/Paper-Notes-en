@@ -118,7 +118,7 @@ Compared to standard tabular baselines (using the same 20 taxa): iLoRA AUROC of 
 - **Future Work**: Learn the selector $S(\cdot)$ jointly; optimize graph branch to $O(K \log K)$ for larger $K$; incorporate do-calculus for causal interactions; extend to multi-omics.
 
 ## Related Work & Insights
-- **vs. Standard LoRA / QLoRA**: iLoRA learns input-conditioned $\Delta W(X)$ instead of input-agnostic global parameters,显式 incorporating relational structures.
+- **vs. Standard LoRA / QLoRA**: iLoRA learns input-conditioned $\Delta W(X)$ instead of input-agnostic global parameters, explicitly incorporating relational structures.
 - **vs. BLOB / Laplace LoRA**: iLoRA performs Bayesian inference in the latent graph space rather than the parameter space, leading to better calibration (ECE 0.098 vs BLOB 0.157).
 - **vs. Microbiome network inference**: Instead of independent post-hoc networks, iLoRA binds inference and diagnosis under a single ELBO, ensuring edge importance is supervised.
 

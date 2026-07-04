@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: 47a2f242eac94eef
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Combining the Best of Both Worlds: A Method for Hybrid NMT and LLM Translation
 
 **Conference**: ACL2025  

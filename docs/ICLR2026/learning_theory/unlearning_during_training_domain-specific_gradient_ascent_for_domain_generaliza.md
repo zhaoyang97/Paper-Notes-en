@@ -121,7 +121,7 @@ Breakdown of Unlearning Set Selection (USS) and Domain-Specific Channel Selectio
 - **Future Directions**: Refining IDV from the channel level to fine-grained feature subspaces or adapting unlearning frequency to the actual rhythm of bias emergence.
 
 ## Related Work & Insights
-- **vs Representation Learning DG**: Methods like IRM or对抗 alignment attempt to **prevent** domain-specific learning. IU acts as a **post-hoc correction** that can be stacked on top of them.
+- **vs Representation Learning DG**: Methods like IRM or adversarial alignment attempt to **prevent** domain-specific learning. IU acts as a **post-hoc correction** that can be stacked on top of them.
 - **vs Aggregated Variance (AV)**: AV is sensitive to domain imbalance and misidentifies invariant textures. IDV is domain-size agnostic and provides more accurate localization.
 - **vs Traditional Machine Unlearning**: Traditional MU targets "forgetting specific data points for privacy"; IU targets "forgetting specific features for generalization," representing a fundamental shift in application.
 

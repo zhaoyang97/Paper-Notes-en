@@ -94,7 +94,7 @@ $$\mathcal{L}_{dpt} = \mathcal{L}_{depth} + \mathcal{L}_{pc} + \mathcal{L}_{cam}
 
 This divide-and-conquer approach of "preserving geometric consistency for static parts and motion smoothness for dynamic parts" is crucial: experiments show that compared to regularization focusing purely on static geometry (like GeoVideo), models tend to collapse into generating static content to maintain consistency at the cost of dynamics. WorldReel bypasses this trade-off by explicitly supervising the static and dynamic components separately.
 
-**5. Hybrid Data and Scene Flow Pseudo-label Construction: Enriching Diversity with Real-world Data and 自造 3D Scene Flow**
+**5. Hybrid Data and Scene Flow Pseudo-label Construction: Enriching Diversity with Real-world Data and Synthesized 3D Scene Flow**
 
 Precise 4D labels are almost exclusively available in synthetic datasets (e.g., PointOdyssey, BEDLAM, Dynamic Replica, Omniworld-Game), but synthetic data lacks scale and scene complexity. The authors supplement this with high-quality real-world videos filtered from Panda-70M via SpatialVid, re-annotating them with SOTA foundation models: depth is obtained using GeometryCrafter for temporally smooth sequences, camera/depth/foreground masks via ViPE, and point clouds are obtained by back-projecting depth (aligned to the canonical frame of the first frame).
 

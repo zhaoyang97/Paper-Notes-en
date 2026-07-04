@@ -9,7 +9,6 @@ tags:
 date: 2026-05-08
 content_hash: 9c6a1365132ea7c9
 ---
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # LinkNav: Surfacing Interconnected Information in Scientific Articles
 
 **Conference**: ACL2026  

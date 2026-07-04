@@ -60,7 +60,7 @@ The workflow consists of three steps: (1) Collect 326 seed short stories from pu
     - **Mechanism**: The evaluation dimensions include sanity-check (is it valid feedback), feedback-type (positive/criticism/mixed), perfect-agree (whether saying "perfect" is accurate), correctness (whether suggestions improve the writing), error-detection (whether the main issue is identified), specificity (whether feedback is specific to the story or generic), and relevance (whether suggestions address the known corruption). The annotation workflow is conditional-branching—first categorizing feedback type and then proceeding along specific evaluation paths.
     - **Design Motivation**: Different dimensions probe different aspects of feedback capability. Hierarchical evaluation helps locate the models' advantages and shortfalls.
 
-3. **多样化提示策略 (Prompt Variations)**:
+3. **Diverse Prompt Strategies (Prompt Variations)**:
 
     - **Function**: Design 4 prompting styles to test model sensitivity to instructions.
     - **Mechanism**: **BL Full** (list format + guide with writing issue categories), **BL Only** (list only without categories), **1-Sent** (one-sentence feedback), and **SpotProb** (challenge style: identify and describe the single main issue). Each has zero-shot and two-shot versions.

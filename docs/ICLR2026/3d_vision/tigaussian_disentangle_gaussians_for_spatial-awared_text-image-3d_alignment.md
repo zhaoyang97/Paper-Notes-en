@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TIGaussian: Disentangle Gaussians for Spatial-Aware Text-Image-3D Alignment
 description: >-
-  [ICLR 2026][3D Vision][3D Gaussian Splatting] TIGaussian刷新了文本-图像-3DGS三模态对齐的SOTA。该方法通过多分支编码器解耦3D Gaussian Splatting (3DGS) 的内在属性，利用扩散先验将单视图图像补充为多视图融合特征，并使用 Query Transformer 将3D特征投影至文本空间。
+  [ICLR 2026][3D Vision][3D Gaussian Splatting] TIGaussian sets a new SOTA for text-image-3DGS tri-modal alignment. The method decouples the intrinsic attributes of 3D Gaussian Splatting (3DGS) via a multi-branch encoder, leverages diffusion priors to supplement single-view images into multi-view fused features, and uses a Query Transformer to project 3D features into text space.
 tags:
   - "ICLR 2026"
   - "3D Vision"
@@ -24,7 +24,7 @@ content_hash: 1c7ca3a6d8aa847e
 **Keywords**: 3D Gaussian Splatting, Cross-modal Alignment, Attribute Disentanglement, Multi-view Fusion, Contrastive Learning
 
 ## TL;DR
-TIGaussian刷新了文本-图像-3DGS三模态对齐的SOTA。该方法通过多分支编码器解耦3D Gaussian Splatting (3DGS) 的内在属性，利用扩散先验将单视图图像补充为多视图融合特征，并使用 Query Transformer 将3D特征投影至文本空间。
+TIGaussian sets a new SOTA for text-image-3DGS tri-modal alignment. The method decouples the intrinsic attributes of 3D Gaussian Splatting (3DGS) via a multi-branch encoder, leverages diffusion priors to supplement single-view images into multi-view fused features, and uses a Query Transformer to project 3D features into text space.
 
 ## Background & Motivation
 **Background**: Text-image contrastive pre-training (CLIP/EVA-CLIP) has successfully aligned image and text features. Recent research aims to incorporate the "third modality"—3D—into the same embedding space to support downstream tasks like zero-shot classification, cross-modal retrieval, and scene recognition. While early 3D work utilized point clouds (PointCLIP, ULIP, Uni3D) or voxels (TriCoLo), UniGS recently achieved SOTA by using 3DGS as a 3D representation through distillation from the Uni3D pre-trained model.

@@ -51,7 +51,7 @@ SemLA consists of two phases:
 
 ### Key Designs
 
-1. **CLIP 嵌入质心索引 (Domain Embeddings from CLIP)**:
+1. **CLIP Embedding Centroid Index (Domain Embeddings from CLIP)**:
 
     - **Function**: Creates a compact semantic index for each domain's LoRA adapter.
     - **Mechanism**: For each image in training domain $\mathcal{D}_i$, compute its CLIP image embedding $\mathbf{e}_j = \text{CLIP}_\text{image}(\mathbf{x}_j)$. The centroid is the average embedding $\mathbf{c}_i = \frac{1}{N_i}\sum_{j=1}^{N_i} \mathbf{e}_j$. At test time, the CLIP embedding $\mathbf{e}_t$ of the input image is computed, and similarity is measured via Euclidean distance $d_i = \|\mathbf{e}_t - \mathbf{c}_i\|_2$.

@@ -131,7 +131,7 @@ This is a theoretical paper without empirical experiments. "Key results" are pre
 - **Reweighting is Power**: Rescaling by $\Sigma^{-1}$ is the mechanism that pushes high-quality data value from "bounded" to "unbounded," suggesting significant gains in modeling noise variance for hybrid training.
 
 ## Limitations & Future Work
-- **Agnostic IT Bound Lack of Tightness**: The sufficient condition might be loose due to the三次方程 (cubic equation) relaxation; exact characterization remains open.
+- **Agnostic IT Bound Lack of Tightness**: The sufficient condition might be loose due to the cubic equation relaxation; exact characterization remains open.
 - **Missing Informed LASSO Analysis**: Analyzing the phase transition for rescaled LASSO is difficult due to the interaction between $\Sigma^{-1}$ and $X$, which breaks the Wishart structure.
 - **Idealized Assumptions**: The work relies on Gaussian designs, exact sparsity, and additive Gaussian noise from only two sources.
 - **Binary Signal Assumption**: IT analysis assumes $\beta^\star \in \{0,1\}^p$, which simplifies calculation but limits direct applicability to general amplitude signals.

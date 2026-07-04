@@ -16,7 +16,6 @@ date: 2026-05-08
 content_hash: e0ef51611fc796f9
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Improved and Oracle-Efficient Online $\ell_1$-Multicalibration
 
 **Conference**: ICML2025  

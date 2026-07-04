@@ -19,7 +19,7 @@ content_hash: 142e07c0187211b9
 
 **Conference**: ACL 2025  
 **arXiv**: [2506.01322](https://arxiv.org/abs/2506.01322)  
-**Code**: [https://huggingface.co/datasets/thivux/phoaudiobook（数据集）](https://huggingface.co/datasets/thivux/phoaudiobook（数据集）)  
+**Code**: [https://huggingface.co/datasets/thivux/phoaudiobook (dataset)](https://huggingface.co/datasets/thivux/phoaudiobook)  
 **Area**: Audio & Speech / TTS  
 **Keywords**: Zero-Shot TTS, Vietnamese, PhoAudiobook, Speech Synthesis, Low-Resource Languages
 

@@ -118,7 +118,7 @@ The tanh+ECA combination is optimal across SSIM, FPS, and parameters. Replacing 
 - **Empirical Value of Fine-tuning**: Demonstrating that the dataset itself serves as a universal fine-tuning set to improve existing models amplifies the contribution's impact.
 
 ## Limitations & Future Work
-- **Frame-by-frame SR**: To maintain real-time speeds, EfRLFN ignores temporal建模, which may lead to inter-frame flickering in highly dynamic scenes.
+- **Frame-by-frame SR**: To maintain real-time speeds, EfRLFN ignores temporal modeling, which may lead to inter-frame flickering in highly dynamic scenes.
 - **Dataset Constraints**: StreamSR depends on YouTube's encoding; generalization to different compression pipelines (e.g., low-latency live encoding) remains to be verified.
 - **Loss Weights**: The selection of $\lambda$ weights was not exhaustively analyzed; adaptive weighting might provide further improvements.
 - **Subjective Evaluation Costs**: While the user study with 3822 participants is robust, pairwise comparisons are expensive and difficult to replicate frequently.

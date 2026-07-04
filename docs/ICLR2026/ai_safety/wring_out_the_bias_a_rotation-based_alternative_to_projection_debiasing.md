@@ -66,7 +66,7 @@ The prerequisite for debiasing is to reify "bias" into a manipulable object. The
 
 This is the theoretical core and the "smoking gun" for the motivation. Let the projection-debiased embedding be $v_{\backslash C}=v-P_Cv$, where $P_C=A_C(A_C^\top A_C)^{-1}A_C^\top$. The authors derive that for directions $d_1, d_2$ of another concept $D\neq C$, the bias after projection is:
 
-$$\text{bias}(v_{\text{PROJ},C},d_1,d_2)=\underbrace{\frac{\|v\|}{\|v-P_Cv\|}}_{\text{放大项}}\cdot\text{bias}(v,d_1,d_2)+\underbrace{\frac{\Delta P_Cv}{\|v-P_Cv\|}}_{\text{改变项}}.$$
+$$\text{bias}(v_{\text{PROJ},C},d_1,d_2)=\underbrace{\frac{\|v\|}{\|v-P_Cv\|}}_{\text{amplification term}}\cdot\text{bias}(v,d_1,d_2)+\underbrace{\frac{\Delta P_Cv}{\|v-P_Cv\|}}_{\text{change term}}.$$
 
 The first term is the **amplification term**: since projection removes a component, $\|v-P_Cv\|<\|v\|$, making this coefficient consistently $>1$, which **equally amplifies** any existing bias. The second term is the **shift term** with an indeterminate sign.Crucially, when $D$ is **orthogonal** to the subspace of $C$, the shift term is $0$, and projection **necessarily** amplifies bias. Given that random directions in high-dimensional space are **likely to be orthogonal**, this amplification occurs frequently. This explains the root cause of the whac-a-mole dilemma—the issue is not "finding the wrong concept" but the "subspace removal + norm shortening" operation itself.
 
@@ -80,7 +80,7 @@ $w$ must satisfy two properties: (1) $w\in\text{col}(A_C)$, which ensures $w$ st
 
 The bias for unconsidered concept $D$ after WRING becomes:
 
-$$\text{bias}(v_{\text{WRING},C},d_1,d_2)=\text{bias}(v,d_1,d_2)+\underbrace{\frac{\|v-P_Cv\|}{\|v\|}\cdot\frac{\Delta P_Cv}{\|v-P_Cv\|}}_{\text{被抑制的改变项}}-\underbrace{\Delta w}_{\text{阻尼项}}.$$
+$$\text{bias}(v_{\text{WRING},C},d_1,d_2)=\text{bias}(v,d_1,d_2)+\underbrace{\frac{\|v-P_Cv\|}{\|v\|}\cdot\frac{\Delta P_Cv}{\|v-P_Cv\|}}_{\text{suppressed change term}}-\underbrace{\Delta w}_{\text{damping term}}.$$
 
 Compared to projection, there are three improvements: **no amplification term** ($>1$ coefficient is gone), the **shift term is compressed** (by a coefficient $<1$), and a **damping term** $\Delta w$ is added to further cancel bias. Most cleanly, when $D\perp C$, both terms vanish, and WRING **does not amplify orthogonal bias at all**.
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Vibe Spaces for Creatively Connecting and Expressing Visual Concepts
 description: >-
-  [CVPR 2026][Image Generation][Image blending] This paper proposes the **Vibe Blending** task (fusing two images into a coherent hybrid based on their "most relevant shared attributes"—the so-called "vibe") and the **Vibe Space** method. By using graph diffusion maps to learn a low-dimensional "small-world" manifold in the CLIP/DINO feature space, it transforms原本 curved geodesics into linearly interpolatable paths, generating creative blends that are more human-recognized than…
+  [CVPR 2026][Image Generation][Image blending] This paper proposes the **Vibe Blending** task (fusing two images into a coherent hybrid based on their "most relevant shared attributes"—the so-called "vibe") and the **Vibe Space** method. By using graph diffusion maps to learn a low-dimensional "small-world" manifold in the CLIP/DINO feature space, it transforms originally curved geodesics into linearly interpolatable paths, generating creative blends that are more human-recognized than…
 tags:
   - "CVPR 2026"
   - "Image Generation"
@@ -23,7 +23,7 @@ content_hash: 0064d33f9117beeb
 **Keywords**: Image blending, Manifold geometry, Graph diffusion maps, Creativity metrics, IP-Adapter
 
 ## TL;DR
-This paper proposes the **Vibe Blending** task (fusing two images into a coherent hybrid based on their "most relevant shared attributes"—the so-called "vibe") and the **Vibe Space** method. By using graph diffusion maps to learn a low-dimensional "small-world" manifold in the CLIP/DINO feature space, it transforms原本 curved geodesics into linearly interpolatable paths, generating creative blends that are more human-recognized than those from GPT or Gemini.
+This paper proposes the **Vibe Blending** task (fusing two images into a coherent hybrid based on their "most relevant shared attributes"—the so-called "vibe") and the **Vibe Space** method. By using graph diffusion maps to learn a low-dimensional "small-world" manifold in the CLIP/DINO feature space, it transforms originally curved geodesics into linearly interpolatable paths, generating creative blends that are more human-recognized than those from GPT or Gemini.
 
 ## Background & Motivation
 **Background**: Fusing two semantically distant images (image morphing/blending) typically involves interpolation in the latent space of GANs or diffusion models, or finding semantic directions in noise/weight/text embedding spaces. Recently, Multi-modal Large Language Models (GPT Image, Gemini) have also been used to "imagine" blended images.

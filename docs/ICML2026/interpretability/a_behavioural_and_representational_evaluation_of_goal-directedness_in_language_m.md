@@ -84,7 +84,7 @@ The behavioral component does not involve training the agent; it samples traject
 | Analysis Item | Key Metrics | Description |
 | :--- | :--- | :--- |
 | Cognitive Map Decoding | MLP cell accuracy ~70%; Linear probe 39.1% | Environment state is encoded non-linearly and coarse-grained in activations |
-| Pre- vs. Post-推理 Change | Map accuracy drops from ~75% (pre) to ~60% (post) | Spatial map info weakens post-inference; representation shifts towards action selection |
+| Pre- vs. Post-Inference Change | Map accuracy drops from ~75% (pre) to ~60% (post) | Spatial map info weakens post-inference; representation shifts towards action selection |
 | Strategy Consistency | Avg. 82.5% accuracy on decoded maps; Recovery range 37.4%--88.4% | Many "errors" in the real grid are rational actions relative to the model's internal map |
 | Multi-step Plan Decoding | 2-layer decoder post-inf $N=1$ prefix acc 66.49%; pre-inf $N=7$ acc 3.8% | Post-inference favors current action decoding; pre-inference preserves more long-range trajectory structure |
 

@@ -49,20 +49,20 @@ Starting from the English RewardBench, preference instances are carefully select
 
 ### Key Designs
 
-1. **多语言基准构建（M-RewardBench Dataset）**:
+1. **Multilingual Benchmark Construction (M-RewardBench Dataset)**:
 
     - **Function**: Constructing an RM evaluation dataset covering 23 typologically diverse languages.
     - **Mechanism**: Selecting preference instances (chosen/rejected pairs) from RewardBench across four capability dimensions—Chat, Safety, Reasoning, and Translation (newly added). The translation pipeline incorporates rigorous quality control, executing machine translation followed by human verification to ensure semantic equivalence.
     - **Design Motivation**: Directly adopting English benchmarks fails to reflect multilingual capabilities, while constructing native preference datasets for each language from scratch is prohibitively expensive and makes maintaining assessment consistency difficult. The translation-based strategy balances cost and comparability.
     - **Languages Covered**: 23 languages, including Chinese, Japanese, Korean, Arabic, Hindi, French, German, Spanish, Russian, Turkish, etc., spanning diverse language families and writing systems, totaling 2.87K preference pairs.
 
-2. **系统化评估框架**:
+2. **Systematic Evaluation Framework**:
 
     - **Function**: Comprehensively evaluating the cross-lingual performance of various RM architectures on M-RewardBench.
     - **Mechanism**: Evaluating three categories of RMs—(1) Classifier-based RMs (e.g., UltraRM) that output scalar scores via regression heads; (2) Generative RMs / LLMs-as-a-judge (e.g., GPT-4) that directly output preference judgments; (3) Implicit RMs (e.g., DPO-trained models) that convey preferences implicitly via likelihood margins. Each RM is evaluated across the 23 languages.
     - **Design Motivation**: Different RM architectures might present distinct multilingual generalization patterns—classifier-based models might be more susceptible to cross-lingual representation alignment, whereas generative RMs might be sensitive to prompting languages.
 
-3. **多维度分析**:
+3. **Multi-Dimensional Analysis**:
 
     - **Function**: Conducting deep analyses of factors influencing cross-lingual RM performance.
     - **Mechanism**: (1) English vs. non-English overall gap analysis, (2) cross-lingual preference drift analysis (shedding light on whether the RM's chosen/rejected decision for the same instance is inverted across different languages), (3) correlation analysis between translation quality and RM performance, and (4) the relationship between language resource levels (high/medium/low-resource) and RM performance.

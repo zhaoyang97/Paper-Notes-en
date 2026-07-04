@@ -14,7 +14,6 @@ date: 2026-05-08
 content_hash: b4ba40782386b402
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # LightGTS: A Lightweight General Time Series Forecasting Model
 
 **Conference**: ICML2025  

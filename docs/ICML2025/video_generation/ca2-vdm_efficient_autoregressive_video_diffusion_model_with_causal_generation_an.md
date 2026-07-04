@@ -71,13 +71,13 @@ To enhance the spatial guidance of the conditional frames on the generated frame
 
 The attention map size is $(HW) \times ((P'+1)HW)$. $P'$ is typically set to 3 (a small value), keeping the computational overhead manageable.
 
-#### 4. 时序 KV-Cache 队列与 Cyclic-TPEs
+#### 4. Temporal KV-Cache Queue and Cyclic-TPEs
 
 **KV-Cache Queue**: As the autoregressive process proceeds, the number of conditional frames $P_k$ grows continually. When $P_k$ reaches the preset maximum $P_{\max}$, the earliest KV-cache is dequeued to maintain a constant queue length. This ensures that the computational and storage costs do not grow infinitely while still leveraging long-term context.
 
 **Cyclic-TPEs**: When the cumulative generation length exceeds the training length, the temporal position encodings (TPE) will be exhausted. Since early TPEs are already bound to the stored KV-cache, they cannot simply be reset. The authors designed a cyclic shift mechanism where the denoising targets are assigned to TPE indices starting over from the beginning. During training, this behavior is aligned by using cyclic shifted TPE sequences with random offsets.
 
-#### 5. 空间 KV-Cache
+#### 5. Spatial KV-Cache
 
 Since $P' < l$, prefix-enhancement for the current chunk only requires the spatial KV-cache of the most recent chunk. Thus:
 - Only **one chunk** of spatial KV-cache is stored.

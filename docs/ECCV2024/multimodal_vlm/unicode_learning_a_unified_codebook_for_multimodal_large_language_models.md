@@ -53,14 +53,14 @@ Two-stage training: Stage I (Unified Codebook Learning) → Stage II (Multimodal
 
 ### Key Designs
 
-1. **Visual Tokenization与Stacked Quantization**:
+1. **Visual Tokenization and Stacked Quantization**:
 
     - **Function**: Compresses images into discrete token sequences, making them processable by the LLM.
     - **Mechanism**: Using the VQ-VAE framework, the encoder $\mathbb{E}$ extracts the feature map $Z_0 \in \mathbb{R}^{h \times w \times c}$, and then finds the nearest neighbor in the codebook $\mathbb{C}$ for each vector $z$: $Q(z;\mathbb{C}) = \arg\min_{k} \|z - e(k)\|_2^2$
     - To address the issue where high-resolution code maps lead to excessively long LLM sequences, stacked quantization (e.g., HQ-VAE) is adopted to compress the $h \times w$ code map into an $\hat{h} \times \hat{w} \times D$ multi-layer stacked map, where the final embedding for each position is the aggregation of the D-layer quantized vectors: $\hat{z}_{ij} = \mathcal{F}_{d=1}^{D} e(\hat{M}_{i,j,d})$
     - **Design Motivation**: Directly using a $256 \times 256$ resolution code map would require the LLM to process excessively long sequences. Stacked quantization significantly reduces the token count while maintaining information fidelity.
 
-2. **Language-Driven Iterative Training（核心创新）**:
+2. **Language-Driven Iterative Training (Core Innovation)**:
 
     - **Function**: Learns a unified codebook suitable for both visual quantization and text processing.
     - **Mechanism**: Alternately trains the visual tokenizer and the LLM, smoothing the visual tokenizer's codebook toward the LLM vocabulary using EMA:
@@ -72,7 +72,7 @@ Two-stage training: Stage I (Unified Codebook Learning) → Stage II (Multimodal
         - The **Language-driven scheme** balances both ends: EMA ensures that the visual codebook slowly converges toward the LLM vocabulary, while avoiding any disturbance to the LLM's own training.
     - **Ablation Validation**: The dual scheme collapses in VQA performance (VQA-v2 drops from 53.1 to 9.3), the frozen scheme yields poor generation quality (FID of 34.45 vs. 6.72), and the language-driven scheme excels in both.
 
-3. **In-Context Image Decompression预训练任务**:
+3. **In-Context Image Decompression Pre-training Task**:
 
     - **Function**: "Decompresses" compressed visual embeddings into a multi-layer code map, serving as a pre-training task to enhance the LLM's capability to understand visual tokens.
     - **Mechanism**: Given the compressed quantized embedding $\hat{Z} \in \mathbb{R}^{\hat{h} \times \hat{w}}$ as input, autoregressively predicts the unfolded code sequence $\{u_1, u_2, ..., u_{\hat{h} \times \hat{w} \times D}\}$:

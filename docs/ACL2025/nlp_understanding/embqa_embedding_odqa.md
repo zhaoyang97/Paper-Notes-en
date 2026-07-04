@@ -36,7 +36,7 @@ EmbQA proposes an embedding-level ODQA framework. It optimizes query representat
 
 **Key Challenge**: Improving ODQA accuracy typically requires more rounds of prompt interaction, but each round of interaction introduces significant computational overhead.
 
-**Key Insight**: Replacing prompt-level多轮 interactions with embedding-level operations (lightweight linear layers + single token embeddings).
+**Key Insight**: Replacing prompt-level multi-turn interactions with embedding-level operations (lightweight linear layers + single token embeddings).
 
 **Core Idea**: Operating in the embedding space to simultaneously optimize retrieval reranking and answer generation diversity, thereby bypassing the computational overhead of multi-round prompting.
 

@@ -99,7 +99,7 @@ A standard binary cross-entropy loss function is used to train ResNet-34. FL tra
 ## Highlights & Insights
 
 - **Systemic three-paradigm comparison framework**: In the privacy-sensitive field of medical imaging, this paper provides a complete comparison baseline of LL/FL/CL, offering a clear reference for subsequent researchers to select training strategies. This experimental design mindset can be migrated to other medical image classification tasks.
-- **巧妙设计 of using annotators as clients**: Using the natural grouping of multiple annotators as client partitions in FL not only simulates realistic multi-center scenarios but also avoids bias introduced by artificial data partitioning.
+- **Clever design of using annotators as clients**: Using the natural grouping of multiple annotators as client partitions in FL not only simulates realistic multi-center scenarios but also avoids bias introduced by artificial data partitioning.
 - **Explainability analysis with Grad-CAM**: Instead of just reporting digital metrics, it explains why CL/FL outperforms LL via attention visualization—because they learn more anatomically meaningful feature representations.
 
 ## Limitations & Future Work

@@ -132,7 +132,7 @@ Evaluation tasks: ID classification accuracy, Misclassification detection (Miscl
 - Novelty: ⭐⭐⭐⭐ Original framework (courtroom analogy + structural decomposition), though rooted in Dirichlet extensions.
 - Experimental Thoroughness: ⭐⭐⭐⭐ Covers ID/OOD/Shift/Long-tail tasks with consistent gains; lacks ImageNet and loss weight ablations.
 - Writing Quality: ⭐⭐⭐⭐⭐ The metaphor is well-sustained; theorems and property analyses are logically rigorous.
-- Value: ⭐⭐⭐⭐ Decomposable EU and unified视角 provide direct inspiration for high-stakes UQ deployment.
+- Value: ⭐⭐⭐⭐ Decomposable EU and unified perspective provide direct inspiration for high-stakes UQ deployment.
 
 <!-- RELATED:START -->
 

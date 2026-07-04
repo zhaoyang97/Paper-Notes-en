@@ -19,7 +19,7 @@ content_hash: c4c43a78825b8ff9
 
 **Conference**: ICLR2026  
 **OpenReview**: [https://openreview.net/forum?id=bZqCBgm2N0](https://openreview.net/forum?id=bZqCBgm2N0)  
-**论文**: [Project Page](https://sites.google.com/view/yuhangliu/projects/bedags)  
+**Paper**: [Project Page](https://sites.google.com/view/yuhangliu/projects/bedags)  
 **Code**: To be confirmed (authors state it will be public after publication)  
 **Area**: Causal Representation Learning / Multimodal VLM  
 **Keywords**: Latent Partial Causal Models, Multimodal Contrastive Learning, Identifiability, Decoupled Representations, CLIP

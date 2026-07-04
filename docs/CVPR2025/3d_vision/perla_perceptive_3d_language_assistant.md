@@ -92,7 +92,7 @@ Training involves the standard next-token prediction loss for language models, c
 ## Highlights & Insights
 
 - **Detail-aware perception improvement without increasing LLM input tokens**: Solves the problem by better encoding (aggregating high-resolution local + low-resolution global) rather than greedily increasing token counts.
-- **巧妙的 application of Hilbert curve**: Kills two birds with one stone by using it for locality-preserving partitioning and efficient $O(1)$ k-NN search.
+- **Clever application of Hilbert curve**: Kills two birds with one stone by using it for locality-preserving partitioning and efficient $O(1)$ k-NN search.
 - **Idea migration from 2D to 3D**: Effectively migrates successful multi-granularity strategies from 2D multimodal models (such as view partitioning in LLaVA-Next) to the 3D point cloud domain for the first time.
 
 ## Limitations & Future Work

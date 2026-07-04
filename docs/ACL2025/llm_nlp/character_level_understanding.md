@@ -81,7 +81,7 @@ The TIPA system consists of two core components:
 3. **Redefining the CSC Task**:
 
     - **Function**: Shifting traditional "outputting the corrected full sentence" to "outputting the position of the incorrect character, the incorrect character, and the correct character".
-    - **Mechanism**: e.g., "业内人事称..." → [{"position": 4, "incorrect": "事", "correction": "士"}]
+   - **Mechanism**: e.g., "Industry insiders say..." -> [{"position": 4, "incorrect": "shi (event-character)", "correction": "shi (scholar-character)"}]
     - **Design Motivation**: Dramatically reduces the number of output tokens (the position method requires 36-51% fewer tokens than traditional methods), thereby improving efficiency.
 
 4. **Extension Method: Full-Parameter SFT**:

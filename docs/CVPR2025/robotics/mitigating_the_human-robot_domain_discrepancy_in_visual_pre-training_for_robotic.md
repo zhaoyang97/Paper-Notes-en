@@ -81,7 +81,7 @@ A bidirectional contrastive loss is designed to constrain the adaptation process
 
 **Principle 2**: Paired human-robot features should be more similar than unpaired ones within a batch (the standard contrastive learning paradigm).
 
-$$\mathcal{L} = \frac{1}{2M}\sum_{i=1}^{M} -\log\frac{\mathcal{S}(\bar{h}_i^f, \bar{r}_i^t)}{\mathcal{S}(\bar{h}_i^f, \bar{r}_i^t) + \mathcal{S}(\bar{h}_i^f, \bar{r}_i^f) + \sum_{j \neq i}\mathcal{S}(\bar{h}_i^f, \bar{r}_j^t)} + \text{对称项}$$
+$$\mathcal{L} = \frac{1}{2M}\sum_{i=1}^{M} -\log\frac{\mathcal{S}(\bar{h}_i^f, \bar{r}_i^t)}{\mathcal{S}(\bar{h}_i^f, \bar{r}_i^t) + \mathcal{S}(\bar{h}_i^f, \bar{r}_i^f) + \sum_{j \neq i}\mathcal{S}(\bar{h}_i^f, \bar{r}_j^t)} + \text{symmetric term}$$
 
 where $\mathcal{S}(x,y) = \exp(x^T y / \tau)$, $\tau=0.1$. The unique aspect of this loss is that the "unadapted robot feature" $\bar{r}_i^f$ is also included in the denominator as a negative sample, directly penalizing the domain gap.
 

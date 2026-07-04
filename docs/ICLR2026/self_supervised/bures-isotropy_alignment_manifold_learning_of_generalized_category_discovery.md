@@ -153,7 +153,7 @@ The general trend is that BIA's benefit to New accuracy is usually more pronounc
 - **vs Bures metric related works**: Previous uses of the Bures metric often focused on comparing distributions, quantum states, or domain adaptation. This work differs by adopting it as a GCD training objective and solving implementation issues via a nuclear norm surrogate.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ The切入点 from Bures geometry to GCD class-token isotropy is distinctive, especially combining the nuclear norm surrogate with GCD representation collapse.
+- Novelty: ⭐⭐⭐⭐☆ The entry point from Bures geometry to GCD class-token isotropy is distinctive, especially combining the nuclear norm surrogate with GCD representation collapse.
 - Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers multiple baselines, datasets, given/unknown $K$, comparisons with SSL regularization, and analysis of batch size and overhead. Could be extended to cross-modal and more complex category estimation.
 - Writing Quality: ⭐⭐⭐⭐☆ Clear narrative flow and complete derivations. Some experimental tables are dense, requiring the reader to extract patterns from many figures.
 - Value: ⭐⭐⭐⭐☆ Lightweight, plug-and-play, and highly interpretable. It offers practical reference value for GCD and open-world representation learning as a low-cost geometric enhancement.

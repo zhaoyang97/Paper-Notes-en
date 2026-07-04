@@ -86,7 +86,7 @@ which represents the average cosine similarity between the features of the two i
 
 With the scores computed, rejection is a simple hard thresholding step. The context subset is defined as:
 
-$$\omega(i) = \{\, j \mid j=i \ \text{或}\ r^{O}_{i\to j} \ge \tau^{O} \,\},\quad O\in\{\text{att}, \text{feat}\},$$
+$$\omega(i) = \{\, j \mid j=i \ \text{or}\ r^{O}_{i\to j} \ge \tau^{O} \,\},\quad O\in\{\text{att}, \text{feat}\},$$
 
 Views below the threshold are discarded. The key selling point is that $\tau^O$ is **a fixed global value shared across all benchmarks** (ablation sets $\tau=0.05$ for RobustVGGT-A and $\tau=0.65$ for RobustVGGT-F). This avoids the scene-by-scene parameter tuning required by VPR and does not require prior knowledge of the number of clean images. After filtering, the clean subset $\{I_j\}_{j\in\omega(i)}$ is fed back into the same VGGT, producing $(P_i, D_i, X_i, C_i)$ based only on geometrically consistent views. The entire process requires zero additional parameters, zero supervision, and zero fine-tuning, costing only one extra forward pass and keeping the efficiency benefits of feed-forward reconstruction virtually intact.
 

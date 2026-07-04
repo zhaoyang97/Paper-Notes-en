@@ -63,7 +63,7 @@ flowchart TD
 
 ### Key Designs
 
-**1. Role-Play Caption (RPC): Position the model as a first-person navigator to补 fill viewpoint transitions**
+**1. Role-Play Caption (RPC): Position the model as a first-person navigator to fill in viewpoint transitions**
 
 Pure 2D methods process inputs frame-by-frame without modeling how the camera moves. RPC requires the model to act as a first-person navigator, generating scene descriptions $\mathcal{D}_i$ for each frame and viewpoint transition descriptions $\Delta\mathcal{T}_{i \to i+1}$ between adjacent frames (e.g., "I move forward and turn right to observe the table from the other side"). This explicitly describes camera motion to ensure cross-frame spatial consistency and stitches overlapping observations via anchor object identification into a unified global scene graph $\hat{\mathcal{G}}_{\mathrm{RPC}} = (\hat{\mathcal{O}}, \hat{\mathcal{R}}, \hat{\mathcal{V}})$. Ablations show RPC provides the largest gain during the RL phase.
 

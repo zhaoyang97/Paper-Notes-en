@@ -59,12 +59,12 @@ The logic for determining component types can be viewed as a decision tree (Fig.
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
 flowchart TD
-    Z["单模态表示<br/>Z(1), Z(2)"] --> ID["帧内分解<br/>拆成 M(m) 帧内 + N(m) 帧间"]
-    ID -->|"M(1), M(2)"| CD["一致性分解<br/>分离冗余 R 与独有 U(m)"]
-    ID -->|"N(1), N(2)"| SYN["协同融合<br/>残差多层融合得协同 S"]
-    CD --> GATE["门控聚合<br/>g_c 加权 R/U/S 子预测"]
+    Z["Unimodal Representations<br/>Z(1), Z(2)"] --> ID["Intra-Frame Decomposition<br/>Split into M(m) Intra-Frame + N(m) Inter-Frame"]
+    ID -->|"M(1), M(2)"| CD["Consistency Decomposition<br/>Separate Redundancy R and Unique U(m)"]
+    ID -->|"N(1), N(2)"| SYN["Synergy Fusion<br/>Residual Multi-Layer Fusion to Obtain Synergy S"]
+    CD --> GATE["Gated Aggregation<br/>g_c Weights R/U/S Sub-Predictions"]
     SYN --> GATE
-    GATE --> OUT["最终预测 Ŷ"]
+    GATE --> OUT["Final Prediction Y-hat"]
 ```
 
 ### Key Designs

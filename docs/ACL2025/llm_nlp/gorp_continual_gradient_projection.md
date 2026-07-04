@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GORP: Continual Gradient Low-Rank Projection Fine-Tuning for LLMs
 description: >-
-  [ACL 2025][LLM (Other)][Continual Learning] GORP proposes to unify the gradients of full-rank parameters and LoRA low-rank parameters by projecting them into a low-rank gradient subspace for joint updates. By utilizing the first moment of Adam to implicitly construct a shared gradient space across tasks, it alleviates catastrophic forgetting. In continual学习 settings on T5 and LLaMA2, its performance is close to the multi-task joint training upper bound.
+  [ACL 2025][LLM (Other)][Continual Learning] GORP proposes to unify the gradients of full-rank parameters and LoRA low-rank parameters by projecting them into a low-rank gradient subspace for joint updates. By utilizing the first moment of Adam to implicitly construct a shared gradient space across tasks, it alleviates catastrophic forgetting. In continual learning settings on T5 and LLaMA2, its performance is close to the multi-task joint training upper bound.
 tags:
   - "ACL 2025"
   - "LLM (Other)"
@@ -24,7 +24,7 @@ content_hash: b9c3e372bfa4d53d
 **Keywords**: Continual Learning, Gradient Projection, LoRA, Catastrophic Forgetting, Low-Rank Optimization
 
 ## TL;DR
-GORP proposes to unify the gradients of full-rank parameters and LoRA low-rank parameters by projecting them into a low-rank gradient subspace for joint updates. By utilizing the first moment of Adam to implicitly construct a shared gradient space across tasks, it alleviates catastrophic forgetting. In continual学习 settings on T5 and LLaMA2, its performance is close to the multi-task joint training upper bound.
+GORP proposes to unify the gradients of full-rank parameters and LoRA low-rank parameters by projecting them into a low-rank gradient subspace for joint updates. By utilizing the first moment of Adam to implicitly construct a shared gradient space across tasks, it alleviates catastrophic forgetting. In continual learning settings on T5 and LLaMA2, its performance is close to the multi-task joint training upper bound.
 
 ## Background & Motivation
 **Background**: Continual fine-tuning of LLMs requires learning on sequential tasks and faces catastrophic forgetting. LoRA is widely used in continual learning due to its parameter efficiency.

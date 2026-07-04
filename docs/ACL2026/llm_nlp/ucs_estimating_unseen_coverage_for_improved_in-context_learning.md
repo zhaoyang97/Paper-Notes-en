@@ -103,7 +103,7 @@ UCS is entirely training-free. Offline preprocessing (embedding and clustering) 
 
 ### Ablation Study
 
-| Configuration | Key Metrics | 说明 |
+| Configuration | Key Metrics | Description |
 |------|---------|------|
 | UCS+VoteK | Unique clusters: 10.0, Cluster size: 1.0 | Completely eliminates redundancy |
 | VoteK Original | Unique clusters: 9.67, Cluster size: 8.50 | Significant redundancy |

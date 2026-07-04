@@ -106,7 +106,7 @@ Key finding: Ours outperforms LRM-based models (IDOL, LHM-HF) in texture fidelit
 ### Ablation Study
 (Evaluated on upper-body synthetic clips):
 
-| Configuration | PSNR↑ | SSIM↑ | LPIPS↓ | 说明 |
+| Configuration | PSNR↑ | SSIM↑ | LPIPS↓ | Notes |
 |------|-------|-------|--------|------|
 | 2-layer Decoder | 20.31 | 0.785 | 0.181 | Shallow |
 | 8-layer Decoder (Default) | 20.38 | 0.787 | 0.164 | Depth provides stable LPIPS gains |

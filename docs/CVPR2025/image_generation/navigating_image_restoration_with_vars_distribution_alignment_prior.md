@@ -60,7 +60,7 @@ VarFormer is trained in two stages. **Stage 1**: Train the Adapter module on top
     - **Mechanism**: Introduces a low-dimensional intermediate feature $M$ (bridge feature) as a "mediator" between the prior and degraded features. $Q$ is derived from the degraded feature $F_{e/d}^i$, keys and values $K,V$ are derived from the enhanced feature $F_{g_{e/d}}^i$, and $M$ is obtained from the concatenation and projection of both. The attention mechanism operates in two steps: first computing $A_{q,m} = \text{Softmax}(QM^T/\sqrt{d})$, then $A_{m,k} = \text{Softmax}(MK^T/\sqrt{d})$, and finally $F_{in}^{i+1} = A_{q,m} \cdot (A_{m,k} \cdot V) + F_{e/d}^i$.
     - **Design Motivation**: Direct cross-attention fusion of features with large quality gaps introduces artifacts. Aligning two highly divergent feature spaces through an intermediate mediator is more stable than direct query-key matching.
 
-3. **Adapter for Domain Shift (Stage 1训练)**:
+3. **Adapter for Domain Shift (Stage 1 Training)**:
     - **Function**: Bridges the gap between the pre-trained distribution and the degraded image distribution while keeping VAR parameters frozen.
     - **Mechanism**: Inserts an Adapter module containing self-attention blocks after the VAR encoder, training it with a Feature Matching Loss—combining cross-entropy loss (to align multi-scale prediction tokens) and L2 loss (to pull the Adapter output closer to the ground-truth VQVAE quantized feature $F_{e_{gt}}^q$).
     - **Design Motivation**: Directly fine-tuning the VAR model destroys pre-trained knowledge, and there is a distribution gap between the degraded images observed by the VAR encoder and the clean images used in pre-training. A lightweight Adapter is the best balance between the two.

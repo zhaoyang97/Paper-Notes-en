@@ -69,7 +69,7 @@ flowchart TD
 
 In sparse settings, unlabeled ground-truth targets share the same "background" label as the actual background, causing them to be incorrectly penalized as negatives. SOS-Student adapts Focal Loss by partitioning predictions into three groups based on confidence and GT matching: high-confidence samples matching GT classes are labeled positives, low-confidence samples matching background are true background, and **high-confidence samples matching background** are identified as "unlabeled targets (hard negatives)." Standard Focal Loss is applied to the first two groups, while an adaptive factor $\omega$ suppresses the loss for the third group to prevent these targets from being driven toward the background. The classification loss is defined as:
 
-$$\mathcal{L}_{cls}^{s}=\begin{cases}-\alpha_t(1-p_t)^{\gamma}\log(p_t) & \text{正样本}\\ -(1-\alpha_t)p_t^{\gamma}\log(1-p_t) & \text{负样本},\ p_t\le thr\\ -(1-\alpha_t)p_t^{\gamma}\log(1-p_t)\,\omega & \text{硬负样本},\ p_t> thr\end{cases}$$
+$$\mathcal{L}_{cls}^{s}=\begin{cases}-\alpha_t(1-p_t)^{\gamma}\log(p_t) & \text{positive sample}\\ -(1-\alpha_t)p_t^{\gamma}\log(1-p_t) & \text{negative sample},\ p_t\le thr\\ -(1-\alpha_t)p_t^{\gamma}\log(1-p_t)\,\omega & \text{hard negative sample},\ p_t> thr\end{cases}$$
 
 where $p_t$ is confidence, $thr$ is the threshold, and $\omega$ is the adaptive factor. This maintains Focal Loss properties while specifically decoupling false negatives in sparse scenarios.
 
@@ -77,7 +77,7 @@ where $p_t$ is confidence, $thr$ is the threshold, and $\omega$ is the adaptive 
 
 HBox and Point lack directional information, making the rotation angle the most difficult attribute to recover. SOS-Student utilizes a robust prior: when an image undergoes a flip or rotation augmentation, the orientation of an object changes by a known transformation. A random augmentation (flip or rotation by angle $\mathcal{R}$) is applied to each image, and the student is required to produce consistent angle predictions between the original and augmented versions. The supervision is formulated as:
 
-$$\mathcal{L}_{Ang}^{s}=\begin{cases} L_{Ang}^{s}(\theta_{flp}+\theta,\,0) & \text{翻转增强}\\ L_{Ang}^{s}(\theta_{rot}-\theta,\,\mathcal{R}) & \text{旋转 }\mathcal{R}\end{cases}$$
+$$\mathcal{L}_{Ang}^{s}=\begin{cases} L_{Ang}^{s}(\theta_{flp}+\theta,\,0) & \text{flip augmentation}\\ L_{Ang}^{s}(\theta_{rot}-\theta,\,\mathcal{R}) & \text{rotation }\mathcal{R}\end{cases}$$
 
 Using Smooth-L1 for $L_{Ang}^s$, gradients for angle regression are provided without any angle annotations.
 

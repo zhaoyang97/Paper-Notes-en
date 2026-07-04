@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: 064b35d879ab4845
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # ABRA: Teleporting Fine-Tuned Knowledge Across Domains for Open-Vocabulary Object Detection
 
 **Conference**: CVPR 2025  

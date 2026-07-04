@@ -16,7 +16,6 @@ date: 2026-05-08
 content_hash: ff8434a2b96979cc
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # When to Lock Attention: Training-Free KV Control in Video Diffusion
 
 **Conference**: CVPR2025  

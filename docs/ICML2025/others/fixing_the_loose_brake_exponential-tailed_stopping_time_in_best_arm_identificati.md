@@ -14,7 +14,6 @@ date: 2026-05-08
 content_hash: 008d321c1a775017
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Fixing the Loose Brake: Exponential-Tailed Stopping Time in Best Arm Identification
 
 **Conference**: ICML2025  

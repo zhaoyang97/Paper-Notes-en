@@ -69,7 +69,7 @@ Predicting futures solely in latent space often leads to **representation collap
 
 $$\mathcal{L}_{\text{latent}} = \left\| \hat z^{t+\tau}_p - \frac{\bar z^{t+\tau}_p}{\|\bar z^{t+\tau}_p\|} \right\|_2^2 + \left\| \hat z^{t+\tau}_s - \frac{\bar z^{t+\tau}_s}{\|\bar z^{t+\tau}_s\|} \right\|_2^2.$$
 
-Second, an **辅助重建损失** (auxiliary reconstruction loss) uses lightweight decoders to map foresight back to raw observations: $\mathcal{L}_{\text{recon}} = \|h_p(\hat z^{t+\tau}_p) - p_{t+\tau}\|_1 + \|h_s(\hat z^{t+\tau}_s) - s^v_{t+\tau}\|_1$. The total objective is $\mathcal{L} = \mathcal{L}_{\text{latent}} + \lambda_{\text{recon}}\mathcal{L}_{\text{recon}}$ ($\lambda_{\text{recon}}=0.1$). This loss forces latent representations to be decodable back to observable states, preventing drift toward excessive abstraction. Ablations (Table 4) show that removing it drops the success rate from 94.7% to 86.1%.
+Second, an **auxiliary reconstruction loss** uses lightweight decoders to map foresight back to raw observations: $\mathcal{L}_{\text{recon}} = \|h_p(\hat z^{t+\tau}_p) - p_{t+\tau}\|_1 + \|h_s(\hat z^{t+\tau}_s) - s^v_{t+\tau}\|_1$. The total objective is $\mathcal{L} = \mathcal{L}_{\text{latent}} + \lambda_{\text{recon}}\mathcal{L}_{\text{recon}}$ ($\lambda_{\text{recon}}=0.1$). This loss forces latent representations to be decodable back to observable states, preventing drift toward excessive abstraction. Ablations (Table 4) show that removing it drops the success rate from 94.7% to 86.1%.
 
 **3. Foresight-Modulated Diffusion Policy: Latent Foresight as Learned Sub-goals**
 

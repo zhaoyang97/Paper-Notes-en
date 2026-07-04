@@ -53,7 +53,7 @@ Core Idea: Ambiguity of issues is resolved by assigning prototypical roles (hero
 Design Motivation:
 - Distinguish **major roles** from **minimally mentioned entities**, capturing only the single most central entity for each role type.
 - Abstract specific individuals/organizations into **stakeholder categories** (e.g., government, environmental activists, general public), enabling cross-textual comparison.
-- Introduce the concept of **focus**: Even if two articles share the same heroes and villains, a difference in focus leads to different narrative frames—a "heroic" frame focuses on praising the hero, while a "责备式" (blaming) frame focuses on criticizing the villain.
+- Introduce the concept of **focus**: Even if two articles share the same heroes and villains, a difference in focus leads to different narrative frames—a "heroic" frame focuses on praising the hero, while a "blaming" frame focuses on criticizing the villain.
 
 #### 2. **Conflict & Resolution**
 

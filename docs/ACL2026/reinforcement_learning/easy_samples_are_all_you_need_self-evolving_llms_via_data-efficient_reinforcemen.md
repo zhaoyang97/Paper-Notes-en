@@ -50,21 +50,21 @@ EasyRL consists of three stages: (1) Knowledge Transfer—training a warmup mode
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    A["10% 简单标注数据"] --> B["知识迁移<br/>GRPO 训练 warmup 模型 π₀"]
-    B --> C["大量未标注数据<br/>warmup 模型独立推理 N 次"]
-    subgraph DC["分治伪标注（按不确定性分三档）"]
+    A["10% Easy Labeled Data"] --> B["Knowledge Transfer<br/>GRPO Training to Warm Up Model π₀"]
+    B --> C["Large Unlabeled Data<br/>Warmup Model Independently Infers N Times"]
+    subgraph DC["Divide-and-Conquer Pseudo-Labeling (Three Uncertainty Tiers)"]
         direction TB
-        C --> D{"N 次答案一致？"}
-        D -->|"一致（低不确定性）"| E["一致性选择<br/>直接采纳为伪标签"]
-        D -->|"不一致，算预测熵 H(x)"| F{"H(x) ≤ τₜ？"}
-        F -->|"是（中不确定性）"| G["反思解决<br/>重评候选并修正得伪标签"]
-        F -->|"否（高不确定性）"| H["搁置，暂不标注"]
+        C --> D{"N Answers Consistent?"}
+        D -->|"Consistent (Low Uncertainty)"| E["Consistency Selection<br/>Directly Adopted as Pseudo-Label"]
+        D -->|"Inconsistent, Compute Prediction Entropy H(x)"| F{"H(x) ≤ τₜ?"}
+        F -->|"Yes (Medium Uncertainty)"| G["Reflective Resolution<br/>Re-evaluate Candidates and Correct to Pseudo-Label"]
+        F -->|"No (High Uncertainty)"| H["Set Aside, Defer Labeling"]
     end
-    E --> I["由难度递进的自训练<br/>伪标签 + 简单标注混合 RL 训练 → πᵢ₊₁"]
+    E --> I["Curriculum Self-Training<br/>Pseudo-Labels + Easy Labeled Data Mixed RL Training → πᵢ₊₁"]
     G --> I
-    I --> J["能力递增模型链 π₁…πₙ"]
-    H -.->|"下一轮用更强的 πᵢ 重新伪标注"| C
-    I -.->|"模型变强，啃略超当前能力的难样本"| H
+    I --> J["Progressively Stronger Model Chain π₁…πₙ"]
+    H -.->|"Next round: re-pseudo-label with stronger πᵢ"| C
+    I -.->|"Stronger model tackles samples slightly beyond current capability"| H
 ```
 
 ### Key Designs

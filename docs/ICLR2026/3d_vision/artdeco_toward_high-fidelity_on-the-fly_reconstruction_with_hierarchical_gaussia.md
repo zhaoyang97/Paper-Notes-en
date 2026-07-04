@@ -44,14 +44,14 @@ ARTDECO (named after **A**ccurate localization + **R**obust reconstruction + **D
 
 ```mermaid
 flowchart LR
-    A[单目 RGB 帧流] --> B[前端 Frontend]
-    B -->|MASt3R 匹配<br/>估相对位姿| C{帧分类}
-    C -->|关键帧/建图帧| D[后端 Backend]
-    C -->|普通帧| F[建图模块]
-    D -->|π³ 闭环检测<br/>全局 BA| E[一致位姿 + 点云置信度]
-    E --> F[建图模块 Mapping]
-    F -->|LoG 选点初始化<br/>分层半隐式高斯| G[结构化 3D 高斯场]
-    G -->|LoD-aware 光栅化| H[新视角渲染]
+    A[Monocular RGB frame stream] --> B[Frontend]
+    B -->|MASt3R matching<br/>estimate relative pose| C{Frame classification}
+    C -->|keyframe / mapping frame| D[Backend]
+    C -->|regular frame| F[Mapping module]
+    D -->|π³ loop closure detection<br/>global BA| E[Consistent poses + point cloud confidence]
+    E --> F[Mapping Module]
+    F -->|LoG point initialization<br/>hierarchical semi-implicit Gaussians| G[Structured 3D Gaussian field]
+    G -->|LoD-aware rasterization| H[Novel view rendering]
 ```
 
 The frontend estimates the relative pose of each frame relative to the latest keyframe and classifies frames into three categories: ordinary frames, mapping frames, and keyframes. The backend refines keyframe poses through loop closure and global BA while estimating point cloud confidence. The mapping module uses all frame types to initialize point clouds into Gaussians and optimize them incrementally. The specialized roles of the three frame types are key to this design—unlike traditional 3DGS-SLAM which only utilizes keyframes.

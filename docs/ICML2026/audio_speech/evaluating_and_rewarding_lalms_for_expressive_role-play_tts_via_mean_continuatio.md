@@ -114,7 +114,7 @@ CER is roughly 1/10th of baselines. MOS is 0.71 higher than the strongest Instru
 ## Highlights & Insights
 - **Inverse continuation is a clever normalization**: Using "candidate as context to predict GT" allows for a fixed-length target, ensuring fair normalization. This paradigm of "leveraging LALM linguistic priors to quantify fuzzy concepts" can transfer to other modalities.
 - **Gated hybrid rewards as a template**: The combination of hard gating, positive shifting, and content penalty is more robust than a weighted sum and can be applied to any dual-objective task (e.g., accent or emotion TTS).
-- **Data提质 (Refining Data)**: The pipeline demonstrates how to upgrade ASR corpora using LLMs/VLMs for character profiles and scene descriptions.
+- **Data Quality Refinement**: The pipeline demonstrates how to upgrade ASR corpora using LLMs/VLMs for character profiles and scene descriptions.
 
 ## Limitations & Future Work
 - Experiments primarily focused on Chinese drama; multi-lingual validity remains to be verified.

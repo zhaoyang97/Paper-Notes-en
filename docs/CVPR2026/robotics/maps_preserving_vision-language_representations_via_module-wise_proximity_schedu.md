@@ -18,7 +18,7 @@ content_hash: 48f552016a26083e
 # MAPS: Preserving Vision-Language Representations via Module-Wise Proximity Scheduling for Better Vision-Language-Action Generalization
 
 **Conference**: CVPR 2026  
-**论文**: [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Huang_MAPS_Preserving_Vision-Language_Representations_via_Module-Wise_Proximity_Scheduling_for_Better_CVPR_2026_paper.html)  
+**Paper**: [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Huang_MAPS_Preserving_Vision-Language_Representations_via_Module-Wise_Proximity_Scheduling_for_Better_CVPR_2026_paper.html)  
 **Code**: https://mapsvla.github.io (Project Page)  
 **Area**: Robotics / VLA Generalization  
 **Keywords**: VLA, Robust Fine-tuning, Catastrophic Forgetting, Projection Regularization, Module-wise Scheduling

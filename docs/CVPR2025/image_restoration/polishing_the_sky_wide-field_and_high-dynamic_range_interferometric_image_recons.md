@@ -16,7 +16,6 @@ date: 2026-05-08
 content_hash: c1357373d7338acf
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # POLISH'ing the Sky: Wide-Field and High-Dynamic Range Interferometric Image Reconstruction with Application to Strong Lens Discovery
 
 **Conference**: CVPR2025  

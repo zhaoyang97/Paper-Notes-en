@@ -57,7 +57,7 @@ Consider a binary classification setting $(X, y) \sim \mathcal{D}$, where $y \in
 
 Under three reasonable assumptions (bounded data, separation between classes $> 2\delta$, and existence of a polynomial-sized clean classifier), the authors construct a key CGRO classifier:
 
-$$f_\mathcal{S}(X) = \underbrace{f_{\text{clean}}(X)(1 - \mathbb{I}\{X \in \cup_i \mathbb{B}_p(X_i, \delta)\})}_{\text{对未见数据用干净分类}} + \underbrace{\sum_{i=1}^N y_i \mathbb{I}\{X \in \mathbb{B}_p(X_i, \delta)\}}_{\text{对训练数据做鲁棒记忆}}$$
+$$f_\mathcal{S}(X) = \underbrace{f_{\text{clean}}(X)(1 - \mathbb{I}\{X \in \cup_i \mathbb{B}_p(X_i, \delta)\})}_{\text{Clean classification on unseen data}} + \underbrace{\sum_{i=1}^N y_i \mathbb{I}\{X \in \mathbb{B}_p(X_i, \delta)\}}_{\text{Robust memorization on training data}}$$
 
 **Core Idea**: Directly memorize the correct label within the $\delta$-neighborhood of the training data points (robust memorization); predict using the clean classifier outside the neighborhood.
 

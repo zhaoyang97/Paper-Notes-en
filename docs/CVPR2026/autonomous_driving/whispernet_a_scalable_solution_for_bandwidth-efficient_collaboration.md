@@ -54,7 +54,7 @@ The pipeline consists of three modules following a "request-response" protocol: 
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
     A["Local Features X_j of Agents"] --> B["Sender Importance Estimation<br/>Spatial Map M_S + Channel Map M_C"]
-    B -->|"輕量元數據"| C["Receiver Confidence-Aware Coordination<br/>Global Request Plan + Budget Allocation"]
+    B -->|"Lightweight Metadata"| C["Receiver Confidence-Aware Coordination<br/>Global Request Plan + Budget Allocation"]
     C -->|"Broadcast Allocation Matrix b_j,k"| D["Sparse Feature M_j Transmission<br/>based on Channel Priority"]
     D --> E["Collaborative Feature Routing<br/>Semantic Grouping + Multi-agent Alignment"]
     E --> F["Downstream Fusion → 3D Detection / BEV Segmentation"]

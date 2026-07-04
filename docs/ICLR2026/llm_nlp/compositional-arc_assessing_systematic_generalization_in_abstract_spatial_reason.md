@@ -51,18 +51,18 @@ The data generation is hierarchical: based on the closure of geometric transform
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
 flowchart TD
-    subgraph DATA["Compositional-ARC 数据集（设计 1）"]
+    subgraph DATA["Compositional-ARC Dataset (Design 1)"]
         direction TB
-        A["几何变换封闭性：<br/>两有效变换组合仍有效"] --> B["5 基础变换 × 3 指示器<br/>（形状/颜色/邻居触发）"]
-        B --> C["level-1：2 指示器组合"] --> D["level-2：3 指示器组合<br/>（留作 OOD 测试集）"]
+        A["Geometric Transform Closure:<br/>Composition of Two Valid Transforms Remains Valid"] --> B["5 Base Transforms × 3 Indicators<br/>(Shape/Color/Neighbor Triggers)"]
+        B --> C["level-1: 2-Indicator Combinations"] --> D["level-2: 3-Indicator Combinations<br/>(Reserved as OOD Test Set)"]
     end
-    subgraph MLC["MLC 视觉文法训练（设计 2）"]
+    subgraph MLC["MLC Visual Grammar Training (Design 2)"]
         direction TB
-        E["每 episode 重抽视觉文法<br/>study = 6 基础 + 6 level-1"] --> F["10×10 网格 → 2×2 patch ×25<br/>+ 1D/2D 位置编码"]
-        F --> G["3 层 encoder-decoder<br/>5.7M 参数 + copy task"]
+        E["Re-sample Visual Grammar Each Episode<br/>study = 6 Base + 6 level-1"] --> F["10×10 Grid → 2×2 Patch ×25<br/>+ 1D/2D Positional Encoding"]
+        F --> G["3-Layer Encoder-Decoder<br/>5.7M Parameters + Copy Task"]
     end
     D --> E
-    G --> H["预测未见 level-2 组合的输出网格"]
+    G --> H["Predict Output Grid for Unseen level-2 Combinations"]
 ```
 
 ### Key Designs

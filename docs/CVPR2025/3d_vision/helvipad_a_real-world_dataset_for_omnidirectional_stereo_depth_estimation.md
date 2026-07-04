@@ -49,19 +49,19 @@ The system consists of two parts: (1) Dataset construction—capturing 29 video 
 
 ### Key Designs
 
-1. **LiDAR到360°图像的精确映射**:
+1. **Precise LiDAR-to-360° Image Mapping**:
 
     - **Function**: Project LiDAR 3D point clouds onto equirectangular images accurately to generate depth labels.
     - **Mechanism**: At the beginning of each acquisition session, a 19×19 checkerboard calibration board is used to obtain the correspondence between LiDAR points and image pixels. A preliminary rotation and translation align the LiDAR coordinate system to the camera center, followed by converting the 3D points to spherical coordinates $(r, \theta, \phi)$ and projecting them onto the equirectangular plane as $(x^{eq}, y^{eq}) = (\frac{\phi + \pi}{2\pi}W, \frac{\theta}{\pi}H)$. Minimizing the projection error via BFGS optimization yields an average alignment error of only 1.7 pixels. The spherical disparity is defined as $d = \arctan(\frac{\sin(\theta_b)}{r_{bottom}/B_{camera} - \cos(\theta_b)})$.
     - **Design Motivation**: The spherical projection of omnidirectional images is fundamentally different from standard perspective projection, requiring spherical coordinate transformations for correct mapping. Precise calibration is the foundation of dataset quality.
 
-2. **深度补全管线**:
+2. **Depth Completion Pipeline**:
 
     - **Function**: Densify sparse LiDAR depth annotations, increasing the ratio of annotated pixels from 12% to 61%.
     - **Mechanism**: A three-step pipeline: (1) **Temporal aggregation**: merging the point cloud of the current frame with those from 4 preceding and 4 succeeding frames, where the error is negligible due to high frame rate and low moving speed. (2) **Spherical interpolation**: estimating the depth of a query point on the spherical grid via inverse distance-weighted average of its $k$-nearest neighbors $r_q = \sum w_i r_i$ (where weights are the reciprocal of spherical coordinate distance). (3) **Filtering**: using relative weighted variance as an uncertainty metric $\sigma^2_{r_q} = \sum w_i (\frac{r_q - r_i}{r_q})^2$ to remove high-uncertainty points and regions lacking close neighbors (e.g., the sky).
     - **Design Motivation**: LiDAR point clouds are inherently sparse, and using them directly as training labels results in insufficient supervision. Temporal aggregation followed by interpolation and filtering provides an automated densification pipeline without human annotations while guaranteeing label quality.
 
-3. **360-IGEV-Stereo（全景适配的立体匹配模型）**:
+3. **360-IGEV-Stereo (Panorama-Adapted Stereo Matching Model)**:
 
     - **Function**: Adapt IGEV-Stereo to process equirectangular projection images.
     - **Mechanism**: Two adaptations are introduced. **Polar angle input**: in a top-bottom setup, images are vertically distorted to construct the cost volume, with the distortion level varying according to the polar angle $\theta$. The polar angle map is added as an extra input channel, processed by a shared polar angle encoder (strided convolutional layers) and concatenated with the feature network bottleneck at the lowest resolution (1/32), as well as context features at 1/4 resolution. **Circular padding**: leveraging the horizontal continuity of 360° images, the left boundary of the image is padded with 64 columns of pixels from the right side, and vice versa during inference. This enables the network to utilize cross-boundary context. The cost volume is constructed via vertical warping. Photometric data augmentation is additionally incorporated during training to cope with lighting variations in the dataset.

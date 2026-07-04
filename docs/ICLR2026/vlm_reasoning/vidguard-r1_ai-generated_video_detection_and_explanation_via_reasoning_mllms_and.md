@@ -51,12 +51,12 @@ VidGuard-R1 addresses the dual challenge of accurately judging video authenticit
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["真实视频<br/>InternVid + ActivityNet"] --> B["无快捷方式数据集构建<br/>配对生成假视频 + 标准化 + CoT标注<br/>(140K视频对)"]
-    B --> C["SFT：学会先思考再判真伪的<br/>CoT输出格式"]
-    C --> D["GRPO 探索式强化学习<br/>采样多条推理路径 + 组内排名"]
-    D --> E["GRPO-TA<br/>注入时序伪影<br/>逼模型看帧间动态"]
-    D --> F["GRPO-Q<br/>扩散步数当质量标尺<br/>细粒度感知退化"]
-    E --> G["真/假判定 + CoT解释<br/>(+生成质量档位)"]
+    A["Real videos<br/>InternVid + ActivityNet"] --> B["Shortcut-free dataset construction<br/>Paired synthetic fake videos + normalization + CoT annotation<br/>(140K video pairs)"]
+    B --> C["SFT: Learn to think before judging authenticity<br/>CoT output format"]
+    C --> D["GRPO exploratory reinforcement learning<br/>Sample multiple reasoning paths + group ranking"]
+    D --> E["GRPO-TA<br/>Inject temporal artifacts<br/>Force model to attend to inter-frame dynamics"]
+    D --> F["GRPO-Q<br/>Diffusion Step Count as Quality Ruler<br/>Fine-Grained Degradation Perception"]
+    E --> G["Real/Fake Verdict + CoT Explanation<br/>(+Generation Quality Grade)"]
     F --> G
 ```
 
@@ -74,7 +74,7 @@ Data alone is insufficient—SFT only teaches the model to mimic reasoning forma
 
 Standard GRPO tends to rely on single-frame cues (pixel distortion, lighting anomalies). GRPO-TA (GRPO with Temporal Artifacts) actively injects temporal disruptions during training to correct this bias. Selected regions of a video are subjected to segment repetition or frame reversal based on a Gaussian distribution, creating temporal anomalies. These tampered videos must be identified as fake. The reward design is asymmetric: correctly identifying tampered versions of real videos (which are more subtle) yields a higher reward $\alpha_1 = 0.5$, while tampered generated videos (which already have instability) yield $\alpha_2 = 0.3$. To ensure stability, the additional reward $w_i$ is only activated if the original video was predicted correctly and the intra-group accuracy $\tilde{p}$ exceeds $\mu = 0.8$:
 
-$$r_i^{\text{GRPO-TA}} = \begin{cases} r_i^{\text{GRPO}} + w_i, & \text{若 } o_i \text{ 正确且 } \tilde{p} > \mu \\ r_i^{\text{GRPO}}, & \text{否则} \end{cases}$$
+$$r_i^{\text{GRPO-TA}} = \begin{cases} r_i^{\text{GRPO}} + w_i, & \text{if } o_i \text{ is correct and } \tilde{p} > \mu \\ r_i^{\text{GRPO}}, & \text{otherwise} \end{cases}$$
 
 This shifts the model's attention from static pixels to inter-frame dynamics.
 

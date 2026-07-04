@@ -49,19 +49,19 @@ The design of C²LEVA consists of two core pillars: (1) **Comprehensive Evaluati
 
 ### Key Designs
 
-1. **22任务综合评测体系 (Comprehensive Task Suite)**:
+1. **22-Task Comprehensive Evaluation Suite (Comprehensive Task Suite)**:
 
     - **Function**: Comprehensively evaluate LLM performance across different dimensions.
     - **Mechanism**: The 22 tasks are organized into 5 capability dimensions: (a) **Knowledge**: world knowledge QA, professional knowledge test, and common-sense reasoning; (b) **Reasoning**: logical reasoning, mathematical reasoning, and code generation and understanding; (c) **Language Understanding**: reading comprehension, sentiment analysis, natural language inference, and info extraction; (d) **Language Generation**: text summarization, translation, creative writing, and dialogue generation; (e) **Safety**: toxic content detection, bias evaluation, and factuality verification. Every task is bilingual (Chinese and English), ensuring the assessment of the models' cross-lingual capabilities.
     - **Design Motivation**: Existing benchmarks often cover only a subset of capability dimensions, failing to comprehensively reflect the overall capability of models. The bilingual design fills the gap in comparative Chinese-English evaluation.
 
-2. **全自动数据更新管道 (Automated Data Renewal Pipeline)**:
+2. **Fully Automated Data Renewal Pipeline (Automated Data Renewal Pipeline)**:
 
     - **Function**: Automatically generate brand new test data periodically to render obsolete test data invalid.
     - **Mechanism**: A data generator is designed for each task to automatically construct new test samples from source data (e.g., news, Wikipedia, academic papers). The specific pipeline includes: (a) fetching raw material from constantly updating data sources; (b) automatically constructing questions using task-specific templates and rules; (c) filtering for quality to ensure the difficulty distribution of new data is consistent with the old; (d) automated correctness validation. The entire process requires no human intervention and can be updated monthly or on demand.
     - **Design Motivation**: Static test sets are the root cause of data contamination—as long as the test set remains unchanged, there is always a risk of leakage. Automated renewal fundamentally solves this problem.
 
-3. **多层次数据保护 (Multi-Level Data Protection)**:
+3. **Multi-Level Data Protection**:
 
     - **Function**: Prevent test data leakage during benchmark release and usage.
     - **Mechanism**: Implement three levels of protection: (a) **Release Level**: Raw text of the test data is not made public; instead, evaluations are conducted via API-based answer submission; (b) **Technical Level**: Data encryption and access control restrict direct access to the raw test data; (c) **Temporal Level**: The specific questions used in each evaluation round can only be viewed after the round is completed (at which point the next round of questions is already prepared).

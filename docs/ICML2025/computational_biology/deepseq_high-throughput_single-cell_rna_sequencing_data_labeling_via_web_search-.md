@@ -58,7 +58,7 @@ The authors propose: Can a modular, scalable LLM annotation system be constructe
 
 DeepSeq is an end-to-end modular pipeline, with the overall workflow as:
 
-$$\text{原始数据} \xrightarrow{\text{过滤}} \text{清洗后数据} \xrightarrow{\text{降维+聚类}} \text{细胞簇} \xrightarrow{\text{提取标志基因}} \text{结构化提示} \xrightarrow{\text{LLM推理}} \text{细胞类型标签}$$
+$$\text{Raw Data} \xrightarrow{\text{Filtering}} \text{Cleaned Data} \xrightarrow{\text{Dim. Reduction + Clustering}} \text{Cell Clusters} \xrightarrow{\text{Marker Gene Extraction}} \text{Structured Prompt} \xrightarrow{\text{LLM Inference}} \text{Cell Type Labels}$$
 
 The system supports two inference paths:
 1. **Local Inference**: Deploying lightweight models (e.g., LLaMA3) via the Ollama client for on-device inference.

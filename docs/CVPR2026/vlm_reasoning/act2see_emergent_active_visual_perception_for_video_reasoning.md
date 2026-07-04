@@ -47,14 +47,14 @@ Act2See is essentially a pipeline that "**constructs interleaved CoT data with f
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["视频初始帧 + 问题"] --> B["交错式 CoT<br/>与工具调用 token"]
-    B -->|检测到 retrieve| C["离线帧检索<br/>(3fps 高采样)"]
-    B -->|检测到 generate| D["检索引导的<br/>条件式帧生成"]
-    C --> E["两轮循环<br/>续写推理出答案"]
+    A["Initial video frame + question"] --> B["Interleaved CoT<br/>and tool-call tokens"]
+    B -->|retrieve detected| C["Offline frame retrieval<br/>(3fps high-rate sampling)"]
+    B -->|generate detected| D["Retrieval-guided<br/>conditional frame generation"]
+    C --> E["Two-round loop<br/>continue reasoning to produce answer"]
     D --> E
-    E -->|仅造数据时| F["人工标注校准<br/>质量过滤"]
-    F --> G["SFT 训练小模型"]
-    E -->|推理时直接出| H["最终答案"]
+    E -->|data construction only| F["Human annotation calibration<br/>quality filtering"]
+    F --> G["SFT training of small model"]
+    E -->|direct output at inference| H["Final answer"]
 ```
 
 ### Key Designs

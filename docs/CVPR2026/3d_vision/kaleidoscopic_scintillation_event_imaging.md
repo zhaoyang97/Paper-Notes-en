@@ -117,7 +117,7 @@ The ratios of removed photons align with expectations (1/5 and 2/5), suggesting 
 - **Density Weighting + Anchor Regularization**: These anti-sparsity/noise techniques are valuable for any photon-level sparse EM fitting problems (e.g., single-photon LiDAR, fluorescence localization).
 
 ## Limitations & Future Work
-- **First-order Reflection Only**: The algorithm assumes $\ge 2$ mirrors and only first-order reflections; events near視场 edges with fewer mirrors are discarded.
+- **First-order Reflection Only**: The algorithm assumes $\ge 2$ mirrors and only first-order reflections; events near field-of-view edges with fewer mirrors are discarded.
 - **Missing Ground Truth**: Real events cannot be generated at controlled locations. Quantitave accuracy relies on simulation after hardware calibration.
 - **Apex Angle Trade-off**: The 120° angle suppresses complex second-order reflections but limits mirror count and geometric diversity.
 - **Dark Count Complexity**: Measured dark counts were higher than baseline; possible sources like crosstalk or fluorescence were listed but not definitively concluded.

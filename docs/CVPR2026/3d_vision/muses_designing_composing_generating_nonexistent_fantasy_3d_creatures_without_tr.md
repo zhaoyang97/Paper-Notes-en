@@ -112,7 +112,7 @@ Muses leads across all metrics. Specifically, in the user study, it achieved 66.
 ### Key Findings
 - **Removing LLM reasoning causes the largest drop**: Rules follow topology but lack semantic awareness; region proportions and relative orientations fail.
 - **Geometry-invariant texture editing has the greatest impact on CLIP**: Providing a style image aligned with the geometry is critical for final text-visual alignment.
-- **Robustness stays stable**: Failure rates rise with skeleton complexity (关节数/degree), but LLM reasoning only fails in 11% of "Hard" cases, proving scalability.
+- **Robustness stays stable**: Failure rates rise with skeleton complexity (joint count/degree), but LLM reasoning only fails in 11% of "Hard" cases, proving scalability.
 - **Transferable to non-biological objects**: As long as an object can be skeletonized (e.g., lamp base + wings), Muses remains applicable.
 
 ## Highlights & Insights

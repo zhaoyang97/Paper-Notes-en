@@ -96,7 +96,7 @@ The key innovation lies in selecting negative samples from the model's own retri
 - Skip the query if the positive sample is already ranked first.
 - Each negative sample is paired with the positive sample to form a training instance.
 
-## 实验
+## Experiments
 
 ### Experimental Setup
 - **Datasets**: MultiHop-RAG, AllSides, AGNews (three domain-specific) + Natural Questions (general)

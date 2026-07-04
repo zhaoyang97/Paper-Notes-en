@@ -55,7 +55,7 @@ Key design concept: **First model LDR, then lift to HDR**, rather than attemptin
 
 #### Camera Imaging Mechanism Modeling
 
-The core innovation lies in designing the network architectures of L2H-CC and H2L-CC based on **物理成像公式 (physical imaging formulations)**.
+The core innovation lies in designing the network architectures of L2H-CC and H2L-CC based on **physical imaging formulations**.
 
 **LDR Image Formation Formula** (forward process from HDR to LDR):
 

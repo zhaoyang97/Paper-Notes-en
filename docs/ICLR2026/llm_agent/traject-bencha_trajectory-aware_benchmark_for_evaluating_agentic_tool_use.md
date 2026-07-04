@@ -46,11 +46,11 @@ TRAJECT-Bench is essentially a pipeline for "data construction + evaluation." On
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["RapidAPI 原始 API"] --> B["工具集策展<br/>可执行+描述清晰<br/>去重+保留高复杂度"]
-    B --> C["任务驱动轨迹合成<br/>并行集合 / 串行依赖链"]
-    C --> D["双难度查询生成<br/>简单(显式) / 困难(隐含)"]
-    D --> E["1228 工具 · 5670 查询"]
-    E --> F["轨迹感知指标评测<br/>EM/Inclusion/Usage/Traj-Satisfy/Acc"]
+    A["RapidAPI Raw API"] --> B["Toolset Curation<br/>Executable + Clear Description<br/>Dedup + Retain High Complexity"]
+    B --> C["Task-Driven Trajectory Synthesis<br/>Parallel Sets / Sequential Dependency Chains"]
+    C --> D["Dual-Difficulty Query Generation<br/>Easy (Explicit) / Hard (Implicit)"]
+    D --> E["1228 Tools · 5670 Queries"]
+    E --> F["Trajectory-Aware Metric Evaluation<br/>EM/Inclusion/Usage/Traj-Satisfy/Acc"]
 ```
 
 ### Key Designs

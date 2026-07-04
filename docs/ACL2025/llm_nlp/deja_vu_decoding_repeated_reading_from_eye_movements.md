@@ -49,19 +49,19 @@ The task is defined via two variants: (1) **Single-trial task**—given a single
 
 ### Key Designs
 
-1. **多层次特征表示（Feature-Based Approach）**:
+1. **Multi-Level Feature Representation (Feature-Based Approach)**:
 
     - Function: Extracts psycholinguistically driven features from eye-movement trajectories for XGBoost classification.
     - Mechanism: Designs a 35-dimensional global feature vector containing three categories of features: (a) 8 standard eye-tracking metrics (total fixation duration, first fixation duration, gaze duration, fixation count, skip rate, regression rate, etc.); (b) 20 lexical attribute coefficients—fitting a participant's speed-normalized eye-movement metrics to word frequency, surprisal, and word length via linear models to capture the reduced sensitivity to linguistic attributes during repeated reading; (c) 7 saccadic network features—constructing the eye-gaze trajectory as a directed graph and extracting graph-theoretical features such as connectivity, centrality, and clustering.
     - Design Motivation: Features are designed directly based on known first-time/repeated reading differences in the psycholinguistic literature to ensure interpretability and a solid theoretical foundation.
 
-2. **RoBERTEye 多模态神经模型**:
+2. **RoBERTEye Multimodal Neural Model**:
 
     - Function: Synthesizes textual semantic information and eye-movement features for end-to-end prediction.
     - Mechanism: Based on a RoBERTa extension, word-level or fixation-level eye-movement feature vectors are projected into the language model's embedding space and concatenated with the word embedding sequence before being input into the Transformer. Two variants are proposed: RoBERTEye-Words (using 13-dimensional word-level features) and RoBERTEye-Fixations (using a concatenation of 6-dimensional fixation-level features and word-level features). Special tokens are used to distinguish text embeddings from eye-movement embeddings.
     - Design Motivation: Leverages the text comprehension capabilities of pretrained language models, enabling the system to discover interaction patterns between textual content and eye-movement behaviors.
 
-3. **E-Z Reader 合成扫视路径增强**:
+3. **E-Z Reader Synthetic Scanpath Augmentation**:
 
     - Function: Generates synthetic "typical first-time reading" eye-gaze trajectories as an auxiliary reference signal.
     - Mechanism: Employs the E-Z Reader cognitive model to generate 1,000 synthetic saccadic pathways for each text, and averages them to serve as a first-time reading reference. The differences between human features and synthetic features are used as auxiliary inputs: the global and word-level representations concatenate the human features with the differences, while the fixation-level representations utilize sequence-wise concatenation with a third special token to distinguish them. Validation shows that the E-Z Reader output is significantly closer to human first-time reading in terms of fixation count and skip rate ($p<0.001$).

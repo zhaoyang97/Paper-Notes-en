@@ -16,7 +16,6 @@ date: 2026-05-08
 content_hash: e402296e6b53e008
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # NTPP: Generative Speech Language Modeling for Dual-Channel Spoken Dialogue via Next-Token-Pair Prediction
 
 **Conference**: ICML2025  

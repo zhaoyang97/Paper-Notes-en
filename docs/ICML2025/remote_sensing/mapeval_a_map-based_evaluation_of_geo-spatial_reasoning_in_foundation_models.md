@@ -118,7 +118,7 @@ Multiple-choice question accuracy is used as the primary metric, computed separa
 
 1. **Unique Three-in-One Evaluation Framework**: This benchmark is the first to integrate textual, API, and visual modalities for map reasoning within a single framework, providing a comprehensive evaluation perspective.
 2. **Elegant Agent Evaluation Design**: By encapsulating tool functions and caching API responses, it ensures both the authenticity and reproducibility of the evaluation.
-3. **揭示了根本能力缺陷**: Fine-tuning experiments prove that the performance gap is not due to a lack of training data, but rather a fundamental limitation in the models' spatial reasoning capabilities.
+3. **Reveals fundamental capability deficiencies**: Fine-tuning experiments prove that the performance gap is not due to a lack of training data, but rather a fundamental limitation in the models' spatial reasoning capabilities.
 4. **MapQA Ecosystem**: MapEval is part of the larger MapQA ecosystem (MapQaTor → MapEval → MapAgent), forming a complete research pipeline from data construction to evaluation and agents.
 
 ## Limitations & Future Work

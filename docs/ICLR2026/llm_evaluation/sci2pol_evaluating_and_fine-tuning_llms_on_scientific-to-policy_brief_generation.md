@@ -170,7 +170,7 @@ Even the strongest Grok-3-beta only scored 77.01, far from perfect, suggesting s
 - [\[ICLR 2026\] RouterArena: An Open Platform for Comprehensive Comparison of LLM Routers](routerarena_an_open_platform_for_comprehensive_comparison_of_llm_routers.md)
 - [\[ICLR 2026\] BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation](biasscope_towards_automated_detection_of_bias_in_llm-as-a-judge_evaluation.md)
 - [\[ICLR 2026\] Log Probability Tracking of LLM APIs](log_probability_tracking_of_llm_apis.md)
-- [\[ACL 2026\] 正确信念的瓦解：临床压力下 LLM 的认知韧性研究](../../ACL2026/llm_evaluation/when_correct_beliefs_collapse_epistemic_resilience_of_llms_under_clinical_pressu.md)
+- [[ACL 2026] When Correct Beliefs Collapse: Epistemic Resilience of LLMs Under Clinical Pressure](../../ACL2026/llm_evaluation/when_correct_beliefs_collapse_epistemic_resilience_of_llms_under_clinical_pressu.md)
 
 </div>
 

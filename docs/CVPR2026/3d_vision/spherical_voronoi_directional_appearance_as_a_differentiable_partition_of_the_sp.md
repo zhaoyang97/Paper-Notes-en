@@ -51,16 +51,16 @@ Reflection modeling follows a deferred rendering pipeline: mapping the 2DGS scen
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["视角方向 ω"] --> B["球面软Voronoi划分<br/>softmax 加权站点"]
-    B -->|直接查询 f(ω)| C["视角相关 diffuse 外观"]
-    B -->|沿反射方向 f(ωr)| D["可学习光照探针<br/>kNN 探针 + 逆距离插值"]
-    E["2DGS 几何pass<br/>位置/法线/粗糙度/diffuse"] --> D
-    E --> F["远场 cubemap"]
-    D --> G["近场镜面 Cn"]
-    F --> H["远场镜面 Cf"]
-    G --> I["β 混合近/远场<br/>粗糙度调温度 λ"]
+    A["View direction omega"] --> B["Spherical soft Voronoi partition<br/>softmax-weighted sites"]
+    B -->|"Direct query f(omega)"| C["View-dependent diffuse appearance"]
+    B -->|"Along reflection direction f(omega_r)"| D["Learnable illumination probe<br/>kNN probe + inverse-distance interpolation"]
+    E["2DGS geometry pass<br/>position / normal / roughness / diffuse"] --> D
+    E --> F["Far-field cubemap"]
+    D --> G["Near-field specular Cn"]
+    F --> H["Far-field specular Cf"]
+    G --> I["Beta blend near/far field<br/>roughness-modulated temperature lambda"]
     H --> I
-    C --> J["最终颜色 C = D + Cspec"]
+    C --> J["Final color C = D + Cspec"]
     I --> J
 ```
 

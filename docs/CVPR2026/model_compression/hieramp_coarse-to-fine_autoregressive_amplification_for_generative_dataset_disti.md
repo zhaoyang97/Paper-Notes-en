@@ -125,7 +125,7 @@ Cross-architecture generalization performance is consistently superior to RDED a
 - **Novel Perspective**: This is the first work to analyze dataset distillation from the perspective of hierarchical semantic amplification, revealing the symmetric effect of coarse-scale diversity vs. fine-scale focus.
 - **Elegant Design**: Requires only the injection of lightweight category tokens and positive logit bias, without external segmentation tools, resulting in minimal inference overhead.
 - **Strong Interpretability**: Provides clear mechanistic explanations through token entropy/coverage analysis and attention visualization.
-- **Consistent SOTA**:全面 leading across CIFAR-10/100 and ImageNet-Woof/100/1K.
+- **Consistent SOTA**: Comprehensively leading across CIFAR-10/100 and ImageNet-Woof/100/1K.
 - **Cross-architecture Generalization**: Distilled data demonstrates stable performance across different teacher-student architecture combinations.
 
 ## Limitations & Future Work

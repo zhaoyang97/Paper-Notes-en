@@ -122,7 +122,7 @@ Loss/gradient-based metrics fluctuate significantly due to internal loss scales 
 - **Moving "mAP Optimization" from Gradient Stage to Sampling Stage**: mAP is non-smooth, non-decomposable, and difficult as a direct training objective. DetGain keeps mAP as the target but uses it only for data selection, bypassing the gradient difficulty—this "metric-as-selector" idea is transferable to any task where evaluation metrics are hard to use as loss functions.
 - **Uniform Prior Closed-form Solution**: Using a maximum entropy distribution provides $O(1)$ analytical computation, eliminates per-model fitting, and is architecture-agnostic. Since the final metric is the teacher-student difference, absolute accuracy is secondary to stable ranking.
 - **Clean Teacher / Augmented Student**: This configuration eliminates the need for hold-out splits used in RHO-LOSS, making it more efficient for engineering pipelines.
-- **Zero-Intrusion Pipeline**: Being a pure data pipeline modification, it正交 (orthogonally) stacks with proposal-level sampling (ATSS/Focal Loss) and feature-level KD (PKD/CrossKD).
+- **Zero-Intrusion Pipeline**: Being a pure data pipeline modification, it orthogonally stacks with proposal-level sampling (ATSS/Focal Loss) and feature-level KD (PKD/CrossKD).
 
 ## Limitations & Future Work
 - **Extra Training Overhead**: Pre-sampling requires additional forward passes for both teacher and student on the super-batch, increasing training time.

@@ -66,7 +66,7 @@ $$\theta_\lambda = \mathbb{E}_{Y \sim P_{Y;\lambda}}[g(Y)] \ge \tau$$
 
 Core Idea: Correct estimation bias based solely on predictions utilizing hold-out annotated data.
 
-$$\hat{\theta} = \underbrace{\frac{1}{N}\sum_{i=1}^N g(\hat{y}_i^\lambda)}_{\text{预测部分 }\hat{\mu}} + \underbrace{\frac{1}{n}\sum_{j=1}^n w_j(g(y_j) - g(\hat{y}_j))}_{\text{偏差校正 }\hat{\Delta}}$$
+$$\hat{\theta} = \underbrace{\frac{1}{N}\sum_{i=1}^N g(\hat{y}_i^\lambda)}_{\text{Prediction Term }\hat{\mu}} + \underbrace{\frac{1}{n}\sum_{j=1}^n w_j(g(y_j) - g(\hat{y}_j))}_{\text{Bias Correction }\hat{\Delta}}$$
 
 where $w_j = p_{X;\lambda}(x_j)/p_{\text{lab}}(x_j)$ is the density ratio between the design distribution and the annotated data distribution.
 

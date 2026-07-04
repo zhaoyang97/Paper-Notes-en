@@ -50,19 +50,19 @@ Generative Montage involves explicit and implicit colluding agents. The explicit
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    A["真实证据池 𝓔<br/>+ 真假设 H_r + 目标错误假设 H_f"]
-    A --> CON["Local Truth 与 Global Lie 分离<br/>每条证据都真，整体后验却偏向 H_f"]
-    subgraph EXP["显式合谋：Writer-Editor-Director 分工"]
+    A["True Evidence Pool 𝓔<br/>+ True Hypothesis H_r + Target False Hypothesis H_f"]
+    A --> CON["Local Truth and Global Lie Separation<br/>Each piece of evidence is true, yet the overall posterior shifts toward H_f"]
+    subgraph EXP["Explicit Collusion: Writer-Editor-Director Division of Labor"]
         direction TB
-        W["Writer：合成偏向 H_f 的叙事草案"]
-        E["Editor：调整片段顺序制造暗示性关联"]
-        D["Director：模拟受害者，查事实约束 + 诱导效果"]
+        W["Writer: synthesizes narrative drafts biased toward H_f"]
+        E["Editor: reorders segments to create suggestive associations"]
+        D["Director: simulates the victim, checks factual constraints + gauges persuasion effect"]
         W --> E --> D
     end
     CON --> EXP
-    EXP -->|审查通过| PUB["Sybil 发布者：作为公开信息流分发"]
-    PUB --> VIC["受害 LLM 分析员<br/>真诚相信错误结论并写报告"]
-    VIC --> JUDGE["下游信念级联评测<br/>Majority Vote / AI Judge，量化 DDR"]
+    EXP -->|Passes review| PUB["Sybil Publisher: distributes as a public information stream"]
+    PUB --> VIC["Victim LLM Analyst<br/>Sincerely believes the false conclusion and writes a report"]
+    VIC --> JUDGE["Downstream Belief Cascade Evaluation<br/>Majority Vote / AI Judge, quantify DDR"]
 ```
 
 ### Key Designs

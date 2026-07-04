@@ -62,7 +62,7 @@ To quantify subjective quality, each rubric is anchored to one of six evaluation
 
 DR answers often "partially satisfy" a rubric. The authors use an LLM judge to output a ternary verdict $m_{r_i}\in\{1, 0.5, 0\}$ (satisfied / partially satisfied / not satisfied). The final compliance score for task $k$ is the weighted sum of positive and negative weights, normalized by the sum of positive weights (theoretical maximum):
 
-$$S_k = \frac{\sum_{r_i\in C} w_{r_i} m_{r_i}}{\sum_{r_i\in C,\, w_{r_i}>0} w_{r_i}}, \qquad m_{r_i} = \mathrm{Judge}(P_k, \mathrm{Res}, r_i) = \begin{cases} 1, & \text{满足} \\ 0.5, & \text{部分满足} \\ 0, & \text{不满足} \end{cases}$$
+$$S_k = \frac{\sum_{r_i\in C} w_{r_i} m_{r_i}}{\sum_{r_i\in C,\, w_{r_i}>0} w_{r_i}}, \qquad m_{r_i} = \mathrm{Judge}(P_k, \mathrm{Res}, r_i) = \begin{cases} 1, & \text{satisfied} \\ 0.5, & \text{partially satisfied} \\ 0, & \text{not satisfied} \end{cases}$$
 
 Negative rubrics follow the same logic but with negative weights. To locate failure sources, the authors define the **Category Failure Rate** $\bar{F}_c = \frac{1}{|T_c|}\sum_{t\in T_c} \frac{n_{\text{fail},c,t}}{n_{\text{fail},t}}$, representing the proportion of "unsatisfied" rubrics contributed by category $c$ across tasks where category $c$ appeared.
 

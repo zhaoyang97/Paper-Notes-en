@@ -114,7 +114,7 @@ Key Conclusion: Under non-i.i.d. or covariate shift, **SPS's coverage guarantee 
 - **Target $\alpha$**: The algorithm is robust to different coverage levels (Experiment 5).
 
 ### Key Findings
-- **Unlocking is crucial for speed**: Fully utilizing structural information like monotonicity does not change the渐近 (asymptotic) regret order but drastically reduces the number of steps needed to reach the target coverage.
+- **Unlocking is crucial for speed**: Fully utilizing structural information like monotonicity does not change the asymptotic regret order but drastically reduces the number of steps needed to reach the target coverage.
 - **Robustness is the differentiator**: While all methods perform adequately under i.i.d. conditions, OCP-Unlock+ remains stable under adversarial shifts where i.i.d.-dependent methods like SPS fail.
 - **Price of limited feedback**: OCP-Unlock+ is generally more conservative (larger set size) than MVP, which is the expected trade-off for ensuring coverage when labels are rarely seen.
 

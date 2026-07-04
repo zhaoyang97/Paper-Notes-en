@@ -100,7 +100,7 @@ The collapse trajectory of average scores as conjunctive metrics are tightened (
 - **The Figure of 0.5% as a Major Impact**: It clearly quantifies the chasm between "completing isolated tasks" and "performing complete research," providing a clear target for subsequent Agent improvements in planning, implementation completeness, and environment robustness.
 
 ## Limitations & Future Work
-- **Semi-automation Still Requires Humans**: While the pipeline reduces human effort to lightweight verification, it still depends on human审查 of task content, and the pipeline itself was tuned through manual trial and error; migration costs to new venues/fields may not be negligible.
+- **Semi-automation Still Requires Humans**: While the pipeline reduces human effort to lightweight verification, it still depends on human review of task content, and the pipeline itself was tuned through manual trial and error; migration costs to new venues/fields may not be negligible.
 - **High Execution Cost**: Due to the time required for execution, only a subset of tasks underwent executability verification (varying from 56 to 420 across models in the #E column), meaning E-related statistics are not perfectly aligned across the full set.
 - **Dependency on Original Implementation as Sole Truth**: When original code is ambiguous or has multiple valid implementations, using a single script chain as ground truth may underestimate an Agent’s reasonable but different solution.
 - **High Variance in Executability (E)**: False implementations or mocks might still pass, introducing overestimation bias—a problem mitigated by conjunctive metrics, though isolated E remains unreliable.

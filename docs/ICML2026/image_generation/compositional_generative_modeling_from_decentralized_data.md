@@ -97,7 +97,7 @@ Evaluations are conducted across three decentralized benchmarks, distinguishing 
 
 DFD is strong at recovering known data but fails significantly on novel combinations (FID$^*$ of 31.36 under non-IID), exposing its tendency to pull samples back to known density regions. DCFM drastically narrows the gap between seen and novel combinations.
 
-**Robotic Spatial Planning** (OGBench cube-single-play, $n=2$, coverage $3/4$, missing diagonal象限 moves): Success Rate (SR) reported.
+**Robotic Spatial Planning** (OGBench cube-single-play, $n=2$, coverage $3/4$, missing diagonal quadrant moves): Success Rate (SR) reported.
 
 | Method | Partition | SR$^o$ | SR$^*$ (Novel) |
 |------|-----------|--------|--------|

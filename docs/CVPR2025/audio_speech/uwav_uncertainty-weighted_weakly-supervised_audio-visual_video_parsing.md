@@ -69,7 +69,7 @@ A five-step pipeline is proposed: (1) pre-train a temporal-aware Transformer on 
 
 ### Loss & Training
 
-The total loss is defined as $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{w\text{-soft}}} + \mathcal{L}_{\text{mix}} + \mathcal{L}_{\text{video}}$. Here, $\mathcal{L}_{\text{w\text{-soft}}}$ represents the class-balanced reweighted binary cross-entropy (BCE) loss on soft labels, where the positive sample weight is $w_{\text{pos}} = \frac{\text{负样本数}}{NTC} \times W$ ($W=0.5$). $\mathcal{L}_{\text{mix}}$ denotes the BCE loss on mixed features, and $\mathcal{L}_{\text{video}}$ is the standard video-level BCE loss.
+The total loss is defined as $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{w\text{-soft}}} + \mathcal{L}_{\text{mix}} + \mathcal{L}_{\text{video}}$. Here, $\mathcal{L}_{\text{w\text{-soft}}}$ represents the class-balanced reweighted binary cross-entropy (BCE) loss on soft labels, where the positive sample weight is $w_{\text{pos}} = \frac{\text{number of negative samples}}{NTC} \times W$ ($W=0.5$). $\mathcal{L}_{\text{mix}}$ denotes the BCE loss on mixed features, and $\mathcal{L}_{\text{video}}$ is the standard video-level BCE loss.
 
 ## Key Experimental Results
 

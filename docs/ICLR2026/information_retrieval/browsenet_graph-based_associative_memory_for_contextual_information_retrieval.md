@@ -147,7 +147,7 @@ BrowseNet achieved the highest average scores across both tables. The improvemen
 - **Latency**: While the overhead is small (~0.49s), subgraph enumeration risks expansion for deeper queries ($p>4$).
 
 ## Related Work & Insights
-- **vs HippoRAG-2**: Both use associative memory. HippoRAG-2 requires expensive KG construction (33x cost). BrowseNet is cheaper and delivers higher召回/EM/F1 by using entity co-occurrence and a single LLM call.
+- **vs HippoRAG-2**: Both use associative memory. HippoRAG-2 requires expensive KG construction (33x cost). BrowseNet is cheaper and delivers higher recall/EM/F1 by using entity co-occurrence and a single LLM call.
 - **vs GraphRAG / RAPTOR**: These use heavy LLM processing during indexing. BrowseNet limits LLM usage to query decomposition and uses graphs for structured traversal rather than generation.
 - **vs Dense Retriever**: Dense retrievers ignore isolated chunk relationships. BrowseNet's hybrid "keyword-link + semantic" strategy is significantly stronger for complex multi-hop tasks like MuSiQue.
 

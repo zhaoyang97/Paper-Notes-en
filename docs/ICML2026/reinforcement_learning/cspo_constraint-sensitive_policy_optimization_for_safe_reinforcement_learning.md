@@ -58,7 +58,7 @@ flowchart TD
 
 The pain point is that uniform punishment does not distinguish between steep and flat regions. Starting from first-order geometry, the authors seek the "minimum parameter update to return to the safety boundary" when a violation occurs. Using a first-order expansion $g(\theta_{k+1})\approx g(\theta_k)+\nabla g(\theta_k)^\top\Delta\theta$, solving the minimum norm projection problem $\min_{\Delta\theta}\tfrac12\|\Delta\theta\|^2$ s.t. $g(\theta_k)+\nabla g(\theta_k)^\top\Delta\theta=0$ yields:
 
-$$\Delta\theta^\star=-\frac{g(\theta_k)}{\走\|\nabla g(\theta_k)\|^2}\nabla g(\theta_k),\qquad \|\Delta\theta^\star\|=\frac{g(\theta_k)}{\|\nabla g(\theta_k)\|}$$
+$$\Delta\theta^\star=-\frac{g(\theta_k)}{\|\nabla g(\theta_k)\|^2}\nabla g(\theta_k),\qquad \|\Delta\theta^\star\|=\frac{g(\theta_k)}{\|\nabla g(\theta_k)\|}$$
 
 This $\|\Delta\theta^\star\|$ is the **shortest signed distance** from the current parameters to the feasible set. The key insight lies in the denominator: the correction magnitude is **inversely proportional to the constraint gradient norm** $\|\nabla g\|$. If the gradient is large (steep boundary), take small steps to prevent overshooting; if the gradient is small (flat region), take large steps to return quickly. To avoid being too aggressive under stochastic gradients, the authors modify this to "proportionally reduce violation" $g(\theta_{k+1})\le\sigma g(\theta_k)$, introducing a reduction factor $\alpha=1-\sigma\in[0,1]$, scaling the update magnitude to $\alpha\,g/\|\nabla g\|$.
 

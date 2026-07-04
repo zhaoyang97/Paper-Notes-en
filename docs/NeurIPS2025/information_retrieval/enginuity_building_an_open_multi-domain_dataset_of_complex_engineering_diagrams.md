@@ -126,7 +126,7 @@ Since this work is a workshop proposal rather than an experimental paper, it lac
 ### Key Findings
 
 - **Performance Cliff from Symbols to Relations**: Current methods exhibit a performance drop of over 25% when moving from symbol detection (85%+) to relationship extraction. This statistic, derived from Stürmer et al. (2025)'s systematic evaluation of Transformer-based parsing on P&ID diagrams, indicates that relationship understanding remains a major bottleneck even in relatively structured P&ID domains.
-- **大量数据规模差距巨大 (Massive Data Scale Gap)**: The largest public engineering diagram datasets currently contain fewer than 5K samples. The target scale of 50K+ for Enginuity represents at least a tenfold increase. The North American market, with over 50,000 distinct vehicle configurations, provides a sufficiently rich pool to support this objective.
+- **Massive Data Scale Gap**: The largest public engineering diagram datasets currently contain fewer than 5K samples. The target scale of 50K+ for Enginuity represents at least a tenfold increase. The North American market, with over 50,000 distinct vehicle configurations, provides a sufficiently rich pool to support this objective.
 - **Cost Feasibility Validation**: The 65% cost reduction achieved by the four-stage pipeline makes annotating 50K+ diagrams under a $150K budget economically viable—averaging roughly $3 per diagram. This is highly cost-effective given the necessity of domain expert involvement, largely driven by the active learning loop in subsequent batches.
 
 ## Highlights & Insights

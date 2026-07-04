@@ -69,7 +69,7 @@ Inputs are preference data pairs (chosen/rejected speech pairs), and outputs are
     - Mechanism:
         - **Intra Pair (Within-model contrast)**: Using Best-of-N sampling on the same model, selecting the best generated output as "chosen" and the worst as "rejected". This is essentially self-contrastive learning.
         - **Inter Pair (Cross-model contrast)**: Comparing the synthesis results of different models on the same text to leverage complementary advantages across models. For instance, if ARS outperforms MaskGCT in prosody, the ARS output is used as chosen.
-        - **Perturbed Pair (Perturbation contrast)**: Leveraging human expert knowledge and DeepSeek-V3 to generate perturbed texts as negatives. Two perturbations: (1) **Pronunciation perturbation**—replacing words with easily mispronounced homophones (e.g., "好好" $\rightarrow$ "豪豪"), (2) **Punctuation perturbation**—modifying comma placement to alter pause prosody.
+        - **Perturbed Pair (Perturbation contrast)**: Leveraging human expert knowledge and DeepSeek-V3 to generate perturbed texts as negatives. Two perturbations: (1) **Pronunciation perturbation**—replacing words with easily mispronounced homophones (e.g., "Haohao" $\rightarrow$ "Haohao" with different characters), (2) **Punctuation perturbation**—modifying comma placement to alter pause prosody.
     - Design Motivation: The three preference pairs provide alignment signals from different dimensions—Intra focuses on stability, Inter on cross-architecture best practices, and Perturbed on error tolerance. Combining them yields richer learning signals.
 
 3. **DPO Extension for TTS Architectures**:

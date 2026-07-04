@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: 6ea2d71abe93f801
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # scSSL-Bench: Benchmarking Self-Supervised Learning for Single-Cell Data
 
 **Conference**: ICML2025 Spotlight  

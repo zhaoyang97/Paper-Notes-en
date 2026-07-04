@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] A Framework for Efficient Model Evaluation through Stratification, Sampling, and Estimation
 description: >-
-  [ECCV 2024][分层抽样] A statistical framework is proposed that synergistically designs three components—stratification, sampling design, and estimation—to accurately estimate Computer Vision (CV) model accuracy with only a small number of annotated test samples, achieving up to a 10x efficiency gain (i.e., reaching equivalent accuracy with 1/10 of the annotations).
+  [ECCV 2024][Stratified Sampling] A statistical framework is proposed that synergistically designs three components—stratification, sampling design, and estimation—to accurately estimate Computer Vision (CV) model accuracy with only a small number of annotated test samples, achieving up to a 10x efficiency gain (i.e., reaching equivalent accuracy with 1/10 of the annotations).
 tags:
   - "ECCV 2024"
-  - "分层抽样"
-  - "Horvitz-Thompson估计"
-  - "差分估计器"
-  - "k-means聚类"
-  - "标注成本"
+  - "Stratified Sampling"
+  - "Horvitz-Thompson Estimation"
+  - "Difference Estimator"
+  - "k-means Clustering"
+  - "Annotation Cost"
 date: 2026-05-08
 content_hash: 8ff0b4fe23e82957
 ---
@@ -20,7 +20,7 @@ content_hash: 8ff0b4fe23e82957
 **arXiv**: [2406.07320](https://arxiv.org/abs/2406.07320)  
 **Code**: [https://github.com/amazon-science/ssepy](https://github.com/amazon-science/ssepy)  
 **Area**: Other  
-**Keywords**: 分层抽样, Horvitz-Thompson估计, 差分估计器, k-means聚类, 标注成本  
+**Keywords**: Stratified Sampling, Horvitz-Thompson Estimation, Difference Estimator, k-means Clustering, Annotation Cost  
 
 ## TL;DR
 A statistical framework is proposed that synergistically designs three components—stratification, sampling design, and estimation—to accurately estimate Computer Vision (CV) model accuracy with only a small number of annotated test samples, achieving up to a 10x efficiency gain (i.e., reaching equivalent accuracy with 1/10 of the annotations).

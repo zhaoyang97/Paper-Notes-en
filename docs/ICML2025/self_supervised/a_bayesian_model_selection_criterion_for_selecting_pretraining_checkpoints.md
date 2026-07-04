@@ -48,7 +48,7 @@ Introduces "downstream free energy" as a Bayesian model selection criterion for 
 
 Establishes a three-layer theoretical chain:
 
-$$\text{下游贝叶斯测试误差} \lesssim \text{下游自由能} \lesssim \text{预训练自由能}$$
+$$\text{downstream Bayesian test error} \lesssim \text{downstream free energy} \lesssim \text{pretraining free energy}$$
 
 Core steps: (1) Define downstream free energy as a measure of checkpoint adaptability; (2) Define pretraining free energy as a proxy computable using only pretraining data; (3) Prove that pretraining free energy controls downstream free energy (Proposition 5.1); (4) Validate using known SGD implicit biases.
 

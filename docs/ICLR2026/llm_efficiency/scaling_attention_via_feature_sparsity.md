@@ -113,7 +113,7 @@ Synthetic NIAH (Needle In A Haystack) stress tests show that SFA not only preser
 - **Sparse axis is worthwhile**: While short embeddings offer the highest raw speedup, the precision loss makes them less practical. SFA provides a superior quality-efficiency trade-off, with $k=8$ being the "sweet spot."
 - **Compounding gains**: End-to-end latency reduction exceeds 2× across the Transformer stack, showing that sparsity scales better when applied throughout the entire network.
 - **Large dimensions and long context benefit most**: SFA's speedup is modest at 4k context but drops latency by over an order of magnitude at 65k context with 256 head dimensions. KV-cache scales proportionally with sparsity ($k=4$ saves ~40%).
-- **Task sensitivity**: Arithmetic reasoning (GSM-8K) is most sensitive to pruning; however, document understanding and retrieval effectively持平 dense, suggesting sparse support is a valid inductive bias for locality.
+- **Task sensitivity**: Arithmetic reasoning (GSM-8K) is most sensitive to pruning; however, document understanding and retrieval effectively match dense performance, suggesting sparse support is a valid inductive bias for locality.
 
 ## Highlights & Insights
 - **Orthogonal New Axis**: While most efficient attention research competes on the "sequence axis," this paper identifies the "feature axis" as a potent, under-explored dimension that is orthogonal to token sparsity and paging.

@@ -48,18 +48,18 @@ The starting point of AnyBCQ is to generalize binary-coded quantization (BCQ) fr
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    W["全精度权重 W"] --> INIT["基础精度 p_L<br/>greedy 初始化 + 交替优化<br/>(LS 求 α / BS 更新 B)"]
-    subgraph GROW["渐进式精度扩展（设计 1）"]
+    W["Full-precision weights W"] --> INIT["Base precision p_L<br/>Greedy initialization + alternating optimization<br/>(LS solves alpha / BS updates B)"]
+    subgraph GROW["Progressive Precision Expansion (Design 1)"]
         direction TB
-        INIT --> FREEZE["冻结已有 bit-plane<br/>B_1..B_p"]
-        FREEZE --> RES["取残差符号<br/>B_(p+1)=sign(R_p)"]
-        RES --> RELS["仅用 LS 重拟合<br/>该精度全部缩放因子 α"]
-        RELS -->|未到 p_H| FREEZE
+        INIT --> FREEZE["Freeze existing bit-planes<br/>B_1..B_p"]
+        FREEZE --> RES["Take residual sign<br/>B_(p+1)=sign(R_p)"]
+        RES --> RELS["Refit only scaling factors alpha<br/>for this precision level using LS"]
+        RELS -->|not yet at p_H| FREEZE
     end
-    GROW -->|共享同一套 bit-plane| STORE["多精度模型<br/>2/3/4-bit 共存"]
-    STORE --> KERNEL["bit-plane CUDA 内核（设计 2）<br/>逐 plane 加减法累加<br/>免转置 / 免查表"]
-    REQ["请求 SLO<br/>选定精度 p"] --> KERNEL
-    KERNEL --> OUT["p-bit 输出"]
+    GROW -->|sharing the same set of bit-planes| STORE["Multi-precision model<br/>2/3/4-bit coexisting"]
+    STORE --> KERNEL["Bit-plane CUDA kernel (Design 2)<br/>Per-plane add/subtract accumulation<br/>No transpose / No lookup table"]
+    REQ["Request SLO<br/>Select precision p"] --> KERNEL
+    KERNEL --> OUT["p-bit output"]
 ```
 
 ### Key Designs

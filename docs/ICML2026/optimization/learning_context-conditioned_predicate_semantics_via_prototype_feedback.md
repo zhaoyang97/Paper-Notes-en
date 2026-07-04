@@ -123,7 +123,7 @@ GRU outperforms concat across all settings, verifying that "gated incremental up
 
 ## Highlights & Insights
 - **Bidirectional Interaction**: Instead of unidirectional "prototype → relation" influence, AlignG models "prototype ← relation candidates," elevating context from an implicit variable to an explicit update signal.
-- **Transferable Principles**: The distinction between "gated incremental updates for state variables" and "single-step强 recalibration for transient variables" is valuable for other tasks requiring global/local balance.
+- **Transferable Principles**: The distinction between "gated incremental updates for state variables" and "single-step strong recalibration for transient variables" is valuable for other tasks requiring global/local balance.
 - **Static Anchor + Dynamic Offset**: Anchoring alignment to static prototypes serves as a cleverly implemented "anti-collusion" mechanism, similar to the role of an EMA teacher in self-distillation.
 
 ## Limitations & Future Work

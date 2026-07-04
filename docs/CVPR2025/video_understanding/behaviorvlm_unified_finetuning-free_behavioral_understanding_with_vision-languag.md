@@ -16,7 +16,6 @@ date: 2026-05-08
 content_hash: edd5e36ba39314e1
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # BehaviorVLM: Unified Finetuning-Free Behavioral Understanding with Vision-Language Reasoning
 
 **Conference**: CVPR 2025  

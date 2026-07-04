@@ -66,7 +66,7 @@ Given a long-tailed dataset $\mathcal{D}_{\text{ltd}}$ (e.g., LVIS), it is divid
     - **Design Motivation**: Training exclusively on the tail classes in Step 2 causes forgetting of head classes. The hybrid sampling fine-tuning in Step 3 achieves a balance between "remembering the head and learning the tail".
 
 ### Loss & Training
-The same detection losses (classification + regression) are used in all three stages, with an additional pseudo-label loss during the semi-supervised stage. Data augmentations include resizing,翻转, photometric distortion, and SCP+RFS, while semi-supervised learning additionally uses translation, shearing, rotation, and Cutout.
+The same detection losses (classification + regression) are used in all three stages, with an additional pseudo-label loss during the semi-supervised stage. Data augmentations include resizing, flipping, photometric distortion, and SCP+RFS, while semi-supervised learning additionally uses translation, shearing, rotation, and Cutout.
 
 ## Key Experimental Results
 

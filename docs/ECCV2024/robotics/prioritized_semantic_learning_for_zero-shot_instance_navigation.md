@@ -76,7 +76,7 @@ The PSL method consists of three components: (1) PSL Agent architecture — intr
 
    **Viewpoint Reward Relaxation**: After rendering and selecting additional images from multiple pitch and yaw angles, the PPO reward function is modified to only encourage the agent to face towards the target on the x-z plane, ignoring pitch angle matching:
 
-    $R_t^{PSL} = \underbrace{\gamma^{suc}\mathbb{1}\{d_t < \epsilon^d\}}_{\text{到达位置}} + \underbrace{\gamma^{suc}\mathbb{1}\{d_t<\epsilon^d\}\mathbb{1}\{\text{extract}_Y(\mathbf{a}_t)<\epsilon^a\}}_{\text{朝向匹配}} + r_d + r_a - \gamma^{delay}$
+    $R_t^{PSL} = \underbrace{\gamma^{suc}\mathbb{1}\{d_t < \epsilon^d\}}_{\text{position reached}} + \underbrace{\gamma^{suc}\mathbb{1}\{d_t<\epsilon^d\}\mathbb{1}\{\text{extract}_Y(\mathbf{a}_t)<\epsilon^a\}}_{\text{orientation match}} + r_d + r_a - \gamma^{delay}$
 
    Design Motivation: A large number of goal images in the raw dataset contain meaningless scenes like walls or empty rooms. These ambiguous goals exacerbate the semantic neglect problem. Relaxing the reward enables the agent to focus on semantic correspondence rather than precise geometric matching.
 

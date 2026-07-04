@@ -139,7 +139,7 @@ Breakdown of training stages and modules (s: stage, r: refinement round):
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐ "Community reuse as annotation + bidirectional self-improvement loop" effectively addresses a real-world gap.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive主 experiments, cross-domain tests, and noise analysis, though the test set is somewhat limited.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive experiments, cross-domain tests, and noise analysis, though the test set is somewhat limited.
 - Writing Quality: ⭐⭐⭐⭐ Clear motivation, well-explained components, and good integration of formulas and figures.
 - Value: ⭐⭐⭐⭐⭐ Provides the first movie highlight benchmark and a reusable human-free training paradigm.
 

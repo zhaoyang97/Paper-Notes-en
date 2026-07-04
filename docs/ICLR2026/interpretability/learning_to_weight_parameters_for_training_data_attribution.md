@@ -46,14 +46,14 @@ The method consists of two steps. The first step is to **unify the weighting for
 
 ```mermaid
 flowchart TD
-    A[训练集 D + query 集 Q] --> B[base 归因方法<br/>TracIn/TRAK/EK-FAC...]
-    B --> C[按参数组拆梯度特征<br/>g_j(x), 预计算各组归因贡献]
-    C --> D[加权得分<br/>τ̃ = g(query)ᵀ·Diag(w)·K·g(xₙ)]
-    D --> E[取 top-k 当伪正样本<br/>I_top-k(w)]
-    E --> F[自监督损失 L_SSL<br/>正样本均分 / ℓ2 范数]
-    F -->|softmax 参数化保证 w≥0| G[更新 w]
-    G -->|每步重算 top-k| D
-    G --> H[学到的参数组权重 w*<br/>可整体/可按语义 subject·style·background]
+    A[Training set D + query set Q] --> B[Base attribution method<br/>TracIn/TRAK/EK-FAC...]
+    B --> C[Split gradient features by parameter group<br/>g_j(x), precompute per-group attribution contributions]
+    C --> D[Weighted score<br/>τ̃ = g(query)ᵀ·Diag(w)·K·g(xₙ)]
+    D --> E[Take top-k as pseudo positive samples<br/>I_top-k(w)]
+    E --> F[Self-supervised loss L_SSL<br/>uniform positive weighting / ℓ2 norm]
+    F -->|softmax parameterization ensures w≥0| G[Update w]
+    G -->|Recompute top-k each step| D
+    G --> H[Learned parameter group weights w*<br/>usable globally or by semantic group: subject · style · background]
 ```
 
 ### Key Designs

@@ -101,7 +101,7 @@ Rather than module removal, the paper validates via **varying the nominal level 
 | Varying $n$ ($\alpha{=}0.1$) | CRC-E stable dominance across metrics | Consistent advantage across sample sizes |
 
 ### Key Findings
-- **Over-conservatism 실증 (Empirical Proof)**: CRO/E2E robustness yields 96%–99.9% (far exceeding target), resulting in high risk certificates; CRC pushes robustness back to $1-\alpha$, yielding lower risk and loss.
+- **Empirical proof of over-conservatism**: CRO/E2E robustness yields 96%–99.9% (far exceeding target), resulting in high risk certificates; CRC pushes robustness back to $1-\alpha$, yielding lower risk and loss.
 - **Coverage < Robustness**: In synthetic experiments, CRC coverage is significantly lower than the robustness level, confirming that not chasing coverage leads to higher efficiency.
 - **Stability**: Conclusions remain consistent across box/ellipsoid shapes and the three tasks. Ellipsoid versions generally yield lower risk certificates by modeling correlations.
 

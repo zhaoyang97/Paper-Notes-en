@@ -58,7 +58,7 @@ SimCIS is based on the Mask2Former architecture and contains three core modules:
 2. **Consistent Selection Loss (CSL)**:
 
     - **Function**: Ensure that the selected semantically salient positions for the same image remain consistent across different stages.
-    - **Mechanism**: During training in the current stage $t$, the selection indices $\mathcal{I}^{t-1}$ from the previous stage $t-1$ are used to extract feature points from the current feature maps. Their similarity distribution with the old prototypes is calculated, and a KL divergence loss is applied to constrain this distribution to be consistent with the previous stage. The formula is $L_{csl} = \frac{1}{|\mathcal{I}^{t-1}|} \sum KL(\text{旧分布} \| \text{新分布})$.
+    - **Mechanism**: During training in the current stage $t$, the selection indices $\mathcal{I}^{t-1}$ from the previous stage $t-1$ are used to extract feature points from the current feature maps. Their similarity distribution with the old prototypes is calculated, and a KL divergence loss is applied to constrain this distribution to be consistent with the previous stage. The formula is $L_{csl} = \frac{1}{|\mathcal{I}^{t-1}|} \sum KL(\text{old distribution} \| \text{new distribution})$.
     - **Design Motivation**: It avoids the problem of reintroducing background annotation errors when preserving old priors in traditional distillation methods. Thanks to the design of QPA, the query positions of old classes can be naturally preserved while allowing new queries to select new classes.
 
 3. **Virtual Queries (VQ)**:

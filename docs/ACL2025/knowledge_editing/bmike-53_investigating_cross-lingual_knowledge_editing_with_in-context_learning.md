@@ -47,19 +47,19 @@ Two major components:
 
 ### Key Designs
 
-1. **三数据集整合与统一格式**:
+1. **Three-Dataset Integration and Unified Format**:
 
     - **Function**: Integrates zsRE (standard factual modification), CounterFact (counterfactual knowledge updates), and WikiFactDiff (real-world temporal updates) into a unified benchmark.
     - **Mechanism**: Each data record uniformly contains the edited knowledge item + four types of evaluation queries (reliability, generality, locality, portability), stored in JSON format.
     - **Design Motivation**: The three datasets cover a complete spectrum of KE scenarios from standard to counterfactual to temporal real-world contexts. Portability queries are constructed via one-hop knowledge graph reasoning to test the logical reasoning capacity of edited knowledge.
 
-2. **四种 IKE 实验设置**:
+2. **Four IKE Experimental Settings**:
 
     - **Function**: Systematically controls the impact of exemplar quantity and quality on cross-lingual IKE.
     - **Mechanism**: zero-shot (no exemplar, depending entirely on pre-training) $\rightarrow$ one-shot (1 random exemplar to familiarize with format) $\rightarrow$ 8-shot mixed (8 mixed-type exemplars exposing various query query patterns) $\rightarrow$ 8-shot metric-specific (8 exemplars of the same type as the evaluation metric to provide targeted guidance).
     - **Design Motivation**: Experiments demonstrate that exemplar quality (type matching) is far more important than quantity—the performance gains of metric-specific configurations on locality and portability far exceed those from merely increasing the count of mixed exemplars.
 
-3. **四类跨语言查询设计**:
+3. **Four Types of Cross-Lingual Query Designs**:
 
     - **Function**: Evaluates the completeness of cross-lingual knowledge editing from different perspectives.
     - **Mechanism**: Reliability (precisely translated queries) evaluates basic editing capability $\rightarrow$ Generality (semantically equivalent but differently phrased queries) tests generalization $\rightarrow$ Locality (irrelevant queries) evaluates knowledge retention $\rightarrow$ Portability (one-hop inference queries) tests reasoning transfer.

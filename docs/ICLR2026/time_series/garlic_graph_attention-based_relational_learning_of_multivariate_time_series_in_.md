@@ -45,13 +45,13 @@ GARLIC combines "local reconstruction" and "global reasoning" into a modular pip
 
 ```mermaid
 flowchart LR
-    A[不规则输入 X + 缺失掩码 M] --> B[潜特征建模<br/>指数衰减填补 + 逐信号 MLP]
-    B --> C[时滞图消息传递<br/>窗口 lag 注意力 + 可学习邻接 Wτ]
-    C --> D[跨维序列注意力<br/>信号注意力→GRU→时间注意力]
-    D --> E[分类预测 ŷ]
-    C --> F[解码器重建 → Lrec]
-    D -.注意力权重.-> G[内生解释<br/>观测/信号/边级归因]
-    C -.图边.-> G
+    A[Irregular input X + missing mask M] --> B[Latent feature modeling<br/>Exponential decay imputation + per-signal MLP]
+    B --> C[Time-lag graph message passing<br/>Window lag attention + learnable adjacency Wτ]
+    C --> D[Cross-dimension sequence attention<br/>Signal attention → GRU → temporal attention]
+    D --> E[Classification prediction ŷ]
+    C --> F[Decoder reconstruction → Lrec]
+    D -.Attention weights.-> G[Intrinsic explanation<br/>Observation/signal/edge-level attribution]
+    C -.Graph edges.-> G
 ```
 
 ### Key Designs

@@ -131,7 +131,7 @@ Removing the three types of error injection (Table 4):
 - **Errors as assets, not burdens**: While traditional approaches try to avoid errors, this paper takes the opposite route by actively collecting, replaying, and injecting errors as supervisory signals. This echoes Henry Ford's "Failure is simply the opportunity to begin again, this time more intelligently"—a valuable perspective for transfer.
 - **Precise diagnosis of the training-testing hypothesis gap**: This reframes long video collapse from "error accumulation" as a symptom to a fundamental difference in training assumptions between generative and restoration DiTs. This reframing allows the solution to emerge naturally.
 - **Engineering cleverness in single-step bidirectional integration**: Using forward/backward integration residuals to calculate error avoids full ODE costs, making error measurement a practical, trainable process.
-- **Zero additional inference overhead + Model family extension**: Error correction is learned directly into LoRA weights; inference requires no extra steps. The framework派生 SVI-Shot/Film/Talk/Dance by varying conditions, which is very engineering-friendly.
+- **Zero additional inference overhead + Model family extension**: Error correction is learned directly into LoRA weights; inference requires no extra steps. The framework derives SVI-Shot/Film/Talk/Dance by varying conditions, which is very engineering-friendly.
 
 ## Limitations & Future Work
 - The error replay memory bank is capped at $Z=500$ with cross-machine warmup; the capacity and update strategy of the memory bank might affect error diversity, and scalability for larger training needs verification.

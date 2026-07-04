@@ -75,7 +75,7 @@ It is difficult for LLMs to spontaneously use unfamiliar prosodic descriptions i
 
 **3. Zero-modification Multilingual Extension: Leveraging Cross-lingual LLM Capabilities via Unified IPA and English Descriptions**
 
-Cross-lingual transfer in SER usually requires retraining, but VowelPrompt extends to other languages with almost no modification. MFA supports alignment for 20+ languages, vowels are uniformly represented via IPA, and normalization is adjusted to the language level. Therefore, 同构 (isomorphic) vowel prosodic descriptions can be extracted from French or German audio. A key trick is that even if the input is French or German, the prosodic descriptions are written in English, directly reusing the existing cross-lingual alignment capabilities of multilingual LLMs without needing to train separate emotion models for each language. This explains its significant lead on the French CaFE (+8.3%) and German EmoDB (+7.7%) datasets.
+Cross-lingual transfer in SER usually requires retraining, but VowelPrompt extends to other languages with almost no modification. MFA supports alignment for 20+ languages, vowels are uniformly represented via IPA, and normalization is adjusted to the language level. Therefore, isomorphic vowel prosodic descriptions can be extracted from French or German audio. A key trick is that even if the input is French or German, the prosodic descriptions are written in English, directly reusing the existing cross-lingual alignment capabilities of multilingual LLMs without needing to train separate emotion models for each language. This explains its significant lead on the French CaFE (+8.3%) and German EmoDB (+7.7%) datasets.
 
 ## Key Experimental Results
 

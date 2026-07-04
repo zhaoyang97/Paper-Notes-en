@@ -51,12 +51,12 @@ The entire pipeline consists of two stages and is completed **entirely offline**
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["输入：一个网站"] --> B["Stage 1 策略探索发现工具候选<br/>导航关键区域 → 提候选 (起始URL,元素,目标)"]
-    B --> C["Stage 2 demonstrate-generate-optimize-test 构建循环<br/>演示轨迹 → 合成 schema+动作脚本 → 注册测试"]
-    C --> D["URL 提升 + 多目标优化<br/>min FailRate + StepCount + AgenticRatio"]
-    D -->|测试失败给反馈 F| C
-    D -->|通过验证 u*| E["注册为可调用工具"]
-    E --> F["运行时：agent 调用工具<br/>+ agentic 兜底 + 多模态DOM解析 + 外部验证"]
+    A["Input: A Website"] --> B["Stage 1 Policy Exploration to Discover Tool Candidates<br/>Navigate Key Areas → Propose Candidates (Start URL, Element, Goal)"]
+    B --> C["Stage 2 Demonstrate-Generate-Optimize-Test Build Loop<br/>Demo Trajectory → Synthesize Schema + Action Script → Register & Test"]
+    C --> D["URL Promotion + Multi-Objective Optimization<br/>min FailRate + StepCount + AgenticRatio"]
+    D -->|Test failure feeds back F| C
+    D -->|Passes validation u*| E["Registered as Callable Tool"]
+    E --> F["Runtime: Agent Invokes Tools<br/>+ Agentic Fallback + Multimodal DOM Parsing + External Validation"]
 ```
 
 ### Key Designs

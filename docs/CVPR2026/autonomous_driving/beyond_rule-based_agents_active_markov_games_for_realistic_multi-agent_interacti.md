@@ -147,7 +147,7 @@ Removing modules under the multi-agent setting:
 
 ## Limitations & Future Work
 - **Authors' View**: Testing is limited to two-car settings; dense multi-car (>2) scenarios with strong coupling are not yet verified. No formal convergence proof for approaching Nash Equilibrium is provided.
-- **Reviewer's View**: The collision rate spikes to 0.46 without "perfect perception," suggesting high sensitivity to input quality. Details on policy pool management (淘汰/replacement strategies) are relatively sparse.
+- **Reviewer's View**: The collision rate spikes to 0.46 without "perfect perception," suggesting high sensitivity to input quality. Details on policy pool management (elimination/replacement strategies) are relatively sparse.
 - **Future Directions**: Scaling to $N$-car scenarios, introducing prioritized sampling for stronger opponents, and re-testing safety margins in closed-loops with realistic perception noise and latency.
 
 ## Related Work & Insights

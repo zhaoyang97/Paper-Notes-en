@@ -66,7 +66,7 @@ Text, video, and audio are naturally heterogeneous. AudioX uses dedicated encode
 
 **3. MAF Multimodal Adaptive Fusion: Gating + Expert Queries + Self-Attention**
 
-This is the core module designed to prevent modality "clashing." MAF passes initial embeddings through a gate to filter and re-weight signals; then, a set of learnable queries (divided into modality-specific "experts")聚合 (aggregate) evidence from different data streams via cross-attention; finally, self-attention integrates context and refined information is written back via residuals:
+This is the core module designed to prevent modality "clashing." MAF passes initial embeddings through a gate to filter and re-weight signals; then, a set of learnable queries (divided into modality-specific "experts") aggregate evidence from different data streams via cross-attention; finally, self-attention integrates context and refined information is written back via residuals:
 
 $$\tilde{H}_v, \tilde{H}_t, \tilde{H}_a = \mathrm{MAF}(H_v, H_t, H_a), \qquad H_c = \mathrm{Concat}\left(\tilde{H}_v, \tilde{H}_t, \tilde{H}_a\right).$$
 

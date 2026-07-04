@@ -49,11 +49,11 @@ SOSBench is essentially a **three-stage construction pipeline**: first, "dangero
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["权威法规<br/>NFPA704 / UN / WHO"] --> B["监管接地的种子词收集<br/>抽危险术语 + 知识库扩展变体"]
-    B --> C["混合初始提示生成<br/>AdvBench模板 + 人工模板 + 种子词替换"]
-    C --> D["数据演化<br/>变异 + 弱模型验证 + 覆盖度采样"]
-    D --> E["SOSBench<br/>3000条 / 六领域各500"]
-    E --> F["PVR 评测框架<br/>逐条提问 + GPT-5 当裁判"]
+    A["Authoritative Regulations<br/>NFPA704 / UN / WHO"] --> B["Regulation-grounded Seed Term Collection<br/>Extract hazard terms + knowledge base variant expansion"]
+    B --> C["Hybrid Initial Prompt Generation<br/>AdvBench templates + manual templates + seed term substitution"]
+    C --> D["Data Evolution<br/>Mutation + weak model validation + coverage sampling"]
+    D --> E["SOSBench<br/>3000 entries / 500 per domain across six domains"]
+    E --> F["PVR Evaluation Framework<br/>Per-item querying + GPT-5 as judge"]
 ```
 
 ### Key Designs

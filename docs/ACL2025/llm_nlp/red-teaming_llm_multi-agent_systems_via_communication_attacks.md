@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: fda109bd3495d6f1
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Red-Teaming LLM Multi-Agent Systems via Communication Attacks
 
 **Conference**: ACL2025  

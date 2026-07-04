@@ -48,12 +48,12 @@ The input to LADDER is a **vision classifier pre-trained via ERM** $f = g \circ 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["现成分类器 f=g∘Φ<br/>+ 验证集文本语料"] --> B["语言化检索<br/>投影 π 对齐 VLR<br/>用 Δ 检索 topK 错误相关句"]
-    B --> C["LLM 假设生成<br/>topK 句 → 假设集 H 与检验句 T"]
-    C --> D["相似度识别切片<br/>s_H(X) 低于阈值 τ 的子集为 error slice"]
-    D --> E["无标注多偏见缓解<br/>s_H 转伪标签 → 平衡集微调 g → 按假设集成"]
-    E --> F["去偏分类器"]
-    C -->|metadata / DICOM 头| C
+    A["Off-the-shelf classifier f=g∘Φ<br/>+ validation set text corpus"] --> B["Verbalized retrieval<br/>projection π aligns VLR<br/>use Δ to retrieve topK error-related sentences"]
+    B --> C["LLM hypothesis generation<br/>topK sentences → hypothesis set H and test sentences T"]
+    C --> D["Similarity-based slice identification<br/>subset with s_H(X) below threshold τ is the error slice"]
+    D --> E["Unlabeled multi-bias mitigation<br/>s_H converted to pseudo-labels → balanced set fine-tunes g → ensemble over hypothesis set"]
+    E --> F["Debiased classifier"]
+    C -->|metadata / DICOM header| C
 ```
 
 ### Key Designs

@@ -79,7 +79,7 @@ This allows $\alpha$ to respond to the real-time feedback of "what happens after
 
 **2. Dual Regularization $L_2/L_3$: Braking Updates via Rate of Change**
 
-To prevent instability, two正则 terms are added: $L_2=\big(\mathbb{E}_s[Q(s,\pi_{\tilde\theta}(s))]-\mathbb{E}_s[Q(s,\pi_\theta(s))]\big)^2$ penalizes Q-value surges (a precursor to overestimation), and $L_3$ constrains BC loss drift. The form of $L_3$ is derived from Theorem 4.4 to ensure a monotonic performance bound. When Q-values fluctuate or deviate too far from the behavior policy, $L_3$ increases the penalty on BC drift to suppress distribution shift.
+To prevent instability, two regularization terms are added: $L_2=\big(\mathbb{E}_s[Q(s,\pi_{\tilde\theta}(s))]-\mathbb{E}_s[Q(s,\pi_\theta(s))]\big)^2$ penalizes Q-value surges (a precursor to overestimation), and $L_3$ constrains BC loss drift. The form of $L_3$ is derived from Theorem 4.4 to ensure a monotonic performance bound. When Q-values fluctuate or deviate too far from the behavior policy, $L_3$ increases the penalty on BC drift to suppress distribution shift.
 
 **3. Mutual Bounds of $L_2$ and $L_3$: Explaining Domain-Specific Requirements**
 

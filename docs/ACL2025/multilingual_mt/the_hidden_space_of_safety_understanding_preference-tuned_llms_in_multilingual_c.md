@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: 187a7ecebe782f76
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # The Hidden Space of Safety: Understanding Preference-Tuned LLMs in Multilingual Contexts
 
 **Conference**: ACL2025  

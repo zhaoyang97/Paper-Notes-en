@@ -113,7 +113,7 @@ Schedules learned by GRPO remain superior to baselines on unseen degradation ope
 - **GRPO is More Powerful but Brittle**: $\text{TriPS}_\text{G}$ wins on perceptual metrics but sometimes lags behind $\text{TriPS}_\text{T}$ in PSNR, reflecting RL exploration bias toward reward-dominant directions. Bernstein-Beta + KL constraints ensure it stays within the physically feasible region.
 
 ## Highlights & Insights
-- **From "Tuning a Parameter" to "Controlling a Trajectory"**: The major shift is viewing posterior sampling as time-varying optimal control.显式建模 the coupling of CFG, DC, and stochasticity makes the monotonic triadic trend a near-inevitable conclusion—a concept transferable to any diffusion control scenario with multiple guidance forces.
+- **From "Tuning a Parameter" to "Controlling a Trajectory"**: The major shift is viewing posterior sampling as time-varying optimal control. Explicitly modeling the coupling of CFG, DC, and stochasticity makes the monotonic triadic trend a near-inevitable conclusion—a concept transferable to any diffusion control scenario with multiple guidance forces.
 - **Bernstein-Beta Parameterization for Stable RL**: Using partition of unity and bounded distributions embeds feasibility constraints into the architecture, which is more stable than penalty terms or KL constraints alone.
 - **Diagnostics-First Methodology**: Defining computable diagnostics ($\text{COS-SIM}_1$ for conflict, $\text{COS-SIM}_2$ for manifold deviation) to derive laws before engineering optimization is more convincing and reproducible than direct NAS/RL search.
 

@@ -47,19 +47,19 @@ The MPR framework consists of two components: (1) the MPR metric, which calculat
 
 ### Key Designs
 
-1. **MPR度量指标 (Multi-Group Proportional Representation Metric)**:
+1. **MPR Metric (Multi-Group Proportional Representation Metric)**:
 
     - **Function**: Quantify representational bias of T2I models across intersectional demographic groups.
     - **Mechanism**: Define the demographic group space as the Cartesian product of multiple attributes (e.g., gender, race, age), forming a set of intersectional groups $\mathcal{G}$ (e.g., "young Black women," "elderly Asian men"). For each group $g \in \mathcal{G}$, calculate the deviation between its actual proportion in the generated images $\hat{p}(g)$ and the target proportion $p^*(g)$. MPR is defined as the maximum relative deviation across all groups: $\text{MPR} = \max_{g \in \mathcal{G}} |\hat{p}(g) - p^*(g)| / p^*(g)$. The target proportion $p^*(g)$ can be specified by the user based on application scenarios (such as census data, uniform distribution, etc.).
     - **Design Motivation**: Adopting a worst-case design ensures that no group is marginalized. Even if the average representation appears acceptable, the MPR value will be high if a single intersectional group is severely under-represented. This reflects fairness issues more accurately than average deviation.
 
-2. **属性分类与群体标注 (Attribute Classification Pipeline)**:
+2. **Attribute Classification and Group Annotation Pipeline (Attribute Classification Pipeline)**:
 
     - **Function**: Automatically annotate demographic attributes of individuals in generated images.
     - **Mechanism**: Use pre-trained face detection and attribute classification models to detect faces in generated images and predict attributes such as gender, perceived race, and age group. These attribute predictions are combined into intersectional group labels. To handle classifier uncertainty, soft labels (probability distributions) are used instead of hard labels, making subsequent MPR calculations more robust.
     - **Design Motivation**: Manual annotation of a large number of generated images is impractical, necessitating an automated pipeline. Using soft labels mitigates the impact of the attribute classifier's own biases on the MPR calculation.
 
-3. **MPR优化算法 (MPR Optimization)**:
+3. **MPR Optimization Algorithm (MPR Optimization)**:
 
     - **Function**: Fine-tune the T2I model to generate more balanced group representations.
     - **Mechanism**: Cast MPR as a differentiable training loss function. In each training step: (a) generate a batch of images using the current model; (b) estimate the group distribution using the attribute classifier; (c) calculate the MPR loss; (d) backpropagate gradients to update the model's text encoder or cross-attention layers. To maintain generation quality, the original diffusion loss is retained and weighted. A key technique is to apply a soft relaxation on the max operation (using a log-sum-exp approximation) to allow gradients to flow to multiple groups with large deviations.

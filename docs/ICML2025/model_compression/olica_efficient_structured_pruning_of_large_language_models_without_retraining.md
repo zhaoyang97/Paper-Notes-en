@@ -17,7 +17,6 @@ date: 2026-05-08
 content_hash: 24fc0127ca977ee3
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Olica: Efficient Structured Pruning of Large Language Models without Retraining
 
 **Conference**: ICML2025  

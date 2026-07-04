@@ -136,7 +136,7 @@ Tested on the Art3D dataset across inflation strengths and initial noise $t_0$ (
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐ The combination of "inflated prior + 3D latent refinement" targets the specific pain point of flat images effectively. The new metrics are a solid addition, though components are clever re-assemblies of existing techniques.
-- Experimental Thoroughness: ⭐⭐⭐⭐ A large难例 (difficult cases) test set, dual-backbone validation, 5 baselines, 51-person user study, and extensive ablation make for a comprehensive evaluation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ A large difficult-cases test set, dual-backbone validation, 5 baselines, 51-person user study, and extensive ablation make for a comprehensive evaluation.
 - Writing Quality: ⭐⭐⭐⭐ Progressive motivation, clear structure, and effective visualizations (convex failure, trajectories) make for a strong presentation.
 - Value: ⭐⭐⭐⭐ Plug-and-play and training-free, providing immediate utility for cartoon/illustration-to-3D in production (games, animation, VR).
 

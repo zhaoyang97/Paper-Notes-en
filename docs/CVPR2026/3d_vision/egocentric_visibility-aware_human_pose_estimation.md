@@ -49,11 +49,11 @@ The pipeline follows three steps: first, a **visibility-aware 3D pose estimation
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["立体第一视角图像<br/>+ SLAM 相机位姿"] --> B["可见性感知3D姿态估计<br/>逐帧 3D 关键点 + 可见性分数"]
-    B --> C["规范坐标系变换<br/>用相机位姿对齐"]
-    C --> D["迭代帧内-帧间注意力精修<br/>STD ↔ TTE 交替 N 轮"]
-    D --> E["VQ-VAE 姿态先验解码<br/>码本重建合理姿态"]
-    E --> F["世界坐标 3D 姿态输出"]
+    A["Stereo Egocentric Images<br/>+ SLAM Camera Poses"] --> B["Visibility-Aware 3D Pose Estimation<br/>Per-Frame 3D Keypoints + Visibility Scores"]
+    B --> C["Canonical Coordinate Transform<br/>Aligned with Camera Poses"]
+    C --> D["Iterative Intra/Inter-Frame Attention Refinement<br/>STD ↔ TTE Alternating N Rounds"]
+    D --> E["VQ-VAE Pose Prior Decoding<br/>Codebook Reconstruction of Plausible Poses"]
+    E --> F["World-Coordinate 3D Pose Output"]
 ```
 
 ### Key Designs

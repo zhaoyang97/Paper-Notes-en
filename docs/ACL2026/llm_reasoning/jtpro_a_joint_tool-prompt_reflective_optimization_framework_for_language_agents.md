@@ -48,18 +48,18 @@ JTPRO maintains a candidate context pool $\mathcal{C}$. In each iteration: (1) A
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    POOL["候选上下文池 𝒞<br/>全局指令 P + 逐工具 schema"] --> PARETO["Pareto 候选选择<br/>保留前沿候选、偏向多赢实例采样"]
-    subgraph EDIT["反思驱动的局部编辑"]
+    POOL["Candidate Context Pool 𝒞<br/>Global instruction P + per-tool schema"] --> PARETO["Pareto Candidate Selection<br/>Retain frontier candidates, bias sampling toward multi-win instances"]
+    subgraph EDIT["Reflection-Driven Local Editing"]
         direction TB
-        RO["小批量 rollout<br/>算 TSA / SFA / OSR"] --> DIAG["Diagnose<br/>抽结构化错误信号"]
-        DIAG --> PROP["ProposeEdits<br/>只改涉事的全局规则与工具描述"]
+        RO["Mini-batch rollout<br/>Compute TSA / SFA / OSR"] --> DIAG["Diagnose<br/>Extract structured error signals"]
+        DIAG --> PROP["ProposeEdits<br/>Modify only the implicated global rules and tool descriptions"]
     end
     PARETO --> EDIT
-    EDIT --> MERGE["与当前全局最优合并"]
-    MERGE --> GLOB["GlobalizeSlots<br/>跨工具重复参数语义提升为全局规则"]
-    GLOB --> VAL{"验证集得分提升?"}
-    VAL -->|是| UPD["加回候选池 + 更新全局最优"]
-    VAL -->|否| POOL
+    EDIT --> MERGE["Merge with current global best"]
+    MERGE --> GLOB["GlobalizeSlots<br/>Promote repeated cross-tool parameter semantics to global rules"]
+    GLOB --> VAL{"Validation score improved?"}
+    VAL -->|Yes| UPD["Add back to candidate pool + update global best"]
+    VAL -->|No| POOL
     UPD --> POOL
 ```
 

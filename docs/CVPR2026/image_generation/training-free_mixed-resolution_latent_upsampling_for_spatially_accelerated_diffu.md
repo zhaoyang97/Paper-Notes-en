@@ -67,7 +67,7 @@ Upsampling disrupts the conditional distribution of flow matching. Under the ori
 
 $$s_{k+1}=\frac{e_k}{\delta_k+e_k},\quad a=\frac{1}{\delta_k+e_k},\quad b=\frac{\delta_k}{\delta_k+e_k}.$$
 
-Critically, this is **training-free**. Unlike Pyramidal Flow ([22]), which learns parameters, RALU derives them analytically (details in supplementary materials, subject to原文 syntax).
+Critically, this is **training-free**. Unlike Pyramidal Flow ([22]), which learns parameters, RALU derives them analytically (details in supplementary materials, subject to original syntax).
 
 **3. Timestep Distribution Matching (NT-Matching): Aligning sampling frequencies to eliminate mismatching artifacts**
 

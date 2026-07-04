@@ -82,7 +82,7 @@ The closed-loop simulator consists of four iterative steps:
 
 **Core Formula**:
 
-$$\text{NNS} = \begin{cases} 5.0 & \text{无碰撞} \\ 4.0 \cdot \max(0, 1 - v_i / v_r) & \text{有碰撞} \end{cases}$$
+$$\text{NNS} = \begin{cases} 5.0 & \text{no collision} \\ 4.0 \cdot \max(0, 1 - v_i / v_r) & \text{collision} \end{cases}$$
 
 where $v_i$ is the relative impact speed at the moment of collision, and $v_r$ is the reference impact speed if no action is taken. Completely avoiding the collision yields 5 stars; colliding but successfully decelerating is rated from 0 to 4 stars according to the deceleration ratio.
 

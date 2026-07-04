@@ -18,7 +18,7 @@ content_hash: 2f0e0f491bdd76c8
 # Reevaluating the Intra-Modal Misalignment Hypothesis in CLIP
 
 **Conference**: CVPR 2026  
-**论文**: [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Herzog_Reevaluating_the_Intra-Modal_Misalignment_Hypothesis_in_CLIP_CVPR_2026_paper.html)  
+**Paper**: [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Herzog_Reevaluating_the_Intra-Modal_Misalignment_Hypothesis_in_CLIP_CVPR_2026_paper.html)  
 **Code**: [Project Page](https://vision-kek.github.io/IsCLIP-Really-Misaligned)  
 **Area**: Multimodal VLM  
 **Keywords**: CLIP, Intra-modal alignment, image retrieval, few-shot classification, representation geometry

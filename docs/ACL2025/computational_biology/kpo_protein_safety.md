@@ -49,19 +49,19 @@ The KPO framework consists of three stages: (1) constructing a Protein Safety Kn
 
 ### Key Designs
 
-1. **蛋白质安全知识图谱(PSKG)构建**:
+1. **Protein Safety Knowledge Graph (PSKG) Construction**:
 
     - Function: Construct a knowledge graph encoding the relationships between harmful proteins $P_H$ and safe proteins $P_B$
     - Mechanism: Collate harmful proteins annotated with keywords "toxin" and "antigen" from the UniProt database (~18,000 sequences), and retrieve safe proteins from Swiss-Prot after excluding harmful ones. Establish indirect connections through Gene Ontology (GO) functional annotations—if a harmful protein $p_H^i$ and a safe protein $p_B^j$ share a GO term $g_z$, a triplet $(p_H^i, g_z, p_B^j)$ is formed.
     - Design Motivation: The hierarchical structure of GO can capture functional associations ranging from coarse-grained (e.g., "binding activity") to fine-grained (e.g., "DNA-binding transcription factor activity"), ensuring that the PSKG is not just a collection of annotations but a graph structure encoding biological expert knowledge.
 
-2. **加权指标图剪枝**:
+2. **Weighted Metric Graph Pruning**:
 
     - Function: Crop the large-scale PSKG into a compact subgraph that retains the most critical nodes, significantly reducing computational overhead.
     - Mechanism: Calculate an importance score for each safe protein node as $S(p_B^j) = \alpha \cdot C_{GO}(p_B^j) + \beta \cdot C_{Deg}(p_B^j)$, where $C_{GO}$ measures connections with high-scoring GO nodes and $C_{Deg}$ measures degree centrality. The score of a GO node also synthesizes bridging degree $R(g_z)$ (how many harmful-safe protein pairs it connects) and neighbor span $O(g_z)$ (how many safe proteins it connects).
     - Design Motivation: Retaining the top-50% GO nodes and top-50% safe protein nodes. Experiments show that score distributions exhibit a long-tail pattern, where low-scoring nodes contribute minimal marginal information; pruning cuts computation time in half without performance degradation.
 
-3. **基于图+嵌入的偏好对构造与DPO微调**:
+3. **Graph + Embedding-Based Preference Pair Construction and DPO Fine-Tuning**:
 
     - Function: Find the most "similar but safe" protein for each harmful protein from the pruned PSKG, constructing preference pairs for DPO fine-tuning.
     - Mechanism: Synthesize graph structural distance and TransE embedding cosine similarity to find matches: $s(p_H^i, p_B^j) = \mu \cdot \frac{1}{\text{dis}(p_H^i, p_B^j)} + (1-\mu) \cdot \cos(e_{p_H^i}, e_{p_B^j})$. For each harmful protein, select the top-M safe proteins to construct preference pairs $(p_B^j, p_H^i)$, and fine-tune using the DPO loss: $L_{KPO} = -\log \sigma(\varphi \cdot [\log P_\theta(p_B^j|x) - \log P_\theta(p_H^i|x)])$.

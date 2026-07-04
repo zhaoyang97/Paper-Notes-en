@@ -119,7 +119,7 @@ Adding SOW boosted LLaVA-7B GEN from 34.0 to 97.0; for InternVL3 on the Trump & 
 - **Novelty**: ⭐⭐⭐⭐⭐ Reframing irreversible unlearning as reversible knowledge externalization is a fundamental paradigm innovation; emergent compositionality is a brilliant additional discovery.
 - **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers 3 MLLMs, 1/2/3 concepts, and 4 baseline categories, with ablations on $\lambda$, token length, and concept count. However, concept types are entity-heavy and lack stress tests on larger-scale or more abstract knowledge.
 - **Writing Quality**: ⭐⭐⭐⭐ Clear motivation (privacy compliance) and method (dual-stream + soft orthogonality). The "Pensieve" metaphor is apt, with complete formulas and diagrams.
-- **Value**: ⭐⭐⭐⭐⭐ Directly addresses the rigid demand for "reversible, auditable, user-controlled" systems in GDPR/ISO. High落地 value for privacy compliance, copyright management, and editable knowledge systems.
+- **Value**: ⭐⭐⭐⭐⭐ Directly addresses the rigid demand for "reversible, auditable, user-controlled" systems in GDPR/ISO. High practical deployment value for privacy compliance, copyright management, and editable knowledge systems.
 
 <!-- RELATED:START -->
 

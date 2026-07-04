@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 3D-Aware Implicit Motion Control for View-Adaptive Human Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Human Motion Control] 3DiMo shifts human motion control from "relying on external SMPL reconstruction" to "jointly learning a set of view-invariant implicit motion tokens end-to-end with the video generator." By leveraging cross-attention semantic injection and multi-view rich data supervision, the model recovers genuine 3D motion from 2D driving frames. This allows for faithful action reproduction while supporting free camera视角 control via text…
+  [CVPR 2026][Video Generation][Human Motion Control] 3DiMo shifts human motion control from "relying on external SMPL reconstruction" to "jointly learning a set of view-invariant implicit motion tokens end-to-end with the video generator." By leveraging cross-attention semantic injection and multi-view rich data supervision, the model recovers genuine 3D motion from 2D driving frames. This allows for faithful action reproduction while supporting free camera viewpoint control via text…
 tags:
   - "CVPR 2026"
   - "Video Generation"
@@ -24,7 +24,7 @@ content_hash: 8816036e524851e4
 **Keywords**: Human Motion Control, Implicit Motion Representation, 3D Awareness, Video Diffusion, Text-to-Camera Control
 
 ## TL;DR
-3DiMo shifts human motion control from "relying on external SMPL reconstruction" to "jointly learning a set of view-invariant implicit motion tokens end-to-end with the video generator." By leveraging cross-attention semantic injection and multi-view rich data supervision, the model recovers genuine 3D motion from 2D driving frames. This allows for faithful action reproduction while supporting free camera视角 control via text, with results significantly exceeding 2D pose and SMPL baselines in motion fidelity and image quality.
+3DiMo shifts human motion control from "relying on external SMPL reconstruction" to "jointly learning a set of view-invariant implicit motion tokens end-to-end with the video generator." By leveraging cross-attention semantic injection and multi-view rich data supervision, the model recovers genuine 3D motion from 2D driving frames. This allows for faithful action reproduction while supporting free camera viewpoint control via text, with results significantly exceeding 2D pose and SMPL baselines in motion fidelity and image quality.
 
 ## Background & Motivation
 **Background**: Human image animation (driving a reference image with the motion from a driving video) currently focuses on feeding "explicit motion signals" to the generator. One category uses 2D poses/DensePose (AnimateAnyone, MimicMotion) injected via pixel alignment; another uses parametric 3D meshes like SMPL(-X) (Uni3C, MTVCrafter), which are rendered or projected into 2D for control.

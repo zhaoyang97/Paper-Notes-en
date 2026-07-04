@@ -43,19 +43,19 @@ During the preprocessing stage, Cobra extracts patch embeddings using four pre-t
 
 ### Key Designs
 
-**1. Feature Space Augmentation via Multiple FMs — 多FM特征空间增广**
+**1. Feature Space Augmentation via Multiple FMs — Multi-FM Feature Space Augmentation**
 
 - **Function**: Generates positive pairs for contrastive learning without pixel-level augmentations.
 - **Mechanism**: A patient's WSI is encoded into patch embeddings using different FMs ($fe_n \in \{CTP, UNI, V2, H0\}$) and different magnifications, which serve as different "views" of the same slide. The query $q$ and positive key $k^+$ are drawn from different FM/magnification embeddings of the same patient.
 - **Design Motivation**: Different FMs feature distinct architectures, pre-training data, and training objectives, thereby capturing complementary morphological characteristics. Various magnifications provide multi-scale context. This feature-space (rather than pixel-space) augmentation is immune to the invariance of pre-trained FMs, offering a more effective positive pair generation strategy for contrastive learning than traditional augmentations.
 
-**2. Mamba-2 + Multi-head Gated Attention 架构**
+**2. Mamba-2 + Multi-head Gated Attention Architecture**
 
 - **Function**: Efficiently encodes long sequences of patch embeddings and aggregates them into slide-level vectors.
 - **Mechanism**: The architecture is formulated as $z = f_A(f_S(f_E(H^{fe_n})))$. The embedding module $f_E$ uses an MLP with SiLU to map different embedding dimensions to a shared $d$-dimensional space; the State Space module $f_S$ utilizes two Mamba-2 SSD layers with residual connections to encode the sequence; the aggregation module $f_A$ employs an $M$-head gated attention mechanism to compute a weighted average $z = \sum_k a_k \cdot H_{S,k}$, where $a_k$ is computed via a tanh-sigmoid gating mechanism.
 - **Design Motivation**: Mamba-2 is more efficient than Transformer architectures over long sequences, making it suitable for handling the thousands or tens of thousands of patches in a WSI. Gated attention aggregation focuses more on diagnostically relevant regions compared to simple average pooling.
 
-**3. 灵活的推理模式（Single-FM / Multi-FM / Unseen-FM）**
+**3. Flexible Inference Modes (Single-FM / Multi-FM / Unseen-FM)**
 
 - **Function**: Enables inference using any FM, whether seen or unseen during training.
 - **Mechanism**: In Single-FM mode, encoded embeddings $H_S$ are used to compute attention weights, but the weighted average is performed over the original patch embeddings $H^{fe_n}$ (Eq. 6). In Multi-FM mode, encoded embeddings from multiple FMs are averaged and then processed (Eq. 8). In Unseen-FM mode, FMs unseen during training are still mapped to the shared space via the embedding module.

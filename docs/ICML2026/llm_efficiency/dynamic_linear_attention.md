@@ -47,14 +47,14 @@ DLA processes tokens in a streaming fashion. For each new token, it first calcul
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["流式 token 序列<br/>每个 token 状态 s_t"] --> B["状态信息分数 I_t<br/>测相对最近状态的表示漂移"]
-    B -->|"I_t < τ：漂移小"| C["并入当前状态"]
-    B -->|"I_t ≥ τ：漂移大"| D["另起新状态"]
-    C --> E["容量受限缓存<br/>固定大小 + 时序排序"]
+    A["Streaming token sequence<br/>per-token state s_t"] --> B["State informativeness score I_t<br/>measures representational drift relative to the most recent state"]
+    B -->|"I_t < τ: small drift"| C["Merge into current state"]
+    B -->|"I_t ≥ τ: large drift"| D["Start a new state"]
+    C --> E["Capacity-bounded cache<br/>fixed size + chronological ordering"]
     D --> E
-    E -->|"缓存满 K"| F["合并信息密度最低<br/>of 相邻状态对"]
+    E -->|"Cache full K"| F["Merge the lowest-information-density<br/>adjacent state pair"]
     F --> E
-    E --> G["查询加权读出<br/>o_t = Σ λ q·S_i"]
+    E --> G["Query-weighted readout<br/>o_t = Σ λ q·S_i"]
 ```
 
 ### Key Designs

@@ -71,7 +71,7 @@ LLM KV quantization (e.g., per-token in KIVI, rotation in QuaRot) assumes channe
 
 Single-pass quantization rounding error has a hard lower bound of $S_X/2$, which is problematic for extreme 2-bit cases. Borrowing from video's natural hierarchy of "coarse structure + high-frequency residuals," QVG refines residuals across multiple stages. The first round produces $\hat X_1$; the dequantization residual $\Delta_1=X-\hat X_1$ is then smoothed and quantized to yield $\hat\Delta_1$. After $L$ rounds, $\hat X=\hat X_1+\hat\Delta_1+\cdots+\hat\Delta_{L-1}$. Each stage decays the error geometrically. The number of stages $L$ acts as a "quality vs. compression" knob—QVG-Pro (multi-stage) achieves a PSNR of 30.4 at INT2, while single-stage QVG achieves 28.7, both far exceeding baselines.
 
-**设计 3. Algorithm-System Co-design: Implementing smoothing and residuals on GPU with <4% latency**
+**Design 3. Algorithm-System Co-design: Implementing smoothing and residuals on GPU with <4% latency**
 
 KV quantization becomes meaningless if it slows down inference. QVG engineered these steps into the autoregressive KV write path: k-means is performed at chunk granularity, centroids are stored in BF16, and (de)quantization is fused with attention kernels. 2-bit values use packed INT representation. By maintaining intra-chunk parallelism and minimizing dequantization overhead, the end-to-end latency increase is kept under 4%, enabling deployment on consumer GPUs like the RTX 4090/5090.
 

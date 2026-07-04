@@ -1,8 +1,8 @@
 ---
 title: >-
-  [Paper Note] 7 Points to Tsinghua but 10 Points to 清华? Assessing Agentic Large Language Models in Multilingual National Bias
+  [Paper Note] 7 Points to Tsinghua but 10 Points to Tsinghua? Assessing Agentic Large Language Models in Multilingual National Bias
 description: >-
-  [ACL 2025 Findings][Multilingual & Machine Translation][Multilingual Bias] This paper presents the first systematic study of national bias in LLMs acting as multilingual recommendation agents in reasoning-based decision-making tasks. Utilizing three scenarios (university application, travel, and relocation) alongside the ThurstoneケースIII (comparative judgment) method, the study quantifies rating discrepancies for GPT-3.5, GPT-4, and Claude Sonnet across six languages. The find…
+  [ACL 2025 Findings][Multilingual & Machine Translation][Multilingual Bias] This paper presents the first systematic study of national bias in LLMs acting as multilingual recommendation agents in reasoning-based decision-making tasks. Utilizing three scenarios (university application, travel, and relocation) alongside the Thurstone Case III (comparative judgment) method, the study quantifies rating discrepancies for GPT-3.5, GPT-4, and Claude Sonnet across six languages. The find…
 tags:
   - "ACL 2025 Findings"
   - "Multilingual & Machine Translation"
@@ -16,7 +16,7 @@ date: 2026-05-08
 content_hash: 7c91fd3a05cde1c1
 ---
 
-# 7 Points to Tsinghua but 10 Points to 清华? Assessing Agentic Large Language Models in Multilingual National Bias
+# 7 Points to Tsinghua but 10 Points to Tsinghua? Assessing Agentic Large Language Models in Multilingual National Bias
 
 **Conference**: ACL 2025 Findings  
 **arXiv**: [2502.17945](https://arxiv.org/abs/2502.17945)  
@@ -25,7 +25,7 @@ content_hash: 7c91fd3a05cde1c1
 **Keywords**: Multilingual Bias, National Bias, LLM Agent, Decision Reasoning, Chain-of-Thought, Fairness  
 
 ## TL;DR
-This paper presents the first systematic study of national bias in LLMs acting as multilingual recommendation agents in reasoning-based decision-making tasks. Utilizing three scenarios (university application, travel, and relocation) alongside the ThurstoneケースIII (comparative judgment) method, the study quantifies rating discrepancies for GPT-3.5, GPT-4, and Claude Sonnet across six languages. The findings reveal a widespread prevalence of "local language bias," and demonstrate that Chain-of-Thought (CoT) reasoning paradoxically exacerbates bias in non-English languages.
+This paper presents the first systematic study of national bias in LLMs acting as multilingual recommendation agents in reasoning-based decision-making tasks. Utilizing three scenarios (university application, travel, and relocation) alongside the Thurstone Case III (comparative judgment) method, the study quantifies rating discrepancies for GPT-3.5, GPT-4, and Claude Sonnet across six languages. The findings reveal a widespread prevalence of "local language bias," and demonstrate that Chain-of-Thought (CoT) reasoning paradoxically exacerbates bias in non-English languages.
 
 ## Background & Motivation
 
@@ -108,7 +108,7 @@ The latent national bias of LLMs is formulated as a "comprehensive evaluation pr
 4. **Gender Interaction Effects**: GPT-4 and GPT-3.5 demonstrate significant differences in gender bias in South Korea (KR) (female persona MD = 0.65-0.73 vs. male 0.30-0.75), whereas Sonnet exhibits the weakest gender bias overall.
 
 ## Highlights & Insights
-- **Pioneering Study**: The first to systematically quantify national bias in LLMs during multilingual reasoning and decision-making; the title "7 Points to Tsinghua but 10 Points to 清华" is highly engaging and communicative.
+- **Pioneering Study**: The first to systematically quantify national bias in LLMs during multilingual reasoning and decision-making; the title "7 Points to Tsinghua but 10 Points to Qinghua" is highly engaging and communicative.
 - **Exquisite Experimental Design**: Triplet design based on the Thurstone case III method combined with dual metrics (JSD/MD), alongside a rigorous and reproducible multi-dimensional cross-analysis of $ \text{CoT} \times \text{Gender} \times 3 \text{ Tasks} \times 6 \text{ Languages} $.
 - **Counterintuitive Core Finding**: CoT reasoning does not mitigate bias but instead exacerbates it, thereby challenging the intuitive assumption that "more reasoning leads to more fairness."
 - **Practical Cautionary Value**: Shines a light on fairness risks in multilingual AI applications, providing direct cautionary implications for the deployment of LLMs in education recommendations, travel planning, and other real-world domains.

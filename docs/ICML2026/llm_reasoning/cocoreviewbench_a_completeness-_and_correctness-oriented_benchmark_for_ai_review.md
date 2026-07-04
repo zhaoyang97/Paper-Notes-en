@@ -83,7 +83,7 @@ To reduce costs, split and classify capabilities are distilled into an 8B model.
 
 $$R = \max\!\left(0.5,\ \text{OmegaIndex} + \mathbb{1}(\text{Correct Format})\right)$$
 
-ReviewClassify uses SFT. The distilled 8B model achieves 87.09% accuracy on human-verified分類 classification. GPT-5-Mini then judges five dimensions: Correctness, Thoroughness, Grounding, Verifiability, and Clarity (1-5 scale), alongside $\text{Completeness} = \dfrac{\text{AI Covered Categories}}{\text{Aggregate Human Covered Categories}} \times 100$.
+ReviewClassify uses SFT. The distilled 8B model achieves 87.09% accuracy on human-verified classification. GPT-5-Mini then judges five dimensions: Correctness, Thoroughness, Grounding, Verifiability, and Clarity (1-5 scale), alongside $\text{Completeness} = \dfrac{\text{AI Covered Categories}}{\text{Aggregate Human Covered Categories}} \times 100$.
 
 ## Key Experimental Results
 

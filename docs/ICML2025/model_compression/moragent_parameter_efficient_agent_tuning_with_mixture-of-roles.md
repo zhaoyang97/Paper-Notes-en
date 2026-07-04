@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: d629d61ac4e26784
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # MoRAgent: Parameter Efficient Agent Tuning with Mixture-of-Roles
 
 **Conference**: ICML2025  

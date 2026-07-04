@@ -18,7 +18,7 @@ content_hash: e7a673b59b81306b
 # TimeCraft: Navigate Weakly-Supervised Temporal Grounded Video Question Answering via Bi-directional Reasoning
 
 **Conference**: ECCV 2024  
-**论文链接**: [ECVA](https://www.ecva.net/papers/eccv_2024/papers_ECCV/html/720_ECCV_2024_paper.php)
+**Paper Link**: [ECVA](https://www.ecva.net/papers/eccv_2024/papers_ECCV/html/720_ECCV_2024_paper.php)
 **Code**: None  
 **Area**: Video Understanding / Video Question Answering / Temporal Grounding  
 **Keywords**: Weakly-Supervised Video Question Answering, Temporal Grounding, Bi-directional Reasoning, Cycle Consistency, Vision-Language

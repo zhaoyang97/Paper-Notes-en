@@ -54,7 +54,7 @@ The contributions of Omni6D are three-fold: **Dataset + Evaluation Metric + Fine
 
 ### Key Designs
 
-#### 1. Dataset 构建 (Dataset Construction)
+#### 1. Dataset Construction
 
 **Function**: Creates a large-scale RGBD dataset covering 166 daily object categories.
 
@@ -70,7 +70,7 @@ The contributions of Omni6D are three-fold: **Dataset + Evaluation Metric + Fine
 
 **Design Motivation**: Free-fall placement produces a massive number of occluded scenes. Data space analysis confirms that the difference between the point cloud centroid and the object centroid in Omni6D is larger than that in CAMERA/REAL, verifying a higher occlusion rate. The more uniform angular deviation distribution in all directions forces the models to handle bottom/side views.
 
-#### 2. 对称感知评估指标 (Symmetry-Aware Evaluation Metric)
+#### 2. Symmetry-Aware Evaluation Metric
 
 **Function**: Designs a 6D pose evaluation metric that correctly handles rotationally symmetric objects.
 
@@ -91,7 +91,7 @@ where $\Theta_0=\{0\}$, $\Theta_2=\{0,90,180,270\}$, and $\Theta_3=\{0,180\}$. T
 
 **Design Motivation**: Each instance is individually annotated with symmetry (which may vary among different instances of the same category), making it more precise than category-level annotations. Experiments demonstrate that models' performance drops significantly under non-symmetry-aware metrics.
 
-#### 3. 渐进微调策略 (Progressive Fine-Tuning Strategy)
+#### 3. Progressive Fine-Tuning Strategy
 
 **Function**: Efficiently transfers models trained on NOCS to large-scale category scenarios.
 

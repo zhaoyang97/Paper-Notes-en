@@ -58,7 +58,7 @@ $$\pi_\theta(y|x) = \frac{1}{N}\sum_{n=1}^N f_\theta^d(y|x)$$
 
 Select top-$k$ uncertain samples (those with the lowest MC-dropout confidence) and query binary feedback:
 
-$$R_{\text{BFA}}(x, y) = B(x, y) = \begin{cases} 1 & \text{正确} \\ -1 & \text{错误} \end{cases}$$
+$$R_{\text{BFA}}(x, y) = B(x, y) = \begin{cases} 1 & \text{correct} \\ -1 & \text{incorrect} \end{cases}$$
 
 Correctly predicted samples are stored in $\mathcal{M}_C$, and incorrect ones in $\mathcal{M}_I$ (FIFO buffers).
 
@@ -72,7 +72,7 @@ Key Advantage: It does not rely on a fixed threshold (a common pain point of tra
 
 ### Loss & Training
 
-$$\mathcal{L}_{\text{BiTTA}} = \alpha \cdot \underbrace{\frac{1}{|\mathcal{M}_C|}\sum_{x \in \mathcal{M}_C}(-\log \pi_\theta) + \frac{1}{|\mathcal{M}_I|}\sum_{x \in \mathcal{M}_I}(+\log \pi_\theta)}_{\text{BFA: 最小化正确CE + 最大化错误CE}} + \beta \cdot \underbrace{\frac{1}{|\mathcal{S}_\text{ABA}|}\sum_{x \in \mathcal{S}_\text{ABA}}(-\log \pi_\theta)}_{\text{ABA: 最小化一致样本CE}}$$
+$$\mathcal{L}_{\text{BiTTA}} = \alpha \cdot \underbrace{\frac{1}{|\mathcal{M}_C|}\sum_{x \in \mathcal{M}_C}(-\log \pi_\theta) + \frac{1}{|\mathcal{M}_I|}\sum_{x \in \mathcal{M}_I}(+\log \pi_\theta)}_{\text{BFA: minimize correct CE + maximize incorrect CE}} + \beta \cdot \underbrace{\frac{1}{|\mathcal{S}_\text{ABA}|}\sum_{x \in \mathcal{S}_\text{ABA}}(-\log \pi_\theta)}_{\text{ABA: minimize consistent sample CE}}$$
 
 Where $\alpha = \beta = 1$. BFA reinforces correct predictions and weakens incorrect ones, while ABA consolidates consistent (highly likely correct) predictions. No gradients are applied to uncertain samples that did not receive feedback (reward is 0), avoiding harmful adaptation from noisy signals.
 

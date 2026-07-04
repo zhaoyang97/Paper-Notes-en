@@ -8,7 +8,7 @@ tags:
   - "Multimodal VLM"
   - "Multi-Modal Retrieval"
   - "RAG"
-  - "Retrieval增强生成"
+  "Retrieval-Augmented Generation"
   - "Query Robustness to Rephrasing"
   - "Document Retrieval"
 date: 2026-05-08
@@ -21,7 +21,7 @@ content_hash: bb172c03d30cc8da
 **arXiv**: [2502.12342](https://arxiv.org/abs/2502.12342)  
 **Code**: None  
 **Area**: Information Retrieval  
-**Keywords**: Multi-Modal Retrieval, RAG, Retrieval增强生成, Query Robustness to Rephrasing, Document Retrieval
+**Keywords**: Multi-Modal Retrieval, RAG, Retrieval-Augmented Generation, Query Robustness to Rephrasing, Document Retrieval
 
 ## TL;DR
 

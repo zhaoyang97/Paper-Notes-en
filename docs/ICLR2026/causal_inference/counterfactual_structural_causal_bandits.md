@@ -100,7 +100,7 @@ The experiments compare cumulative regret (CR) across three action space strateg
 
 ## Limitations & Future Work
 - **SCM Modeling Assumptions**: Requires a fixed causal structure and defined variables, making it difficult to model dynamic, high-dimensional, or partially observable systems.
-- **Feasibility of Counterfactual Actions**: Assumes the agent can execute any implementable counterfactual $P(Y_{X_*成就})$, which implicitly requires identifying suitable "counterfactual mediators." This may be constrained by ethics or technology in reality.
+- **Feasibility of Counterfactual Actions**: Assumes the agent can execute any implementable counterfactual $P(Y_{X_*})$, which implicitly requires identifying suitable "counterfactual mediators." This may be constrained by ethics or technology in reality.
 - **Known Causal Graph Assumption**: Assumes the agent has the true graph. While causal discovery can help, the authors note that **conservatively assuming a confounding edge (super-model) does not compromise soundness** (it only reduces precision), whereas missing an edge is dangerous.
 - Future Directions: Explicitly incorporating causal discovery uncertainty into regret analysis or providing robustness guarantees under graph misspecification would make the framework more practical.
 

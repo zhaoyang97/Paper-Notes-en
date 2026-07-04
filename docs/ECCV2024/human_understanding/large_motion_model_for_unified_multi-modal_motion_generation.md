@@ -114,7 +114,7 @@ To address the inconsistency in data formats, the authors construct the MotionVe
 
 ### Ablation Study
 
-**预训练策略消融 (LMM-Base)**:
+**Pre-training Strategy Ablation (LMM-Base)**:
 
 | Config | Downsample | Random Mask | Attention | HumanML3D Top1 | HumanML3D FID | AMASS 1000ms |
 |------|-----------|-------------|-----------|---------------|---------------|-------------|

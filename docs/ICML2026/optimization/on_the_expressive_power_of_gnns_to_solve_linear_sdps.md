@@ -49,7 +49,7 @@ The input is an SDP instance $(C, \{A_k\}_{k=1}^m, \{b_k\}_{k=1}^m)$. The author
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
     A["SDP Instance<br/>Obj C, Constraints A_k, b_k"] --> B["Encode as Bi-typed Graph<br/>Var Nodes (i,j) + Constr Nodes A_k, weighted by A_k,ij"]
-    B --> C{"Which level of WL?探索"}
+    B --> C{"Which level of WL? Explore"}
     C -->|"1-WL/2-WL Equivalent<br/>VC-WL, VC-2-WL"| X["Impossibility: Same color for isomorphic instances<br/>Cannot distinguish different optimal solutions"]
     C -->|"2-FWL Equivalent"| D["VC-2-FWL: Pairwise joint aggregation<br/>T rounds, simulates PDHG iteration"]
     D --> E["Decode predicted matrix X̂<br/>Supervised by min-norm X*"]

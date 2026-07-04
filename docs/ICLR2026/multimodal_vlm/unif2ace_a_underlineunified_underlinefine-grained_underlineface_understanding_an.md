@@ -118,7 +118,7 @@ Face Understanding (UniF2aceD-1M score by GPT-4o / DeepSeek): SOTA across all me
 
 ## Highlights & Insights
 - **Theoretical Grounding of Loss**: D3Diff is not just a combination of losses; it is driven by NLL bound tightness (Theorem 1). This "theory-first" approach provides a template for optimizing discrete diffusion in other domains.
-- **MoE as Feature Reinjection**: Using MoE as a channel to "拌" (mix) external specialized encoder outputs (CLIP/InsightFace) into the backbone backbone addresses attribute forgetting.
+- **MoE as Feature Reinjection**: Using MoE as a channel to blend external specialized encoder outputs (CLIP/InsightFace) into the backbone addresses attribute forgetting.
 - **Data Density Strategy**: By pushing attribute density to 17.7 per description, the authors demonstrate that the bottleneck for vertical UMMs often lies in data granularity.
 
 ## Limitations & Future Work

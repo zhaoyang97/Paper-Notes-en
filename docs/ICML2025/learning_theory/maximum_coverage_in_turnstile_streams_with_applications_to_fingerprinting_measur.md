@@ -71,7 +71,7 @@ To address general fingerprinting, a more generalized submodular maximization fr
 
 A novel linear sketch is designed to estimate $n^p - F_p$ ($p \geq 2$), where $F_p = \sum_i f_i^p$ is the $p$-th frequency moment:
 
-$$\text{草图大小} = \tilde{O}(\gamma^{-2/(p-1)}), \quad \text{近似比} = (1 \pm \gamma^{1/(p-1)})$$
+$$\text{Sketch size} = \tilde{O}(\gamma^{-2/(p-1)}), \quad \text{approximation ratio} = (1 \pm \gamma^{1/(p-1)})$$
 
 This result holds independent theoretical value and is applied to instantiate the submodular framework for solving general fingerprinting.
 

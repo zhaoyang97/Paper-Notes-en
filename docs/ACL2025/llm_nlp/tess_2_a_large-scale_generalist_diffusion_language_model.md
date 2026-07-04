@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: 0ae93dee15bca0a0
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # TESS 2: A Large-Scale Generalist Diffusion Language Model
 
 **Conference**: ACL2025  

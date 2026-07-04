@@ -52,7 +52,7 @@ Workflow:
 
 **Gradient-preserving Compression Score (GCS)**:
 
-$$\text{GCS}(\delta_i) = \underbrace{||\frac{\partial^2 \ell}{\partial w_i^2} \delta_i||_1}_{\text{性能保持}} \underbrace{- \lambda \frac{\partial \ell}{\partial w_i} \odot \delta_i}_{\text{隐私保护}}$$
+$$\text{GCS}(\delta_i) = \underbrace{||\frac{\partial^2 \ell}{\partial w_i^2} \delta_i||_1}_{\text{Performance Preservation}} \underbrace{- \lambda \frac{\partial \ell}{\partial w_i} \odot \delta_i}_{\text{Privacy Protection}}$$
 
 - Term 1 (Hessian term): Minimizes the gradient shift introduced by compression, ensuring the adapter's gradient direction on the emulator matches that on the original model.
 - Term 2 (First-order gradient term): Maximizes the loss discrepancy to protect privacy.

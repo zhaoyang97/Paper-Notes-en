@@ -47,7 +47,7 @@ MISOB is an iterative training framework: (1) pre-training a base classifier $f^
 
 Conventional recourse cost focuses on the average cost of all rejected individuals, whereas social burden focuses on individuals who **should have been accepted but were incorrectly rejected**. For a sensitive group $s$:
 
-$$B_{f,g}^s = \underbrace{\mathbb{E}[\delta((X,s), g_f(X))]}_{\text{假阴性的追索成本}} \cdot (1 - \underbrace{P(f(X)=1|S=s, Y=1)}_{\text{真阳性率 TPR}})$$
+$$B_{f,g}^s = \underbrace{\mathbb{E}[\delta((X,s), g_f(X))]}_{\text{recourse cost of false negatives}} \cdot (1 - \underbrace{P(f(X)=1|S=s, Y=1)}_{\text{true positive rate (TPR)}})$$
 
 where $\delta$ is the recourse cost function, and $g_f$ is the recourse algorithm. Social burden simultaneously accounts for: the probability of being incorrectly rejected (related to TPR) and the cost of changing features. In an ideal scenario, the social burden should be zero.
 

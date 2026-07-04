@@ -49,12 +49,12 @@ During inference, the model generates sub-queries step-by-step. For each sub-que
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["输入问题"] --> B["MDP 建模<br/>逐步推理=终止决策+原子决策"]
-    B --> C["二叉树搜索<br/>每个子查询枚举<br/>参数/检索两条路"]
-    C -->|挑出答对且检索最少的轨迹| D["模仿学习<br/>学会子查询→原子决策→中间答案<br/>得 DeepRAG-Imi"]
-    D -->|离线:偏好对 DPO| E["校准链<br/>校准知识边界"]
-    D -->|在线:结果奖励 GRPO| E
-    E --> F["按需检索推理<br/>逐步拆解+自适应检索"]
+    A["Input Question"] --> B["MDP Modeling<br/>step-by-step reasoning = termination decision + atomic decision"]
+    B --> C["Binary Tree Search<br/>enumerate each sub-query<br/>along parametric / retrieval paths"]
+    C -->|Select correct trajectories with fewest retrievals| D["Imitation Learning<br/>learn sub-query → atomic decision → intermediate answer<br/>yields DeepRAG-Imi"]
+    D -->|Offline: preference pairs DPO| E["Calibration Chain<br/>calibrate knowledge boundary"]
+    D -->|Online: outcome reward GRPO| E
+    E --> F["On-demand Retrieval Reasoning<br/>stepwise decomposition + adaptive retrieval"]
 ```
 
 ### Key Designs

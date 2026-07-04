@@ -18,7 +18,7 @@ content_hash: 3fa6f6edd9ed0c22
 # NavForesee: A Unified Vision-Language World Model for Hierarchical Planning and Dual-Horizon Navigation Prediction
 
 **Conference**: CVPR 2026  
-**论文**: [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_NavForesee_A_Unified_Vision-Language_World_Model_for_Hierarchical_Planning_and_CVPR_2026_paper.html)  
+**Paper**: [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_NavForesee_A_Unified_Vision-Language_World_Model_for_Hierarchical_Planning_and_CVPR_2026_paper.html)  
 **Code**: To be confirmed  
 **Area**: Robotics / Embodied Navigation / Vision-Language Navigation  
 **Keywords**: Vision-Language Navigation, World Models, Hierarchical Planning, VLM, Dual-Horizon Prediction  

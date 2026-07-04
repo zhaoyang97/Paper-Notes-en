@@ -45,20 +45,20 @@ At each layer $\ell$ of the LLM, the ICR Score is calculated for each token $i$:
 
 ### Key Designs
 
-1. **ICR Score 构造**:
+1. **ICR Score Construction**:
 
     - Function: Quantifying the degree of dominance of MHSA vs FFN on hidden state updates in each layer
     - Mechanism: $\text{ICR}_i^\ell = \text{JSD}(\text{Proj}_i^\ell, \text{Attn}_i^\ell)$. The projection vector $p_{i,j}^\ell = \frac{(\Delta x_i^\ell)^T \cdot x_j^\ell}{\|x_j^\ell\|}$ measures the alignment between the update direction and each token's representation
     - Design Motivation: A low ICR indicates that the update is dominated by MHSA (context routing), whereas a high ICR indicates dominance by FFN (parametric knowledge injection). Hallucinations tend to occur when FFN abnormally injects information
     - Difference from Prior Methods: Instead of directly using the 4000-dimensional hidden states, a 1-dimensional ICR Score is used to compress the information of each layer
 
-2. **跨层稳定性**:
+2. **Cross-Layer Stability**:
 
     - Function: Verifying that the layered pattern of ICR Score is consistent across datasets
     - Mechanism: Early layers (0-3) show low ICR (MHSA-dominated local extraction) → middle layers (4-20) exhibit rising ICR (FFN-infused knowledge) → late layers (21+) display falling ICR (MHSA refinement and integration)
     - Design Motivation: This consistent pattern is an intrinsic property of the model rather than being data-specific, thereby ensuring generalization
 
-3. **ICR Probe 架构**:
+3. **ICR Probe Architecture**:
 
     - Function: Using the ICR Scores of all L layers as input, and outputting the hallucination probability via a 4-layer MLP
     - Mechanism: The input is a token-wise averaged $1 \times L$ vector, with an architecture of $(L, 128, 64, 32, 1)$, totalling <16K parameters

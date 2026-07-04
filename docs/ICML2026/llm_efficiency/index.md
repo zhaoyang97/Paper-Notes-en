@@ -231,7 +231,7 @@ item_total: 48
 
 **[Sparser Block-Sparse Attention via Token Permutation](sparser_block-sparse_attention_via_token_permutation.md)**
 
-:   This paper proposes PBS-Attn, which leverages the permutation invariance of attention to reorder keys within segments based on "global importance." This聚拢 (gathers) scattered heavy hitters into continuous high-density blocks before performing block-sparse computation, achieving up to 2.75x end-to-end acceleration for long-context prefilling while maintaining accuracy nearly equal to full attention.
+:   This paper proposes PBS-Attn, which leverages the permutation invariance of attention to reorder keys within segments based on "global importance." This gathers scattered heavy hitters into continuous high-density blocks before performing block-sparse computation, achieving up to 2.75x end-to-end acceleration for long-context prefilling while maintaining accuracy nearly equal to full attention.
 
 **[STAR: Rethinking MoE Routing as Structure-Aware Subspace Learning](star_rethinking_moe_routing_as_structure-aware_subspace_learning.md)**
 

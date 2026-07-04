@@ -18,7 +18,7 @@ content_hash: 596642355c1ba32e
 # LoPrune: Efficient Data Pruning for LoRA-Based Fine-Tuning of Vision Transformer
 
 **Conference**: CVPR 2026  
-**论文**: [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/He_LoPrune_Efficient_Data_Pruning_for_LoRA_Based_Fine_Tuning_of_Vision_Transformer_CVPR_2026_paper_html)  
+**Paper**: [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/He_LoPrune_Efficient_Data_Pruning_for_LoRA_Based_Fine_Tuning_of_Vision_Transformer_CVPR_2026_paper_html)  
 **Code**: To be confirmed  
 **Area**: Model Compression / Efficient Fine-Tuning  
 **Keywords**: Data Pruning, LoRA Fine-Tuning, Influence Function, Trainable Subspace, K-FAC

@@ -73,7 +73,7 @@ This indicates that the attack success rate is dominated by the **concept prefer
 
 Through further analysis using Bayes' theorem, the concept preference ratio is positively correlated with three factors:
 
-$$\frac{P_M(\theta_1|\mathcal{S}_t)}{P_M(\theta_2|\mathcal{S}_t)} \propto \underbrace{\frac{P_M(\theta_1)}{P_M(\theta_2)}}_{\text{任务先验权重}} \cdot \underbrace{\left(\frac{P_M(\mathbf{y}_t|\hat{\mathbf{x}},\theta_1)}{P_M(\mathbf{y}_t|\hat{\mathbf{x}},\theta_2)}\right)^m}_{\text{中毒影响因子}} \cdot \underbrace{\left(\frac{P_M(\mathbf{y}_{gt}|\mathbf{x},\theta_1)}{P_M(\mathbf{y}_{gt}|\mathbf{x},\theta_2)}\right)^n}_{\text{干净影响因子}}$$
+$$\frac{P_M(\theta_1|\mathcal{S}_t)}{P_M(\theta_2|\mathcal{S}_t)} \propto \underbrace{\frac{P_M(\theta_1)}{P_M(\theta_2)}}_{\text{Task Prior Weight}} \cdot \underbrace{\left(\frac{P_M(\mathbf{y}_t|\hat{\mathbf{x}},\theta_1)}{P_M(\mathbf{y}_t|\hat{\mathbf{x}},\theta_2)}\right)^m}_{\text{Poisoning Influence Factor}} \cdot \underbrace{\left(\frac{P_M(\mathbf{y}_{gt}|\mathbf{x},\theta_1)}{P_M(\mathbf{y}_{gt}|\mathbf{x},\theta_2)}\right)^n}_{\text{Clean Influence Factor}}$$
 
 Since the task prior weight and the poisoned scaling factor are determined by the task and attack scenarios and are uncontrollable, the defense can only be achieved by **adjusting the clean scaling factor**.
 

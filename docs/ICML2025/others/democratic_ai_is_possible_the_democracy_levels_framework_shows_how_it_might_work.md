@@ -63,7 +63,7 @@ The framework defines three main categories and 13 dimensions to evaluate the qu
 
 **Process Quality**:
 
-$$Q_{process} = f(\text{代表性}, \text{知情度}, \text{审议性}, \text{实质性}, \text{鲁棒性}, \text{可读性})$$
+$$Q_{process} = f(\text{representativeness}, \text{informed}, \text{deliberativeness}, \text{substantiveness}, \text{robustness}, \text{legibility})$$
 
 - **Representation**: Whether key decisions represent the relevant population.
 - **Informedness**: Whether decisions incorporate critical information from domain experts, authoritative organizations, and diverse stakeholders.

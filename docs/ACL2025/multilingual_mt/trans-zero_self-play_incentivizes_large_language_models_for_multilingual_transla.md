@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: 963281b89a30f277
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Trans-Zero: Self-Play Incentivizes Large Language Models for Multilingual Translation
 
 **Conference**: ACL2025  

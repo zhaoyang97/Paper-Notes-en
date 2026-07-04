@@ -19,7 +19,7 @@ content_hash: fb76313022b9208c
 
 **Conference**: CVPR 2026  
 **Paper**: [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_URScenes_A_Multi-scenario_Dataset_for_Unstructured_Road_Environments_CVPR_2026_paper.html)  
-**Code**: http://www.sav-lab.com （数据与工具包，⚠️ 以原文为准）  
+**Code**: http://www.sav-lab.com (data and toolkit, ⚠️ refer to the original paper for authoritative information)  
 **Area**: Autonomous Driving / Perception Datasets  
 **Keywords**: Unstructured roads, open-pit mines, multi-modal perception, 3D object detection, occupancy prediction
 

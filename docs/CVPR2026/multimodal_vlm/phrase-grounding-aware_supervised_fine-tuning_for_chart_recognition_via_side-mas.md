@@ -96,7 +96,7 @@ Comparison on C2T (Table Extraction, F1) and ChartQA (Relaxed Accuracy) against 
 | Qwen2.5VL-7B | SFT | 93.3 | 85.6 | 76.2 |
 | Qwen2.5VL-7B | **Ours** | 93.4* | **86.5** | **90.2 (Hum F1)** |
 
-> ⚠️ Some Qwen7B C2T Avg figures were line-truncated in the source; refer to原文 Tab. 2. "90.2" represents Qwen7B-Ours F1 on C2T Hum. Specialty models UniChart and ChartInstruct also improved from SFT (66.2/58.5) to 67.7/60.4 (ChartQA Avg) using Ours.
+> ⚠️ Some Qwen7B C2T Avg figures were line-truncated in the source; refer to the original Tab. 2. "90.2" represents Qwen7B-Ours F1 on C2T Hum. Specialty models UniChart and ChartInstruct also improved from SFT (66.2/58.5) to 67.7/60.4 (ChartQA Avg) using Ours.
 
 Seg. performed worst (difficult to optimize a segmentation model with ~25k samples and domain gap); TL. matched SFT on ChartQA (single region) but degraded significantly on C2T (multi-target).
 

@@ -50,8 +50,8 @@ flowchart TD
     A["5000+ PMC Papers (IF &gt; 3)"] --> SG1
     subgraph SG1["High-complexity Multi-panel Images + Six Fine-grained Panel Types"]
         direction TB
-        B["Extract 5632 figures<br/>Append text + standardized captions"] --> C["YOLO Panel Detection<br/>淘汰 77.6% with ≤ 6 panels"]
-        C --> D["Expert review of experimental flow<br/>淘汰 14.2% → 1084 figures"]
+        B["Extract 5632 figures<br/>Append text + standardized captions"] --> C["YOLO Panel Detection<br/>Filter out 77.6% with ≤ 6 panels"]
+        C --> D["Expert review of experimental flow<br/>Filter out 14.2% → 1084 figures"]
     end
     SG1 --> E["Three-stage Seven-task Hierarchical Evaluation<br/>Expert templates → GPT-4o 7608 candidate MCQs"]
     E --> SG2

@@ -82,7 +82,7 @@ This is a position/conceptual analysis paper with **no experiments, no datasets,
 | Reducing LLM hallucinations | Social Judiciousness (less misinformation) | Takeover Avoidance (better "scheming/sandbagging") |
 | Math benchmark scaling (o3 vs. GPT-4.5) | Positive Alignment / Task Reliability | Negative Alignment (higher PersonQA hallucinations) |
 | Recommender CTR maximization | Task Reliability (meets developer goal) | Social Judiciousness (addiction/polarization) |
-| Training "non-offensive" CoT | Task Reliability (合意/desirable local output) | Takeover Avoidance (model learns to hide intent) |
+| Training "non-offensive" CoT | Task Reliability (desirable local output) | Takeover Avoidance (model learns to hide intent) |
 
 These cases share a common structure: **the same technical intervention is simultaneously an improvement for one type of alignment and a regression for another**.
 

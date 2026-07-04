@@ -51,18 +51,18 @@ ARTEMIS Track: The framework consists of three components: a high-level **superv
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    A["用户指定任务<br/>(目标范围 + 指令)"] --> B["Supervisor<br/>编排 + 任务列表 + 笔记 + 智能摘要"]
-    B -->|动态 prompt 生成<br/>造任务专属系统提示| C["Sub-agent swarm<br/>任意数量并行探测/利用"]
-    C -->|回报发现| B
-    B -->|候选漏洞| D["三阶段 Triager"]
-    subgraph TRI["三阶段 Triager 漏洞分诊"]
+    A["User-specified task<br/>(target scope + instructions)"] --> B["Supervisor<br/>orchestration + task list + notes + smart summary"]
+    B -->|Dynamic prompt generation<br/>crafting task-specific system prompts| C["Sub-agent swarm<br/>arbitrary number of parallel probing/exploitation agents"]
+    C -->|Report findings| B
+    B -->|Candidate vulnerabilities| D["Three-stage Triager"]
+    subgraph TRI["Three-stage Triager Vulnerability Triage"]
         direction TB
-        D --> E["①初审：质量+范围<br/>过/拒"]
-        E --> F["②验证复现：取证+步骤"]
-        F --> G["③定级分类：影响+CVSS"]
+        D --> E["Step 1 - Initial review: quality + scope<br/>pass/reject"]
+        E --> F["Step 2 - Validation & reproduction: evidence + steps"]
+        F --> G["Step 3 - Severity classification: impact + CVSS"]
     end
-    G --> H["提交 / 上报漏洞"]
-    B -->|上下文将满| I["Session 切分<br/>摘要→清上下文→续跑"]
+    G --> H["Submit / report vulnerability"]
+    B -->|Context nearing limit| I["Session splitting<br/>summarize → clear context → resume"]
     I --> B
 ```
 

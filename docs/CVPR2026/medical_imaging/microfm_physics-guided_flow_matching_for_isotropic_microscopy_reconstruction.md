@@ -47,12 +47,12 @@ MicroFM represents a two-stage physics-guided framework. **Stage 1 (Physical PSF
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["各向异性 3D 采集<br/>(轴向分辨率差)"] --> B["物理 PSF 预测<br/>Zernike 波前 + SFE-Net 盲估"]
-    B --> C["合成配对数据<br/>真实 PSF 模糊横向切片"]
-    B --> D["体几何先验 INR<br/>渲染各向同性体"]
-    C --> E["锚定 Flow Matching 重建<br/>x0=αLR+β先验 → 高质量切片"]
+    A["Anisotropic 3D Acquisition<br/>(Poor Axial Resolution)"] --> B["Physics PSF Estimation<br/>Zernike Wavefront + SFE-Net Blind Estimation"]
+    B --> C["Synthetic Paired Data<br/>Real PSF Blurred Lateral Slices"]
+    B --> D["Volumetric Geometry Prior INR<br/>Render Isotropic Volume"]
+    C --> E["Anchored Flow Matching Reconstruction<br/>x0=αLR+β Prior → High-Quality Slices"]
     D --> E
-    E --> F["三轴切片融合<br/>各向同性 3D 体"]
+    E --> F["Tri-Axis Slice Fusion<br/>Isotropic 3D Volume"]
 ```
 
 ### Key Designs

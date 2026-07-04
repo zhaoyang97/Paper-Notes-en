@@ -46,11 +46,11 @@ The input to EvoPresent is a paper (PDF) plus optional voice, persona, or image 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["输入：论文 + 音色/人物/配图"] --> B["四智能体协同流水线<br/>讲故事→补内容→排版渲染"]
-    B --> C["Checker 迭代自改进回路<br/>打分→反馈→修订"]
-    C -->|调用美学裁判| D["PresAesth<br/>多任务 GRPO 美学模型"]
-    D -->|分数/缺陷/对比反馈| C
-    C -->|分数≥阈值 或 取最优版| E["合成讲解视频"]
+    A["Input: paper + voice/persona/figures"] --> B["Four-agent collaborative pipeline<br/>storytelling → content expansion → layout rendering"]
+    B --> C["Checker iterative self-improvement loop<br/>scoring → feedback → revision"]
+    C -->|invoke aesthetic judge| D["PresAesth<br/>multi-task GRPO aesthetic model"]
+    D -->|score/defects/comparative feedback| C
+    C -->|score ≥ threshold or select best version| E["Synthesized presentation video"]
 ```
 
 ### Key Designs

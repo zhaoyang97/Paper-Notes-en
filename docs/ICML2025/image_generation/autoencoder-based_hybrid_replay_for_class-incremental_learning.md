@@ -98,7 +98,7 @@ The total loss consists of three components:
 
 **1. HAE Loss (Eq. 1)**:
 
-$$L(x, \hat{x}, z) = \underbrace{\sum \|x_i^{j,k} - \hat{x}_i^{j,k}\|^2}_{L_x: \text{重建损失}} + \lambda \underbrace{\sum \|z_i^{j,k} - p_i^j\|^2}_{L_z: \text{聚类损失}}$$
+$$L(x, \hat{x}, z) = \underbrace{\sum \|x_i^{j,k} - \hat{x}_i^{j,k}\|^2}_{L_x: \text{Reconstruction Loss}} + \lambda \underbrace{\sum \|z_i^{j,k} - p_i^j\|^2}_{L_z: \text{Clustering Loss}}$$
 
 - $L_x$: Minimizes the L2 distance between the input and the reconstructed data.
 - $L_z$: Pulls samples from the same class closer to their corresponding CCE location in the latent space, with $\lambda$ as a hyperparameter.

@@ -47,25 +47,25 @@ LongDPO consists of two main components: (1) **Step-level preference data constr
 
 ### Key Designs
 
-1. **MCTS 收集步级偏好对** (MCTS for step-level preference collection):
+1. **MCTS for Step-Level Preference Pair Collection** (MCTS for step-level preference collection):
 
     - **Function**: Models the long-form text generation process as a tree search. Each layer (step) generates multiple candidate segments, evaluates their quality with a reward model, and selects the optimal one and a random one as the chosen/rejected pair, respectively.
     - **Mechanism**: The node is defined at the $t$-th layer of the tree as $s_{t+1} = \pi_\theta(q \oplus s_1 \oplus \cdots \oplus s_t)$. Node selection uses the UCB formula to balance exploration and exploitation: $\text{UCB}_i = \alpha \sqrt{2 \ln(N_i / (1 + n_i))} + v_i$. Each step is evaluated based on 7 principles (factuality, coherence, etc.) to get the average reward.
     - **Design Motivation**: Searching finds higher quality preference pairs than direct sampling, and step-level decomposition provides more accurate reward signals.
 
-2. **全局记忆池（Global Memory Pool）**:
+2. **Global Memory Pool**:
 
     - **Function**: Filters out candidate nodes that contradict prior factual content during the MCTS selection phase.
     - **Mechanism**: Once a node is selected, its factual content is extracted and stored in the memory pool $M_t$. During the next selection step, the candidate node is split into 128-word segments. Embedding similarity (using gte-Qwen2-1.5B) is calculated between these segments and each fact in the memory pool. Segments with a similarity $\geq 0.8$ undergo a consistency check against the corresponding facts; if inconsistent, the candidate is skipped.
     - **Design Motivation**: Factual inconsistency is the most common quality issue in long-form generation. The memory pool eliminates contradictory candidates during the search phase rather than repairing them post-hoc.
 
-3. **Critique 增强生成** (Critique-augmented generation):
+3. **Critique-Augmented Generation**:
 
     - **Function**: Generates improvement suggestions using an external critique model for chosen candidates with rewards below a threshold $\eta = 2.5$, and then regenerates them.
     - **Mechanism**: For each low-reward $s_{win}$, a sibling node $s_{sib}$ performing better under a certain principle is identified to construct a triplet (principle, sibling node, node to be improved). The critique model generates analysis, justification, relevant text, confidence score, and writing suggestions. These suggestions $z_\lambda$ are then injected into the regeneration process: $s_{win\_new} = \pi_\theta(q \oplus s_1 \oplus \cdots \oplus s_t \oplus z_\lambda)$.
     - **Design Motivation**: Simply expanding the search space is inefficient and yields limited gains; directly guiding improvement using critiques is more efficient, and external critiques are more reliable than self-reflection.
 
-4. **步级 DPO 训练** (Stepwise DPO training):
+4. **Step-Level DPO Training** (Stepwise DPO training):
 
     - **Function**: Utilizes the collected step-level preference pairs for fine-grained DPO learning.
     - **Mechanism**: $\mathcal{L}_{LongDPO} = -\mathbb{E}[\log \sigma(\beta \log \frac{\pi_\theta(s_w|q'))}{\pi_{ref}(s_w|q')} - \beta \log \frac{\pi_\theta(s_l|q')}{\pi_{ref}(s_l|q')})]$, where $q' = q \oplus s_{1 \sim i}$.

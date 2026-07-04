@@ -24,7 +24,7 @@ content_hash: 2995880a96c6d62b
 **Keywords**: Vision Transformers, Structured Pruning, Class-Specific Models, Edge Deployment, Knowledge Decoupling
 
 ## TL;DR
-Vulcan discovers that the Feed-Forward Network (FFN) in a ViT stores "class-specific knowledge" while the Multi-Head Attention (MHA) stores "class-agnostic patterns." It proposes a "train-then-prune" post-training method that collapses FFN neurons toward high-activation anchor neurons and uses Truncated Nuclear Norm Regularization (TNNR) to compress MHA projection matrices into low-rank structures. This approach yields compact edge ViTs (20%–40% of the original size) that认-target classes with nearly lossless accuracy—sometimes outperforming the original ViT on specific classes by up to 15.12%.
+Vulcan discovers that the Feed-Forward Network (FFN) in a ViT stores "class-specific knowledge" while the Multi-Head Attention (MHA) stores "class-agnostic patterns." It proposes a "train-then-prune" post-training method that collapses FFN neurons toward high-activation anchor neurons and uses Truncated Nuclear Norm Regularization (TNNR) to compress MHA projection matrices into low-rank structures. This approach yields compact edge ViTs (20%–40% of the original size) that recognize target classes with nearly lossless accuracy—sometimes outperforming the original ViT on specific classes by up to 15.12%.
 
 ## Background & Motivation
 **Background**: Deploying large Vision Transformers (ViTs) on edge devices like drones or vehicle sensors requires compression. Common techniques include quantization, knowledge distillation, and unstructured/structured pruning. Structured pruning is particularly edge-friendly as it produces "regularly shaped" models that do not require specialized hardware accelerators.
@@ -115,7 +115,7 @@ Efficiency (Jetson Orin NX):
 - **Robustness**: Performance is insensitive to the penalty hyperparameter $\rho \in [0.1, 10.0]$.
 
 ## Highlights & Insights
-- **Explainability as a Tool**: Vulcan converts the interpretability of neurons into a concrete pruning strategy (FFN vs. MHA分治).
+- **Explainability as a Tool**: Vulcan converts the interpretability of neurons into a concrete pruning strategy (FFN vs. MHA divide-and-conquer).
 - **Paradigm Shift**: It replaces the traditional "prune-then-train" with "train-then-prune," ensuring pruned weights are truly redundant rather than just "less important."
 - **Performance Gain via Focus**: Removing irrelevant class knowledge acts as a form of regularization, allowing the edge ViT to exceed the accuracy of the base model on target tasks.
 

@@ -63,7 +63,7 @@ MimicMotion is built upon the pre-trained Stable Video Diffusion (SVD). The inpu
 
 3. **Progressive Latent Fusion**:
 
-    - **Function**: Generates smooth videos of arbitrary length,消除 segment boundary flickering and sudden transitions.
+    - **Function**: Generates smooth videos of arbitrary length, eliminating segment boundary flickering and sudden transitions.
     - **Mechanism**: A long pose sequence is segmented into fixed-length video segments of length $N$, with an overlap of $C$ frames between adjacent segments ($C \ll N$). During each denoising step, each segment is denoised independently, and a position-aware weighted fusion is performed on the overlapping regions. The fusion weight is defined as $\lambda_{\text{fusion}} = 1/(C+1)$, where frames closer to the center of the current segment receive higher weights, and frames closer to the boundaries receive lower weights. Specifically, for the $j$-th frame of the $i$-th segment ($j \leq C$), the fusion formula is:
       $$\mathbf{z}_i^j \leftarrow j\lambda_{\text{fusion}}\mathbf{z}_i^j + (1 - j\lambda_{\text{fusion}})\mathbf{z}_{i-1}^{N-C+j}$$
       This method is training-free and is only applied during inference.

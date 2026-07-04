@@ -138,7 +138,7 @@ Optimization strategy ablation:
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐ First event-frame fusion dense VDM system. AIS reduction and neighborhood greedy optimization are both effective and mutually supportive.
 - Experimental Thoroughness: ⭐⭐⭐⭐ Self-built 120+ sequence benchmark covering multiple scales/scenarios, comprehensive ablation; however, minor numerical inconsistencies between text/tables and missing hyperparameter analysis noted.
-- Writing Quality: ⭐⭐⭐⭐ Clear chain of motivation-conflict-method, with complete formulas; minor瑕疵 in symbol/numerical consistency.
+- Writing Quality: ⭐⭐⭐⭐ Clear chain of motivation-conflict-method, with complete formulas; minor imperfections in symbol/numerical consistency.
 - Value: ⭐⭐⭐⭐⭐ Substituting high-speed camera solutions with 18.9% storage has direct value for non-contact measurement in structural monitoring, mechanics, and biomechanics.
 
 <!-- RELATED:START -->

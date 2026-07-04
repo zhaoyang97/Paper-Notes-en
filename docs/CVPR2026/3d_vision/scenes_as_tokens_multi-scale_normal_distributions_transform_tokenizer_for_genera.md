@@ -49,13 +49,13 @@ Three-stage tokenization: ① Construct **multi-scale NDT representations** from
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["高分辨率点云<br/>+ 文本指令"] --> B["多尺度 NDT 表征<br/>每个 cell = 高斯(均值,协方差)+RGB"]
-    B --> C["3D Encoder<br/>抽各尺度 NDT 特征"]
-    C --> D["MSDec<br/>跨尺度 cross-attn 融合→场景 token"]
-    P["用户提示<br/>点/框/mask"] -->|"MSDec 统一接口"| D
-    D --> E["LLM<br/>拼 场景/引导/文本 token 自回归生成"]
-    E -->|"输出 [SEG] 时"| F["MSDec 分割解码<br/>→ 3D mask"]
-    E --> G["文本回答"]
+    A["High-Resolution Point Cloud<br/>+ Text Instruction"] --> B["Multi-Scale NDT Representation<br/>Each cell = Gaussian(mean, covariance) + RGB"]
+    B --> C["3D Encoder<br/>Extract NDT features at each scale"]
+    C --> D["MSDec<br/>Cross-scale cross-attn fusion → scene token"]
+    P["User Prompt<br/>Point / Box / Mask"] -->|"MSDec unified interface"| D
+    D --> E["LLM<br/>Concatenate scene/guidance/text tokens for autoregressive generation"]
+    E -->|"When outputting [SEG]"| F["MSDec segmentation decoder<br/>→ 3D mask"]
+    E --> G["Text Answer"]
 ```
 
 ### Key Designs

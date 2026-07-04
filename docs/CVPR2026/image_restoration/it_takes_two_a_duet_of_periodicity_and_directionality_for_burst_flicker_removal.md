@@ -145,7 +145,7 @@ Flickerformer achieves the best performance across all three metrics. PSNR excee
 
 - **The three modules contribute independently and are highly complementary**: PFM provides +0.279dB, AFFN +0.382dB, and WDAM +0.373dB. Their combined Gain is +0.777dB (surpassing simple summation), indicating synergistic effects.
 - **Why AFFN outperforms FRFN**: Visualizations demonstrate that FRFN cannot distinguish between motion and flicker changes, introducing ghosting during fusion; AFFN focuses on periodic structures via autocorrelation, effectively separating flicker from motion.
-- **WDAM provides more precise directional localization**: Compared to isotropic attention like ASSA, WDAM restores subtle flicker regions (e.g., faces) more thoroughly by using high-frequency subbands as precise "定位 (locating)" signals.
+- **WDAM provides more precise directional localization**: Compared to isotropic attention like ASSA, WDAM restores subtle flicker regions (e.g., faces) more thoroughly by using high-frequency subbands as precise "locating" signals.
 - **Significant efficiency advantages**: WDAM only computes attention on half-sized low-frequency subbands, reducing complexity to ~25% of standard window attention and lowering Flops from 139.42G to 128.76G.
 
 ## Highlights & Insights

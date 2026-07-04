@@ -62,7 +62,7 @@ flowchart TD
 
 This serves as the core innovation of the paper, directly addressing the pain point that existing metrics only perform weighted summation of individual metrics and focus solely on geometric coverage. Instead of calculating a scalar gain for each candidate and greedily taking the maximum, the authors construct an undirected weighted graph $\mathcal{G}=(V,E,A)$. The node set $V=\{V_0,V_1,\dots,V_N\}$ contains a virtual global map node $V_0$ and $N$ candidate viewpoint nodes. The adjacency matrix is designed with "partitioned encoding":
 
-$$A_{ij}=\begin{cases}\lambda_g g_i^g+\lambda_s g_i^s,& i=0 \text{ 或 } j=0,\ i\neq j\\ \lambda_r g_{ij}^r,& i,j\geq1,\ i\neq j\\ 0,&\text{otherwise}\end{cases}$$
+$$A_{ij}=\begin{cases}\lambda_g g_i^g+\lambda_s g_i^s,& i=0 \text{ or } j=0,\ i\neq j\\ \lambda_r g_{ij}^r,& i,j\geq1,\ i\neq j\\ 0,&\text{otherwise}\end{cases}$$
 
 Specifically, the **edges between the virtual node and candidate viewpoints** encode the "intrinsic quality" of the viewpoint (geometric uncertainty $g_i^g$ + rendering quality $g_i^s$), while **edges between candidate viewpoints** encode "viewpoint redundancy" $g_{ij}^r$. Consequently, intrinsic qualities and pairwise relationships occupy different structural regions of the graph. Eigendecomposition is then performed on the normalized Laplacian $L=I-D^{-1/2}AD^{-1/2}$, and the **Fiedler vector** $v_1$ corresponding to the second smallest eigenvalue is retrieved to reveal structural centrality. The NBV is selected as:
 

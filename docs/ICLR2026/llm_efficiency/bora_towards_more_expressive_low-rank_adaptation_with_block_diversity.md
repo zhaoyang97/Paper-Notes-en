@@ -102,7 +102,7 @@ Evaluated on GLUE (NLU, RoBERTa-Base/Large), Math10K (math reasoning), and Commo
 | Math Reasoning | Qwen2.5-14B | **80.60** | 79.09 | 80.15 |
 | Commonsense | Gemma-7B | **87.04** | 85.95 | 86.61 |
 
-In math reasoning, BoRA at $r=8$ is 2.4% higher than LoRA on average, whereas scaling LoRA's rank by 4x (to 32) only yields a 1.9% improvement. In commonsense reasoning, BoRA at the same rank leads by 0.95%, while LoRA with 4x rank only gains 0.77%. Effectively, BoRA achieves better results than加 rank versions of LoRA with 1/4th the parameters. While MELoRA also increases rank, its zero elements cause info loss, often performing worse than standard LoRA in math tasks.
+In math reasoning, BoRA at $r=8$ is 2.4% higher than LoRA on average, whereas scaling LoRA's rank by 4x (to 32) only yields a 1.9% improvement. In commonsense reasoning, BoRA at the same rank leads by 0.95%, while LoRA with 4x rank only gains 0.77%. Effectively, BoRA achieves better results than higher-rank versions of LoRA with 1/4th the parameters. While MELoRA also increases rank, its zero elements cause info loss, often performing worse than standard LoRA in math tasks.
 
 ### Ablation Study
 Ablation of Exponential (Exp) and Normalization (Norm) in $\Sigma$ parameterization:

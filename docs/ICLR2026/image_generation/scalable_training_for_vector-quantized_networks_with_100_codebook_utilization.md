@@ -47,12 +47,12 @@ FVQ (FullVQ) = Standard VQN (Encoder + Quantization Layer + Decoder) + VQBridge 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["输入图像"] --> B["Encoder → 连续表示 z_e"]
-    C["可学习码本 C<br/>16384 × 256"] --> D["VQBridge<br/>compress–process–recover<br/>映射出 Ĉ"]
-    B --> E["量化层<br/>用 Ĉ 找最近邻 → z_q"]
+    A["Input Image"] --> B["Encoder → continuous representation z_e"]
+    C["Learnable Codebook C<br/>16384 × 256"] --> D["VQBridge<br/>compress–process–recover<br/>outputs Ĉ"]
+    B --> E["Quantization Layer<br/>find nearest neighbor in Ĉ → z_q"]
     D --> E
-    E --> F["Decoder → 重建图像"]
-    F -->|训练期: 学习率退火| G["训练完丢弃 VQBridge 与 C<br/>仅保留 Ĉ，推理零开销"]
+    E --> F["Decoder → reconstructed image"]
+    F -->|Training: learning rate annealing| G["Discard VQBridge and C after training<br/>retain only Ĉ, zero inference overhead"]
 ```
 
 ### Key Designs

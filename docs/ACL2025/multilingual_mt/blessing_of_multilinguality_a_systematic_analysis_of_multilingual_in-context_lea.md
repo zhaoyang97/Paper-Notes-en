@@ -172,7 +172,7 @@ Core control variable: Demonstrations of the same index are semantically equival
 ## Highlights & Insights
 - **"Irrelevant foreign languages also help" is the most striking discovery**: suggesting a "language-switching activation" mechanism within MLLMs—encountering non-English text triggers a transition to more general cross-lingual processing modes. This finding provides crucial implications for understanding MLLM inner mechanics.
 - **Practical value for LRLs**: A zero-cost improvement—simply mixing HRL demonstrations into the prompt.
-- **Exquisitely controlled experiments**: Semantically equivalent parallel demonstrations + McNemar's test +踩 irrelevant language ablation.
+- **Exquisitely controlled experiments**: Semantically equivalent parallel demonstrations + McNemar's test + irrelevant language ablation.
 
 ## Limitations & Future Work
 - **Limited model scale**: Restricting to the 7B–12B range; does this still hold for 70B+ models? Larger models' English capabilities may already be sufficiently robust.

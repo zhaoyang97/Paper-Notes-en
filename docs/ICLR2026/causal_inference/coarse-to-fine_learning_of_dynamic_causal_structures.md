@@ -47,11 +47,11 @@ The overall pipeline consists of three stages: "**Coarse Encoding → Fine Inter
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["时间序列 X<br/>N 条 · 长 T · d 变量"] --> B["粗到细编码<br/>滑动卷积窗 + 并行解码<br/>得粗粒度 Wt"]
-    B --> C["线性插值细化<br/>一阶 Taylor 补全每个时间步"]
-    C --> D["范数缩放无环约束<br/>hnorm：1-范数缩放 W∘W"]
-    D --> E["重构优化<br/>因→果重构 + ℓ1 + 中心路径"]
-    E -->|阈值 δ 剪枝| F["动态因果图 G = {Gt}"]
+    A["Time Series X<br/>N samples · Length T · d variables"] --> B["Coarse-to-Fine Encoding<br/>Sliding Conv Window + Parallel Decoding<br/>Yields Coarse-Grained Wt"]
+    B --> C["Linear Interpolation Refinement<br/>First-Order Taylor Completion per Time Step"]
+    C --> D["Norm-Scaled Acyclicity Constraint<br/>hnorm: 1-norm Scaling of W∘W"]
+    D --> E["Reconstruction Optimization<br/>Cause→Effect Reconstruction + ℓ1 + Central Path"]
+    E -->|Threshold δ Pruning| F["Dynamic Causal Graph G = {Gt}"]
 ```
 
 ### Key Designs

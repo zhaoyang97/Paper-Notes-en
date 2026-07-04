@@ -99,7 +99,7 @@ Main results on CMLocation test sets (V1: strict center + north alignment; V2: r
 Image-level CVGL methods (FRGeo 8.06 / GeoDTR+ 7.44 / Sample4Geo 29.19 in acc@0.25) nearly collapse under the multi-target setting, confirming they are unsuitable for CVMOGL. MOGeo also remains competitive on degraded single-target CVOGL benchmarks: CVOGL-SVI test acc@0.25 reaches 50.98 (VAGeo 48.21, DetGeo 45.43), and acc@0.25 on CVOGL-Drone is on par with SOTA, while acc@0.5 is slightly lower than VAGeo.
 
 ### Ablation Study
-逐个移除组件 on the two most difficult datasets, CVOGL-Drone and CMLocation-V2 (test acc@0.25):
+Ablation study removing components one by one on the two most difficult datasets, CVOGL-Drone and CMLocation-V2 (test acc@0.25):
 
 | Configuration | CVOGL-Drone | CMLocation-V2 | Description |
 |------|-------------|---------------|------|

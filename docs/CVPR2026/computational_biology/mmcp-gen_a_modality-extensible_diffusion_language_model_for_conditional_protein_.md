@@ -131,7 +131,7 @@ The stepwise ablation for inverse folding clearly shows the marginal contributio
 ## Limitations & Future Work
 - The authors admit that full bidirectional joint optimization of $P_\theta(s|x)$ and $P_\phi(x|s)$ is computationally heavy, and the structural fidelity gains may be limited by the upper bound of the contrastive proxy.
 - ⚠️ Evaluations were primarily on a custom multimodal dataset following the CFP-GEN protocol. Generalization across datasets/distributions and the adequacy of fair comparisons with newer backbones (e.g., full ESM3) require more external validation.
-- The number of modality-specific queries is fixed at 4 or heuristically chosen between 0–4 based on complexity; whether this capacity is sufficient for极其 complex new modalities remains to be explored.
+- The number of modality-specific queries is fixed at 4 or heuristically chosen between 0–4 based on complexity; whether this capacity is sufficient for extremely complex new modalities remains to be explored.
 - The code link is general (only leading to the group homepage); some implementation details like training steps are relegated to the Appendix, and the degree of openness remains to be confirmed.
 
 ## Related Work & Insights

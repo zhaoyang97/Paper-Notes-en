@@ -154,7 +154,7 @@ Real-world zero-shot transfer (AgileX Cobot Magic, direct deployment of RoboTwin
 - **Absolute success rates are still low**: Tasks like "Pick Diverse Bottles" remain extremely difficult (1/20), indicating that while representation conflict is eased, the intrinsic difficulty of fine manipulation remains.
 
 ## Related Work & Insights
-- **vs Binning**: Binning is dimension-wise and independent per step; MoEActok uses chunk-level quantization with skill-based分工 for higher fidelity.
+- **vs Binning**: Binning is dimension-wise and independent per step; MoEActok uses chunk-level quantization with skill-based division of labor for higher fidelity.
 - **vs FAST**: FAST focuses on frequency domain compression (DCT+BPE); MoEActok focuses on kinematic structure and skill decoupling.
 - **vs VQ-BET / VQ-VLA**: These use a **single** quantization stack with entangled latent spaces; MoEActok uses $K$ specialized quantizers to resolve "mixed-signal optimization" issues.
 - **vs Diffusion-head methods**: Diffusion approaches are continuous and require transformer architecture changes; MoEActok preserves the discrete benefit and ecosystem of LLMs.

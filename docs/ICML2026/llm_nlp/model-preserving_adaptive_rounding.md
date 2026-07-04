@@ -161,11 +161,11 @@ YAQA is a pure PTQ method with no explicit training loss; quantized weights are 
 <!-- RELATED:END -->
 ## Related Papers
 
-- [\[ICML 2026\] Universal Reasoner: 冻结 LLM 的可组合即插即用推理器](universal_reasoner_a_single_composable_plug-and-play_reasoner_for_frozen_llms.md)
-- [\[ICML 2026\] "I've Seen How This Goes"：用渐进条件惊奇度刻画 LLM 与人类写作的多样性](ive_seen_how_this_goes_characterizing_diversity_via_progressive_conditional_surp.md)
-- [\[ACL 2026\] 当梯度相撞：多目标提示优化对 LLM 评判员的失效模式](../../ACL2026/llm_nlp/when_gradients_collide_failure_modes_of_multi-objective_prompt_optimization_for_.md)
+- [\[ICML 2026\] Universal Reasoner: A Composable Plug-and-Play Reasoner for Frozen LLMs](universal_reasoner_a_single_composable_plug-and-play_reasoner_for_frozen_llms.md)
+- [\[ICML 2026\] "I've Seen How This Goes": Characterizing Diversity in LLM and Human Writing via Progressive Conditional Surprisal](ive_seen_how_this_goes_characterizing_diversity_via_progressive_conditional_surp.md)
+- [\[ACL 2026\] When Gradients Collide: Failure Modes of Multi-Objective Prompt Optimization for LLM Judges](../../ACL2026/llm_nlp/when_gradients_collide_failure_modes_of_multi-objective_prompt_optimization_for_.md)
 - [\[ICML 2026\] Token-Efficient Change Detection in LLM APIs](token-efficient_change_detection_in_llm_apis.md)
-- [\[ICML 2026\] Multi-Agent Teams Hold Experts Back: 自组织 LLM 团队为什么留不住「专家」](multi-agent_teams_hold_experts_back.md)
+- [\[ICML 2026\] Multi-Agent Teams Hold Experts Back: Why Self-Organizing LLM Teams Fail to Retain Specialists](multi-agent_teams_hold_experts_back.md)
 
 </div>
 

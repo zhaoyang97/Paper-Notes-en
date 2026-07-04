@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: a407080a9f1cb3c1
 ---
 
-<!-- 由 tmp/gen_cvf_stubs.py 自动生成（CVF-only，无 arXiv） -->
 # MacTok: Robust Continuous Tokenization for Image Generation
 
 **Conference**: CVPR 2026  

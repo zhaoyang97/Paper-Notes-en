@@ -38,7 +38,7 @@ GAKer is proposed as the first targeted adversarial attack generator that genera
 
 **Goal**: How to train a class-agnostic adversarial attack generator that can generalize to entirely unseen target classes?
 
-**Key Insight**: Shifting the target from "class labels" to "视觉特征" (visual features)—guiding the attack using the features of target images instead of class IDs, and replacing cross-entropy loss with cosine distance.
+**Key Insight**: Shifting the target from "class labels" to "visual features"—guiding the attack using the features of target images instead of class IDs, and replacing cross-entropy loss with cosine distance.
 
 **Core Idea**: During training, minimize the cosine distance between the features of the adversarial example and the target image (class-agnostic), and inject target features into the intermediate layers of the UNet generator via a Feature Transform Module.
 

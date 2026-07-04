@@ -115,7 +115,7 @@ Based on the laws, visual tokens **early exit** after the first stage (from laye
 When attention FLOPs are reduced to ~37.5%, performance drops are generally <2 points.
 
 ### Key Findings
-- **Visual information is not used throughout the entire process**: Masking language-to-video attention in the later 40% of layers does not affect performance, proving that後半 model layers reason using already extracted visual summaries.
+- **Visual information is not used throughout the entire process**: Masking language-to-video attention in the later 40% of layers does not affect performance, proving that later model layers reason using already extracted visual summaries.
 - **The most expensive attention is often the least useful**: Inter-frame and intra-frame self-attention have high computational costs but contribute little compared to the cheaper language-to-video retrieval.
 - **Critical layers are outliers**: The identification of specific layers that carry the most weight is useful for pruning and quantization strategies.
 - **Performance without visual access**: Models retain 48–70% performance even with full visual masking due to LLM world knowledge, but visual information provides the critical 30–50% gain.

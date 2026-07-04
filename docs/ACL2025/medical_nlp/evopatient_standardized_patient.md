@@ -48,19 +48,19 @@ EvoPatient proposes a multi-agent coevolution framework. Through autonomous simu
 The input consists of real clinical records → Three core modules: (1) Simulated Flow models the diagnostic process into multi-stage dialogues → (2) Simulated Agent Pair performs autonomous multi-round dialogues (patient + multiple doctors) → (3) Coevolution Mechanism validates and stores high-quality dialogues to construct an attention library and a trajectories library → Output the trained virtual SP for human doctor training.
 
 ### Key Designs
-1. **Simulated Flow (模拟流程)**:
+1. **Simulated Flow**:
 
     - **Function**: Models the real diagnostic process into a structured, multi-stage dialogue sequence.
     - **Mechanism**: Divides the diagnostic workflow into phases such as chief complaint generation, triage, inquiry, and conclusion $\mathcal{F} = \langle \mathcal{S}^1, \mathcal{S}^2, \dots \rangle$, where each phase contains multi-round dialogues between doctor and patient.
     - **Design Motivation**: Structured workflows make the simulation resemble real-world scenarios while allowing flexible customization of different phases.
 
-2. **Simulated Agent Pair (模拟Agent对)**:
+2. **Simulated Agent Pair**:
 
     - **Function**: Enables autonomous multi-round diagnostic dialogues between the patient agent and multiple doctor agents.
     - **Mechanism**: The patient agent is equipped with 5,000 diverse background profiles (family, education, personality, etc.) + RAG retrieval of clinical records; the doctor agent dynamically recruits agents from other departments via a **multi-disciplinary consultation mechanism**, forming a DAG topological structure to prevent information backflow and increase question diversity.
     - **Design Motivation**: Questions from multi-department doctors cover different perspectives, prompting the patient agent to learn more comprehensive standardized expressions.
 
-3. **Coevolution Mechanism (协同进化机制)**:
+3. **Coevolution Mechanism**:
 
     - **Function**: Automatically validates, stores, and utilizes high-quality dialogue experience.
     - **Mechanism**: Two experience libraries work collaboratively:

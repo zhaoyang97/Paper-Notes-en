@@ -141,7 +141,7 @@ Component breakdown ($n=17, f=4$, worst-case accuracy %):
 
 ## Limitations & Future Work
 
-- **Restricted Threat Model**: The method relies on the良性 structure of the probit simplex; its efficacy in regression, generative tasks, or raw logit spaces (e.g., for LLMs) requires further verification.
+- **Restricted Threat Model**: The method relies on the benign structure of the probit simplex; its efficacy in regression, generative tasks, or raw logit spaces (e.g., for LLMs) requires further verification.
 - **Requirement for Validation Data**: DeepSet-TM requires a small portion of labeled data (10%) at the server to train the aggregator, which might not be available in strictly private scenarios.
 - **Byzantine Constraint**: The $f < n/2$ constraint is strict, and performance in massive cross-device federated settings remains to be explored.
 

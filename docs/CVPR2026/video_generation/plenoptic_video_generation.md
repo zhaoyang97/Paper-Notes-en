@@ -135,7 +135,7 @@ Training strategy and retrieval ablation on the Basic set:
 ## Limitations & Future Work
 - **Dependency on Large-Scale Multi-View Synthetic Data**: Basic requires ~170K episodes and Agibot ~146K synchronized segments. The cost of obtaining precise multi-camera labels limits expansion to open-domain real-world scenes.
 - **High Compute Barrier**: Requiring 32×H100 with context parallelism is expensive for reproduction and deployment.
-- **Scalability of Context Capacity**: Benefits plateau after $k=6$ due to fused trajectory errors, suggesting a ceiling for scalability to a very high number of视角 $N$.
+- **Scalability of Context Capacity**: Benefits plateau after $k=6$ due to fused trajectory errors, suggesting a ceiling for scalability to a very high number of viewpoints $N$.
 - **Geometric vs. Semantic metrics**: PSNR on Agibot remains relatively low (~14.5), and synchronization is primarily measured at the pixel level rather than semantic label consistency.
 
 ## Related Work & Insights

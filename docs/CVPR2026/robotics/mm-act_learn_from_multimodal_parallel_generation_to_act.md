@@ -67,9 +67,9 @@ To eliminate the objective mismatch between AR pre-training and diffusion action
 
 The model is designed as a block-level masked token predictor. For each continuous time $t \in (0, 1]$, tokens are independently replaced by `<mask>` with probability $p_{mask} = f_{modal}(t)$. The conditional distribution for a single position is:
 
-$$q_t(x_t^i \mid f_{modal}(t), x_0^i) = (1 - f_{modal}(t)) \mathbf{1}\{x_t^i = x_0^i\} + f_{modal}(t) \mathbf{1}\{x_t^i = \texttt{<mask大>}\}$$
+$$q_t(x_t^i \mid f_{modal}(t), x_0^i) = (1 - f_{modal}(t)) \mathbf{1}\{x_t^i = x_0^i\} + f_{modal}(t) \mathbf{1}\{x_t^i = \texttt{<mask>}\}$$
 
-Text uses a linear schedule (following LLaDA), while images and actions use a cosine schedule to align with continuous denoising. For **actions**, $t=1$ is used—meaning the entire segment is masked ($x_t = \texttt{<mask大>} \times L$)—allowing the model to generate all action tokens in parallel in one forward pass for low latency. A multi-step **re-mask** version is also provided to balance performance and efficiency. **Images** utilize the same multi-step re-mask decoding. **Text** generation is limited to 256 tokens, allowing for full parallel decoding within a single block.
+Text uses a linear schedule (following LLaDA), while images and actions use a cosine schedule to align with continuous denoising. For **actions**, $t=1$ is used—meaning the entire segment is masked ($x_t = \texttt{<mask>} \times L$)—allowing the model to generate all action tokens in parallel in one forward pass for low latency. A multi-step **re-mask** version is also provided to balance performance and efficiency. **Images** utilize the same multi-step re-mask decoding. **Text** generation is limited to 256 tokens, allowing for full parallel decoding within a single block.
 
 **3. Context-Shared Multimodal Learning: Shared Context + Unified Loss**
 

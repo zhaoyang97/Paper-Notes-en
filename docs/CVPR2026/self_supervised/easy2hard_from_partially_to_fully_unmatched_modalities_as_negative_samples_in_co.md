@@ -144,7 +144,7 @@ Hyperparameter sensitivity (Channel / EH-MIMIC):
 ## Highlights & Insights
 - **Modularity**: The approach changes only the negative sample set and not the architecture or base loss, allowing it to be integrated into any TC-style contrastive method with minimal cost.
 - **Explicit Hardness**: Instead of defining hardness via embedding similarity (which can be noisy), this work uses "cross-modal overlap," a discrete combinatorial structure that is clean, $M$-agnostic, and naturally ordered.
-- **Sigmoid-of-differences**: The weight design using a decomposition of unity is elegant. It handles multi-level接力 transitions smoothly and ensures gradients are well-behaved.
+- **Sigmoid-of-differences**: The weight design using a decomposition of unity is elegant. It handles multi-level relay transitions smoothly and ensures gradients are well-behaved.
 
 ## Limitations & Future Work
 - The absolute performance gains are relatively modest in several datasets (+0.006 to +0.028). Whether this holds for large-scale vision-language models remains unverified.

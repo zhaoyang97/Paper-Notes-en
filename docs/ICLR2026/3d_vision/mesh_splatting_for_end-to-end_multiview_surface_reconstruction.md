@@ -112,7 +112,7 @@ Rendering Efficiency (DTU scan 122, Table 3, Full Resolution 1600×1200): Mesh S
 - **Future Work**: Adaptive layer bandwidth / hierarchical softening for large scenes; engineering optimizations like triangle culling and adaptive vertex density to further increase speed (current splatting is still slower than 3DGS).
 
 ## Related Work & Insights
-- **Volumetric Surface Reconstruction**: NeuS/VolSDF (SDF reparameterization), Neuralangelo (hash encoding for detail), 2DGS/GOF/GaussianSurfel (adding normal/depth正则 to GS)—Ours takes the opposite approach by optimizing directly on the mesh to avoid post-meshing.
+- **Volumetric Surface Reconstruction**: NeuS/VolSDF (SDF reparameterization), Neuralangelo (hash encoding for detail), 2DGS/GOF/GaussianSurfel (adding normal/depth regularization to GS)—Ours takes the opposite approach by optimizing directly on the mesh to avoid post-meshing.
 - **Mesh-based Surface Reconstruction**: NvdiffRec (tetrahedral reparameterization), IMLS-Splatting (point cloud to mesh + shading loss), SuGaR (flat Gaussians on mesh)—Ours adopts DMTet from NvdiffRec and shading supervision from IMLS, but adds a 3D receptive field via softening.
 - **Mesh Softening Techniques**: Gaussian Shell Maps, DELIFFAS, AdaptiveShell, Gaussian Frosting, and Volumetric Surfaces place transparent layers around a base mesh, but primarily for novel view synthesis where the base mesh is fixed after initialization. Our layers are differentiable with respect to the base mesh, which is the fundamental difference allowing end-to-end reconstruction.
 

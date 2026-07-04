@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: 9bbfb999dffc2e94
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # RollingQ: Reviving the Cooperation Dynamics in Multimodal Transformer
 
 **Conference**: ICML2025  

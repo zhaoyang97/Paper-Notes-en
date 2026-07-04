@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: e1c9ca02a10c37ac
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成，已深读补充 -->
 # LineFlow: A Framework to Learn Active Control of Production Lines
 
 **Conference**: ICML2025  

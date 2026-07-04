@@ -61,7 +61,7 @@ $$x_t = \sqrt{\alpha_t} \, x_0 + \sqrt{1 - \alpha_t} \, \epsilon, \quad \epsilon
 
 **Theorem 3.1** (Conditional DDIM Inversion) indicates that the conditional inversion process progressively moves the noise vector away from the semantic direction of class $y$:
 
-$$x_t = \sqrt{\alpha_t} \, x_0 - \sum_{i=0}^{t-1} \left[ \nabla_{x_i} \log p_\theta(x_i)^{s_i} + \nabla_{x_i} \log p_\theta(y | x_i)^{s_i} \right] + \text{残差项}$$
+$$x_t = \sqrt{\alpha_t} \, x_0 - \sum_{i=0}^{t-1} \left[ \nabla_{x_i} \log p_\theta(x_i)^{s_i} + \nabla_{x_i} \log p_\theta(y | x_i)^{s_i} \right] + \text{residual term}$$
 
 where $-\nabla_{x_i} \log p_\theta(y | x_i)$ represents the gradient direction that reduces the probability of the sample belonging to class $y$.
 

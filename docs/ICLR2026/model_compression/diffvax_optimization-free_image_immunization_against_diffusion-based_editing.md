@@ -50,15 +50,15 @@ The core problem is transforming the process of "applying adversarial perturbati
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    D["数据构建<br/>1000 人像 + SAM 合成 mask<br/>+ ChatGPT 多样 prompt"] --> I["输入图像 I"]
-    I --> F["UNet++ 免疫器 f(·;θ)<br/>一次前向预测扰动 ε_im"]
-    F --> A["ε_im × 免疫 mask M<br/>叠加得免疫图 I_im"]
-    A --> N["L_noise<br/>约束扰动不可感知"]
-    A --> S["冻结 SD Inpainting<br/>训练与编辑解耦：<br/>不绑 prompt、免疫 mask≠编辑 mask"]
-    S --> E["L_edit<br/>编辑区趋向全黑 → 编辑失败"]
-    N --> T["反传更新 θ"]
+    D["Data Construction<br/>1000 portraits + SAM-synthesized masks<br/>+ ChatGPT diverse prompts"] --> I["Input image I"]
+    I --> F["UNet++ Immunizer f(·;θ)<br/>Single forward pass predicts perturbation epsilon_im"]
+    F --> A["epsilon_im x immunity mask M<br/>Overlay to obtain immunized image I_im"]
+    A --> N["L_noise<br/>Constrain perturbation to be imperceptible"]
+    A --> S["Frozen SD Inpainting<br/>Training decoupled from editing:<br/>Not bound to prompt; immunity mask != editing mask"]
+    S --> E["L_edit<br/>Edited region driven toward all-black -> editing fails"]
+    N --> T["Backprop Update θ"]
     E --> T
-    A -.->|"推理仅需此步"| O["免疫图输出 (~70ms)"]
+    A -.->|"Inference requires only this step"| O["Immunized Image Output (~70ms)"]
 ```
 
 ### Key Designs

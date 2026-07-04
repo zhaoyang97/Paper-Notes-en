@@ -19,7 +19,7 @@ content_hash: edb3df3dd9510bc7
 
 **Conference**: CVPR 2026  
 **Paper**: [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Stergiou_TRANSPORTER_Transferring_Visual_Semantics_from_VLM_Manifolds_CVPR_2026_paper.html)  
-**Code**: [项目页](https://alexandrosstergiou.github.io/TRANSPORTER)  
+**Code**: [Project Page](https://alexandrosstergiou.github.io/TRANSPORTER)  
 **Area**: Model Interpretability / Video VLM / Generative Explanations  
 **Keywords**: VLM Interpretability, logits-to-video, Optimal Transport, concept vectors, text-to-video
 

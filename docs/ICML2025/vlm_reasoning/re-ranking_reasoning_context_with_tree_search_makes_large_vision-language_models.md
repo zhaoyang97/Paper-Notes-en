@@ -155,7 +155,7 @@ Note: Ablation values are compiled based on the trends reported in Fig. 1 of the
 
 ## Rating
 
-- Novelty: ⭐⭐⭐狠 The combination of reasoning context and MCTS re-ranking is novel, though individual components have predecessors.
+- Novelty: ⭐⭐⭐ The combination of reasoning context and MCTS re-ranking is novel, though individual components have predecessors.
 - Experimental Thoroughness: ⭐⭐⭐⭐ Evaluated on 5+ VQA datasets and multiple models, though lacks runtime analysis.
 - Writing Quality: ⭐⭐⭐⭐ Clear logic, sufficient illustrations, and a complete chain of motivation.
 - Value: ⭐⭐⭐⭐⭐ A plug-and-play framework, training-free, and highly practical.

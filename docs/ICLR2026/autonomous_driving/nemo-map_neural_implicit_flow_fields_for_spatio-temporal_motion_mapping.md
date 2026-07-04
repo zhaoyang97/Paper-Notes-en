@@ -51,14 +51,14 @@ The pipeline operates as follows: When query coordinates $(\mathbf{x}, t)$ are i
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    Q["查询坐标 (x, y, t)"] --> X["空间坐标 x"]
-    Q --> T["时间 t"]
-    X -->|"特征网格<br/>双线性插值"| FS["可学习空间特征网格<br/>连续空间特征 f_s(x)"]
-    T -->|"周期正弦激活"| FT["SIREN 时间编码<br/>时间特征 f_t(t)"]
-    FS --> CAT["拼接 f_s ⊕ f_t"]
+    Q["Query coordinates (x, y, t)"] --> X["Spatial coordinate x"]
+    Q --> T["Time t"]
+    X -->|"Feature grid<br/>bilinear interpolation"| FS["Learnable spatial feature grid<br/>continuous spatial feature f_s(x)"]
+    T -->|"Periodic sine activation"| FT["SIREN temporal encoding<br/>temporal feature f_t(t)"]
+    FS --> CAT["Concatenate f_s ⊕ f_t"]
     FT --> CAT
-    CAT -->|"MLP"| OUT["SWGMM 参数化输出<br/>{w_j, μ_j, Σ_j}"]
-    OUT --> DIST["速度-方向多模态分布<br/>p(v | x, t)"]
+    CAT -->|"MLP"| OUT["SWGMM parameterized output<br/>{w_j, μ_j, Σ_j}"]
+    OUT --> DIST["Velocity-direction multimodal distribution<br/>p(v | x, t)"]
 ```
 
 ### Key Designs

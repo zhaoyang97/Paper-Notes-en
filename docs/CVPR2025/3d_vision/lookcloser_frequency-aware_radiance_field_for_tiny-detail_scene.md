@@ -49,19 +49,19 @@ The input to FA-NeRF is a multi-frequency dataset containing overall/normal-reso
 
 ### Key Designs
 
-1. **3D 频率量化（Patch-based 3D Frequency Quantification）**:
+1. **3D Frequency Quantification (Patch-based 3D Frequency Quantification)**:
 
     - **Function**: Analyzes the frequency level of each 3D point in the scene.
     - **Mechanism**: Progressive image regression—for each 2D image patch, the frequency components of NeRF encoding are progressively increased until the rendered result's SSIM compared to the ground truth exceeds a threshold $t$. The frequency at this point is defined as the 2D frequency $f_{2D}$ of the patch. Then, the 2D frequency is projected to 3D space via $f_{3D} = f_{2D} \cdot fl / d$ (where $fl$ is the focal length and $d$ is depth). For a 3D point with multiple observing patches, the median of all projected frequencies is taken as its 3D frequency. Experiments prove that different frequency contents require different lowest NeRF frequency levels, and the estimated 3D frequency accurately reflects the true frequency.
     - **Design Motivation**: The required frequency representation capability varies greatly among different objects in a scene (e.g., rough walls vs. fine patterns). Without quantifying frequency, the network capacity cannot be allocated reasonably.
 
-2. **频率网格 + 频率感知特征重加权**:
+2. **Frequency Grid + Frequency-Aware Feature Re-weighting**:
 
     - **Function**: Stores the frequency distribution of the entire scene and adaptively adjusts the weight of each feature level based on the frequency.
     - **Mechanism**: A frequency voxel grid $V^{(\text{frequency})} \in \mathbb{R}^{N_x \times N_y \times N_z \times 1}$ is used to store spatial frequency information, initialized by point clouds and updated during training. In the multi-level Hash Grid encoding of Instant-NGP, the feature at level $\ell$ is multiplied by the weight $\omega_\ell = \text{erf}\left(\sqrt{(\ell_{max} - \ell_{min})^2 / \text{Clip}[(\ell_{max} - \ell + 1)^2]}\right)$. This is a single-sided attenuation function—automatically reducing the weights of high-level features in low-frequency regions, avoiding wasting high-frequency feature space on low-frequency content.
     - **Design Motivation**: High-resolution levels in Hash Grid contribute minimally to low-frequency content but waste capacity. Through re-weighting, the network can more efficiently utilize the limited feature space to serve different frequency contents.
 
-3. **自适应光线行进（Adaptive Ray Marching）**:
+3. **Adaptive Ray Marching**:
 
     - **Function**: Adaptively adjusts ray sampling intervals according to the frequency of the content.
     - **Mechanism**: High-frequency regions require denser sampling points to avoid over-smoothing. According to the frequency value $f$ in the frequency grid, the sampling frequency is set to $f_{sample} = 2f$ following the sampling theorem. This automatically determines the appropriate sampling interval without manual tuning.

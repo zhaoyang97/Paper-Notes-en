@@ -19,7 +19,7 @@ content_hash: 95075e07bdafb75c
 
 **Conference**: ICLR 2026  
 **arXiv**: [2601.19739](https://arxiv.org/abs/2601.19739)  
-**Code**: [https://runjia.tech/iclr_tokenseek (Project Page)](https://runjia.tech/iclr_tokenseek（项目主页）)  
+**Code**: [https://runjia.tech/iclr_tokenseek (Project Page)](https://runjia.tech/iclr_tokenseek)  
 **Area**: Interpretability  
 **Keywords**: Memory-Efficient Fine-Tuning, Token Pruning, Instance-Aware, Activation Memory Optimization, PEFT Compatibility
 

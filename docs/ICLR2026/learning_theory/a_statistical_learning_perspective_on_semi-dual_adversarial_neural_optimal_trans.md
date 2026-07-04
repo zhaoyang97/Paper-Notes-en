@@ -53,7 +53,7 @@ The research focuses on the empirical minimax problem solved in practice:
 
 $$\min_{\theta\in\Theta}\max_{\omega\in\Omega}\ \frac1N\sum_{n}\big[\langle x_n,T_\omega(x_n)\rangle-\varphi_\theta(T_\omega(x_n))\big]+\frac1M\sum_m \varphi_\theta(y_m),$$
 
-where $\varphi_\theta$ is the dual potential and $T_\omega$ is the transport map, both represented by neural networks; the true distributions $p, q$ are replaced by empirical distributions $\widehat p, \widehat q$. The proof proceeds in three stages: **(1) Error Decomposition**—upper-bounding the map error by four error terms of the functional $\mathcal L$; **(2) Term-wise Bounding**—controlling estimation error via Rademacher complexity and approximation error via network approximation capabilities; **(3) Rate Consolidation**—assembling the generalization error bound and simplifying it to收敛率 $1/\sqrt{N}, 1/\sqrt{M}$ for specific network classes.
+where $\varphi_\theta$ is the dual potential and $T_\omega$ is the transport map, both represented by neural networks; the true distributions $p, q$ are replaced by empirical distributions $\widehat p, \widehat q$. The proof proceeds in three stages: **(1) Error Decomposition**—upper-bounding the map error by four error terms of the functional $\mathcal L$; **(2) Term-wise Bounding**—controlling estimation error via Rademacher complexity and approximation error via network approximation capabilities; **(3) Rate Consolidation**—assembling the generalization error bound and simplifying it to the convergence rate $1/\sqrt{N}, 1/\sqrt{M}$ for specific network classes.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%

@@ -49,28 +49,28 @@ The contribution of this paper consists of two parts: (1) the G-Pass@k evaluatio
 
 ### Key Designs
 
-1. **G-Pass@k 基础指标**:
+1. **G-Pass@k Base Metric**:
 
     - Function: Measures the probability that all $k$ responses randomly selected from $n$ samplings are correct.
     - Mechanism: Computed using the hypergeometric distribution. Let the total number of samples be $n$ and the number of correct responses be $c$, then:
     $$\text{G-Pass@}k = \mathbb{E}_{\text{Questions}}\left[\frac{\binom{c}{k}}{\binom{n}{k}}\right]$$
     - Design Motivation: Regresses to Pass@1 when $k=1$, and reflects stability when requiring all $k$ trials to be correct. However, a single value of $k$ is still not comprehensive enough.
 
-2. **G-Pass@$k_\tau$ 带阈值的指标**:
+2. **G-Pass@$k_\tau$ Metric with Threshold**:
 
     - Function: Measures the probability of getting at least $\lceil\tau \cdot k\rceil$ correct responses out of $k$ samples.
     - Mechanism: Introduces a threshold parameter $\tau \in [0, 1]$ to control the criterion of "success":
     $$\text{G-Pass@}k_\tau = \mathbb{E}_{\text{Questions}}\left[\sum_{j=\lceil\tau \cdot k\rceil}^{c}\frac{\binom{c}{j}\cdot\binom{n-c}{k-j}}{\binom{n}{k}}\right]$$
     - Design Motivation: When $\tau=0$, it is equivalent to the traditional Pass@k (at least one correct response), and when $\tau = 1$, it requires all responses to be correct. Tuning $\tau$ allows continuous trade-offs between "performance ceiling" and "perfect stability".
 
-3. **mG-Pass@k 综合指标**:
+3. **mG-Pass@k Aggregate Metric**:
 
     - Function: Computes the integrated mean of G-Pass@$k_\tau$ over the interval $\tau \in [0.5, 1.0]$ to evaluate overall performance with a single number.
     - Mechanism:
     $$\text{mG-Pass@}k = 2\int_{0.5}^{1.0}\text{G-Pass@}k_\tau \, d\tau = \frac{2}{k}\sum_{i=\lceil 0.5k\rceil+1}^{k}\text{G-Pass@}\frac{i}{k}$$
     - Design Motivation: The interval $[0.5, 1.0]$ is selected because it is more effective at distinguishing models—most models can pass at low thresholds, yielding little discriminative power. mG-Pass@k provides a concise single-value metric.
 
-4. **LiveMathBench 动态基准**:
+4. **LiveMathBench Dynamic Benchmark**:
 
     - Function: Provides continuously updated, challenging math competition problems to mitigate data leakage.
     - Mechanism: Collects new problems from contemporary math competitions and updates them periodically (e.g., v202412, v202505) to ensure that the questions have not been seen in the models' training data.

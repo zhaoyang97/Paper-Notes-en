@@ -54,19 +54,19 @@ Interruption points use relative reasoning lengths $X\in\{0.1,0.3,\dots,0.9\}$, 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    Q["查询 q"] --> P["阶段1·生成推理前缀<br/>在相对位置 X 截断得 r(:X)"]
-    P --> I["在 X 处插入干预"]
-    subgraph TC["两类时间约束中断（不给新信息）"]
+    Q["Query q"] --> P["Phase 1 · Generate reasoning prefix<br/>Truncate at relative position X to obtain r(:X)"]
+    P --> I["Insert intervention at X"]
+    subgraph TC["Two types of time-constrained interruptions (no new information)"]
         direction TB
-        H["硬中断<br/>注入 end-thinking / force-answer，强制停思考"]
-        SF["软中断<br/>注入加速指令，仍可继续但应压缩"]
+        H["Hard interruption<br/>Inject end-thinking / force-answer to forcibly stop reasoning"]
+        SF["Soft interruption<br/>Inject acceleration instruction; reasoning may continue but should be compressed"]
     end
-    I -->|要求立即/更快作答| TC
-    I -->|任务规格中途改变| U["动态上下文更新<br/>注入新信息 u，满足 a*(q)≠a*(q,u)"]
-    TC --> G["阶段2·续写剩余轨迹与答案<br/>M(q, r(:X), i/u) → (r'(X:), a')"]
+    I -->|Demand immediate / faster answer| TC
+    I -->|Task specification changes mid-way| U["Dynamic context update<br/>Inject new information u satisfying a*(q)≠a*(q,u)"]
+    TC --> G["Phase 2 · Continue remaining trajectory and answer<br/>M(q, r(:X), i/u) → (r'(X:), a')"]
     U --> G
-    G --> M["双指标度量<br/>准确率 A_i(X) + 续写长度 L_i(X)"]
-    M --> T["错误模式分类<br/>推理泄漏 / 恐慌作答 / 自我怀疑（+prompt guidance 缓解）"]
+    G --> M["Dual-metric measurement<br/>Accuracy A_i(X) + continuation length L_i(X)"]
+    M --> T["Error pattern classification<br/>Reasoning leakage / panic answering / self-doubt (+prompt guidance mitigation)"]
 ```
 
 ### Key Designs

@@ -47,14 +47,14 @@ The method addresses two sides of the same problem: identifying components that 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["答案 token a+ / a− 各自前向"] --> B["答案 token 差分作为几何目标<br/>差分方向 Δr 即电路指纹"]
-    P["contrastive prompt<br/>clean vs corrupted"] --> C["组件输出差分 Δo_c"]
-    B --> D["投到组件原生空间<br/>内积得节点重要性 S_c"]
+    A["Answer token a+ / a− forward pass respectively"] --> B["Answer token difference as geometric target<br/>Difference direction Δr is the circuit fingerprint"]
+    P["contrastive prompt<br/>clean vs corrupted"] --> C["Component output difference Δo_c"]
+    B --> D["Project onto component native space<br/>Inner product yields node importance S_c"]
     C --> D
-    D --> E["Q/K/V Shapley 分解<br/>三通道博弈唯一解算 edge"]
-    E --> F["输出电路（read）"]
-    B --> G["几何 steering<br/>同一组方向替换/叠加激活（write）"]
-    G --> H["改写输出（read-write 对偶）"]
+    D --> E["Q/K/V Shapley decomposition<br/>Three-channel game unique solution for edges"]
+    E --> F["Output circuit (read)"]
+    B --> G["Geometric steering<br/>Replace/superimpose activations along same set of directions (write)"]
+    G --> H["Rewrite output (read-write duality)"]
 ```
 
 ### Key Designs

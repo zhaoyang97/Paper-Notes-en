@@ -93,7 +93,7 @@ The complexity of standard self-attention is $O(N^2 C)$. Each step of the mediat
 
 **Mechanism**: Quantify the variation of redundancy using the latent distance between consecutive denoising steps $\Delta_t = \|x_t - x_{t+1}\|$. When the distance falls below a certain threshold of the initial distance, the model switches to use more mediators:
 
-$$n_t = \begin{cases} n_1, & \Delta_t > \rho_0 \cdot \Delta_0 \quad \text{(早期，高冗余，少中介者)} \\ n_2, & \Delta_t \leq \rho_1 \cdot \Delta_0 \quad \text{(中期)} \\ \vdots \\ n_k, & \Delta_t \leq \rho_{k-1} \cdot \Delta_0 \quad \text{(后期，低冗余，多中介者)} \end{cases}$$
+$$n_t = \begin{cases} n_1, & \Delta_t > \rho_0 \cdot \Delta_0 \quad \text{(early stage, high redundancy, fewer mediators)} \\ n_2, & \Delta_t \leq \rho_1 \cdot \Delta_0 \quad \text{(middle stage)} \\ \vdots \\ n_k, & \Delta_t \leq \rho_{k-1} \cdot \Delta_0 \quad \text{(late stage, low redundancy, more mediators)} \end{cases}$$
 
 **Sample-wise Independent Scheduling**: The threshold switching is sample-adaptive, as different images have distinct denoising processes and varying latent change rates.
 

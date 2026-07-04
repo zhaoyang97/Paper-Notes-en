@@ -118,7 +118,7 @@ Shape prediction ablation (V2V↓) shows: as references increase from 3 to 12, o
 
 ## Limitations & Future Work
 - The pipeline remains dependent on the SMPL-X parametric model, which may limit performance on very loose clothing, accessories, or non-standard body types.
-- Accuracy gains in shape (V2V) saturate quickly as references increase, suggesting multi-view complementarity benefits appearance/texture more than体型 precision.
+- Accuracy gains in shape (V2V) saturate quickly as references increase, suggesting multi-view complementarity benefits appearance/texture more than body shape precision.
 - Rectification quality is bounded by synthetic training data; performance under extreme real-world occlusion may be less stable.
 
 ## Related Work & Insights

@@ -50,10 +50,10 @@ Saber does not modify the weights or architecture of the DLM. Instead, it reconf
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["全遮蔽序列输入"] --> B["自适应动态阈值加速<br/>阈值 τ_t = 已解遮蔽 token 的平均置信度<br/>置信度高于 τ_t 的 token 并行解遮蔽，组成草稿集 D_t"]
-    B --> C["回溯增强重遮蔽<br/>计算置信度下降 Δ_j，把降幅最大的 μ_t 个 token 打回遮蔽态"]
-    C -->|仍有遮蔽 token| B
-    C -->|全部解遮蔽完成| D["生成完成"]
+    A["Fully Masked Sequence Input"] --> B["Adaptive Dynamic Threshold Acceleration<br/>Threshold τ_t = average confidence of already-unmasked tokens<br/>Tokens with confidence above τ_t are unmasked in parallel, forming draft set D_t"]
+    B --> C["Backtracking-Enhanced Re-Masking<br/>Compute confidence drop Δ_j, re-mask the μ_t tokens with the largest drops"]
+    C -->|Masked tokens remain| B
+    C -->|All tokens unmasked| D["Generation Complete"]
 ```
 
 ### Key Designs

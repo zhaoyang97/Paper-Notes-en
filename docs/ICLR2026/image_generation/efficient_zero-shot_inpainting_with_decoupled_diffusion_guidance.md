@@ -44,7 +44,7 @@ This paper proposes DING (Decoupled INpainting Guidance), which decouples denois
 ### Overall Architecture
 DING operates within the DDIM reverse sampling framework, taking a masked reference image and text prompts as input to produce an infilled image satisfying observational consistency. Unlike traditional zero-shot guidance, it no longer performs gradient backpropagation through the denoiser. Instead, it evaluates the denoiser at proxy samples drawn from the prior reverse transition, resulting in a closed-form posterior approximation.
 
-Specifically, at each time step, the pre-trained model provides the DDIM transition mean. The masked and observed regions are updated separately:缺失 areas follow standard stochastic sampling, while observed areas use a Gaussian closed-form update involving "DDIM mean + observation constraints + noise term," ensuring semantic alignment and contextual consistency.
+Specifically, at each time step, the pre-trained model provides the DDIM transition mean. The masked and observed regions are updated separately: missing areas follow standard stochastic sampling, while observed areas use a Gaussian closed-form update involving "DDIM mean + observation constraints + noise term," ensuring semantic alignment and contextual consistency.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%

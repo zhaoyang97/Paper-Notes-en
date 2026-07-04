@@ -137,7 +137,7 @@ On AntMaze with sparse rewards and high-dimensional states, TGCVG still makes mo
 - **Value Penalty vs. Policy Constraint Analysis**: The t-SNE analysis of the failure mechanism (outlier clusters misjudged as in-distribution) is a rare distribution-level insight into synthesizer selection, providing significant value for practitioners in data augmentation.
 
 ## Limitations & Future Work
-- **Dependency on existing dynamics models**: TGCVG reuses the pre-trained dynamics model from Lin et al. 2024; the上限 of the dynamics model itself is not addressed, and model errors may still propagate in high-dimensional or complex dynamics.
+- **Dependency on existing dynamics models**: TGCVG reuses the pre-trained dynamics model from Lin et al. 2024; the upper bound of the dynamics model itself is not addressed, and model errors may still propagate in high-dimensional or complex dynamics.
 - **Task-specific $\lambda$ tuning**: $\lambda$ sensitivity varies across datasets, and the lack of an automatic selection mechanism means hyperparameter tuning is still required.
 - **Limited gains for DT**: The improvement when using DT as the downstream algorithm is relatively small (75.36→78.09), and TGCVG underperforms GTA on AntMaze-umaze (41.20 vs 66.50), suggesting conservative constraints might be too tight for certain sparse or structured tasks.
 - **Generation quality capped by policy capability**: The authors note that synthetic data quality highly depends on the action synthesizer's decision-making ability, implying limited gains if the policy is poorly trained.

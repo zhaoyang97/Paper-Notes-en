@@ -92,7 +92,7 @@ Evaluation is carried out on CLIC 2020 Test (428 images), Kodak, and DIV2K. Perc
 
 | Comparison Target | Type | PICO Relative Benefit (Subjective) |
 |--------|------|------|
-| HEIC / AV1 / VVC(VTM) | Best existing standardized codecs | BD-rate >60% → Over 2.5x编 bitrate savings for equal quality |
+| HEIC / AV1 / VVC(VTM) | Best existing standardized codecs | BD-rate >60% → Over 2.5x bitrate savings for equal quality |
 | BPG | Traditional | Over 3x bitrate savings |
 | AV2 / ECM / JPEG-AI | Next-generation/Standardized | 2.3–3x overall bitrate savings |
 | HiFiC / MRIC / C3-WD | Strongest learned + perceptual codecs | Under equal quality, their file sizes are 20–40% larger, and they are significantly slower |

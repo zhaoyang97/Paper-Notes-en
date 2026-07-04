@@ -33,12 +33,12 @@ Standard LLM evaluation benchmarks (e.g., MMLU, llm-jp-eval) primarily test "hig
 
 ### Japanese First-Person Psych-Predicate Constraint
 
-Japanese has a unique grammatical phenomenon: predicates describing inner states (e.g., "寒い/cold", "悲しい/sad", etc.) can only describe the first person when used directly:
+Japanese has a unique grammatical phenomenon: predicates describing inner states (e.g., "samui/cold", "kanashii/sad", etc.) can only describe the first person when used directly:
 
-- ✅ 私は寒い (I feel cold) — First person + psych-predicate, grammatical
-- ❌ 母は寒い (My mother feels cold) — Third person + psych-predicate in direct form, **ungrammatical**
-- ✅ 母は寒がっている (My mother seems to feel cold) — Third person + psych-predicate + **evidential marker**, grammatical
-- ✅ 母は寒そうだ (My mother looks cold) — Another grammatical form similar to the above
+- ✅ Watashi wa samui (I feel cold) — First person + psych-predicate, grammatical
+- ❌ Haha wa samui (My mother feels cold) — Third person + psych-predicate in direct form, **ungrammatical**
+- ✅ Haha wa samugatteiru (My mother seems to feel cold) — Third person + psych-predicate + **evidential marker**, grammatical
+- ✅ Haha wa samusoda (My mother looks cold) — Another grammatical form similar to the above
 
 Native speakers naturally adhere to this rule (even without knowing the rule name), but L2 learners and **even state-of-the-art models like GPT-4o frequently violate this rule**.
 
@@ -105,14 +105,14 @@ Perplexity is reported using the median (instead of the mean) because token prob
 **Counterintuitive Success of Weblab**:
 Weblab utilizes an **unmodified English tokenizer**, leading to:
 - Almost every Japanese character triggers byte fallback (rate 0.66)
-- Even basic words learned in second grade of elementary school like "食べる" (eat) or "買う" (buy) cannot be tokenized correctly
+- Even basic words learned in second grade of elementary school like "taberu" (eat) or "kau" (buy) cannot be tokenized correctly
 - However, precisely because the tokenization is **consistently poor**, it avoids grammatical-specific tokenization inconsistency!
 
 ### Ablation Study
 
 **Tokenization Consistency Experiments on Llama 3**:
 
-In Llama 3, psych-predicate adjectives ending in "しい" (e.g., "悲しい/kanashii", "寂しい/sabishii") trigger byte fallback when combined with evidential expressions, resulting in extremely low probabilities. However, adjectives ending in "い" (e.g., "痛い/itai", "寒い/samui") do not.
+In Llama 3, psych-predicate adjectives ending in "-shii" (e.g., "kanashii/sad", "sabishii/lonely") trigger byte fallback when combined with evidential expressions, resulting in extremely low probabilities. However, adjectives ending in "-i" (e.g., "itai/painful", "samui/cold") do not.
 
 When restricting test sentences to **consistently well-tokenized sentences**:
 - Perplexity of grammatical type (c): 3.7e+04 → **1.3e+03** (reduced by approximately **28 times**)

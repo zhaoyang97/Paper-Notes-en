@@ -45,11 +45,11 @@ Under a client-server architecture, EF21-Muon decomposes each step into three ta
 ```mermaid
 flowchart LR
     subgraph Server
-        A["LMO 步: X^{k+1}=LMO_B(X^k,t^k)(G^k)"] --> B["压缩模型偏移 S^k=C(X^{k+1}-W^k)"]
-        B --> C["更新 W^{k+1}=W^k+S^k"]
+        A["LMO step: X^{k+1}=LMO_B(X^k,t^k)(G^k)"] --> B["Compress model shift S^k=C(X^{k+1}-W^k)"]
+        B --> C["Update W^{k+1}=W^k+S^k"]
     end
-    C -->|"广播 S^k"| W1["Worker j: 更新 W, 算动量 M, 压缩梯度偏移 R^k_j"]
-    W1 -->|"回传 R^k_j"| D["聚合 G^{k+1}=G^k + (1/n)ΣR^k_j"]
+    C -->|"Broadcast S^k"| W1["Worker j: Update W, compute momentum M, compress gradient shift R^k_j"]
+    W1 -->|"Return R^k_j"| D["Aggregate G^{k+1}=G^k + (1/n)ΣR^k_j"]
     D --> A
 ```
 

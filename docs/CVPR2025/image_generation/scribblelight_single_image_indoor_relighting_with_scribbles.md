@@ -55,13 +55,13 @@ ScribbleLight employs a two-stage training process. In the first stage, the albe
     - **Mechanism**: Map the image $I$ and the albedo $A$ to latent vectors $z^I$ and $z^A$ using a VAE encoder. The image latent vector is diffused with noise at timestep $t$, while a fixed amount of noise ($T=200$) is added to the albedo latent vector. Both are concatenated along the feature dimension and fed into the SD U-Net (with doubled input channels and zero-initialized new weights). The training objective is $\mathcal{L} = \mathbb{E}[\|\epsilon - \epsilon_{\theta^S}(z_t^I, z_T^A, t, p)\|_2^2]$.
     - **Design Motivation**: Feeding the precise albedo directly causes the model to rely excessively on it, resulting in insufficient lighting changes. Additionally, errors from the albedo predictor would propagate directly as artifacts. Adding fixed-step noise introduces uncertainty, which preserves the fundamental color structure while forcing the model to rely more on image priors.
 
-2. **ScribbleLight ControlNet 编码器-解码器**:
+2. **ScribbleLight ControlNet Encoder-Decoder**:
 
     - **Function**: Extracting control features containing 3D geometry and illumination information from scribbles and normal maps.
     - **Mechanism**: The encoder $\mathcal{E}^C$ encodes the concatenated scribble $M$ and normal $N$ into an illumination feature map $f$. The decoder $\mathcal{D}^C$ reconstructs the normals and monochromatic shading from the feature map: $$\mathcal{L}_D = \|\mathcal{D}^C(\mathcal{E}^C(M,N)) - (S_{mono}, N)\|_2^2$$. ControlNet takes the feature map $f$, the noisy latent vector $z_t^I$, and the text prompt $p$ as inputs. It is initialized with the original Stable Diffusion v2 weights (non-albedo conditioned version) and jointly trained.
     - **Design Motivation**: A pure encoder lacks constraints, which may cause latent features to lose geometric information. Reconstructing normals and shading via the decoder ensures that the features capture complete information required for relighting. Removing the normal maps leads to the generation of random objects, while removing the decoder leads to hallucinations.
 
-3. **涂鸦自动生成策略**:
+3. **Automatic Scribble Generation Strategy**:
 
     - **Function**: Automatically creating training scribble annotations from real image datasets.
     - **Mechanism**: Based on thresholding the shading intensity distribution—pixels with $I(x)>\mu+\sigma$ are labeled as bright (1), $I(x)<\mu-\sigma$ as dark (0), and others as neutral (0.5). To simulate the roughness of real user scribbles, random-sized morphological dilation and erosion (using $3 \times 3$ to $19 \times 19$ kernels) are applied.

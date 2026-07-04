@@ -40,18 +40,18 @@ PROMO is built on the FLUX.1-dev (Flow Matching DiT) backbone and employs LoRA (
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    P["人物图 + 多件服装图 + pose / mask"]
-    S["风格提示系统与 TryOff 模块<br/>微调 7B VLM 出穿搭描述、反抠服装"]
-    P --> E["潜空间多模态拼接与空间条件压缩<br/>统一 VAE 编码，pose+mask 降采样砍 87.5% token"]
-    E -->|条件 token| C
-    S -->|风格文本| C
-    subgraph C["时序自参考与 3D-RoPE 条件编码（FLUX DiT 去噪）"]
+    P["Person image + multiple garment images + pose / mask"]
+    S["Style Prompt System and TryOff Module<br/>Fine-tuned 7B VLM for outfit description and garment extraction"]
+    P --> E["Latent-space Multimodal Concatenation and Spatial Condition Compression<br/>Unified VAE encoding, pose+mask downsampled to cut 87.5% tokens"]
+    E -->|"Condition tokens"| C
+    S -->|"Style text"| C
+    subgraph C["Temporal Self-Reference and 3D-RoPE Conditional Encoding (FLUX DiT Denoising)"]
         direction TB
-        KV["条件 KV 首步缓存复用<br/>2.4× 加速"]
-        RoPE["3D-RoPE 时间轴当条件组 ID<br/>单次前向穿多件"]
+        KV["Conditional KV First-step Cache Reuse<br/>2.4× Speedup"]
+        RoPE["3D-RoPE Time Axis as Condition Group ID<br/>Single Forward Pass for Multiple Garments"]
         KV --> RoPE
     end
-    C --> OUT["试穿结果"]
+    C --> OUT["Try-on Result"]
 ```
 
 ### Key Designs

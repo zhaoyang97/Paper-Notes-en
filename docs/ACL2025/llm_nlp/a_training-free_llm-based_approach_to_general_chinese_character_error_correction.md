@@ -29,9 +29,9 @@ Proposal of the Chinese Character Error Correction (C2EC) task, which covers sub
 
 ## Background & Motivation
 
-Chinese Spelling Correction (CSC) is a classic NLP task aiming to automatically detect and correct character errors in Chinese text. Traditional CSC tasks **only focus on character substitution errors**, such as homophone or visually similar character substitutions caused by typing errors (e.g., miswriting "已经" as "以经").
+Chinese Spelling Correction (CSC) is a classic NLP task aiming to automatically detect and correct character errors in Chinese text. Traditional CSC tasks **only focus on character substitution errors**, such as homophone or visually similar character substitutions caused by typing errors (e.g., miswriting "yijing" as the wrong homophone character).
 
-In real-world applications, however, errors in Chinese text extend beyond substitutions. **Missing characters** (e.g., omitting "校" in "我去学") and **redundant characters** (e.g., adding an extra "去" in "我去去学校") are also common. Nevertheless, current CSC datasets typically exclude these two types of errors from annotations, and evaluations frequently neglect them. This significantly **limits the practicality** of CSC models, as they cannot handle insertion and deletion operations in real-world scenarios.
+In real-world applications, however, errors in Chinese text extend beyond substitutions. **Missing characters** (e.g., omitting a character in a word) and **redundant characters** (e.g., inserting an extra character) are also common. Nevertheless, current CSC datasets typically exclude these two types of errors from annotations, and evaluations frequently neglect them. This significantly **limits the practicality** of CSC models, as they cannot handle insertion and deletion operations in real-world scenarios.
 
 **Key Challenge**: Traditional CSC methods assume that the input and output lengths are identical (one-to-one substitution), an assumption that completely fails when encountering missing or redundant errors. Most BERT-based CSC models (such as SCOPE and ECSpell) rely on this equal-length assumption.
 

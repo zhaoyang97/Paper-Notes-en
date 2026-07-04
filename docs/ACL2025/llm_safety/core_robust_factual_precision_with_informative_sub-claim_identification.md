@@ -60,7 +60,7 @@ The evaluation process of Core is: Input generated text $\rightarrow$ claim deco
 3. **Weighted Precision Calculation**:
 
     - **Function**: Consider the variation in information density of claims in the final precision calculation.
-    - **Mechanism**: While traditional precision is defined as $P = \frac{\text{正确声明数}}{\text{总声明数}}$, the improvement of Core is $P_{core} = \frac{\sum_{i \in I} w_i \cdot v_i}{\sum_{i \in I} w_i}$, where $I$ is the set of informative claims, $w_i$ is the information density weight of claim $i$ (the weighted sum of the five-element scores), and $v_i \in \{0, 1\}$ is the verification result. This ensures that claims containing richer, more specific information carry more weight in the precision calculation.
+    - **Mechanism**: While traditional precision is defined as $P = \frac{\text{number of correct claims}}{\text{total claims}}$, the improvement of Core is $P_{core} = \frac{\sum_{i \in I} w_i \cdot v_i}{\sum_{i \in I} w_i}$, where $I$ is the set of informative claims, $w_i$ is the information density weight of claim $i$ (the weighted sum of the five-element scores), and $v_i \in \{0, 1\}$ is the verification result. This ensures that claims containing richer, more specific information carry more weight in the precision calculation.
     - **Design Motivation**: Not all informative claims are equally important—"Einstein published relativity in 1905" is more informative than "Einstein was a physicist," hence it should receive a higher weight in precision evaluation.
 
 ### Loss & Training

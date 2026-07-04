@@ -126,7 +126,7 @@ The depth pruning variant achieved the best alignment across all metrics (HPS-v2
 ## Highlights & Insights
 - **The "Tree" abstraction tackles two bottlenecks simultaneously**: shared prefixes naturally amortize sampling (solving inefficiency), and internal node value aggregation naturally supports dense credit signals (solving sparse rewards)—an elegant use of a single data structure for dual gains.
 - **Marginal-preserving branching construction**: Using $\xi_b = (\xi_0 + s\eta_b)/\sqrt{1+s^2}$ ensures the marginal remains $\mathcal{N}(0,I)$, so the "prefix reuse" speedup is theoretically free of sampling distribution distortion.
-- **Decoupling forward sampling from backward gradients**: Pruning only affects the backward pass while retaining full exploration in reward evaluation. This "算力-探索" (compute-exploration) decoupling can be applied to any tree-based RL training.
+- **Decoupling forward sampling from backward gradients**: Pruning only affects the backward pass while retaining full exploration in reward evaluation. This "compute-exploration" decoupling can be applied to any tree-based RL training.
 - **Depth-wise normalization**: It addresses the fact that reward magnitudes are not directly comparable across noise levels. Standardizing within each depth prevents low-variance late steps from dominating the gradient—a useful insight for any process-reward scenario.
 
 ## Limitations & Future Work

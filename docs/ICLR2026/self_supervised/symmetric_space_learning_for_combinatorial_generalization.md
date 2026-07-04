@@ -88,7 +88,7 @@ $L_{basis}=\sum_i 1/\|K_i\|_1 + \sum_j 1/\|P_j\|_1$ prevents the learnable bases
 
 ### Main Results
 
-The主实验 (Main Results) demonstrate the model's superiority across multiple benchmarks. In a 3D spherical point cloud task where training data only covers a 270-degree arc, CartanFM reliably reconstructs the unobserved 90-degree arc.
+The main experiments (Main Results) demonstrate the model's superiority across multiple benchmarks. In a 3D spherical point cloud task where training data only covers a 270-degree arc, CartanFM reliably reconstructs the unobserved 90-degree arc.
 
 | Task / Dataset | Metric | Ours | Prev. SOTA / Baseline | Gain |
 |--------|------|------|----------|------|

@@ -49,19 +49,19 @@ Prompt Depth Anything is built upon the ViT-Large + DPT decoder architecture of 
 
 ### Key Designs
 
-1. **多尺度提示融合架构（Prompt Fusion Architecture）**:
+1. **Multi-Scale Prompt Fusion Architecture (Prompt Fusion Architecture)**:
 
     - **Function**: Integrate low-resolution LiDAR depth as conditional information into the decoding process of the depth foundation model.
     - **Mechanism**: At each scale $S_i$ of the DPT decoder, the LiDAR depth map is first bilinearly interpolated to the spatial resolution of the current scale. Then, a shallow convolutional network (two 3×3 convolutions) extracts depth features. These features are projected to the same dimension as the image features using a zero-initialized convolutional layer, and finally added to the intermediate features of the DPT for depth decoding. The entire fusion module adds only 5.7% computational overhead (1.789 vs 1.691 TFLOPs).
     - **Design Motivation**: The zero-initialization design ensures that the initial output is completely consistent with the original foundation model, fully inheriting the capability of the pre-trained model. Multi-scale fusion makes full use of spatial distance information at different granularities provided by the LiDAR. Compared to other conditional injection methods such as ControlNet, CrossAttention, and Adaptive LayerNorm, a simple additive fusion better utilizes the pixel-alignment characteristics between the LiDAR and the output depth.
 
-2. **合成数据 LiDAR 仿真（Sparse Anchor Interpolation）**:
+2. **Synthetic Data LiDAR Simulation (Sparse Anchor Interpolation)**:
 
     - **Function**: Generate realistic LiDAR depth inputs for synthetic data (e.g., Hypersim).
     - **Mechanism**: Simple downsampling of GT depth fails to simulate the noise characteristics of real LiDAR, causing the model to degrade into learning depth super-resolution. To address this, the authors propose Sparse Anchor Interpolation: the GT depth is first downsampled to the LiDAR resolution (192×256), sparse anchors are sampled on it using a perturbed grid (step size 7), and the remaining points are interpolated via RGB-similarity KNN. This simulates LiDAR noise and interpolation artifacts.
     - **Design Motivation**: If the simulated LiDAR is too "clean," the model will only learn to perform super-resolution rather than correcting noise, compromising performance on real LiDAR. Sparse anchor interpolation introduces noise patterns similar to real iPhone LiDAR.
 
-3. **伪 GT 深度生成 + 边缘感知损失**:
+3. **Pseudo GT Depth Generation + Edge-Aware Loss**:
 
     - **Function**: Generate high-quality training supervision signals for real data (e.g., ScanNet++) that only has coarse GT depth.
     - **Mechanism**: The FARO laser scan depth of ScanNet++ has poor quality at edges of texture-dense regions (due to holes and artifacts caused by occlusion), while Zip-NeRF reconstruction yields high-quality edges but is inaccurate in textureless areas. The edge-aware loss combines the advantages of both: $\mathcal{L}_{edge} = L_1(\mathbf{D}_{gt}, \hat{\mathbf{D}}) + \lambda \cdot \mathcal{L}_{grad}(\mathbf{D}_{pseudo}, \hat{\mathbf{D}})$, where the $L_1$ term supervises the overall depth values using FARO depth (accurate in textureless planar regions), and the gradient term supervises the gradient of the output depth using the gradient of the Zip-NeRF pseudo-GT (accurate at edges).

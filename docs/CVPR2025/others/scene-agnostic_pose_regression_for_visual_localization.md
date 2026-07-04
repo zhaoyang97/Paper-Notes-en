@@ -51,7 +51,7 @@ SPR-Mamba takes a panorama sequence captured along a trajectory, I_2, ..., I_q$ 
 1. **Local Branch**:
 
     - **Function**: Learning step-by-step relative poses between adjacent frames.
-    - **Mechanism**: Compute the differences between DINO features of adjacent frames ($帧产生-1$ difference vectors) and process them through multi-layer linear layers. An auxiliary translation and rotation head is attached during training to output inter-frame relative poses as additional supervision. The auxiliary head can be removed during inference.
+    - **Mechanism**: Compute the differences between DINO features of adjacent frames ($N-1$ difference vectors) and process them through multi-layer linear layers. An auxiliary translation and rotation head is attached during training to output inter-frame relative poses as additional supervision. The auxiliary head can be removed during inference.
     - **Design Motivation**: The local branch provides fine-grained, short-range motion information, compensating for the high-frequency displacement details that the global branch might lose during direct long-distance regression.
 
 2. **Global Branch**:

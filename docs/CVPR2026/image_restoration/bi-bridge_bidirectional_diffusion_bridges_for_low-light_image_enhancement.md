@@ -49,13 +49,13 @@ The critical modification in Bi-Bridge is simple: **instead of training separate
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["配对 (xA, xB)<br/>正常光 / 低光"] --> B["对称桥构造 + 方向随机互换<br/>采样 m 指派 (x0, xT)"]
-    B --> C["前向桥 SDE 采样 xt<br/>解析高斯桥 q(xt|x0,xT)"]
-    C --> D["统一端点预测训练<br/>共享 U-Net Dθ 预测 x̂0"]
-    D -->|MSE + 感知损失| E["训练目标 L = LBi + λp·Lper"]
-    D -.推理.-> F["双向推理<br/>选端点 xT + 预测-校正采样器"]
-    F -->|xT=xA| G["增强：低光→正常光"]
-    F -->|xT=xB| H["退化：正常光→低光"]
+    A["Paired (xA, xB)<br/>Normal light / Low light"] --> B["Symmetric bridge construction + random direction swap<br/>Sample m, assign (x0, xT)"]
+    B --> C["Forward bridge SDE sampling xt<br/>Analytic Gaussian bridge q(xt|x0,xT)"]
+    C --> D["Unified endpoint prediction training<br/>Shared U-Net Dθ predicts x̂0"]
+    D -->|MSE + Perceptual Loss| E["Training objective L = LBi + λp·Lper"]
+    D -.Inference.-> F["Bidirectional inference<br/>Select endpoint xT + predictor-corrector sampler"]
+    F -->|xT=xA| G["Enhancement: Low light → Normal light"]
+    F -->|xT=xB| H["Degradation: Normal light → Low light"]
 ```
 
 ### Key Designs

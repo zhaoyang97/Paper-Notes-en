@@ -34,7 +34,7 @@ In low-light environments, frame cameras require prolonged exposure times to gat
 **Key Challenge**: Solving the joint problem of low light and blur simultaneously is highly challenging:
 1. Relying solely on frame information, there is almost no usable motion and structural detail in the frames when motion blur is severe or illumination is extremely low;
 2. Existing joint low-light and deblurring methods (e.g., LEDNet) rely on synthetic data and fail to generalize to real-world scenarios;
-3. There is a lack of synchronized datasets containing real-world low-light blurry images, normal-light sharp images, and event流 (event streams).
+3. There is a lack of synchronized datasets containing real-world low-light blurry images, normal-light sharp images, and event streams.
 
 **Advantages of Event Cameras** provide the possibility to jointly solve these two problems: their **high dynamic range** (HDR) property allows them to capture scene details even under low light, and their **high temporal resolution** enables them to accurately record motion information during long exposures.
 

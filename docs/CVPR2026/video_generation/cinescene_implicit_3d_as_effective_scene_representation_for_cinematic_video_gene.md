@@ -130,7 +130,7 @@ CineScene leads in scene consistency and camera precision. FramePack suffers fro
 ## Highlights & Insights
 - **Injection Method as a Contribution**: Treating the same VGGT features as conditioning rather than loss enables dynamic subject insertion, suggesting that "how" 3D information is introduced is as critical as the information itself.
 - **Bypassing Reconstruction Fragility**: Using implicit features from foundation models avoids the pitfalls of sparse-view 3D reconstruction and the computational overhead of explicit geometry.
-- **对抗 Positioning Bias**: The trick of "fixing the first frame and shuffling the rest" is a valuable strategy for any multi-reference generation task to prevent the model from shortcutting via position-aware priors.
+- **Countering Positioning Bias**: The trick of "fixing the first frame and shuffling the rest" is a valuable strategy for any multi-reference generation task to prevent the model from shortcutting via position-aware priors.
 
 ## Limitations & Future Work
 - **Synthetic Data Reliance**: Training data is primarily from UE5; while small-scale OOD tests were performed on real data, the sim-to-real gap remains a factor.

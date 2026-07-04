@@ -127,7 +127,7 @@ Table 3: Effect of replacing components with ground truth in FLUX.1.
 | True $\alpha_t$ | 0.9263 | 28.78 | 0.0860 | Only $\alpha$ is insufficient |
 | True $u_t, \beta_t$ | 0.9916 | 41.79 | 0.0100 | Best |
 | True $\alpha_t, \beta_t$ (Estim. direction) | 0.9265 | 28.78 | 0.0874 | Direction reuse is the main error source |
-| **全估计=VDE** | 0.8931 | 26.15 | 0.1198 | Online estimation remains faithful |
+| **Full Estimation = VDE** | 0.8931 | 26.15 | 0.1198 | Online estimation remains faithful |
 
 ### Key Findings
 - **Direction Reuse is the Primary Error Source**: Estimating only coefficients (True $u_t$) yields an SSIM of 0.9893, while reusing the direction drops it significantly.

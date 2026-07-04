@@ -48,12 +48,12 @@ The input to OSMAGC consists of $V$ views of incomplete remote sensing data $\{X
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["不完整多视图遥感数据<br/>{Xᵛ} + 索引矩阵 {Qᵛ}"] --> B["超像素锚图初始化 SAGI<br/>ERS 超像素→空间感知锚点 Aᵛ→多尺度锚图 Zᵛ"]
-    B --> C["多尺度锚图学习 MSAGL<br/>视图加权 + 矩阵分解，从缺失数据学完整 Zᵛ"]
-    C --> D["结构对齐共识特征学习 SACFL<br/>对齐矩阵 Rᵛ 把多尺度锚图对齐到共享 H"]
-    D --> E["正交空间感知正则 OSAR<br/>水平+垂直双向 TV 平滑约束 H"]
-    E -->|交替优化联合求解 Zᵛ/Aᵛ/Rᵛ/H/α| C
-    E --> F["对 H 跑 k-means → 聚类结果"]
+    A["Incomplete Multi-View Remote Sensing Data<br/>{Xᵛ} + Index Matrices {Qᵛ}"] --> B["Superpixel Anchor Graph Initialization SAGI<br/>ERS Superpixels → Spatial-Aware Anchors Aᵛ → Multi-Scale Anchor Graphs Zᵛ"]
+    B --> C["Multi-Scale Anchor Graph Learning MSAGL<br/>View Weighting + Matrix Factorization, Learning Complete Zᵛ from Missing Data"]
+    C --> D["Structure-Aligned Consensus Feature Learning SACFL<br/>Alignment Matrices Rᵛ Align Multi-Scale Anchor Graphs to Shared H"]
+    D --> E["Orthogonal Spatial-Aware Regularization OSAR<br/>Horizontal + Vertical Bidirectional TV Smoothness Constraint on H"]
+    E -->|Alternating Optimization: Joint Solving of Zᵛ/Aᵛ/Rᵛ/H/α| C
+    E --> F["Run k-means on H → Clustering Results"]
 ```
 
 ### Key Designs

@@ -134,7 +134,7 @@ Hyperparameter analysis (Tab. 5, LoveDA): Learnable Gaussian bandwidth $\sigma$ 
 ### Key Findings
 - **P2A is the critical threshold for prior utility**: MeanStruct+DAS **without P2A** actually performs worse than the baseline (dropping from 52.42 to 52.01 on ResNet18). Abstract priors can be counterproductive if not translated into explicit affinities. Once P2A converts the prior into topology-aware affinities, performance jumps.
 - **Message passing is more vital than self-attention**: Removing "affinity-guided message passing" results in a significant drop, whereas removing self-attention caused only a slight decrease. This suggests prior-guided local propagation is the primary engine for structural reasoning.
-- **Generative priors outperform discriminative ones**: Tab. 4 shows that using discriminative backbones as priors yield small gains or甚至 even performance drops (ResNet18 prior drops to 50.20 on ConvNeXt B). Only the MeanStruct generative prior provides significant gains across all backbones, validating the "generative structural bias" hypothesis.
+- **Generative priors outperform discriminative ones**: Tab. 4 shows that using discriminative backbones as priors yield small gains or even performance drops (ResNet18 prior drops to 50.20 on ConvNeXt B). Only the MeanStruct generative prior provides significant gains across all backbones, validating the "generative structural bias" hypothesis.
 - **Diminishing returns on stronger backbones**: On the already powerful D2LS ConvNeXt B, HySeg's gain narrows to approximately +0.3~0.5 mIoU, indicating its primary role is compensating for structural weaknesses in weaker models.
 
 ## Highlights & Insights

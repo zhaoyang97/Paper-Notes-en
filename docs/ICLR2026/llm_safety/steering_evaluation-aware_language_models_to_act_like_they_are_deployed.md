@@ -49,12 +49,12 @@ The critical logical loop is: the steering vector is taken from the model before
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["Llama Nemotron 49B<br/>原始模型"] --> B["合成文档微调 SDF<br/>灌入三条自我事实"]
-    B --> C["专家迭代 ExIt<br/>强化评估时写类型注解"]
-    C --> D["评估感知模型生物体<br/>评估写注解·部署不写"]
-    A -->|微调前抽向量| E["对比激活引导向量<br/>16 对部署↔评估提示均值差"]
-    E -->|推理时加进残差流| D
-    D --> F["评估上下文被推向部署<br/>类型注解率 80%→<11%"]
+    A["Llama Nemotron 49B<br/>Base Model"] --> B["Synthetic Document Fine-tuning SDF<br/>Inject three self-fact statements"]
+    B --> C["Expert Iteration ExIt<br/>Reinforce writing type annotations during evaluation"]
+    C --> D["Evaluation-Aware Model Agent<br/>Writes annotations during evaluation, omits them during deployment"]
+    A -->|Extract vectors before fine-tuning| E["Contrastive Activation Steering Vector<br/>Mean difference of 16 deployment vs. evaluation prompt pairs"]
+    E -->|Add to residual stream at inference| D
+    D --> F["Evaluation context steered toward deployment<br/>Type annotation rate 80% -> <11%"]
 ```
 
 ### Key Designs

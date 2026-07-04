@@ -49,19 +49,19 @@ SCoP consists of three components: (1) Definitions of five comprehension skills 
 
 ### Key Designs
 
-1. **从认知理论到可测试任务的映射**:
+1. **Mapping from Cognitive Theory to Testable Tasks**:
 
     - **Function**: Decomposes the abstract cognitive comprehension process into five concrete, automatically evaluable NLP tasks.
     - **Mechanism**: Locating $\rightarrow$ given a question and a document, output supporting sentences + the answer; Inferring $\rightarrow$ given a complex question, output multiple supporting sentences + the answer; Connecting $\rightarrow$ mask several sentences in the document, and choose the correct sentence from candidates to fill in (similar to cloze, but at the sentence level); Organizing $\rightarrow$ given a scrambled document and subheadings, predict the correct position of each subheading; Selecting $\rightarrow$ given a document and the required number of key sentences, extract key sentences.
     - **Design Motivation**: These five skills form a progressive hierarchy from local to global. Cognitive science research indicates that human reading also follows this hierarchy, so evaluating LLMs using the same framework allows direct comparison of human-machine differences.
 
-2. **严格的数据构建与噪声过滤框架**:
+2. **Rigorous Data Construction and Noise Filtering Framework**:
 
     - **Function**: Ensures that test samples genuinely require document comprehension to answer, eliminating memorization and shortcuts.
     - **Mechanism**: For the Locating and Inferring tasks, supporting sentences are first automatically annotated using semantic similarity (z-score threshold), and then syntax tree analysis is used to determine whether the question requires multi-step reasoning. A critical step is "de-memorization filtering"—questions are sent to the LLM (without the document), and any sample where the model answers correctly solely based on memory is removed. This step filtered out over 90% of the samples (37,023 $\rightarrow$ 4,682).
     - **Design Motivation**: The exceptionally high filtering rate of 90% is a striking finding in itself—indicating that a vast number of questions in existing reading comprehension benchmarks can actually be answered by LLMs through memorization, with absolutely no need to comprehend the document. This validates the necessity of evaluating the comprehension process.
 
-3. **不一致性分析（Inconsistency Analysis）**:
+3. **Inconsistency Analysis**:
 
     - **Function**: Detects the inconsistency phenomenon of "correct answer but incorrect comprehension process."
     - **Mechanism**: Calculates the inconsistency score—in Locating and Inferring tasks, measuring the proportion of samples where the supporting sentences are predicted incorrectly but the final answer is correct. GPT-4o's inconsistency rate at the Inferring level reaches 18.29%, which is 8 times higher than that at the Locating level (2.32%).

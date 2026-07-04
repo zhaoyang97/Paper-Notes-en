@@ -43,7 +43,7 @@ The paper proposes SOLVE, which achieves feature-level synergy between VLM and e
 
 ### Key Designs
 
-1. **共享 Sequential Q-Former (SQ-Former)**:
+1. **Shared Sequential Q-Former (SQ-Former)**:
 
     - **Function**: Provides uniform visual encoding for both VLM and E2E models.
     - **Mechanism**: 384 learnable queries perform cross-attention sequentially with image features, detection tokens, and lane tokens, following a Q→Img→Det→Lane encoding sequence. The encoded results are simultaneously fed into both the VLM and E2E branches.
@@ -55,7 +55,7 @@ The paper proposes SOLVE, which achieves feature-level synergy between VLM and e
     - **Mechanism**: Maintains a bank of 36 candidate trajectories clustered via K-means from the training data. The VLM first selects the optimal coarse trajectory and then refines it using trajectory tokens. Compared to direct coordinate regression, this coarse-to-fine paradigm yields more reliable VLM inference.
     - **Design Motivation**: The performance is optimal with 6 reference trajectories (4 are too few and cause confusion, while 8 are too many and introduce distraction).
 
-3. **异步时序解耦 (Asynchronous Temporal Decoupling)**:
+3. **Asynchronous Temporal Decoupling (Asynchronous Temporal Decoupling)**:
 
     - **Function**: Addresses the issue of VLM inference latency making it unsuitable for real-time control.
     - **Mechanism**: The VLM generates long-range trajectories (e.g., 3 seconds) at a low frequency and stores them in global memory. The E2E model operates at a high frequency, retrieving the VLM trajectory from memory at each step to use as an initialization prior.

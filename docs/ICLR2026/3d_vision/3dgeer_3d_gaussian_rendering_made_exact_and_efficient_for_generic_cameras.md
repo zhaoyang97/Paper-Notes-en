@@ -48,11 +48,11 @@ The input is a set of multi-view images with arbitrary camera models (pinhole, f
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["多视角图像<br/>+任意相机模型(针孔/鱼眼)"] --> B["双极等角投影 BEAP<br/>(θ,φ)球面角空间均匀采样光线"]
-    B -->|每条光线 + 3D高斯集| C["粒子包围截锥体 PBF<br/>CSF∩PBF 精确求光线-粒子关联"]
-    C -->|该光线命中的高斯| D["标准坐标变换+闭式透射率<br/>沿光线精确积分高斯密度"]
-    D --> E["累积像素颜色 → BEAP 图像"]
-    E --> F["光度损失监督训练"]
+    A["Multi-view images<br/>+ arbitrary camera models (pinhole/fisheye)"] --> B["Bipolar Equiangular Projection BEAP<br/>(θ,φ) uniform ray sampling in spherical angle space"]
+    B -->|each ray + 3D Gaussian set| C["Particle Bounding Frustum PBF<br/>CSF∩PBF exact ray-particle association"]
+    C -->|Gaussians hit by this ray| D["Standard coordinate transform + closed-form transmittance<br/>exact integration of Gaussian density along ray"]
+    D --> E["Accumulated pixel color → BEAP image"]
+    E --> F["Photometric loss supervision training"]
 ```
 
 ### Key Designs

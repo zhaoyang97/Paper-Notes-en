@@ -136,7 +136,7 @@ Wall-clock time validation ($T_E=6$ minutes, approx. 8k tokens/step, using measu
 
 ## Related Work & Insights
 - **vs. Traditional RL Latency Modeling (Delay-Aware MDP / sticky-actions)**: While these handle computational delay, they are restricted to the RL domain. This paper formalizes real-time reasoning for LLM agents using token counts for fair, reproducible comparisons.
-- **vs. Budget Control Methods (budget forcing / L1)**: These methods try to maximize LLM performance under fixed budgets but suffer when the budget deviates from the适配 range. This paper proves they cannot be effective across different pressure levels.
+- **vs. Budget Control Methods (budget forcing / L1)**: These methods try to maximize LLM performance under fixed budgets but suffer when the budget deviates from the adapted range. This paper proves they cannot be effective across different pressure levels.
 - **vs. Existing Dual-Process LLM Designs**: Most existing designs treat the two systems as sequential stages or isolated units. AgileThinker differs by allowing System 1 to access System 2's partial reasoning traces in real-time, bridging "classical real-time efficiency" with "modern LLM reasoning."
 
 ## Rating

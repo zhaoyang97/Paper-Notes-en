@@ -109,7 +109,7 @@ Baselines (GEARS, scGPT, BioLord, etc.) often rely on forced pairing: regression
 - **Crucial Masking Model**: Without it, the model collapses toward zero, reducing generation diversity.
 - **Structured Latent Initialization**: Mapping from control cells via ODE is superior to random Gaussian noise for quality/efficiency.
 - **Essential Control Statistics**: $\mu_{ct}$ and $\sigma_{ct}$ provide a necessary starting point for perturbation transitions.
-- **Generalization**: Superiority in dual-knockout and OOD drug settings highlights the外推 ability of explicit perturbation modeling combined with implicit bridges.
+- **Generalization**: Superiority in dual-knockout and OOD drug settings highlights the extrapolation ability of explicit perturbation modeling combined with implicit bridges.
 
 ## Highlights & Insights
 - **Revisiting "Unpaired" as "Distribution Transition"**: Replacing forced pairing with DDIB's shared latent space is a clean conceptual shift that respects the biological nature of the data.

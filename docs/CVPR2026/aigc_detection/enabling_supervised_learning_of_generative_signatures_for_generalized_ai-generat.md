@@ -146,7 +146,7 @@ Key curves: $p_{aug}$ from 0% (mean 88.80%) → 20% (peak 95.79%) → 50% (94.86
 - **vs Handcrafted Filters / Denoisers (SRM, Noiseprint++)**: These generalize poorly as they are optimized for general noise. This work proves supervised learning of model-specific artifacts is superior.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐巧妙地利用代理监督将不可监督的提取任务转换为监督回归。
+- Novelty: ⭐⭐⭐⭐⭐ Cleverly leverages proxy supervision to convert an unsupervised extraction task into supervised regression.
 - Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive benchmarks, ablation studies, and spectral visualization.
 - Writing Quality: ⭐⭐⭐⭐ Clear logic across three stages, though minor symbol inconsistencies exist.
 - Value: ⭐⭐⭐⭐⭐ High practical value as a universal forensic base.

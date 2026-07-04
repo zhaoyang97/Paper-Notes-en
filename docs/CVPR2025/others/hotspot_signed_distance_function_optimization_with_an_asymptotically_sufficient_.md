@@ -118,17 +118,17 @@ The total loss is $L = w_b L_{\text{boundary}} + w_e L_{\text{eikonal}} + w_h L_
 - Value: ⭐⭐⭐⭐ Important theoretical advancement in the field of neural SDF optimization, transferable to downstream tasks like inverse rendering.
 ---
 title: >-
-  [论文解读] HotSpot: Signed Distance Function Optimization with an Asymptotically Sufficient Condition
+  [Paper Notes] HotSpot: Signed Distance Function Optimization with an Asymptotically Sufficient Condition
 description: >-
-  [CVPR 2025][人体理解][符号距离函数] 提出 HotSpot，基于 screened Poisson 方程与距离的经典关系设计新的 SDF 优化损失，提供了渐近充分条件保证收敛到真正的距离函数（而非仅满足 Eikonal 的伪解），同时自然惩罚多余表面积，在复杂形状上显著优于 SAL/DiGS/StEik。
+  [CVPR 2025][Human Understanding][Signed Distance Function] Proposes HotSpot, a novel SDF optimization loss based on the classical relationship between the screened Poisson equation and distance, providing an asymptotically sufficient condition to guarantee convergence to a true distance function (rather than pseudo-solutions that merely satisfy the Eikonal equation), while naturally penalizing excess surface area, significantly outperforming SAL/DiGS/StEik on complex shapes.
 tags:
   - CVPR 2025
-  - 人体理解
-  - 符号距离函数
-  - 表面重建
-  - Poisson方程
-  - Eikonal约束
-  - 距离场优化
+  - Human Understanding
+  - Signed Distance Function
+  - Surface Reconstruction
+  - Poisson Equation
+  - Eikonal Constraint
+  - Distance Field Optimization
 ---
 
 <!-- RELATED:START -->

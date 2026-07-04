@@ -31,7 +31,7 @@ By rendering Chinese characters into $8\times 8$ grayscale images and feeding th
 **Background**: Mainstream Chinese LMs treat characters as discrete token IDs (e.g., Chinese versions of GPT/BERT). Previous glyph-augmented works (Glyce, ChineseBERT) integrate glyph features **as auxiliary information** into token embeddings; pixel-based LMs like PIXEL perform MLM directly on rendered text but target pixel-to-pixel reconstruction.
 
 **Limitations of Prior Work**:
-- Index-based representations strip characters like "山" (mountain) into abstract IDs, losing visual information (shape and structure) that is inherently meaningful to humans.
+- Index-based representations strip characters like "shan" (mountain) into abstract IDs, losing visual information (shape and structure) that is inherently meaningful to humans.
 - Chinese is logographic; character forms encode semantic and phonetic information. Discrete IDs converge slowly when data is scarce.
 - Existing glyph-augmented methods treat glyphs as side info without controlled experiments on "complete replacement of token IDs."
 

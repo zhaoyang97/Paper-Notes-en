@@ -37,7 +37,7 @@ StableMaterials is a PBR material generation method based on latent diffusion mo
 
 **Goal**: ① Incorporate unlabeled (non-PBR) textures into the training of material generation models; ② Distill knowledge across domains from SDXL to enhance diversity; ③ Achieve fast few-step generation while maintaining tileability and high resolution.
 
-**Key Insight**: Since direct supervision is infeasible for SDXL textures, **pixel-to-pixel alignment is not required**. Instead, adversarial loss is employed in a shared latent space to align the distribution of "SDXL textures" with that of "真实材质" (real materials)—forcing the generator to output latent features that "look like materials" even when starting from unlabeled textures.
+**Key Insight**: Since direct supervision is infeasible for SDXL textures, **pixel-to-pixel alignment is not required**. Instead, adversarial loss is employed in a shared latent space to align the distribution of "SDXL textures" with that of "real materials"—forcing the generator to output latent features that "look like materials" even when starting from unlabeled textures.
 
 **Core Idea**: Utilize a semi-supervised training scheme combining "primary supervision + auxiliary adversarial learning." This treats the adversarial loss as a cross-domain distillation signal to inherit diversity from SDXL, while using the supervised term to anchor physical plausibility and avoid mode collapse.
 

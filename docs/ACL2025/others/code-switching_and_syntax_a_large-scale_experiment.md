@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Code-Switching and Syntax: A Large-Scale Experiment
 description: >-
-  [ACL 2025 (Findings)][语码转换] Through large-scale, multilingual, and cross-phenomenon experiments, this study systematically validates the linguistic consensus that "syntactic information is sufficient to explain code-switching (CS) patterns" for the first time. Using only syntactic features, the model achieves judgment accuracy comparable to bilingual humans, and the learned syntactic patterns generalize to unseen language pairs.
+  [ACL 2025 (Findings)][Code-Switching] Through large-scale, multilingual, and cross-phenomenon experiments, this study systematically validates the linguistic consensus that "syntactic information is sufficient to explain code-switching (CS) patterns" for the first time. Using only syntactic features, the model achieves judgment accuracy comparable to bilingual humans, and the learned syntactic patterns generalize to unseen language pairs.
 tags:
   - "ACL 2025 (Findings)"
-  - "语码转换"
-  - "句法分析"
-  - "双语处理"
-  - "最小对实验"
-  - "跨语言泛化"
+  - "Code-Switching"
+  - "Syntactic Analysis"
+  - "Bilingual Processing"
+  - "Minimal Pair Experiments"
+  - "Cross-Lingual Generalization"
 date: 2026-05-08
 content_hash: 36e69881c5870318
 ---
@@ -18,9 +18,9 @@ content_hash: 36e69881c5870318
 
 **Conference**: ACL 2025 (Findings)  
 **arXiv**: [2506.01846](https://arxiv.org/abs/2506.01846)  
-**Code**: 无  
-**Area**: 其他  
-**Keywords**: 语码转换, 句法分析, 双语处理, 最小对实验, 跨语言泛化
+**Code**: None  
+**Area**: Other  
+**Keywords**: Code-Switching, Syntactic Analysis, Bilingual Processing, Minimal Pair Experiments, Cross-Lingual Generalization
 
 ## TL;DR
 

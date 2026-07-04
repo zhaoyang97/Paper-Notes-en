@@ -37,7 +37,7 @@ From a single monocular RGB video with a moving perspective, RHINO reconstructs 
 
 **Key Insight**: Two observations: (1) Recent 3D perception foundation models (MASt3R) treat correspondence as a 3D point-map regression task rather than 2D image matching, making them robust in low-texture regions for object-level SfM. (2) Neural SDFs do more than encode geometry; they provide a continuous, differentiable "signed distance to the surface," which is an ideal signal for reasoning about contacts.
 
-**Core Idea**: "Decouple then Join"—first decouple the human/object/scene using 3D foundation models and camera motion subtraction to align them into a world coordinate system, then恢復 detail via joint optimization with per-component neural SDFs. The same SDF distances are reused to construct differentiable contact losses that "suck" hands toward the object surface while penalizing interpenetration.
+**Core Idea**: "Decouple then Join"—first decouple the human/object/scene using 3D foundation models and camera motion subtraction to align them into a world coordinate system, then recover detail via joint optimization with per-component neural SDFs. The same SDF distances are reused to construct differentiable contact losses that "suck" hands toward the object surface while penalizing interpenetration.
 
 ## Method
 

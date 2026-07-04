@@ -47,14 +47,14 @@ The pipeline consists of three parts: (1) Formulating dLLM sampling as an MDP—
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    A["输入：prompt x + 全掩码序列 y_T"] --> B["底座 dLLM 前向（参数冻结）<br/>得每位置预测分布 p_t^k"]
-    B --> C["置信度即状态<br/>c_t^k=max_v p_t^k(v) 加 mask m_t、步 t<br/>→ 单层 Transformer 策略 π_φ 输出 logit b_t"]
-    C --> D["Bernoulli 动态步长<br/>s_t^k=σ(b_t^k)，u_t^k~Ber(s_t^k)<br/>逐位置独立决定揭/不揭"]
-    D -->|仍有掩码位| B
-    D -->|全部揭完（终止步 T̂）| E
-    subgraph TRAIN["乘性奖励 + GRPO"]
+    A["Input: prompt x + fully masked sequence y_T"] --> B["Base dLLM forward pass (frozen parameters)<br/>yields per-position prediction distribution p_t^k"]
+    B --> C["Confidence as state<br/>c_t^k=max_v p_t^k(v) plus mask m_t, step t<br/>→ single-layer Transformer policy π_φ outputs logit b_t"]
+    C --> D["Bernoulli adaptive step<br/>s_t^k=σ(b_t^k), u_t^k~Ber(s_t^k)<br/>per-position independent reveal/no-reveal decision"]
+    D -->|masked positions remain| B
+    D -->|all positions revealed (terminal step T̂)| E
+    subgraph TRAIN["Multiplicative Reward + GRPO"]
         direction TB
-        E["乘性奖励<br/>R = r·(1−(T−T̂)/T)^α，错答打回 0 优势"] --> F["GRPO：同 prompt G 条 rollout 算组内优势<br/>终步奖励回灌每步、更新 π_φ（dLLM 不动）"]
+        E["Multiplicative Reward<br/>R = r·(1−(T−T̂)/T)^α, wrong answer zeroes out advantage"] --> F["GRPO: G rollouts per prompt compute group-wise advantage<br/>terminal reward back-propagated to each step, updates π_φ (dLLM frozen)"]
     end
 ```
 

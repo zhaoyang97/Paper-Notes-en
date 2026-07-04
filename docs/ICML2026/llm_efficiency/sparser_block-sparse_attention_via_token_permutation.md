@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sparser Block-Sparse Attention via Token Permutation
 description: >-
-  [ICML 2026][LLM Efficiency][Block-Sparse Attention] This paper proposes PBS-Attn, which leverages the permutation invariance of attention to reorder keys within segments based on "global importance." This聚拢 (gathers) scattered heavy hitters into continuous high-density blocks before performing block-sparse computation, achieving up to 2.75x end-to-end acceleration for long-context prefilling while maintaining accuracy nearly equal to full attention.
+  [ICML 2026][LLM Efficiency][Block-Sparse Attention] This paper proposes PBS-Attn, which leverages the permutation invariance of attention to reorder keys within segments based on "global importance." This gathers scattered heavy hitters into continuous high-density blocks before performing block-sparse computation, achieving up to 2.75x end-to-end acceleration for long-context prefilling while maintaining accuracy nearly equal to full attention.
 tags:
   - "ICML 2026"
   - "LLM Efficiency"
@@ -24,7 +24,7 @@ content_hash: 9705f052ff6603cf
 **Keywords**: Block-Sparse Attention, Token Permutation, Long-Context Prefilling, FlashAttention, Heavy Hitter
 
 ## TL;DR
-This paper proposes PBS-Attn, which leverages the permutation invariance of attention to reorder keys within segments based on "global importance." This聚拢 (gathers) scattered heavy hitters into continuous high-density blocks before performing block-sparse computation, achieving up to 2.75x end-to-end acceleration for long-context prefilling while maintaining accuracy nearly equal to full attention.
+This paper proposes PBS-Attn, which leverages the permutation invariance of attention to reorder keys within segments based on "global importance." This gathers scattered heavy hitters into continuous high-density blocks before performing block-sparse computation, achieving up to 2.75x end-to-end acceleration for long-context prefilling while maintaining accuracy nearly equal to full attention.
 
 ## Background & Motivation
 
@@ -88,7 +88,7 @@ LongBench Average Scores (Llama-3.1-8B-Instruct, closer to Full is better):
 | MeanPooling (No perm) | 46.61 | 40.66 | 30.64 | 58.14 | 36.67 | Same selector, no perm |
 | **Ours (PBS-Attn)** | 48.00 | **42.09** | 28.36 | **63.80** | **37.37** | Only 0.91 below Full |
 
-Average scores on RULER 128K for Llama-3.1-8B-Instruct: Full 75.30 / MeanPooling 59.32 / PBS-Attn 66.98 / PBS-Attn+ 72.09. The relative Gain of permutation increases with context length (提升 7.66 points over MeanPooling at 128K).
+Average scores on RULER 128K for Llama-3.1-8B-Instruct: Full 75.30 / MeanPooling 59.32 / PBS-Attn 66.98 / PBS-Attn+ 72.09. The relative gain from permutation increases with context length (a 7.66-point improvement over MeanPooling at 128K).
 
 Efficiency: TTFT measured on H100 shows PBS-Attn achieves **2.75×** end-to-end acceleration relative to FlashAttention at 256K context, remaining the fastest or tied for fastest across 8K-512K. In contrast, MInference only accelerates after 128K, and XAttention gains plateau after 128K.
 

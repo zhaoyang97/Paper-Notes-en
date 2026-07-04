@@ -135,7 +135,7 @@ Combining these three strategies improves the performance of Claude 3.5 Sonnet o
 
 - **Novelty**: ⭐⭐⭐⭐ The design of cross-modal three-hop reasoning across three modalities in the financial sector is highly unique, and the multiple-choice format is creative.
 - **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive coverage of models, with diversified analytical dimensions (modality-level, stage-level, error classification, chart types) and deep qualitative analysis.
-- **写作质量**: ⭐⭐⭐⭐ The problem definition is clear, chart designs are elegant, and the analysis is progressively structured.
+- **Writing Quality**: ⭐⭐⭐⭐ The problem definition is clear, chart designs are elegant, and the analysis is progressively structured.
 - **Value**: ⭐⭐⭐⭐ It establishes a high-quality testbed for evaluating the multimodal reasoning capabilities of MLLMs, exposing pivotal capability deficiencies.
 
 <!-- RELATED:START -->

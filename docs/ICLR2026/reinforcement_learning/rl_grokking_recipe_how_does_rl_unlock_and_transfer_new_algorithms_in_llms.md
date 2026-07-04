@@ -50,7 +50,7 @@ flowchart TD
     A["Base Model<br/>pass@K=0 Problems"] --> B["DELTA: Controlled Synthetic<br/>Programming Problem Families"]
     B --> C["Staged Reward Recipe<br/>per-test Warmup → full-pass"]
     C -->|After Long Plateau| D["Grokking Phase Transition<br/>Jump to Near-Full Score"]
-    C -.加速尝试.-> E["Experience Replay +<br/>Feedback Loop + Selective Curriculum"]
+    C -.Accelerate attempts.-> E["Experience Replay +<br/>Feedback Loop + Selective Curriculum"]
     E -.-> D
     D --> F["3-Axis Generalization Eval<br/>Exploration/Composition/Transformation"]
 ```

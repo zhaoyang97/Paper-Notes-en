@@ -49,19 +49,19 @@ A three-stage framework: (1) Pruning SD v1.5 to obtain an efficient UNet image b
 
 ### Key Designs
 
-1. **移动端延迟-内存联合架构搜索**:
+1. **Joint Latency-Memory Architecture Search for Mobile Devices**:
 
     - **Function**: Searching for the optimal combination among 6 temporal layer candidates to satisfy mobile OOM and latency constraints.
     - **Mechanism**: First, a lookup table is constructed to record the latency and memory footprint of each temporal layer type under different spatiotemporal resolutions. After excluding OOM states, the spatial backbone is frozen, and search is restricted to the type (Conv/Attn, 1D/3D), position (which resolution level), and quantity of temporal layers. Candidate architectures are trained for 20K steps using pre-computed video latents and then evaluated on VBench. Evolutionary search is used to obtain the latency-quality Pareto-optimal solution.
     - **Design Motivation**: The computational characteristics of different temporal layers vary dramatically across distinct resolutions: 3D attention is cost-effective at low resolutions but infeasible at high resolutions, whereas 1D attention complexity grows linearly rather than quadratically with spatial resolution. A hybrid combination is therefore necessary.
 
-2. **图像-视频联合对抗微调**:
+2. **Joint Image-Video Adversarial Fine-Tuning**:
 
     - **Function**: Reducing the number of denoising steps from 25 to 4 while preserving video quality.
     - **Mechanism**: The generator is initialized with the pre-trained text-to-video model. The discriminator utilizes a frozen UNet encoder as its backbone, with spatiotemporal discriminator heads (spatial ResBlock + temporal self-attention) appended after each downsampling block; only the parameters of these heads are updated. A key innovation is the support of joint image-video training: the discriminator heads process both image and video data simultaneously, where image data helps maintain texture quality and video data ensures temporal consistency. The framework is trained using Rectified Flow on 4 fixed timesteps.
     - **Design Motivation**: Compact models (0.6B) exhibit less trajectory redundancy than large models, making direct application of existing distillation methods ineffective. The distribution-level supervision provided by adversarial loss is more suitable for few-step generation than point-wise losses.
 
-3. **VAE 解码器压缩**:
+3. **VAE Decoder Compression**:
 
     - **Function**: Eliminating the VAE decoding bottleneck.
     - **Mechanism**: With a frozen encoder, temporal and spatial decoders are pruned separately. The original temporal decoder latency is reduced from 23,100 ms to 210 ms, and the spatial decoder from 4,100 ms to 330 ms, achieving a $50\times$ speedup with negligible quality degradation.

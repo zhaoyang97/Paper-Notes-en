@@ -86,7 +86,7 @@ where $M(\mathcal{Y}_i)$ is the occlusion mask for the $i$-th warping, and $\lam
 
 **4. Fresnel-Weighted Composition + Synchronized Denoising: View-dependent Mixing and Trajectory Injection**
 
-Transparent objects exhibit both refraction and reflection, with weights varying by angle. The authors warp the panorama into a reflection appearance $I_{0|t}^{\text{R}}=\pi^{-\text{R}}(I_{0|t}^{360})$ and mix refractive and reflective colors in linear color space using Fresnel equations: $\mathbf{c}'=\tfrac{1}{2}(R_p+R_s)(\mathbf{c}^{\text{反}}-\mathbf{c}^{\text{折}})+\mathbf{c}^{\text{折}}$, where $R_p, R_s$ are reflection coefficients. The synchronized clean estimates $\hat I_{0|t}$ and $\hat I_{0|t}^{360}$ are encoded back to latents, and:
+Transparent objects exhibit both refraction and reflection, with weights varying by angle. The authors warp the panorama into a reflection appearance $I_{0|t}^{\text{R}}=\pi^{-\text{R}}(I_{0|t}^{360})$ and mix refractive and reflective colors in linear color space using Fresnel equations: $\mathbf{c}'=\tfrac{1}{2}(R_p+R_s)(\mathbf{c}^{\text{refl}}-\mathbf{c}^{\text{refr}})+\mathbf{c}^{\text{refr}}$, where $R_p, R_s$ are reflection coefficients. The synchronized clean estimates $\hat I_{0|t}$ and $\hat I_{0|t}^{360}$ are encoded back to latents, and:
 
 $$z_{t-1}=z_t+\frac{\sigma_{t-1}-\sigma_t}{\sigma_t}(z_t-\hat z_{0|t})$$
 

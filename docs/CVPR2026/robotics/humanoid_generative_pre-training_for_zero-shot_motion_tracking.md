@@ -47,11 +47,11 @@ Humanoid-GPT is a three-stage pipeline consisting of "data curation → expert t
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["原始 mocap + 视频重建动作<br/>AMASS / LAFAN1 / MotionMillion / PHUMA + 自采"] --> B["数据策展与重定向<br/>过滤+G1 重定向+时间扭曲→20亿帧"]
-    B --> C["Harmonic Motion Embedding<br/>周期特征→K-Means 约300簇"]
-    C --> D["分簇运动专家<br/>每簇 PPO + 关键点级奖励"]
-    D -->|DAgger 蒸馏| E["因果 Transformer 通才<br/>历史 token→各关节 PD 目标"]
-    E --> F["零样本跟踪未见动作<br/>真实 G1 实时遥操作/舞蹈"]
+    A["Raw Mocap + Video-Reconstructed Motions<br/>AMASS / LAFAN1 / MotionMillion / PHUMA + In-House"] --> B["Data Curation and Retargeting<br/>Filtering + G1 Retargeting + Time Warping → 2 Billion Frames"]
+    B --> C["Harmonic Motion Embedding<br/>Periodic Features → K-Means ~300 Clusters"]
+    C --> D["Per-Cluster Motion Experts<br/>PPO per Cluster + Keypoint-Level Reward"]
+    D -->|DAgger Distillation| E["Causal Transformer Generalist<br/>History Tokens → Per-Joint PD Targets"]
+    E --> F["Zero-Shot Tracking of Unseen Motions<br/>Real G1 Real-Time Teleoperation / Dance"]
 ```
 
 ### Key Designs

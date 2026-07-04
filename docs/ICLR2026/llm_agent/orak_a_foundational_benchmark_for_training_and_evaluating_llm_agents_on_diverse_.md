@@ -74,7 +74,7 @@ Orak uses normalized scores (actual score / max possible score) and benchmarks a
 ## Key Experimental Results
 
 ### Main Results
-Benchmark of 15 LLMs using default strategies (Normalized scores,节选):
+Benchmark of 15 LLMs using default strategies (Normalized scores, excerpt):
 
 | Model | AceAttorney | Pokémon | StarCraft2 | BabaIsYou | 2048 | Avg Rank |
 |------|------|------|------|------|------|------|

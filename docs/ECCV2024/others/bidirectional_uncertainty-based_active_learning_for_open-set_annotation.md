@@ -13,7 +13,6 @@ date: 2026-05-08
 content_hash: 024799eaf513bd33
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Bidirectional Uncertainty-Based Active Learning for Open-Set Annotation
 
 **Conference**: ECCV2024  

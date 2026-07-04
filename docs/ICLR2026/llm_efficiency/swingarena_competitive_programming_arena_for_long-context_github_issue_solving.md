@@ -48,13 +48,13 @@ SwingArena aims to solve the problem where existing code evaluations use "fixed 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["真实 GitHub 仓库<br/>高 star 项目"] --> B["数据构建与 CI 复现<br/>四阶段过滤 + Docker 复现原生 CI"]
-    B --> C["评测实例<br/>issue 描述 + 仓库代码 + CI 流水线"]
-    C --> D["RACG 检索增强<br/>FileRetriever→CodeChunker<br/>→CodeReranker→Token 预算"]
-    D -->|关键代码上下文| E["对抗性 Battle 协议<br/>Submitter 生成补丁 ↔ Reviewer 编写测试"]
-    E --> F["仓库原生 CI 验证<br/>编译 / lint / 回归测试 / Reviewer 测试"]
-    F -->|10 轮角色对称交换| E
-    F --> G["评测指标<br/>Win Rate / RPR / SPR / CI 通过率"]
+    A["Real GitHub Repos<br/>High-Star Projects"] --> B["Data Construction & CI Reproduction<br/>Four-Stage Filtering + Docker Native CI Reproduction"]
+    B --> C["Evaluation Instances<br/>Issue Description + Repo Code + CI Pipeline"]
+    C --> D["RACG Retrieval Augmentation<br/>FileRetriever→CodeChunker<br/>→CodeReranker→Token Budget"]
+    D -->|Key Code Context| E["Adversarial Battle Protocol<br/>Submitter Generates Patch ↔ Reviewer Writes Tests"]
+    E --> F["Repo Native CI Validation<br/>Build / Lint / Regression Tests / Reviewer Tests"]
+    F -->|10 Rounds of Symmetric Role Swap| E
+    F --> G["Evaluation Metrics<br/>Win Rate / RPR / SPR / CI Pass Rate"]
 ```
 
 ### Key Designs

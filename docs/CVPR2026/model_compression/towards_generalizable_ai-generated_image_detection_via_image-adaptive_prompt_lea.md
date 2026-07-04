@@ -52,24 +52,24 @@ The entire pipeline is based on CLIP ViT-L/14. Three types of learnable componen
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    IMG["测试图像（含未见生成器）"]
-    subgraph TTT["测试时 token 调优"]
+    IMG["Test Image (Unseen Generator)"]
+    subgraph TTT["Test-Time Token Tuning"]
         direction TB
-        V["生成 32 个视角<br/>1 全局 + 31 局部裁剪翻转"] --> SEL["置信度筛选保留 6 个"]
-        SEL --> ENT["最小化平均熵<br/>更新 token A，共 2 步"]
+        V["Generate 32 Views<br/>1 Global + 31 Local Crop Flips"] --> SEL["Confidence Filtering Retains 6 Views"]
+        SEL --> ENT["Minimize Average Entropy<br/>Update Token A, 2 Steps Total"]
     end
-    subgraph CIL["条件信息学习器"]
+    subgraph CIL["Conditional Information Learner"]
         direction TB
-        PT["切 192 个 32×32 块<br/>DCT 选纹理最丰富块"] --> HP["高通滤波取高频"]
-        HP --> CNN["两路独立 CNN<br/>Cf 伪造特有 / Cg 通用"]
+        PT["Crop 192 Patches of 32×32<br/>DCT Selects Texture-Richest Patches"] --> HP["High-Pass Filtering for High Frequencies"]
+        HP --> CNN["Two Independent CNNs<br/>Cf Forgery-Specific / Cg General"]
     end
     IMG --> TTT
     IMG --> CIL
-    ENT --> SF["可学习缩放因子<br/>逐通道融合 αf·Cf + αg·Cg + A"]
+    ENT --> SF["Learnable Scaling Factor<br/>Channel-Wise Fusion αf·Cf + αg·Cg + A"]
     CNN --> SF
     SF --> PR["image-adaptive prompt"]
-    PR --> CLIP["CLIP ViT-L/14 编码器<br/>冻结 MLP adapter + learnable token"]
-    CLIP --> OUT["CLS → 分类器<br/>Optimal Input Selection 取最自信视角 → 真/伪"]
+    PR --> CLIP["CLIP ViT-L/14 Encoder<br/>Frozen MLP Adapter + Learnable Token"]
+    CLIP --> OUT["CLS → Classifier<br/>Optimal Input Selection Picks Most Confident View → Real/Fake"]
 ```
 
 ### Key Designs

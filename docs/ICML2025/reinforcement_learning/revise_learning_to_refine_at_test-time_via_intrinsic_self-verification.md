@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: 8e9bb57b74d99418
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # ReVISE: Learning to Refine at Test-Time via Intrinsic Self-Verification
 
 **Conference**: ICML2025  

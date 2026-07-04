@@ -24,9 +24,6 @@ FEATURED_PATTERNS = [
     r"\boral\s+paper\b",
     r"\bspotlight\b",
     r"\bhighlight\b",
-    r"最佳论文",
-    r"口头报告",
-    r"（口头）",
 ]
 
 

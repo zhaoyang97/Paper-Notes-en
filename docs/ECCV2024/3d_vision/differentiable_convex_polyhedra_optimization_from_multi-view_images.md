@@ -58,7 +58,7 @@ Given a set of hyperplane parameters $\theta$, a differentiable convex polyhedro
 
     - **Function**: Propagate gradients of the image loss to hyperplane parameters
     - **Mechanism**: Decompose the gradient chain into three parts:
-    $\frac{\partial \mathcal{L}}{\partial \theta} = \underbrace{\frac{\partial \mathcal{L}}{\partial \mathcal{I}}}_{\text{图像损失}} \cdot \underbrace{\frac{\partial \mathcal{I}}{\partial \mathcal{V}}}_{\text{可微渲染}} \cdot \underbrace{\frac{\partial \mathcal{V}}{\partial \theta}}_{\text{可微顶点位置}}$
+    $\frac{\partial \mathcal{L}}{\partial \theta} = \underbrace{\frac{\partial \mathcal{L}}{\partial \mathcal{I}}}_{\text{Image Loss}} \cdot \underbrace{\frac{\partial \mathcal{I}}{\partial \mathcal{V}}}_{\text{Differentiable Rendering}} \cdot \underbrace{\frac{\partial \mathcal{V}}{\partial \theta}}_{\text{Differentiable Vertex Position}}$
     - **Design Motivation**: Directly computing $\partial \mathcal{I}/\partial \theta$ is intractable (due to the lack of explicit meshes, self-intersection issues, and GPU memory explosion in volume rendering), so gradients are acquired indirectly by constructing explicit meshes.
 
 2. **Hyperplane Intersection Solver via Duality Transform**:

@@ -98,9 +98,9 @@ This method is a plug-and-play inference-time framework requiring no additional 
 - Compared to single-image segmentation with SAM, the graph-cut-based multi-image segmentation is significantly better at label consistency and user stroke adherence.
 
 ## Highlights & Insights
-- **巧妙利用扩散特征作为图割空间 (Clever utilization of diffusion features as a graph cut space)**: Migrating classic graph cut optimization from pixel space to the self-attention feature space of the diffusion model simultaneously solves two problems: seam placement and feature blending. This idea can be generalized to any task requiring cross-image semantic alignment.
-- **对 $Q^{model}$ vs $Q^B$ 的深刻洞察 (Profound insight into $Q^{model}$ vs $Q^B$)**: Discovering the concrete manifestation of the decoupled properties where Q controls structure and K/V controls appearance in synthesis tasks. This provides theoretical and experimental support for opting to retain the model's adaptive Q in the base region.
-- **用户交互范式的转变 (Shift in interactive generation paradigms)**: Shifting from "asking the model to generate the correct result in one shot" to "asking the model to generate multiple candidates and then combining them." This change in mindset is highly inspiring for interactive generative content creation.
+- **Clever utilization of diffusion features as a graph cut space**: Migrating classic graph cut optimization from pixel space to the self-attention feature space of the diffusion model simultaneously solves two problems: seam placement and feature blending. This idea can be generalized to any task requiring cross-image semantic alignment.
+- **Profound insight into $Q^{model}$ vs $Q^B$**: Discovering the concrete manifestation of the decoupled properties where Q controls structure and K/V controls appearance in synthesis tasks. This provides theoretical and experimental support for opting to retain the model's adaptive Q in the base region.
+- **Shift in interactive generation paradigms**: Shifting from "asking the model to generate the correct result in one shot" to "asking the model to generate multiple candidates and then combining them." This change in mindset is highly inspiring for interactive generative content creation.
 
 ## Limitations & Future Work
 - Storing Q/K/V features for every timestep and every self-attention layer of all images beforehand incurs large memory overhead.

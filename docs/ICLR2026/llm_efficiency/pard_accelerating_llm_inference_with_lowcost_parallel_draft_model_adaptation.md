@@ -66,7 +66,7 @@ The root cause of slow AR drafting is dependency between tokens. Following the M
 
 $$P(x_n,\dots,x_{n+K-1}\mid x_0,\dots,x_{n-1};\theta_{\text{PARD}}) = P(x_n\mid x_{<n})\prod_{k=1}^{K-1}P(x_{n+k}\mid x_{<n}, m_0,\dots,m_{k-1}).$$
 
-Because each step only depends on the real prefix and mask placeholders, all $K$ tokens can be calculated in the **same forward pass**, reducing the number of forward passes from $K$ to $1$. Combined with a carefully designed attention mask (ensuring queries see correct prefix KVs), training and inference consistency is maintained. This补 compensates for the "accurate but slow" drawback of independent drafts.
+Because each step only depends on the real prefix and mask placeholders, all $K$ tokens can be calculated in the **same forward pass**, reducing the number of forward passes from $K$ to $1$. Combined with a carefully designed attention mask (ensuring queries see correct prefix KVs), training and inference consistency is maintained. This compensates for the "accurate but slow" drawback of independent drafts.
 
 **3. Conditional Output Dropping (COD): Reducing Parallel Training Costs from $O(NK)$ to $O(N)$**
 

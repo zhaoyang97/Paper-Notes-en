@@ -60,7 +60,7 @@ The input is a 3D mesh. Sharp Edge Sampling is used to obtain a uniform point se
     - **Mechanism**: $C = \text{CrossAttn}(P_s, P_u) + \text{CrossAttn}(P_s, P_a)$, where $P_s$ represents the latent tokens.
     - **Design Motivation**: Uniform points reflect the overall shape, while salient points reflect local details. Their attention patterns are distinctly different. Processing them separately allows the network to learn global and detailed encoding processes independently.
 
-3. **Dora-Bench 评测基准**
+3. **Dora-Bench Evaluation Benchmark**
 
     - **Function**: Stratifies 3D shapes into 4 levels (L1-L4) based on geometric complexity.
     - **Classification Basis**: Number of salient edges—from L1 (fewest edges) to L4 (most edges).

@@ -77,7 +77,7 @@ This is equivalent to optimizing and reducing $(s_j - s_i)$ over every pair of $
 
 **Mechanism**: The decision boundary of MLC optimization for $(s_j - s_i)$ is $s_j - s_i = m$, which allows for ambiguity: $\{s_j, s_i\}=\{0.1, 0.4\}$ and $\{0.5, 0.8\}$ both satisfy $m=0.3$, but in the latter case, $s_j=0.5$ is still unacceptably high. Consequently, two additional optimization targets are introduced—**maximizing $s_i$** (high similarity for positive classes) and **minimizing $s_j$** (low similarity for negative classes):
 
-$$\mathcal{L}_\text{MLCD} = \underbrace{\log\left(1 + \sum_{i \in \Omega_p} \exp(-s_i)\right)}_{\text{正类损失}} + \underbrace{\log\left(1 + \sum_{j \in \Omega'_n} \exp(s_j)\right)}_{\text{负类损失}}$$
+$$\mathcal{L}_\text{MLCD} = \underbrace{\log\left(1 + \sum_{i \in \Omega_p} \exp(-s_i)\right)}_{\text{Positive Class Loss}} + \underbrace{\log\left(1 + \sum_{j \in \Omega'_n} \exp(s_j)\right)}_{\text{Negative Class Loss}}$$
 
 The crucial elegance lies in the fact that with these two additional terms, the **positive loss and negative loss are naturally decoupled** (mathematically provable), enabling them to be optimized independently without interference.
 

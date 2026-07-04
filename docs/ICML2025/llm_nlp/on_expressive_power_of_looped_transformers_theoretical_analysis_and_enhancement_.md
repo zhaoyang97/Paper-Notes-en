@@ -58,7 +58,7 @@ $$\omega_f^{\text{tok}}(\delta) \coloneqq \sup_{n,\mathbf{X},\mathbf{X}'}\{\|f(\
 
 Given a permutation-equivariant continuous function $f$, when the number of loops $r > N$, there exists a single-layer Looped Transformer with only 2 attention heads and head size of 1, such that:
 
-$$\|\mathcal{L}_2 \circ \text{TF}^{\circ r} \circ \mathcal{L}_1 - f\|_{L^p} \leq (Nd)^{1/p}(\omega_f^{\text{tok}}(\delta\sqrt{d}) + \omega_f^{\text{cont}}(\delta\sqrt{Nd})) + \omega_f(\delta\sqrt{Nd}) + \text{低阶项}$$
+$$\|\mathcal{L}_2 \circ \text{TF}^{\circ r} \circ \mathcal{L}_1 - f\|_{L^p} \leq (Nd)^{1/p}(\omega_f^{\text{tok}}(\delta\sqrt{d}) + \omega_f^{\text{cont}}(\delta\sqrt{Nd})) + \omega_f(\delta\sqrt{Nd}) + \text{lower-order terms}$$
 
 Where $\delta = ((r-N)/2)^{-1/((N+1)d+1)}$, and the parameter size is $O(d)$, which is **independent of the approximation accuracy and sequence length**.
 

@@ -43,7 +43,7 @@ RORem proposes a "Human-in-the-Loop" semi-supervised data generation paradigm. I
 ## Method
 
 ### Overall Architecture
-A three-stage iterative pipeline: (1) Initialization: Fine-tune SDXL-Inpainting on a 60K initial dataset composed of RORD (15K real pairs from videos) and MULAN (45K synthetic pairs); (2) Human Labeling: Use the current model to generate removal results on OpenImages, then collect labels from 10 annotators to filter high-quality samples; (3) Auto Labeling: Train a discriminator $D_\phi$ using the human feedback data to automatically replace human annotation. Stages 2 and 3 are宣 iterated for 3 rounds, resulting in 200K+ paired data. There is also a final fine-tuning stage: use 1200 high-resolution pairs from DIV2K/Flickr2K to enhance output quality.
+A three-stage iterative pipeline: (1) Initialization: Fine-tune SDXL-Inpainting on a 60K initial dataset composed of RORD (15K real pairs from videos) and MULAN (45K synthetic pairs); (2) Human Labeling: Use the current model to generate removal results on OpenImages, then collect labels from 10 annotators to filter high-quality samples; (3) Auto Labeling: Train a discriminator $D_\phi$ using the human feedback data to automatically replace human annotation. Stages 2 and 3 are iterated for 3 rounds, resulting in 200K+ paired data. There is also a final fine-tuning stage: use 1200 high-resolution pairs from DIV2K/Flickr2K to enhance output quality.
 
 ### Key Designs
 

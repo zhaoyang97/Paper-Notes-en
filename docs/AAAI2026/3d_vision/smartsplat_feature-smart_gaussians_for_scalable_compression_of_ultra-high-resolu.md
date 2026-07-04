@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: b127de3ae06e61ad
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # SmartSplat: Feature-Smart Gaussians for Scalable Compression of Ultra-High-Resolution Images
 
 **Conference**: AAAI2026  

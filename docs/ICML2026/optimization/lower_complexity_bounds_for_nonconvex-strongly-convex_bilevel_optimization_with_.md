@@ -85,7 +85,7 @@ This paper contains no numerical experiments; the results are theoretical lower 
 
 ### Comparison with Existing Bilevel Bounds
 
-| Work | Type | Oracle / Assumption | Complexity | 含 $\kappa$ |
+| Work | Type | Oracle / Assumption | Complexity | w/ $\kappa$ |
 | :--- | :--- | :--- | :--- | :--- |
 | Ji & Liang (2023) | Lower | 2nd-order, $H$ is convex | $\sqrt{\kappa}$ gap | Yes (Restricted) |
 | Dagréou et al. (2024) | Lower | Finite-sum 1st-order | $\Omega(n+\sqrt{n}\epsilon^{-2})$ | No |

@@ -106,7 +106,7 @@ flowchart TD
 - **Honest Conservatism**: The authors explicitly state they did not perform equivalent MFT on competitor models, systematically underestimating their worst-case capabilities—this disclosure makes the conclusion more credible.
 
 ## Limitations & Future Work
-- **Covers only twoリスク classes**: Self-improvement was skipped as it is far from High capability, but it remains uncertain if this method will suffice if those capabilities jump.
+- **Covers only two risk classes**: Self-improvement was skipped as it is far from High capability, but it remains uncertain if this method will suffice if those capabilities jump.
 - **Compute/Data as a ceiling**: MFT utilized OpenAI's proprietary compute and expert data. A real novice attacker's "upper bound" might be lower, but the estimation itself relies on resources that are difficult for external parties to replicate.
 - **Non-release of weights and data**: To avoid providing recipes for attackers, the paper only shares high-level details and does not release MFT weights, sacrificing reproducibility.
 - **Asymmetric Comparison**: No equivalent MFT was done for open-source competitors, leading to systematic bias in horizontal comparisons (albeit conservative bias).

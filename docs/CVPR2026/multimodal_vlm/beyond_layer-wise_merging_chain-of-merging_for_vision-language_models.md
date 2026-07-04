@@ -9,7 +9,6 @@ tags:
 date: 2026-05-08
 content_hash: 83016ba13ece7fdd
 ---
-<!-- 由 tmp/gen_cvf_stubs.py 自动生成（CVF-only，无 arXiv） -->
 # Beyond Layer-Wise Merging: Chain-of-Merging for Vision-Language Models
 
 **Conference**: CVPR 2026  

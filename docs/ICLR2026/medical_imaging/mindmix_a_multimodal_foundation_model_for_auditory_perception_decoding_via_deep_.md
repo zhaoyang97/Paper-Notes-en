@@ -79,7 +79,7 @@ The total pre-training loss is a weighted sum of these (plus a quantization loss
 
 **2. CALRA: Deep Cross-modal Alignment via Refine-then-Contrast**
 
-CALRA (Cross-Attention Low-Rank Alignment) addresses the limitation where standard CLIP-style shallow projections are insufficient for low SNR, strong non-linearity, and heterogeneous speech/music stimuli. CALRA's strategy is "refine then contrast"—injecting context-aware deep interactions into embeddings before calculating contrastive loss. it consists of three协同 components:
+CALRA (Cross-Attention Low-Rank Alignment) addresses the limitation where standard CLIP-style shallow projections are insufficient for low SNR, strong non-linearity, and heterogeneous speech/music stimuli. CALRA's strategy is "refine then contrast"—injecting context-aware deep interactions into embeddings before calculating contrastive loss. It consists of three synergistic components:
 
 - **Type-specific Aligner**: Neural responses differ significantly between speech and music. A learnable transformation $f_k$ is used to route initial projections based on auditory type $k$: $(E'_{proj}, A'_{proj}) = f_k(E_{proj}, A_{proj})$.
 - **Bi-directional Cross-Attention**: Modalities retrieve supplementary information from each other over global projection vectors. $E'_{interacted} = \text{MHA}(Q_E, K_A, V_A)$ and $A'_{interacted} = \text{MHA}(Q_A, K_E, V_E)$ occur simultaneously with residuals and LayerNorm to produce $h_E, h_A$. It performs global alignment rather than local token matching.

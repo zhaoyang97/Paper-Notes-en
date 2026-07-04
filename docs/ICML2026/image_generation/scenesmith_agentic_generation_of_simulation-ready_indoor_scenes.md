@@ -143,7 +143,7 @@ SceneSmith does not train new models; it combines off-the-shelf VLMs (GPT, etc.)
 ## Related Work & Insights
 - **vs HSM (Pun et al., 2026)**: SceneSmith adopts its hierarchical philosophy but adds refined prompts and the agent triangle, resulting in vastly better object counts (71 vs 23) and simulation readiness (STB 96% vs 45%).
 - **vs Holodeck (Yang et al., 2024b)**: Holodeck uses constraint solvers + retrieval for layouts but only supports sparse scenes; SceneSmith achieves 2.6× the object count at the house level.
-- **vs SceneWeaver (Yang et al., 2025)**: SceneWeaver uses a single LLM planner for reason-act-reflect; SceneSmith upgrades this to a three-agent分工 with visual feedback and multi-tool turns, achieving a 91.7% win rate.
+- **vs SceneWeaver (Yang et al., 2025)**: SceneWeaver uses a single LLM planner for reason-act-reflect; SceneSmith upgrades this to a three-agent division of labor with visual feedback and multi-tool turns, achieving a 91.7% win rate.
 - **vs ProcTHOR (Deitke et al., 2022b)**: Purely rule-based methods have limited semantics; SceneSmith achieves open-vocabulary semantic control while using a tool system to ensure physical feasibility.
 - **vs LayoutVLM / I-Design**: These focus on visual-language layout optimization with low object counts (11–14) and poor stability (8–61%). SceneSmith represents a leap in all relevant dimensions.
 

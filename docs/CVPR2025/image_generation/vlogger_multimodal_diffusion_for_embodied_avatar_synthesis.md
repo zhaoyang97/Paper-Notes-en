@@ -129,7 +129,7 @@ VLOGGER is a two-stage pipeline: the input is a single reference image and an au
 
 ## Rating
 
-- Novelty: ⭐⭐⭐狠 Incorporating full-body motion (including gestures) into audio-driven video generation for the first time, and the integration of warped reference images into the diffusion framework is an innovative design.
+- Novelty: ⭐⭐⭐⭐ Incorporating full-body motion (including gestures) into audio-driven video generation for the first time, and the integration of warped reference images into the diffusion framework is an innovative design.
 - Experimental Thoroughness: ⭐⭐⭐⭐ Evaluation is very comprehensive, spanning three public benchmarks, detailed ablation studies, diversity analyses, and video editing application showcases.
 - Writing Quality: ⭐⭐⭐⭐ Clearly structured with detailed methodological descriptions and intuitive diagrams.
 - Value: ⭐⭐⭐⭐ Directly drives applications such as virtual avatars, online communication, and content creation, although the inaccessibility of the dataset and foundation models is a drawback.

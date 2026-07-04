@@ -121,7 +121,7 @@ Implicit models significantly outperform explicit models at equivalent embedding
 - **Existence vs. Learnability**: The theorems prove such a $G$ exists but do not specify if standard training (e.g., gradient descent) will always find it or how many samples are needed.
 - **Lipschitz assumption scope**: Does not directly apply to non-Lipschitz, discontinuous, or discrete-domain targets.
 - **Efficiency trade-offs**: Lacks quantitative analysis of how many iterations equal how many parameters in terms of FLOPs or wall-clock time.
-- **Future directions**: Extending the framework to discrete/sequence spaces for more rigorous LLM support and studying the誘induction of regularity during training.
+- **Future directions**: Extending the framework to discrete/sequence spaces for more rigorous LLM support and studying the induction of regularity during training.
 
 ## Related Work & Insights
 - **vs. DEQ/Implicit Deep Learning**: Complements these architectures by providing the **complete expressivity characterization** lacking in original works.

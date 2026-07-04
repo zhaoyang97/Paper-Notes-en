@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: 18e0138f4c04a61c
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # SSSD: Simply-Scalable Speculative Decoding
 
 **Conference**: ACL2026  

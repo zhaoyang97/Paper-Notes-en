@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SPATIA: Multimodal Generation and Prediction of Spatial Cell Phenotypes
 description: >-
-  [ICML2026][Computational Biology][Spatial Transcriptomics] Addressing the spatial transcriptomics challenge of joint modeling for "cell morphology + gene expression + spatial location," SPATIA utilizes a hierarchical attention mechanism (cell→niche→组织) for unified representation and a **spatial-conditioned morphology generation module** (weak pairing + confidence-aware Optimal Transport reweighting + morphology-profile alignment flow matching). It sets new SOTA across 25.9M c…
+  [ICML2026][Computational Biology][Spatial Transcriptomics] Addressing the spatial transcriptomics challenge of joint modeling for "cell morphology + gene expression + spatial location," SPATIA utilizes a hierarchical attention mechanism (cell→niche→tissue) for unified representation and a **spatial-conditioned morphology generation module** (weak pairing + confidence-aware Optimal Transport reweighting + morphology-profile alignment flow matching). It sets new SOTA across 25.9M c…
 tags:
   - "ICML2026"
   - "Computational Biology"
@@ -24,7 +24,7 @@ content_hash: 52757b1823b0f335
 **Keywords**: Spatial Transcriptomics, Cell Phenotype, Flow Matching, Optimal Transport, Multi-scale Representation  
 
 ## TL;DR
-Addressing the spatial transcriptomics challenge of joint modeling for "cell morphology + gene expression + spatial location," SPATIA utilizes a hierarchical attention mechanism (cell→niche→组织) for unified representation and a **spatial-conditioned morphology generation module** (weak pairing + confidence-aware Optimal Transport reweighting + morphology-profile alignment flow matching). It sets new SOTA across 25.9M cells and 12 tasks for both generation and prediction.
+Addressing the spatial transcriptomics challenge of joint modeling for "cell morphology + gene expression + spatial location," SPATIA utilizes a hierarchical attention mechanism (cell→niche→tissue) for unified representation and a **spatial-conditioned morphology generation module** (weak pairing + confidence-aware Optimal Transport reweighting + morphology-profile alignment flow matching). It sets new SOTA across 25.9M cells and 12 tasks for both generation and prediction.
 
 ## Background & Motivation
 **Background**: Image-based spatial transcriptomics (ST) technologies enable the simultaneous acquisition of **cell microscopic morphology images** and **gene expression profiles** while maintaining tissue integrity. Understanding how cell morphology, gene expression, and spatial organization jointly shape tissue function is a core problem in modeling healthy and diseased cell states.

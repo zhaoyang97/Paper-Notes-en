@@ -138,7 +138,7 @@ Noise scheduler comparison: Variance (Ours) FID 0.083 outperforms Sqrt (0.108) a
 - [\[AAAI 2026\] mmPred: Radar-based Human Motion Prediction in the Dark](../../AAAI2026/human_understanding/mmpred_radar-based_human_motion_prediction_in_the_dark.md)
 - [\[ICLR 2026\] ReactDance: Hierarchical Representation for High-Fidelity and Coherent Long-Form Reactive Dance Generation](reactdance_hierarchical_representation_for_high-fidelity_and_coherent_long-form_.md)
 - [\[ICLR 2026\] HUMOF: Human Motion Forecasting in Interactive Social Scenes](humof_human_motion_forecasting_in_interactive_social_scenes.md)
-- [\[ICLR 2026\] TriC-Motion: 三域因果建模驱动的文本到动作生成](tric-motion_tri-domain_causal_modeling_grounded_text-to-motion_generation.md)
+- [\[ICLR 2026\] TriC-Motion: Tri-Domain Causal Modeling Grounded Text-to-Motion Generation](tric-motion_tri-domain_causal_modeling_grounded_text-to-motion_generation.md)
 
 </div>
 

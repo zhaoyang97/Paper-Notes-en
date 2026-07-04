@@ -67,7 +67,7 @@ Two components are connected in series:
 
     - **Function**: Deconstructs debate responses into independent factual statements and verifies their truthfulness using a search engine
     - **Mechanism**: Optimized based on the SAFE method, extracting facts → constructing search queries → retrieving external evidence → LLM judging whether the facts are supported
-    - **Metric**: $S_{FA} = \frac{\text{被验证为真的事实数}}{\text{总独立事实数}}$
+    - **Metric**: $S_{FA} = \frac{\text{number of facts verified as true}}{\text{total number of independent facts}}$
 
 4. **InspireDebate Optimization Framework**:
 

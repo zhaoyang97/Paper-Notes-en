@@ -116,7 +116,7 @@ Causal Direction Ablation:
 
 ### Key Findings
 - **Synergy of RPWS and SiD**: Replacing MDP with RPWS reduced FPD from 271 to 109; SiD further reduced it to 91, proving both "real statistical simulation" and "causal decomposition" are beneficial.
-- **Causal Direction is Critical**: $S \to I$ was superior to $I \to S$ or independent modeling, confirming that gains come from aligning with LiDAR成像's causal structure.
+- **Causal Direction is Critical**: $S \to I$ was superior to $I \to S$ or independent modeling, confirming that gains come from aligning with LiDAR imaging's causal structure.
 - **Data Efficiency**: SiD maintains strong performance with only 10% of real data, whereas WeatherGen degrades faster under limited supervision.
 
 ## Highlights & Insights
@@ -138,7 +138,7 @@ Causal Direction Ablation:
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐ Explicitly decomposing the reverse diffusion process based on LiDAR causality is novel and physically grounded.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive主表 and multi-dimensional ablations, though limited to two datasets.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive main-table and multi-dimensional ablations, though limited to two datasets.
 - Writing Quality: ⭐⭐⭐⭐ Logical motivation and clear description of causal decomposition.
 - Value: ⭐⭐⭐⭐ High practical value for autonomous driving perception by enabling scalable and data-efficient generation of adverse-weather data.
 

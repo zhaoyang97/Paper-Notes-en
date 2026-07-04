@@ -19,7 +19,7 @@ content_hash: 82a039e44b9c7c66
 
 **Conference**: ICLR2026  
 **OpenReview**: [https://openreview.net/forum?id=5OIgg5YkC3](https://openreview.net/forum?id=5OIgg5YkC3)  
-**论文**: [Project Page](https://unpaired-multimodal.github.io/)  
+**Paper**: [Project Page](https://unpaired-multimodal.github.io/)  
 **Code**: Not disclosed  
 **Area**: Self-supervised / Representation Learning  
 **Keywords**: Unpaired multimodal learning, unimodal enhancement, weight sharing, self-supervised representation, cross-modal transfer  

@@ -79,7 +79,7 @@ If only schema annotations are provided, the model learns "what to perceive" but
 
 ### Loss & Training
 
-A standard four-stage流程 is adopted, with UAS data injected in the middle two stages: (1) Discrete token alignment (vocabulary expansion); (2) Audio-LLM adaptation, freezing the LLM and encoder while training only the projection layer with UAS data; (3) Full-parameter instruction fine-tuning, mixing ASR/TTS + UAS + UAS-QA; (4) GRPO reinforcement.
+A standard four-stage pipeline is adopted, with UAS data injected in the middle two stages: (1) Discrete token alignment (vocabulary expansion); (2) Audio-LLM adaptation, freezing the LLM and encoder while training only the projection layer with UAS data; (3) Full-parameter instruction fine-tuning, mixing ASR/TTS + UAS + UAS-QA; (4) GRPO reinforcement.
 
 ## Key Experimental Results
 

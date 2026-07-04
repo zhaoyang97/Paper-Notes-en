@@ -133,7 +133,7 @@ item_total: 72
 
 **[Data-efficient Targeted Token-level Preference Optimization for LLM-based Text-to-Speech](data-efficient_targeted_token-level_preference_optimization_for_llm-based_text-t.md)**
 
-:   To address the challenge of aligning ambiguous pronunciations in LLM-based TTS (e.g., the Japanese word "辛い" can be read as both *karai* and *tsurai*), the authors propose TKTO. This method first estimates the importance weight $w_t$ for each token using two contrastive KTO models trained with swapped labels. It then decomposes the utterance-level value function of KTO into token-level components and aggregates them with weights. This achieves both "no paired data required" and "automatic targeting of objective tokens," increasing Japanese pronunciation accuracy from 0.668 to 0.958 (+39%) and reducing CER by 54%.
+:   To address the challenge of aligning ambiguous pronunciations in LLM-based TTS (e.g., the Japanese word "karai/tsurai" can be read as both *karai* and *tsurai*), the authors propose TKTO. This method first estimates the importance weight $w_t$ for each token using two contrastive KTO models trained with swapped labels. It then decomposes the utterance-level value function of KTO into token-level components and aggregates them with weights. This achieves both "no paired data required" and "automatic targeting of objective tokens," increasing Japanese pronunciation accuracy from 0.668 to 0.958 (+39%) and reducing CER by 54%.
 
 **[Dial HEALTHDIAL for Advice: A Multilingual and Multi-Parallel Spoken Dialogue Dataset for Knowledge-Grounded Information Seeking](dial_healthdial_for_advice_a_multilingual_and_multi-parallel_spoken_dialogue_dat.md)**
 

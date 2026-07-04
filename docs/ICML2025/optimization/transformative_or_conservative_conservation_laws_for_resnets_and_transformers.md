@@ -17,7 +17,6 @@ date: 2026-05-08
 content_hash: 89c08a80124b5b25
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Transformative or Conservative? Conservation Laws for ResNets and Transformers
 
 **Conference**: ICML2025  

@@ -88,7 +88,7 @@ Relying solely on SFT imitation often leads the model to learn "templated" evalu
 
 $$R_t = \alpha \cdot PR_t + \beta \cdot OR_t,\quad \alpha=0.5,\ \beta=1.0$$
 
-During training, the model is intentionally fed limited historical interactions without explicit preferences, forcing it into a situation where it must "infer preferences from sparse signals." Process rewards ensure the evaluation chain covers the correct dimensions, while outcome rewards ensure the final ranking is correct—消融实验 (ablation study) shows that removing either significantly degrades performance, proving both are indispensable.
+During training, the model is intentionally fed limited historical interactions without explicit preferences, forcing it into a situation where it must "infer preferences from sparse signals." Process rewards ensure the evaluation chain covers the correct dimensions, while outcome rewards ensure the final ranking is correct—ablation studies show that removing either significantly degrades performance, proving both are indispensable.
 
 **3. Hard Negative Curriculum Learning: Feeding response pairs with "similar quality but mismatching user taste" from easy to hard**
 

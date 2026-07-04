@@ -79,7 +79,7 @@ Evaluation Protocol: As real-world scenes rarely provide ground truth poses, the
 |--------|------|-----------|----------|-----------------|------|
 | 7-Scenes | Avg PSNR↑ | **21.7** | 21.2 | 21.2 | Matches/Exceeds ACE-Zero and COLMAP |
 | 7-Scenes | Avg Recon Time↓ | **30min** | 1h | 38h | ~76× faster than COLMAP default |
-| Mip-NeRF 360 | Avg PSNR↑ | **24.3** | 22.9 | **24.7** |大幅 exceeds ACE-Zero, nears COLMAP |
+| Mip-NeRF 360 | Avg PSNR↑ | **24.3** | 22.9 | **24.7** | Substantially exceeds ACE-Zero, nears COLMAP |
 | Tanks&Temples | PSNR↑ | Generally Better than ACE0 | — | — | Tested on both short (150-500) and long (4k-22k) image sets |
 
 Note: On Mip-NeRF 360, the recent dense RGB SLAM method VGGT-SLAM performed poorly (avg 14.3 PSNR) due to large discrepancies between sequential frames, significantly below ACE-Zero and Ours.

@@ -66,7 +66,7 @@ PGen relies on two types of user inputs: (1) **Personalized Context**: historica
 **Generation Modeling Stage**:
 - Step 1 - Foundation Model Selection: LLM / MLLM / Diffusion Model
 - Step 2 - Guidance Mechanism: Instruction guidance (ICL, instruction tuning) + Structural guidance (adapter, cross-attention)
-- Step 3 - Optimization Strategy: Tuning-free (模型融合, multi-turn interaction) / Supervised Fine-Tuning (Full or PEFT) / Preference Optimization (RLHF, DPO)
+- Step 3 - Optimization Strategy: Tuning-free (model merging, multi-turn interaction) / Supervised Fine-Tuning (Full or PEFT) / Preference Optimization (RLHF, DPO)
 
 ### Multi-level Taxonomy
 

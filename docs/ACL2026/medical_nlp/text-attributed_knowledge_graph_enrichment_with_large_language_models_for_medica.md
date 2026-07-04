@@ -50,11 +50,11 @@ CoMed consists of four steps: (1) Extract co-occurrence and temporal transition 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["EHR 就诊序列<br/>诊断 / 药物 / 手术代码"] --> B["EHR 统计证据提取与过滤<br/>共现 + 时序转移 → 条件概率 / PMI / χ²"]
-    B -->|保留统计显著代码对| C["类型约束的 LLM 关系推断<br/>类型关系池 + 8 项统计 → 关系标签/三元组/置信度/理由 → 异构 KG"]
-    C --> D["文本属性图丰富<br/>LLM 生成节点描述 + 边特征(关系/证据/理由)"]
-    D --> E["LLM-GNN 联合学习<br/>LoRA LLaMA 编码 → 类型投影 → 关系感知异构 GNN"]
-    E --> F["统一医学概念嵌入<br/>→ 下一次就诊诊断预测"]
+    A["EHR Visit Sequences<br/>Diagnosis / Medication / Procedure Codes"] --> B["EHR Statistical Evidence Extraction and Filtering<br/>Co-occurrence + temporal transitions → conditional probability / PMI / χ²"]
+    B -->|Retain statistically significant code pairs| C["Type-Constrained LLM Relation Inference<br/>Type-relation pool + 8 statistics → relation label / triplet / confidence / rationale → heterogeneous KG"]
+    C --> D["Text-Attributed Graph Enrichment<br/>LLM generates node descriptions + edge features (relation / evidence / rationale)"]
+    D --> E["LLM-GNN Joint Learning<br/>LoRA LLaMA encoding → type projection → relation-aware heterogeneous GNN"]
+    E --> F["Unified Medical Concept Embedding<br/>→ Next-Visit Diagnosis Prediction"]
 ```
 
 ### Key Designs

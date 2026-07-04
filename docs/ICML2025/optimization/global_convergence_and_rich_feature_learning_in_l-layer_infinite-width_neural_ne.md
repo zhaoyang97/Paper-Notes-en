@@ -71,7 +71,7 @@ $$\lim_{n\to\infty} x^\top y / n = \mathbb{E}[Z^x Z^y]$$
 
 **Decomposition of Feature Evolution**: For any feature $z \in \{x^l, h^l\}$:
 
-$$Z^{z_t}(\xi) = Z^{z_0}(\xi) + \underbrace{Z^{\delta z_1}(\xi) + \cdots + Z^{\delta z_t}(\xi)}_{\text{特征学习项}}$$
+$$Z^{z_t}(\xi) = Z^{z_0}(\xi) + \underbrace{Z^{\delta z_1}(\xi) + \cdots + Z^{\delta z_t}(\xi)}_{\text{feature learning term}}$$
 
 **Gaussian Process Families**: Training induces two families of Gaussian processes—the forward process $\{\hat{Z}^{W_0^l \delta x_s^{l-1}(\xi_i)}\}$ which tracks feature evolution, and the backward process $\{\hat{Z}^{W_0^{l\top} dh_s^l(\xi_i)}\}$ which describes gradient flow.
 

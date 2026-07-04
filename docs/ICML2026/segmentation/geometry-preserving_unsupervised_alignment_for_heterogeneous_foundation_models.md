@@ -131,7 +131,7 @@ GPUA achieves an average gain of 11.8 points. Gains are highest in remote sensin
 - t-SNE visualization confirms the original VLM modality gap is mitigated, with visual clusters accurately aligned to semantic anchors while retaining intra-class structures.
 
 ## Highlights & Insights
-- **Cross-lingual to Cross-model**: The归纳偏置 (inductive bias) of treating "VFM features as visual language" allows mature NLP tools (Procrustes, Sinkhorn, hubness loss) to be reused without "reinventing the wheel."
+- **Cross-lingual to Cross-model**: The inductive bias of treating "VFM features as visual language" allows mature NLP tools (Procrustes, Sinkhorn, hubness loss) to be reused without "reinventing the wheel."
 - **Two-stage Decoupling**: Unlike alternating optimization, solving $P$ first and then $W$ provides significant stability and serves as a useful engineering pattern for correspondence-based mapping problems.
 - **Zero-cost Plugin**: The "task-agnostic, frozen parameters, single matrix" combination makes GPUA suitable for industrial deployment where fine-tuning large models is impractical.
 

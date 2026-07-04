@@ -67,11 +67,11 @@ This is the core of the paper, directly addressing the pain point where "editing
 
 The authors run one denoising trajectory $z_{t-1}=D_\theta(z_t,t,p)$ for the source prompt $p$, and another $z^*_{t-1}=D_\theta(z^*_t,t,p^*)$ for the editing prompt $p^*$. Along the $p^*$ trajectory, **the attention maps of the source trajectory are used to overwrite the editing trajectory's own attention maps** ($W^{*}_{G_t}\leftarrow \hat{W}_{G_t}$). Cross-attention injection is applied only to tokens **shared between the two prompts** and lasts until timestep $\tau_{\text{cross}}$:
 
-$$\hat{W}_{G_t}^{\text{cross}}=\begin{cases}((W^{*}_{G_t})^{\text{cross}})_{i,j}, & \text{若 } CT(j)=\varnothing \text{ 或 } t<\tau_{\text{cross}}\\ (W_{G_t}^{\text{cross}})_{i,CT(j)}, & \text{否则}\end{cases}$$
+$$\hat{W}_{G_t}^{\text{cross}}=\begin{cases}((W^{*}_{G_t})^{\text{cross}})_{i,j}, & \text{if } CT(j)=\varnothing \text{ or } t<\tau_{\text{cross}}\\ (W_{G_t}^{\text{cross}})_{i,CT(j)}, & \text{otherwise}\end{cases}$$
 
 where $CT$ is an alignment function that maps token indices of $p^*$ back to their corresponding indices in $p$, returning an empty set if no match is found (allowing new concepts in the editing prompt to emerge freely). Self-attention maps are injected early in the denoising process ($t\geq\tau_{\text{self}}$) and released later:
 
-$$\hat{W}_{G_t}^{\text{self}}=\begin{cases}(W^{*}_{G_t})^{\text{self}}, & t<\tau_{\text{self}}\\ W_{G_t}^{\text{self}}, & \text{否则}\end{cases}$$
+$$\hat{W}_{G_t}^{\text{self}}=\begin{cases}(W^{*}_{G_t})^{\text{self}}, & t<\tau_{\text{self}}\\ W_{G_t}^{\text{self}}, & \text{otherwise}\end{cases}$$
 
 This is effective because attention maps encode **structural information** such as layout, composition, and symmetry. Injecting source self-attention early on fixes the spatial arrangement of components before allowing semantic details to grow, thus enabling editing without structurally destabilizing the object. The authors also demonstrate spectral decomposition on the 3D self-attention maps (colored using the first three eigenvectors of the normalized Laplacian), which naturally groups Gaussians into semantic parts, verifying that self-attention indeed carries 3D scene composition.
 

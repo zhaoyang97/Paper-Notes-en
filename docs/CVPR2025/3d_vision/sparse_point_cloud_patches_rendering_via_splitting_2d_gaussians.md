@@ -112,7 +112,7 @@ A combination of MSE and SSIM loss is employed: $\mathcal{L} = \frac{1}{N_c}\sum
 
 ## Highlights & Insights
 
-- **巧妙组合 2D Gaussians + 法线初始化**: The advantage of 2DGS over 3DGS is its explicit normals, which can be easily estimated from point clouds. This combination transforms initialization from "random quaternions" into "geometrically aligned normal directions," which is key to the success of the method. This philosophy of "finding a natural match between representation and data characteristics" is highly instructive.
+- **Clever combination of 2D Gaussians + normal initialization**: The advantage of 2DGS over 3DGS is its explicit normals, which can be easily estimated from point clouds. This combination transforms initialization from "random quaternions" into "geometrically aligned normal directions," which is key to the success of the method. This philosophy of "finding a natural match between representation and data characteristics" is highly instructive.
 - **Splitting Decoder as an implicit upsampler**: Unlike traditional point cloud upsampling methods, the splitting decoder operates in the Gaussian parameter space, performing upsampling and attribute prediction in a single step, which is highly efficient. This design can be generalized to other scenarios requiring dense representations generated from sparse ones.
 - **Entire-Patch architecture solves the supervision issue in patch training**: Using the full prediction as a "background" to enable patch training is a highly practical engineering trick.
 

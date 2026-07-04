@@ -14,7 +14,6 @@ date: 2026-05-08
 content_hash: 0fdcb0d4e184e2b0
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Towards Dynamic Theory of Mind: Evaluating LLM Adaptation to Temporal Evolution of Human States
 
 **Conference**: ACL2025  

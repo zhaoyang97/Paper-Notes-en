@@ -135,7 +135,7 @@ Efficiency comparison against MLLM-based solutions:
 - **Teacher Ceiling**: Performance is tied to the strength of the 2D VFM; rare or abstract functional parts not covered by the VFM may still pose challenges.
 
 ## Related Work & Insights
-- **vs. Geometric Segmentation (PointNet++, etc.)**: Purely geometric models struggle with functional boundaries; this work补足 (supplements) functional semantics at the backbone level.
+- **vs. Geometric Segmentation (PointNet++, etc.)**: Purely geometric models struggle with functional boundaries; this work supplements functional semantics at the backbone level.
 - **vs. Prompt-driven/MLLM (LASO, GREAT)**: This work achieves better results with 1/10th the size of MLLM approaches by fixing the encoder bottleneck.
 - **vs. Feature Lifting**: Standard lifting often results in fragmented representations; CMAT preserves part-level relations via affinity alignment.
 

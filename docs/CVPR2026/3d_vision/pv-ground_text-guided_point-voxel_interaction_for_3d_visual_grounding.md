@@ -119,7 +119,7 @@ Single-stage ScanRefer, incrementally adding PVI and TGS (Baseline is point-base
 - **vs. MCLN (Baseline)**: MCLN uses point backbones limited by aggressive downsampling; PV-Ground replaces the frontend for better fidelity and task-relevance.
 - **vs. TSP3D**: TSP3D uses hard pruning of voxels which risks deleting small objects; PV-Ground uses soft aggregation and differentiable sampling.
 - **vs. EDA / 3D-SPS**: These use Top-K hard selection; PV-Ground adapts differentiable soft assignment, allowing all points to participate in learning.
-- **vs. PointNet++**: The 핵심论点 is that point backbone downsampling is a systemic bottleneck for 3D VG.
+- **vs. PointNet++**: The core argument is that point backbone downsampling is a systemic bottleneck for 3D VG.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐ First point-voxel framework for 3D VG + text-guided soft sampling.

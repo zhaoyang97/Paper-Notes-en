@@ -49,13 +49,13 @@ The pipeline follows "geometry first, semantics second, confidence adjudication"
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["LiDAR + 4D Radar<br/>点云 → 体素"] --> B["双测聚源 BEV 融合<br/>拼接卷积 → 初始 3D 框"]
-    C["RGB / 热 / 事件<br/>2D backbone 特征"] --> D
-    B --> D["Voxel-centric 可变形采样<br/>体素并集投影 + 交叉注意力"]
-    D --> E["Confidence-based Voxel Fusion<br/>相机轴 sigmoid 门控加权"]
-    E --> F["ROI 网格精修<br/>S×S×S 子体素 → MLP"]
-    B -->|初始框 B| F
-    F --> G["输出 3D 框 B̃"]
+    A["LiDAR + 4D Radar<br/>Point cloud → Voxel"] --> B["Dual-sensor BEV fusion<br/>Concatenation + convolution → initial 3D boxes"]
+    C["RGB / Thermal / Event<br/>2D backbone features"] --> D
+    B --> D["Voxel-centric Deformable Sampling<br/>Voxel Union Projection + Cross-Attention"]
+    D --> E["Confidence-based Voxel Fusion<br/>Camera-axis Sigmoid Gate Weighting"]
+    E --> F["ROI Grid Refinement<br/>S×S×S Sub-voxel → MLP"]
+    B -->|"Initial Box B"| F
+    F --> G["Output 3D Box B̃"]
 ```
 
 ### Key Designs

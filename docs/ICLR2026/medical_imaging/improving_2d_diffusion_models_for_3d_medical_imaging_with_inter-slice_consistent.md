@@ -70,7 +70,7 @@ flowchart TD
 
 To treat the disease at its source, the lesion must first be accurately located. Examining the re-noising step of the DDIM sampler:
 
-$$x_{t-1} = \sqrt{\bar{\alpha}_{t-1}}\hat{x}_{0|t} + \underbrace{\sqrt{1-\bar{\alpha}_{t-1}-\eta^2\tilde{\beta}_t^2}\epsilon_{\theta^*}^{(t)}(x_t)}_{\text{确定性噪声}} + \underbrace{\eta\tilde{\beta}_t\epsilon}_{\text{随机噪声}}$$
+$$x_{t-1} = \sqrt{\bar{\alpha}_{t-1}}\hat{x}_{0|t} + \underbrace{\sqrt{1-\bar{\alpha}_{t-1}-\eta^2\tilde{\beta}_t^2}\epsilon_{\theta^*}^{(t)}(x_t)}_{\text{deterministic noise}} + \underbrace{\eta\tilde{\beta}_t\epsilon}_{\text{stochastic noise}}$$
 
 The deterministic term is determined by network predictions, which naturally yield similar outputs for similar adjacent slices, and thus is not the issue. The real trouble lies in the stochastic term $\epsilon \sim \mathcal{N}(0, \mathbf{I})$, which is sampled independently for every layer, causing the sampling trajectories of adjacent slices to be completely decoupled. When the inverse problem is severely under-constrained (e.g., sparse-view CT where the data fidelity term barely restricts the solution space), this independent stochasticity gains excessive degrees of freedom, pushing adjacent layers toward entirely different solutions, resulting in structural breaks and artifacts along the z-axis. This decomposition identifies "uncoordinated stochasticity" as the root cause and directly points out: by making this stochasticity correlated across layers, discontinuity can be eliminated at the source without post-hoc smoothing.
 

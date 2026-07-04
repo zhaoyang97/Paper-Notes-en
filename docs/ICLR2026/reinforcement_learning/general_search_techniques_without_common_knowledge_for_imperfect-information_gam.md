@@ -19,7 +19,7 @@ content_hash: 09f4b73ed65922f1
 
 **Conference**: ICLR2026  
 **OpenReview**: [https://openreview.net/forum?id=afaakBqkvb](https://openreview.net/forum?id=afaakBqkvb)  
-**论文**: [OpenReview](https://openreview.net/forum?id=afaakBqkvb)  
+**Paper**: [OpenReview](https://openreview.net/forum?id=afaakBqkvb)  
 **Code**: No public code available  
 **Area**: Reinforcement Learning / Imperfect-Information Game Search  
 **Keywords**: Imperfect-information games, subgame solving, Fog of War chess, CFR, game search  

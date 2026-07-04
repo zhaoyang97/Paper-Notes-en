@@ -51,7 +51,7 @@ OmniFlatten is proposed—an end-to-end full-duplex voice conversation model bas
 ### Overall Architecture
 
 OmniFlatten consists of the following core components:
-- **Audio Tokenizer**: Employs CosyVoice's speech tokenizer (single codebook, $4096$ codes) to convert speech into a离散 (discrete) token sequence.
+- **Audio Tokenizer**: Employs CosyVoice's speech tokenizer (single codebook, $4096$ codes) to convert speech into a discrete token sequence.
 - **Base Model**: Qwen2-0.5B (a text LLM, small in scale but highly cost-effective).
 - **Audio Detokenizer**: OT-CFM + HifiGAN vocoder, which converts speech tokens back into audio.
 

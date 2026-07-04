@@ -54,15 +54,15 @@ The following diagram illustrates the relationship between the two weighting pat
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    IN["偏好对 (x, y_w, y_l)<br/>+ 外部质量分 S_w, S_l"]
-    IN --> QUAL["质量感知权重 w_qual<br/>σ(η·(S_w−S_l))<br/>好坏越分明→权重越大"]
-    IN --> PERF["性能感知权重 w_perf<br/>focal：模型已学会→降权<br/>长度归一化 + 固定阈值 τ_ref"]
-    IN --> DPO["DPO 项 logσ(Δr)<br/>隐式奖励边距"]
-    QUAL --> MUL["三者相乘<br/>w_qual · w_perf · logσ(Δr)"]
+    IN["Preference Pair (x, y_w, y_l)<br/>+ External Quality Scores S_w, S_l"]
+    IN --> QUAL["Quality-Aware Weight w_qual<br/>σ(η·(S_w−S_l))<br/>Clearer good/bad distinction → larger weight"]
+    IN --> PERF["Performance-Aware Weight w_perf<br/>focal: already learned → down-weight<br/>Length normalization + fixed threshold τ_ref"]
+    IN --> DPO["DPO Term logσ(Δr)<br/>Implicit Reward Margin"]
+    QUAL --> MUL["Multiply All Three<br/>w_qual · w_perf · logσ(Δr)"]
     PERF --> MUL
     DPO --> MUL
-    IN --> CNLL["校准 NLL 损失 L_c-NLL<br/>仅困难且高质量正样本激活<br/>托住好回答绝对概率"]
-    MUL --> SUM["Uni-DPO 损失<br/>= 加权 DPO 项 + λ·L_c-NLL"]
+    IN --> CNLL["Calibrated NLL Loss L_c-NLL<br/>Activated only for hard, high-quality positive samples<br/>Anchors absolute probability of good responses"]
+    MUL --> SUM["Uni-DPO Loss<br/>= Weighted DPO Term + λ·L_c-NLL"]
     CNLL --> SUM
 ```
 

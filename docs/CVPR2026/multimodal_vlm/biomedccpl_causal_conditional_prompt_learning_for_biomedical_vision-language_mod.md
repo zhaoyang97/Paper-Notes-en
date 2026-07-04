@@ -132,7 +132,7 @@ Ablation of components (SAR / VGAP / SCD, 11-dataset average; Few-shot column de
 
 ## Limitations & Future Work
 - Layer indices $\{3,7,11\}$, number of prototypes $N=14$, and $\alpha/\lambda_1/\lambda_2$ were tuned on validation sets; their robustness across wider datasets or adaptive selection methods were not fully explored in the main text (details in Supp.).
-- The definition of "causal knowledge" relies on prior descriptions of diagnostic features. Simplifying all non-diagnostic features into a single confounder $C$ in the SCM is a simplification. If artifacts themselves co-vary with pathology (e.g., a specific device only used for one disease), the validity of front-door adjustment might be challenged (筆者注: this is inference, not discussed in paper).
+- The definition of "causal knowledge" relies on prior descriptions of diagnostic features. Simplifying all non-diagnostic features into a single confounder $C$ in the SCM is a simplification. If artifacts themselves co-vary with pathology (e.g., a specific device only used for one disease), the validity of front-door adjustment might be challenged (author's note: this is inference, not discussed in paper).
 - Evaluation focused on B2N and few-shot classification, not addressing finer-grained tasks like detection or segmentation. The scalability of the batch size=1 training on larger datasets remains unverified.
 
 ## Related Work & Insights

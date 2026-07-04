@@ -127,7 +127,7 @@ Decomposing the two components of QDF (Hetero. = Heterogeneous weights / diagona
 
 ### Key Findings
 - **Individual components both outperform DF**: Learning either heterogeneous weights (QDF†) or autocorrelation (QDF‡) improves upon MSE, with QDF‡ often being the runner-up, highlighting the value of modeling label autocorrelation.
-- **Model-agnostic普适 gains**: Consistent error reduction when applied to TQNet, PDF, Fredformer, and iTransformer. On ECL, it reduced MSE for Fredformer and TQNet by 7.4% and 5.9%, respectively.
+- **Model-agnostic universal gains**: Consistent error reduction when applied to TQNet, PDF, Fredformer, and iTransformer. On ECL, it reduced MSE for Fredformer and TQNet by 7.4% and 5.9%, respectively.
 - **Comparison with meta-learning optimizers**: While MAML / iMAML / Reptile can optimize weighting matrices to beat DF, they underperform QDF because they do not explicitly optimize for out-of-sample generalization.
 - **Hyperparameter insensitivity**: Performance improves significantly as $N_{\text{in}}$ increases from 0 to 1 and stabilizes thereafter. The method is robust across a wide range of $K$ and $\eta$.
 

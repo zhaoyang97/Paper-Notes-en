@@ -62,7 +62,7 @@ For each sample in the query set (containing $n = 35$ lines of dialogue), $k$ tr
 3. The *chosen* (minimum $P$) and *rejected* (maximum $P$) candidates are selected based on the $P$ metric.
 4. Low-diversity lines are filtered: Lines with fewer than $e_1 = 4$ unique samples after deduplication or with a $P$ difference less than $e_2 = 0.08$ do not participate in optimization.
 
-Example: For the source sentence "历史虽然会重演，但是人类是无法回到过去的。" (2.89s), among multiple English candidates, the one with the closest duration (2.93s) is selected as *chosen*, and the one with the largest duration discrepancy (3.19s) is selected as *rejected*.
+Example: For the source sentence "History may repeat itself, but humans cannot return to the past." (2.89s), among multiple English candidates, the one with the closest duration (2.93s) is selected as *chosen*, and the one with the largest duration discrepancy (3.19s) is selected as *rejected*.
 
 ### 3. Segment-level DPO Loss
 

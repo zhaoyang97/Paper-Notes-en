@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: df0d12ac23d1f2cd
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Point-SRA: Self-Representation Alignment for 3D Representation Learning
 
 **Conference**: AAAI 2026  

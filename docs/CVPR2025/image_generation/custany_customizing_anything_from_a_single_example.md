@@ -47,19 +47,19 @@ Given a reference image, a segmentation mask, and a text prompt, CustAny generat
 
 ### Key Designs
 
-1. **多模型互补ID提取**:
+1. **Multi-Model Complementary ID Extraction**:
 
     - **Function**: Extract comprehensive ID feature representations from reference images.
     - **Mechanism**: DINOv2 excels at capturing detailed structures of objects due to contrastive learning, but its ColorJitter data augmentation renders it insensitive to colors. Conversely, MAE is trained based on reconstruction, which naturally preserves color and structural details. Therefore, the reference image (with the background masked out) is fed into both encoders to extract class tokens and patch tokens separately, which are then dimensionally aligned via MLPs.
     - **Design Motivation**: Experiments demonstrate that using any single encoder among CLIP, DINO, or MAE leads to clear degradations in ID fidelity, whereas their complementary combination achieves optimal results across three metrics: FID, CLIP-i, and DINO-i.
 
-2. **全局-局部双层ID注入**:
+2. **Global-Local Two-Level ID Injection**:
 
     - **Function**: Maximize the embedding of ID information into the diffusion model while preserving text editability.
     - **Mechanism**: Global injection concatenates the class tokens of DINOv2 and MAE with the category word embedding of the text, fuses them through an MLP, replaces the category word position within the text embedding, and interacts with the UNet via standard cross-attention. Local injection fuses patch tokens and uses them as keys/values for an additional cross-attention layer, injecting fine-grained spatial details into each upsampling block of the UNet.
     - **Design Motivation**: Global injection provides semantic-level ID guidance ("what this object is"), while local injection offers pixel-level details ("what the object looks like"). Both are indispensable—global injection alone yields FID 49.78/DINO-i 60.67, local injection alone yields DINO-i 62.89, while their dual-level combination achieves 47.50/65.12.
 
-3. **ID感知解耦模块**:
+3. **ID-Aware Decoupling Module**:
 
     - **Function**: Disentangle ID and non-ID information during training to enhance generation diversity.
     - **Mechanism**: A "decoupling branch" is introduced, where CLIP extracts target image embeddings and filters out ID information via a learnable mask $m_{id}$, obtaining $f_{msk}$ (which contains only non-ID information like pose and orientation). The decoupling branch performs denoising using $f_{msk} \oplus f_{fuse}^C$, whereas the normal branch uses only $f_{fuse}^C$. Both paths predict the target image. A contrastive loss $\mathcal{L}_{contrast} = Sim(f_{fuse}^C, f_{msk})$ is applied to ensure orthogonality between ID and non-ID features.

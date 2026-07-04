@@ -115,7 +115,7 @@ Ablations comparing "Mixed-Curvature vs. Constant Curvature" were conducted acro
 - Gains on Cora relative to SSGE were modest (79.86 vs. 79.55), indicating that benefits in downstream graph tasks may be less pronounced than in tasks with explicit geometric targets like gradient flow or VAEs.
 
 ## Highlights & Insights
-- **Precise Geometric Insight**: Linking the "trees as richer projection domains" idea with "mixed-curvature as heterogeneous geometry拼接" is effective—routing through the tree root naturally mirrors the hub required for transport between curvature components.
+- **Precise Geometric Insight**: Linking the "trees as richer projection domains" idea with "mixed-curvature as heterogeneous geometry stitching" is effective—routing through the tree root naturally mirrors the hub required for transport between curvature components.
 - **Complete Theoretical Loop**: The paper provides rigorous proofs for the metric properties of the tree distance, the well-definedness/linearity/injectivity of the Radon transform, and the metricity of MCTSW.
 - **Engineering Feasibility**: By introducing constraints (single-component edge changes + equal dimensions), the tree space is factorized, allowing sort-reuse and cross-component parallelism, maintaining near-linear complexity relative to support points.
 

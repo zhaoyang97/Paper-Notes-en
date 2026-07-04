@@ -49,19 +49,19 @@ The CRC framework is a two-stage post-processing workflow that can be inserted a
 
 ### Key Designs
 
-1. **多维一致性反思（Consistency Reflection）**:
+1. **Multi-Dimensional Consistency Reflection**:
 
     - **Function**: Systematically identify specific issues in the initial response that are inconsistent with the dialogue context.
     - **Mechanism**: Build structured reflection prompts requiring the model to check consistency across four dimensions—(a) User profile consistency: whether the response aligns with known user preferences and background information; (b) Dialogue history consistency: whether there are repetitions, contradictions, or forgotten discussions; (c) Domain knowledge consistency: whether the provided information aligns with facts in the knowledge base; (d) Sub-goal consistency: whether the response facilitates progression towards the current sub-goal. The model needs to provide specific inconsistency descriptions and modification suggestions for each dimension.
     - **Design Motivation**: Decomposing the general "response quality" problem into four checkable dimensions reduces the difficulty of reflection and makes correction more targeted. This structured reflection is more effective than simple "please improve this response" prompts.
 
-2. **一致性纠正（Consistency Correction）**:
+2. **Consistency Correction**:
 
     - **Function**: Generate responses that are more consistent with the dialogue context based on the reflection results.
     - **Mechanism**: Concatenate the inconsistency analysis and modification suggestions from the reflection stage into the original input to form enhanced generation conditions. When generating the corrected response, the model refers to both the original context and the reflection results, ensuring inconsistencies are fixed while maintaining dialogue fluency. The correction is not simple post-editing; instead, it is a complete regeneration based on the original context, with reflection results acting as an extra "attention guide."
     - **Design Motivation**: Once the reflection stage makes the problem "explicit," the correction stage can focus more precisely on the parts needing repair, avoiding blind rewriting.
 
-3. **模型无关架构设计**:
+3. **Model-Agnostic Architecture Design**:
 
     - **Function**: Ensure the framework is adaptable to language models of different scales and architectures.
     - **Mechanism**: CRC achieves reflection and correction solely through prompt construction, without modifying internal model structures or training objectives. For encoder-decoder models (BART, T5), the context + reflection results serve as the encoder input; for decoder-only models (GPT-2, DialoGPT, Phi3, Mistral, LLaMA3), everything is concatenated into a single input sequence. The framework can be combined plug-and-play with various backbones.

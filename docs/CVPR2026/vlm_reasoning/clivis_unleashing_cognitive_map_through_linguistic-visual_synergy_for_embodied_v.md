@@ -152,7 +152,7 @@ On EgoTempo (InternVL3 + Qwen2.5-Max):
 ## Related Work & Insights
 - **vs. Socratic Strategies**: Socratic methods use instruction-agnostic captions; CLiViS uses "on-demand perception" via LLM queries, outperforming them by ~20%.
 - **vs. End-to-end VLMs**: While VLMs have strong perception, they lack planning; CLiViS builds a planning loop on top of existing VLMs to provide stable gains.
-- **vs. Video Reasoning Methods**: Static pipelines like VideoTree fail on complex verification; Video-R1 requires expensive training. CLiViS is training-free and uses an iterative loop to消解 ambiguity, outperforming VideoTree by 9.4% on EgoSchema while being faster than VideoAgent.
+- **vs. Video Reasoning Methods**: Static pipelines like VideoTree fail on complex verification; Video-R1 requires expensive training. CLiViS is training-free and uses an iterative loop to resolve ambiguity, outperforming VideoTree by 9.4% on EgoSchema while being faster than VideoAgent.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐ Uses a dynamic cognitive map and hypothesis-verification loop as a synergy medium; clear, training-free approach, though individual components have precedents.

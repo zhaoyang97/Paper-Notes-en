@@ -99,7 +99,7 @@ iMF-XL/2 achieves a 1.72 FID (approx. 50% improvement over MF). Interestingly, i
 - **In-context injection yields dual benefits**: Replacing adaLN-zero reduces FID from 4.57 to 4.09 while simultaneously cutting model size from 133M to 89M.
 
 ## Highlights & Insights
-- **范式诊断 (Paradigm Diagnosis) via equivalent rewriting is elegant**: Proving that the MF u-loss equals a reparameterized v-loss identifies the "moving target" and "illegal input" issues immediately—a significant cognitive shift.
+- **Paradigm Diagnosis via equivalent rewriting is elegant**: Proving that the MF u-loss equals a reparameterized v-loss identifies the "moving target" and "illegal input" issues immediately—a significant cognitive shift.
 - **Zero-cost $v_\theta=u_\theta(z_t,t,t)$ is simple yet effective**: Leveraging the boundary condition where average velocity collapses to instantaneous velocity provides a legal, low-variance JVP input without extra parameters.
 - **"Treating hyperparameters as conditions" is transferable**: The idea of conditioning on CFG scales/intervals is applicable to any one-step or few-step model requiring hyperparameter tuning at inference.
 - **Multi-token in-context conditioning** re-evaluates the conclusion from DiT that in-context is inferior to adaLN-zero; by using more tokens per condition, it matches performance while saving 1/3 of parameters.

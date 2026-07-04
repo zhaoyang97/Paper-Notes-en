@@ -46,7 +46,7 @@ MI-DETR maintains the standard DETR framework: a backbone + a multi-layer transf
 
 ### Key Designs
 
-1. **Multi-time Inquiries（MI）机制**:
+1. **Multi-time Inquiries (MI) Mechanism**:
 
     - Function: Enables object queries to learn multi-modal information in each decoder layer through multiple parallel and parameter-independent branches.
     - Mechanism: Each MI decoder layer feeds the input queries $Q_{i-1}$ into $M$ independent inquiry heads (each being a standard SA+CA+FFN) to obtain $M$ sets of queries $\{Q_i^1, ..., Q_i^M\}$, which are then fused into the output $Q_i = \text{Linear}(\text{Concat}(Q_i^1, ..., Q_i^M))$ via concatenation and a linear layer. Each inquiry head has its own parameters, learning information of different patterns.

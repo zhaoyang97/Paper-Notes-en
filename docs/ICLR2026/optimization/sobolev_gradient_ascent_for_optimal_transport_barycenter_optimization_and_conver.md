@@ -19,7 +19,7 @@ content_hash: 5930f90432d4eab9
 
 **Conference**: ICLR 2026  
 **OpenReview**: [https://openreview.net/forum?id=IjL1xEoxXi](https://openreview.net/forum?id=IjL1xEoxXi)  
-**论文**: [OpenReview](https://openreview.net/forum?id=IjL1xEoxXi)  
+**Paper**: [OpenReview](https://openreview.net/forum?id=IjL1xEoxXi)  
 **Code**: Supplementary Material  
 **Area**: Optimal Transport / Barycenter Optimization  
 **Keywords**: Wasserstein Barycenter, Sobolev Gradient Ascent, Unconstrained Dual, Exact Optimal Transport, Convergence Analysis  

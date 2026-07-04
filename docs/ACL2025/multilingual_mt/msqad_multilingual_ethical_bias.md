@@ -124,7 +124,7 @@ Core experimental design: The independent variable is solely the language, contr
 
 ## Related Papers
 
-- [\[ACL 2025\] 7 Points to Tsinghua but 10 Points to 清华? Assessing Agentic Large Language Models in Multilingual National Bias](assessing_agentic_large_language_models_in_multilingual_national_bias.md)
+- [\[ACL 2025\] 7 Points to Tsinghua but 10 Points to Qinghua? Assessing Agentic Large Language Models in Multilingual National Bias](assessing_agentic_large_language_models_in_multilingual_national_bias.md)
 - [\[ACL 2025\] Disentangling Language and Culture for Evaluating Multilingual Large Language Models](disentangle_language_culture.md)
 - [\[ACL 2025\] Just Go Parallel: Improving the Multilingual Capabilities of Large Language Models](just_go_parallel_improving_the_multilingual_capabilities_of_large_language_model.md)
 - [\[ACL 2025\] Cross-Lingual Optimization for Language Transfer in Large Language Models](cross-lingual_optimization_for_language_transfer_in_large_language_models.md)

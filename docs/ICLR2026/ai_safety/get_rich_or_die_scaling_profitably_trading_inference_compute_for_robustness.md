@@ -107,7 +107,7 @@ flowchart LR
 ## Rating
 - **Novelty**: ⭐⭐⭐⭐ Proposes a highly predictive, falsifiable hypothesis that unifies the reasoning-robustness relationship.
 - **Experimental Thoroughness**: ⭐⭐⭐⭐ Cross-validation across three levels of robustness, four interventions, and black-box/white-box settings.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear logical chain with a生动 economic metaphor and "Q&A style" summaries for each section.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear logical chain with a vivid economic metaphor and "Q&A style" summaries for each section.
 - **Value**: ⭐⭐⭐⭐ Sets boundaries for "trading compute for security" and provides an actionable recipe for practical implementation.
 
 <!-- RELATED:START -->

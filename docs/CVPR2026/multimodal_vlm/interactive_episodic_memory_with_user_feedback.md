@@ -77,7 +77,7 @@ FALM needs to learn scoring, but no per-segment labels for "does this segment al
 
 $$\mathcal{L}=\lambda\mathcal{L}_C(L,P)+\lambda_t\mathcal{L}_C(L^t,P^t)+\lambda_c\mathcal{L}_2(S^c,P^c)+\lambda_n\mathcal{L}_2(S^k,P^k)$$
 
-where $\mathcal{L}_C$ is binary cross-entropy and $\mathcal{L}_2$ is $\|\cdot\|_2^2$ regression loss. This拆解 (decomposition) of "feedback semantics" into learnable segment-level signals allows training without manual segment-wise labels.
+where $\mathcal{L}_C$ is binary cross-entropy and $\mathcal{L}_2$ is $\|\cdot\|_2^2$ regression loss. This decomposition of "feedback semantics" into learnable segment-level signals allows training without manual segment-wise labels.
 
 **4. ReFocus Integration & Multi-round Extension: Non-intrusive injection via scalar adapters**
 

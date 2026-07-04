@@ -124,7 +124,7 @@ Overall: 1.96x average $\text{MAE}_{\text{P}}$ Gain and 6.09% average $\text{MAE
 
 ## Highlights & Insights
 - The **"channel-wise + time-step" training paradigm** is the most transferable contribution for scenarios where attacks affect only subset dimensions.
-- **Using a backcaster for reverse consistency** is clever: it translates a structural asymmetry in backdoors (正向 history $\rightarrow$ future vs. 反向 future $\rightarrow$ history) into a computational loss signal.
+- **Using a backcaster for reverse consistency** is clever: it translates a structural asymmetry in backdoors (forward history $\rightarrow$ future vs. backward future $\rightarrow$ history) into a computational loss signal.
 - The link from **NTK bound to geometric priors** is elegant: Theorem 4.1 turns an empirical observation into a theoretical conclusion, enabling neighborhood distance as a side-channel detection signal independent of loss.
 - **DRLS using $\mathcal{D}_{\text{unrel}}$ as a reference** creates a self-reinforcing loop where the neighborhood signal becomes sharper as the pool of excluded samples grows.
 

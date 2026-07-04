@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: deb4c141013f6e4b
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Unsupervised Morphological Tree Tokenizer
 
 **Conference**: ACL2025  

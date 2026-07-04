@@ -121,7 +121,7 @@ In end-to-end typing, Ours (848×480) reached **45.6 WPM / 3.1% CER**, significa
 
 ## Related Work & Insights
 - **vs Wilson / MRTouch / EgoTouch / TouchInsight**: These either require specialized sensors or lack spatial resolution for precise typing. Ours uses single RGB + fine-tuning + velocity filtering across multiple views.
-- **vs Unsupervised Domain Adaptation**: Methods like AdaBN/MMD fail to bridge the millimeter gap. Labeled监督 fine-tuning is required for geometric and metric precision.
+- **vs Unsupervised Domain Adaptation**: Methods like AdaBN/MMD fail to bridge the millimeter gap. Labeled supervised fine-tuning is required for geometric and metric precision.
 - **Insight**: When precision requirements far exceed general benchmarks, prioritize "domain-relevant training data" over architectural updates. A targeted medium-sized dataset + careful fine-tuning is often more effective than model innovation.
 
 ## Rating

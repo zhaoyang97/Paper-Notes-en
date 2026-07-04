@@ -45,19 +45,19 @@ The system is divided into two layers: (1) **Inner Loop**: Standard RL training�
 
 ### Key Designs
 
-1. **交易风险 MDP 建模**:
+1. **Transaction Risk MDP Modeling**:
 
     - Function: Models the payment workflow (Pre-auth → Issuer check → Post-auth) as a finite-step MDP.
     - Mechanism: State $\mathcal{S}_i$ = SL model scores from each stage + stage indicator; action $\mathcal{A}_i$ = {block, allow}. The optimization target is to maximize $\$TP - \$FP$, subject to the constraint $\$TP_{\text{stage1}} > \$TP_{\text{stage2}}$ (detecting early is more valuable).
     - Design Motivation: Traditional step-by-step scoring of SL cannot formulate cross-stage constraints, whereas MDP naturally supports sequential decision-making.
 
-2. **LLM 进化式奖励函数优化**:
+2. **LLM-Driven Evolutionary Reward Function Optimization**:
 
     - Function: The LLM receives the task description, RL environment code, historical reward functions, and performance feedback to generate new reward function code.
     - Mechanism: The evolutionary algorithm iterates for around 60 rounds ($N_{iter} \approx 60$), sampling approximately 10 candidates per round ($N_{samples} \approx 10$). The agent is trained for about 150 episodes. After evaluation, the best, sub-optimal, and failed experiences are fed back to the LLM. It supports both zero-shot (no examples provided) and few-shot (providing human-designed reward functions as references).
     - Design Motivation: The human-designed precision-constraint reward function (formula $R = (1-\alpha_i)\$TP_i - \alpha_i\$FP_i$) is effective but has a limited exploration space.
 
-3. **人工奖励函数基线**:
+3. **Human-Designed Reward Function Baseline**:
 
     - Function: Derives precision-constrained rewards based on business constraints.
     - Mechanism: Derives $R_{\text{precision}}^i = (1-\alpha_i)\$TP_i - \alpha_i\$FP_i$ from the precision constraint $\frac{\$TP_i}{\$TP_i + \$FP_i} > \alpha_i$ through Lagrangian relaxation.

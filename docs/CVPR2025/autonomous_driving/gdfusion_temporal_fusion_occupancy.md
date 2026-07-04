@@ -29,7 +29,7 @@ GDFusion is proposed, which reinterprets RNN as gradient descent on the feature 
 
 ## Background & Motivation
 
-**Background**: Temporal information is increasingly important in vision-based 3D语义占用预测 (VisionOcc), but existing methods only focus on voxel-level feature fusion.
+**Background**: Temporal information is increasingly important in vision-based 3D semantic occupancy prediction (VisionOcc), but existing methods only focus on voxel-level feature fusion.
 
 **Limitations of Prior Work**: Three temporal cues are neglected: scene-level consistency priors (unchanged weather/lighting in the short term), historical motion information to correct ego-motion alignment errors of the current frame, and historical geometric information to complement depth estimation of the current frame.
 

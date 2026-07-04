@@ -29,7 +29,7 @@ The paper proposes the TempVS benchmark to systematically evaluate the grounding
 
 ## Background & Motivation
 
-**Background**: Multimodal large language models (MLLMs) have demonstrated outstanding performance on single-image visual understanding tasks. However, the evaluation of temporal understanding and reasoning in multi-image scenarios remains relatively weak. Existing multi-image benchmarks primarily focus on描写 cross-image recognition and referencing, rarely addressing temporal relationships.
+**Background**: Multimodal large language models (MLLMs) have demonstrated outstanding performance on single-image visual understanding tasks. However, the evaluation of temporal understanding and reasoning in multi-image scenarios remains relatively weak. Existing multi-image benchmarks primarily focus on cross-image recognition and referencing, rarely addressing temporal relationships.
 
 **Limitations of Prior Work**: Existing temporal evaluations suffer from three major issues: (a) some tasks can be answered using only a single image without needing to understand the sequence; (b) some tasks rely heavily on common sense and world knowledge (e.g., ordering cooking steps); (c) some benchmarks use distractor options that do not exist in the images, allowing models to infer answers based on object existence.
 

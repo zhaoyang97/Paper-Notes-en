@@ -48,19 +48,19 @@ The research workflow consists of three stages: (1) data collection—designing 
 
 ### Key Designs
 
-1. **基于归因理论的标注体系**:
+1. **Attribution Theory-Based Annotation Framework**:
 
     - Function: Provides a fine-grained, theory-driven stigma classification framework.
     - Mechanism: Incorporates the 7 stigma dimensions of Corrigan's attribution theory as the label space. Each interview segment is labeled as one of 8 classes: non-stigma (53.9%), Responsibility (9.5%), Social Distance (9.2%), Fear (8.9%), Anger (7.2%), Coercive Segregation (6.5%), Helping (3.8%), and Pity (1.0%). Detailed annotation guidelines and multiple rounds of training were introduced during the annotation process, with inter-annotator agreement evaluated via Krippendorff's $\alpha$.
     - Design Motivation: Unlike previous binary classifications of "stigma vs. non-stigma," theory-grounded fine-grained classification can reveal different dimensions and causes of stigma, providing a basis for subsequent targeted interventions. For instance, "fear"-type stigma needs to be addressed through public education, whereas "responsibility attribution" stigma must be corrected by emphasizing the involuntary nature of the condition.
 
-2. **人机结构化访谈收集范式**:
+2. **Human-Machine Structured Interview Collection Paradigm**:
 
     - Function: Elicits participants' natural expressions of stigmatizing attitudes under controlled conditions.
     - Mechanism: Designs a chatbot to present a vignette about "Zhang suffering from depression" to participants, then naturally elicits their attitudes through a series of guiding questions (e.g., "Do you think this is his own fault?", "Would you be willing to be his neighbor?"). The question design covers all 7 dimensions of the attribution theory. Sociodemographic information such as age, sexual orientation, gender, educational background, and cultural background of the participants is simultaneously collected.
     - Design Motivation: Compared with social media data, the interview approach ensures that every participant has an opportunity to express their attitude toward each dimension, resulting in a more balanced data distribution. Meanwhile, the structured design guarantees comparability across different participants. Utilizing a chatbot mitigates social desirability bias, which is stronger in front of human interviewers.
 
-3. **社会文化背景元数据**:
+3. **Sociocultural Context Metadata**:
 
     - Function: Supports association analysis between stigmatizing attitudes and socio-cultural factors.
     - Mechanism: Records detailed demographic information for each participant, including age, gender, educational level, nationality, religious beliefs, and mental health-related experiences. This information is released alongside the stigma annotations as part of the data set, enabling researchers to analyze "which socio-cultural factors predict stronger stigmatizing attitudes."

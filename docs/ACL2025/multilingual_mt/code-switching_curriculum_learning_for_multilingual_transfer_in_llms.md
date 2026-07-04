@@ -52,7 +52,7 @@ CSCL divides training into three progressive stages: Stage 1 uses token-level CS
 1. **Token-Level Code-Switching Data Construction (Token-Level CS)**:
 
     - **Function**: Establish fine-grained lexical correspondences between the source and target languages.
-    - **Mechanism**: Given parallel corpora, word-level alignments are obtained using word alignment tools (e.g., awesome-align). Then, a portion of source language tokens in a sentence are randomly replaced with their target counterparts. The replacement ratio gradually scales up; for example, a sentence might look like "The 고양이 sat on the 의자". This mixing forces the model to bring the representation spaces of both languages closer.
+    - **Mechanism**: Given parallel corpora, word-level alignments are obtained using word alignment tools (e.g., awesome-align). Then, a portion of source language tokens in a sentence are randomly replaced with their target counterparts. The replacement ratio gradually scales up; for example, a sentence might look like "The cat sat on the chair," with selected words replaced by their counterparts in the target language. This mixing forces the model to bring the representation spaces of both languages closer.
     - **Design Motivation**: Simulate the "borrowing" phenomenon during the early stages of human second language acquisition, establishing a cross-lingual bridge at the level of the smallest semantic units.
 
 2. **Sentence-Level Code-Switching Data Construction (Sentence-Level CS)**:

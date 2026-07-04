@@ -146,7 +146,7 @@ Finding: Text planning fails to exceed SFT baselines even with RL $\rightarrow$ 
 2. **Rule-Based Dynamics**: The reward system currently relies on rule-based parsing, limiting generalization to unknown environments.
 3. **Image Complexity**: Environments use simple grid rendering; scalability to high-resolution real-world images is unknown.
 4. **Training Cost**: The computational overhead of two-stage RL and sampling efficiency requires further analysis.
-5. **模态 Complementarity**: Positioned as an alternative rather than a supplement; fusing both modalities might yield better results.
+5. **Modality Complementarity**: Positioned as an alternative rather than a supplement; fusing both modalities might yield better results.
 
 ## Related Work & Insights
 

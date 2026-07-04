@@ -47,16 +47,16 @@ ScaleFormer addresses the cross-scale generalization problem of training on smal
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    P["PAN 图 P (H×W×1)"] --> SAP
-    L["上采样 MS 图 L (H×W×C)"] --> SAP
-    SAP["Scale-Aware Patchify<br/>分桶采样切成 5D token 序列 (B×T×C×h×w)"] --> ST
-    subgraph ST["解耦空间-序列建模（Single Transformer）"]
+    P["PAN Image P (H×W×1)"] --> SAP
+    L["Upsampled MS Image L (H×W×C)"] --> SAP
+    SAP["Scale-Aware Patchify<br/>Bucket-sampled into 5D token sequences (B×T×C×h×w)"] --> ST
+    subgraph ST["Decoupled Spatial-Sequence Modeling (Single Transformer)"]
         direction TB
-        SPA["Spatial 自注意力<br/>patch 内建模空间关系"] --> SEQ["Sequence 自注意力 + RoPE<br/>跨 patch 建模、向未见序列长度外推"]
+        SPA["Spatial Self-Attention<br/>Models spatial relations within each patch"] --> SEQ["Sequence Self-Attention + RoPE<br/>Cross-patch modeling with extrapolation to unseen sequence lengths"]
     end
-    ST --> CT["Cross Transformer<br/>MS 交叉查询 PAN，注入高频空间细节"]
-    CT --> HEAD["回归头"]
-    HEAD --> OUT["HRMS 高分辨率多光谱图"]
+    ST --> CT["Cross Transformer<br/>MS cross-attends to PAN to inject high-frequency spatial detail"]
+    CT --> HEAD["Regression Head"]
+    HEAD --> OUT["HRMS High-Resolution Multispectral Image"]
 ```
 
 ### Key Designs

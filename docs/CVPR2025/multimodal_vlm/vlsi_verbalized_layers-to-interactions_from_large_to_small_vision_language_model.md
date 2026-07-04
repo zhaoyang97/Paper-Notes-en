@@ -118,10 +118,10 @@ The training of VLsI consists of three stages: (1) Verbalization Step: Training 
 - Designated intermediate layers: The small model selects one layer every 4 layers (layers 2, 6, 10, ..., 26), with the large model selected at corresponding intervals.
 
 ## Rating
-- Novelty (新颖性): ⭐⭐⭐⭐⭐ Using natural language for layer-wise distillation presents a highly novel paradigm, with elegant designs for verbalizer and adaptive layer matching.
-- Experimental Thoroughness (实验充分度): ⭐⭐⭐⭐⭐ Evaluated across 10 benchmarks, with rich ablation studies, cross-backbone verification, and comparisons against closed-source models.
-- Writing Quality (写作质量): ⭐⭐⭐⭐ Clear structure and well-executed verbalization visualizations.
-- Value (价值): ⭐⭐⭐⭐⭐ Offers a new distillation paradigm for efficient VLMs, enabling a 2B model to outperform many 7B-13B alternatives.
+- Novelty: ⭐⭐⭐⭐⭐ Using natural language for layer-wise distillation presents a highly novel paradigm, with elegant designs for verbalizer and adaptive layer matching.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Evaluated across 10 benchmarks, with rich ablation studies, cross-backbone verification, and comparisons against closed-source models.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and well-executed verbalization visualizations.
+- Value: ⭐⭐⭐⭐⭐ Offers a new distillation paradigm for efficient VLMs, enabling a 2B model to outperform many 7B-13B alternatives.
 
 <!-- RELATED:START -->
 

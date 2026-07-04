@@ -126,7 +126,7 @@ Removing physical components from the engine (Synthetic Set):
 
 ## Limitations & Future Work
 - Limited robustness to **severely broken or fractured** bamboo slips. Physical parameters are sensitive to the original environment, limiting generalization. Progressive simulation incurs high computational overhead.
-- Note: Custom metrics TRQ and DCI are论文-specific. TRQ uses edge sharpness/stroke continuity weighting because reliable OCR for Qin Seal Script is unavailable (utility OCR accuracy <20%). 
+- Note: Custom metrics TRQ and DCI are paper-specific. TRQ uses edge sharpness/stroke continuity weighting because reliable OCR for Qin Seal Script is unavailable (utility OCR accuracy <20%). 
 - Future directions: Adaptive control point hierarchies, hybrid physics-data models, and more efficient solvers for various cultural heritage materials.
 
 ## Related Work & Insights

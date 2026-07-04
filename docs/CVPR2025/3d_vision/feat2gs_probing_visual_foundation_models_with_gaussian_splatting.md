@@ -47,19 +47,19 @@ The pipeline of Feat2GS consists of: (1) inputting uncalibrated, sparse multi-vi
 
 ### Key Designs
 
-1. **GTA 三模式探测（Geometry/Texture/All Probing）**:
+1. **GTA Three-Mode Probing (Geometry/Texture/All Probing)**:
 
     - **Function**: Individually evaluate the geometric and texture awareness of VFMs.
     - **Mechanism**: Three modes are introduced—**Geometry Mode**: The MLP decodes geometric parameters $\{x_i, \alpha_i, \Sigma_i\} = g_\Theta^{(G)}(f_i)$ from VFM features, leaving texture parameters freely optimized; **Texture Mode**: The MLP decodes texture parameters $\{c_i\} = g_\Theta^{(T)}(f_i)$ with geometric parameters freely optimized; **All Mode**: The MLP simultaneously decodes all parameters. By comparing the NVS quality across the three modes, the strengths and weaknesses of different VFMs in terms of geometry and texture can be precisely pinpointed.
     - **Design Motivation**: This is the core contribution of this work—leveraging the natural decoupling of 3DGS parameters to run independent evaluations for both kinds of 3D awareness.
 
-2. **轻量级读出层设计**:
+2. **Lightweight Readout Layer Design**:
 
     - **Function**: Decoding 3DGS attributes from VFM features while preventing overfitting.
     - **Mechanism**: Utilizing only a 2-layer MLP (with a 256-dimensional hidden layer and ReLU activation). The network capacity is intentionally constrained to ensure that the 3DGS parameters are truly "read out" from the VFM features, rather than being learned by the network itself. This stands in sharp contrast to InstantSplat's free optimization, which is prone to overfitting under sparse views due to its millions of optimized parameters.
     - **Design Motivation**: To guarantee the fairness of probing—ensuring that different VFMs use identical readout architectures and training configurations.
 
-3. **暖启动策略（Warm Start）**:
+3. **Warm Start Strategy**:
 
     - **Function**: Avoiding local optima when directly decoding 3D structures from 2D features.
     - **Mechanism**: Pre-training the readout layer for 1K steps with $\min_\Theta \|g_\Theta(f) - G_{init}\|$ target, using point clouds reconstructed by DUSt3R as the target, before switching to photometric loss optimization for another 7K steps. This provides matching initialization conditions for all VFMs.

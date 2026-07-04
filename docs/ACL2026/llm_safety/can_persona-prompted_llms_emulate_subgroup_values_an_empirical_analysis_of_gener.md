@@ -114,7 +114,7 @@ Comparison of 7 open-source and 4 closed-source models on the OOD split (selecte
 | SeaLLMs-v3 | .276 → .124 | .094 → .037 | .294 → .318 | .108 → .111 |
 | **Avg** | .240 → **.179** | .078 → .054 | .280 → **.336** | .094 → .116 |
 
-**Fairness Paradox**: Accuracy-based fairness improves for all models, but NMAE-based fairness deteriorates in almost all cases (放大 gaps for dominant subgroups).
+**Fairness Paradox**: Accuracy-based fairness improves for all models, but NMAE-based fairness deteriorates in almost all cases (amplifying gaps for dominant subgroups).
 
 ### Key Findings
 - **GPT-4.1 still only 57.4%**: Shows subgroup-aware alignment cannot be solved by prompt engineering alone; closed-source SOTA remains limited.

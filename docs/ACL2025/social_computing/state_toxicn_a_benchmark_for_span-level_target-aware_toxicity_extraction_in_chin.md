@@ -54,8 +54,8 @@ The contributions of this paper include two main components:
 
    | Component | Meaning | Example |
    |------|------|------|
-   | Target | Target of hate speech | "男同" (Gay people) |
-   | Argument | Arguments supporting the hatred | "艾滋高发群体" (High-incidence group of AIDS) |
+   | Target | Target of hate speech | "Gay people" |
+   | Argument | Arguments supporting the hatred | "High-incidence group of AIDS" |
    | Hateful | Whether it constitutes hate | hate / non-hate |
    | Group | Target group classification | LGBTQ, others |
 
@@ -86,7 +86,7 @@ The contributions of this paper include two main components:
 5. **Disguise Manifestations of Hateful Slang**
 
     - Homophonic substitution
-    - Character splitting and merging: e.g., "默" (black dog) $\rightarrow$ racial discrimination
+    - Character splitting and merging: e.g., "mo" (black dog) $\rightarrow$ racial discrimination
     - References to historical allusions
     - These techniques make traditional keyword-based methods difficult to detect.
 

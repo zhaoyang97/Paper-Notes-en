@@ -51,7 +51,7 @@ flowchart TD
     LOD["LoD City Model"] --> INST["LoD Instantiation<br/>Graph Part. + 24-bit ID"]
     INST --> RM["Rendered Instance Mask Set per Pose"]
     Q["Query Aerial Image"] --> SEG["SAM Instance Segmenter<br/>Prompter + LoRA Fine-tuning"]
-    DATA -.训练.-> SEG
+    DATA -.Training.-> SEG
     SEG --> QM["Query Instance Mask Set"]
     RM --> ALIGN["Instance Silhouette Alignment<br/>One-to-one Weighted Dice Scoring"]
     QM --> ALIGN

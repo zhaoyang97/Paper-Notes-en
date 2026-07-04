@@ -14,7 +14,6 @@ date: 2026-05-08
 content_hash: 1a4edb0bc4af93b7
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Position: Causal Machine Learning Requires Rigorous Synthetic Experiments for Broader Adoption
 
 **Conference**: ICML2025  

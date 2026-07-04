@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: 30739bf44592e041
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Learning Mean Field Control on Sparse Graphs
 
 **Conference**: ICML2025  

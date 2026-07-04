@@ -108,7 +108,7 @@ On the SMAL dataset, SGMatch outperforms HybridFMap by 24% (2.5 vs. 3.3). On the
 ## Highlights & Insights
 
 - The design philosophy of **"semantics as a modulator rather than a replacement"** is highly valuable: by utilizing a gating mechanism to enhance or suppress geometric features at the channel level, rather than simple concatenation or addition, the model elegantly balances the contributions of the two modalities.
-- **CFM regularization** is an elegant complement to the functional maps framework: while traditional methods focus on spectral domain regularization (bijectivity, orthogonality), CFM imposes constraints from the perspective of the "传输过程" (transmission process) in the spatial domain, introducing an entirely different inductive bias. This concept can be transferred to other tasks requiring spatially smooth correspondences (e.g., optical flow estimation, point cloud registration).
+- **CFM regularization** is an elegant complement to the functional maps framework: while traditional methods focus on spectral domain regularization (bijectivity, orthogonality), CFM imposes constraints from the perspective of the "transport process" in the spatial domain, introducing an entirely different inductive bias. This concept can be transferred to other tasks requiring spatially smooth correspondences (e.g., optical flow estimation, point cloud registration).
 - The visualizations in the semantic feature analysis (Appendix C) are highly convincing: in challenging cross-species matching, geometric features yield diffuse high-response regions, whereas DINOv2 semantic features precisely locate the corresponding body parts.
 
 ## Limitations & Future Work

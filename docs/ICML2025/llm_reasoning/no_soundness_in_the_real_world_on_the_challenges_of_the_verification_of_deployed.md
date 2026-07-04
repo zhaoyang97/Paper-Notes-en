@@ -44,7 +44,7 @@ All current verification methods target the **theoretical model** of the network
 
 ### Key Insight
 
-$$\text{理论健全性} \neq \text{实际健全性}$$
+$$\text{Theoretical Soundness} \neq \text{Practical Soundness}$$
 
 That is, a verifier that correctly bounds the exact-precision output does not necessarily bound the actual output under floating-point deployment. This implies that an attacker can design a network backdoor that is completely invisible during theoretical model verification, yet becomes activated to exhibit malicious behavior in specific deployment environments.
 

@@ -1973,7 +1973,7 @@ item_total: 492
 
 **[Vibe Spaces for Creatively Connecting and Expressing Visual Concepts](vibe_spaces_for_creatively_connecting_and_expressing_visual_concepts.md)**
 
-:   This paper proposes the **Vibe Blending** task (fusing two images into a coherent hybrid based on their "most relevant shared attributes"—the so-called "vibe") and the **Vibe Space** method. By using graph diffusion maps to learn a low-dimensional "small-world" manifold in the CLIP/DINO feature space, it transforms原本 curved geodesics into linearly interpolatable paths, generating creative blends that are more human-recognized than those from GPT or Gemini.
+:   This paper proposes the **Vibe Blending** task (fusing two images into a coherent hybrid based on their "most relevant shared attributes"—the so-called "vibe") and the **Vibe Space** method. By using graph diffusion maps to learn a low-dimensional "small-world" manifold in the CLIP/DINO feature space, it transforms originally curved geodesics into linearly interpolatable paths, generating creative blends that are more human-recognized than those from GPT or Gemini.
 
 **[VibeToken: Scaling 1D Image Tokenizers and Autoregressive Models for Dynamic Resolution Generations](vibetoken_scaling_1d_image_tokenizers_and_autoregressive_models_for_dynamic_reso.md)**
 

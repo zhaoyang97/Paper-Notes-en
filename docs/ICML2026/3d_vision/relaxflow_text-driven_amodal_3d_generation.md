@@ -144,7 +144,7 @@ User preference is overwhelmingly in favor of RelaxFlow (68.52%), demonstrating 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐ (Formulates a neglected task with strong mathematical grounding)
 - Experimental Thoroughness: ⭐⭐⭐⭐ (Extensive across backbones/benchmarks, though small sample size for AmbiSem-3D)
-- Writing Quality: ⭐⭐⭐⭐⭐ (Clear logic and完备 proofs)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Clear logic and complete proofs)
 - Value: ⭐⭐⭐⭐⭐ (Broadly applicable paradigm for training-free controllable generation)
 
 <!-- RELATED:START -->

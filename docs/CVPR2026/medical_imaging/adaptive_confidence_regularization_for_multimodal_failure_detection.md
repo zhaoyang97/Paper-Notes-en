@@ -16,7 +16,6 @@ date: 2026-05-08
 content_hash: 6118b818d546a55b
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Adaptive Confidence Regularization for Multimodal Failure Detection
 
 **Conference**: CVPR2026  

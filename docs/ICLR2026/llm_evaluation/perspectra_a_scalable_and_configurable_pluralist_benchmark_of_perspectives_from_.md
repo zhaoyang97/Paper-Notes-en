@@ -120,7 +120,7 @@ A quantitative analysis of three systematic failure modes was conducted:
 ## Limitations & Future Work
 - **Dependency on a single closed-source model (GPT-4o)**: Synthesis may reflect GPT-4o's specific biases or systematic artifacts.
 - **Retrieval is the bottleneck**: Retrieval was not optimized end-to-end, offloading the burden of "ignoring irrelevant matches" to the rewriting model.
-- **Task coverage focuses on "understanding" rather than "generating" diversity**: The demo tasks are discriminative; they do not directly measure the model's ability to actively generate multiple合理 perspectives.
+- **Task coverage focuses on "understanding" rather than "generating" diversity**: The demo tasks are discriminative; they do not directly measure the model's ability to actively generate multiple reasonable perspectives.
 - **Perspective boundaries are constrained by Kialo**: Viewpoints are inherited from Kialo's moderated graph, meaning minority or fringe perspectives might be missing.
 
 ## Related Work & Insights

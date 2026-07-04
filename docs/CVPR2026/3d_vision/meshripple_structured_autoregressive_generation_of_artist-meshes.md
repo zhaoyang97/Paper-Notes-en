@@ -70,7 +70,7 @@ The key lies in the "frontier queue + root pointer": a FIFO frontier queue $B_i$
 
 Simply having a topological tokenization order is insufficient, as the model might still attend to tokens in the window that are irrelevant to "the face currently being grown." To solve this, the authors add a frontier attention layer over the face-level tokens: for a query at position $i$, only faces that belong to its frontier queue $B_i$ and do not exceed the current position are assigned non-negative logits, while all others are masked:
 
-$$M^b_{i,j}=\begin{cases}0, & F_j\in B_i \text{ 且 } j\le i\\ -\infty, & \text{otherwise}\end{cases}$$
+$$M^b_{i,j}=\begin{cases}0, & F_j\in B_i \text{ and } j\le i\\ -\infty, & \text{otherwise}\end{cases}$$
 
 This forces the model to focus primarily on the faces of the "active growth boundary" that are genuinely responsible for structural connectivity when predicting the next face, and gradients are routed back to these tokens. It pairs with Ripple Tokenization: while tokenization ensures that relevant faces are near the tail, frontier attention concentrates computation and gradients onto the specific faces that are actually growable within that subset, rather than spreading them across the entire window.
 

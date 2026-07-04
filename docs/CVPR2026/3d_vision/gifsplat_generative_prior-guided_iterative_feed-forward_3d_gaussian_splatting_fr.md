@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: e321a1069df580c2
 ---
 
-<!-- 由 tmp/gen_cvf_stubs.py 自动生成（CVF-only，无 arXiv） -->
 # GIFSplat: Generative Prior-Guided Iterative Feed-Forward 3D Gaussian Splatting from Sparse Views
 
 **Conference**: CVPR 2026  

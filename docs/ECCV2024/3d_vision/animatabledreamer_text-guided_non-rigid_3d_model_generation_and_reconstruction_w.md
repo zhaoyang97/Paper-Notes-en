@@ -64,13 +64,13 @@ Two stages: (1) Extraction stage—learning an implicit articulate model (NeuS +
 3. **Canonical Score Distillation (CSD)** $\leftarrow$ Core Contribution:
 
     - **Function**: Allowing supervision signals from the diffusion model to propagate back to the canonical model via the warping mechanism.
-    - **Mechanism**: $$\nabla_\phi \mathcal{L}_{CSD} = \mathbb{E}[\underbrace{(\epsilon_\theta - \epsilon)}_{\text{扩散先验}} \cdot \underbrace{\frac{\partial \mathcal{R}(\mathbf{X}_*)}{\partial \mathbf{X}_*}}_{\text{Canonical 渲染}} \cdot \underbrace{\frac{\partial W(\mathbf{X}^t)}{\partial \phi_w}}_{\text{Warp 精化}}]$$
+    - **Mechanism**: $$\nabla_\phi \mathcal{L}_{CSD} = \mathbb{E}[\underbrace{(\epsilon_\theta - \epsilon)}_{\text{Diffusion Prior}} \cdot \underbrace{\frac{\partial \mathcal{R}(\mathbf{X}_*)}{\partial \mathbf{X}_*}}_{\text{Canonical Rendering}} \cdot \underbrace{\frac{\partial W(\mathbf{X}^t)}{\partial \phi_w}}_{\text{Warp Refinement}}]$$
     - Three gradient terms: diffusion prior provides appearance guidance $\rightarrow$ canonical rendering guarantees consistency $\rightarrow$ warp refinement optimizes deformation parameters.
     - Using MVDream (a multi-view diffusion model) to render 4 orthogonal views simultaneously, ensuring 3D consistency.
     - **Design Motivation**: Standard SDS only computes gradients in the observation space, failing to guarantee canonical space consistency. CSD ensures gradient propagation to the canonical model via the chain rule of warping.
 
 ### Loss & Training
-- Extraction stage: $\mathcal{L}_{Ext} = \mathcal{L}_{recon}(\text{RGB+轮廓+光流}) + \mathcal{L}_{CSD} + \mathcal{L}_{reg}(\text{特征匹配+循环一致性})$
+- Extraction stage: $\mathcal{L}_{Ext} = \mathcal{L}_{recon}(\text{RGB+Contour+Optical Flow}) + \mathcal{L}_{CSD} + \mathcal{L}_{reg}(\text{Feature Matching+Cycle Consistency})$
 - Generation stage: $\mathcal{L}_{Gen} = \mathcal{L}_{skel} + \mathcal{L}_{bone} + \mathcal{L}_{CSD} + \mathcal{L}_{reg}$
 - Rendering with a resolution of 200×200 and 4 orthogonal views.
 - Training takes approximately 5 hours for 12,000 iterations on a single A800 GPU.

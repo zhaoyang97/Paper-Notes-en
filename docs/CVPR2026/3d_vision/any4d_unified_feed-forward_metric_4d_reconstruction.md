@@ -19,7 +19,7 @@ content_hash: 04b887aacd196cf0
 
 **Conference**: CVPR 2026  
 **Paper**: [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Karhade_Any4D_Unified_Feed-Forward_Metric_4D_Reconstruction_CVPR_2026_paper.html)  
-**Code**: https://any-4d.github.io （项目页，开源承诺中）  
+**Code**: https://any-4d.github.io (project page, open-source pending)  
 **Area**: 3D Vision / 4D Reconstruction  
 **Keywords**: 4D reconstruction, scene flow, feed-forward Transformer, multimodal, metric scale
 

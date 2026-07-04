@@ -19,7 +19,7 @@ content_hash: 2340bcb9df3f575d
 
 **Conference**: ICLR2026  
 **OpenReview**: [https://openreview.net/forum?id=JkFBc9anLi](https://openreview.net/forum?id=JkFBc9anLi)  
-**论文**: OpenReview conference paper  
+**Paper**: OpenReview conference paper  
 **Code**: https://github.com/TianhaoMa5/ICLR2026_LLP-PVC  
 **Area**: Weakly Supervised Learning / Learning from Label Proportions / Learning Theory  
 **Keywords**: Learning from label proportions, weakly supervised learning, proportional value classification, over-smoothing, FFT aggregation

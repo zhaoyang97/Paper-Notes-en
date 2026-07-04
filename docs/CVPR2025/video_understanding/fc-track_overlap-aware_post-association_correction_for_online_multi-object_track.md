@@ -16,7 +16,6 @@ date: 2026-05-08
 content_hash: 6f80cf540b383b86
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # FC-Track: Overlap-Aware Post-Association Correction for Online Multi-Object Tracking
 
 **Conference**: CVPR 2025  

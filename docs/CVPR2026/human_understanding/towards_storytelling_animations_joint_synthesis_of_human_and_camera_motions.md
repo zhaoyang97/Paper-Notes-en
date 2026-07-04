@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: 7a31158efe126ba7
 ---
 
-<!-- 由 tmp/gen_cvf_stubs.py 自动生成（CVF-only，无 arXiv） -->
 # Towards Storytelling Animations: Joint Synthesis of Human and Camera Motions
 
 **Conference**: CVPR 2026  

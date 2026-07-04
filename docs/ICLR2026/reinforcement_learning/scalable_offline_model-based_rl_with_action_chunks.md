@@ -108,7 +108,7 @@ In reward-based tasks, MAC demonstrates strong general applicability, achieving 
 
 ### Ablation Study
 
-| Configuration | Task/Metric | Result |说明 |
+| Configuration | Task/Metric | Result | Notes |
 |-------------|------------|------|------|
 | Chunk length $n=1$ | cube-octuple | ~0 success | Long-horizon tasks are unsolvable without chunking |
 | Chunk length $n=10$ | cube-octuple | Significant Gain | Optimal balance between error reduction and learnability |

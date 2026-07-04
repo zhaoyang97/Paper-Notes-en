@@ -83,7 +83,7 @@ $$\mathbb{E}_{\mathbf{x} \sim p(\mathbf{x}|c)}[\|s(\mathbf{x},c) - s(\mathbf{x})
 
 Wen's metric is insufficiently sensitive in the initial stage of generation ($t = T-1$). The authors propose using the Hessian-score product to amplify high-curvature directions:
 
-$$\|H_\theta(\mathbf{x}_t, c) \cdot s_\theta(\mathbf{x}_t, c)\|^2 \quad \text{近似} \quad -\text{tr}(H_\theta(\mathbf{x}_t, c)^3)$$
+$$\|H_\theta(\mathbf{x}_t, c) \cdot s_\theta(\mathbf{x}_t, c)\|^2 \quad \text{approximates} \quad -\text{tr}(H_\theta(\mathbf{x}_t, c)^3)$$
 
 This third-moment statistic is more sensitive to large negative eigenvalues ($\lambda^3$ amplification effect), thereby effectively distinguishing memorized from non-memorized samples at the very first sampling step.
 

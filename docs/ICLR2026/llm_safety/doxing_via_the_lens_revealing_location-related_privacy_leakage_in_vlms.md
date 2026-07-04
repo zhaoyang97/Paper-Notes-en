@@ -83,7 +83,7 @@ Metrics like VRR, AED, and MED provide fragmented views, making horizontal compa
 
 $$\text{Glare} = a \left[ H(R) + \text{VRR} \cdot \log_2 \left( \frac{A_0}{\pi d_{50} \bar{d}} \right) \right] \; [\text{bits}]$$
 
-The first term, Risk Term $H(R) = -\text{VRR} \cdot \log_2 \text{VRR} - (1 - \text{VRR}) \cdot \log_2(1 - \text{VRR})$, characterizes the information leaked by the model's "willingness to answer" itself. The second term, Leakage Term, characterizes the定位 (localization) accuracy leakage via the narrowing of the median error $d_{50}$ and mean error $\bar{d}$ relative to the total land area of Earth $A_0 = 1.48 \times 10^8\ \text{km}^2$. $a = 100$ is a scaling factor. The more willing the model is to answer and the more accurate the localization, the larger the Glare value, enabling a single-number ranking of privacy threats.
+The first term, Risk Term $H(R) = -\text{VRR} \cdot \log_2 \text{VRR} - (1 - \text{VRR}) \cdot \log_2(1 - \text{VRR})$, characterizes the information leaked by the model's "willingness to answer" itself. The second term, Leakage Term, characterizes the localization accuracy leakage via the narrowing of the median error $d_{50}$ and mean error $\bar{d}$ relative to the total land area of Earth $A_0 = 1.48 \times 10^8\ \text{km}^2$. $a = 100$ is a scaling factor. The more willing the model is to answer and the more accurate the localization, the larger the Glare value, enabling a single-number ranking of privacy threats.
 
 **4. ClueMiner and GeoMiner: Decomposing "How Models Guess" and Verifying Collaborative Amplification**
 

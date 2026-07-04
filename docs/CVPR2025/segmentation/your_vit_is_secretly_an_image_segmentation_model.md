@@ -47,19 +47,19 @@ The input to EoMT is the token sequence after image patch embedding. The first $
 
 ### Key Designs
 
-1. **逐步移除任务特定组件**:
+1. **Progressively Removing Task-Specific Components**:
 
     - Function: Verify the necessity of each component
     - Mechanism: Start from ViT-Adapter + M2F and gradually remove components: (1) Remove ViT-Adapter—use simple transposed/standard convolutions to construct a feature pyramid from single-scale ViT outputs (ViTDet-style), which only drops PQ by 0.4; (2) Remove the pixel decoder—directly feed the feature pyramid into the TF decoder, keeping PQ basically unchanged; (3) Remove multi-scale processing—queries only attend to single-scale ViT outputs, dropping PQ by another 0.2; (4) Remove the independent TF decoder—directly inject queries into the last few layers of ViT, which drops PQ by 0.5 but boosts FPS to 61
     - Design Motivation: Each ablation step quantifies the "actual value" of the corresponding component. It is discovered that on ViT-L pre-trained with DINOv2, all components combined only contribute 1.1 PQ, while introducing a 4.4x speed penalty
 
-2. **查询注入机制**:
+2. **Query Injection Mechanism**:
 
     - Function: Allow ViT's self-attention to simultaneously handle query-to-query interactions and query-to-image feature transfer
     - Mechanism: Concatenate $K$ learnable queries to the end of the patch tokens after the $L_1$-th layer. In the subsequent $L_2$ self-attention layers, a single MHSA operation simultaneously computes: self-attention between queries (coordinating queries), cross-attention from queries to patches (acquiring visual info), reverse attention from patches to queries (feeding query info back to visual features), and the original self-attention among patches. For ViT-L ($L=24$), setting $L_1=20$ and $L_2=4$ only increases the token processing workload by 2.1%
     - Design Motivation: Standard segmentation methods perform self-attention and cross-attention sequentially in two distinct steps. EoMT exploits the natural "all-to-all" property of ViT's self-attention mechanism to complete all interactions within a single step, which is more efficient and simpler
 
-3. **掩码退火（Mask Annealing）策略**:
+3. **Mask Annealing Strategy**:
 
     - Function: Use masked attention during training (for performance) and no masked attention during inference (for speed)
     - Mechanism: Masked attention in M2F constrains each query to focus only on the image region corresponding to its predicted mask, which aids learning but degrades efficiency. EoMT fully enables masked attention in the early training phases ($P_{mask}=1.0$), and then block-by-block and step-by-step anneals the masking probability to 0, ensuring the model adapts to a mask-free attention scheme by the end of training. The annealing schedule uses polynomial decay, lifting masks from early layers first, until the mask probability reaches 0 for all layers at the end of training

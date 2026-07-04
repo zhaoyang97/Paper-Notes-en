@@ -45,12 +45,12 @@ CADC follows the standard autoencoder structure common in learned compression. E
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["输入图像 x"] --> B["分析变换 g_a<br/>→ 紧凑潜变量 y"]
-    B --> C["不确定性引导自适应量化<br/>m=f_u(y-z̄)，ŷ=Q(y/m)"]
-    C -->|码流 AE/AD| D["合成变换 g_s<br/>→ 噪声潜变量 l_T (高通道)"]
-    D --> E["辅助解码器引导信息集中<br/>g_aux 只吃前4通道 l_T(1:4)"]
-    E --> F["免码率自适应文本条件<br/>BLIP(x̂_aux)=c_aux ⊕ c_fix"]
-    F --> G["一步扩散去噪 ε_SD<br/>+ SD VAE 解码 D_SD → x̂"]
+    A["Input Image x"] --> B["Analysis Transform g_a<br/>→ Compact Latent Variable y"]
+    B --> C["Uncertainty-Guided Adaptive Quantization<br/>m=f_u(y-z̄), ŷ=Q(y/m)"]
+    C -->|Bitstream AE/AD| D["Synthesis Transform g_s<br/>→ Noisy Latent Variable l_T (High Channel)"]
+    D --> E["Auxiliary Decoder Guides Information Concentration<br/>g_aux consumes only first 4 channels l_T(1:4)"]
+    E --> F["Rate-Free Adaptive Text Conditioning<br/>BLIP(x̂_aux)=c_aux ⊕ c_fix"]
+    F --> G["Single-Step Diffusion Denoising ε_SD<br/>+ SD VAE Decoder D_SD → x̂"]
 ```
 
 ### Key Designs

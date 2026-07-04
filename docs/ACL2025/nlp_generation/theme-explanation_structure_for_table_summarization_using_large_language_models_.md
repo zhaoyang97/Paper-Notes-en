@@ -83,7 +83,7 @@ The Tabular-TX pipeline consists of four stages:
 ### Theme-Explanation Structure
 
 **Theme Part**:
-- Form: Noun phrase of the table title + citation/basis expression (e.g., Korean "…에 따르면" = "According to...").
+- Form: Noun phrase of the table title + citation/basis expression (e.g., a Korean phrase meaning "according to...").
 - Function: Providing key contextual anchors to ensure numerical values are correctly interpreted. For example, the Theme "According to refugee status statistics by nationality" provides an explicit context for the subsequent "2,437 applications, of which only 147 were approved."
 - Necessity: Unlike text summarization, table cells themselves do not provide enough context; lacking a Theme leads to sentence ambiguity.
 

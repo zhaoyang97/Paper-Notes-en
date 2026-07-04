@@ -143,7 +143,7 @@ Additional specific ablations:
 ## Highlights & Insights
 - **Reframing "Reflection Erasure" as "Joint Dual-Layer Generation"**: Previous discriminative methods treated reflection as trash to be erased. This work realizes the reflection layer carries scene context, making joint modeling mutually beneficial—a fundamental shift in problem formulation.
 - **Zero-Annotation Prompt Driven**: Utilizing "Transmission" and "Reflection" prompts to divide a single model's labor avoids dependencies on precise layer-wise linguistic descriptions (as in L-DiffER), making it engineering-simple and reproducible.
-- **Disjoint Sampling as "Inter-layer Mutually Exclusive CFG"**: Migrating the negative guidance idea from Classifier-Free Guidance to "repelling two outputs" using the noise difference $\epsilon^{\mathcal{T}}-\epsilon^{\mathcal{R}}$ is a transferable trick for any diffusion任务 requiring output separation (e.g., intrinsic image decomposition, multi-layer matting).
+- **Disjoint Sampling as "Inter-layer Mutually Exclusive CFG"**: Migrating the negative guidance idea from Classifier-Free Guidance to "repelling two outputs" using the noise difference $\epsilon^{\mathcal{T}}-\epsilon^{\mathcal{R}}$ is a transferable trick for any diffusion task requiring output separation (e.g., intrinsic image decomposition, multi-layer matting).
 - **Latent-Space Test-Time Optimization Paradigm**: Learning a "latent synthesis function" instead of a fixed pixel-addition constraint, combined with latent-space gradient refinement, balances fidelity and efficiency—a generic template for inverse problems where the imaging model is not strictly known.
 
 ## Limitations & Future Work

@@ -63,7 +63,7 @@ Where FBD + Band-Wise Attention constitute **DFCA**, and IBS + FREF constitute *
 
 **1. Dynamic Frequency Band Decoupling (FBD): Replacing "IR = Low Frequency" priors with learnable boundaries**
 
-Addressing the issue where fixed frequency priors lose 정보 from tiny targets across bands, FBD adaptively partitions each feature into multiple sub-bands based on radial frequency. After performing FFT on the $l$-th layer feature, a binary mask $M_b$ isolates the $b$-th sub-band radially: $F^l_{m,b} = M_b \odot \mathcal{F}(F^l_m)$, $m\in\{q,k,v\}$, where the mask is defined as:
+Addressing the issue where fixed frequency priors lose information from tiny targets across bands, FBD adaptively partitions each feature into multiple sub-bands based on radial frequency. After performing FFT on the $l$-th layer feature, a binary mask $M_b$ isolates the $b$-th sub-band radially: $F^l_{m,b} = M_b \odot \mathcal{F}(F^l_m)$, $m\in\{q,k,v\}$, where the mask is defined as:
 
 $$M_b(u,v) = \begin{cases} 1, & k_b \le \sqrt{u^2+v^2} < k_{b+1} \\ 0, & \text{otherwise} \end{cases}$$
 

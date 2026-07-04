@@ -53,9 +53,9 @@ where $D_{ins}(\hat{\lambda})$ is the lower bound computed via dual feasible poi
 
 SOP consists of three components:
 
-$$f(x) = \sum_{i=1}^m \underbrace{\theta(\Gamma(x), x)_i}_{\text{分组选择器}} \cdot \underbrace{h(g_i \odot x)}_{\text{骨干预测器}}$$
+$$f(x) = \sum_{i=1}^m \underbrace{\theta(\Gamma(x), x)_i}_{\text{group selector}} \cdot \underbrace{h(g_i \odot x)}_{\text{backbone predictor}}$$
 
-where $\underbrace{g_i \in \Gamma(x)}_{\text{分组生成器}}$.
+where $\underbrace{g_i \in \Gamma(x)}_{\text{group generator}}$.
 
 #### Group Generator $\Gamma$
 

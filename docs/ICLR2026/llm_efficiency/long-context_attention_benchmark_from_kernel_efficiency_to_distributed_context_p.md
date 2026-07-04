@@ -45,15 +45,15 @@ LongCA-bench consists of three main components: a **data preparation interface**
 
 ```mermaid
 flowchart TD
-    A[数据准备接口] --> A1[Mask Generator<br/>12 静态 + 2 动态 = 14 掩码]
-    A --> A2[变长序列采样<br/>Pile/ProLong64K/512K]
-    A1 & A2 --> B[输入表示接口<br/>统一数据格式]
-    B --> C[Kernel 组件]
-    B --> D[Module 组件]
-    C --> C1[稠密 ×7<br/>FA/FA2/FA3/cuDNN/Flex/FlashMask/SDPA]
-    C --> C2[稀疏 ×5<br/>VSA/Triton VSA/FA2 Sparse/FlashInfer/Flex]
-    D --> D1[上下文并行 ×5<br/>Ulysses/Ring P2P/Ring AllGather/USP/LoongTrain]
-    C1 & C2 & D1 --> E[H100×96 / A800 评测<br/>TFLOPs + 峰值显存]
+    A[Data Preparation Interface] --> A1[Mask Generator<br/>12 Static + 2 Dynamic = 14 Masks]
+    A --> A2[Variable-Length Sequence Sampling<br/>Pile/ProLong64K/512K]
+    A1 & A2 --> B[Input Representation Interface<br/>Unified Data Format]
+    B --> C[Kernel Components]
+    B --> D[Module Components]
+    C --> C1[Dense x7<br/>FA/FA2/FA3/cuDNN/Flex/FlashMask/SDPA]
+    C --> C2[Sparse x5<br/>VSA/Triton VSA/FA2 Sparse/FlashInfer/Flex]
+    D --> D1[Context Parallel x5<br/>Ulysses/Ring P2P/Ring AllGather/USP/LoongTrain]
+    C1 & C2 & D1 --> E[H100x96 / A800 Evaluation<br/>TFLOPs + Peak GPU Memory]
 ```
 
 ### Key Designs

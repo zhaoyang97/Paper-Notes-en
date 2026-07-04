@@ -104,10 +104,10 @@ Seven open-source instruction-tuned LLMs: Qwen2.5 (72B/7B), Llama 3.3 (70B), Lla
 |---|---|---|---|
 | Korean + KRW vs. USD | -37.89* | -27.43* | -36.36* |
 | Turkish + TRY vs. USD | -57.01* | -42.22* | -49.13* |
-| Korean + 근(Geun) vs. kg | -21.99* | -31.12* | -22.11* |
-| Chinese + 斤(Jin) vs. kg | -25.39* | -26.79* | -11.33* |
-| Japanese + 間(Ken) vs. km | -80.09* | -75.71* | -73.90* |
-| Chinese + 里(Li) vs. km | -20.19* | -13.18* | -15.03* |
+| Korean + Geun vs. kg | -21.99* | -31.12* | -22.11* |
+| Chinese + Jin vs. kg | -25.39* | -26.79* | -11.33* |
+| Japanese + Ken vs. km | -80.09* | -75.71* | -73.90* |
+| Chinese + Li vs. km | -20.19* | -13.18* | -15.03* |
 
 Even when language and measurement systems are aligned, performance degradation remains statistically significant in almost all cases—language alignment does not resolve measurement bias.
 

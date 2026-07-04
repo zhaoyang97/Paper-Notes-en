@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: 2238dfcd2e68bb0c
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Transforming Podcast Preview Generation: From Expert Models to LLM-Based Systems
 
 **Conference**: ACL 2025  

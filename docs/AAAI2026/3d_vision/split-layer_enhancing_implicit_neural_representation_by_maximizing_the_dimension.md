@@ -78,7 +78,7 @@ This forms an **$N$-th order homogeneous polynomial**, where the different terms
 
 **Design Motivation**: Through the polynomial product, the feature space is expanded from a linear space to a polynomial space. The total number of different terms is equivalent to combinations with repetition of choosing $N$ elements from $C/\sqrt{N}$:
 
-$$\text{特征空间维度} = \binom{C/\sqrt{N}+N-1}{N}$$
+$$\text{Feature space dimension} = \binom{C/\sqrt{N}+N-1}{N}$$
 
 When $C=256, N=2$, the original feature space is 256-dimensional, while Split-Layer expands it to $\binom{181+1}{2} = 16,471$ dimensions—an expansion of approximately 64 times, while keeping the parameter count unchanged (each branch has $(C/\sqrt{N})^2$ parameters, resulting in a total of $C^2$ across $N$ branches).
 

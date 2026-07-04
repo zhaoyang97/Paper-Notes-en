@@ -63,7 +63,7 @@ $$\epsilon_T(\hat{p}_{\mathcal{T}}^{\boldsymbol{\pi}}) \leq \sum_{i=0}^{K} \pi_i
 
 That is, the error of the mixture model does not exceed the weighted average of the errors of individual prompts. Furthermore, **Lemma 3.3** decomposes the error into specialization error and generalization error:
 
-$$\epsilon_T \leq \sum_{i} \lambda_i \left( \underbrace{\pi_i^{\text{in}} \cdot \epsilon_{T_i}(\hat{p}_{t_i})}_{\text{专精误差}} + \underbrace{\sum_{j \neq i} \pi_j^{\text{out}} \cdot \epsilon_{T_i}(\hat{p}_{t_j})}_{\text{泛化误差}} \right)$$
+$$\epsilon_T \leq \sum_{i} \lambda_i \left( \underbrace{\pi_i^{\text{in}} \cdot \epsilon_{T_i}(\hat{p}_{t_i})}_{\text{specialization error}} + \underbrace{\sum_{j \neq i} \pi_j^{\text{out}} \cdot \epsilon_{T_i}(\hat{p}_{t_j})}_{\text{generalization error}} \right)$$
 
 where $\pi_i^{\text{in}}$ is the weight of prompt $t_i$ inside its training domain, and $\pi_j^{\text{out}}$ is the weight of other prompts outside that domain.
 

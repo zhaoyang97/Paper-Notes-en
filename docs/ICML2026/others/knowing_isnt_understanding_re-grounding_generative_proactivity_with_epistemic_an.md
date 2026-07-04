@@ -114,7 +114,7 @@ As a position paper, there are no quantitative experiments. The following tables
 - Novelty: ⭐⭐⭐⭐⭐ Bringing "epistemic-behavioral coupling" and ignorance philosophy to agent design is a conceptual breakthrough.
 - Experimental Thoroughness: ⭐⭐⭐ Position paper nature; heavy on synthesis and conceptual deduction without quantitative experiments.
 - Writing Quality: ⭐⭐⭐⭐ Structured conceptual derivation, though some sections are conceptually dense.
-- Value: ⭐⭐⭐⭐⭐ Corrective influence on the agentic community; provides a checklist of constraints to prevent "宁可错也要前进" (moving forward at the cost of being wrong) strategies.
+- Value: ⭐⭐⭐⭐⭐ Corrective influence on the agentic community; provides a checklist of constraints to prevent "move forward even at the cost of being wrong" strategies.
 
 <!-- RELATED:START -->
 

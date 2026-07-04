@@ -20,7 +20,7 @@ content_hash: ddb467f3c7203b1d
 **Conference**: ICLR 2026  
 **OpenReview**: [https://openreview.net/forum?id=mB3vxfrQZM](https://openreview.net/forum?id=mB3vxfrQZM)  
 **Code**: https://github.com/ThinkMorph/ThinkMorph  
-**主页**: https://thinkmorph.github.io  
+**Project Page**: https://thinkmorph.github.io  
 **Area**: Multimodal VLM / LLM Reasoning  
 **Keywords**: Interleaved Chain-of-Thought, Multimodal Reasoning, Unified Model, Visual Manipulation, Emergent Abilities
 

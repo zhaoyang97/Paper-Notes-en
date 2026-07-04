@@ -138,7 +138,7 @@ The core conclusion: no single fixed heuristic is optimal across all $\delta$. U
 ## Related Work & Insights
 - **vs. Nerlove & Arrow (Goodwill-stock model)**: Classical models treat ads as investments in "goodwill" that depreciate, often resulting in strategies that "stack all ads at the beginning." This work adds an explicit fatigue term to capture the phase transition to "corner-heavy" scheduling.
 - **vs. RL-based Scheduling**: RL methods are general but produce "black-box" policies. This work uses a structured convex model to obtain interpretable scheduling laws.
-- **vs. Leqi 2021 (Satiation / Restless Bandits)**: That work uses linear dynamical systems for satiation. This paper focuses on continuous-time deterministic scheduling and the **optimal moment distribution**相变.
+- **vs. Leqi 2021 (Satiation / Restless Bandits)**: That work uses linear dynamical systems for satiation. This paper focuses on continuous-time deterministic scheduling and the **optimal moment distribution** phase transition.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐ First to map three psychological effects into a continuous-time optimized reward model with phase-transition analysis.

@@ -111,7 +111,7 @@ Compared to individual estimations followed by Bonferroni correction, this avoid
 
 It further allows applying an adaptive weight function $\tilde{\psi}$ to the predicted data that differs from the target QBDM $\psi$:
 
-$$\hat{Q}(\psi, \tilde{\psi}) = \underbrace{Q_{\tilde{\psi}}(\tilde{F}_N^u) - Q_{\tilde{\psi}}(\tilde{F}_n)}_{\text{自适应项}} + \underbrace{Q_\psi(F_n)}_{\text{目标 QBDM}}$$
+$$\hat{Q}(\psi, \tilde{\psi}) = \underbrace{Q_{\tilde{\psi}}(\tilde{F}_N^u) - Q_{\tilde{\psi}}(\tilde{F}_n)}_{\text{Adaptive Term}} + \underbrace{Q_\psi(F_n)}_{\text{Target QBDM}}$$
 
 After parameterizing $\tilde{\psi}(\cdot) = \xi^T \phi(\cdot)$, the variance is convex with respect to $\xi$. The optimal $\xi$ is solved via convex optimization with regularization, and it still satisfies the CLT. This shows significant effects in the presence of heteroscedasticity.
 

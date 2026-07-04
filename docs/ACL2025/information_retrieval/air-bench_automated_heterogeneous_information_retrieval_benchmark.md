@@ -49,19 +49,19 @@ The data generation pipeline of AIR-Bench consists of three stages: (1) **Corpus
 
 ### Key Designs
 
-1. **多阶段查询生成管线**:
+1. **Multi-Stage Query Generation Pipeline**:
 
     - **Function**: Automatically generate diverse and high-quality retrieval queries starting from a real-world corpus.
     - **Mechanism**: A six-step iterative loop: (1) Sample a positive document $d_i^+$ from the corpus; (2) Use LLM to generate a "character" (persona) who might need this document; (3) Generate a "scenario" where this character would use the document; (4) Generate an original query $ori\_q_i$ based on the character + scenario while controlling query length, type, information need type, and expression style; (5) Use LLM to rewrite the query to remove overlapping vocabulary with the source document, yielding the final $q_i$; (6) Generate hard negative documents $\{d_i^{-}(j)\}$ based on the query and positive document.
     - **Design Motivation**: The intermediate steps of character + scenario are more transparent and controllable than direct query generation, significantly increasing diversity. Query rewriting increases retrieval difficulty, and hard negative generation makes the evaluation more discriminative.
 
-2. **双层质量控制机制**:
+2. **Two-Level Quality Control Mechanism**:
 
     - **Function**: Filter low-quality LLM-generated data and rectify incorrect relevance labels.
     - **Mechanism**: Two components: (a) **Low-Quality Query Filtering**: Use LLM to predict the relevance between $q_i$ and $d_i^+$, discarding the query if predicted as negative; (b) **Label Error Rectification**: A three-step pipeline: retrieve top-1000 documents using an embedding model $\to$ pre-label with multiple reranking models (majority voting) $\to$ final LLM judgment. Different strategies are applied to three categories of documents: original positives (retained), generated hard negatives judged as positive (discarded), and missed positive documents in the corpus (added to $\mathcal{D}_+$).
     - **Design Motivation**: LLM generation inevitably introduces low-quality queries and incorrect labels. Combining multi-model voting with LLM verification guarantees data quality to the greatest extent.
 
-3. **双任务异构评估设计**:
+3. **Dual-Task Heterogeneous Evaluation Design**:
 
     - **Function**: Cover two core application scenarios: traditional retrieval and modern RAG.
     - **Mechanism**: (a) **QA Task**: Classic question-answering retrieval evaluated on large-scale document collections, with nDCG@10 as the primary metric; (b) **Long-Doc Task**: Chunk-level retrieval of long documents, closely resembling RAG scenarios, with Recall@10 as the primary metric (as recall of positives is more critical than ranking in RAG). These tasks cover 9 major domains (News, Web, Wiki, Science, Finance, Medicine, Law, ArXiv, Books) and 13 languages.

@@ -175,7 +175,7 @@ Key Findings: (1) Removing cross-variable modeling causes a 56% performance drop
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ CHead Attention is a精巧 (exquisite) concept; the one-to-one constraint is simple but essential.
+- Novelty: ⭐⭐⭐⭐⭐ CHead Attention is an elegant (exquisite) concept; the one-to-one constraint is simple but essential.
 - Experimental Thoroughness: ⭐⭐⭐⭐⭐ 11 datasets across 3 missing scenarios and 4 missing rates, plus ablation and representation analysis.
 - Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, intuitive paradigm comparisons, and insightful ablation design.
 - Value: ⭐⭐⭐⭐⭐ The 46% MSE reduction is a breakthrough in time-series imputation.

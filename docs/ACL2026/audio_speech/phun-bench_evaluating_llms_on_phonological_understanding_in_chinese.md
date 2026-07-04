@@ -9,7 +9,6 @@ tags:
 date: 2026-05-08
 content_hash: 43385d0c3a00dd13
 ---
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Phun-Bench: Evaluating LLMs on Phonological Understanding in Chinese
 
 **Conference**: ACL2026  

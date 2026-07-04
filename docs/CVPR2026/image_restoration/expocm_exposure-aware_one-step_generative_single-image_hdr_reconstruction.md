@@ -129,7 +129,7 @@ ExpoCM leads in PSNR-µ, SSIM-µ, and ∆E2000 across datasets. The lowest ∆E2
 
 ## Limitations & Future Work
 - **Dependence on Soft Mask Quality**: Masks rely on luminance statistics; extreme scenes (e.g., large monochromatic areas) might lead to biased quantile estimations.
-- **感知指标 on small datasets**: On HDR-EYE, certain perceptual metrics like HDR-VDP-2 were lower than DDPM, suggesting that one-step generation still faces challenges in very small sample scenarios compared to multi-step diffusion.
+- **Perceptual metrics on small datasets**: On HDR-EYE, certain perceptual metrics like HDR-VDP-2 were lower than DDPM, suggesting that one-step generation still faces challenges in very small sample scenarios compared to multi-step diffusion.
 - **Hyperparameter Sensitivity**: The ELC loss contains several coefficients; although reported as robust, their generalization across vastly different datasets requires further validation.
 
 ## Related Work & Insights

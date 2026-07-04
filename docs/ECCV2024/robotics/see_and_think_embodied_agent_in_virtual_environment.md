@@ -49,25 +49,25 @@ STEVE is an LLM-based multimodal autonomous system that receives the visual stat
 
 ### Key Designs
 
-1. **Vision Perception 视觉感知 $\mathcal{P}^v$**
+1. **Vision Perception $\mathcal{P}^v$**
 
     - **Function**: Encodes the visual state (image/video), agent state (HP/inventory), and task description into a unified token representation.
     - **Mechanism**: EfficientFormerV2-S0 is used as the visual encoder to encode images into $n$ visual tokens of dimension $d$, which are concatenated with the state and task tokens processed by the text tokenizer.
     - **Design Motivation**: The textual context in Minecraft is insufficient to convey the visual characteristics of blocks and entities, necessitating direct visual perception.
 
-2. **Language Instruction 语言指令 $\mathcal{I}^l$**
+2. **Language Instruction $\mathcal{I}^l$**
 
     - **Function**: Responsible for iterative reasoning and decomposing complex tasks into manageable steps.
     - **Mechanism**: Comprises four independent LLM sub-modules: Planner (high-level planning), Critic (evaluation and feedback), Curriculum (progressive learning), and Describer (information summarization). These are based on STEVE-7B/13B (fine-tuned from LLaMA-2) and possess Minecraft domain expertise.
     - **Design Motivation**: A single LLM struggles to perform planning, evaluation, and learning simultaneously; collaborative role-playing is more effective.
 
-3. **Code Action 代码动作 $\mathcal{A}^c$**
+3. **Code Action $\mathcal{A}^c$**
 
     - **Function**: Translates language instructions into executable code in Minecraft.
     - **Mechanism**: Based on skill database retrieval. Instructions are encoded into query vectors, which are matched with skill-code pairs in the database using cosine similarity, containing 210 skills across 8 categories.
     - **Design Motivation**: Code execution is more reliable than direct control, and skill database retrieval is more stable than generating code directly via LLMs.
 
-4. **Curriculum Learning with Memory（带记忆的课程学习）**
+4. **Curriculum Learning with Memory**
 
     - **Function**: Progressively learns tasks from simple to complex, accumulating experience into memory.
     - **Mechanism**: Performs curriculum tasks first to allow agent exploration, storing successful experiences. Uses the Chain of Summarization method to compress overly long memories, enabling gradient-free in-context lifelong learning.

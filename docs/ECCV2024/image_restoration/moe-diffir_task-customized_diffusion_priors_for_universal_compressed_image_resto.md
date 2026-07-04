@@ -19,7 +19,7 @@ content_hash: a452fbcf5989dee7
 
 **Conference**: ECCV 2024  
 **arXiv**: [2407.10833](https://arxiv.org/abs/2407.10833)  
-**Code**: [项目页面](https://renyulin-f.github.io/MoE-DiffIR.github.io/)  
+**Code**: [Project Page](https://renyulin-f.github.io/MoE-DiffIR.github.io/)  
 **Area**: Image Restoration / Compressed Image Restoration  
 **Keywords**: Compressed Image Restoration, Mixture of Experts, Prompt Learning, Stable Diffusion, Universal Image Restoration
 

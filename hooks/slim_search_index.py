@@ -3,11 +3,11 @@
 Why this matters
 ----------------
 MkDocs' search plugin emits one doc per <h2> heading (~230k entries / 262MB on
-this repo). Worse, every paper note shares the same Chinese section headings
-("一句话总结", "研究背景与动机", "方法详解", ...), so if we naively concatenate
+this repo). Worse, every paper note shares the same generic section headings
+("TL;DR", "Background & Motivation", "Method", ...), so if we naively concatenate
 those into each paper's title field, those generic phrases end up in ~14k
 documents. Lunr.js then spends forever building the inverted index and the
-desktop UI sits on "正在初始化搜索引擎" forever.
+desktop UI can sit on its initialization state forever.
 
 Strategy
 --------
@@ -15,7 +15,7 @@ Strategy
   2. Keep **only the base page's title** — do NOT merge section headings into
      the title field. This is the single biggest win for lunr performance.
   3. Set each page's 'text' field to its **keywords only** (read from the
-     note's `**关键词**:` / `**Keywords**:` line) — never the full body. This
+    note's `**Keywords**:` line) — never the full body. This
      makes keyword search work (e.g. a paper whose title omits "diffusion" but
      is tagged so) while costing only ~1.8 MB over title-only, vs the ~250 MB
      a full-body index would weigh.
@@ -41,9 +41,8 @@ _CONF_PATTERN = re.compile(
 MIN_TAG_FREQ = 5
 
 # Body metadata line listing a paper's keywords, e.g.
-#   **关键词**: diffusion model, image editing      (zh notes)
 #   **Keywords**: diffusion model, image editing    (en notes)
-_KW_PATTERN = re.compile(r"\*\*(?:关键词|Keywords)\*\*\s*[:：]\s*(.+)")
+_KW_PATTERN = re.compile(r"\*\*Keywords\*\*\s*[:：]\s*(.+)")
 
 
 def _is_index_page(base: str) -> bool:

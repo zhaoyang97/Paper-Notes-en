@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: 86ad8937382765ef
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # ARCHE: Autoregressive Residual Compression with Hyperprior and Excitation
 
 **Conference**: CVPR 2025  

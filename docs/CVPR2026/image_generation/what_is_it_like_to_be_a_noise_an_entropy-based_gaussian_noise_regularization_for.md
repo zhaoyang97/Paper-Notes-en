@@ -74,7 +74,7 @@ $$p_{\hat{x}}(x) = \frac{1}{Z}\prod_{i\in V}\psi_i(x_i)\prod_{(i,j)\in E}\psi_{i
 
 However, since the partition function $Z$ is generally analytically intractable, the objective remains unsolvable. The key breakthrough is that the MRF structure itself provides a principled approximation—the **Bethe-Kikuchi cluster expansion**, which approximates the intractable global entropy (and thus the KL divergence) of the cluster using the sum of the entropies of local clusters (unary + pairwise cliques) while correcting for their overlaps. Restricting the expansion to nodes and edges (i.e., the standard Bethe approximation) yields the final objective (Eq. 5):
 
-$$D_{KL}(P_{\hat{x}} \| G) \approx \underbrace{D_{KL}(P_{\hat{x},S^{(2)}} \| G_{S^{(2)}})}_{\text{空间熵项}} + \gamma\,\underbrace{D_{KL}(P_{\hat{x},S^{(1)}} \| G_{S^{(1)}})}_{\text{值熵项}},$$
+$$D_{KL}(P_{\hat{x}} \| G) \approx \underbrace{D_{KL}(P_{\hat{x},S^{(2)}} \| G_{S^{(2)}})}_{\text{spatial entropy term}} + \gamma\,\underbrace{D_{KL}(P_{\hat{x},S^{(1)}} \| G_{S^{(1)}})}_{\text{value entropy term}},$$
 
 where $\gamma$ is the over-counting correction term prescribed by the Bethe approximation (since a single pixel simultaneously belongs to multiple pairwise cliques). The two terms are complementary: the **value entropy term $S^{(1)}$** compares the empirical distribution of 1D pixel intensities with the target $\mathcal{N}(0,1)$ to align marginal statistics; the **spatial entropy term $S^{(2)}$** compares the 2D joint empirical distribution of neighboring pixel pairs with the target $\mathcal{N}(0, I_2)$ to penalize local statistical dependencies that should not exist in an ideal Gaussian field—this term is the core of capturing "typicality."
 

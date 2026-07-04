@@ -38,7 +38,7 @@ AARD addresses two systematic weaknesses in diffusion-based point cloud anomaly 
 
 **Key Insight**: The authors propose a **Geometry Recognizability Hypothesis**—the state of a point cloud in diffusion can transition continuously from a "completely unrecognizable pure noise state" to a "completely recognizable geometric state," with two quantifiable boundaries in between. By constraining noise magnitude and direction along this spectrum, geometric structures can be preserved while maintaining denoising flexibility.
 
-**Core Idea**: Noise is矫正ed by "orthogonal decomposition followed by normal alignment + neighborhood averaging for consistency," while an Anomaly-Aware Transformer routes "normal references" to anomalous regions and "input references" to normal regions. This enables simultaneous geometric fidelity and anomaly correction within a single diffusion framework.
+**Core Idea**: Noise is corrected by "orthogonal decomposition followed by normal alignment + neighborhood averaging for consistency," while an Anomaly-Aware Transformer routes "normal references" to anomalous regions and "input references" to normal regions. This enables simultaneous geometric fidelity and anomaly correction within a single diffusion framework.
 
 ## Method
 

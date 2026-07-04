@@ -149,7 +149,7 @@ CRISP takes the lead in Overall score across all 4 (model, dataset) settings. On
 - **Sweep Cost**: 200 runs are expensive. HM scoring sensitivity requires broad sweeps to find the optimal balance.
 
 ## Related Work & Insights
-- **vs RMU**: RMU pushes target hidden states toward random directions (coarse扰), while CRISP suppresses specific SAE directions, leading to 6+ points higher retain and double the fluency.
+- **vs RMU**: RMU pushes target hidden states toward random directions (coarse perturbation), while CRISP suppresses specific SAE directions, leading to 6+ points higher retain and double the fluency.
 - **vs ELM**: ELM modifies early layers to align target representations with "benign substitutes," causing hallucinations. CRISP suppresses at middle layers, avoiding total representation shifts.
 - **vs Farrell et al. 2024 (SAE clamp)**: Former is inference-time; CRISP converts the goal into LoRA training for persistence.
 - **vs PISCES**: PISCES uses manual feature selection and only edits FFN $W_2$; CRISP is automatic and edits the full attention/FFN stack via LoRA.

@@ -30,7 +30,7 @@ This paper systematically evaluates the performance of 13 models (LLMs + traditi
 
 Machine translation has made significant progress with the introduction of the Transformer paradigm, but still faces severe challenges when translating knowledge-intensive and entity-rich texts. The core problem lies in the fact that entity translations cannot simply be transliterated; instead, they often require transcreation across cultures.
 
-**Classic Case**: The English phrase "Rotten Tomatoes" (a movie review website) should be translated into Korean as "로튼 토마토" (transliteration) rather than "썩은 토마토" (literal meaning "rotten tomatoes"). Such translations, which require cultural background knowledge, represent the weak point of current MT systems.
+**Classic Case**: The English phrase "Rotten Tomatoes" (a movie review website) should be translated into Korean with a phonetic transliteration rather than the literal meaning "rotten tomatoes." Such translations, which require cultural background knowledge, represent the weak point of current MT systems.
 
 **Limitations of Prior Work**:
 
@@ -57,7 +57,7 @@ This study is a systematic evaluation rather than proposing a new method. The fr
 
     - LLMs (11 models): GPT-4/4o/o1/o1-mini (OpenAI), Claude 3.5 Sonnet/Haiku (Anthropic), Gemini 1.5 Pro/Flash (Google), Grok 2 (xAI), DeepSeek R1 (DeepSeek), Llama 3 (Meta)
     - Traditional MT (2 models): NLLB-200 and mBART-50
-    - **Design Motivation**: Covering closed-source/开源, small/large parameter sizes, and different architectures to comprehensively evaluate the state-of-the-art.
+    - **Design Motivation**: Covering closed-source/open-source, small/large parameter sizes, and different architectures to comprehensively evaluate the state-of-the-art.
 
 2. **Three-Dimensional Automatic Evaluation**:
 

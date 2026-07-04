@@ -97,7 +97,7 @@ Based on the AR_BOP metric (average of YCB-V + LM-O + TUD-L) of the BOP Challeng
 
 1. UNOPose (70.9% AR_BOP) surpasses the CAD-based ZTE-PPF (69.0%), requiring only a single unposed reference.
 2. GRF contributes the most; removing it significantly degrades performance, confirming the criticality of $SE(3)$-invariant standardization.
-3. Compared to traditional methods (ICP 13.8%, FPFH 28.5%时), learning-based methods exhibit a massive advantage in the single-reference setting.
+3. Compared to traditional methods (ICP 13.8%, FPFH 28.5%), learning-based methods exhibit a massive advantage in the single-reference setting.
 4. The overlap predictor brings particularly prominent improvements in low-overlap scenarios (large viewpoint differences).
 
 ## Highlights & Insights

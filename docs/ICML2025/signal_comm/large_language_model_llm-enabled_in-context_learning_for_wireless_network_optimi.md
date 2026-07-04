@@ -37,7 +37,7 @@ As 6G networks become increasingly complex, traditional network optimization met
 
 The emergence of LLMs offers new avenues for network optimization. In-context learning (ICL) presents two core advantages:
 - **Training-free**: Relies on the inference capability of the LLM, avoiding the computational overhead of parameter updates.
-- **Natural Language Interface**: Network operators can directly描述 optimization tasks using natural language.
+- **Natural Language Interface**: Network operators can directly describe optimization tasks using natural language.
 
 However, most existing research on LLM-based network optimization focuses on static scenarios or simple feedback mechanisms, lacking systematic designs for experience accumulation and exemplar selection in dynamic environments. This paper takes base station (BS) transmit power control as a case study and proposes a comprehensive LLM in-context learning optimization framework.
 
@@ -111,7 +111,7 @@ Sorting by $\mathcal{L}$ and selecting the top-k exemplars balances the dual req
 
 To balance exploration and exploitation, a classic $\epsilon$-greedy strategy is introduced:
 
-$$a = \begin{cases} \text{随机动作}, & \text{if } rand < \epsilon \\ \text{LLM 决策}, & \text{otherwise} \end{cases}$$
+$$a = \begin{cases} \text{random action}, & \text{if } rand < \epsilon \\ \text{LLM decision}, & \text{otherwise} \end{cases}$$
 
 Random exploration continuously generates new exemplars, enriching the experience pool and allowing the LLM to learn from superior exemplars.
 

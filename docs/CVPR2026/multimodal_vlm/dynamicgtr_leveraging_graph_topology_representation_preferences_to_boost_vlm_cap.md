@@ -50,18 +50,18 @@ DynamicGTR addresses the problem: when feeding a graph to a VLM, the form used t
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    G["输入图 G + 查询 q"] --> POOL["零样本 GTR 池<br/>5 视觉 + 3 文本 = 8 种表示"]
-    subgraph OFF["离线：构建偏好数据 + 训路由器"]
+    G["Input Graph G + Query q"] --> POOL["Zero-Shot GTR Pool<br/>5 Visual + 3 Text = 8 Representations"]
+    subgraph OFF["Offline: Build Preference Data + Train Router"]
         direction TB
-        POOL --> PROBE["探测：每题用 8 种 GTR<br/>各跑一遍 VLM Reasoner"]
-        PROBE --> GRE["图响应效率 GRE 打分<br/>准确率 + α·token 效率"]
-        GRE --> GTRP["GTR 偏好数据集 GTRP<br/>取 GRE 最高者为最优标签"]
-        GTRP --> ROUTER["训练 GTR 路由器<br/>DeBERTaV3 多标签分类"]
+        POOL --> PROBE["Probe: Run VLM Reasoner Once<br/>per Question with Each of 8 GTRs"]
+        PROBE --> GRE["Graph Response Efficiency (GRE) Scoring<br/>Accuracy + α·Token Efficiency"]
+        GRE --> GTRP["GTR Preference Dataset GTRP<br/>Highest GRE Selected as Optimal Label"]
+        GTRP --> ROUTER["Train GTR Router<br/>DeBERTaV3 Multi-Label Classification"]
     end
-    ROUTER --> INFER["在线：路由器为新查询<br/>一次前向选最优 GTR"]
-    POOL -.提供 8 种候选.-> INFER
-    INFER --> RENDER["按选中 GTR 渲染图<br/>喂给冻结的 VLM Reasoner"]
-    RENDER --> ANS["零样本作答<br/>又准又省 token"]
+    ROUTER --> INFER["Online: Router Selects Best GTR<br/>for New Query in One Forward Pass"]
+    POOL -.Provide 8 Candidates.-> INFER
+    INFER --> RENDER["Render Graph with Selected GTR<br/>Feed to Frozen VLM Reasoner"]
+    RENDER --> ANS["Zero-Shot Answer<br/>Accurate and Token-Efficient"]
 ```
 
 ### Key Designs

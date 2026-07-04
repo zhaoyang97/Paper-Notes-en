@@ -60,7 +60,7 @@ The overall pipeline of MARGE is an iterative self-improvement loop:
     - Given a self-generated solution trajectory $\tau = (s_0, a_0, s_1, a_1, ..., s_T)$
     - "Fork" at each intermediate state $s_t$—keep the reasoning prefix up to $s_t$, and re-sample subsequent steps.
     - Sample $K$ subsequent paths for each state, and calculate how many of them reach the correct final answer.
-    - Hit rate $h(s_t) = \frac{\text{到达正确答案的路径数}}{K}$
+    - Hit rate $h(s_t) = \frac{\text{number of paths reaching the correct answer}}{K}$
     - Design Motivation: The hit rate reflects the quality of an intermediate state—a high hit rate indicates that it is easy to reach the correct answer from this state (a good intermediate reasoning result), while a low hit rate indicates that the intermediate reasoning has already deviated.
 
 2. **Hit-Guided Credit Assignment**:

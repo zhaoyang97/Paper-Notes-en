@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: 356f5056c7b41596
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # BenDFM: A taxonomy and synthetic CAD dataset for manufacturability assessment in sheet metal bending
 
 **Conference**: CVPR 2025  

@@ -78,7 +78,7 @@ FreeTTA is entirely training-free—executing no gradient backpropagation and op
 
 ### Main Results (Cross-Domain, ViT-B/16)
 
-| 方法 | T.D. | Avail. | T.F. | AIR | CAL | DTD | FLWR | SUN | UCF | AVG |
+| Method | T.D. | Avail. | T.F. | AIR | CAL | DTD | FLWR | SUN | UCF | AVG |
 |------|------|--------|------|-----|-----|-----|------|-----|-----|-----|
 | CLIP zero-shot | - | - | - | 23.22 | 93.55 | 45.04 | 66.99 | 65.63 | 65.16 | 64.59 |
 | TPT | ✗ | ✔ | ✗ | 24.78 | 94.16 | 47.75 | 68.98 | 65.50 | 68.04 | 65.10 |

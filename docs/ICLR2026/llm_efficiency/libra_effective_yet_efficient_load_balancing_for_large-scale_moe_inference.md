@@ -45,16 +45,16 @@ The core innovation of Libra is **Two-Stage Locality-Aware Execution**: it split
 
 ```mermaid
 flowchart LR
-    G[Gate 路由] --> L[MoE_local<br/>本地常驻专家计算]
-    G --> P[预测下一层 gating]
-    P --> R[热专家复制规划]
-    G --> TS[Token Sharding<br/>CPU 上执行]
-    L -.时间窗内并行隐藏.-> TS
-    L -.并行.-> R
+    G[Gate Routing] --> L[MoE_local<br/>Local Resident Expert Computation]
+    G --> P[Predict Next Layer Gating]
+    P --> R[Hot Expert Replication Planning]
+    G --> TS[Token Sharding<br/>Executed on CPU]
+    L -.Hidden in parallel within time window.-> TS
+    L -.Parallel.-> R
     TS --> D[AllGather Dispatch]
-    D --> RM[MoE_remote<br/>远程 token 计算]
+    D --> RM[MoE_remote<br/>Remote Token Computation]
     L --> RM
-    RM --> C[Combine 输出]
+    RM --> C[Combine Output]
 ```
 
 ### Key Designs

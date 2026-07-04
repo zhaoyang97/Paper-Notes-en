@@ -48,23 +48,23 @@ DIVA is a post-training framework that does not modify the backbone architecture
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    P["图文对 (I, T)"]
-    subgraph DUAL["双流构造与中间层定位（设计 1）"]
+    P["Image-text pair (I, T)"]
+    subgraph DUAL["Dual-stream construction and intermediate layer localization (Design 1)"]
         direction TB
-        U["理解流：原图 + 描述指令<br/>→ captioning（低频语义偏置）"]
-        G["生成流：随机 mask 图 + 文本条件<br/>→ inpainting（高频细节偏置）"]
+        U["Understanding stream: original image + caption instruction<br/>→ captioning (low-frequency semantic bias)"]
+        G["Generation stream: randomly masked image + text condition<br/>→ inpainting (high-frequency detail bias)"]
     end
     P --> DUAL
-    DUAL --> MID["中间层 8–18 抽 image-token 隐状态 → pooling"]
-    subgraph FAC["共享/独有因子化与门控编码器（设计 2 · Stage 1）"]
+    DUAL --> MID["Intermediate layers 8–18 extract image-token hidden states → pooling"]
+    subgraph FAC["Shared/Unique Factorization and Gated Encoder (Design 2 · Stage 1)"]
         direction TB
-        ENC["门控 MLP 编码器：共享 + 独有<br/>每流得 z_sh / z_uni"]
-        CTC["跨任务条件注入：用对方流 z_sh 偏置自己 logit<br/>+ 正交约束（冻结 backbone，只训编码器）"]
+        ENC["Gated MLP Encoder: Shared + Unique<br/>Each stream yields z_sh / z_uni"]
+        CTC["Cross-Task Conditional Injection: bias own logit with the other stream's z_sh<br/>+ Orthogonality constraint (frozen backbone, encoder-only training)"]
         ENC --> CTC
     end
     MID --> FAC
-    FAC --> S2["互信息非对称对齐（设计 3 · Stage 2）<br/>InfoNCE 对齐 z_sh + CLUB 解耦 z_uni，stop-grad 非对称"]
-    S2 --> OUT["后训练 UMM<br/>理解 +7.82% / 生成 +8.46%"]
+    FAC --> S2["Mutual Information Asymmetric Alignment (Design 3 · Stage 2)<br/>InfoNCE aligns z_sh + CLUB decouples z_uni, stop-grad asymmetric"]
+    S2 --> OUT["Post-trained UMM<br/>Understanding +7.82% / Generation +8.46%"]
 ```
 
 ### Key Designs

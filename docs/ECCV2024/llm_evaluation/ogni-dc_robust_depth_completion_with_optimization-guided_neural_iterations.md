@@ -103,11 +103,11 @@ A joint $L_1 + L_2$ loss is used for depth, and $L_1$ loss is used for gradients
 | Configuration | NYUv2 RMSE↓ | NYUv2 MAE↓ | KITTI RMSE↓ | Description |
 |------|-------------|-----------|-------------|------|
 | CFormer+DySPN baseline | 123.6 | 43.2 | 825.1 | Baseline |
-| No DDI (直接预测深度) | 128.6 | 44.9 | 824.0 | No optimization layer |
+| No DDI (Direct Depth Prediction) | 128.6 | 44.9 | 824.0 | No optimization layer |
 | **OGNI-DC (Ours)** | **112.2** | **38.0** | **813.7** | Full model |
 | 1 GRU iteration | 114.0 | 39.9 | 820.1 | Single iteration |
 | 3 GRU iterations | 112.4 | 38.2 | 818.6 | 3 iterations |
-| ConvRNN (替换 GRU) | 112.7 | 38.1 | 817.7 | No gating mechanism |
+| ConvRNN (replacing GRU) | 112.7 | 38.1 | 817.7 | No gating mechanism |
 | DDI zeros init | - | - | - | 62.1% higher latency |
 | DDI pre-filled init | - | - | - | 56.3% higher latency |
 

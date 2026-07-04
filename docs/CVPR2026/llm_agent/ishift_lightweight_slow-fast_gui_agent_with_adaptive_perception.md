@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: 5c439aaedf884dbb
 ---
 
-<!-- 由 tmp/gen_cvf_stubs.py 自动生成（CVF-only，无 arXiv） -->
 # iSHIFT: Lightweight Slow-Fast GUI Agent with Adaptive Perception
 
 **Conference**: CVPR 2026  

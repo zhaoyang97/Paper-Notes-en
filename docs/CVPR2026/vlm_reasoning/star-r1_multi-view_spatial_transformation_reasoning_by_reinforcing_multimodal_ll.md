@@ -57,7 +57,7 @@ flowchart TD
 ### Key Designs
 
 **1. SFT vs RL Diagnosis and Two-stage Integration: Process-supervised cold start for structure, RL for generalization**
-Pure SFT overfits to annotation patterns and fails under perspective changes, while pure RL misses objects and lacks formatting. The authors chose a hybrid approach. Stage 1 utilizes **process-supervised cold start**, forcing每条 CoT to follow the three-step trajectory and using **result-oriented filtering** to exclude incorrect reasoning paths. SFT establishes the "reasoning skeleton" and format, leaving "optimal trajectory exploration" to Stage 2 RL.
+Pure SFT overfits to annotation patterns and fails under perspective changes, while pure RL misses objects and lacks formatting. The authors chose a hybrid approach. Stage 1 utilizes **process-supervised cold start**, forcing each CoT to follow the three-step trajectory and using **result-oriented filtering** to exclude incorrect reasoning paths. SFT establishes the "reasoning skeleton" and format, leaving "optimal trajectory exploration" to Stage 2 RL.
 
 **2. Fine-grained Dense Accuracy Reward: Converting sparse signals into dense signals**
 TVR requires a triplet `(index, attribute, value)` to be entirely correct to receive a point. Using binary rewards (1 for all correct, 0 otherwise) limits exploration efficiency. The authors refined the reward to the level of **each transformation $t_i$**, applying tiered positive rewards based on the match:

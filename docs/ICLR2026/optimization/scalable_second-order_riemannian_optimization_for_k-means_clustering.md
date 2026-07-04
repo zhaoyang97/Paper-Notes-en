@@ -157,7 +157,7 @@ Convergence efficiency comparison on GMM ($n=100$, $\gamma=0.8$, $\mu=0.1$):
 ## Related Papers
 
 - [\[ICLR 2026\] The Potential of Second-Order Optimization for LLMs: A Study with Full Gauss-Newton](the_potential_of_second-order_optimization_for_llms_a_study_with_full_gauss-newt.md)
-- [\[ICLR 2026\] Angle k-means：用角度关系加速精确 k-means](angle_k-means.md)
+- [\[ICLR 2026\] Angle k-means: Accelerating exact k-means via angular relationships](angle_k-means.md)
 - [\[ICLR 2026\] Riemannian Optimization on Relaxed Indicator Matrix Manifold](riemannian_optimization_on_relaxed_indicator_matrix_manifold.md)
 - [\[ICLR 2026\] Landing with the Score: Riemannian Optimization through Denoising](landing_with_the_score_riemannian_optimization_through_denoising.md)
 - [\[AAAI 2026\] Convex Clustering Redefined: Robust Learning with the Median of Means Estimator](../../AAAI2026/optimization/convex_clustering_redefined_robust_learning_with_higher_order_norms_and_beyond.md)

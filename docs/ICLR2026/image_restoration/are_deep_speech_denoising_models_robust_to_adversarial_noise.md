@@ -79,7 +79,7 @@ The solution follows a standard PGD framework: at each step, the perturbation $\
 
 Four models were selected to ensure conclusions are not architecture-specific: Demucs (Meta), a time-domain U-Net + LSTM encoder-decoder; Full-SubNet+ (FSN+), a frequency-domain fullband-subband network; FRCRN (Alibaba), a frequency recurrent CRN operating on complex spectra; and MP-SENet, a mask-enhancement network predicting both magnitude and phase. These represent the four main technical routes in modern DNS.
 
-### 评估设置
+### Evaluation Setup
 - **Acoustic Conditions**: 5 SNR levels (70dB / 30dB / 10dB / 5dB / 0dB) crossed with reverberation presence, plus simulated Over-The-Air (OTA) transmission.
 - **Human Evaluation**: (a) Transcription test—participants attempt to transcribe denoised outputs to calculate Word Error Rate (WER); (b) ABX test—participants identify the adversarial signal among samples to verify imperceptibility.
 - **Objective Metrics**: STOI, PESQ, ViSQOL, SI-SDR.
@@ -124,7 +124,7 @@ Four models were selected to ensure conclusions are not architecture-specific: D
 | Universal Perturbation (one $\delta$ for all) | Failure | Minimal STOI drop | Spectral differences across speech are too large for the psychoacoustic constraint set. |
 | Cross-model Transfer | No transfer | Other models unaffected | Gradient directions vary greatly; white-box attacks are highly model-specific. |
 
-### 防御探索
+### Defense Exploration
 - **Gaussian Noise Injection**: Adding small amounts of noise to DNS input partially mitigates attacks (STOI recovers from 0.08 to ~0.5) but significantly degrades quality for normal use.
 - **Adversarial Training**: Noted as a valuable direction but not tested due to the high computational cost of DNS training.
 

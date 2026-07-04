@@ -101,7 +101,7 @@ Baselines include Vanilla QMIX, Rand-Obs/Rand-Act, FGSM, ATLA, ERNIE, ROMANCE, a
 
 ### Ablation Study
 
-| Configuration | 8m Dis-1 Win Rate (%) | 说明 |
+| Configuration | 8m Dis-1 Win Rate (%) | Notes |
 |------|-------------------|------|
 | IBAL Full | 88.4 ± 3.3 | Full Method |
 | w/o adaptive prob. (Fixed $P_{\mathrm{act}}=1/K$) | Significant drop | Curriculum attack intensity is critical |

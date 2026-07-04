@@ -89,7 +89,7 @@ Using ViT-B/16-IN21K as the backbone, class-incremental CL was performed on Imag
 | MOS | 78.10 | 90.53 | 89.91 | 67.76 |
 | **E2-LoRA (Ours)** | **New SOTA** | **New SOTA** | **New SOTA** | **New SOTA** |
 
-> Last-Acc and Inc-Acc outperform known SOTAs across all benchmarks (提升/Gain is most significant on long fine-grained sequences like Cars-196).
+> Last-Acc and Inc-Acc outperform known SOTAs across all benchmarks (gain is most significant on long fine-grained sequences like Cars-196).
 
 ### Ablation Study
 

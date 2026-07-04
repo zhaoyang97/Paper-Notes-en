@@ -99,7 +99,7 @@ Average across three models: FROST improves accuracy by 26.70% and reduces token
 **Outlier Metrics** (AIME2024, Phi-4-Reasoning): FROST reduces the maximum infinity norm $\|x\|_\infty$ from 35.31 to 29.67 (−15.97%), average kurtosis from 241.72 to 21.54 (−91.09%), and increases average sentence entropy from 2.71 to 3.07 (+13.28%).
 
 ### Key Findings
-- **强 Correlation between outlier metrics and performance**: Higher infinity norm/kurtosis correlates with lower sentence entropy and inefficient reasoning—verifying the causal chain of "outlier removal = more efficient reasoning."
+- **Strong correlation between outlier metrics and performance**: Higher infinity norm/kurtosis correlates with lower sentence entropy and inefficient reasoning—verifying the causal chain of "outlier removal = more efficient reasoning."
 - **Selective contraction outperforms bidirectional sharpening**: Sparsemax/Entmax15 mistakenly delete key sentences by reducing both high and low weights; FROST’s unilateral tail contraction avoids this (Minerva is the only exception where Entmax15 slightly wins).
 - **Generalization without performance loss**: On three OOD tasks (LeetCode / LiveCodeBench / UGPhysics), FROST maintains or improves performance because modifying only the activation and using LoRA results in minimal parameter shift.
 - **Efficiency gains**: Inference time is reduced by at least 28.6%, and training time is 42.2% lower than other SFT baselines.

@@ -47,19 +47,19 @@ MovieBench is not a modeling framework, but rather a dataset and benchmarking fr
 
 ### Key Designs
 
-1. **三级层次化数据结构 (Hierarchical Data Structure)**:
+1. **Three-Level Hierarchical Data Structure (Hierarchical Data Structure)**:
 
     - **Function**: To provide multi-granularity video description information from global to local levels.
     - **Mechanism**: The movie-level provides movie overviews (~43.4K words per movie, lasting ~45.6 minutes), including global information such as synopsis, main characters, and styles. The scene-level corresponds to scene segments in movies (averaging 263.6 words, 15.4 seconds), annotating scene themes, involved characters, and spatial relationships. The shot-level is the finest granularity (averaging 66.3 words, 4.09 seconds), offering detailed actions, dialogues, and visual descriptions of individual shots. These three levels of information are generated through an automated pipeline utilizing subtitle alignment and scene detection technologies.
     - **Design Motivation**: Generation tasks of different granularities require different levels of information. Keyframe generation needs scene-level information, shot transitions require shot-level details, and character consistency maintenance relies on movie-level character banks. Existing datasets provide only a single granularity, failing to support these demands simultaneously.
 
-2. **角色信息库 (Character Bank)**:
+2. **Character Bank**:
 
     - **Function**: To establish complete character profiles for each movie, including character names, portrait images, and voices.
     - **Mechanism**: Facial images (covering multiple angles and expressions) of major characters are automatically extracted from movies. Different scenes featuring the same character are associated using face detection and clustering algorithms to construct a character identity library. Simultaneously, dialogue audio segments of characters are extracted for audio-driven generation tasks. The standard version of Ours contains portraits and audio, and the Ours++ extended version further expands the data scale (116.8 hours vs. 69.2 hours).
     - **Design Motivation**: Character consistency is one of the biggest challenges in movie-level video generation. Existing datasets lack character-level annotations, preventing models from learning the critical constraint that the same character should maintain a consistent appearance across different scenes.
 
-3. **四个基准任务定义 (Four Benchmark Tasks)**:
+3. **Four Benchmark Tasks Definition (Four Benchmark Tasks)**:
 
     - **Function**: To comprehensively evaluate the different dimensional capabilities of long video generation.
     - **Mechanism**: Task 1 (Text→Keyframe/Storyboard) generates keyframe sequences from movie-level text descriptions, testing narrative understanding and visual planning capabilities. Task 2 (Identity-Customized Long Video) generates multi-scene videos that maintain character consistency given character portraits and scene descriptions. Task 3 (Keyframe-conditioned Video) generates coherent videos from keyframe sequences, testing inter-frame transition and dynamic generation capabilities. Task 4 (Audio-driven Talking Human) generates character speaking videos driven by audio.

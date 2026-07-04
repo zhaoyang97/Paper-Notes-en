@@ -53,7 +53,7 @@ flowchart TD
     FRONT --> OT["Sinkhorn Optimal Transport<br/>Move dominated samples to nearest frontier points"]
     OT --> LOSS["Transport cost as differentiable loss<br/>DRaFT-K style backprop to T2I model"]
     LOSS --> P
-    STRAT["Online/Offline Strategy + VLM Decision Agent<br/>Strong rewards expand online / Weak rewards lock offline + collapse protection"] -.調節.-> FRONT
+    STRAT["Online/Offline Strategy + VLM Decision Agent<br/>Strong rewards expand online / Weak rewards lock offline + collapse protection"] -.Regulate.-> FRONT
 ```
 
 ### Key Designs

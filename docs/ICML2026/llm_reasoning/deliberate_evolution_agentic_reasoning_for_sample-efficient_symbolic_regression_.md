@@ -51,16 +51,16 @@ Specifically, in round $t$: a parent expression $f_p$ is sampled from population
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["种群 Pₜ：Boltzmann 采样父表达式 fₚ"] --> B["Adaptive Operators 方向<br/>状态 sₜ=(质量, 访问量) → 采样算子 oₜ"]
-    A --> C["Tool-Augmented Diagnostic 诊断<br/>Data Profiler / 残差诊断 / 量纲验证 → 报告 aₜ"]
-    A --> D["Reflective Memory 记忆<br/>精英 / 失败 / 突破 三元反思提炼规则 Mₜ₋₁"]
-    B --> E["LLM 提案：给定 (Q, fₚ, oₜ, aₜ, Mₜ₋₁) 产符号骨架"]
+    A["Population Pₜ: Boltzmann-sampled parent expression fₚ"] --> B["Adaptive Operators direction<br/>State sₜ=(quality, visit count) → sample operator oₜ"]
+    A --> C["Tool-Augmented Diagnostics<br/>Data Profiler / residual diagnostics / dimensional validation → report aₜ"]
+    A --> D["Reflective Memory<br/>Elite / failure / breakthrough ternary reflection distills rules Mₜ₋₁"]
+    B --> E["LLM proposal: given (Q, fₚ, oₜ, aₜ, Mₜ₋₁) produce symbolic skeleton"]
     C --> E
     D --> E
-    E --> F["BFGS 拟合常数 → 完整表达式 fₜ"]
-    F --> G["评估 → 回写种群、算子权重 wₛ、记忆 Mₜ"]
-    G -->|预算 T=400 未用完| A
-    G -->|预算用完| H["输出最优表达式 f̂"]
+    E --> F["BFGS fit constants → complete expression fₜ"]
+    F --> G["Evaluate → write back population, operator weights wₛ, memory Mₜ"]
+    G -->|Budget T=400 not exhausted| A
+    G -->|Budget exhausted| H["Output best expression f̂"]
 ```
 
 ### Key Designs

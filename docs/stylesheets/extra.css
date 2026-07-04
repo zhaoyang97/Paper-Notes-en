@@ -90,7 +90,7 @@
   gap: 0.32rem;
 }
 
-/* 语义大类分组容器：组之间留竖向间距 */
+/* Semantic area-group container: keep vertical spacing between groups */
 .conf-card .area-groups {
   display: flex;
   flex-direction: column;

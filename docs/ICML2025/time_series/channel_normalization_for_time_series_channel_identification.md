@@ -68,7 +68,7 @@ where $c$ is the channel index, and $\gamma_c \in \mathbb{R}^D$, $\beta_c \in \m
 3. **Prototypical Channel Normalization (PCN)**:
 
     - Motivation: CN/ACN requires knowing the number of channels $C$ beforehand, making them inapplicable to scenarios with a variable number of channels (e.g., foundation models).
-    - Design: Introduce $K$ 个可学习原型 $\{p_k\}_{k=1}^K$, where channels obtain affine parameters through similarity with these prototypes.
+    - Design: Introduce $K$ learnable prototypes $\{p_k\}_{k=1}^K$, where channels obtain affine parameters through similarity with these prototypes.
     - Formula: $\gamma_c = \sum_k \text{softmax}(\text{sim}(x_c, p_k)) \cdot \gamma_k^{proto}$
     - Advantages: $K$ is fixed and independent of the actual number of channels, making it suitable for time series foundation models.
 

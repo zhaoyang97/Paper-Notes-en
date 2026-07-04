@@ -47,13 +47,13 @@ Built on the GNT baseline, CaesarNeRF incorporates: (1) a CNN encoder to extract
 
 ### Key Designs
 
-1. **相机位姿校准（Calibration）**:
+1. **Camera Pose Calibration**:
 
     - **Function**: Rotate the global semantic features of each reference view into the coordinate system of the target viewpoint.
     - **Mechanism**: Given the transformation $T_n = T_{out}^{w2c} \cdot T_n^{c2w}$, the $3\times3$ rotation submatrix is extracted to rotate the features. The semantic features are first reshaped into a 3D volume, rotated, and then reshaped back.
     - **Design Motivation**: Global features of a scene observed from different views are semantically inconsistent (e.g., front vs. side). Only after rotating and aligning them to eliminate viewpoint discrepancies does averaging become meaningful. Ablations show that adding only calibration improves PSNR by 0.67 on MVImgNet (1-view).
 
-2. **序列细化（Sequential Refinement）**:
+2. **Sequential Refinement**:
 
     - **Function**: Learn a residual update $\Delta^{(k)}$ from per-frame features $\{S_n\}$ via cross-attention in each Transformer layer, progressively refining the global representation as $\tilde{S}^{(k+1)} = \tilde{S}^{(k)} + \Delta^{(k)}$.
     - **Mechanism**: Different Transformer layers demand global information of varying granularities—shallow layers require coarse structural information, while deep layers demand precise fine details. A static global feature cannot adapt to this requirement.

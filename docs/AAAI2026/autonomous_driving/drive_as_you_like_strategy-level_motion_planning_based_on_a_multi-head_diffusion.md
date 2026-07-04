@@ -14,7 +14,6 @@ date: 2026-05-08
 content_hash: f334d19c25d2812e
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Drive As You Like: Strategy-Level Motion Planning Based on A Multi-Head Diffusion Model
 
 **Conference**: AAAI2026  

@@ -49,19 +49,19 @@ This paper constructs a systematic evaluation framework: the inputs are samples 
 
 ### Key Designs
 
-1. **多样化数据集选择**:
+1. **Diverse Dataset Selection**:
 
     - **Function**: Cover different deception scenarios and modalities
     - **Mechanism**: Choose three datasets: RLTD (real-life trial videos from high-stakes scenarios), MU3D (interpersonal deception in controlled experiments, containing video/audio), and OpSpam (deceptive online reviews, pure text). RLTD contains 121 samples, MU3D contains 320 samples, and OpSpam contains 1600 samples. Each dataset represents a different type of deception and available modalities, rendering the evaluation results more generalizable.
     - **Design Motivation**: A single dataset cannot reflect the true complexity of deception detection challenges; only cross-domain evaluation can reveal the general capabilities of the models.
 
-2. **多层次提示策略**:
+2. **Multi-Level Prompting Strategy**:
 
     - **Function**: Systematically compare the effects of different prompting methods on deception detection performance.
     - **Mechanism**: Zero-shot direct prediction is used as the baseline. In few-shot learning, random selection and semantic similarity-based in-context exemplar selection (sim-top) are respectively adopted. Regarding reasoning strategies, the study compares three approaches: direct label prediction (label-first), post-hoc reasoning generation (label-then-reasoning), and chain-of-thought (CoT) reasoning (reasoning-then-label). Experiments explore 2, 4, 6, 8, and 10 few-shot exemplars, reporting the best results.
     - **Design Motivation**: Different prompting strategies may activate different reasoning patterns of LLMs; systematic comparison helps identify the best practices.
 
-3. **辅助特征与多模态融合评估**:
+3. **Auxiliary Features and Multimodal Fusion Evaluation**:
 
     - **Function**: Evaluate the contribution of non-verbal features and cross-modal information to detection performance.
     - **Mechanism**: For the video dataset (RLTD), 16 key non-verbal features (such as eyebrow raise, gaze direction, mouth movement, hand movement, etc.) are extracted as auxiliary inputs. For multimodal models, GPT-4o is used to generate video and audio summaries, which are then provided to the model as additional context. Meanwhile, the performance differences between pure text inputs and text + auxiliary feature inputs are compared.

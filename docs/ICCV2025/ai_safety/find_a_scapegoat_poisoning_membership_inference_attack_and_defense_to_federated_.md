@@ -33,7 +33,7 @@ This paper proposes FedPoisonMIA, a poisoning-based membership inference attack 
 
 **Limitations of Prior Work**: Most poisoning attacks in FL focus on compromising model integrity (e.g., degrading accuracy), with insufficient attention to privacy attacks. Poisoning Membership Inference Attacks (PMIA) manipulate gradients to infer whether a specific sample exists in a benign client's dataset, but existing PMIA methods have limited effectiveness against Byzantine-robust aggregation mechanisms.
 
-**Key Challenge**: PMIA is inherently harder to design than conventional poisoning attacks — it must extract private information without significantly degrading global model performance (which would trigger detection). Gradients computed with wrong labels produce excessively large angular deviations, making them易 to filter by robust aggregation rules.
+**Key Challenge**: PMIA is inherently harder to design than conventional poisoning attacks — it must extract private information without significantly degrading global model performance (which would trigger detection). Gradients computed with wrong labels produce excessively large angular deviations, making them easy to filter by robust aggregation rules.
 
 **Key Insight**: On the attack side, the paper crafts malicious gradients to maximize angular deviation while ensuring it does not exceed the maximum angular difference among benign gradients; on the defense side, angular deviation serves as the discriminative criterion for filtering malicious updates.
 

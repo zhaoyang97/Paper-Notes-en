@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: e451031a303e2131
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # V-Bridge: Bridging Video Generative Priors to Versatile Few-shot Image Restoration
 
 **Conference**: CVPR2025  

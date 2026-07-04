@@ -19,7 +19,7 @@ content_hash: 979d4c21b0192f7f
 
 **Conference**: ICLR 2026  
 **OpenReview**: [https://openreview.net/forum?id=z0QLeooEEf](https://openreview.net/forum?id=z0QLeooEEf)  
-**论文**: [Project Page](https://jiahao620.github.io/reconviagen)  
+**Paper**: [Project Page](https://jiahao620.github.io/reconviagen)  
 **Code**: To be confirmed  
 **Area**: 3D Vision  
 **Keywords**: Multi-view reconstruction, 3D generative prior, Diffusion models, Reconstruction prior, Pose-agnostic

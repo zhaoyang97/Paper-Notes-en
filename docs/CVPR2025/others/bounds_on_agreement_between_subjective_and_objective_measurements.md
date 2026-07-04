@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: e71ec88c18e91679
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Bounds on Agreement between Subjective and Objective Measurements
 
 **Conference**: CVPR 2025  

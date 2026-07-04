@@ -82,7 +82,7 @@ Standard MoEs activate the same number of experts per layer, but different depth
 
 $$\bm{\pi}=\operatorname{softmax}(\bm{\eta}),\quad k_l=\pi_l\cdot(K-L)+1.$$
 
-The softmax ensures $\sum_l \pi_l=1$, and the affine transformation maps the probability simplex to the feasible region. This allows the model to optimize per-layer算力 allocation via gradient descent. A global budget $K$ (e.g., $K=2L$) induces **inter-layer competition**, forcing the model to move capacity to the most beneficial layers.
+The softmax ensures $\sum_l \pi_l=1$, and the affine transformation maps the probability simplex to the feasible region. This allows the model to optimize per-layer compute allocation via gradient descent. A global budget $K$ (e.g., $K=2L$) induces **inter-layer competition**, forcing the model to move capacity to the most beneficial layers.
 
 ### Loss & Training
 

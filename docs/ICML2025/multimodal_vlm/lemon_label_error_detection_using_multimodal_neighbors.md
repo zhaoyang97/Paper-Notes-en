@@ -123,7 +123,7 @@ Given a dataset $\mathcal{D} = \{(\mathbf{x}, \mathbf{y})_i\}_{i=1}^N$ (image-te
 | Full LEMoN | 86.0% | 95.6% | All components |
 | W/o $\tau_1, \tau_2$ | 85.3% (-0.7) | 94.9% (-0.7) | Adaptive weights contribute |
 | W/o $s_n$ (Image neighborhood) | 85.4% (-0.6) | 94.6% (-1.0) | Text neighborhood is more important (mmimdb) |
-| W/o $s_m$ (Text neighborhood) | 86.1% (-指) | 94.7% (-0.9) | Image neighborhood is more important (mscoco) |
+| W/o $s_m$ (Text neighborhood) | 86.1% (-N/A) | 94.7% (-0.9) | Image neighborhood is more important (mscoco) |
 | Only $d_{mm}$ (CLIP Sim.) | 85.1% (-0.9) | 93.8% (-1.8) | Total neighborhood contribution is ~1-2% |
 
 ### Downstream Filtering Performance

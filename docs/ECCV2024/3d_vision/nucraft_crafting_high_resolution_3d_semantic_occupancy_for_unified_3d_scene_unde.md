@@ -46,19 +46,19 @@ The system consists of two parts: (1) **nuCraft Dataset Construction**—generat
 
 ### Key Designs
 
-1. **nuCraft高分辨率标注构建** (nuCraft High-Resolution Annotation Construction):
+1. **nuCraft High-Resolution Annotation Construction**:
 
     - **Function**: Providing high-precision semantic occupancy annotations that are $8\times$ denser than existing benchmarks.
     - **Mechanism**: First, point cloud density is increased by accumulating multi-frame (past and future) LiDAR scans to eliminate single-frame sparsity. Then, an improved voxelization and semantic propagation algorithm is utilized to assign semantic labels to each 0.1m voxel. Key steps include: removing temporal misalignment of dynamic objects (by tracking dynamic objects with 3D bounding boxes and accumulating point clouds in their local coordinate systems), visibility reasoning (using ray-tracing to determine which voxels are occupied, free, or unobserved), and annotation refinement (removing noisy annotations through geometric consistency checks).
     - **Design Motivation**: High-quality annotation is the prerequisite for high-resolution prediction, as noise and errors in existing automatic annotation pipelines would be amplified at finer resolutions.
 
-2. **VQ-VAE占用数据压缩** (VQ-VAE Occupancy Data Compression):
+2. **VQ-VAE Occupancy Data Compression**:
 
     - **Function**: Encoding high-dimensional occupancy data into a compact discrete latent representation.
     - **Mechanism**: Training a 3D VQ-VAE whose encoder compresses the $1024 \times 1024 \times 80$ occupancy grid into a low-resolution latent feature map (e.g., $128 \times 128 \times 10$), and mapping each latent vector to the nearest code in a learned codebook via vector quantization. The decoder restores the original high-resolution occupancy from the quantized latent representation. The training utilizes reconstruction loss and commitment loss. The compressed latent space only needs to store codebook indices (integers), reducing the data size by approximately $512\times$.
     - **Design Motivation**: Direct prediction in the high-resolution voxel space requires massive GPU memory (>100GB), whereas VQ-VAE leverages the structural redundancy of occupancy data to compress it to a manageable scale, while the discretized codebook provides structured priors.
 
-3. **潜在空间占用预测** (Latent Space Occupancy Prediction):
+3. **Latent Space Occupancy Prediction**:
 
     - **Function**: Directly predicting the compressed occupancy representation from sensor inputs.
     - **Mechanism**: Using standard image/LiDAR backbones to extract features and generating Bird’s-Eye-View (BEV) features via a BEV feature extraction module. Then, a lightweight prediction head maps the BEV features to the latent space of the VQ-VAE, predicting which codebook index should be used for each latent position. Training uses cross-entropy loss, transforming the prediction problem into a classification problem (selecting from classes of the codebook size). During inference, the predicted indices directly reconstruct the high-resolution occupancy field through the pre-trained decoder, without requiring any post-processing upsampling.

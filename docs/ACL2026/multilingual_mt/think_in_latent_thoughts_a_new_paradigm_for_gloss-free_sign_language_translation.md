@@ -59,7 +59,7 @@ flowchart TD
     B --> C
     subgraph E["Plan-then-Locate Dual-stream Decoder"]
         direction TB
-        E1["Thought Cross-Attention<br/>(Planning: Determine semantic intent)"] -->|Routing matrix to frame先验| E2["Video Cross-Attention<br/>(Locating: Retrieve frame evidence)"]
+        E1["Thought Cross-Attention<br/>(Planning: Determine semantic intent)"] -->|Routing matrix to frame prior| E2["Video Cross-Attention<br/>(Locating: Retrieve frame evidence)"]
     end
     C -->|Ordered Thought Chain| E
     B -.Frame-level Evidence.-> E2

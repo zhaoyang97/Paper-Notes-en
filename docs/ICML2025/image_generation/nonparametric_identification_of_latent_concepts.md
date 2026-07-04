@@ -125,7 +125,7 @@ where $\mathbf{R}$ is the $\ell_1$-norm regularization of $\hat{M}$ and $D_{\hat
 
 - **Linear Concept Identification**: Rajendran et al. (2024), Reizinger et al. (2024) — identifying up to linear transformations under linear assumptions.
 - **Object-Centric Learning**: Brady et al. (2023), Lachapelle et al. (2023) — requiring occlusion-free/additive assumptions.
-- **Nonlinear ICA**: Hyvärinen & Morioka (2016), Khemakhem et al. (2020) — requiring multiple domains/辅助变量.
+- **Nonlinear ICA**: Hyvärinen & Morioka (2016), Khemakhem et al. (2020) — requiring multiple domains/auxiliary variables.
 - **Structure Learning**: Shimizu et al. (2006), Zheng et al. (2022) — recovering DAGs from exogenous noise.
 
 ## Rating

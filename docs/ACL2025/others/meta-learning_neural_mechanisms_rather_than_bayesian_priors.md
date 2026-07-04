@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Meta-Learning Neural Mechanisms rather than Bayesian Priors
 description: >-
-  [ACL 2025][Meta-learning] Challenges the mainstream view that "meta-learning distills Bayesian simplicity priors in neural networks," demonstrating through formal language experiments that meta-learning actually implants useful **破坏性神经机制** (e.g., counters) in models, rather than learning a preference for simplicity.
+  [ACL 2025][Meta-learning] Challenges the mainstream view that "meta-learning distills Bayesian simplicity priors in neural networks," demonstrating through formal language experiments that meta-learning actually implants useful **disruptive neural mechanisms** (e.g., counters) in models, rather than learning a preference for simplicity.
 tags:
   - "ACL 2025"
   - "Meta-learning"
@@ -24,7 +24,7 @@ content_hash: cf4dfb419a402649
 
 ## TL;DR
 
-Challenges the mainstream view that "meta-learning distills Bayesian simplicity priors in neural networks," demonstrating through formal language experiments that meta-learning actually implants useful **破坏性神经机制** (e.g., counters) in models, rather than learning a preference for simplicity.
+Challenges the mainstream view that "meta-learning distills Bayesian simplicity priors in neural networks," demonstrating through formal language experiments that meta-learning actually implants useful **disruptive neural mechanisms** (e.g., counters) in models, rather than learning a preference for simplicity.
 
 ## Background & Motivation
 

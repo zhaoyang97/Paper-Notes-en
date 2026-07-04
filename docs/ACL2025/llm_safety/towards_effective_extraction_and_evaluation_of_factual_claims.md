@@ -49,19 +49,19 @@ The contributions of this work are twofold: (1) An evaluation framework that def
 
 ### Key Designs
 
-1. **多维度评估框架**:
+1. **Multi-Dimensional Evaluation Framework**:
 
     - Function: Systematically evaluate the quality of claim extraction
     - Mechanism: Defines several key quality dimensions: *coverage* measures whether the extracted claims cover all verifiable information from the source text; *atomicity* measures whether each claim is sufficiently simple to contain only one verifiable fact; *decontextualization* measures whether a claim remains understandable and unambiguous when detached from the original text; *minimality* measures whether claims are concise and free of redundant information. The core innovation of this framework lies in the automated measurement of coverage and decontextualization. Coverage is measured by an LLM judging whether information in the original text is captured by the set of claims, while decontextualization is assessed by checking for unresolved pronouns or implicit contextual dependencies in the claims.
     - Design Motivation: Existing evaluation methods either rely on manual annotation (not scalable) or focus on a single dimension. A standardized framework enables fair comparisons across different methods.
 
-2. **Claimify声明抽取方法**:
+2. **Claimify Claim Extraction Method**:
 
     - Function: Extract high-quality factual claims from long text
     - Mechanism: Claimify is implemented based on LLMs, guiding the model through a carefully designed multi-step prompt for claim extraction. Its key characteristics are: (a) Explicitly handling ambiguity during extraction—when the source text is vaguely phrased or has multiple interpretations, Claimify avoids forcing claim generation and only outputs claims when the correct interpretation can be determined with high confidence; (b) Decontextualizing each extracted claim to ensure it remains understandable when isolated, supplementing necessary background information (e.g., resolving pronouns in "He worked there for five years" into concrete entities); (c) Atomizing the claims to ensure each contains only a single verifiable factual point.
     - Design Motivation: Existing methods often extract claims too aggressively in pursuit of high coverage, which leads to incorrect claims under ambiguous circumstances. Through a "rather miss than make a mistake" strategy, Claimify significantly improves claim accuracy while maintaining relatively high coverage.
 
-3. **自动化覆盖率与去语境化度量**:
+3. **Automated Coverage and Decontextualization Metrics**:
 
     - Function: Evaluate claim quality automatically in a scalable and reproducible manner
     - Mechanism: Coverage is measured using an LLM-as-judge setup, where the judge model is provided with the original text and the extracted claims to determine if each verifiable information point in the source is covered by at least one claim. Decontextualization evaluates whether each claim contains elements requiring context, such as unresolved pronouns or vague temporal/spatial references. Neither method requires manual annotation, enabling automated large-scale applications.

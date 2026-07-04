@@ -79,7 +79,7 @@ Total Loss = Intra-modality Patch Discrimination Loss + 0.1 $\times$ Instance Co
 
 ## Key Experimental Results
 
-Pre-training data consists of 285,288 samples (2.56km $\times$ 2.56km over 1 year), 3 satellite observations (Sentinel-1/2, Landsat-8) + 6 derived maps, resampled to 10m/pixel. Samples were drawn from OpenStreetMap地物 (120 classes), up to 10k tiles per class. Evaluation compares 12 foundation models across 18 research benchmarks + 19 datasets from 7 partner organizations, using both kNN/Linear Probing (frozen) and Full Fine-tuning protocols.
+Pre-training data consists of 285,288 samples (2.56km $\times$ 2.56km over 1 year), 3 satellite observations (Sentinel-1/2, Landsat-8) + 6 derived maps, resampled to 10m/pixel. Samples were drawn from OpenStreetMap land-cover categories (120 classes), up to 10k tiles per class. Evaluation compares 12 foundation models across 18 research benchmarks + 19 datasets from 7 partner organizations, using both kNN/Linear Probing (frozen) and Full Fine-tuning protocols.
 
 ### Main Results (Average Embedding Task Scores, OlmoEarth Base Highest)
 

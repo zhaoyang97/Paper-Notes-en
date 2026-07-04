@@ -245,7 +245,7 @@ item_total: 52
 
 **[SPATIA: Multimodal Generation and Prediction of Spatial Cell Phenotypes](spatia_multimodal_generation_and_prediction_of_spatial_cell_phenotypes.md)**
 
-:   Addressing the spatial transcriptomics challenge of joint modeling for "cell morphology + gene expression + spatial location," SPATIA utilizes a hierarchical attention mechanism (cell→niche→组织) for unified representation and a **spatial-conditioned morphology generation module** (weak pairing + confidence-aware Optimal Transport reweighting + morphology-profile alignment flow matching). It sets new SOTA across 25.9M cells and 12 tasks for both generation and prediction.
+:   Addressing the spatial transcriptomics challenge of joint modeling for "cell morphology + gene expression + spatial location," SPATIA utilizes a hierarchical attention mechanism (cell→niche→tissue) for unified representation and a **spatial-conditioned morphology generation module** (weak pairing + confidence-aware Optimal Transport reweighting + morphology-profile alignment flow matching). It sets new SOTA across 25.9M cells and 12 tasks for both generation and prediction.
 
 **[Stein Diffusion Guidance: Training-Free Posterior Correction for Sampling Beyond High-Density Regions](stein_diffusion_guidance_training-free_posterior_correction_for_sampling_beyond_.md)**
 

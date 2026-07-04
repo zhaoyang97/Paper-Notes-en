@@ -88,7 +88,7 @@ ThinkGuard operates in three steps: (1) using GPT-4o/DeepSeek-R1 to generate str
 | ThinkGuard (full) | 75.5 | Full (label + critique) |
 | Label-only SFT | 72.3 | Label-only SFT → -3.2% |
 | LLaMA Guard 3 + ICL | 62.8 | In-context learning → poor performance |
-| LLaMA Guard 3 原始 | 64.4 | Untuned baseline |
+| LLaMA Guard 3 (untuned) | 64.4 | Untuned baseline |
 
 ### Key Findings
 - **Critique Augmentation vs. Label-only SFT**: +3.2% F1, showing that the reasoning process itself enhances classification quality.

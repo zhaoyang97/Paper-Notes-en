@@ -19,7 +19,7 @@ content_hash: d1fd9041ef4009c3
 
 **Conference**: ICLR 2026  
 **arXiv**: [2602.04541](https://arxiv.org/abs/2602.04541)  
-**Code**: [https://github.com/（论文提及有代码）](https://github.com/（论文提及有代码）)  
+**Code**: [https://github.com/(code repository mentioned in paper)](https://github.com/(code repository mentioned in paper))  
 **Area**: LLM Efficiency  
 **Keywords**: Long-Context Inference, Sparse Attention, Attention Head Specialization, KV Cache Optimization, HardKuma Distribution
 

@@ -45,10 +45,10 @@ FSPO consists of three components: (1) A training objective that packages prefer
 
 ```mermaid
 flowchart TD
-    A[合成偏好数据管线<br/>view-conditioning 增多样性<br/>iterative persona 增结构] --> B[100万+ 分用户合成偏好<br/>x, y_w, y_l, 用户ID]
-    B --> C[元学习训练<br/>每个用户=一个任务<br/>少样本偏好→held-out 偏好<br/>DPO/IPO 隐式奖励]
-    C -.可选.-> D[RAT 两阶段<br/>1.从少样本偏好预测用户描述<br/>2.据描述生成回答]
-    C --> E[测试时适应真实用户<br/>输入真人少样本偏好<br/>个性化生成]
+    A[Synthetic Preference Data Pipeline<br/>view-conditioning for diversity<br/>iterative persona for structure] --> B[1M+ Per-User Synthetic Preferences<br/>x, y_w, y_l, User ID]
+    B --> C[Meta-Learning Training<br/>Each User = One Task<br/>Few-Shot Preferences → Held-Out Preferences<br/>DPO/IPO Implicit Reward]
+    C -.Optional.-> D[RAT Two-Stage<br/>1. Predict User Description from Few-Shot Preferences<br/>2. Generate Response Based on Description]
+    C --> E[Test-Time Adaptation to Real Users<br/>Input Real Human Few-Shot Preferences<br/>Personalized Generation]
     D --> E
 ```
 

@@ -48,18 +48,18 @@ BACO aims to capture base diversity and aligned quality in one decoding pass by 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    A["当前上下文（prompt + 已生成前缀）"] --> B["base 与 aligned 并行前向<br/>各出一份 next-token 分布"]
+    A["Current context (prompt + generated prefix so far)"] --> B["Base and aligned run forward in parallel<br/>each producing a next-token distribution"]
     B --> R
-    subgraph R["组合路由（单阈值 γ 连续可调）"]
+    subgraph R["Composite routing (single threshold γ, continuously adjustable)"]
         direction TB
-        C{"内容路由<br/>top-1 是标点 / function word?"}
-        C -->|是| AL1["走 aligned：保格式与语篇衔接"]
-        C -->|否| L{"logit 路由<br/>base 不确定度 vs γ"}
-        L -->|高不确定| BS["走 base：放手跑多样性"]
-        L -->|低不确定| AL2["走 aligned：保质量"]
+        C{"Content routing<br/>is top-1 a punctuation mark / function word?"}
+        C -->|Yes| AL1["Use aligned: preserve formatting and discourse cohesion"]
+        C -->|No| L{"Logit routing<br/>base uncertainty vs γ"}
+        L -->|High uncertainty| BS["Use base: allow diversity to run freely"]
+        L -->|Low uncertainty| AL2["Use aligned: preserve quality"]
     end
-    R --> D["从被选中模型采样 token<br/>仅在词边界切换"]
-    D -->|拼回上下文，继续解码| A
+    R --> D["Sample token from the selected model<br/>switch only at word boundaries"]
+    D -->|Append to context, continue decoding| A
 ```
 
 ### Key Designs

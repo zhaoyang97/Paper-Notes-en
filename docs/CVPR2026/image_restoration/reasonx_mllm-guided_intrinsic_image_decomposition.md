@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: 0525f6d1dcd3ed58
 ---
 
-<!-- 由 tmp/gen_cvf_stubs.py 自动生成（CVF-only，无 arXiv） -->
 # ReasonX: MLLM-Guided Intrinsic Image Decomposition
 
 **Conference**: CVPR 2026  

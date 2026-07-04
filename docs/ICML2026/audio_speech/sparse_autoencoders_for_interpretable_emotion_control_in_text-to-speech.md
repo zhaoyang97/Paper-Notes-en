@@ -104,7 +104,7 @@ In blind tests with 20 raters (0–5 scale): SAE-Emotion is significantly superi
 
 ### Key Findings
 - **Emotions are sparsely organized in the SAE dictionary**: The $\Delta$-score distribution for anger vs. neutral is centered at 0 with a thin positive tail forming the cluster of emotion features; happiness and sadness exhibit similar heavy-tailed distributions.
-- **Single latents map to observable acoustic properties**: Intervening only on Latent #24 significantly raises F0 (+23.11 Hz, p=1.07e-4), RMS energy, and spectral centroid while keeping duration constant, suggesting SAE大致 decouples "pitch/brightness/energy" into different directions.
+- **Single latents map to observable acoustic properties**: Intervening only on Latent #24 significantly raises F0 (+23.11 Hz, p=1.07e-4), RMS energy, and spectral centroid while keeping duration constant, suggesting SAE approximately decouples "pitch/brightness/energy" into different directions.
 - **Selection Metric > Randomness**: Random SAE EMOS is only 1.82, much lower than SAE-Emotion’s 3.22, proving that performance comes from "choosing the right features" rather than "sparsity itself."
 - **Sparse Decomposition > Dense Global**: SAE-Emotion Emo-SIM $\geq$ Global Steering across all tests, with EMOS +0.12, showing the gain of decomposing global shifts into interpretable directions.
 - **Calibratable Continuous Intensity Control**: Scanning $\alpha\in\{-60, 0, +60\}$ for the rank-1 happiness feature shows generated samples moving continuously toward the true happiness reference in the emotion prototype space, indicating $\alpha$ is a physically meaningful "emotion intensity knob."

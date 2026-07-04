@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: cbd0e1d87b38b5ce
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Lego Sketch: A Scalable Memory-augmented Neural Network for Sketching Data Streams
 
 **Conference**: ICML2025  

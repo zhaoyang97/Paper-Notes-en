@@ -47,11 +47,11 @@ The input to MDAE is a clean 3D volume $X_0 \in \mathbb{R}^{D \times H \times W}
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["干净 3D 体数据 X0"] --> B["全局双重破坏<br/>空间掩码 + 扩散加噪同时施加"]
-    B --> C["可变掩码比<br/>pmask ~ U(0.01, 0.99)"]
-    C --> D["时间条件化架构<br/>ResNet U-Net + FiLM(t) 调制"]
-    D --> E["双重重建目标<br/>掩区修复 L_masked + 可见区去噪 L_visible"]
-    E -->|监督目标均为干净 X0| F["预训练编码器<br/>迁移到分类 / 分割下游"]
+    A["Clean 3D volumetric data X0"] --> B["Global dual corruption<br/>Spatial masking + diffusion noise applied simultaneously"]
+    B --> C["Variable Mask Ratio<br/>pmask ~ U(0.01, 0.99)"]
+    C --> D["Time-Conditioned Architecture<br/>ResNet U-Net + FiLM(t) Modulation"]
+    D --> E["Dual Reconstruction Objective<br/>Masked Inpainting L_masked + Visible Region Denoising L_visible"]
+    E -->|Supervision targets are clean X0| F["Pre-trained Encoder<br/>Transferred to Classification / Segmentation Downstream"]
 ```
 
 ### Key Designs

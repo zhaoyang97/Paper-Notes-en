@@ -71,7 +71,7 @@ $$T=\begin{cases} C, & \text{if } \gamma C \ge D,\\ \alpha\beta C, & \text{other
 
 If $\gamma C \ge D$ (video is short enough for dense sampling), the model samples $C$ frames without tiling. Only when $\gamma C < D$ (sampling intervals exceed $\gamma$ frames, causing information sparsity) is paneling triggered to sample $\alpha\beta C$ frames. This switch ensures details are preserved when possible, preventing performance degradation in short videos.
 
-**2. Panel Construction: Tiling frames into standard-sized分镜图**
+**2. Panel Construction: Tiling frames into standard-sized storyboard panels**
 
 Once paneling is triggered, the $\alpha\beta C$ sampled frames are too numerous for the window. These frames are first downsampled to $\mathbf{x}'\in\mathbb{R}^{\alpha\beta C\times 3\times H/\alpha\times W/\beta}$, then **tiled into panel images every $\alpha\beta$ frames in a left-to-right, top-to-bottom order**. For a 2×2 configuration:
 

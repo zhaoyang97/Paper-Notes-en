@@ -41,17 +41,17 @@ Given an input feature set $\{x_i\}_{i=1}^{L}$, GG-SSM first constructs a fully 
 
 ### Key Designs
 
-1. **基于特征不相似度的图构建**:
+1. **Graph Construction Based on Feature Dissimilarity**:
     - Function: Model input features as a graph structure, where edge weights represent the relationship intensity between nodes
     - Mechanism: Define a fully connected undirected graph $G=(V,E)$, where each node $v_i$ corresponds to feature $x_i$. Edge weights are computed via cosine dissimilarity: $w_{ij} = \exp\left(-\frac{x_i^\top x_j}{\|x_i\|\|x_j\|}\right)$. Then, Chazelle's MST algorithm is used to extract a minimum spanning tree $\mathcal{T}$, where the MST keeps only the $L-1$ most critical edges
     - Design Motivation: The MST preserves the minimum-weight edge set connecting all nodes, capturing the core structural relationships of the data in the most compact way. Chazelle's algorithm has a complexity of $\mathcal{O}(E\alpha(E,V))$, where the inverse Ackermann function $\alpha$ grows extremely slowly, practically equivalent to linear time
 
-2. **沿图的状态传播机制**:
+2. **State Propagation Mechanism Along the Graph**:
     - Function: Aggregate information on the MST to compute the hidden state of each node
     - Mechanism: Define path weight $S_{ji} = \prod_{m=1}^{n} \bar{A}_{k_m}$, which is the product of all state transition matrices along the path from node $v_j$ to $v_i$. The hidden state of node $v_i$ is $h_i = \sum_{v_j \in V} S_{ji} \bar{B}_j x_j$, aggregating contributions from all other nodes (with decay strength modulated by path weights). The final output of the model is $y_i = C_i \text{Norm}(h_i) + D x_i$
     - Design Motivation: The tree structure of MST guarantees a unique path between any two nodes, avoiding redundant computation. Through the multiplicative decay of path weights, the contributions of distant nodes naturally decay, approximating an "attention" effect under a computational complexity of only $\mathcal{O}(L)$
 
-3. **高效的前向/后向传播**:
+3. **Efficient Forward/Backward Propagation**:
     - Function: Guarantee linear computational complexity for training and inference
     - Mechanism: Forward propagation proceeds from leaf nodes to root nodes, with each node executing fixed operations (initializing state, aggregating child states, updating hidden states). Backward propagation proceeds from root to leaves, using dynamic programming to store intermediate results to avoid redundant calculations. The entire architecture relies on local neighborhood information, requiring no global operations
     - Design Motivation: The CUDA implementation of MST makes graph generation extremely fast, with single-pass forward propagation time close to Mamba. The linear complexity ensures scalability to large-scale datasets and high-resolution inputs

@@ -130,7 +130,7 @@ Calibration error (ECE) also decreased significantly (CIFAR-10-C, BAT ViT-B/16 a
 - Multiple update steps are harmful; single-step adaptation is necessary to preserve CLIP's zero-shot priors.
 
 ## Highlights & Insights
-- **"Unlearning" as a neglected lever**: While previous TTA focused on "what to learn," BITTA demonstrates that "what to actively NOT learn" is equally important—巧妙 (cleverly) turning indistinguishable samples into regularization signals via entropy maximization.
+- **"Unlearning" as a neglected lever**: While previous TTA focused on "what to learn," BITTA demonstrates that "what to actively NOT learn" is equally important—cleverly turning indistinguishable samples into regularization signals via entropy maximization.
 - **Transforming "optimal ratio" from a hyperparameter to a predictable signal**: By observing that optimal ratios correspond to consistent entropy values and $K$ is a linear factor, they standardized a manual tuning process into a linear formula with conformal guarantees.
 - **Data-perspective universality**: By operating strictly on "sample selection" rather than the learning loss itself, BITTA achieves orthogonal gains across the "TTA family" (TPT/TPS/BAT/MEMO/SAR).
 

@@ -62,7 +62,7 @@ flowchart TD
 
 This is the foundation of the work, addressing the "middle weight" dilemma. The authors express the attention weight matrix $P$ as the sum of two terms using a sparse mask $M$:
 
-$$P = \underbrace{P \odot M}_{\text{稀疏分量}} + \underbrace{P \odot (1-M)}_{\text{低秩分量}}$$
+$$P = \underbrace{P \odot M}_{\text{sparse component}} + \underbrace{P \odot (1-M)}_{\text{low-rank component}}$$
 
 Empirical observation shows that the matrix remaining after removing the top values has an extremely low stable rank (the bottom-92% has a rank of ~9, while the full matrix rank is 6226). Since linear attention is essentially a low-rank approximation of rank at most $d$, previous linear attention failed because it tried to approximate the **entire** high-rank matrix. SLA succeeds by letting linear attention approximate only the **naturally low-rank** residual component.
 

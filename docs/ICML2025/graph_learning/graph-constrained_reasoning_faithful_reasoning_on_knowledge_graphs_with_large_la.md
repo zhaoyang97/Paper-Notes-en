@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: c8ac176095bf737a
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Graph-constrained Reasoning: Faithful Reasoning on Knowledge Graphs with Large Language Models
 
 **Conference**: ICML2025  
@@ -63,7 +62,7 @@ Core Idea: Use the KG-Trie to constrain token generation during LLM decoding, gu
 
 The generation probability is modeled as:
 
-$$P_\phi(a, \boldsymbol{w}_z | q) = \underbrace{P_\phi(a|q, \boldsymbol{w}_z)}_{\text{常规解码}} \cdot \underbrace{\prod_{i=1}^{|\boldsymbol{w}_z|} P_\phi(w_{z_i}|q, w_{z_{1:i-1}}) \cdot \mathcal{C}_\mathcal{G}(w_{z_i}|w_{z_{1:i-1}})}_{\text{图约束解码}}$$
+$$P_\phi(a, \boldsymbol{w}_z | q) = \underbrace{P_\phi(a|q, \boldsymbol{w}_z)}_{\text{Standard Decoding}} \cdot \underbrace{\prod_{i=1}^{|\boldsymbol{w}_z|} P_\phi(w_{z_i}|q, w_{z_{1:i-1}}) \cdot \mathcal{C}_\mathcal{G}(w_{z_i}|w_{z_{1:i-1}})}_{\text{Graph-Constrained Decoding}}$$
 
 The constraint function is a hard constraint (0/1 mask):
 

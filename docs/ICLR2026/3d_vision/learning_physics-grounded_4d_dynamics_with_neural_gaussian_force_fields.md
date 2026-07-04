@@ -44,13 +44,13 @@ NGFF addresses the contradiction between making video generation "physically pla
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["多视角 RGB 图像"] --> B["物体感知的 3D 重建<br/>前馈 Transformer 建高斯<br/>SAM2 分割 + DiffSplat 补全"]
-    B --> C["物体级 3D 高斯<br/>逐物体编码成隐状态"]
-    C --> D["神经高斯力场 NGFF<br/>神经算子预测全局力 + 局部力"]
-    D --> E["ODE 积分的轨迹解码<br/>二阶 ODE 求解器积分力场"]
-    E --> F["更新后高斯<br/>随时间演化的位姿与形变"]
-    F --> G["渲染输出 4D 视频"]
-    H["交互式外力"] -.-> E
+    A["Multi-view RGB images"] --> B["Object-aware 3D reconstruction<br/>feed-forward Transformer builds Gaussians<br/>SAM2 segmentation + DiffSplat completion"]
+    B --> C["Object-level 3D Gaussians<br/>per-object encoding into latent states"]
+    C --> D["Neural Gaussian Force Field NGFF<br/>neural operator predicts global + local forces"]
+    D --> E["Trajectory decoding via ODE integration<br/>second-order ODE solver integrates force field"]
+    E --> F["Updated Gaussians<br/>poses and deformations evolving over time"]
+    F --> G["Rendered output: 4D video"]
+    H["Interactive external forces"] -.-> E
 ```
 
 ### Key Designs

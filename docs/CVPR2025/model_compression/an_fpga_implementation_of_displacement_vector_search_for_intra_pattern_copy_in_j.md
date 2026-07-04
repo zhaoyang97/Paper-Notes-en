@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: b64becc8f8d5ab97
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # An FPGA Implementation of Displacement Vector Search for Intra Pattern Copy in JPEG XS
 
 **Conference**: CVPR 2025  

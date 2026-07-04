@@ -44,14 +44,14 @@ CAP is a decoupled two-stage process: Stage 1 utilizes RPCA to decompose each we
 
 ```mermaid
 flowchart LR
-    W[权重矩阵 W] -->|RPCA / ADMM| L[低秩 L]
-    W -->|RPCA / ADMM| S[稀疏 S]
-    L -->|Bernoulli 采样 s_σ| P1[保留奇异值]
-    S -->|Bernoulli 采样 s_S| P2[保留稀疏项]
-    P1 & P2 --> Loss[校准集重构损失]
-    Loss -->|策略梯度更新概率| P1
-    Loss -->|策略梯度更新概率| P2
-    P1 & P2 -->|全局 top-K 截断| Wc["压缩权重 W̃ = U'V'ᵀ + S⊙m_S"]
+    W[Weight Matrix W] -->|RPCA / ADMM| L[Low-Rank L]
+    W -->|RPCA / ADMM| S[Sparse S]
+    L -->|Bernoulli Sampling s_σ| P1[Retain Singular Values]
+    S -->|Bernoulli Sampling s_S| P2[Retain Sparse Entries]
+    P1 & P2 --> Loss[Calibration Set Reconstruction Loss]
+    Loss -->|Policy Gradient Update Probabilities| P1
+    Loss -->|Policy Gradient Update Probabilities| P2
+    P1 & P2 -->|Global top-K Truncation| Wc["Compressed Weight W̃ = U'V'ᵀ + S⊙m_S"]
 ```
 
 ### Key Designs

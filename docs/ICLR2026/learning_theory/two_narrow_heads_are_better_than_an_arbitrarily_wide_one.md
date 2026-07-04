@@ -20,7 +20,7 @@ content_hash: c2a294ea486cfa73
 
 **Conference**: ICLR2026  
 **OpenReview**: [https://openreview.net/forum?id=RRmPbbZsvl](https://openreview.net/forum?id=RRmPbbZsvl)  
-**论文**: OpenReview  
+**Paper**: OpenReview  
 **Code**: supplementary material  
 **Area**: Learning Theory / Transformer Expressivity  
 **Keywords**: Transformer theory, multi-head attention, expressivity lower bounds, Endpoint Selection Problem, induction heads  
@@ -141,7 +141,7 @@ Ours further compares performance across graph structures, head counts, and the 
 - The strongest point of this paper is that the lower bound does not depend on dimension or precision. Most Transformer lower bounds are weakened by the "what if I increase width?" argument; this paper proves a single head cannot pass the geometric contradiction of cyclic ESP regardless of width.
 - ESP is an excellent "minimal counter-example." Unlike complex graph algorithms that hide difficulty in multi-step reasoning, it compresses difficulty into endpoint selection for four tokens, forcing the reader to recognize the structural limits of single-head attention.
 - The MAS/MFAS connection adds depth. Ours does not just claim the single head fails; it precisely characterizes the maximum acyclic portion a single head can correctly process and links searching for optimal error to NP-hard graph optimization.
-- The two-head construction is highly interpretable. Two heads aligning with two positions with a selector deciding the winner mirrors simplified分工 (division of labor) mechanisms in induction heads and copy circuits.
+- The two-head construction is highly interpretable. Two heads aligning with two positions with a selector deciding the winner mirrors simplified division-of-labor mechanisms in induction heads and copy circuits.
 - The insight for mechanistic interpretability is that certain capabilities might not be attributable to "one very wide and strong head" but require multiple heads to form complementary geometric perspectives. Pruning or merging heads based solely on importance might underestimate these combinatorial structures.
 
 ## Limitations & Future Work
@@ -159,7 +159,7 @@ Ours further compares performance across graph structures, head counts, and the 
 - **Future Inspiration**: Similar ESP-like "micro-tasks" could establish a finer hierarchy for Transformer architectures, e.g., identifying tasks solvable by $k$ heads or exploring provable trade-offs between depth and head count.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Beautifully designed极简 (minimalist) ESP task providing unconditional expressivity separation.
+- Novelty: ⭐⭐⭐⭐⭐ Beautifully designed minimalist ESP task providing unconditional expressivity separation.
 - Experimental Thoroughness: ⭐⭐⭐⭐ Adequate validation for a theory paper covering DAGs, complete digraphs, and FFNs; however, external task extrapolation is limited.
 - Writing Quality: ⭐⭐⭐⭐ Clear main line and natural transitions; some dense derivations require familiarity with attention geometry.
 - Value: ⭐⭐⭐⭐⭐ Provides a reusable analysis paradigm for Transformer theory and mechanistic interpretability.

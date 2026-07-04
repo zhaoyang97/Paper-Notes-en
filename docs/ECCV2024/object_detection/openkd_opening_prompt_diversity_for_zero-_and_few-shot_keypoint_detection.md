@@ -49,26 +49,26 @@ OpenKD is built on episodic training, where each episode contains a support set 
 
 ### Key Designs
 
-1. **基于 CLIP 的多模态特征提取与投影 (CLIP-based Multimodal Feature Extraction and Projection)**:
+1. **CLIP-based Multimodal Feature Extraction and Projection**:
 
     - **Function**: Uses CLIP RN50 as a shared backbone to extract support/query image features and text features.
     - **Core Idea**: The original CLIP image encoder retains only the classification token via attention pooling, discarding spatial information. The authors reuse the V/O projection matrices of CLIP's attention pooling via $\mathbf{X}' = \mathbf{X}\mathbf{W}_v\mathbf{W}_o$ to obtain projected image tokens, thereby preserving spatial location information.
     - **Design Motivation**: Keypoint detection requires precise spatial localization rather than just global features; meanwhile, reusing CLIP's projection matrices can narrow the modal gap between image tokens and text features.
 
-2. **残差特征适配（Residual Feature Adaptation）**:
+2. **Residual Feature Adaptation**:
 
     - **Function**: Uses two lightweight adaptation networks $\mathcal{A}_v$ and $\mathcal{A}_t$ to fine-tune image and text features, respectively, in a residual manner.
     - **Core Idea**: $\mathbf{X}^s := \mathbf{X}^s + \mathcal{A}_v(\mathbf{X}^s)$, $\mathbf{t}_n := \mathbf{t}_n + \mathcal{A}_t(\mathbf{t}_n)$.
     - **Design Motivation**: CLIP's pre-trained features are aligned at the image level rather than the keypoint level, necessitating adaptation to the fine-grained task space of keypoint detection.
 
-3. **多模态关键点 Prototype Set**:
+3. **Multimodal Keypoint Prototype Set**:
 
     - **Function**: Unifiedly converts visual and text prompts into keypoint prototypes to construct the prototype set $\mathcal{T} = \mathcal{T}^v \cup \mathcal{T}^t$.
     - Visual Prototype (VKP): Performs Gaussian-weighted accumulation centered on keypoint locations on the support image feature map $\mathbf{X}^s$ to yield $\mathbf{\Phi}_n \in \mathbb{R}^d$. For K-shot, it takes the average of the same category of keypoints: $\mathbf{\Psi}_n^v = \frac{1}{K}\sum_k \mathbf{\Phi}_{k,n}$.
     - Text Prototype (TKP): Directly encodes the keypoint text using the CLIP text encoder to obtain $\mathbf{\Psi}_n^t$.
     - **Design Motivation**: Unifies prompts of different modalities into a shared $d$-dimensional feature space, enabling the model to flexibly handle visual prompts, text prompts, or a combination of both.
 
-4. **辅助关键点与文本插值（Auxiliary Keypoints & Texts Interpolation）**:
+4. **Auxiliary Keypoints & Texts Interpolation**:
 
     - **Function**: Generates auxiliary training samples in both visual and textual domains, drastically improving novel keypoint detection capability.
     - **Visual Interpolation**: Generates the auxiliary keypoint position $\hat{\mathbf{p}}$ via linear interpolation with $z=0.5$ between two known keypoints, and filters out points outside the foreground using saliency detection.
@@ -76,14 +76,14 @@ OpenKD is built on episodic training, where each episode contains a support set 
     - **False Text Control (FTC) Selection Strategy**: Samples top-$\eta$ results from the candidate text pool, but rejects a candidate if the cosine similarity between the visual feature of the auxiliary keypoint $\hat{\mathbf{\Phi}}$ and the candidate text feature $\hat{\mathbf{t}}_i$ is below a threshold $\alpha$.
     - **Design Motivation**: The category of keypoints seen during training is limited (e.g., only "eye", "nose"), preventing generalization to novel keypoints. Generating intermediate keypoints and their corresponding texts via interpolation expands the spatial reasoning capability of the model.
 
-5. **模态内/模态间对比学习 (Intra- and Inter-modality Contrastive Learning)**:
+5. **Intra- and Inter-modality Contrastive Learning**:
 
     - **Function**: Introduces two contrastive losses to enhance the discriminative ability of the prototypes.
     - $\mathcal{L}_{tt}$ (Intra-text Contrastive): Randomly samples the TKP sets of two species, constructs a similarity matrix $\mathbf{J}$, and optimizes both the cross-species invariance for identical keypoint types and the distinctiveness for different keypoint types.
     - $\mathcal{L}_{vt}$ (Visual-Text Contrastive): Aligns VKPs closer to TKPs, applying a stop gradient to TKPs to prevent the superior text representations from being degraded by inferior visual feature adaptations.
     - **Design Motivation**: Experiments reveal that text prototypes inherently possess better clustering properties and lower variance, so visual prototypes are aligned toward text prototypes rather than vice versa.
 
-6. **LLM 作为语言解析器 (LLM as Language Parser)**:
+6. **LLM as Language Parser**:
 
     - **Function**: Uses an LLM to parse diverse natural language text prompts, extracting keypoint and object keywords to synthesize a standard prompt format.
     - For example, given the input "Can you localize the left eye and nose of cat?", the LLM extracts "left eye", "nose", and "cat".

@@ -81,7 +81,7 @@ $$X^{(k)}W = (\bar{X}^{(k)} + \tilde{X}^{(k)})W \approx \underbrace{Q_8(\bar{X}^
 
 The term $Q_8(\bar{X}^{(k)})Q_4(W)$ is calculated on FP8 Tensor Cores and serves as a **dynamic token bias**, which is broadcast to all $thw$ tokens within the cube; the remaining term is calculated on FP4 Tensor Cores. Since a single anchor is shared within each cube, this auxiliary cost is marginal (only +3.2% when cube size is 64) but significantly enhances precision. On the weight side, SVDQuant can be integrated: $W$ is decomposed into low-rank factors $L_1 L_2$ and residual $R = W - L_1 L_2$, approximating the layer-wise output as:
 
-$$X^{(k)}W \approx \underbrace{X^{(k)}L_1 L_2}_{\text{低秩}} + \underbrace{Q_8(\bar{X}^{(k)})Q_4(R)}_{\text{单 token}} + \underbrace{Q_4(\tilde{X}^{(k)})Q_4(R)}_{\text{低比特}}$$
+$$X^{(k)}W \approx \underbrace{X^{(k)}L_1 L_2}_{\text{low-rank}} + \underbrace{Q_8(\bar{X}^{(k)})Q_4(R)}_{\text{single token}} + \underbrace{Q_4(\tilde{X}^{(k)})Q_4(R)}_{\text{low-bit}}$$
 
 The activation-side delta decomposition and the weight-side low-rank decomposition are highly complementary: the former targets dynamic activation outliers while the latter handles static weight outliers. Quantization is formulated as $Q(X) = \text{round}(X/s_X)\cdot s_X$, where $s_X = \max(|X|)/q_{\max}$ ($q_{\max}=6$ for 4-bit floating point).
 

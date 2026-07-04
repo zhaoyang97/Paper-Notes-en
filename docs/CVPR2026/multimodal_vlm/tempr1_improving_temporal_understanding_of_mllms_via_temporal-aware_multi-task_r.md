@@ -144,7 +144,7 @@ Multi-task synergy (gradually adding tasks, overall evaluation across five tasks
 ## Related Work & Insights
 - **vs Traditional VLP Temporal Methods (M-DETR, etc.)**: These rely on specialized heads per task and struggle with cross-domain generalization. TempR1 uses a single MLLM end-to-end, supporting cross-task knowledge transfer.
 - **vs Single-task RL (Time-R1, MUSEG, etc.)**: Most focus on TG with task-specific rewards. TempR1 expands RL to five tasks with a unified framework compatible with three correspondence structures.
-- **vs SFT-based Temporal Enhancement (TRACE, etc.)**: SFT often leads to overfitting and reasoning decay; TempR1's RL fine-tuning improves专项 performance while preserving general video understanding.
+- **vs SFT-based Temporal Enhancement (TRACE, etc.)**: SFT often leads to overfitting and reasoning decay; TempR1's RL fine-tuning improves targeted performance while preserving general video understanding.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐ The classification of three correspondence types and typed rewards is a clean, effective abstraction.

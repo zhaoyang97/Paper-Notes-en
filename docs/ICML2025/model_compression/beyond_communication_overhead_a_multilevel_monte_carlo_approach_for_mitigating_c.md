@@ -133,7 +133,7 @@ Adaptive MLMC-Top-k achieves the best communication and iteration efficiency acr
 | **MLMC Fixed-point** | **~91%** | **~90%** | 2d bits |
 | Uncompressed SGD | ~92% | ~91% | 64d bits |
 
-Under the same $2d$ bits communication volume, MLMC fixed-point compression significantly outperforms both 2-bit biased and unbiased基线 in final accuracy.
+Under the same $2d$ bits communication volume, MLMC fixed-point compression significantly outperforms both 2-bit biased and unbiased baselines in final accuracy.
 
 ### Key Findings
 

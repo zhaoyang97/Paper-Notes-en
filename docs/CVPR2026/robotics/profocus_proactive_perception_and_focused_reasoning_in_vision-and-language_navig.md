@@ -66,7 +66,7 @@ Feeding panoramas directly to VLMs results in massive visual token redundancy, a
 
 $$h_i = \pi \cdot \frac{x_1 + x_2 - F}{F}$$
 
-The entire observation is organized into a structured map $\mathcal{C}_t = \{(h_i, \textit{obj}_i(\boldsymbol{b}_i), d_i)\}_{i=1}^{N_t}$ and formatted as natural language. Consequently, the LLM receives方位 and distance text (e.g., "a door 2 meters ahead to the left") instead of pixels, enabling direct spatial reasoning and avoiding visual token expansion.
+The entire observation is organized into a structured map $\mathcal{C}_t = \{(h_i, \textit{obj}_i(\boldsymbol{b}_i), d_i)\}_{i=1}^{N_t}$ and formatted as natural language. Consequently, the LLM receives bearing and distance text (e.g., "a door 2 meters ahead to the left") instead of pixels, enabling direct spatial reasoning and avoiding visual token expansion.
 
 **2. Reasoning-Driven Proactive Perception Loop: Seeking Only What is Needed**
 

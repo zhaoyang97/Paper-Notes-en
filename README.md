@@ -31,14 +31,16 @@
 
 ## 🗓️ Roadmap
 
-| Announcement | Conference |
-|--------------|------------|
-| 2026-07 | ECCV 2026 |
-| 2026-09 | NeurIPS 2026 |
-| 2026-10 | EMNLP 2026 |
-| 2026-12 | AAAI 2027 |
-| 2027-01 | ICLR 2027 |
-| 2027-02 | CVPR 2027 |
+Notes for the following conferences will be added once their acceptance lists are announced. All dates are estimates, subject to official announcements.
+
+| Conference | Notification | List Released | Conference Dates |
+|------------|--------------|---------------|------------------|
+| ECCV 2026 | 2026-06 | 2026-07 | 2026-09 |
+| NeurIPS 2026 | 2026-09 | 2026-09 | 2026-12 |
+| EMNLP 2026 | 2026-08 | 2026-10 | 2026-10 |
+| AAAI 2027 | 2026-11 | 2026-12 | 2027-01 |
+| ICLR 2027 | 2027-01 | 2027-01 | 2027-04 |
+| CVPR 2027 | 2027-02 | 2027-03 | 2027-06 |
 
 ## 🔍 Research Areas
 

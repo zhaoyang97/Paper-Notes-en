@@ -47,11 +47,11 @@ RECODE-H consists of two parts: a **benchmark** (102 repository-level tasks + fi
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["任务输入<br/>结构化指令 + 仓库上下文 + 单元测试"] --> B["ReCodeAgent<br/>ReAct 四步 + 记忆压缩"]
-    B --> C["生成 / 修改代码并提交"]
-    C --> D["差分测试评测<br/>固定种子对比标准实现中间结果"]
-    D -->|全部通过 或 满 10 轮| E["输出：MRR / Recall@n / 通过率"]
-    D -->|未通过| F["五级反馈层级<br/>GPT-o4-mini 模拟研究者"]
+    A["Task Input<br/>Structured Instructions + Repository Context + Unit Tests"] --> B["ReCodeAgent<br/>ReAct Four Steps + Memory Compression"]
+    B --> C["Generate / Modify Code and Submit"]
+    C --> D["Differential Test Evaluation<br/>Fixed Seed Comparison Against Reference Implementation Intermediate Results"]
+    D -->|All Pass or 10 Rounds Reached| E["Output: MRR / Recall@n / Pass Rate"]
+    D -->|Not Passing| F["Five-Level Feedback Hierarchy<br/>GPT-o4-mini Simulates Researcher"]
     F --> B
 ```
 

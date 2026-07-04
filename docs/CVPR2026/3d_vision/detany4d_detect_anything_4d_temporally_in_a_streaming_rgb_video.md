@@ -133,7 +133,7 @@ Components added incrementally on 10% of the training data:
 
 ## Limitations & Future Work
 - **Dependency on Simulators**: DA4D is primarily based on the Habitat simulator; the sim-to-real gap on real-world videos is not fully explored.
-- **AP vs SOTA**: The trade-off prioritizes consistency over极致 single-frame precision.
+- **AP vs SOTA**: The trade-off prioritizes consistency over maximum single-frame precision.
 - **Training Cost**: 200 epochs take ~2 weeks; scalability to very long sequences is unverified as the max length in training was 10.
 - **Upstream Dependencies**: Geometric supervision relies on the quality of pre-trained models like UniDepth.
 

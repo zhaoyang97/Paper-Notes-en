@@ -53,13 +53,13 @@ Video frames are processed by a visual encoder to extract tokens $\to$ a set of 
     - **Mechanism**: Insert learnable VST tokens after each segment of video frames. The causal attention of the LLM allows VSTs to attend to all preceding visual tokens, so their KV naturally encodes previous visual information. After processing, the original visual KV is offloaded, retaining only the VST KV.
     - **Design Motivation**: Ablation studies show that internal LLM compression (VST) achieves an MLVU score of 41.4 at a $16\times$ compression ratio, significantly outperforming pooling (33.7), Q-Former (35.1), and C-Abstractor (37.1).
 
-2. **动态压缩**:
+2. **Dynamic Compression**:
 
     - **Function**: Adaptively adjusts the compression granularity based on the information density of the video content.
     - **Mechanism**: Uses CLIP depth scores to measure the magnitude of semantic changes between adjacent frames—regions with high changes (e.g., scene cuts) receive finer granularity (more VSTs), while regions with low changes (e.g., static shots) receive coarser granularity.
     - **Design Motivation**: Uniform compression loses key details in information-dense areas and wastes capacity in information-sparse areas.
 
-3. **课程学习**:
+3. **Curriculum Learning**:
 
     - **Function**: Progressively guides the model to learn increasingly higher compression ratios.
     - **Mechanism**: Employs low compression ratios ($2\times$, $4\times$) in the early stages of training, gradually increasing to higher ratios ($8\times$, $12\times$, $16\times$). This prevents training collapse caused by facing extremely high compression ratios from the start.

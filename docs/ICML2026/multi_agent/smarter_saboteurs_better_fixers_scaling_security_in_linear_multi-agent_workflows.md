@@ -132,7 +132,7 @@ Impact of key axes (anchored on the Malicious scenario):
 - **Scaling Ceiling**: Tested up to 27B; it is unclear if the symmetry between destruction and correction holds or saturates at even larger scales (e.g., 400B+).
 
 ## Related Work & Insights
-- **vs. Huang et al. (2025) / AutoTransform**: They concluded linear topologies are the most fragile using GPT-3.5改写. This paper argues the root cause is "missing correction" and adds the missing dimension of model scaling.
+- **vs. Huang et al. (2025) / AutoTransform**: They concluded linear topologies are the most fragile using GPT-3.5 paraphrasing. This paper argues the root cause is "missing correction" and adds the missing dimension of model scaling.
 - **vs. UniDebugger (Lee et al. 2024)**: Adopts "separation of detection and repair" but applies it to MAS security, proving it functions as an adversarial defense.
 - **vs. MAST Failure Taxonomy (Cemri et al. 2025)**: MAST identifies "incorrect/incomplete verification" as a primary MAS failure mode. This paper provides optimistic evidence that a simple QA+Fixer can suffice in certain linear settings.
 

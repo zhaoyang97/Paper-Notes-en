@@ -138,7 +138,7 @@ Ours (ESP) achieves the highest (or tied for highest) $\tau$ and S/R across 4 mo
 ## Rating
 - Novelty: ⭐⭐⭐⭐ The "embedding-space probe $\to$ MTP decoding" paradigm shift is clean, with theory, phenomenon, and algorithm forming a complete loop.
 - Experimental Thoroughness: ⭐⭐⭐⭐ Covers 4 models, 3 BC settings, and full SpecBench tasks. Includes 4D ablations. Deducted for lack of long-gen and batch > 1.
-- Writing Quality: ⭐⭐⭐⭐ Clear progression from motivation to observation to lemma to algorithm.直直观
+- Writing Quality: ⭐⭐⭐⭐ Clear progression from motivation to observation to lemma to algorithm. Intuitive.
 - Value: ⭐⭐⭐⭐ A truly "plug-and-play" training-free MTP with direct utility for edge LLM inference and frozen model deployment.
 
 <!-- RELATED:START -->

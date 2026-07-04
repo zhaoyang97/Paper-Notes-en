@@ -1,6 +1,6 @@
 ---
 title: >-
-  [Paper Note] Gradient Intrinsic Dimensionality Alignment: 弥合 LoRA 与全量微调之间的鸿沟
+  [Paper Note] Gradient Intrinsic Dimensionality Alignment: Narrowing the Gap Between LoRA and Full Fine-Tuning
 description: >-
   [ICLR 2026][Model Compression][LoRA] This paper identifies that the fundamental cause of the performance gap between LoRA and full fine-tuning (FFT) is that the dimension of LoRA's low-rank subspace is far smaller than the number of active update directions in FFT gradients (Gradient Intrinsic Dimensionality, or GID, differing by up to 100x). It proposes
 tags:

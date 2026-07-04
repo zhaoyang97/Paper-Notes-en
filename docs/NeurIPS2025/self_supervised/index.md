@@ -104,7 +104,7 @@ item_total: 35
 
 **[CleverBirds: A Multiple-Choice Benchmark for Fine-grained Human Knowledge Tracing](cleverbirds_a_multiple-choice_benchmark_for_fine-grained_human_knowledge_tracing.md)**
 
-:   提出CleverBirds——迄今最大规模的视觉知识追踪基准，通过eBird公民科学平台收集了40000+参与者完成的1700万+多选鸟类物种识别问答（涵盖10000+物种），系统性评估了多种知识追踪与分类方法，揭示了细粒度视觉知识建模特别是预测学习者错误选择方面的核心挑战。
+:   Introduces CleverBirds—the largest visual knowledge tracing benchmark to date, collecting 17M+ multiple-choice bird species identification questions answered by 40,000+ participants via the eBird citizen-science platform (covering 10,000+ species), systematically evaluating diverse knowledge tracing and classification methods, and revealing core challenges in fine-grained visual knowledge modeling, particularly in predicting learners' incorrect answer choices.
 
 **[Connecting Jensen-Shannon and Kullback-Leibler Divergences: A New Bound for Representation Learning](connecting_jensenshannon_and_kullbackleibler_divergences_a_n.md)**
 

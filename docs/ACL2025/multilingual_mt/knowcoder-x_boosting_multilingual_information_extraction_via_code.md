@@ -31,7 +31,7 @@ This work proposes KnowCoder-X, which represents multilingual IE schemas through
 
 - **Background**: While large language models exhibit spontaneous cross-lingual alignment capabilities after pre-training on multilingual corpora, the performance gap between different languages remains substantial in information extraction (IE) tasks.
 - **Limitations of Prior Work**: Experiments show that even after training on English NER data, the F1 score on Chinese parallel datasets is only 52.7 (compared to 95.1 in English), indicating that cross-lingual alignment for IE in LLMs is still weak; existing cross-lingual IE methods lack a unified schema representation.
-- **Key Challenge**: The schemas (entity types, relation types, etc.) in IE tasks have different names across various languages but share the same semantics (e.g., Korean "사람" and Chinese "人物" both correspond to PER). The lack of a unified representation hinders cross-lingual knowledge transfer.
+- **Key Challenge**: The schemas (entity types, relation types, etc.) in IE tasks have different names across various languages but share the same semantics (e.g., Korean "saram" and Chinese "renwu" both correspond to PER). The lack of a unified representation hinders cross-lingual knowledge transfer.
 - **Goal**: To enhance the cross-lingual alignment capability of LLMs in IE tasks, enabling models trained on Chinese and English data to generalize to 29 unseen languages.
 - **Key Insight**: Leveraging code (Python classes) to unify multilingual schema representations and performing cross-lingual alignment training through translated instance prediction tasks.
 - **Core Idea**: Unifying multilingual IE schemas with Python classes + cross-lingual alignment instruction tuning = strong zero-shot cross-lingual IE migration.
@@ -46,7 +46,7 @@ KnowCoder-X adopts a two-stage instruction tuning paradigm: (1) an IE cross-ling
 
 #### 1. Multilingual Schema Unified Representation Based on Python Classes
 - **Function**: Maps IE schemas of all languages to unified Python class definitions.
-- **Mechanism**: Defines three base classes: Entity, Relation, and Event, with each specific concept inheriting from its corresponding base class. Non-English schemas are first mapped to the corresponding English classes; for instance, Korean "사람" and Chinese "人物" are both mapped to the `PER(Entity)` class. Class docstrings contain instance exemplars and concept descriptions.
+- **Mechanism**: Defines three base classes: Entity, Relation, and Event, with each specific concept inheriting from its corresponding base class. Non-English schemas are first mapped to the corresponding English classes; for instance, Korean "saram" and Chinese "renwu" are both mapped to the `PER(Entity)` class. Class docstrings contain instance exemplars and concept descriptions.
 - **Design Motivation**: The object-oriented nature of code is naturally suited for unifying schema representations and cross-lingual knowledge sharing; consistent schemas allow the model to efficiently share the knowledge of the same ontology across different languages.
 
 #### 2. IE Cross-Lingual Alignment Instruction Tuning

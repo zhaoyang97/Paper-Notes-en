@@ -44,19 +44,19 @@ Input video frame sequence → VLM (LLaVA-1.6-Mistral-7B) to generate frame-by-f
 
 ### Key Designs
 
-1. **基于文本描述的表征偏差分析框架**
+1. **Text Description-Based Representation Bias Analysis Framework**
 
     - **Function**: Precisely measure representation biases across three independent dimensions: conceptual bias (whether objects alone are sufficient for prediction), temporal bias (whether a single frame is sufficient), and commonsense vs. dataset bias.
     - **Mechanism**: A VLM is used to generate detailed descriptions $d_{n,i} = d(f_{n,i})$ for each frame, and then an LLM extracts object lists $o_{n,i}$, activities $a_{n,i}$, and verbs $\nu_{n,i}$ from the descriptions based on specific prompts. These textual descriptions can be combined into different temporal configurations: middle frame, max-score frame, frame average, or frame sequence ("Frame 1: ... Frame 2: ..."). A pretrained text embedding model (such as E5) is then used to measure zero-shot classification/retrieval performance as the bias metric $M(D, \phi)$.
     - **Design Motivation**: Compared to directly cropping or patching specific content in videos, textual descriptions can isolate specific concepts (objects/actions) more cleanly, avoiding information leakage and artifacts; furthermore, the textual format naturally fits the zero-shot reasoning capabilities of LLMs.
 
-2. **常识偏差 vs 数据集偏差分离**
+2. **Commonsense Bias vs. Dataset Bias Separation**
 
     - **Function**: Distinguish between reasonable commonsense reasoning (e.g., "predicting playing piano when seeing a piano") and spurious correlations in the dataset (e.g., "mirrors and flowers always appearing in makeup videos").
     - **Mechanism**: Commonsense bias is measured using a zero-shot text embedding model (without access to the training set), while dataset bias is measured by training a linear classifier on the training set text embeddings. The difference between the two represents pure dataset bias. Experiments show that performance improves significantly after training (e.g., UCF101 objects from 63.3% to 80.3%), indicating a large number of spurious object-label correlations in the dataset.
     - **Design Motivation**: Commonsense bias itself might be reasonable (as objects and actions indeed correlate in daily life), but dataset bias is a harmful spurious correlation, which needs to be treated separately.
 
-3. **基于一致性投票的自动去偏策略**
+3. **Automatic Debiasing Strategy Based on Consistency Voting**
 
     - **Function**: Automatically identify and exclude test samples with high object bias to construct an unbiased evaluation set.
     - **Mechanism**: Utilize 3 text embedding models with different prompts $\times$ 3 bootstrapped training sets = 9 models in total. For each sample, it is excluded only when all 9 models consistently judge that "the sample can be correctly classified/retrieved solely based on objects." The exclusion ratio is automatically determined by the severity of the bias. A class-balanced version of the unbiased split is also additionally constructed.

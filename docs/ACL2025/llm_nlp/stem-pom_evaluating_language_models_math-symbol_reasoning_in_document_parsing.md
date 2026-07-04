@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: f20b8961ef702c54
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # STEM-PoM: Evaluating Language Models Math-Symbol Reasoning in Document Parsing
 
 **Conference**: ACL2025  

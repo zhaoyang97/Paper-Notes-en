@@ -116,7 +116,7 @@ Evaluated across 6 scenarios (e.g., "man petting a dog," "robot grasping a cube"
 | Full model | Natural, follows prompt | Complete model |
 | w/o Noise Sampling | Unnatural motion | Fails to reach the high-noise region required for motion injection |
 | w/o Fenwick Tree | Serious artifacts in later frames | Independent per-frame modeling cannot handle long sequences |
-| w/o Fine Points | Loss of精细动作 (e.g., grasping) | Lacks local degrees of freedom |
+| w/o Fine Points | Loss of fine-grained motion (e.g., grasping) | Lacks local degrees of freedom |
 | w/o Coarse Points | Global distortion | Lacking large-scale structural motion |
 | w/o Regularization | Jitter and distortion | Temporal/spatial smoothness is lost |
 

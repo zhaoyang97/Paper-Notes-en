@@ -44,22 +44,22 @@ The pipeline consists of two stages: Stage 1 involves 2D multi-modal prior align
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    IN["单目图像"] --> FAE
-    subgraph FAE["融合对齐编码器 FAE（Stage 1：2D 结构对齐）"]
+    IN["Monocular Image"] --> FAE
+    subgraph FAE["Fusion Alignment Encoder FAE (Stage 1: 2D Structural Alignment)"]
         direction TB
-        S["Sapiens 三种先验<br/>关键点 / 分割 / 深度"] --> D["ResNet-50 蒸馏<br/>推理时丢弃基础模型编码器"]
-        D --> P["融合先验特征 F_p"]
+        S["Sapiens Three Priors<br/>Keypoints / Segmentation / Depth"] --> D["ResNet-50 Distillation<br/>Base Model Encoder Discarded at Inference"]
+        D --> P["Fused Prior Features F_p"]
     end
-    FAE --> REG["回归 MANO 双手参数<br/>（可能存在穿透）"]
-    REG -->|IoU / 穿透检测| GATE{"存在穿透?"}
-    GATE -->|否| OUT["物理合理的无碰撞双手"]
-    subgraph DIFF["穿透消除扩散模型（Stage 2：3D 空间对齐）"]
+    FAE --> REG["Regress MANO two-hand parameters<br/>(penetration may exist)"]
+    REG -->|IoU / Penetration Detection| GATE{"Penetration exists?"}
+    GATE -->|No| OUT["Physically plausible collision-free hands"]
+    subgraph DIFF["Penetration Removal Diffusion Model (Stage 2: 3D Spatial Alignment)"]
         direction TB
-        C["以穿透姿态 X_c 为条件"] --> R["反向扩散逐步去噪"]
-        R --> CG["碰撞梯度引导<br/>Chamfer 距离 + 法线判穿透"]
+        C["Conditioned on penetrating pose X_c"] --> R["Reverse diffusion iterative denoising"]
+        R --> CG["Collision gradient guidance<br/>Chamfer distance + normal-based penetration detection"]
         CG --> R
     end
-    GATE -->|是| DIFF
+    GATE -->|Yes| DIFF
     DIFF --> OUT
 ```
 

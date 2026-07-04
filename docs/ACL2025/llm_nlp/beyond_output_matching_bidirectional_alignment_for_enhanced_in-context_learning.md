@@ -60,7 +60,7 @@ $$\mathcal{L}^{\text{KL}} = \sum_{i=1}^{m} \sum_{j=1}^{t} D_{\text{KL}}(P_j(\mat
 
 4. **Ranking Loss**:
 
-$$\mathcal{L}^{\text{rank}} = \sum_i \sum_{R^+, R^- \in R_i^{\text{all}}} \max\{0, \underbrace{\frac{\log Q^S(R^-) - \log Q^S(R^+)}{\max \log Q^S - \min \log Q^S}}_{\text{Left: 学生偏好差异}} + \underbrace{\frac{1}{N-1}(\text{rank}(Q^T(R^-)) - \text{rank}(Q^T(R^+)))}_{\text{Right: 教师排名差异}}\}$$
+$$\mathcal{L}^{\text{rank}} = \sum_i \sum_{R^+, R^- \in R_i^{\text{all}}} \max\{0, \underbrace{\frac{\log Q^S(R^-) - \log Q^S(R^+)}{\max \log Q^S - \min \log Q^S}}_{\text{Left: Student Preference Difference}} + \underbrace{\frac{1}{N-1}(\text{rank}(Q^T(R^-)) - \text{rank}(Q^T(R^+)))}_{\text{Right: Teacher Ranking Difference}}\}$$
 
     - The Left part measures the student's normalized preference difference between positive and negative exemplar sets.
     - The Right part reflects the teacher's **relative ranking** difference between positive and negative exemplar sets (using the rank function instead of raw scores to reduce the impact of magnitude variations in scores).

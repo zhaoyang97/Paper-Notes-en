@@ -142,7 +142,7 @@ The authors split the method into two key components: `HPPT` (Hierarchical Promp
 ## Highlights & Insights
 
 - The biggest highlight is transforming prompts from "class-exclusive parameter slots" into a "parsable knowledge structure." Once the structure is explicitly modeled, forward and backward transfer have concrete anchors rather than remaining abstract slogans.
-- By splitting into "Instrument Shared → Part Shared → Class Specific" layers, the authors incorporate inductive biases for highly structured objects into continual segmentation. This design is more本质 (inherent) to the problem than the memory replay commonly seen in general continual learning.
+- By splitting into "Instrument Shared → Part Shared → Class Specific" layers, the authors incorporate inductive biases for highly structured objects into continual segmentation. This design is more inherent to the problem than the memory replay commonly seen in general continual learning.
 - The directed weighted propagation of SRS is clever. Many methods risk large-scale fine-tuning of historical parameters when attempting backward transfer, but this work limits updates to relevant localities via tree distance decay, achieving a reasonable balance between "updating" and "preserving."
 - Validating the approach on both CNN and foundation model solutions suggests this is a contribution at the "knowledge organization layer" rather than a trick dependent on a specific architecture.
 

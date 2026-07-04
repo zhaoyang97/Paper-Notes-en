@@ -52,7 +52,7 @@ $$p_{0|t_n}^\theta \approx p_{0|t_1}^\psi \circ \cdots \circ p_{t_{n-1}|t_n}^\ps
 
 To capture dimensional correlations, a mixture model is proposed:
 $$p_{s|t}^\theta(x_s|x_t) = \mathbb{E}_\lambda[p_{s|t}^\theta(x_s|x_t;\lambda)]$$
-$$\text{其中 } p_{s|t}^\theta(x_s|x_t;\lambda) = \prod_{d=1}^D p_{s|t}^{\theta,d}(x_s^d|x_t;\lambda)$$
+$$\text{where } p_{s|t}^\theta(x_s|x_t;\lambda) = \prod_{d=1}^D p_{s|t}^{\theta,d}(x_s^d|x_t;\lambda)$$
 
 - Each component conditioned on $\lambda$ remains a product model (dimension-independent), but taking the expectation over $\lambda$ introduces dimensional correlation.
 - **Proposition 1** proves the **universal approximation** property of the mixture model: any discrete distribution can be represented as a mixture of product distributions.

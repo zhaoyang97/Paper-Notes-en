@@ -28,7 +28,7 @@ content_hash: c8a515129ae9b27f
 This paper establishes a **finite-sample** theory for smooth calibration error (smooth CE). It first proves that the population smooth CE can be controlled by "training smooth CE + generalization gap" via uniform convergence. It then demonstrates that the training smooth CE is upper-bounded by the **functional gradient norm** of the loss. Consequently, it provides the first provable guarantees for "calibration + accuracy" for gradient boosted trees, kernel boosting, and two-layer neural networks simultaneously.
 
 ## Background & Motivation
-**Background**: Probability prediction is crucial in high-risk scenarios such as healthcare, meteorology, and language modeling. **Calibration** (where predicted probabilities align with true label frequencies) is a core requirement for衡量 its reliability. Existing methods to improve calibration fall into two categories: adding regularization during training and post-processing recalibration.
+**Background**: Probability prediction is crucial in high-risk scenarios such as healthcare, meteorology, and language modeling. **Calibration** (where predicted probabilities align with true label frequencies) is a core requirement for measuring its reliability. Existing methods to improve calibration fall into two categories: adding regularization during training and post-processing recalibration.
 
 **Limitations of Prior Work**: Most of these methods **only have empirical validation without theoretical guarantees**, or they create a trade-off between calibration and sharpness (predictive discriminative power)—recalibration often sacrifices accuracy. Thus, the question of "which learning algorithms can train well-calibrated models without losing accuracy" remained unanswered.
 
@@ -52,10 +52,10 @@ which is the supremum over all 1-Lipschitz test functions $h$. Compared to the w
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["目标：总体 smooth CE<br/>smCE(f, D)"] --> B["1. 一致收敛分解<br/>≤ 训练 smCE + 泛化间隙"]
-    B -->|泛化间隙 = O(1/√n)| C["2. 泛函梯度控制<br/>训练 smCE ≤ ‖泛函梯度‖"]
-    C -->|代入沿梯度迭代的算法| D["3. 三算法实例化<br/>GBT / 核提升 / 两层NN"]
-    D -->|margin 假设 + 选超参| E["联合保证<br/>ε-smooth CE + ε-误分类率"]
+    A["Goal: population smooth CE<br/>smCE(f, D)"] --> B["1. Uniform convergence decomposition<br/>≤ training smCE + generalization gap"]
+    B -->|generalization gap = O(1/√n)| C["2. Functional gradient control<br/>training smCE ≤ ‖functional gradient‖"]
+    C -->|substitute gradient-descent iteration algorithm| D["3. Three algorithm instantiations<br/>GBT / kernel boosting / two-layer NN"]
+    D -->|margin assumption + hyperparameter selection| E["Joint guarantee<br/>ε-smooth CE + ε-misclassification rate"]
 ```
 
 ### Key Designs

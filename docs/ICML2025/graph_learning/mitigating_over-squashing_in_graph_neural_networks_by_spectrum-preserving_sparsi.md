@@ -43,7 +43,7 @@ Proposes GOKU (Densification-Sparsification Rewiring paradigm), which treats the
 
 ### DSR Paradigm: Densification-Sparsification Rewiring
 
-The overall workflow is $G \xrightarrow{\text{稠密化}} G_l \xrightarrow{\text{稀疏化}} G_o$, where $G$ is the input graph, $G_l$ is the latent dense graph, and $G_o$ is the final output graph.
+The overall workflow is $G \xrightarrow{\text{Densification}} G_l \xrightarrow{\text{Sparsification}} G_o$, where $G$ is the input graph, $G_l$ is the latent dense graph, and $G_o$ is the final output graph.
 
 **Key Idea**: Treat the input graph $G$ as the result of spectral sparsification on an unknown dense graph $G_l$. The structural bottlenecks in $G$ stem from the removal of edges critical for connectivity during the sparsification process. By recovering these "missing edges" via inverse sparsification, and subsequently performing forward sparsification to prune unimportant edges, the final output $G_o$ simultaneously satisfies:
 

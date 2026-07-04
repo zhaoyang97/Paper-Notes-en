@@ -49,12 +49,12 @@ The overall logic of the paper is divided into three steps: (1) **Formalization*
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["语言模型激活 a"] --> B["SAE 集成形式化<br/>加权和 ≡ 拼接特征字典"]
-    B -->|"利用初始化随机性<br/>并行训练"| C["Naive Bagging<br/>重建取平均·降方差"]
-    B -->|"逐级拟合残差<br/>串行训练"| D["Boosting<br/>重建取和·降偏差"]
-    C --> E["拼接后的大特征字典<br/>+ 系数"]
+    A["Language model activation a"] --> B["SAE ensemble formulation<br/>Weighted sum ≡ concatenated feature dictionary"]
+    B -->|"Exploit initialization randomness<br/>Parallel training"| C["Naive Bagging<br/>Average reconstructions · reduce variance"]
+    B -->|"Fit residuals sequentially<br/>Serial training"| D["Boosting<br/>Sum reconstructions · reduce bias"]
+    C --> E["Concatenated large feature dictionary<br/>+ coefficients"]
     D --> E
-    E --> F["下游：概念检测<br/>+ 虚假相关消除"]
+    E --> F["Downstream: concept detection<br/>+ spurious correlation removal"]
 ```
 
 ### Key Designs

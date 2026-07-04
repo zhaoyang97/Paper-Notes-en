@@ -19,7 +19,7 @@ content_hash: 5ba7bb7b5c45712d
 
 **Conference**: ICLR 2026  
 **OpenReview**: [https://openreview.net/forum?id=FvMyAMbbX0](https://openreview.net/forum?id=FvMyAMbbX0)  
-**论文**: [Project Page](https://ripemangobox.github.io/ReactDance)  
+**Paper**: [Project Page](https://ripemangobox.github.io/ReactDance)  
 **Code**: TBD  
 **Area**: Human Motion Generation / Dance Generation  
 **Keywords**: Reactive Dance Generation, Hierarchical Quantization, Diffusion Models, Long-Sequence Parallel Sampling, Classifier-Free Guidance

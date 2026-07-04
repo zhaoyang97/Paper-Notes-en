@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: 3870cb517abefc5c
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Efficient RGB-D Scene Understanding via Multi-task Adaptive Learning and Cross-dimensional Feature Guidance
 
 **Conference**: CVPR 2025  

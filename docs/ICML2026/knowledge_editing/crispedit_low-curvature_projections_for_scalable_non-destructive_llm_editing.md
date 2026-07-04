@@ -128,7 +128,7 @@ CrispEdit achieves the highest editing success rate with almost zero capability 
 - CrispEdit-Seq still shows some generalization decay (80.5 $\to$ 71.1 on ZsRE), indicating that streaming K-FAC is not yet perfectly lossless.
 
 ## Related Work & Insights
-- **vs AlphaEdit / Adam-NSCL**: Both use null-space projection, but their reliance on activation covariance $K_{\text{cap}}$ makes them over-restrictive特例 (Prop 1), leading to the 17-point MMLU gap.
+- **vs AlphaEdit / Adam-NSCL**: Both use null-space projection, but their reliance on activation covariance $K_{\text{cap}}$ makes them over-restrictive special cases (Prop 1), leading to the 17-point MMLU gap.
 - **vs MEMIT / ROME**: These methods suffer catastrophic MMLU failure in generation-based evaluation; CrispEdit avoids the "knowledge localization" assumption.
 - **vs LoRA / FT**: Fine-tuning methods fail in sequential editing without explicit capability constraints; CrispEdit's projection is complementary to FT.
 - **vs UltraEdit**: UltraEdit is fast (3 min) but has low success rates ($\approx$ 20.0); CrispEdit achieves 80.5 in 4 min, dominating the time-quality Pareto front.

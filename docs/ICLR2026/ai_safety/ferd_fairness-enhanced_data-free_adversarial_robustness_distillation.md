@@ -44,14 +44,14 @@ FERD is a two-stage "generation + distillation" framework. **Generation Stage**:
 
 ```mermaid
 flowchart LR
-    N[随机噪声] --> G[生成器]
-    RW[鲁棒性引导<br/>类别重加权采样] --> G
-    G --> FAE[FAEs<br/>非鲁棒特征预测<br/>趋向均匀分布]
-    FAE -->|均匀目标类约束| UTAE[UTAEs<br/>攻击方向均匀]
-    FAE -->|干净样本| KD[解耦蒸馏 IKL]
-    UTAE -->|对抗样本| KD
-    T[冻结教师] --> KD
-    KD --> S[学生模型]
+    N[Random noise] --> G[Generator]
+    RW[Robustness-guided<br/>class re-weighted sampling] --> G
+    G --> FAE[FAEs<br/>Non-robust feature prediction<br/>toward uniform distribution]
+    FAE -->|Uniform target class constraint| UTAE[UTAEs<br/>Uniform attack directions]
+    FAE -->|Clean samples| KD[Decoupled distillation IKL]
+    UTAE -->|Adversarial samples| KD
+    T[Frozen teacher] --> KD
+    KD --> S[Student model]
 ```
 
 ### Key Designs

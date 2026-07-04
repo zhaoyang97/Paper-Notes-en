@@ -132,7 +132,7 @@ The source pool (300K) is a synthesis of Flan V2, Open-Assistant 1, WizardLM, Do
 - **Field failure on niche tasks**: The current semantic fields are ill-suited for multilingual (TyDiQA) or highly specialized tasks.
 - **LLM dependency**: The pipeline is sensitive to the quality of the LLM used for annotation and scoring.
 - **Target shift assumption**: The assumption that $P(X \mid Y)$ is stable may not always hold in reality.
-- **Evaluation target set同源**: Because target sets are derived from the same distribution as the evaluation data (sub-sampling benchmarks), the performance in real-world scenarios with scarcer target information might be lower.
+- **Evaluation target set homogeneity**: Because target sets are derived from the same distribution as the evaluation data (sub-sampling benchmarks), the performance in real-world scenarios with scarcer target information might be lower.
 
 ## Related Work & Insights
 - **vs. LESS / TSDS**: Both focus on marginal input distributions. TADS identifies their shared flaw: ignoring the target label makes it impossible to verify semantic alignment between candidate and target outputs.

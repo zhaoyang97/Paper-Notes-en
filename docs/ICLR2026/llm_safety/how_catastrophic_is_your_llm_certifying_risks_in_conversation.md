@@ -111,7 +111,7 @@ Number of scenarios where the certified lower bound exceeds single-turn (ST) or 
 
 ## Limitations & Future Work
 - **Finite Sample Size**: Only 50 sequences per specification results in wide Clopper–Pearson intervals (often 0.3+ difference between bounds), providing limited resolution despite the "hardness" of the lower bound.
-- **Dependence on Judge Model**: Using GPT-4o for判别 catastrophic outputs means judge errors directly pollute the certification results; the framework does not inherently solve judge reliability.
+- **Dependence on Judge Model**: Using GPT-4o for classifying catastrophic outputs means judge errors directly pollute the certification results; the framework does not inherently solve judge reliability.
 - **Manual Heuristics for Graphs/Distributions**: Actor-based expansion, similarity thresholds, and jailbreak probabilities affect the distribution shape. Certification only holds for the "defined distribution," which remains somewhat empirical.
 - **Certification $\neq$ Defense**: The framework reveals risks but provides no mitigation. Feedback from these certified bounds into safety training (e.g., adversarial training against GPh/AwR) is a natural next step.
 

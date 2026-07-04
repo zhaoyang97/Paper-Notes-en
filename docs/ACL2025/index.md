@@ -750,9 +750,9 @@ item_total: 1853
 
 :   This paper proposes AskQE, a question answering-based quality estimation framework for machine translation. By generating questions from the source text, answering them based on both the source text and the back-translation output, and comparing the answers to detect translation errors, it helps users who do not understand the target language determine the acceptability of translations. On the BioMQM dataset, its Kendall's $\tau$ correlation and decision accuracy outperform existing QE metrics.
 
-**[7 Points to Tsinghua but 10 Points to 清华? Assessing Agentic Large Language Models in Multilingual National Bias](multilingual_mt/assessing_agentic_large_language_models_in_multilingual_national_bias.md)**
+**[7 Points to Tsinghua but 10 Points to Tsinghua? Assessing Agentic Large Language Models in Multilingual National Bias](multilingual_mt/assessing_agentic_large_language_models_in_multilingual_national_bias.md)**
 
-:   This paper presents the first systematic study of national bias in LLMs acting as multilingual recommendation agents in reasoning-based decision-making tasks. Utilizing three scenarios (university application, travel, and relocation) alongside the ThurstoneケースIII (comparative judgment) method, the study quantifies rating discrepancies for GPT-3.5, GPT-4, and Claude Sonnet across six languages. The findings reveal a widespread prevalence of "local language bias," and demonstrate that Chain-of-Thought (CoT) reasoning paradoxically exacerbates bias in non-English languages.
+:   This paper presents the first systematic study of national bias in LLMs acting as multilingual recommendation agents in reasoning-based decision-making tasks. Utilizing three scenarios (university application, travel, and relocation) alongside the Thurstone Case III (comparative judgment) method, the study quantifies rating discrepancies for GPT-3.5, GPT-4, and Claude Sonnet across six languages. The findings reveal a widespread prevalence of "local language bias," and demonstrate that Chain-of-Thought (CoT) reasoning paradoxically exacerbates bias in non-English languages.
 
 **[Beyond N-Grams: Rethinking Evaluation Metrics and Strategies for Multilingual Abstractive Summarization](multilingual_mt/beyond_n-grams_rethinking_evaluation_metrics_and_strategies_for_multilingual_abs.md)**
 

@@ -15,7 +15,6 @@ date: 2026-05-08
 content_hash: d88b75bf73dbba8d
 ---
 
-<!-- 由 src/gen_stubs.py 自动生成 -->
 # Position: All Current Generative Fidelity and Diversity Metrics are Flawed
 
 **Conference**: ICML2025  

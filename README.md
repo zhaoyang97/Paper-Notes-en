@@ -1,3 +1,7 @@
+<p align="center">
+	<img src="docs/assets/papernotes-logo-horizontal.svg" alt="PaperNotes" width="720">
+</p>
+
 # 📚 AI Paper Notes
 
 **Read a top-tier AI paper in 5 minutes — one repo to keep up with the latest AI progress.**

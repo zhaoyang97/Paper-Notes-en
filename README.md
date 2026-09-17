@@ -1,8 +1,9 @@
 <p>
-  <img src="docs/assets/papernotes-logo-horizontal.svg"
-       alt="PaperNotes" width="100%">
+  <a href="https://en.papernotes.org/">
+    <img src="docs/assets/papernotes-logo-horizontal.svg"
+         alt="en.papernotes.org · AI Paper Notes" width="100%">
+  </a>
 </p>
-
 # 📚 AI Paper Notes
 
 **Read a top-tier AI paper in 5 minutes — one repo to keep up with the latest AI progress.**

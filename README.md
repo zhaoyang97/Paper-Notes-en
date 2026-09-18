@@ -4,6 +4,8 @@
          alt="en.papernotes.org · AI Paper Notes" width="100%">
   </a>
 </p>
+
+
 # 📚 AI Paper Notes
 
 **Read a top-tier AI paper in 5 minutes — one repo to keep up with the latest AI progress.**

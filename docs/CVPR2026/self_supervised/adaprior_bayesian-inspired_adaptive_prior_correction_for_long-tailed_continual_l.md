@@ -19,7 +19,7 @@ content_hash: b7497bff99ba3d8d
 
 **Conference**: CVPR 2026  
 **Paper**: [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Bhat_AdaPrior_Bayesian-Inspired_Adaptive_Prior_Correction_for_Long-Tailed_Continual_Learning_CVPR_2026_paper.html)  
-**Code**: To be confirmed  
+**Code**: https://github.com/Opencoder053/AdaPrior
 **Area**: Continual Learning / Long-Tail Recognition  
 **Keywords**: Long-Tailed Class Incremental Learning (LTCIL), Bayesian Prior Correction, EMA Prior Estimation, Logit Adjustment, Model-Induced Prior
 

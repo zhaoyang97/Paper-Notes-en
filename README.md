@@ -21,6 +21,12 @@
 
 > 💡 **Tip**: If math formulas don't render correctly, refreshing the page usually fixes it.
 
+## 💬 Feedback
+We welcome feedback on the website and its content. If you would like us to add notes on your paper, remove or revise existing notes on your paper, or share any other comments or suggestions, please contact us in either of the following ways:
+
+- [Open an issue](https://github.com/zhaoyang97/Paper-Notes-en/issues/new)
+- Email [contact@papernotes.org](mailto:contact@papernotes.org)
+
 ## 📊 Conference Coverage
 
 | Conference | Notes | Full Paper List |
